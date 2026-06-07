@@ -17,19 +17,11 @@ public:
     virtual void refreshCatalogItems(::IPackManifestFactory&) = 0;
 
     virtual void setEnabled(bool enabled) = 0;
-
-    virtual ~IContentCatalogPackSource() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

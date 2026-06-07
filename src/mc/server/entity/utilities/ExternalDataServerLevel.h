@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/entity/utilities/ExternalDataInterface.h"
 #include "mc/input/ClientPlayMode.h"
@@ -10,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ILevel;
 struct AdventureSettings;
 // clang-format on
 
@@ -44,6 +46,18 @@ public:
     virtual ::InputMode getInputMode() const /*override*/;
 
     virtual ::GameType getDefaultGameType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ExternalDataServerLevel(::Bedrock::NotNullNonOwnerPtr<::ILevel const> level);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel const> level);
     // NOLINTEND
 
 public:

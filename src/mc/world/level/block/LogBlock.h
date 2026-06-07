@@ -13,7 +13,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class BlockType;
-class Experiments;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace mce { class Color; }
 // clang-format on
@@ -27,22 +26,40 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LogBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~LogBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LogBlock(
+        ::std::string const&                 nameId,
+        int                                  id,
+        ::WeakPtr<::BlockType const>         strippedBlockType,
+        ::std::optional<::LogBlockMapColors> mapColors
+    );
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&                 nameId,
+        int                                  id,
+        ::WeakPtr<::BlockType const>         strippedBlockType,
+        ::std::optional<::LogBlockMapColors> mapColors
+    );
     // NOLINTEND
 
 public:
@@ -51,8 +68,6 @@ public:
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

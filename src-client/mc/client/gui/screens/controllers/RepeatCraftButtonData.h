@@ -41,12 +41,6 @@ public:
             sendFlyingItem
     );
 
-    MCAPI ~RepeatCraftButtonData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void reset();
     // NOLINTEND
 };

@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 512, ushort[256]>                                                  m_viewRemap;
     ::ll::TypedStorage<4, 256, float[16][4]>                                                 m_colorPalette;
-    ::ll::TypedStorage<8, 114688, ::bgfx::View[256]>                                         m_view;
+    ::ll::TypedStorage<4, 114688, ::bgfx::View[256]>                                         m_view;
     ::ll::TypedStorage<4, 1024, int[256]>                                                    m_occlusion;
     ::ll::TypedStorage<8, 524288, uint64[65536]>                                             m_sortKeys;
     ::ll::TypedStorage<2, 131072, ushort[65536]>                                             m_sortValues;
@@ -62,7 +62,7 @@ public:
     ::ll::TypedStorage<8, 524288, ::bgfx::RangedBindings* [65536]>                           m_rangedRenderItemBind;
     ::ll::TypedStorage<4, 4100, uint[1025]>                                                  m_blitKeys;
     ::ll::TypedStorage<64, 65600, ::bgfx::BlitItem[1025]>                                    m_blitItem;
-    ::ll::TypedStorage<8, 4718624, ::bgfx::FrameCache>                                       m_frameCache;
+    ::ll::TypedStorage<4, 4718624, ::bgfx::FrameCache>                                       m_frameCache;
     ::ll::TypedStorage<8, 8, ::bgfx::UniformBuffer**>                                        m_uniformBuffer;
     ::ll::TypedStorage<4, 4, uint>                                                           m_numRenderItems;
     ::ll::TypedStorage<2, 2, ushort>                                                         m_numBlitItems;
@@ -109,23 +109,13 @@ public:
 
     MCAPI void destroy();
 
-    MCAPI void reset();
-
     MCAPI void sort();
-
-    MCAPI ~Frame();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

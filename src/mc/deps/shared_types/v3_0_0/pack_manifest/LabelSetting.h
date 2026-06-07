@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v3_0_0/pack_manifest/SettingType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
 struct LabelSetting {
@@ -16,20 +21,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LabelSetting(LabelSetting const&);
-    LabelSetting();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&&);
-
-    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting const&);
-
     MCAPI ~LabelSetting();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

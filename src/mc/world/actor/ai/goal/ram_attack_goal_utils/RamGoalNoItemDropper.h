@@ -21,8 +21,6 @@ public:
     virtual void checkForHornDropOnCollision(::Vec3 collisionPos) /*override*/;
 
     virtual void dontDropHorn() /*override*/;
-
-    virtual ~RamGoalNoItemDropper() /*override*/ = default;
     // NOLINTEND
 
 public:

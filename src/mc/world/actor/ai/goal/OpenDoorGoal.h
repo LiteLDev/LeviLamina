@@ -39,8 +39,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~OpenDoorGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI OpenDoorGoal(::Mob& mob, bool closeDoorAfter);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, bool closeDoorAfter);
     // NOLINTEND
 
 public:

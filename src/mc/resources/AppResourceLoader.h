@@ -25,6 +25,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual bool load(::ResourceLocation const&, ::std::string&) const /*override*/;
+#else // LL_PLAT_C
     virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
     virtual bool load(
@@ -32,26 +35,42 @@ public:
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool load(::ResourceLocation const&, ::std::string&, ::gsl::span<::std::string const>) const /*override*/;
+#else // LL_PLAT_C
     virtual bool load(
         ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool load(::ResourceLocationPair const&, ::std::string&, ::gsl::span<::std::string const>) const
+        /*override*/;
+#else // LL_PLAT_C
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const
         /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const&) const /*override*/;
+#else // LL_PLAT_C
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
-
-#ifdef LL_PLAT_C
-    virtual ::mce::Image loadTexture(::ResourceLocation const& resourceLocation) const /*override*/;
-
 #endif
-    virtual ~AppResourceLoader() /*override*/ = default;
+
+#ifdef LL_PLAT_S
+    virtual ::std::pair<int, ::std::string_view>
+    getPackStackIndexOfResource(::ResourceLocation const&, ::gsl::span<::std::string const>) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::mce::Image loadTexture(::ResourceLocation const& resourceLocation) const /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

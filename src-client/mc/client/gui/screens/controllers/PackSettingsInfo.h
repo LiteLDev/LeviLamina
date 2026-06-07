@@ -31,15 +31,11 @@ public:
 
 public:
     // prevent constructor by default
-    PackSettingsInfo& operator=(PackSettingsInfo const&);
-    PackSettingsInfo(PackSettingsInfo const&);
     PackSettingsInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackSettingsInfo(::PackSettingsInfo&&);
-
     MCAPI PackSettingsInfo(
         ::std::unique_ptr<::PackManifest>                       packManifest,
         ::std::optional<::std::string>                          worldId,
@@ -56,8 +52,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackSettingsInfo&&);
-
     MCAPI void* $ctor(
         ::std::unique_ptr<::PackManifest>                       packManifest,
         ::std::optional<::std::string>                          worldId,

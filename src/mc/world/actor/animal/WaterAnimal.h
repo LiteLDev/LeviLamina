@@ -21,8 +21,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool checkSpawnRules(bool) /*override*/;
-
-    virtual ~WaterAnimal() /*override*/;
     // NOLINTEND
 
 public:
@@ -45,12 +43,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

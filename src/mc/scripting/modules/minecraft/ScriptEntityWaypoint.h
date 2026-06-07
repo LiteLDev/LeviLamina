@@ -12,12 +12,9 @@
 // clang-format off
 class ServerWaypoint;
 namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptRGB; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidWaypointError; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidWaypointTextureSelectorError; }
-namespace ScriptModuleMinecraft { struct ScriptWaypointTextureSelector; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptEntityWaypoint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid() const /*override*/;
@@ -47,21 +40,11 @@ public:
     getDimensionLocation() const /*override*/;
 
     virtual ::std::unique_ptr<::ServerWaypoint> createWaypoint() const /*override*/;
-
-    virtual ~ScriptEntityWaypoint() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptEntityWaypoint(
-        ::Scripting::WeakLifetimeScope const&                                      scope,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> entity,
-        ::ScriptModuleMinecraft::ScriptWaypointTextureSelector const&              textureSelector,
-        ::ScriptModuleMinecraft::ScriptEntityVisibilityRules const&                entityRules,
-        ::std::optional<::ScriptModuleMinecraft::ScriptRGB> const&                 color
-    );
-
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
@@ -79,24 +62,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope const&                                      scope,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> entity,
-        ::ScriptModuleMinecraft::ScriptWaypointTextureSelector const&              textureSelector,
-        ::ScriptModuleMinecraft::ScriptEntityVisibilityRules const&                entityRules,
-        ::std::optional<::ScriptModuleMinecraft::ScriptRGB> const&                 color
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -14,12 +14,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::BiomeTypes> mBiomeType;
     // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BiomeTypeJsonComponent() /*override*/ = default;
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_110

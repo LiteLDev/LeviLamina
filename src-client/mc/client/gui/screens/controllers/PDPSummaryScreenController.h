@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
-
-    virtual ~PDPSummaryScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -3,16 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/identity/PlayFabStatus.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/XsapiHandle.h"
 #include "mc/deps/core/threading/Async.h"
+#include "mc/identity/SignInResult.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Social { class GameConnectionInfo; }
+namespace cohtml { class Binder; }
+namespace Social { class MultiplayerPlatformFactory; }
+namespace Social { struct MultiIdentitySigninResult; }
+namespace Social { struct MultiplayerPlatformFactoryData; }
 namespace Social { struct PlayerProfileState; }
 namespace Social { struct XboxLiveUserProfileData; }
-namespace cohtml { class Binder; }
 // clang-format on
 
 namespace Social {
@@ -21,14 +27,29 @@ namespace Social {
 #ifdef LL_PLAT_C
 MCNAPI void CoherentBind(::cohtml::Binder* binder, ::Social::PlayerProfileState* state);
 
-MCNAPI ::std::string identityErrorToUserFacingString(::std::error_code error);
+MCNAPI ::std::string bedrockClientErrorToString(int errorCode);
 
-MCNAPI bool isSignInError(::std::error_code const& code);
+MCNAPI ::brstd::move_only_function<::std::unique_ptr<::Social::MultiplayerPlatformFactory>()>
+createMultiplayerPlatformFactory(::Social::MultiplayerPlatformFactoryData&& data);
+
+MCNAPI ::Social::SignInResult getResultFromErrorCode(::std::error_code const& code);
+
+MCNAPI ::std::string identityErrorToUserFacingString(::Social::MultiIdentitySigninResult const& errorResult);
+
+MCNAPI ::std::error_code make_error_code(::Social::PlayFabStatus e);
+
+MCNAPI ::std::error_condition make_error_condition(::Social::SignInResult e);
+
+MCNAPI ::std::string playfabErrorToString(int errorCode);
 
 MCNAPI ::Social::MultiplayerServiceIdentifier serviceIdentifierFromString(::std::string_view idString);
 
+MCNAPI char const* serviceIdentifierToString(::Social::MultiplayerServiceIdentifier id);
+
 MCNAPI ::Bedrock::Threading::Async<::std::pair<::std::error_code, ::Social::XsapiHandle<::XUser*>>>
 signInCompleteHelper(::XUser* user, long hr);
+
+MCNAPI ::std::string xblErrorToString(int errorCode);
 #endif
 // NOLINTEND
 

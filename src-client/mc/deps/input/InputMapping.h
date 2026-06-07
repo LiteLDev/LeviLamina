@@ -30,9 +30,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InputMapping& operator=(InputMapping const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI InputMapping();
+
+    MCAPI InputMapping(::InputMapping const&);
+
+    MCAPI InputMapping(
+        ::KeyboardInputMapping&               aKeyboardMapping,
+        ::MouseInputMapping&                  mouseMapping,
+        ::TouchInputMapping&                  aTouchMapping,
+        ::GameControllerInputMapping&         aGamePadMapping,
+        ::TestAutoInputMapping&               aTestAutoMapping,
+        ::std::vector<::ChordButtonMapping>&  aChordButtonMapping,
+        ::std::vector<::DeviceButtonMapping>& aDeviceButtonMapping
+    );
 
     MCAPI ::std::vector<::std::string> getButtonDifference(::InputMapping const* otherMapping) const;
 
@@ -45,6 +61,18 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::InputMapping const&);
+
+    MCAPI void* $ctor(
+        ::KeyboardInputMapping&               aKeyboardMapping,
+        ::MouseInputMapping&                  mouseMapping,
+        ::TouchInputMapping&                  aTouchMapping,
+        ::GameControllerInputMapping&         aGamePadMapping,
+        ::TestAutoInputMapping&               aTestAutoMapping,
+        ::std::vector<::ChordButtonMapping>&  aChordButtonMapping,
+        ::std::vector<::DeviceButtonMapping>& aDeviceButtonMapping
+    );
     // NOLINTEND
 
 public:

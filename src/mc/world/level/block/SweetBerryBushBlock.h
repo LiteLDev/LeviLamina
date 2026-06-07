@@ -15,7 +15,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -62,8 +61,7 @@ public:
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& pathPos, ::BlockPos const&) const /*override*/;
 
     virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const /*override*/;
 
@@ -77,12 +75,7 @@ public:
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~SweetBerryBushBlock() /*override*/ = default;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -137,21 +130,19 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& pathPos, ::BlockPos const&) const;
 
     MCAPI bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
     MCAPI bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
-    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
 
     // NOLINTEND

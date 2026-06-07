@@ -32,6 +32,8 @@ public:
     // NOLINTBEGIN
     MCAPI void _run(::ClientBlockPipeline::Description const& description, ::ClientBlockPipeline::Inputs& inputs);
 
+    MCAPI void loadAllStreams(::mce::MeshData& outputMesh, ::std::vector<::TessellatorQuadInfo>& outputFaceInfo) const;
+
     MCAPI void mergeStreams(
         ::mce::MeshData&                            outputMesh,
         ::std::vector<::TessellatorQuadInfo>&       outputFaceInfo,
@@ -39,6 +41,8 @@ public:
         ::std::vector<::TessellatorQuadInfo> const& inputFaceInfo,
         bool                                        textureShiftsEnabled
     ) const;
+
+    MCAPI void run(::ClientBlockPipeline::Description const& description, ::ClientBlockPipeline::Inputs&& inputs);
 
     MCAPI ~BlockTessellatorPipeline();
     // NOLINTEND

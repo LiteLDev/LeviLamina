@@ -72,7 +72,15 @@ public:
     MCNAPI ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> getAllThemesMap() const;
 #endif
 
+    MCNAPI ::std::string const& getCurrentTheme() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Editor::Settings::ThemeProps const& getProperties() const;
+#endif
+
     MCNAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
+
+    MCNAPI ::std::vector<::std::string> getThemeIdList() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getThemeName(::std::string const& id) const;
 
@@ -85,12 +93,16 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> setThemeName(::std::string const& id, ::std::string const& name);
 
+    MCNAPI void updateSettings(::Editor::Settings::ThemeProps const& props, bool notifyUpdate);
+
     MCNAPI ::Scripting::Result_deprecated<void> updateThemeColor(
         ::std::string const&                      id,
         ::Editor::Settings::ThemeSettingsColorKey key,
         ::mce::Color const&                       newColor,
         bool                                      notifyUpdate
     );
+
+    MCNAPI ~Theme();
     // NOLINTEND
 
 public:
@@ -126,6 +138,12 @@ public:
                                                     onThemeColorUpdatedCallback,
         ::std::function<void(::std::string const&)> onThemeDeletedCallback
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

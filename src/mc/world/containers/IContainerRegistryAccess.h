@@ -25,24 +25,12 @@ public:
         ::FullContainerName const&         name
     ) = 0;
 
-    virtual ~IContainerRegistryAccess();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~IContainerRegistryAccess() = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

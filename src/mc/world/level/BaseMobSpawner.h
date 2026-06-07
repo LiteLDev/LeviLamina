@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseMobSpawner() = default;
+    virtual ~BaseMobSpawner();
 
     virtual void tick(::BlockSource& source);
 
@@ -66,6 +66,10 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::Actor* createAndAddDisplayEntity(::BlockSource& region);
+
+    MCFOLD float getOSpin() const;
+
+    MCFOLD float getSpin() const;
 #endif
 
     MCAPI void removeDisplayEntity();
@@ -81,6 +85,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorDefinitionIdentifier actorDefId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

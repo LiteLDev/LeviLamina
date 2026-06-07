@@ -15,20 +15,13 @@ public:
 public:
     // prevent constructor by default
     ItemSearchResults& operator=(ItemSearchResults const&);
+    ItemSearchResults(ItemSearchResults const&);
     ItemSearchResults();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemSearchResults(::FurnaceIngredientSearchResultsUtil::ItemSearchResults const&);
-
     MCNAPI ~ItemSearchResults();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::FurnaceIngredientSearchResultsUtil::ItemSearchResults const&);
     // NOLINTEND
 
 public:

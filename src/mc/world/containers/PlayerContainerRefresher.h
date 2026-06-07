@@ -20,6 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void refreshContainer(::DynamicContainerManager const& menu) const;
+
     MCAPI void
     slotChanged(::DynamicContainerManager& menu, ::Container& container, int slot, ::ItemStack const& newItem) const;
     // NOLINTEND

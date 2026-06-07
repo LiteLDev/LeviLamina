@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Vec3;
+// clang-format on
+
 namespace CameraAimAssist {
 
 class BlockTarget {
@@ -25,6 +31,22 @@ public:
         Side& operator=(Side const&);
         Side(Side const&);
         Side();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI Side(::Vec3 const& pos, uchar fid);
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(::Vec3 const& pos, uchar fid);
+#endif
+        // NOLINTEND
     };
 
 public:
@@ -43,6 +65,32 @@ public:
     BlockTarget& operator=(BlockTarget const&);
     BlockTarget(BlockTarget const&);
     BlockTarget();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void addSide(::CameraAimAssist::BlockTarget::Side const& side);
+
+    MCNAPI void forEachSide(::std::function<void(::CameraAimAssist::BlockTarget::Side const&)> const& callback) const;
+
+    MCNAPI float getAimAssistPriorityPercentage() const;
+
+    MCNAPI ::BlockPos const& getBlockPos() const;
+
+    MCNAPI bool getIsFlowingLiquid() const;
+
+    MCNAPI bool getIsLiquid() const;
+
+    MCNAPI uchar getSidesCount() const;
+
+    MCNAPI void setAimAssistPriorityPercentage(float priorityPercentage);
+
+    MCNAPI void setBlockPos(::BlockPos const& blockPos);
+
+    MCNAPI void setIsLiquid(bool isLiquid, bool isFlowing);
+#endif
+    // NOLINTEND
 };
 
 } // namespace CameraAimAssist

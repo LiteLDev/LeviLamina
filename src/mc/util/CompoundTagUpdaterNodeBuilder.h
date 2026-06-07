@@ -26,10 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundTagUpdaterNodeBuilder _addChildNode();
+    MCAPI ::CompoundTagUpdaterNodeBuilder& addCompound(::std::string const& tagName);
 
     MCAPI ::CompoundTagUpdaterNodeBuilder&
     edit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
+
+    MCAPI void fork(uint64 size, ::std::function<void(::CompoundTagUpdaterNodeBuilder&, uint64)>&& function);
 
     MCAPI ::CompoundTagUpdaterNodeBuilder& match(::std::string const& tagName, ::std::string pattern);
 

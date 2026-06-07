@@ -25,11 +25,16 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptActorItemPickupEventFilterData& operator=(ScriptActorItemPickupEventFilterData const&);
     ScriptActorItemPickupEventFilterData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorItemPickupEventFilterData(
+        ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData const&
+    );
+
     MCAPI ScriptActorItemPickupEventFilterData(
         ::Scripting::WeakLifetimeScope           scope,
         ::ScriptModuleMinecraft::ScriptActorData actorData,
@@ -58,6 +63,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData const&);
+
     MCFOLD void* $ctor(
         ::Scripting::WeakLifetimeScope           scope,
         ::ScriptModuleMinecraft::ScriptActorData actorData,

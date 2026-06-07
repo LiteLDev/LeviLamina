@@ -48,8 +48,6 @@ public:
 
     virtual void
     _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset) /*override*/;
-
-    virtual ~LockingFillingContainer() /*override*/ = default;
     // NOLINTEND
 
 public:

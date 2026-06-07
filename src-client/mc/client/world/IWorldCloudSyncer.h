@@ -19,9 +19,6 @@ public:
     virtual ~IWorldCloudSyncer() = default;
 
     virtual void syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) = 0;
-
-    virtual void
-    syncWorldManifest(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) = 0;
     // NOLINTEND
 
 public:

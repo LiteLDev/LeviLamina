@@ -38,13 +38,11 @@ public:
     // NOLINTBEGIN
     virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
-    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase& entity, ::Actor& face, uchar& pos, ::BlockPos&) const /*override*/;
 
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~SignItem() /*override*/;
     // NOLINTEND
 
 public:
@@ -66,17 +64,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
-    MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase& entity, ::Actor& face, uchar& pos, ::BlockPos&) const;
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;

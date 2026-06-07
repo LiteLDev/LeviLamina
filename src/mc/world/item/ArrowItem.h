@@ -21,7 +21,6 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class MobEffectInstance;
-class Potion;
 class Vec3;
 namespace Bedrock::Safety { class RedactableString; }
 namespace cereal { struct ReflectionCtx; }
@@ -71,16 +70,12 @@ public:
 
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
-
-    virtual ~ArrowItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ArrowItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx);
-
-    MCAPI ::std::shared_ptr<::Potion const> _potionExistsOrContentError(int aux) const;
 
     MCAPI void applyEffect(::Arrow* arrow, ::ItemInstance const& slotItem) const;
 

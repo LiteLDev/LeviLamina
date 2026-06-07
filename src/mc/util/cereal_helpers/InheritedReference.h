@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace CerealHelpers {
 
 struct InheritedReference {
@@ -15,8 +20,25 @@ public:
 public:
     // prevent constructor by default
     InheritedReference& operator=(InheritedReference const&);
-    InheritedReference(InheritedReference const&);
     InheritedReference();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI InheritedReference(::CerealHelpers::InheritedReference const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::CerealHelpers::InheritedReference const&);
+    // NOLINTEND
 };
 
 } // namespace CerealHelpers

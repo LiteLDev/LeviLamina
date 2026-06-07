@@ -21,17 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemUseOnEvent& operator=(ItemUseOnEvent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ItemUseOnEvent();
-
-    MCAPI ItemUseOnEvent(::ItemUseOnEvent&&);
-
-    MCAPI ItemUseOnEvent(::ItemUseOnEvent const&);
 
     MCAPI ~ItemUseOnEvent();
     // NOLINTEND
@@ -40,10 +32,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ItemUseOnEvent&&);
-
-    MCAPI void* $ctor(::ItemUseOnEvent const&);
     // NOLINTEND
 
 public:

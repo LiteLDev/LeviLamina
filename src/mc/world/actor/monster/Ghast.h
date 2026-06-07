@@ -35,8 +35,6 @@ public:
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    virtual ~Ghast() /*override*/ = default;
     // NOLINTEND
 
 public:

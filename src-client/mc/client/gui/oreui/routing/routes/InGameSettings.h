@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
+#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -41,8 +42,6 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
-
-    virtual ~InGameSettings() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -57,7 +56,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
+    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND

@@ -7,12 +7,6 @@
 
 struct NoiseBasedColorPaletteFlag : public ::BiomeComponentBase {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~NoiseBasedColorPaletteFlag() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

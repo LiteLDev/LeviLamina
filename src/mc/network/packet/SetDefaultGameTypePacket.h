@@ -59,19 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~SetDefaultGameTypePacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~SetDefaultGameTypePacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI SetDefaultGameTypePacket();
+
+    MCAPI explicit SetDefaultGameTypePacket(::SetDefaultGameTypePacketPayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SetDefaultGameTypePacketPayload payload);
     // NOLINTEND
 
 public:

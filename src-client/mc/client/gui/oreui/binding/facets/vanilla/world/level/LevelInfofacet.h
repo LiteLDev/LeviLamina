@@ -62,7 +62,7 @@ public:
 
     MCFOLD ::OreUI::AllowListPath const& getWorldIconPath() const;
 
-    MCAPI ::std::string const& getWorldName() const;
+    MCFOLD ::std::string const& getWorldName() const;
     // NOLINTEND
 
 public:

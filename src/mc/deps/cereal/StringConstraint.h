@@ -23,26 +23,19 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StringConstraint& operator=(StringConstraint const&);
-    StringConstraint();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~StringConstraint() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StringConstraint(::cereal::StringConstraint&&);
-
-    MCAPI StringConstraint(::cereal::StringConstraint const&);
-
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
+    MCFOLD ::cereal::StringConstraint& maxSize(uint64 size);
+
+    MCFOLD uint64 maxSize() const;
+
+    MCAPI ::cereal::StringConstraint& minSize(uint64 size);
+
     MCAPI ::cereal::StringConstraint& regex(::std::string str, ::std::regex_constants::syntax_option_type flag);
+
+    MCAPI ::cereal::StringConstraint& rejectEmpty();
 
     MCAPI void validateValue(::std::string_view str, ::cereal::SerializerContext& context) const;
     // NOLINTEND
@@ -51,20 +44,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string flagsToString(::std::regex_constants::syntax_option_type flags);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::StringConstraint&&);
-
-    MCAPI void* $ctor(::cereal::StringConstraint const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

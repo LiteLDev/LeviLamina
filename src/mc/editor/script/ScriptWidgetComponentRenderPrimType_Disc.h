@@ -29,18 +29,6 @@ public:
     ScriptWidgetComponentRenderPrimType_Disc();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrimType_Disc() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc const& other) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();

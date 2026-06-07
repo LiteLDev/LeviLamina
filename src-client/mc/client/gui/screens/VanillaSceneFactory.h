@@ -8,11 +8,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class IAdvancedGraphicsOptions;
+class IClientInstance;
+class IMinecraftGame;
 class IUIDefRepository;
 namespace Json { class Value; }
+namespace OreUI { class SceneProvider; }
 // clang-format on
 
 class VanillaSceneFactory : public ::SceneFactory {
+public:
+    // prevent constructor by default
+    VanillaSceneFactory();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -20,6 +28,28 @@ public:
 
     virtual ::Json::Value createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository) const
         /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI VanillaSceneFactory(
+        ::IMinecraftGame&                                                minecraft,
+        ::IClientInstance&                                               client,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
+        ::OreUI::SceneProvider&                                          sceneProvider
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IMinecraftGame&                                                minecraft,
+        ::IClientInstance&                                               client,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
+        ::OreUI::SceneProvider&                                          sceneProvider
+    );
     // NOLINTEND
 
 public:

@@ -29,12 +29,6 @@ public:
     EDUExternalScreenController();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~EDUExternalScreenController() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI EDUExternalScreenController(
@@ -43,7 +37,11 @@ public:
         ::std::function<uint64()>                 worldCountCallback
     );
 
+    MCAPI bool _hasExternalStoragePermissions();
+
     MCAPI void _openStoragePermissionWarningDialog();
+
+    MCAPI void _openSystemSettings();
 
     MCAPI void _registerBindings();
     // NOLINTEND

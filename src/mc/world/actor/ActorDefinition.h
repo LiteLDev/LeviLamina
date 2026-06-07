@@ -54,6 +54,7 @@
 #include "mc/world/actor/ActorDefinitionDescriptor.h"
 #include "mc/world/actor/ActorDefinitionParseStatus.h"
 #include "mc/world/actor/ActorPropertiesDescription.h"
+#include "mc/world/actor/ActorVersionDescription.h"
 #include "mc/world/actor/AnimationScriptsDescription.h"
 #include "mc/world/actor/AnimationsDescription.h"
 #include "mc/world/actor/IdentifierDescription.h"
@@ -69,6 +70,7 @@ class ActorDefinitionEvent;
 class ActorEventResponseFactory;
 class ActorFactory;
 class CommonResourceDefinitionMap;
+class DefinitionInstanceGroup;
 class Experiments;
 class MinEngineVersion;
 class PackLoadContext;
@@ -92,8 +94,10 @@ public:
     ::ll::TypedStorage<8, 24, ::ActorPropertiesDescription>                                mActorPropertiesDescription;
     ::ll::TypedStorage<8, 32, ::ActorAliasDescription>                                     mActorAliasDescription;
     ::ll::TypedStorage<8, 16, ::SpawnCategoryDescription>                                  mSpawnCategoryDescription;
+    ::ll::TypedStorage<8, 32, ::ActorVersionDescription>                                   mActorVersionDescription;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionAttribute>>                   mAttributes;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mEventHandlers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mUpgradeHandlers;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CommonResourceDefinitionMap>>            mCommonResourceDefinitionMap;
     ::ll::TypedStorage<8, 32, ::std::string>                                               mRelativeResourceFilepath;
     ::ll::TypedStorage<4, 4, ::CurrentCmdVersion>                                          mCommandVersion;
@@ -153,12 +157,14 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorDefinition(::std::string const& id);
 
+    MCFOLD ::DefinitionInstanceGroup const& getDefinitionGroup() const;
+
     MCAPI ::ActorDefinitionParseStatus parse(
         ::ActorDocumentDataParams    deserializeDataParams,
         ::ActorDefinitionDescriptor& desc,
         ::ActorFactory&              actorFactory,
-        ::Experiments const&         experiments,
-        ::LogArea                    logArea
+        ::Experiments const&         logArea,
+        ::LogArea
     );
 
     MCAPI void parseAttributes(::ActorDocumentDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
@@ -169,16 +175,21 @@ public:
         ::PackLoadContext const&      packLoadContext
     );
 
-    MCAPI void parseEvents(
-        ::cereal::DynamicValue const& root,
-        ::MinEngineVersion const&     minEngineVersion,
-        ::SemVersion const&           formatVersion,
-        ::ActorEventResponseFactory*  responseFactory,
-        ::Experiments const&          experiments,
-        ::JsonBetaState               useBetaFeatures
-    );
-
     MCAPI ~ActorDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void parseEvents(
+        ::std::unordered_map<::std::string, ::ActorDefinitionEvent>& eventHandlers,
+        ::cereal::DynamicValue const&                                root,
+        ::MinEngineVersion const&                                    minEngineVersion,
+        ::SemVersion const&                                          formatVersion,
+        ::ActorEventResponseFactory*                                 responseFactory,
+        ::Experiments const&                                         useBetaFeatures,
+        ::JsonBetaState
+    );
     // NOLINTEND
 
 public:

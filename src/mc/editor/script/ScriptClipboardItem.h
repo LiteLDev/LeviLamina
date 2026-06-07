@@ -18,6 +18,7 @@ namespace Editor::Services { class ClipboardServiceProvider; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -48,9 +49,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> clear();
 
-    MCNAPI ::Vec3 getNormalizedOrigin() const;
-
-    MCNAPI ::Vec3 getOriginalWorldLocation() const;
+    MCNAPI ::mce::UUID const& getId() const;
 
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>>
@@ -63,9 +62,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Editor::EditorStructureTemplate> getStructure();
 
-    MCNAPI bool isEmpty() const;
-
-    MCNAPI ::Editor::ScriptModule::ScriptClipboardItem& operator=(::Editor::ScriptModule::ScriptClipboardItem&&);
+    MCNAPI ::Editor::ScriptModule::ScriptClipboardItem& operator=(::Editor::ScriptModule::ScriptClipboardItem&& other);
 
     MCNAPI ::Scripting::Result_deprecated<void>
     readFromStructure(::Editor::ScriptModule::ScriptEditorStructure const& structure);

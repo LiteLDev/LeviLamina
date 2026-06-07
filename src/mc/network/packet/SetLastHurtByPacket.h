@@ -59,14 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~SetLastHurtByPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI SetLastHurtByPacket();
+
+    MCAPI explicit SetLastHurtByPacket(::SetLastHurtByPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SetLastHurtByPacketPayload payload);
     // NOLINTEND
 
 public:

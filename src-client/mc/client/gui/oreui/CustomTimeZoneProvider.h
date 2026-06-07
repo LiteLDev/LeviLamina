@@ -16,8 +16,6 @@ public:
     virtual double GetDaylightSavingsOffset(double timeMsUtc) /*override*/;
 
     virtual double GetLocalTimeOffset(double timeMs, bool isTimeUtc) /*override*/;
-
-    virtual ~CustomTimeZoneProvider() /*override*/ = default;
     // NOLINTEND
 
 public:

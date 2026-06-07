@@ -67,12 +67,6 @@ public:
     IterableIndexMerger& operator=(IterableIndexMerger const&);
     IterableIndexMerger(IterableIndexMerger const&);
     IterableIndexMerger();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::VoxelShapes::IterableIndexMerger::StartPoint findStart() const;
-    // NOLINTEND
 };
 
 } // namespace VoxelShapes

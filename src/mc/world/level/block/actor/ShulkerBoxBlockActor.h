@@ -53,7 +53,7 @@ public:
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
@@ -74,23 +74,29 @@ public:
         ::AABB const&                actorAabbAfterMovement
     ) const;
 
+    MCAPI void _calculateBB();
+
     MCAPI ::Vec3 _calculateMovementWithCollisions(::BlockSource& region, ::Actor* actor) const;
 
     MCAPI void _moveCollidedEntities(::BlockSource& region) const;
+
+#ifdef LL_PLAT_C
+    MCAPI uchar getFacingDir();
+#endif
+
+    MCAPI void setFacingDir(uchar facing);
+
+    MCFOLD void setupRedstoneComponent(::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
-#endif
 
     MCAPI static bool itemAllowed(::ItemStackBase const& item);
 
-#ifdef LL_PLAT_C
     MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
-#endif
     // NOLINTEND
 
 public:
@@ -100,7 +106,7 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCAPI void $onPlace(::BlockSource& region);
+    MCFOLD void $onPlace(::BlockSource& region);
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
@@ -114,7 +120,7 @@ public:
 
     MCAPI void $stopOpen(::Actor& actor);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

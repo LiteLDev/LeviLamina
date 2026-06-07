@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ParticleLifetimeBlockDependentComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
@@ -36,10 +40,20 @@ public:
     virtual bool hasParticleExpired(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams
+        ::RenderParams&
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~ParticleLifetimeBlockDependentComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ParticleLifetimeBlockDependentComponent(bool expireIfOnList);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool expireIfOnList);
     // NOLINTEND
 
 public:
@@ -54,7 +68,7 @@ public:
     MCAPI bool $hasParticleExpired(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams
+        ::RenderParams&
     );
     // NOLINTEND
 

@@ -10,6 +10,7 @@
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
+class DataDrivenRenderer;
 class RenderParams;
 // clang-format on
 
@@ -18,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnk761f9d;
-    ::ll::UntypedStorage<8, 528> mUnkbe2fcc;
+    ::ll::UntypedStorage<8, 552> mUnkbe2fcc;
     ::ll::UntypedStorage<8, 8>   mUnkda6eb3;
     ::ll::UntypedStorage<4, 64>  mUnkd5039e;
     // NOLINTEND
@@ -42,8 +43,20 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering(
+        ::std::shared_ptr<::DataDrivenRenderer> renderer
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
     // NOLINTEND
 
 public:

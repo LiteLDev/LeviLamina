@@ -17,8 +17,6 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
     virtual void registerEvents(::entt::dispatcher& eventDispatcher) /*override*/;
-
-    virtual ~DwellerSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

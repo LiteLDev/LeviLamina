@@ -14,7 +14,7 @@ class ComponentItem;
 class HashedString;
 class ItemStack;
 class Mob;
-struct LegacyOnHurtActorTriggerItemComponentData;
+namespace SharedTypes::Legacy { struct OnHurtActorTriggerItemComponent; }
 // clang-format on
 
 class LegacyOnHurtActorTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -33,14 +33,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~LegacyOnHurtActorTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnHurtActorTriggerItemComponent(::LegacyOnHurtActorTriggerItemComponentData&& componentData);
+    MCAPI explicit LegacyOnHurtActorTriggerItemComponent(
+        ::SharedTypes::Legacy::OnHurtActorTriggerItemComponent&& componentData
+    );
 
     MCAPI void _onHurtActor(int& durabilityDamage, ::ItemStack& item, ::Actor& actor, ::Mob& attacker);
     // NOLINTEND
@@ -54,7 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyOnHurtActorTriggerItemComponentData&& componentData);
+    MCAPI void* $ctor(::SharedTypes::Legacy::OnHurtActorTriggerItemComponent&& componentData);
     // NOLINTEND
 
 public:

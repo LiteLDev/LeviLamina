@@ -27,12 +27,6 @@ public:
     WorldRecoveryAsyncResult& operator=(WorldRecoveryAsyncResult const&);
     WorldRecoveryAsyncResult(WorldRecoveryAsyncResult const&);
     WorldRecoveryAsyncResult();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~WorldRecoveryAsyncResult() /*override*/ = default;
-    // NOLINTEND
 };
 
 } // namespace Bedrock

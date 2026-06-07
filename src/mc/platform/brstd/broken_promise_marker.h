@@ -14,8 +14,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* what() const /*override*/;
-
-    virtual ~broken_promise_marker() /*override*/;
     // NOLINTEND
 
 public:
@@ -28,12 +26,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::brstd::detail::broken_promise_marker const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

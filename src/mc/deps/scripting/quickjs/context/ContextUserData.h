@@ -7,10 +7,16 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class LifetimeRegistry; }
+namespace Scripting { class IPrinter; }
+namespace Scripting { class ScriptObjectFactory; }
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct ContextId; }
 namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct ModuleDependency; }
+namespace Scripting::QuickJS { class ClassRegistry; }
+namespace Scripting::QuickJS { class ObjectInspector; }
 namespace Scripting::QuickJS { struct ParseContextData; }
+namespace Scripting::QuickJS { struct ResolvedTypes; }
 // clang-format on
 
 namespace Scripting::QuickJS {
@@ -45,12 +51,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::ModuleBinding const*
-    findSatisfyingModule(::Scripting::ModuleDependency const& moduleDependency) const;
+    MCNAPI ContextUserData(
+        ::Scripting::ContextId                           contextId_,
+        ::Scripting::WeakLifetimeScope                   scope_,
+        ::Scripting::QuickJS::ClassRegistry&             classReg_,
+        ::Scripting::QuickJS::ResolvedTypes&             resolvedTypes_,
+        ::Scripting::ScriptObjectFactory&                objectFactory_,
+        ::Scripting::QuickJS::ObjectInspector&           objectInspector_,
+        ::Scripting::IPrinter*                           printer_,
+        ::std::vector<::Scripting::ModuleBinding> const& modules,
+        ::Scripting::ContextConfig                       contextConfig
+    );
 
     MCNAPI ::std::string generateParseContextErrorMessage() const;
 
-    MCNAPI ::Scripting::LifetimeRegistry& getLifetimeRegistry();
+    MCNAPI ::std::optional<::std::string> getDebugIdForSourceFile(::std::string const& sourceFile) const;
 
     MCNAPI ::Scripting::QuickJS::ParseContextData const& peekParseContext() const;
 
@@ -62,9 +77,33 @@ public:
         ::std::variant<::std::string_view, uint> arg
     );
 
-    MCNAPI void resetParseContext();
-
     MCNAPI void resetParseContextUntilVariant(bool removeVariant);
+
+    MCNAPI void setDebugIdForSourceFile(::std::string const& sourceFile, ::std::string debugId);
+
+    MCNAPI ~ContextUserData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Scripting::ContextId                           contextId_,
+        ::Scripting::WeakLifetimeScope                   scope_,
+        ::Scripting::QuickJS::ClassRegistry&             classReg_,
+        ::Scripting::QuickJS::ResolvedTypes&             resolvedTypes_,
+        ::Scripting::ScriptObjectFactory&                objectFactory_,
+        ::Scripting::QuickJS::ObjectInspector&           objectInspector_,
+        ::Scripting::IPrinter*                           printer_,
+        ::std::vector<::Scripting::ModuleBinding> const& modules,
+        ::Scripting::ContextConfig                       contextConfig
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ADPopupTelemetryEvent;
+// clang-format on
+
 class ADPopupButtonAction {
 public:
     // ADPopupButtonAction inner types define
@@ -32,7 +37,6 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ADPopupButtonAction(ADPopupButtonAction const&);
     ADPopupButtonAction();
 
 #endif
@@ -40,11 +44,29 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI ADPopupButtonAction(::ADPopupButtonAction const&);
+
+    MCNAPI ::ADPopupTelemetryEvent const& getTelemetryEvent() const;
+
+    MCNAPI ::std::string const& getText() const;
+
+    MCNAPI ::ADPopupButtonAction::Type getType() const;
+
+    MCNAPI ::std::string const& getUri() const;
+
     MCNAPI ::ADPopupButtonAction& operator=(::ADPopupButtonAction&&);
 
     MCNAPI ::ADPopupButtonAction& operator=(::ADPopupButtonAction const&);
 
     MCNAPI ~ADPopupButtonAction();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ADPopupButtonAction const&);
 #endif
     // NOLINTEND
 

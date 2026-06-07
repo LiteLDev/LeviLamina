@@ -21,6 +21,7 @@ class FreezingComponent;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorGameTypeComponent;
+struct ActorMovementTickNeededComponent;
 struct BlockMovementSlowdownAppliedComponent;
 struct BlockMovementSlowdownMultiplierComponent;
 struct BoatFlagComponent;
@@ -50,37 +51,41 @@ struct WaterlilyBlockFlag;
 
 namespace EntityInsideSystemImpl {
 
-struct EntityInside
-: public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<
-          ::InterpolateMovementNeededComponent,
-          ::BoatFlagComponent,
-          ::FreezeImmuneFlagComponent,
-          ::IsDeadFlagComponent,
-          ::PlayerComponent,
-          ::WasInWaterFlagComponent>,
-      ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorGameTypeComponent, ::DimensionTypeComponent>,
-      ::Write<
-          ::BlockMovementSlowdownMultiplierComponent,
-          ::FallDistanceComponent,
-          ::InsideBlockComponent,
-          ::StateVectorComponent>,
-      ::AddRemove<
-          ::BlockMovementSlowdownAppliedComponent,
-          ::FreezingComponent,
-          ::IgnoresEntityInsideFlagComponent,
-          ::InsideBubbleColumnBlockComponent,
-          ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-          ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-          ::InsideGenericBlockComponent,
-          ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-          ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-          ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-          ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-          ::InsideWebBlockComponent>,
-      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-      ::GlobalWrite<>,
-      ::EntityFactoryT<>>> {
+struct EntityInside : public ::IStrictTickingSystem<::StrictExecutionContext<
+                          ::Filter<
+                              ::InterpolateMovementNeededComponent,
+                              ::BoatFlagComponent,
+                              ::FreezeImmuneFlagComponent,
+                              ::IsDeadFlagComponent,
+                              ::PlayerComponent,
+                              ::WasInWaterFlagComponent>,
+                          ::Read<
+                              ::AABBShapeComponent,
+                              ::ActorMovementTickNeededComponent,
+                              ::ActorGameTypeComponent,
+                              ::DimensionTypeComponent,
+                              ::MovementAbilitiesComponent>,
+                          ::Write<
+                              ::BlockMovementSlowdownMultiplierComponent,
+                              ::FallDistanceComponent,
+                              ::InsideBlockComponent,
+                              ::StateVectorComponent>,
+                          ::AddRemove<
+                              ::BlockMovementSlowdownAppliedComponent,
+                              ::FreezingComponent,
+                              ::IgnoresEntityInsideFlagComponent,
+                              ::InsideBubbleColumnBlockComponent,
+                              ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+                              ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+                              ::InsideGenericBlockComponent,
+                              ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+                              ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+                              ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+                              ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+                              ::InsideWebBlockComponent>,
+                          ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                          ::GlobalWrite<>,
+                          ::EntityFactoryT<>>> {
 public:
     // EntityInside inner types define
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
@@ -91,7 +96,12 @@ public:
             ::IsDeadFlagComponent,
             ::PlayerComponent,
             ::WasInWaterFlagComponent>,
-        ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorGameTypeComponent, ::DimensionTypeComponent>,
+        ::Read<
+            ::AABBShapeComponent,
+            ::ActorMovementTickNeededComponent,
+            ::ActorGameTypeComponent,
+            ::DimensionTypeComponent,
+            ::MovementAbilitiesComponent>,
         ::Write<
             ::BlockMovementSlowdownMultiplierComponent,
             ::FallDistanceComponent,
@@ -134,9 +144,10 @@ public:
                 ::WasInWaterFlagComponent>,
             ::Read<
                 ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
+                ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
-                ::DimensionTypeComponent>,
+                ::DimensionTypeComponent,
+                ::MovementAbilitiesComponent>,
             ::Write<
                 ::BlockMovementSlowdownMultiplierComponent,
                 ::FallDistanceComponent,
@@ -171,9 +182,10 @@ public:
                 ::WasInWaterFlagComponent>,
             ::Read<
                 ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
+                ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
-                ::DimensionTypeComponent>,
+                ::DimensionTypeComponent,
+                ::MovementAbilitiesComponent>,
             ::Write<
                 ::BlockMovementSlowdownMultiplierComponent,
                 ::FallDistanceComponent,
@@ -197,8 +209,6 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-
-    virtual ~EntityInside() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -215,46 +225,10 @@ public:
                 ::WasInWaterFlagComponent>,
             ::Read<
                 ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
+                ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
-                ::DimensionTypeComponent>,
-            ::Write<
-                ::BlockMovementSlowdownMultiplierComponent,
-                ::FallDistanceComponent,
-                ::InsideBlockComponent,
-                ::StateVectorComponent>,
-            ::AddRemove<
-                ::BlockMovementSlowdownAppliedComponent,
-                ::FreezingComponent,
-                ::IgnoresEntityInsideFlagComponent,
-                ::InsideBubbleColumnBlockComponent,
-                ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-                ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-                ::InsideGenericBlockComponent,
-                ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-                ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-                ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-                ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-                ::InsideWebBlockComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
-    );
-
-    MCAPI static auto createServerSideContextObjects(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::InterpolateMovementNeededComponent,
-                ::BoatFlagComponent,
-                ::FreezeImmuneFlagComponent,
-                ::IsDeadFlagComponent,
-                ::PlayerComponent,
-                ::WasInWaterFlagComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorGameTypeComponent,
-                ::DimensionTypeComponent>,
+                ::DimensionTypeComponent,
+                ::MovementAbilitiesComponent>,
             ::Write<
                 ::BlockMovementSlowdownMultiplierComponent,
                 ::FallDistanceComponent,
@@ -293,9 +267,10 @@ public:
                 ::WasInWaterFlagComponent>,
             ::Read<
                 ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
+                ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
-                ::DimensionTypeComponent>,
+                ::DimensionTypeComponent,
+                ::MovementAbilitiesComponent>,
             ::Write<
                 ::BlockMovementSlowdownMultiplierComponent,
                 ::FallDistanceComponent,
@@ -330,9 +305,10 @@ public:
                 ::WasInWaterFlagComponent>,
             ::Read<
                 ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
+                ::ActorMovementTickNeededComponent,
                 ::ActorGameTypeComponent,
-                ::DimensionTypeComponent>,
+                ::DimensionTypeComponent,
+                ::MovementAbilitiesComponent>,
             ::Write<
                 ::BlockMovementSlowdownMultiplierComponent,
                 ::FallDistanceComponent,

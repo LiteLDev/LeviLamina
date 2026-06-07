@@ -79,10 +79,10 @@ public:
     virtual void reload(::UIComponent const& rhs) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree&         context,
+        ::ScreenInputContext& screenEvent,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     ) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
@@ -104,9 +104,17 @@ public:
 
     MCAPI uint64 _computeHoverSliceDeflection(::PointerMoveScreenEventData const& moveData);
 
+    MCAPI bool _isGamepadDeflectionEnabled();
+
+    MCFOLD void _setVisible(::std::weak_ptr<::UIControl> const& control, bool visible);
+
     MCAPI void _updateControlVisibility();
 
     MCAPI void addStateControl(::std::shared_ptr<::UIControl> control);
+
+    MCFOLD ::InputMode getInputMode() const;
+
+    MCAPI void setInputMode(::InputMode const& inputMode);
     // NOLINTEND
 
 public:
@@ -130,12 +138,8 @@ public:
 
     MCAPI void $reload(::UIComponent const& rhs);
 
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
-    );
+    MCAPI ::ComponentReceiveActionType
+    $receive(::VisualTree& context, ::ScreenInputContext& screenEvent, ::UIAnimationController&, ::ScreenEvent const&);
 
     MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 

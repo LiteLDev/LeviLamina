@@ -23,8 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~FlatWorldPresetsFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

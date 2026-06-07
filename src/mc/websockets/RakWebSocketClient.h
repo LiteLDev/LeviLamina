@@ -12,14 +12,6 @@ public:
     virtual void _updateState() /*override*/;
 
     virtual uint _genMaskingKey() const /*override*/;
-
-    virtual ~RakWebSocketClient() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

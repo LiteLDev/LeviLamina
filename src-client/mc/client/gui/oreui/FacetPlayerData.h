@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/resources/AllowListProfileImage.h"
+#include "mc/client/realms/Player.h"
 #include "mc/client/realms/PlayerRole.h"
 #include "mc/client/realms/RealmStoriesPlayerRole.h"
 #include "mc/client/realms/stories/FetchStatus.h"
@@ -11,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Realms::Stories { class FacetStateManager; }
-namespace Realms::Stories { struct Player; }
 // clang-format on
 
 namespace OreUI::RealmsStories {
@@ -20,41 +20,43 @@ struct FacetPlayerData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Realms::Stories::Player&>                             mPlayer;
+    ::ll::TypedStorage<8, 408, ::Realms::Stories::Player>                            mPlayer;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Realms::Stories::FacetStateManager>> mStoriesFacetStateManager;
     ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage>                       mProfileImage;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FacetPlayerData& operator=(FacetPlayerData const&);
-    FacetPlayerData(FacetPlayerData const&);
     FacetPlayerData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FacetPlayerData(::OreUI::RealmsStories::FacetPlayerData&&);
+    MCAPI FacetPlayerData(
+        ::Realms::Stories::Player                             player,
+        ::OreUI::AllowListProfileImage const&                 profileImage,
+        ::std::weak_ptr<::Realms::Stories::FacetStateManager> provider
+    );
 
     MCAPI ::Realms::Stories::FetchStatus getFetchProfileStatus() const;
 
     MCAPI ::std::string const& getGamerTag() const;
 
-    MCAPI bool getHasAccepted() const;
+    MCFOLD bool getHasAccepted() const;
 
-    MCAPI bool getHasOptedIn() const;
+    MCFOLD bool getHasOptedIn() const;
 
-    MCAPI bool getIsPlayingOnRealm() const;
+    MCFOLD bool getIsPlayingOnRealm() const;
 
-    MCAPI int64 getLastSeenTime() const;
+    MCFOLD int64 getLastSeenTime() const;
 
     MCAPI bool getOnlineStatus() const;
 
     MCFOLD ::OreUI::AllowListProfileImage const& getProfileImage() const;
 
-    MCAPI ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
+    MCFOLD ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
 
-    MCAPI ::Realms::PlayerRole getRealmsRole() const;
+    MCFOLD ::Realms::PlayerRole getRealmsRole() const;
 
     MCFOLD ::std::string const& getXuid() const;
 
@@ -70,13 +72,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RealmsStories::FacetPlayerData&&);
+    MCAPI void* $ctor(
+        ::Realms::Stories::Player                             player,
+        ::OreUI::AllowListProfileImage const&                 profileImage,
+        ::std::weak_ptr<::Realms::Stories::FacetStateManager> provider
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

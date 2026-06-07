@@ -41,13 +41,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EditorStructureDBMetadata();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorStructureDBMetadata();
-
     MCNAPI EditorStructureDBMetadata(::Editor::EditorStructureDBMetadata&&);
 
     MCNAPI EditorStructureDBMetadata(::Editor::EditorStructureDBMetadata const&);
+
+    MCNAPI explicit EditorStructureDBMetadata(
+        ::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData
+    );
 
     MCNAPI EditorStructureDBMetadata(
         ::mce::UUID const& guid,
@@ -73,18 +79,20 @@ public:
     MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
 
 #ifdef LL_PLAT_C
-    MCNAPI static ::Vec3 convertToNormalizedVecFromAbs(::Vec3 const& absoluteOrigin, ::Vec3 const& structureSize);
+    MCNAPI static ::Vec3 convertToAbsoluteFromNormalized(::Vec3 const& normalizedOrigin, ::Vec3 const& structureSize);
 #endif
+
+    MCNAPI static ::Vec3 convertToNormalizedVecFromAbs(::Vec3 const& absoluteOrigin, ::Vec3 const& structureSize);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Editor::EditorStructureDBMetadata&&);
 
     MCNAPI void* $ctor(::Editor::EditorStructureDBMetadata const&);
+
+    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData);
 
     MCNAPI void* $ctor(
         ::mce::UUID const& guid,

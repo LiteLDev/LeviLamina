@@ -68,16 +68,36 @@ public:
 
     MCAPI void assignDefaultMapping(::std::vector<::Keymapping>&& newDefaultMapping);
 
+    MCAPI void clearAllInstancesOfKey(int keyVal, ::RawInputType type);
+
+    MCAPI void defaultKeyAtIndex(uint64 index);
+
     MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
 
+    MCAPI ::Keymapping const* getKeyMappingByRawInput(int rawKeyIndex, ::RawInputType rawKeyType) const;
+
     MCAPI ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
+
+    MCAPI ::Keymapping const& getKeymappingByIndex(uint64 index) const;
+
+    MCAPI uint64 getNumKeymappings() const;
+
+    MCFOLD ::RemappingLayoutRawIndex const& getRawLayout() const;
+
+    MCFOLD ::RemappingLayoutRawIndex& getRawLayout();
 
     MCAPI ::Bedrock::PubSub::Subscription
     registerRefreshKeymappingsListener(::std::function<void(::std::optional<uint64>)> callback);
 
+    MCAPI void resetToDefaultMapping();
+
     MCAPI void setMapping(::std::string const& action, ::std::vector<int> const& keys);
 
     MCAPI void unassignDuplicateKeys(uint64 index);
+
+    MCAPI void unassignKey(::DuplicateKey duplicateKey);
+
+    MCAPI void unassignKeyAtIndex(uint64 index);
     // NOLINTEND
 
 public:

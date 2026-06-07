@@ -37,19 +37,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileDeleteProgressHandler() /*override*/ = default;
+    virtual ~FileDeleteProgressHandler() /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void tick(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onExit(::MinecraftScreenModel&) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
@@ -57,19 +57,41 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FileDeleteProgressHandler(
+        ::IContentManager&                                      contentManager,
+        ::std::vector<::std::shared_ptr<::ContentItem const>>&& itemsToDelete
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::IContentManager& contentManager, ::std::vector<::std::shared_ptr<::ContentItem const>>&& itemsToDelete);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $tick(::MinecraftScreenModel&);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onCancel(::MinecraftScreenModel&);
 
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onExit(::MinecraftScreenModel&);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
     MCAPI ::std::string $getTitleText() const;
 

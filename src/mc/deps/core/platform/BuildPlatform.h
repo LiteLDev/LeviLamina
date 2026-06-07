@@ -8,7 +8,7 @@ enum class BuildPlatform : int {
     Osx                    = 3,
     Amazon                 = 4,
     GearVRDeprecated       = 5,
-    Uwp                    = 7,
+    UwpDeprecated          = 7,
     Win32                  = 8,
     Dedicated              = 9,
     TvOSDeprecated         = 10,
@@ -17,5 +17,5 @@ enum class BuildPlatform : int {
     Xbox                   = 13,
     WindowsPhoneDeprecated = 14,
     Linux                  = 15,
-    Unknown                = -1,
+    Unknown                = 4294967295,
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/DiskAccessDiagnostics.h"
 #include "mc/deps/core/file/WriteOperation.h"
 
 // auto generated forward declare list
@@ -89,7 +90,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit DiskAccessTracker(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
 
-    MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
+    MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation path, ::Core::PathView);
 
 #ifdef LL_PLAT_C
     MCNAPI void _computeTrackerStats(
@@ -98,17 +99,44 @@ public:
         ::std::chrono::steady_clock::time_point  writeCountCalculationWindow
     );
 
-    MCNAPI ::std::_Deque_const_iterator<
-        ::std::_Deque_val<::std::_Deque_simple_types<::Core::DiskAccessTracker::WriteOperation>>>
-    _findOldestWriteOperation(::std::chrono::steady_clock::time_point oldestAllowedTime, uint64 hint) const;
-
     MCNAPI void _setCurrentWriteThrottleTracker(
         ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> osWriteThrottleTracker
+    );
+#endif
+
+    MCNAPI void addIgnoredPath(::Core::PathView path);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Core::DiskAccessTracker::TrackerStats computeMainTrackerStats(
+        ::std::chrono::nanoseconds byteWriteCalculationWindow,
+        ::std::chrono::nanoseconds writeCountCalculationWindow
+    );
+
+    MCNAPI void computeTrackerStats(
+        ::Core::DiskAccessTracker::TrackerStats& trackerStats,
+        ::std::chrono::nanoseconds               byteWriteCalculationWindow,
+        ::std::chrono::nanoseconds               writeCountCalculationWindow
     );
 
     MCNAPI void setOSWriteThrottleTracker(
         ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> osWriteThrottleTracker
     );
+
+    MCNAPI void setOnBudgetAboveRecoverThreshold(
+        ::std::function<void(::std::chrono::nanoseconds, uint64, ::std::optional<uint64>, ::std::string const&)>
+            onBudgetAboveRecoverThreshold
+    );
+
+    MCNAPI void setOnBudgetBelowLowThreshold(
+        ::std::function<void(uint64, double, double, ::std::string const&)> onBudgetBelowLowThreshold
+    );
+
+    MCNAPI void setShouldRepeatLowTelemetryFunc(
+        ::std::function<bool(::Core::DiskAccessDiagnostics::WriteBudgetTelemetryPeriodState&)>
+            shouldRepeatLowTelemetryFunc
+    );
+
+    MCNAPI void showVerboseLogs(bool showLogs);
 
     MCNAPI void update();
 #endif

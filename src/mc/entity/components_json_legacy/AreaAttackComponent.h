@@ -9,7 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CompoundTag;
+class DataLoadHelper;
 struct ActorUniqueID;
 struct Tick;
 // clang-format on
@@ -30,17 +32,31 @@ public:
 public:
     // prevent constructor by default
     AreaAttackComponent& operator=(AreaAttackComponent const&);
-    AreaAttackComponent(AreaAttackComponent const&);
     AreaAttackComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AreaAttackComponent(::AreaAttackComponent const&);
+
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI ::std::pair<::ActorUniqueID, ::Tick>* findCooldownEntry(::ActorUniqueID const& actorID);
+
+    MCAPI bool
+    isEntryOnAttackCooldown(::std::pair<::ActorUniqueID, ::Tick> const* cooldownEntry, ::Tick const& currentTick) const;
 
     MCAPI ::AreaAttackComponent& operator=(::AreaAttackComponent&&);
 
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+
     MCAPI ~AreaAttackComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AreaAttackComponent const&);
     // NOLINTEND
 
 public:

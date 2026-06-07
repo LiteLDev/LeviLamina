@@ -267,9 +267,9 @@ public:
 
     virtual void SetVideoBitrateAllocation(::webrtc::VideoBitrateAllocation const& bitrate) /*override*/;
 
-    virtual ::webrtc::RTPSender* RtpSender() /*override*/;
-
     virtual ::webrtc::RTPSender const* RtpSender() const /*override*/;
+
+    virtual ::webrtc::RTPSender* RtpSender() /*override*/;
     // NOLINTEND
 
 public:
@@ -467,9 +467,9 @@ public:
 
     MCNAPI void $SetVideoBitrateAllocation(::webrtc::VideoBitrateAllocation const& bitrate);
 
-    MCNAPI ::webrtc::RTPSender* $RtpSender();
-
     MCNAPI ::webrtc::RTPSender const* $RtpSender() const;
+
+    MCNAPI ::webrtc::RTPSender* $RtpSender();
 
 
     // NOLINTEND

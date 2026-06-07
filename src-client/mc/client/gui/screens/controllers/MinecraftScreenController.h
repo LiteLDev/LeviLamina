@@ -12,6 +12,7 @@
 #include "mc/client/gui/screens/controllers/SafeZoneBuffer.h"
 #include "mc/client/gui/screens/controllers/ScreenExitBehavior.h"
 #include "mc/client/gui/screens/controllers/UpdateSliderProgressMode.h"
+#include "mc/client/network/NetworkFilter.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/input/InputMode.h"
@@ -206,6 +207,8 @@ public:
 
     MCAPI bool _checkRealmCreatePermissions();
 
+    MCFOLD void _closeJsonDefinedControlPopup(::std::string const& factory, ::std::string const& name);
+
     MCAPI void _closeModalDialog();
 
     MCAPI void
@@ -244,6 +247,8 @@ public:
 
     MCAPI void _gateRealmsWhenCrossPlatformIsDisabled(::std::function<void()> callback);
 
+    MCAPI ::NetworkFilter _getNetworkFilter() const;
+
     MCAPI int
     _getStepSliderValue(::std::function<int()> getValue, ::std::string const& valueBindingName, bool continuousUpdate);
 
@@ -278,13 +283,25 @@ public:
     MCAPI ::std::string const
     _retrieveBindingValueFromPropertyBag(::std::string const& bindingName, ::UIPropertyBag& propertyBag) const;
 
+    MCAPI void _setExitBehavior(::ScreenExitBehavior exitBehavior);
+
     MCAPI void _showLiveMultiplayerModal();
 
+    MCAPI void _showMobileDataBlockedModal();
+
     MCAPI void _showNoWifiModal();
+
+    MCAPI void _showServerCapacityFullModal();
 
     MCAPI bool _tryNavigateToXblUpsellScreen();
 
     MCAPI bool _tryShowSuspendWarningModal(::std::function<void()> onConfirm);
+
+    MCAPI void _updateRayTracingStatus();
+
+    MCFOLD bool _usingGamepadBehavior() const;
+
+    MCFOLD void closeJsonDefinedControlPopup(::std::string const& factory, ::std::string const& name);
 
     MCAPI void displayJsonDefinedControlPopup(
         ::std::string const& controlId,
@@ -299,6 +316,12 @@ public:
     exportWorld(::std::string const& levelId, ::std::string const& levelName, ::FileArchiver::ExportType type);
 
     MCAPI void gateOnPlatformSignInForStoreAccess(::std::function<void()> callback);
+
+    MCAPI ::InputMode getInputMode() const;
+
+    MCAPI bool isRayTracingEnabled() const;
+
+    MCFOLD bool isUsingGamepadBehavior() const;
 
     MCAPI ::ui::ViewRequest promptSignIn(
         ::Social::IdentitySignInTrigger                            signInTrigger,
@@ -435,7 +458,9 @@ public:
         ::OptionID                            sliderOptionID
     );
 
-    MCFOLD void showPickFileDialog(::std::shared_ptr<::FilePickerSettings> settings);
+    MCAPI void showPickFileDialog(::std::shared_ptr<::FilePickerSettings> settings);
+
+    MCAPI void showPlayerProfile(::std::string const& xuid, ::std::string const& platformId);
 
     MCAPI void showRemoteStorageErrorModal(::Core::Path const& storageDirectory);
 
@@ -445,7 +470,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::string const& getControllerSliderOptionTitle();
+
     MCAPI static ::ModalScreenData getProfanityModalData();
+
+    MCAPI static ::OptionID const getSliderOptionID();
 
     MCAPI static int packItemInstance(::ItemInstance const& item);
     // NOLINTEND
@@ -457,6 +486,8 @@ public:
 
     MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>&
     defaultProgressSliderOptionLabeller();
+
+    MCAPI static ::UpdateSliderProgressMode const& defaultUpdateSliderProgressMode();
 
     MCAPI static ::OptionID& mSliderOptionID();
 
@@ -518,7 +549,7 @@ public:
 
     MCFOLD bool $_isStillValid() const;
 
-    MCFOLD bool $_getGamepadHelperVisible() const;
+    MCAPI bool $_getGamepadHelperVisible() const;
 
     MCAPI bool $_getMixedHelperVisible() const;
 

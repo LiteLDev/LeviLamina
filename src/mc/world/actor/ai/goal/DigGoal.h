@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -12,7 +12,7 @@
 class Mob;
 // clang-format on
 
-class DigGoal : public ::Goal {
+class DigGoal : public ::BaseGoal {
 public:
     // DigGoal inner types define
     enum class CanUseResult : int {
@@ -61,14 +61,20 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~DigGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DigGoal(::Mob& mob);
+
     MCAPI ::DigGoal::CanUseResult _canUse() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

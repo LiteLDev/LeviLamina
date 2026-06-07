@@ -40,8 +40,6 @@ public:
     virtual ::std::string const& getName() const /*override*/;
 
     virtual void executeAction(::RenderParams& params) const /*override*/;
-
-    virtual ~StopMovementResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

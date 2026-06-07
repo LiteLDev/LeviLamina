@@ -21,14 +21,11 @@ public:
 
 public:
     // prevent constructor by default
-    PerlinSimplexNoise& operator=(PerlinSimplexNoise const&);
     PerlinSimplexNoise();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PerlinSimplexNoise(::PerlinSimplexNoise const&);
-
     MCAPI PerlinSimplexNoise(uint seed, int levels);
 
     MCAPI PerlinSimplexNoise(::IRandom& r, int levels, bool parityInitialization);
@@ -47,14 +44,16 @@ public:
 
     MCAPI float getValue(float x, float y) const;
 
+    MCAPI float getValueNormalized(::Vec3 const& pos) const;
+
+    MCAPI float getValueNormalized(float x, float y) const;
+
     MCAPI ~PerlinSimplexNoise();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PerlinSimplexNoise const&);
-
     MCAPI void* $ctor(uint seed, int levels);
 
     MCAPI void* $ctor(::IRandom& r, int levels, bool parityInitialization);
@@ -63,6 +62,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

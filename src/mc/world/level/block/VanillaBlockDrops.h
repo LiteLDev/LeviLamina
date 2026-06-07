@@ -6,6 +6,7 @@
 // clang-format off
 class BaseGameVersion;
 class Block;
+class BlockDefinitionGroup;
 class Experiments;
 class IRandom;
 struct ResourceDrops;
@@ -18,17 +19,16 @@ namespace VanillaBlockDrops {
 MCAPI ::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
 addUniformFortuneBonus(::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> countProvider);
 
-MCAPI ::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
-between(int minInclusive, int maxInclusive);
-
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> combine(
     ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategyA,
     ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategyB
 );
 
-MCAPI void configureBlockDrops(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
-
-MCAPI ::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> exactly(int value);
+MCAPI void configureBlockDrops(
+    ::BaseGameVersion const& baseGameVersion,
+    ::Experiments const&     experiments,
+    ::BlockDefinitionGroup*  blockDefinitionGroup
+);
 
 MCAPI ::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
 limitCount(int max, ::std::function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> countProvider);

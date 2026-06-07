@@ -39,6 +39,8 @@ enum class ESessionError : int {
     ERelayServerConfigurationResultParsingErrorNoExpiration = 31,
     ESessionErrorDataChannelClosed                          = 32,
     EInternalErrorJsonSerialization                         = 33,
+    ESessionErrorInvalidArgument                            = 34,
+    ESessionErrorGenericFailure                             = 35,
 };
 
 }

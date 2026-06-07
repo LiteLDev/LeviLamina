@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class ChunkPos;
 namespace br::worldgen { class StructureCache; }
 namespace br::worldgen { struct JigsawJunction; }
@@ -24,14 +25,17 @@ public:
     // prevent constructor by default
     Beardifier& operator=(Beardifier const&);
     Beardifier(Beardifier const&);
-    Beardifier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::br::worldgen::Beardifier& operator=(::br::worldgen::Beardifier&&);
+    MCAPI Beardifier();
 
-    MCAPI ~Beardifier();
+    MCAPI double compute(::BlockPos pos) const;
+
+    MCFOLD bool empty() const;
+
+    MCFOLD ::br::worldgen::Beardifier& operator=(::br::worldgen::Beardifier&&);
     // NOLINTEND
 
 public:
@@ -42,9 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/ProgressScreenNavigation.h"
+#include "mc/client/realms/PlayerRoleActions.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -43,6 +44,7 @@ struct LocalPlayerChangedConnector;
 namespace OreUI { class Router; }
 namespace Parties { class IPartyProvider; }
 namespace Realms { struct RealmId; }
+namespace Realms { struct World; }
 namespace Social { class IUserManager; }
 namespace Social { class MultiplayerServiceManager; }
 // clang-format on
@@ -97,6 +99,8 @@ public:
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>                                             mRouter;
     ::ll::TypedStorage<8, 64, ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()>>
         mGetPartyProvider;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::Realms::World const&, ::Realms::PlayerRoleActions)>>
+        mCanUserDoRealmRoleAction;
     // NOLINTEND
 
 public:

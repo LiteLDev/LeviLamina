@@ -21,9 +21,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BaseCyclingComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseCyclingComponent() /*override*/ = default;
+    virtual ~BaseCyclingComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const = 0;
 
@@ -37,9 +41,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BaseCyclingComponent(::UIControl& owner);
+
     MCAPI void _notifyPageIndicatorManagerOfNewSubscriber();
 
     MCAPI void _notifySubPageChanged(uint64 newPage);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

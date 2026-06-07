@@ -25,6 +25,7 @@ class ChunkGenerationManager;
 class Command;
 class CommandManager;
 class CommandOrigin;
+class DynamicProperties;
 class DynamicPropertiesManager;
 class Experiments;
 class HashedString;
@@ -39,12 +40,14 @@ class Random;
 class ResourcePackManager;
 class ServerMapDataManager;
 class ServerPlayerSleepManager;
+class ServerScriptManager;
 class ServerSubChunkLighter;
 class TagCacheManager;
 class TickTimeManager;
 class TickTimeManagerServer;
 class TradeTables;
 class VolumeEntityManagerServer;
+class WorldClockRegistryServer;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
@@ -134,13 +137,13 @@ public:
     runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem) /*override*/;
 
     virtual void decrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+        ::std::string const& tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
     virtual void incrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+        ::std::string const& tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
@@ -188,6 +191,8 @@ public:
 
     MCAPI void _initializeActorManager();
 
+    MCAPI void _initializeDynamicPropertiesManager();
+
     MCAPI void _initializeMobEvents();
 
     MCAPI void _initializePlayerSleepManager();
@@ -197,6 +202,28 @@ public:
     MCAPI void _onActorEntityAdded(::Actor& actor);
 
     MCAPI void _onPlayerWakeUp(::Player& player);
+
+    MCAPI void bindDynamicScriptTypes(::ServerScriptManager& script);
+
+    MCFOLD ::CommandManager const& getCommandManager() const;
+
+    MCFOLD ::CommandManager& getCommandManager();
+
+    MCAPI ::DynamicPropertiesDefinition& getDynamicPropertiesDefinition();
+
+    MCAPI ::DynamicPropertiesManager& getDynamicPropertiesManager() const;
+
+    MCFOLD ::MobEvents const& getMobEvents() const;
+
+    MCFOLD ::MobEvents& getMobEvents();
+
+    MCAPI ::DynamicProperties& getOrAddDynamicProperties();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> getWorldClockRegistryServer() const;
+
+    MCAPI void setShouldSendSleepMessage(bool shouldSend);
+
+    MCAPI bool shouldSendSleepMessage() const;
     // NOLINTEND
 
 public:
@@ -252,13 +279,13 @@ public:
     MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
 
     MCAPI void $decrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+        ::std::string const& tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     );
 
     MCAPI void $incrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+        ::std::string const& tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     );
 
     MCAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();

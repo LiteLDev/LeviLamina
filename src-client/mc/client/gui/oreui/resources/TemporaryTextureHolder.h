@@ -7,32 +7,42 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace GeometryAtlas { class IAtlasTile; }
 namespace cg { class ImageBuffer; }
 namespace mce { class TexturePtr; }
 // clang-format on
 
-namespace OreUI {
+namespace Gameface {
 
 class TemporaryTextureHolder {
 public:
     // TemporaryTextureHolder inner types define
     using ImageId = uint64;
 
-    using TextureResource = ::std::variant<::cg::ImageBuffer, ::mce::TexturePtr>;
+    using TextureResource =
+        ::std::variant<::cg::ImageBuffer, ::mce::TexturePtr, ::std::shared_ptr<::GeometryAtlas::IAtlasTile>>;
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
     ::ll::TypedStorage<8, 8, uint64>                       mId;
-    ::ll::TypedStorage<8, 16, ::std::map<uint64, ::std::variant<::cg::ImageBuffer, ::mce::TexturePtr>>>
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::map<
+            uint64,
+            ::std::variant<::cg::ImageBuffer, ::mce::TexturePtr, ::std::shared_ptr<::GeometryAtlas::IAtlasTile>>>>
         mTextureResources;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::variant<::cg::ImageBuffer, ::mce::TexturePtr> consumeImageBuffer(uint64 id);
+    MCAPI ::std::variant<::cg::ImageBuffer, ::mce::TexturePtr, ::std::shared_ptr<::GeometryAtlas::IAtlasTile>>
+    consumeImageBuffer(uint64 id);
+
+    MCAPI void dropImageBuffer(uint64 id);
 
     MCAPI uint64 holdImageBuffer(::cg::ImageBuffer buffer);
 
@@ -48,4 +58,4 @@ public:
     // NOLINTEND
 };
 
-} // namespace OreUI
+} // namespace Gameface

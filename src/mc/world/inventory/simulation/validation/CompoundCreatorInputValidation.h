@@ -18,34 +18,29 @@ public:
     // NOLINTBEGIN
     virtual ~CompoundCreatorInputValidation() /*override*/ = default;
 
-    virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const /*override*/;
-
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+    virtual bool
+    isItemAllowedInSlot(::ContainerScreenContext const& item, int const, ::ItemStackBase const&, int const, bool) const
         /*override*/;
+
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
+
+    virtual int getContainerSize(::ContainerScreenContext const&, ::Container const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
+        ::ContainerScreenContext const& item,
+        int const,
+        ::ItemStackBase const&,
+        int const,
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const&, ::Container const&) const;
 
 
     // NOLINTEND

@@ -27,8 +27,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
 
-    virtual ~SayCommand() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _logOutput(::std::string const& message, ::CommandOrigin const& output, ::CommandOutput&) const;
     // NOLINTEND
 
 public:

@@ -26,8 +26,14 @@ public:
     virtual void load(::std::string const&) /*override*/;
 
     virtual void load(::Json::Value const& valueJson) /*override*/;
+    // NOLINTEND
 
-    virtual ~Vec3Option() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void reset(bool saveOptionChange);
+#endif
     // NOLINTEND
 
 public:

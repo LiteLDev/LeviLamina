@@ -19,19 +19,29 @@ public:
 
 public:
     // prevent constructor by default
-    DataStoreChange(DataStoreChange const&);
+    DataStoreChange& operator=(DataStoreChange const&);
     DataStoreChange();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange&&);
+    MCAPI DataStoreChange(::Bedrock::DDUI::DataStoreChange&&);
 
-    MCAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange const&);
+    MCAPI DataStoreChange(::Bedrock::DDUI::DataStoreChange const&);
+
+    MCAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange&&);
 
     MCAPI bool operator==(::Bedrock::DDUI::DataStoreChange const& rhs) const;
 
     MCAPI ~DataStoreChange();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::DDUI::DataStoreChange&&);
+
+    MCAPI void* $ctor(::Bedrock::DDUI::DataStoreChange const&);
     // NOLINTEND
 
 public:

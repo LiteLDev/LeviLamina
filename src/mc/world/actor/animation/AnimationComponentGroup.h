@@ -9,6 +9,7 @@
 // clang-format off
 class AnimationComponent;
 class AnimationComponentID;
+struct AnimationComponentArguments;
 // clang-format on
 
 class AnimationComponentGroup {
@@ -27,5 +28,10 @@ public:
 
     MCAPI static void
     releaseAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);
+
+#ifdef LL_PLAT_C
+    MCAPI static void
+    setFactory(::gsl::not_null<::std::unique_ptr<::AnimationComponent> (*)(::AnimationComponentArguments&&)> factory);
+#endif
     // NOLINTEND
 };

@@ -8,10 +8,12 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
 class CompoundTag;
 class DataLoadHelper;
-class Mob;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class PigZombie : public ::Zombie {
@@ -22,6 +24,10 @@ public:
     ::ll::TypedStorage<4, 4, int> mPlayAngrySoundIn;
     ::ll::TypedStorage<4, 4, int> mStunedTime;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PigZombie();
 
 public:
     // virtual functions
@@ -36,14 +42,26 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
-
-    virtual ~PigZombie() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _alert(::Mob& target);
+    MCAPI PigZombie(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

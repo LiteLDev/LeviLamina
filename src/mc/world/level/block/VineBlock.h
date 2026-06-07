@@ -13,7 +13,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Vec3;
@@ -22,6 +21,10 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class VineBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    VineBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -55,21 +58,15 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual ::Block const& sanitizeFillBlock(::Block const& block) const /*override*/;
-
-    virtual ~VineBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canGrowDown(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI bool _canSideSpread(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI VineBlock(::std::string const& nameId, int id);
 
     MCAPI int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -87,6 +84,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static bool directionsContainFace(int vineDirections, uchar face);
+#endif
+
+    MCAPI static ::Block const& getBlockForFace(uchar face);
+
     MCAPI static bool isAcceptableNeighbour(::Block const& block);
     // NOLINTEND
 
@@ -102,6 +105,12 @@ public:
     MCAPI static int const& VINE_SOUTH();
 
     MCAPI static int const& VINE_WEST();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -139,8 +148,6 @@ public:
         ::Vec3 const&     clickPos,
         int               itemValue
     ) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -22,15 +27,19 @@ public:
 public:
     // prevent constructor by default
     ScriptNetResponse& operator=(ScriptNetResponse const&);
-    ScriptNetResponse(ScriptNetResponse const&);
     ScriptNetResponse();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetResponse& operator=(::ScriptModuleMinecraftNet::ScriptNetResponse&&);
+    MCNAPI ScriptNetResponse(::ScriptModuleMinecraftNet::ScriptNetResponse const&);
 
-    MCNAPI ~ScriptNetResponse();
+    MCNAPI ScriptNetResponse(
+        ::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader> const&                         headers,
+        ::std::string const&                                                                      body,
+        uint                                                                                      status,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
+    );
     // NOLINTEND
 
 public:
@@ -40,9 +49,16 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetResponse const&);
+
+    MCNAPI void* $ctor(
+        ::std::vector<::ScriptModuleMinecraftNet::ScriptNetHeader> const&                         headers,
+        ::std::string const&                                                                      body,
+        uint                                                                                      status,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
+    );
     // NOLINTEND
 };
 

@@ -7,18 +7,6 @@
 
 namespace SharedTypes::v1_21_100::SurfaceBuilder {
 
-struct FrozenOceanSurfaceSettings : public ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~FrozenOceanSurfaceSettings();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+struct FrozenOceanSurfaceSettings : public ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings {};
 
 } // namespace SharedTypes::v1_21_100::SurfaceBuilder

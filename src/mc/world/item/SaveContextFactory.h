@@ -12,7 +12,9 @@ namespace SaveContextFactory {
 // NOLINTBEGIN
 MCAPI ::std::unique_ptr<::SaveContext> createCloneSaveContext();
 
-MCFOLD ::std::unique_ptr<::SaveContext> createDiskSaveContext();
+MCAPI ::std::unique_ptr<::SaveContext> createDiskSaveContext();
+
+MCAPI ::std::unique_ptr<::SaveContext> createMoveSaveContext();
 
 MCAPI ::std::unique_ptr<::SaveContext> createNetworkSaveContext();
 // NOLINTEND

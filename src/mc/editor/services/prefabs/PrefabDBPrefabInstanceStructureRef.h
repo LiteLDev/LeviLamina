@@ -2,6 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Editor::Prefabs { class PrefabDBTemplate; }
+namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
+// clang-format on
+
 namespace Editor::Prefabs {
 
 class PrefabDBPrefabInstanceStructureRef {
@@ -19,25 +31,32 @@ public:
 
 public:
     // prevent constructor by default
+    PrefabDBPrefabInstanceStructureRef& operator=(PrefabDBPrefabInstanceStructureRef const&);
     PrefabDBPrefabInstanceStructureRef(PrefabDBPrefabInstanceStructureRef const&);
     PrefabDBPrefabInstanceStructureRef();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Prefabs::PrefabDBPrefabInstanceStructureRef&
-    operator=(::Editor::Prefabs::PrefabDBPrefabInstanceStructureRef&&);
+    MCNAPI ::Mirror getMirror() const;
 
-    MCNAPI ::Editor::Prefabs::PrefabDBPrefabInstanceStructureRef&
-    operator=(::Editor::Prefabs::PrefabDBPrefabInstanceStructureRef const&);
+    MCNAPI ::mce::UUID getPrefabStructureId() const;
 
-    MCNAPI ~PrefabDBPrefabInstanceStructureRef();
+    MCNAPI ::Rotation getRotation() const;
+
+    MCNAPI ::mce::UUID getStructureTemplateDataId() const;
+
+    MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBTemplate> getTemplateRef();
+
+    MCNAPI void setMirror(::Mirror mirror);
+
+    MCNAPI void setRotation(::Rotation rotation);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

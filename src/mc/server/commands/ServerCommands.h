@@ -20,6 +20,8 @@ MCAPI void setupStandardServer(
     ::std::string const& networkTestCommands,
     ::PermissionsFile*   permissionsFile
 );
+
+MCAPI void shutdown();
 // NOLINTEND
 
 } // namespace ServerCommands

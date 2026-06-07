@@ -2,4 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CrashDumpLogUtils {};
+// auto generated inclusion list
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
+
+struct CrashDumpLogUtils {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::CrashDumpLogStringID
+    getTagFromOptions(uint64 choice, ::gsl::span<::CrashDumpLogStringID const> options);
+    // NOLINTEND
+};

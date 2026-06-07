@@ -44,8 +44,6 @@ public:
         // NOLINTBEGIN
         MCNAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid);
 
-        MCNAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid, ::DenyList::Duration const& duration);
-
         MCNAPI ~Entry();
         // NOLINTEND
 
@@ -53,8 +51,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid);
-
-        MCNAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid, ::DenyList::Duration const& duration);
         // NOLINTEND
 
     public:
@@ -86,12 +82,6 @@ public:
 
     MCNAPI bool isBlocked(::DenyList::Entry const& entry) const;
 
-    MCNAPI ~DenyList();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void removeEntry(::DenyList::Entry const& entry);
     // NOLINTEND
 };

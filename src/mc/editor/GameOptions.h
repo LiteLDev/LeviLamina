@@ -75,7 +75,6 @@ public:
 
 public:
     // prevent constructor by default
-    GameOptions& operator=(GameOptions const&);
     GameOptions();
 
 public:
@@ -87,7 +86,7 @@ public:
 
     MCNAPI void applyToLevelData(::LevelData& levelData) const;
 
-    MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions&&);
+    MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions const&);
 
     MCNAPI ~GameOptions();
     // NOLINTEND

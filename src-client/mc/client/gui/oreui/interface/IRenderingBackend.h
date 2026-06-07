@@ -20,14 +20,6 @@ public:
     virtual void initializeStaticResources(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const&) = 0;
 
     virtual void onAppPreSuspended() = 0;
-
-    virtual ~IRenderingBackend() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

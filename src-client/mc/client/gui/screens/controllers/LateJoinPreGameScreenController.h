@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LateJoinPreGameScreenController() /*override*/ = default;
+    virtual ~LateJoinPreGameScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -63,6 +63,8 @@ public:
 
     MCAPI void _promptForPlatformConnection();
 
+    MCAPI void _registerEventHandlers();
+
     MCAPI bool _tickAnimatingText(bool updateBaseText);
 
     MCAPI bool _tickUserState();
@@ -80,6 +82,12 @@ public:
         ::std::function<void()> const&            userReadyCallback,
         bool                                      hasXBLBroadcast
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

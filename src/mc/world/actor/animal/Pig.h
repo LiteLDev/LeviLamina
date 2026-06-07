@@ -8,16 +8,40 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Pig : public ::Animal {
 public:
+    // prevent constructor by default
+    Pig();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
+    // NOLINTEND
 
-    virtual ~Pig() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI
+    Pig(::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TouchSystemWrapper();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void sendTouchEvents(::std::vector<::OreUI::TouchEventData> const& events) /*override*/;
@@ -34,8 +38,26 @@ public:
     virtual void sendGestureEvent(::OreUI::GestureEventData const& event) /*override*/;
 
     virtual void sendMouseMoveEvent(::Vec2 const& pos) /*override*/;
+    // NOLINTEND
 
-    virtual ~TouchSystemWrapper() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TouchSystemWrapper(
+        ::std::function<void(::std::vector<::cohtml::TouchEventData>&)> const& touchEventsCallback,
+        ::std::function<void(::cohtml::GestureEventData&)> const&              gestureEventCallback,
+        ::std::function<void(::cohtml::MouseEventData const&)> const&          mouseEventCallback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::function<void(::std::vector<::cohtml::TouchEventData>&)> const& touchEventsCallback,
+        ::std::function<void(::cohtml::GestureEventData&)> const&              gestureEventCallback,
+        ::std::function<void(::cohtml::MouseEventData const&)> const&          mouseEventCallback
+    );
     // NOLINTEND
 
 public:

@@ -33,8 +33,6 @@ public:
     virtual ::Json::Value asJsonValue() const /*override*/;
 
     virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
-
-    virtual ~TextObjectLocalizedTextWithParams() /*override*/ = default;
     // NOLINTEND
 
 public:

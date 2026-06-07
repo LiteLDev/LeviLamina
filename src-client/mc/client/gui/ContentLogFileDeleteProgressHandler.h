@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ContentLogFileDeleteProgressHandler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ContentLogFileDeleteProgressHandler() /*override*/ = default;
@@ -47,6 +51,18 @@ public:
     virtual ::std::string getTitleText() const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ContentLogFileDeleteProgressHandler(::ContentLogFileDeleteProgressHandler::FileDeleteTarget target);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContentLogFileDeleteProgressHandler::FileDeleteTarget target);
     // NOLINTEND
 
 public:

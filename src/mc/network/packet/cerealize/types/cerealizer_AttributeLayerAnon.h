@@ -10,6 +10,8 @@ namespace cereal { struct ReflectionCtx; }
 namespace cerealizer_AttributeLayerAnon {
 // functions
 // NOLINTBEGIN
+MCAPI void bindAttributeLayerSettings(::cereal::ReflectionCtx& ctx);
+
 MCAPI void bindBoolAttribute(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindColorAttribute(::cereal::ReflectionCtx& ctx);

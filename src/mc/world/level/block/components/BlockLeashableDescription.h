@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockLeashableDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BlockLeashableDescription() /*override*/;
@@ -38,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockLeashableDescription(::Vec3 const& offset);
+    MCAPI BlockLeashableDescription();
     // NOLINTEND
 
 public:
@@ -50,13 +46,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::Vec3 const& MAX_BOUNDS();
+
+    MCAPI static ::Vec3 const& MIN_BOUNDS();
+
     MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& offset);
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

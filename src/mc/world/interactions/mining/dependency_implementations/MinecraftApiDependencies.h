@@ -27,8 +27,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void finishMiningHook() /*override*/;
-
-    virtual ~MinecraftApiDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:

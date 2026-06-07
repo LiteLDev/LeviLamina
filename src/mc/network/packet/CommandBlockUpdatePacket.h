@@ -13,6 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseCommandBlock;
 class BinaryStream;
 class BlockSource;
 class CommandBlockActor;
@@ -40,7 +41,6 @@ public:
 public:
     // prevent constructor by default
     CommandBlockUpdatePacket& operator=(CommandBlockUpdatePacket const&);
-    CommandBlockUpdatePacket();
 
 public:
     // virtual functions
@@ -52,16 +52,18 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~CommandBlockUpdatePacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CommandBlockUpdatePacket();
+
     MCAPI CommandBlockUpdatePacket(::CommandBlockUpdatePacket const&);
 
 #ifdef LL_PLAT_C
+    MCAPI CommandBlockUpdatePacket(::ActorRuntimeID entityId, ::BaseCommandBlock const& baseCmdBlock);
+
     MCAPI CommandBlockUpdatePacket(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
 #endif
     // NOLINTEND
@@ -69,17 +71,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::CommandBlockUpdatePacket const&);
 
 #ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ActorRuntimeID entityId, ::BaseCommandBlock const& baseCmdBlock);
+
     MCAPI void* $ctor(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

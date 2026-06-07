@@ -59,19 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~PlayerToggleCrafterSlotRequestPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~PlayerToggleCrafterSlotRequestPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI PlayerToggleCrafterSlotRequestPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit PlayerToggleCrafterSlotRequestPacket(::PlayerToggleCrafterSlotRequestPacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::PlayerToggleCrafterSlotRequestPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/NewBlockID.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/projectile/PredictableProjectile.h"
+#include "mc/world/level/block/NewBlockID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,6 +14,8 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class Block;
+class BlockPos;
+class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
@@ -54,7 +56,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     virtual void normalTick() /*override*/;
 
@@ -79,8 +81,6 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
-
-    virtual ~FallingBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -92,11 +92,15 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI bool _isBeingPushedUp(::Block const& pushingBlock, ::BlockSource& region, ::BlockPos blockPos) const;
+
     MCAPI void breakBlock();
 
     MCAPI void doNormalTick(::ITickDelegate& tickDelegate);
 
     MCAPI ::Block const& getFallingBlock() const;
+
+    MCAPI void setFallDamageAmount(float amount);
 
     MCAPI void setFallingBlock(::Block const& block, bool creative);
     // NOLINTEND
@@ -114,7 +118,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
     MCAPI void $normalTick();
 

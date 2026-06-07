@@ -16,8 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~FreezingSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

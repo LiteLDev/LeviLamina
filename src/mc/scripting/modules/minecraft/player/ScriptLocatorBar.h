@@ -71,8 +71,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptLocatorBar();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptLocatorBar(::WeakEntityRef playerRef);
+
+    MCAPI bool
+    _hasWaypoint(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWaypoint> const& waypoint) const;
+
     MCAPI void _initializeGroupHandle();
 
     MCAPI void _onWaypointPropertyUpdate(
@@ -108,6 +117,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WeakEntityRef playerRef);
     // NOLINTEND
 };
 

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
-#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/server/ChunkPositionAndDimension.h"
 #include "mc/server/ClientGenerationRequestHandler.h"
@@ -40,11 +39,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                mChunksSentSinceStart;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>              mSource;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkSource>>                  mNetworkChunkSource;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)>>
-                                             mAddCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)>> mAddCallback;
     ::ll::TypedStorage<8, 32, ::std::string> mCacheSerializeBuffer;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPositionAndDimension, ::std::weak_ptr<::LevelChunk>>>
                                                                       mQueuedChunks;
@@ -75,8 +70,6 @@ public:
     // NOLINTBEGIN
     MCAPI NetworkChunkPublisher(::ILevel& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
 
-    MCAPI bool _isWaitingForFullyBuiltChunks() const;
-
     MCAPI bool _sendQueuedChunk(
         ::ChunkPositionAndDimension const&          queuedChunk,
         ::ClientBlobCache::Server::TransferBuilder* cachedTransfer
@@ -92,9 +85,15 @@ public:
 
     MCAPI void destroyRegion();
 
+#ifdef LL_PLAT_S
+    MCAPI int getChunksSentSinceStart() const;
+#endif
+
 #ifdef LL_PLAT_C
     MCAPI void handleGenerationRequests();
 #endif
+
+    MCAPI bool is2DPositionRelevant(::BlockPos const& position) const;
 
     MCAPI void moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
 
@@ -109,7 +108,20 @@ public:
     );
 #endif
 
+    MCAPI void resetInitialSpawn();
+
     MCAPI void sendQueuedChunks();
+
+#ifdef LL_PLAT_C
+    MCAPI void setClientsNetworkChunkSource(::std::shared_ptr<::ChunkSource> networkChunkSource);
+
+    MCAPI void setPlayerNetworkId(::NetworkIdentifier const& id);
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI void
+    setServerSettings(::ServerNetworkSystem& network, ::ClientBlobCache::Server::ActiveTransfersManager& cacheManager);
+#endif
     // NOLINTEND
 
 public:

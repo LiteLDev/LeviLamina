@@ -24,14 +24,11 @@ public:
 
 public:
     // prevent constructor by default
-    AquiferNoises& operator=(AquiferNoises const&);
     AquiferNoises();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AquiferNoises(::AquiferNoises const&);
-
     MCAPI AquiferNoises(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> barrierNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelFloodednessNoise,
@@ -52,8 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::AquiferNoises const&);
-
     MCFOLD void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> barrierNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelFloodednessNoise,

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
+class BiomeRegistry;
 // clang-format on
 
 namespace OperationNodeFilters {
@@ -17,6 +18,22 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::Biome const*>> mNoRiverBiomes;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RiverInit();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit RiverInit(::BiomeRegistry const& biomeRegistry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 };
 

@@ -28,12 +28,6 @@ public:
     SafeZoneQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SafeZoneQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SafeZoneQuery(::OreUI::ClientDependencies const& data);

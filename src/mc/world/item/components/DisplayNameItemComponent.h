@@ -21,22 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DisplayNameItemComponent(DisplayNameItemComponent const&);
-    DisplayNameItemComponent();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DisplayNameItemComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
-
-    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent const&);
+    MCFOLD void setDescriptionId(::std::string const& descriptionId);
     // NOLINTEND
 
 public:

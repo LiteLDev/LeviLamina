@@ -13,11 +13,11 @@ namespace FogCommandUtil {
 // functions
 // NOLINTBEGIN
 MCNAPI bool
-pop(::std::string const&,
-    ::std::string const&   userProvidedId,
-    ::CommandOutput&       output,
-    ::Player&              target,
-    ::FogCommandComponent& fogCommandComponent);
+pop(::std::string const& userProvidedId,
+    ::std::string const& output,
+    ::CommandOutput&     target,
+    ::Player&            fogCommandComponent,
+    ::FogCommandComponent&);
 
 MCNAPI bool push(
     ::std::string const&   fogId,
@@ -28,11 +28,11 @@ MCNAPI bool push(
 );
 
 MCNAPI bool remove(
-    ::std::string const&,
-    ::std::string const&   userProvidedId,
-    ::CommandOutput&       output,
-    ::Player&              target,
-    ::FogCommandComponent& fogCommandComponent
+    ::std::string const& userProvidedId,
+    ::std::string const& output,
+    ::CommandOutput&     target,
+    ::Player&            fogCommandComponent,
+    ::FogCommandComponent&
 );
 // NOLINTEND
 

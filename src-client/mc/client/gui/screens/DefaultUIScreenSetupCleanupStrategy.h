@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DefaultUIScreenSetupCleanupStrategy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DefaultUIScreenSetupCleanupStrategy() /*override*/ = default;
@@ -30,6 +34,18 @@ public:
     virtual void cleanupScreen(::ScreenContext& screenContext) /*override*/;
 
     virtual ::EyeRenderingModeBit getEyeRenderingMode() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit DefaultUIScreenSetupCleanupStrategy(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
     // NOLINTEND
 
 public:

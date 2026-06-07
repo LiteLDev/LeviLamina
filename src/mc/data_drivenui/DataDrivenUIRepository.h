@@ -68,10 +68,37 @@ public:
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void onJsonResourcesChanged(::ResourcePackManager&) /*override*/;
+#else // LL_PLAT_C
     virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void load(::ResourcePackManager const&) /*override*/;
+#else // LL_PLAT_C
     virtual void load(::ResourcePackManager const& resourcePackManager) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::std::vector<::std::variant<
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
+    getComposition(::std::string const&) const /*override*/;
+#else // LL_PLAT_C
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
@@ -89,13 +116,41 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>> const&
     getComposition(::std::string const& identifier) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::std::vector<::std::variant<
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const& getRoot(::std::string const&) const
+        /*override*/;
+#else // LL_PLAT_C
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const&
     getRoot(::std::string const& identifier) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::std::vector<::std::variant<
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDivider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormDropdown>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormScrollView>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSlider>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormSwitch>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::FormTextField>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelCloseButton>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelDecoration>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelSpacing>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContextList>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
+    getExtensionPointContents(::std::string const&) const /*override*/;
+#else // LL_PLAT_C
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerFixedGridLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ExtensionPoint>,
@@ -113,9 +168,16 @@ public:
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::PanelText>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Visibility>>>
     getExtensionPointContents(::std::string const& name) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::PubSub::Subscription
+    subscribeToOnCompositionsReloadedAsync(::std::function<void()>&&) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::PubSub::Subscription
     subscribeToOnCompositionsReloadedAsync(::std::function<void()>&& onCompositionsReloadedAsyncCallback) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -126,6 +188,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::ResourcePackManager&                               resourcePackManager
     );
+
+    MCNAPI void _collectExtensionPoints();
 
     MCNAPI void _initializeLoaders(
         ::Puv::SlicedLoader<
@@ -140,6 +204,8 @@ public:
             ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition>& compositionLoader,
         bool                                                        isBuiltinPack
     );
+
+    MCNAPI bool _isExtensionPointDefined(::std::string const& name) const;
 
     MCNAPI void _loadAllDataDrivenUIData(::ResourcePackManager const& resourcePackManager);
 

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/common/SubClientId.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/server/ServerPlayer.h"
@@ -14,7 +13,6 @@
 #include "mc/server/sim/LookDuration.h"
 #include "mc/server/sim/MovementIntent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorSwingSource.h"
 #include "mc/world/actor/player/PlayerMovementSettings.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
@@ -23,10 +21,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockSource;
 class ChunkSource;
 class ChunkViewSource;
-class Dimension;
 class EntityContext;
 class ItemStack;
 class Level;
@@ -94,8 +90,6 @@ public:
     virtual ::std::shared_ptr<::ChunkViewSource> _createChunkSource(::ChunkSource& mainChunkSource) /*override*/;
 
     virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance) /*override*/;
-
-    virtual ~SimulatedPlayer() /*override*/;
     // NOLINTEND
 
 public:
@@ -124,23 +118,37 @@ public:
     MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
     _createNavigationResult(::NavigationComponent* navigation) const;
 
-    MCFOLD ::BlockSource& _getRegion();
-
-    MCAPI bool _trySwing(::ActorSwingSource swingSource);
+    MCAPI void _updateDestroyBlock();
 
     MCAPI void _updateMovement();
 
     MCAPI void _updateRidingComponents();
 
+    MCAPI ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> getGameTestHelper() const;
+
+    MCAPI void postAiStep();
+
     MCAPI void preAiStep();
 
     MCAPI void setGameTestHelper(::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> gameTestHelper);
+
+    MCAPI void setXuid(::std::string const& xuid);
 
     MCAPI bool simulateAttack();
 
     MCAPI bool simulateAttack(::Actor* actor);
 
     MCAPI void simulateChat(::std::string const& message);
+
+    MCAPI bool simulateDestroyBlock(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
+
+    MCAPI void simulateDisconnect();
+
+    MCAPI bool simulateDropSelectedItem();
+
+    MCAPI void simulateFly();
+
+    MCAPI bool simulateGiveItem(::ItemStack& item, bool selectSlot);
 
     MCAPI bool simulateInteract();
 
@@ -150,9 +158,17 @@ public:
 
     MCAPI bool simulateJump();
 
+    MCAPI void simulateLocalMove(::Vec3 const& localDirection, float);
+
+    MCAPI void simulateLookAt(::Vec3 const& pos);
+
+    MCAPI void simulateLookAt(::Actor& actor, ::sim::LookDuration lookType);
+
     MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType);
 
     MCAPI void simulateLookAt(::Vec3 const& pos, ::sim::LookDuration lookType);
+
+    MCAPI void simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget);
 
     MCAPI ::ScriptModuleGameTest::ScriptNavigationResult simulateNavigateToEntity(::Actor& actor, float speed);
 
@@ -161,11 +177,36 @@ public:
 
     MCAPI void simulateNavigateToLocations(::std::vector<::Vec3>&& positions, float speed);
 
+    MCAPI bool simulateRespawn();
+
     MCAPI void simulateSetBodyRotation(float degY);
+
+    MCAPI bool simulateSetItem(::ItemStack& item, bool selectSlot, int slot);
+
+    MCAPI void simulateStartBuildInSlot(int slot);
+
+    MCAPI void simulateStopBuild();
 
     MCAPI void simulateStopDestroyingBlock();
 
+    MCAPI void simulateStopFlying();
+
+    MCAPI void simulateStopInteracting();
+
+    MCAPI void simulateStopMoving();
+
+    MCAPI void simulateStopUsingItem();
+
+    MCAPI bool simulateUseItem(::ItemStack& item);
+
     MCAPI bool simulateUseItemInSlot(int slot);
+
+    MCAPI bool simulateUseItemInSlotOnBlock(
+        int                                   slot,
+        ::BlockPos const&                     pos,
+        ::ScriptModuleMinecraft::ScriptFacing face,
+        ::Vec3 const&                         facePos
+    );
 
     MCAPI bool simulateUseItemOnBlock(
         ::ItemStack&                          item,
@@ -173,11 +214,22 @@ public:
         ::ScriptModuleMinecraft::ScriptFacing face,
         ::Vec3 const&                         facePos
     );
+
+    MCAPI void simulateWorldMove(::Vec3 const& worldDirection, float);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::SimulatedPlayer* create(
+        ::std::string const&                                  name,
+        ::Vec3 const&                                         spawnPos,
+        ::DimensionType                                       dimensionId,
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> serverNetworkHandler,
+        ::std::string const&                                  xuid,
+        ::std::optional<::ActorUniqueID>                      idOverride
+    );
+
     MCAPI static ::SimulatedPlayer* create(
         ::std::string const&                                  name,
         ::Vec3 const&                                         spawnPos,
@@ -189,6 +241,8 @@ public:
         ::std::string const&                                  xuid,
         ::std::optional<::ActorUniqueID>                      idOverride
     );
+
+    MCAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:
@@ -211,12 +265,6 @@ public:
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

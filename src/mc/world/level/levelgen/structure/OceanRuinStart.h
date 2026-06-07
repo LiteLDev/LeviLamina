@@ -23,8 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string_view getStructureName() const /*override*/;
-
-    virtual ~OceanRuinStart() /*override*/ = default;
     // NOLINTEND
 
 public:

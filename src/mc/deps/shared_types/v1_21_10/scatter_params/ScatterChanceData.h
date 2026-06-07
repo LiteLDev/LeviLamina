@@ -22,19 +22,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScatterChanceData& operator=(ScatterChanceData const&);
-    ScatterChanceData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData&&);
-
-    MCAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData const&);
-
-    MCAPI ::SharedTypes::v1_21_10::ScatterChanceData& operator=(::SharedTypes::v1_21_10::ScatterChanceData&&);
-
     MCAPI ~ScatterChanceData();
     // NOLINTEND
 
@@ -42,14 +31,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData const&);
     // NOLINTEND
 
 public:

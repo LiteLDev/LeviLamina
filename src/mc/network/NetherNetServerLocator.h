@@ -18,6 +18,7 @@ class SignalingService;
 struct NetherNetConnector;
 struct PingedCompatibleServer;
 struct PortPair;
+struct ServerSupportedAuthenticationTypes;
 namespace Bedrock::Threading { class Mutex; }
 namespace NetherNet { struct NetworkID; }
 // clang-format on
@@ -41,6 +42,7 @@ public:
         ::ll::UntypedStorage<4, 4>  mUnkc83c1f;
         ::ll::UntypedStorage<1, 1>  mUnk91bac1;
         ::ll::UntypedStorage<1, 1>  mUnk1b4aaf;
+        ::ll::UntypedStorage<1, 2>  mUnkd722a4;
         ::ll::UntypedStorage<4, 4>  mUnk21552f;
         ::ll::UntypedStorage<2, 2>  mUnkb17aa9;
         // NOLINTEND
@@ -54,6 +56,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::NetherNetServerLocator::ServerData& operator=(::NetherNetServerLocator::ServerData&&);
+
         MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
         MCNAPI void write(::BinaryStream& stream) const;
@@ -98,14 +102,15 @@ public:
         ::GameType           gameType,
         int                  numPlayers,
         int                  maxNumPlayers,
-        bool                 isJoinableThroughServerScreen,
         bool                 isEditorWorld,
-        bool                 isHardcore
+        bool                 isHardcore,
+        bool                 supportedAuth,
+        ::ServerSupportedAuthenticationTypes
     ) /*override*/;
 
     virtual void stopAnnouncingServer() /*override*/;
 
-    virtual void startServerDiscovery(::PortPair ports) /*override*/;
+    virtual void startServerDiscovery(::PortPair) /*override*/;
 
     virtual void stopServerDiscovery() /*override*/;
 
@@ -129,11 +134,11 @@ public:
 
     MCNAPI void _onDiscoveryResponse(::NetherNet::NetworkID const& networkID, ::gsl::span<char const> responseData);
 
+    MCNAPI void _pruneStaleServers(::std::chrono::seconds staleAfter);
+
     MCNAPI void _setDiscoveryRequestCallback(bool enable);
 
     MCNAPI void _setDiscoveryResponseCallback(bool enable);
-
-    MCNAPI void _setIsAnnouncing(bool isAnnouncing);
 
     MCNAPI void _setIsDiscovering(bool isDiscovering);
     // NOLINTEND
@@ -170,14 +175,15 @@ public:
         ::GameType           gameType,
         int                  numPlayers,
         int                  maxNumPlayers,
-        bool                 isJoinableThroughServerScreen,
         bool                 isEditorWorld,
-        bool                 isHardcore
+        bool                 isHardcore,
+        bool                 supportedAuth,
+        ::ServerSupportedAuthenticationTypes
     );
 
     MCNAPI void $stopAnnouncingServer();
 
-    MCNAPI void $startServerDiscovery(::PortPair ports);
+    MCNAPI void $startServerDiscovery(::PortPair);
 
     MCNAPI void $stopServerDiscovery();
 

@@ -9,26 +9,14 @@ class IPreliminarySurfaceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPreliminarySurfaceProvider();
+    virtual ~IPreliminarySurfaceProvider() = default;
 
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

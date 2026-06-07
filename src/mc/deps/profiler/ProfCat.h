@@ -27,6 +27,8 @@ MCNAPI ::Bedrock::Profiler::details::Category const& BASELINE_RESOURCELOAD();
 
 MCNAPI ::Bedrock::Profiler::details::Category const& BURST();
 
+MCNAPI ::Bedrock::Profiler::details::Category const& GRAPHICS_TASKS();
+
 MCNAPI ::Bedrock::Profiler::details::Category const& JSON_UI_SYSTEM();
 
 MCNAPI ::Bedrock::Profiler::details::Category const& LEVEL_RENDERER();
@@ -50,6 +52,12 @@ MCNAPI ::Bedrock::Profiler::details::Category const& SCHEDULER();
 
 #ifdef LL_PLAT_C
 MCNAPI ::Bedrock::Profiler::details::Category const& UISCENE();
+#endif
+
+MCNAPI ::Bedrock::Profiler::details::Category const& WHISKER_INTERNAL();
+
+#ifdef LL_PLAT_C
+MCNAPI ::Bedrock::Profiler::details::Category const& WHISKER_OVERLAY();
 #endif
 // NOLINTEND
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/EnumSet.h"
+#include "mc/deps/shared_types/legacy/Facing.h"
 #include "mc/legacy/facing/Name.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
@@ -11,6 +12,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockRedstoneProducerDescription
@@ -18,12 +20,12 @@ struct BlockRedstoneProducerDescription
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, schar>                                 mPower;
-    ::ll::TypedStorage<1, 1, uchar>                                 mStronglyPoweredFace;
-    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::Facing::Name, 6>> mConnectedFaces;
-    ::ll::TypedStorage<1, 1, bool>                                  mIsTransformRelative;
-    ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerUp;
-    ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerDown;
+    ::ll::TypedStorage<1, 1, schar>                                  mPower;
+    ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::Facing>> mStronglyPoweredFace;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::Facing::Name, 6>>  mConnectedFaces;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsTransformRelative;
+    ::ll::TypedStorage<1, 1, bool>                                   mAllowPowerUp;
+    ::ll::TypedStorage<1, 1, bool>                                   mAllowPowerDown;
     // NOLINTEND
 
 public:
@@ -42,8 +44,6 @@ public:
     virtual ::CompoundTag buildUnboundDataNetworkTag() const /*override*/;
 
     virtual void initializeUnboundDataFromNetwork(::CompoundTag const& tag) /*override*/;
-
-    virtual ~BlockRedstoneProducerDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -57,6 +57,12 @@ public:
         bool                                  allowPowerUp,
         bool                                  allowPowerDown
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -76,12 +82,6 @@ public:
         bool                                  allowPowerUp,
         bool                                  allowPowerDown
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

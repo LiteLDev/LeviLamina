@@ -5,10 +5,16 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetComponentBasePayload.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
+namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class Color; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -36,13 +42,37 @@ public:
 public:
     // prevent constructor by default
     WidgetAddVolumeOutlineComponentPayload& operator=(WidgetAddVolumeOutlineComponentPayload const&);
-    WidgetAddVolumeOutlineComponentPayload(WidgetAddVolumeOutlineComponentPayload const&);
     WidgetAddVolumeOutlineComponentPayload();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~WidgetAddVolumeOutlineComponentPayload() /*override*/;
+    MCNAPI WidgetAddVolumeOutlineComponentPayload(::Editor::Network::WidgetAddVolumeOutlineComponentPayload const&);
+
+    MCNAPI WidgetAddVolumeOutlineComponentPayload(
+        ::mce::UUID const&                                              serviceId,
+        ::mce::UUID const&                                              groupId,
+        ::mce::UUID const&                                              widgetId,
+        ::mce::UUID const&                                              componentId,
+        ::std::string const&                                            componentName,
+        ::Vec3 const&                                                   pos,
+        bool                                                            visible,
+        bool                                                            lockToSurface,
+        ::std::optional<::Editor::RelativeVolumeListBlockVolume> const& volume,
+        ::mce::Color const&                                             outlineColor,
+        ::mce::Color const&                                             hullColor,
+        ::mce::Color const&                                             highlightOutlineColor,
+        ::mce::Color const&                                             highlightHullColor,
+        bool                                                            showOutline,
+        bool                                                            showHighlightOutline,
+        ::Rotation                                                      rotation,
+        ::Mirror                                                        mirror,
+        ::Vec3 const&                                                   offset,
+        ::Vec3 const&                                                   normalizedOrigin
+    );
+
+    MCNAPI ::Editor::Network::WidgetAddVolumeOutlineComponentPayload&
+    operator=(::Editor::Network::WidgetAddVolumeOutlineComponentPayload&&);
     // NOLINTEND
 
 public:
@@ -52,9 +82,31 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::Network::WidgetAddVolumeOutlineComponentPayload const&);
+
+    MCNAPI void* $ctor(
+        ::mce::UUID const&                                              serviceId,
+        ::mce::UUID const&                                              groupId,
+        ::mce::UUID const&                                              widgetId,
+        ::mce::UUID const&                                              componentId,
+        ::std::string const&                                            componentName,
+        ::Vec3 const&                                                   pos,
+        bool                                                            visible,
+        bool                                                            lockToSurface,
+        ::std::optional<::Editor::RelativeVolumeListBlockVolume> const& volume,
+        ::mce::Color const&                                             outlineColor,
+        ::mce::Color const&                                             hullColor,
+        ::mce::Color const&                                             highlightOutlineColor,
+        ::mce::Color const&                                             highlightHullColor,
+        bool                                                            showOutline,
+        bool                                                            showHighlightOutline,
+        ::Rotation                                                      rotation,
+        ::Mirror                                                        mirror,
+        ::Vec3 const&                                                   offset,
+        ::Vec3 const&                                                   normalizedOrigin
+    );
     // NOLINTEND
 
 public:

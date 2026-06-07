@@ -24,31 +24,6 @@ public:
         mStartWithDelay;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    DelayableTaskGroup();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI DelayableTaskGroup(
-        ::std::unique_ptr<::TaskGroup> taskGroup,
-        ::brstd::copyable_function<void(::TaskGroup&, ::std::chrono::seconds, ::brstd::move_only_function<void()>)>
-            startWithDelay
-    );
-#endif
-
-    MCAPI void startWithDelay(::std::chrono::seconds delay, ::brstd::move_only_function<void()> work);
-
-#ifdef LL_PLAT_C
-    MCAPI ~DelayableTaskGroup();
-#endif
-    // NOLINTEND
-
 public:
     // static functions
     // NOLINTBEGIN
@@ -57,26 +32,6 @@ public:
         ::std::chrono::seconds              delay,
         ::brstd::move_only_function<void()> work
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::TaskGroup> taskGroup,
-        ::brstd::copyable_function<void(::TaskGroup&, ::std::chrono::seconds, ::brstd::move_only_function<void()>)>
-            startWithDelay
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

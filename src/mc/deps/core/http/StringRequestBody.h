@@ -12,8 +12,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
+    // NOLINTEND
 
-    virtual ~StringRequestBody() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::shared_ptr<::Bedrock::Http::StringRequestBody> create(::std::string const& data);
     // NOLINTEND
 
 public:

@@ -11,6 +11,8 @@
 // clang-format off
 namespace Editor { struct LocalizationEntry; }
 namespace Editor::ScriptModule { class ScriptLogProperties; }
+namespace Editor::Services { class LoggingServiceProvider; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -33,6 +35,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptLoggingService(
+        ::Editor::Services::LoggingServiceProvider* loggingService,
+        ::Scripting::WeakLifetimeScope const&       scope
+    );
+
     MCNAPI ::Scripting::Result_deprecated<void> _logMessage(
         ::Editor::LogLevel                                           level,
         ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
@@ -64,6 +71,13 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Editor::Services::LoggingServiceProvider* loggingService, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

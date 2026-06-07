@@ -10,6 +10,10 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockPos;
+class CompoundTag;
+class IRandom;
+namespace Util { class XXHash; }
 // clang-format on
 
 namespace br::worldgen::processors {
@@ -37,7 +41,22 @@ public:
 
     MCAPI RuleSet(::br::worldgen::processors::RuleSet const&);
 
+    MCAPI void appendMetadataKey(::Util::XXHash& hash) const;
+
     MCAPI ::br::worldgen::processors::RuleSet& operator=(::br::worldgen::processors::RuleSet&&);
+
+    MCFOLD ::Block const& outputState() const;
+
+    MCAPI ::std::unique_ptr<::CompoundTag> outputTag(::IRandom& random, ::CompoundTag const* existingTag) const;
+
+    MCAPI bool test(
+        ::Block const& inputState,
+        ::Block const& locState,
+        ::BlockPos     inTemplatePos,
+        ::BlockPos     worldPos,
+        ::BlockPos     reference,
+        ::IRandom&     random
+    ) const;
 
     MCAPI ::br::worldgen::processors::RuleSet withLoc(::br::worldgen::processors::BlockRules::Test loc);
 

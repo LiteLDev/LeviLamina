@@ -49,6 +49,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SpawnGroupRegistry(::ResourcePackManager& resourcePackManager, ::IMinecraftEventing& eventing);
+
     MCAPI void _addSpawnRules(::std::string const& identifier, ::MobSpawnRules& spawnRules);
 
     MCAPI void _getResources(
@@ -60,8 +62,16 @@ public:
     MCAPI ::Puv::LoadResult<::ActorSpawnRuleData>
     _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
 
+    MCAPI ::SpawnGroupData const* getSpawnGroup(::std::string const& identifier) const;
+
     MCAPI void
-    readResourceFiles(::ResourcePackManager&, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
+    readResourceFiles(::ResourcePackManager& dataMap, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ResourcePackManager& resourcePackManager, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

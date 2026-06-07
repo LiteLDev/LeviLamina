@@ -14,7 +14,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -24,6 +23,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class TripWireBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    TripWireBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,22 +50,32 @@ public:
         /*override*/;
 
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~TripWireBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TripWireBlock(::std::string const& nameId, int id);
+
     MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool _isEntityInsideTriggerable(::BlockSource const& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI void _updateSource(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
+#ifdef LL_PLAT_C
+    MCAPI bool shouldConnectTo(::BlockSource& region, ::BlockPos const& pos, int dir) const;
+#endif
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -86,8 +99,6 @@ public:
     MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

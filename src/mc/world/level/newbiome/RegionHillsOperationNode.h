@@ -39,8 +39,28 @@ public:
     ) const /*override*/;
 
     virtual ::std::tuple<::Pos2d, ::Pos2d> _getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const /*override*/;
+    // NOLINTEND
 
-    virtual ~RegionHillsOperationNode() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RegionHillsOperationNode(
+        uint                                                         seedMixup,
+        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
+        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
+        ::BiomeRegistry const&                                       biomeRegistry
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        uint                                                         seedMixup,
+        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
+        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
+        ::BiomeRegistry const&                                       biomeRegistry
+    );
     // NOLINTEND
 
 public:

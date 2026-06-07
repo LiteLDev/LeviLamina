@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
 #include "mc/deps/json/Value.h"
 #include "mc/world/level/WorldVersion.h"
+#include "mc/world/level/biome/BiomeIdType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,8 +25,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FlatWorldOptions();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FlatWorldOptions(::Json::Value const& root, ::LevelData const& levelData);
+
     MCAPI bool _load(::Json::Value const& root, ::LevelData const& levelData);
 
     MCAPI ~FlatWorldOptions();
@@ -36,6 +42,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Json::Value getLayers(::LevelData const& levelData);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Json::Value const& root, ::LevelData const& levelData);
     // NOLINTEND
 
 public:

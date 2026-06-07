@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     virtual int updateDecayDelay(int const) const /*override*/;
 
-    virtual int updateFacingData(int const, ::Block const& block) const /*override*/;
+    virtual int updateFacingData(int const block, ::Block const&) const /*override*/;
 
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
@@ -36,13 +36,13 @@ public:
     virtual int attemptUseCharge(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
-        ::BlockPos const&,
-        ::BlockPos const& pos,
-        int               charge,
-        int,
-        ::Random&        random,
-        ::SculkSpreader& spreader,
-        bool const       spreadVeins
+        ::BlockPos const&    pos,
+        ::BlockPos const&    charge,
+        int                  random,
+        int                  spreader,
+        ::Random&            spreadVeins,
+        ::SculkSpreader&,
+        bool const
     ) const /*override*/;
 
     virtual void onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const
@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $updateDecayDelay(int const) const;
 
-    MCAPI int $updateFacingData(int const, ::Block const& block) const;
+    MCAPI int $updateFacingData(int const block, ::Block const&) const;
 
     MCFOLD bool $canChangeBlockOnSpread() const;
 
@@ -84,13 +84,13 @@ public:
     MCAPI int $attemptUseCharge(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
-        ::BlockPos const&,
-        ::BlockPos const& pos,
-        int               charge,
-        int,
-        ::Random&        random,
-        ::SculkSpreader& spreader,
-        bool const       spreadVeins
+        ::BlockPos const&    pos,
+        ::BlockPos const&    charge,
+        int                  random,
+        int                  spreader,
+        ::Random&            spreadVeins,
+        ::SculkSpreader&,
+        bool const
     ) const;
 
     MCAPI void $onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const;

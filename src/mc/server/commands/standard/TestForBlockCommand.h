@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~TestForBlockCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

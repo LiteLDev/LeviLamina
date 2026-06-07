@@ -74,6 +74,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EditorVolumeHighlightRenderer();
+
     MCAPI ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area) const;
 
     MCAPI ::RenderChunkInstanced& _getRenderChunkInstanced(::BlockPos const& chunkPos);
@@ -100,6 +102,12 @@ public:
         ::AABB const&             area,
         ::Vec3 const&             offset
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

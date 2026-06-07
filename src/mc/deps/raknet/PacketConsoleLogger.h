@@ -31,8 +31,6 @@ public:
     virtual void SetLogCommandParser(::RakNet::LogCommandParser*);
 
     virtual void WriteLog(char const*) /*override*/;
-
-    virtual ~PacketConsoleLogger() /*override*/ = default;
     // NOLINTEND
 
 public:

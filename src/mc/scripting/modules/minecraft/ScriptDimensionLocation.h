@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
+struct WorldPosition;
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
@@ -27,7 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptDimensionLocation();
+    MCAPI ScriptDimensionLocation();
+
+    MCAPI ScriptDimensionLocation(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> const& dimension,
+        float                                                                                 x,
+        float                                                                                 y,
+        float                                                                                 z
+    );
+
+    MCAPI ::Vec3 getLocation() const;
+
+    MCAPI ::WorldPosition getWorldPosition() const;
+
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptDimensionLocation const& other) const;
     // NOLINTEND
 
 public:
@@ -37,9 +52,16 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> const& dimension,
+        float                                                                                 x,
+        float                                                                                 y,
+        float                                                                                 z
+    );
     // NOLINTEND
 };
 

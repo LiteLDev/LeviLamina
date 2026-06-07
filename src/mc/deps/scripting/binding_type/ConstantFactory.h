@@ -25,13 +25,19 @@ public:
 public:
     // prevent constructor by default
     ConstantFactory& operator=(ConstantFactory const&);
-    ConstantFactory(ConstantFactory const&);
     ConstantFactory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ConstantFactory(::Scripting::ConstantFactory&&);
+    MCNAPI ConstantFactory(::Scripting::ConstantFactory const&);
+
+    MCNAPI ConstantFactory(
+        ::std::string                                                      name_,
+        ::entt::meta_type                                                  type_,
+        bool                                                               primitive_,
+        ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_
+    );
 
     MCNAPI ~ConstantFactory();
     // NOLINTEND
@@ -39,7 +45,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::ConstantFactory&&);
+    MCNAPI void* $ctor(::Scripting::ConstantFactory const&);
+
+    MCNAPI void* $ctor(
+        ::std::string                                                      name_,
+        ::entt::meta_type                                                  type_,
+        bool                                                               primitive_,
+        ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_
+    );
     // NOLINTEND
 
 public:

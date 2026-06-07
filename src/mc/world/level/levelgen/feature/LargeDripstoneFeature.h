@@ -10,7 +10,7 @@
 // clang-format off
 class IBlockWorldGenAPI;
 class Random;
-namespace DripstoneUtils { class WindOffsetter; }
+namespace SpeleothemUtils { class WindOffsetter; }
 // clang-format on
 
 class LargeDripstoneFeature : public ::IFeature {
@@ -36,12 +36,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
-            ::IBlockWorldGenAPI&                   target,
-            ::DripstoneUtils::WindOffsetter const& wind
+            ::IBlockWorldGenAPI&                    target,
+            ::SpeleothemUtils::WindOffsetter const& wind
         );
 
         MCAPI void
-        placeBlocks(::IBlockWorldGenAPI& target, ::Random& random, ::DripstoneUtils::WindOffsetter const& wind) const;
+        placeBlocks(::IBlockWorldGenAPI& target, ::Random& random, ::SpeleothemUtils::WindOffsetter const& wind) const;
         // NOLINTEND
     };
 
@@ -49,8 +49,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-
-    virtual ~LargeDripstoneFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

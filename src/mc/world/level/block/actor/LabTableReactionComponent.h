@@ -12,7 +12,7 @@ class LabTableReactionComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LabTableReactionComponent();
+    virtual ~LabTableReactionComponent() = default;
 
     virtual void _onStart(::LabTableReaction& owner, ::BlockSource& region);
 
@@ -22,26 +22,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $_onStart(::LabTableReaction& owner, ::BlockSource& region);
 
     MCFOLD void $_onTick(::LabTableReaction& owner, ::BlockSource& region);
 
-    MCFOLD void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

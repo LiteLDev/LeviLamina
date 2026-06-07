@@ -41,8 +41,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlockStateType& operator=(ScriptBlockStateType const&);
+    ScriptBlockStateType();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptBlockStateType(::ScriptModuleMinecraft::ScriptBlockStateType const&);
+
+    MCAPI explicit ScriptBlockStateType(::BlockState const& blockState);
+
     MCAPI void _fillValidValues();
     // NOLINTEND
 
@@ -53,6 +62,14 @@ public:
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockState const& blockState);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockStateType const&);
+
+    MCAPI void* $ctor(::BlockState const& blockState);
     // NOLINTEND
 };
 

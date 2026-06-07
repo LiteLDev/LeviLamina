@@ -26,18 +26,6 @@ public:
                                     mLayers;
     ::ll::TypedStorage<4, 4, float> mDuration;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CameraAnimationStorageComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

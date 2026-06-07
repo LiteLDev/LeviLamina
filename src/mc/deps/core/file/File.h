@@ -9,9 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
-namespace Core { class FileSystemImpl; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace brstd { struct source_location; }
@@ -36,41 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI File(::Core::File&& rhs);
-#endif
-
-    MCNAPI
-    File(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
-
     MCNAPI ::Core::Result close();
 
-#ifdef LL_PLAT_C
-    MCNAPI ::Core::Result flush();
-#endif
-
-    MCNAPI ::Core::Result getRemainingSize(uint64* pSize);
-
-    MCNAPI ::Core::Result getSize(uint64* pSize);
-
-#ifdef LL_PLAT_C
     MCNAPI bool isNearTransactionLimit(uint64 windowSize) const;
-#endif
 
     MCNAPI ::Core::Result
     open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
-
-    MCNAPI ::Core::File& operator=(::Core::File&& rhs);
-
-    MCNAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
-
-    MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
-
-    MCNAPI void setLoggingEnabled(bool loggingEnabled);
-
-    MCNAPI ::Core::Result setPosition(uint64 position);
-
-    MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
 
     MCNAPI ~File();
     // NOLINTEND
@@ -78,28 +47,28 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> cleanPath(::Core::PathView entryPath);
+
+#ifdef LL_PLAT_C
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    cleanPathSeparators(::Core::PathView entryPath);
 #endif
 
     MCNAPI static ::Core::Result writeCreateOrAppendFileData(
-        ::Core::PathView         path,
-        uint64                   offset,
-        uint64                   numBytesToWrite,
-        uchar const*             buffer,
-        ::brstd::source_location sourceLocation
+        ::Core::PathView            path,
+        uint64                      offset,
+        uint64                      numBytesToWrite,
+        ::std::vector<uchar> const& buffer,
+        ::brstd::source_location    sourceLocation
     );
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Core::File&& rhs);
-#endif
-
-    MCNAPI void*
-    $ctor(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
+    MCNAPI static ::Core::Result writeCreateOrAppendFileData(
+        ::Core::PathView path,
+        uint64           offset,
+        uint64           numBytesToWrite,
+        uchar const*     buffer,
+        ::brstd::source_location
+    );
     // NOLINTEND
 
 public:

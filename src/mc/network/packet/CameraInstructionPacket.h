@@ -23,13 +23,6 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    CameraInstructionPacket();
-
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,30 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~CameraInstructionPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    MCAPI CameraInstructionPacket();
+
     MCAPI explicit CameraInstructionPacket(::CameraInstructionPacketPayload payload);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(::CameraInstructionPacketPayload payload);
-#endif
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::CameraInstructionPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -99,9 +84,9 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
-    MCAPI ::SerializationMode $getSerializationMode() const;
+    MCFOLD ::SerializationMode $getSerializationMode() const;
 
-    MCAPI void $setSerializationMode(::SerializationMode mode);
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
 
     MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,

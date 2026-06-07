@@ -20,31 +20,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptChatSendBeforeEvent& operator=(ScriptChatSendBeforeEvent const&);
-    ScriptChatSendBeforeEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptChatSendBeforeEvent(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
-    operator=(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
     // NOLINTEND
 };
 

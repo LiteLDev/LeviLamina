@@ -15,27 +15,15 @@ class MapPolicy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MapPolicy();
+    virtual ~MapPolicy() = default;
 
     virtual ::mce::Color get(::BlockSource& region, ::BlockPos const& pos) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

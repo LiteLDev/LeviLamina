@@ -28,21 +28,38 @@ public:
     // prevent constructor by default
     CSHA1& operator=(CSHA1 const&);
     CSHA1(CSHA1 const&);
-    CSHA1();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CSHA1();
+
     MCAPI void Final();
 
+    MCFOLD uchar* GetHash() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool ReportHash_a(char* tszReport, ::CSHA1::REPORT_TYPE rtReportType) const;
+#endif
+
+    MCFOLD void Reset();
+
     MCAPI void Transform(uint* pState, uchar const* pBuffer);
+
+    MCAPI void Update(uchar const* pbData, uint uLen);
 
     MCAPI ~CSHA1();
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

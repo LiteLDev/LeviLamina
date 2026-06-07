@@ -29,7 +29,25 @@ public:
 
     MCAPI void boost(::Actor& actor);
 
+    MCFOLD int getBoostTime() const;
+
+    MCFOLD int getBoostTimeTotal() const;
+
+    MCFOLD bool getIsBoosting() const;
+
+    MCAPI bool itemUseText(::Actor const& actor, ::ItemStack const& item, ::std::string& text);
+
     MCAPI bool onItemInteract(::Actor& actor, ::ItemStack& item, ::Player& player);
+
+    MCFOLD void setBoostTime(int boostTime);
+
+    MCFOLD void setIsBoosting(bool isBoosting);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::mce::UUID getSpeedModifierUUID();
     // NOLINTEND
 
 public:

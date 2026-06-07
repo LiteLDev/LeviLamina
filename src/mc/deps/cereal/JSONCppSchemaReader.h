@@ -41,8 +41,6 @@ public:
     virtual bool _allowAsFloat() /*override*/;
 
     virtual bool _allowAsDouble() /*override*/;
-
-    virtual ~JSONCppSchemaReader() /*override*/;
     // NOLINTEND
 
 public:
@@ -55,12 +53,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

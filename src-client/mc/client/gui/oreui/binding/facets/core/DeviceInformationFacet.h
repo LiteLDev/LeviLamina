@@ -10,6 +10,7 @@
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/file/StorageAreaStateListener.h"
+#include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/platform/OperationMode.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -88,9 +89,9 @@ public:
 
     virtual void onOperationModeChanged(::OperationMode operationMode) /*override*/;
 
-    virtual void onLowDiskSpace(bool const bSet) /*override*/;
+    virtual void onLowDiskSpace(bool const) /*override*/;
 
-    virtual void onOutOfDiskSpace(bool const bSet) /*override*/;
+    virtual void onOutOfDiskSpace(bool const) /*override*/;
     // NOLINTEND
 
 public:
@@ -106,25 +107,37 @@ public:
 
     MCAPI void _fillInputMethods();
 
+    MCAPI void _fillMemory();
+
+    MCAPI void _fillPlatform(::BuildPlatform buildPlatform);
+
     MCAPI void _fillStorageInfo();
+
+    MCAPI void _fillSupportsManualAddedServers();
+
+    MCAPI int _getAppDisplayHeight() const;
+
+    MCAPI int _getAppDisplayWidth() const;
+
+    MCAPI float _getAppPixelsPerMilimeter() const;
 
     MCAPI void changeStorage();
 
-    MCAPI int defaultNetworkMaxPlayers() const;
+    MCFOLD int defaultNetworkMaxPlayers() const;
 
     MCFOLD ::std::vector<::Social::MultiplayerServiceIdentifier> const& getActiveMultiplayerServiceIds() const;
 
     MCFOLD ::OreUI::FacetTaskState getChangeStorageProgress() const;
 
-    MCAPI int getDisplayHeight() const;
+    MCFOLD int getDisplayHeight() const;
 
-    MCAPI int getDisplayWidth() const;
+    MCFOLD int getDisplayWidth() const;
 
     MCFOLD int getGuiScaleBase() const;
 
     MCFOLD int getGuiScaleModifier() const;
 
-    MCAPI ::std::vector<::OreUI::InputMethod> const& getInputMethods() const;
+    MCFOLD ::std::vector<::OreUI::InputMethod> const& getInputMethods() const;
 
     MCAPI bool getIsLowMemoryDevice() const;
 
@@ -146,7 +159,7 @@ public:
 
     MCAPI bool isOnline() const;
 
-    MCAPI bool isStorageFull() const;
+    MCFOLD bool isStorageFull() const;
 
     MCAPI bool isStorageLow() const;
 
@@ -186,9 +199,9 @@ public:
 
     MCAPI void $onOperationModeChanged(::OperationMode operationMode);
 
-    MCFOLD void $onLowDiskSpace(bool const bSet);
+    MCFOLD void $onLowDiskSpace(bool const);
 
-    MCFOLD void $onOutOfDiskSpace(bool const bSet);
+    MCFOLD void $onOutOfDiskSpace(bool const);
     // NOLINTEND
 
 public:

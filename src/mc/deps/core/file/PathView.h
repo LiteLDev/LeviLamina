@@ -3,14 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/platform/brstd/basic_cstring_view.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
 
 namespace Core {
 
@@ -35,28 +28,17 @@ public:
 
 public:
     // prevent constructor by default
+    PathView& operator=(PathView const&);
     PathView();
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI explicit PathView(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
-#endif
+    MCNAPI PathView(::Core::PathView&&);
 
-    MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const& src);
+    MCNAPI PathView(::Core::PathView const&);
 
-#ifdef LL_PLAT_C
-    MCNAPI explicit PathView(::std::string const& src);
-#endif
-
-    MCNAPI explicit PathView(::Core::Path const& src);
-
-#ifdef LL_PLAT_C
-    MCNAPI explicit PathView(char const* src);
-#endif
-
-    MCNAPI bool operator==(::Core::PathView const& rhs) const;
+    MCNAPI ::Core::PathView& operator=(::Core::PathView&&);
 
     MCNAPI ~PathView();
     // NOLINTEND
@@ -64,21 +46,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
-#endif
+    MCNAPI void* $ctor(::Core::PathView&&);
 
-    MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const& src);
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::string const& src);
-#endif
-
-    MCNAPI void* $ctor(::Core::Path const& src);
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(char const* src);
-#endif
+    MCNAPI void* $ctor(::Core::PathView const&);
     // NOLINTEND
 
 public:

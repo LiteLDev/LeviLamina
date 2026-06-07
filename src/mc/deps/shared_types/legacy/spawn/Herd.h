@@ -18,23 +18,21 @@ public:
 
 public:
     // prevent constructor by default
-    Herd(Herd const&);
+    Herd& operator=(Herd const&);
     Herd();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Herd(::SharedTypes::Legacy::Spawn::Herd const&);
+
     MCFOLD ::SharedTypes::Legacy::Spawn::Herd& operator=(::SharedTypes::Legacy::Spawn::Herd&&);
-
-    MCFOLD ::SharedTypes::Legacy::Spawn::Herd& operator=(::SharedTypes::Legacy::Spawn::Herd const&);
-
-    MCAPI ~Herd();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD void* $ctor(::SharedTypes::Legacy::Spawn::Herd const&);
     // NOLINTEND
 };
 

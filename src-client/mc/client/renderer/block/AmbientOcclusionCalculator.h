@@ -57,13 +57,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AmbientOcclusionCalculator(
-        ::BlockPos const&                                     centerPos,
-        ::Block const&                                        centerBlock,
-        ::BlockTessellatorCache&                              cache,
-        ::AmbientOcclusionCalculator::AocConfiguration const& configuration
-    );
-
     MCAPI ::PrecompCache _getCache();
 
     MCAPI void calculate(uchar face);
@@ -71,16 +64,5 @@ public:
     MCAPI void calculateBoxAverage(bool);
 
     MCAPI void calculateWithCache(uchar face);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockPos const&                                     centerPos,
-        ::Block const&                                        centerBlock,
-        ::BlockTessellatorCache&                              cache,
-        ::AmbientOcclusionCalculator::AocConfiguration const& configuration
-    );
     // NOLINTEND
 };

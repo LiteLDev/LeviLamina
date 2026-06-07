@@ -14,7 +14,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -24,6 +23,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class LecternBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    LecternBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const&
@@ -32,10 +35,9 @@ public:
 
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
@@ -44,34 +46,36 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const
         /*override*/;
 
     virtual bool isSignalSource() const /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~LecternBlock() /*override*/ = default;
+    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _dropBook(::Player& player, ::BlockPos const& pos) const;
+    MCAPI LecternBlock(::std::string const& nameId, int id);
 
     MCAPI void _updateRedstone(::BlockSource& region, ::BlockPos const& pos, bool powered) const;
+
+    MCAPI void emitRedstonePulse(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -87,9 +91,9 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -97,16 +101,13 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const;
 
     MCFOLD bool $isSignalSource() const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
 
 
     // NOLINTEND

@@ -8,10 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Turtle : public ::Animal {
+public:
+    // prevent constructor by default
+    Turtle();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -20,8 +27,26 @@ public:
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
+    // NOLINTEND
 
-    virtual ~Turtle() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Turtle(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

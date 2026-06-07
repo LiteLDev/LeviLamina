@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/SplineType.h"
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetComponentBasePayload.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -26,13 +29,28 @@ public:
 public:
     // prevent constructor by default
     WidgetAddSplineComponentPayload& operator=(WidgetAddSplineComponentPayload const&);
-    WidgetAddSplineComponentPayload(WidgetAddSplineComponentPayload const&);
     WidgetAddSplineComponentPayload();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~WidgetAddSplineComponentPayload() /*override*/;
+    MCNAPI WidgetAddSplineComponentPayload(::Editor::Network::WidgetAddSplineComponentPayload const&);
+
+    MCNAPI WidgetAddSplineComponentPayload(
+        ::mce::UUID const&                    serviceId,
+        ::mce::UUID const&                    groupId,
+        ::mce::UUID const&                    widgetId,
+        ::mce::UUID const&                    componentId,
+        ::std::string const&                  componentName,
+        ::Vec3 const&                         pos,
+        bool                                  visible,
+        bool                                  lockToSurface,
+        ::std::vector<::mce::UUID>            controlPointIds,
+        ::Scripting::RenderHelper::SplineType splineType
+    );
+
+    MCNAPI ::Editor::Network::WidgetAddSplineComponentPayload&
+    operator=(::Editor::Network::WidgetAddSplineComponentPayload&&);
     // NOLINTEND
 
 public:
@@ -42,9 +60,22 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::Network::WidgetAddSplineComponentPayload const&);
+
+    MCNAPI void* $ctor(
+        ::mce::UUID const&                    serviceId,
+        ::mce::UUID const&                    groupId,
+        ::mce::UUID const&                    widgetId,
+        ::mce::UUID const&                    componentId,
+        ::std::string const&                  componentName,
+        ::Vec3 const&                         pos,
+        bool                                  visible,
+        bool                                  lockToSurface,
+        ::std::vector<::mce::UUID>            controlPointIds,
+        ::Scripting::RenderHelper::SplineType splineType
+    );
     // NOLINTEND
 
 public:

@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -25,19 +27,25 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk6df0be;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DeviceIdRecord& operator=(DeviceIdRecord const&);
     DeviceIdRecord(DeviceIdRecord const&);
     DeviceIdRecord();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    DeviceIdRecord& operator=(DeviceIdRecord const&);
+    DeviceIdRecord(DeviceIdRecord const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit DeviceIdRecord(::std::string const& deviceId);
-
-    MCNAPI ::Bedrock::DeviceIdRecord& operator=(::Bedrock::DeviceIdRecord&& other);
+    MCNAPI DeviceIdRecord();
 
     MCNAPI ::Bedrock::Result<
         void,
@@ -47,6 +55,15 @@ public:
             ::Bedrock::DeviceIdErrorType::CacheOpenFailed,
             ::Bedrock::DeviceIdErrorType::ValidationFail>>
     writeToCacheFile(::Core::Path const& pathToCacheFile);
+
+    MCNAPI ::Bedrock::Result<
+        void,
+        ::std::variant<
+            ::Bedrock::DeviceIdErrorType::FileWriteError,
+            ::Bedrock::DeviceIdErrorType::NoCacheFound,
+            ::Bedrock::DeviceIdErrorType::CacheOpenFailed,
+            ::Bedrock::DeviceIdErrorType::ValidationFail>>
+    writeToCacheFolder(::Core::Path const& pathToCacheFolder);
 
     MCNAPI ~DeviceIdRecord();
 #endif
@@ -58,7 +75,8 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI static bool _isValid(::std::string const& md5Hash, ::std::string const& guid);
 
-    MCNAPI static ::std::string generateHash(::std::string const& str);
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    getCacheFilePath(::Core::Path const& pathToCacheFolder);
 
     MCNAPI static ::Bedrock::Result<
         void,
@@ -98,7 +116,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::string const& deviceId);
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 

@@ -68,8 +68,6 @@ public:
         ::ChunkPos const&                    lc,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
-
-    virtual ~OceanRuinFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

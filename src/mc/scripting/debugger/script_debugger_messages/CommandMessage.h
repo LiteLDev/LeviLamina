@@ -14,15 +14,21 @@ public:
 
 public:
     // prevent constructor by default
-    CommandMessage(CommandMessage const&);
+    CommandMessage& operator=(CommandMessage const&);
     CommandMessage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptDebuggerMessages::CommandMessage& operator=(::ScriptDebuggerMessages::CommandMessage&&);
+    MCNAPI CommandMessage(::ScriptDebuggerMessages::CommandMessage const&);
 
-    MCNAPI ::ScriptDebuggerMessages::CommandMessage& operator=(::ScriptDebuggerMessages::CommandMessage const&);
+    MCNAPI ::ScriptDebuggerMessages::CommandMessage& operator=(::ScriptDebuggerMessages::CommandMessage&&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptDebuggerMessages::CommandMessage const&);
     // NOLINTEND
 };
 

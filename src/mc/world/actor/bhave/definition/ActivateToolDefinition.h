@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
-
-    virtual ~ActivateToolDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:

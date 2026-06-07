@@ -17,6 +17,8 @@ class Player;
 struct LevelGameRuleChangeEvent;
 struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
+namespace ScriptModuleMinecraft { class ScriptV010Events; }
+namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -69,8 +71,23 @@ public:
     ) /*override*/;
 
     virtual ::EventResult onLevelRemovedActor(::Actor& actor) /*override*/;
+    // NOLINTEND
 
-    virtual ~ScriptLevelGlobalEventListener() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD void registerListener(
+        ::Scripting::WeakLifetimeScope const&                                     scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> handle
+    );
+
+    MCFOLD void registerListener(
+        ::Scripting::WeakLifetimeScope const&                                           scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldAfterEvents> handle
+    );
+
+    MCFOLD void
+    unregisterListener(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle);
     // NOLINTEND
 
 public:

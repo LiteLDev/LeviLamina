@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ColoredTorchBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
@@ -32,9 +36,19 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
+    // NOLINTEND
 
-    virtual ~ColoredTorchBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ColoredTorchBlock(::std::string const& nameId, int id, ::ColoredTorchColor baseColor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::ColoredTorchColor baseColor);
     // NOLINTEND
 
 public:
@@ -50,7 +64,7 @@ public:
         int               itemValue
     ) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
 
     // NOLINTEND

@@ -61,8 +61,6 @@ public:
 
     virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     _preloadSubFolders(::Core::Path const& packRelativePath) const /*override*/;
-
-    virtual ~ZippedEncryptedFilesAccessStrategy() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,6 +73,17 @@ public:
         ::IPackIOProvider const&                                          io,
         ::Core::Path const&                                               subPath,
         ::std::unique_ptr<::PackAccessStrategy>                           zipSubPack
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static bool isValidZippedEncryptedPack(
+        ::IPackIOProvider const& io,
+        ::Core::Path const&      pathToPack,
+        ::ContentIdentity&       contentIdentity,
+        ::Core::Path const&      subPath
     );
     // NOLINTEND
 

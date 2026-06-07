@@ -24,8 +24,6 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_VillagerV2AdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

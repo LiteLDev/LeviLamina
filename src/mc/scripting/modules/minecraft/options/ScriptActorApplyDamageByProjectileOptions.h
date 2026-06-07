@@ -25,17 +25,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorApplyDamageByProjectileOptions& operator=(ScriptActorApplyDamageByProjectileOptions const&);
-    ScriptActorApplyDamageByProjectileOptions();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorApplyDamageByProjectileOptions(
-        ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&
-    );
-
     MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
 
     MCAPI ~ScriptActorApplyDamageByProjectileOptions();
@@ -48,15 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

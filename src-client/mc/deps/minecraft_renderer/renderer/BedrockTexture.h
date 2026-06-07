@@ -29,13 +29,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BedrockTexture(BedrockTexture const&);
-    BedrockTexture();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BedrockTexture();
+
+    MCAPI BedrockTexture(::BedrockTexture&& rhs);
+
+    MCAPI BedrockTexture(::BedrockTexture const& rhs);
+
     MCAPI ::std::optional<::ResourceLocationPair> const _getLayerLocation(
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition,
         ::cg::TextureSetLayerType                                      layerType
@@ -47,10 +48,19 @@ public:
         ::mce::TextureResourceService&          textureResourceService,
         ::cg::TextureSetImageDescription const& setDescription,
         ::IsMissingTexture                      isMissing,
-        ::std::string_view                      debugName
+        ::std::string_view
     ) const;
 
     MCAPI ::mce::ClientTexture const& getClientHandle(::cg::TextureSetLayerType textureType) const;
+
+    MCAPI ::std::shared_ptr<::BedrockTextureData const> const
+    getSharedBedrockTextureData(::cg::TextureSetLayerType textureType) const;
+
+    MCAPI ::mce::TextureDescription const& getTextureDescription() const;
+
+    MCAPI ::cg::TextureSetImageDescription getTextureSetImageDescription() const;
+
+    MCAPI ::IsMissingTexture isMissingTexture() const;
 
     MCAPI bool load(
         ::mce::TextureResourceService&                                 textureResourceService,
@@ -73,11 +83,26 @@ public:
         ::std::optional<::IsMissingTexture> optIsMissingTexture
     );
 
+    MCAPI void loadMetadata(
+        ::cg::TextureSetImageDescription const& textureSetImageDescription,
+        ::std::optional<::IsMissingTexture>     optIsMissingTexture
+    );
+
     MCAPI ::BedrockTexture& operator=(::BedrockTexture const& rhs);
 
     MCAPI void unload();
 
     MCAPI ~BedrockTexture();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCFOLD void* $ctor(::BedrockTexture&& rhs);
+
+    MCFOLD void* $ctor(::BedrockTexture const& rhs);
     // NOLINTEND
 
 public:

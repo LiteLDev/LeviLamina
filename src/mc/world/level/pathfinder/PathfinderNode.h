@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/pathfinder/NodeType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class PathfinderNode {
 public:
     // member variables
@@ -22,6 +30,37 @@ public:
 public:
     // prevent constructor by default
     PathfinderNode& operator=(PathfinderNode const&);
-    PathfinderNode(PathfinderNode const&);
     PathfinderNode();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PathfinderNode(::PathfinderNode const& node);
+
+    MCNAPI PathfinderNode(::BlockPos const& pos, ::NodeType type);
+
+    MCNAPI float distanceTo(::PathfinderNode* to) const;
+
+    MCNAPI float distanceToSqr(::PathfinderNode* to) const;
+
+    MCNAPI bool equals(::PathfinderNode* o);
+
+    MCNAPI float getCostMalus() const;
+
+    MCNAPI ::NodeType getType() const;
+
+    MCNAPI bool inOpenSet();
+
+    MCNAPI void setCostMalus(float costMalus);
+
+    MCNAPI void setMoveMalus(float moveMalus);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::PathfinderNode const& node);
+
+    MCNAPI void* $ctor(::BlockPos const& pos, ::NodeType type);
+    // NOLINTEND
 };

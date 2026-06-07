@@ -25,7 +25,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~PendingConditionals() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~PendingConditionals() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -36,7 +41,15 @@ public:
 
     MCAPI void
     _forAll(::std::function<void(::std::shared_ptr<::Bedrock::Threading::Details::PendingConditional>&)> pred);
+
+    MCAPI void tick();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

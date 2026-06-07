@@ -17,9 +17,17 @@ namespace Identity { class IEduAuth; }
 namespace Identity { struct ActiveDirectoryIdentityParameters; }
 namespace Social { class IEduMultiplayerHeadless; }
 namespace edu::auth { struct CredsLost; }
+class AbstractScene;
+class ActiveDirectorySystem;
 class IClientInstance;
+class IEDUDiscoveryService;
 class IMinecraftGame;
+class LessonInfo;
+class LibraryDeeplinkListener;
 class ServicePackSystem;
+class WebviewSystem;
+namespace EduCloud { struct IEduCloudSaveSystem; }
+namespace Social { class MultiplayerService; }
 // clang-format on
 
 class EDUSystems : public ::IEDUSystems, public ::edu::auth::CredentialsObserver {
@@ -95,10 +103,35 @@ public:
 
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity();
 
+    MCNAPI ::ActiveDirectorySystem& getActiveDirectorySystem();
+
+    MCNAPI ::LibraryDeeplinkListener* getDeepLinkListener() const;
+
+    MCNAPI ::IEDUDiscoveryService& getDiscoveryService();
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> getEduCloudSaveSystem();
+
+    MCNAPI ::LessonInfo& getLessonInfo() const;
+
+    MCNAPI void
+    getMultiplayerServiceListToRegister(::std::vector<::std::shared_ptr<::Social::MultiplayerService>>& inout);
+
+    MCNAPI ::std::string getReferrerId() const;
+
+    MCNAPI ::ServicePackSystem* getServicePackSystem() const;
+
+    MCNAPI ::WebviewSystem* getWebviewSystem();
+
     MCNAPI ::ServicePackSystem*
     initializeServicePackSystem(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> identity);
 
+    MCNAPI bool needsFramePriority(::AbstractScene* activeScene) const;
+
+    MCNAPI void onClientLevelExit();
+
     MCNAPI void onInitFinished();
+
+    MCNAPI void setDeepLinkListener(::std::unique_ptr<::LibraryDeeplinkListener> listener);
 
     MCNAPI void setReferrerId(::std::string referrerId);
 

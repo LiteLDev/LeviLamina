@@ -22,8 +22,6 @@ public:
         /*override*/;
 
     virtual ::BlockPos adjustSpawnPos(::BlockSource& region, ::BlockPos candidate) const /*override*/;
-
-    virtual ~OnGround() /*override*/ = default;
     // NOLINTEND
 
 public:

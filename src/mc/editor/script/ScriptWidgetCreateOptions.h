@@ -31,18 +31,12 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetCreateOptions(ScriptWidgetCreateOptions const&);
     ScriptWidgetCreateOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
-
-    MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
-
     MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
 
@@ -53,14 +47,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
-
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
     // NOLINTEND
 
 public:

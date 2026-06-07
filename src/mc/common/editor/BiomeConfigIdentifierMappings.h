@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    BiomeConfigIdentifierMappings& operator=(BiomeConfigIdentifierMappings const&);
     BiomeConfigIdentifierMappings();
 
 public:
@@ -27,9 +28,6 @@ public:
 
     MCNAPI ::Editor::Network::BiomeConfigIdentifierMappings&
     operator=(::Editor::Network::BiomeConfigIdentifierMappings&&);
-
-    MCNAPI ::Editor::Network::BiomeConfigIdentifierMappings&
-    operator=(::Editor::Network::BiomeConfigIdentifierMappings const&);
 
     MCNAPI ~BiomeConfigIdentifierMappings();
     // NOLINTEND

@@ -9,9 +9,9 @@ public:
     ::ll::UntypedStorage<4, 4> mUnkc441c0;
     ::ll::UntypedStorage<4, 4> mUnkcbbccb;
 #ifdef LL_PLAT_S
-    ::ll::UntypedStorage<8, 8> mUnkffb08b;
+    ::ll::UntypedStorage<8, 8> mUnk392379;
 #else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 8> mUnk49ab7f;
+    ::ll::UntypedStorage<8, 8> mUnkc46835;
 #endif
     // NOLINTEND
 

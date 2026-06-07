@@ -15,9 +15,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockTypeRegistryReadLock();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BlockTypeRegistryReadLock(::std::shared_ptr<::BlockTypeRegistryRWLock> locker);
+
     MCAPI ~BlockTypeRegistryReadLock();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::BlockTypeRegistryRWLock> locker);
     // NOLINTEND
 
 public:

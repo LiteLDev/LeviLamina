@@ -34,8 +34,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~ActiveLevelHardcoreModeFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -7,9 +7,15 @@
 
 class HUDContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~HUDContainerScreenValidator() /*override*/ = default;
+    MCAPI HUDContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

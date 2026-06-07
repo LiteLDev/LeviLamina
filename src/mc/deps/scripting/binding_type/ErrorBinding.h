@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct PropertyBinding; }
 // clang-format on
 
@@ -18,6 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk573a59;
     ::ll::UntypedStorage<8, 16> mUnkd85588;
+    ::ll::UntypedStorage<8, 24> mUnk30992f;
     ::ll::UntypedStorage<8, 24> mUnkd8aa0c;
     // NOLINTEND
 
@@ -30,8 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    ErrorBinding(::std::string name_, ::entt::meta_type type_, ::std::vector<::Scripting::PropertyBinding> properties_);
+    MCNAPI ErrorBinding(
+        ::std::string                               name_,
+        ::entt::meta_type                           type_,
+        ::std::vector<::Scripting::FunctionBinding> constructors_,
+        ::std::vector<::Scripting::PropertyBinding> properties_
+    );
 
     MCNAPI ~ErrorBinding();
     // NOLINTEND
@@ -39,8 +45,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string name_, ::entt::meta_type type_, ::std::vector<::Scripting::PropertyBinding> properties_);
+    MCNAPI void* $ctor(
+        ::std::string                               name_,
+        ::entt::meta_type                           type_,
+        ::std::vector<::Scripting::FunctionBinding> constructors_,
+        ::std::vector<::Scripting::PropertyBinding> properties_
+    );
     // NOLINTEND
 
 public:

@@ -33,8 +33,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void writeAsset(::PackWriteStrategy::FileName path, ::std::string const& fileContent) /*override*/;
-
-    virtual ~ZipPackWriteStrategy() /*override*/;
     // NOLINTEND
 
 public:
@@ -57,12 +55,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> archiveFileAccess,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> rawFileAccess
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

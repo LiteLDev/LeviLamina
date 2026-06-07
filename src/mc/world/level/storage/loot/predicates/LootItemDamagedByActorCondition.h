@@ -28,11 +28,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
+    virtual bool applies(::Random& context, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~LootItemDamagedByActorCondition() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::string const& getActorName() const;
     // NOLINTEND
 
 public:
@@ -44,7 +48,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $applies(::Random&, ::LootTableContext& context);
+    MCNAPI bool $applies(::Random& context, ::LootTableContext&);
 
     MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
 

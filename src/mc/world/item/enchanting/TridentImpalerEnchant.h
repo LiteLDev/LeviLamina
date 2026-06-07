@@ -21,8 +21,6 @@ public:
     virtual int getMaxLevel() const /*override*/;
 
     virtual float getDamageBonus(int level, ::Actor const& target, ::Actor const&) const /*override*/;
-
-    virtual ~TridentImpalerEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -26,9 +26,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VisualTreeProxyCallbacks& operator=(VisualTreeProxyCallbacks const&);
+    VisualTreeProxyCallbacks();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI VisualTreeProxyCallbacks(::VisualTreeProxyCallbacks const&);
+
     MCAPI ~VisualTreeProxyCallbacks();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::VisualTreeProxyCallbacks const&);
     // NOLINTEND
 
 public:

@@ -21,6 +21,7 @@ class AsynchronousIPResolver;
 class RakNetConnector;
 struct PingedCompatibleServer;
 struct PortPair;
+struct ServerSupportedAuthenticationTypes;
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
@@ -55,10 +56,12 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnk8d0484;
         ::ll::UntypedStorage<1, 1>  mUnk43329d;
         ::ll::UntypedStorage<1, 1>  mUnka62802;
+        ::ll::UntypedStorage<1, 2>  mUnkc9d2fb;
         // NOLINTEND
 
     public:
         // prevent constructor by default
+        AnnounceServerData& operator=(AnnounceServerData const&);
         AnnounceServerData();
 
     public:
@@ -67,17 +70,16 @@ public:
         MCNAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
 
         MCNAPI AnnounceServerData(
-            ::std::string const& playerName,
-            ::std::string const& worldName,
-            ::GameType           gameType,
-            int                  numPlayers,
-            int                  maxNumPlayers,
-            bool                 isJoinableThroughServerScreen,
-            bool                 isEditorWorld,
-            bool                 isHardcore
+            ::std::string const&                 playerName,
+            ::std::string const&                 worldName,
+            ::GameType                           gameType,
+            int                                  numPlayers,
+            int                                  maxNumPlayers,
+            bool                                 isJoinableThroughServerScreen,
+            bool                                 isEditorWorld,
+            bool                                 isHardcore,
+            ::ServerSupportedAuthenticationTypes supportedAuth
         );
-
-        MCNAPI ::RakNetServerLocator::AnnounceServerData& operator=(::RakNetServerLocator::AnnounceServerData const&);
 
         MCNAPI ~AnnounceServerData();
         // NOLINTEND
@@ -88,14 +90,15 @@ public:
         MCNAPI void* $ctor(::RakNetServerLocator::AnnounceServerData const& announceData);
 
         MCNAPI void* $ctor(
-            ::std::string const& playerName,
-            ::std::string const& worldName,
-            ::GameType           gameType,
-            int                  numPlayers,
-            int                  maxNumPlayers,
-            bool                 isJoinableThroughServerScreen,
-            bool                 isEditorWorld,
-            bool                 isHardcore
+            ::std::string const&                 playerName,
+            ::std::string const&                 worldName,
+            ::GameType                           gameType,
+            int                                  numPlayers,
+            int                                  maxNumPlayers,
+            bool                                 isJoinableThroughServerScreen,
+            bool                                 isEditorWorld,
+            bool                                 isHardcore,
+            ::ServerSupportedAuthenticationTypes supportedAuth
         );
         // NOLINTEND
 
@@ -118,6 +121,14 @@ public:
         NatHolePuncherFunctor& operator=(NatHolePuncherFunctor const&);
         NatHolePuncherFunctor(NatHolePuncherFunctor const&);
         NatHolePuncherFunctor();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI bool punch(::std::function<bool()> lanDiscoveryPortPuncher, ::std::function<bool()> gamePortPuncher);
+#endif
+        // NOLINTEND
     };
 
     class PingRateRecorder {
@@ -140,6 +151,12 @@ public:
         PingRateRecorder& operator=(PingRateRecorder const&);
         PingRateRecorder(PingRateRecorder const&);
         PingRateRecorder();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool pingEnd(uint const& endTime, int ipVersion);
+        // NOLINTEND
     };
 
     struct StateChangeRequestData {
@@ -147,7 +164,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4>  mUnkf1839a;
-        ::ll::UntypedStorage<8, 80> mUnkaf330a;
+        ::ll::UntypedStorage<8, 88> mUnkaf330a;
         ::ll::UntypedStorage<4, 8>  mUnk315143;
         // NOLINTEND
 
@@ -174,7 +191,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnke8e0f9;
+        ::ll::UntypedStorage<8, 88> mUnke8e0f9;
         ::ll::UntypedStorage<4, 4>  mUnk5cca28;
         ::ll::UntypedStorage<4, 8>  mUnk163ab6;
         // NOLINTEND
@@ -201,33 +218,33 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk471f4b;
-    ::ll::UntypedStorage<8, 64> mUnkde3b17;
-    ::ll::UntypedStorage<8, 64> mUnkf988f6;
-    ::ll::UntypedStorage<8, 8>  mUnk2218c2;
-    ::ll::UntypedStorage<8, 16> mUnk5f4202;
-    ::ll::UntypedStorage<8, 24> mUnkd55261;
-    ::ll::UntypedStorage<8, 64> mUnk2876ef;
-    ::ll::UntypedStorage<8, 24> mUnkb30369;
-    ::ll::UntypedStorage<1, 1>  mUnkfa3d98;
-    ::ll::UntypedStorage<4, 4>  mUnk7ebf28;
-    ::ll::UntypedStorage<4, 8>  mUnkc145b0;
-    ::ll::UntypedStorage<4, 4>  mUnk3962a5;
-    ::ll::UntypedStorage<4, 4>  mUnk3d87f2;
-    ::ll::UntypedStorage<8, 24> mUnk3bbb85;
-    ::ll::UntypedStorage<8, 24> mUnk87606a;
-    ::ll::UntypedStorage<8, 40> mUnk26b996;
-    ::ll::UntypedStorage<1, 1>  mUnk2c445a;
-    ::ll::UntypedStorage<8, 64> mUnkc78041;
-    ::ll::UntypedStorage<8, 32> mUnkc98a78;
-    ::ll::UntypedStorage<4, 4>  mUnk8bcebb;
-    ::ll::UntypedStorage<8, 80> mUnkd855a4;
-    ::ll::UntypedStorage<8, 80> mUnk518100;
-    ::ll::UntypedStorage<4, 4>  mUnk5542ff;
-    ::ll::UntypedStorage<4, 4>  mUnkf403ed;
-    ::ll::UntypedStorage<8, 96> mUnk8970d6;
-    ::ll::UntypedStorage<4, 4>  mUnk8d92b1;
-    ::ll::UntypedStorage<8, 40> mUnk7ba1da;
+    ::ll::UntypedStorage<8, 64>  mUnk471f4b;
+    ::ll::UntypedStorage<8, 64>  mUnkde3b17;
+    ::ll::UntypedStorage<8, 64>  mUnkf988f6;
+    ::ll::UntypedStorage<8, 8>   mUnk2218c2;
+    ::ll::UntypedStorage<8, 16>  mUnk5f4202;
+    ::ll::UntypedStorage<8, 24>  mUnkd55261;
+    ::ll::UntypedStorage<8, 64>  mUnk2876ef;
+    ::ll::UntypedStorage<8, 24>  mUnkb30369;
+    ::ll::UntypedStorage<1, 1>   mUnkfa3d98;
+    ::ll::UntypedStorage<4, 4>   mUnk7ebf28;
+    ::ll::UntypedStorage<4, 8>   mUnkc145b0;
+    ::ll::UntypedStorage<4, 4>   mUnk3962a5;
+    ::ll::UntypedStorage<4, 4>   mUnk3d87f2;
+    ::ll::UntypedStorage<8, 24>  mUnk3bbb85;
+    ::ll::UntypedStorage<8, 24>  mUnk87606a;
+    ::ll::UntypedStorage<8, 40>  mUnk26b996;
+    ::ll::UntypedStorage<1, 1>   mUnk2c445a;
+    ::ll::UntypedStorage<8, 64>  mUnkc78041;
+    ::ll::UntypedStorage<8, 32>  mUnkc98a78;
+    ::ll::UntypedStorage<4, 4>   mUnk8bcebb;
+    ::ll::UntypedStorage<8, 80>  mUnkd855a4;
+    ::ll::UntypedStorage<8, 80>  mUnk518100;
+    ::ll::UntypedStorage<4, 4>   mUnk5542ff;
+    ::ll::UntypedStorage<4, 4>   mUnkf403ed;
+    ::ll::UntypedStorage<8, 104> mUnk8970d6;
+    ::ll::UntypedStorage<4, 4>   mUnk8d92b1;
+    ::ll::UntypedStorage<8, 40>  mUnk7ba1da;
     // NOLINTEND
 
 public:
@@ -242,14 +259,15 @@ public:
     virtual ~RakNetServerLocator() /*override*/;
 
     virtual void startAnnouncingServer(
-        ::std::string const& playerName,
-        ::std::string const& worldName,
-        ::GameType           gameType,
-        int                  numPlayers,
-        int                  maxNumPlayers,
-        bool                 isJoinableThroughServerScreen,
-        bool                 isEditorWorld,
-        bool                 isHardcore
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
     ) /*override*/;
 
     virtual void stopAnnouncingServer() /*override*/;
@@ -313,7 +331,7 @@ public:
         ::PortPair                                newPorts
     );
 
-    MCNAPI ::std::string _getHostGuid(::std::string const& address, int port);
+    MCNAPI ::std::string _getHostGuid(::std::string const& address, int);
 
     MCNAPI void _getServerOriginalAddress(::std::string& originalAddressToSet, ::std::string const& ip);
 
@@ -326,14 +344,14 @@ public:
 
     MCNAPI void _initializeBroadcastAddresses();
 
-    MCNAPI void _onPingSend(::std::string const& guid, ::std::string const& addr, int ipVersion);
+    MCNAPI void _onPingSend(::std::string const& guid, ::std::string const& ipVersion, int);
 
     MCNAPI bool
     _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
 
-#ifdef LL_PLAT_C
-    MCNAPI void _punchHoles();
-#endif
+    MCNAPI bool _pingServerV4(::std::string const& address, int port);
+
+    MCNAPI bool _pingServerV6(::std::string const& address, int port);
 
     MCNAPI void _setPingResponder(::RakNetServerLocator::AnnounceServerData const& serverData);
 
@@ -386,14 +404,15 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $startAnnouncingServer(
-        ::std::string const& playerName,
-        ::std::string const& worldName,
-        ::GameType           gameType,
-        int                  numPlayers,
-        int                  maxNumPlayers,
-        bool                 isJoinableThroughServerScreen,
-        bool                 isEditorWorld,
-        bool                 isHardcore
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           gameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth
     );
 
     MCNAPI void $stopAnnouncingServer();

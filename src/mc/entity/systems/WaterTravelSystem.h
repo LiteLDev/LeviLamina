@@ -11,33 +11,32 @@
 // clang-format off
 class StrictEntityContext;
 struct DolphinFlagComponent;
-struct InterpolateMovementNeededComponent;
 struct MobTravelComponent;
 struct MovementAttributesComponent;
 struct MovementSpeedComponent;
 struct OnGroundFlagComponent;
 struct PlayerComponent;
 struct SwimSpeedMultiplierComponent;
-struct WaterTravelFlagComponent;
+struct TickingSystemWithInfo;
 struct WaterWalkSpeedEnchantComponent;
 // clang-format on
 
-class WaterTravelSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void tickWaterTravelSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent const, ::WaterTravelFlagComponent const>,
-            ::MovementAttributesComponent const,
-            ::MovementSpeedComponent const,
-            ::SwimSpeedMultiplierComponent const,
-            ::WaterWalkSpeedEnchantComponent const,
-            ::MobTravelComponent,
-            ::Optional<::DolphinFlagComponent const>,
-            ::Optional<::OnGroundFlagComponent const>>               view,
-        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>> players
-    );
-    // NOLINTEND
-};
+namespace WaterTravelSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createWaterTravelSystem();
+
+MCAPI void doTickWaterTravelSystem(
+    ::StrictEntityContext&                                       entity,
+    ::MovementAttributesComponent const&                         attributesComponent,
+    ::MovementSpeedComponent const&                              movementSpeedComponent,
+    ::SwimSpeedMultiplierComponent const&                        swimSpeedMultiplierComponent,
+    ::WaterWalkSpeedEnchantComponent const&                      waterWalkSpeedEnchantComponent,
+    ::MobTravelComponent&                                        mobTravelComponent,
+    ::Optional<::DolphinFlagComponent const>                     dolphinFlagComponent,
+    ::Optional<::OnGroundFlagComponent const>                    onGroundFlagComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>> players
+);
+// NOLINTEND
+
+} // namespace WaterTravelSystem

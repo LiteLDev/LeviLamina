@@ -54,8 +54,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack&&);
-
     MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
 
     MCAPI ScriptItemStack(
@@ -76,6 +74,8 @@ public:
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value
     ) const;
+
+    MCAPI void clearDynamicProperties(::Scripting::ContextConfig const& contextConfig);
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
     clone(::Scripting::WeakLifetimeScope scope) const;
@@ -101,6 +101,10 @@ public:
 
     MCAPI int getDynamicPropertyTotalByteCount(::Scripting::ContextConfig const& contextConfig);
 
+    MCFOLD ::ItemInstance const& getItemInstance() const;
+
+    MCFOLD ::ItemInstance& getItemInstance();
+
     MCAPI ::Scripting::Result<::std::string, ::Scripting::EngineError> getLocalizationKey() const;
 
     MCAPI ::std::vector<::std::string> getLore() const;
@@ -115,20 +119,14 @@ public:
 
     MCAPI ::std::string getTypeId() const;
 
-    MCAPI bool hasComponent(
-        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents> components,
-        ::std::string_view                                               id,
-        bool                                                             includeCustom
-    );
-
     MCAPI bool hasTag(::std::string const& tag) const;
+
+    MCAPI bool isStackableWith(::ScriptModuleMinecraft::ScriptItemStack const& other) const;
 
     MCAPI bool matches(
         ::std::string                                                                                  itemName,
         ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> properties
     ) const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack&&);
 
     MCAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack const&);
 
@@ -160,6 +158,8 @@ public:
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
             loreVariantList
     );
+
+    MCAPI void setLoreV010(::std::optional<::std::vector<::std::string>> const& loreList);
 
     MCAPI ::Scripting::Result_deprecated<void> setNameTag(::std::optional<::std::string> nameTag);
 
@@ -198,8 +198,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
 
     MCAPI void* $ctor(

@@ -16,18 +16,25 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AgentActionEventPacketPayload(AgentActionEventPacketPayload const&);
-    AgentActionEventPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AgentActionEventPacketPayload& operator=(::AgentActionEventPacketPayload&&);
+    MCAPI AgentActionEventPacketPayload();
 
-    MCAPI ::AgentActionEventPacketPayload& operator=(::AgentActionEventPacketPayload const&);
+    MCAPI AgentActionEventPacketPayload(
+        ::std::string const& requestId,
+        ::AgentActionType    action,
+        ::Json::Value const& response
+    );
 
     MCAPI ~AgentActionEventPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::std::string const& requestId, ::AgentActionType action, ::Json::Value const& response);
     // NOLINTEND
 
 public:

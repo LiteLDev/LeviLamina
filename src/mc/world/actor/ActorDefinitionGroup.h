@@ -6,11 +6,11 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/LoadDataRefVariant.h"
+#include "mc/deps/puv/LoadResultBetaVariant.h"
 #include "mc/deps/puv/puv_load_data/LoadResultWithTiming.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/resources/JsonBetaState.h"
-#include "mc/world/actor/ActorDefinitionParseStatus.h"
 #include "mc/world/actor/ActorDefinitionPtr.h"
 #include "mc/world/level/storage/Experiments.h"
 
@@ -18,6 +18,7 @@
 // clang-format off
 class ActorComponentFactory;
 class ActorDefinition;
+class ActorMigratedDefinitionFactory;
 class IMinecraftEventing;
 class Level;
 class LinkedAssetValidator;
@@ -29,8 +30,8 @@ class SemVersionView;
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Puv { class Input; }
-namespace SharedTypes::v1_26_10 { struct ActorDefinitions; }
-namespace SharedTypes::v1_26_10 { struct ActorDocument; }
+namespace SharedTypes::Beta { struct ActorDocument; }
+namespace SharedTypes::v1_26_20 { struct ActorDocument; }
 // clang-format on
 
 class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -82,8 +83,6 @@ public:
         // NOLINTEND
     };
 
-    using ActorDefinitionList = ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>>;
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -123,7 +122,8 @@ public:
 
     MCAPI void _getResources(::Level& level);
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_26_10::ActorDocument> _initActorDefinition(
+    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
+    _initActorDefinition(
         ::Puv::Input const&  input,
         ::SemVersion const&  formatVersion,
         ::PackLoadContext&   packLoadContext,
@@ -143,28 +143,39 @@ public:
         ::LogArea                            logArea
     );
 
-    MCAPI ::ActorDefinitionParseStatus _loadTemplates(
-        ::Level&                                                                        level,
-        ::std::string const&                                                            base,
-        ::std::unordered_map<::std::string, ::SharedTypes::v1_26_10::ActorDefinitions>& componentsGroup,
-        ::SemVersion const&                                                             formatVersion,
-        ::PackLoadContext const&                                                        packLoadContext,
-        ::JsonBetaState                                                                 useBetaFeatures
+    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
+    _loadDefinitionFromJSON(
+        ::SemVersion const&  formatVersion,
+        ::PackLoadContext&   packLoadContext,
+        ::std::string const& relativeResourceFilepath,
+        ::Json::Value        minecraftEntityNode,
+        ::JsonBetaState      useBetaFeatures,
+        ::std::string const& identifier,
+        ::Level&             level,
+        ::LogArea            logArea
     );
+
+    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
+    _loadEntityNode(
+        ::Puv::Input const&                     input,
+        ::SemVersion const&                     formatVersion,
+        ::PackLoadContext const&                packLoadContext,
+        ::JsonBetaState                         useBetaFeatures,
+        ::ActorMigratedDefinitionFactory const& factory
+    ) const;
 
     MCAPI bool _parseEntityJsonFromActorDocument(
-        ::SharedTypes::v1_26_10::ActorDocument& actorDocument,
-        ::std::unique_ptr<::ActorDefinition>&   def,
-        ::SemVersion const&                     formatVersion,
-        ::PackLoadContext&                      packLoadContext,
-        ::std::string const&                    relativeResourceFilepath,
-        ::JsonBetaState                         useBetaFeatures,
-        ::std::string const&                    identifier,
-        ::Level&                                level,
-        ::LogArea                               logArea
+        ::Puv::LoadDataRefVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
+                                              actorDocumentRefVariant,
+        ::std::unique_ptr<::ActorDefinition>& def,
+        ::SemVersion const&                   formatVersion,
+        ::PackLoadContext&                    packLoadContext,
+        ::std::string const&                  relativeResourceFilepath,
+        ::JsonBetaState                       useBetaFeatures,
+        ::std::string const&                  identifier,
+        ::Level&                              level,
+        ::LogArea                             logArea
     );
-
-    MCAPI void _removeRef(::ActorDefinitionPtr& ptr);
 
     MCAPI void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
 
@@ -180,6 +191,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void loadActorDefinitionFormatVersion(::Json::Value& root, ::SemVersion& formatVersion);
+
     MCAPI static bool loadActorDefinitionIdentifier(
         ::Json::Value const& root,
         ::SemVersion const&  formatVersion,

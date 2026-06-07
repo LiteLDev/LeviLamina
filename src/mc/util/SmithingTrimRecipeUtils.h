@@ -23,6 +23,8 @@ MCNAPI bool doesItemHaveResultingTrim(
 MCNAPI bool
 validateAdditionIngredient(::Level const& level, ::RecipeIngredient additionIngredient, ::std::string const& recipeId);
 
+MCNAPI bool validateBaseIngredient(::RecipeIngredient baseIngredient, ::std::string const& recipeId);
+
 MCNAPI bool
 validateTemplateIngredient(::Level const& level, ::RecipeIngredient templateIngredient, ::std::string const& recipeId);
 // NOLINTEND

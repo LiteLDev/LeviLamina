@@ -12,18 +12,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                       mRegexStr;
     ::ll::TypedStorage<8, 8, uint64>                                               mMinSize;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~StringConstraint();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace cereal::internal

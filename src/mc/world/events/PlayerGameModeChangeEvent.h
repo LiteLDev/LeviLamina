@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<4, 4, ::GameType>       mFromGameMode;
     ::ll::TypedStorage<4, 4, ::GameType>       mToGameMode;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerGameModeChangeEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

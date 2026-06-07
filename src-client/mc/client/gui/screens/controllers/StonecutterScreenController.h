@@ -64,6 +64,8 @@ public:
 
     MCAPI void _changeLeftTab(int dir);
 
+    MCAPI ::std::string _getStoneHoverText(int collectionIndex) const;
+
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();

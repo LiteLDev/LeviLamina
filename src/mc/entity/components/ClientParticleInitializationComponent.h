@@ -13,16 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ParticleInitializationData>> mParticleInitializationData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientParticleInitializationComponent& operator=(ClientParticleInitializationComponent const&);
-    ClientParticleInitializationComponent(ClientParticleInitializationComponent const&);
-    ClientParticleInitializationComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ClientParticleInitializationComponent& operator=(::ClientParticleInitializationComponent&&);
-    // NOLINTEND
 };

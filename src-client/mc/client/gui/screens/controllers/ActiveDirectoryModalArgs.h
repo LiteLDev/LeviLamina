@@ -19,13 +19,12 @@ public:
 public:
     // prevent constructor by default
     ActiveDirectoryModalArgs& operator=(ActiveDirectoryModalArgs const&);
-    ActiveDirectoryModalArgs(ActiveDirectoryModalArgs const&);
     ActiveDirectoryModalArgs();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActiveDirectoryModalArgs(::ActiveDirectoryModalArgs&&);
+    MCAPI ActiveDirectoryModalArgs(::ActiveDirectoryModalArgs const&);
 
     MCAPI ~ActiveDirectoryModalArgs();
     // NOLINTEND
@@ -33,7 +32,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActiveDirectoryModalArgs&&);
+    MCAPI void* $ctor(::ActiveDirectoryModalArgs const&);
     // NOLINTEND
 
 public:

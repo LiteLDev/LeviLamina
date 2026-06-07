@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class WindowState;
+namespace Bedrock { class ActivationArguments; }
 namespace Bedrock { class ApplicationInitHandler; }
 namespace MainGameCore { class WndProc; }
 // clang-format on
@@ -24,11 +25,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WinMain_PC() /*override*/ = default;
+    virtual ~WinMain_PC() /*override*/;
 
     virtual ::std::unique_ptr<::MainGameCore::WndProc> _createWndProcInstance() /*override*/;
 
-    virtual void _prepareForWindowCreation() /*override*/;
+    virtual void _prepareForWindowCreation(::Bedrock::ActivationArguments const&) /*override*/;
 
     virtual ::tagWNDCLASSEXW _createWindowClass(::HINSTANCE__* hInstance) /*override*/;
 
@@ -40,11 +41,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::MainGameCore::WndProc> $_createWndProcInstance();
 
-    MCAPI void $_prepareForWindowCreation();
+    MCAPI void $_prepareForWindowCreation(::Bedrock::ActivationArguments const&);
 
     MCAPI ::tagWNDCLASSEXW $_createWindowClass(::HINSTANCE__* hInstance);
 

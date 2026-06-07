@@ -167,12 +167,16 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI bool canModify() const;
+
+    MCAPI void clearSaveTag();
 #endif
 
     MCAPI bool getBool() const;
 
 #ifdef LL_PLAT_C
     MCAPI bool getBool(::InputMode inputMode) const;
+
+    MCAPI ::std::string const& getCaptionId() const;
 
     MCAPI float getFloat() const;
 
@@ -182,25 +186,49 @@ public:
 
     MCAPI float getFloatMin() const;
 
+    MCAPI ::OptionID getID() const;
+
     MCAPI int getInt() const;
 
     MCAPI int64 getInt64() const;
+
+    MCAPI int getIntMax() const;
+
+    MCAPI int getIntMin() const;
+
+    MCAPI ::OptionOwnerType getOptionOwnerType() const;
+
+    MCAPI ::OptionResetFlags getOptionResetFlags() const;
+
+    MCAPI ::std::string const& getSaveTag() const;
 
     MCAPI ::std::string const& getString() const;
 
     MCAPI ::std::vector<::std::string> getStringList() const;
 
-    MCAPI uint64 getUInt64() const;
+    MCAPI ::std::string const& getTelemetryProperty() const;
+
+    MCAPI ::Social::Events::PrivacyTagEnterprise getTelemetryTag() const;
+
+    MCAPI ::OptionType getType() const;
 
     MCAPI ::std::unordered_map<int, ::std::string> const& getValueNameMap() const;
 
     MCAPI ::std::vector<int> const& getValues() const;
 
-    MCAPI ::glm::vec3 getVec3() const;
+    MCAPI bool hasOverrideSource() const;
+
+    MCAPI bool isDefaultValue() const;
 
     MCAPI bool isDefaultValue(::InputMode inputMode) const;
 
     MCAPI bool isNewVersion(::GameVersion currentVersion) const;
+
+    MCAPI bool isType(::OptionType type) const;
+
+    MCAPI void notifyOptionValueChanged(bool saveOptionChange);
+
+    MCAPI void notifyOptionValueChanged(::InputMode inputMode, bool saveOptionChange);
 #endif
 
     MCAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
@@ -220,9 +248,27 @@ public:
     MCAPI ::Option&
     registerTelemetryProperty(::std::string const& propertyName, ::Social::Events::PrivacyTagEnterprise propertyTag);
 
+    MCAPI void reset();
+
+    MCAPI void reset(::InputMode inputMode);
+
+    MCAPI void resetForced(bool saveOptionChange);
+
     MCAPI void set(int value);
 
+    MCAPI void set(::InputMode inputmode, float value);
+
+    MCAPI void set(::InputMode inputmode, bool value);
+
+    MCAPI void setCoerceSaveValueCallback(::std::function<int(int)> callback);
+
+    MCAPI void setCoerceValueCallback(::std::function<::std::string(::std::string const&)> f);
+
+    MCAPI void setCoerceValueCallback(::std::function<bool(bool)> f);
+
     MCAPI void setOverrideSource(::Option* overrideSource);
+
+    MCAPI void setRequestSaveCallback(::std::function<void(bool)> callback);
 
     MCAPI void toggle();
 #endif
@@ -259,7 +305,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

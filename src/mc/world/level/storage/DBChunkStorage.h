@@ -7,9 +7,10 @@
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ActorDigestFormat.h"
 #include "mc/world/level/chunk/ChunkSource.h"
+#include "mc/world/level/chunk/LevelChunk.h"
+#include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"
 #include "mc/world/level/storage/DBChunkStorageKey.h"
-#include "mc/world/level/storage/db_helpers/Category.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -160,22 +161,7 @@ public:
         ::std::unique_ptr<::ChunkSource> parent,
         ::DBStorage&                     storage,
         ::Scheduler&                     scheduler,
-        ::Experiments const&             experiments
-    );
-
-    MCAPI void _batchDelete(
-        ::LevelStorageWriteBatch& batch,
-        ::std::string const&      key,
-        ::DBHelpers::Category     category,
-        ::std::string_view        reason
-    );
-
-    MCAPI void _batchPut(
-        ::LevelStorageWriteBatch& batch,
-        ::std::string const&      key,
-        ::std::string&&           buffer,
-        ::DBHelpers::Category     category,
-        ::std::string_view        reason
+        ::Experiments const&
     );
 
     MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _cacheSeamlessChunkBlendingData(
@@ -187,9 +173,19 @@ public:
     MCAPI bool
     _checkSubChunksUseAbsoluteIndices(::DBChunkStorageKey key, ::LevelChunk const& lc, bool& flatworldsNeedFixup) const;
 
+    MCAPI bool _deleteChunkData(::ChunkPos const& pos, ::LevelStorageWriteBatch& batch);
+
     MCAPI void _deleteChunkEntityData(::DBChunkStorageKey const& key, ::LevelStorageWriteBatch& batch);
 
     MCAPI void _deserializeIndependentActorStorage(::LevelChunk& lc, ::std::string const& storageKeyDigestBuffer);
+
+    MCAPI ::std::shared_ptr<::LevelStorageWriteBatch> _getBuffer();
+
+    MCAPI ::LevelChunk::Neighbors _getChunkNeighbors(::ChunkPos lc, ::DimensionType dimensionType);
+
+    MCAPI ::std::optional<::LevelChunkFormat> _getLevelChunkFormat(::std::string_view prefix, ::std::string& buffer);
+
+    MCAPI ::LevelChunk::Neighbors _getNeighborsUsedForBlending(::ChunkPos chunkPos, ::DimensionType dimensonType);
 
     MCAPI bool _hasChunk(::DBChunkStorageKey const& key);
 
@@ -236,6 +232,8 @@ public:
     );
 
     MCAPI void _writeDiscardChunksBatch();
+
+    MCAPI void freeCaches();
     // NOLINTEND
 
 public:
@@ -243,8 +241,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::string> _deserializeChunkActorStorageKeys(::IDataInput& digestStream);
 
-    MCAPI static ::ConsoleChunkBlender::BlenderMode
-    _getBlenderMode(::LevelChunk const& lc, ::Experiments const& experiments);
+    MCAPI static ::ConsoleChunkBlender::BlenderMode _getBlenderMode(::LevelChunk const& lc, ::Experiments const&);
 
     MCAPI static ::std::string deserializeActorStorageToString(
         bool                                                      hasActorDigestVersionTag,
@@ -264,12 +261,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::ChunkSource> parent,
-        ::DBStorage&                     storage,
-        ::Scheduler&                     scheduler,
-        ::Experiments const&             experiments
-    );
+    MCAPI void*
+    $ctor(::std::unique_ptr<::ChunkSource> parent, ::DBStorage& storage, ::Scheduler& scheduler, ::Experiments const&);
     // NOLINTEND
 
 public:
@@ -324,7 +317,7 @@ public:
 
     MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCAPI void $hintDiscardBatchBegin();
+    MCFOLD void $hintDiscardBatchBegin();
 
     MCAPI void $hintDiscardBatchEnd();
 

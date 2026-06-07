@@ -93,6 +93,8 @@ public:
 
         MCAPI GameControllerMappingData(::GameControllerMapper::GameControllerMappingData&&);
 
+        MCAPI void clear();
+
         MCAPI ::GameControllerMapper::GameControllerMappingData&
         operator=(::GameControllerMapper::GameControllerMappingData&&);
 
@@ -158,10 +160,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setMapping(
-        ::InputEventQueue&      eventQueue,
-        ::BindingFactory const& bindingFactory,
-        ::InputMapping const&   inputMapping,
-        int                     controllerId
+        ::InputEventQueue&      inputMapping,
+        ::BindingFactory const& controllerId,
+        ::InputMapping const&,
+        int
     ) /*override*/;
 
     virtual void clearMapping(int controllerId) /*override*/;
@@ -178,8 +180,6 @@ public:
     virtual ::std::vector<::std::weak_ptr<::IGameController>> _getGameControllers() = 0;
 
     virtual ::GameControllerInputMapping const& getGameControllerMapping(::InputMapping const& inputMapping) = 0;
-
-    virtual ~GameControllerMapper() /*override*/;
     // NOLINTEND
 
 public:
@@ -228,20 +228,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMapping(
-        ::InputEventQueue&      eventQueue,
-        ::BindingFactory const& bindingFactory,
-        ::InputMapping const&   inputMapping,
-        int                     controllerId
-    );
+    MCAPI void
+    $setMapping(::InputEventQueue& inputMapping, ::BindingFactory const& controllerId, ::InputMapping const&, int);
 
     MCAPI void $clearMapping(int controllerId);
 

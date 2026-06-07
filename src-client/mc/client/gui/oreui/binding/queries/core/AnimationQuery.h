@@ -33,12 +33,6 @@ public:
     AnimationQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AnimationQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AnimationQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);

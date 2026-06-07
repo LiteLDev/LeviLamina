@@ -40,6 +40,8 @@ public:
 
     MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
 
+    MCAPI uint64 findStateIndex(::std::string const& name, bool missingIsOkay, uint64 defaultState) const;
+
     MCAPI void resolveTransitionStateIndices();
 
     MCAPI void updateActiveParticleState(
@@ -52,9 +54,9 @@ public:
 
     MCAPI void updateActiveSoundEffectState(
         ::RenderParams& renderParams,
-        int,
-        int                               newStateIndex,
-        ::ActorAnimationControllerPlayer& player
+        int             newStateIndex,
+        int             player,
+        ::ActorAnimationControllerPlayer&
     ) const;
 
     MCAPI ~ActorAnimationController();

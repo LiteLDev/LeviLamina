@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
@@ -32,12 +33,15 @@ public:
     MCAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
 
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
-
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
 
     MCAPI ~Metadata();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -15,6 +15,7 @@ class ItemStack;
 class Player;
 class ProjectileItemComponent;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct ThrowableItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -33,24 +34,34 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ThrowableItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~ThrowableItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ThrowableItemComponent(::SharedTypes::v1_20_50::ThrowableItemComponent component);
+
+    MCAPI explicit ThrowableItemComponent(bool doSwing);
+
     MCAPI void _doThrow(
         ::ItemStack&                     item,
         ::Player&                        player,
         ::ProjectileItemComponent const& projectileComponent,
         float                            power
     ) const;
+
+    MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+
+    MCAPI void use(bool& result, ::ItemStack& item, ::Player& player) const;
     // NOLINTEND
 
 public:
@@ -63,6 +74,14 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::ThrowableItemComponent component);
+
+    MCAPI void* $ctor(bool doSwing);
     // NOLINTEND
 
 public:

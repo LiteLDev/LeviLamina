@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsWorldEditorGameRulesQueriesFacet() /*override*/ = default;
+    virtual ~RealmsWorldEditorGameRulesQueriesFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -77,9 +77,9 @@ public:
 
     MCAPI bool getSleepSkipNight() const;
 
-    MCAPI int getSleepSkipNightPercent() const;
+    MCFOLD int getSleepSkipNightPercent() const;
 
-    MCAPI bool getTNTExplodes() const;
+    MCFOLD bool getTNTExplodes() const;
 
     MCFOLD bool getTileDrops() const;
     // NOLINTEND
@@ -97,9 +97,15 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCFOLD bool $update();
     // NOLINTEND
 
 public:

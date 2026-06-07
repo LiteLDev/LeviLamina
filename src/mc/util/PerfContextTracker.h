@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class PerfContextTrackerReport;
+struct FrameAnomalyDetectorSummary;
 // clang-format on
 
 class PerfContextTracker {
@@ -33,31 +34,14 @@ public:
         // prevent constructor by default
         Duration& operator=(Duration const&);
         Duration(Duration const&);
+        Duration();
 
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Duration();
+        virtual ~Duration() = default;
 
         virtual void reset();
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Duration();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -128,8 +112,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual void reset() /*override*/;
-
-        virtual ~Timer() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -155,7 +137,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk2b7e27;
     ::ll::UntypedStorage<8, 40>  mUnkeefdc7;
     ::ll::UntypedStorage<8, 288> mUnk7e0308;
-    ::ll::UntypedStorage<8, 200> mUnk8e863b;
+    ::ll::UntypedStorage<8, 256> mUnk8e863b;
     ::ll::UntypedStorage<4, 4>   mUnkf2b035;
     ::ll::UntypedStorage<4, 4>   mUnke5955e;
     ::ll::UntypedStorage<4, 4>   mUnk4f5d25;
@@ -163,28 +145,47 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnkccc016;
     ::ll::UntypedStorage<4, 4>   mUnk66f8d6;
     ::ll::UntypedStorage<4, 4>   mUnk800a03;
+    ::ll::UntypedStorage<8, 64>  mUnk39cda4;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     PerfContextTracker& operator=(PerfContextTracker const&);
     PerfContextTracker(PerfContextTracker const&);
-    PerfContextTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _reset();
+    MCNAPI PerfContextTracker();
 
 #ifdef LL_PLAT_C
-    MCNAPI void _resetStats();
-
     MCNAPI bool _tryBeginContext(::std::string const& contextName, ::std::chrono::steady_clock::time_point const& now);
 
     MCNAPI void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
 
     MCNAPI bool _tryRestartContext(::std::chrono::steady_clock::time_point const& now);
 
+    MCNAPI void clear();
+#endif
+
+    MCNAPI void incrementPacketReceivedInfo(uint packetSize);
+
+    MCNAPI void incrementPacketSentInfo(uint packetSize);
+
+#ifdef LL_PLAT_C
+    MCNAPI void onAppResume();
+
+    MCNAPI void onAppSuspend();
+
+    MCNAPI void setActorRenderCount(int actorRenderCount);
+
+    MCNAPI void
+    setFrameAnomalyEventing(::std::function<::std::optional<::FrameAnomalyDetectorSummary>()> summaryProvider);
+#endif
+
+    MCNAPI void setMobCount(uint mobCount);
+
+#ifdef LL_PLAT_C
     MCNAPI void tick(
         ::std::string const& currentContext,
         uint                 clientCount,
@@ -194,11 +195,25 @@ public:
             reporter
     );
 #endif
+
+    MCNAPI ~PerfContextTracker();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::PerfContextTracker& getInstance();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

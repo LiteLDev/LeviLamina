@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptGameRuleChangeAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -29,9 +30,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptGameRuleChangeAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptGameRuleChangeAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 };
 

@@ -7,18 +7,43 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class MushroomCow : public ::Animal {
+public:
+    // prevent constructor by default
+    MushroomCow();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
+    // NOLINTEND
 
-    virtual ~MushroomCow() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MushroomCow(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

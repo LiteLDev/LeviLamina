@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/GeneratorType.h"
 

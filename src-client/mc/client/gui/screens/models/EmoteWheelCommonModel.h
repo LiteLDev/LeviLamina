@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/input/ButtonIndiciesEnum.h"
 #include "mc/platform/UUID.h"
 
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenController;
 class MinecraftScreenModel;
+class PersonaScreenModel;
 class PersonaScreenModelCommon;
 // clang-format on
 
@@ -35,6 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    EmoteWheelCommonModel(::MinecraftScreenController& screen, ::std::shared_ptr<::PersonaScreenModel> personaModel);
+
     MCAPI EmoteWheelCommonModel(
         ::MinecraftScreenController&                  screen,
         ::std::shared_ptr<::PersonaScreenModelCommon> personaModel,
@@ -56,7 +61,15 @@ public:
 
     MCAPI void _setHoverIndex(int hoverIndex);
 
+    MCAPI void clearHover();
+
+    MCAPI int getEmoteWheelIndexAsUserFacingValue(::ButtonIndiciesEnum const& buttonIndex) const;
+
+    MCFOLD int getInvalidEmoteIndex() const;
+
     MCAPI void setOnEmoteSlotSelected(::std::function<void(int)> callback);
+
+    MCFOLD void update(::ui::DirtyFlag& dirtyFlags);
 
     MCAPI ~EmoteWheelCommonModel();
     // NOLINTEND
@@ -64,6 +77,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::MinecraftScreenController& screen, ::std::shared_ptr<::PersonaScreenModel> personaModel);
+
     MCAPI void* $ctor(
         ::MinecraftScreenController&                  screen,
         ::std::shared_ptr<::PersonaScreenModelCommon> personaModel,

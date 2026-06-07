@@ -26,17 +26,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Effect(Effect const&);
-        Effect();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::FeedItem::Effect& operator=(::FeedItem::Effect&&);
-
-        MCFOLD ::FeedItem::Effect& operator=(::FeedItem::Effect const&);
-
         MCAPI ~Effect();
         // NOLINTEND
 
@@ -57,27 +48,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FeedItem();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeedItem(::FeedItem const&);
-
     MCAPI void addEffect(::FeedItem::Effect const& effect);
 
-    MCAPI ::FeedItem& operator=(::FeedItem&&);
-
-    MCAPI ::FeedItem& operator=(::FeedItem const&);
-
     MCAPI ~FeedItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FeedItem const&);
     // NOLINTEND
 
 public:

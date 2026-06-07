@@ -4,10 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/util/FloatRange.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/phys/AABB.h"
@@ -15,18 +13,16 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class EntityContext;
 class ItemDescriptor;
 class Mob;
+class MoveControlComponent;
 class NavigationComponent;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class JumpToBlockGoal : public ::Goal {
+class JumpToBlockGoal : public ::BaseGoal {
 public:
     // JumpToBlockGoal inner types declare
     // clang-format off
-    class Definition;
     struct WeightedJumpToBlockPos;
     // clang-format on
 
@@ -37,57 +33,6 @@ public:
         Jump            = 2,
         Airborne        = 3,
         Done            = 4,
-    };
-
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>                              mSearchWidth;
-        ::ll::TypedStorage<4, 4, int>                              mSearchHeight;
-        ::ll::TypedStorage<4, 4, int>                              mMinPathLength;
-        ::ll::TypedStorage<4, 4, int>                              mMinDistance;
-        ::ll::TypedStorage<4, 8, ::FloatRange>                     mCooldownTime;
-        ::ll::TypedStorage<4, 4, float>                            mScaleFactor;
-        ::ll::TypedStorage<4, 4, float>                            mMaxVelocity;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mPreferredBlocks;
-        ::ll::TypedStorage<4, 4, float>                            mPreferredBlocksChance;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mForbiddenBlocks;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::JumpToBlockGoal& goal) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JumpToBlockGoal::Definition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     struct WeightedJumpToBlockPos {
@@ -116,8 +61,17 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::JumpToBlockGoal::WeightedJumpToBlockPos>> mJumpableBlocksPositions;
     ::ll::TypedStorage<4, 12, ::Vec3>                                                   mVelocityVector;
     ::ll::TypedStorage<8, 8, ::Tick>                                                    mFaceJumpTimer;
-    ::ll::TypedStorage<8, 104, ::JumpToBlockGoal::Definition>                           mDefinition;
     ::ll::TypedStorage<4, 24, ::AABB const>                                             mOriginalAabb;
+    ::ll::TypedStorage<4, 4, int>                                                       mSearchWidth;
+    ::ll::TypedStorage<4, 4, int>                                                       mSearchHeight;
+    ::ll::TypedStorage<4, 4, int>                                                       mMinPathLength;
+    ::ll::TypedStorage<4, 4, int>                                                       mMinDistance;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                                 mCooldownTime;
+    ::ll::TypedStorage<4, 4, float>                                                     mScaleFactor;
+    ::ll::TypedStorage<4, 4, float>                                                     mMaxVelocity;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>                          mPreferredBlocks;
+    ::ll::TypedStorage<4, 4, float>                                                     mPreferredBlocksChance;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>                          mForbiddenBlocks;
     // NOLINTEND
 
 public:
@@ -142,8 +96,6 @@ public:
     virtual bool canBeInterrupted() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~JumpToBlockGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -159,13 +111,13 @@ public:
 
     MCAPI bool _findTargetBlock();
 
-    MCAPI bool _isValidPassThroughBlock(::BlockPos const& blockPos, ::NavigationComponent& navigation) const;
-
     MCAPI bool _isValidTargetBlock(
         ::BlockPos const&      blockPos,
         ::BlockSource const&   region,
         ::NavigationComponent& navigation
     ) const;
+
+    MCAPI bool _turnToTarget(::MoveControlComponent const& moveControl) const;
 
     MCAPI void resetCooldown();
     // NOLINTEND
@@ -174,12 +126,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

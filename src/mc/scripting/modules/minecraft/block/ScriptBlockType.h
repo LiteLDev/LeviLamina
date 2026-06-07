@@ -40,16 +40,34 @@ public:
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::HashedString const>> mBlockName;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ScriptBlockType& operator=(ScriptBlockType const&);
+    ScriptBlockType();
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ScriptBlockType(::ScriptModuleMinecraft::ScriptBlockType const&);
+#endif
+
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
     createDefaultBlockPermutationV010() const;
 
+    MCAPI ::BlockType const& getBlock() const;
+
     MCAPI ::std::string getId() const;
 
-    MCAPI ::std::string getLocalizationKey() const;
+#ifdef LL_PLAT_S
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockType& operator=(::ScriptModuleMinecraft::ScriptBlockType&& rhs);
+
+    MCAPI ~ScriptBlockType();
+#endif
     // NOLINTEND
 
 public:
@@ -59,9 +77,22 @@ public:
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
+    // NOLINTEND
 
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
-    tryGetHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockType const&);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

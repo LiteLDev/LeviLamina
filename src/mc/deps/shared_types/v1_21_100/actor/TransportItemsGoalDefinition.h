@@ -54,13 +54,12 @@ public:
 public:
     // prevent constructor by default
     TransportItemsGoalDefinition& operator=(TransportItemsGoalDefinition const&);
-    TransportItemsGoalDefinition(TransportItemsGoalDefinition const&);
     TransportItemsGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransportItemsGoalDefinition(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
+    MCAPI TransportItemsGoalDefinition(::SharedTypes::v1_21_100::TransportItemsGoalDefinition const&);
 
     MCAPI ::SharedTypes::v1_21_100::TransportItemsGoalDefinition&
     operator=(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
@@ -83,7 +82,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_100::TransportItemsGoalDefinition const&);
     // NOLINTEND
 
 public:

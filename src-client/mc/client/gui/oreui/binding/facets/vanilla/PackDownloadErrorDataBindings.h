@@ -17,8 +17,6 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::vector<::std::string> const& getPackTitles() const;
 
-    MCAPI void reset();
-
     MCAPI ~PackDownloadErrorDataBindings();
     // NOLINTEND
 

@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* what() const /*override*/;
-
-    virtual ~DebugAssertException() /*override*/;
     // NOLINTEND
 
 public:
@@ -42,12 +40,6 @@ public:
     MCNAPI void* $ctor(::DebugAssertException const&);
 
     MCNAPI void* $ctor(::AssertHandlerContext context);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

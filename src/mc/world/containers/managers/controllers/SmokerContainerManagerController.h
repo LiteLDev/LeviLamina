@@ -19,12 +19,6 @@ public:
 
 #endif
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SmokerContainerManagerController() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

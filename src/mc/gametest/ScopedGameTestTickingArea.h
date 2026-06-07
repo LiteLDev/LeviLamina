@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BoundingBox;
+class Dimension;
 class ITickingArea;
 // clang-format on
 
@@ -26,6 +28,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI
+    ScopedGameTestTickingArea(::Dimension& dimension, ::BoundingBox const& bounds, ::std::string const& structureName);
+
     MCNAPI void _createTickingArea();
 
     MCNAPI void _removeTickingArea();
@@ -41,6 +46,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& TICKING_AREA_PREFIX();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Dimension& dimension, ::BoundingBox const& bounds, ::std::string const& structureName);
     // NOLINTEND
 
 public:

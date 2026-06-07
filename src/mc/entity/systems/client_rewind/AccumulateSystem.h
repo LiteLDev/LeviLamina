@@ -23,14 +23,14 @@ struct ActorDataFlagComponent;
 struct ActorDataHorseFlagComponent;
 struct ActorDataJumpDurationComponent;
 struct ActorDataSeatOffsetComponent;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct ReplayStateTrackerComponent;
 // clang-format on
 
 namespace ClientRewind {
 
 struct AccumulateSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
-                              ::Filter<::ActorMovementTickNeededComponent>,
+                              ::Filter<::InterpolateMovementNeededComponent>,
                               ::Read<
                                   ::ActorDataFlagComponent,
                                   ::ActorDataHorseFlagComponent,
@@ -45,7 +45,7 @@ struct AccumulateSystem : public ::IStrictTickingSystem<::StrictExecutionContext
 public:
     // AccumulateSystem inner types define
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
-        ::Filter<::ActorMovementTickNeededComponent>,
+        ::Filter<::InterpolateMovementNeededComponent>,
         ::Read<
             ::ActorDataFlagComponent,
             ::ActorDataHorseFlagComponent,
@@ -63,7 +63,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<
                 ::ActorDataFlagComponent,
                 ::ActorDataHorseFlagComponent,
@@ -76,8 +76,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
-
-    virtual ~AccumulateSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -101,7 +99,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<
                 ::ActorDataFlagComponent,
                 ::ActorDataHorseFlagComponent,

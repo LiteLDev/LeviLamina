@@ -11,9 +11,9 @@
 // clang-format off
 class IEntitlementManager;
 class IPremiumCachePackEntitlementValidator;
+class PersonaClient;
 class SkinPackModel;
 class SkinRepository;
-class SkinRepositoryClientInterface;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -40,11 +40,11 @@ public:
 
     virtual bool exhausted() const /*override*/;
 
-    virtual ::HandleRangeResult handleRange(int, int end) /*override*/;
+    virtual ::HandleRangeResult handleRange(int end, int) /*override*/;
 
     virtual void collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::SkinRepositoryClientInterface&                     skinRepo,
+        ::PersonaClient&                                     skinRepo,
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     ) /*override*/;
@@ -55,11 +55,11 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $exhausted() const;
 
-    MCFOLD ::HandleRangeResult $handleRange(int, int end);
+    MCFOLD ::HandleRangeResult $handleRange(int end, int);
 
     MCAPI void $collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::SkinRepositoryClientInterface&                     skinRepo,
+        ::PersonaClient&                                     skinRepo,
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     );

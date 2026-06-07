@@ -23,8 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
-
-    virtual ~AttackDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:

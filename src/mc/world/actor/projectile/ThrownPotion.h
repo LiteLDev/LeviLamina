@@ -8,13 +8,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
 class HashedString;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class ThrownPotion : public ::Throwable {
+public:
+    // prevent constructor by default
+    ThrownPotion();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -28,8 +35,36 @@ public:
     virtual void setAuxValue(int aux) /*override*/;
 
     virtual ::HashedString const& queryEntityRenderer() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ThrownPotion() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ThrownPotion(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
+    MCAPI short getPotionId() const;
+
+    MCAPI void setLinger(bool linger);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& SPLASH_RANGE();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

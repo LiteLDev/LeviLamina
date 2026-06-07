@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/level/material/MaterialType.h"
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +12,6 @@ class AABB;
 class Block;
 class BlockActor;
 class BlockPos;
-class Dimension;
 class GetCollisionShapeInterface;
 class LevelChunk;
 class Material;
@@ -42,7 +40,7 @@ public:
 
     virtual bool containsAnyLiquid(::AABB const& box) const = 0;
 
-    virtual bool containsMaterial(::AABB const& box, ::MaterialType material) const = 0;
+    virtual bool containsMaterial(::AABB const& box, ::SharedTypes::v1_26_20::MaterialType material) const = 0;
 
     virtual bool isInWall(::Vec3 const& pos) const = 0;
 

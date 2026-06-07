@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> createBlockSource() /*override*/;
-
-    virtual ~VanillaBlockSourceFactoryAdapter() /*override*/ = default;
     // NOLINTEND
 
 public:

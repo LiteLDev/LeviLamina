@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ProfanityFilterFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ProfanityFilterFacet() /*override*/ = default;
@@ -31,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ProfanityFilterFacet(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext);
+
     MCAPI bool isProfanityInString(::std::string const& stringToCheck) const;
     // NOLINTEND
 
@@ -38,6 +44,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext);
     // NOLINTEND
 
 public:

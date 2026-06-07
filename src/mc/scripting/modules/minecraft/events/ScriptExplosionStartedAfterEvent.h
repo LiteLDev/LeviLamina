@@ -54,8 +54,6 @@ public:
 
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>
     getImpactedBlocks() const;
-
-    MCAPI ~ScriptExplosionStartedAfterEvent();
     // NOLINTEND
 
 public:
@@ -73,12 +71,6 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                               scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

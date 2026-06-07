@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isEntitlementValid(::IEntitlement const& entitlement) const /*override*/;
-
-    virtual ~PremiumPurchasableCachePackEntitlementValidator() /*override*/ = default;
     // NOLINTEND
 
 public:

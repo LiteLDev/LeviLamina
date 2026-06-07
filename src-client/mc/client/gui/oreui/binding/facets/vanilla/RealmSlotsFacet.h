@@ -51,8 +51,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~RealmSlotsFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -93,12 +91,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> playScreenModel);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

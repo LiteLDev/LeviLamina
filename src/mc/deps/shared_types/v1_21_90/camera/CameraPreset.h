@@ -60,15 +60,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset&&);
-
     MCAPI CameraPreset(::SharedTypes::v1_21_90::CameraPreset const&);
 
     MCFOLD ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset&&);
 
     MCFOLD ::SharedTypes::v1_21_90::CameraPreset& operator=(::SharedTypes::v1_21_90::CameraPreset const&);
-
-    MCFOLD void setEntityOffset(::std::optional<::std::array<float, 3>> opt);
 
     MCAPI ~CameraPreset();
     // NOLINTEND
@@ -82,8 +78,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_90::CameraPreset&&);
-
     MCFOLD void* $ctor(::SharedTypes::v1_21_90::CameraPreset const&);
     // NOLINTEND
 

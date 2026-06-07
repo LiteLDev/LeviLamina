@@ -26,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    UV& operator=(UV const&);
     UV();
 
 public:
@@ -34,10 +35,6 @@ public:
     MCAPI UV(::SharedTypes::v1_20_80::UV&&);
 
     MCAPI UV(::SharedTypes::v1_20_80::UV const&);
-
-    MCAPI ::SharedTypes::v1_20_80::UV& operator=(::SharedTypes::v1_20_80::UV&&);
-
-    MCAPI ::SharedTypes::v1_20_80::UV& operator=(::SharedTypes::v1_20_80::UV const&);
 
     MCAPI ~UV();
     // NOLINTEND

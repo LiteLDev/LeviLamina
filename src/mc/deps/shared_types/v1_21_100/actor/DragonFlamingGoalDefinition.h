@@ -26,17 +26,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DragonFlamingGoalDefinition& operator=(DragonFlamingGoalDefinition const&);
-    DragonFlamingGoalDefinition(DragonFlamingGoalDefinition const&);
-    DragonFlamingGoalDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_100::DragonFlamingGoalDefinition&
-    operator=(::SharedTypes::v1_21_100::DragonFlamingGoalDefinition&&);
-
     MCAPI ~DragonFlamingGoalDefinition();
     // NOLINTEND
 
@@ -49,8 +40,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DEFAULT_SMOKE_COLOR();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

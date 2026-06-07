@@ -16,19 +16,17 @@ class ThrownPotionEffectSubcomponent : public ::SplashPotionEffectSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void writetoJSON(::Json::Value&) const /*override*/;
+    virtual void writetoJSON(::Json::Value& component) const /*override*/;
 
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     virtual char const* getName() const /*override*/;
-
-    virtual ~ThrownPotionEffectSubcomponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $writetoJSON(::Json::Value&) const;
+    MCFOLD void $writetoJSON(::Json::Value& component) const;
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 

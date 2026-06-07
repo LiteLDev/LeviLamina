@@ -16,7 +16,6 @@
 #include "mc/client/gui/screens/controllers/InventoryTabIndex.h"
 #include "mc/client/gui/screens/controllers/LibraryModalScreenType.h"
 #include "mc/client/gui/screens/controllers/MarketplacePassTabIndex.h"
-#include "mc/client/gui/screens/controllers/RealmsPlusTabIndex.h"
 #include "mc/client/gui/screens/controllers/SlotSelectedAction.h"
 #include "mc/client/gui/screens/controllers/TabbedUpsellScreenDefaultTab.h"
 #include "mc/client/gui/screens/controllers/UpdateVersionScreenContext.h"
@@ -27,7 +26,6 @@
 #include "mc/deps/core/file/FileUploadType.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/threading/Async.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -45,13 +43,13 @@ class BaseScreen;
 class BlockActor;
 class BlockPos;
 class CachedScenes;
-class Dimension;
 class DlcId;
 class IAdvancedGraphicsOptions;
 class IClientInstance;
 class IContentKeyProvider;
 class IContentManager;
 class IMinecraftGame;
+class ISceneStack;
 class IStoreCatalogItem;
 class IUIDefRepository;
 class LayoutManager;
@@ -225,7 +223,16 @@ public:
         ::std::function<void()> initializedCallback
     );
 
+    MCAPI ::Json::Value _createSafeZoneSizeVar(
+        float safeZoneScaleFactor,
+        float screenPositionOffset,
+        bool  horizontal,
+        bool  isToporLeft
+    ) const;
+
     MCAPI ::std::shared_ptr<::AbstractScene> _createScreen(::std::shared_ptr<::BaseScreen> newScreen);
+
+    MCAPI ::std::shared_ptr<::AbstractScene> _createStartMenuScreenForEditor(::std::function<void()> loadCallback);
 
     MCAPI void _createWorldSettingsScreenCache();
 
@@ -459,11 +466,6 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createLegacyCreateWorldScreen();
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createLegacyRealmsPDPScreen(
-        ::RealmsPlusTabIndex                    tabIndex,
-        ::std::function<void(::Realms::World&)> onCreateCallback
-    );
-
     MCAPI ::std::shared_ptr<::AbstractScene> createLegacyRealmsPlusEndedScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createLegacyWorldTemplateLoadingScreen(::std::string const& manifestId);
@@ -512,8 +514,6 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene>
     createMakeInfiniteScreen(::LevelSummary const& editedLevel, ::StorageVersion storageVersion);
-
-    MCAPI ::std::shared_ptr<::AbstractScene> createManageFeedScreen(::Realms::World const& world);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createManifestValidationScreen(
         ::PackManifestFactory&                                            manifestFactory,
@@ -617,6 +617,9 @@ public:
     MCAPI ::std::shared_ptr<::AbstractScene>
     createPlatformStoreConnectConfirmationScreen(::std::function<void(bool)> callback);
 
+    MCAPI ::std::shared_ptr<::AbstractScene>
+    createPlayScreen(::PlayScreenDefaultTab tab, ::std::string const& dirtyLevelId);
+
     MCAPI ::std::shared_ptr<::AbstractScene> createPortfolioScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createProgressScreen(
@@ -719,6 +722,8 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createSafeZoneScreen();
 
+    MCAPI ::std::shared_ptr<::AbstractScene> createSceneFromUrl(::std::string const& url, ::OreUI::RouteMode mode);
+
     MCAPI ::std::shared_ptr<::AbstractScene> createScreenshotScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createSelectWorldScreen(
@@ -796,6 +801,8 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createWorldTemplateScreen(bool hideTopBar);
 
+    MCAPI ::std::shared_ptr<::AbstractScene> createXblConsoleQrSignInScreen(::std::string const& code);
+
     MCAPI ::std::shared_ptr<::AbstractScene> createXblConsoleSignInScreen(::std::string const& code);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createXblImmediateSignInScreen(
@@ -811,6 +818,14 @@ public:
     );
 
     MCAPI ::Json::Value generateGlobalVars(::std::string const& screenName, ::ScreenController& controller);
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> getCurrentSceneStack();
+
+    MCFOLD bool isUsingClientSceneStack();
+
+    MCAPI void precacheGameplayScreens();
+
+    MCAPI void precacheOreUIGameplayViews();
 
     MCAPI void registerInGameScreen(
         ::std::string const& name,
@@ -841,7 +856,15 @@ public:
         )>                   creationFunc
     );
 
+    MCAPI void resetSceneStackForOutOfGameUse();
+
+    MCAPI bool screenPrecacheInProgress() const;
+
+    MCFOLD void setIsEditorModeEnabled(bool isEditorModeEnabled);
+
     MCAPI void terminateAsyncUILoading();
+
+    MCAPI void unregisterInGameScreens();
     // NOLINTEND
 
 public:

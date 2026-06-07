@@ -7,6 +7,12 @@
 #include "mc/deps/core/debug/log/LogEndPoint.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/typeid_t.h"
+
+// auto generated forward declare list
+// clang-format off
+class ContentLog;
+// clang-format on
 
 class ContentLogEndPoint : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::LogEndPoint {
 public:
@@ -16,9 +22,25 @@ public:
 
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) = 0;
 
-    virtual void log(char const* message) /*override*/;
+    virtual void log(char const*) /*override*/;
 
     virtual bool logOnlyOnce() const = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ContentLogEndPoint();
+
+    MCNAPI void _register(::Bedrock::typeid_t<::ContentLog> id);
+
+    MCNAPI void _unregister();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -30,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $log(char const* message);
+    MCNAPI void $log(char const*);
 
 
     // NOLINTEND
@@ -39,5 +61,7 @@ public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftableForLogEndPoint();
+
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

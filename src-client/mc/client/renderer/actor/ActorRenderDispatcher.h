@@ -55,13 +55,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorRenderDispatcher() = default;
+    virtual ~ActorRenderDispatcher();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ActorRenderDispatcher(::SubClientId clientId);
+
+    MCAPI ::std::shared_ptr<::ActorRenderer> _getRenderer(::Actor& actor) const;
+
+    MCAPI void cleanupRenderer(::HashedString const& name);
+
+    MCAPI void clearEntityRenderers();
 
     MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
         ::Font&              font,
@@ -74,6 +80,8 @@ public:
     );
 
     MCAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
+
+    MCFOLD ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>>& getDataDrivenRenderers();
 
     MCAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::Actor const& actor) const;
 
@@ -101,6 +109,14 @@ public:
     MCAPI void render(
         ::BaseActorRenderContext& entityRenderContext,
         ::Actor&                  entity,
+        ::Vec3 const&             pos,
+        ::Vec2 const&             rot,
+        bool                      ignoreLighting
+    );
+
+    MCAPI void render(
+        ::BaseActorRenderContext& entityRenderContext,
+        ::Actor&                  entity,
         ::Vec3 const&             cameraTargetPos,
         ::Vec3 const&             pos,
         ::Vec2 const&             rot,
@@ -117,6 +133,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SubClientId clientId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

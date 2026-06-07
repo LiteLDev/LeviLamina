@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/phys/AABB.h"
@@ -13,55 +11,9 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class MoveIndoorsGoal : public ::Goal {
-public:
-    // MoveIndoorsGoal inner types declare
-    // clang-format off
-    class MoveIndoorsDefinition;
-    // clang-format on
-
-    // MoveIndoorsGoal inner types define
-    class MoveIndoorsDefinition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Tick> mTimeoutCooldown;
-        ::ll::TypedStorage<4, 4, float>  mSpeedModifier;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~MoveIndoorsDefinition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void addCooldownTicksBySeconds(float const& seconds);
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveIndoorsGoal::MoveIndoorsDefinition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
+class MoveIndoorsGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -96,16 +48,20 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~MoveIndoorsGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isInside(::BlockPos const& pos);
+    MCAPI explicit MoveIndoorsGoal(::Mob& mob);
 
     MCAPI void _startPathfinding();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

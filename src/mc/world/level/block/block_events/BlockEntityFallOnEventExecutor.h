@@ -23,8 +23,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void dispatch(::BlockEvents::BlockEntityFallOnEvent& eventData) const /*override*/;
+    // NOLINTEND
 
-    virtual ~BlockEntityFallOnEventExecutor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void disableCallToBase();
     // NOLINTEND
 
 public:

@@ -14,13 +14,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::string asString() const;
+    MCAPI ::std::string asString() const;
 
-#ifdef LL_PLAT_C
-    MCAPI bool operator!=(::mce::UUID const& rhs) const;
-#endif
+    MCAPI bool isEmpty() const;
 
-    MCFOLD bool operator==(::mce::UUID const& rhs) const;
+    MCAPI bool operator<(::mce::UUID const& rhs) const;
     // NOLINTEND
 
 public:

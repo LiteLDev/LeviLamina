@@ -9,6 +9,8 @@
 #include "mc/world/actor/Mob.h"
 #include "mc/world/actor/agent/AgentAnimation.h"
 #include "mc/world/actor/agent/AgentRenderData.h"
+#include "mc/world/actor/agent/AgentTravelType.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,6 +26,7 @@ class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct KnockbackParameters;
 struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
@@ -65,7 +68,7 @@ public:
 
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
+    virtual void knockback(::Actor*, int, float, float, ::KnockbackParameters const&) /*override*/;
 
     virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
@@ -97,8 +100,6 @@ public:
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
-
-    virtual ~Agent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -110,9 +111,17 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _isOnGround(::AABB const& aabb);
+    MCAPI ::AgentTravelType checkTravelType();
+
+    MCAPI void doClientTravel(::AABB const& aabb);
+
+    MCAPI ::Vec3 doServerTravel(::AABB const& aabb, ::AgentTravelType travelType);
 
     MCAPI float getMoveSpeedScalar() const;
+
+    MCFOLD ::AgentRenderData& getRenderData();
+
+    MCFOLD int getSelectedSlot() const;
 
     MCAPI int getSwingAnimationDuration() const;
 
@@ -120,17 +129,37 @@ public:
 
     MCAPI bool isArmSwinging() const;
 
-    MCAPI bool isEmoting() const;
+    MCAPI bool isIdling();
 
     MCAPI bool isShrugging() const;
+
+    MCAPI bool isValidSlotNum(int slotNum);
+
+    MCAPI void setGameType(::GameType gameType);
+
+    MCAPI void setMoveTarget(float target);
+
+    MCAPI void setMoveTarget(::Vec2 target);
 
     MCAPI void setNameTagFromOwner(::Player const& player);
 
     MCAPI void shrug();
 
+    MCAPI void startCommandMode();
+
+    MCAPI void stopCommandMode();
+
     MCAPI void swingArm();
 
     MCAPI void tryFireCreateEvent(::Player& player);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Vec3 roundTeleportPos(::Vec3 const& pos);
+
+    MCAPI static ::Agent* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:
@@ -154,7 +183,7 @@ public:
 
     MCFOLD bool $canBeAffected(uint id) const;
 
-    MCFOLD void $knockback(::Actor*, int, float, float, float, float, float);
+    MCFOLD void $knockback(::Actor*, int, float, float, ::KnockbackParameters const&);
 
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 

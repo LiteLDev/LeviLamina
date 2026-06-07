@@ -40,18 +40,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::SubChunkLightUpdate>>> mAlteredSubchunkBlockList;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~RuntimeLightingSubchunkList();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -81,11 +69,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RuntimeLightingManager(::Dimension& dimension);
+
     MCAPI void _getListOfChunksWithPlayerDistance();
 
     MCAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
 
     MCAPI void _removeProcessedSubchunks();
+
+    MCAPI void flushRunTimeLighting();
 
     MCAPI void updateBlockLight(
         ::BlockPos const& blockPos,
@@ -95,6 +87,12 @@ public:
         ::Brightness      newAbsorption,
         bool              isSkyLight
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension);
     // NOLINTEND
 
 public:

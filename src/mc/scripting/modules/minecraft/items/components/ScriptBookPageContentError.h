@@ -20,34 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptBookPageContentError& operator=(ScriptBookPageContentError const&);
-    ScriptBookPageContentError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptBookPageContentError(::ScriptModuleMinecraft::ScriptBookPageContentError const&);
-
-    MCAPI ~ScriptBookPageContentError();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBookPageContentError const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

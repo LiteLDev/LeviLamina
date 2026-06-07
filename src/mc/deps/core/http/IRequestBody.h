@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRequestBody();
+    virtual ~IRequestBody() = default;
 
     virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar> destination) = 0;
 
@@ -41,12 +41,6 @@ public:
     virtual ::std::string const& getLoggableSource() const = 0;
 
     virtual ::gsl::span<uchar const> getLoggableData() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

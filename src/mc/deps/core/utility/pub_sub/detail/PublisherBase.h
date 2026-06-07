@@ -38,21 +38,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~PublisherBase() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _clear();
-
     MCAPI void _insertConnection(
         ::std::shared_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase> const& body,
         ::Bedrock::PubSub::ConnectPosition                                        at,
         ::std::optional<int>                                                      group
     );
+
+    MCFOLD bool empty() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD uint64 size() const;
+#endif
     // NOLINTEND
 
 public:

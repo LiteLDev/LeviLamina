@@ -17,8 +17,30 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Attribute();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Attribute(::HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
+
+    MCFOLD uint const getIDValue() const;
+
+    MCFOLD ::HashedString const& getName() const;
+
+    MCFOLD ::RedefinitionMode getRedefinitionMode() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Attribute& getByName(::HashedString const& attribute);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
     // NOLINTEND
 };

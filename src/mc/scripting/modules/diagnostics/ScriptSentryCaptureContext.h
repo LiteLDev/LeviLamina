@@ -21,35 +21,13 @@ public:
 public:
     // prevent constructor by default
     ScriptSentryCaptureContext& operator=(ScriptSentryCaptureContext const&);
+    ScriptSentryCaptureContext(ScriptSentryCaptureContext const&);
     ScriptSentryCaptureContext();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptSentryCaptureContext(::ScriptModuleDiagnostics::ScriptSentryCaptureContext const&);
-
-    MCNAPI ::ScriptModuleDiagnostics::ScriptSentryCaptureContext&
-    operator=(::ScriptModuleDiagnostics::ScriptSentryCaptureContext&&);
-
-    MCNAPI ~ScriptSentryCaptureContext();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleDiagnostics::ScriptSentryCaptureContext const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

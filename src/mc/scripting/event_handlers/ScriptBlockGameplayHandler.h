@@ -32,8 +32,6 @@ public:
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::BlockTryPlaceByPlayerEvent const& eventData) /*override*/;
-
-    virtual ~ScriptBlockGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

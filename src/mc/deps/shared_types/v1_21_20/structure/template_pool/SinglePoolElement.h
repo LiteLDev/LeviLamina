@@ -20,25 +20,22 @@ public:
 
 public:
     // prevent constructor by default
-    SinglePoolElement(SinglePoolElement const&);
+    SinglePoolElement& operator=(SinglePoolElement const&);
     SinglePoolElement();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&&);
+    MCAPI SinglePoolElement(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
 
     MCFOLD ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
-
-    MCAPI ~SinglePoolElement();
+    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&&);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD void* $ctor(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
     // NOLINTEND
 };
 

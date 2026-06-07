@@ -30,14 +30,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerUseNameTagAfterEvent& operator=(ScriptPlayerUseNameTagAfterEvent const&);
     ScriptPlayerUseNameTagAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
-
     MCAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
     MCAPI ScriptPlayerUseNameTagAfterEvent(
@@ -49,7 +46,7 @@ public:
     );
 
     MCAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
+    operator=(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
     MCAPI ~ScriptPlayerUseNameTagAfterEvent();
     // NOLINTEND
@@ -63,8 +60,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
     MCAPI void* $ctor(

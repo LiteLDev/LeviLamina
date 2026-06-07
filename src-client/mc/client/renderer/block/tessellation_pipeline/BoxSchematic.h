@@ -17,24 +17,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                       mUsesFaceUVs;
     ::ll::TypedStorage<1, 1, bool>                                                       mFacesHaveCull;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoxSchematic(BoxSchematic const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BoxSchematic();
-
-    MCAPI ::ClientBlockPipeline::BoxSchematic& operator=(::ClientBlockPipeline::BoxSchematic const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

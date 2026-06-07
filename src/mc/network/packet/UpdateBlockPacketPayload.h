@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class ILevel;
+// clang-format on
+
 struct UpdateBlockPacketPayload {
 public:
     // member variables
@@ -13,5 +19,25 @@ public:
     ::ll::TypedStorage<4, 4, uint>        mLayer;
     ::ll::TypedStorage<1, 1, uchar>       mUpdateFlags;
     ::ll::TypedStorage<4, 4, uint>        mRuntimeId;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UpdateBlockPacketPayload();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI UpdateBlockPacketPayload(::BlockPos const& pos, uint layer, uint runtimeId, uchar updateFlags);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::Block const& getBlock(::ILevel const& level) const;
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos, uint layer, uint runtimeId, uchar updateFlags);
     // NOLINTEND
 };

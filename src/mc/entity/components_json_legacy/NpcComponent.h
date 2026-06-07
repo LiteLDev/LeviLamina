@@ -48,7 +48,6 @@ public:
     // prevent constructor by default
     NpcComponent& operator=(NpcComponent const&);
     NpcComponent(NpcComponent const&);
-    NpcComponent();
 
 public:
     // virtual functions
@@ -59,6 +58,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NpcComponent();
+
     MCAPI NpcComponent(::NpcComponent&& rhs);
 
     MCAPI void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
@@ -67,7 +68,13 @@ public:
 
     MCAPI void _loadData(::Actor& owner);
 
+#ifdef LL_PLAT_C
+    MCAPI void addAction(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
+#endif
+
     MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
+
+    MCAPI void clearSceneStateForAllPlayers();
 
     MCAPI void executeClosingCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
@@ -76,7 +83,17 @@ public:
 
     MCAPI void executeOpeningCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::variant<::npc::CommandAction, ::npc::UrlAction>* getActionAt(uint64 index);
+
+    MCAPI uint64 getActionCount() const;
+#endif
+
+    MCFOLD ::npc::ActionContainer& getActionsContainer();
+
     MCAPI ::std::vector<int> getCommandCounts() const;
+
+    MCFOLD ::std::string const& getDefaultSceneId() const;
 
     MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
@@ -86,28 +103,59 @@ public:
 
     MCAPI ::std::string const& getInteractiveText(::Actor& owner) const;
 
-#ifdef LL_PLAT_C
     MCAPI ::std::string const& getName(::Actor const& owner) const;
+
+    MCAPI ::std::string const& getNameRawText(::Actor const& owner) const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::NpcGUIOffset const& getPickerOffset() const;
+
+    MCFOLD ::NpcGUIOffset const& getPortraitOffset() const;
 #endif
 
     MCAPI ::std::string const& getSceneStateForPlayer(::ActorUniqueID const& playerID) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::SkinData const& getSelectedSkinData() const;
+#endif
+
+    MCAPI uint64 getSkinCount() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::SkinData const& getSkinData(int index) const;
+#endif
+
+    MCAPI int getSkinIndex() const;
+
+    MCAPI int getUrlCount() const;
 
     MCAPI void initClientOnlyData(::Actor& owner);
 
     MCAPI void initFromDefinition(::Actor& owner);
 
+    MCFOLD bool isGloballyAccessed() const;
+
     MCAPI void loadActions(::Actor& owner);
 
     MCAPI void loadInteractiveRawText(::Actor& owner);
+
+    MCAPI void loadNPCData(::Actor& owner);
+
+    MCAPI void loadNameRawText(::Actor& owner);
 
     MCAPI ::NpcComponent& operator=(::NpcComponent&& rhs);
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
+#ifdef LL_PLAT_C
+    MCAPI void removeActionAt(uint64 index);
+
+    MCAPI void removeInteractiveTextFilter();
+#endif
+
     MCAPI ::std::string sanitizeRawText(::std::string const& rawText) const;
 
-    MCAPI void
-    setActions(::Actor& owner, ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& newActions);
+    MCAPI void setDefaultSceneId(::std::string sceneId);
 
     MCAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
 
@@ -118,9 +166,15 @@ public:
     setInteractiveTextFilter(::std::function<::std::string(::std::string const&)> filter, bool shouldRunFilter);
 #endif
 
+    MCAPI void setIsGloballyAccessed();
+
     MCAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
 
+    MCAPI void setSceneStateForPlayer(::Actor& owner, ::ActorUniqueID const& playerID, ::std::string const& sceneName);
+
     MCAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
+
+    MCAPI void syncActionsWithClient(::Actor& owner);
 
 #ifdef LL_PLAT_C
     MCAPI void syncActionsWithServer(::Actor& owner) const;
@@ -148,6 +202,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::NpcComponent&& rhs);
     // NOLINTEND
 

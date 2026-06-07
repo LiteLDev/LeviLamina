@@ -7,6 +7,11 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 
+// auto generated forward declare list
+// clang-format off
+class IMinecraftEventing;
+// clang-format on
+
 class WorldSessionEndPoint : public ::ContentLogEndPoint {
 public:
     // member variables
@@ -24,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
+    virtual void log(::LogArea const area, ::LogLevel const level, char const*) /*override*/;
 
     virtual void flush() /*override*/;
 
@@ -33,20 +38,24 @@ public:
     virtual bool isEnabled() const /*override*/;
 
     virtual bool logOnlyOnce() const /*override*/;
-
-    virtual ~WorldSessionEndPoint() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI explicit WorldSessionEndPoint(::IMinecraftEventing& eventing);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
+    MCNAPI void $log(::LogArea const area, ::LogLevel const level, char const*);
 
     MCNAPI void $flush();
 
@@ -57,5 +66,13 @@ public:
     MCNAPI bool $logOnlyOnce() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForLogEndPoint();
+
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

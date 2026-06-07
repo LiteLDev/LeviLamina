@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/attribute/AttributeModifier.h"
 #include "mc/world/level/Tick.h"
 
@@ -14,7 +14,7 @@ struct DrinkPotionData;
 namespace mce { class UUID; }
 // clang-format on
 
-class DrinkPotionGoal : public ::Goal {
+class DrinkPotionGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,16 +46,12 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~DrinkPotionGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI DrinkPotionGoal(::Mob& mob, float walkSpeedModifier, ::std::vector<::DrinkPotionData> const& drinkPotionData);
-
-    MCAPI ::std::optional<int> _findPotionToUse() const;
     // NOLINTEND
 
 public:

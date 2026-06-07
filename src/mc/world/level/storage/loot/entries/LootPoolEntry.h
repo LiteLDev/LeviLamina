@@ -42,6 +42,16 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD int getBaseWeight() const;
+
+    MCFOLD int getQuality() const;
+
+    MCFOLD ::LootPoolEntry const* getSubTable() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootPoolEntry>

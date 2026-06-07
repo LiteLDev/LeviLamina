@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftKeyboardManager() /*override*/;
+    virtual ~MinecraftKeyboardManager() /*override*/ = default;
 
     virtual bool tryEnableKeyboard(
         ::std::string const& currentText,
@@ -94,11 +94,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit MinecraftKeyboardManager(::IClientInstance& clientInstance);
+
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> _getGuiData() const;
 
     MCAPI float _getGuiScale() const;
 
     MCAPI float _getInvGuiScale() const;
+
+    MCAPI void delayedInputResume();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool keyboardIsOwned();
     // NOLINTEND
 
 public:
@@ -108,9 +118,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::IClientInstance& clientInstance);
     // NOLINTEND
 
 public:

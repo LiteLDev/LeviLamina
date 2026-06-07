@@ -35,6 +35,8 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentBoundingBoxOptions& operator=(ScriptWidgetComponentBoundingBoxOptions const&);
+    ScriptWidgetComponentBoundingBoxOptions(ScriptWidgetComponentBoundingBoxOptions const&);
     ScriptWidgetComponentBoundingBoxOptions();
 
 public:
@@ -42,23 +44,6 @@ public:
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void>
     validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
-
-    virtual ~ScriptWidgetComponentBoundingBoxOptions() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentBoundingBoxOptions(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
-
-    MCNAPI
-    ScriptWidgetComponentBoundingBoxOptions(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
     // NOLINTEND
 
 public:
@@ -87,20 +72,6 @@ public:
     MCNAPI static ::Vec3 const& DEFAULT_OFFSET();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
-
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

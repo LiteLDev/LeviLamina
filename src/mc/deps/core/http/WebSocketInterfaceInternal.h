@@ -41,8 +41,7 @@ public:
         ::gsl::not_null<::XAsyncBlock*>
     ) /*override*/;
 
-    virtual HRESULT
-    disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status) /*override*/;
+    virtual HRESULT disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::HCWebSocketCloseStatus) /*override*/;
     // NOLINTEND
 
 public:
@@ -65,15 +64,9 @@ public:
         ::gsl::not_null<::XAsyncBlock*>
     );
 
-    MCNAPI HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
+    MCNAPI HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::HCWebSocketCloseStatus);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

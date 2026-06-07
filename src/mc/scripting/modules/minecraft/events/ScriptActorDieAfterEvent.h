@@ -31,13 +31,12 @@ public:
 public:
     // prevent constructor by default
     ScriptActorDieAfterEvent& operator=(ScriptActorDieAfterEvent const&);
-    ScriptActorDieAfterEvent(ScriptActorDieAfterEvent const&);
     ScriptActorDieAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorDieAfterEvent(::ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
+    MCAPI ScriptActorDieAfterEvent(::ScriptModuleMinecraft::ScriptActorDieAfterEvent const&);
 
     MCAPI ScriptActorDieAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData> const& eventData,
@@ -54,7 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDieAfterEvent const&);
 
     MCAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData> const& eventData,

@@ -30,6 +30,6 @@ public:
 
     MCAPI float _getSpaghetti3D(::Vec3 worldPos) const;
 
-    MCAPI float cavify(::Vec3 worldPos, int, float density) const;
+    MCAPI float cavify(::Vec3 worldPos, int density, float) const;
     // NOLINTEND
 };

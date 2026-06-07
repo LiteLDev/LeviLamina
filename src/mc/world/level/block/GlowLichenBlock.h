@@ -13,31 +13,45 @@ class Block;
 class BlockPos;
 class BlockSource;
 class BlockType;
+class Material;
 // clang-format on
 
 class GlowLichenBlock : public ::MultifaceBlock {
 public:
+    // prevent constructor by default
+    GlowLichenBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const /*override*/;
 
     virtual ::BlockType& init() /*override*/;
+    // NOLINTEND
 
-    virtual ~GlowLichenBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GlowLichenBlock(::std::string const& nameId, int id, ::Material const& material);
+
+    MCAPI bool fertilize(::BlockSource& region, ::BlockPos const& pos) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const;
 
     MCAPI ::BlockType& $init();
 

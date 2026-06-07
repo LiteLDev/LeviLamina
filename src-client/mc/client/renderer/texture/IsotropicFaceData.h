@@ -17,6 +17,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI IsotropicFaceData();
+
+    MCAPI bool isTextureIsotropic(uchar face) const;
+
     MCAPI bool setTextureIsotropic(::Json::Value const& isotropicData);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

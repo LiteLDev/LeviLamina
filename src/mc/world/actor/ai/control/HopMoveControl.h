@@ -26,8 +26,18 @@ public:
 
     virtual void
     setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed) /*override*/;
+    // NOLINTEND
 
-    virtual ~HopMoveControl() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI HopMoveControl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

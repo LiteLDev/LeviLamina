@@ -40,9 +40,27 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~StreamFlusher() /*override*/ = default;
+        virtual ~StreamFlusher() /*override*/;
 
         virtual ::Core::Result _flushBuffer(void const* data, uint64 amount) /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI explicit StreamFlusher(::Core::Path const& streamPath);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Core::Path const& streamPath);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -81,7 +99,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDiagnosticsPublishToFile() /*override*/ = default;
+    virtual ~ScriptDiagnosticsPublishToFile() /*override*/;
 
     virtual bool isStatPublisherEnabled() const /*override*/;
 
@@ -120,6 +138,12 @@ public:
         ::std::optional<uint>    maxCaptureFiles,
         ::std::optional<uint>    maxCaptureFileSize
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

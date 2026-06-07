@@ -11,25 +11,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UriData& operator=(UriData const&);
-    UriData(UriData const&);
-    UriData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UriData(::std::string overrideUri);
-
-    MCFOLD ::UriData& operator=(::UriData&&);
-
     MCAPI ~UriData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::string overrideUri);
     // NOLINTEND
 
 public:

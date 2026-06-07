@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ColorExpr();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -36,12 +30,6 @@ public:
     );
 
     MCAPI static void fromString(::SharedTypes::v1_20_80::ColorExpr& instance, ::std::string str);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

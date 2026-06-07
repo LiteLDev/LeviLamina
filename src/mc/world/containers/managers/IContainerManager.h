@@ -17,7 +17,7 @@ class IContainerManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContainerManager();
+    virtual ~IContainerManager() = default;
 
     virtual ::ContainerID getContainerId() const = 0;
 
@@ -48,20 +48,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

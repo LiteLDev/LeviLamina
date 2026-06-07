@@ -9,6 +9,7 @@
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/CommandStatus.h"
 #include "mc/server/commands/CommandTypeFlag.h"
 #include "mc/server/commands/CommandVersion.h"
 #include "mc/server/commands/SemanticConstraint.h"
@@ -51,12 +52,13 @@ public:
     struct ParseToken;
     struct ChainedSubcommand;
     struct Enum;
+    struct ParamParseRule;
     struct ParseRule;
     struct SemanticInfo;
-    struct Signature;
     struct SymbolHasher;
     struct SymbolPairHasher;
     struct ParseTable;
+    struct Signature;
     class Parser;
     // clang-format on
 
@@ -148,12 +150,13 @@ public:
         BlockStateValues          = 1048659,
         BlockStateArray           = 1048660,
         BlockStateArrayCont       = 1048661,
-        Command                   = 1048662,
-        SlashCommand              = 1048663,
-        CodeBuilderArg            = 1048664,
-        CodeBuilderArgs           = 1048665,
-        CodeBuilderSelectParam    = 1048666,
-        CodeBuilderSelector       = 1048667,
+        ClockTimeMarkerName       = 1048662,
+        Command                   = 1048663,
+        SlashCommand              = 1048664,
+        CodeBuilderArg            = 1048665,
+        CodeBuilderArgs           = 1048666,
+        CodeBuilderSelectParam    = 1048667,
+        CodeBuilderSelector       = 1048668,
     };
 
     struct RegistryState {
@@ -178,10 +181,30 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uint>> softEnumValuesCount;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        RegistryState& operator=(RegistryState const&);
+        RegistryState();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI RegistryState(::CommandRegistry::RegistryState const&);
+#endif
+
         MCAPI ~RegistryState();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(::CommandRegistry::RegistryState const&);
+#endif
         // NOLINTEND
 
     public:
@@ -198,6 +221,22 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                mName;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mValues;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SoftEnum();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI SoftEnum(::std::string const& name, ::std::vector<::std::string> values);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::string const& name, ::std::vector<::std::string> values);
+        // NOLINTEND
     };
 
     class Symbol {
@@ -208,11 +247,25 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Symbol();
+
+    public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI bool isTerminal() const;
-#endif
+        MCAPI explicit Symbol(::CommandLexer::TokenType value);
+
+        MCAPI explicit Symbol(uint64 value);
+
+        MCFOLD int value() const;
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::CommandLexer::TokenType value);
+
+        MCFOLD void* $ctor(uint64 value);
         // NOLINTEND
     };
 
@@ -283,6 +336,49 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                                              isChaining;
         ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>>                         paramsSymbol;
         // NOLINTEND
+
+#ifdef LL_PLAT_S
+    public:
+        // prevent constructor by default
+        Overload& operator=(Overload const&);
+        Overload(Overload const&);
+        Overload();
+
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        Overload();
+
+#endif
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCAPI Overload(::CommandRegistry::Overload&&);
+#endif
+
+        MCAPI
+        Overload(::CommandVersion version_, ::brstd::copyable_function<::std::unique_ptr<::Command>() const> alloc_);
+
+        MCAPI ~Overload();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCAPI void* $ctor(::CommandRegistry::Overload&&);
+#endif
+
+        MCAPI void*
+        $ctor(::CommandVersion version_, ::brstd::copyable_function<::std::unique_ptr<::Command>() const> alloc_);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
     struct ParamSymbols {
@@ -315,18 +411,6 @@ public:
         ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> hasproperty;
         ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> codebuilder;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ParamSymbols();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
     };
 
     struct ParseToken {
@@ -345,6 +429,14 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::std::string toString() const;
+
+        MCAPI ~ParseToken();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -416,6 +508,26 @@ public:
         // NOLINTEND
     };
 
+    struct ParamParseRule {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            8,
+            bool (CommandRegistry::*)(
+                void*,
+                ::CommandRegistry::ParseToken const&,
+                ::CommandOrigin const&,
+                int,
+                ::std::string&,
+                ::std::vector<::std::string>&
+            ) const>
+                                                            parse;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol> symbol;
+        // NOLINTEND
+    };
+
     struct ParseRule {
     public:
         // member variables
@@ -471,52 +583,6 @@ public:
         // NOLINTEND
     };
 
-    struct Signature {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                              name;
-        ::ll::TypedStorage<8, 32, ::std::string>                              description;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Overload>> overloads;
-        ::ll::TypedStorage<8, 24, ::std::vector<uint>>                        chainedSubcommandIndexes;
-        ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                    permissionLevel;
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandSymbol;
-        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandAliasEnum;
-        ::ll::TypedStorage<2, 2, ::CommandFlag>                               flags;
-        ::ll::TypedStorage<4, 4, int>                                         firstRule;
-        ::ll::TypedStorage<4, 4, int>                                         firstFactorization;
-        ::ll::TypedStorage<4, 4, int>                                         firstOptional;
-        ::ll::TypedStorage<1, 1, bool>                                        runnable;
-        ::ll::TypedStorage<8, 8, uint64>                                      ruleCounter;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Signature& operator=(Signature const&);
-        Signature(Signature const&);
-        Signature();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Signature(::CommandRegistry::Signature&&);
-
-        MCAPI ~Signature();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::CommandRegistry::Signature&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-    };
-
     struct SymbolHasher {};
 
     struct SymbolPairHasher {};
@@ -550,6 +616,76 @@ public:
                                                              predict;
         ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> buildDuration;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ParseTable();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+        // NOLINTEND
+    };
+
+    struct Signature {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                              name;
+        ::ll::TypedStorage<8, 32, ::std::string>                              description;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Overload>> overloads;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint>>                        chainedSubcommandIndexes;
+        ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                    permissionLevel;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandSymbol;
+        ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                   commandAliasEnum;
+        ::ll::TypedStorage<2, 2, ::CommandFlag>                               flags;
+        ::ll::TypedStorage<4, 4, int>                                         firstRule;
+        ::ll::TypedStorage<4, 4, int>                                         firstFactorization;
+        ::ll::TypedStorage<4, 4, int>                                         firstOptional;
+        ::ll::TypedStorage<1, 1, bool>                                        runnable;
+        ::ll::TypedStorage<8, 8, uint64>                                      ruleCounter;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Signature();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Signature(
+            ::std::string const&      name_,
+            char const*               description_,
+            ::CommandPermissionLevel  level_,
+            ::CommandRegistry::Symbol commandSymbol_,
+            ::CommandFlag             flags_,
+            uint64                    initialRuleCount
+        );
+
+        MCAPI ~Signature();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::std::string const&      name_,
+            char const*               description_,
+            ::CommandPermissionLevel  level_,
+            ::CommandRegistry::Symbol commandSymbol_,
+            ::CommandFlag             flags_,
+            uint64                    initialRuleCount
+        );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
     class Parser {
@@ -581,10 +717,22 @@ public:
         // NOLINTBEGIN
         MCAPI Parser(::CommandRegistry const& registry, int version);
 
+        MCAPI ::entt::internal::dense_map_iterator<::entt::internal::dense_map_node<
+            ::std::pair<::CommandRegistry::Symbol, ::CommandRegistry::Symbol>,
+            int> const*>
+        _findParsePrediction(
+            ::CommandRegistry::LexicalToken const& lexToken,
+            ::CommandRegistry::Symbol const&       stackSymbol
+        ) const;
+
         MCAPI bool _parse(::std::string const& in);
+
+        MCAPI ::std::unique_ptr<::Command> createCommand(::CommandOrigin const& origin);
 
         MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
         createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
+
+        MCFOLD ::std::string const& getErrorMessage() const;
 
         MCAPI ::std::vector<::std::string> getErrorParams() const;
 
@@ -635,8 +783,6 @@ public:
 
     using HardTerminal = ::CommandLexer::TokenType;
 
-    using NonTerminal = ::CommandRegistry::Symbol;
-
     using ParamVisitCallback = ::std::function<
         bool(::CommandParameterData const&, ::CommandOrigin const&, ::CommandRegistry::ParseToken const*)>;
 
@@ -671,6 +817,8 @@ public:
     using SemanticConstraintID = uchar;
 
     using SoftEnumID = uint;
+
+    using Symbol = ::CommandRegistry::Symbol;
 
     using SymbolSet =
         ::entt::dense_set<::CommandRegistry::Symbol, ::CommandRegistry::SymbolHasher, ::std::equal_to<void>>;
@@ -766,6 +914,13 @@ public:
         ) const,
         ::CommandRegistry::Signature* signature
     );
+
+    MCAPI void _addEnumValueConstraintsInternal(
+        ::std::vector<::std::pair<uint64, uint>> const& constrainedValueKeys,
+        ::SemanticConstraint                            constraints
+    );
+
+    MCAPI void _addEnumValueConstraintsToExisting(uint constrainedValueId, ::SemanticConstraint constraints);
 
     MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
         ::std::string const&                                     name,
@@ -911,6 +1066,21 @@ public:
     MCAPI bool
     buildSelector(::ActorSelectorArgs const& args, ::CommandSelectorBase* output, ::std::string& error) const;
 
+#ifdef LL_PLAT_C
+    MCAPI bool canCommandBeUsed(
+        ::std::string const&            commandLine,
+        ::CommandPermissionLevel const& permissionLevel,
+        bool                            cheatsEnabled,
+        bool                            isEditorWorld
+    ) const;
+#endif
+
+    MCAPI bool checkOriginCommandFlags(
+        ::CommandOrigin const&   origin,
+        ::CommandFlag            flags,
+        ::CommandPermissionLevel permissionLevel
+    ) const;
+
     MCAPI ::std::unique_ptr<::Command> createCommand(
         ::CommandRegistry::ParseToken const& root,
         ::CommandOrigin const&               origin,
@@ -924,19 +1094,21 @@ public:
     MCAPI ::std::string describe(::CommandRegistry::Symbol symbol) const;
 
     MCAPI ::std::string describe(
-        ::CommandRegistry::Signature const& command,
-        ::std::string const&                alias,
-        ::CommandRegistry::Overload const&  overload,
-        uint                                highlight,
-        uint*                               start,
-        uint*                               length
+        ::CommandRegistry::Signature const& alias,
+        ::std::string const&                overload,
+        ::CommandRegistry::Overload const&  highlight,
+        uint                                start,
+        uint*                               length,
+        uint*
     ) const;
+
+    MCAPI bool enabledInEditor(::std::string const& nameIn) const;
+
+    MCAPI void finalizeChainedSubcommandOverloadRules(char const* command);
 
     MCFOLD ::CommandRegistry::Signature const* findCommand(::std::string const& name) const;
 
     MCFOLD ::CommandRegistry::Signature* findCommand(::std::string const& name);
-
-    MCAPI ::CommandRegistry::Symbol findEnumValue(::std::string const& name) const;
 
     MCAPI ::CommandRegistry::Symbol findIdentifierInfo(::std::string const& name) const;
 
@@ -947,6 +1119,8 @@ public:
     MCAPI void forEachNonTerminal(::std::function<void(::CommandRegistry::Symbol)> func) const;
 
     MCAPI ::Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
+
+    MCAPI ::std::vector<::std::string> getAliases(::std::string const& command) const;
 
     MCAPI ::std::vector<::std::string> getAlphabeticalLookup(::CommandOrigin const& origin) const;
 
@@ -963,6 +1137,12 @@ public:
     MCAPI ::CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(::CommandOrigin const& origin, ::std::string const& commandName) const;
 
+    MCAPI ::CommandRunStats& getCommandRunStats() const;
+
+    MCAPI ::CommandStatus getCommandStatus(::std::string const& nameIn) const;
+
+    MCAPI uint64 getEnumData(::CommandRegistry::ParseToken const& token) const;
+
     MCAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
 
 #ifdef LL_PLAT_C
@@ -972,10 +1152,16 @@ public:
         uint                   cursorPosition
     ) const;
 
-    MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
+    MCAPI bool hasCommands() const;
+
+    MCAPI bool hasState() const;
 #endif
 
+    MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
+
     MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
+
+    MCAPI bool isValidCommand(::std::string const& commandName) const;
 
 #ifdef LL_PLAT_C
     MCAPI void loadRemoteCommands(::AvailableCommandsPacket const& packet);
@@ -983,11 +1169,9 @@ public:
 
     MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Signature const& command) const;
 
-    MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Overload const& overload) const;
-
-#ifdef LL_PLAT_C
     MCAPI bool originCanRunOverloadWithParam(::CommandOrigin const& origin, ::CommandParameterData const& param) const;
 
+#ifdef LL_PLAT_C
     MCAPI ::std::string parsePartialCommand(
         ::CommandRegistry::Parser& parser,
         ::std::string const&       _cmdLine,
@@ -999,10 +1183,20 @@ public:
     MCAPI bool parseSelector(
         ::ActorSelectorArgs&                 args,
         ::CommandRegistry::ParseToken const& token,
+        ::CommandOrigin const&               error,
+        int                                  errorParams,
+        ::std::string&,
+        ::std::vector<::std::string>&
+    ) const;
+
+    MCAPI bool parseSelector(
+        ::CommandSelectorBase*               output,
+        ::CommandRegistry::ParseToken const& token,
         ::CommandOrigin const&               origin,
         int                                  version,
         ::std::string&                       error,
-        ::std::vector<::std::string>&        errorParams
+        ::std::vector<::std::string>&        errorParams,
+        bool
     ) const;
 
 #ifdef LL_PLAT_C
@@ -1032,11 +1226,17 @@ public:
 
     MCAPI void removeSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
+#ifdef LL_PLAT_C
+    MCAPI bool requiresCheatsEnabled(::std::string const& nameIn) const;
+#endif
+
     MCAPI ::AvailableCommandsPacket serializeAvailableCommands() const;
 
     MCAPI void setCommandRegistrationOverride(
         ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)> functor
     );
+
+    MCAPI void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
 
     MCAPI void setSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
@@ -1058,8 +1258,10 @@ public:
 
     MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
 
+    MCFOLD static void buildOverload(::CommandRegistry::Overload& overload);
+
     MCFOLD static ::CommandRegistry::ParseToken*
-    collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
+    collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol);
 
     MCAPI static ::CommandRegistry::ParseToken* collapseOn(
         ::CommandRegistry::ParseToken& parent,
@@ -1082,8 +1284,11 @@ public:
         ::CommandRegistry::Symbol      boundSymbol
     );
 
-    MCAPI static ::CommandRegistry::ParseToken*
-    kill(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
+#ifdef LL_PLAT_C
+    MCAPI static bool isParseMatch(::CommandParameterData const& param, ::CommandRegistry::Symbol in);
+#endif
+
+    MCAPI static ::CommandRegistry::ParseToken* kill(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol);
 
     MCAPI static bool readFloat(
         float&                               value,
@@ -1121,19 +1326,29 @@ public:
     // NOLINTBEGIN
     MCAPI static char const*& CODE_STATUS_PROPERTY_NAME();
 
+    MCAPI static char const*& COMMAND_NAME_ENUM_NAME();
+
     MCAPI static char const*& FUNCTION_NAME_SOFTENUM_NAME();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::pair<
-        bool (CommandRegistry::*)(
-            void*,
-            ::CommandRegistry::ParseToken const&,
-            ::CommandOrigin const&,
-            int,
-            ::std::string&,
-            ::std::vector<::std::string>&
-        ) const,
-        ::CommandRegistry::Symbol> const[]>
-    ParseRuleSymbols();
+    MCAPI static char const*& HASITEM_PARAM_DATA();
+
+    MCAPI static char const*& HASITEM_PARAM_ITEM();
+
+    MCAPI static char const*& HASITEM_PARAM_LOCATION();
+
+    MCAPI static char const*& HASITEM_PARAM_QUANTITY();
+
+    MCAPI static char const*& HASITEM_PARAM_SLOT();
+
+    MCAPI static char const*& HASPERMISSIONSTATE_ENUM_DISABLED();
+
+    MCAPI static char const*& HASPERMISSIONSTATE_ENUM_ENABLED();
+
+    MCAPI static char const*& HASPROPERTY_PARAM_PROPERTY_NAME();
+
+    MCAPI static char const*& TAG_VALUES_SOFTENUM_NAME();
+
+    MCAPI static char const*& UNLOCKABLE_RECIPES_SOFTENUM_NAME();
     // NOLINTEND
 
 public:

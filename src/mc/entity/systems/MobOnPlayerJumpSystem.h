@@ -12,5 +12,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
+
+    MCAPI static float getPlayerJumpPendingScale(int jumpAmount);
     // NOLINTEND
 };

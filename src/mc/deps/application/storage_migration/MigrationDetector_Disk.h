@@ -17,8 +17,7 @@ class MigrationDetector_Disk : public ::Bedrock::StorageMigration::MigrationDete
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc6b0b2;
-    ::ll::UntypedStorage<8, 32> mUnk3cf8f2;
+    ::ll::UntypedStorage<8, 8>  mUnkf4902b;
     ::ll::UntypedStorage<8, 32> mUnkb54b47;
     ::ll::UntypedStorage<8, 16> mUnk1689de;
     ::ll::UntypedStorage<8, 16> mUnke0be58;

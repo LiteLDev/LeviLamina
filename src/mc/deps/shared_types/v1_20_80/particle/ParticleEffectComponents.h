@@ -14,21 +14,9 @@ namespace SharedTypes::v1_20_80 {
 
 struct ParticleEffectComponents : public ::cereal::ComponentStorage {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ParticleEffectComponents();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

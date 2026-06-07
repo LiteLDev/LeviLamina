@@ -8,6 +8,7 @@ class BreathableComponent;
 class BuoyancyComponent;
 class CollisionBoxComponent;
 class DimensionStateComponent;
+class EntityId;
 class EntityRegistry;
 class FreezingComponent;
 class HitboxComponent;
@@ -50,7 +51,6 @@ struct DimensionTypeComponent;
 struct FallDistanceComponent;
 struct FallFlyTicksComponent;
 struct FreezeImmuneFlagComponent;
-struct FrictionModifierComponent;
 struct HasTeleportedFlagComponent;
 struct HorizontalCollisionFlagComponent;
 struct HorseFlagComponent;
@@ -103,6 +103,7 @@ struct StandAnimationComponent;
 struct StateVectorComponent;
 struct SwimAmountComponent;
 struct SwimSpeedMultiplierComponent;
+struct UsesMobTravelComponent;
 struct VanillaClientGameplayComponent;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
@@ -243,7 +244,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 904> mUnk314ea6;
+    ::ll::UntypedStorage<8, 904> mUnkd9365b;
     // NOLINTEND
 
 public:

@@ -53,7 +53,9 @@ public:
 #endif
 
 #ifdef LL_PLAT_C
-    MCNAPI static ::MolangScriptArg const* getTargetYRotationBase(::RenderParams& renderParams);
+    MCNAPI static ::MolangScriptArg const* getTargetXRotationBase(::RenderParams& renderParams);
 #endif
+
+    MCNAPI static ::MolangScriptArg const* getTargetYRotationBase(::RenderParams& renderParams);
     // NOLINTEND
 };

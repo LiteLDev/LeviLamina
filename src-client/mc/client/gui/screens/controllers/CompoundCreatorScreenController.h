@@ -49,8 +49,6 @@ public:
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI void _registerBindings();
-
     MCAPI void _registerInputStateMachine();
 
     MCAPI void _registerOutputStateMachine();

@@ -9,6 +9,8 @@ MCAPI int const& CONTROLLING_SEAT();
 
 MCAPI bool const& PASSENGER_CAN_PICK();
 
+MCAPI float const& PASSENGER_MAX_WIDTH();
+
 MCAPI bool const& PULL_IN_ENTITIES();
 
 MCAPI int const& SEAT_COUNT();

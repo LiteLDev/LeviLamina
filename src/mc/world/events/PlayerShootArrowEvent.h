@@ -22,22 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerShootArrowEvent& operator=(PlayerShootArrowEvent const&);
-    PlayerShootArrowEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerShootArrowEvent(::PlayerShootArrowEvent const&);
-
     MCAPI ~PlayerShootArrowEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::PlayerShootArrowEvent const&);
     // NOLINTEND
 
 public:

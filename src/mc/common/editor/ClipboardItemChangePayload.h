@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class ClipboardItemChangePayload
@@ -23,9 +28,9 @@ public:
     ClipboardItemChangePayload();
 
 public:
-    // virtual functions
+    // static functions
     // NOLINTBEGIN
-    virtual ~ClipboardItemChangePayload() /*override*/ = default;
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

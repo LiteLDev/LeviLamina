@@ -24,35 +24,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentRenderPrimType_AxialSphere& operator=(ScriptWidgetComponentRenderPrimType_AxialSphere const&);
     ScriptWidgetComponentRenderPrimType_AxialSphere(ScriptWidgetComponentRenderPrimType_AxialSphere const&);
     ScriptWidgetComponentRenderPrimType_AxialSphere();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrimType_AxialSphere() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere const&);
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

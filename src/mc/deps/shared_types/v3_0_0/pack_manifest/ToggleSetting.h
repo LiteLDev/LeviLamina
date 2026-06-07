@@ -24,21 +24,16 @@ public:
 
 public:
     // prevent constructor by default
-    ToggleSetting(ToggleSetting const&);
+    ToggleSetting& operator=(ToggleSetting const&);
     ToggleSetting();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ToggleSetting(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&);
+
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&&);
-
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&);
-
-    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&) const;
-
-    MCAPI ~ToggleSetting();
     // NOLINTEND
 
 public:
@@ -54,9 +49,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&);
     // NOLINTEND
 };
 

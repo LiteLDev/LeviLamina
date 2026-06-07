@@ -14,14 +14,14 @@ public:
 
 public:
     // prevent constructor by default
+    RenderingRidingOffsetInfo& operator=(RenderingRidingOffsetInfo const&);
+    RenderingRidingOffsetInfo(RenderingRidingOffsetInfo const&);
     RenderingRidingOffsetInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderingRidingOffsetInfo(::RenderingRidingOffsetInfo const&);
-
-    MCAPI ::RenderingRidingOffsetInfo& operator=(::RenderingRidingOffsetInfo const&);
+    MCAPI RenderingRidingOffsetInfo(::std::string const& baseLocator, ::std::string const& seatLocator);
 
     MCAPI ~RenderingRidingOffsetInfo();
     // NOLINTEND
@@ -29,7 +29,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::RenderingRidingOffsetInfo const&);
+    MCAPI void* $ctor(::std::string const& baseLocator, ::std::string const& seatLocator);
     // NOLINTEND
 
 public:

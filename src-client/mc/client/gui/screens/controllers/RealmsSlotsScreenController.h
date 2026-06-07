@@ -53,8 +53,6 @@ public:
     // NOLINTBEGIN
     MCAPI RealmsSlotsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::Realms::World& world);
 
-    MCAPI ::ui::ViewRequest _editRealm();
-
     MCAPI void _getUnreadCount();
 
     MCAPI bool _isRealmExpiringForPlatform();
@@ -70,8 +68,6 @@ public:
     MCAPI void _setActiveSlot(int slotIndex, ::std::function<void()> callback, bool refreshScreen);
 
     MCAPI ::ui::ViewRequest _startRealm();
-
-    MCAPI bool _userGeneratedContentRestrictionsDialogCheck() const;
     // NOLINTEND
 
 public:

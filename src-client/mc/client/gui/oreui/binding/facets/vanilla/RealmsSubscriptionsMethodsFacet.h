@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsSubscriptionsMethodsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsSubscriptionsMethodsFacet() /*override*/ = default;
@@ -30,6 +34,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsSubscriptionsMethodsFacet(
+        ::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions
+    );
+
     MCAPI void initialize();
 
     MCAPI void reset();
@@ -39,6 +47,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
     // NOLINTEND
 
 public:

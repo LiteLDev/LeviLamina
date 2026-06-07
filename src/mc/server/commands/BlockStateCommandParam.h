@@ -31,8 +31,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockStateCommandParam& operator=(BlockStateCommandParam const&);
+    BlockStateCommandParam();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockStateCommandParam(::BlockStateCommandParam const&);
+
+    MCAPI BlockStateCommandParam(::std::string state, ::std::string value, ::BlockStateCommandParam::Type type);
+
     MCAPI bool _createCompoundTag(::CompoundTag& tag, ::CommandOutput& output) const;
 
     MCAPI ::BlockState const* _getBlockState(::Block const& block) const;
@@ -40,7 +49,17 @@ public:
     MCAPI ::std::optional<::std::pair<::HashedString, int>>
     getNameAndValue(::CommandOutput& output, ::Block const& defaultNewBlock) const;
 
+    MCAPI bool setBlockState(::Block const** inputBlock, ::CommandOutput& output) const;
+
     MCAPI ~BlockStateCommandParam();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::BlockStateCommandParam const&);
+
+    MCAPI void* $ctor(::std::string state, ::std::string value, ::BlockStateCommandParam::Type type);
     // NOLINTEND
 
 public:

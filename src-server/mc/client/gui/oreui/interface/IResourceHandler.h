@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI {
+namespace Gameface {
 
-class IResourceHandler {
-public:
-    // IResourceHandler inner types define
-    enum class Status : int {};
-};
+class IResourceHandler {};
 
-} // namespace OreUI
+} // namespace Gameface

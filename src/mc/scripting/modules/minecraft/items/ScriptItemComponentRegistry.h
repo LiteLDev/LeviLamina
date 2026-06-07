@@ -41,6 +41,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptItemComponentRegistry(
+        ::ScriptModuleMinecraft::IScriptItemCustomComponentWriter& customComponentWriter
+    );
+
     MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
@@ -76,6 +80,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::IScriptItemCustomComponentWriter& customComponentWriter);
     // NOLINTEND
 };
 

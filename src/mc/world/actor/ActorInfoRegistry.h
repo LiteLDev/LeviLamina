@@ -19,7 +19,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorInfoRegistry();
+#ifdef LL_PLAT_C
+    MCAPI void digestInfoFromServer(::std::vector<::ActorInfo> const& infoList);
+#endif
+
+    MCAPI ::ActorInfo const& getActorInfo(uint infoRuntimeId) const;
 
     MCAPI uint getActorInfoId(::std::string const& name) const;
 
@@ -30,11 +34,7 @@ public:
     MCAPI bool isSpawnEggAvailable(::std::string identifier);
 
     MCAPI void registerActorInfo(::ActorInfo const& info);
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void setSpawnEggAvailable(::std::string identifier, bool val);
     // NOLINTEND
 };

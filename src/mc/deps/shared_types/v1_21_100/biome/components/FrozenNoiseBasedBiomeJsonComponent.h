@@ -14,12 +14,6 @@ namespace SharedTypes::v1_21_100 {
 
 struct FrozenNoiseBasedBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBiomeJsonComponent {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FrozenNoiseBasedBiomeJsonComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

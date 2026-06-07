@@ -10,11 +10,6 @@ class SemVersionBase {};
 
 // free functions
 // NOLINTBEGIN
-MCAPI bool operator!=(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
-);
-
 MCAPI bool operator<(::SemVersionBase<::std::string_view> const& lhs, ::SemVersionBase<::std::string_view> const& rhs);
 
 MCAPI bool operator<(
@@ -28,21 +23,6 @@ MCAPI bool operator<(
 );
 
 MCAPI bool operator<(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::std::string_view> const&               rhs
-);
-
-MCAPI bool operator==(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
-);
-
-MCAPI bool operator==(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::std::string_view> const&               rhs
-);
-
-MCAPI bool operator>=(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::std::string_view> const&               rhs
 );

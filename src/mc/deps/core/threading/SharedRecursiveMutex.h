@@ -23,14 +23,6 @@ public:
     virtual bool _shouldLockForSharedAccess(::std::thread::id) /*override*/;
 
     virtual bool _shouldUnLockForSharedAccess(::std::thread::id) /*override*/;
-
-    virtual ~SharedRecursiveMutex() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

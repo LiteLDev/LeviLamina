@@ -26,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleMotionParametricComponent& operator=(ParticleMotionParametricComponent const&);
     ParticleMotionParametricComponent(ParticleMotionParametricComponent const&);
     ParticleMotionParametricComponent();
 
@@ -33,20 +34,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ParticleMotionParametricComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ParticleMotionParametricComponent() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_80::ParticleMotionParametricComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleMotionParametricComponent const&);
+    MCAPI ParticleMotionParametricComponent(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
     // NOLINTEND
 
 public:
@@ -62,9 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
     // NOLINTEND
 
 public:

@@ -14,8 +14,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class CampfireBlockActor;
-class Experiments;
 class ItemInstance;
 struct BlockAnimateTickData;
 struct Brightness;
@@ -32,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CampfireBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
@@ -40,10 +42,9 @@ public:
 
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& pathPos, ::BlockPos const&) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
@@ -59,16 +60,12 @@ public:
         /*override*/;
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~CampfireBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CampfireBlockActor* _getBlockActor(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI CampfireBlock(::std::string const& nameId, int id, bool spawnRandomParticles, bool setsOnFire);
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -78,9 +75,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _canBeLit(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static bool isLit(::Block const& block);
+
     MCAPI static bool tryDouseFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor, bool needsWater);
 
     MCAPI static bool tryLightFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool spawnRandomParticles, bool setsOnFire);
     // NOLINTEND
 
 public:
@@ -92,9 +99,9 @@ public:
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& pathPos, ::BlockPos const&) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
@@ -109,8 +116,6 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

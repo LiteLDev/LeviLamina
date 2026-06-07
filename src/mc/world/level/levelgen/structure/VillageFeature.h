@@ -28,13 +28,10 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     VillageFeature();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -68,24 +65,18 @@ public:
         ::ChunkPos const&                    chunkPos,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
-
-    virtual ~VillageFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI VillageFeature(uint seed, int townSpacing, int minTownSeparation, ::BiomeRegistry const& biomeRegistry);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(uint seed, int townSpacing, int minTownSeparation, ::BiomeRegistry const& biomeRegistry);
-#endif
     // NOLINTEND
 
 public:

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class NoodleCavifierNoises;
-class Vec3;
 // clang-format on
 
 class NoodleCavifier {
@@ -37,20 +36,4 @@ public:
     NoodleCavifier& operator=(NoodleCavifier const&);
     NoodleCavifier(NoodleCavifier const&);
     NoodleCavifier();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NoodleCavifier(::NoodleCavifierNoises const& noises, short minWorldHeight);
-
-    MCAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
-
-    MCAPI ::std::array<::NoiseCellInterpolator*, 4> getInterpolators(int blocksPerCellXZ, int blocksPerCellY);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::NoodleCavifierNoises const& noises, short minWorldHeight);
-    // NOLINTEND
 };

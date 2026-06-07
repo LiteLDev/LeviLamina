@@ -30,9 +30,6 @@ public:
     MCNAPI
     ScriptModalFormDataTextFieldOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions const&);
 
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
-
     MCNAPI ~ScriptModalFormDataTextFieldOptions();
     // NOLINTEND
 

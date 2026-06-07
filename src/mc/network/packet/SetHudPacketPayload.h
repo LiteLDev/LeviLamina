@@ -15,16 +15,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetHudPacketPayload& operator=(SetHudPacketPayload const&);
-    SetHudPacketPayload(SetHudPacketPayload const&);
-    SetHudPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SetHudPacketPayload& operator=(::SetHudPacketPayload&&);
-
     MCAPI ~SetHudPacketPayload();
     // NOLINTEND
 

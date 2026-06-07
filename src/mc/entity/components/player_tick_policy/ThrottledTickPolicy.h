@@ -34,8 +34,6 @@ public:
     virtual bool isStrictMovement() const /*override*/;
 
     virtual bool isStrictDismount() const /*override*/;
-
-    virtual ~ThrottledTickPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:

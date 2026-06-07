@@ -18,29 +18,9 @@ public:
     using Flags = ::ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags;
 
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentInterface& operator=(ScriptItemCustomComponentInterface const&);
-    ScriptItemCustomComponentInterface(ScriptItemCustomComponentInterface const&);
-    ScriptItemCustomComponentInterface();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentInterface(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
-
-    MCAPI ~ScriptItemCustomComponentInterface();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI ::ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags toFlags() const;
     // NOLINTEND
 };
 

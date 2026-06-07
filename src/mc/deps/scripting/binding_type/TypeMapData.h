@@ -28,13 +28,20 @@ public:
     public:
         // prevent constructor by default
         Mapping& operator=(Mapping const&);
-        Mapping(Mapping const&);
         Mapping();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI Mapping(::Scripting::TypeMapData::Mapping const&);
+
         MCNAPI ~Mapping();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Scripting::TypeMapData::Mapping const&);
         // NOLINTEND
 
     public:

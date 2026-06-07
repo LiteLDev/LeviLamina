@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
+#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/client/gui/screens/models/PlayScreenDefaultTab.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -41,14 +42,12 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
-
-    virtual ~PlayScreen() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isOreUIPlayScreenEnabled() const;
+    MCAPI explicit PlayScreen(::ui::ScreenTechStackSelector const& screenTechStackSelector);
     // NOLINTEND
 
 public:
@@ -57,19 +56,31 @@ public:
     MCAPI static ::std::string
     composeRoute(::PlayScreenDefaultTab tab, bool isEditorMode, ::std::string const& dirtyLevelId);
 
-    MCAPI static ::std::string getLastPlayScreenTab(::std::vector<::OreUI::RouterLocation> const& routerHistory);
+    MCAPI static ::std::optional<::std::string>
+    getEditorPlayScreenRouteIfEnabled(bool isEditorMode, ::PlayScreenDefaultTab tab);
+
+    MCAPI static ::std::string
+    getLastPlayScreenTab(::std::vector<::OreUI::RouterLocation> const& routerHistory, bool isEditorMode);
+
+    MCAPI static ::PlayScreenDefaultTab resolveEditorTabFromRoute(::std::string const& route);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> EDITOR_ROUTE();
+
+    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> LEGACY_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ui::ScreenTechStackSelector const& screenTechStackSelector);
     // NOLINTEND
 
 public:

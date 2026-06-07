@@ -11,7 +11,6 @@
 class Actor;
 class BlockPos;
 class CompoundTag;
-class HashedString;
 class ItemStack;
 class Vec3;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
@@ -39,14 +38,6 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
-
-    virtual ~OnUseOn() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

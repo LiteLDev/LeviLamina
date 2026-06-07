@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 struct CopperBlockSet;
 // clang-format on
 
@@ -24,4 +25,16 @@ public:
     CopperBehavior& operator=(CopperBehavior const&);
     CopperBehavior(CopperBehavior const&);
     CopperBehavior();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CopperBehavior(::CopperBlockSet const& blockSet, ::HashedString const& thisBlock);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CopperBlockSet const& blockSet, ::HashedString const& thisBlock);
+    // NOLINTEND
 };

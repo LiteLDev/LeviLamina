@@ -22,23 +22,19 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayerRef;
     ::ll::TypedStorage<4, 4, ::PlatformType>   mPlatformType;
     ::ll::TypedStorage<4, 4, int>              mMaxRenderDistance;
+    ::ll::TypedStorage<8, 32, ::std::string>   mLocale;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptClientSystemInfo& operator=(ScriptClientSystemInfo const&);
-    ScriptClientSystemInfo(ScriptClientSystemInfo const&);
     ScriptClientSystemInfo();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptClientSystemInfo() /*override*/ = default;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptClientSystemInfo(::ScriptModuleMinecraft::ScriptClientSystemInfo const&);
+
     MCAPI explicit ScriptClientSystemInfo(::Player const& player);
 
     MCAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo& operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
@@ -53,6 +49,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptClientSystemInfo const&);
+
     MCAPI void* $ctor(::Player const& player);
     // NOLINTEND
 

@@ -20,11 +20,7 @@ public:
 
     virtual bool shouldProcessMessage(::std::string const& functionNamespace, ::std::string const& func) = 0;
 
-    virtual bool onMessageReceived(
-        ::std::string const&           functionNamespace,
-        ::std::string const&           func,
-        ::std::optional<::Json::Value> arguments
-    ) = 0;
+    virtual bool onMessageReceived(::std::string const&, ::std::string const&, ::std::optional<::Json::Value>) = 0;
 
     virtual bool isShutdownInProgress();
 

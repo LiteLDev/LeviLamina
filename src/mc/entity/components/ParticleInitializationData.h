@@ -18,30 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleInitializationData& operator=(ParticleInitializationData const&);
-    ParticleInitializationData();
-
-public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ParticleInitializationData(::ParticleInitializationData&&);
-#endif
-
-    MCAPI ParticleInitializationData(::ParticleInitializationData const&);
-
     MCAPI ~ParticleInitializationData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(::ParticleInitializationData&&);
-#endif
-
-    MCAPI void* $ctor(::ParticleInitializationData const&);
     // NOLINTEND
 
 public:

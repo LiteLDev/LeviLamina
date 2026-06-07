@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandBlockName.h"
@@ -22,7 +21,6 @@ class BlockStateCommandParam;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Dimension;
 class Scoreboard;
 struct ScoreInfo;
 struct ScoreboardId;
@@ -77,13 +75,14 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::std::string getCommandName() const /*override*/;
-
-        virtual ~ExecuteChainedSubcommand() /*override*/ = default;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
+        MCAPI static ::std::string
+        getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::ConditionSubcommand subcommand);
+
         MCAPI static ::std::string
         getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand subcommand);
 
@@ -93,6 +92,16 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
+        MCAPI static char const*& CHAINED_OPTION_0();
+
+        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCK();
+
+        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCKS();
+
+        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_ENTITY();
+
+        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_SCORE();
+
         MCAPI static char const*& SUBCOMMAND_ALIGN();
 
         MCAPI static char const*& SUBCOMMAND_ANCHORED();
@@ -112,6 +121,28 @@ public:
         MCAPI static char const*& SUBCOMMAND_IF();
 
         MCAPI static char const*& SUBCOMMAND_IN();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_ALIGN();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_ANCHORED();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_AS();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_AT();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_ENTITY();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_FACING();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_IF_UNLESS();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_IN();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_POSITIONED();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_ROTATED();
+
+        MCAPI static char const*& SUBCOMMAND_OPTION_RUN();
 
         MCAPI static char const*& SUBCOMMAND_POSITIONED();
 
@@ -174,8 +205,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~NewExecuteCommand() /*override*/;
     // NOLINTEND
 
 public:
@@ -219,12 +248,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

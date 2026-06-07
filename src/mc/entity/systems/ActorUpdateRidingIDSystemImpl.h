@@ -21,17 +21,17 @@ namespace ActorUpdateRidingIDSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void clearRidingID(
-    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
-    ::StrictEntityContext const&                                                              entity,
-    ::EntityModifier<::PassengerComponent, ::KeepRidingEvenIfTooLargeForVehicleFlagComponent> modifier
+    ::entt::type_list<::Include<::StopRidingRequestComponent>> entity,
+    ::StrictEntityContext const&                               modifier,
+    ::EntityModifier<::PassengerComponent, ::KeepRidingEvenIfTooLargeForVehicleFlagComponent>
 );
 
 MCAPI void updateRidingPrevID(
-    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
-    ::StrictEntityContext const&                             entity,
-    ::PassengerComponent const&                              passengerComponent,
-    ::ViewT<::StrictEntityContext, ::VehicleComponent const> vehicleView,
-    ::EntityModifier<::RidingPrevIDComponent>                modifier
+    ::entt::type_list<::Include<::StopRidingRequestComponent>> entity,
+    ::StrictEntityContext const&                               passengerComponent,
+    ::PassengerComponent const&                                vehicleView,
+    ::ViewT<::StrictEntityContext, ::VehicleComponent const>   modifier,
+    ::EntityModifier<::RidingPrevIDComponent>
 );
 // NOLINTEND
 

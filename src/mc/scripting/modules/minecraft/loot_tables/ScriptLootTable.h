@@ -37,7 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::std::string getPath() const;
+#endif
 
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPool>> getPools();
     // NOLINTEND

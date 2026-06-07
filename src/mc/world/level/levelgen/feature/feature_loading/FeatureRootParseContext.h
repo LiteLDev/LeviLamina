@@ -22,18 +22,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureLoading::AbstractFeatureHolder>> mFeatureHolder;
     ::ll::TypedStorage<8, 8, ::IFeature*>                                                mFeature;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~FeatureRootParseContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace FeatureLoading

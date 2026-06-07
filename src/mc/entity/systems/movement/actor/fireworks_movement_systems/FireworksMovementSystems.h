@@ -11,12 +11,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
 class EntitySystems;
 class LocalSpatialEntityFetcher;
 class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct ActorSetPositionRequestComponent;
+struct ActorUniqueID;
 struct DimensionTypeComponent;
 struct FireworksRocketFlagComponent;
 struct LocalSpatialEntityFetcherFactoryComponent;
@@ -66,7 +68,25 @@ MCAPI void fireworksRocketMoveServer(
     ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent>                               factoryComponent
 );
 
+MCAPI void fireworksRocketServerProjectileHit(
+    ::entt::type_list<::Include<::FireworksRocketFlagComponent, ::MoveRequestComponent>> stateVector,
+    ::StateVectorComponent const&                                                        actorOwner,
+    ::ActorOwnerComponent&
+);
+
 MCAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);
+
+MCAPI void simulateAttachedRocket(
+    ::StrictEntityContext const& rocket,
+    ::ActorUniqueID const&       attachedID,
+    ::StateVectorComponent&      rocketStateVector,
+    ::LocalSpatialEntityFetcher& fetcher,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> const& stateVectors,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                               modifier
+);
+
+MCAPI void
+tryInitializeRocketRotation(::ActorRotationComponent& rocketRotation, ::StateVectorComponent const& rocketStateVector);
 // NOLINTEND
 
 } // namespace FireworksMovementSystems

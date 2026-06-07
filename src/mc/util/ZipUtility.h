@@ -74,8 +74,6 @@ public:
         ::Core::Path const&                    filePath,
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const /*override*/;
-
-    virtual ~ZipUtility() /*override*/ = default;
     // NOLINTEND
 
 public:

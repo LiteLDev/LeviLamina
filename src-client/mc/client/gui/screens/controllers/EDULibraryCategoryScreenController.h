@@ -38,8 +38,6 @@ public:
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
     virtual void onOpen() /*override*/;
-
-    virtual ~EDULibraryCategoryScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -60,6 +58,8 @@ public:
 
     MCAPI void _registerBindings();
 
+    MCAPI void _registerControllerCallbacks();
+
     MCAPI void _registerEventHandlers();
     // NOLINTEND
 
@@ -76,12 +76,6 @@ public:
         ::std::vector<::EDULibraryCategory>      libraryCategories,
         bool                                     firstPage
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

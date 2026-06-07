@@ -58,8 +58,18 @@ public:
     virtual float getGuiScale() const /*override*/;
 
     virtual void setGuiScale(float scale) /*override*/;
+    // NOLINTEND
 
-    virtual ~RenderDragonOffscreenPaperDollRenderer() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RenderDragonOffscreenPaperDollRenderer();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

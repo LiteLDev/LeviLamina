@@ -36,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPrefabTemplateMetadata(::Editor::ScriptModule::ScriptPrefabTemplateMetadata&&);
-
     MCNAPI ScriptPrefabTemplateMetadata(::Editor::ScriptModule::ScriptPrefabTemplateMetadata const&);
 
     MCNAPI explicit ScriptPrefabTemplateMetadata(::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> templateRef);
@@ -60,8 +58,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptPrefabTemplateMetadata&&);
-
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptPrefabTemplateMetadata const&);
 
     MCNAPI void* $ctor(::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> templateRef);

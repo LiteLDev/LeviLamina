@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/gameplay/data/gameplayui/ChestType.h"
 #include "mc/client/gui/gameplay/gameplayui/GameStateModel.h"
-#include "mc/deps/shared_types/legacy/ContainerType.h"
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 // clang-format on
 
 namespace GameplayUI {
@@ -25,20 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void closeDataDrivenScreens();
-
-    MCAPI void onGameServerConnectionChanged(bool isConnectedToGameServer);
-
-    MCAPI void onPlayerOpenContainer(
-        ::SharedTypes::Legacy::ContainerType     container,
-        ::std::optional<::GameplayUI::ChestType> chestType
-    );
+    MCAPI void onLeaveWorld();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isManagedRoute(::std::string const& route, ::IOptions const& options);
+    MCAPI static bool isManagedRoute(::std::string const& route, ::IOptionRegistry const& options);
     // NOLINTEND
 };
 

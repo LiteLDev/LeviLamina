@@ -14,10 +14,6 @@ class Item;
 
 class ItemInstance : public ::ItemStackBase {
 public:
-    // prevent constructor by default
-    ItemInstance& operator=(ItemInstance const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void reinit(::Block const& block, int count) /*override*/;
@@ -25,8 +21,6 @@ public:
     virtual void reinit(::Item const& item, int count, int auxValue) /*override*/;
 
     virtual void reinit(::std::string_view const name, int count, int auxValue) /*override*/;
-
-    virtual ~ItemInstance() /*override*/;
     // NOLINTEND
 
 public:
@@ -45,6 +39,8 @@ public:
     MCAPI ItemInstance(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCAPI ::ItemInstance clone() const;
+
+    MCAPI ::ItemInstance& operator=(::ItemInstance const& rhs);
     // NOLINTEND
 
 public:
@@ -73,12 +69,6 @@ public:
     MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

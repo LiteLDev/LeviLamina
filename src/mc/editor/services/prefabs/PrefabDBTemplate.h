@@ -3,8 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/OwnerPtrIterator.h"
 #include "mc/common/editor/PrefabSource.h"
+#include "mc/common/editor/PrefabTemplateErrorState.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/util/Mirror.h"
@@ -13,6 +16,7 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { class PrefabDBTemplateStructureRef; }
 namespace Editor::Prefabs::PrefabDBTemplateLoader::v1 { struct TemplateData; }
 namespace mce { class UUID; }
@@ -71,17 +75,67 @@ public:
         ::Vec3 const&      structureNormalizedOrigin
     );
 
+    MCNAPI void clearDirty();
+
     MCNAPI bool clone(::Editor::Prefabs::PrefabDBTemplate const& other);
 
     MCNAPI void forEachStructureRef(
         ::std::function<void(::StackRefResult<::Editor::Prefabs::PrefabDBTemplateStructureRef>)> callback
     );
 
+    MCNAPI int getDependentInstanceCount() const;
+
+    MCNAPI ::std::string const& getDescription() const;
+
+    MCNAPI ::std::string const& getDisplayName() const;
+
+    MCNAPI ::mce::UUID const& getId() const;
+
+    MCNAPI ::std::string const& getName() const;
+
+    MCNAPI ::std::string const& getNotes() const;
+
+    MCNAPI ::Editor::Prefabs::PrefabSource getSource() const;
+
+    MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBTemplateStructureRef const>
+    getStructureRef(::mce::UUID const& prefabStructureId) const;
+
+    MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBTemplateStructureRef>
+    getStructureRef(::mce::UUID const& prefabStructureId);
+
+    MCNAPI ::std::vector<::std::string> const& getTags() const;
+
+    MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBTemplate> getWeakRef();
+
     MCNAPI bool isDirty() const;
+
+    MCNAPI bool isReadOnly() const;
 
     MCNAPI bool removeStructureRef(::WeakRef<::Editor::Prefabs::PrefabDBTemplateStructureRef> structureRef);
 
     MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData saveToFileData() const;
+
+    MCNAPI void setDescription(::std::string const& description);
+
+    MCNAPI void setDisplayName(::std::string const& displayName);
+
+    MCNAPI void setName(::std::string const& name);
+
+    MCNAPI void setNotes(::std::string const& notes);
+
+    MCNAPI void setTags(::std::vector<::std::string> const& tags);
+
+    MCNAPI ::Editor::Prefabs::OwnerPtrIterator<
+        ::Editor::Prefabs::PrefabDBTemplateStructureRef const,
+        ::OwnerPtr<::Editor::Prefabs::PrefabDBTemplateStructureRef>>
+    structureRefcBegin() const;
+
+    MCNAPI ::Editor::Prefabs::OwnerPtrIterator<
+        ::Editor::Prefabs::PrefabDBTemplateStructureRef const,
+        ::OwnerPtr<::Editor::Prefabs::PrefabDBTemplateStructureRef>>
+    structureRefcEnd() const;
+
+    MCNAPI ::Editor::Prefabs::PrefabTemplateErrorState validate(::Editor::ServiceProviderCollection&);
 
     MCNAPI ~PrefabDBTemplate();
     // NOLINTEND

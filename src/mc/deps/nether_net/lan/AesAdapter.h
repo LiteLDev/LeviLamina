@@ -12,23 +12,21 @@ class AesAdapter : public ::rtc::AsyncSocketAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AesAdapter() /*override*/ = default;
+    virtual ~AesAdapter() /*override*/;
 
     virtual ::NetherNet::ErrorOr<void, ::std::error_code> SetKey(uint64 id) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForSocket();
-
-    MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
 };
 

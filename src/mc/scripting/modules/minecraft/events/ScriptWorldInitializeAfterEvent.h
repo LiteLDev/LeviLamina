@@ -9,6 +9,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptPropertyRegistry; }
 namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -27,6 +28,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptWorldInitializeAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptWorldInitializeAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
@@ -34,6 +48,15 @@ public:
     MCAPI static ::Scripting::ClassBinding bindV010();
 
     MCAPI static ::Scripting::ClassBinding bindV1();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 };
 

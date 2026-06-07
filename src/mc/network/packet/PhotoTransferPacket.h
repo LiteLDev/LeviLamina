@@ -59,13 +59,6 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~PhotoTransferPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~PhotoTransferPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -86,12 +79,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::PhotoTransferPacketPayload payload);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

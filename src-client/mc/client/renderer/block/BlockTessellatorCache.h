@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BrightnessPair.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/block/BrightnessPair.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,12 +48,8 @@ public:
 
     MCAPI ::BlockGraphics const* getBlockGraphics(::BlockPos const& p, ::Block const& block, uint layer);
 
+    MCAPI ::Block const& getExtraBlock(::BlockPos const& p);
+
     MCAPI ::BrightnessPair getLightColor(::BlockPos const& p, ::Block const* blockHint);
-
-    MCAPI ::std::pair<::Block const*, uint> getLiquidBlockAndLayer(::BlockPos const& p);
-
-    MCAPI void reset(::BlockSource* region, ::BlockPos const& startPostion);
-
-    MCAPI void resetToAir(::BlockSource* region, ::BlockPos const& startPostion);
     // NOLINTEND
 };

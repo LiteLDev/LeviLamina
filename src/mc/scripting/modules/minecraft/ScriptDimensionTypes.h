@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 namespace ScriptModuleMinecraft { class ScriptDimensionType; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -38,6 +36,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
     get(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
+
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
+    getAll(::Scripting::WeakLifetimeScope scope);
 
     MCAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
     // NOLINTEND

@@ -33,6 +33,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<::std::string> _prependVariable(::std::string const& variableName);
 
+    MCFOLD ::MolangVariableMap& getVariableMap();
+
     MCAPI ::Scripting::Result_deprecated<void>
     setColorRBGA_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptColor const& color);
 

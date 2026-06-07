@@ -50,6 +50,14 @@ public:
         ::std::optional<::std::string>                      description,
         ::std::unique_ptr<::Settings::IBooleanDataProvider> dataProvider
     );
+
+    MCFOLD bool flush();
+
+    MCFOLD ::std::vector<::Settings::BooleanConfirmationRequest> getConfirmationRequests() const;
+
+    MCAPI bool getValue() const;
+
+    MCAPI bool updateValue(bool value);
     // NOLINTEND
 
 public:

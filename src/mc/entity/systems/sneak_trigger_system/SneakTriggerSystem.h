@@ -39,25 +39,25 @@ MCAPI ::SneakTriggerSystem::PlayerStatusTransitions
 determineStatus(::SneakTriggerSystem::DetermineStatusArgs const& args);
 
 MCAPI void doActionTick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                                 entity,
-    ::PlayerActionComponent const&                               actions,
-    ::ActorDataFlagComponent&                                    actorData,
-    ::ActorDataDirtyFlagsComponent&                              dirtyFlags,
-    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>& modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>> entity,
+    ::StrictEntityContext const&                                     actions,
+    ::PlayerActionComponent const&                                   actorData,
+    ::ActorDataFlagComponent&                                        dirtyFlags,
+    ::ActorDataDirtyFlagsComponent&                                  modifier,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>&
 );
 
 MCAPI void doIntentTick(
-    ::StrictEntityContext const&,
-    ::MoveInputComponent const&                        moveInput,
-    ::ActorGameTypeComponent const&                    actorGameType,
-    ::PlayerInputRequestComponent const&               playerInputRequest,
-    ::ActorDataFlagComponent const&                    actorDataFlag,
-    ::PlayerActionComponent&                           actions,
-    ::Optional<::WasInWaterFlagComponent const>        wasInWaterFlag,
-    ::Optional<::PassengerComponent const>             passenger,
-    ::OptionalGlobal<::BaseGameVersionComponent const> baseGameVersion,
-    ::ExternalDataInterface const&                     externalDataInterface
+    ::StrictEntityContext const&                       moveInput,
+    ::MoveInputComponent const&                        actorGameType,
+    ::ActorGameTypeComponent const&                    playerInputRequest,
+    ::PlayerInputRequestComponent const&               actorDataFlag,
+    ::ActorDataFlagComponent const&                    actions,
+    ::PlayerActionComponent&                           wasInWaterFlag,
+    ::Optional<::WasInWaterFlagComponent const>        passenger,
+    ::Optional<::PassengerComponent const>             baseGameVersion,
+    ::OptionalGlobal<::BaseGameVersionComponent const> externalDataInterface,
+    ::ExternalDataInterface const&
 );
 // NOLINTEND
 

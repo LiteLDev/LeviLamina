@@ -9,7 +9,9 @@
 // clang-format off
 namespace rtc { class AsyncPacketSocket; }
 namespace rtc { class SocketAddress; }
+namespace rtc { class SocketFactory; }
 namespace webrtc { class AsyncDnsResolverInterface; }
+namespace webrtc { class TaskQueueBase; }
 // clang-format on
 
 namespace NetherNet {
@@ -41,6 +43,18 @@ public:
     CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort) /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PacketSocketFactory(::rtc::SocketFactory* socketFactory, ::webrtc::TaskQueueBase* workerThread);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::rtc::SocketFactory* socketFactory, ::webrtc::TaskQueueBase* workerThread);
     // NOLINTEND
 
 public:

@@ -20,4 +20,38 @@ public:
     ::ll::TypedStorage<4, 4, uint>                      mVisibleCameraMask;
     ::ll::TypedStorage<1, 1, bool>                      mShouldFallBackToUnsorted;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ChunkLayerRenderObject();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChunkLayerRenderObject(
+        ::mce::MaterialPtr const& material,
+        uint64                    index,
+        uint                      indicesStart,
+        uint                      indicesCount,
+        uint                      unsortedIndicesStart,
+        uint                      unsortedIndicesCount,
+        uint                      visibleCameraMask,
+        bool                      unsortedIndices
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::mce::MaterialPtr const& material,
+        uint64                    index,
+        uint                      indicesStart,
+        uint                      indicesCount,
+        uint                      unsortedIndicesStart,
+        uint                      unsortedIndicesCount,
+        uint                      visibleCameraMask,
+        bool                      unsortedIndices
+    );
+    // NOLINTEND
 };

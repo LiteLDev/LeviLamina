@@ -4,7 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CompoundTag;
+class DataLoadHelper;
 class VibrationListener;
 // clang-format on
 
@@ -19,5 +21,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 };

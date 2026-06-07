@@ -41,10 +41,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MeleeAttackBaseGoalDefinition();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeleeAttackBaseGoalDefinition();
-
     MCAPI MeleeAttackBaseGoalDefinition(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&&);
 
     MCAPI MeleeAttackBaseGoalDefinition(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&);
@@ -73,8 +75,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition const&);

@@ -7,18 +7,6 @@
 
 namespace SharedTypes::v1_21_100::SurfaceBuilder {
 
-struct OverworldSurfaceSettings : public ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~OverworldSurfaceSettings();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+struct OverworldSurfaceSettings : public ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings {};
 
 } // namespace SharedTypes::v1_21_100::SurfaceBuilder

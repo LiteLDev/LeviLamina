@@ -15,7 +15,7 @@ class ComponentItem;
 class HashedString;
 class ItemStack;
 class Mob;
-struct LegacyOnHitBlockTriggerItemComponentData;
+namespace SharedTypes::Legacy { struct OnHitBlockTriggerItemComponent; }
 // clang-format on
 
 class LegacyOnHitBlockTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -34,16 +34,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~LegacyOnHitBlockTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnHitBlockTriggerItemComponent(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
+    MCAPI explicit LegacyOnHitBlockTriggerItemComponent(
+        ::SharedTypes::Legacy::OnHitBlockTriggerItemComponent&& componentData
+    );
 
-    MCAPI void _onHitBlock(::ItemStack& item, ::Block const&, ::BlockPos const& blockPos, ::Mob& attacker);
+    MCAPI void _onHitBlock(::ItemStack& item, ::Block const& blockPos, ::BlockPos const& attacker, ::Mob&);
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
+    MCAPI void* $ctor(::SharedTypes::Legacy::OnHitBlockTriggerItemComponent&& componentData);
     // NOLINTEND
 
 public:

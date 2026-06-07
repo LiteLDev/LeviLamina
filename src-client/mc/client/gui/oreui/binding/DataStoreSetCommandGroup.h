@@ -8,7 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class PacketSender;
 namespace Bedrock::DDUI { class DataStoreSyncClient; }
+namespace GameplayUI { class DataDrivenScreenAPI; }
+namespace OreUI { class ClientDependencies; }
+namespace OreUI { class GameDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -29,6 +33,10 @@ public:
         mSetBool;
     ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, ::std::string>>
         mButtonPress;
+    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, ::std::string>>
+                                                                 mCloseButtonPress;
+    ::ll::TypedStorage<8, 8, ::PacketSender*>                    mPacketSender;
+    ::ll::TypedStorage<8, 8, ::GameplayUI::DataDrivenScreenAPI*> mDataDrivenScreenAPI;
     // NOLINTEND
 
 public:
@@ -36,17 +44,19 @@ public:
     DataStoreSetCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataStoreSetCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DataStoreSetCommandGroup(::Bedrock::DDUI::DataStoreSyncClient* dataStore);
+    MCAPI DataStoreSetCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+
+    MCAPI DataStoreSetCommandGroup(
+        ::Bedrock::DDUI::DataStoreSyncClient* dataStore,
+        ::GameplayUI::DataDrivenScreenAPI*    dataDrivenScreenAPI,
+        ::PacketSender*                       packetSender
+    );
 
     MCAPI void buttonPress(::std::string dataStore, ::std::string property, ::std::string path);
+
+    MCAPI void closeButtonPress(::std::string dataStore, ::std::string property, ::std::string path);
 
     MCAPI void setBool(::std::string dataStoreName, ::std::string property, ::std::string path, bool data);
 
@@ -64,7 +74,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::DDUI::DataStoreSyncClient* dataStore);
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+
+    MCAPI void* $ctor(
+        ::Bedrock::DDUI::DataStoreSyncClient* dataStore,
+        ::GameplayUI::DataDrivenScreenAPI*    dataDrivenScreenAPI,
+        ::PacketSender*                       packetSender
+    );
     // NOLINTEND
 
 public:

@@ -20,27 +20,22 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>> mAllowedItems;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    StorageItemComponent(StorageItemComponent const&);
-    StorageItemComponent();
-
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::SharedTypes::v1_21_60::StorageItemComponent&
-    operator=(::SharedTypes::v1_21_60::StorageItemComponent const&);
-#endif
+    MCAPI bool operator==(::SharedTypes::v1_21_60::StorageItemComponent const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

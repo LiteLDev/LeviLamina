@@ -13,15 +13,14 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
 class Random;
 struct BlockAnimateTickData;
-struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+struct BlockGraphicsModeChangeContext;
 // clang-format on
 
 class BubbleColumnBlock : public ::BlockType {
@@ -30,6 +29,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mFancyBubbles;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BubbleColumnBlock();
 
 public:
     // virtual functions
@@ -43,10 +46,9 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
-    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
+    virtual bool mayPick(::BlockSource const& liquid, ::Block const&, bool) const /*override*/;
 
     virtual void addAABBs(
         ::Block const&             block,
@@ -77,15 +79,13 @@ public:
     virtual ::std::optional<::HashedString> getRequiredMedium() const /*override*/;
 
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~BubbleColumnBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BubbleColumnBlock(::std::string const& nameId, int id);
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -96,9 +96,21 @@ public:
     // NOLINTBEGIN
     MCAPI static void _createParticles(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool down);
 
+    MCAPI static bool _getFlowDownward(::Block const& block);
+
+    MCAPI static bool _isValidBubbleColumnLocation(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static bool addBubbleColumnSegment(::BlockSource& region, ::BlockPos const& pos);
 
+    MCAPI static bool shouldDragDown(::Block const& block);
+
     MCAPI static void spawnBubbles(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -112,9 +124,9 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
-    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+    MCFOLD bool $mayPick(::BlockSource const& liquid, ::Block const&, bool) const;
 
     MCFOLD void $addAABBs(
         ::Block const&             block,
@@ -145,8 +157,6 @@ public:
     MCAPI ::std::optional<::HashedString> $getRequiredMedium() const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

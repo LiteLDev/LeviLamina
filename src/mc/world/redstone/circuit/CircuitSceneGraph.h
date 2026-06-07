@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,18 +30,6 @@ public:
         ::ll::TypedStorage<8, 8, ::BaseCircuitComponent*>                   mRawComponentPtr;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseCircuitComponent>> mComponent;
         ::ll::TypedStorage<4, 12, ::BlockPos>                               mPos;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PendingEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -70,7 +59,15 @@ public:
 
     MCAPI void add(::BlockPos const& pos, ::std::unique_ptr<::BaseCircuitComponent> component);
 
+    MCAPI ::BaseCircuitComponent* addIfPoweredBlockAt(::BlockSource& source, ::BlockPos const& pos);
+
     MCAPI void findRelationships(::BlockPos const& pos, ::BaseCircuitComponent* producerTarget, ::BlockSource* region);
+
+    MCAPI ::BaseCircuitComponent* getBaseComponent(::BlockPos const& pos);
+
+    MCAPI ::BaseCircuitComponent* getComponent(::BlockPos const& pos, ::CircuitComponentType typeID);
+
+    MCAPI ::BaseCircuitComponent* getFromPendingAdd(::BlockPos const& pos, ::CircuitComponentType typeID);
 
     MCAPI void invalidatePos(::BlockPos const& pos);
 
@@ -78,11 +75,11 @@ public:
 
     MCAPI void processPendingAdds();
 
+    MCAPI void remove(::BlockPos const& pos, ::BaseCircuitComponent* component);
+
     MCAPI void removeComponent(::BlockPos const& pos);
 
     MCAPI void removeStaleRelationships();
-
-    MCAPI void scheduleRelationshipUpdate(::BlockPos const& pos, ::BaseCircuitComponent* component);
 
     MCAPI void update(::BlockSource* region);
 

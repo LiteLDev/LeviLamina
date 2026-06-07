@@ -17,6 +17,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void onEquipItemPickedUp(::ItemStack item, int countToPickup);
+
     MCAPI ~EquipItemComponent();
     // NOLINTEND
 

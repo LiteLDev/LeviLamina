@@ -19,14 +19,6 @@ public:
     virtual void onOptionsLoadBegin() = 0;
 
     virtual void onOptionsLoadComplete() = 0;
-
-    virtual ~OptionsObserver() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

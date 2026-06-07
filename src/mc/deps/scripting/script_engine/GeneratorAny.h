@@ -26,7 +26,6 @@ public:
 
 public:
     // prevent constructor by default
-    GeneratorAny& operator=(GeneratorAny const&);
     GeneratorAny();
 
 public:
@@ -38,6 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI GeneratorAny(::Scripting::GeneratorAny&& rhs);
+
     MCNAPI GeneratorAny(::Scripting::GeneratorAny const& rhs);
 
     MCNAPI GeneratorAny(
@@ -51,11 +52,17 @@ public:
     nextGeneric(::entt::meta_any& argAny, ::entt::meta_type const& expectedReturnType) const;
 
     MCNAPI ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny&& rhs);
+
+    MCNAPI ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny const& rhs);
+
+    MCNAPI bool valid() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Scripting::GeneratorAny&& rhs);
+
     MCNAPI void* $ctor(::Scripting::GeneratorAny const& rhs);
 
     MCNAPI void* $ctor(

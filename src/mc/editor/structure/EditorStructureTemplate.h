@@ -20,6 +20,7 @@ class CompoundTag;
 class IUnknownBlockTypeRegistry;
 class StructureSettings;
 class Vec3;
+namespace Editor { class RelativeVolumeListBlockVolume; }
 // clang-format on
 
 namespace Editor {
@@ -36,6 +37,7 @@ public:
 public:
     // prevent constructor by default
     EditorStructureTemplate& operator=(EditorStructureTemplate const&);
+    EditorStructureTemplate(EditorStructureTemplate const&);
     EditorStructureTemplate();
 
 public:
@@ -62,10 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorStructureTemplate(::Editor::EditorStructureTemplate&&);
-
-    MCNAPI EditorStructureTemplate(::Editor::EditorStructureTemplate const&);
-
     MCNAPI explicit EditorStructureTemplate(::std::string_view name);
 
 #ifdef LL_PLAT_C
@@ -92,21 +90,42 @@ public:
     MCNAPI void editorFillFromWorld(
         ::BlockSource&                                 region,
         ::StructureSettings const&                     structureSettings,
+        ::Editor::RelativeVolumeListBlockVolume const& volume
+    );
+
+    MCNAPI void editorFillFromWorld(
+        ::BlockSource&                                 region,
+        ::StructureSettings const&                     structureSettings,
         ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
         ::BlockPos const&                              posMin,
         ::BlockPos const&                              span
     );
 
 #ifdef LL_PLAT_C
-    MCNAPI ::Editor::EditorStructureTemplate& operator=(::Editor::EditorStructureTemplate&&);
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume const& getBlockVolume() const;
+#endif
+
+    MCNAPI ::Vec3 const& getNormalizedOrigin() const;
+
+    MCNAPI ::Vec3 getOriginalWorldLocation() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::std::string> getTags() const;
 #endif
 
     MCNAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,
         ::BlockPalette const&      globalBlockPalette,
         ::BoundingBox const&       transformedBounds,
-        ::StructureSettings const& structureSettings
+        ::StructureSettings const& structureSettings,
+        bool                       excludeAirBlocks
     ) const;
+
+    MCNAPI void setBounds(::BlockVolumeBase const& volume);
+
+    MCNAPI void setBounds(::Editor::RelativeVolumeListBlockVolume const& volume);
+
+    MCNAPI void setBounds(::BlockPos const& from, ::BlockPos const& to);
 
     MCNAPI bool setNormalizedOrigin(::Vec3 newOrigin);
     // NOLINTEND
@@ -114,10 +133,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::EditorStructureTemplate&&);
-
-    MCNAPI void* $ctor(::Editor::EditorStructureTemplate const&);
-
     MCNAPI void* $ctor(::std::string_view name);
 
 #ifdef LL_PLAT_C

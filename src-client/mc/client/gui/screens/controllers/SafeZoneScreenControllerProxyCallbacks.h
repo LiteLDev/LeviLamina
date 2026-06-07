@@ -8,16 +8,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<void(float)>> mSetSafeZonePercent;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SafeZoneScreenControllerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

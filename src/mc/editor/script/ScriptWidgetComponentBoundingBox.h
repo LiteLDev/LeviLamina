@@ -54,12 +54,13 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentBoundingBox& operator=(ScriptWidgetComponentBoundingBox const&);
+    ScriptWidgetComponentBoundingBox(ScriptWidgetComponentBoundingBox const&);
     ScriptWidgetComponentBoundingBox();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentBoundingBox() /*override*/ = default;
+    virtual ~ScriptWidgetComponentBoundingBox() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
 
@@ -72,8 +73,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentBoundingBox(::Editor::ScriptModule::ScriptWidgetComponentBoundingBox const&);
-
     MCNAPI ScriptWidgetComponentBoundingBox(
         ::Editor::ServiceProviderCollection&                                             serviceProviders,
         ::mce::UUID const&                                                               componentId,
@@ -171,8 +170,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBoundingBox const&);
-
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                             serviceProviders,
         ::mce::UUID const&                                                               componentId,
@@ -182,6 +179,12 @@ public:
         ::Vec3 const&                                                                    size,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions> options
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/scripting/modules/minecraft/debugdrawer/ScriptDebugShape.h"
 
 // auto generated forward declare list
 // clang-format off
-struct ShapeDataPayload;
+class Vec3;
+namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -16,19 +17,16 @@ namespace ScriptModuleDebugUtilities {
 
 class ScriptBoxShape : public ::ScriptModuleDebugUtilities::ScriptDebugShape {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> mBoxBound;
-    // NOLINTEND
+    // prevent constructor by default
+    ScriptBoxShape();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
-
-    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
-
-    virtual ~ScriptBoxShape() /*override*/;
+    MCAPI ScriptBoxShape(
+        ::Scripting::WeakLifetimeScope const&                                           scope,
+        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location
+    );
     // NOLINTEND
 
 public:
@@ -38,19 +36,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
-
-    MCAPI void $applyUpdatedData(::ShapeDataPayload const& existing);
-
-
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                                           scope,
+        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location
+    );
     // NOLINTEND
 
 public:

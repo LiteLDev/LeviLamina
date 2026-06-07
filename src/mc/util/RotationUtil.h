@@ -7,15 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Random;
 // clang-format on
 
 namespace RotationUtil {
 // functions
 // NOLINTBEGIN
+MCNAPI ::Rotation getRandomRotation(::Random& random);
+
 MCNAPI ::Rotation getRotated(::Rotation original, ::Rotation rotation);
 
-MCNAPI ::std::vector<::Rotation> getShuffledRotations(::Random& random);
+MCNAPI ::BlockPos rotate(::BlockPos const& source, ::Rotation rotation);
 
 MCNAPI uchar rotate(::Rotation source, uchar direction);
 // NOLINTEND

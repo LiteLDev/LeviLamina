@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
-#include "mc/world/level/block/DripstoneThickness.h"
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 #include "mc/world/level/block/FallingBlock.h"
-#include "mc/world/level/material/MaterialType.h"
+#include "mc/world/level/block/SpeleothemThickness.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +16,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class BlockType;
-class Experiments;
 class Vec3;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
@@ -27,10 +26,12 @@ namespace mce { class Color; }
 
 class PointedDripstoneBlock : public ::FallingBlock {
 public:
+    // prevent constructor by default
+    PointedDripstoneBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual ::BlockType& init() /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -64,13 +65,13 @@ public:
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const
         /*override*/;
-
-    virtual ~PointedDripstoneBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PointedDripstoneBlock(::std::string const& nameId, int id);
+
     MCAPI void _queueColumnForFall(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _updateBlockThickness(::BlockSource& region, ::BlockPos const& pos) const;
@@ -85,7 +86,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::DripstoneThickness _calculateDripstoneThickness(
+    MCAPI static ::SpeleothemThickness _calculateDripstoneThickness(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         uchar             tipDirection,
@@ -94,43 +95,75 @@ public:
 
     MCAPI static bool _canDrip(::BlockSource& region, ::BlockPos const& pos);
 
+    MCAPI static bool _canFillCauldron(::Block const& block);
+
+    MCAPI static bool _canGrow(::Block const& rootBlock, ::Block const& aboveRootLiquidBlock);
+
     MCAPI static bool _canTipGrow(::BlockSource& region, ::BlockPos const& tipPos);
 
     MCAPI static void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos);
 
+    MCAPI static ::std::optional<::BlockPos> _findFillableCauldronBelowStalactiteTip(
+        ::BlockSource&                        region,
+        ::BlockPos const&                     stalactiteTipPos,
+        ::SharedTypes::v1_26_20::MaterialType liquidType
+    );
+
     MCAPI static ::std::optional<::BlockPos>
     _findRootBlock(::BlockSource& region, ::BlockPos const& pos, int maxSearchLength);
 
-    MCAPI static ::std::optional<::BlockPos> _getBlockAboveStalactiteRoot(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static ::std::optional<::BlockPos>
+    _findTip(::BlockSource& region, ::BlockPos const& pos, uchar searchDirection, int maxSearchLength, bool);
 
     MCAPI static void _grow(::BlockSource& region, ::BlockPos const& growFromPos, uchar growToDirection);
 
+    MCAPI static void _growStalagmiteBelow(::BlockSource& region, ::BlockPos const& growIntoPos);
+
+    MCAPI static bool _hasHangingSupport(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static bool _isTip(::Block const& block, bool includeMergedTip);
+
     MCAPI static bool _isValidPointedDripstonePlacement(::BlockSource& region, ::BlockPos const& pos, bool isHanging);
-
-    MCAPI static bool _mayPlaceHanging(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static bool _mayPlaceStanding(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void addDripParticle(::BlockSource& region, ::BlockPos const& pos, ::ParticleType particleType);
 
-    MCAPI static bool canGrow(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& stalactiteTipPos);
-
     MCAPI static void fillCauldron(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static ::std::optional<::MaterialType>
+    MCAPI static ::std::optional<::BlockPos>
+    findStalactiteTipAboveCauldron(::BlockSource& region, ::BlockPos const& cauldronPos);
+
+    MCAPI static ::std::optional<::SharedTypes::v1_26_20::MaterialType>
     getCauldronFillLiquidType(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static ::std::optional<::BlockPos>
+    getStalactiteTipBelowFillSource(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void growStalactite(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void growStalagmite(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static bool isPointedDripstoneWithDirection(::Block const& block, uchar tipDirection);
+
+    MCAPI static ::std::optional<::ParticleType>
+    shouldDrip(::BlockSource& region, ::BlockPos const& pos, float randomValue);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& MAX_HORIZONTAL_OFFSET();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-    MCFOLD ::BlockType& $init();
+    MCAPI ::BlockType& $init();
 
     MCAPI int $getVariant(::Block const& block) const;
 

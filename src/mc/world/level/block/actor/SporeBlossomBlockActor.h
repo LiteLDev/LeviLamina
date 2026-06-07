@@ -7,16 +7,31 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class BlockSource;
 // clang-format on
 
 class SporeBlossomBlockActor : public ::BlockActor {
 public:
+    // prevent constructor by default
+    SporeBlossomBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
+    // NOLINTEND
 
-    virtual ~SporeBlossomBlockActor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SporeBlossomBlockActor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

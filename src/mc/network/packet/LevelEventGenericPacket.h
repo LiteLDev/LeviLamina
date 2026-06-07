@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelEventGenericPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -63,26 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~LevelEventGenericPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelEventGenericPacket();
+
     MCAPI explicit LevelEventGenericPacket(::LevelEventGenericPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelEventGenericPacketPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::LevelEventGenericPacketPayload payload);
     // NOLINTEND
 
 public:

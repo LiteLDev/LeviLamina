@@ -48,8 +48,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~MarketplacePassWorldTemplateListFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -69,6 +67,11 @@ public:
     MCAPI void _initWorldTemplates();
 
     MCAPI bool _tryReadWorldTemplates();
+
+    MCAPI void _updateBindings(
+        ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings>&& templateBindings,
+        ::OreUI::SeeMoreRouteData&&                                    seeMoreRouteData
+    );
 
     MCAPI void clearRefreshTaskState();
 
@@ -96,12 +99,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>               dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -20,12 +20,12 @@ class EntityContext;
 class GameplayUserManager;
 class IActorManagerConnector;
 class ILevelStorageManagerConnector;
+class Level;
 class LevelStorage;
 class Objective;
 class PacketSender;
 class Player;
 class ScoreboardIdentityRef;
-struct ActorUniqueID;
 struct PlayerScoreboardId;
 struct ScorePacketInfo;
 // clang-format on
@@ -112,13 +112,15 @@ public:
     MCAPI void
     _clearAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
-    MCAPI ::Player* _getPlayer(::ActorUniqueID entityID) const;
+    MCAPI void _clearScoreTag(::ScoreboardId const& scoreboardId);
 
     MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
     MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCAPI void _onSaveEvent(::LevelStorage&);
+    MCFOLD void _onSaveEvent(::LevelStorage&);
+
+    MCAPI void _readFromLevelStorage();
 
     MCAPI ::ScorePacketInfo _unpackIdentityDefToScorePacket(
         ::ScoreboardIdentityRef const& identityDef,
@@ -129,9 +131,11 @@ public:
     MCAPI void
     _updateAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
-    MCAPI void _updateScoreTag(::ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
+    MCAPI void _updateScoreTag(::ScoreboardId const& scoreboardId, bool);
 
     MCAPI void deserialize(::std::unique_ptr<::CompoundTag> root);
+
+    MCFOLD void initializeImGui(::Level& level);
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);

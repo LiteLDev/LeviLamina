@@ -67,7 +67,7 @@ public:
 
     virtual bool hasTellPerms() const;
 
-    virtual bool canUseAbility(::AbilitiesIndex ability) const;
+    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     virtual bool isWorldBuilder() const;
 
@@ -107,10 +107,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CommandOrigin();
+
     MCAPI ::std::unique_ptr<::CommandArea> getAreaAt(::BlockPos const& pos, int commandVersion) const;
 
     MCAPI ::std::unique_ptr<::CommandArea>
     getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
+
+    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(::BlockPos const& pos, int commandVersion) const;
 
     MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(
         ::BlockPos const& min,
@@ -118,6 +122,10 @@ public:
         int               commandVersion,
         bool              allowUnloadedChunks
     ) const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool isEditorWorld() const;
+#endif
     // NOLINTEND
 
 public:
@@ -138,6 +146,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::optional<::BlockPos> $getCursorHitBlockPos() const;
@@ -148,7 +162,7 @@ public:
 
     MCAPI bool $hasTellPerms() const;
 
-    MCFOLD bool $canUseAbility(::AbilitiesIndex ability) const;
+    MCFOLD bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     MCAPI bool $isWorldBuilder() const;
 

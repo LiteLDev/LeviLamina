@@ -26,22 +26,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    VibrationInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VibrationInfo(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
+    MCAPI void _setActorIDs(::GameEventContext const& gameEventContext);
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void save(::CompoundTag& tag) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
     // NOLINTEND
 };

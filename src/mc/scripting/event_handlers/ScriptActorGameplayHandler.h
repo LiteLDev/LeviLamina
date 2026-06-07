@@ -40,8 +40,6 @@ public:
     handleEvent(::ActorBeforeAcquireItemEvent& actorAquireItemEvent) /*override*/;
 
     virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
-
-    virtual ~ScriptActorGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,12 +68,6 @@ public:
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     );
-
-    MCAPI bool _handleActorRemoveEvent(
-        ::ActorRemovedEvent const&                                                        actorRemovedEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
     // NOLINTEND
 
 public:

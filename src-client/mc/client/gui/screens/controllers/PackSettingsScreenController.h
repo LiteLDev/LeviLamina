@@ -34,8 +34,6 @@ public:
     virtual void onOpen() /*override*/;
 
     virtual void onTerminate() /*override*/;
-
-    virtual ~PackSettingsScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

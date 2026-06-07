@@ -20,8 +20,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::leveldb::Status Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const /*override*/;
-
-    virtual ~LevelDbRandomAccessFile() /*override*/ = default;
     // NOLINTEND
 
 public:

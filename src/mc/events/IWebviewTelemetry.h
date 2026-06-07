@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IMinecraftEventing;
 struct WebviewDownloadInfo;
 // clang-format on
 
@@ -44,19 +45,18 @@ public:
     virtual void
     fireCodeBuilderRunPerformance(::std::string const& stage, ::std::chrono::milliseconds elapsedTimeMS) const
         /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~IWebviewTelemetry() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~IWebviewTelemetry() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI explicit IWebviewTelemetry(::IMinecraftEventing const& eventing);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IMinecraftEventing const& eventing);
     // NOLINTEND
 
 public:

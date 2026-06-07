@@ -27,8 +27,6 @@ public:
     virtual bool isTreasureOnly() const /*override*/;
 
     virtual bool isDiscoverable() const /*override*/;
-
-    virtual ~LungeEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

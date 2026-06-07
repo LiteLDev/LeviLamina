@@ -35,8 +35,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~RealmWorldUploaderFacet_v2() /*override*/ = default;
     // NOLINTEND
 
 public:

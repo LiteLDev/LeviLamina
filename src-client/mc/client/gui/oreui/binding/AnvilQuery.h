@@ -36,9 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double) /*override*/;
-
-    virtual ~AnvilQuery() /*override*/ = default;
+    virtual void update(double time) /*override*/;
     // NOLINTEND
 
 public:
@@ -62,7 +60,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCAPI void $update(double time);
     // NOLINTEND
 
 public:

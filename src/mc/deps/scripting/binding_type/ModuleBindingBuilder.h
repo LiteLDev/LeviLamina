@@ -17,9 +17,13 @@ namespace Scripting { struct ErrorBinding; }
 namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct ModuleBinding; }
+namespace Scripting { struct ModuleDependency; }
+namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ObjectFactory; }
 namespace Scripting { struct TaggedBinding; }
 namespace Scripting { struct TypeMapData; }
+namespace Scripting { struct Version; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -54,22 +58,15 @@ public:
         // prevent constructor by default
         BuilderData& operator=(BuilderData const&);
         BuilderData(BuilderData const&);
+        BuilderData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI BuilderData();
-
         MCNAPI ::Scripting::ModuleBindingBuilder::BuilderData&
         operator=(::Scripting::ModuleBindingBuilder::BuilderData&&);
 
         MCNAPI ~BuilderData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -94,6 +91,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ModuleBindingBuilder(
+        ::mce::UUID                 uuid,
+        ::std::string const&        name,
+        ::Scripting::Version const& version,
+        bool                        importRestricted
+    );
+
     MCNAPI bool _allowed(
         ::std::vector<::Scripting::Release> const& releases,
         bool                                       allowUntagged,
@@ -152,14 +156,23 @@ public:
 
     MCNAPI ::Scripting::ModuleBindingBuilder& errorBinding(::Scripting::ErrorBinding&& errorBinding);
 
+    MCNAPI ::std::vector<::Scripting::ModuleDependency> getDependencies() const;
+
+    MCNAPI ::Scripting::ModuleDescriptor getModuleDescriptor() const;
+
     MCNAPI ::Scripting::ModuleBindingBuilder& interfaceBinding(::Scripting::InterfaceBinding&& interfaceBinding);
 
-    MCNAPI ~ModuleBindingBuilder();
+    MCNAPI void setImportRestricted();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void _applyMissingRuntimeConditions(
+        ::Scripting::ModuleBinding&           moduleBinding,
+        ::Scripting::RuntimeConditions const& currentRuntimeConditions
+    );
+
     MCNAPI static bool _assertClassMemberSymbolDoNotExist(
         ::Scripting::ClassBinding const&  classBinding,
         ::std::string const&              name,
@@ -194,9 +207,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void*
+    $ctor(::mce::UUID uuid, ::std::string const& name, ::Scripting::Version const& version, bool importRestricted);
     // NOLINTEND
 };
 

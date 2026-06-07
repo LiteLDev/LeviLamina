@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockType;
+namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on
 
 class BlockTypeComponentStorageFinalizer {
@@ -15,6 +16,8 @@ public:
 
     MCAPI void _finalizeCollisionBoxComponent(::BlockType& blockType);
 
+    MCAPI void _finalizeRedstoneProducerComponent(::BlockType& blockType);
+
     MCAPI void _finalizeSelectionBoxComponent(::BlockType& blockType);
 
     MCAPI void _updateDestructionParticlesComponent(::BlockType& blockType);
@@ -22,5 +25,8 @@ public:
     MCAPI void addRemainingComponents(::BlockType& blockType);
 
     MCAPI void finalizeComponentData(::BlockType& blockType);
+
+    MCAPI void
+    finalizeComponentDataForVoxelShapes(::BlockType& blockType, ::VoxelShapes::VoxelShapeRegistry& voxelShapeRegistry);
     // NOLINTEND
 };

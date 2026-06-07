@@ -39,6 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FlockingDefinition();
+
     MCAPI void initialize(::EntityContext& entity, ::FlockingComponent& component) const;
     // NOLINTEND
 
@@ -48,5 +50,11 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FlockingDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

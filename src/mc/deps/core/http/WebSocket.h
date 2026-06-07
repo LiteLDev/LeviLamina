@@ -30,16 +30,15 @@ public:
     // prevent constructor by default
     WebSocket& operator=(WebSocket const&);
     WebSocket(WebSocket const&);
-    WebSocket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WebSocket() = default;
+    virtual ~WebSocket();
 
     virtual ::Bedrock::Threading::Async<::std::error_code> send(::std::string const& message) const;
 
-    virtual void onMessage(::std::string_view incomingMessage);
+    virtual void onMessage(::std::string_view message);
 
     virtual void onBinaryMessage(::gsl::span<uchar const>);
 
@@ -49,15 +48,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI WebSocket();
+
     MCNAPI ::HC_WEBSOCKET_OBSERVER* _allocateSocket(::brstd::future<void> connectCompleted);
 
     MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
     connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);
+
+    MCNAPI bool disconnect();
+
+    MCNAPI bool isConnected() const;
+
+    MCNAPI void setPingInterval(::std::chrono::seconds interval);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static long _deallocateSocket(::HC_WEBSOCKET_OBSERVER* handle);
+
     MCNAPI static void _deallocateSocketAsync(::HC_WEBSOCKET_OBSERVER* handle);
 
     MCNAPI static void _onConnect(
@@ -73,11 +82,23 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> $send(::std::string const& message) const;
 
-    MCNAPI void $onMessage(::std::string_view incomingMessage);
+    MCNAPI void $onMessage(::std::string_view message);
 
     MCNAPI void $onBinaryMessage(::gsl::span<uchar const>);
 

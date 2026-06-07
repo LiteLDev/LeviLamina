@@ -42,21 +42,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        SettingsScreenTabInfo();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SettingsScreenTabInfo(::std::string tabName, int tabVersion);
-
         MCAPI ~SettingsScreenTabInfo();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string tabName, int tabVersion);
         // NOLINTEND
 
     public:
@@ -168,11 +156,15 @@ public:
 
     MCAPI void _init();
 
+    MCAPI void _makeSureInitialTabIsValid();
+
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
 
     MCAPI void _registerSubControllers();
+
+    MCAPI ::std::string getWorldId() const;
     // NOLINTEND
 
 public:

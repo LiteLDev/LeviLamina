@@ -27,8 +27,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::mce::Color get(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual ~BiomeAndPatternMapPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:

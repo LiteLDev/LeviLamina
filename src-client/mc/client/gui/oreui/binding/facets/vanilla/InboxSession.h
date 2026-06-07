@@ -75,6 +75,8 @@ public:
 
     MCAPI void _registerInboxMessageChange();
 
+    MCAPI void _reportInboxSummary() const;
+
     MCAPI void _setInvitationStatus(
         ::OreUI::InboxFacet::InboxMessageData const& inMessage,
         ::Invites::Invite::InvitationStatus const&   status
@@ -90,8 +92,6 @@ public:
 
     MCAPI void loadSettings();
 
-    MCAPI void markAllRead();
-
     MCAPI void rejectInvitation(::std::string const& instanceId);
 
     MCAPI void
@@ -100,6 +100,8 @@ public:
     MCAPI void saveSettings();
 
     MCAPI void setNotificationRead(::std::string const& instanceId);
+
+    MCAPI bool update();
 
     MCAPI ~InboxSession();
     // NOLINTEND

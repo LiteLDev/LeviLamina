@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/BlockDescriptor.h"
+#include "mc/deps/shared_types/legacy/DefinitionTrigger.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,20 +25,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 80, ::SharedTypes::Legacy::BlockDescriptor> filter;
-        ::ll::TypedStorage<4, 4, int>                                     destroySpeed;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~BlockInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        ::ll::TypedStorage<8, 80, ::SharedTypes::Legacy::BlockDescriptor>   filter;
+        ::ll::TypedStorage<4, 4, int>                                       destroySpeed;
+        ::ll::TypedStorage<8, 88, ::SharedTypes::Legacy::DefinitionTrigger> onDigDeprecated;
         // NOLINTEND
     };
 
@@ -46,13 +36,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo>> mDestroySpeeds;
     ::ll::TypedStorage<1, 1, bool>                                                                    mUseEfficiency;
+    ::ll::TypedStorage<8, 96, ::std::optional<::SharedTypes::Legacy::DefinitionTrigger>>              mOnDigDeprecated;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DiggerItemComponent();
-
     MCAPI ~DiggerItemComponent();
     // NOLINTEND
 
@@ -63,15 +52,15 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static variables
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

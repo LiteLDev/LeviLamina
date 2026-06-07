@@ -79,6 +79,8 @@ public:
     MCNAPI void clearData();
 
 #ifdef LL_PLAT_C
+    MCNAPI bool isTiming();
+
     MCNAPI bool shouldTrackNearbyPosition(::BlockPos const& blockToTrack);
 
     MCNAPI bool shouldTrackPosition(::BlockPos const& blockToTrack);
@@ -92,6 +94,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::PlayerRenderChunkModificationLatencyTracker& get();
+
 #ifdef LL_PLAT_C
     MCNAPI static ::PlayerRenderChunkModificationLatencyTracker* getIfTiming();
 #endif

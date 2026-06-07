@@ -17,8 +17,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptPrefabErrorInvalidInstance();
-
-    MCNAPI ~ScriptPrefabErrorInvalidInstance();
     // NOLINTEND
 
 public:
@@ -31,12 +29,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -22,20 +22,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPotionEffectType& operator=(ScriptPotionEffectType const&);
-    ScriptPotionEffectType(ScriptPotionEffectType const&);
-    ScriptPotionEffectType();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<::std::optional<int>, ::Scripting::EngineError> _getDurationTicks() const;
 
     MCAPI ::std::string getPotionNameIdWithPrefix();
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptPotionEffectType&
-    operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
     // NOLINTEND
 
 public:

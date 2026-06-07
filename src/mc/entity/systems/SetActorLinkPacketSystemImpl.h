@@ -49,6 +49,19 @@ MCAPI void singleSendActorLinkPacket(
     ::EntityModifier<::SendPacketsComponent>                modifier
 );
 
+MCAPI void singleTickActorLinkPacketForPassenger(
+    ::StrictEntityContext const& passengerEntity,
+    ::ViewT<::StrictEntityContext, ::Exclude<::SwitchingVehiclesFlagComponent>, ::PassengerComponent const> view,
+    ::ViewT<::StrictEntityContext, ::ActorUniqueIDComponent const, ::RemovePassengersComponent>             vehicles,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Exclude<::SwitchingVehiclesFlagComponent>,
+        ::ActorUniqueIDComponent const,
+        ::Optional<::ActorIsBeingDestroyedFlagComponent const>,
+        ::Optional<::ExitFromPassengerFlagComponent const>> passengers,
+    ::EntityModifier<::SendPacketsComponent>                modifier
+);
+
 MCAPI void tickSendActorLinkPacket(
     ::ViewT<::StrictEntityContext, ::ActorUniqueIDComponent const, ::RemovePassengersComponent> view,
     ::ViewT<

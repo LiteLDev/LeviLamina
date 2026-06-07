@@ -35,6 +35,8 @@ public:
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
+    virtual void onComplete(::MinecraftScreenModel& minecraftScreenModel);
+
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
     virtual void onRetry(::MinecraftScreenModel& minecraftScreenModel);
@@ -45,7 +47,7 @@ public:
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const = 0;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& model) const = 0;
 
     virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
@@ -66,6 +68,8 @@ public:
         ::ui::GameEventNotification const& notification
     );
 
+    MCFOLD void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
+
     MCFOLD void $onRetry(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
@@ -73,8 +77,6 @@ public:
     MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
     MCAPI ::std::string $getTTSProgressMessage() const;
-
-    MCAPI ::std::string $getTitleText() const;
 
     MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND

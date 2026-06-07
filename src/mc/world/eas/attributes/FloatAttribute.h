@@ -13,12 +13,6 @@ namespace EAS { class FloatModifier; }
 
 namespace EAS {
 
-class FloatAttribute : public ::EAS::EnvironmentAttribute<float, ::EAS::FloatModifier, ::EAS::FloatConstraint> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FloatAttribute() /*override*/ = default;
-    // NOLINTEND
-};
+class FloatAttribute : public ::EAS::EnvironmentAttribute<float, ::EAS::FloatModifier, ::EAS::FloatConstraint> {};
 
 } // namespace EAS

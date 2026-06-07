@@ -7,15 +7,16 @@
 #include "mc/client/world/actor/player/ClientLocatorBar.h"
 #include "mc/common/Brightness.h"
 #include "mc/common/SubClientId.h"
+#include "mc/deps/application/LowMemorySeverity.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/Side.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/events/OpenCodeMethod.h"
 #include "mc/network/packet/PlayerRespawnState.h"
@@ -74,6 +75,7 @@ class TextObjectRoot;
 class Vec2;
 struct ActorUniqueID;
 struct ArmorSlotAndDamagePair;
+struct FurnaceOptions;
 struct INpcDialogueData;
 struct InventoryOptions;
 struct ItemStackLegacyRequestIdTag;
@@ -102,27 +104,15 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~RegionListener();
+        virtual ~RegionListener() = default;
 
         virtual void onRegionDestroyed() = 0;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -132,6 +122,20 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, int64> mEmoteButtonDownStartTime;
         ::ll::TypedStorage<1, 1, bool>  mIsExpediateSelectionActive;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void emoteButtonEntered();
+
+        MCFOLD int64 getEmoteButtonDownStartTime() const;
+
+        MCAPI bool getIsExpediateSelectionActive() const;
+
+        MCAPI void reset();
+
+        MCFOLD void setIsExpediateSelectionActive(bool isExpediateSelectionActive);
         // NOLINTEND
     };
 
@@ -151,6 +155,12 @@ public:
         ::ll::TypedStorage<1, 1, ::LocalPlayer::FellFromWorldHeightAchievementTracker::FallState> mState;
         ::ll::TypedStorage<4, 4, int>                                                             mCheckAliveTicks;
         ::ll::TypedStorage<1, 1, bool>                                                            mHasSentAchievement;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void tick(float fallDistance, ::Vec3 const& pos, ::Dimension& dimension, ::LocalPlayer* player);
         // NOLINTEND
     };
 
@@ -259,7 +269,7 @@ public:
 
     virtual void tickWorld(::Tick const& currentTick) /*override*/;
 
-    virtual void frameUpdate(::FrameUpdateContextBase& frameUpdateContextBase) /*override*/;
+    virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
     virtual ::std::vector<::ChunkPos> const& getTickingOffsets() const /*override*/;
 
@@ -287,18 +297,18 @@ public:
 
     virtual void openInventory() /*override*/;
 
-    virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
+    virtual void setContainerData(::IContainerManager&, int, int) /*override*/;
 
     virtual void slotChanged(
         ::IContainerManager& menu,
-        ::Container&         container,
-        int                  slot,
-        ::ItemStack const&   oldItem,
+        ::Container&         slot,
+        int                  oldItem,
         ::ItemStack const&   newItem,
-        bool                 isResultSlot
+        ::ItemStack const&   isResultSlot,
+        bool
     ) /*override*/;
 
-    virtual void refreshContainer(::IContainerManager& menu) /*override*/;
+    virtual void refreshContainer(::IContainerManager&) /*override*/;
 
     virtual bool isLoading() const /*override*/;
 
@@ -387,7 +397,7 @@ public:
 
     virtual void addLevels(int levels) /*override*/;
 
-    virtual bool isActorRelevant(::Actor const& actor) /*override*/;
+    virtual bool isActorRelevant(::Actor const&) /*override*/;
 
     virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
@@ -453,6 +463,8 @@ public:
 
     MCAPI void _forceCameraCut();
 
+    MCAPI ::CrashDumpLogStringID _getCrashDumpLogCategory();
+
     MCAPI void _handleDebugTracking();
 
     MCAPI void _logCDEvent(
@@ -462,7 +474,21 @@ public:
         ::CrashDumpLogStringID option4
     );
 
+    MCAPI void _onLowMemory(::LowMemorySeverity severity);
+
     MCAPI void _prepareMainChunkSource(::ChunkPos const& center);
+
+    MCAPI void addRegionListener(::LocalPlayer::RegionListener* listener);
+
+    MCAPI float checkSecondsSinceLevelChanged();
+
+    MCAPI float checkSecondsSinceXPContainerClosed() const;
+
+    MCAPI void clearMovementState();
+
+    MCAPI void closeContainerScreen(::SharedTypes::Legacy::ContainerType containerType);
+
+    MCAPI void closeNpcInteractScreen(::ActorUniqueID const& npcId);
 
     MCAPI void createEditorPlayer(::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager);
 
@@ -470,35 +496,131 @@ public:
 
     MCAPI void fireEventPersonaEmotePlayed(bool emoteEndedEarly);
 
+    MCAPI ::ItemStack const& getActivatedItem() const;
+
+    MCAPI ::IClientInstance& getClientInstance() const;
+
+    MCAPI ::ClientLocatorBar& getClientLocatorBar();
+
+    MCAPI ::NetworkIdentifier const& getConnectionId() const;
+
+    MCAPI ::SharedTypes::Legacy::ContainerType getContainerTypeToClose();
+
+    MCAPI ::Bedrock::DDUI::DataStoreSyncClient& getDataStoreSync();
+
+    MCAPI ::LocalPlayer::EmoteExpediateData& getEmoteExpediateData();
+
     MCAPI float getFieldOfViewModifier() const;
+
+    MCAPI ::InventoryMenu& getInventoryMenu();
+
+    MCAPI ::std::string const& getInventorySearchString() const;
+
+    MCAPI int getItemActivationOffsetX() const;
+
+    MCAPI int getItemActivationOffsetY() const;
+
+    MCAPI int getItemActivationTicks() const;
+
+    MCFOLD ::ItemStackNetManagerClient& getItemStackNetManagerClient();
+
+    MCAPI ::std::string const& getLastDeathInfo() const;
+
+    MCAPI ::NetworkChunkSubscriber& getNetworkChunkSubscriber();
+
+    MCAPI float getOPortalEffectTime() const;
 
     MCAPI float getPickRange() const;
 
+    MCAPI float getPortalEffectTime() const;
+
+    MCAPI uint getViewBlockRadius() const;
+
     MCAPI void handleArmorDamage(::ArmorSlotAndDamagePair const& armorSlotAndDamage);
 
+    MCAPI void handleChunkGenerationRequests(
+        ::ChunkPos                       moveCenter,
+        int                              chunkRadius,
+        ::std::vector<::ChunkPos> const& serverChunks
+    );
+
+    MCAPI bool hasBossRegistered(::ActorUniqueID) const;
+
     MCAPI void hurtTo(int newHealth);
+
+    MCAPI void initializeItemStackNetManager(bool enableItemStackNetManager);
+
+    MCAPI bool isAbleToRespawn() const;
+
+    MCAPI bool isPlaying() const;
 
     MCAPI void localPlayerTurn(::Vec2 const& deltaRot);
 
     MCAPI void markUIAnimationComponentDirty();
 
+    MCAPI void missedSwing();
+
+    MCAPI void onStopRidingCameraForceCut();
+
     MCAPI void openCodeScreen(::OpenCodeMethod openMethod);
 
     MCAPI void pickBlock(::HitResult const& hitResult, bool withData);
 
+    MCAPI void playEmoteSlot(int slotIndex, bool playChatMessage);
+
     MCAPI void pushChangeDimensionLoadingScreen(::DimensionType toId);
 
+    MCAPI ::Bedrock::PubSub::Subscription registerLocalPlayerDeathListener(::std::function<void()> callback);
+
+    MCAPI ::Bedrock::PubSub::Subscription registerLocalPlayerRespawnListener(::std::function<void()> callback);
+
+    MCAPI ::Bedrock::PubSub::Subscription registerPlayerGameTypeChangedListener(::std::function<void()> callback);
+
+    MCAPI void removeRegionListener(::LocalPlayer::RegionListener* listener);
+
     MCAPI void requestChunkRadius(uint chunkRadius);
+
+    MCAPI void resetLastDeathInfo();
 
     MCAPI void sendBlockPickRequestPacket(::BlockSource& region, ::BlockPos const& hitResultBlockPos, bool withData);
 
     MCAPI void sendEmotes();
 
+    MCAPI void sendInput();
+
     MCAPI void setAllEmotePlayedTelemetryData(::std::string const& emoteProductId, int emoteSlotNumber);
+
+    MCAPI void setAndSaveBlastFurnaceOptions(::FurnaceOptions const& options);
+
+    MCAPI void setAndSaveFurnaceOptions(::FurnaceOptions const& options);
 
     MCAPI void setAndSaveInventoryOptions(::InventoryOptions const& options);
 
+    MCAPI void setAndSaveSmokerOptions(::FurnaceOptions const& options);
+
+    MCAPI void setClientRespawnPotentialPosition(::Vec3 const& pos);
+
+    MCAPI void setClientRespawnState(::PlayerRespawnState const& state);
+
+    MCAPI void setConnectionId(::NetworkIdentifier const& id);
+
+    MCAPI void setCurrentStructureFeature(::HashedString structureFeature);
+
+    MCAPI void setInventorySearchString(::std::string const& inventorySearchString);
+
+    MCAPI void setLastDeathInfo(::std::string const& info);
+
     MCAPI void setPlayerGameTypeWithoutServerNotification(::GameType gameType);
+
+    MCAPI bool shouldCloseContainer();
+
+    MCAPI bool shouldRotateWithCamera() const;
+
+    MCAPI void startPaddling(::SharedTypes::Side side);
+
+    MCAPI void stopPaddling(::SharedTypes::Side side);
+
+    MCAPI void updateSecondsSinceXPContainerClosed();
     // NOLINTEND
 
 public:
@@ -511,6 +633,8 @@ public:
     );
 
     MCAPI static void sendInput(::EntityContext& entity, ::PacketSender& packetSender);
+
+    MCAPI static ::LocalPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:
@@ -551,7 +675,7 @@ public:
 
     MCAPI void $tickWorld(::Tick const& currentTick);
 
-    MCFOLD void $frameUpdate(::FrameUpdateContextBase& frameUpdateContextBase);
+    MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
     MCAPI ::std::vector<::ChunkPos> const& $getTickingOffsets() const;
 
@@ -579,18 +703,18 @@ public:
 
     MCAPI void $openInventory();
 
-    MCFOLD void $setContainerData(::IContainerManager& menu, int id, int value);
+    MCFOLD void $setContainerData(::IContainerManager&, int, int);
 
     MCAPI void $slotChanged(
         ::IContainerManager& menu,
-        ::Container&         container,
-        int                  slot,
-        ::ItemStack const&   oldItem,
+        ::Container&         slot,
+        int                  oldItem,
         ::ItemStack const&   newItem,
-        bool                 isResultSlot
+        ::ItemStack const&   isResultSlot,
+        bool
     );
 
-    MCFOLD void $refreshContainer(::IContainerManager& menu);
+    MCFOLD void $refreshContainer(::IContainerManager&);
 
     MCAPI bool $isLoading() const;
 
@@ -650,7 +774,7 @@ public:
 
     MCAPI bool $isAutoJumpEnabled() const;
 
-    MCFOLD bool $setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
+    MCAPI bool $setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 
@@ -672,7 +796,7 @@ public:
 
     MCFOLD void $addLevels(int levels);
 
-    MCFOLD bool $isActorRelevant(::Actor const& actor);
+    MCFOLD bool $isActorRelevant(::Actor const&);
 
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 

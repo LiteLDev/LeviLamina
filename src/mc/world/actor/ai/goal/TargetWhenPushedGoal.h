@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +11,7 @@ class Mob;
 struct MobDescriptor;
 // clang-format on
 
-class TargetWhenPushedGoal : public ::Goal {
+class TargetWhenPushedGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,9 +39,19 @@ public:
 
     virtual void stop() /*override*/;
 
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    // NOLINTEND
 
-    virtual ~TargetWhenPushedGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TargetWhenPushedGoal(::Mob& mob, ::std::vector<::MobDescriptor> targetTypes, float percentChance);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, ::std::vector<::MobDescriptor> targetTypes, float percentChance);
     // NOLINTEND
 
 public:
@@ -57,7 +67,7 @@ public:
 
     MCAPI void $stop();
 
-    MCFOLD void $appendDebugInfo(::std::string& str) const;
+    MCFOLD void $appendDebugInfo(::std::string&) const;
 
 
     // NOLINTEND

@@ -14,6 +14,7 @@
 class Actor;
 class ActorFactory;
 class ActorManager;
+class Dimension;
 class EntityContext;
 class EntityRegistry;
 class IAddActorEntityProxy;
@@ -23,6 +24,7 @@ class LevelChunk;
 class LevelStorage;
 class ListTag;
 class WeakEntityRef;
+struct ActorUniqueID;
 // clang-format on
 
 class AutonomousActorManager {
@@ -56,6 +58,8 @@ public:
 
     MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
+    MCAPI void _onChunkLoaded(::IAddActorEntityProxy& addActorEntityProxy, ::LevelChunk& levelChunk);
+
     MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
     MCAPI void _saveAllAutonomousActors(::LevelStorage& levelStorage);
@@ -63,7 +67,13 @@ public:
     MCAPI ::Actor*
     addAutonomousActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
+    MCAPI ::Actor* addAutonomousActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
+
+    MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(::ActorUniqueID actorUniqueID) const;
+
     MCAPI void loadAutonomousActorsFromDisk(::LevelStorage& levelStorage, ::ActorFactory& actorFactory);
+
+    MCAPI void onLevelTearingDown();
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
@@ -78,14 +88,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _deduplicateDuplicateActorsFromList(::ListTag& listTag);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& AUTONOMOUS_ACTOR_KEY();
-
-    MCAPI static ::std::string_view const& AUTONOMOUS_ACTOR_LIST_KEY();
     // NOLINTEND
 
 public:

@@ -19,14 +19,13 @@ public:
 
 public:
     // prevent constructor by default
-    SchemaInfo& operator=(SchemaInfo const&);
     SchemaInfo(SchemaInfo const&);
     SchemaInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::SchemaInfo& operator=(::cereal::internal::SchemaInfo&&);
+    MCAPI ::cereal::internal::SchemaInfo& operator=(::cereal::internal::SchemaInfo const&);
 
     MCAPI ~SchemaInfo();
     // NOLINTEND

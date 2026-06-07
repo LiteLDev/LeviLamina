@@ -12,7 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 class IStoreCatalogItem;
 class MinecraftScreenModel;
 class PartySystemSubController;
@@ -34,7 +34,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PerfTurtleScreenController>> mPerfTurtleScreenController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PartySystemSubController>> mPartySystemController;
     ::ll::TypedStorage<8, 8, ::PersonaRepository&>                           mPersonaRepository;
-    ::ll::TypedStorage<8, 8, ::IOptions&>                                    mOptions;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                             mOptions;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ToastManager>>    mToastManager;
     ::ll::TypedStorage<8, 376, ::std::optional<::ToastMessage>>              mToastMessage;
     // NOLINTEND
@@ -69,7 +69,7 @@ public:
     MCAPI ToastScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::PersonaRepository&                               personaRepository,
-        ::IOptions&                                        Options,
+        ::IOptionRegistry&                                 Options,
         ::ToastManager&                                    toastManager,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
@@ -77,6 +77,8 @@ public:
     MCAPI void _destroySplitscreenJoinPopup();
 
     MCAPI ::IStoreCatalogItem const* _getAchievementPersonaPiece();
+
+    MCAPI ::std::string _getButtonGlyphId(bool isUsingGamepad);
 
     MCAPI void _registerBindings();
 
@@ -91,7 +93,7 @@ public:
     MCAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::PersonaRepository&                               personaRepository,
-        ::IOptions&                                        Options,
+        ::IOptionRegistry&                                 Options,
         ::ToastManager&                                    toastManager,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
@@ -116,7 +118,7 @@ public:
 
     MCAPI void $removeToast();
 
-    MCAPI void $refreshToast();
+    MCFOLD void $refreshToast();
     // NOLINTEND
 
 public:

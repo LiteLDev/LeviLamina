@@ -22,19 +22,12 @@ public:
     // prevent constructor by default
     DataChannelInit& operator=(DataChannelInit const&);
     DataChannelInit(DataChannelInit const&);
+    DataChannelInit();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DataChannelInit();
-
     MCNAPI ~DataChannelInit();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

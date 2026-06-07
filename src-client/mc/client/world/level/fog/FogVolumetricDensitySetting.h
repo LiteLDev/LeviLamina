@@ -13,8 +13,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FogVolumetricDensitySetting();
+
+    MCAPI FogVolumetricDensitySetting(float maxDensity, float maxDensityHeight, float zeroDensityHeight);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::FogVolumetricDensitySetting
+    lerp(::FogVolumetricDensitySetting const& src, ::FogVolumetricDensitySetting const& dst, float alpha);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FogVolumetricDensitySetting const& ZERO_SETTING();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(float maxDensity, float maxDensityHeight, float zeroDensityHeight);
     // NOLINTEND
 };

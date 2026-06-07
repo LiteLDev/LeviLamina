@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 // clang-format on
 
-class FollowParentGoal : public ::Goal {
+class FollowParentGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,8 +42,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FollowParentGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit FollowParentGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -7,8 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Level;
 class LevelStorage;
+class PositionTrackingDBClientRequestPacket;
 class PositionTrackingId;
 class Scheduler;
 class TaskGroup;
@@ -41,8 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI PositionTrackingDBServer(::Level& level, ::Scheduler& callbackContext);
 
-    MCAPI void _addRecordToPendingUpdateQueue(::PositionTrackingDB::TrackingRecord* record);
-
     MCAPI void
     _beginWriteTrackingRecordToLevelStorage(::PositionTrackingDB::TrackingRecord const* record, bool forceWrite);
 
@@ -50,10 +50,16 @@ public:
 
     MCAPI void _initializeNewPositionTrackerId(::PositionTrackingId& inOut, bool writeToPersistent);
 
+    MCAPI ::PositionTrackingId createTracker(::BlockPos const& positionToTrack, ::DimensionType const& dimension);
+
     MCAPI ::PositionTrackingDB::ResultCode destroyTracker(::PositionTrackingId const& id, bool forceLocalCacheEntry);
 
     MCAPI ::PositionTrackingDB::ResultCode
     findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
+
+    MCAPI void onReceivePacket(::PositionTrackingDBClientRequestPacket const& packet);
+
+    MCAPI bool tick();
 
     MCAPI ~PositionTrackingDBServer();
     // NOLINTEND

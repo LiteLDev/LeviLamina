@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CerealSchemaUpgradeSet;
 class CompoundTag;
 class ExpressionNode;
 class SemVersion;
@@ -51,6 +52,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockGeometryDescription& operator=(BlockGeometryDescription const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -64,8 +69,6 @@ public:
     virtual ::CompoundTag buildUnboundDataNetworkTag() const /*override*/;
 
     virtual void initializeUnboundDataFromNetwork(::CompoundTag const& tag) /*override*/;
-
-    virtual ~BlockGeometryDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -84,10 +87,6 @@ public:
         ::BlockRendererDescription const&                       renderer,
         bool                                                    isFullBlockV1
     );
-
-    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
-
-    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
     // NOLINTEND
 
 public:
@@ -97,6 +96,8 @@ public:
 
     MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>
     getBoneVisibility(::std::map<::std::string, ::ExpressionNode> const& boneVisibilities);
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
 
     MCAPI static ::std::map<::std::string, ::ExpressionNode>
     setBoneVisibility(::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> const& boneVisibilities);
@@ -148,12 +149,6 @@ public:
         ::BlockRendererDescription const&                       renderer,
         bool                                                    isFullBlockV1
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

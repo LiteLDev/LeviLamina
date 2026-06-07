@@ -116,6 +116,24 @@ MCAPI ::ItemTag const& StoneTier();
 
 MCAPI ::ItemTag const& StoneToolMaterials();
 
+MCAPI ::ItemTag const& SulfurCubeArchetypeBouncy();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeFastFlat();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeFastSliding();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeHighResistance();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeLight();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeRegular();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeSlowFlat();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeSlowSliding();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeSticky();
+
 MCAPI ::ItemTag const& Sword();
 
 MCAPI ::ItemTag const& Tool();

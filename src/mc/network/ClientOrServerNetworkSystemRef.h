@@ -19,14 +19,4 @@ public:
     using ClientRefT = ::std::reference_wrapper<::ClientNetworkSystem>;
 
     using ServerRefT = ::std::reference_wrapper<::ServerNetworkSystem>;
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::ClientNetworkSystem& toClientNetworkSystem();
-#endif
-
-    MCAPI ::ServerNetworkSystem& toServerNetworkSystem();
-    // NOLINTEND
 };

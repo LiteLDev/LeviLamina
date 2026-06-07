@@ -30,7 +30,7 @@ class IPackSourceFactory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPackSourceFactory() /*override*/;
+    virtual ~IPackSourceFactory() /*override*/ = default;
 
 #ifdef LL_PLAT_C
     virtual ::TreatmentPackSource& createTreatmentPackSource(::Core::Path const& path, ::PackType packType) = 0;
@@ -88,12 +88,6 @@ public:
         ::PackType                                                  packType,
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     ) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class IRandom;
+struct IntProvider;
 // clang-format on
 
 struct UniformInt : public ::IntProviderType {
@@ -26,8 +27,12 @@ public:
     virtual int maxValue() const /*override*/;
 
     virtual int minValue() const /*override*/;
+    // NOLINTEND
 
-    virtual ~UniformInt() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::IntProvider of(int minInclusive, int maxInclusive);
     // NOLINTEND
 
 public:

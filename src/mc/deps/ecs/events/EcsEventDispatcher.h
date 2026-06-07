@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityRegistry;
 struct CameraActivationEvent;
 struct CameraAttachToEntityInstructionEvent;
 struct CameraClearInstructionEvent;
@@ -43,5 +41,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::entt::dispatcher> mDispatcher;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void update();
     // NOLINTEND
 };

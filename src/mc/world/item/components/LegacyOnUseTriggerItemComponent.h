@@ -13,7 +13,7 @@ class ComponentItem;
 class HashedString;
 class ItemStack;
 class Player;
-struct LegacyOnUseTriggerItemComponentData;
+namespace SharedTypes::Legacy { struct OnUseTriggerItemComponent; }
 // clang-format on
 
 class LegacyOnUseTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -32,14 +32,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~LegacyOnUseTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnUseTriggerItemComponent(::LegacyOnUseTriggerItemComponentData&& data);
+    MCAPI explicit LegacyOnUseTriggerItemComponent(::SharedTypes::Legacy::OnUseTriggerItemComponent&& data);
 
     MCAPI void _use(bool& result, ::ItemStack& item, ::Player& player);
     // NOLINTEND
@@ -53,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyOnUseTriggerItemComponentData&& data);
+    MCAPI void* $ctor(::SharedTypes::Legacy::OnUseTriggerItemComponent&& data);
     // NOLINTEND
 
 public:

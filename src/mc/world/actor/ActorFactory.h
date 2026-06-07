@@ -15,6 +15,7 @@ class ActorDefinitionGroup;
 class ActorGoalFactory;
 class ActorMigratedDefinitionFactory;
 class BlockPos;
+class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class DimensionHeightRange;
@@ -88,6 +89,8 @@ public:
     MCAPI ::std::vector<::std::pair<::std::string, ::ActorDefinitionIdentifier const*>>
     buildSummonEntityTypeEnum(::Experiments const& experiments) const;
 
+    MCAPI void clearDefinitionGroup();
+
     MCAPI ::OwnerPtr<::EntityContext> clientCreateDisplayActor(
         ::ActorDefinitionIdentifier const& identifier,
         ::Actor*                           spawner,
@@ -123,11 +126,20 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void digestIdentifierListFromServer(::std::vector<::ActorInfo> const& identifierList);
+
+    MCAPI ::std::vector<::std::string> generateActorIdentifierList() const;
 #endif
 
-    MCAPI ::ActorComponentFactory& getComponentFactory() const;
+    MCFOLD ::ActorGoalFactory& getGoalFactory();
+
+    MCFOLD ::ActorMigratedDefinitionFactory& getMigratedDefinitionFactory();
 
     MCAPI void init(::Experiments const& experiments);
+
+    MCAPI ::OwnerPtr<::EntityContext> loadActor(::CompoundTag* tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI ::OwnerPtr<::EntityContext>
+    loadActor(::CompoundTag* tag, ::DataLoadHelper& dataLoadHelper, ::DimensionHeightRange const& heightRange);
 
     MCAPI ::OwnerPtr<::EntityContext> loadActor(
         ::CompoundTag*                tag,
@@ -138,9 +150,11 @@ public:
 
     MCAPI ::ActorType lookupEntityType(::ActorDefinitionIdentifier const& identifier) const;
 
-#ifdef LL_PLAT_C
+    MCAPI void setDefinitionGroup(::ActorDefinitionGroup* group);
+
     MCFOLD void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
-#endif
+
+    MCAPI void setVanillaActors(::std::vector<::ActorFactoryData> vanillaActors);
     // NOLINTEND
 
 public:
@@ -152,6 +166,8 @@ public:
         ::std::unordered_map<::std::string, ::ActorFactoryData> const& factoryFunctions,
         ::ActorFactoryData&                                            data
     );
+
+    MCAPI static ::Actor* fixLegacyEntity(::BlockSource& region, ::CompoundTag const* tag);
     // NOLINTEND
 
 public:

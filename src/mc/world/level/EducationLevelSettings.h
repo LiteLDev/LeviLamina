@@ -38,14 +38,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EducationLevelSettings();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EducationLevelSettings();
-
     MCAPI EducationLevelSettings(::EducationLevelSettings const&);
 
     MCAPI ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>
     getCommandOverrideFunctor() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::string getScreenShotBorderPath() const;
+#endif
 
     MCAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
 
@@ -69,8 +75,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::EducationLevelSettings const&);
     // NOLINTEND
 

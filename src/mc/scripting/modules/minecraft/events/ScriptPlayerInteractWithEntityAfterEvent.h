@@ -34,14 +34,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerInteractWithEntityAfterEvent& operator=(ScriptPlayerInteractWithEntityAfterEvent const&);
     ScriptPlayerInteractWithEntityAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithEntityAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&&);
-
     MCAPI
     ScriptPlayerInteractWithEntityAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
 
@@ -52,7 +49,11 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>                      target
     );
 
-    MCAPI ~ScriptPlayerInteractWithEntityAfterEvent();
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
     // NOLINTEND
 
 public:
@@ -64,8 +65,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
 
     MCAPI void* $ctor(
@@ -74,12 +73,6 @@ public:
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>                      target
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

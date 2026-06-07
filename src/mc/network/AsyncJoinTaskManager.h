@@ -98,6 +98,8 @@ public:
         ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> defaultJoinVerdict
     );
 
+    MCAPI void _expirePendingVerdict(uint64 id);
+
     MCAPI ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> _handleAllVerdictsTaskCompletion(
         ::SubClientId                                                                    subClientId,
         uint64                                                                           verdictId,
@@ -119,6 +121,8 @@ public:
             ::std::shared_ptr<::AsyncVerdictPromise>
         )> callback
     );
+
+    MCAPI void removeExistingPendingVerdictIfPresent(::SourceClientHash);
     // NOLINTEND
 
 public:

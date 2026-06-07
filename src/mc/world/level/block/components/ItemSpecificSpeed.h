@@ -12,30 +12,4 @@ public:
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mItem;
     ::ll::TypedStorage<4, 4, float>             mBlockDestroySpeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemSpecificSpeed();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemSpecificSpeed(::ItemSpecificSpeed const&);
-
-    MCAPI ::ItemSpecificSpeed& operator=(::ItemSpecificSpeed const&);
-
-    MCAPI ~ItemSpecificSpeed();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemSpecificSpeed const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

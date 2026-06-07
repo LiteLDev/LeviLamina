@@ -37,16 +37,14 @@ public:
 
     virtual ::Brightness getLightEmission(int data) const /*override*/;
 
-    virtual bool isDestructive(int auxValue) const /*override*/;
+    virtual bool isDestructive(int) const /*override*/;
 
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
+    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const
         /*override*/;
-
-    virtual ~BlockItem() /*override*/;
     // NOLINTEND
 
 public:
@@ -64,12 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
@@ -81,12 +73,12 @@ public:
 
     MCAPI ::Brightness $getLightEmission(int data) const;
 
-    MCAPI bool $isDestructive(int auxValue) const;
+    MCAPI bool $isDestructive(int) const;
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
 
 
     // NOLINTEND

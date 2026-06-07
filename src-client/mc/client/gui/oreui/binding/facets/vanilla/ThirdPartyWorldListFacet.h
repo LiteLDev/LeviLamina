@@ -45,8 +45,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~ThirdPartyWorldListFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -92,12 +90,6 @@ public:
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&          appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

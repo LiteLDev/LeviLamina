@@ -37,17 +37,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::NetworkPeer::NetworkLoad> mLoad;
-        ::ll::TypedStorage<4, 4, int>                        mCurrentPing;
-        ::ll::TypedStorage<4, 4, int>                        mAveragePing;
-        ::ll::TypedStorage<4, 4, int>                        mApproximateMaxBps;
-        ::ll::TypedStorage<4, 4, float>                      mCurrentPacketLoss;
-        ::ll::TypedStorage<4, 4, float>                      mAveragePacketLoss;
-        ::ll::TypedStorage<8, 8, uint64>                     mTotalBytesReceived;
-        ::ll::TypedStorage<8, 8, uint64>                     mTotalBytesSent;
-        ::ll::TypedStorage<8, 8, uint64>                     mCurrentBytesSendBuffer;
-        ::ll::TypedStorage<4, 4, int>                        mICEState;
-        ::ll::TypedStorage<1, 1, bool>                       mUsingRelays;
+        ::ll::TypedStorage<4, 4, ::NetworkPeer::NetworkLoad>  mLoad;
+        ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds> mCurrentPing;
+        ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds> mAveragePing;
+        ::ll::TypedStorage<4, 4, int>                         mApproximateMaxBps;
+        ::ll::TypedStorage<4, 4, float>                       mCurrentPacketLoss;
+        ::ll::TypedStorage<4, 4, float>                       mAveragePacketLoss;
+        ::ll::TypedStorage<8, 8, uint64>                      mTotalBytesReceived;
+        ::ll::TypedStorage<8, 8, uint64>                      mTotalBytesSent;
+        ::ll::TypedStorage<8, 8, uint64>                      mCurrentBytesSendBuffer;
+        ::ll::TypedStorage<4, 4, int>                         mICEState;
+        ::ll::TypedStorage<1, 1, bool>                        mUsingRelays;
         // NOLINTEND
     };
 
@@ -79,6 +79,8 @@ public:
 
     virtual bool isEncrypted() const;
 
+    virtual bool isLan() const;
+
     virtual ::NetworkPeer::DataStatus _receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
@@ -101,6 +103,8 @@ public:
     MCAPI bool $isLocal() const;
 
     MCAPI bool $isEncrypted() const;
+
+    MCAPI bool $isLan() const;
 
 
     // NOLINTEND

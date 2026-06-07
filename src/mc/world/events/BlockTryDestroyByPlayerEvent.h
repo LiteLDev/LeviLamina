@@ -26,24 +26,13 @@ public:
 public:
     // prevent constructor by default
     BlockTryDestroyByPlayerEvent& operator=(BlockTryDestroyByPlayerEvent const&);
+    BlockTryDestroyByPlayerEvent(BlockTryDestroyByPlayerEvent const&);
     BlockTryDestroyByPlayerEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent&&);
-
-    MCAPI BlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent const&);
-
     MCAPI ~BlockTryDestroyByPlayerEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockTryDestroyByPlayerEvent&&);
-
-    MCAPI void* $ctor(::BlockTryDestroyByPlayerEvent const&);
     // NOLINTEND
 
 public:

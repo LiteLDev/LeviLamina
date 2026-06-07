@@ -69,6 +69,24 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit UIComponent(::UIControl& owner);
+
+    MCFOLD ::UIControl const& getOwner() const;
+
+    MCFOLD ::UIControl& getOwner();
+
+    MCAPI bool isLocked() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

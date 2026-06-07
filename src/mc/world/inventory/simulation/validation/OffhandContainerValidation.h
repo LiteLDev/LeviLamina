@@ -29,8 +29,6 @@ public:
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~OffhandContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

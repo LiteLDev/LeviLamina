@@ -10,11 +10,27 @@ namespace Settings {
 
 class TextComponent : public ::Settings::Component<::Settings::TextComponent> {
 public:
+    // prevent constructor by default
+    TextComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TextComponent() /*override*/ = default;
 
     virtual ::Settings::ComponentState getDefaultState() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TextComponent(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
     // NOLINTEND
 
 public:

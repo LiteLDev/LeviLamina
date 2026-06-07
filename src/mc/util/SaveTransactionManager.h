@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SaveTransactionManager() /*override*/ = default;
+    virtual ~SaveTransactionManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -41,6 +41,12 @@ public:
         ::std::function<void(bool)> showIconFunction
     );
 
+    MCNAPI void _hideGlobalSaveIcon();
+
+    MCNAPI void _showGlobalSaveIcon();
+
+    MCNAPI void onBeginCompaction();
+
     MCNAPI void onEndCompaction();
     // NOLINTEND
 
@@ -48,6 +54,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::function<void(bool)> showIconFunction);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

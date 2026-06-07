@@ -14,6 +14,8 @@ MCAPI ::std::string composeRoute(
     ::std::string const& serverMessage,
     ::std::string const& serverName
 );
+
+MCAPI ::std::string composeRouteNoParameters();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::DisconnectScreen

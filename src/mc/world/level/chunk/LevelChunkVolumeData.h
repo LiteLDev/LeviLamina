@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/WeightedRandomList.h"
+#include "mc/world/actor/spawn_category/Type.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/LevelChunkDataRegistry.h"
@@ -10,9 +12,12 @@
 // auto generated forward declare list
 // clang-format off
 class IDataInput;
+class IDataOutput;
 class StructureSpawnRegistry;
 class StructureStart;
+class Vec3;
 namespace br::worldgen { class StructureInstance; }
+namespace br::worldgen { struct SpawnerData; }
 // clang-format on
 
 class LevelChunkVolumeData {
@@ -49,6 +54,16 @@ public:
     MCAPI void deserializeAabbVolumes(::IDataInput& stream);
 
     MCAPI void deserializeHardcodedSpawners(::IDataInput& stream);
+
+    MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+    dynamicMobsAt(::BlockPos pos, ::SpawnCategory::Type category) const;
+
+    MCAPI ::std::vector<::std::string> getStructuresAt(::Vec3 position) const;
+
+    MCAPI ::std::optional<::WeightedRandomList<::br::worldgen::SpawnerData>>
+    mobsAt(::BlockPos pos, ::SpawnCategory::Type category) const;
+
+    MCAPI bool serializeAabbVolumes(::IDataOutput& stream) const;
 
     MCAPI ::std::vector<::BlockPos> structureSpawnPos() const;
 

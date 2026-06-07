@@ -65,8 +65,6 @@ public:
     virtual void resetAuthentication(::Identity::IEduAuth&, bool) /*override*/;
 
     virtual bool isDemoConversion() const /*override*/;
-
-    virtual ~EduHeadlessSso() /*override*/ = default;
     // NOLINTEND
 
 public:

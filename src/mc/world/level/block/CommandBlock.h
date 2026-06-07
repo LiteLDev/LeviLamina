@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
@@ -53,15 +57,12 @@ public:
 
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
-
-    virtual ~CommandBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
-    _execute(::BlockSource& region, ::CommandBlockActor& entity, ::BlockPos const& pos, bool commandSet) const;
+    MCAPI CommandBlock(::std::string const& nameId, int id, ::CommandBlockMode mode);
 
     MCAPI void _executeChain(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -75,6 +76,8 @@ public:
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void execute(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI ::CommandBlockMode getMode() const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -91,11 +94,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::CommandBlockMode mode);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCFOLD ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,

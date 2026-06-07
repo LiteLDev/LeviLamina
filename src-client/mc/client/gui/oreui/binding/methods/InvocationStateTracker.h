@@ -30,6 +30,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::OreUI::Detail::IInvocationStateTracker::InvocationInformation> mInformation;
+        ::ll::TypedStorage<1, 1, bool>                                                             mHasState;
         ::ll::TypedStorage<
             8,
             48,

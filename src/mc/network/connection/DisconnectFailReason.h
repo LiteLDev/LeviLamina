@@ -141,7 +141,11 @@ enum class DisconnectFailReason : int {
     EditorMismatchEditorToVanilla                 = 133,
     EditorMismatchVanillaToEditor                 = 134,
     DenyListed                                    = 135,
-    MaxDisconnectFailReason                       = 136,
+    NonceMissing                                  = 136,
+    NonceNotFound                                 = 137,
+    NonceExpired                                  = 138,
+    NonceNotValid                                 = 139,
+    MaxDisconnectFailReason                       = 140,
 };
 
 }

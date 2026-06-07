@@ -19,7 +19,7 @@ class UnzipFile {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UnzipFile();
+    virtual ~UnzipFile() = default;
 
     virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) = 0;
 
@@ -55,21 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

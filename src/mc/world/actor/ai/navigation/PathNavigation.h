@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/pathfinder/CanJumpIntoNode.h"
+#include "mc/world/level/pathfinder/NodeType.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockPos;
 class BlockSource;
 class Mob;
 class NavigationComponent;
@@ -18,9 +23,9 @@ class PathNavigation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PathNavigation() = default;
+    virtual ~PathNavigation();
 
-    virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description);
+    virtual void initializeInternal(::Mob& mob, ::NavigationDescription const* description);
 
     virtual void tick(::NavigationComponent& parent, ::Mob& mob);
 
@@ -51,18 +56,33 @@ public:
     MCAPI float _getHighestBlockHeight(::BlockSource& region, ::Mob& mob, ::Vec3 const& pos, ::Vec2 const& aabb) const;
 
     MCAPI bool _isPositionOnlyInAir(::BlockSource const& region, ::Vec3 const& pos, ::Vec2 const& aabb) const;
+
+    MCAPI ::NodeType isFree(
+        ::NavigationComponent& parent,
+        ::Mob&                 mob,
+        ::BlockPos const&      lastPathPos,
+        ::BlockPos const&      testPos,
+        ::BlockPos const&      size,
+        ::CanJumpIntoNode      jumpIntoNode
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
+    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription const* description);
 
     MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
     MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
+    MCFOLD ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
     MCFOLD ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
@@ -72,7 +92,7 @@ public:
 
     MCAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed);
 
-    MCFOLD void $stop(::NavigationComponent& parent, ::Mob& mob);
+    MCAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
 
     MCFOLD bool $travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za);
 

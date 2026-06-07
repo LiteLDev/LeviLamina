@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/actor/ActorType.h"
@@ -12,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Dimension;
 class ItemStackBase;
 class LegacyTelemetryEventPacket;
 class Mob;

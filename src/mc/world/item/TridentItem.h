@@ -50,14 +50,20 @@ public:
     virtual int getAttackDamage() const /*override*/;
 
     virtual bool canDestroyInCreative() const /*override*/;
-
-    virtual ~TridentItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Actor* _setupProjectile(::Actor* trident, ::ItemStack item, bool creative) const;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& CHARGE_THRESHOLD_TIME();
+
+    MCAPI static int const& THROW_THRESHOLD_TIME();
     // NOLINTEND
 
 public:

@@ -6,9 +6,13 @@ namespace Social {
 
 struct EduJoinServerResponse {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72>  mUnkce4b98;
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<1, 72> mUnkce4b98;
+#else // LL_PLAT_C
+    ::ll::UntypedStorage<8, 72> mUnkce4b98;
+#endif
     ::ll::UntypedStorage<8, 40>  mUnk7d94d0;
     ::ll::UntypedStorage<4, 8>   mUnk9dc522;
     ::ll::UntypedStorage<8, 152> mUnk9150cd;
@@ -24,7 +28,7 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    EduJoinServerResponse& operator=(EduJoinServerResponse const&);
+    EduJoinServerResponse(EduJoinServerResponse const&);
     EduJoinServerResponse();
 
 #endif
@@ -32,21 +36,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI EduJoinServerResponse(::Social::EduJoinServerResponse&&);
-
-    MCNAPI EduJoinServerResponse(::Social::EduJoinServerResponse const&);
+    MCNAPI ::Social::EduJoinServerResponse& operator=(::Social::EduJoinServerResponse const&);
 
     MCNAPI ~EduJoinServerResponse();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Social::EduJoinServerResponse&&);
-
-    MCNAPI void* $ctor(::Social::EduJoinServerResponse const&);
 #endif
     // NOLINTEND
 

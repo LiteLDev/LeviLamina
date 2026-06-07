@@ -21,6 +21,8 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI auto toJsonStr() const;
+
     MCNAPI ~UnsupportedAction();
 #endif
     // NOLINTEND

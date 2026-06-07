@@ -33,17 +33,18 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptCustomCommandOrigin& operator=(ScriptCustomCommandOrigin const&);
     ScriptCustomCommandOrigin();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCustomCommandOrigin(::ScriptModuleMinecraft::ScriptCustomCommandOrigin&&);
-
     MCAPI ScriptCustomCommandOrigin(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
 
-    MCAPI ~ScriptCustomCommandOrigin();
+    MCAPI ::ScriptModuleMinecraft::ScriptCustomCommandOrigin&
+    operator=(::ScriptModuleMinecraft::ScriptCustomCommandOrigin&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptCustomCommandOrigin&
+    operator=(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
     // NOLINTEND
 
 public:
@@ -55,15 +56,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandOrigin&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

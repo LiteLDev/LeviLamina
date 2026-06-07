@@ -20,6 +20,22 @@ public:
     ::ll::TypedStorage<8, 8, ::Biome const*> mFromBiome;
     ::ll::TypedStorage<8, 8, ::Biome const*> mToBiome;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RareBiomeSpot();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RareBiomeSpot(uint oneInXChance, ::Biome const& fromBiome, ::Biome const& toBiome);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(uint oneInXChance, ::Biome const& fromBiome, ::Biome const& toBiome);
+    // NOLINTEND
 };
 
 } // namespace OperationNodeFilters

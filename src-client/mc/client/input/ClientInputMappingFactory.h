@@ -9,9 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class Config;
-class IOptions;
+class IOptionRegistry;
 class KeyboardRemappingLayout;
 struct DeviceButtonMapping;
+struct GameControllerInputMapping;
 struct InputMapping;
 struct TouchInputMapping;
 // clang-format on
@@ -43,19 +44,17 @@ public:
     // NOLINTBEGIN
     virtual ::InputMapping const* getMapping(::std::string const& mappingName) /*override*/;
 
-    virtual void createInputMappingTemplates(::IOptions& options) = 0;
+    virtual void createInputMappingTemplates(::IOptionRegistry& options) = 0;
 
     virtual ::TouchInputMapping _createScreenTouchMapping() const;
 
     virtual ::std::vector<::DeviceButtonMapping> _createScreenDeviceButtonMapping() const;
 
-    virtual void _updateKeyboardAndMouseControls(::IOptions& options) = 0;
+    virtual void _updateKeyboardAndMouseControls(::IOptionRegistry& options) = 0;
 
     virtual void _updateGameControllerControls() = 0;
 
     virtual void _updateTouchMappingControls() = 0;
-
-    virtual ~ClientInputMappingFactory() /*override*/;
     // NOLINTEND
 
 public:
@@ -64,6 +63,8 @@ public:
     MCAPI explicit ClientInputMappingFactory(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
 
     MCAPI void _activateMapping(::std::string const& mappingName);
+
+    MCAPI void _configureGameControllerMapping(::GameControllerInputMapping& mapping);
 
     MCAPI ::InputMapping* _getMappingInternal(::std::string const& mappingName);
 
@@ -74,12 +75,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

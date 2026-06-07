@@ -70,8 +70,6 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~StartGamePacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -104,7 +102,11 @@ public:
         uint64                                                                     blockTypeRegistryChecksum
     );
 
-    MCAPI void _prepareBlockPropertiesTags(::BlockDefinitionGroup const& blockDefinitionGroup);
+#ifdef LL_PLAT_C
+    MCFOLD ::LevelSettings const& getLevelSettings() const;
+
+    MCAPI ::std::string getMultiplayerCorrelationId() const;
+#endif
     // NOLINTEND
 
 public:
@@ -136,12 +138,6 @@ public:
         int                                                                        enchantmentSeed,
         uint64                                                                     blockTypeRegistryChecksum
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

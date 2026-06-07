@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/codebuilder/EncryptionCipherMode.h"
 #include "mc/codebuilder/RequestPurpose.h"
-#include "mc/codebuilder/ResponsePurpose.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,8 +44,6 @@ MCNAPI ::std::string serialize(::CodeBuilder::ErrorMessage const& message);
 MCNAPI ::std::string serialize(::CodeBuilder::EventMessage const& message);
 
 MCNAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message, ::std::string const& requestId);
-
-MCNAPI ::std::string toString(::CodeBuilder::ResponsePurpose purpose);
 // NOLINTEND
 
 } // namespace CodeBuilder

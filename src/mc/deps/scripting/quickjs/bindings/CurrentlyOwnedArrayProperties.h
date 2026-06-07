@@ -25,18 +25,6 @@ public:
         Prop& operator=(Prop const&);
         Prop(Prop const&);
         Prop();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Prop();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -50,13 +38,6 @@ public:
     CurrentlyOwnedArrayProperties& operator=(CurrentlyOwnedArrayProperties const&);
     CurrentlyOwnedArrayProperties(CurrentlyOwnedArrayProperties const&);
     CurrentlyOwnedArrayProperties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::QuickJS::CurrentlyOwnedArrayProperties&
-    operator=(::Scripting::QuickJS::CurrentlyOwnedArrayProperties&&);
-    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

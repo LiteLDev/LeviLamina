@@ -23,20 +23,34 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HangingActorItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~HangingActorItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI HangingActorItem(::std::string const& name, int id, ::ActorType type);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::ActorType type);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
 
     // NOLINTEND

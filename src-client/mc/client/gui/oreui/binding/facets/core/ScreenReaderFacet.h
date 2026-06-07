@@ -32,9 +32,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScreenReaderFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenReaderFacet() /*override*/ = default;
+    virtual ~ScreenReaderFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -42,13 +46,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScreenReaderFacet(
+        ::std::weak_ptr<::ITTSEventManager> ttsEventManager,
+        ::gsl::not_null<::Option*>          chatTextToSpeechOption,
+        ::gsl::not_null<::Option*>          uiTextToSpeechOption
+    );
+
     MCAPI void _registerObservers();
 
     MCAPI void clear();
 
     MCFOLD bool getIsChatTextToSpeechEnabled() const;
 
-    MCAPI bool getIsIdle() const;
+    MCFOLD bool getIsIdle() const;
 
     MCFOLD bool getIsUITextToSpeechEnabled() const;
 
@@ -63,6 +73,22 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::weak_ptr<::ITTSEventManager> ttsEventManager,
+        ::gsl::not_null<::Option*>          chatTextToSpeechOption,
+        ::gsl::not_null<::Option*>          uiTextToSpeechOption
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

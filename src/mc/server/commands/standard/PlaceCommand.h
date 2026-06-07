@@ -57,8 +57,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~PlaceCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

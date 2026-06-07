@@ -82,14 +82,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, int64>                    int_;
-        ::ll::TypedStorage<8, 8, uint64>                   uint_;
-        ::ll::TypedStorage<8, 8, double>                   real_;
-        ::ll::TypedStorage<1, 8, bool>                     bool_;
-        ::ll::TypedStorage<8, 8, ::Json::Value::CZString*> string_;
-        ::ll::TypedStorage<8, 8, ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>*>
-                                                                 map_;
         ::ll::TypedStorage<8, 8, ::std::vector<::Json::Value*>*> array_;
+        ::ll::TypedStorage<1, 8, bool>                           bool_;
+        ::ll::TypedStorage<8, 8, int64>                          int_;
+        ::ll::TypedStorage<8, 8, ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>*>
+                                                           map_;
+        ::ll::TypedStorage<8, 8, double>                   real_;
+        ::ll::TypedStorage<8, 8, ::Json::Value::CZString*> string_;
+        ::ll::TypedStorage<8, 8, uint64>                   uint_;
         // NOLINTEND
     };
     using ArrayIndex = uint;
@@ -166,7 +166,7 @@ public:
 
     MCAPI bool asBool(bool defaultValue) const;
 
-    MCFOLD char const* asCString() const;
+    MCAPI char const* asCString() const;
 
     MCAPI double asDouble(double defaultValue) const;
 

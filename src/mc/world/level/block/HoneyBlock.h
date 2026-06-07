@@ -13,37 +13,41 @@ class Actor;
 class Block;
 class BlockPos;
 class EntityContext;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class Material;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
 class HoneyBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    HoneyBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual ::AABB getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
+    virtual void onStandOn(::EntityContext& entity, ::BlockPos const&) const /*override*/;
+
+    virtual float getBounciness(::IConstBlockSource const&, ::BlockPos const&) const /*override*/;
 
     virtual int getExtraRenderLayers() const /*override*/;
 
-    virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
-
-    virtual ~HoneyBlock() /*override*/ = default;
+    virtual ::AABB const& getVisualShape(::Block const& bufferAABB, ::AABB&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HoneyBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
@@ -54,22 +58,28 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const&) const;
+
+    MCFOLD float $getBounciness(::IConstBlockSource const&, ::BlockPos const&) const;
 
     MCFOLD int $getExtraRenderLayers() const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& bufferAABB, ::AABB&) const;
 
 
     // NOLINTEND

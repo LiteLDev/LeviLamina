@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerDeathManagerProxy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~PlayerDeathManagerProxy() /*override*/ = default;
@@ -30,6 +34,18 @@ public:
     virtual bool shouldShowDeathMessages() const /*override*/;
 
     virtual void onWorldOwnerHasDied() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit PlayerDeathManagerProxy(::ServerLevel& serverLevel);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ServerLevel& serverLevel);
     // NOLINTEND
 
 public:

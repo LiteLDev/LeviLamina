@@ -16,7 +16,7 @@ class ActorInWeatherTest : public ::FilterTest {
 public:
     // ActorInWeatherTest inner types define
     enum class WeatherType : int {
-        Undefined    = -1,
+        Undefined    = 4294967295,
         Clear        = 0,
         Rain         = 1,
         Snow         = 2,
@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
+    virtual bool setup(::FilterTest::Definition const& inputs, ::FilterInputs const&) /*override*/;
 
     virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
@@ -47,14 +47,12 @@ public:
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
 
     virtual ::Json::Value _serializeValue() const /*override*/;
-
-    virtual ~ActorInWeatherTest() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+    MCNAPI bool $setup(::FilterTest::Definition const& inputs, ::FilterInputs const&);
 
     MCNAPI bool $evaluate(::FilterContext const& context) const;
 

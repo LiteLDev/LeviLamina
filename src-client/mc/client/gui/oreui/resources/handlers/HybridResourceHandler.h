@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -13,17 +14,17 @@ class IFileAccess;
 class ResourcePackManager;
 namespace Core { class FileSystem; }
 namespace Core { class Path; }
-namespace OreUI { class ResourceResponse; }
-namespace OreUI { class ResourceStreamResponse; }
-namespace OreUI { class TemporaryTextureHolder; }
+namespace Gameface { class ISyncStreamReader; }
+namespace Gameface { class ResourceResponse; }
+namespace Gameface { class ResourceStreamResponse; }
+namespace Gameface { class TemporaryTextureHolder; }
+namespace Gameface { struct ResourceRequest; }
 namespace OreUI { struct HybridResourceLocation; }
-namespace OreUI { struct ResourceRequest; }
-namespace cohtml { class ISyncStreamReader; }
 // clang-format on
 
 namespace OreUI {
 
-class HybridResourceHandler : public ::OreUI::IResourceHandler {
+class HybridResourceHandler : public ::Gameface::IResourceHandler {
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,9 +32,9 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IFileAccess>>      mFileAccess;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Core::FileSystem>> mFileSystem;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>              mDataPath;
-    ::ll::TypedStorage<8, 64, ::std::function<::cohtml::ISyncStreamReader*(::IFileAccess&, ::Core::Path)>>
-                                                               mSyncStreamReaderFactory;
-    ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&> mTemporaryTextureHolder;
+    ::ll::TypedStorage<8, 64, ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)>>
+                                                                  mSyncStreamReaderFactory;
+    ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&> mTemporaryTextureHolder;
     // NOLINTEND
 
 public:
@@ -47,12 +48,12 @@ public:
     // NOLINTBEGIN
     virtual ~HybridResourceHandler() /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status onResourceStreamRequest(
-        ::OreUI::ResourceRequest const&  request,
-        ::OreUI::ResourceStreamResponse& response
+    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
+        ::Gameface::ResourceRequest const&  request,
+        ::Gameface::ResourceStreamResponse& response
     ) /*override*/;
 
     virtual void update() /*override*/;
@@ -61,14 +62,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HybridResourceHandler(
+        ::ResourcePackManager const&                                                         packManager,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&                             fileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
+        ::Core::Path const&                                                                  dataPath,
+        ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory,
+        ::Gameface::TemporaryTextureHolder&                                                  temporaryTextureHolder
+    );
+
     MCAPI ::std::optional<::OreUI::HybridResourceLocation>
-    _getAssetResourceLocationFromResourcePackManager(::OreUI::ResourceRequest const& request) const;
+    _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
     // NOLINTEND
 
 public:
-    // static variables
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> PROTOCOL();
+    MCAPI void* $ctor(
+        ::ResourcePackManager const&                                                         packManager,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&                             fileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
+        ::Core::Path const&                                                                  dataPath,
+        ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory,
+        ::Gameface::TemporaryTextureHolder&                                                  temporaryTextureHolder
+    );
     // NOLINTEND
 
 public:
@@ -80,11 +97,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse& response);
 
     MCFOLD void $update();
     // NOLINTEND

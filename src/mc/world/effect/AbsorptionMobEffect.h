@@ -19,8 +19,6 @@ public:
     virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom) /*override*/;
 
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const /*override*/;
-
-    virtual ~AbsorptionMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:

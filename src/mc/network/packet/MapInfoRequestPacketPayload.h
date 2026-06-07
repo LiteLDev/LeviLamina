@@ -20,17 +20,16 @@ public:
 
 public:
     // prevent constructor by default
-    MapInfoRequestPacketPayload& operator=(MapInfoRequestPacketPayload const&);
     MapInfoRequestPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapInfoRequestPacketPayload(::MapInfoRequestPacketPayload const&);
+    MCAPI explicit MapInfoRequestPacketPayload(::ActorUniqueID mapId);
 
     MCAPI MapInfoRequestPacketPayload(::ActorUniqueID mapId, ::MapItemSavedData& map);
 
-    MCFOLD ::MapInfoRequestPacketPayload& operator=(::MapInfoRequestPacketPayload&&);
+    MCAPI bool replaceServerPixels(::MapItemSavedData& map) const;
 
     MCAPI ~MapInfoRequestPacketPayload();
     // NOLINTEND
@@ -38,7 +37,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::MapInfoRequestPacketPayload const&);
+    MCAPI void* $ctor(::ActorUniqueID mapId);
 
     MCAPI void* $ctor(::ActorUniqueID mapId, ::MapItemSavedData& map);
     // NOLINTEND

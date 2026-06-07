@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CerealSchemaUpgradeSet;
 class ExpressionNode;
 class HashedString;
 class ItemStack;
@@ -31,12 +32,6 @@ public:
     RepairableItemComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RepairableItemComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RepairableItemComponent(::SharedTypes::v1_20_50::RepairableItemComponent component);
@@ -49,6 +44,8 @@ public:
 
     MCAPI ::RepairItemResult
     handleItemRepair(::ItemStack& inputItem, ::ItemStack& materialItem, bool allowBidirectionalRepair) const;
+
+    MCAPI bool isValidRepairItem(::ItemStackBase const& repairItem) const;
     // NOLINTEND
 
 public:
@@ -61,6 +58,8 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:

@@ -16,6 +16,10 @@ class ItemInstance;
 
 class CarrotBlock : public ::CropBlock {
 public:
+    // prevent constructor by default
+    CarrotBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
@@ -23,10 +27,20 @@ public:
     virtual int getVariant(::Block const& block) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~CarrotBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CarrotBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -34,10 +48,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemInstance const $getBaseSeed() const;
 
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
 
     // NOLINTEND

@@ -24,14 +24,11 @@ public:
 
 public:
     // prevent constructor by default
-    OreVeinifierNoises& operator=(OreVeinifierNoises const&);
     OreVeinifierNoises();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OreVeinifierNoises(::OreVeinifierNoises const&);
-
     MCAPI OreVeinifierNoises(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeininessNoiseSource,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceA,
@@ -52,8 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::OreVeinifierNoises const&);
-
     MCFOLD void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeininessNoiseSource,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceA,

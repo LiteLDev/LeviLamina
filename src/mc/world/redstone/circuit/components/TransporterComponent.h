@@ -29,10 +29,10 @@ public:
     virtual void cacheValues(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
+        ::CircuitSceneGraph&         info,
+        ::CircuitTrackingInfo const& dampening,
+        int&                         bDirectlyPowered,
+        bool&
     ) /*override*/;
 
     virtual bool
@@ -45,8 +45,18 @@ public:
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~TransporterComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TransporterComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -55,7 +65,7 @@ public:
     MCAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
 
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 

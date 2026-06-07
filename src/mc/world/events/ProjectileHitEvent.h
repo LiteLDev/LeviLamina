@@ -23,16 +23,4 @@ public:
     ProjectileHitEvent& operator=(ProjectileHitEvent const&);
     ProjectileHitEvent(ProjectileHitEvent const&);
     ProjectileHitEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ProjectileHitEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

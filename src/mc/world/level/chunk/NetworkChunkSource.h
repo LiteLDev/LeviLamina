@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Dimension;
 class LevelChunk;
 struct LevelChunkFinalDeleter;
 // clang-format on
@@ -18,6 +19,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>>> mChunkMap;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NetworkChunkSource();
 
 public:
     // virtual functions
@@ -39,8 +44,18 @@ public:
     virtual bool canCreateViews() const /*override*/;
 
     virtual bool canLaunchTasks() const /*override*/;
+    // NOLINTEND
 
-    virtual ~NetworkChunkSource() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit NetworkChunkSource(::Dimension& dimension);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension);
     // NOLINTEND
 
 public:

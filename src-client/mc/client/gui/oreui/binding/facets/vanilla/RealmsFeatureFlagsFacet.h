@@ -27,8 +27,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~RealmsFeatureFlagsFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

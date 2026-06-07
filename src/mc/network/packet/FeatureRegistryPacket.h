@@ -59,14 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~FeatureRegistryPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI FeatureRegistryPacket();
+
+    MCAPI explicit FeatureRegistryPacket(::FeatureRegistryPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::FeatureRegistryPacketPayload payload);
     // NOLINTEND
 
 public:

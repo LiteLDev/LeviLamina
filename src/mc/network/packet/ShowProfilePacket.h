@@ -59,8 +59,18 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    // NOLINTEND
 
-    virtual ~ShowProfilePacket() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ShowProfilePacket();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

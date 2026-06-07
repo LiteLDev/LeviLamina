@@ -61,7 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InternalComponentRegistry() = default;
+    virtual ~InternalComponentRegistry();
 
     virtual void registerComponents();
     // NOLINTEND
@@ -70,6 +70,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
+
+    MCAPI void addComponentSaveData(::Actor const& owner, ::CompoundTag& tag);
 
     MCAPI void initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
     // NOLINTEND
@@ -84,6 +86,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& INTERNAL_COMPONENTS();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -40,10 +40,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const& getAction() const;
 
-    MCAPI ::std::optional<::OreUI::RouterLocation> getCurrentLocation() const;
-
-    MCAPI ::std::optional<::OreUI::RouterLocation> getPreviousLocation() const;
-
     MCAPI void goBack();
 
     MCAPI void goBackAndReplace(

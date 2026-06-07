@@ -24,21 +24,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilterData const& data);
+#ifdef LL_PLAT_S
+    MCFOLD void process();
+#endif
 
-    MCAPI ~ScriptMessageReceiveEventFilter();
+    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilterData const& data);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

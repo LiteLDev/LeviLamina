@@ -34,13 +34,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorAnimationControllerState();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorAnimationControllerState(::HashedString const& name);
+    MCAPI void addAnimation(::HashedString const& name);
+
+    MCAPI void addBlendTransitionKeyFrame(float time, float blendValue);
 
 #ifdef LL_PLAT_C
     MCAPI void addTransition(
@@ -54,12 +52,6 @@ public:
     MCAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
 
     MCAPI ~ActorAnimationControllerState();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& name);
     // NOLINTEND
 
 public:

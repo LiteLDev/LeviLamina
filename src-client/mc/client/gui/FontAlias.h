@@ -85,7 +85,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FontAlias() /*override*/ = default;
+    virtual ~FontAlias() /*override*/;
 
     virtual float _getCharWidth(int uniChar, bool forceUnicode) /*override*/;
 
@@ -127,7 +127,7 @@ public:
         uint                   textureHeight
     ) const /*override*/;
 
-    virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
+    virtual void loadFontData(bool) /*override*/;
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
@@ -178,6 +178,12 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
@@ -220,7 +226,7 @@ public:
         uint                   textureHeight
     ) const;
 
-    MCFOLD void $loadFontData(bool uploadTextureImmediately);
+    MCFOLD void $loadFontData(bool);
 
     MCAPI bool $_supportsShadowInSingleDraw();
 

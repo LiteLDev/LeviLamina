@@ -22,18 +22,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CooldownItemComponent(CooldownItemComponent const&);
-    CooldownItemComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_50::CooldownItemComponent& operator=(::SharedTypes::v1_20_50::CooldownItemComponent&&);
-
-    MCAPI ::SharedTypes::v1_20_50::CooldownItemComponent&
-    operator=(::SharedTypes::v1_20_50::CooldownItemComponent const&);
-
     MCAPI ~CooldownItemComponent();
     // NOLINTEND
 
@@ -47,6 +37,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& DEFAULT_CATEGORY();
+
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:

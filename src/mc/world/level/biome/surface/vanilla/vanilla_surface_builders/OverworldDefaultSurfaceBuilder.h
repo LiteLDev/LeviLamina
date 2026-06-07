@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
+class SurfaceBuilderData;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -18,13 +18,11 @@ public:
     // NOLINTBEGIN
     virtual void initBuilder(uint) /*override*/;
 
-    virtual void initBiomeSurface(::Biome& biome) const /*override*/;
+    virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
-    virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
+    virtual bool isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const /*override*/;
 
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
-
-    virtual ~OverworldDefaultSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -32,9 +30,9 @@ public:
     // NOLINTBEGIN
     MCFOLD void $initBuilder(uint);
 
-    MCFOLD void $initBiomeSurface(::Biome& biome) const;
+    MCAPI void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
-    MCAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
 

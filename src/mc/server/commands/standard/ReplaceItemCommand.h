@@ -55,13 +55,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~ReplaceItemCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ReplaceItemCommand();
+
     MCAPI void
     _outputError(::CommandOutput& output, ::Util::ReplacementResults errorDetails, ::std::string const& itemName) const;
     // NOLINTEND
@@ -70,6 +70,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

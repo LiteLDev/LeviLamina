@@ -28,18 +28,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool carveEllipsoidVolume(
-        ::IBlockWorldGenAPI& target,
-        ::CaveFeatureUtils::CarverConfiguration const&,
-        ::Random&                                    random,
-        ::ChunkPos const&                            pos,
-        ::Vec3 const&                                startPos,
-        ::BoundingBox const&                         volume,
-        float                                        rad,
-        float                                        yRad,
-        ::CaveFeatureUtils::CarvingParameters const& carveValues
+        ::IBlockWorldGenAPI&                           target,
+        ::CaveFeatureUtils::CarverConfiguration const& random,
+        ::Random&                                      pos,
+        ::ChunkPos const&                              startPos,
+        ::Vec3 const&                                  volume,
+        ::BoundingBox const&                           rad,
+        float                                          yRad,
+        float                                          carveValues,
+        ::CaveFeatureUtils::CarvingParameters const&
     ) const /*override*/;
-
-    virtual ~UnderwaterCaveFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,15 +50,15 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $carveEllipsoidVolume(
-        ::IBlockWorldGenAPI& target,
-        ::CaveFeatureUtils::CarverConfiguration const&,
-        ::Random&                                    random,
-        ::ChunkPos const&                            pos,
-        ::Vec3 const&                                startPos,
-        ::BoundingBox const&                         volume,
-        float                                        rad,
-        float                                        yRad,
-        ::CaveFeatureUtils::CarvingParameters const& carveValues
+        ::IBlockWorldGenAPI&                           target,
+        ::CaveFeatureUtils::CarverConfiguration const& random,
+        ::Random&                                      pos,
+        ::ChunkPos const&                              startPos,
+        ::Vec3 const&                                  volume,
+        ::BoundingBox const&                           rad,
+        float                                          yRad,
+        float                                          carveValues,
+        ::CaveFeatureUtils::CarvingParameters const&
     ) const;
 
 

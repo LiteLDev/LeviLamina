@@ -14,9 +14,11 @@
 #include "mc/network/connection/DisconnectFailReason.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/world/MinecraftArguments.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
+class ClientNetworkSystem;
 class DefaultCommandsContextProvider;
 class EntityContext;
 class EntityRegistry;
@@ -41,7 +43,6 @@ class PrivateKeyManager;
 class ResourcePackManager;
 class Scheduler;
 class ScriptPackSettingsCache;
-class ServerMetrics;
 class ServerNetworkHandler;
 class ServerNetworkSystem;
 class StructureManager;
@@ -54,6 +55,7 @@ struct PackIdVersion;
 struct ServerNetworkHandlerDependencies;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
+class ServerMetrics;
 // clang-format on
 
 class Minecraft : public ::IEntityRegistryOwner {
@@ -142,27 +144,51 @@ public:
 
     MCAPI void _tryCatchupMovementTicks();
 
+    MCAPI void clientReset();
+
     MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
     MCAPI void disconnectClient(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
 
-#ifdef LL_PLAT_S
+    MCAPI void earlyShutdownMainthread();
+
+    MCAPI ::ClientNetworkSystem& getClientNetworkSystem();
+
+    MCFOLD ::MinecraftCommands& getCommands();
+
+    MCFOLD ::IMinecraftEventing& getEventing() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const;
+
+    MCFOLD ::GameModuleServer& getGameModuleServer();
+
     MCAPI ::optional_ref<::MinecraftGameTest> getGameTest();
-#endif
+
+    MCAPI double getLastTimestep();
 
     MCAPI ::Level* getLevel() const;
+
+#ifdef LL_PLAT_S
+    MCAPI ::Bedrock::NonOwnerPointer<::MinecraftServiceKeyManager> getMinecraftServiceKeyManager();
+#endif
 
 #ifdef LL_PLAT_C
     MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
 #endif
 
+    MCFOLD ::ResourcePackManager& getResourceLoader();
+
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
-#ifdef LL_PLAT_C
     MCAPI ::ServerNetworkSystem& getServerNetworkSystem();
-#endif
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
+
+#ifdef LL_PLAT_C
+    MCFOLD ::Timer const& getTimer();
+#endif
+
+    MCAPI bool hasCommands();
 
     MCAPI bool hostMultiplayer(
         ::std::string const&                                                 serverName,
@@ -180,25 +206,47 @@ public:
         ::ServerNetworkHandlerDependencies&&                                 serverNetworkOptions
     );
 
-    MCAPI void init();
+    MCFOLD void init();
+
+    MCFOLD void initAsDedicatedServer();
+
+    MCAPI void initCommands();
+
+    MCFOLD bool isDedicatedServer() const;
+
+    MCAPI bool isLeaveGameDone() const;
 
 #ifdef LL_PLAT_C
-    MCAPI void initCommands();
+    MCFOLD bool isModded();
+
+    MCAPI void onClientCreatedLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 
     MCAPI ::Bedrock::PubSub::Subscription registerLevelListener(::std::function<void(::Level*)> callback) const;
 
     MCAPI bool requestInGamePause(bool status);
+#endif
+
+    MCAPI void requestResourceReload();
+
+#ifdef LL_PLAT_S
+    MCAPI void requestServerShutdown();
+#endif
 
     MCAPI void resetGameSession();
+
+#ifdef LL_PLAT_C
+    MCAPI void setGameModeReal(::GameType gameType);
 
     MCAPI void startClientGame(::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler);
 #endif
 
     MCAPI void startLeaveGame(bool stopNetwork);
 
-    MCAPI void tickSimtime(int nTick, int maxTick);
-
     MCAPI bool update();
+
+#ifdef LL_PLAT_C
+    MCAPI void updateScreens();
+#endif
     // NOLINTEND
 
 public:

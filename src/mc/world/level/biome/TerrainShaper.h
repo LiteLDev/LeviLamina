@@ -26,9 +26,9 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static float getContinents(::TerrainShaper::Point const& point);
+        MCFOLD static float getContinents(::TerrainShaper::Point const& point);
 
-        MCAPI static float getErosion(::TerrainShaper::Point const& point);
+        MCFOLD static float getErosion(::TerrainShaper::Point const& point);
 
         MCFOLD static float getRidges(::TerrainShaper::Point const& point);
 
@@ -60,19 +60,20 @@ public:
 
 public:
     // prevent constructor by default
-    TerrainShaper& operator=(TerrainShaper const&);
     TerrainShaper();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TerrainShaper(::TerrainShaper const&);
-
     MCAPI TerrainShaper(
         ::ToFloatFunction<::TerrainShaper::Point> offsetSpline,
         ::ToFloatFunction<::TerrainShaper::Point> factorSpline,
         ::ToFloatFunction<::TerrainShaper::Point> jaggednessSpline
     );
+
+    MCAPI float factor(float continentalness, float erosion, float weirdness) const;
+
+    MCAPI float jaggedness(float continentalness, float erosion, float weirdness) const;
 
     MCAPI float offset(float continentalness, float erosion, float weirdness) const;
 
@@ -127,8 +128,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TerrainShaper const&);
-
     MCAPI void* $ctor(
         ::ToFloatFunction<::TerrainShaper::Point> offsetSpline,
         ::ToFloatFunction<::TerrainShaper::Point> factorSpline,

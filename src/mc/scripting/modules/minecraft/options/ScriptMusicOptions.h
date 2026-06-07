@@ -23,6 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD float getFade() const;
+
+    MCAPI bool getLoop() const;
+
+    MCFOLD float getVolume() const;
+
     MCAPI ::std::optional<::Scripting::PropertyOutOfBoundsError> validate() const;
     // NOLINTEND
 
@@ -32,6 +38,16 @@ public:
     MCAPI static ::Scripting::ClassBinding bindV010();
 
     MCAPI static ::Scripting::InterfaceBinding bindV1();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& FADE_DEFAULT();
+
+    MCAPI static bool const& LOOP_DEFAULT();
+
+    MCAPI static float const& VOLUME_DEFAULT();
     // NOLINTEND
 };
 

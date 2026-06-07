@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ModalFormRequestPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -63,26 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~ModalFormRequestPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ModalFormRequestPacket();
+
     MCAPI explicit ModalFormRequestPacket(::ModalFormRequestPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ModalFormRequestPacketPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::ModalFormRequestPacketPayload payload);
     // NOLINTEND
 
 public:

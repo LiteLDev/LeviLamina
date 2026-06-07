@@ -25,13 +25,20 @@ public:
 public:
     // prevent constructor by default
     RealmsJoinData& operator=(RealmsJoinData const&);
-    RealmsJoinData(RealmsJoinData const&);
     RealmsJoinData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RealmsJoinData(::World::RealmsJoinData const&);
+
     MCAPI ~RealmsJoinData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::World::RealmsJoinData const&);
     // NOLINTEND
 
 public:

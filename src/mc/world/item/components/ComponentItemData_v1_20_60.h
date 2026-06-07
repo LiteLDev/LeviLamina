@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_20/item/ItemDescription.h"
+#include "mc/deps/shared_types/v1_20_50/item/ItemDeprecatedComponentData.h"
 #include "mc/deps/shared_types/v1_20_60/item/ComponentItemComponentData.h"
-#include "mc/world/item/components/ComponentItemDeprecatedComponentData_v1_20_50.h"
-#include "mc/world/item/components/ComponentItemDescriptionData_v1_20_20.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,25 +18,24 @@ struct ComponentItemData_v1_20_60 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 96, ::ComponentItemDescriptionData_v1_20_20>              mDescription;
-    ::ll::TypedStorage<8, 840, ::SharedTypes::v1_20_60::ComponentItemComponentData> mItemComponents;
-    ::ll::TypedStorage<8, 768, ::ComponentItemDeprecatedComponentData_v1_20_50>     mDeprecatedItemComponents;
+    ::ll::TypedStorage<8, 96, ::SharedTypes::v1_20_20::ItemDescription>              mDescription;
+    ::ll::TypedStorage<8, 936, ::SharedTypes::v1_20_60::ComponentItemComponentData>  mItemComponents;
+    ::ll::TypedStorage<8, 872, ::SharedTypes::v1_20_50::ItemDeprecatedComponentData> mDeprecatedItemComponents;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ComponentItemData_v1_20_60& operator=(ComponentItemData_v1_20_60 const&);
     ComponentItemData_v1_20_60();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI ComponentItemData_v1_20_60(::ComponentItemData_v1_20_60&&);
+
     MCAPI ComponentItemData_v1_20_60(::ComponentItemData_v1_20_60 const&);
-#endif
+
+    MCAPI ::ComponentItemData_v1_20_60& operator=(::ComponentItemData_v1_20_60&&);
 
     MCAPI ~ComponentItemData_v1_20_60();
     // NOLINTEND
@@ -45,8 +44,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void moveDeprecatedData(::ComponentItemData_v1_20_50& oldData, ::ComponentItemData_v1_20_60& newData);
 
     MCAPI static void
     upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_20_50, ::ComponentItemData_v1_20_60, nullptr_t>& upgrader);
@@ -61,9 +58,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ComponentItemData_v1_20_60&&);
+
     MCAPI void* $ctor(::ComponentItemData_v1_20_60 const&);
-#endif
     // NOLINTEND
 
 public:

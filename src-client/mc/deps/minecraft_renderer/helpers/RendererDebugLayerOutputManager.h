@@ -50,6 +50,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void debugMessageCallback(char const* msg);
+    // NOLINTEND
+
+public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

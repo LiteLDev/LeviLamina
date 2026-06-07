@@ -10,6 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ADPopupButtonAction;
+class ADPopupTelemetryEvent;
 class ActiveDirectoryIdentity;
 // clang-format on
 
@@ -41,31 +43,50 @@ public:
     ActiveDirectoryPopup();
 
 #else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ActiveDirectoryPopup();
+
 #endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ActiveDirectoryPopup();
-
     MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup&&);
 
     MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup const&);
 
-    MCNAPI ActiveDirectoryPopup(
-        ::std::string&&             id,
-        ::std::string&&             title,
-        ::std::string&&             popupText,
-        ::std::string&&             hyperlinkIntroText,
-        ::std::string&&             hyperlinkLabelText,
-        ::std::string&&             hyperlinkUri,
-        ::ActiveDirectoryAction     postPopupAction,
-        ::ActiveDirectoryExperience experienceType
-    );
+    MCNAPI ::std::string const& getDemoLinkText() const;
+
+    MCNAPI ::ActiveDirectoryExperience getExperienceType() const;
+
+    MCNAPI ::ADPopupButtonAction const& getFirstLowerButton() const;
+
+    MCNAPI ::std::string const& getHyperlinkIntroText() const;
+
+    MCNAPI ::std::string const& getHyperlinkLabelText() const;
+
+    MCNAPI ::std::string const& getHyperlinkUri() const;
+
+    MCNAPI ::std::string const& getLearnMoreText() const;
+
+    MCNAPI ::std::string const& getLearnMoreUri() const;
+
+    MCNAPI ::std::string const& getPopupId() const;
+
+    MCNAPI ::std::string const& getPopupText() const;
+
+    MCNAPI ::std::string const& getPopupTitle() const;
+
+    MCNAPI ::std::optional<::ADPopupButtonAction> const& getSecondLowerButton() const;
 
     MCNAPI ::std::string getTTSMessageBody() const;
 
+    MCNAPI ::ADPopupTelemetryEvent const& getTelemetryEvent() const;
+
     MCNAPI ::ActiveDirectoryPopup& operator=(::ActiveDirectoryPopup const&);
+
+    MCNAPI ::ActiveDirectoryAction postAction() const;
 
     MCNAPI ~ActiveDirectoryPopup();
 #endif
@@ -80,7 +101,7 @@ public:
         ::ActiveDirectoryExperience                                    experience);
 
     MCNAPI static ::ActiveDirectoryPopup
-    get(::edu::Role, int trialsRemaining, ::ActiveDirectoryExperience experience, ::std::string const& email);
+    get(::edu::Role trialsRemaining, int experience, ::ActiveDirectoryExperience email, ::std::string const&);
 
     MCNAPI static ::ActiveDirectoryPopup getVerificationInProgressPopup(::std::string const& verificationUri);
 #endif
@@ -90,22 +111,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::ActiveDirectoryPopup&&);
 
     MCNAPI void* $ctor(::ActiveDirectoryPopup const&);
-
-    MCNAPI void* $ctor(
-        ::std::string&&             id,
-        ::std::string&&             title,
-        ::std::string&&             popupText,
-        ::std::string&&             hyperlinkIntroText,
-        ::std::string&&             hyperlinkLabelText,
-        ::std::string&&             hyperlinkUri,
-        ::ActiveDirectoryAction     postPopupAction,
-        ::ActiveDirectoryExperience experienceType
-    );
 #endif
     // NOLINTEND
 

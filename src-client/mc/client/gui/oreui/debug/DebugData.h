@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/facets/util/UserDefinedFeatureFlags.h"
 #include "mc/client/gui/oreui/debug/FrameDebugData.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
@@ -13,21 +12,7 @@ struct DebugData : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::OreUI::FrameDebugData>          mFrameDebugData;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>   mDevServerOverrideUrl;
-    ::ll::TypedStorage<8, 96, ::OreUI::UserDefinedFeatureFlags> mUserFlags;
-    // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DebugData() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    ::ll::TypedStorage<8, 40, ::OreUI::FrameDebugData> mFrameDebugData;
     // NOLINTEND
 
 public:

@@ -7,8 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class IMinecraftEventing;
 class ResourcePackManager;
 class SemVersionConstant;
+struct PBRFallbackSettings;
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -23,89 +25,21 @@ public:
     // PBRFallbackConfig inner types define
     struct PBRFallbackConfigSettings {
     public:
-        // PBRFallbackConfigSettings inner types declare
-        // clang-format off
-        struct PBRFallbackSettings;
-        // clang-format on
-
-        // PBRFallbackConfigSettings inner types define
-        struct PBRFallbackSettings {
-        public:
-            // PBRFallbackSettings inner types declare
-            // clang-format off
-            struct PBRDataMER;
-            struct PBRData;
-            // clang-format on
-
-            // PBRFallbackSettings inner types define
-            struct PBRDataMER {
-            public:
-                // member variables
-                // NOLINTBEGIN
-                ::ll::UntypedStorage<4, 16> mUnkfafe13;
-                // NOLINTEND
-
-            public:
-                // prevent constructor by default
-                PBRDataMER& operator=(PBRDataMER const&);
-                PBRDataMER(PBRDataMER const&);
-                PBRDataMER();
-            };
-
-            struct PBRData {
-            public:
-                // member variables
-                // NOLINTBEGIN
-                ::ll::UntypedStorage<4, 16> mUnk4db81d;
-                // NOLINTEND
-
-            public:
-                // prevent constructor by default
-                PBRData& operator=(PBRData const&);
-                PBRData(PBRData const&);
-                PBRData();
-            };
-
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::UntypedStorage<4, 16> mUnk8317b2;
-            ::ll::UntypedStorage<4, 16> mUnk46184a;
-            ::ll::UntypedStorage<4, 16> mUnk6f801b;
-            ::ll::UntypedStorage<4, 16> mUnk245ab3;
-            // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            PBRFallbackSettings& operator=(PBRFallbackSettings const&);
-            PBRFallbackSettings(PBRFallbackSettings const&);
-            PBRFallbackSettings();
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-            // NOLINTEND
-        };
-
-    public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkf77385;
-        ::ll::UntypedStorage<4, 64> mUnk1f910a;
+        ::ll::UntypedStorage<4, 64> mUnke83bd2;
         // NOLINTEND
 
     public:
         // prevent constructor by default
+        PBRFallbackConfigSettings& operator=(PBRFallbackConfigSettings const&);
         PBRFallbackConfigSettings(PBRFallbackConfigSettings const&);
         PBRFallbackConfigSettings();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::PBRFallbackConfig::PBRFallbackConfigSettings&
-        operator=(::PBRFallbackConfig::PBRFallbackConfigSettings const&);
-
         MCNAPI ~PBRFallbackConfigSettings();
         // NOLINTEND
 
@@ -145,6 +79,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit PBRFallbackConfig(::IMinecraftEventing& eventing);
+
     MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
 
     MCNAPI ::Puv::LoadResultAny
@@ -164,6 +100,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
@@ -175,16 +117,3 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// free functions
-// NOLINTBEGIN
-MCNAPI bool operator==(
-    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P0,
-    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P1
-);
-
-MCNAPI bool operator==(
-    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P0,
-    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P1
-);
-// NOLINTEND

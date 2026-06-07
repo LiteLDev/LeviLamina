@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+namespace Json { class Value; }
 // clang-format on
 
 struct SkinData {
@@ -15,28 +16,31 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<int>> mMarkVariant;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     SkinData();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI explicit SkinData(::Actor const& actor);
 
+    MCAPI explicit SkinData(::Json::Value const& skinDataJson);
+
     MCAPI void applyToActor(::Actor& actor) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::Json::Value serialize() const;
 #endif
+
+    MCAPI bool softMatch(::SkinData const& skinRef, bool& perfectMatch) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::Actor const& actor);
-#endif
+
+    MCAPI void* $ctor(::Json::Value const& skinDataJson);
     // NOLINTEND
 };

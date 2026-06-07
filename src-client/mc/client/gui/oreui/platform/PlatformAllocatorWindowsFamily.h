@@ -24,8 +24,6 @@ public:
     virtual void* virtualAllocate(void* hint, uint size, int protection, int flags) /*override*/;
 
     virtual bool virtualFree(void* ptr, uint size, int flags) /*override*/;
-
-    virtual ~PlatformAllocatorWindowsFamily() /*override*/ = default;
     // NOLINTEND
 
 public:

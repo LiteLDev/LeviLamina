@@ -28,18 +28,6 @@ public:
     ReplicationTypeInfo& operator=(ReplicationTypeInfo const&);
     ReplicationTypeInfo(ReplicationTypeInfo const&);
     ReplicationTypeInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ReplicationTypeInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

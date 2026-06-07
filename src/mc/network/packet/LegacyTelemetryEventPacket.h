@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LegacyTelemetryEventPacket& operator=(LegacyTelemetryEventPacket const&);
-    LegacyTelemetryEventPacket(LegacyTelemetryEventPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -64,32 +59,18 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~LegacyTelemetryEventPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI LegacyTelemetryEventPacket();
-
-    MCAPI explicit LegacyTelemetryEventPacket(::LegacyTelemetryEventPacketPayload payload);
-
-    MCAPI ::LegacyTelemetryEventPacket& operator=(::LegacyTelemetryEventPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::LegacyTelemetryEventPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

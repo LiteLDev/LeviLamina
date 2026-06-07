@@ -11,9 +11,11 @@
 // clang-format off
 class BoundingBox;
 class Vec3;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptRelativeVolumeListBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptSimpleBlockVolume; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -41,6 +43,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptSelectionContainerVolume(
+        ::Editor::ServiceProviderCollection&  services,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+
     MCNAPI void _add(
         ::std::variant<
             ::Vec3 const,
@@ -52,14 +59,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::BoundingBox> _bounds() const;
 
-    MCNAPI void _clear();
-
     MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>
     _get() const;
-
-    MCNAPI int _getVolumeCount() const;
-
-    MCNAPI bool _isEmpty() const;
 
     MCNAPI void _moveTo(::Vec3 const& location);
 
@@ -88,6 +89,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

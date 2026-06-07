@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/entity/components/InsideBlockWithPosAndBlockComponent.h"
 #include "mc/entity/components/InsideBlockWithPosComponent.h"
@@ -12,12 +13,15 @@
 // clang-format off
 class Actor;
 class ActorOwnerComponent;
+class BlockPos;
 class FreezingComponent;
 class LocalConstBlockSource;
 class StrictEntityContext;
+class Vec2;
 class Vec3;
 struct AABBShapeComponent;
 struct ActorGameTypeComponent;
+struct ActorMovementTickNeededComponent;
 struct BlockMovementSlowdownAppliedComponent;
 struct BlockMovementSlowdownMultiplierComponent;
 struct CactusBlockFlag;
@@ -46,6 +50,11 @@ namespace EntityInsideSystem {
 // functions
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createCleanupSystem();
+
+MCAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
+
+MCAPI bool
+isSlidingDown(::BlockPos const& blockPos, ::Vec3 const& entityPos, ::Vec3 const& entityPosDelta, ::Vec2 const& aabbDim);
 
 MCAPI void onBoatAboveBubbleColumn(::Actor& actor);
 
@@ -124,10 +133,11 @@ MCAPI void tickMovementSlowdown(
 );
 
 MCAPI void tickSetEntityInside(
-    ::StrictEntityContext const&    entity,
-    ::AABBShapeComponent const&     aabbShape,
-    ::DimensionTypeComponent const& dimension,
-    ::InsideBlockComponent&         insideBlock,
+    ::StrictEntityContext const&                         entity,
+    ::AABBShapeComponent const&                          aabbShape,
+    ::DimensionTypeComponent const&                      dimension,
+    ::InsideBlockComponent&                              insideBlock,
+    ::Optional<::ActorMovementTickNeededComponent const> actorMovementTickNeeded,
     ::EntityModifier<
         ::BlockMovementSlowdownAppliedComponent,
         ::FreezingComponent,

@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::mce::Color const& get(int materialInstanceId, uchar facing) const /*override*/;
-
-    virtual ~MultiResolvedTint() /*override*/ = default;
     // NOLINTEND
 
 public:

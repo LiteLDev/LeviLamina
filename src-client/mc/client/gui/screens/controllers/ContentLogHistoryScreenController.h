@@ -32,7 +32,7 @@ public:
 
     MCAPI void _handleCopyToClipboard();
 
-    MCAPI void _registerBindings();
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

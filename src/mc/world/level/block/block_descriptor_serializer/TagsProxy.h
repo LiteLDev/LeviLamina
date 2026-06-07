@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace BlockDescriptorSerializer {
 
 struct TagsProxy {
@@ -12,18 +17,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TagsProxy(TagsProxy const&);
-    TagsProxy();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
-
-    MCFOLD ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy const&);
+    MCFOLD void fromString(::std::string const& expression);
 
     MCAPI ~TagsProxy();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

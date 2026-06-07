@@ -6,6 +6,11 @@
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace OreUI { class GameDependencies; }
+// clang-format on
+
 namespace OreUI {
 
 class ClientUpdatesSupportQuery : public ::OreUI::QueryBase<::OreUI::ClientUpdatesSupportQuery> {
@@ -16,9 +21,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    ClientUpdatesSupportQuery();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~ClientUpdatesSupportQuery() /*override*/ = default;
+    MCAPI explicit ClientUpdatesSupportQuery(::OreUI::GameDependencies const& game);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:

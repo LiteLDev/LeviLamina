@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
 // auto generated forward declare list
@@ -29,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InventoryContainerModel() /*override*/ = default;
+    virtual ~InventoryContainerModel() /*override*/;
 
     virtual void postInit() /*override*/;
 
@@ -46,6 +47,24 @@ public:
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
 
     virtual ::Container* _getContainer() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI InventoryContainerModel(::ContainerEnumName containerName, int size, ::Player& player);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerEnumName containerName, int size, ::Player& player);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

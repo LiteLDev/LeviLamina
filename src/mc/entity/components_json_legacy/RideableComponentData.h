@@ -32,15 +32,22 @@ public:
 public:
     // prevent constructor by default
     RideableComponentData& operator=(RideableComponentData const&);
-    RideableComponentData(RideableComponentData const&);
     RideableComponentData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RideableComponentData(::RideableComponentData const&);
+
     MCAPI ::RideableComponentData& operator=(::RideableComponentData&&);
 
     MCAPI ~RideableComponentData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::RideableComponentData const&);
     // NOLINTEND
 
 public:

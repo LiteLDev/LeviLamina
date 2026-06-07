@@ -4,16 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 #include "mc/world/item/ItemDescriptor.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
-class BlockType;
 class Mob;
 // clang-format on
 
@@ -21,15 +20,15 @@ class LayEggGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>       mTargetBlocks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MaterialType>>         mTargetMaterialsAboveBlock;
-    ::ll::TypedStorage<1, 1, bool>                                   mAllowLayingFromBelow;
-    ::ll::TypedStorage<1, 1, bool>                                   mUseDefaultAnimation;
-    ::ll::TypedStorage<4, 4, float>                                  mLaySeconds;
-    ::ll::TypedStorage<8, 16, ::ItemDescriptor>                      mEggType;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnLay;
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mLayEggSound;
-    ::ll::TypedStorage<4, 4, int>                                    mLayEggCounter;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>                      mTargetBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_20::MaterialType>> mTargetMaterialsAboveBlock;
+    ::ll::TypedStorage<1, 1, bool>                                                  mAllowLayingFromBelow;
+    ::ll::TypedStorage<1, 1, bool>                                                  mUseDefaultAnimation;
+    ::ll::TypedStorage<4, 4, float>                                                 mLaySeconds;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor>                                     mEggType;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                            mOnLay;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>                mLayEggSound;
+    ::ll::TypedStorage<4, 4, int>                                                   mLayEggCounter;
     // NOLINTEND
 
 public:
@@ -54,8 +53,6 @@ public:
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual void _moveToBlock() /*override*/;
-
-    virtual ~LayEggGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -63,19 +60,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LayEggGoal(::Mob& mob);
 
-    MCAPI bool _isTargetBlock(::BlockType const& block) const;
+    MCAPI void _layEgg(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

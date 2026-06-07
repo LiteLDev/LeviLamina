@@ -41,13 +41,6 @@ public:
     MCAPI static ::std::string
     stringFromCreativeItemCategory(::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory category);
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::initializer_list<::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> const&
-    CREATIVE_ITEM_CATEGORY_MAPPING();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_110

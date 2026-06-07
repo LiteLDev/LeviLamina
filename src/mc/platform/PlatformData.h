@@ -18,6 +18,18 @@ public:
     PlatformData& operator=(PlatformData const&);
     PlatformData(PlatformData const&);
     PlatformData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~PlatformData();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Bedrock::PlatformUtils

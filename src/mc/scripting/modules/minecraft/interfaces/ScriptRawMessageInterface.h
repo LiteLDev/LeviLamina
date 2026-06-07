@@ -44,13 +44,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptRawMessageInterface();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptRawMessageInterface();
-
     MCAPI ScriptRawMessageInterface(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
 
     MCAPI void buildJsonObject(::Json::Value& val) const;
+
+    MCAPI bool isRawTextJsonFormat() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
     operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface&& other);
@@ -93,8 +97,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
     // NOLINTEND
 

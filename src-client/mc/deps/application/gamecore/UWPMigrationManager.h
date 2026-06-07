@@ -73,6 +73,30 @@ public:
         // NOLINTEND
 
     public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI MoveOperation(
+            bool                                       critical,
+            uchar                                      maxRetries,
+            ::Core::PathBuffer<::std::string> const&   srcPath,
+            ::Core::PathBuffer<::std::string> const&   dstPath,
+            ::UWPMigrationManager::MoveOperation::Type opType
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(
+            bool                                       critical,
+            uchar                                      maxRetries,
+            ::Core::PathBuffer<::std::string> const&   srcPath,
+            ::Core::PathBuffer<::std::string> const&   dstPath,
+            ::UWPMigrationManager::MoveOperation::Type opType
+        );
+        // NOLINTEND
+
+    public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
@@ -113,8 +137,6 @@ public:
         virtual ::Core::Result migrate(bool forceCritical) const /*override*/;
 
         virtual void cleanup() const /*override*/;
-
-        virtual ~MoveDirectoryOperation() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -139,8 +161,6 @@ public:
         virtual ::Core::Result migrate(bool forceCritical) const /*override*/;
 
         virtual void cleanup() const /*override*/;
-
-        virtual ~MoveFileOperation() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -165,8 +185,6 @@ public:
         virtual ::Core::Result migrate(bool) const /*override*/;
 
         virtual void cleanup() const /*override*/;
-
-        virtual ~MoveSecureStorageOperation() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -212,7 +230,7 @@ public:
         uint                                     migrationVersion
     );
 
-    MCNAPI ::Core::PathBuffer<::std::string> getMigrationFilePath() const;
+    MCNAPI ::UWPMigrationManager::Status getStatus() const;
 
     MCNAPI ::Bedrock::Result<void> migrateFromUWP();
 
@@ -225,6 +243,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::string getLastMigrationErrorsAsJson();
+
+    MCNAPI static ::UWPMigrationManager::MigrationState getMigrationState();
     // NOLINTEND
 
 public:

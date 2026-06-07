@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual float computeScore(::BlockPos const&, ::PointLighting::ManagedPointLight const&) const /*override*/;
-
-    virtual ~LightBrightnessHeuristic() /*override*/ = default;
     // NOLINTEND
 
 public:

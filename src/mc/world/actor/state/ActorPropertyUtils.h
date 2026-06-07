@@ -5,11 +5,9 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorDefinitionDiffList;
 class EntityOverrides;
 class HashedString;
 class PropertyComponent;
-class PropertyGroup;
 struct ActorUniqueID;
 struct MolangScriptArg;
 struct PropertySyncData;
@@ -18,37 +16,6 @@ struct PropertySyncData;
 namespace ActorPropertyUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool _checkAndQueueBoolValue(
-    ::PropertyGroup const&,
-    uint64                     overallIndex,
-    ::ActorDefinitionDiffList* actorDiffList,
-    bool                       value
-);
-
-MCAPI bool _checkAndQueueEnumIndexValueByHash(
-    ::PropertyGroup const&     propertyGroup,
-    uint64                     enumIndexArrayIndex,
-    uint64                     overallIndex,
-    ::ActorDefinitionDiffList* actorDiffList,
-    uint64                     value
-);
-
-MCAPI bool _checkAndQueueFloatValue(
-    ::PropertyGroup const&,
-    uint64,
-    uint64                     overallIndex,
-    ::ActorDefinitionDiffList* actorDiffList,
-    float                      value
-);
-
-MCAPI bool _checkAndQueueIntValue(
-    ::PropertyGroup const&,
-    uint64,
-    uint64                     overallIndex,
-    ::ActorDefinitionDiffList* actorDiffList,
-    int                        value
-);
-
 MCAPI void addPendingEventResponseChange(
     ::PropertyComponent const& props,
     ::Actor&                   actor,
@@ -81,6 +48,13 @@ MCAPI bool tryQueueEnumIndexValueByString(
 MCAPI bool tryQueueFloatValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, float value);
 
 MCAPI bool tryQueueIntValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, int value);
+
+MCAPI bool tryQueueVariantValue(
+    ::PropertyComponent const&                             properties,
+    ::Actor&                                               actor,
+    uint64                                                 propertyNameHash,
+    ::std::variant<int, float, bool, ::std::string> const& value
+);
 // NOLINTEND
 
 } // namespace ActorPropertyUtils

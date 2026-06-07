@@ -7,6 +7,11 @@
 #include "mc/world/level/block/PillarAxis.h"
 
 namespace PillarAxisUtils {
+// functions
+// NOLINTBEGIN
+MCNAPI uchar mapFaceToAxisDirection(uchar absoluteFace, ::PillarAxis axis);
+// NOLINTEND
+
 // static variables
 // NOLINTBEGIN
 MCNAPI ::Bedrock::DenseEnumMap<::PillarAxis, ::std::string_view, 3> const& AXIS_NAME();

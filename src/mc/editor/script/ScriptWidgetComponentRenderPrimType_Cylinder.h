@@ -33,12 +33,6 @@ public:
     ScriptWidgetComponentRenderPrimType_Cylinder();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrimType_Cylinder() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cylinder const& other) const;

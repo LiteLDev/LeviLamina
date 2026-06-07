@@ -29,14 +29,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerInteractWithBlockEvent& operator=(ScriptPlayerInteractWithBlockEvent const&);
     ScriptPlayerInteractWithBlockEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithBlockEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent const&);
-
     MCAPI ScriptPlayerInteractWithBlockEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>  block,
@@ -44,15 +41,11 @@ public:
         ::Vec3                                                                      faceLocation,
         bool                                                                        isFirstEvent
     );
-
-    MCAPI ~ScriptPlayerInteractWithBlockEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent const&);
-
     MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>  block,
@@ -60,12 +53,6 @@ public:
         ::Vec3                                                                      faceLocation,
         bool                                                                        isFirstEvent
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

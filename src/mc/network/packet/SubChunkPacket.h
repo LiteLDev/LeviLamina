@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
@@ -12,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Dimension;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -53,6 +51,14 @@ public:
         ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mRenderHeightMapType;
         ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkRenderHeightMap;
         // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
+
+        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
+        // NOLINTEND
     };
 
     struct SubChunkPosOffset {
@@ -86,11 +92,6 @@ public:
         // NOLINTBEGIN
         MCAPI SubChunkPacketData(::SubChunkPacket::SubChunkPacketData const&);
 
-        MCAPI SubChunkPacketData(
-            ::SubChunkPacket::SubChunkPosOffset const& pos,
-            ::SubChunkPacket::SubChunkRequestResult    requestResult
-        );
-
         MCAPI ~SubChunkPacketData();
         // NOLINTEND
 
@@ -98,9 +99,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::SubChunkPacket::SubChunkPacketData const&);
-
-        MCAPI void*
-        $ctor(::SubChunkPacket::SubChunkPosOffset const& pos, ::SubChunkPacket::SubChunkRequestResult requestResult);
         // NOLINTEND
 
     public:
@@ -131,6 +129,22 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SubChunkPacket();
+
+    MCAPI SubChunkPacket(::DimensionType const& dimension, ::SubChunkPos const& centerPos, bool cacheEnabled);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::DimensionType const& dimension, ::SubChunkPos const& centerPos, bool cacheEnabled);
     // NOLINTEND
 
 public:

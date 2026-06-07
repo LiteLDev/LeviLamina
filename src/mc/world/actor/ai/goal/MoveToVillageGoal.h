@@ -34,7 +34,7 @@ public:
 
     virtual bool canContinueToUse() /*override*/;
 
-    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+    virtual bool isValidTarget(::BlockSource& pos, ::BlockPos const&) /*override*/;
 
     virtual void tick() /*override*/;
 
@@ -43,8 +43,6 @@ public:
     virtual void _moveToBlock() /*override*/;
 
     virtual ::BlockPos _selectRandomPosInVillage();
-
-    virtual ~MoveToVillageGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,7 +68,7 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI bool $isValidTarget(::BlockSource& pos, ::BlockPos const&);
 
     MCAPI void $tick();
 

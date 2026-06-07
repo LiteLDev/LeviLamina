@@ -20,20 +20,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string_view getStructureName() const /*override*/;
-
-    virtual ~BuriedTreasureStart() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BuriedTreasureStart(::Dimension&, ::Random&, int x, int z);
+    MCAPI BuriedTreasureStart(::Dimension& x, ::Random& z, int, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension&, ::Random&, int x, int z);
+    MCAPI void* $ctor(::Dimension& x, ::Random& z, int, int);
     // NOLINTEND
 
 public:

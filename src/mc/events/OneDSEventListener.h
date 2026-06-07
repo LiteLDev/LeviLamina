@@ -64,6 +64,8 @@ public:
     MCNAPI void
     AddPartA(::std::string const& eventName, ::Json::Value& eventBody, int64 eventTimestamp, bool isSafetyEvent);
 
+    MCNAPI void AddPartAExtensions(::Json::Value& eventBody);
+
     MCNAPI void AddPartC(::Social::Events::Event const& event, ::Json::Value& eventBody);
 
     MCNAPI ::std::string BuildCommonSchemaMsg(::Social::Events::Event const& event);

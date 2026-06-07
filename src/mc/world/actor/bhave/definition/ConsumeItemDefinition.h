@@ -7,12 +7,6 @@
 
 class ConsumeItemDefinition : public ::BehaviorDefinition {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ConsumeItemDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

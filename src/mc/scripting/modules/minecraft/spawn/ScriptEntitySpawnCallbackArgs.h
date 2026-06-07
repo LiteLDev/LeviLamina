@@ -43,8 +43,6 @@ public:
         ::BlockSource&                 region,
         ::Vec3                         position
     );
-
-    MCAPI ~ScriptEntitySpawnCallbackArgs();
     // NOLINTEND
 
 public:
@@ -63,12 +61,6 @@ public:
         ::BlockSource&                 region,
         ::Vec3                         position
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

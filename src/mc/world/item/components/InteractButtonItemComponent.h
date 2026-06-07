@@ -12,6 +12,7 @@ class ComponentItem;
 class CompoundTag;
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct InteractButtonItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,7 +26,6 @@ public:
 
 public:
     // prevent constructor by default
-    InteractButtonItemComponent(InteractButtonItemComponent const&);
     InteractButtonItemComponent();
 
 public:
@@ -38,16 +38,14 @@ public:
     virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~InteractButtonItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent&&);
+    MCAPI explicit InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
 
-    MCFOLD ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent const&);
+    MCFOLD ::std::string getInteractText() const;
     // NOLINTEND
 
 public:
@@ -60,6 +58,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
     // NOLINTEND
 
 public:

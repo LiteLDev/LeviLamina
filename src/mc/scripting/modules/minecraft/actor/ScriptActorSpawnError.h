@@ -22,8 +22,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptActorSpawnError(::ActorValidationError error);
-
-    MCAPI ~ScriptActorSpawnError();
     // NOLINTEND
 
 public:
@@ -36,12 +34,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorValidationError error);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

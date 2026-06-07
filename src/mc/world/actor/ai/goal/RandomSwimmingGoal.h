@@ -5,12 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class RandomSwimmingGoal : public ::RandomStrollGoal {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mAvoidSurface;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RandomSwimmingGoal();
 
 public:
     // virtual functions
@@ -22,8 +31,18 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool _setWantedPosition() /*override*/;
+    // NOLINTEND
 
-    virtual ~RandomSwimmingGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RandomSwimmingGoal(::Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
     // NOLINTEND
 
 public:

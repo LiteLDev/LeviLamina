@@ -28,20 +28,20 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptCompoundBlockVolume(ScriptCompoundBlockVolume const&);
     ScriptCompoundBlockVolume();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptCompoundBlockVolume() /*override*/ = default;
+    virtual ~ScriptCompoundBlockVolume() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
-    operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
+    MCAPI explicit ScriptCompoundBlockVolume(::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI ScriptCompoundBlockVolume(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -52,6 +52,20 @@ public:
     MCAPI static ::Scripting::ClassBinding bindClass();
 
     MCAPI static ::Scripting::EnumBinding bindRelativeEnums();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI void* $ctor(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

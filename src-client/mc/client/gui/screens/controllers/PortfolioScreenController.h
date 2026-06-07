@@ -85,6 +85,8 @@ public:
 
     MCAPI void _registerEventHandlers();
 
+    MCAPI void _registerSubControllers();
+
     MCAPI void _saveCaptions(bool forceSaveAll);
     // NOLINTEND
 

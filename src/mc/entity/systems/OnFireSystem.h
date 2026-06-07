@@ -12,14 +12,12 @@ class Actor;
 
 class OnFireSystem : public ::ITickingSystem {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OnFireSystem() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _setOnFireImpl(::Actor& actor, int seconds, bool isInWaterOrRain, int fireProtectionLevels);
+
+    MCAPI static void extinguishFire(::Actor& actor);
+
 #ifdef LL_PLAT_C
     MCAPI static void onFireChanged(::Actor& actor);
 #endif

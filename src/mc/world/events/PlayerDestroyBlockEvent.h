@@ -21,16 +21,4 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                           mFace;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerDestroyBlockEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

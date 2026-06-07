@@ -68,8 +68,6 @@ public:
     // NOLINTBEGIN
     MCNAPI Watchdog(::JSRuntime* rt, ::Scripting::WatchdogSettings settings);
 
-    MCNAPI void _endContextTiming(::Scripting::ContextId contextId);
-
     MCNAPI ::Scripting::QuickJS::ContextTimings& _getOrCreateContextTime(::Scripting::ContextId contextId);
 
     MCNAPI void _sendWatchdogEvent(::Scripting::WatchdogEvent watchdogEvent);

@@ -12,9 +12,11 @@
 // clang-format off
 class ActorDefinitionGroup;
 class BlockPos;
+class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
+class SpawnConditions;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
@@ -71,13 +73,13 @@ public:
 
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
+    virtual bool canStartJumpSquish() const;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual ~Slime() /*override*/;
+    virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
     // NOLINTEND
 
 public:
@@ -90,15 +92,27 @@ public:
         ::Slime::Parameters                parameters
     );
 
-    MCAPI ::OwnerPtr<::EntityContext> createChild(int);
+    MCAPI ::OwnerPtr<::EntityContext> _createChild(int);
 
-    MCFOLD int getSlimeSize() const;
+    MCAPI void _justJumped();
 
-    MCAPI void justJumped();
+    MCAPI void _justLanded();
 
-    MCAPI void justLanded();
+    MCAPI void _setSlimeSize(int size);
 
-    MCAPI void setSlimeSize(int size);
+    MCFOLD float getOldSquishValue() const;
+
+    MCAPI float getSquishValue() const;
+
+    MCAPI void postNormalTick(bool wasOnGround);
+
+    MCAPI void preNormalTick();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::function<bool(::SpawnConditions const&, ::BlockSource&)> getSpawnRulesCallback();
     // NOLINTEND
 
 public:
@@ -110,12 +124,6 @@ public:
         ::EntityContext&                   entityContext,
         ::Slime::Parameters                parameters
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -131,11 +139,13 @@ public:
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCFOLD bool $canStartJumpSquish() const;
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
 
     // NOLINTEND

@@ -17,7 +17,23 @@ public:
     // NOLINTBEGIN
     MCAPI bool BetaApis() const;
 
+    MCAPI bool CustomProjectiles() const;
+
+    MCAPI bool ExperimentalCreatorCameras() const;
+
     MCAPI Experiments();
+
+#ifdef LL_PLAT_C
+    MCAPI bool FurnaceRecipeBook() const;
+#endif
+
+    MCAPI bool UpcomingCreatorFeatures() const;
+
+    MCAPI bool VillagerTradesRebalance() const;
+
+    MCAPI bool VoxelShapes() const;
+
+    MCAPI bool Y2026Drop2() const;
 
 #ifdef LL_PLAT_C
     MCAPI bool _shouldShowAsExperimentalLevel(
@@ -32,28 +48,36 @@ public:
 
     MCAPI void getTagData(::CompoundTag const& tag);
 
-#ifdef LL_PLAT_S
+    MCAPI bool isExperimentEnabled(::AllExperiments experiment) const;
+
     MCAPI void setExperimentEnabled(::AllExperiments experiment, bool value);
-#endif
 
     MCAPI void setTagData(::CompoundTag& tag) const;
 
 #ifdef LL_PLAT_C
     MCAPI bool shouldShowAsExperimentalLevel() const;
 #endif
+    // NOLINTEND
 
-    MCAPI ~Experiments();
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string const& getExperimentTextID(::AllExperiments experiment);
+
+#ifdef LL_PLAT_S
+    MCAPI static int getIndexForExperiment(::AllExperiments experiment);
+#endif
+
+    MCAPI static ::gsl::span<::std::string const> getToggleNames();
+
+#ifdef LL_PLAT_C
+    MCAPI static ::gsl::span<::std::string const> getToggleTextIds();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

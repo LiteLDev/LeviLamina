@@ -29,11 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~PlayerUIContainerModelBase() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~PlayerUIContainerModelBase() /*override*/;
-#endif
 
     virtual void postInit() /*override*/;
 
@@ -55,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _refreshContainer(bool initial);
+    MCAPI void _refreshSlot(bool initial, int modelSlot);
     // NOLINTEND
 
 public:

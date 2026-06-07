@@ -16,13 +16,20 @@ public:
 public:
     // prevent constructor by default
     MessageReceived& operator=(MessageReceived const&);
-    MessageReceived(MessageReceived const&);
     MessageReceived();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI MessageReceived(::NetherNet::SignalingEvents::MessageReceived const&);
+
     MCNAPI ~MessageReceived();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::NetherNet::SignalingEvents::MessageReceived const&);
     // NOLINTEND
 
 public:

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +14,7 @@ struct ActorDefinitionIdentifier;
 struct SummonSpellData;
 // clang-format on
 
-class SummonActorGoal : public ::Goal {
+class SummonActorGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,25 +50,31 @@ public:
     virtual void stop() /*override*/;
 
     virtual void tick() /*override*/;
-
-    virtual ~SummonActorGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SummonActorGoal(::Mob& caster, ::std::vector<::SummonSpellData> const& spellTypes);
+
     MCAPI void _createSpellEntity(
-        float x,
-        float z,
-        float minY,
-        float maxY,
-        float,
-        int                         lifespan,
-        ::ActorDefinitionIdentifier summonType,
-        ::std::string const&        summonEvent
+        float                       x,
+        float                       z,
+        float                       minY,
+        float                       maxY,
+        float                       lifespan,
+        int                         summonType,
+        ::ActorDefinitionIdentifier summonEvent,
+        ::std::string const&
     ) const;
 
     MCAPI int _selectBestSpell(::Actor& target) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& caster, ::std::vector<::SummonSpellData> const& spellTypes);
     // NOLINTEND
 
 public:

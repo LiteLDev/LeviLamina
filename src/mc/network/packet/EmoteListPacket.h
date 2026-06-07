@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EmoteListPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -63,26 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~EmoteListPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EmoteListPacket();
+
     MCAPI explicit EmoteListPacket(::EmoteListPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EmoteListPacketPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::EmoteListPacketPayload payload);
     // NOLINTEND
 
 public:

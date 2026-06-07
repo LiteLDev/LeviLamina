@@ -21,6 +21,7 @@ class BlockTessellator;
 class BlockType;
 class ConduitBlockActor;
 class DecoratedPotBlockActor;
+class Item;
 class ItemActor;
 class ItemGraphics;
 class ItemStack;
@@ -85,8 +86,6 @@ public:
     _getGuiBlockItemTransforms(::Block const* block, ::Vec3 offset, float scale, float squeezeAmount) const;
 
     MCAPI void _getGuiItemColors(::ItemStack const& item, int& color, int& secondaryColor) const;
-
-    MCAPI ::IconBlitGlint _getIconBlitGlint(::ItemRenderChunkType itemRenderChunkType, ::ItemStack const& item) const;
 
     MCAPI ::mce::TexturePtr _getShulkerBoxTexture(::ItemStack const& item);
 
@@ -177,9 +176,13 @@ public:
         float                     actorFrameAlpha
     );
 
+    MCAPI void clearDataDrivenRenderers();
+
     MCAPI void forceGraphicsLoad();
 
     MCAPI ::ItemGraphics& getGraphics(::ItemStack const& item);
+
+    MCAPI ::ItemGraphics& getGraphics(::Item const& item);
 
     MCAPI void iconBlit(
         ::BaseActorRenderContext&       renderContext,
@@ -227,6 +230,12 @@ public:
         float                     scale,
         int                       zOrder
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static float getRenderYOffset(::ItemActor const& itemEntity, ::BlockType const* block, float ageInSeconds);
     // NOLINTEND
 
 public:

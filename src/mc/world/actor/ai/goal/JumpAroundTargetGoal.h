@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/util/FloatRange.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/phys/AABB.h"
@@ -16,14 +14,12 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class JumpAroundTargetGoal : public ::Goal {
+class JumpAroundTargetGoal : public ::BaseGoal {
 public:
     // JumpAroundTargetGoal inner types declare
     // clang-format off
-    class Definition;
     struct Jump;
     // clang-format on
 
@@ -32,51 +28,6 @@ public:
         PrepareJump = 0,
         Jumping     = 1,
         Done        = 2,
-    };
-
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>   mFilters;
-        ::ll::TypedStorage<4, 4, float>                 mCooldownSeconds;
-        ::ll::TypedStorage<4, 4, float>                 mCooldownWhenHurtSeconds;
-        ::ll::TypedStorage<4, 4, float>                 mLastHurtDurationSeconds;
-        ::ll::TypedStorage<4, 4, float>                 mPrepareJumpDurationSeconds;
-        ::ll::TypedStorage<4, 4, float>                 mMaxJumpVelocity;
-        ::ll::TypedStorage<1, 1, bool>                  mCheckCollision;
-        ::ll::TypedStorage<4, 4, float>                 mBoundingBoxScaleFactor;
-        ::ll::TypedStorage<4, 4, int>                   mLineOfSightCheckHeight;
-        ::ll::TypedStorage<4, 8, ::FloatRange>          mDistanceToTargetRange;
-        ::ll::TypedStorage<4, 4, int>                   mLandingPositionSpreadDegrees;
-        ::ll::TypedStorage<4, 8, ::FloatRange>          mLandingPositionRange;
-        ::ll::TypedStorage<4, 4, int>                   mRequiredAirBlocksAbove;
-        ::ll::TypedStorage<4, 4, int>                   mSnapToSurfaceBlockRange;
-        ::ll::TypedStorage<4, 4, float>                 mJumpingFromWaterTimeoutSeconds;
-        ::ll::TypedStorage<8, 24, ::std::vector<float>> mAllowedJumpAngles;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JumpAroundTargetGoal::Definition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     struct Jump {
@@ -99,9 +50,9 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                           mCheckCollision;
     ::ll::TypedStorage<4, 4, float>                                          mBoundingBoxScaleFactor;
     ::ll::TypedStorage<4, 4, int>                                            mLineOfSightCheckHeight;
-    ::ll::TypedStorage<4, 8, ::FloatRange>                                   mDistanceToTargetSqrRange;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                      mDistanceToTargetSqrRange;
     ::ll::TypedStorage<4, 4, int>                                            mLandingPositionSpreadDegrees;
-    ::ll::TypedStorage<4, 8, ::FloatRange>                                   mDistanceFromTargetLandingPosition;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                      mDistanceFromTargetLandingPosition;
     ::ll::TypedStorage<4, 4, int>                                            mRequiredAirBlocksAbove;
     ::ll::TypedStorage<4, 4, int>                                            mSnapToSurfaceBlockRange;
     ::ll::TypedStorage<8, 24, ::std::vector<float>>                          mAllowedJumpAngles;
@@ -140,13 +91,13 @@ public:
     virtual bool canBeInterrupted() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~JumpAroundTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit JumpAroundTargetGoal(::Mob& mob);
+
     MCAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition) const;
 
     MCAPI bool _canJumpFromCurrentPosition() const;
@@ -154,6 +105,12 @@ public:
     MCAPI void _jump() const;
 
     MCAPI ::std::optional<::BlockPos> _snapToSurface(::Vec3 const& targetPosition) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

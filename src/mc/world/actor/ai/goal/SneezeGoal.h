@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class Mob;
 struct MobDescriptor;
 // clang-format on
 
-class SneezeGoal : public ::Goal {
+class SneezeGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,8 +50,40 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~SneezeGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SneezeGoal(
+        ::Mob&                                mob,
+        float                                 cooldownTime,
+        float                                 probability,
+        float                                 dropItemChance,
+        ::std::string const&                  lootTable,
+        ::std::string const&                  sneezeSound,
+        ::std::string const&                  preSneezeSound,
+        float                                 prepareTime,
+        ::std::vector<::MobDescriptor> const& reactMobFilters,
+        float                                 reactWithin
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&                                mob,
+        float                                 cooldownTime,
+        float                                 probability,
+        float                                 dropItemChance,
+        ::std::string const&                  lootTable,
+        ::std::string const&                  sneezeSound,
+        ::std::string const&                  preSneezeSound,
+        float                                 prepareTime,
+        ::std::vector<::MobDescriptor> const& reactMobFilters,
+        float                                 reactWithin
+    );
     // NOLINTEND
 
 public:

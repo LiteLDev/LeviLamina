@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class ResourceLocation;
+class Scheduler;
+class WorkerPool;
 namespace cg { class ImageBuffer; }
 namespace mce { class TextureGroup; }
 // clang-format on
@@ -26,10 +28,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI
+    AsyncCachedTextureLoader(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string const& taskGroupName);
+
     MCNAPI ::cg::ImageBuffer*
     getCachedImageOrLoadAsync(::ResourceLocation const& imageToLoad, ::mce::TextureGroup& textureGroup);
 
     MCNAPI ~AsyncCachedTextureLoader();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string const& taskGroupName);
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Block;
 // clang-format on
 
@@ -26,24 +27,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EntityType& operator=(EntityType const&);
-    EntityType();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntityType(::br::spawn::EntityType const&);
-
     MCAPI bool isBlockDangerous(::Block const& block) const;
 
-    MCAPI ~EntityType();
-    // NOLINTEND
+    MCAPI ::AABB spawnAabb(float x, float y, float z) const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::br::spawn::EntityType const&);
+    MCAPI ~EntityType();
     // NOLINTEND
 
 public:

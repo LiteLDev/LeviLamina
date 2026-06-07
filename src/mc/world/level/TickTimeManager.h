@@ -33,6 +33,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD void incrementCurrentTick();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

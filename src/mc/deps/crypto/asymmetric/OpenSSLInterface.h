@@ -82,6 +82,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string _computeSharedSecretECC(::std::string const& myPrivateKey, ::std::string const& peerPublicKey);
 
+    MCNAPI bool
+    _constructPublicKeyRSA(::std::string const& modulus, ::std::string const& exponent, ::std::string& keyOut);
+
     MCNAPI ::std::string _decryptDataRSA(
         ::std::string const&          privateKey,
         ::std::string const&          data,
@@ -97,6 +100,8 @@ public:
     );
 
     MCNAPI bool _generateKeyPairECC(::std::string& privateKey, ::std::string& publicKey);
+
+    MCNAPI bool _generateKeyPairRSA(::std::string& privateKey, ::std::string& publicKey);
     // NOLINTEND
 
 public:

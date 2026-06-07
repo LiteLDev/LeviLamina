@@ -13,13 +13,17 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class ItemInstance;
+struct CopperBlockSet;
 namespace BlockEvents { class ActorInternalEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class CopperGolemStatueBlock : public ::CopperBlock<::ActorBlock> {
+public:
+    // prevent constructor by default
+    CopperGolemStatueBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,17 +33,15 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~CopperGolemStatueBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CopperGolemStatueBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+
     MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -52,6 +54,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isInteractiveBlock() const;
@@ -60,9 +68,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const;
 
 
     // NOLINTEND

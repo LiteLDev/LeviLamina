@@ -26,29 +26,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SummonSpellStage>>     stages;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> startSound;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SummonSpellData& operator=(SummonSpellData const&);
-    SummonSpellData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SummonSpellData(::SummonSpellData const&);
-
-    MCAPI ~SummonSpellData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SummonSpellData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

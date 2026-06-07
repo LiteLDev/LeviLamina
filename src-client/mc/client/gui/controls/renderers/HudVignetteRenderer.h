@@ -35,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HudVignetteRenderer();
+
     MCAPI bool _renderVignette(
         ::MinecraftUIRenderContext& renderContext,
         ::IClientInstance&          client,
@@ -42,6 +44,12 @@ public:
         int                         w,
         int                         h
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

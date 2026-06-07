@@ -17,11 +17,13 @@ class Interface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Interface();
+    virtual ~Interface() = default;
 
     virtual ::ClientBlockPipeline::WorldView::LocalInfo getLocalInfo(::BlockPos const& relativePos) const = 0;
 
     virtual ::Block const& getBlock(::BlockPos const& relativePos) const = 0;
+
+    virtual ::Block const& getExtraBlock(::BlockPos const& relativePos) const = 0;
 
     virtual ::BlockActor const* getBlockActor(::BlockPos const& relativePos) const = 0;
 
@@ -29,27 +31,15 @@ public:
 
     virtual ::BlockPos getRelativeMin(::BlockPos const& worldMin) const = 0;
 
-    virtual ::BlockPos getRelativeMax(::BlockPos const& worldMin) const = 0;
+    virtual ::BlockPos getRelativeMax(::BlockPos const& worldMax) const = 0;
 
     virtual bool isInBounds(::BlockPos const& relativePos, ::BlockPos const& dimensions) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -17,6 +17,7 @@ class BlockPos;
 class CompoundTag;
 class Dimension;
 class Level;
+class Player;
 class Vec2;
 class Vec3;
 struct CommandOriginData;
@@ -32,6 +33,13 @@ public:
     ::ll::TypedStorage<1, 1, ::SubClientId>         mSourceSubId;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    DevConsoleCommandOrigin();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -74,6 +82,26 @@ public:
     virtual bool isValid() const /*override*/;
 
     virtual bool requiresValidLevel() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit DevConsoleCommandOrigin(::Player& player);
+
+    MCAPI DevConsoleCommandOrigin(::ActorUniqueID id, ::Level* level, ::NetworkIdentifier source, ::SubClientId sub);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Player& player);
+
+    MCAPI void* $ctor(::ActorUniqueID id, ::Level* level, ::NetworkIdentifier source, ::SubClientId sub);
+#endif
     // NOLINTEND
 
 public:

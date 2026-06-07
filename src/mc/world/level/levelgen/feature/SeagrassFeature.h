@@ -32,8 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    virtual ~SeagrassFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -41,6 +39,8 @@ public:
     // NOLINTBEGIN
     MCAPI void
     _tryPlaceSeagrass(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isColdEnoughForIce) const;
+
+    MCAPI void _tryPlaceTallSeagrass(::BlockSource& region, ::BlockPos const& pos, bool isColdEnoughForIce) const;
     // NOLINTEND
 
 public:

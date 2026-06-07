@@ -34,12 +34,6 @@ public:
     DataDrivenUIDefinitionQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataDrivenUIDefinitionQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI DataDrivenUIDefinitionQuery(

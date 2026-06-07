@@ -21,22 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerInteractEvent& operator=(PlayerInteractEvent const&);
-    PlayerInteractEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerInteractEvent(::PlayerInteractEvent const&);
-
     MCAPI ~PlayerInteractEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::PlayerInteractEvent const&);
     // NOLINTEND
 
 public:

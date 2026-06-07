@@ -44,7 +44,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActivationUri;
 class AppPlatformListener;
 class AppPlatformNetworkSettings;
 class BatteryMonitorInterface;
@@ -53,23 +52,15 @@ class HardwareMemoryTierUtil;
 class IAppPlatformImpl;
 class IFileAccess;
 class IPlatformScreenshots;
-class ImagePickingCallback;
-class NetworkChangeObserver;
 class PDFWriter;
 class PropertyBag;
-class PushNotificationMessage;
-class RectangleArea;
 class SecureStorage;
 class SecureStorageKey;
 class ThermalMonitorInterface;
-class ThrottledFileWriteManager;
 class UriListener;
+class WebviewInterface;
 struct IntegrityTokenResult;
 struct TextBoxSelection;
-namespace ApplicationSignal { class ClipboardCopy; }
-namespace ApplicationSignal { class ClipboardPaste; }
-namespace ApplicationSignal { class ClipboardPasteRequest; }
-namespace Bedrock { class CommonPlatform; }
 namespace Bedrock { class DeviceIdManager; }
 namespace Bedrock { class FilePickerManager; }
 namespace Bedrock { class IApplicationDataStores; }
@@ -83,7 +74,16 @@ namespace Core { class Path; }
 namespace Core { class PathView; }
 namespace mce { class UUID; }
 namespace mce { struct Image; }
-class WebviewInterface;
+class ActivationUri;
+class ImagePickingCallback;
+class NetworkChangeObserver;
+class PushNotificationMessage;
+class RectangleArea;
+class ThrottledFileWriteManager;
+namespace ApplicationSignal { class ClipboardCopy; }
+namespace ApplicationSignal { class ClipboardPaste; }
+namespace ApplicationSignal { class ClipboardPasteRequest; }
+namespace Bedrock { class CommonPlatform; }
 namespace Social { struct UserCreationData; }
 namespace Webview { class PlatformArguments; }
 // clang-format on
@@ -198,8 +198,6 @@ public:
 
     virtual void initAppPlatformNetworkSettings() /*override*/;
 
-    virtual void initializeScreenDependentResources();
-
     virtual uint64 getHighPerformanceThreadsCount() const;
 
     virtual uint64 getTotalHardwareThreadsCount() const;
@@ -233,7 +231,7 @@ public:
 
     virtual void loadJPEG(::mce::Image& out, ::Core::Path const& filename);
 
-    virtual int getKeyFromKeyCode(int keyCode, int metaState, int deviceId);
+    virtual int getKeyFromKeyCode(int, int, int);
 
     virtual void textEditComponentGainedFocus(
         ::std::string const& currentText,
@@ -281,7 +279,7 @@ public:
 
     virtual bool useHardwareMouse();
 
-    virtual void provideHardwareMouseImageData(::mce::Image const& imageData);
+    virtual void provideHardwareMouseImageData(::mce::Image const&);
 
     virtual bool hasCustomSoftwareCursor() const;
 
@@ -337,7 +335,7 @@ public:
 
     virtual ::std::shared_ptr<::PDFWriter> createPlatformPDFWriter();
 
-    virtual void shareFile(::Core::Path const& path, ::std::function<void(bool)> onCompletionCallback);
+    virtual void shareFile(::Core::Path const&, ::std::function<void(bool)>);
 
     virtual bool hasHardwareBackButton();
 
@@ -367,7 +365,7 @@ public:
 
     virtual ::std::wstring getClipboardText() const;
 
-    virtual void getClipboardTextAsync(::std::function<void(::std::string const&)> callback) const;
+    virtual void getClipboardTextAsync(::std::function<void(::std::string const&)>) const;
 
     virtual bool supportsShare() const;
 
@@ -382,8 +380,8 @@ public:
     virtual void pushNotificationReceived(::PushNotificationMessage const& msg);
 
     virtual void openStoragePermissionRequest(
-        ::PermissionRequestReason                        reason,
-        ::std::function<void(::StoragePermissionResult)> resultCallback
+        ::PermissionRequestReason resultCallback,
+        ::std::function<void(::StoragePermissionResult)>
     );
 
     virtual void setStorageDirectory(
@@ -393,11 +391,11 @@ public:
         ::std::function<void(bool)> onComplete
     );
 
-    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory dir);
+    virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory);
 
     virtual ::FileStorageDirectory getStorageDirectory() const;
 
-    virtual void setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
+    virtual void setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)>);
 
     virtual ::Bedrock::PubSub::Subscription
     addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
@@ -408,11 +406,7 @@ public:
 
     virtual bool delayOptionSaveUntilCloudSync() const;
 
-    virtual void updateTextEditBoxPosition(
-        ::RectangleArea const& controlPosition,
-        ::RectangleArea const& selectionPosition,
-        float const            guiScale
-    );
+    virtual void updateTextEditBoxPosition(::RectangleArea const&, ::RectangleArea const&, float const);
 
     virtual ::BatteryMonitorInterface const& getBatteryMonitorInterface() const;
 
@@ -431,9 +425,9 @@ public:
 #endif
     virtual ::Bedrock::Threading::Async<::IntegrityTokenResult> requestIntegrityToken(::std::string const& nonceToken);
 
-    virtual void setIntegrityToken(::std::string const& integrityToken);
+    virtual void setIntegrityToken(::std::string const&);
 
-    virtual void setIntegrityTokenErrorMessage(::std::string const& errorMessage);
+    virtual void setIntegrityTokenErrorMessage(::std::string const&);
 
     virtual bool supportsInPackageRecursion() const;
 
@@ -447,9 +441,9 @@ public:
 
     virtual auto getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
-    virtual void updateLocalization(::std::string const& loc);
+    virtual void updateLocalization(::std::string const&);
 
-    virtual void setSleepEnabled(bool enabled);
+    virtual void setSleepEnabled(bool);
 
     virtual ::Core::PathBuffer<::std::string> getScratchPath();
 
@@ -487,7 +481,7 @@ public:
 
     virtual bool getDisableLDBSeekCompactions() const;
 
-    virtual void showDialog(int dialogId);
+    virtual void showDialog(int);
 
     virtual void createUserInput();
 
@@ -501,7 +495,7 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    virtual void registerFileForCollectionWithCrashDump(::Core::Path const& fileName);
+    virtual void registerFileForCollectionWithCrashDump(::Core::Path const&);
 
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
@@ -563,7 +557,7 @@ public:
 
     virtual bool supportsVibration() const;
 
-    virtual void vibrate(int milliSeconds);
+    virtual void vibrate(int);
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename);
 
@@ -588,9 +582,9 @@ public:
 
     virtual bool isLANAvailable() const /*override*/;
 
-    virtual bool isNetworkEnabled(bool onlyWifiAllowed) const /*override*/;
+    virtual bool isNetworkEnabled(bool) const /*override*/;
 
-    virtual void setNetworkAllowed(bool allowed);
+    virtual void setNetworkAllowed(bool);
 
     virtual bool isNetworkAllowed() const;
 
@@ -618,7 +612,7 @@ public:
 
     virtual void finish();
 
-    virtual bool canLaunchUri(::std::string const& uri);
+    virtual bool canLaunchUri(::std::string const&);
 
     virtual void launchUri(::std::string const& uri);
 
@@ -648,7 +642,7 @@ public:
 
     virtual bool hasIDEProfiler();
 
-    virtual ::std::string getPlatformStringVar(int stringId);
+    virtual ::std::string getPlatformStringVar(int);
 
     virtual ::std::string getApplicationId() const = 0;
 
@@ -762,15 +756,15 @@ public:
 
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage();
 
-    virtual ::SecureStorageKey getSecureStorageKey(::std::string const& key) /*override*/;
+    virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) /*override*/;
 
-    virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) /*override*/;
+    virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) /*override*/;
 
     virtual bool devHotReloadRenderResources() const;
 
     virtual bool shouldPauseDownloadsWhenEnterGame() const;
 
-    virtual bool compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
+    virtual bool compareAppReceiptToLocalReceipt(::std::string const&);
 
     virtual ::mce::UUID const& getThirdPartyPackUUID() const;
 
@@ -823,7 +817,7 @@ public:
     virtual ::std::shared_ptr<::Core::FileStorageArea>
     createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
-    virtual void handlePlatformSpecificCommerceError(uint error);
+    virtual void handlePlatformSpecificCommerceError(uint);
 
     virtual bool isEduMode() const;
 
@@ -851,7 +845,7 @@ public:
 
     virtual bool usesAsyncOptionSaving() const;
 
-    virtual void showPlatformStoreIcon(bool shouldShow);
+    virtual void showPlatformStoreIcon(bool);
 
     virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback) /*override*/;
 
@@ -930,34 +924,70 @@ public:
 
     MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
 
-    MCAPI void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
+    MCAPI void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const&);
 #endif
 
 #ifdef LL_PLAT_S
     MCAPI void _fireAppTerminated();
 #endif
 
+#ifdef LL_PLAT_C
+    MCAPI ::IAppPlatformImpl& _getImpl();
+#endif
+
     MCAPI void _initializeLoadProfiler();
 
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
-
-    MCAPI ::UIProfile getDefaultUIProfile() const;
-#endif
-
 #ifdef LL_PLAT_S
-    MCFOLD ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
+    MCAPI void _terminateListeners();
+
+    MCFOLD ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo>& accessPlatformRuntimeInformation_Shim();
 #endif
+
+#ifdef LL_PLAT_C
+    MCAPI void addNetworkChangeObserver(::NetworkChangeObserver& observer);
+
+    MCAPI void checkAndTriggerOnLowMemory();
+
+    MCAPI void disableCPUBoost();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
+#endif
+
+    MCFOLD ::Core::PathBuffer<::std::string> getCurrentStoragePath() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::UIProfile getDefaultUIProfile() const;
+
+    MCAPI ::std::string getDeviceIdWarning() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> getExternalStoragePath() const;
+
+    MCAPI uint64 getFreeMemoryTestable() const;
+#endif
+
+    MCAPI ::std::string getGraphicsDeviceTier() const;
+
+    MCFOLD ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
 
     MCAPI ::std::optional<::std::locale> getLocaleForDateTimeFormatting() const;
 
     MCAPI ::gsl::not_null<::Bedrock::PubSub::Connector<void(::LowMemorySeverity)>*> getOnLowMemoryConnector();
 
+    MCAPI ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo> const& getPlatformRuntimeInformation() const;
+
 #ifdef LL_PLAT_C
+    MCAPI ::std::string getShareText() const;
+
+    MCAPI ::std::string getShareTitle() const;
+
+    MCAPI ::std::string getShareUri() const;
+
     MCAPI double getTotalActiveSeconds();
 #endif
 
     MCFOLD ::Core::PathBuffer<::std::string> getUserdataPath() const;
+
+    MCAPI bool isTerminating() const;
 
 #ifdef LL_PLAT_C
     MCAPI void loadImage(::mce::Image& out, ::Core::Path const& filename);
@@ -965,6 +995,14 @@ public:
     MCAPI ::mce::Image loadTexture(::Core::Path const& filename);
 
     MCAPI ::mce::Image loadTextureFromStream(::std::string const& fileStream);
+
+    MCAPI void notifyElapsedSeconds(double seconds);
+#endif
+
+    MCAPI void notifyUserStorageInitialized();
+
+#ifdef LL_PLAT_C
+    MCAPI void processSignals();
 #endif
 
     MCAPI ::Bedrock::Result<::std::string>
@@ -974,6 +1012,10 @@ public:
     MCAPI bool requiresNetworkOutageMessaging() const;
 
     MCAPI void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
+
+    MCAPI void setShareMetaData(::std::string const& shareTitle, ::std::string const& shareText);
+
+    MCAPI bool tryEnableCPUBoost();
 #endif
     // NOLINTEND
 
@@ -983,9 +1025,23 @@ public:
     MCAPI static ::Bedrock::Result<::std::string> _readAssetFileGeneric(::Core::PathView filename);
 
 #ifdef LL_PLAT_C
+    MCAPI static bool hasPendingProtocolActivation();
+
+    MCAPI static void imGuiAddInputChar(ushort c);
+
+    MCAPI static bool isInitialized();
+
     MCAPI static bool mouseInputHandledByImGui();
 
+    MCAPI static void setPendingProtocolActivation(::ActivationUri const& uri);
+
+    MCAPI static bool updateImGuiKeyboard(uchar param, bool isDown);
+
+    MCAPI static void updateImGuiMouseButton(uchar button, bool isDown);
+
     MCAPI static void updateImGuiMousePosition(float x, float y);
+
+    MCAPI static void updateImGuiMouseScrollBar(float value);
 #endif
     // NOLINTEND
 
@@ -993,6 +1049,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_PATH();
+
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& LOG_PATH();
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SETTINGS_PATH();
 
@@ -1026,8 +1084,6 @@ public:
 
     MCAPI void $initAppPlatformNetworkSettings();
 
-    MCFOLD void $initializeScreenDependentResources();
-
     MCAPI uint64 $getHighPerformanceThreadsCount() const;
 
     MCAPI uint64 $getTotalHardwareThreadsCount() const;
@@ -1040,7 +1096,7 @@ public:
 
     MCAPI ::ProcessExecutionState $getProcessExecutionState() const;
 
-    MCAPI void $restartApp(bool restart);
+    MCFOLD void $restartApp(bool restart);
 
     MCFOLD bool $restartRequested();
 
@@ -1052,9 +1108,9 @@ public:
 
     MCAPI ::Bedrock::Threading::Async<::IntegrityTokenResult> $requestIntegrityToken(::std::string const& nonceToken);
 
-    MCFOLD void $setIntegrityToken(::std::string const& integrityToken);
+    MCFOLD void $setIntegrityToken(::std::string const&);
 
-    MCFOLD void $setIntegrityTokenErrorMessage(::std::string const& errorMessage);
+    MCFOLD void $setIntegrityTokenErrorMessage(::std::string const&);
 
     MCFOLD bool $supportsInPackageRecursion() const;
 
@@ -1068,9 +1124,9 @@ public:
 
     MCAPI auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
-    MCFOLD void $updateLocalization(::std::string const& loc);
+    MCFOLD void $updateLocalization(::std::string const&);
 
-    MCFOLD void $setSleepEnabled(bool enabled);
+    MCFOLD void $setSleepEnabled(bool);
 
     MCAPI ::Core::PathBuffer<::std::string> $getScratchPath();
 
@@ -1096,7 +1152,7 @@ public:
 
     MCFOLD ::Core::PathBuffer<::std::string> $getCatalogSearchScratchPath();
 
-    MCAPI ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> $getUserStorageRootPath() const;
 
     MCFOLD ::std::shared_ptr<::Core::FileStorageArea> $getOrCreateStorageAreaForUser(::Social::UserCreationData const&);
 
@@ -1104,11 +1160,11 @@ public:
 
     MCFOLD uint64 $getOptimalLDBSize();
 
-    MCAPI int $getMaxLDBFilesOpen() const;
+    MCFOLD int $getMaxLDBFilesOpen() const;
 
     MCFOLD bool $getDisableLDBSeekCompactions() const;
 
-    MCFOLD void $showDialog(int dialogId);
+    MCFOLD void $showDialog(int);
 
     MCFOLD void $createUserInput();
 
@@ -1122,7 +1178,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCFOLD void $registerFileForCollectionWithCrashDump(::Core::Path const& fileName);
+    MCFOLD void $registerFileForCollectionWithCrashDump(::Core::Path const&);
 
     MCFOLD void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
@@ -1132,7 +1188,7 @@ public:
 
     MCAPI int $getDisplayWidth();
 
-    MCAPI int $getDisplayHeight();
+    MCFOLD int $getDisplayHeight();
 
     MCFOLD void $setScreenSize(int width, int height);
 
@@ -1172,7 +1228,7 @@ public:
 
     MCFOLD bool $supportsVibration() const;
 
-    MCFOLD void $vibrate(int milliSeconds);
+    MCFOLD void $vibrate(int);
 
     MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
@@ -1197,9 +1253,9 @@ public:
 
     MCFOLD bool $isLANAvailable() const;
 
-    MCFOLD bool $isNetworkEnabled(bool onlyWifiAllowed) const;
+    MCFOLD bool $isNetworkEnabled(bool) const;
 
-    MCFOLD void $setNetworkAllowed(bool allowed);
+    MCFOLD void $setNetworkAllowed(bool);
 
     MCFOLD bool $isNetworkAllowed() const;
 
@@ -1225,7 +1281,7 @@ public:
 
     MCFOLD void $finish();
 
-    MCFOLD bool $canLaunchUri(::std::string const& uri);
+    MCFOLD bool $canLaunchUri(::std::string const&);
 
     MCFOLD void $launchUri(::std::string const& uri);
 
@@ -1253,7 +1309,7 @@ public:
 
     MCFOLD bool $hasIDEProfiler();
 
-    MCAPI ::std::string $getPlatformStringVar(int stringId);
+    MCAPI ::std::string $getPlatformStringVar(int);
 
     MCAPI uint64 $getMaximumUsedMemory();
 
@@ -1337,15 +1393,15 @@ public:
 
     MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
-    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const& key);
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
-    MCFOLD void $setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value);
+    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
 
     MCFOLD bool $devHotReloadRenderResources() const;
 
     MCFOLD bool $shouldPauseDownloadsWhenEnterGame() const;
 
-    MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
+    MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const&);
 
     MCAPI ::mce::UUID const& $getThirdPartyPackUUID() const;
 
@@ -1398,7 +1454,7 @@ public:
     MCAPI ::std::shared_ptr<::Core::FileStorageArea>
     $createLoggingStorageArea(::Core::FileAccessType fileAccessType, ::Core::PathView loggingPath);
 
-    MCFOLD void $handlePlatformSpecificCommerceError(uint error);
+    MCFOLD void $handlePlatformSpecificCommerceError(uint);
 
     MCFOLD bool $isEduMode() const;
 
@@ -1424,7 +1480,7 @@ public:
 
     MCFOLD bool $usesAsyncOptionSaving() const;
 
-    MCFOLD void $showPlatformStoreIcon(bool shouldShow);
+    MCFOLD void $showPlatformStoreIcon(bool);
 
     MCAPI void $showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback);
 
@@ -1475,7 +1531,7 @@ public:
 
     MCFOLD void $loadJPEG(::mce::Image& out, ::Core::Path const& filename);
 
-    MCFOLD int $getKeyFromKeyCode(int keyCode, int metaState, int deviceId);
+    MCFOLD int $getKeyFromKeyCode(int, int, int);
 
     MCFOLD void $textEditComponentGainedFocus(
         ::std::string const& currentText,
@@ -1523,15 +1579,15 @@ public:
 
     MCFOLD bool $useHardwareMouse();
 
-    MCFOLD void $provideHardwareMouseImageData(::mce::Image const& imageData);
+    MCFOLD void $provideHardwareMouseImageData(::mce::Image const&);
 
     MCFOLD bool $hasCustomSoftwareCursor() const;
 
     MCFOLD ::Core::PathBuffer<::std::string> $getCustomSoftwareCursorAsset() const;
 
-    MCAPI bool $getPointerFocus();
+    MCFOLD bool $getPointerFocus();
 
-    MCAPI void $setPointerFocus(bool lostFocus);
+    MCFOLD void $setPointerFocus(bool lostFocus);
 
     MCFOLD bool $isInvertScrollEnabled() const;
 
@@ -1541,7 +1597,7 @@ public:
 
     MCAPI void $_fireAppResumed();
 
-    MCFOLD void $_fireAppFocusLost();
+    MCAPI void $_fireAppFocusLost();
 
     MCAPI void $_fireAppFocusGained();
 
@@ -1573,7 +1629,7 @@ public:
 
     MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
 
-    MCFOLD void $shareFile(::Core::Path const& path, ::std::function<void(bool)> onCompletionCallback);
+    MCFOLD void $shareFile(::Core::Path const&, ::std::function<void(bool)>);
 
     MCFOLD bool $hasHardwareBackButton();
 
@@ -1603,7 +1659,7 @@ public:
 
     MCAPI ::std::wstring $getClipboardText() const;
 
-    MCFOLD void $getClipboardTextAsync(::std::function<void(::std::string const&)> callback) const;
+    MCFOLD void $getClipboardTextAsync(::std::function<void(::std::string const&)>) const;
 
     MCFOLD bool $supportsShare() const;
 
@@ -1618,8 +1674,8 @@ public:
     MCAPI void $pushNotificationReceived(::PushNotificationMessage const& msg);
 
     MCAPI void $openStoragePermissionRequest(
-        ::PermissionRequestReason                        reason,
-        ::std::function<void(::StoragePermissionResult)> resultCallback
+        ::PermissionRequestReason resultCallback,
+        ::std::function<void(::StoragePermissionResult)>
     );
 
     MCFOLD void $setStorageDirectory(
@@ -1629,11 +1685,11 @@ public:
         ::std::function<void(bool)> onComplete
     );
 
-    MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory dir);
+    MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory);
 
     MCFOLD ::FileStorageDirectory $getStorageDirectory() const;
 
-    MCFOLD void $setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
+    MCFOLD void $setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)>);
 
     MCFOLD ::Bedrock::PubSub::Subscription
     $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
@@ -1644,11 +1700,7 @@ public:
 
     MCFOLD bool $delayOptionSaveUntilCloudSync() const;
 
-    MCFOLD void $updateTextEditBoxPosition(
-        ::RectangleArea const& controlPosition,
-        ::RectangleArea const& selectionPosition,
-        float const            guiScale
-    );
+    MCFOLD void $updateTextEditBoxPosition(::RectangleArea const&, ::RectangleArea const&, float const);
 
     MCAPI ::BatteryMonitorInterface const& $getBatteryMonitorInterface() const;
 

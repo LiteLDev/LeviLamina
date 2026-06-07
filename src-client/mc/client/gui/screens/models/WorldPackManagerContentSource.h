@@ -43,8 +43,6 @@ public:
         ::PackManagerContentSourceData& packData,
         ::std::vector<::PackModel>&     available
     ) /*override*/;
-
-    virtual ~WorldPackManagerContentSource() /*override*/ = default;
     // NOLINTEND
 
 public:

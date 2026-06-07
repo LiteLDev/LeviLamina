@@ -22,8 +22,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptLocationInUnloadedChunkError(::Vec3 const& pos);
-
-    MCAPI ~ScriptLocationInUnloadedChunkError();
     // NOLINTEND
 
 public:
@@ -36,12 +34,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Vec3 const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

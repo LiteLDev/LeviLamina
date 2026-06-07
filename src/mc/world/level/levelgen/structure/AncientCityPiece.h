@@ -35,8 +35,6 @@ public:
     virtual ::Block const& getBeardStabilizeBlock(::Block const&) const /*override*/;
 
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const /*override*/;
-
-    virtual ~AncientCityPiece() /*override*/ = default;
     // NOLINTEND
 
 public:

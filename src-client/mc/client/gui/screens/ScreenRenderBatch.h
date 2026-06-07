@@ -7,10 +7,11 @@
 class ComponentRenderBatch;
 class CustomRenderComponent;
 class GridComponent;
+class SpriteComponent;
+class TextComponent;
 class UIControl;
 class UIRenderContext;
 struct BatchClippingState;
-struct BatchKey;
 struct BatchVisualState;
 struct ClippedControlMetadata;
 struct RenderControlMetadata;
@@ -38,14 +39,26 @@ public:
     );
 
     MCAPI void _addToRenderBatch(
+        int                         depth,
+        ::SpriteComponent* const    sprite,
+        ::BatchClippingState const& batchClippingState,
+        ::BatchVisualState const&   batchVisualState
+    );
+
+    MCAPI void _addToRenderBatch(
+        int                         depth,
+        ::TextComponent* const      text,
+        ::BatchClippingState const& batchClippingState,
+        ::BatchVisualState const&   batchVisualState
+    );
+
+    MCAPI void _addToRenderBatch(
         ::UIRenderContext&             renderContext,
         int                            depth,
         ::CustomRenderComponent* const customRender,
         ::BatchClippingState const&    batchClippingState,
         ::BatchVisualState const&      batchVisualState
     );
-
-    MCAPI ::ComponentRenderBatch& _findOrAddRenderBatch(::BatchKey&& batchKey);
 
     MCAPI void _populateRenderBatch(::UIRenderContext& renderContext);
 
@@ -67,12 +80,22 @@ public:
         ::ClippedControlMetadata&   clippedControlData
     );
 
+    MCAPI void _sortRenderControlsCollection();
+
     MCAPI void _storeTextureState(::UIControl& control, bool state);
+
+    MCAPI ~ScreenRenderBatch();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::std::string, ::std::pair<int, int>>& GRID_DIMENSIONS();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

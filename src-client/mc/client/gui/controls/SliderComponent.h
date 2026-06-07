@@ -67,8 +67,8 @@ public:
     virtual ::ComponentReceiveActionType receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::UIAnimationController& screenEvent,
+        ::ScreenEvent const&
     ) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
@@ -83,19 +83,16 @@ public:
 
     MCAPI void _finalizeSliderBox();
 
-    MCAPI ::ComponentReceiveActionType _handleButtonEvent(
-        ::VisualTree&                  visualTree,
-        ::ScreenInputContext&          context,
-        ::ButtonScreenEventData const& buttonData
-    );
+    MCAPI ::ComponentReceiveActionType
+    _handleButtonEvent(::VisualTree& context, ::ScreenInputContext& buttonData, ::ButtonScreenEventData const&);
 
     MCAPI void _handleControllerDirectionEvent(
-        ::VisualTree&                         visualTree,
-        ::ScreenInputContext&                 context,
-        ::ControllerDirectionEventData const& controllerData
+        ::VisualTree&         context,
+        ::ScreenInputContext& controllerData,
+        ::ControllerDirectionEventData const&
     );
 
-    MCAPI void _handleHoverEvent(::VisualTree& visualTree, ::HoverScreenEventData const& hoverData);
+    MCAPI void _handleHoverEvent(::VisualTree& hoverData, ::HoverScreenEventData const&);
 
     MCAPI void _moveSliderBox(::glm::vec2 offsetDelta);
 
@@ -107,15 +104,21 @@ public:
 
     MCAPI void _updateControlVisibility();
 
-    MCAPI void _updateSliderBarProgress();
-
-    MCAPI void _updateSliderFromDirection(::ui::CardinalDirection direction);
-
     MCAPI void _updateSliderFromPosition(::glm::vec2 const& pointerPosition, bool finalize);
 
     MCAPI void _updateSliderFromStepSize(int stepSize);
 
+    MCAPI ::ui::OrientationType getSliderDirection() const;
+
     MCAPI bool getSliderSelected() const;
+
+    MCAPI float getSliderTimeoutDefaultValue() const;
+
+    MCAPI float getSliderValue() const;
+
+    MCAPI void setNumberSteps(int steps);
+
+    MCAPI void setSliderTimeout(float timeout);
 
     MCAPI void setSliderValue(float value);
     // NOLINTEND
@@ -136,8 +139,8 @@ public:
     MCAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::UIAnimationController& screenEvent,
+        ::ScreenEvent const&
     );
 
     MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);

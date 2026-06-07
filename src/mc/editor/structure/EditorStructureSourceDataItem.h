@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/editor/structure/StructureSource.h"
+
 // auto generated forward declare list
 // clang-format off
 class LevelStorage;
@@ -43,6 +46,14 @@ public:
     );
 
     MCNAPI ::std::string getFullStructureName() const;
+
+    MCNAPI ::std::string getStructureName() const;
+
+    MCNAPI ::std::string getStructureNamespace() const;
+
+    MCNAPI ::Editor::EditorStructureTemplate const* getStructureTemplate() const;
+
+    MCNAPI bool isSource(::Editor::StructureSource const& source) const;
 
     MCNAPI ::std::optional<::Editor::EditorStructureTemplate>
     load(::ResourcePackStack const& packStack, ::LevelStorage& levelStorage) const;

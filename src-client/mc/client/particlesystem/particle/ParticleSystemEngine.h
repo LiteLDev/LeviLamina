@@ -13,13 +13,17 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockPos;
 class BlockSource;
+class ClientFrameUpdateContext;
 class HashedString;
 class LightTexture;
 class Matrix;
 class MolangVariableMap;
 class ParticleEffectGroup;
 class ParticleEffectInfo;
+class ParticleRenderData;
+class ScreenContext;
 namespace LightPropagation { class LightVolumeManager; }
 namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on
@@ -112,7 +116,46 @@ public:
         ::MolangVariableMap   molangVariableMap
     );
 
+    MCAPI void emitParticleManually(
+        ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32> emitterHandle,
+        ::Vec3 const&                                                                            particlePosition,
+        ::Vec3 const&                                                                            velocityAdd,
+        float                                                                                    scaleMult
+    );
+
+    MCAPI void extractForRendering(::ParticleRenderData& particleRenderData, float a);
+
+    MCAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+
+    MCAPI uint64 getEffectEmitterCount(::HashedString const& effectName) const;
+
+    MCAPI uint64 getEffectParticleCount(::HashedString const& effectName) const;
+
+    MCFOLD ::Bedrock::dense_slot_map<
+        ::std::unique_ptr<::ParticleSystem::ParticleEmitter>,
+        64,
+        32,
+        ::std::allocator<::std::unique_ptr<::ParticleSystem::ParticleEmitter>>> const&
+    getEmitters();
+
+    MCFOLD ::ParticleEffectGroup& getParticleEffectGroup() const;
+
     MCAPI ::ParticleSystem::ParticleEmitter* getParticleEmitter(
+        ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32> emitterHandle
+    );
+
+    MCAPI void onBlockPositionChanged(::BlockPos const& blockPosition);
+
+    MCAPI void onDimensionChanged(::BlockSource& newSource);
+
+    MCAPI void render(
+        ::ScreenContext&            screenContext,
+        ::Vec3 const&               cameraTargetPos,
+        ::Vec3 const&               cameraPos,
+        ::ParticleRenderData const& particleRenderData
+    );
+
+    MCAPI void setEmitterIsManuallyEmitted(
         ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32> emitterHandle
     );
 

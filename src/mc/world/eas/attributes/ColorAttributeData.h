@@ -17,12 +17,6 @@ public:
     ColorAttributeData& operator=(ColorAttributeData const&);
     ColorAttributeData(ColorAttributeData const&);
     ColorAttributeData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool operator==(::EAS::ColorAttributeData const&) const;
-    // NOLINTEND
 };
 
 } // namespace EAS

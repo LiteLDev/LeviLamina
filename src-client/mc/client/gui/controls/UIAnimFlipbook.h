@@ -44,8 +44,6 @@ public:
     virtual void onResourcesLoaded(::UIAnimationComponent& animComponent) /*override*/;
 
     virtual void _reset(::UIControl& ownerControl) /*override*/;
-
-    virtual ~UIAnimFlipbook() /*override*/ = default;
     // NOLINTEND
 
 public:

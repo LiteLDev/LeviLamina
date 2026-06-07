@@ -127,11 +127,9 @@ public:
         ::ResourcePacksScreenController::PackRestriction restriction
     );
 
-    MCAPI uint64 _countAddonsActivated();
-
-    MCAPI void _determineHasLockedContent();
-
     MCAPI void _displayAddonStackingWarningModal(::std::function<void(bool)> moveCallback);
+
+    MCAPI void _displayAddonStackingWarningModalFromLink();
 
     MCAPI ::std::string _getAvailableSize(int slot);
 
@@ -143,9 +141,11 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> _getCyclingIconZip();
 
+    MCAPI ::ResourceLocation _getInvalidResource(int slot) const;
+
     MCAPI ::PackListType _getPackListType(::UIPropertyBag* bag) const;
 
-    MCAPI ::ui::ViewRequest _handleAvailablePackClicked(::UIPropertyBag* bag);
+    MCFOLD ::ui::ViewRequest _handleAvailablePackClicked(::UIPropertyBag* bag);
 
     MCAPI void _handleCycleIcon();
 
@@ -158,7 +158,13 @@ public:
         ::PackListType          packListType
     );
 
+    MCAPI ::ui::ViewRequest _handleReadToggleClicked(::UIPropertyBag* bag);
+
+    MCFOLD ::ui::ViewRequest _handleRealmsPackClicked(::UIPropertyBag* bag);
+
     MCAPI ::ui::ViewRequest _handleReportErrorsClicked(::UIPropertyBag* bag);
+
+    MCAPI ::ui::ViewRequest _handleSelectedPackClicked(::UIPropertyBag* bag);
 
     MCAPI ::ui::ViewRequest _handleSelectedPackMoveClicked(::UIPropertyBag* bag);
 
@@ -192,8 +198,8 @@ public:
         ::ContentView*                              contentView,
         int                                         collectionIndex,
         ::PackListType                              fromPackList,
-        bool,
-        bool forceMove
+        bool                                        forceMove,
+        bool
     );
 
     MCAPI void _registerBindings();
@@ -211,14 +217,16 @@ public:
     MCAPI void _showStoreConnectFailedMessage();
 
     MCAPI void _tryMoveResource(
-        ::std::shared_ptr<::ContentItem> const& item,
-        ::ContentView*                          contentView,
-        int                                     collectionIndex,
-        ::PackListType                          fromPackList,
-        bool                                    forceMove
+        ::std::shared_ptr<::PackContentItem> const& packItem,
+        ::ContentView*                              contentView,
+        int                                         collectionIndex,
+        ::PackListType                              fromPackList,
+        bool                                        forceMove
     );
 
     MCAPI void activatePack(::std::string packId);
+
+    MCAPI void setOtherPacksTabController(::ResourcePacksScreenController* otherPacksTab);
     // NOLINTEND
 
 public:

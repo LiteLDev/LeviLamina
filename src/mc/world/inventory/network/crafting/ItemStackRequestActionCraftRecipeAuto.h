@@ -29,8 +29,35 @@ public:
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
-    virtual ~ItemStackRequestActionCraftRecipeAuto() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ItemStackRequestActionCraftRecipeAuto();
+
+#ifdef LL_PLAT_C
+    MCNAPI ItemStackRequestActionCraftRecipeAuto(::RecipeNetId const& recipeNetId, uchar numCrafts);
+
+    MCNAPI ItemStackRequestActionCraftRecipeAuto(
+        ::RecipeNetId const&                     recipeNetId,
+        uchar                                    numCrafts,
+        ::std::vector<::RecipeIngredient> const& ingredients
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::RecipeNetId const& recipeNetId, uchar numCrafts);
+
+    MCNAPI void*
+    $ctor(::RecipeNetId const& recipeNetId, uchar numCrafts, ::std::vector<::RecipeIngredient> const& ingredients);
+#endif
     // NOLINTEND
 
 public:

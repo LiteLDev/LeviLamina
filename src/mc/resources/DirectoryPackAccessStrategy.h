@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/Result.h"
 #include "mc/resources/PackAccessStrategy.h"
 #include "mc/resources/PackAccessStrategyType.h"
 
@@ -10,9 +11,11 @@
 // clang-format off
 class PackAssetSet;
 class ResourceLocation;
+struct StreamableAssetSource;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Bedrock::Resources::Archive { class Reader; }
 namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class DirectoryPackAccessStrategy : public ::PackAccessStrategy {
@@ -72,6 +75,9 @@ public:
     virtual bool canRecurse() const /*override*/;
 
     virtual void unload() /*override*/;
+
+    virtual ::Bedrock::Result<::StreamableAssetSource>
+    getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView>) const /*override*/;
 
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
@@ -155,6 +161,9 @@ public:
     MCNAPI bool $canRecurse() const;
 
     MCNAPI void $unload();
+
+    MCNAPI ::Bedrock::Result<::StreamableAssetSource>
+    $getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView>) const;
 
     MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     $_loadArchive(::Core::Path const& packRelativePath) const;

@@ -37,11 +37,16 @@ public:
 
     public:
         // prevent constructor by default
+        RouteEntry& operator=(RouteEntry const&);
         RouteEntry();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI RouteEntry(::OreUI::RouteMatcher::RouteEntry const&);
+
+        MCAPI RouteEntry(::OreUI::RouteMatcher::RouteEntry&&);
+
         MCAPI RouteEntry(
             ::std::string const&                                                     baseScreenId,
             ::std::string const&                                                     pattern,
@@ -58,6 +63,10 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCAPI void* $ctor(::OreUI::RouteMatcher::RouteEntry const&);
+
+        MCAPI void* $ctor(::OreUI::RouteMatcher::RouteEntry&&);
+
         MCAPI void* $ctor(
             ::std::string const&                                                     baseScreenId,
             ::std::string const&                                                     pattern,
@@ -83,6 +92,31 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string const> baseScreenId;
         ::ll::TypedStorage<8, 32, ::std::string const> route;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DefaultRouteEntry& operator=(DefaultRouteEntry const&);
+        DefaultRouteEntry();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI DefaultRouteEntry(::OreUI::RouteMatcher::DefaultRouteEntry const&);
+
+        MCAPI DefaultRouteEntry(::OreUI::RouteMatcher::DefaultRouteEntry&&);
+
+        MCAPI DefaultRouteEntry(::std::string const& baseScreenId, ::std::string const& route);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::OreUI::RouteMatcher::DefaultRouteEntry const&);
+
+        MCFOLD void* $ctor(::OreUI::RouteMatcher::DefaultRouteEntry&&);
+
+        MCFOLD void* $ctor(::std::string const& baseScreenId, ::std::string const& route);
+        // NOLINTEND
     };
 
     struct RedirectEntry {
@@ -96,34 +130,35 @@ public:
 
     public:
         // prevent constructor by default
+        RedirectEntry& operator=(RedirectEntry const&);
         RedirectEntry();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI RedirectEntry(::OreUI::RouteMatcher::RedirectEntry const&);
+
+        MCAPI RedirectEntry(::OreUI::RouteMatcher::RedirectEntry&&);
+
         MCAPI RedirectEntry(
             ::std::string const&                                 pattern,
             ::std::function<bool()>                              isActiveCallback,
             ::std::function<::std::string(::std::string const&)> composer
         );
-
-        MCAPI ~RedirectEntry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCFOLD void* $ctor(::OreUI::RouteMatcher::RedirectEntry const&);
+
+        MCAPI void* $ctor(::OreUI::RouteMatcher::RedirectEntry&&);
+
+        MCFOLD void* $ctor(
             ::std::string const&                                 pattern,
             ::std::function<bool()>                              isActiveCallback,
             ::std::function<::std::string(::std::string const&)> composer
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -161,15 +196,11 @@ public:
     virtual ::OreUI::RouteMode getRouteMode(::std::string const& route) const /*override*/;
 
     virtual ::OreUI::RoutePrerequisite getRoutePrerequisite(::std::string const& route) const /*override*/;
-
-    virtual ~RouteMatcher() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouteMatcher();
-
     MCAPI ::std::optional<::OreUI::RouteMatcher::RedirectEntry> _matchRedirect(::std::string const& route) const;
 
     MCAPI ::std::optional<::OreUI::RouteMatcher::RouteEntry> _matchRoute(::std::string const& route) const;
@@ -189,18 +220,6 @@ public:
         ::std::function<bool()>                                                  isActiveCallback,
         ::std::function<void(::std::string const&, ::OreUI::RouteHistoryAction)> matchCallback
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

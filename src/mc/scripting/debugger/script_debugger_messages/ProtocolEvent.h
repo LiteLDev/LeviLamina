@@ -21,17 +21,17 @@ public:
 
 public:
     // prevent constructor by default
-    ProtocolEvent(ProtocolEvent const&);
+    ProtocolEvent& operator=(ProtocolEvent const&);
     ProtocolEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ProtocolEvent(::ScriptDebuggerMessages::ProtocolEvent const&);
+
     MCNAPI ProtocolEvent(::std::vector<::Scripting::ModuleDescriptor>&& pluginDescriptors, bool requirePasscode);
 
     MCNAPI ::ScriptDebuggerMessages::ProtocolEvent& operator=(::ScriptDebuggerMessages::ProtocolEvent&&);
-
-    MCNAPI ::ScriptDebuggerMessages::ProtocolEvent& operator=(::ScriptDebuggerMessages::ProtocolEvent const&);
 
     MCNAPI ~ProtocolEvent();
     // NOLINTEND
@@ -39,6 +39,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptDebuggerMessages::ProtocolEvent const&);
+
     MCNAPI void* $ctor(::std::vector<::Scripting::ModuleDescriptor>&& pluginDescriptors, bool requirePasscode);
     // NOLINTEND
 

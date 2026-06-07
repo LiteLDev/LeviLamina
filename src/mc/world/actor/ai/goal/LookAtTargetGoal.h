@@ -7,12 +7,6 @@
 
 class LookAtTargetGoal : public ::LookAtActorGoal {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~LookAtTargetGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

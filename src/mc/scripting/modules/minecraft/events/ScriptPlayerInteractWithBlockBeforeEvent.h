@@ -31,17 +31,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerInteractWithBlockBeforeEvent& operator=(ScriptPlayerInteractWithBlockBeforeEvent const&);
     ScriptPlayerInteractWithBlockBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
-
-    MCAPI
-    ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent const&);
-
     MCAPI ScriptPlayerInteractWithBlockBeforeEvent(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,
@@ -58,10 +52,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent const&);
-
     MCAPI void* $ctor(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,

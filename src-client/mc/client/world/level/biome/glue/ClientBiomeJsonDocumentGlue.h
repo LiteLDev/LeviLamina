@@ -65,18 +65,6 @@ public:
         ResolvedClientBiomeData& operator=(ResolvedClientBiomeData const&);
         ResolvedClientBiomeData(ResolvedClientBiomeData const&);
         ResolvedClientBiomeData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ResolvedClientBiomeData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

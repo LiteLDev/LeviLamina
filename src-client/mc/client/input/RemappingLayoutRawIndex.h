@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Keymapping;
+struct DuplicateKey;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -41,6 +42,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void defaultKeyAtIndex(uint64 index);
+
+    MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
+
+    MCAPI ::Keymapping const& getKeymappingByIndex(uint64 index) const;
+
+    MCAPI uint64 getNumKeymappings() const;
 
     MCAPI bool isKeymappingDefault(uint64 index) const;
 

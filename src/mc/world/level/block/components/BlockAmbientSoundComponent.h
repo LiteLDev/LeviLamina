@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&) const>> mCanPlay;
     ::ll::TypedStorage<4, 4, int>                                                                         mOneInChance;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BlockAmbientSoundComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

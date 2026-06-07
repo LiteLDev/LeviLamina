@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChunkBuildOrderPolicy() /*override*/ = default;
+    virtual ~ChunkBuildOrderPolicy() /*override*/;
 
     virtual int getChunkRebuildPriority(::ChunkPos const& cp) const /*override*/;
 
@@ -74,6 +74,24 @@ public:
     ) /*override*/;
 
     virtual void updateInfluences() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChunkBuildOrderPolicy();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

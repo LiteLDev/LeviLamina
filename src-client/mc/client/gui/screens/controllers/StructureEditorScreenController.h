@@ -103,8 +103,6 @@ public:
 
     MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
 
-    MCAPI void _initiate3DExport();
-
     MCAPI void _initiateDetect();
 
     MCAPI void _initiateExport();
@@ -116,8 +114,6 @@ public:
     MCAPI void _initiateLoad();
 
     MCAPI void _initiateSave();
-
-    MCAPI void _onBoundsChanged();
 
     MCAPI void _onStructureTypeChanged(::StructureBlockType newMode);
 
@@ -131,13 +127,11 @@ public:
 
     MCAPI void _registerRedstoneDropdown();
 
+    MCAPI void _resetChanges();
+
     MCAPI void _setSeedFromString();
 
-    MCAPI void _updateStructureBlock(bool trigger);
-
-    MCAPI void _validateAndSetOffset(int newValue, int index);
-
-    MCAPI void _validateAndSetSize(int newValue, int index);
+    MCAPI void _setStructureEditorData(::StructureEditorData const& structureEditorData);
     // NOLINTEND
 
 public:

@@ -64,6 +64,18 @@ public:
     MCAPI EventCoordinatorManager();
 
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ActorEventCoordinator> getActorEventCoordinator();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::BlockEventCoordinator> getBlockEventCoordinator();
+
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ItemEventCoordinator> getItemEventCoordinator();
+
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::NpcEventCoordinator> getNpcEventCoordinator();
+#endif
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ScriptDeferredEventCoordinator> getScriptDeferredEventCoordinator();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ScriptingEventCoordinator> getScriptingEventCoordinator();
     // NOLINTEND
 
 public:

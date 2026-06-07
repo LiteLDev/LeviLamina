@@ -17,14 +17,6 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     virtual bool _isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const /*override*/;
-
-    virtual ~ActorHasDamagedEquipmentTest() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

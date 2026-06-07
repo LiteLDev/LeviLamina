@@ -4,12 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorRuntimeID;
 class MoveActorAbsoluteData;
+class MoveActorDeltaData;
 class Player;
 class Vec2;
 class Vec3;
-struct NetworkIdentifierWithSubId;
 // clang-format on
 
 class SpatialActorNetworkData {
@@ -40,6 +41,8 @@ public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static int& DEFAULT_DROP_PACKET_CHANCE();
+
+        MCNAPI static int& DEFAULT_SEND_EVERY_N_PACKETS();
         // NOLINTEND
     };
 
@@ -63,6 +66,14 @@ public:
         DebugSpatialPacketModifiers& operator=(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCNAPI float getSavingsPercentage() const;
+#endif
+        // NOLINTEND
     };
 
 public:
@@ -86,7 +97,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
+    MCNAPI explicit SpatialActorNetworkData(::Actor& entity);
 
     MCNAPI uint64 _getOptimizationScore(::Player& player) const;
 
@@ -94,15 +105,37 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI bool didTeleportEntity(::MoveActorAbsoluteData const& moveData);
+#endif
 
+    MCNAPI void enableAutoSend(bool enable);
+
+    MCNAPI ::Vec3 getLastSentPositionForAddingEntity();
+
+    MCNAPI ::Vec2 getLastSentRotationForAddingEntity();
+
+    MCNAPI float getLastSentYBodyRotationForAddingEntity();
+
+    MCNAPI float getLastSentYHeadRotationForAddingEntity();
+
+#ifdef LL_PLAT_C
     MCNAPI void handleServerData(
         ::MoveActorAbsoluteData const&                 moveData,
         ::std::chrono::steady_clock::time_point const& receiveTimepoint,
         bool                                           isPredictableActor
     );
+
+    MCNAPI void handleServerData(
+        ::MoveActorDeltaData const&                    moveData,
+        ::std::chrono::steady_clock::time_point const& receiveTimepoint,
+        bool                                           isPredictableActor
+    );
 #endif
 
-    MCNAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
+    MCNAPI bool isAutoSendEnabled() const;
+
+    MCNAPI bool isOptimizationsEnabled() const;
+
+    MCNAPI void sendUpdate(bool forceMove, bool forceMoveLocalEntity, bool forceAbsoluteMovement, bool forceCompletion);
 
 #ifdef LL_PLAT_C
     MCNAPI void setLastReceivedMoveDataForAddedEntity(
@@ -115,7 +148,21 @@ public:
 
     MCNAPI bool shouldSendMotionPredictionHintsPacket() const;
 
+    MCNAPI bool shouldSendUpdate(bool forceMove, bool forceMoveLocalEntity) const;
+
     MCNAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
+
+    MCNAPI ~SpatialActorNetworkData();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& getDebugSpatialPacketModifiers();
+#endif
+
+    MCNAPI static bool isPredictedMovementComponentEnabled();
     // NOLINTEND
 
 public:
@@ -124,5 +171,17 @@ public:
     MCNAPI static ::SpatialActorNetworkData::DebugSendRateModifiers& mDebugSendRateModifiers();
 
     MCNAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Actor& entity);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

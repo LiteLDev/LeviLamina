@@ -43,6 +43,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptServerStateMonitor(::ServerScriptManagerEvents& events);
+
+    MCAPI bool isReloading() const;
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptServerState const& state() const;
     // NOLINTEND
 
 public:
@@ -54,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

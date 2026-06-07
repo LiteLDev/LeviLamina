@@ -19,20 +19,23 @@ public:
     // prevent constructor by default
     RenderChunkConstants& operator=(RenderChunkConstants const&);
     RenderChunkConstants(RenderChunkConstants const&);
-    RenderChunkConstants();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void init() /*override*/;
-
-    virtual ~RenderChunkConstants() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI RenderChunkConstants();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

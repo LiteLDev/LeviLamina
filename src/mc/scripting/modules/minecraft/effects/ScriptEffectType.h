@@ -20,6 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::MobEffect const& getEffect() const;
+
     MCAPI ::std::string getName_V1() const;
 
     MCAPI ::std::string getName_V2() const;

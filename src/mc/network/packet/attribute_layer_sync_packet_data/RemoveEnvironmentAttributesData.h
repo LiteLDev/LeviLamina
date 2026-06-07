@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,21 +20,15 @@ public:
 
 public:
     // prevent constructor by default
-    RemoveEnvironmentAttributesData(RemoveEnvironmentAttributesData const&);
+    RemoveEnvironmentAttributesData& operator=(RemoveEnvironmentAttributesData const&);
     RemoveEnvironmentAttributesData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData&
-    operator=(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData&&);
+    MCAPI RemoveEnvironmentAttributesData(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const&);
 
-    MCAPI ::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData&
-    operator=(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const&);
-
-    MCAPI bool operator==(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const&) const;
-
-    MCAPI ~RemoveEnvironmentAttributesData();
+    MCAPI bool operator==(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const& rhs) const;
     // NOLINTEND
 
 public:
@@ -48,9 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData const&);
     // NOLINTEND
 };
 

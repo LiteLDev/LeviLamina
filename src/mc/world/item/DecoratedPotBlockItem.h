@@ -15,6 +15,10 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class DecoratedPotBlockItem : public ::BlockItem {
 public:
+    // prevent constructor by default
+    DecoratedPotBlockItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void appendFormattedHovertext(
@@ -25,14 +29,20 @@ public:
     ) const /*override*/;
 
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
-
-    virtual ~DecoratedPotBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DecoratedPotBlockItem(::std::string const& name, int id);
+
     MCAPI ::std::string buildIngredientItemList(::CompoundTag const* ingredientList) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

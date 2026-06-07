@@ -51,7 +51,7 @@ public:
         WaitForServerStart        = 14,
         WorldCreationComplete     = 15,
         WorldCreationFailed       = 16,
-        CheckBannedState          = 17,
+        EnsureSignIn              = 17,
     };
 
 public:
@@ -110,17 +110,23 @@ public:
         ::ui::ProgressScreenNavigation                               progressScreenNavigation
     );
 
-    MCAPI void _handleCheckBannedState();
-
     MCFOLD void _handleCheckingDlc();
+
+    MCAPI void _handleEnsureSignIn();
 
     MCAPI void _handleJoinRealm();
 
+    MCAPI void _handleLoadingWorldTemplate();
+
     MCAPI void _handleSelectRealmsSlot();
+
+    MCAPI void _handleStartCreatingWorld();
 
     MCAPI void _handleStartLocalServer();
 
     MCAPI void _handleUploadToRealm();
+
+    MCAPI void _handleWaitForServerStart();
 
     MCAPI bool _isWorldPlatformLocked() const;
 
@@ -156,7 +162,7 @@ public:
 
     MCAPI bool isRandomSeedAllowed() const;
 
-    MCFOLD void selectRealmToCreateOn(::std::string const& realmId);
+    MCAPI void selectRealmToCreateOn(::std::string const& realmId);
 
     MCAPI void setWorldPreviewImagePath(::std::string const& worldPreviewImagePath);
 

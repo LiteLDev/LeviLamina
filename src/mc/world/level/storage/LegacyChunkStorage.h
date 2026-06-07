@@ -65,13 +65,13 @@ public:
         ::Biome&                         defaultBiome
     );
 
+    MCNAPI bool _isImported(::ChunkPos const& pos);
+
     MCNAPI bool _loadChunk(::LevelChunk& lc);
 
     MCNAPI void _loadEntities();
 
     MCNAPI void _markChunkAsImported(::ChunkPos const& pos);
-
-    MCNAPI bool _openRegionFile();
     // NOLINTEND
 
 public:

@@ -16,6 +16,8 @@ namespace mce { class MaterialPtr; }
 namespace mce { class Mesh; }
 namespace mce { class TexturePtr; }
 namespace mce { struct BufferResourceService; }
+namespace mce { struct MeshDataVertexFieldCounts; }
+namespace mce::framebuilder { struct FrameLightingModelCapabilities; }
 // clang-format on
 
 class Tessellator {
@@ -45,7 +47,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                  mIsFormatFixed;
-    ::ll::TypedStorage<8, 288, ::mce::MeshData>                     mMeshData;
+    ::ll::TypedStorage<8, 312, ::mce::MeshData>                     mMeshData;
     ::ll::TypedStorage<1, 1, bool>                                  mHasNormals;
     ::ll::TypedStorage<8, 8, uint64>                                mNextReserve;
     ::ll::TypedStorage<4, 20, ::std::optional<::glm::vec4>>         mNextNormal;
@@ -54,6 +56,7 @@ public:
     ::ll::TypedStorage<2, 4, ::std::optional<ushort>>               mNextBoneId;
     ::ll::TypedStorage<2, 4, ::std::optional<ushort>>               mNextPBRTextureIdx;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                 mNextMERS;
+    ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                mNextGeoType;
     ::ll::TypedStorage<1, 1, bool>                                  mIndexPhase;
     ::ll::TypedStorage<4, 12, ::Vec3>                               mPostTransformOffset;
     ::ll::TypedStorage<4, 12, ::Vec3>                               mPostTransformScale;
@@ -89,40 +92,109 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Tessellator(::std::weak_ptr<::mce::BufferResourceService> bufferResourceService);
 
-    MCAPI void _tex(::Vec2 const& coord, int unit);
+    MCAPI void addPostTransformOffset(::Vec3 const& v);
 
     MCAPI void addPostTransformOffset(float x, float y, float z);
+
+    MCAPI void addRotation(float angle, ::Vec3 const& axis);
+
+    MCAPI void addTranslation(::Vec3 const& offset);
+
+    MCAPI void applyDefaultTransform();
 
     MCAPI void
     begin(::Tessellator::DebugContextCallback debugContextCallback, int reservedVertices, bool buildFaceData);
 
-    MCAPI void begin(
-        ::Tessellator::DebugContextCallback debugContextCallback,
-        ::mce::PrimitiveMode                mode,
-        int                                 reservedVertices,
-        bool                                buildFaceData
-    );
+    MCAPI void
+    begin(::Tessellator::DebugContextCallback mode, ::mce::PrimitiveMode reservedVertices, int buildFaceData, bool);
+
+    MCAPI void beginIndices(uint64 estimateCount);
+
+    MCAPI void beginOverride(::Tessellator::DebugContextCallback debugContextCallback);
+
+    MCAPI void bone0(ushort index);
+
+    MCAPI void cancel();
 
     MCAPI void clear();
 
     MCAPI void color(::mce::Color const& c);
 
+    MCAPI void color(int c);
+
     MCAPI void color(float r, float g, float b, float a);
+
+    MCAPI void colorABGR(int c);
+
+    MCAPI ::mce::Mesh
+    end(::std::string_view                                  debugName,
+        ::Tessellator::SupplementaryFieldAutoGenerationMode supplementaryFieldGenerationMode);
 
     MCAPI ::mce::Mesh
     end(::Tessellator::UploadMode                           uploadMode,
         ::std::string_view                                  debugName,
         ::Tessellator::SupplementaryFieldAutoGenerationMode supplementaryFieldGenerationMode);
 
+    MCAPI ::mce::Mesh endOverride(
+        ::std::string_view                                  debugName,
+        ::Tessellator::SupplementaryFieldAutoGenerationMode supplementaryFieldGenerationMode
+    );
+
+    MCAPI bool forceTessellateIntercept() const;
+
+    MCFOLD bool getHasNormals();
+
+    MCAPI ::Vec3 const& getPostTransformOffset() const;
+
+    MCAPI ::glm::mat4x4 const& getTransformMatrix() const;
+
+    MCAPI ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
+
+    MCAPI bool isOverridden();
+
+    MCAPI bool isTessellating() const;
+
+    MCAPI void mers(float metallic, float emissive, float roughness, float subsurface);
+
+    MCAPI void noColor();
+
+    MCAPI void normal(::Vec3 const& n, float w);
+
     MCAPI void normal(float x, float y, float z, float w);
+
+    MCAPI void pbrTextureIdx(ushort const& pbrTextureDataHandle);
 
     MCAPI void postTransformScale(::Vec3 const& scale);
 
     MCAPI void quad(uint i1, uint i2, uint i3, uint i4);
 
+    MCAPI void reserveDeferredVertices(uint64 count);
+
+    MCAPI void resetPostTransformScale();
+
+    MCAPI void resetTessellateIntercept();
+
     MCAPI void resetTransform(bool setToIdentity);
 
     MCAPI void rotateAroundPivot(::Vec3 const& pivotOffset, float angle, ::Vec3 const& rotationAxis, bool preTransform);
+
+    MCAPI void setHasNormals(bool hasNormal);
+
+    MCAPI void setPostTransformOffset(::Vec3 const& v);
+
+    MCAPI void setPostTransformOffset(float xo, float yo, float zo);
+
+    MCAPI void setQuadFacingID(uchar facing);
+
+    MCAPI void setQuadTwoSided(bool twoSided);
+
+    MCAPI void setScaleTransform(::Vec3 const& scale);
+
+    MCAPI void setTessellateIntercept(
+        ::std::function<void(::Tessellator const&, ::mce::MaterialPtr const&, ::mce::TexturePtr const&)> callback
+    );
+
+    MCAPI bool shouldApplyTransform() const;
 
     MCAPI void simpleQuad(
         ::Vec3 const& pos0,
@@ -135,17 +207,38 @@ public:
         ::Vec2 const& uv3
     );
 
+    MCAPI void tex(::Vec2 const& v);
+
+    MCAPI void tex(float u, float v);
+
     MCAPI void tex1(::Vec2 const& v);
+
+    MCAPI void tex2(::Vec2 const& v);
+
+    MCAPI void triangle(uint i1, uint i2, uint i3);
 
     MCAPI void triggerIntercept(::mce::MaterialPtr const& material, ::mce::TexturePtr const& texture);
 
     MCAPI void trim();
 
+    MCAPI void vertex(::Vec3 const& pos);
+
     MCAPI void vertex(float x, float y, float z);
+
+    MCAPI void vertexUV(::Vec3 const& pos, ::Vec2 const& uv);
+
+    MCAPI void vertexUV(::Vec3 const& pos, float u, float v);
 
     MCAPI void vertexUV(float x, float y, float z, float u, float v);
 
     MCAPI ~Tessellator();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCFOLD static ::Tessellator::SupplementaryFieldAutoGenerationMode
+    selectFieldAutoGenerationMode(::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCaps);
     // NOLINTEND
 
 public:

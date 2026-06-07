@@ -4,22 +4,31 @@
 
 // auto generated inclusion list
 #include "mc/resources/PackError.h"
+#include "mc/resources/PackParseErrorType.h"
 
 class EducationMetadataError : public ::PackError {
+public:
+    // prevent constructor by default
+    EducationMetadataError();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const /*override*/;
 
     virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
-
-    virtual ~EducationMetadataError() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI EducationMetadataError(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
     // NOLINTEND
 
 public:

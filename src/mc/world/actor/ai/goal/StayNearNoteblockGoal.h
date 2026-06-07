@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Mob;
 // clang-format on
 
-class StayNearNoteblockGoal : public ::Goal {
+class StayNearNoteblockGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,8 +43,20 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~StayNearNoteblockGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit StayNearNoteblockGoal(::Mob& mob);
+
+    MCAPI ::std::optional<::BlockPos> const _hasLastVibrationAtNoteblock();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

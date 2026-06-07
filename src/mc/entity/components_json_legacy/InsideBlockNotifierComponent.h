@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class InsideBlockEventMap;
 // clang-format on
 
@@ -15,14 +16,18 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InsideBlockNotifierComponent& operator=(InsideBlockNotifierComponent const&);
-    InsideBlockNotifierComponent(InsideBlockNotifierComponent const&);
-    InsideBlockNotifierComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InsideBlockNotifierComponent& operator=(::InsideBlockNotifierComponent&&);
+    MCFOLD ::InsideBlockEventMap* _findBlockMap(::Block const& block);
+
+    MCFOLD ::InsideBlockEventMap const* _findBlockMapConst(::Block const& block) const;
+
+    MCFOLD ::std::vector<::InsideBlockEventMap> const& getBlockList() const;
+
+    MCAPI bool isTrackedBlock(::Block const& block) const;
+
+    MCAPI void resetBlocksInsideState();
+
+    MCAPI void setInsideBlock(::Block const& block, bool isInside);
     // NOLINTEND
 };

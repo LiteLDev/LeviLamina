@@ -77,10 +77,10 @@ public:
     // NOLINTBEGIN
     virtual ~AsyncDnsResolver() /*override*/ = default;
 
-    virtual void Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
-
     virtual void
     Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
+
+    virtual void Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
     virtual ::webrtc::AsyncDnsResolverResult const& result() const /*override*/;
     // NOLINTEND
@@ -100,9 +100,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
-
     MCNAPI void $Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
+
+    MCNAPI void $Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
 
     MCNAPI ::webrtc::AsyncDnsResolverResult const& $result() const;
 

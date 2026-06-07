@@ -7,12 +7,6 @@
 
 struct OceanFrozenSurfaceFlag : public ::BiomeComponentBase {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OceanFrozenSurfaceFlag() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

@@ -14,22 +14,37 @@ public:
 
 public:
     // prevent constructor by default
-    ResourcePackChunkDataPacketPayload(ResourcePackChunkDataPacketPayload const&);
+    ResourcePackChunkDataPacketPayload& operator=(ResourcePackChunkDataPacketPayload const&);
     ResourcePackChunkDataPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload&&);
+    MCAPI ResourcePackChunkDataPacketPayload(::ResourcePackChunkDataPacketPayload const&);
 
-    MCAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload const&);
+    MCAPI ResourcePackChunkDataPacketPayload(
+        ::std::string const& name,
+        int                  chunkID,
+        uint64               byteOffset,
+        ::std::vector<uchar> data
+    );
+
+    MCAPI ::ResourcePackChunkDataPacketPayload& operator=(::ResourcePackChunkDataPacketPayload&&);
 
     MCAPI ~ResourcePackChunkDataPacketPayload();
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ResourcePackChunkDataPacketPayload const&);
+
+    MCAPI void* $ctor(::std::string const& name, int chunkID, uint64 byteOffset, ::std::vector<uchar> data);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

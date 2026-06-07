@@ -24,8 +24,6 @@ public:
 
     virtual void
     registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator) /*override*/;
-
-    virtual ~VanillaGameModuleDedicatedServer() /*override*/ = default;
     // NOLINTEND
 
 public:

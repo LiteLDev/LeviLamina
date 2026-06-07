@@ -34,8 +34,6 @@ public:
     // NOLINTBEGIN
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
-
-    virtual ~DividerControl() /*override*/ = default;
     // NOLINTEND
 
 public:

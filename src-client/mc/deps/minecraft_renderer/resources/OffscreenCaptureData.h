@@ -14,20 +14,13 @@ public:
 public:
     // prevent constructor by default
     OffscreenCaptureData& operator=(OffscreenCaptureData const&);
+    OffscreenCaptureData(OffscreenCaptureData const&);
     OffscreenCaptureData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OffscreenCaptureData(::OffscreenCaptureData const&);
-
     MCAPI ~OffscreenCaptureData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OffscreenCaptureData const&);
     // NOLINTEND
 
 public:

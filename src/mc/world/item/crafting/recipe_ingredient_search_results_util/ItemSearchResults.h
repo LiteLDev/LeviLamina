@@ -51,7 +51,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 };

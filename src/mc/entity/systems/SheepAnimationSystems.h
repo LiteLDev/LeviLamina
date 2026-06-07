@@ -13,9 +13,4 @@ namespace SheepAnimationSystems {
 MCAPI void registerSystems(::EntitySystems& registry, bool isClientSide);
 // NOLINTEND
 
-// static variables
-// NOLINTBEGIN
-MCAPI ::std::string const& JEB_NAME();
-// NOLINTEND
-
 } // namespace SheepAnimationSystems

@@ -21,10 +21,12 @@ class CommandOutput;
 class CommandOutputSender;
 class CommandRegistry;
 class DeferredCommandBase;
+class DeferredScriptCommand;
 class Experiments;
 class ICommandsContextProvider;
 class ItemRegistryRef;
 class Level;
+class Packet;
 class Recipes;
 struct MCRESULT;
 struct MinecraftCommandsArguments;
@@ -76,7 +78,20 @@ public:
         ::std::function<void(::MCRESULT)>   callback
     );
 
+    MCAPI void
+    enqueueDeferredCompiledCommand(::gsl::not_null<::Command*> command, ::std::unique_ptr<::CommandOrigin> origin);
+
+    MCAPI bool enqueueDeferredScriptCommand(::std::unique_ptr<::DeferredScriptCommand> scriptCommand);
+
     MCAPI ::MCRESULT executeCommand(::CommandContext& context, bool suppressOutput) const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::CommandOutputSender& getOutputSender() const;
+#endif
+
+    MCFOLD ::CommandRegistry const& getRegistry() const;
+
+    MCFOLD ::CommandRegistry& getRegistry();
 
     MCAPI void handleOutput(::CommandOrigin const& origin, ::CommandOutput const& output) const;
 
@@ -94,6 +109,10 @@ public:
         ::Recipes const&              recipes
     );
 
+#ifdef LL_PLAT_C
+    MCFOLD void registerChatPermissionsCallback(::std::function<bool()> callback);
+#endif
+
     MCAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
 
 #ifdef LL_PLAT_C
@@ -103,9 +122,20 @@ public:
         int                                version,
         bool                               suppressOutput
     );
+#endif
+
+    MCAPI void runCommand(::Command& command, ::CommandOrigin& origin);
+
+    MCAPI void
+    runCommand(::HashedString const& commandStr, ::CommandOrigin& origin, ::CurrentCmdVersion commandVersion);
+
+#ifdef LL_PLAT_C
+    MCAPI void setOutputSender(::std::unique_ptr<::CommandOutputSender> outputSender);
+#endif
+
+    MCAPI void setRegistryNetworkUpdateCallback(::std::function<void(::Packet const&)> callback) const;
 
     MCAPI void tick();
-#endif
     // NOLINTEND
 
 public:

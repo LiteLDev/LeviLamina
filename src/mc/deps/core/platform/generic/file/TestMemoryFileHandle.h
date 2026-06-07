@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Core::Result _write(void const*, uint64) /*override*/;
-
-    virtual ~TestMemoryFileHandle() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -55,16 +55,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldSystemModules& operator=(WorldSystemModules const&);
-    WorldSystemModules(WorldSystemModules const&);
-    WorldSystemModules();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSystemModules(::World::WorldSystemModules&&);
-
     MCAPI ~WorldSystemModules();
     // NOLINTEND
 
@@ -75,12 +67,6 @@ public:
         ::World::WorldSystemModuleGameDependencies&&     game,
         ::World::WorldSystemModulePlatformDependencies&& platform
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::World::WorldSystemModules&&);
     // NOLINTEND
 
 public:

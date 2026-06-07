@@ -11,7 +11,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class JukeboxBlockActor;
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -21,16 +20,8 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockRecordPlayerComponentV010 : public ::ScriptModuleMinecraft::BaseScriptBlockActorComponent {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockRecordPlayerComponentV010() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::JukeboxBlockActor* _tryGetJukeboxActor();
-
     MCAPI ::Scripting::Result_deprecated<void> clearRecord();
 
     MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();

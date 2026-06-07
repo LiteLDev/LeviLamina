@@ -11,7 +11,6 @@
 // clang-format off
 class IPersonaRepository;
 class IStoreCatalogItem;
-class PersonaPiece;
 class UIPropertyBag;
 namespace persona { class PieceOfferWrapper; }
 // clang-format on
@@ -36,23 +35,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ReactAnimationData& operator=(ReactAnimationData const&);
-        ReactAnimationData(ReactAnimationData const&);
-        ReactAnimationData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ReactAnimationData(::PersonaAnimationModel::ReactAnimationData&&);
-
         MCAPI ~ReactAnimationData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::PersonaAnimationModel::ReactAnimationData&&);
         // NOLINTEND
 
     public:
@@ -63,6 +48,8 @@ public:
     };
 
     using ReactAnimationType = ::persona::ReactAnimationType;
+
+    using ReactAnimationData = ::PersonaAnimationModel::ReactAnimationData;
 
 public:
     // member variables
@@ -96,11 +83,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PersonaAnimationModel(::IPersonaRepository const& personaRepo);
+
     MCAPI void _populateReactAnimations();
 
     MCAPI void playEmote(::IStoreCatalogItem const& emoteCatalogOffer);
 
-    MCAPI void playEmote(::PersonaPiece const& emoteToPlay);
+    MCAPI void playEmote(::persona::PieceOfferWrapper const& emoteCatalogOffer);
 
     MCAPI void playReactAnimations(::persona::PieceType pieceType, bool offer);
 
@@ -109,5 +98,19 @@ public:
     MCAPI void updateAppearanceData(::persona::PieceOfferWrapper const& offer, bool isOwned);
 
     MCAPI void updatePaperDollAnimation(::UIPropertyBag& bag);
+
+    MCAPI ~PersonaAnimationModel();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IPersonaRepository const& personaRepo);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ class RealmWorldUploaderFacet : public ::OreUI::FacetBase<::OreUI::RealmWorldUpl
 public:
     // RealmWorldUploaderFacet inner types define
     enum class FacetStatus : uchar {
-        CheckBannedState           = 0,
+        EnsureSignIn               = 0,
         SelectRealmsSlot           = 1,
         CreateWorld                = 2,
         CreateAndUploadToRealm     = 3,
@@ -74,8 +74,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~RealmWorldUploaderFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -88,15 +86,15 @@ public:
         ::OreUI::Router&                         uiRouter
     );
 
-    MCAPI void _handleCheckBannedState();
-
     MCAPI void _handleCreateAndUploadToRealm();
+
+    MCAPI void _handleEnsureSignIn();
 
     MCAPI void _handleSelectRealmsSlot();
 
     MCAPI void _handleUploadToRealm();
 
-    MCAPI void _selectRealmSlot();
+    MCAPI void _saveRealmWorld(::std::string const& worldID);
 
     MCAPI void
     _startUploadToRealm(::std::string const& worldID, ::OreUI::RealmWorldUploaderFacet::UploadAction uploadAction);
@@ -105,7 +103,7 @@ public:
 
     MCAPI void clearUploadWorldToRealmTaskState();
 
-    MCAPI ::std::optional<::OreUI::UploadToRealmsError> const& getUploadWorldToRealmError() const;
+    MCFOLD ::std::optional<::OreUI::UploadToRealmsError> const& getUploadWorldToRealmError() const;
 
     MCAPI ::OreUI::FacetTaskState getUploadWorldToRealmTaskState() const;
 
@@ -131,12 +129,6 @@ public:
         ::std::shared_ptr<::PlayScreenModel>     playScreenModel,
         ::OreUI::Router&                         uiRouter
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

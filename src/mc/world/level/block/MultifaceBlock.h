@@ -14,7 +14,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IBlockWorldGenAPI;
@@ -39,10 +38,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MultifaceBlock() /*override*/ = default;
+    virtual ~MultifaceBlock() /*override*/;
 
     virtual ::AABB const&
-    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
+    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const& bufferAABB, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
     virtual ::AABB getCollisionShape(
@@ -85,13 +84,13 @@ public:
     virtual bool isLavaBlocking() const /*override*/;
 
     virtual ::Block const& sanitizeFillBlock(::Block const& block) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MultifaceBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI MultifaceBlock(
         ::std::string const&                         nameId,
         int                                          id,
@@ -124,6 +123,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static int _getNumSides(::Block const& block);
+
+    MCAPI static bool _hasAnyFace(::Block const& block);
+
+    MCAPI static bool _hasAnyVacantFace(::Block const& block);
+
+    MCAPI static int convertOldMultifaceToNewMultifaceValue(int oldMultifaceDirections);
+
     MCAPI static ::Block const& getBlockForPlacement(
         ::Block const&    oldBlock,
         ::Block const&    placementBlock,
@@ -166,6 +173,8 @@ public:
 
     MCAPI static int const& MULTIFACE_NORTH();
 
+    MCAPI static int const& MULTIFACE_SIDES();
+
     MCAPI static int const& MULTIFACE_SOUTH();
 
     MCAPI static int const& MULTIFACE_UP();
@@ -176,6 +185,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI void* $ctor(
         ::std::string const&                         nameId,
         int                                          id,
@@ -185,13 +196,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
+        ::Block const&             block,
+        ::IConstBlockSource const& bufferAABB,
         ::BlockPos const&,
-        ::AABB& bufferAABB
+        ::AABB&
     ) const;
 
     MCFOLD ::AABB $getCollisionShape(
@@ -237,8 +254,6 @@ public:
     MCFOLD bool $isLavaBlocking() const;
 
     MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

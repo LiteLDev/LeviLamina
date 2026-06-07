@@ -15,7 +15,9 @@ class Container;
 class ContainerScreenValidatorBase;
 class ContainerValidationBase;
 class ItemStack;
+class ItemStackBase;
 class SimpleSparseContainer;
+struct ContainerIterationRange;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
 struct ContainerValidationLayer;
@@ -70,6 +72,13 @@ public:
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
     );
 
+    MCAPI bool _canSet(
+        ::ContainerValidationSlotInfo const& slotInfo,
+        ::ItemStackBase const&               item,
+        int                                  amount,
+        bool                                 isInternalTransfer
+    ) const;
+
     MCAPI void _commit();
 
     MCAPI ::ContainerValidationSlotInfo
@@ -82,7 +91,12 @@ public:
 
     MCAPI bool _propagateContainers();
 
-    MCAPI int _tryAddItem(::ContainerValidationSlotInfo& slotInfo, int addCount, bool allowPartialSuccess);
+    MCAPI int _tryAddItem(
+        ::ContainerValidationSlotInfo& dstSlotInfo,
+        ::ItemStackBase const&         srcItem,
+        int                            addCount,
+        bool                           allowPartialSuccess
+    );
 
     MCAPI bool
     _tryMoveItem(::ContainerValidationSlotInfo& srcValidatorPair, ::ContainerValidationSlotInfo& dstValidatorPair);
@@ -103,12 +117,29 @@ public:
         ::ContainerScreenRequestActionType   actionType
     );
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::optional<::ContainerIterationRange>
+    getContainerIterator(::ContainerValidationSlotData const& slotData);
+#endif
+
     MCAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);
+
+    MCAPI bool isCraftingImplemented();
+
+#ifdef LL_PLAT_C
+    MCAPI void postRequest();
+#endif
 
     MCAPI bool tryCommitActionResults();
 
     MCAPI ::ContainerValidationResult tryConsume(::ContainerValidationSlotData const& srcSlotData, int transferAmount);
+
+#ifdef LL_PLAT_C
+    MCAPI ::ContainerValidationResult tryConsumeExpected(::ContainerValidationSlotData const& srcSlot);
+#endif
+
+    MCAPI ::ContainerValidationResult tryDestroy(::ContainerValidationSlotData const& srcSlotData, int transferAmount);
 
     MCAPI ::ContainerValidationResult
     tryDrop(::ContainerValidationSlotData const& srcSlotData, int transferAmount, bool dropRandomly);

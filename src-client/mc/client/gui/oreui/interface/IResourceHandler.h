@@ -2,35 +2,36 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
+
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { class ResourceResponse; }
-namespace OreUI { class ResourceStreamResponse; }
-namespace OreUI { struct ResourceRequest; }
+namespace Gameface { class ResourceResponse; }
+namespace Gameface { class ResourceStreamResponse; }
+namespace Gameface { struct ResourceRequest; }
 // clang-format on
 
-namespace OreUI {
+namespace Gameface {
 
 class IResourceHandler {
 public:
     // IResourceHandler inner types define
-    enum class Status : int {
-        Success = 0,
-        Failure = 1,
-        Queued  = 2,
-    };
+    using Status = ::Gameface::ResourceHandlerStatus;
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~IResourceHandler() = default;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) = 0;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) = 0;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse& response) = 0;
+    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
+        ::Gameface::ResourceRequest const&  request,
+        ::Gameface::ResourceStreamResponse& response
+    ) = 0;
 
     virtual void update() = 0;
 
@@ -48,4 +49,4 @@ public:
     // NOLINTEND
 };
 
-} // namespace OreUI
+} // namespace Gameface

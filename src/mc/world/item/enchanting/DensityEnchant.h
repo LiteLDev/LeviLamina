@@ -20,9 +20,7 @@ public:
 
     virtual int getMaxLevel() const /*override*/;
 
-    virtual float getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const /*override*/;
-
-    virtual ~DensityEnchant() /*override*/ = default;
+    virtual float getDamageBonus(int level, ::Actor const& attacker, ::Actor const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -34,7 +32,7 @@ public:
 
     MCFOLD int $getMaxLevel() const;
 
-    MCAPI float $getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const;
+    MCAPI float $getDamageBonus(int level, ::Actor const& attacker, ::Actor const&) const;
 
 
     // NOLINTEND

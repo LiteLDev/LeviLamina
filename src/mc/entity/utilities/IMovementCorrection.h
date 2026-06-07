@@ -18,13 +18,23 @@ public:
     // NOLINTBEGIN
     virtual ~IMovementCorrection() = default;
 
+#ifdef LL_PLAT_S
+    virtual ::AdvanceFrameResult
+    getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& snapshot);
+#else // LL_PLAT_C
     virtual ::AdvanceFrameResult getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& entity);
+#endif
 
     virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) = 0;
 
     virtual ::std::bitset<2> getCorrectionTypeBitset() const = 0;
 
+#ifdef LL_PLAT_S
+    virtual void advanceFrame(::EntityContext& rewindEntity) const = 0;
+#else // LL_PLAT_C
     virtual void advanceFrame(::EntityContext& entity) const = 0;
+#endif
+
     // NOLINTEND
 
 public:

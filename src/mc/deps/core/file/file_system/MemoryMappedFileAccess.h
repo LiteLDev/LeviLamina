@@ -29,21 +29,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const /*override*/;
-
-        virtual ~MemoryMappedFileReadAccess() /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        virtual uint64 fread(void* buffer, uint64 count, uint64 file, void*) const /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI uint64 $fread(void* buffer, uint64 size, uint64 count, void* file) const;
+        MCNAPI uint64 $fread(void* buffer, uint64 count, uint64 file, void*) const;
 
 
         // NOLINTEND
@@ -59,21 +51,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) /*override*/;
-
-        virtual ~MemoryMappedFileWriteAccess() /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
+        virtual uint64 fwrite(void const* buffer, uint64 count, uint64 file, void*) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI uint64 $fwrite(void const* buffer, uint64 size, uint64 count, void* file);
+        MCNAPI uint64 $fwrite(void const* buffer, uint64 count, uint64 file, void*);
 
 
         // NOLINTEND

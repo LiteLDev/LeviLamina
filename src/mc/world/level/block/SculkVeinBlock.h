@@ -12,18 +12,32 @@ class Block;
 class BlockActor;
 class BlockPos;
 class ItemInstance;
+class Material;
 // clang-format on
 
 class SculkVeinBlock : public ::MultifaceBlock {
+public:
+    // prevent constructor by default
+    SculkVeinBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    // NOLINTEND
 
-    virtual ~SculkVeinBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SculkVeinBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -31,7 +45,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
 
     // NOLINTEND

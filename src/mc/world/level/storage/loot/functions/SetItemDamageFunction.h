@@ -26,19 +26,25 @@ public:
     // NOLINTBEGIN
     virtual ~SetItemDamageFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::RandomValueBounds getDamage() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

@@ -68,12 +68,6 @@ public:
     ScatteredFeaturePiece();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScatteredFeaturePiece() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScatteredFeaturePiece(int west, int floor, int north, int width, int height, int depth);
@@ -88,12 +82,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(int west, int floor, int north, int width, int height, int depth);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

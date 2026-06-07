@@ -14,17 +14,25 @@ public:
 
 public:
     // prevent constructor by default
-    PluginDetails(PluginDetails const&);
+    PluginDetails& operator=(PluginDetails const&);
     PluginDetails();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PluginDetails(::ScriptDebuggerMessages::PluginDetails const&);
+
+    MCNAPI PluginDetails(::std::string name, ::std::string moduleId);
+
     MCNAPI ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails&&);
+    // NOLINTEND
 
-    MCNAPI ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptDebuggerMessages::PluginDetails const&);
 
-    MCNAPI bool operator==(::ScriptDebuggerMessages::PluginDetails const&) const;
+    MCNAPI void* $ctor(::std::string name, ::std::string moduleId);
     // NOLINTEND
 };
 

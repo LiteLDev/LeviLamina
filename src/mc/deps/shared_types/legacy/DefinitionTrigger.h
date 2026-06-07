@@ -6,6 +6,11 @@
 #include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::Legacy {
 
 struct DefinitionTrigger {
@@ -18,9 +23,28 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DefinitionTrigger& operator=(DefinitionTrigger const&);
+    DefinitionTrigger();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DefinitionTrigger(::SharedTypes::Legacy::DefinitionTrigger const&);
+
     MCAPI ~DefinitionTrigger();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::Legacy::DefinitionTrigger const&);
     // NOLINTEND
 
 public:

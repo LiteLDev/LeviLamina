@@ -13,18 +13,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mValue;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BooleanConfirmationRequest();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Settings

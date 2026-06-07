@@ -50,11 +50,11 @@ public:
     virtual void uploadTextureToGPU() /*override*/;
 
     virtual void setTextConstantsInScreenContext(
-        ::ScreenContext& screenContext,
-        int,
-        float               guiScale,
-        ::mce::Color const& textColor,
-        bool                hasShadow
+        ::ScreenContext&    screenContext,
+        int                 guiScale,
+        float               textColor,
+        ::mce::Color const& hasShadow,
+        bool
     ) const /*override*/;
 
     virtual ::Vec2 getTranslationFactor() const /*override*/;
@@ -65,9 +65,9 @@ public:
 
     virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool) const /*override*/;
 
-    virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
+    virtual ::mce::MaterialPtr const& getMaterial(int, bool) const /*override*/;
 
-    virtual ::mce::Font::Type getType(int glyphSheet) const /*override*/;
+    virtual ::mce::Font::Type getType(int) const /*override*/;
 
     virtual void loadFontData(bool) /*override*/;
 
@@ -92,8 +92,6 @@ public:
 
     virtual ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     getFontSources() const /*override*/;
-
-    virtual ~MSDFFont() /*override*/;
     // NOLINTEND
 
 public:
@@ -121,12 +119,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
@@ -144,11 +136,11 @@ public:
     MCFOLD void $uploadTextureToGPU();
 
     MCFOLD void $setTextConstantsInScreenContext(
-        ::ScreenContext& screenContext,
-        int,
-        float               guiScale,
-        ::mce::Color const& textColor,
-        bool                hasShadow
+        ::ScreenContext&    screenContext,
+        int                 guiScale,
+        float               textColor,
+        ::mce::Color const& hasShadow,
+        bool
     ) const;
 
     MCAPI ::Vec2 $getTranslationFactor() const;
@@ -159,9 +151,9 @@ public:
 
     MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
 
-    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+    MCAPI ::mce::MaterialPtr const& $getMaterial(int, bool) const;
 
-    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+    MCFOLD ::mce::Font::Type $getType(int) const;
 
     MCAPI void $loadFontData(bool);
 

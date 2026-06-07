@@ -17,14 +17,6 @@ public:
     virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
-
-    virtual ~ActorIsBabyTest() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

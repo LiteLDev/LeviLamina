@@ -26,14 +26,6 @@ public:
     virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const /*override*/;
 
     virtual bool _isOtherBlockValidAsSource(::Block const& block) const /*override*/;
-
-    virtual ~SculkVeinMultifaceSpreader() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

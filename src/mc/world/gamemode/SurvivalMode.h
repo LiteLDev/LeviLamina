@@ -12,6 +12,7 @@ class Block;
 class BlockPos;
 class InteractionResult;
 class ItemStack;
+class Player;
 class Vec3;
 // clang-format on
 
@@ -24,6 +25,10 @@ public:
     ::ll::TypedStorage<4, 4, int>                          mTrialEndedReminder;
     ::ll::TypedStorage<8, 64, ::std::function<void(bool)>> mShowUpsellScreenCallback;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SurvivalMode();
 
 public:
     // virtual functions
@@ -60,13 +65,13 @@ public:
     virtual bool isInTrialMode() /*override*/;
 
     virtual void registerUpsellScreenCallback(::std::function<void(bool)> callback) /*override*/;
-
-    virtual ~SurvivalMode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit SurvivalMode(::Player& player);
+
     MCAPI void _messagePlayers(::std::string message);
 
     MCAPI void _showTrialReminder(bool force);
@@ -76,6 +81,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static bool& mTrialHasEnded();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:
@@ -110,7 +121,7 @@ public:
 
     MCAPI void $setTrialMode(bool isEnabled);
 
-    MCAPI bool $isInTrialMode();
+    MCFOLD bool $isInTrialMode();
 
     MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
 

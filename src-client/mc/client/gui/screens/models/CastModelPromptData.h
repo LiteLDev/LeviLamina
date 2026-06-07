@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CastModelPromptData() /*override*/ = default;
+    virtual ~CastModelPromptData() /*override*/;
 
     virtual bool allowedToOpenCheck() const /*override*/;
 
@@ -57,6 +57,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::PersonaScreenModel>  screenModel,
         ::Bedrock::NonOwnerPointer<::CharacterSelectorModel> characterSelectorModel
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

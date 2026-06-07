@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LayoutComponent;
 class ScreenInputContext;
 class UIAnimationController;
 class UIControl;
@@ -84,30 +85,45 @@ public:
     MCAPI ::glm::vec2 _getContentSize() const;
 
     MCAPI bool _handlePointerMove(
-        ::VisualTree&                 visualTree,
-        ::ScreenInputContext&         context,
-        ::UIAnimationController&      animationController,
-        ::ScreenEvent const&          screenEvent,
-        ::ComponentReceiveActionType& returnValue
+        ::VisualTree&         screenEvent,
+        ::ScreenInputContext& returnValue,
+        ::UIAnimationController&,
+        ::ScreenEvent const&,
+        ::ComponentReceiveActionType&
     );
 
     MCAPI bool _handleScrollDirection(
-        ::VisualTree&                 visualTree,
-        ::ScreenInputContext&         context,
-        ::UIAnimationController&      animationController,
-        ::ScreenEvent const&          screenEvent,
-        ::ComponentReceiveActionType& returnValue
+        ::VisualTree&         screenEvent,
+        ::ScreenInputContext& returnValue,
+        ::UIAnimationController&,
+        ::ScreenEvent const&,
+        ::ComponentReceiveActionType&
+    );
+
+    MCAPI bool _handleScrollRequest(
+        ::VisualTree&         screenEvent,
+        ::ScreenInputContext& returnValue,
+        ::UIAnimationController&,
+        ::ScreenEvent const&,
+        ::ComponentReceiveActionType&
     );
 
     MCAPI bool _handleTrackScrollButton(
-        ::VisualTree&                 visualTree,
-        ::ScreenInputContext&         context,
-        ::UIAnimationController&      animationController,
-        ::ScreenEvent const&          screenEvent,
-        ::ComponentReceiveActionType& returnValue
+        ::VisualTree&         screenEvent,
+        ::ScreenInputContext& returnValue,
+        ::UIAnimationController&,
+        ::ScreenEvent const&,
+        ::ComponentReceiveActionType&
     );
 
     MCAPI void _makeScrollBarVisible();
+
+    MCAPI void _setContentOffset(
+        ::LayoutComponent& layout,
+        ::glm::vec2        offset,
+        ::glm::vec2 const& scrollContentSize,
+        ::glm::vec2 const& scrollViewPortSize
+    );
 
     MCAPI ::ui::AnimationStatus _updateDynamicsAndScrollPosition(::mce::TimeStep const& timeStep);
 
@@ -121,6 +137,8 @@ public:
 
     MCAPI ::ui::AnimationStatus animationScrollingTick(::mce::TimeStep const& timeStep);
 
+    MCFOLD ::std::weak_ptr<::UIControl> getScrollContent() const;
+
     MCAPI bool handleScrollDirection(
         ::VisualTree&            visualTree,
         ::UIAnimationController& animationController,
@@ -129,6 +147,10 @@ public:
         ::glm::vec2 const&       deltaPosition,
         bool                     alreadyHandled
     );
+
+    MCAPI bool isPointInViewPort(::glm::vec2 const& pointerPosition) const;
+
+    MCFOLD void setGestureControlMode(bool state);
     // NOLINTEND
 
 public:

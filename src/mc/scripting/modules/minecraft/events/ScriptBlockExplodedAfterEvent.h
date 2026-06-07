@@ -40,16 +40,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockExplodedAfterEvent(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
-
     MCAPI ScriptBlockExplodedAfterEvent(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
 
     MCAPI ScriptBlockExplodedAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                            scope
     );
-
-    MCAPI ~ScriptBlockExplodedAfterEvent();
     // NOLINTEND
 
 public:
@@ -61,20 +57,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
-
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
 
     MCAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                            scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -40,26 +40,24 @@ public:
     virtual void consumeCount(uint count) /*override*/;
 
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
-
-    virtual ~DelegatingRandom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $nextInt();
+    MCAPI int $nextInt();
 
-    MCFOLD int $nextInt(int const bound);
+    MCAPI int $nextInt(int const bound);
 
-    MCFOLD int64 $nextLong();
+    MCAPI int64 $nextLong();
 
     MCFOLD bool $nextBoolean();
 
-    MCFOLD double $nextDouble();
+    MCAPI double $nextDouble();
 
     MCAPI double $nextGaussianDouble();
 
-    MCFOLD void $consumeCount(uint count);
+    MCAPI void $consumeCount(uint count);
 
     MCFOLD ::std::unique_ptr<::IRandom> $fork();
 

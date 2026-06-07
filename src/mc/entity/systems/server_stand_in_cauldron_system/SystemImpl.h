@@ -55,8 +55,6 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-
-    virtual ~SystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

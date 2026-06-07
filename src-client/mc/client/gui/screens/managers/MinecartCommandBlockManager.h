@@ -100,6 +100,12 @@ public:
     MCAPI void _loadFromBaseCommandBlock();
 
     MCAPI void _saveToBaseCommandBlock(::BaseCommandBlock& baseCommandBlock);
+
+    MCAPI ::std::string getLastPerformedCommandBlockConditionalModeString();
+
+    MCAPI ::std::string getLastPerformedCommandBlockRedstoneModeString();
+
+    MCAPI ::std::string getLastPerformedCommandBlockTypeModeString();
     // NOLINTEND
 
 public:

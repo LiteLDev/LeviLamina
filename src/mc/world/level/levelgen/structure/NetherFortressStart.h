@@ -19,8 +19,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string_view getStructureName() const /*override*/;
-
-    virtual ~NetherFortressStart() /*override*/ = default;
     // NOLINTEND
 
 public:

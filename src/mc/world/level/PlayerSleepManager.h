@@ -23,6 +23,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlayerSleepManager();
+
+    MCFOLD ::PlayerSleepStatus const& getPlayerSleepStatus() const;
+
+    MCFOLD void setSleepStatus(::PlayerSleepStatus const& sleepStatus);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

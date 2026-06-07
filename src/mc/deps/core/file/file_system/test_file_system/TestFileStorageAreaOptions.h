@@ -6,11 +6,21 @@ namespace Bedrock {
 
 struct TestFileStorageAreaOptions {
 public:
+    // TestFileStorageAreaOptions inner types declare
+    // clang-format off
+    struct getCurrentTime;
+    // clang-format on
+
+    // TestFileStorageAreaOptions inner types define
+    struct getCurrentTime {};
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk1e9e56;
     ::ll::UntypedStorage<8, 16> mUnkdfc54f;
     ::ll::UntypedStorage<8, 64> mUnk4221c8;
+    ::ll::UntypedStorage<8, 64> mUnkd4ea61;
     // NOLINTEND
 
 public:

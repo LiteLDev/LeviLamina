@@ -30,7 +30,13 @@ public:
 
         MCAPI ::std::vector<::Motif const*> _getR21Motifs() const;
 
+        MCAPI void clear();
+
         MCAPI ::Motif const& getMotifByName(::std::string const& name) const;
+
+#ifdef LL_PLAT_C
+        MCFOLD ::std::vector<::Motif const*> const& getSplitMeshMotifsAsList() const;
+#endif
 
         MCAPI void init(::BaseGameVersion const& baseGameVersion);
         // NOLINTEND
@@ -51,6 +57,30 @@ public:
     ::ll::TypedStorage<4, 16, ::glm::vec4 const>   mUVs;
     ::ll::TypedStorage<1, 1, bool const>           mIsPublic;
     ::ll::TypedStorage<1, 1, bool const>           mIsSplitMeshPainting;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Motif();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Motif(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
+
+#ifdef LL_PLAT_C
+    MCFOLD int getHeight() const;
+#endif
+
+    MCFOLD ::std::string const getName() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::glm::vec4 const& getUVs() const;
+
+    MCFOLD int getWidth() const;
+
+    MCFOLD bool isSplitMeshPainting() const;
+#endif
     // NOLINTEND
 
 public:
@@ -157,5 +187,11 @@ public:
     MCAPI static ::Motif const& mWind();
 
     MCAPI static ::Motif const& mWither();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
     // NOLINTEND
 };

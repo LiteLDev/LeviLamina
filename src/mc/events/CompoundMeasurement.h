@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/events/PrivacyTagEnterprise.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Social::Events { class Measurement; }
@@ -27,12 +30,21 @@ public:
 public:
     // prevent constructor by default
     CompoundMeasurement& operator=(CompoundMeasurement const&);
-    CompoundMeasurement(CompoundMeasurement const&);
     CompoundMeasurement();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI CompoundMeasurement(::Social::Events::CompoundMeasurement const&);
+
+    MCNAPI CompoundMeasurement(
+        ::std::string const&                   dynamicColumnName,
+        ::std::string const&                   propertyName,
+        ::Social::Events::PrivacyTagEnterprise privacyTag,
+        uint64                                 maxSize,
+        uint64                                 maxNumberOfOperations
+    );
+
     MCNAPI void _addOrUpdateMeasurement(
         ::Social::Events::Measurements&      existingMeasurements,
         ::Social::Events::Measurement const& newMeasurement
@@ -47,6 +59,20 @@ public:
     MCNAPI void updateMeasurements(::Social::Events::CompoundMeasurement const& other);
 
     MCNAPI ~CompoundMeasurement();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Social::Events::CompoundMeasurement const&);
+
+    MCNAPI void* $ctor(
+        ::std::string const&                   dynamicColumnName,
+        ::std::string const&                   propertyName,
+        ::Social::Events::PrivacyTagEnterprise privacyTag,
+        uint64                                 maxSize,
+        uint64                                 maxNumberOfOperations
+    );
     // NOLINTEND
 
 public:

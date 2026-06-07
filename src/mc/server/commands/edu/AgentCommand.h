@@ -54,15 +54,7 @@ public:
         Turn           = 18,
     };
 
-    struct CommandInfo {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::AgentCommand::Mode>                                                     mode;
-        ::ll::TypedStorage<8, 8, char const*>                                                              name;
-        ::ll::TypedStorage<8, 64, ::std::function<::std::unique_ptr<::AgentCommands::Command>(::Player&)>> function;
-        // NOLINTEND
-    };
+    struct CommandInfo {};
 
     using AgentCommandFunction = ::std::function<::std::unique_ptr<::AgentCommands::Command>(::Player&)>;
 
@@ -91,8 +83,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~AgentCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -102,11 +92,11 @@ public:
 
     MCAPI void createAgent(::Player& player, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void createAgentOutputSuccess(::CommandOutput& output, bool wasSpawned) const;
-
     MCAPI void directionCommand(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void drop(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+    MCAPI ::std::string errorName() const;
 
     MCAPI void getPosition(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
@@ -117,6 +107,8 @@ public:
     MCAPI void reportSuccess(bool success, ::CommandOutput& output) const;
 
     MCAPI void setItem(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+    MCAPI ::std::string successName() const;
 
     MCAPI void tpAgent(::Player& player, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 

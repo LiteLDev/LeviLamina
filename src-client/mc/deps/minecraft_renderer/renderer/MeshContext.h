@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/checked_resource_service/ClientResourcePointer.h"
 #include "mc/external/render_dragon/resources/ServerResourcePointer.h"
 
 // auto generated forward declare list
@@ -58,7 +59,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MeshContext(
+        ::mce::RenderContext&                                 renderContext,
+        uchar const&                                          subClientId,
+        ::mce::Camera&                                        camera,
+        ::mce::GlobalConstantBuffers&                         globalConstantBuffers,
+        ::mce::GlobalConstantBufferManager&                   globalConstantBufferManager,
+        ::ShaderColor&                                        currentShaderColor,
+        ::ShaderColor&                                        currentShaderDarkColor,
+        ::mce::BufferResourceService&                         bufferResourceService,
+        ::mce::QuadIndexBuffer&                               currentQuadIndexBuffer,
+        ::mce::ClientResourcePointer<::mce::ImmediateBuffer>& immediateBuffer
+    );
+
     MCAPI ~MeshContext();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::mce::RenderContext&                                 renderContext,
+        uchar const&                                          subClientId,
+        ::mce::Camera&                                        camera,
+        ::mce::GlobalConstantBuffers&                         globalConstantBuffers,
+        ::mce::GlobalConstantBufferManager&                   globalConstantBufferManager,
+        ::ShaderColor&                                        currentShaderColor,
+        ::ShaderColor&                                        currentShaderDarkColor,
+        ::mce::BufferResourceService&                         bufferResourceService,
+        ::mce::QuadIndexBuffer&                               currentQuadIndexBuffer,
+        ::mce::ClientResourcePointer<::mce::ImmediateBuffer>& immediateBuffer
+    );
     // NOLINTEND
 
 public:

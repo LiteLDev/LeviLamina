@@ -7,12 +7,6 @@
 
 class CompoundCreatorContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CompoundCreatorContainerScreenValidator() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

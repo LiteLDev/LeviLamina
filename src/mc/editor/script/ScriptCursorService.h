@@ -9,8 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptCursorProperties; }
 namespace Editor::ScriptModule { class ScriptCursorRay; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -33,6 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI
+    ScriptCursorService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+
     MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getDefaultProperties() const;
 
     MCNAPI ::Scripting::Result_deprecated<uchar> getFacingDirection() const;
@@ -71,6 +76,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

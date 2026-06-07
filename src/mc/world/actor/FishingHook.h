@@ -13,6 +13,7 @@
 class ActorDefinitionGroup;
 class EntityContext;
 class HitResult;
+class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -88,13 +89,19 @@ public:
 
     MCAPI void _updateGravity();
 
-    MCAPI ::Actor* getFishingTarget();
-
-    MCAPI ::Actor* getOwner();
+    MCAPI void _updateServer();
 
     MCAPI void postNormalTick();
 
     MCAPI int retrieve();
+
+    MCAPI void shoot(::Vec3 dir, float pow, float uncertainty);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& BOBBER_SIZE();
     // NOLINTEND
 
 public:

@@ -54,9 +54,7 @@ public:
     MCNAPI
     Program(::std::vector<::std::unique_ptr<::Molang::details::IInstruction>> instructions, bool storeStackState);
 
-#ifdef LL_PLAT_C
     MCNAPI ::MolangScriptArg const& execute(::RenderParams& renderParams, ::MolangEvalParams& state) const;
-#endif
 
     MCNAPI ::Molang::details::Program& operator=(::Molang::details::Program const& rhs);
 

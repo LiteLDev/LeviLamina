@@ -22,17 +22,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::ServerLevel& level, ::Dimension& dimension) /*override*/;
+    virtual void execute(::ServerLevel&, ::Dimension&) /*override*/;
 
     virtual bool operator==(::IRequestAction const& action) const /*override*/;
-
-    virtual ~TestAction() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCAPI void $execute(::ServerLevel&, ::Dimension&);
 
 
     // NOLINTEND

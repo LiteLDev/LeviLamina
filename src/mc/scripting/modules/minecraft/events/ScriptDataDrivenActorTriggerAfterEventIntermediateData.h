@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ActorDefinitionEndedEvent;
 struct ActorDefinitionModifier;
 // clang-format on
 
@@ -22,9 +23,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptDataDrivenActorTriggerAfterEventIntermediateData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptDataDrivenActorTriggerAfterEventIntermediateData(::ActorDefinitionEndedEvent const& evt);
+
     MCAPI ~ScriptDataDrivenActorTriggerAfterEventIntermediateData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorDefinitionEndedEvent const& evt);
     // NOLINTEND
 
 public:

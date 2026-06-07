@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/RouteMode.h"
-#include "mc/client/gui/oreui/interface/RoutePrerequisite.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,11 +15,6 @@ namespace OreUI::RouteDataParserUtils {
 // functions
 // NOLINTBEGIN
 MCAPI ::OreUI::RouteMode _parseMode(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& entry
-);
-
-MCAPI ::OreUI::RoutePrerequisite _parsePrerequisite(
     ::rapidjson::
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& entry
 );

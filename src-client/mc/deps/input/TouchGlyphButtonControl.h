@@ -61,8 +61,7 @@ public:
 
     virtual void render(::InputRenderContext& context) const /*override*/;
 
-    virtual void
-    tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
+    virtual void tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int) /*override*/;
 
     virtual void release(::InputEventQueue& eventQueue) /*override*/;
     // NOLINTEND
@@ -172,7 +171,7 @@ public:
 
     MCAPI void $render(::InputRenderContext& context) const;
 
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int);
 
     MCAPI void $release(::InputEventQueue& eventQueue);
     // NOLINTEND

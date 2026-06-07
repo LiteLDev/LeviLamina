@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -14,7 +13,6 @@ class Actor;
 class BlockPos;
 class Dimension;
 class Level;
-class ServerLevel;
 class Vec2;
 class Vec3;
 // clang-format on
@@ -25,7 +23,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk2a0cc2;
     ::ll::UntypedStorage<1, 1>  mUnkb047b6;
-    ::ll::UntypedStorage<4, 4>  mUnk7e734d;
+    ::ll::UntypedStorage<4, 4>  mUnkfef23a;
     ::ll::UntypedStorage<8, 64> mUnk494336;
     // NOLINTEND
 
@@ -69,28 +67,6 @@ public:
     virtual void handleCommandOutputCallback(int successCount, ::std::string&& messages) const /*override*/;
 
     virtual bool isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptDebuggerCommandOrigin(
-        ::ServerLevel&                              origin,
-        ::CommandPermissionLevel                    permissionLevel,
-        ::DimensionType                             dimensionType,
-        ::std::function<void(int, ::std::string&&)> outputCallback
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ServerLevel&                              origin,
-        ::CommandPermissionLevel                    permissionLevel,
-        ::DimensionType                             dimensionType,
-        ::std::function<void(int, ::std::string&&)> outputCallback
-    );
     // NOLINTEND
 
 public:

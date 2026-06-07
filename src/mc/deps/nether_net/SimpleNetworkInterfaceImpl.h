@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimpleNetworkInterfaceImpl() /*override*/ = default;
+    virtual ~SimpleNetworkInterfaceImpl() /*override*/;
 
     virtual bool SendPacket(
         ::NetherNet::NetworkID remoteId,
@@ -137,8 +137,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::PeerConnectionInterface::RTCConfiguration GetRTCConfig(::NetherNet::NetworkID peerId) const;
-
     MCNAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
 
     MCNAPI void InitializeConfiguration(
@@ -161,6 +159,28 @@ public:
             ::NetherNet::CandidateAdd> const&            signal,
         ::std::optional<::NetherNet::SignalingChannelId> preference
     );
+
+    MCNAPI SimpleNetworkInterfaceImpl(
+        ::NetherNet::ContextProxy const&     ctx,
+        ::NetherNet::NetworkID               networkID,
+        ::NetherNet::TransportConfiguration* pConfiguration
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::NetherNet::ContextProxy const&     ctx,
+        ::NetherNet::NetworkID               networkID,
+        ::NetherNet::TransportConfiguration* pConfiguration
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

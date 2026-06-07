@@ -31,8 +31,6 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockChestObstructionDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -57,12 +55,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChestObstructionRule obstructionRule);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -8,7 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
 class IConstBlockSource;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class LlamaSpit : public ::PredictableProjectile {
@@ -19,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LlamaSpit();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void normalTick() /*override*/;
@@ -26,8 +33,26 @@ public:
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
+    // NOLINTEND
 
-    virtual ~LlamaSpit() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI LlamaSpit(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

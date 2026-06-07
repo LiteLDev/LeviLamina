@@ -25,16 +25,4 @@ public:
                                               mQueryFunctionPtr;
     ::ll::TypedStorage<8, 48, ::HashedString> mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangQueryFunctionPtr& operator=(MolangQueryFunctionPtr const&);
-    MolangQueryFunctionPtr(MolangQueryFunctionPtr const&);
-    MolangQueryFunctionPtr();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::MolangQueryFunctionPtr& operator=(::MolangQueryFunctionPtr&&);
-    // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/util/BlockCerealSchemaUpgrade.h"
 
 // auto generated forward declare list
@@ -13,6 +14,10 @@ class SemVersion;
 namespace BlockDescriptionVersioning {
 
 class BlockDescription11940Upgrade : public ::BlockCerealSchemaUpgrade {
+public:
+    // BlockDescription11940Upgrade inner types define
+    using CreativeItemCategory = ::SharedTypes::CreativeItemCategory;
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -28,8 +33,6 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const /*override*/;
-
-    virtual ~BlockDescription11940Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:

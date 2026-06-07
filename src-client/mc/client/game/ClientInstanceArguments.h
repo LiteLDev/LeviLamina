@@ -55,8 +55,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk1816d3;
         ::ll::UntypedStorage<4, 4>  mUnk59e9eb;
-        ::ll::UntypedStorage<8, 8>  mUnk26db83;
-        ::ll::UntypedStorage<8, 8>  mUnk5ce196;
+        ::ll::UntypedStorage<8, 8>  mUnkcef0cc;
         ::ll::UntypedStorage<8, 8>  mUnk554f65;
         ::ll::UntypedStorage<8, 16> mUnk95c634;
         // NOLINTEND
@@ -66,18 +65,6 @@ public:
         CreateLegacyClientNetworkHandlerArguments& operator=(CreateLegacyClientNetworkHandlerArguments const&);
         CreateLegacyClientNetworkHandlerArguments(CreateLegacyClientNetworkHandlerArguments const&);
         CreateLegacyClientNetworkHandlerArguments();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CreateLegacyClientNetworkHandlerArguments();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

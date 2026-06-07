@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ShapeDataPayload;
+class Vec3;
+namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -15,27 +17,17 @@ namespace ScriptModuleDebugUtilities {
 
 class ScriptArrowShape : public ::ScriptModuleDebugUtilities::ScriptLineShape {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mHeadRadius;
-    ::ll::TypedStorage<4, 4, float> mHeadLength;
-    ::ll::TypedStorage<4, 4, int>   mSegments;
-    // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
-
-    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
-
-    virtual ~ScriptArrowShape() /*override*/;
-    // NOLINTEND
+    // prevent constructor by default
+    ScriptArrowShape();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptArrowShape();
+    MCAPI ScriptArrowShape(
+        ::Scripting::WeakLifetimeScope const&                                           scope,
+        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
+        ::Vec3 const&                                                                   endLocation
+    );
     // NOLINTEND
 
 public:
@@ -47,23 +39,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
-
-    MCAPI void $applyUpdatedData(::ShapeDataPayload const& existing);
-
-
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                                           scope,
+        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
+        ::Vec3 const&                                                                   endLocation
+    );
     // NOLINTEND
 
 public:

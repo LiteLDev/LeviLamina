@@ -18,9 +18,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlockCustomComponentActorAfterEventIntermediateStorage&
+    operator=(ScriptBlockCustomComponentActorAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentActorAfterEventIntermediateStorage();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptBlockCustomComponentActorAfterEventIntermediateStorage(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage&&
+    );
+
+    MCAPI ScriptBlockCustomComponentActorAfterEventIntermediateStorage(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage const&
+    );
+
     MCAPI ~ScriptBlockCustomComponentActorAfterEventIntermediateStorage();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage&&);
+
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage const&);
     // NOLINTEND
 
 public:

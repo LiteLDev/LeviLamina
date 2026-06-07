@@ -100,8 +100,11 @@ public:
     MCAPI ::RakNet::SystemAddress
     Connect(char const* host, ushort remotePort, bool block, ushort socketFamily, char const* bindAddress);
 
-    MCAPI bool
-    CreateListenSocket(ushort port, ushort maxIncomingConnections, ushort socketFamily, char const* bindAddress);
+    MCAPI bool CreateListenSocket(ushort port, ushort maxIncomingConnections, ushort socketFamily, char const*);
+
+    MCAPI void DeallocatePacket(::RakNet::Packet* packet);
+
+    MCAPI ushort GetConnectionCount() const;
 
     MCAPI void GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
 
@@ -115,7 +118,7 @@ public:
 
     MCAPI ::RakNet::Packet* ReceiveInt();
 
-    MCAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const* bindAddress);
+    MCAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const*);
 
     MCAPI bool Start(
         ushort      port,
@@ -129,6 +132,10 @@ public:
     MCAPI void Stop();
 
     MCAPI TCPInterface();
+
+    MCAPI bool WasStarted() const;
+
+    MCAPI bool _appendToBlockingSocketList(uint64 const& s);
     // NOLINTEND
 
 public:

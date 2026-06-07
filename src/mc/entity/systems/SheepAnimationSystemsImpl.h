@@ -19,11 +19,11 @@ namespace SheepAnimationSystemsImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void tickJebification(
-    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::SheepFlagComponent>>,
-    ::TintColorComponent&              tintColorComponent,
-    ::SynchedActorDataComponent const& synchedActorDataComponent,
-    ::ActorUniqueIDComponent&          actorUniqueIDComponent,
-    ::ActorOwnerComponent&             actorOwnerForTickCountOnly
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::SheepFlagComponent>> tintColorComponent,
+    ::TintColorComponent&                                                                    synchedActorDataComponent,
+    ::SynchedActorDataComponent const&                                                       actorUniqueIDComponent,
+    ::ActorUniqueIDComponent&                                                                actorOwnerForTickCountOnly,
+    ::ActorOwnerComponent&
 );
 // NOLINTEND
 

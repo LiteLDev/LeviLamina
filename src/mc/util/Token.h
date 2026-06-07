@@ -36,6 +36,8 @@ public:
 
     MCNAPI bool _parseRandom();
 
+    MCNAPI ::std::string const& getText(::std::string const& defaultValue) const;
+
     MCNAPI ~Token();
     // NOLINTEND
 

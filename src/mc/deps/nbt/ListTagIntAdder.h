@@ -18,13 +18,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ListTagIntAdder& operator()(int i);
-
-    MCNAPI ~ListTagIntAdder();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

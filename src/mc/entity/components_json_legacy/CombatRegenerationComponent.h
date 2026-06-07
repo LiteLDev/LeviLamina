@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class CombatRegenerationDefinition;
 class CombatRegenerationListener;
 // clang-format on
 
@@ -25,7 +24,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
 
-    MCAPI ::CombatRegenerationDefinition const* _getDefinition(::Actor& actor) const;
+    MCAPI bool _shouldApplyCombatBuffs(::Actor& owner, ::Actor& mob);
 
     MCAPI void tick(::Actor& owner);
     // NOLINTEND

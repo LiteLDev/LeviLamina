@@ -42,6 +42,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void schedule(::EntityContext& entity, ::AgentComponents::Actions::QueueItem item);
+
+    MCAPI static void tryStartNext(::EntityContext& entity);
     // NOLINTEND
 };
 

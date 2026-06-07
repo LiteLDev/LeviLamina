@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/components/SupportShape.h"
 
 // auto generated forward declare list
@@ -23,5 +24,7 @@ public:
     MCAPI static bool _stairSupportCheck(::Block const& block, uchar face);
 
     MCAPI static bool canProvideFullSupport(::Block const& block, uchar face, bool multifaceCheck);
+
+    MCAPI static bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType supportType);
     // NOLINTEND
 };

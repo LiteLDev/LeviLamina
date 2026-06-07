@@ -27,6 +27,7 @@ struct ItemRendererData;
 struct PointerHeldScreenEventData;
 struct RawInputScreenEventData;
 struct ScreenEvent;
+struct SliderChangeEventData;
 struct TextEditScreenEventData;
 struct TextEditSelectedStateChangeEventData;
 struct ToggleChangeEventData;
@@ -465,11 +466,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScreenController(bool useTaskGroup);
 
-    MCAPI uint _getNameId(::std::string const& name) const;
+    MCFOLD uint _getNameId(::std::string const& name) const;
 
     MCAPI ::ui::ViewRequest _handleButtonEvent(::ScreenEvent& screenEvent);
 
     MCAPI ::ui::ViewRequest _handleEvent(::ScreenEvent& screenEvent);
+
+    MCAPI ::ui::ViewRequest _handleSliderChangeEvent(::SliderChangeEventData& sliderChangeEvent);
 
     MCAPI void _registerSubController(::std::shared_ptr<::ScreenController> controller);
 
@@ -616,7 +619,16 @@ public:
         ::brstd::move_only_function<bool(int) const>          condition
     );
 
+    MCAPI void focusControl(::std::string const& controlName, bool delayed);
+
+    MCAPI void
+    focusControl(::std::string const& focusId, ::std::string const& collectionIndexName, int collectionIndex);
+
+    MCFOLD uint getNameId(::std::string const& name) const;
+
     MCAPI bool hasFinishedAsyncTasks() const;
+
+    MCAPI void prepareFocusForModalPopup();
 
     MCAPI void queueAsyncTask(::brstd::move_only_function<::TaskResult()>&& task, ::std::function<void()>&& callback);
 
@@ -677,6 +689,10 @@ public:
         ::brstd::move_only_function<::ui::ViewRequest(::PointerHeldScreenEventData&) const> callback
     );
 
+    MCAPI void registerRawInputEventHandler(
+        ::brstd::move_only_function<::ui::ViewRequest(::RawInputScreenEventData&) const> callback
+    );
+
     MCAPI void registerSliderChangedEventHandler(
         uint                                                             buttonId,
         ::brstd::move_only_function<::ui::ViewRequest(int, float) const> callback
@@ -715,14 +731,6 @@ public:
         uint                                                                           buttonId,
         ::brstd::move_only_function<::ui::ViewRequest(::ToggleChangeEventData&) const> callback
     );
-
-    MCAPI void
-    setControlFactoryCreateCallback(::std::function<void(::std::string const&, ::UIPropertyBag const&)> callback);
-
-    MCAPI void setControlFactoryDestroyAllCallback(::std::function<void(::std::string const&)> callback);
-
-    MCAPI void
-    setControlFactoryDestroyCallback(::std::function<void(::std::string const&, ::std::string const&)> callback);
     // NOLINTEND
 
 public:
@@ -754,7 +762,7 @@ public:
 
     MCAPI void $queueTitleNarration();
 
-    MCFOLD void $onTerminate();
+    MCAPI void $onTerminate();
 
     MCAPI void $onInit();
 
@@ -772,7 +780,7 @@ public:
 
     MCFOLD void $leaveScreen(::std::string const& expectedScreenName);
 
-    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI bool $bind(
         ::std::string const& collectionName,
@@ -803,7 +811,7 @@ public:
 
     MCAPI void $setViewCommand(::ScreenViewCommand const& callback);
 
-    MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCFOLD ::std::string $getAdditionalScreenInfo() const;
 

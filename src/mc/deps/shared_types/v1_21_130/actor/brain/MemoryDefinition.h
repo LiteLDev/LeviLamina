@@ -23,15 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MemoryDefinition& operator=(MemoryDefinition const&);
-    MemoryDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MemoryDefinition(::SharedTypes::v1_21_130::Brain::MemoryDefinition const&);
-
     MCAPI ~MemoryDefinition();
     // NOLINTEND
 
@@ -51,12 +44,6 @@ public:
     MCAPI static ::std::string_view const& MEMORY_TYPE();
 
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_130::Brain::MemoryDefinition const&);
     // NOLINTEND
 
 public:

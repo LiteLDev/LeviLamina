@@ -16,8 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~SaveSurroundingChunksSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -25,7 +25,9 @@ namespace dragon::mesh { class Mesh; }
 namespace mce { class Buffer; }
 namespace mce { class MaterialPtr; }
 namespace mce { class MeshContext; }
+namespace mce { class Texture; }
 namespace mce { class TexturePtr; }
+namespace mce { class VertexFormat; }
 namespace mce { struct BufferResourceService; }
 namespace mce { struct ClientTexture; }
 namespace mce { struct ServerTexture; }
@@ -50,7 +52,7 @@ public:
     ::ll::TypedStorage<1, 1, ::mce::PrimitiveMode>                                    mPrimitiveMode;
     ::ll::TypedStorage<1, 1, ::mce::MeshDebugString>                                  mDebugName;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::mce::BufferResourceService>>          mBufferResourceService;
-    ::ll::TypedStorage<8, 288, ::mce::MeshData>                                       mMeshData;
+    ::ll::TypedStorage<8, 312, ::mce::MeshData>                                       mMeshData;
     ::ll::TypedStorage<
         8,
         24,
@@ -94,7 +96,7 @@ public:
         ::std::string_view                               debugName
     );
 
-    MCAPI void _freeHALData() const;
+    MCAPI bool _loadBlankData(::mce::BufferResourceService& bufferResourceService, ::std::string_view debugName) const;
 
     MCAPI bool _loadRawData(::mce::BufferResourceService& bufferResourceService, ::std::string_view debugName) const;
 
@@ -106,16 +108,16 @@ public:
         ::brstd::static_vector<
             ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture>,
             8> textures,
-        uint   startOffset,
-        uint   count,
+        uint   offscreenCaptureDescription,
+        uint   renderMetadata,
         ::std::variant<
             ::std::monostate,
             ::UIActorOffscreenCaptureDescription,
             ::UIThumbnailMeshOffscreenCaptureDescription,
             ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription,
-        ::mce::IndexBufferContainer const*                         overrideIndexBuffer,
-        ::std::optional<::dragon::RenderMetadata>                  renderMetadata
+            ::UIStructureVolumeOffscreenCaptureDescription> const&,
+        ::mce::IndexBufferContainer const*,
+        ::std::optional<::dragon::RenderMetadata>
     ) const;
 
     MCAPI bool areBuffersValid() const;
@@ -124,15 +126,29 @@ public:
 
     MCAPI uint64 getMeshVertexCount() const;
 
+    MCAPI ::gsl::span<uchar const> getRawData() const;
+
+    MCAPI ::mce::VertexFormat const& getVertexFormat(uint stream) const;
+
+    MCFOLD ::mce::VertexLayout const& getVertexLayout() const;
+
     MCAPI bool hasField(::mce::VertexField type) const;
+
+    MCFOLD bool isTemporary() const;
 
     MCAPI bool isValid() const;
 
-    MCAPI bool isVertexLayoutValid() const;
+    MCAPI void load(::mce::BufferResourceService& bufferResourceService);
 
     MCAPI explicit operator ::dragon::mesh::Mesh() const;
 
+    MCAPI ::mce::Mesh& operator=(::mce::Mesh&& rhs);
+
     MCAPI void prepareAsEmptyData(::mce::VertexLayout const& forcedLayout) const;
+
+    MCAPI void prepareRenderData(::mce::VertexLayout const& forcedLayout) const;
+
+    MCAPI void releaseVertexBuffer();
 
     MCAPI void renderMesh(
         ::mce::MeshContext&       meshContext,
@@ -148,12 +164,51 @@ public:
         ::mce::IndexBufferContainer const*                         overrideIndexBuffer
     ) const;
 
+    MCFOLD void renderMesh(
+        ::mce::MeshContext&                                                     meshContext,
+        ::mce::MaterialPtr const&                                               materialPtr,
+        ::std::initializer_list<::std::reference_wrapper<::mce::Texture const>> textures,
+        uint                                                                    startOffset,
+        uint                                                                    count,
+        ::mce::IndexBufferContainer const*                                      overrideIndexBuffer
+    ) const;
+
     MCAPI void renderMesh(
         ::mce::MeshContext&       meshContext,
         ::mce::MaterialPtr const& materialPtr,
         ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const& texture,
         uint startOffset,
         uint count,
+        ::std::variant<
+            ::std::monostate,
+            ::UIActorOffscreenCaptureDescription,
+            ::UIThumbnailMeshOffscreenCaptureDescription,
+            ::UIMeshOffscreenCaptureDescription,
+            ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription,
+        ::mce::IndexBufferContainer const*                         overrideIndexBuffer
+    ) const;
+
+    MCAPI void renderMesh(
+        ::mce::MeshContext&                      meshContext,
+        ::mce::MaterialPtr const&                materialPtr,
+        ::gsl::span<::mce::ServerTexture const*> textures,
+        uint                                     startOffset,
+        uint                                     count,
+        ::std::variant<
+            ::std::monostate,
+            ::UIActorOffscreenCaptureDescription,
+            ::UIThumbnailMeshOffscreenCaptureDescription,
+            ::UIMeshOffscreenCaptureDescription,
+            ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription,
+        ::mce::IndexBufferContainer const*                         overrideIndexBuffer
+    ) const;
+
+    MCAPI void renderMesh(
+        ::mce::MeshContext&                  meshContext,
+        ::mce::MaterialPtr const&            materialPtr,
+        ::gsl::span<::mce::TexturePtr const> textures,
+        uint                                 startOffset,
+        uint                                 count,
         ::std::variant<
             ::std::monostate,
             ::UIActorOffscreenCaptureDescription,

@@ -43,7 +43,7 @@ public:
     ::ll::UntypedStorage<4, 12>  mUnk3826b7;
     ::ll::UntypedStorage<4, 4>   mUnk704c8f;
     ::ll::UntypedStorage<4, 100> mUnkea9050;
-    ::ll::UntypedStorage<8, 88>  mUnk1e608c;
+    ::ll::UntypedStorage<8, 104> mUnk1e608c;
     ::ll::UntypedStorage<4, 16>  mUnkf67562;
     ::ll::UntypedStorage<8, 24>  mUnk7823f6;
     ::ll::UntypedStorage<8, 40>  mUnk2879ec;
@@ -59,6 +59,7 @@ public:
     // prevent constructor by default
     ReplayableActorInput& operator=(ReplayableActorInput const&);
     ReplayableActorInput(ReplayableActorInput const&);
+    ReplayableActorInput();
 
 public:
     // virtual functions
@@ -106,30 +107,14 @@ public:
     virtual void capture(::SpinAttackResultsComponent const& spinAttackResults) /*override*/;
 
     virtual void capture(::MovementInterpolatorComponent const& interpolator) /*override*/;
-
-    virtual ~ReplayableActorInput() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ReplayableActorInput();
-
     MCNAPI void applyCollisionData(::History::EntityWithCache& entity);
 
     MCNAPI ::History::NonPlayerComponents& getOrCreateNonPlayerComponents();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

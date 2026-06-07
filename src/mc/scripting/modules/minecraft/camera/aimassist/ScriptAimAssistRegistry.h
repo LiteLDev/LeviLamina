@@ -63,15 +63,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptAimAssistRegistry& operator=(ScriptAimAssistRegistry const&);
+    ScriptAimAssistRegistry(ScriptAimAssistRegistry const&);
     ScriptAimAssistRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
-
-    MCAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
+    MCAPI ScriptAimAssistRegistry(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
 
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>,
@@ -108,7 +106,9 @@ public:
     _getPresets() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptAimAssistRegistry&
-    operator=(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
+    operator=(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
+
+    MCAPI ~ScriptAimAssistRegistry();
     // NOLINTEND
 
 public:
@@ -120,9 +120,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
+    // NOLINTEND
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

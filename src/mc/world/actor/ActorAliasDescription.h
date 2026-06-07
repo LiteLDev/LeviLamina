@@ -22,8 +22,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* getJsonName() const /*override*/;
-
-    virtual ~ActorAliasDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -32,12 +30,6 @@ public:
     MCAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
 
     MCAPI void parse(::Json::Value& root, bool isVanilla);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

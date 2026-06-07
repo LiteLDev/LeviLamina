@@ -29,8 +29,6 @@ public:
     virtual bool isDone() /*override*/;
 
     virtual void fireCommandDoneEvent() /*override*/;
-
-    virtual ~InspectCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

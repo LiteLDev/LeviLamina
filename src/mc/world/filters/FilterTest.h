@@ -2,11 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/FilterSubject.h"
+#include "mc/world/filters/FilterOperator.h"
+
 // auto generated forward declare list
 // clang-format off
 class IWorldRegistriesProvider;
 struct FilterContext;
 struct FilterInputs;
+struct FilterParamDefinition;
 namespace Json { class Value; }
 // clang-format on
 
@@ -40,7 +45,31 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI Definition(
+            ::std::string const&                               name,
+            ::std::string const&                               description,
+            ::FilterParamDefinition const*                     subjectParam,
+            ::FilterParamDefinition const*                     domainParam,
+            ::FilterParamDefinition const*                     operatorParam,
+            ::FilterParamDefinition const*                     valueParam,
+            ::std::function<::std::shared_ptr<::FilterTest>()> factory
+        );
+
         MCNAPI ~Definition();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(
+            ::std::string const&                               name,
+            ::std::string const&                               description,
+            ::FilterParamDefinition const*                     subjectParam,
+            ::FilterParamDefinition const*                     domainParam,
+            ::FilterParamDefinition const*                     operatorParam,
+            ::FilterParamDefinition const*                     valueParam,
+            ::std::function<::std::shared_ptr<::FilterTest>()> factory
+        );
         // NOLINTEND
 
     public:
@@ -88,9 +117,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _testValuesWithOperator(float a, float b) const;
+    MCNAPI ::FilterOperator getOperator() const;
 
-    MCNAPI bool _testValuesWithOperator(bool a, bool b) const;
+    MCNAPI ::SharedTypes::Legacy::FilterSubject getSubject() const;
 
     MCNAPI ::Json::Value serialize() const;
     // NOLINTEND
@@ -98,8 +127,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
-
     MCNAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
     MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;
@@ -107,11 +134,5 @@ public:
     MCNAPI ::Json::Value $_serializeDomain() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

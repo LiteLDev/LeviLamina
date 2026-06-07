@@ -39,9 +39,9 @@ public:
         ::BlockPos const&    originPos,
         ::BlockPos const&    pos,
         int                  charge,
-        int,
-        ::Random&        random,
-        ::SculkSpreader& spreader,
+        int                  random,
+        ::Random&            spreader,
+        ::SculkSpreader&,
         bool const
     ) const /*override*/;
 
@@ -51,6 +51,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _canPlaceGrowth(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::BlockPos const&);
+
     MCAPI static void _placeGrowthAt(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
@@ -83,9 +85,9 @@ public:
         ::BlockPos const&    originPos,
         ::BlockPos const&    pos,
         int                  charge,
-        int,
-        ::Random&        random,
-        ::SculkSpreader& spreader,
+        int                  random,
+        ::Random&            spreader,
+        ::SculkSpreader&,
         bool const
     ) const;
 

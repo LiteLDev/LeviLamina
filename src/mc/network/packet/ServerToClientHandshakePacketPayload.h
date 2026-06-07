@@ -10,17 +10,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerToClientHandshakePacketPayload(ServerToClientHandshakePacketPayload const&);
-    ServerToClientHandshakePacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ServerToClientHandshakePacketPayload& operator=(::ServerToClientHandshakePacketPayload&&);
-
-    MCFOLD ::ServerToClientHandshakePacketPayload& operator=(::ServerToClientHandshakePacketPayload const&);
-
     MCAPI ~ServerToClientHandshakePacketPayload();
     // NOLINTEND
 

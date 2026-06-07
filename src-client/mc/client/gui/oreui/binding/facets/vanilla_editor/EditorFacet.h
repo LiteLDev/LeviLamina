@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { class EditorUiMessageListener; }
 // clang-format on
 
 namespace OreUI {
@@ -20,11 +19,10 @@ class EditorFacet : public ::OreUI::FacetBase<::OreUI::EditorFacet> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                                mIsDirty;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>   mClient;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mModeChangedEvent;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanShowModeShortcutToast;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::EditorUiMessageListener>> mClientMessageListener;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsDirty;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>> mClient;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mModeChangedEvent;
+    ::ll::TypedStorage<1, 1, bool>                                              mCanShowModeShortcutToast;
     // NOLINTEND
 
 public:

@@ -22,16 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TeleportToOwnerGoalDefinition& operator=(TeleportToOwnerGoalDefinition const&);
-    TeleportToOwnerGoalDefinition(TeleportToOwnerGoalDefinition const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TeleportToOwnerGoalDefinition();
-
-    MCAPI TeleportToOwnerGoalDefinition(::SharedTypes::v1_26_10::TeleportToOwnerGoalDefinition&&);
 
     MCAPI ~TeleportToOwnerGoalDefinition();
     // NOLINTEND
@@ -52,8 +45,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCFOLD void* $ctor(::SharedTypes::v1_26_10::TeleportToOwnerGoalDefinition&&);
     // NOLINTEND
 
 public:

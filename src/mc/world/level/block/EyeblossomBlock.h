@@ -18,20 +18,24 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class EyeblossomBlock : public ::FlowerBlock {
 public:
+    // prevent constructor by default
+    EyeblossomBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    virtual void entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const /*override*/;
-
-    virtual ~EyeblossomBlock() /*override*/ = default;
+    virtual void entityInside(::BlockSource& region, ::BlockPos const& entity, ::Actor&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EyeblossomBlock(::std::string const& nameId, int id);
+
     MCAPI void
     _updateEyeblossomState(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isMainBlock) const;
 
@@ -39,13 +43,19 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
+    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& entity, ::Actor&) const;
 
 
     // NOLINTEND

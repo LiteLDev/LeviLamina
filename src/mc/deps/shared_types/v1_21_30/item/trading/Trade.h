@@ -23,16 +23,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Trade(Trade const&);
-    Trade();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_30::Trade& operator=(::SharedTypes::v1_21_30::Trade const&);
-
+#ifdef LL_PLAT_C
     MCAPI ~Trade();
+#endif
     // NOLINTEND
 
 public:
@@ -44,7 +39,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

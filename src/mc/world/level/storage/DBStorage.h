@@ -59,9 +59,31 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        CommitOperation();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI CommitOperation(
+            ::std::string const&             key,
+            ::std::shared_ptr<::std::string> value,
+            bool                             isDelete,
+            ::DBHelpers::Category            category
+        );
+
         MCNAPI ~CommitOperation();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(
+            ::std::string const&             key,
+            ::std::shared_ptr<::std::string> value,
+            bool                             isDelete,
+            ::DBHelpers::Category            category
+        );
         // NOLINTEND
 
     public:
@@ -76,18 +98,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::atomic<int>*> mRefCounter;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~DBStorageToken();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -199,7 +209,7 @@ public:
     virtual ::std::unique_ptr<::CompoundTag>
     getCompoundTag(::std::string const& key, ::DBHelpers::Category category) /*override*/;
 
-    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category category) const /*override*/;
+    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category) const /*override*/;
 
     virtual bool loadLevelData(::LevelData& data) /*override*/;
 
@@ -269,7 +279,11 @@ public:
 
     MCAPI void _handleErrorStatus(::leveldb::Status const& status);
 
+    MCAPI bool _isMarkedAsCorrupted() const;
+
     MCAPI void _markAsCorrupted(::std::string_view message) const;
+
+    MCAPI void _mergeIntoDeleteCache(::std::string const& key, ::DBHelpers::Category category);
 
     MCAPI void _mergeIntoWriteCache(::LevelStorageWriteBatch const& batchToMerge);
 
@@ -283,8 +297,7 @@ public:
         ::std::function<void(::std::string_view, ::std::string_view)> const& callback
     ) const;
 
-    MCAPI ::DBStorage::PendingWriteResult
-    _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
+    MCAPI ::DBStorage::PendingWriteResult _readPendingWrite(::std::string const& key, ::DBHelpers::Category) const;
 
     MCAPI void _removeCorruptedMark() const;
 
@@ -294,6 +307,12 @@ public:
         ::brstd::move_only_function<::TaskResult()> action,
         ::brstd::move_only_function<void()>         callback
     );
+
+    MCAPI void _write(::leveldb::WriteBatch& batch, uint batchSizeInBytes, uint writesInBatch);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::TaskGroup& getTaskGroup();
+#endif
 
     MCAPI bool tryRepair(::Core::Path const& path) const;
     // NOLINTEND
@@ -319,16 +338,14 @@ public:
 
     MCFOLD ::Core::LevelStorageResult $getState() const;
 
-#ifdef LL_PLAT_S
     MCAPI ::std::unique_ptr<::ChunkSource>
     $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
-#endif
 
-    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
 
-    MCAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category category) const;
+    MCAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category) const;
 
     MCAPI bool $loadLevelData(::LevelData& data);
 

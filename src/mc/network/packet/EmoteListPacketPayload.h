@@ -19,17 +19,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EmoteListPacketPayload& operator=(EmoteListPacketPayload const&);
-    EmoteListPacketPayload(EmoteListPacketPayload const&);
-    EmoteListPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EmoteListPacketPayload& operator=(::EmoteListPacketPayload&&);
-
     MCAPI ~EmoteListPacketPayload();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& MAX_EMOTE_PIECE_IDS();
     // NOLINTEND
 
 public:

@@ -2,4 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PositionPassengerUtility {};
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+class Vec3;
+struct ActorDataSeatOffsetComponent;
+// clang-format on
+
+struct PositionPassengerUtility {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Vec3 getNewPassengerPosition(
+        ::ActorDataSeatOffsetComponent const& seatOffsetComponent,
+        ::Vec3 const&                         originPos,
+        ::Vec2 const&                         vehicleRot
+    );
+    // NOLINTEND
+};

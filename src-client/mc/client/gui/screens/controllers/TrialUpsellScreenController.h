@@ -40,6 +40,10 @@ public:
     // NOLINTBEGIN
     MCAPI
     TrialUpsellScreenController(::std::shared_ptr<::MinecraftScreenModel> model, bool isNewWorld, bool timeExpired);
+
+    MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -51,7 +55,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $handleLicenseChanged();
+    MCAPI void $handleLicenseChanged();
 
     MCFOLD ::ui::SceneType $getSceneType() const;
 

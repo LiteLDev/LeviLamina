@@ -11,9 +11,11 @@ struct SyncedClientOptionsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::DeviceMemoryTier> mMemoryTier;
-    ::ll::TypedStorage<4, 4, int>                mMaxViewDistance;
-    ::ll::TypedStorage<1, 1, ::GraphicsMode>     mGraphicsMode;
-    ::ll::TypedStorage<4, 4, ::UIProfile>        mUIProfile;
+    ::ll::TypedStorage<4, 4, ::DeviceMemoryTier>   mMemoryTier;
+    ::ll::TypedStorage<4, 4, int>                  mMaxViewDistance;
+    ::ll::TypedStorage<1, 1, ::GraphicsMode>       mGraphicsMode;
+    ::ll::TypedStorage<4, 4, ::UIProfile>          mUIProfile;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mTextFilteringDebugTimeoutMilliSeconds;
+    ::ll::TypedStorage<1, 1, bool>                 mFilterProfanity;
     // NOLINTEND
 };

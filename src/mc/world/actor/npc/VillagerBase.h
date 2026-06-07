@@ -51,8 +51,6 @@ public:
     virtual void handleEntityEvent(::ActorEvent event, int data) /*override*/;
 
     virtual void onLightningHit() /*override*/;
-
-    virtual ~VillagerBase() /*override*/;
     // NOLINTEND
 
 public:
@@ -69,6 +67,16 @@ public:
     MCAPI void consumeLoveFood();
 
     MCAPI int getBreedingStackIndex() const;
+
+    MCAPI bool isChasing() const;
+
+    MCAPI bool isWillingToBreed(bool consumeFoodIfNecessary);
+
+    MCAPI void setChasing(bool chasing);
+
+    MCAPI void setWillingToBreed(bool willingToBreed);
+
+    MCAPI void stopGoals();
     // NOLINTEND
 
 public:
@@ -79,12 +87,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

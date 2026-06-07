@@ -46,9 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    ScriptPlayerInventoryItemChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent&&);
-
     MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
         ::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&
     );
@@ -62,8 +59,6 @@ public:
         bool                                               isQuantityChanged,
         ::Scripting::WeakLifetimeScope const&              scope
     );
-
-    MCAPI ~ScriptPlayerInventoryItemChangeAfterEvent();
     // NOLINTEND
 
 public:
@@ -75,8 +70,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
 
     MCAPI void* $ctor(
@@ -88,12 +81,6 @@ public:
         bool                                               isQuantityChanged,
         ::Scripting::WeakLifetimeScope const&              scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

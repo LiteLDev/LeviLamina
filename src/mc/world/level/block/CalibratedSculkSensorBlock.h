@@ -16,6 +16,10 @@ class CircuitSystem;
 
 class CalibratedSculkSensorBlock : public ::SculkSensorBlock {
 public:
+    // prevent constructor by default
+    CalibratedSculkSensorBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
@@ -25,8 +29,12 @@ public:
     virtual int getVariant(::Block const& block) const /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    // NOLINTEND
 
-    virtual ~CalibratedSculkSensorBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CalibratedSculkSensorBlock(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -36,6 +44,12 @@ public:
     _wouldBePoweredByCircuit(::CircuitSystem& circuitSystem, ::BlockPos const& pos, uchar connectionDirection);
 
     MCAPI static int getInputStrength(::BlockSource const& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

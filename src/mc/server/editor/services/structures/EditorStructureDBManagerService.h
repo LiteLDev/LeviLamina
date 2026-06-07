@@ -160,8 +160,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& DEFAULT_EDITOR_NAMESPACE();
-
     MCNAPI static ::std::string const& EDITOR_PROJECT_STRUCTUREDB_FOLDER();
 
     MCNAPI static ::std::string const& LEVELDB_STRUCTURE_TAG_PREFIX();

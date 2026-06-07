@@ -8,10 +8,18 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkViewSource;
+class Dimension;
 class LevelChunk;
 // clang-format on
 
 class EmptyChunkSource : public ::ChunkSource {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EmptyChunkSource();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -20,8 +28,22 @@ public:
     virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
 
     virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
+    // NOLINTEND
 
-    virtual ~EmptyChunkSource() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit EmptyChunkSource(::Dimension* dimension);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Dimension* dimension);
+#endif
     // NOLINTEND
 
 public:

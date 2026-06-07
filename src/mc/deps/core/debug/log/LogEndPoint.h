@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual ~LogEndPoint() = default;
 
-    virtual void log(char const* message) = 0;
+    virtual void log(char const*) = 0;
 
     virtual void flush() = 0;
 

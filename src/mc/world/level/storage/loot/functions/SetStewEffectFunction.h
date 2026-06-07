@@ -23,9 +23,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SetStewEffectFunction();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetStewEffectFunction() /*override*/ = default;
+    virtual ~SetStewEffectFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
@@ -35,10 +39,33 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SetStewEffectFunction(
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
+        ::std::vector<int>                                     effectIDs
+    );
+
+    MCFOLD ::std::vector<int> const& getEffectIDs() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::vector<int> effectIDs);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

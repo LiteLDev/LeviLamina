@@ -12,11 +12,25 @@ class HashedString;
 
 class GlowItemFrameBlock : public ::ItemFrameBlock {
 public:
+    // prevent constructor by default
+    GlowItemFrameBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString getSpawnedItemName() const /*override*/;
+    // NOLINTEND
 
-    virtual ~GlowItemFrameBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GlowItemFrameBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

@@ -13,6 +13,7 @@
 // clang-format off
 class Actor;
 class ServerLevel;
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -37,16 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorData(::ScriptModuleMinecraft::ScriptActorData const&);
-
     MCAPI explicit ScriptActorData(::Actor const& actor);
+
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
+    getActor(::Scripting::WeakLifetimeScope const& scope) const;
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>
     getPlayer(::Scripting::WeakLifetimeScope const& scope) const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptActorData& operator=(::ScriptModuleMinecraft::ScriptActorData&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptActorData& operator=(::ScriptModuleMinecraft::ScriptActorData const&);
 
     MCAPI ~ScriptActorData();
     // NOLINTEND
@@ -54,8 +52,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const&);
-
     MCAPI void* $ctor(::Actor const& actor);
     // NOLINTEND
 

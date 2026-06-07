@@ -11,24 +11,40 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mTitle;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
-    GatheringServerInfo(GatheringServerInfo const&);
     GatheringServerInfo();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD ::GatheringServerInfo& operator=(::GatheringServerInfo&&);
+    MCAPI GatheringServerInfo(::GatheringServerInfo const&);
 
-    MCFOLD ::GatheringServerInfo& operator=(::GatheringServerInfo const&);
+#ifdef LL_PLAT_C
+    MCAPI GatheringServerInfo(::std::string const& gatheringId, ::std::string const& gatheringTitle);
+
+    MCFOLD ::std::string const& getCreatorName() const;
+
+    MCFOLD ::std::string const& getGatheringId() const;
+
+    MCFOLD bool isValid() const;
+
+    MCFOLD ::GatheringServerInfo& operator=(::GatheringServerInfo&&);
 #endif
 
+    MCFOLD ::GatheringServerInfo& operator=(::GatheringServerInfo const&);
+
     MCAPI ~GatheringServerInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::GatheringServerInfo const&);
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string const& gatheringId, ::std::string const& gatheringTitle);
+#endif
     // NOLINTEND
 
 public:

@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AnvilScreenController() /*override*/ = default;
+    virtual ~AnvilScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -73,6 +73,8 @@ public:
 
     MCAPI void _initScreenControllerProxy();
 
+    MCAPI void _registerBindings();
+
     MCAPI void _registerEventHandlers();
 
     MCAPI void _registerStateMachine();
@@ -83,6 +85,12 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player&, ::BlockPos const& pos, ::ActorUniqueID);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

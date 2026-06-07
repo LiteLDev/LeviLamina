@@ -12,6 +12,7 @@ class CompositePackSource;
 struct PackContentItem;
 struct PackIdVersion;
 struct PackInstanceId;
+namespace Core { class Path; }
 // clang-format on
 
 struct PackManagerContentSourceData {
@@ -33,14 +34,17 @@ public:
 
 public:
     // prevent constructor by default
-    PackManagerContentSourceData& operator=(PackManagerContentSourceData const&);
-    PackManagerContentSourceData(PackManagerContentSourceData const&);
     PackManagerContentSourceData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackManagerContentSourceData(::PackManagerContentSourceData&&);
+    MCAPI PackManagerContentSourceData(
+        ::Core::Path const&                                        path,
+        ::ContentType                                              contentType,
+        ::std::unique_ptr<::CompositePackSource>                   packSource,
+        ::std::vector<::std::shared_ptr<::PackContentItem>> const& packContent
+    );
 
     MCAPI ~PackManagerContentSourceData();
     // NOLINTEND
@@ -48,7 +52,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackManagerContentSourceData&&);
+    MCAPI void* $ctor(
+        ::Core::Path const&                                        path,
+        ::ContentType                                              contentType,
+        ::std::unique_ptr<::CompositePackSource>                   packSource,
+        ::std::vector<::std::shared_ptr<::PackContentItem>> const& packContent
+    );
     // NOLINTEND
 
 public:

@@ -39,6 +39,8 @@ public:
 
     virtual ::Block const& getBlock(::BlockPos const& relativePos) const /*override*/;
 
+    virtual ::Block const& getExtraBlock(::BlockPos const& relativePos) const /*override*/;
+
     virtual ::BlockActor const* getBlockActor(::BlockPos const& relativePos) const /*override*/;
 
     virtual void offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea&) const /*override*/;
@@ -48,8 +50,6 @@ public:
     virtual ::BlockPos getRelativeMax(::BlockPos const& worldMax) const /*override*/;
 
     virtual bool isInBounds(::BlockPos const& relativePos, ::BlockPos const& dimensions) const /*override*/;
-
-    virtual ~FullChunk() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,6 +70,8 @@ public:
     MCAPI ::ClientBlockPipeline::WorldView::LocalInfo $getLocalInfo(::BlockPos const& relativePos) const;
 
     MCAPI ::Block const& $getBlock(::BlockPos const& relativePos) const;
+
+    MCAPI ::Block const& $getExtraBlock(::BlockPos const& relativePos) const;
 
     MCFOLD ::BlockActor const* $getBlockActor(::BlockPos const& relativePos) const;
 

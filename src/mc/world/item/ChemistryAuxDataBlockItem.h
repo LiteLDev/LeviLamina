@@ -15,13 +15,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
-
-    virtual ~ChemistryAuxDataBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $fixupCommon(::ItemStackBase& stack) const;
+
 
     // NOLINTEND
 };

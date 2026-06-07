@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     virtual void setOwner(::ActorUniqueID const ownerID) /*override*/;
 
@@ -55,8 +55,6 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
-
-    virtual ~AreaEffectCloud() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -76,6 +74,12 @@ public:
 
     MCAPI float getEffectiveRadius() const;
 
+    MCAPI ::ParticleType getParticle() const;
+
+    MCAPI void notifyPickup();
+
+    MCFOLD void setAffectOwner(bool shouldAffect);
+
     MCAPI void setDuration(::EffectDuration duration);
 
     MCAPI void setInitialRadius(float radius);
@@ -84,11 +88,13 @@ public:
 
     MCAPI void setParticleColor(::mce::Color& c);
 
-    MCAPI void setPickupCount(int useCount);
-
-    MCAPI void setPotion(short potionAUX);
+    MCFOLD void setPotion(short potionAUX);
 
     MCAPI void setRadiusChangeOnPickup(float changeAmount);
+
+    MCAPI void setRadiusOnUse(float radiusOnUse);
+
+    MCFOLD void setReapplicationDelay(int delay);
     // NOLINTEND
 
 public:
@@ -104,7 +110,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
     MCAPI void $setOwner(::ActorUniqueID const ownerID);
 

@@ -7,6 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ResolvedTextObject;
+class Scoreboard;
 struct ResolveData;
 namespace Json { class Value; }
 // clang-format on
@@ -22,6 +25,7 @@ public:
     // prevent constructor by default
     TextObjectRoot& operator=(TextObjectRoot const&);
     TextObjectRoot(TextObjectRoot const&);
+    TextObjectRoot();
 
 public:
     // virtual functions
@@ -38,15 +42,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TextObjectRoot();
+    MCNAPI void addChild(::std::unique_ptr<::ITextObject> childObject);
 
-    MCNAPI ::TextObjectRoot& operator=(::TextObjectRoot&&);
-    // NOLINTEND
+    MCNAPI ::std::vector<::std::string> asStringVector() const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void clear();
+
+    MCNAPI bool isEmpty() const;
+
+    MCNAPI ::ResolvedTextObject resolveRoot(::Actor const& actor, ::Scoreboard const& scoreboard) const;
     // NOLINTEND
 
 public:

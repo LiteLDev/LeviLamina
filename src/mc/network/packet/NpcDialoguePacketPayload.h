@@ -32,12 +32,24 @@ public:
 
 public:
     // prevent constructor by default
-    NpcDialoguePacketPayload(NpcDialoguePacketPayload const&);
     NpcDialoguePacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NpcDialoguePacketPayload(::NpcDialoguePacketPayload const&);
+
+    MCAPI explicit NpcDialoguePacketPayload(::ActorUniqueID npcID);
+
+    MCAPI NpcDialoguePacketPayload(
+        ::ActorUniqueID                                   npcID,
+        ::NpcDialoguePacketPayload::NpcDialogueActionType dialogueActionType,
+        ::std::string const&                              dialogueText,
+        ::std::string const&                              sceneName,
+        ::std::string const&                              npcName,
+        ::std::string const&                              actionJSON
+    );
+
     MCAPI ::NpcDialoguePacketPayload& operator=(::NpcDialoguePacketPayload&&);
 
     MCAPI ::NpcDialoguePacketPayload& operator=(::NpcDialoguePacketPayload const&);
@@ -52,6 +64,23 @@ public:
         ::NpcDialoguePacket&        outPacket,
         ::NpcDialogueStorage const* storage,
         ::std::string const&        sceneName
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::NpcDialoguePacketPayload const&);
+
+    MCAPI void* $ctor(::ActorUniqueID npcID);
+
+    MCAPI void* $ctor(
+        ::ActorUniqueID                                   npcID,
+        ::NpcDialoguePacketPayload::NpcDialogueActionType dialogueActionType,
+        ::std::string const&                              dialogueText,
+        ::std::string const&                              sceneName,
+        ::std::string const&                              npcName,
+        ::std::string const&                              actionJSON
     );
     // NOLINTEND
 

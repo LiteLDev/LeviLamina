@@ -10,9 +10,6 @@ public:
     // clang-format off
     struct Calculator;
     struct ConstantCalculator;
-    struct InverseLinearCalculator;
-    struct LinearCalculator;
-    struct QuadraticCalculator;
     // clang-format on
 
     // BrushShapeWeightedSphere inner types define
@@ -21,12 +18,6 @@ public:
     struct Calculator {};
 
     struct ConstantCalculator {};
-
-    struct InverseLinearCalculator {};
-
-    struct LinearCalculator {};
-
-    struct QuadraticCalculator {};
 };
 
 } // namespace Editor::ClientBrush

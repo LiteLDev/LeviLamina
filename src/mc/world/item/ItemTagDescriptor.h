@@ -52,8 +52,6 @@ public:
     virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
     virtual uint64 getHash() const /*override*/;
-
-    virtual ~ItemTagDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:

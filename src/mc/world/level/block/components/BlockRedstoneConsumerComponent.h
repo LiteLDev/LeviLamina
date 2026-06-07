@@ -3,18 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/level/block/components/IBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
 class BlockSource;
-namespace BlockEvents { class BlockEventManager; }
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class BlockRedstoneConsumerComponent {
+class BlockRedstoneConsumerComponent : public ::IBlockComponent {
 public:
     // BlockRedstoneConsumerComponent inner types define
     using OnSetupRedstoneComponentCallback = void(::BlockSource&, ::BlockPos const&);
@@ -28,16 +27,15 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                        mAcceptSameDirection;
     ::ll::TypedStorage<1, 1, bool>                                        mAcceptHalfPulse;
     ::ll::TypedStorage<1, 1, bool>                                        mIgnoreFirstUpdate;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnPlaceEventSubscription;
     ::ll::TypedStorage<8, 8, void (*)(::BlockSource&, ::BlockPos const&)> mOnSetupRedstoneComponentCallback;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onPlace(::BlockEvents::BlockPlaceEvent const& ev) const;
+    MCAPI void onEvent(::BlockEvents::BlockPlaceEvent const& ev) const;
 
-    MCAPI void finalize(::BlockEvents::BlockEventManager& eventManager);
+    MCFOLD void setOnSetupRedstoneComponentCallback(void (*callback)(::BlockSource&, ::BlockPos const&));
     // NOLINTEND
 
 public:

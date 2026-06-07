@@ -14,6 +14,10 @@ class Player;
 
 class EnderpearlItem : public ::Item {
 public:
+    // prevent constructor by default
+    EnderpearlItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
@@ -23,14 +27,24 @@ public:
     virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
     virtual int getCooldownDuration() const /*override*/;
+    // NOLINTEND
 
-    virtual ~EnderpearlItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EnderpearlItem(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& COOLDOWN();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

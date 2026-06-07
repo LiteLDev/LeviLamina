@@ -33,8 +33,6 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockMovableDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -54,6 +52,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::MovementType const& DEFAULT_MOVEMENT_TYPE();
+
+    MCAPI static ::StickyType const& DEFAULT_STICKY_TYPE();
+
     MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
@@ -63,12 +65,6 @@ public:
     MCAPI void* $ctor(::MovementType movableType);
 
     MCAPI void* $ctor(::MovementType movableType, ::StickyType stickyType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

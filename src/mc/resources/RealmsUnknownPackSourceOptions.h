@@ -16,16 +16,4 @@ public:
     RealmsUnknownPackSourceOptions& operator=(RealmsUnknownPackSourceOptions const&);
     RealmsUnknownPackSourceOptions(RealmsUnknownPackSourceOptions const&);
     RealmsUnknownPackSourceOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~RealmsUnknownPackSourceOptions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

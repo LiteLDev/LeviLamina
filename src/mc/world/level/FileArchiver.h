@@ -77,11 +77,29 @@ public:
         ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> copiedLevelPath;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        CopyWorldResult& operator=(CopyWorldResult const&);
+        CopyWorldResult();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
+        MCAPI CopyWorldResult(::FileArchiver::CopyWorldResult const&);
+
         MCAPI ~CopyWorldResult();
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCFOLD void* $ctor(::FileArchiver::CopyWorldResult const&);
 #endif
         // NOLINTEND
 
@@ -110,19 +128,28 @@ public:
     public:
         // prevent constructor by default
         EduCloudImportInfo(EduCloudImportInfo const&);
-        EduCloudImportInfo();
 
 #endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
+        MCAPI EduCloudImportInfo();
+
         MCAPI ::FileArchiver::EduCloudImportInfo& operator=(::FileArchiver::EduCloudImportInfo&&);
 
         MCAPI ::FileArchiver::EduCloudImportInfo& operator=(::FileArchiver::EduCloudImportInfo const&);
 #endif
 
         MCAPI ~EduCloudImportInfo();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor();
+#endif
         // NOLINTEND
 
     public:
@@ -146,6 +173,22 @@ public:
             // NOLINTBEGIN
             ::ll::TypedStorage<4, 4, ::FileArchiverOutcome>              outcome;
             ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> path;
+            // NOLINTEND
+
+        public:
+            // member functions
+            // NOLINTBEGIN
+#ifdef LL_PLAT_C
+            MCAPI ~ImportWorldResult();
+#endif
+            // NOLINTEND
+
+        public:
+            // destructor thunk
+            // NOLINTBEGIN
+#ifdef LL_PLAT_C
+            MCFOLD void $dtor();
+#endif
             // NOLINTEND
         };
 
@@ -172,6 +215,30 @@ public:
         virtual ~ProgressReporter() /*override*/;
 
         virtual void clear() /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ProgressReporter();
+
+#ifdef LL_PLAT_C
+        MCAPI ::std::string getProgressMessage();
+
+        MCAPI float getProgressPercentage() const;
+
+        MCAPI ::std::string getProgressTitle();
+#endif
+
+        MCAPI void setProgressMessage(::std::string const& message);
+
+        MCAPI void setProgressTitle(::std::string const& title);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -208,9 +275,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Result& operator=(Result const&);
+        Result();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI Result(::FileArchiver::Result const&);
+
         MCAPI ~Result();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::FileArchiver::Result const&);
         // NOLINTEND
 
     public:
@@ -230,18 +310,6 @@ public:
         ::ll::TypedStorage<8, 104, ::FileArchiver::Result>                       mResult;
         ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LevelStorage>> mLevelStorage;
         ::ll::TypedStorage<8, 8, ::LevelData*>                                   mLevelData;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ExportData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -489,6 +557,8 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::Bedrock::Threading::Async<::FileArchiver::CopyWorldResult> copyLevelAsync(::std::string const& worldId);
+
+    MCAPI void eraseEduCloudImportInfo(::std::string const& worldId);
 #endif
 
     MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> exportCurrentEditorLevel(
@@ -549,9 +619,9 @@ public:
 
     MCAPI ::FileArchiver::State getCurrentState();
 
+#ifdef LL_PLAT_C
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> getProgressReporter();
 
-#ifdef LL_PLAT_C
     MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> importLevel(
         ::Core::Path const&  archivedWorldFile,
         bool                 suppressStartMessage,
@@ -566,10 +636,25 @@ public:
         bool                                           suppressEndMessage,
         ::std::string const&                           levelId
     );
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void setWorldConverter(::std::unique_ptr<::FileArchiver::IWorldConverter> worldConverter);
+    MCAPI ::Bedrock::Threading::Async<::FileArchiver::ImportWorldsResult>
+    importLevels(::std::vector<::Core::PathBuffer<::std::string>> const& archivedWorldFiles);
+
+    MCAPI void setEduCloudImportInfo(
+        ::std::string const& worldId,
+        ::std::string const& cTag,
+        ::std::string const& name,
+        ::std::string const& oid,
+        bool                 allowMultiplayer
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::error_code make_error_code(::FileArchiverOutcome error);
 #endif
     // NOLINTEND
 
@@ -577,8 +662,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& EXTENSION_ADDON();
-
-    MCAPI static ::std::string const& EXTENSION_EDITOR_ADDON();
 
     MCAPI static ::std::string const& EXTENSION_PROJECT();
 

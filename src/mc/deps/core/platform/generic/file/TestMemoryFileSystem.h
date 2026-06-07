@@ -20,8 +20,6 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::Core::FileImpl>
     _createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64) /*override*/;
-
-    virtual ~TestMemoryFileSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

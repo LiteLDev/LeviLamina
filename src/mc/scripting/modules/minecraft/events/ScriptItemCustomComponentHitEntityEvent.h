@@ -84,23 +84,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptItemCustomComponentHitEntityEvent& operator=(ScriptItemCustomComponentHitEntityEvent const&);
     ScriptItemCustomComponentHitEntityEvent();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptItemCustomComponentHitEntityEvent() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentHitEntityEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
-
-    MCAPI
-    ScriptItemCustomComponentHitEntityEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent const&);
-
     MCAPI ScriptItemCustomComponentHitEntityEvent(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                        scope
@@ -116,20 +104,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent const&);
-
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                        scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

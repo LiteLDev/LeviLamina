@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/renderer/MatrixStack.h"
+#include "mc/deps/shared_types/legacy/item/RenderOffsetsItemComponent.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -11,17 +12,12 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes::Legacy { struct RenderOffsetsItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class RenderOffsetsItemComponent : public ::NetworkedItemComponent<::RenderOffsetsItemComponent> {
 public:
-    // RenderOffsetsItemComponent inner types declare
-    // clang-format off
-    struct TRS;
-    struct ItemTransforms;
-    // clang-format on
-
     // RenderOffsetsItemComponent inner types define
     enum class Hand : int {
         MainHand = 0,
@@ -33,48 +29,31 @@ public:
         ThirdPerson = 1,
     };
 
-    struct TRS {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mTranslation;
-        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mRotation;
-        ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mScale;
-        // NOLINTEND
+    using ItemTransforms = ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms;
 
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
-        // NOLINTEND
-    };
-
-    struct ItemTransforms {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 36, ::RenderOffsetsItemComponent::TRS> mFirstPerson;
-        ::ll::TypedStorage<4, 36, ::RenderOffsetsItemComponent::TRS> mThirdPerson;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
-        // NOLINTEND
-    };
+    using TRS = ::SharedTypes::Legacy::RenderOffsetsItemComponent::TRS;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 72, ::RenderOffsetsItemComponent::ItemTransforms> mMainHand;
-    ::ll::TypedStorage<4, 72, ::RenderOffsetsItemComponent::ItemTransforms> mOffhand;
+    ::ll::TypedStorage<4, 72, ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms> mMainHand;
+    ::ll::TypedStorage<4, 72, ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms> mOffhand;
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~RenderOffsetsItemComponent() /*override*/ = default;
+    MCAPI RenderOffsetsItemComponent();
+
+    MCAPI explicit RenderOffsetsItemComponent(::SharedTypes::Legacy::RenderOffsetsItemComponent const& data);
+
+#ifdef LL_PLAT_C
+    MCAPI void buildMatrixFromData(
+        ::MatrixStack::MatrixStackRef&            mvs,
+        ::RenderOffsetsItemComponent::Hand        hand,
+        ::RenderOffsetsItemComponent::Perspective perspective
+    ) const;
+#endif
     // NOLINTEND
 
 public:
@@ -82,11 +61,13 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static void _buildMatrixFromData(
-        ::MatrixStack::MatrixStackRef&                      mvs,
-        ::RenderOffsetsItemComponent::ItemTransforms const& hand,
-        ::RenderOffsetsItemComponent::Perspective           perspective
+        ::MatrixStack::MatrixStackRef&                                           mvs,
+        ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms const& hand,
+        ::RenderOffsetsItemComponent::Perspective                                perspective
     );
 #endif
+
+    MCFOLD static void _fromString(::RenderOffsetsItemComponent&, ::std::string const&);
 
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
@@ -94,15 +75,32 @@ public:
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
+#ifdef LL_PLAT_C
+    MCAPI static void buildMatrixFromDefaults(
+        ::MatrixStack::MatrixStackRef&            mvs,
+        ::RenderOffsetsItemComponent::Hand        hand,
+        ::RenderOffsetsItemComponent::Perspective perspective,
+        float                                     textureScale
+    );
+#endif
+
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
+    MCAPI static ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
 
-    MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
+    MCAPI static ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::Legacy::RenderOffsetsItemComponent const& data);
     // NOLINTEND
 
 public:

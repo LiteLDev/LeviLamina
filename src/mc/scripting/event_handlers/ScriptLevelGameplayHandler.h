@@ -27,19 +27,11 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::LevelWeatherChangedEvent& event) /*override*/;
 
     virtual ::HandlerResult handleEvent(::ScriptingWorldInitializeEvent const& event) /*override*/;
-
-    virtual ~ScriptLevelGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleScriptingWorldInitializeEvent(
-        ::ScriptingWorldInitializeEvent const&                                            eventData,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
-
     MCAPI bool _handleWeatherChangedEvent(
         ::LevelWeatherChangedEvent&                                                       weatherChangedEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,

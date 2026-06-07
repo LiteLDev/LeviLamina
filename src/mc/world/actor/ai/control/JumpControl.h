@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     virtual ~JumpControl() /*override*/ = default;
 
-    virtual void initializeInternal(::Mob& mob, ::JumpControlDescription* description);
+    virtual void initializeInternal(::Mob&, ::JumpControlDescription const*);
 
     virtual ::std::unique_ptr<::JumpControl> clone() const;
 
@@ -37,9 +37,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI JumpControl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeInternal(::Mob& mob, ::JumpControlDescription* description);
+    MCFOLD void $initializeInternal(::Mob&, ::JumpControlDescription const*);
 
     MCAPI ::std::unique_ptr<::JumpControl> $clone() const;
 

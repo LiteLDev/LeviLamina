@@ -12,10 +12,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::BiomeTypes> mBiomeType;
     // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BiomeTypeComponent() /*override*/ = default;
-    // NOLINTEND
 };

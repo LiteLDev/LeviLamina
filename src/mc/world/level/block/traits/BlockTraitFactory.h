@@ -37,15 +37,22 @@ public:
     public:
         // prevent constructor by default
         TraitMetadata& operator=(TraitMetadata const&);
-        TraitMetadata(TraitMetadata const&);
         TraitMetadata();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI TraitMetadata(::BlockTraitFactory::TraitMetadata const&);
+
         MCAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
 
         MCAPI ~TraitMetadata();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::BlockTraitFactory::TraitMetadata const&);
         // NOLINTEND
 
     public:
@@ -66,18 +73,16 @@ public:
 
 public:
     // prevent constructor by default
-    BlockTraitFactory& operator=(BlockTraitFactory const&);
     BlockTraitFactory(BlockTraitFactory const&);
+    BlockTraitFactory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockTraitFactory();
-
     MCAPI ::std::unique_ptr<::BlockTrait::ITrait>
     createTrait(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI ::BlockTraitFactory& operator=(::BlockTraitFactory&&);
+    MCAPI ::BlockTraitFactory& operator=(::BlockTraitFactory const&);
 
     MCAPI ~BlockTraitFactory();
     // NOLINTEND
@@ -85,17 +90,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockTraitFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
-
     MCAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
+    MCAPI static ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata> const*
+    registeredTraits(::cereal::ReflectionCtx const& ctx);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

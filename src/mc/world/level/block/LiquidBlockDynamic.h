@@ -10,8 +10,8 @@
 class Actor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class LiquidBlock;
+class Material;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -32,27 +32,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~LiquidBlockDynamic() /*override*/ = default;
+    virtual void entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LiquidBlockDynamic(
+        ::std::string const& nameId,
+        int                  id,
+        ::Material const&    material,
+        ::LiquidBlock const& liquidBlock
+    );
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& nameId, int id, ::Material const& material, ::LiquidBlock const& liquidBlock);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD void $entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const;
 
 
     // NOLINTEND

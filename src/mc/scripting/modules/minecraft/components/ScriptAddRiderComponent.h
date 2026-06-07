@@ -19,12 +19,6 @@ class ScriptAddRiderComponent
 : public ::ScriptModuleMinecraft::
       ECSScriptActorComponent<::AddRiderComponent, ::SharedTypes::v1_21_130::AddRiderComponentDefinition> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptAddRiderComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<::std::string> getEntityType() const;
@@ -36,6 +30,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

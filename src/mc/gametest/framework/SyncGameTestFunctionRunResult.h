@@ -16,7 +16,7 @@ class SyncGameTestFunctionRunResult : public ::gametest::IGameTestFunctionRunRes
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 248> mUnkc3d536;
+    ::ll::UntypedStorage<8, 288> mUnkc3d536;
     // NOLINTEND
 
 public:
@@ -31,8 +31,6 @@ public:
     virtual bool isComplete() const /*override*/;
 
     virtual ::std::optional<::gametest::GameTestError> getError() /*override*/;
-
-    virtual ~SyncGameTestFunctionRunResult() /*override*/ = default;
     // NOLINTEND
 
 public:

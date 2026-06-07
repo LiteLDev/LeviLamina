@@ -14,17 +14,27 @@ class BlockSource;
 
 class DoublePlantBlock : public ::DoublePlantBaseBlock {
 public:
+    // prevent constructor by default
+    DoublePlantBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual ~DoublePlantBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DoublePlantBlock(::std::string const& nameId, int id);
+
     MCAPI bool placeAt(::BlockSource& region, ::BlockPos const& pos, int updateType, ::Actor*) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

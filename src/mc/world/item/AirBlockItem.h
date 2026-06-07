@@ -11,12 +11,6 @@ public:
     AirBlockItem();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AirBlockItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AirBlockItem(::std::string const& name, int);

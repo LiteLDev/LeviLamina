@@ -28,6 +28,8 @@ public:
 
 public:
     // prevent constructor by default
+    SemVersion& operator=(SemVersion const&);
+    SemVersion(SemVersion const&);
     SemVersion();
 
 public:
@@ -35,23 +37,9 @@ public:
     // NOLINTBEGIN
     MCAPI SemVersion(::SemVersion&&);
 
-    MCAPI SemVersion(::SemVersion const&);
-
     MCAPI explicit SemVersion(::SemVersionConstant const& other);
 
-    MCAPI SemVersion(
-        ushort                           major,
-        ushort                           minor,
-        ushort                           patch,
-        ::Bedrock::StaticOptimizedString preRelease,
-        ::Bedrock::StaticOptimizedString buildMeta
-    );
-
     MCAPI ::SemVersion& operator=(::SemVersion&&);
-
-    MCAPI ::SemVersion& operator=(::SemVersion const&);
-
-    MCAPI ~SemVersion();
     // NOLINTEND
 
 public:
@@ -71,22 +59,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::SemVersion&&);
 
-    MCAPI void* $ctor(::SemVersion const&);
-
     MCAPI void* $ctor(::SemVersionConstant const& other);
-
-    MCAPI void* $ctor(
-        ushort                           major,
-        ushort                           minor,
-        ushort                           patch,
-        ::Bedrock::StaticOptimizedString preRelease,
-        ::Bedrock::StaticOptimizedString buildMeta
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

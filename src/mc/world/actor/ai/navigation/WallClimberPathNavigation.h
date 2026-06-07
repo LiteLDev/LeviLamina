@@ -38,8 +38,6 @@ public:
     virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed) /*override*/;
 
     virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
-
-    virtual ~WallClimberPathNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:

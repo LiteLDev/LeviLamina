@@ -38,8 +38,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~DebugSettingsFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -63,11 +61,11 @@ public:
 
     MCFOLD int getSpawnDimension() const;
 
-    MCAPI bool isEnableBiomeOverride() const;
+    MCFOLD bool isEnableBiomeOverride() const;
 
     MCFOLD bool isEnableSpawnBiome() const;
 
-    MCAPI void setBiomeOverride(int biomeIndex);
+    MCAPI void setBiomeOverride(int);
 
     MCAPI void setEnableBiomeOverride(bool enable);
 
@@ -79,7 +77,7 @@ public:
 
     MCAPI void setGameVersionOverride(::std::string const& version);
 
-    MCAPI void setSpawnBiome(int biomeIndex);
+    MCAPI void setSpawnBiome(int);
 
     MCAPI void setSpawnDimension(int spawnDimensionIndex);
     // NOLINTEND
@@ -94,12 +92,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> worldSettingsProvider);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

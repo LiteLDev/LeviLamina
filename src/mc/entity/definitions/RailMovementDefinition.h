@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct RailMovementComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -21,7 +23,14 @@ public:
     // prevent constructor by default
     RailMovementDefinition& operator=(RailMovementDefinition const&);
     RailMovementDefinition(RailMovementDefinition const&);
-    RailMovementDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RailMovementDefinition();
+
+    MCAPI void initialize(::EntityContext&, ::RailMovementComponent& component) const;
+    // NOLINTEND
 
 public:
     // static functions
@@ -29,5 +38,11 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RailMovementDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -23,12 +23,13 @@ public:
 public:
     // prevent constructor by default
     EditorBPStructureData& operator=(EditorBPStructureData const&);
-    EditorBPStructureData(EditorBPStructureData const&);
     EditorBPStructureData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI EditorBPStructureData(::Editor::EditorBPStructureData const&);
+
     MCNAPI EditorBPStructureData(
         ::std::string   strucNamespace,
         ::std::string   name,
@@ -42,6 +43,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::EditorBPStructureData const&);
+
     MCNAPI void* $ctor(::std::string strucNamespace, ::std::string name, ::PackIdVersion idVersion, ::std::string path);
     // NOLINTEND
 

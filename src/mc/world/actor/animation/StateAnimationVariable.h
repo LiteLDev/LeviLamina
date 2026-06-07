@@ -25,5 +25,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void setVariable(::RenderParams& renderParams) const;
+
+    MCAPI ~StateAnimationVariable();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

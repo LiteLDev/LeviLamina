@@ -26,7 +26,9 @@ public:
     class Viewer;
     template<typename T0, typename T1> class AccessHandle;
     class Editor;
+    class EditorImpl;
     class Impl;
+    class ViewerImpl;
     // clang-format on
 
     // DataStore inner types define
@@ -72,15 +74,19 @@ public:
         // NOLINTEND
 
     public:
-        // virtual function thunks
+        // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI bool getBooleanKey(::std::string_view key, bool defaultValue) const;
 
+        MCNAPI int getSInt32Key(::std::string_view key, int defaultValue) const;
+#endif
         // NOLINTEND
 
     public:
-        // vftables
+        // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+
         // NOLINTEND
     };
 
@@ -95,14 +101,67 @@ public:
 
         virtual ::Bedrock::JSONObject::Node*
         setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) = 0;
-
-        virtual ~Editor() /*override*/ = default;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
 
+        // NOLINTEND
+    };
+
+    class EditorImpl : public ::Bedrock::DataStore::Editor {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnkeff452;
+        ::ll::UntypedStorage<1, 1> mUnke53327;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EditorImpl& operator=(EditorImpl const&);
+        EditorImpl(EditorImpl const&);
+        EditorImpl();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~EditorImpl() /*override*/ = default;
+
+        virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const /*override*/;
+
+        virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() /*override*/;
+
+        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view key) const /*override*/;
+
+        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view key) /*override*/;
+
+        virtual ::Bedrock::JSONObject::Node*
+        setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) /*override*/;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI ::gsl::not_null<::Bedrock::DataStore const*> $getOwningDataStore() const;
+
+        MCNAPI ::gsl::not_null<::Bedrock::DataStore*> $getOwningDataStore();
+
+        MCNAPI ::Bedrock::JSONObject::Node const* $getValueForKey(::std::string_view key) const;
+
+        MCNAPI ::Bedrock::JSONObject::Node* $getValueForKey(::std::string_view key);
+
+        MCNAPI ::Bedrock::JSONObject::Node*
+        $setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value);
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -161,6 +220,48 @@ public:
         // NOLINTEND
     };
 
+    class ViewerImpl : public ::Bedrock::DataStore::Viewer {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk42e070;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ViewerImpl& operator=(ViewerImpl const&);
+        ViewerImpl(ViewerImpl const&);
+        ViewerImpl();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const /*override*/;
+
+        virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() /*override*/;
+
+        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view key) const /*override*/;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI ::gsl::not_null<::Bedrock::DataStore const*> $getOwningDataStore() const;
+
+        MCNAPI ::gsl::not_null<::Bedrock::DataStore*> $getOwningDataStore();
+
+        MCNAPI ::Bedrock::JSONObject::Node const* $getValueForKey(::std::string_view key) const;
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -183,7 +284,23 @@ public:
     // NOLINTBEGIN
     MCNAPI DataStore();
 
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::DataStore::AccessHandle<::Bedrock::DataStore::Editor, ::Bedrock::DataStore::EditorImpl> edit();
+#endif
+
+    MCNAPI void load();
+
+#ifdef LL_PLAT_C
+    MCNAPI void save();
+#endif
+
     MCNAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
+
+    MCNAPI void setFilePath(::Core::Path const& filePath);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::DataStore::AccessHandle<::Bedrock::DataStore::Viewer, ::Bedrock::DataStore::ViewerImpl> view();
+#endif
     // NOLINTEND
 
 public:

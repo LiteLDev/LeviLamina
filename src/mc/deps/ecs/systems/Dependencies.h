@@ -22,16 +22,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                   mUsesEntityFactory;
     ::ll::TypedStorage<8, 144, ::std::array<::std::vector<uint>, 6>> mAccessGroups;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~Dependencies();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

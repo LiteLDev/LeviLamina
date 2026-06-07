@@ -42,6 +42,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HorseArmorItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isBodyArmor() const /*override*/;
@@ -71,14 +75,32 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~HorseArmorItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI HorseArmorItem(::std::string const& name, int id, ::HorseArmorItem::Tier tier);
+
+    MCFOLD ::HorseArmorItem::Tier getTier() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
+#ifdef LL_PLAT_C
+    MCAPI static void ResetDefaultHorseLeatherColor();
+
+    MCAPI static void SetDefaultHorseLeatherColor(int newDefaultHorseLeatherColor);
+#endif
+
+    MCAPI static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::HorseArmorItem::Tier tier);
     // NOLINTEND
 
 public:
@@ -102,7 +124,7 @@ public:
 
     MCAPI bool $isDyeable() const;
 
-    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
     MCFOLD void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

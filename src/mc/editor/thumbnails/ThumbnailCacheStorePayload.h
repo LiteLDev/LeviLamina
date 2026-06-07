@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class ThumbnailFileBytes; }
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -24,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    ThumbnailCacheStorePayload& operator=(ThumbnailCacheStorePayload const&);
     ThumbnailCacheStorePayload(ThumbnailCacheStorePayload const&);
     ThumbnailCacheStorePayload();
 
@@ -41,14 +44,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::ThumbnailCacheStorePayload&
-    operator=(::Editor::Network::ThumbnailCacheStorePayload const&);
+#ifdef LL_PLAT_C
+    MCNAPI ThumbnailCacheStorePayload(::mce::UUID const& id, uint hash, ::Editor::ThumbnailFileBytes const& data);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::mce::UUID const& id, uint hash, ::Editor::ThumbnailFileBytes const& data);
+#endif
     // NOLINTEND
 
 public:

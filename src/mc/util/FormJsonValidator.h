@@ -22,9 +22,7 @@ public:
 
     MCNAPI static ::JsonValidator::Property getControlLockedProperty();
 
-#ifdef LL_PLAT_C
     MCNAPI static ::JsonValidator::Property getDividerProperty();
-#endif
 
     MCNAPI static ::JsonValidator::Property getDropdownProperty(bool requiresDefault);
 
@@ -35,11 +33,11 @@ public:
         ::JsonValidator::Property const& labelType,
         ::JsonValidator::Property const& dividerType
     );
+#endif
 
     MCNAPI static ::JsonValidator::Property getHeaderProperty();
 
     MCNAPI static ::JsonValidator::Property getLabelProperty();
-#endif
 
     MCNAPI static ::JsonValidator::Property getSliderProperty(bool requiresDefault);
 

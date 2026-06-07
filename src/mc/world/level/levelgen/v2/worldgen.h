@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/Projection.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,6 +22,7 @@ namespace SharedTypes::v1_21_80 { class JigsawBlockMetadata; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
 namespace br::worldgen { struct StructureBlockInfo; }
 namespace br::worldgen { struct StructurePlaceSettings; }
+namespace br::worldgen { struct StructureProcessor; }
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
 // clang-format on
 
@@ -38,7 +41,10 @@ MCAPI int expansionHackCalc(
 
 MCAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
 
-MCAPI bool isEmptyPool(::StructureTemplatePool const& pool);
+MCAPI ::std::vector<uint64> getJigsawBlockIds(::StructureTemplatePool const& pool);
+
+MCAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const&
+getProjectionProcessors(::Projection projection);
 
 MCFOLD int noopCalc(
     ::JigsawStructureUtils::MetadataCache&,
@@ -77,10 +83,10 @@ MCAPI ::std::optional<::BlockPos> randomNamedJigsawLocation(
     ::IRandom&                    random
 );
 
-MCAPI ::std::vector<uint64> shuffledJigsawBlockId(::StructureTemplatePool const& pool, ::IRandom& random);
-
 MCAPI ::std::vector<uint64>
 shuffledJigsawBlockIndexes(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata, ::IRandom& random);
+
+MCAPI ::BlockPos transform(::BlockPos pos, ::Mirror mirror, ::Rotation rotation, ::BlockPos pivot);
 // NOLINTEND
 
 } // namespace br::worldgen

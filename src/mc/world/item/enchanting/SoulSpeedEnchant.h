@@ -24,14 +24,16 @@ public:
     virtual bool isTreasureOnly() const /*override*/;
 
     virtual bool isDiscoverable() const /*override*/;
-
-    virtual ~SoulSpeedEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getLevel(::Actor const& entity);
+
+    MCAPI static float getSpeedBoost(int level);
+
+    MCAPI static bool shouldSpawnParticles(::Actor const& entity);
     // NOLINTEND
 
 public:

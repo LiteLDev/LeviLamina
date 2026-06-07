@@ -29,7 +29,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~TickTimeManagerClient() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~TickTimeManagerClient() /*override*/;
+#endif
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const getWorldClockRegistry() const /*override*/;
 
@@ -56,6 +60,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
     );
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

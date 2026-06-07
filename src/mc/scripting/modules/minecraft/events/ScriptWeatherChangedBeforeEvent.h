@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct LevelWeatherChangedEvent;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -23,9 +24,35 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptWeatherChangedBeforeEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptWeatherChangedBeforeEvent(
+        ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
+        int                                        duration
+    );
+
+    MCAPI void copyTo(::LevelWeatherChangedEvent& weatherChangedEvent) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
+        int                                        duration
+    );
     // NOLINTEND
 };
 

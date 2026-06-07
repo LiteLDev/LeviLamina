@@ -42,6 +42,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool isPopulated() const;
+
+    MCNAPI void setPopulated(bool value);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 

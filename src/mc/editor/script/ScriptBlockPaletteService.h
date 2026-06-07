@@ -11,7 +11,9 @@
 // clang-format off
 namespace Editor::ScriptModule { class ScriptBlockPalette; }
 namespace Editor::ScriptModule { class ScriptIBlockPaletteItem; }
+namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -35,6 +37,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptBlockPaletteService(
+        ::Editor::Services::EditorBlockPaletteServiceProvider& provider,
+        ::Scripting::WeakLifetimeScope const&                  scope
+    );
+
     MCNAPI void addOrReplacePalette(
         ::std::string const&                                                             paletteId,
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette> palette
@@ -76,6 +83,13 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Editor::Services::EditorBlockPaletteServiceProvider& provider, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

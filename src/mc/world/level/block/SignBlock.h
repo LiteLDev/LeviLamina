@@ -16,7 +16,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Item;
@@ -70,6 +69,14 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::SignBlock::SignInteractionResult::Result> mResult;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI ::std::optional<::std::string> getButtonTooltip() const;
+#endif
+        // NOLINTEND
     };
 
 public:
@@ -78,6 +85,10 @@ public:
     ::ll::TypedStorage<4, 4, ::SignBlock::SignType> mSignType;
     ::ll::TypedStorage<1, 1, bool>                  mOnGround;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SignBlock();
 
 public:
     // virtual functions
@@ -91,8 +102,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
@@ -110,15 +120,17 @@ public:
     virtual bool _canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     virtual ::ItemInstance _getItemInstance() const;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~SignBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SignBlock(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::SignBlock::SignType getSignType() const;
+#endif
+
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -127,7 +139,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canChangeSign(::SignBlockActor& blockActor, ::Player& player);
+    MCAPI static bool
+    _canUseDye(::SignBlockActor& blockActor, ::SignTextSide side, ::mce::Color const& dyeColor, ::Player& player);
+
+    MCAPI static bool _canUseHoneyComb(::SignBlockActor& blockActor, ::Player& player);
+
+    MCAPI static bool _canUseInkSac(::SignBlockActor& blockActor, ::SignTextSide side, ::Player& player);
 
     MCAPI static ::SignBlock::SignInteractionResult _getInteractResult(
         ::SignBlockActor& blockActor,
@@ -138,6 +155,8 @@ public:
         uchar             face
     );
 
+    MCAPI static void _getShape(int facing, ::AABB& bufferValue);
+
     MCAPI static void _useDye(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
@@ -146,24 +165,8 @@ public:
         ::Player&         player
     );
 
-    MCAPI static void _useGlowInkSac(
-        ::SignBlockActor& blockActor,
-        ::SignTextSide    side,
-        ::ItemStack&      glowInkSacStack,
-        ::BlockPos const& pos,
-        ::Player&         player
-    );
-
     MCAPI static void
     _useHoneyComb(::SignBlockActor& blockActor, ::ItemStack& honeyCombStack, ::BlockPos const& pos, ::Player& player);
-
-    MCAPI static void _useInkSac(
-        ::SignBlockActor& blockActor,
-        ::SignTextSide    side,
-        ::ItemStack&      inkSacStack,
-        ::BlockPos const& pos,
-        ::Player&         player
-    );
 
 #ifdef LL_PLAT_C
     MCAPI static ::SignBlock::SignInteractionResult
@@ -171,6 +174,12 @@ public:
 #endif
 
     MCAPI static ::mce::Color getSignTextColorFromDyeItem(::Item const& dyeItem);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
     // NOLINTEND
 
 public:
@@ -185,7 +194,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
@@ -202,8 +211,6 @@ public:
     MCAPI bool $_canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI ::ItemInstance $_getItemInstance() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

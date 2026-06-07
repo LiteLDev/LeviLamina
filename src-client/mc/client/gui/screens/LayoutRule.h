@@ -42,9 +42,9 @@ public:
     MCAPI void addDynamicGridItemGridPositionTerm(
         ::UIControl&          parent,
         ::UIControl&          control,
-        ::LayoutVariableType  type,
-        ::ui::OrientationType rescalingType,
-        int                   collectionIndex
+        ::LayoutVariableType  rescalingType,
+        ::ui::OrientationType collectionIndex,
+        int
     );
 
     MCAPI void addFillGridDimensionTerm(
@@ -76,20 +76,16 @@ public:
     );
 
     MCAPI void addStackPanelItemPositionTerms(
-        ::UIControl&          priorSibling,
-        ::UIControl&          control,
-        ::LayoutVariableType  positionType,
-        ::ui::OrientationType orientation
+        ::UIControl& priorSibling,
+        ::UIControl& positionType,
+        ::LayoutVariableType,
+        ::ui::OrientationType
     );
 
     MCAPI void
     addStackPanelItemRemainderSizeTerms(::UIControl& parent, ::UIControl& control, ::LayoutVariableType sizeType);
 
     MCAPI void addStackPanelVisibilityTerm(::UIControl& control, ::LayoutVariableType sizeType);
-
-    MCAPI bool isSatisfiable() const;
-
-    MCAPI void removeDependsOnMeEntries();
 
     MCAPI ::std::string toString(::UIControl& control) const;
     // NOLINTEND

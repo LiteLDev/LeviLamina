@@ -47,17 +47,19 @@ public:
     // NOLINTBEGIN
     MCAPI GatheringInfoScreenController(::std::shared_ptr<::MainMenuScreenModel> model, bool autoConnect);
 
+    MCAPI void _attemptAutoConnect();
+
     MCAPI void _attemptToConnect();
 
     MCAPI void _createQRCode();
 
-    MCAPI bool _hasValidGathering() const;
-
-    MCAPI bool _isChildAccount() const;
+    MCAPI bool _isConsolePlatform() const;
 
     MCAPI bool _locKeyValid(::std::string const& key) const;
 
     MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
 
     MCAPI bool _shouldShowQRCode() const;
 

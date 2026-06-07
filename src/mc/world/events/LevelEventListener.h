@@ -45,6 +45,8 @@ public:
         bool                 isLightning
     );
 
+    virtual ::EventResult onRealmsStory(::std::string const&);
+
     virtual ::EventResult onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
 
@@ -72,6 +74,8 @@ public:
         bool                 isRaining,
         bool                 isLightning
     );
+
+    MCFOLD ::EventResult $onRealmsStory(::std::string const&);
 
     MCFOLD ::EventResult $onEvent(::LevelNotificationEvent const& event);
 

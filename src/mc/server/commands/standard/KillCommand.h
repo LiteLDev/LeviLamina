@@ -26,26 +26,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~KillCommand() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI KillCommand();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketViolationResponse.h"
 #include "mc/network/packet/PacketViolationSeverity.h"
 #include "mc/network/packet/PacketViolationType.h"
 
@@ -19,17 +20,48 @@ public:
 
 public:
     // prevent constructor by default
-    PacketViolationWarningPacketPayload(PacketViolationWarningPacketPayload const&);
     PacketViolationWarningPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::PacketViolationWarningPacketPayload& operator=(::PacketViolationWarningPacketPayload&&);
+    MCAPI PacketViolationWarningPacketPayload(
+        ::std::error_code const&  error_code,
+        ::PacketViolationResponse violationResponse,
+        ::MinecraftPacketIds      violatingPacketId,
+        ::std::string const&      violationContext
+    );
 
-    MCFOLD ::PacketViolationWarningPacketPayload& operator=(::PacketViolationWarningPacketPayload const&);
+#ifdef LL_PLAT_C
+    MCAPI PacketViolationWarningPacketPayload(
+        ::PacketViolationSeverity violationSeverity,
+        ::PacketViolationType     violationType,
+        ::MinecraftPacketIds      violatingPacketId,
+        ::std::string const&      violationContext
+    );
+#endif
 
     MCAPI ~PacketViolationWarningPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::error_code const&  error_code,
+        ::PacketViolationResponse violationResponse,
+        ::MinecraftPacketIds      violatingPacketId,
+        ::std::string const&      violationContext
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::PacketViolationSeverity violationSeverity,
+        ::PacketViolationType     violationType,
+        ::MinecraftPacketIds      violatingPacketId,
+        ::std::string const&      violationContext
+    );
+#endif
     // NOLINTEND
 
 public:

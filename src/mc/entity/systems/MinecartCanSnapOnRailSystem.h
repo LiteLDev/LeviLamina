@@ -15,6 +15,7 @@ struct InterpolateMovementNeededComponent;
 struct RailMovementComponent;
 struct SnapOnRailComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 struct MinecartCanSnapOnRailSystem {
@@ -34,5 +35,7 @@ public:
         ::EntityModifier<::SnapOnRailComponent> mod,
         ::IConstBlockSource const&              constBlockSource
     );
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

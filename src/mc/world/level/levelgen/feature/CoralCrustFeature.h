@@ -19,16 +19,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    virtual ~CoralCrustFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
-
-    MCAPI ::BlockPos _getOffsetFromRot(int rot, int type) const;
 
     MCAPI void _placeCoral(
         ::BlockSource&                                 region,
@@ -48,6 +44,8 @@ public:
     ) const;
 
     MCFOLD void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
+
+    MCFOLD void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

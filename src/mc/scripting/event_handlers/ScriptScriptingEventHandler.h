@@ -32,8 +32,6 @@ public:
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ScriptModuleShutdownEvent const& moduleShutdownEvent) /*override*/;
-
-    virtual ~ScriptScriptingEventHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

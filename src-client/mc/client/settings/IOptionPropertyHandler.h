@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Settings { struct LocStringData; }
 namespace Settings { struct OptionData; }
 // clang-format on
 
@@ -20,13 +21,15 @@ public:
 
     virtual ::std::vector<::Settings::OptionData> getOptions() = 0;
 
-    virtual ::std::optional<::std::string> getInfo();
+    virtual ::std::optional<::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>
+    getInfo();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::optional<::std::string> $getInfo();
+    MCAPI ::std::optional<::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>
+    $getInfo();
     // NOLINTEND
 };
 

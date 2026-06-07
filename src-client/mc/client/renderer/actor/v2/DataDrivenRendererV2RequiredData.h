@@ -8,7 +8,9 @@ class DataDrivenRenderer;
 class GameVersion;
 class HashedString;
 class MinecraftGameplayGraphicsResources;
+struct DataDrivenRendererContinuousData;
 struct DataDrivenRendererPreprocessingContext;
+struct ProcessedDataDrivenRenderers;
 // clang-format on
 
 class DataDrivenRendererV2RequiredData {
@@ -69,15 +71,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataDrivenRendererV2RequiredData(
+        ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
+        ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
+        ::GameVersion const&                                                                 gameVersion
+    );
+
     MCNAPI bool forceReinitialize(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
 
+    MCNAPI ::DataDrivenRendererContinuousData* getDataDrivenRendererContinuousData() const;
+
+    MCNAPI ::ProcessedDataDrivenRenderers const* getProcessedDataDrivenRenderers() const;
+
     MCNAPI void rebuildLateRenderers(::MinecraftGameplayGraphicsResources& graphicsResources);
 
     MCNAPI bool removeRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
+
+    MCNAPI bool renderActorsWithAttachablesEquipped() const;
 
     MCNAPI bool shouldRebuild() const;
 
@@ -86,6 +100,8 @@ public:
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
         ::MinecraftGameplayGraphicsResources&          graphicsResources
     );
+
+    MCNAPI ~DataDrivenRendererV2RequiredData();
     // NOLINTEND
 
 public:
@@ -97,5 +113,21 @@ public:
         ::DataDrivenRendererPreprocessingContext&      ctx,
         bool                                           supportPlayers
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
+        ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
+        ::GameVersion const&                                                                 gameVersion
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

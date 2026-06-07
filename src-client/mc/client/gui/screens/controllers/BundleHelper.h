@@ -46,11 +46,16 @@ public:
         int                          fromBundleCollectionIndex
     );
 
+    MCFOLD ::ActiveBundleData const& getActiveBundleData() const;
+
     MCAPI ::ItemStack const& getItemStackFromBundle(
         ::ContainerScreenController const& controller,
         ::ItemStackBase const&             bundleItem,
         int                                bundleItemIdx
     ) const;
+
+    MCAPI ::BundleTooltipLayoutData const&
+    getTooltipLayoutData(::ContainerScreenController const& controller, ::ItemStackBase const& bundleItem) const;
 
     MCAPI void handleBundleActive(
         ::ContainerScreenController& controller,
@@ -76,7 +81,21 @@ public:
         int                          collectionIndex
     );
 
+    MCAPI ::ui::ViewRequest handleBundlePlaceAll(
+        ::ContainerScreenController& controller,
+        ::std::string const&         collectionName,
+        int                          collectionIndex
+    );
+
+    MCAPI ::ui::ViewRequest handleBundlePlaceOne(
+        ::ContainerScreenController& controller,
+        ::std::string const&         collectionName,
+        int                          collectionIndex
+    );
+
     MCAPI void handleBundleUnselected(::ContainerScreenController& controller);
+
+    MCAPI void invalidateBundleTooltipLayoutData();
 
     MCAPI bool isSlotInteractiveBundle(
         ::ContainerScreenController const& controller,
@@ -94,14 +113,13 @@ public:
         ::BundleHelper::BundleItemScrollWheelDirection direction
     );
 
+    MCAPI void resetActiveBundleData();
+
     MCAPI bool shouldHandleBundleIdlePlaceAll(
         ::ContainerScreenController& controller,
         ::std::string const&         collectionName,
         int                          collectionIndex
     ) const;
-
-    MCAPI bool
-    shouldShowBundleOpen(::std::string const& collectionName, int collectionIndex, bool usingTouchScheme) const;
 
     MCAPI ~BundleHelper();
     // NOLINTEND
@@ -109,10 +127,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _isBundleSelected(
+        ::std::string const&      collectionName,
+        int                       collectionIndex,
+        ::ActiveBundleData const& activeBundleData
+    );
+
     MCAPI static ::ui::ViewRequest _onBundleItemRightStick(
         ::BundleHelper::BundleItemStickScrollDirection direction,
         ::BundleTooltipLayoutData                      tooltipLayoutData,
         ::ActiveBundleData&                            activeBundleData
+    );
+
+    MCAPI static ::ui::ViewRequest _onBundleItemScrollWheel(
+        ::BundleHelper::BundleItemScrollWheelDirection direction,
+        ::BundleTooltipLayoutData                      tooltipLayoutData,
+        ::ActiveBundleData&                            activeBundleData
+    );
+
+    MCAPI static bool _shouldShowBundleOpen(
+        ::std::string const&      collectionName,
+        int                       collectionIndex,
+        bool                      usingTouchScheme,
+        ::ActiveBundleData const& activeBundleData
     );
 
     MCAPI static void registerBindings(::ContainerScreenController& controller);

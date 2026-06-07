@@ -39,8 +39,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
-
-    virtual ~LegacyForestFoliageFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

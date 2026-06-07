@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::optional<::Json::Value>>          mJSONResponse;
     ::ll::TypedStorage<1, 2, ::std::optional<::ModalFormCancelReason>> mFormCancelReason;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ModalFormResponsePacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

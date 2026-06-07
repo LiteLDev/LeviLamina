@@ -23,9 +23,7 @@ public:
         bool
     ) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~SmithingTableTemplateContainerValidation() /*override*/ = default;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -39,7 +37,7 @@ public:
         bool
     ) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCAPI int $getContainerOffset(::ContainerScreenContext const&) const;
 
 
     // NOLINTEND

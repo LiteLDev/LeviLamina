@@ -43,7 +43,15 @@ public:
         bool                                                isBaby
     );
 
+    MCFOLD ::ActorUniqueID getActorId() const;
+
+    MCFOLD ::ActorDefinitionIdentifier const& getIdentifier() const;
+
+    MCFOLD bool isBaby() const;
+
 #ifdef LL_PLAT_C
+    MCAPI bool isValid() const;
+
     MCAPI ::std::optional<::RenderParams> tryCreateRenderParamsForVariants() const;
 #endif
 

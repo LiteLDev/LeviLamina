@@ -13,6 +13,7 @@
 class IFileAccess;
 namespace Core { class FileSystem; }
 namespace Core { class Path; }
+namespace Gameface { class ISyncStreamReader; }
 // clang-format on
 
 namespace OreUI {
@@ -25,9 +26,13 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IFileAccess>>        mFileAccess;
     ::ll::TypedStorage<8, 24, ::std::vector<::Core::PathBuffer<::std::string>>> mCurrentFolderFiles;
     ::ll::TypedStorage<8, 32, ::std::string>                                    mCurrentFileName;
-    ::ll::TypedStorage<8, 64, ::std::function<::cohtml::ISyncStreamReader*(::IFileAccess&, ::Core::Path)>>
+    ::ll::TypedStorage<8, 64, ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)>>
         mSyncStreamReaderFactory;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FileSystemReader();
 
 public:
     // virtual functions
@@ -39,6 +44,26 @@ public:
     virtual char const* NextFile() /*override*/;
 
     virtual ::cohtml::ISyncStreamReader* OpenFile(char const* path) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FileSystemReader(
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&                             fileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
+        ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&                             fileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
+        ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory
+    );
     // NOLINTEND
 
 public:

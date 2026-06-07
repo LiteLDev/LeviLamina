@@ -25,24 +25,24 @@ namespace ActorStopRidingEventSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void tickHandlerEvent(
-    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
-    ::StrictEntityContext const&                           entity,
-    ::ActorOwnerComponent const&                           actorOwnerComponent,
-    ::PassengerComponent const&                            passengerComponent,
-    ::Optional<::ActorIsBeingDestroyedFlagComponent const> actorIsBeingDestroyedFlagComponent,
-    ::Optional<::ExitFromPassengerFlagComponent const>     exitFromPassengerFlagComponent,
-    ::Optional<::SwitchingVehiclesFlagComponent const>     switchingVehiclesFlagComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::ActorOwnerComponent const> vehicles,
-    ::EntityModifier<::StopRidingRequestComponent>                                             modifier
+    ::entt::type_list<::Include<::StopRidingRequestComponent>> entity,
+    ::StrictEntityContext const&                               actorOwnerComponent,
+    ::ActorOwnerComponent const&                               passengerComponent,
+    ::PassengerComponent const&                                actorIsBeingDestroyedFlagComponent,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent const>     exitFromPassengerFlagComponent,
+    ::Optional<::ExitFromPassengerFlagComponent const>         switchingVehiclesFlagComponent,
+    ::Optional<::SwitchingVehiclesFlagComponent const>         vehicles,
+    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::ActorOwnerComponent const> modifier,
+    ::EntityModifier<::StopRidingRequestComponent>
 );
 
 MCAPI void tickListenerEvent(
-    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
-    ::ActorOwnerComponent const&                           actorOwnerComponent,
-    ::Optional<::LocalPlayerComponent const>               localPlayerFlag,
-    ::Optional<::ActorIsBeingDestroyedFlagComponent const> actorIsBeingDestroyedFlag,
-    ::Optional<::ExitFromPassengerFlagComponent const>     exitFromPassengerFlag,
-    ::Optional<::SwitchingVehiclesFlagComponent const>     switchingVehiclesFlag
+    ::entt::type_list<::Include<::StopRidingRequestComponent>> actorOwnerComponent,
+    ::ActorOwnerComponent const&                               localPlayerFlag,
+    ::Optional<::LocalPlayerComponent const>                   actorIsBeingDestroyedFlag,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent const>     exitFromPassengerFlag,
+    ::Optional<::ExitFromPassengerFlagComponent const>         switchingVehiclesFlag,
+    ::Optional<::SwitchingVehiclesFlagComponent const>
 );
 // NOLINTEND
 

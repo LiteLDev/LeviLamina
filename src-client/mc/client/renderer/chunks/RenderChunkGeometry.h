@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/block/BakedBlockLightType.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/ecs/EntityId.h"
@@ -18,8 +19,10 @@ class IRenderChunkGarbage;
 class MinecraftGraphics;
 class RenderChunkBuilder;
 class RenderChunkSorter;
+class TerrainLayer;
 class TerrainTextures;
 class TextureAtlas;
+class Vec3;
 struct BlockQueueEntry;
 struct RenderChunkDirectIndexData;
 struct RenderChunkDirectVertexData;
@@ -28,8 +31,10 @@ namespace dragon { struct RenderMetadata; }
 namespace mce { class IndexBufferContainer; }
 namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }
+namespace mce { class TexturePtr; }
 namespace mce { struct BufferResourceService; }
 namespace mce { struct ServerTexture; }
+namespace mce::framebuilder { struct FrameLightingModelCapabilities; }
 // clang-format on
 
 class RenderChunkGeometry {
@@ -97,6 +102,10 @@ public:
         bool                                                         hasSortedLayers
     );
 
+    MCAPI void _resetFaceMetadata();
+
+    MCAPI bool didRayTracingModeChangeDuringBuild() const;
+
     MCAPI uint64 endFaceSortOnly(
         ::mce::BufferResourceService& bufferResourceService,
         ::RenderChunkSorter&          sorter,
@@ -116,9 +125,35 @@ public:
         bool                            useSplitStream
     );
 
+    MCAPI ::mce::TexturePtr const& getDiffuseTexture(::TerrainLayer const& layer) const;
+
+    MCFOLD ::std::variant<
+        ::std::monostate,
+        ::std::shared_ptr<::mce::Mesh>,
+        ::std::shared_ptr<::RenderChunkDirectVertexData>> const&
+    getMeshData() const;
+
+    MCFOLD ::std::vector<::BlockQueueEntry> const& getPointLightCandidates() const;
+
     MCAPI bool isEmpty() const;
 
+    MCAPI bool isMeshValid() const;
+
+    MCAPI bool isReady() const;
+
+    MCAPI void prefetchMeshPtr() const;
+
+    MCAPI void rebuild(
+        ::RenderChunkBuilder& builder,
+        bool                  lightingType,
+        ::BakedBlockLightType forExport,
+        bool                  lightingModelCapabilities,
+        ::mce::framebuilder::FrameLightingModelCapabilities const&
+    );
+
     MCAPI void reset();
+
+    MCAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const&);
 
     MCAPI ~RenderChunkGeometry();
     // NOLINTEND
@@ -127,6 +162,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::mce::ServerTexture> createTerrainTextureList(::SubClientId player);
+
+    MCAPI static void deinitTextures();
 
     MCAPI static void initTextures(
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> const&  minecraftGraphics,

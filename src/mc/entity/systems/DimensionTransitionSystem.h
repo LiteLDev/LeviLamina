@@ -45,18 +45,6 @@ public:
         ::EntityModifier<::DimensionTransitionComponent> mod
     );
 
-#ifdef LL_PLAT_C
-    MCAPI static void
-    _tickReadyToContinueClient(::ViewT<::StrictEntityContext, ::PlayerChangeDimensionRequestComponent> view);
-#endif
-
-    MCAPI static void _tickReadyToContinueServer(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Exclude<::PassengerComponent, ::VehicleComponent, ::DimensionTransitionComponent>,
-            ::PlayerChangeDimensionRequestComponent> view
-    );
-
     MCAPI static void _tickVehicleDismount(
         ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent, ::PassengerComponent>>
             passengers,
@@ -67,7 +55,18 @@ public:
 
     MCAPI static ::TickingSystemWithInfo createPortalTransition();
 
+#ifdef LL_PLAT_C
+    MCAPI static ::TickingSystemWithInfo createReadyToContinueClient();
+#endif
+
+    MCAPI static ::TickingSystemWithInfo createReadyToContinueServer();
+
     MCAPI static ::TickingSystemWithInfo createVehicleDismount();
+
+    MCAPI static void removeChangeDimensionRequest(
+        ::StrictEntityContext const&                              entity,
+        ::EntityModifier<::PlayerChangeDimensionRequestComponent> modifier
+    );
 
     MCAPI static void requestPlayerChangeDimension(
         ::StrictEntityContext const&                                                      player,

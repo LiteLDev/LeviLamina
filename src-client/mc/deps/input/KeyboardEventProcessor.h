@@ -16,7 +16,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~KeyboardEventProcessor();
+    virtual ~KeyboardEventProcessor() = default;
 
     virtual void onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin) = 0;
 
@@ -24,21 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

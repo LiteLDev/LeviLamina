@@ -30,21 +30,7 @@ public:
     // clang-format on
 
     // IViewListener inner types define
-    struct IClipboardData {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual void Set(char const*, uint) = 0;
-
-        virtual ~IClipboardData() = default;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-    };
+    struct IClipboardData {};
 
 public:
     // virtual functions
@@ -104,7 +90,7 @@ public:
 
     virtual void OnAudioStreamVolumeChanged(int id, float volume);
 
-    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType);
+    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
 
     virtual void OnCaretRectChanged(int x, int y, uint width, uint height);
 
@@ -114,12 +100,7 @@ public:
 
     virtual void OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
 
-    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(
-        ::cohtml::ISocketListener* listener,
-        char const*                url,
-        char const**               protocols,
-        uint                       protocolsCount
-    );
+    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint);
     // NOLINTEND
 
 public:
@@ -155,8 +136,6 @@ public:
         void*,
         ::cohtml::InputEventPhase::PhaseType const
     );
-
-    MCNAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType);
     // NOLINTEND
 };
 

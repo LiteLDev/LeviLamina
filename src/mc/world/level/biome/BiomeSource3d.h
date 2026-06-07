@@ -62,8 +62,6 @@ public:
     virtual ::BiomeSourceType const getType() const /*override*/;
 
     virtual ::Biome const* _getBiome(::GetBiomeOptions const& getBiomeOptions) const /*override*/;
-
-    virtual ~BiomeSource3d() /*override*/;
     // NOLINTEND
 
 public:
@@ -76,12 +74,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

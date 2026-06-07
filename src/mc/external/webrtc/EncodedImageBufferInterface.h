@@ -11,9 +11,9 @@ class EncodedImageBufferInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual uchar const* data() const = 0;
-
     virtual uchar* data() = 0;
+
+    virtual uchar const* data() const = 0;
 
     virtual uint64 size() const = 0;
 

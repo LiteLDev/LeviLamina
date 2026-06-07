@@ -26,6 +26,8 @@ namespace ExternalFileLevelStorage {
 MCNAPI ::Bedrock::Result<void>
 _readLevelDataFromFile(::Core::Path const& datFilename, ::std::string const& worldID, ::LevelData& levelData);
 
+MCNAPI bool _writeLevelDat(::Core::Path const& datFilename, ::LevelData const& levelData);
+
 MCNAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
 
 MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
@@ -36,14 +38,18 @@ MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
 
 MCNAPI ::std::vector<::std::string> const getImportantFiles();
 
+#ifdef LL_PLAT_C
+MCNAPI bool isLevelCloudSave(::Core::Path const& directory);
+#endif
+
+MCNAPI bool isLevelMarkedForSync(::Core::Path const& directory);
+
 MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::string const& name);
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
-#ifdef LL_PLAT_C
 MCNAPI ::Bedrock::Result<bool>
 readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData);
-#endif
 
 MCNAPI ::Bedrock::Result<bool> readLevelDataFromFile(
     ::Core::Path const&   directory,
@@ -58,6 +64,14 @@ MCNAPI bool readShallowLevelSummaryFromSyncFile(
     ::LevelSummary&      summary
 );
 
+MCNAPI bool readSyncFileData(
+    ::Core::Path const& directory,
+    ::std::string&      levelName,
+    int64&              levelSize,
+    int64&              remoteTimestamp,
+    bool&               isSyncUsable
+);
+
 MCNAPI void saveLevelData(
     ::Core::Path const&  levelPath,
     ::std::string const& levelId,
@@ -65,8 +79,7 @@ MCNAPI void saveLevelData(
     bool                 ignoreCache
 );
 
-MCNAPI void
-saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
+MCNAPI void saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelData, ::LevelData const&);
 
 MCNAPI void saveLevelDisplayDataToCache(
     ::std::string const&          levelId,

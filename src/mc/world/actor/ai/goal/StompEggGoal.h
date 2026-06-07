@@ -10,9 +10,14 @@
 class BlockPos;
 class BlockSource;
 class Level;
+class Mob;
 // clang-format on
 
 class StompEggGoal : public ::StompBlockGoal {
+public:
+    // prevent constructor by default
+    StompEggGoal();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -24,11 +29,21 @@ public:
 
     virtual void _createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos) /*override*/;
 
-    virtual void _playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos pos) /*override*/;
+    virtual void _playBreakProgressSound(::Level& pos, ::BlockSource&, ::BlockPos) /*override*/;
 
-    virtual void _playDestroySound(::Level&, ::BlockSource&, ::BlockPos pos) /*override*/;
+    virtual void _playDestroySound(::Level& pos, ::BlockSource&, ::BlockPos) /*override*/;
+    // NOLINTEND
 
-    virtual ~StompEggGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit StompEggGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -36,15 +51,15 @@ public:
     // NOLINTBEGIN
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCFOLD void $setInterval(int const interval);
+    MCAPI void $setInterval(int const interval);
 
     MCAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
     MCAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos pos);
+    MCAPI void $_playBreakProgressSound(::Level& pos, ::BlockSource&, ::BlockPos);
 
-    MCAPI void $_playDestroySound(::Level&, ::BlockSource&, ::BlockPos pos);
+    MCAPI void $_playDestroySound(::Level& pos, ::BlockSource&, ::BlockPos);
 
 
     // NOLINTEND

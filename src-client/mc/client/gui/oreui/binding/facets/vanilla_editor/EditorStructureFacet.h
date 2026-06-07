@@ -43,9 +43,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        StructureDescription& operator=(StructureDescription const&);
+        StructureDescription();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI StructureDescription(::OreUI::EditorStructureFacet::StructureDescription const&);
+
         MCAPI ~StructureDescription();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::OreUI::EditorStructureFacet::StructureDescription const&);
         // NOLINTEND
 
     public:
@@ -71,22 +84,15 @@ public:
     public:
         // prevent constructor by default
         StructureData(StructureData const&);
+        StructureData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI StructureData();
-
         MCAPI ::OreUI::EditorStructureFacet::StructureData&
         operator=(::OreUI::EditorStructureFacet::StructureData const&);
 
         MCAPI ~StructureData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:

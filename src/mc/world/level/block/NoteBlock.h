@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NoteBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
@@ -33,20 +37,38 @@ public:
 
     virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const
         /*override*/;
-
-    virtual ~NoteBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NoteBlock(::std::string const& nameId, int id);
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void _triggerNoteParticle(::Level& level, ::Vec3 const& vPos, int note) const;
 
     MCAPI ::NoteBlock& enableSkullPlacement(bool enabled);
 
+#ifdef LL_PLAT_C
+    MCFOLD bool skullPlacementEnabled() const;
+#endif
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static float getPitch(int note);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

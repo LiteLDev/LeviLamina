@@ -54,27 +54,41 @@ public:
     ::ll::UntypedStorage<8, 24> mUnke68a94;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ItemTransferRequest& operator=(ItemTransferRequest const&);
     ItemTransferRequest(ItemTransferRequest const&);
     ItemTransferRequest();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ItemTransferRequest& operator=(ItemTransferRequest const&);
+    ItemTransferRequest(ItemTransferRequest const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI ItemTransferRequest();
+
     MCNAPI void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
 
-    MCNAPI ~ItemTransferRequest();
+    MCNAPI int getInputAmount() const;
+
+    MCNAPI int getOutputAmount() const;
+
+    MCNAPI void reset();
 #endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 };

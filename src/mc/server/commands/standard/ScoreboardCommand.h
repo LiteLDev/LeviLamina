@@ -18,6 +18,7 @@ class CommandOutput;
 class CommandRegistry;
 class Objective;
 class Scoreboard;
+class ServerLevel;
 struct ActorUniqueID;
 struct ScoreboardId;
 // clang-format on
@@ -61,6 +62,18 @@ public:
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit InitProxy(::ServerLevel& level);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::ServerLevel& level);
+        // NOLINTEND
     };
 
     struct SetScoreOutput {
@@ -111,8 +124,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~ScoreboardCommand() /*override*/;
     // NOLINTEND
 
 public:
@@ -189,6 +200,8 @@ public:
         ::CommandOutput&                                              output
     ) const;
 
+    MCAPI void objectives(::Scoreboard& scoreboard, ::CommandOrigin const& output, ::CommandOutput&) const;
+
     MCAPI void players(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void removeObjective(::Scoreboard& scoreboard, ::std::string const& name, ::CommandOutput& output) const;
@@ -229,7 +242,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string> _getNonSortableDisplaySlots(::Scoreboard& scoreboard);
+    MCAPI static ::std::vector<::std::string> _getNonSortableDisplaySlots(::Scoreboard&);
 
     MCAPI static ::std::vector<::std::string> _getSortableDisplaySlots(::Scoreboard& scoreboard);
 
@@ -240,12 +253,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

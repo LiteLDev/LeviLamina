@@ -36,8 +36,6 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~MonumentBuilding() /*override*/;
     // NOLINTEND
 
 public:
@@ -45,34 +43,27 @@ public:
     // NOLINTBEGIN
     MCAPI MonumentBuilding(::Random& random, short seaLevel, int west, int north, int& orientation);
 
-    MCAPI void generateEntranceArchs(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateEntranceArchs(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
-    MCAPI void generateEntranceWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateEntranceWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
-    MCAPI void generateLowerWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateLowerWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
-    MCAPI void generateMiddleWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateMiddleWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
-    MCAPI void generateRoofPiece(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateRoofPiece(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
     MCAPI ::std::vector<::std::shared_ptr<::RoomDefinition>> generateRoomGraph(::Random& random);
 
-    MCAPI void generateUpperWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateUpperWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
-    MCAPI void
-    generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Random& random, short seaLevel, int west, int north, int& orientation);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

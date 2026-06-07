@@ -14,6 +14,7 @@ namespace Editor { struct SimpleBlockPaletteItem; }
 namespace Editor::ScriptModule { class ScriptWeightedBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -29,8 +30,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptProbabilityBlockPaletteItem& operator=(ScriptProbabilityBlockPaletteItem const&);
-    ScriptProbabilityBlockPaletteItem(ScriptProbabilityBlockPaletteItem const&);
     ScriptProbabilityBlockPaletteItem();
 
 public:
@@ -55,6 +54,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptProbabilityBlockPaletteItem(::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem const&);
+
+    MCNAPI ScriptProbabilityBlockPaletteItem(
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::optional<::std::string> const& displayName
+    );
+
     MCNAPI ::Scripting::Result_deprecated<void> addBlock(
         ::std::variant<
             ::std::string,
@@ -65,6 +71,9 @@ public:
 
     MCNAPI ::std::vector<::Editor::ScriptModule::ScriptWeightedBlock> getBlocks() const;
 
+    MCNAPI ::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem&
+    operator=(::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem const&);
+
     MCNAPI ::Scripting::Result_deprecated<void> removeBlockAt(int index);
     // NOLINTEND
 
@@ -72,6 +81,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem const&);
+
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::std::optional<::std::string> const& displayName);
     // NOLINTEND
 
 public:

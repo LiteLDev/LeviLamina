@@ -49,25 +49,12 @@ public:
     virtual ::std::string const& getCrashDataRoot() const = 0;
 
     virtual ::std::string const& getCrashedSessionFileSuffix() const = 0;
-
-#ifdef LL_PLAT_S
-    virtual ~CrashManager() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CrashManager() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_CRASH_DIRECTORY_NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

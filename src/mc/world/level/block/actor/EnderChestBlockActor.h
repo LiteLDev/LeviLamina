@@ -28,9 +28,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::std::unique_ptr<::EnderChestBlockActor> createEnderChestBlockEntity(::BlockPos const& pos);
-#endif
     // NOLINTEND
 
 public:

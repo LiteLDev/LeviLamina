@@ -59,8 +59,18 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    // NOLINTEND
 
-    virtual ~ServerPlayerPostMovePositionPacket() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ServerPlayerPostMovePositionPacket();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

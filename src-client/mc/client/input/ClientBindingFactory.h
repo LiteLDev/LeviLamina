@@ -113,8 +113,6 @@ public:
     // NOLINTBEGIN
     MCAPI ClientBindingFactory(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
 
-    MCAPI bool _blockSelectEnabled() const;
-
     MCAPI ::RectangleArea
     _calculateClassicButtonRectangleWithOptionIDs(::OptionID posX, ::OptionID posY, ::OptionID scale) const;
 
@@ -125,6 +123,10 @@ public:
     MCAPI ::RectangleArea _fitToScreen(::RectangleArea const& rectangle) const;
 
     MCAPI ::std::vector<::RectangleArea*> _getActiveTopTouchButtons();
+
+    MCAPI bool _isInputSprinting() const;
+
+    MCAPI void _setupTopTouchButtonAreas(float screenCenterX, float screenTop, float buttonSize, float bufferSize);
 
     MCAPI bool _touchButtonsVisible() const;
 
@@ -138,7 +140,7 @@ public:
 
     MCAPI void setupFloatSetters();
 
-    MCAPI void setupStringBindings();
+    MCAPI void setupPointBindings();
     // NOLINTEND
 
 public:

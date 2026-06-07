@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/external/gameface/renoir/ColorWriteMask.h"
-#include "mc/external/gameface/renoir/PixelFormat.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI::RenderUtils { struct TextureData; }
 namespace cg { class ImageBuffer; }
 namespace mce { class TextureContainer; }
 namespace mce { struct BlendStateDescription; }
@@ -23,10 +21,6 @@ namespace renoir { struct DepthStencilState; }
 namespace OreUI::RenderUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<uchar> convertSingleChannelTextureDataToRGBA(::gsl::span<uchar const> textureData);
-
-MCAPI ::OreUI::RenderUtils::TextureData convertTextureData(::renoir::PixelFormat format, ::gsl::span<uchar const> data);
-
 MCAPI ::mce::BlendStateDescription
 convertToBlendStateDescription(::renoir::BlendingState const& blendingState, ::renoir::ColorWriteMask colorWriteMask);
 
@@ -37,11 +31,17 @@ MCAPI ::std::vector<::cg::ImageBuffer> createZeroedImageBuffers(::mce::TextureDe
 
 MCAPI ::mce::TextureContainer createZeroedTextureContainer(::mce::TextureDescription const& textureDescription);
 
+MCFOLD bool isUsingRenderDragon();
+
 MCAPI void* prepareRenderDragonTexture(
     ::mce::TextureResourceService& textureResourceService,
     ::mce::ClientTexture&          targetTexture,
     ::mce::TextureContainer&&      textureContainer
 );
+
+MCAPI bool shouldFlipTextureOrigin();
+
+MCAPI bool supportsR8Textures();
 // NOLINTEND
 
 } // namespace OreUI::RenderUtils

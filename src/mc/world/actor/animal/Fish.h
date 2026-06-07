@@ -29,8 +29,6 @@ public:
 
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
-
-    virtual ~Fish() /*override*/;
     // NOLINTEND
 
 public:
@@ -51,12 +49,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

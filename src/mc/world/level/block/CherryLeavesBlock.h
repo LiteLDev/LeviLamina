@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
-
-    virtual ~CherryLeavesBlock() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -8,7 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
+class BlockSource;
 // clang-format on
 
 class GeodeFeature : public ::IFeature {
@@ -52,8 +54,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
+    // NOLINTEND
 
-    virtual ~GeodeFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GeodeFeature();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool canSupportGeode(::Block const& block);
+
+    MCFOLD static bool overlapsWithStructureFeature(::BlockSource const& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

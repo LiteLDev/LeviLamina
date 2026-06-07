@@ -14,6 +14,7 @@ class ActorDefinitionGroup;
 class ActorHurtResult;
 class EntityContext;
 struct ActorDefinitionIdentifier;
+struct KnockbackParameters;
 struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
@@ -45,15 +46,13 @@ public:
 
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
+    virtual void knockback(::Actor*, int, float, float, ::KnockbackParameters const&) /*override*/;
 
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
     virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
-
-    virtual ~Npc() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -90,7 +89,7 @@ public:
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCFOLD void $newServerAiStep();
+    MCAPI void $newServerAiStep();
 
     MCFOLD void $die(::ActorDamageSource const& source);
 
@@ -104,7 +103,7 @@ public:
 
     MCAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCFOLD void $knockback(::Actor*, int, float, float, float, float, float);
+    MCFOLD void $knockback(::Actor*, int, float, float, ::KnockbackParameters const&);
 
     MCFOLD bool $canBePulledIntoVehicle() const;
 

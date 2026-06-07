@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorDamageSource;
 class Amplifier;
 // clang-format on
@@ -52,7 +53,23 @@ public:
 
     MCAPI float getAmount() const;
 
+    MCFOLD uint64 getId() const;
+
+    MCFOLD int getOperand() const;
+
+    MCFOLD ::AttributeBuffType getType() const;
+
     MCAPI ::AttributeBuff& operator=(::AttributeBuff const&);
+
+    MCAPI void setAmplificationAmount(int amplification, float scale);
+
+    MCFOLD void setId(uint64 val);
+
+    MCFOLD void setOperand(int val);
+
+    MCAPI void setSource(::Actor* source);
+
+    MCFOLD void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND
 
 public:
@@ -66,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

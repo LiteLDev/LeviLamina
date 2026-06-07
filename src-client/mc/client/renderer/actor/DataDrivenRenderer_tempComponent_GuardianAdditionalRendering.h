@@ -45,8 +45,6 @@ public:
     ) /*override*/;
 
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_GuardianAdditionalRendering() /*override*/;
     // NOLINTEND
 
 public:
@@ -61,12 +59,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

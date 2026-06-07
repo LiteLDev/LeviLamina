@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EndCityStart();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EndCityStart() /*override*/ = default;
@@ -36,19 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EndCityStart(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
+    MCAPI void _create(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
     // NOLINTEND
 
 public:

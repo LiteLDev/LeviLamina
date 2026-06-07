@@ -12,9 +12,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChordButtonMapping& operator=(ChordButtonMapping const&);
+    ChordButtonMapping();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChordButtonMapping(::ChordButtonMapping const&);
+
     MCAPI ~ChordButtonMapping();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ChordButtonMapping const&);
     // NOLINTEND
 
 public:

@@ -25,8 +25,18 @@ public:
     virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~WaitTicksNode() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WaitTicksNode();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

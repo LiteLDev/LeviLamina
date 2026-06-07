@@ -63,7 +63,7 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    virtual bool canLaunchUri(::std::string const& uri) /*override*/;
+    virtual bool canLaunchUri(::std::string const&) /*override*/;
 
     virtual void launchUri(::std::string const& uri) /*override*/;
 
@@ -182,11 +182,11 @@ public:
 
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
 
-    virtual ::SecureStorageKey getSecureStorageKey(::std::string const& key) /*override*/;
+    virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) /*override*/;
 
-    virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) /*override*/;
+    virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) /*override*/;
 
-    virtual bool compareAppReceiptToLocalReceipt(::std::string const& otherReceipt) /*override*/;
+    virtual bool compareAppReceiptToLocalReceipt(::std::string const&) /*override*/;
 
     virtual int getPlatformDpi() const /*override*/;
 
@@ -242,7 +242,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCFOLD bool $canLaunchUri(::std::string const& uri);
+    MCFOLD bool $canLaunchUri(::std::string const&);
 
     MCAPI void $launchUri(::std::string const& uri);
 
@@ -275,7 +275,7 @@ public:
 
     MCAPI void $_fireAppFocusGained();
 
-    MCFOLD void $_fireAppFocusLost();
+    MCAPI void $_fireAppFocusLost();
 
     MCAPI void $textEditComponentGainedFocus(
         ::std::string const& currentText,
@@ -360,15 +360,15 @@ public:
 
     MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
-    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const& key);
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
-    MCFOLD void $setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value);
+    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
 
-    MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
+    MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const&);
 
     MCAPI int $getPlatformDpi() const;
 
-    MCFOLD ::Bedrock::CommonPlatform* $getPlatformShim() const;
+    MCAPI ::Bedrock::CommonPlatform* $getPlatformShim() const;
     // NOLINTEND
 
 public:

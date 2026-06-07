@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ class Actor;
 class Mob;
 // clang-format on
 
-class FollowMobGoal : public ::Goal {
+class FollowMobGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,24 +48,38 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~FollowMobGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FollowMobGoal(
+        ::Mob&                    mob,
+        float                     speedMultiplier,
+        float                     stopDistance,
+        int                       searchRange,
+        bool                      useHomePositionRestriction,
+        ::std::string const&      preferredActorType,
+        ::ActorFilterGroup const& filters
+    );
+
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>> _findCandidateMobs();
 
-#ifdef LL_PLAT_S
     MCAPI void setFilters(::ActorFilterGroup& filters);
-#endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::Mob&                    mob,
+        float                     speedMultiplier,
+        float                     stopDistance,
+        int                       searchRange,
+        bool                      useHomePositionRestriction,
+        ::std::string const&      preferredActorType,
+        ::ActorFilterGroup const& filters
+    );
     // NOLINTEND
 
 public:

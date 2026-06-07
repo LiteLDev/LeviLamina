@@ -28,8 +28,6 @@ public:
                                                root,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
-
-    virtual ~ActorCommandResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

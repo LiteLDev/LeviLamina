@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -13,11 +12,11 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Dimension;
 class IRealmEventLogger;
 class ItemEnchants;
 class ItemInstance;
 class ItemStack;
+class LevelStorage;
 class Player;
 class RealmsStoriesData;
 class Vec3;
@@ -36,6 +35,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RealmsStoriesData>> mRealmsStoriesData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IRealmEventLogger>> mRealmEventLogger;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RealmsStoriesGameplayEventListener();
 
 public:
     // virtual functions
@@ -71,13 +74,16 @@ public:
 
     virtual ::EventResult
     onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants) /*override*/;
-
-    virtual ~RealmsStoriesGameplayEventListener() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RealmsStoriesGameplayEventListener(
+        ::LevelStorage&                        levelStorage,
+        ::std::unique_ptr<::IRealmEventLogger> realmEventLogger
+    );
+
     MCNAPI void _checkForBiomeRealmEvents(::Player const& player);
 
     MCNAPI void _checkForStructureRealmEvents(::Player const& player);
@@ -92,26 +98,22 @@ public:
     _publishEventForRealmsService(::RealmEventId id, ::std::string const& xuid, ::Json::Value const& metadata) const;
 
     MCNAPI void _publishLocationWorldEventIfFirstTime(::RealmEventId id, ::Player const& player);
-
-    MCNAPI void _publishWorldEventFirstOrOtherTime(
-        ::RealmEventId       firstTimeId,
-        ::RealmEventId       otherTimeId,
-        ::std::string const& xuid
-    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::Player const* _getActorFullyAuthenticatedPlayer(::Actor const* actor);
+
     MCNAPI static ::std::set<::std::string> _getXuidsInKillProximity(::Actor const& killedActor, float xz, float y);
 
     MCNAPI static ::std::string _playerXuidsToString(::std::set<::std::string> const& xuids);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::LevelStorage& levelStorage, ::std::unique_ptr<::IRealmEventLogger> realmEventLogger);
     // NOLINTEND
 
 public:

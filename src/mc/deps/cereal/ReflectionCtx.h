@@ -10,15 +10,11 @@ namespace cereal {
 
 struct ReflectionCtx : public ::Bedrock::EnableNonOwnerReferences, public ::cereal::internal::ReflectionContext {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ReflectionCtx() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ReflectionCtx();
+
+    MCAPI ::std::optional<::entt::type_info> getKnownPropertyType(::std::string_view name) const;
     // NOLINTEND
 
 public:
@@ -31,12 +27,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

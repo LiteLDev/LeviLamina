@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,28 +21,30 @@ struct DistanceSortedActor;
 struct Shareable;
 // clang-format on
 
-class PickupItemsGoal : public ::Goal {
+class PickupItemsGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>                   mTarget;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                mTargetPos;
-    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
-    ::ll::TypedStorage<4, 4, int>                                    mSearchRange;
-    ::ll::TypedStorage<4, 4, int>                                    mSearchHeight;
-    ::ll::TypedStorage<4, 4, float>                                  mSpeedModifier;
-    ::ll::TypedStorage<1, 1, bool>                                   mTrackTarget;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>              mPath;
-    ::ll::TypedStorage<4, 4, int>                                    mRandomStopInterval;
-    ::ll::TypedStorage<4, 4, float>                                  mGoalRadiusSq;
-    ::ll::TypedStorage<4, 4, int>                                    mTimeToRecalcPath;
-    ::ll::TypedStorage<1, 1, bool>                                   mPickupBasedOnChance;
-    ::ll::TypedStorage<1, 1, bool>                                   mCanPickupAnyItem;
-    ::ll::TypedStorage<4, 4, int>                                    mTimeoutAfterBeingAttacked;
-    ::ll::TypedStorage<1, 1, bool>                                   mCanPickupToHandOrEquipment;
-    ::ll::TypedStorage<1, 1, bool>                                   mPickupSameItemsAsInHand;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor> const> mExcludedItemsList;
-    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>        mFilteredPickupTargets;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnEndEvent;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>             mTarget;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mExcludedItemsList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>  mFilteredPickupTargets;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>        mPath;
+    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3>                          mTargetPos;
+    ::ll::TypedStorage<4, 4, int>                              mSearchRange;
+    ::ll::TypedStorage<4, 4, int>                              mSearchHeight;
+    ::ll::TypedStorage<4, 4, int>                              mRandomStopInterval;
+    ::ll::TypedStorage<4, 4, int>                              mTimeToRecalcPath;
+    ::ll::TypedStorage<4, 4, int>                              mTimeoutAfterBeingAttacked;
+    ::ll::TypedStorage<4, 4, float>                            mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                            mGoalRadiusSq;
+    ::ll::TypedStorage<1, 1, bool>                             mPickupBasedOnChance;
+    ::ll::TypedStorage<1, 1, bool>                             mTrackTarget;
+    ::ll::TypedStorage<1, 1, bool>                             mCanPickupAnyItem;
+    ::ll::TypedStorage<1, 1, bool>                             mCanPickupToHandOrEquipment;
+    ::ll::TypedStorage<1, 1, bool>                             mPickupSameItemsAsInHand;
     // NOLINTEND
 
 public:
@@ -64,13 +67,13 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~PickupItemsGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PickupItemsGoal(::Mob& mob);
+
     MCAPI void _dropItem(::ItemStack const& item) const;
 
     MCAPI ::std::vector<::WeakEntityRef>
@@ -83,12 +86,14 @@ public:
     MCAPI bool _isSameItemAsInHand(::ItemStack const& item) const;
 
     MCAPI void _pickItemUp(::ItemActor& itemActor);
+
+    MCAPI void _updatePathIfNecessary(::Actor const& target, float targetDistanceSqr);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

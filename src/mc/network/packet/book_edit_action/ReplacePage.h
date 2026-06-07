@@ -15,25 +15,21 @@ public:
 
 public:
     // prevent constructor by default
-    ReplacePage(ReplacePage const&);
+    ReplacePage& operator=(ReplacePage const&);
     ReplacePage();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ReplacePage(::BookEditAction::ReplacePage const&);
+
     MCFOLD ::BookEditAction::ReplacePage& operator=(::BookEditAction::ReplacePage&&);
-
-    MCFOLD ::BookEditAction::ReplacePage& operator=(::BookEditAction::ReplacePage const&);
-
-    MCFOLD bool operator==(::BookEditAction::ReplacePage const&) const;
-
-    MCAPI ~ReplacePage();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD void* $ctor(::BookEditAction::ReplacePage const&);
     // NOLINTEND
 };
 

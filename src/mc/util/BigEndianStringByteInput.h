@@ -23,14 +23,6 @@ public:
     virtual ::Bedrock::Result<int> readIntResult() /*override*/;
 
     virtual ::Bedrock::Result<int64> readLongLongResult() /*override*/;
-
-    virtual ~BigEndianStringByteInput() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

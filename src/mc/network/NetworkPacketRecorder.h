@@ -29,8 +29,6 @@ public:
 
     virtual ::NetworkPeer::DataStatus
     _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
-
-    virtual ~NetworkPacketRecorder() /*override*/ = default;
     // NOLINTEND
 
 public:

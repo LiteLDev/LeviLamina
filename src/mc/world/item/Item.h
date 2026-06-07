@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/deps/shared_types/item/ItemCooldownType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
@@ -12,14 +13,13 @@
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/util/BaseGameVersion.h"
 #include "mc/world/interactions/mining/MineBlockItemEffectType.h"
-#include "mc/world/item/CreativeItemCategory.h"
 #include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/ItemAcquisitionMethod.h"
 #include "mc/world/item/ItemColor.h"
 #include "mc/world/item/ItemCommandVisibility.h"
 #include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/item/ItemVersion.h"
 #include "mc/world/item/Rarity.h"
+#include "mc/world/item/registry/ItemVersion.h"
 #include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
@@ -33,6 +33,7 @@ class CameraItemComponentLegacy;
 class CompoundTag;
 class Container;
 class FoodItemComponentLegacy;
+class ICameraItemComponent;
 class IDataInput;
 class IDataOutput;
 class IFoodItemComponent;
@@ -40,6 +41,7 @@ class ILevel;
 class InteractionResult;
 class ItemComponent;
 class ItemDescriptor;
+class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Level;
@@ -50,18 +52,19 @@ class ReadOnlyBinaryStream;
 class RenderParams;
 class SeedItemComponentLegacy;
 class SemVersion;
+class SemVersionConstant;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct Brightness;
 struct CommandName;
-struct ItemIconInfoFactory;
+struct ItemComprehensiveLoadResult;
+struct ItemIconInfo;
 struct ItemTag;
 struct ItemTintStrategy;
 struct ItemUsedOnEventContext;
+struct NewBlockID;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
-namespace Json { class Value; }
-namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -100,7 +103,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                             mMaxUseDuration;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                              mMinRequiredBaseGameVersion;
     ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                    mBlockType;
-    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                          mCreativeCategory;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::CreativeItemCategory>             mCreativeCategory;
     ::ll::TypedStorage<8, 8, ::Item*>                                         mCraftingRemainingItem;
     ::ll::TypedStorage<8, 32, ::std::string>                                  mCreativeGroup;
     ::ll::TypedStorage<4, 4, float>                                           mFurnaceBurnIntervalModifier;
@@ -124,8 +127,11 @@ public:
     // NOLINTBEGIN
     virtual ~Item();
 
-    virtual ::PuvLoadData::LoadResultWithTiming
-    initServer(::Json::Value const& data, ::SemVersion const& documentVersion, ::PackLoadContext& packLoadContext);
+    virtual void initServer(
+        ::ItemComprehensiveLoadResult&& data,
+        ::SemVersion const&             documentVersion,
+        ::PackLoadContext&              packLoadContext
+    );
 
     virtual void tearDown();
 
@@ -375,8 +381,12 @@ public:
 
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
-    virtual ::PuvLoadData::LoadResultWithTiming
-    initClient(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext&, ::ItemIconInfoFactory iconFactory);
+    virtual void initClient(
+        ::ItemComprehensiveLoadResult&& data,
+        ::SemVersion const&             iconFactory,
+        ::PackLoadContext&,
+        ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
+    );
 
     virtual ::Item& setIconInfo(::std::string const& name, int index);
 
@@ -396,7 +406,7 @@ public:
 
     virtual void playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
-    virtual float getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
+    virtual float getFurnaceXPmultiplier(::ItemStackBase const&) const;
 
     virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
@@ -434,6 +444,8 @@ public:
         ::Vec3 const&        clickPos
     ) const;
 
+    MCAPI void addOnResetBAICallback(::std::function<void()> callback);
+
     MCAPI ::Item& addTag(::ItemTag const& tag);
 
     MCAPI ::Item& addTag(::HashedString const& tag);
@@ -442,13 +454,53 @@ public:
 
     MCAPI ::std::string buildCategoryDescriptionName() const;
 
+    MCAPI ::ItemDescriptor buildDescriptor(short auxValue, ::CompoundTag const*) const;
+
     MCAPI bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool canUseSeed(::Actor& entity, ::BlockPos pos, uchar face) const;
+#endif
 
     MCAPI void clearTags();
 
+    MCAPI float destroySpeedBonus(::ItemStackBase const& inst) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void executeOnResetBAICallbacks() const;
+#endif
+
+    MCFOLD ::WeakPtr<::BlockType const> const& getBlockType() const;
+
+    MCFOLD ::ICameraItemComponent* getCamera() const;
+
     MCAPI ::std::vector<::CommandName> getCommandNames() const;
 
+    MCFOLD ::SharedTypes::CreativeItemCategory getCreativeCategory() const;
+
+    MCAPI ::std::string const& getCreativeGroup() const;
+
     MCAPI short getDamageValue(::CompoundTag const* userData) const;
+
+    MCFOLD int getFrameCount() const;
+
+    MCAPI ::std::string const& getFullItemName() const;
+
+    MCFOLD ::HashedString const& getFullNameHash() const;
+
+    MCFOLD float getFurnaceBurnIntervalMultipler() const;
+
+    MCAPI short getId() const;
+
+    MCFOLD ::Interactions::Mining::MineBlockItemEffectType getMineBlockType() const;
+
+    MCFOLD ::std::string const& getNamespace() const;
+
+    MCFOLD ::HashedString const& getRawNameHash() const;
+
+    MCAPI ::std::string const& getRawNameId() const;
+
+    MCFOLD ::BaseGameVersion const& getRequiredBaseGameVersion() const;
 
     MCAPI ::std::string getSerializedName() const;
 
@@ -456,21 +508,71 @@ public:
 
     MCAPI bool hasTag(::HashedString const& tag) const;
 
+#ifdef LL_PLAT_C
+    MCFOLD bool isAnimatedInToolbar() const;
+
+    MCFOLD bool isCamera() const;
+#endif
+
+    MCAPI bool isCommandOnly() const;
+
     MCAPI bool isElytra() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD bool isMirroredArt() const;
+#endif
+
+    MCAPI bool isNameTag() const;
+
+    MCAPI bool isSeed() const;
 
     MCAPI bool operator==(::Item const& rhs) const;
 
+#ifdef LL_PLAT_C
+    MCAPI void reloadIcon();
+
+    MCAPI void resetId(short id);
+#endif
+
     MCAPI ::Item& setAllowOffhand(bool offhand);
+
+    MCAPI ::Item& setBaseRarity(::Rarity baseRarity);
+
+    MCFOLD ::Item& setCategory(::SharedTypes::CreativeItemCategory creativeCategory);
 
     MCAPI ::Item& setCreativeGroup(::std::string const& group);
 
+    MCAPI void setDamageValue(::ItemStackBase& stack, short newDamage) const;
+
+    MCAPI ::Item& setExplodable(bool boom);
+
     MCAPI ::Item& setFireResistant(bool resistant);
 
+    MCFOLD ::Item& setFurnaceBurnIntervalMultiplier(float multiplier);
+
+    MCAPI ::Item& setFurnaceXPmultiplier(float multiplier);
+
+    MCAPI ::Item& setHandEquipped();
+
+    MCAPI ::Item& setHoverTextColorFormat(::std::string_view hoverTextColorFormat);
+
+    MCAPI ::Item& setIsGlint(bool glint);
+
+    MCAPI ::Item& setIsMirroredArt(bool val);
+
+    MCAPI ::Item& setMaxStackSize(uchar max);
+
     MCAPI ::Item& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
+
+    MCAPI ::Item& setRequiresWorldBuilder(bool value);
 
     MCAPI ::Item& setShouldDespawn(bool despawn);
 
     MCAPI ::Item& setStackedByData(bool isStackedByData);
+
+    MCAPI ::Item& setUseAnimation(::SharedTypes::Legacy::UseAnimation anim);
+
+    MCAPI bool shouldDespawn() const;
 
     MCAPI bool
     updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
@@ -492,17 +594,29 @@ public:
     // NOLINTBEGIN
     MCAPI static bool isElytra(::ItemDescriptor const& itemDescriptor);
 
+#ifdef LL_PLAT_C
     MCAPI static bool isElytraBroken(int value);
+#endif
+
+    MCAPI static bool isFlyEnabled(::ItemInstance const& item);
 
     MCAPI static bool isSameTypeAndItem(::ItemStackBase const& firstItem, ::ItemStackBase const& secondItem);
+
+    MCAPI static ::NewBlockID toBlockId(short itemId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& DATA_DRIVEN_NEXT_VERSION();
+
+    MCAPI static ::SemVersionConstant const& DATA_DRIVEN_VERSION();
+
     MCAPI static ::std::string const& ICON_DESCRIPTION_PREFIX();
 
     MCAPI static ::std::string const& TAG_DAMAGE();
+
+    MCAPI static bool const& mGenerateDenyParticleEffect();
     // NOLINTEND
 
 public:
@@ -520,14 +634,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::PuvLoadData::LoadResultWithTiming
-    $initServer(::Json::Value const& data, ::SemVersion const& documentVersion, ::PackLoadContext& packLoadContext);
+    MCAPI void $initServer(
+        ::ItemComprehensiveLoadResult&& data,
+        ::SemVersion const&             documentVersion,
+        ::PackLoadContext&              packLoadContext
+    );
 
     MCFOLD void $tearDown();
 
     MCAPI ::Item& $setDescriptionId(::std::string const& description);
 
-    MCAPI ::std::string const& $getDescriptionId() const;
+    MCFOLD ::std::string const& $getDescriptionId() const;
 
     MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
@@ -599,13 +716,13 @@ public:
 
     MCAPI bool $isHandEquipped() const;
 
-    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+    MCAPI bool $isGlint(::ItemStackBase const& stack) const;
 
     MCFOLD bool $isPattern() const;
 
     MCFOLD int $getPatternIndex() const;
 
-    MCAPI ::Rarity $getBaseRarity() const;
+    MCFOLD ::Rarity $getBaseRarity() const;
 
     MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
 
@@ -707,7 +824,7 @@ public:
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCFOLD void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     MCFOLD float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
@@ -721,7 +838,7 @@ public:
 
     MCAPI ::Bedrock::Safety::RedactableString const $buildRedactedDescriptionName(::ItemStackBase const& stack) const;
 
-    MCFOLD ::std::string
+    MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI ::Bedrock::Safety::RedactableString $getRedactedCustomName(::ItemStackBase const& stack) const;
@@ -771,10 +888,14 @@ public:
 
     MCFOLD bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
-    MCAPI ::PuvLoadData::LoadResultWithTiming
-    $initClient(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext&, ::ItemIconInfoFactory iconFactory);
+    MCAPI void $initClient(
+        ::ItemComprehensiveLoadResult&& data,
+        ::SemVersion const&             iconFactory,
+        ::PackLoadContext&,
+        ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
+    );
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
@@ -792,11 +913,11 @@ public:
 
     MCFOLD void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
-    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
+    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const&) const;
 
     MCAPI bool $calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCFOLD bool
+    MCAPI bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     MCFOLD bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;

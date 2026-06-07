@@ -28,8 +28,6 @@ public:
     virtual bool isOwnedByTickingThread(::LevelChunk const& levelChunk) const /*override*/;
 
     virtual void onTickingStopped(::LevelChunk& levelChunk) /*override*/;
-
-    virtual ~LevelChunkEventManagerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -37,8 +37,6 @@ public:
 
     virtual void
     render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_EnderManAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

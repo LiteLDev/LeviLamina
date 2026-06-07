@@ -13,31 +13,19 @@ class RNS2EventHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RNS2EventHandler();
+    virtual ~RNS2EventHandler() = default;
 
     virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct) = 0;
 
     virtual void DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct* s, char const* file, uint line) = 0;
 
-    virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const* file, uint line) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const*, uint) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ResponseVerifier;
 struct EDUConfigData;
 struct ServicePack;
 namespace Json { class Value; }
@@ -17,11 +18,7 @@ struct IEduWebService {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IEduWebService() = default;
-#else // LL_PLAT_C
-    virtual ~IEduWebService();
-#endif
 
     virtual void setEula() = 0;
 
@@ -55,14 +52,15 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI static void commonSigninBody(::Json::Value& body, ::std::string const& appSessionId);
 
+    MCNAPI static ::std::unique_ptr<::WebServices::IEduWebService> create(
+        ::std::unique_ptr<::ResponseVerifier>                             verifier,
+        ::std::function<::std::string const()>                            getEduIdentityToken,
+        ::std::function<::std::optional<::EDUConfigData>(::Json::Value&)> configParser,
+        ::std::string const&                                              appSessionId
+    );
+
     MCNAPI static void setupDemoIdentity(::Json::Value& body);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

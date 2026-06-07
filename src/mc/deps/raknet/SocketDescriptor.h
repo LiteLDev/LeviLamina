@@ -22,6 +22,18 @@ public:
     SocketDescriptor& operator=(SocketDescriptor const&);
     SocketDescriptor(SocketDescriptor const&);
     SocketDescriptor();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SocketDescriptor(ushort _port, char const* _hostAddress);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(ushort _port, char const* _hostAddress);
+    // NOLINTEND
 };
 
 } // namespace RakNet

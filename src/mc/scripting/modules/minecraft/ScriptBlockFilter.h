@@ -33,13 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptBlockFilter();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockFilter(::ScriptModuleMinecraft::ScriptBlockFilter&&);
+    MCAPI ScriptBlockFilter();
 
     MCAPI ScriptBlockFilter(::ScriptModuleMinecraft::ScriptBlockFilter const&);
 
@@ -101,7 +97,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockFilter&&);
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockFilter const&);
     // NOLINTEND

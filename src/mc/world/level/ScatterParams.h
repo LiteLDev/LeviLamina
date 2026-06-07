@@ -45,18 +45,6 @@ public:
         ::ll::TypedStorage<4, 4, int>               mNumerator;
         ::ll::TypedStorage<4, 4, int>               mDenominator;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ChanceInformation();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct CoordinateRange {
@@ -72,31 +60,11 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CoordinateRange& operator=(CoordinateRange const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI CoordinateRange();
-
-        MCNAPI CoordinateRange(::ScatterParams::CoordinateRange&&);
-
-        MCNAPI CoordinateRange(::ScatterParams::CoordinateRange const&);
-
         MCNAPI int _eval(int evaluatedMin, int evaluatedMax, uint& stepIndex, ::Random& random) const;
 
         MCNAPI ~CoordinateRange();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
-
-        MCNAPI void* $ctor(::ScatterParams::CoordinateRange&&);
-
-        MCNAPI void* $ctor(::ScatterParams::CoordinateRange const&);
         // NOLINTEND
 
     public:
@@ -122,6 +90,14 @@ public:
         ScatteredPositions& operator=(ScatteredPositions const&);
         ScatteredPositions(ScatteredPositions const&);
         ScatteredPositions();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool empty();
+
+        MCNAPI ::BlockPos nextPos();
+        // NOLINTEND
     };
 
 public:
@@ -135,12 +111,17 @@ public:
 
 public:
     // prevent constructor by default
-    ScatterParams(ScatterParams const&);
-    ScatterParams();
+    ScatterParams& operator=(ScatterParams const&);
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScatterParams();
+
+    MCAPI ScatterParams(::ScatterParams&&);
+
+    MCAPI ScatterParams(::ScatterParams const&);
+
     MCAPI void _fillCoordinateRangeFromData(
         ::std::string const&                                coordinateName,
         ::ScatterParams::CoordinateRange&                   coordinateRange,
@@ -149,16 +130,11 @@ public:
         ::LogArea                                           logArea
     );
 
-    MCAPI ::BlockPos
-    _getPos(uint stepIndex, ::BlockPos const& origin, ::Random& random, ::RenderParams& molangParams) const;
-
     MCAPI void fillFromData(
         ::SharedTypes::v1_21_10::ScatterParamsData const& data,
         ::MolangVersion                                   molangVersion,
         ::LogArea                                         logArea
     );
-
-    MCAPI ::ScatterParams& operator=(::ScatterParams const&);
 
     MCAPI void readSerializedScatterParamData(::BiomeScatterParamData const& data, ::BiomeStringList const& stringList);
 
@@ -181,6 +157,18 @@ public:
     );
 
     MCAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random);
+
+    MCAPI static void initScatterParamIndices();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ScatterParams&&);
+
+    MCAPI void* $ctor(::ScatterParams const&);
     // NOLINTEND
 
 public:

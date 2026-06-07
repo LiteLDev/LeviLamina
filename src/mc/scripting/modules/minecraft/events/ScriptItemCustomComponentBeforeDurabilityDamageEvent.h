@@ -41,51 +41,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentBeforeDurabilityDamageEvent&
-    operator=(ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
-    ScriptItemCustomComponentBeforeDurabilityDamageEvent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void updateEngineEvent(int& durabilityDamage, ::ItemStack& item, ::Actor&, ::Mob&) const /*override*/;
 
     virtual bool shouldCancel() const /*override*/;
-
-    virtual ~ScriptItemCustomComponentBeforeDurabilityDamageEvent() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&
-    );
-
-    MCAPI ScriptItemCustomComponentBeforeDurabilityDamageEvent(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&
-    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

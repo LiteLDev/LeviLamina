@@ -29,11 +29,15 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptBlockLocationIterator& operator=(ScriptBlockLocationIterator const&);
+    ScriptBlockLocationIterator(ScriptBlockLocationIterator const&);
     ScriptBlockLocationIterator();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptBlockLocationIterator(::ScriptModuleMinecraft::ScriptBlockLocationIterator&& it);
+
     MCAPI ScriptBlockLocationIterator(
         ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
@@ -41,6 +45,9 @@ public:
     );
 
     MCAPI ::Scripting::Result<bool, ::Scripting::EngineError> isValid() const;
+
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockLocationIterator&
+    operator=(::ScriptModuleMinecraft::ScriptBlockLocationIterator&& it);
     // NOLINTEND
 
 public:
@@ -52,6 +59,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockLocationIterator&& it);
+
     MCAPI void* $ctor(
         ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>

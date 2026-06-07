@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/world/item/CreativeItemCategory.h"
+#include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
@@ -18,12 +18,12 @@ class CreativeGroupInfo : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>  mCategory;
-    ::ll::TypedStorage<8, 8, ::CreativeItemRegistry*> mRegistry;
-    ::ll::TypedStorage<8, 48, ::HashedString>         mName;
-    ::ll::TypedStorage<8, 128, ::ItemInstance>        mIcon;
-    ::ll::TypedStorage<4, 4, uint>                    mIndex;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>>    mItemIndexes;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::CreativeItemCategory> mCategory;
+    ::ll::TypedStorage<8, 8, ::CreativeItemRegistry*>             mRegistry;
+    ::ll::TypedStorage<8, 48, ::HashedString>                     mName;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                    mIcon;
+    ::ll::TypedStorage<4, 4, uint>                                mIndex;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                mItemIndexes;
     // NOLINTEND
 
 public:
@@ -42,29 +42,23 @@ public:
     // NOLINTBEGIN
     MCAPI CreativeGroupInfo(::CreativeGroupInfo const&);
 
-    MCAPI CreativeGroupInfo(
-        ::CreativeItemRegistry* registry,
-        ::CreativeItemCategory  category,
-        ::HashedString const&   name,
-        uint                    index,
-        ::ItemInstance const&   icon
-    );
+    MCAPI void _addCreativeItemEntry(::CreativeItemEntry* itemEntry);
 
     MCAPI void addCreativeItem(::CreativeItemEntry* itemEntry);
+
+    MCFOLD ::SharedTypes::CreativeItemCategory getCreativeCategory() const;
+
+    MCFOLD ::ItemInstance const& getIcon() const;
+
+    MCFOLD ::std::vector<uint> const& getItems() const;
+
+    MCAPI ::std::string const& getName() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CreativeGroupInfo const&);
-
-    MCAPI void* $ctor(
-        ::CreativeItemRegistry* registry,
-        ::CreativeItemCategory  category,
-        ::HashedString const&   name,
-        uint                    index,
-        ::ItemInstance const&   icon
-    );
     // NOLINTEND
 
 public:

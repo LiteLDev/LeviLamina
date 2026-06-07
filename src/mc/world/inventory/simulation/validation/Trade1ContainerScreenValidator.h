@@ -7,9 +7,15 @@
 
 class Trade1ContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~Trade1ContainerScreenValidator() /*override*/ = default;
+    MCAPI Trade1ContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

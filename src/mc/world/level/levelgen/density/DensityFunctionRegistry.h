@@ -13,4 +13,16 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DensityFunctionPtr>> mFunctions;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DensityFunctionRegistry();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+    // NOLINTEND
 };

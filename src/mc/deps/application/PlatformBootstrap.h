@@ -80,8 +80,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlatformBootstrap() = default;
-
+#ifdef LL_PLAT_C
     virtual void initialize() = 0;
 
     virtual ::std::string_view getAssetRoot() = 0;
@@ -107,6 +106,8 @@ public:
 
     virtual ::Bedrock::PlatformBootstrap::CreateDirectoryResult
     rawCreateDirectory(char const* path, char* errorBuffer, uint64 errorBufferSize) = 0;
+#endif
+
     // NOLINTEND
 
 public:
@@ -146,9 +147,7 @@ public:
     MCNAPI static ::Bedrock::PlatformBootstrap::SaveResult
     _makeSaveError(::Bedrock::PlatformBootstrap::SaveResultCode, char*, uint64, char const*, ...);
 
-#ifdef LL_PLAT_S
     MCNAPI static ::Bedrock::PlatformBootstrap& getSharedInstance();
-#endif
     // NOLINTEND
 
 public:

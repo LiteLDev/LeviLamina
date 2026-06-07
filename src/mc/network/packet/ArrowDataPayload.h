@@ -14,10 +14,4 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<float>>   mArrowHeadRadius;
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>   mNumSegments;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::ArrowDataPayload const&) const;
-    // NOLINTEND
 };

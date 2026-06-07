@@ -33,7 +33,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk6d7cb9;
     ::ll::UntypedStorage<8, 8>   mUnkcebfae;
     ::ll::UntypedStorage<2, 4>   mUnk204914;
-    ::ll::UntypedStorage<4, 4>   mUnk2c3be6;
+    ::ll::UntypedStorage<4, 4>   mUnkab95a5;
     ::ll::UntypedStorage<8, 48>  mUnk9c0f1e;
     // NOLINTEND
 
@@ -61,8 +61,6 @@ public:
     virtual void updateColor(::std::string const& biomeName, ::mce::Color const& color) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription listenForBiomeUpdates(::std::function<void()> callback) /*override*/;
-
-    virtual ~EditorCustomBiomeSource() /*override*/;
     // NOLINTEND
 
 public:
@@ -94,12 +92,6 @@ public:
         ::std::map<::std::string, ::CustomBiome> const& customBiomeMap,
         ::mce::UUID                                     id
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

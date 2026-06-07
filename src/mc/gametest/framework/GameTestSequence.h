@@ -27,6 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::optional<::gametest::GameTestError>
+    _executeWithoutFail(::std::optional<::gametest::GameTestError> const& error);
+
     MCNAPI ::std::optional<::gametest::GameTestError> _tick(int currentTick);
 
     MCNAPI ::gametest::GameTestSequence& thenExecute(::std::function<::std::optional<::gametest::GameTestError>()> fn);
@@ -39,10 +42,16 @@ public:
 
     MCNAPI void thenFail(::gametest::GameTestError error);
 
+    MCNAPI ::gametest::GameTestSequence& thenIdle(int tickDelay);
+
     MCNAPI void thenSucceed();
+
+    MCNAPI ::gametest::GameTestSequence& thenWait(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI ::gametest::GameTestSequence&
     thenWaitAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
+
+    MCNAPI bool tickAndFailIfNotComplete(int currentTick);
     // NOLINTEND
 };
 

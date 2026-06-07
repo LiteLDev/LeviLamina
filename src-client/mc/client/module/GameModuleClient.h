@@ -20,6 +20,7 @@ class ItemRegistryRef;
 class Level;
 class MultiPlayerLevel;
 class ResourcePackStack;
+class ServerboundDiagnosticsPacket;
 // clang-format on
 
 class GameModuleClient : public ::AppExtensions::AppExtensionsNonOwner {
@@ -34,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameModuleClient() /*override*/;
+    virtual ~GameModuleClient() /*override*/ = default;
 
     virtual void init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) = 0;
 
@@ -62,7 +63,7 @@ public:
 
     virtual void setupStandardCommands(::CommandRegistry& commandRegistry) = 0;
 
-    virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) = 0;
+    virtual void setupStartMenuScreenCommands(::CommandRegistry&) = 0;
 
     virtual void setupUI() = 0;
 
@@ -70,18 +71,37 @@ public:
 
     virtual ::std::unique_ptr<::ClientInputMappingFactory> createInputMappingFactory(::IClientInstance& client) = 0;
 
-    virtual void registerVanillaGoalsForUpgrader(::ActorMigratedDefinitionFactory& migratedFactory) const = 0;
+    virtual ::std::shared_ptr<void> registerVanillaGoalsForUpgrader(
+        ::Experiments const&              experiments,
+        ::BaseGameVersion const&          baseGameVersion,
+        ::ItemRegistryRef const           itemRegistryRef,
+        ::ActorMigratedDefinitionFactory& migratedFactory
+    ) const = 0;
+
+    virtual ::ServerboundDiagnosticsPacket createServerboundDiagnosticsPacket() = 0;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI GameModuleClient();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -39,12 +39,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ClipParameters();
+    MCNAPI ClipParameters(::Vec3 const& a, ::Vec3 const& b);
+
+    MCNAPI ClipParameters(
+        ::Vec3 const&                                                            a,
+        ::Vec3 const&                                                            b,
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
+    );
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Vec3 const& a, ::Vec3 const& b);
+
+    MCNAPI void* $ctor(
+        ::Vec3 const&                                                            a,
+        ::Vec3 const&                                                            b,
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
+    );
     // NOLINTEND
 };

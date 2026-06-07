@@ -31,15 +31,6 @@ public:
     virtual float _evaluateCurve(float t, ::RenderParams& renderParams) /*override*/;
 
     virtual ::ParticleSystem::ParticleCurveType getCurveType() const /*override*/;
-
-    virtual ~ParticleCurveBezier() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static float
-    evaluateNormalizedBezierCurve(float tNormalized, float value0, float value1, float value2, float value3);
     // NOLINTEND
 
 public:

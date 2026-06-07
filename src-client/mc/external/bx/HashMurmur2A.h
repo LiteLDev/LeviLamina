@@ -17,7 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAligned(void const* _data, int _len);
+    MCAPI void add(void const* _data, int _len);
 
     MCAPI void addUnaligned(void const* _data, int _len);
     // NOLINTEND

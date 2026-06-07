@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DelayedAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -41,13 +45,13 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual int getAttackTicksResetValue() const /*override*/;
-
-    virtual ~DelayedAttackGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DelayedAttackGoal(::Mob& mob);
+
     MCAPI void _attemptAttack(::Actor& target, bool canReach, bool hasLineOfSight);
 
     MCAPI void _attemptStartAttacking(::Actor& target) const;
@@ -63,6 +67,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& mMinLineOfSightFixVersion();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

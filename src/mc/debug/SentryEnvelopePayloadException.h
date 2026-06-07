@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct SentryEnvelopePayloadException {
 public:
     // member variables
@@ -13,14 +18,14 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadException(SentryEnvelopePayloadException const&);
+    SentryEnvelopePayloadException();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SentryEnvelopePayloadException();
-
     MCNAPI SentryEnvelopePayloadException(::SentryEnvelopePayloadException&&);
+
+    MCNAPI SentryEnvelopePayloadException(::SentryEnvelopePayloadException const&);
 
     MCNAPI ::SentryEnvelopePayloadException& operator=(::SentryEnvelopePayloadException&&);
 
@@ -30,11 +35,17 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::SentryEnvelopePayloadException&&);
+
+    MCNAPI void* $ctor(::SentryEnvelopePayloadException const&);
     // NOLINTEND
 
 public:

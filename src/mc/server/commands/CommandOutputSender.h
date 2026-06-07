@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CommandOutputSender() = default;
+    virtual ~CommandOutputSender();
 
     virtual void send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
@@ -47,6 +47,8 @@ public:
     MCAPI void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
 
     MCAPI ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
+
+    MCAPI void addObserver(::CodeBuilder::CommandOutputObserver& observer);
 #endif
 
     MCAPI void
@@ -65,6 +67,12 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void* $ctor();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

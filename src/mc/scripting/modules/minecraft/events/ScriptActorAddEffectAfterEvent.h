@@ -32,15 +32,15 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorAddEffectAfterEvent& operator=(ScriptActorAddEffectAfterEvent const&);
     ScriptActorAddEffectAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorAddEffectAfterEvent(::ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent const&);
-
-    MCAPI ~ScriptActorAddEffectAfterEvent();
+    MCAPI ScriptActorAddEffectAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                             scope
+    );
     // NOLINTEND
 
 public:
@@ -52,13 +52,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                             scope
+    );
     // NOLINTEND
 };
 

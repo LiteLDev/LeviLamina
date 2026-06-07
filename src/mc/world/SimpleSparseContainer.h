@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimpleSparseContainer() /*override*/ = default;
+    virtual ~SimpleSparseContainer() /*override*/;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
@@ -55,11 +55,8 @@ public:
 
     virtual void containerContentChanged(int slot) /*override*/;
 
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void
+    serverInitItemStackIds(int onNetIdChanged, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
     // NOLINTEND
 
 public:
@@ -72,7 +69,13 @@ public:
         ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
 
-    MCAPI void _setBackingContainerSlot(int slot, ::ItemStack const& newItem);
+    MCFOLD void clearItem(int slot);
+
+    MCAPI void pushAllToBackingContainer();
+
+#ifdef LL_PLAT_C
+    MCAPI void setCreatedItem(int slot, ::ItemStack const& item);
+#endif
     // NOLINTEND
 
 public:
@@ -84,6 +87,12 @@ public:
         ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,
         ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -103,11 +112,7 @@ public:
 
     MCAPI void $containerContentChanged(int slot);
 
-    MCFOLD void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCFOLD void $serverInitItemStackIds(int onNetIdChanged, int, ::std::function<void(int, ::ItemStack const&)>);
 
 
     // NOLINTEND

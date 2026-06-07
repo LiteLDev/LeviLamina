@@ -37,6 +37,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI void fromBool(bool b);
+
+        MCAPI void fromInt(int i);
+
         MCAPI void fromString(::std::string str);
 
         MCAPI ~Compound();
@@ -65,13 +69,12 @@ public:
 
 public:
     // prevent constructor by default
-    BlockDescriptor(BlockDescriptor const&);
     BlockDescriptor();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor&&);
+    MCAPI BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor const&);
 
     MCAPI explicit BlockDescriptor(::std::string name);
 
@@ -83,15 +86,21 @@ public:
 
     MCFOLD ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor&&);
 
-    MCAPI ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor const&);
+    MCFOLD ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor const&);
 
     MCAPI ~BlockDescriptor();
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor&&);
+    MCFOLD void* $ctor(::SharedTypes::Legacy::BlockDescriptor const&);
 
     MCAPI void* $ctor(::std::string name);
 

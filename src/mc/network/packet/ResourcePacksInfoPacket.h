@@ -23,13 +23,6 @@ public:
     ::ll::TypedStorage<8, 80, ::PacksInfoData> mData;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ResourcePacksInfoPacket();
-
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,14 +33,13 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~ResourcePacksInfoPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    MCAPI ResourcePacksInfoPacket();
+
     MCAPI ResourcePacksInfoPacket(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,
@@ -55,13 +47,17 @@ public:
         ::PackIdVersion const&         worldTemplateIdVersion,
         bool                           forceDisableVibrantVisuals
     );
+
+#ifdef LL_PLAT_C
+    MCFOLD ::PacksInfoData const& getHostSpecifiedPacks() const;
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,
@@ -69,13 +65,6 @@ public:
         ::PackIdVersion const&         worldTemplateIdVersion,
         bool                           forceDisableVibrantVisuals
     );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

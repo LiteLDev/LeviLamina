@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+namespace mce { class RenderDevice; }
+namespace mce { struct ViewportInfo; }
+// clang-format on
+
 namespace mce {
 
 class RenderContextBase {
@@ -21,7 +28,50 @@ public:
     // prevent constructor by default
     RenderContextBase& operator=(RenderContextBase const&);
     RenderContextBase(RenderContextBase const&);
-    RenderContextBase();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI RenderContextBase();
+
+    MCNAPI void beginFrame();
+
+    MCNAPI bool captureScreenAsRGB(::std::vector<uchar>& outBytes, int& outWidth, int& outHeight);
+
+    MCNAPI void clearColorBuffer(::mce::Color const& clearColor, ::mce::ViewportInfo const* vpInfo) const;
+
+    MCNAPI void clearContextState();
+
+    MCNAPI void clearDepthStencilBuffer(float depth, uchar stencil, ::mce::ViewportInfo const* vpInfo) const;
+
+    MCNAPI void endFrame();
+
+    MCNAPI void flush();
+
+    MCNAPI ::mce::RenderDevice* getDevice() const;
+
+    MCNAPI void setRenderTarget();
+
+    MCNAPI void setScissorRect(int x, int y, uint w, uint h);
+
+    MCNAPI void setViewport(::mce::ViewportInfo const& viewportInfo);
+
+    MCNAPI void unbindAllTexturesAndShaders();
+
+    MCNAPI ~RenderContextBase();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace mce

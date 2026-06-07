@@ -31,8 +31,6 @@ public:
         ) /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const /*override*/;
-
-    virtual ~WorldRecovery_Unimplemented() /*override*/ = default;
     // NOLINTEND
 
 public:

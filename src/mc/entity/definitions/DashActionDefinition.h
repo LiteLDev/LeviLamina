@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct DashActionComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -30,7 +32,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void initialize(::EntityContext& entity, ::DashActionComponent& component) const;
+
     MCAPI void setDirection(::std::string const& direction);
+
+    MCAPI void uninitialize(::EntityContext& entity, ::DashActionComponent&) const;
     // NOLINTEND
 
 public:

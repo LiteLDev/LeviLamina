@@ -14,7 +14,6 @@ namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct PropertyBinding; }
 namespace Scripting { struct TypeNameInfo; }
 namespace Scripting::QuickJS { class RegisteredClass; }
-namespace Scripting::QuickJS { class RegisteredEnum; }
 namespace Scripting::QuickJS { class RegisteredError; }
 namespace Scripting::QuickJS { class RegisteredInterface; }
 namespace Scripting::QuickJS { struct ResolvedTypes; }
@@ -41,6 +40,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk167758;
     ::ll::UntypedStorage<8, 64> mUnk8a16c7;
     ::ll::UntypedStorage<8, 64> mUnk85c83f;
+    ::ll::UntypedStorage<8, 64> mUnkfb655b;
     ::ll::UntypedStorage<8, 64> mUnkb30580;
     // NOLINTEND
 
@@ -72,14 +72,6 @@ public:
 
     MCNAPI void _registerBakedProperties(::Scripting::ClassBinding const& classBinding);
 
-    MCNAPI ::Scripting::QuickJS::RegisteredClass* findClassByType(::entt::meta_type const& type) const;
-
-    MCNAPI ::Scripting::QuickJS::RegisteredEnum* findEnumByType(::entt::meta_type const& type) const;
-
-    MCNAPI ::Scripting::QuickJS::RegisteredError* findErrorByType(::entt::meta_type const& type) const;
-
-    MCNAPI ::Scripting::QuickJS::RegisteredInterface* findInterfaceByType(::entt::meta_type const& type) const;
-
     MCNAPI ::std::optional<::Scripting::TypeNameInfo> getNameForType(
         ::Scripting::QuickJS::ResolvedTypes const& resolvedTypes,
         ::entt::meta_type const&                   type,
@@ -87,15 +79,15 @@ public:
     ) const;
 
     MCNAPI ::Scripting::QuickJS::RegisteredClass&
-    registerClass(::JSContext* ctx, ::Scripting::ClassBinding const& classBinding, bool forModule);
+    registerClass(::JSContext* ctx, ::Scripting::ClassBinding const& classBinding, bool);
 
-    MCNAPI void registerEnum(::JSContext* ctx, ::Scripting::EnumBinding const& enumBinding);
+    MCNAPI void registerEnum(::JSContext* enumBinding, ::Scripting::EnumBinding const&);
 
     MCNAPI ::Scripting::QuickJS::RegisteredError&
     registerError(::JSContext* ctx, ::Scripting::ErrorBinding const& errorBinding);
 
     MCNAPI ::Scripting::QuickJS::RegisteredInterface&
-    registerInterface(::JSContext* ctx, ::Scripting::InterfaceBinding const& interfaceBinding);
+    registerInterface(::JSContext* interfaceBinding, ::Scripting::InterfaceBinding const&);
 
     MCNAPI ~ClassRegistry();
     // NOLINTEND

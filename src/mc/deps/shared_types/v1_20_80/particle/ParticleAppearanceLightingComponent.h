@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-    virtual ~ParticleAppearanceLightingComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

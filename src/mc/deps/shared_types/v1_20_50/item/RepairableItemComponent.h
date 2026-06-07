@@ -50,21 +50,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~RepairableItemComponent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static variables
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

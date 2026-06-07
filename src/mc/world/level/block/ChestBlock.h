@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/ChestType.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +18,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Container;
-class Experiments;
 class IConstBlockSource;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -45,7 +44,7 @@ public:
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
 
     virtual void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const /*override*/;
 
@@ -69,24 +68,29 @@ public:
 
     virtual bool isChestBlock() const /*override*/;
 
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~ChestBlock() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChestBlock(::std::string const& nameId, int id, ::ChestType type, ::MaterialType materialType);
+    MCAPI ChestBlock(
+        ::std::string const&                  nameId,
+        int                                   id,
+        ::ChestType                           type,
+        ::SharedTypes::v1_26_20::MaterialType materialType
+    );
+
+    MCAPI bool canPairWith(::ChestBlock const& other) const;
+
+    MCFOLD ::ChestType getChestType() const;
+
+    MCAPI void onPairedWith(::BlockSource& region, ::BlockPos const& mainPos, ::BlockPos const& attachedPos) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -104,13 +108,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::ChestType type, ::MaterialType materialType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void*
+    $ctor(::std::string const& nameId, int id, ::ChestType type, ::SharedTypes::v1_26_20::MaterialType materialType);
     // NOLINTEND
 
 public:
@@ -122,7 +121,7 @@ public:
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
 
     MCAPI void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
 
@@ -145,14 +144,11 @@ public:
 
     MCFOLD bool $isChestBlock() const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

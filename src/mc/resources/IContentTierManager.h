@@ -14,17 +14,11 @@ class IContentTierManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IContentTierManager() /*override*/;
+    virtual ~IContentTierManager() /*override*/ = default;
 
     virtual ::ContentTierInfo getContentTierInfo() const = 0;
 
     virtual bool shouldDeviceAllowAnimation() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

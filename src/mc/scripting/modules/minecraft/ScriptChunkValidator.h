@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class BlockSource;
 // clang-format on
 
@@ -29,6 +30,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptChunkValidator(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
+
+#ifdef LL_PLAT_C
+    MCAPI bool operator()(::BlockPos const& blockPos) const;
+#endif
+
+    MCFOLD uint64 size() const;
 
     MCAPI ~ScriptChunkValidator();
     // NOLINTEND

@@ -6,6 +6,7 @@
 // clang-format off
 class BlockSource;
 class ChunkPos;
+class Dimension;
 class LevelChunk;
 // clang-format on
 
@@ -26,6 +27,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit Seasons(::Dimension& dimension);
+
     MCNAPI void postProcess(::LevelChunk& levelChunk, ::BlockSource& region, ::ChunkPos const& chunkPos);
+
+    MCNAPI void tick();
+
+    MCNAPI ~Seasons();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Dimension& dimension);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

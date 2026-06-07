@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/PrefabSource.h"
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -21,11 +19,10 @@
 class BlockPalette;
 class BlockSource;
 class ChunkPos;
-class Dimension;
 class Vec3;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
-namespace Editor { class EditorManagerServer; }
+namespace Editor { class EditorManager; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
 namespace Editor::Prefabs { class PrefabDBTemplate; }
@@ -47,7 +44,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnke4ef26;
     ::ll::UntypedStorage<8, 32> mUnk5db5bc;
     ::ll::UntypedStorage<8, 64> mUnk8132d3;
-    ::ll::UntypedStorage<8, 64> mUnk50d9ea;
+    ::ll::UntypedStorage<8, 64> mUnk4f26f2;
     ::ll::UntypedStorage<8, 16> mUnkaab249;
     ::ll::UntypedStorage<8, 16> mUnk156c5f;
     ::ll::UntypedStorage<8, 48> mUnk7e0a09;
@@ -151,6 +148,8 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit PrefabDBService(::Editor::ServiceProviderCollection& serviceProviders);
 
+    MCNAPI bool _buildManifests();
+
     MCNAPI ::StackRefResult<::Editor::Prefabs::PrefabDBPrefabInstance> _createPrefabInstance(
         ::WeakRef<::Editor::Prefabs::PrefabDBTemplate> prefabTemplateRef,
         ::DimensionType const&                         dimension,
@@ -168,32 +167,16 @@ public:
         ::Editor::Prefabs::PrefabSource const& source
     );
 
-    MCNAPI bool
-    _loadPrefabDBInstances(::Core::PathBuffer<::std::string> const& dbPath, ::std::vector<::std::string>& errorLog);
-
-    MCNAPI bool _loadPrefabDBTemplates(
-        ::Editor::Prefabs::PrefabSource          source,
-        ::Core::PathBuffer<::std::string> const& dbPath,
-        ::std::vector<::std::string>&            errorLog
-    );
-
-    MCNAPI void _onTickEvent(::Editor::EditorManagerServer&);
+    MCNAPI void _onTickEvent(::Editor::EditorManager&);
 
     MCNAPI void
     _propagateDirtyTemplateChangesToInstances(::WeakRef<::Editor::Prefabs::PrefabDBTemplate> templateWeakRef);
 
     MCNAPI void _validateDatabase(::std::vector<::std::string>& outErrors);
 
-    MCNAPI void _writePrefabInstanceToStorage(
-        ::Core::PathBuffer<::std::string> const&         dbPath,
-        ::Editor::Prefabs::PrefabDBPrefabInstance const& prefabInstance,
-        ::std::vector<::std::string>&                    outErrors
-    );
-
-    MCNAPI void _writePrefabTemplateToStorage(
-        ::Core::PathBuffer<::std::string> const&   dbPath,
-        ::Editor::Prefabs::PrefabDBTemplate const& prefabTemplate,
-        ::std::vector<::std::string>&              outErrors
+    MCNAPI void findInstancesOfTemplate(
+        ::mce::UUID const&                                                   templateId,
+        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
     );
     // NOLINTEND
 

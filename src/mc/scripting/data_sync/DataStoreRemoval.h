@@ -12,17 +12,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataStoreRemoval(DataStoreRemoval const&);
-    DataStoreRemoval();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::DDUI::DataStoreRemoval& operator=(::Bedrock::DDUI::DataStoreRemoval&&);
-
-    MCFOLD ::Bedrock::DDUI::DataStoreRemoval& operator=(::Bedrock::DDUI::DataStoreRemoval const&);
-
     MCAPI ~DataStoreRemoval();
     // NOLINTEND
 

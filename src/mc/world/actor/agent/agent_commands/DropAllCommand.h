@@ -21,8 +21,6 @@ public:
     virtual void execute() /*override*/;
 
     virtual bool isDone() /*override*/;
-
-    virtual ~DropAllCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

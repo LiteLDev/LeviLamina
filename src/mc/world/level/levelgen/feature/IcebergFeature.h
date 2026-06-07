@@ -28,35 +28,17 @@ public:
     // prevent constructor by default
     IcebergFeature& operator=(IcebergFeature const&);
     IcebergFeature(IcebergFeature const&);
-    IcebergFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    virtual ~IcebergFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateIcebergBlock(
-        ::BlockSource&    region,
-        ::Random&         random,
-        ::BlockPos const& origin,
-        int               height,
-        int               xo,
-        int               yOff,
-        int               zo,
-        int               radius,
-        int               a,
-        bool              snowOnTop,
-        bool              isEllipse,
-        float             shapeAngle,
-        int               ellipseC,
-        ::Block const&    blockToPlace
-    ) const;
+    MCAPI IcebergFeature();
 
     MCAPI void carve(
         int               radius,
@@ -69,6 +51,12 @@ public:
         int               ellipseA,
         int               ellipseC
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

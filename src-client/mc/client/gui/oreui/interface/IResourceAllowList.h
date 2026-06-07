@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/interface/IResourceHandler.h"
 #include "mc/client/gui/oreui/interface/ProfileImageState.h"
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -30,19 +30,11 @@ public:
     virtual ::OreUI::AllowListProfileImage getOrAddProfileImage(::Social::ProfileImageOptions const& options) = 0;
 
     virtual void
-    setProfileImageStatus(::Social::ProfileImageOptions const& options, ::OreUI::IResourceHandler::Status status) = 0;
+    setProfileImageStatus(::Social::ProfileImageOptions const& options, ::Gameface::ResourceHandlerStatus status) = 0;
 
     virtual ::OreUI::ProfileImageState getProfileImageState(::Social::ProfileImageOptions const& options) = 0;
 
     virtual ::Bedrock::PubSub::Subscription addProfileImageStateSubscriber(::std::function<void()> const& callback) = 0;
-
-    virtual ~IResourceAllowList() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

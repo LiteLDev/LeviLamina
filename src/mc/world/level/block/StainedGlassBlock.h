@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StainedGlassBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool getCollisionShapeForCamera(
@@ -32,15 +36,25 @@ public:
         ::BlockPos const&          pos
     ) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
+    // NOLINTEND
 
-    virtual ~StainedGlassBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StainedGlassBlock(::std::string const& nameId, int id, bool doesDrops, bool doesNotCollideWithCamera);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool doesDrops, bool doesNotCollideWithCamera);
     // NOLINTEND
 
 public:
@@ -53,7 +67,7 @@ public:
         ::BlockPos const&          pos
     ) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
 
 
     // NOLINTEND

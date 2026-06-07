@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Block;
 class BlockDescriptor;
 class BlockPos;
 class BlockSource;
@@ -39,6 +40,8 @@ public:
 
 public:
     // prevent constructor by default
+    EntityPlacerItemComponent& operator=(EntityPlacerItemComponent const&);
+    EntityPlacerItemComponent(EntityPlacerItemComponent const&);
     EntityPlacerItemComponent();
 
 public:
@@ -47,14 +50,14 @@ public:
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~EntityPlacerItemComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
+
+    MCAPI void _positionActor(::Actor& actor, ::Vec3 const& position, uchar face) const;
 
     MCAPI void _positionAndRotateActor(
         ::Actor&           actor,
@@ -68,15 +71,25 @@ public:
 
     MCAPI void _useOn(
         bool&              result,
-        ::ItemStack const& initialItemStack,
-        ::ItemStack&       currentItemStack,
-        ::Actor&           usingActor,
-        ::BlockPos const&  pos,
-        uchar              face,
-        ::Vec3 const&      clickPos
+        ::ItemStack const& currentItemStack,
+        ::ItemStack&       usingActor,
+        ::Actor&           pos,
+        ::BlockPos const&  face,
+        uchar              clickPos,
+        ::Vec3 const&
     );
 
+    MCAPI bool _useOnMonsterSpawner(
+        ::ItemStack&      item,
+        ::Actor&          usingActor,
+        ::BlockPos const& blockPos,
+        ::BlockSource&    region,
+        ::Block const&    block
+    ) const;
+
     MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI ::EntityPlacerItemComponent& operator=(::EntityPlacerItemComponent&&);
     // NOLINTEND
 
 public:
@@ -95,12 +108,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

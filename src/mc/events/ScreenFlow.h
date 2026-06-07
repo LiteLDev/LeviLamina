@@ -11,6 +11,15 @@ namespace Social::Events {
 
 class ScreenFlow {
 public:
+    // ScreenFlow inner types declare
+    // clang-format off
+    struct nowFunc;
+    // clang-format on
+
+    // ScreenFlow inner types define
+    struct nowFunc {};
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk639462;
@@ -39,6 +48,20 @@ public:
     );
 
     MCNAPI void PopulateEvent(::Social::Events::Event& event, bool clear);
+
+#ifdef LL_PLAT_C
+    MCNAPI void SetApplicationId(::std::string const& appId);
+#endif
+
+    MCNAPI bool ShouldSendEvent() const;
+
+    MCNAPI ~ScreenFlow();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

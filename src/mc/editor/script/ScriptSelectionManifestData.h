@@ -28,21 +28,9 @@ public:
     ScriptSelectionManifestData();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptSelectionManifestData();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

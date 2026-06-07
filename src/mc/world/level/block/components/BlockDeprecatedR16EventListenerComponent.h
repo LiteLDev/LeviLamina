@@ -2,12 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/container/small_vector_base.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
 class DefinitionEvent;
 class DefinitionTrigger;
 class RenderParams;
+struct ActorDefinitionEventStackEntry;
 // clang-format on
 
 class BlockDeprecatedR16EventListenerComponent {
@@ -18,18 +22,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockDeprecatedR16EventListenerComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _executeEvent(
-        ::std::string const&                                                  eventName,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::RenderParams&                                                       params
-    ) const;
+    MCAPI explicit BlockDeprecatedR16EventListenerComponent(
+        ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers
+    );
 
-    MCAPI void _forceExecuteTrigger(
-        ::DefinitionTrigger const&                                            trigger,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::RenderParams&                                                       params
+    MCAPI void _executeEvent(
+        ::std::string const&                                            eventName,
+        ::Bedrock::small_vector_base<::ActorDefinitionEventStackEntry>& eventStack,
+        ::RenderParams&                                                 params
     ) const;
     // NOLINTEND
 
@@ -39,5 +45,11 @@ public:
     MCAPI static void executeEvent(::Block const& block, ::std::string const& eventName, ::RenderParams& params);
 
     MCAPI static bool executeTrigger(::Block const& block, ::DefinitionTrigger const& trigger, ::RenderParams& params);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers);
     // NOLINTEND
 };

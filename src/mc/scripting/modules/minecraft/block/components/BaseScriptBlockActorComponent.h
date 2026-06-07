@@ -17,15 +17,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseScriptBlockActorComponent() /*override*/;
+    virtual ~BaseScriptBlockActorComponent() /*override*/ = default;
 
     virtual bool _isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

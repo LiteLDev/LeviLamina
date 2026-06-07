@@ -19,12 +19,6 @@ public:
     AtmosphericScatteringSessionStorage();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AtmosphericScatteringSessionStorage() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

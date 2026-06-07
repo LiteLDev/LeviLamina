@@ -15,7 +15,6 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
@@ -26,17 +25,21 @@ namespace mce { class Color; }
 
 class AnvilBlock : public ::FallingBlock {
 public:
+    // prevent constructor by default
+    AnvilBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
 
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
@@ -51,20 +54,18 @@ public:
 
     virtual bool isCraftingBlock() const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
 
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~AnvilBlock() /*override*/ = default;
+    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AnvilBlock(::std::string const& nameId, int id);
+
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -74,26 +75,32 @@ public:
     MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::AnvilDamage getDamageEnumForName(::HashedString const& name);
+    MCFOLD static ::AnvilDamage getDamageEnumForName(::HashedString const& name);
 #endif
 
-#ifdef LL_PLAT_S
-    MCAPI static int getDamageForName(::HashedString const& name);
-#endif
+    MCFOLD static int getDamageForName(::HashedString const& name);
+
+    MCAPI static ::HashedString const& getNameForDamage(int damage);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
     MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
@@ -107,13 +114,11 @@ public:
 
     MCFOLD bool $isCraftingBlock() const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
 
 
     // NOLINTEND

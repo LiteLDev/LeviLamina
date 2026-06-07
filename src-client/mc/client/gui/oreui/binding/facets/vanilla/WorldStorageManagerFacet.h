@@ -51,13 +51,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~WorldStorageManagerFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    WorldStorageManagerFacet(::World::WorldEditor& worldEditor, ::World::InfiniteWorldConverter& worldSizeConverter);
+
     MCAPI void clearDuplicateWorldTaskState();
 
     MCAPI void clearExportWorldResult();
@@ -102,6 +103,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::World::WorldEditor& worldEditor, ::World::InfiniteWorldConverter& worldSizeConverter);
     // NOLINTEND
 
 public:

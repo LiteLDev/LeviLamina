@@ -14,15 +14,18 @@ class ActorOwnerComponent;
 class ReplayStateComponent;
 class StrictEntityContext;
 struct ActorDataBoundingBoxComponent;
+struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
 struct ActorDataHorseFlagComponent;
 struct ActorDataJumpDurationComponent;
 struct ActorDataSeatOffsetComponent;
-struct ActorMovementTickNeededComponent;
 struct DynamicRenderOffsetComponent;
+struct InterpolateMovementNeededComponent;
 struct MoveInputComponent;
 struct ReplayStateTrackerComponent;
+struct ReplayStateTrackerDiff;
 struct ReplayStateValidFrameSupportComponent;
+namespace ClientRewind { struct ApplyReplayStateTrackerRequestComponent; }
 // clang-format on
 
 namespace ClientRewind {
@@ -35,17 +38,27 @@ MCAPI void _advanceRewindFrameSystem(
     ::ActorOwnerComponent&                                    actorOwnerComponent,
     ::ReplayStateComponent&                                   replayStateComponent
 );
-
-MCAPI void _tickAdvanceRewindFrameSystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
-        ::Optional<::MoveInputComponent const>,
-        ::Optional<::ReplayStateValidFrameSupportComponent const>,
-        ::ActorOwnerComponent,
-        ::ReplayStateComponent> view
-);
 #endif
+
+MCAPI void applyData(
+    ::ClientRewind::ApplyReplayStateTrackerRequestComponent const& toApply,
+    ::ActorDataDirtyFlagsComponent&                                dirtyFlags,
+    ::std::tuple<
+        ::ActorDataFlagComponent&,
+        ::Optional<::ActorDataHorseFlagComponent>,
+        ::Optional<::ActorDataJumpDurationComponent>,
+        ::Optional<::ActorDataBoundingBoxComponent>,
+        ::Optional<::ActorDataSeatOffsetComponent>>& data
+);
+
+MCAPI ::ReplayStateTrackerDiff extractSnapshot(
+    ::std::tuple<
+        ::ActorDataFlagComponent const&,
+        ::Optional<::ActorDataHorseFlagComponent const>,
+        ::Optional<::ActorDataJumpDurationComponent const>,
+        ::Optional<::ActorDataBoundingBoxComponent const>,
+        ::Optional<::ActorDataSeatOffsetComponent const>> const& data
+);
 
 MCAPI void tickAccumulate(
     ::ReplayStateTrackerComponent& tracker,
@@ -59,10 +72,10 @@ MCAPI void tickAccumulate(
 
 #ifdef LL_PLAT_C
 MCAPI void tickCorrectionInterpolation(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                     entity,
-    ::DynamicRenderOffsetComponent&                  offset,
-    ::EntityModifier<::DynamicRenderOffsetComponent> modifier
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>> entity,
+    ::StrictEntityContext const&                                       offset,
+    ::DynamicRenderOffsetComponent&                                    modifier,
+    ::EntityModifier<::DynamicRenderOffsetComponent>
 );
 
 MCAPI void tickPublish(

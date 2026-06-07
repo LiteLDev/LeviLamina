@@ -20,9 +20,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~CompositeDefinition() /*override*/;
+    MCAPI ::BehaviorDefinition const* get(uint64 index) const;
+
+    MCAPI uint64 getCount() const;
     // NOLINTEND
 
 public:
@@ -37,8 +39,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // vftables
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

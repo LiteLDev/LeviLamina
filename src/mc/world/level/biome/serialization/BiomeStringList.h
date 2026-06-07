@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -23,15 +24,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeStringList& operator=(BiomeStringList const&);
-    BiomeStringList(BiomeStringList const&);
-    BiomeStringList();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeStringList(::BiomeStringList&&);
+    MCAPI ushort addStringAndGetIndex(::std::string const& value);
+
+    MCAPI ::std::string const& getStringOrEmpty(ushort index) const;
+
+    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~BiomeStringList();
     // NOLINTEND
@@ -40,12 +39,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeStringList> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeStringList&&);
     // NOLINTEND
 
 public:

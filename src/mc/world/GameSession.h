@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ClientNetworkSystem;
 class Level;
 class LoopbackPacketSender;
 class NetEventCallback;
@@ -41,6 +42,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI GameSession(
+        ::ClientNetworkSystem&                network,
+        ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
+        ::LoopbackPacketSender&               loopbackPacketSender,
+        ::SubClientId                         subid
+    );
+#endif
+
     MCAPI GameSession(
         ::ServerNetworkSystem&                                               network,
         ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
@@ -50,7 +60,13 @@ public:
         ::SubClientId                                                        subid
     );
 
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
+#endif
+
     MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
+
+    MCAPI void tick();
 
     MCAPI ~GameSession();
     // NOLINTEND
@@ -58,6 +74,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::ClientNetworkSystem&                network,
+        ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
+        ::LoopbackPacketSender&               loopbackPacketSender,
+        ::SubClientId                         subid
+    );
+#endif
+
     MCAPI void* $ctor(
         ::ServerNetworkSystem&                                               network,
         ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,

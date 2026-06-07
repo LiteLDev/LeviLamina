@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class PlayerEventCoordinator;
-class ServerPlayer;
 // clang-format on
 
 namespace Editor {
@@ -44,12 +43,6 @@ public:
     virtual ::optional_ref<::PlayerEventCoordinator> getPlayerEventCoordinator() /*override*/;
 
     virtual bool isClientSide() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::ServerPlayer* getServerPlayer() const;
     // NOLINTEND
 
 public:

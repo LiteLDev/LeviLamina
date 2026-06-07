@@ -16,13 +16,12 @@ public:
 public:
     // prevent constructor by default
     QueueItem& operator=(QueueItem const&);
-    QueueItem(QueueItem const&);
     QueueItem();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI QueueItem(::AgentComponents::Actions::QueueItem&&);
+    MCAPI QueueItem(::AgentComponents::Actions::QueueItem const&);
 
     MCAPI ~QueueItem();
     // NOLINTEND
@@ -30,7 +29,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AgentComponents::Actions::QueueItem&&);
+    MCAPI void* $ctor(::AgentComponents::Actions::QueueItem const&);
     // NOLINTEND
 
 public:

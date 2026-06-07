@@ -2,16 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/settings/LocStringData.h"
+
 namespace Settings {
 
 struct OptionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                             value;
-    ::ll::TypedStorage<8, 32, ::std::string>                  label;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> description;
-    ::ll::TypedStorage<1, 1, bool>                            disabled;
+    ::ll::TypedStorage<4, 4, int> value;
+    ::ll::
+        TypedStorage<8, 72, ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>
+            label;
+    ::ll::TypedStorage<
+        8,
+        80,
+        ::std::optional<::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>>
+                                   description;
+    ::ll::TypedStorage<1, 1, bool> disabled;
     // NOLINTEND
 
 public:
@@ -23,15 +32,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI OptionData(::Settings::OptionData&&);
+
     MCAPI ::Settings::OptionData& operator=(::Settings::OptionData&&);
 
     MCAPI ~OptionData();
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Settings::OptionData&&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

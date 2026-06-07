@@ -30,8 +30,6 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
-
-    virtual ~WoodlandMansionStart() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,6 +45,12 @@ public:
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _fillCobblestone(::BlockPos const& startPos, ::BlockSource& region);
     // NOLINTEND
 
 public:

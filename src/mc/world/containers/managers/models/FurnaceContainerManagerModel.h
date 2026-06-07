@@ -16,13 +16,13 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class ContainerModel;
 class ContainerScreenContext;
 class FurnaceBlockActor;
 class ItemDescriptor;
 class ItemStack;
 class Player;
+class Recipe;
 struct IngredientSearchInfo;
 // clang-format on
 
@@ -34,26 +34,26 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos>                    mBlockPos;
-    ::ll::TypedStorage<4, 4, int>                            mLastTickCount;
-    ::ll::TypedStorage<4, 4, int>                            mLastLitTime;
-    ::ll::TypedStorage<4, 4, int>                            mLastLitDuration;
-    ::ll::TypedStorage<4, 4, int>                            mLastStoredXP;
-    ::ll::TypedStorage<4, 4, int>                            mLastInputId;
-    ::ll::TypedStorage<4, 4, int>                            mLastInputAux;
-    ::ll::TypedStorage<8, 128, ::ItemInstance>               mLastCraftedItem;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mLastOutputName;
-    ::ll::TypedStorage<4, 4, int>                            mLastResultDisplayId;
-    ::ll::TypedStorage<1, 1, ::BlockActorType const>         mBlockActorType;
-    ::ll::TypedStorage<1, 1, ::ContainerEnumName const>      mIngredientContainerName;
-    ::ll::TypedStorage<8, 48, ::HashedString const>          mRecipeTag;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRecipeBook;
-    ::ll::TypedStorage<1, 1, bool>                           mSmeltableFilterOn;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mSearchString;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mCaseFoldedSearchString;
-    ::ll::TypedStorage<4, 4, int>                            mNumFoodRecipes;
-    ::ll::TypedStorage<4, 4, int>                            mNumBlocksRecipes;
-    ::ll::TypedStorage<4, 4, int>                            mNumItemsRecipes;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                 mBlockPos;
+    ::ll::TypedStorage<4, 4, int>                                         mLastTickCount;
+    ::ll::TypedStorage<4, 4, int>                                         mLastLitTime;
+    ::ll::TypedStorage<4, 4, int>                                         mLastLitDuration;
+    ::ll::TypedStorage<4, 4, int>                                         mLastStoredXP;
+    ::ll::TypedStorage<4, 4, int>                                         mLastInputId;
+    ::ll::TypedStorage<4, 4, int>                                         mLastInputAux;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                            mLastCraftedItem;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mLastOutputName;
+    ::ll::TypedStorage<4, 4, int>                                         mLastResultDisplayId;
+    ::ll::TypedStorage<1, 1, ::BlockActorType const>                      mBlockActorType;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName const>                   mIngredientContainerName;
+    ::ll::TypedStorage<8, 48, ::HashedString const>                       mRecipeTag;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Recipe>>> mRecipeBook;
+    ::ll::TypedStorage<1, 1, bool>                                        mSmeltableFilterOn;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mSearchString;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mCaseFoldedSearchString;
+    ::ll::TypedStorage<4, 4, int>                                         mNumFoodRecipes;
+    ::ll::TypedStorage<4, 4, int>                                         mNumBlocksRecipes;
+    ::ll::TypedStorage<4, 4, int>                                         mNumItemsRecipes;
     // NOLINTEND
 
 public:
@@ -67,7 +67,7 @@ public:
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
@@ -85,6 +85,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FurnaceContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+
     MCAPI FurnaceContainerManagerModel(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
@@ -98,12 +100,14 @@ public:
 
     MCAPI ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
 
+    MCAPI ::FilterResult
+    _filterByTextAndInventory(::ItemInstance const& item, bool includeCursorItem, ::TextSearchMode searchMode) const;
+
+    MCAPI bool _foundInStartOfAnyWord(::std::string const& itemName) const;
+
     MCAPI ::FurnaceBlockActor* _getFurnaceEntity();
 
-    MCAPI bool _itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
-
-    MCFOLD bool
-    _itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
+    MCAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
 
     MCAPI void _populateRecipeBook();
 
@@ -112,6 +116,16 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
 
+    MCAPI void fireItemSmeltedEvent(::ItemDescriptor const& itemDescriptor);
+
+    MCAPI int getBurnProgress(int max);
+
+    MCAPI int getLitProgress(int max);
+#endif
+
+    MCAPI ::std::vector<::ItemInstance> getUnlockedRecipeIngredientsForResult(::ItemInstance const& item) const;
+
+#ifdef LL_PLAT_C
     MCAPI bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
 #endif
 
@@ -130,6 +144,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+
     MCAPI void* $ctor(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
@@ -151,7 +167,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 

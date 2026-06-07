@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace UI::Resources { struct ResolvedPropertyData; }
 namespace UI::Resources { struct ResolvedTextureData; }
 namespace cohtml { class Binder; }
 namespace ui { struct SliceSize; }
@@ -14,8 +13,6 @@ namespace UI::Resources {
 // functions
 // NOLINTBEGIN
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::UI::Resources::ResolvedTextureData* data);
-
-MCAPI void CoherentBind(::cohtml::Binder* binder, ::UI::Resources::ResolvedPropertyData* data);
 
 MCAPI ::std::string toString(::ui::SliceSize const& vec);
 

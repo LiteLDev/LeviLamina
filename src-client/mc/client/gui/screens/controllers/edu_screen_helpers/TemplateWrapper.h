@@ -24,6 +24,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string getSubtext1();
+
+    MCAPI ::std::string getSubtext2();
+
+    MCAPI ::std::string getTexture();
+
+    MCAPI ::std::string getTextureSource();
+
+    MCAPI ::std::string getTextureZip();
     // NOLINTEND
 };
 

@@ -36,18 +36,6 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOrigin;
         ::ll::TypedStorage<4, 4, uint>                               mRefCount;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~OriginMapping();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct QueuedCommand {
@@ -109,6 +97,9 @@ public:
 
     MCAPI void _loadTickFiles(::ResourcePackManager const& serverPackManager);
 
+    MCAPI int
+    _processCommandStack(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
+
     MCAPI void _processFunctionEntry(
         ::std::string const&                functionName,
         ::std::vector<::std::string> const& lines,
@@ -118,6 +109,11 @@ public:
     );
 
     MCAPI void _queueCommandsAfterCaller(
+        ::std::vector<::std::unique_ptr<::IFunctionEntry>> const& toQueue,
+        ::CommandOrigin const&                                    origin
+    );
+
+    MCAPI void _queueCommandsNextToExecute(
         ::std::vector<::std::unique_ptr<::IFunctionEntry>> const& toQueue,
         ::CommandOrigin const&                                    origin
     );
@@ -137,6 +133,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string getFunctionNameFromPath(::Core::Path const& filename);
+
+    MCAPI static ::FunctionQueueOrder getQueueOrderForCommandVersion(::CurrentCmdVersion version);
     // NOLINTEND
 
 public:

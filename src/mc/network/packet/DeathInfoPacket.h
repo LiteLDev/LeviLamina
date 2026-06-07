@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DeathInfoPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -63,26 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~DeathInfoPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DeathInfoPacket();
+
     MCAPI explicit DeathInfoPacket(::DeathInfoPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DeathInfoPacketPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::DeathInfoPacketPayload payload);
     // NOLINTEND
 
 public:

@@ -9,7 +9,7 @@
 #include "mc/util/FloatRange.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -19,7 +19,7 @@ class Mob;
 class Player;
 // clang-format on
 
-class TemptBaseGoal : public ::Goal {
+class TemptBaseGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -68,8 +68,6 @@ public:
     virtual void updateMovement() = 0;
 
     virtual void stopMovement() = 0;
-
-    virtual ~TemptBaseGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -108,12 +106,6 @@ public:
         ::ActorDefinitionTrigger const&        onStartEvent,
         ::ActorDefinitionTrigger const&        onEndEvent
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

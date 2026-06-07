@@ -38,12 +38,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        LogMessage& operator=(LogMessage const&);
-        LogMessage(LogMessage const&);
-        LogMessage();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::std::string const& getContentMessage() const;
@@ -55,8 +49,6 @@ public:
         MCAPI ::std::string getTagListString() const;
 
         MCFOLD ::std::string const& getTimeStamp() const;
-
-        MCFOLD ::OreUI::EditorLoggingFacet::LogMessage& operator=(::OreUI::EditorLoggingFacet::LogMessage&&);
 
         MCAPI ~LogMessage();
         // NOLINTEND
@@ -79,9 +71,21 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        LogNotification();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI explicit LogNotification(::Editor::LogMessage const& logMessage);
+
         MCAPI ~LogNotification();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::Editor::LogMessage const& logMessage);
         // NOLINTEND
 
     public:

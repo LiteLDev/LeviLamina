@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description) /*override*/;
+    virtual void initializeInternal(::Mob& mob, ::NavigationDescription const* description) /*override*/;
 
     virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
@@ -44,20 +44,22 @@ public:
     virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
 
     virtual void updatePath(::NavigationComponent& parent, ::Mob& mob) /*override*/;
-
-    virtual ~FlyingPathNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _disableGravity(::Mob& mob);
+
     MCAPI void _restorePreviousGravityFlag(::Mob& mob);
+
+    MCAPI void _storePreviousGravityFlag(::Mob& mob);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
+    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription const* description);
 
     MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 

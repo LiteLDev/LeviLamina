@@ -33,8 +33,6 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     ) /*override*/;
-
-    virtual ~SHRoomCrossing() /*override*/ = default;
     // NOLINTEND
 
 public:

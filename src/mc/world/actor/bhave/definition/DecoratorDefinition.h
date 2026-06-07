@@ -20,9 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~DecoratorDefinition() /*override*/ = default;
+    MCFOLD ::BehaviorDefinition const* get() const;
     // NOLINTEND
 
 public:
@@ -30,5 +30,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::BehaviorDefinition>
     _decoratorLoadChildBehavior(::Json::Value value, ::BehaviorFactory const& factory, ::BehaviorTreeDefinitionPtr ptr);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

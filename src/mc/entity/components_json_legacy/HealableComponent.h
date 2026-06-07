@@ -9,9 +9,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
-class HealableDefinition;
 class InteractionResult;
-class ItemStack;
 class Player;
 struct FeedItem;
 // clang-format on
@@ -29,7 +27,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _applyEffects(::Actor& owner, ::std::vector<::FeedItem::Effect> const& effects);
-
-    MCAPI static bool _canHeal(::Actor& owner, ::ItemStack const& item, ::HealableDefinition const* healableDefinition);
     // NOLINTEND
 };

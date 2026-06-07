@@ -12,4 +12,18 @@ public:
     ::ll::TypedStorage<1, 1, bool> showNameTags;
     ::ll::TypedStorage<1, 1, bool> autoJump;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AdventureSettings();
+
+    MCAPI bool operator==(::AdventureSettings const& compareValue) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+    // NOLINTEND
 };

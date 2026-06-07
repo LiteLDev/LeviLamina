@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ReplaceBiomesComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

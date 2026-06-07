@@ -26,13 +26,38 @@ public:
 public:
     // prevent constructor by default
     ScriptCommandMessageEvent& operator=(ScriptCommandMessageEvent const&);
-    ScriptCommandMessageEvent(ScriptCommandMessageEvent const&);
     ScriptCommandMessageEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptCommandMessageEvent(::ScriptCommandMessageEvent const&);
+
+    MCAPI ScriptCommandMessageEvent(
+        ::std::string const&             messageId,
+        ::std::string const&             messageValue,
+        ::Level const&                   level,
+        ::std::optional<::ActorUniqueID> sourceActor,
+        ::std::optional<::BlockObject>   blockObject,
+        ::std::optional<::ActorUniqueID> initiatorId
+    );
+
     MCAPI ~ScriptCommandMessageEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptCommandMessageEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::string const&             messageId,
+        ::std::string const&             messageValue,
+        ::Level const&                   level,
+        ::std::optional<::ActorUniqueID> sourceActor,
+        ::std::optional<::BlockObject>   blockObject,
+        ::std::optional<::ActorUniqueID> initiatorId
+    );
     // NOLINTEND
 
 public:

@@ -21,6 +21,12 @@ namespace mce { class TextureGroup; }
 namespace FontLoadingUtils {
 // functions
 // NOLINTBEGIN
+MCNAPI bool isBitmapFont(::std::string const& formatString);
+
+MCNAPI bool isTrueTypeFont(::std::string const& formatString);
+
+MCNAPI bool isTrueTypeMsdfFont(::std::string const& formatString);
+
 MCNAPI ::std::shared_ptr<::BitmapFont>
 loadBitmapFont(::Json::Value const& fontMetaData, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
 

@@ -36,8 +36,6 @@ public:
     virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity) /*override*/;
 
     virtual void singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext) /*override*/;
-
-    virtual ~RunInitializers() /*override*/ = default;
     // NOLINTEND
 
 public:

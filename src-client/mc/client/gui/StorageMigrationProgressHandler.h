@@ -18,13 +18,13 @@ public:
     // NOLINTBEGIN
     virtual ~StorageMigrationProgressHandler() /*override*/ = default;
 
-    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void tick(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onExit(::MinecraftScreenModel&) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -40,15 +40,27 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StorageMigrationProgressHandler();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onStart(::MinecraftScreenModel&);
 
-    MCFOLD void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $tick(::MinecraftScreenModel&);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onCancel(::MinecraftScreenModel&);
 
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onExit(::MinecraftScreenModel&);
 
     MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 

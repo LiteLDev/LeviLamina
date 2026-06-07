@@ -49,6 +49,8 @@ public:
         // NOLINTBEGIN
         MCAPI BlockPositionData(::StructureBlockPalette::BlockPositionData const& rhs);
 
+        MCAPI bool isValid() const;
+
         MCAPI ~BlockPositionData();
         // NOLINTEND
 
@@ -61,7 +63,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -74,17 +76,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureBlockPalette& operator=(StructureBlockPalette const&);
-    StructureBlockPalette(StructureBlockPalette const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureBlockPalette();
-
-    MCAPI StructureBlockPalette(::StructureBlockPalette&&);
-
     MCAPI ::StructureBlockPaletteLoadResult _parseBlockPalette(::CompoundTag const& tag);
 
     MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionData(::CompoundTag const& tag, int index);
@@ -95,6 +88,13 @@ public:
 
     MCAPI void _saveBlockPositionDataList(::CompoundTag& tag) const;
 
+    MCAPI void addBlockPositionData(uint64 id, ::StructureBlockPalette::BlockPositionData blockPositionData);
+
+    MCAPI uint64 addMapping(::std::unique_ptr<::CompoundTag> serializationId);
+
+    MCFOLD ::std::unordered_map<uint64, ::StructureBlockPalette::BlockPositionData> const&
+    getAllBlockPositionData() const;
+
     MCAPI ::Block const& getBlock(
         ::BlockPalette const&                                   blockPalette,
         uint64                                                  paletteId,
@@ -103,15 +103,18 @@ public:
 
     MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
 
+    MCFOLD uint64 getSize() const;
+
+    MCAPI bool load(::CompoundTag const& tag, int formatVersion);
+
+    MCAPI void removeBlockPositionData(uint64 id);
+
+    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+
+    MCAPI ::Block const*
+    tryGetBlock(uint64 paletteId, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry) const;
+
     MCAPI ~StructureBlockPalette();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::StructureBlockPalette&&);
     // NOLINTEND
 
 public:

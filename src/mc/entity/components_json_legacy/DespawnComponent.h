@@ -48,12 +48,6 @@ public:
         // NOLINTBEGIN
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     class WorldAccessor : public ::DespawnComponent::IWorldAccessor {
@@ -85,14 +79,6 @@ public:
         virtual ::std::optional<int> getActorNoActionTime(::Actor const& actor) const /*override*/;
 
         virtual void resetActorNoActionTime(::Actor& actor) /*override*/;
-
-        virtual ~WorldAccessor() /*override*/;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -125,11 +111,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _tryStandardDespawnRules(
+    MCAPI bool _canDespawn(
+        ::Actor&                            actor,
+        ::DespawnComponent::IWorldAccessor& worldAccessor,
+        ::DespawnDefinition const&          definition
+    ) const;
+
+    MCAPI bool _instantRulesPrescribeDespawn(
+        ::Actor&                                  actor,
+        ::DespawnDefinition const&                definition,
+        ::DespawnComponent::IWorldAccessor const& worldAccessor
+    ) const;
+
+    MCAPI bool _softRulesPrescribeDespawn(
         ::Actor&                            actor,
         ::DespawnDefinition const&          definition,
         ::DespawnComponent::IWorldAccessor& worldAccessor
     ) const;
+
+    MCAPI void onDespawn(::Actor& actor);
 
     MCAPI void tick(::Actor& actor);
     // NOLINTEND

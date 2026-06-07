@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,17 +50,33 @@ public:
 
     MCAPI void _writeManifest();
 
+    MCAPI ::Core::PathBuffer<::std::string> getBookPath(::std::string const& bookId);
+
     MCAPI void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
 
     MCAPI ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
+
+    MCAPI void
+    getPhoto(::PhotoStorageContainer const& container, ::std::string const& photoName, ::std::string& resultData);
+
+    MCFOLD ::Core::PathBuffer<::std::string> const& getPhotoItemPath();
 
     MCAPI ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
 
     MCAPI ::Core::PathBuffer<::std::string> getPhotoPathRelative(::Actor& owner);
 
+    MCAPI bool isValidPhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
+
     MCAPI void setValidLoosePhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
 
     MCAPI void storePhoto(
+        ::PhotoStorageContainer const& container,
+        ::std::string const&           photoName,
+        ::std::string const&           photoData
+    );
+
+    MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> storePhotoFront(
+        ::Player&                      owner,
         ::PhotoStorageContainer const& container,
         ::std::string const&           photoName,
         ::std::string const&           photoData

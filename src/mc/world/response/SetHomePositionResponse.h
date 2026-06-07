@@ -27,8 +27,6 @@ public:
     virtual ::std::string const& getName() const /*override*/;
 
     virtual void executeAction(::RenderParams& params) const /*override*/;
-
-    virtual ~SetHomePositionResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

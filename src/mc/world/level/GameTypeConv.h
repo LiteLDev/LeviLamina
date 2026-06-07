@@ -8,11 +8,13 @@
 namespace GameTypeConv {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_S
 MCNAPI ::std::string gameTypeToNonLocString(::GameType type);
-#endif
 
 MCNAPI ::std::string gameTypeToString(::GameType type);
+
+MCNAPI ::GameType intToGameType(int id);
+
+MCNAPI ::GameType intToGameTypeForCommands(int id);
 
 MCNAPI ::GameType stringToGameType(::std::string const& str);
 // NOLINTEND

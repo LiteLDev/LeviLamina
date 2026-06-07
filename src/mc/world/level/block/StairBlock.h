@@ -55,7 +55,7 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
     virtual void addAABBs(
@@ -93,7 +93,7 @@ public:
 
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -115,11 +115,9 @@ public:
         ::BlockPos const&                                         pos
     ) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~StairBlock() /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -139,6 +137,8 @@ public:
         int                                                       directionToCheck
     ) const;
 
+    MCAPI void setBaseShape(::Block const& block, ::AABB& shape, bool shrink) const;
+
     MCAPI bool setInnerPieceShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -154,10 +154,12 @@ public:
         ::AABB&                    shape,
         bool                       shrink
     ) const;
+    // NOLINTEND
 
-#ifdef LL_PLAT_C
-    MCAPI void shapeZFightShrink(::AABB& shape) const;
-#endif
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static uchar stairDirectionToFacing(int stairDirection);
     // NOLINTEND
 
 public:
@@ -179,12 +181,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::HitResult $clip(
@@ -198,7 +194,7 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
 
     MCAPI void $addAABBs(
         ::Block const&             block,
@@ -233,7 +229,7 @@ public:
 
     MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -259,9 +255,9 @@ public:
         ::BlockPos const&                                         pos
     ) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

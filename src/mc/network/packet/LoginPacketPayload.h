@@ -15,16 +15,19 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConnectionRequest>> mConnectionRequest;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     LoginPacketPayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoginPacketPayload(::LoginPacketPayload const& other);
-
-    MCAPI ::LoginPacketPayload& operator=(::LoginPacketPayload const& other);
+#ifdef LL_PLAT_C
+    MCAPI LoginPacketPayload(int clientVersion, ::ConnectionRequest const& connectionRequest);
+#endif
 
     MCAPI ~LoginPacketPayload();
     // NOLINTEND
@@ -32,12 +35,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LoginPacketPayload const& other);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(int clientVersion, ::ConnectionRequest const& connectionRequest);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

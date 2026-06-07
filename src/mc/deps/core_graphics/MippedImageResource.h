@@ -30,11 +30,23 @@ public:
 
     virtual uint getSize() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::cg::ImageBuffer const* getImage(uint) const /*override*/;
+#else // LL_PLAT_C
     virtual ::cg::ImageBuffer const* getImage(uint mipLevel) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void addImage(::cg::ImageBuffer) /*override*/;
+#else // LL_PLAT_C
     virtual void addImage(::cg::ImageBuffer imageToAdd) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void addImage(::std::shared_ptr<::cg::ImageResource>) /*override*/;
+#else // LL_PLAT_C
     virtual void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd) /*override*/;
+#endif
 
     virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() /*override*/;

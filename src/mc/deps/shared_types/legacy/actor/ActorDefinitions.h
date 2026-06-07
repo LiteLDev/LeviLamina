@@ -14,21 +14,9 @@ namespace SharedTypes::Legacy {
 
 struct ActorDefinitions : public ::cereal::ComponentStorage {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorDefinitions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

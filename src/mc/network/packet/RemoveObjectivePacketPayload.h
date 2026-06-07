@@ -10,17 +10,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RemoveObjectivePacketPayload(RemoveObjectivePacketPayload const&);
-    RemoveObjectivePacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::RemoveObjectivePacketPayload& operator=(::RemoveObjectivePacketPayload&&);
-
-    MCFOLD ::RemoveObjectivePacketPayload& operator=(::RemoveObjectivePacketPayload const&);
-
     MCAPI ~RemoveObjectivePacketPayload();
     // NOLINTEND
 

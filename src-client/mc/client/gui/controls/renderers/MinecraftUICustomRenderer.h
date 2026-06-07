@@ -37,6 +37,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MinecraftUICustomRenderer();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();
@@ -54,5 +66,11 @@ public:
     MCAPI void $preRenderSetup(::UIRenderContext& renderContext);
 
     MCFOLD void $preRenderSetup(::MinecraftUIRenderContext& renderContext);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

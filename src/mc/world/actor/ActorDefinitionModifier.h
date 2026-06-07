@@ -20,6 +20,7 @@ public:
 
 public:
     // prevent constructor by default
+    ActorDefinitionModifier& operator=(ActorDefinitionModifier const&);
     ActorDefinitionModifier();
 
 public:
@@ -28,8 +29,6 @@ public:
     MCAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
 
     MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
-
-    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier const&);
 
     MCAPI ~ActorDefinitionModifier();
     // NOLINTEND

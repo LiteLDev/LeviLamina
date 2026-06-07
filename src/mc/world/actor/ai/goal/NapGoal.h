@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@
 class Mob;
 // clang-format on
 
-class NapGoal : public ::Goal {
+class NapGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,8 +46,6 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~NapGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,8 +60,6 @@ public:
         ::ActorFilterGroup const& canNapFilters,
         ::ActorFilterGroup const& wakeMobExceptions
     );
-
-    MCAPI bool _canSleep(::Tick const& currentTick) const;
 
     MCAPI bool _detectsMobs() const;
     // NOLINTEND

@@ -59,14 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~OpenSignPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI OpenSignPacket();
+
+    MCAPI explicit OpenSignPacket(::OpenSignPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::OpenSignPacketPayload payload);
     // NOLINTEND
 
 public:

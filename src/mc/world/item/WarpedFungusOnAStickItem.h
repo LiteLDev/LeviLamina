@@ -25,8 +25,6 @@ public:
     virtual int getEnchantSlot() const /*override*/;
 
     virtual int getEnchantValue() const /*override*/;
-
-    virtual ~WarpedFungusOnAStickItem() /*override*/ = default;
     // NOLINTEND
 
 public:

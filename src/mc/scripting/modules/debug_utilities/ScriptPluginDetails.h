@@ -20,11 +20,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptPluginDetails();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPluginDetails();
-
     MCAPI ScriptPluginDetails(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
+
+    MCAPI ScriptPluginDetails(::std::string const& name, ::std::string const& packId, ::std::string const& moduleUUID);
 
     MCAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
     operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails&&);
@@ -44,9 +48,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
+
+    MCAPI void* $ctor(::std::string const& name, ::std::string const& packId, ::std::string const& moduleUUID);
     // NOLINTEND
 
 public:

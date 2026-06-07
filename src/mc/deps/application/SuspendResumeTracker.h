@@ -22,13 +22,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onAppResumed() /*override*/;
-
-    virtual ~SuspendResumeTracker() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void _tryCreateInstance();
+
     MCNAPI static void invalidateThreadIndex();
     // NOLINTEND
 

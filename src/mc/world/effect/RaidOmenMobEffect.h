@@ -18,8 +18,6 @@ public:
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const /*override*/;
 
     virtual void onEffectExpired(::Actor& target) const /*override*/;
-
-    virtual ~RaidOmenMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:

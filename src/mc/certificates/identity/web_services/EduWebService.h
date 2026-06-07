@@ -7,7 +7,6 @@
 #include "mc/certificates/identity/web_services/IEduWebService.h"
 #include "mc/certificates/identity/web_services/SigninContext.h"
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
-#include "mc/deps/identity/edu_common/ActiveDirectoryAuthenticationState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,29 +50,58 @@ public:
 
     virtual void setEula() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void
+    setPurchaseReceipt(::std::string const&, ::std::function<void(bool)> const&, ::std::string const&) /*override*/;
+#else // LL_PLAT_C
     virtual void setPurchaseReceipt(
         ::std::string const&               receipt,
         ::std::function<void(bool)> const& callback,
         ::std::string const&               anonimizedOId
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void setSkin(::std::string const&) /*override*/;
+#else // LL_PLAT_C
     virtual void setSkin(::std::string const& newSkin) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void signinForDemo(
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual void signinForDemo(
         ::std::function<
             void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
             callback
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void signin(
+        ::std::function<
+            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>,
+        ::std::string const&
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual void signin(
         ::std::function<
             void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
                              callback,
         ::std::string const& delegationKey
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)>) /*override*/;
+#else // LL_PLAT_C
     virtual void
     sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)> packReturnCallback) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -107,15 +135,6 @@ public:
     getRequest(::std::string_view url, ::std::string apiVersion, bool includeAuth, ::Json::Value&& body);
 
     MCNAPI ::WebServices::EduSignin::EduRole getRole(::std::string const& str);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::ActiveDirectoryAuthenticationState
-    getErrorState(::std::string const& reason, ::WebServices::SigninContext context);
 #endif
     // NOLINTEND
 

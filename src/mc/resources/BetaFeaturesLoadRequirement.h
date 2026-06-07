@@ -2,4 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BetaFeaturesLoadRequirement {};
+// auto generated inclusion list
+#include "mc/resources/JsonBetaState.h"
+
+// auto generated forward declare list
+// clang-format off
+class PackLoadContext;
+// clang-format on
+
+class BetaFeaturesLoadRequirement {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static bool satisfied(::PackLoadContext const&, ::JsonBetaState canUseBeta);
+    // NOLINTEND
+};

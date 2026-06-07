@@ -86,15 +86,23 @@ public:
         ::brstd::move_only_function<bool(::ContentItem const&)> predicate
     );
 
+    MCAPI void forEachItem(::brstd::move_only_function<void(::std::shared_ptr<::ContentItem const> const&)> predicate);
+
     MCAPI void forceReload();
 
     MCAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>
     getCollection(::ContentItem const& item);
 
+    MCAPI ::std::shared_ptr<::ContentItem const> getItem(uint64 index);
+
     MCAPI ::std::shared_ptr<::ContentItem const>
     getItem(::brstd::move_only_function<bool(::ContentItem const&)> predicate);
 
+    MCAPI uint64 getNumberOfItems();
+
     MCAPI uint64 getTotalSize();
+
+    MCAPI ::gsl::not_null<::std::shared_ptr<::IVersionedContentItemCollection const>> getViewSource() const;
 
     MCAPI bool tryReload();
 

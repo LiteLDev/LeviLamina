@@ -10,8 +10,9 @@
 class Actor;
 class ActorInteraction;
 class BreedableDefinition;
+class CompoundTag;
+class DataLoadHelper;
 class InteractionResult;
-class ItemDescriptor;
 class ItemStack;
 class Player;
 class WeakEntityRef;
@@ -48,19 +49,30 @@ public:
 
     MCAPI void _spawnLoveParticles(::Actor& owner);
 
-    MCAPI void _useBreedItem(
-        ::Actor&  owner,
-        ::Player& player,
-        ::ItemStack const&,
-        ::std::optional<::ItemDescriptor> const& resultItem
-    );
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
 
+    MCFOLD void decrementBreedCooldown();
+
+    MCAPI void decrementLoveTimer();
+
+    MCFOLD int getBreedCooldown() const;
+
     MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+
+    MCFOLD int getLoveTimer() const;
 
     MCAPI ::std::vector<::WeakEntityRef> mate(::Actor& owner, ::Actor& partner);
 
     MCAPI bool meetsSittingRequirements(::Actor const& actor) const;
+
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+
+    MCAPI void resetLove(::Actor& owner);
+
+    MCAPI void setInLove(::Actor& owner, ::Player const* player);
+
+    MCFOLD void setLoveTimer(int loveTimer);
     // NOLINTEND
 };

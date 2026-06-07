@@ -11,13 +11,16 @@
 class Actor;
 class Block;
 class BlockPos;
-class Experiments;
 class JigsawBlockInfo;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class JigsawBlock : public ::FaceDirectionalActorBlock {
+public:
+    // prevent constructor by default
+    JigsawBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,15 +35,13 @@ public:
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~JigsawBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI JigsawBlock(::std::string const& nameId, int id);
+
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -48,6 +49,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canAttach(::JigsawBlockInfo const& block1, ::JigsawBlockInfo const& block2);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -68,8 +75,6 @@ public:
         ::Vec3 const&     clickPos,
         int               itemValue
     ) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class PlayScreenDefaultTab : int {
-    // bitfield representation
-    World         = 0,
-    Friends       = 1 << 0,
-    Servers       = 1 << 1,
-    LastLegacyTab = 1 << 1,
-    Projects      = 1 << 2,
-    Realms        = Friends | LastLegacyTab,
-    Count         = Friends | Projects,
+    World          = 0,
+    Friends        = 1,
+    Servers        = 2,
+    LastLegacyTab  = 2,
+    Realms         = 3,
+    Projects       = 4,
+    ProjectServers = 5,
+    Count          = 6,
 };

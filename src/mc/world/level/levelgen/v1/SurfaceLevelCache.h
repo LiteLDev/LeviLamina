@@ -26,14 +26,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const /*override*/;
-
-    virtual ~SurfaceLevelCache() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI SurfaceLevelCache(
+        ::DividedPos2d<4>                    startPos,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
+        uint64                               bufferSizeXZ
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::DividedPos2d<4>                    startPos,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
+        uint64                               bufferSizeXZ
+    );
     // NOLINTEND
 
 public:

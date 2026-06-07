@@ -37,8 +37,6 @@ public:
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
-
-    virtual ~StructurePoolBlockPredicateStateMatch() /*override*/ = default;
     // NOLINTEND
 
 public:

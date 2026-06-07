@@ -27,6 +27,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void fromDescriptor(
+        ::SharedTypes::v1_21_120::EntityTypes&   entityTypes,
+        ::SharedTypes::v1_21_120::MobDescriptor& descriptor
+    );
     // NOLINTEND
 
 public:

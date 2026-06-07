@@ -14,12 +14,6 @@ public:
 
 #endif
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MemoryStream() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

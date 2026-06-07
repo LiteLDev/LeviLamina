@@ -34,8 +34,6 @@ public:
 
     virtual void
         _enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>) /*override*/;
-
-    virtual ~FIFODeferredSubscriptionHub() /*override*/ = default;
     // NOLINTEND
 
 public:

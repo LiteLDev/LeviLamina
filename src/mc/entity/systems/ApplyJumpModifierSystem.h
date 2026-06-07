@@ -19,6 +19,7 @@ struct MovementAttributesComponent;
 struct OnGroundFlagComponent;
 struct PowerJumpFlagComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 struct TriggerJumpRequestComponent;
 // clang-format on
 
@@ -40,29 +41,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickApplyJumpModifierSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::OnGroundFlagComponent, ::PowerJumpFlagComponent>,
-            ::Exclude<::MobIsJumpingFlagComponent>,
-            ::TriggerJumpRequestComponent const,
-            ::ActorRotationComponent const,
-            ::MovementAttributesComponent const,
-            ::MobEffectsComponent const,
-            ::MobTravelComponent const,
-            ::JumpPendingScaleComponent,
-            ::StateVectorComponent> view
-    );
+    MCAPI static ::TickingSystemWithInfo createApplyJumpModifierSystem();
 
     MCAPI static void tickApplyJumpModifierSystem(
-        ::StrictEntityContext const&,
-        ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,
-        ::ActorRotationComponent const&      actorRotationComponent,
-        ::MovementAttributesComponent const& attributesComponent,
-        ::MobEffectsComponent const&         mobEffectsComponent,
-        ::MobTravelComponent const&          mobTravelComponent,
-        ::JumpPendingScaleComponent&         jumpPendingScaleComponent,
-        ::StateVectorComponent&              stateVectorComponent
+        ::StrictEntityContext const&         triggerJumpRequestComponent,
+        ::TriggerJumpRequestComponent const& actorRotationComponent,
+        ::ActorRotationComponent const&      attributesComponent,
+        ::MovementAttributesComponent const& mobEffectsComponent,
+        ::MobEffectsComponent const&         mobTravelComponent,
+        ::MobTravelComponent const&          jumpPendingScaleComponent,
+        ::JumpPendingScaleComponent&         stateVectorComponent,
+        ::StateVectorComponent&
     );
     // NOLINTEND
 };

@@ -11,6 +11,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_21_90 { struct SwingSoundsItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,9 +25,17 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~SwingSoundsItemComponent() /*override*/ = default;
+    MCAPI SwingSoundsItemComponent();
+
+    MCAPI explicit SwingSoundsItemComponent(::SharedTypes::v1_21_90::SwingSoundsItemComponent const& data);
+
+    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackCriticalHitSound() const;
+
+    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackHitSound() const;
+
+    MCFOLD ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackMissSound() const;
     // NOLINTEND
 
 public:
@@ -39,6 +48,14 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::SwingSoundsItemComponent const& data);
     // NOLINTEND
 
 public:

@@ -16,15 +16,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::OreUI::FacetResourcePackId& operator=(::OreUI::FacetResourcePackId const&);
-
-    MCAPI ~FacetResourcePackId();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ::OreUI::FacetResourcePackId& operator=(::OreUI::FacetResourcePackId const&);
     // NOLINTEND
 };
 

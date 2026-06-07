@@ -5,6 +5,8 @@
 namespace Editor::DataStore::Tag {
 // static variables
 // NOLINTBEGIN
+MCNAPI ::std::add_lvalue_reference_t<char const[]> NETWORK_EVENT();
+
 MCNAPI ::std::add_lvalue_reference_t<char const[]> NOTIFICATION();
 // NOLINTEND
 

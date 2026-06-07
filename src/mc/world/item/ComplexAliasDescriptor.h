@@ -52,8 +52,6 @@ public:
     virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
     virtual uint64 getHash() const /*override*/;
-
-    virtual ~ComplexAliasDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -98,7 +96,7 @@ public:
 
     MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
-    MCFOLD uint64 $getHash() const;
+    MCAPI uint64 $getHash() const;
 
 
     // NOLINTEND

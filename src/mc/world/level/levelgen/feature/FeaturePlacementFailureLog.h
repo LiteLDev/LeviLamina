@@ -20,18 +20,6 @@ public:
         ::ll::TypedStorage<8, 8, ::Bedrock::StaticOptimizedString> source;
         ::ll::TypedStorage<8, 8, ::Bedrock::StaticOptimizedString> message;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~SourceMessagePair();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     using Log = ::std::vector<::FeaturePlacementFailureLog::SourceMessagePair>;
@@ -45,6 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::std::vector<::FeaturePlacementFailureLog::SourceMessagePair> const& getFailureLog() const;
+
     MCAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message);
 
     MCAPI ~FeaturePlacementFailureLog();
@@ -53,6 +43,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

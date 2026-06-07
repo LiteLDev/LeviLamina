@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -18,6 +19,12 @@ public:
     ::ll::TypedStorage<4, 4, uint> mHardClayMaterial;
     ::ll::TypedStorage<1, 1, bool> mBrycePillars;
     ::ll::TypedStorage<1, 1, bool> mHasForest;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:

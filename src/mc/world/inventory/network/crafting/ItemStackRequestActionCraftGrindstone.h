@@ -28,8 +28,26 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     virtual ::ItemStackNetIdVariant const& getRecipeNetId() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ItemStackRequestActionCraftGrindstone() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ItemStackRequestActionCraftGrindstone();
+
+#ifdef LL_PLAT_C
+    MCNAPI ItemStackRequestActionCraftGrindstone(::ItemStackNetIdVariant const& netId, int repairCost);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ItemStackNetIdVariant const& netId, int repairCost);
+#endif
     // NOLINTEND
 
 public:

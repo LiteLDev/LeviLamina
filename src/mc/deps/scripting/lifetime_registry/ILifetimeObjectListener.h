@@ -14,7 +14,7 @@ class ILifetimeObjectListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILifetimeObjectListener();
+    virtual ~ILifetimeObjectListener() = default;
 
     virtual void
     onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
@@ -24,21 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

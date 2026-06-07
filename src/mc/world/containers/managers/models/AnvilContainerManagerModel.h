@@ -37,7 +37,7 @@ public:
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int id, int value) /*override*/;
+    virtual void setData(int, int) /*override*/;
 
     virtual bool isValid(float pickRange) /*override*/;
 
@@ -57,7 +57,17 @@ public:
     MCAPI void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
 
     MCAPI void fireItemCraftedEvent(::ItemInstance const& item);
+
+    MCAPI void fireItemEnchantedEvent(::ItemInstance const& item);
+
+    MCFOLD ::BlockPos const& getBlockPos() const;
 #endif
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& RESULT_SLOT();
     // NOLINTEND
 
 public:
@@ -75,7 +85,7 @@ public:
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int id, int value);
+    MCFOLD void $setData(int, int);
 
     MCAPI bool $isValid(float pickRange);
 

@@ -8,8 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class CraftingContainer;
 class ItemStackRequestActionCraftBase;
 class Player;
+class Recipe;
 class Recipes;
 // clang-format on
 
@@ -29,12 +31,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerSmithingTable() /*override*/ = default;
+    virtual ~CraftHandlerSmithingTable() /*override*/;
 
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     virtual ::Recipes const* _getLevelRecipes() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _recipeMatches(::Recipe const& recipe, ::CraftingContainer& currentCraftingItems) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

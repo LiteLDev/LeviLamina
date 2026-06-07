@@ -8,9 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraftNet { class ScriptHttpRequestBodyTooLargeError; }
-namespace ScriptModuleMinecraftNet { class ScriptHttpRequestNotAllowedError; }
-namespace ScriptModuleMinecraftNet { class ScriptMalformedHttpRequestError; }
+namespace ScriptModuleMinecraftNet { class ScriptHttpRequestLimitExceededError; }
+namespace ScriptModuleMinecraftNet { class ScriptInternalHttpRequestError; }
+namespace ScriptModuleMinecraftNet { class ScriptMalformedUriError; }
+namespace ScriptModuleMinecraftNet { class ScriptRequestBodyTooLargeError; }
+namespace ScriptModuleMinecraftNet { class ScriptTLSOnlyError; }
+namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
@@ -32,7 +35,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk6081b8;
+        ::ll::UntypedStorage<8, 80> mUnk8292dc;
         ::ll::UntypedStorage<8, 32> mUnk6af6af;
         // NOLINTEND
 
@@ -86,9 +89,12 @@ public:
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
             ::Scripting::Error,
-            ::ScriptModuleMinecraftNet::ScriptHttpRequestBodyTooLargeError,
-            ::ScriptModuleMinecraftNet::ScriptHttpRequestNotAllowedError,
-            ::ScriptModuleMinecraftNet::ScriptMalformedHttpRequestError> const&                   promise,
+            ::ScriptModuleMinecraftNet::ScriptRequestBodyTooLargeError,
+            ::ScriptModuleMinecraftNet::ScriptInternalHttpRequestError,
+            ::ScriptModuleMinecraftNet::ScriptHttpRequestLimitExceededError,
+            ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
+            ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
+            ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError> const&                          promise,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
     );
     // NOLINTEND

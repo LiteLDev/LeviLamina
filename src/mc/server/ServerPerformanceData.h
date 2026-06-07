@@ -26,12 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ServerPerformanceData() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ServerPerformanceData();
@@ -41,12 +35,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

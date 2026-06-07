@@ -47,16 +47,12 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual ::ActorUniqueID _findTarget(::MobDescriptor const** outMobDescriptor);
-
-    virtual ~NearestAttackableTargetGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit NearestAttackableTargetGoal(::Mob& mob);
-
-    MCAPI bool _canStartSearching();
 
     MCAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
 
@@ -69,12 +65,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

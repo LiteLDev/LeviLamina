@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class Level;
 // clang-format on
 
 class BlockHashPalette : public ::BlockPalette {
@@ -16,6 +17,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::map<uint, uint64>> mNetworkIdToPaletteIndexMap;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockHashPalette();
 
 public:
     // virtual functions
@@ -27,8 +32,18 @@ public:
     virtual ::Block const& getBlock(uint const& networkId) const /*override*/;
 
     virtual void assignBlockNetworkId(::Block const& block, uint64 networkId) const /*override*/;
+    // NOLINTEND
 
-    virtual ~BlockHashPalette() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BlockHashPalette(::Level& level);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:

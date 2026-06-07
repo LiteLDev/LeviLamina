@@ -8,10 +8,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Silverfish : public ::Monster {
+public:
+    // prevent constructor by default
+    Silverfish();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -24,8 +31,26 @@ public:
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
+    // NOLINTEND
 
-    virtual ~Silverfish() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Silverfish(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
+
 // auto generated forward declare list
 // clang-format off
 struct CrashDumpFormatEntryImpl;
@@ -23,8 +26,24 @@ public:
     CrashDumpRenderData();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI CrashDumpRenderData(::CrashDumpLogStringID tag, int objectId);
+#endif
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<::CrashDumpFormatEntryImpl const[]> kFormat();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::CrashDumpLogStringID tag, int objectId);
+#endif
     // NOLINTEND
 };

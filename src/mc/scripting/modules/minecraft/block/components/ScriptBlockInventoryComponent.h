@@ -33,12 +33,6 @@ public:
     ScriptBlockInventoryComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockInventoryComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockInventoryComponent(::ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);

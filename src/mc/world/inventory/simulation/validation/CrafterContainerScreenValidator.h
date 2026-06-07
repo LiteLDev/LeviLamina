@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/validation/ContainerScreenValidatorBase.h"
 
-class CrafterContainerScreenValidator : public ::ContainerScreenValidatorBase {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CrafterContainerScreenValidator() /*override*/ = default;
-    // NOLINTEND
-};
+class CrafterContainerScreenValidator : public ::ContainerScreenValidatorBase {};

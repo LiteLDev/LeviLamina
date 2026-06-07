@@ -11,23 +11,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EDUDiscoveryDialogCallbacks& operator=(EDUDiscoveryDialogCallbacks const&);
-    EDUDiscoveryDialogCallbacks(EDUDiscoveryDialogCallbacks const&);
-    EDUDiscoveryDialogCallbacks();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EDUDiscoveryDialogCallbacks(::EDUDiscoveryDialogCallbacks&&);
-
     MCAPI ~EDUDiscoveryDialogCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::EDUDiscoveryDialogCallbacks&&);
     // NOLINTEND
 
 public:

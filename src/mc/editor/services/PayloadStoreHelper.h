@@ -17,18 +17,6 @@ public:
     PayloadStoreHelper& operator=(PayloadStoreHelper const&);
     PayloadStoreHelper(PayloadStoreHelper const&);
     PayloadStoreHelper();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PayloadStoreHelper();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

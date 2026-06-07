@@ -8,7 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Player;
+struct PlayerInteractWithEntityBeforeEvent;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -27,9 +31,35 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptPlayerInteractWithEntityBeforeEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPlayerInteractWithEntityBeforeEvent(
+        ::Player&                                    player,
+        ::Actor&                                     target,
+        ::PlayerInteractWithEntityBeforeEvent const& eventData,
+        ::Scripting::WeakLifetimeScope&              scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Player&                                    player,
+        ::Actor&                                     target,
+        ::PlayerInteractWithEntityBeforeEvent const& eventData,
+        ::Scripting::WeakLifetimeScope&              scope
+    );
     // NOLINTEND
 };
 

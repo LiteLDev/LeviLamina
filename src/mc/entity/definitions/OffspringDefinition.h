@@ -70,20 +70,6 @@ public:
         PropertyGeneticData& operator=(PropertyGeneticData const&);
         PropertyGeneticData(PropertyGeneticData const&);
         PropertyGeneticData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::OffspringDefinition::PropertyGeneticData& operator=(::OffspringDefinition::PropertyGeneticData&&);
-
-        MCAPI ~PropertyGeneticData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -106,11 +92,12 @@ public:
     // prevent constructor by default
     OffspringDefinition& operator=(OffspringDefinition const&);
     OffspringDefinition(OffspringDefinition const&);
-    OffspringDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI OffspringDefinition();
+
     MCAPI void setMutationStrategy(::std::string const& strategy);
     // NOLINTEND
 
@@ -120,5 +107,11 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OffspringDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -15,5 +15,20 @@ public:
     // prevent constructor by default
     Semaphore& operator=(Semaphore const&);
     Semaphore(Semaphore const&);
-    Semaphore();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI Semaphore();
+
+    MCNAPI void notify();
+
+    MCNAPI void wait();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
 };

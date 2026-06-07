@@ -6,6 +6,7 @@
 // clang-format off
 class AABB;
 class Block;
+class BlockGraphics;
 class BlockPos;
 class BlockTessellatorCache;
 struct AirAndSimpleBlockBits;
@@ -38,9 +39,9 @@ public:
         ::AirAndSimpleBlockBits const* airAndSimpleBlocks
     );
 
-    MCAPI bool _shouldOcclude(uchar face, ::AABB const& shape, ::BlockPos const& p) const;
+    MCAPI bool _isHalfCubeOpaque(::Block const& block, ::BlockGraphics const& blockGraphics) const;
 
-    MCAPI bool _shouldOccludeIce(uchar face, ::AABB const& shape, ::BlockPos const& pos) const;
+    MCAPI bool _shouldOccludeCactus(uchar face, ::AABB const& shape, ::BlockPos const& pos) const;
 
     MCAPI bool _shouldOccludeLeaves(uchar face, ::AABB const& shape, ::BlockPos const& p) const;
 

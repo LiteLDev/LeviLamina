@@ -23,5 +23,7 @@ enum class AllExperiments : int {
     BrainPrototype                         = 17,
     FurnaceRecipeBook                      = 18,
     CustomProjectiles                      = 19,
-    Count                                  = 20,
+    Y2026Drop2                             = 20,
+    Lwe                                    = 21,
+    Count                                  = 22,
 };

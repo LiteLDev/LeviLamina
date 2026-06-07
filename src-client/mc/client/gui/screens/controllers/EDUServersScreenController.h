@@ -112,6 +112,9 @@ public:
 
     MCAPI ::std::optional<::Social::EduDedicatedServerDetails> _getServerDetails(::UIPropertyBag& bag) const;
 
+    MCAPI ::std::optional<::Social::EduDedicatedServerDetails>
+    _getServerDetailsById(::std::string const& serverId) const;
+
     MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
 
     MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
@@ -154,6 +157,14 @@ public:
             ::std::vector<::std::string>,
             ::std::vector<::Social::EduDedicatedServerDetails>> const& servers
     );
+
+    MCAPI void cacheAddServer(::std::string const& serverId);
+
+    MCAPI void cacheJoinServer(::std::string const& serverId);
+
+    MCAPI bool getIsDoneLoadingServers() const;
+
+    MCAPI void setDoneFetchHandler();
     // NOLINTEND
 
 public:

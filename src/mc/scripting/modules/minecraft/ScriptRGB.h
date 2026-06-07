@@ -30,13 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRGB const& other) const;
+    MCAPI ScriptRGB();
+
+    MCAPI explicit ScriptRGB(::mce::Color const& color);
+
+    MCFOLD ::mce::Color const& getColor() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::mce::Color const& color);
     // NOLINTEND
 
 public:

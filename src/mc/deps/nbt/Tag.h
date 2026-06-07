@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Tag();
+    virtual ~Tag() = default;
 
     virtual void deleteChildren();
 
@@ -58,23 +58,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Tag();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getTagName(::Tag::Type type);
-
     MCAPI static ::Bedrock::Result<::std::unique_ptr<::Tag>> newTag(::Tag::Type type);
     // NOLINTEND
 
 public:
-    // static variables
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NullString();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

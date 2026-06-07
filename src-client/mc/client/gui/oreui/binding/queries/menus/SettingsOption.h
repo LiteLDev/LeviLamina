@@ -23,12 +23,6 @@ public:
     SettingsOption();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SettingsOption() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI
@@ -39,12 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(int value, ::std::string const& label, ::std::optional<::std::string> description, bool disabled);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

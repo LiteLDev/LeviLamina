@@ -31,41 +31,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PayloadEventDispatcher(
-        ::std::function<void(
-            ::HashedString const&,
-            ::Editor::DataStore::EventType,
-            ::Json::Value const&,
-            ::Editor::DataStore::PayloadDescription const&
-        )> syncNetworkCallback,
-        ::std::function<void(
-            ::HashedString const&,
-            ::Editor::DataStore::EventType,
-            ::Json::Value const&,
-            ::Editor::DataStore::PayloadDescription const&
-        )> publishCallback
+#ifdef LL_PLAT_S
+    MCNAPI void publishEvent(
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
     );
+
+    MCNAPI void syncNetworkEvent(
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
+#endif
 
     MCNAPI ~PayloadEventDispatcher();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::function<void(
-            ::HashedString const&,
-            ::Editor::DataStore::EventType,
-            ::Json::Value const&,
-            ::Editor::DataStore::PayloadDescription const&
-        )> syncNetworkCallback,
-        ::std::function<void(
-            ::HashedString const&,
-            ::Editor::DataStore::EventType,
-            ::Json::Value const&,
-            ::Editor::DataStore::PayloadDescription const&
-        )> publishCallback
-    );
     // NOLINTEND
 
 public:

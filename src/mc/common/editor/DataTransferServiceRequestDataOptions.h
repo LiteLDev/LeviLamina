@@ -13,26 +13,14 @@ public:
 
 public:
     // prevent constructor by default
+    DataTransferServiceRequestDataOptions& operator=(DataTransferServiceRequestDataOptions const&);
+    DataTransferServiceRequestDataOptions(DataTransferServiceRequestDataOptions const&);
     DataTransferServiceRequestDataOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DataTransferServiceRequestDataOptions(::Editor::Network::DataTransferServiceRequestDataOptions const&);
-
-    MCNAPI ::Editor::Network::DataTransferServiceRequestDataOptions&
-    operator=(::Editor::Network::DataTransferServiceRequestDataOptions&&);
-
-    MCNAPI ::Editor::Network::DataTransferServiceRequestDataOptions&
-    operator=(::Editor::Network::DataTransferServiceRequestDataOptions const&);
-
     MCNAPI ~DataTransferServiceRequestDataOptions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::DataTransferServiceRequestDataOptions const&);
     // NOLINTEND
 
 public:

@@ -33,14 +33,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptItemUseOnEvent& operator=(ScriptItemUseOnEvent const&);
     ScriptItemUseOnEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseOnEvent(::ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
-
     MCAPI ScriptItemUseOnEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> scriptItem,
         uchar                                                                          face,
@@ -49,8 +46,6 @@ public:
         ::BlockSource&                                                                 region,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
-
-    MCAPI ~ScriptItemUseOnEvent();
     // NOLINTEND
 
 public:
@@ -62,8 +57,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
-
     MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> scriptItem,
         uchar                                                                          face,
@@ -72,12 +65,6 @@ public:
         ::BlockSource&                                                                 region,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

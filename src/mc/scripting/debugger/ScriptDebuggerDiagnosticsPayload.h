@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class ScriptDebuggerDiagnosticsPayload {
 public:
     // member variables
@@ -19,7 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::ScriptDebuggerDiagnosticsPayload& operator=(::ScriptDebuggerDiagnosticsPayload&&);
+
     MCNAPI ~ScriptDebuggerDiagnosticsPayload();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -16,8 +16,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
+    // NOLINTEND
 
-    virtual ~FlyMoveControl() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FlyMoveControl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

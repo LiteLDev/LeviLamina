@@ -49,14 +49,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptItems& operator=(ScriptItems const&);
     ScriptItems();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItems(::ScriptModuleMinecraft::ScriptItems const&);
-
     MCAPI explicit ScriptItems(::ItemRegistryRef itemRegistry);
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
@@ -90,6 +87,8 @@ public:
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     getOrAdd(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName, bool allowAirBlockItem);
+
+    MCAPI ~ScriptItems();
     // NOLINTEND
 
 public:
@@ -114,9 +113,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItems const&);
-
     MCAPI void* $ctor(::ItemRegistryRef itemRegistry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

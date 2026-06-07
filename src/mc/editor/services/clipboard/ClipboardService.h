@@ -119,6 +119,8 @@ public:
 
     MCNAPI void _onItemChanged(::Editor::Services::ClipboardItem const& item) const;
 
+    MCNAPI void _onItemDestroyed(::mce::UUID const& id) const;
+
     MCNAPI void _sendChangeItemToClient(::mce::UUID const& id) const;
     // NOLINTEND
 

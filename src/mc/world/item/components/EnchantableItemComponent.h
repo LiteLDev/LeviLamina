@@ -11,6 +11,7 @@
 class ComponentItem;
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct EnchantableItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,23 +25,18 @@ public:
 
 public:
     // prevent constructor by default
-    EnchantableItemComponent(EnchantableItemComponent const&);
     EnchantableItemComponent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~EnchantableItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent&&);
-
-    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent const&);
+    MCAPI explicit EnchantableItemComponent(::SharedTypes::v1_20_50::EnchantableItemComponent component);
     // NOLINTEND
 
 public:
@@ -53,6 +49,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::EnchantableItemComponent component);
     // NOLINTEND
 
 public:

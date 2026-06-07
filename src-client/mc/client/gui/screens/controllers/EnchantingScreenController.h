@@ -12,6 +12,7 @@ class BlockPos;
 class ClientInstanceScreenModel;
 class EnchantingContainerManagerController;
 class Player;
+class UIPropertyBag;
 struct ActorUniqueID;
 // clang-format on
 
@@ -59,6 +60,10 @@ public:
     MCAPI ::ui::ViewRequest _enchantmentClicked(int option);
 
     MCAPI void _initScreenControllerProxy();
+
+    MCAPI ::ui::ViewRequest _onOptionButtonClicked(::UIPropertyBag* bag);
+
+    MCAPI ::ui::ViewRequest _onOptionButtonSelected(::UIPropertyBag* bag);
 
     MCAPI void _registerBindings();
 

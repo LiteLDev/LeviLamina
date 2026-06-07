@@ -5,13 +5,40 @@
 // auto generated inclusion list
 #include "mc/world/events/IRealmEventLogger.h"
 
+// auto generated forward declare list
+// clang-format off
+class LevelEventCoordinator;
+// clang-format on
+
 class RealmEventServerLogger : public ::IRealmEventLogger {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::LevelEventCoordinator&> mLevelEventCoordinator;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RealmEventServerLogger& operator=(RealmEventServerLogger const&);
+    RealmEventServerLogger(RealmEventServerLogger const&);
+    RealmEventServerLogger();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void logEvent(::std::string const& message) /*override*/;
+    // NOLINTEND
 
-    virtual ~RealmEventServerLogger() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit RealmEventServerLogger(::LevelEventCoordinator& levelEventCoordinator);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LevelEventCoordinator& levelEventCoordinator);
     // NOLINTEND
 
 public:

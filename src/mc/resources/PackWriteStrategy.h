@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
+
 class PackWriteStrategy {
 public:
     // PackWriteStrategy inner types define
@@ -17,6 +22,20 @@ public:
     virtual ~PackWriteStrategy() = default;
 
     virtual void writeAsset(::PackWriteStrategy::FileName path, ::std::string const& fileContent) = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void eduImportModifyManifest(::std::string const& newManifest);
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Core::Path getPath(::PackWriteStrategy::FileName path);
     // NOLINTEND
 
 public:

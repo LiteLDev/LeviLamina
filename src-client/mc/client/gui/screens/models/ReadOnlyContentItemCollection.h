@@ -33,8 +33,6 @@ public:
     ) const /*override*/;
 
     virtual ::ContentItemCollectionVersion getVersion() const /*override*/;
-
-    virtual ~ReadOnlyContentItemCollection() /*override*/ = default;
     // NOLINTEND
 
 public:

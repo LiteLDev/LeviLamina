@@ -24,30 +24,33 @@ public:
 
 public:
     // prevent constructor by default
-    SpawnData(SpawnData const&);
     SpawnData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SpawnData(::SpawnData&& rhs);
+
+    MCAPI SpawnData(::SpawnData const& rhs);
+
     MCAPI explicit SpawnData(::CompoundTag const& tag);
 
-    MCAPI ::SpawnData& operator=(::SpawnData const&);
+    MCAPI SpawnData(int randomWeight, ::ActorDefinitionIdentifier actorId);
+
+    MCAPI ::SpawnData& operator=(::SpawnData const& rhs);
 
     MCAPI ::std::unique_ptr<::CompoundTag> save();
-
-    MCAPI ~SpawnData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundTag const& tag);
-    // NOLINTEND
+    MCAPI void* $ctor(::SpawnData&& rhs);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SpawnData const& rhs);
+
+    MCAPI void* $ctor(::CompoundTag const& tag);
+
+    MCAPI void* $ctor(int randomWeight, ::ActorDefinitionIdentifier actorId);
     // NOLINTEND
 };

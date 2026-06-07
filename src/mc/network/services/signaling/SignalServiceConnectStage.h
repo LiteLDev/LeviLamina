@@ -18,5 +18,6 @@ enum class SignalServiceConnectStage : int {
     EventWebSocketMessageAccepted  = 12,
     EventWebSocketMessageDelivered = 13,
     EventWebSocketMessageError     = 14,
+    EventWebSocketMessageIgnored   = 15,
     EventUnknown                   = 999,
 };

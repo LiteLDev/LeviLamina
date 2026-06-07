@@ -50,6 +50,10 @@ public:
 
     MCNAPI ::ResourceLocation buildTrimTexturePath() const;
 
+    MCNAPI void setCustomMaterialPalettePath(::std::string materialPalettePath);
+
+    MCNAPI void setCustomPatternPath(::std::string patternPath);
+
     MCNAPI ~ArmorTrimTextureData();
     // NOLINTEND
 

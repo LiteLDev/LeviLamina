@@ -9,7 +9,7 @@ class IDataInput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDataInput() = default;
+    virtual ~IDataInput();
 
     virtual ::Bedrock::Result<::std::string> readStringResult() = 0;
 
@@ -51,14 +51,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };

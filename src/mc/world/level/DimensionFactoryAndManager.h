@@ -18,4 +18,26 @@ public:
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DimensionFactory>>> mDimensionFactory;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DimensionManager>>> mDimensionManager;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DimensionFactoryAndManager();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI DimensionFactoryAndManager(
+        ::Bedrock::UniqueOwnerPointer<::DimensionFactory> factory,
+        ::Bedrock::UniqueOwnerPointer<::DimensionManager> manager
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Bedrock::UniqueOwnerPointer<::DimensionFactory> factory,
+        ::Bedrock::UniqueOwnerPointer<::DimensionManager> manager
+    );
+    // NOLINTEND
 };

@@ -26,6 +26,12 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCFOLD ::ServerWaypointGroup* get() const;
+
+        MCFOLD explicit operator bool() const;
+
+        MCFOLD ::ServerWaypointGroup* operator->() const;
+
         MCAPI ~GroupStrongHandle();
         // NOLINTEND
 

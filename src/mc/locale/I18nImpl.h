@@ -161,8 +161,6 @@ public:
     ) /*override*/;
 
     virtual bool isPackKeyword(::std::string const& key) /*override*/;
-
-    virtual ~I18nImpl() /*override*/;
     // NOLINTEND
 
 public:
@@ -185,7 +183,8 @@ public:
 
     MCAPI ::std::string& _getLocaleCodeFor(::std::string const& code);
 
-    MCAPI void _notifyLanguagesLoaded();
+    MCAPI ::gsl::not_null<::std::shared_ptr<::ImmutableLocalization>>
+    _getPackKeywordLocale(::std::string const& langCode);
 
     MCAPI void _setLanguageSupportsHypenSplitting(::Localization const& localization);
     // NOLINTEND
@@ -194,12 +193,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -279,7 +272,7 @@ public:
 
     MCAPI ::gsl::not_null<::std::shared_ptr<::Localization const>> $getCurrentLanguage();
 
-    MCFOLD bool $languageSupportsHypenSplitting();
+    MCAPI bool $languageSupportsHypenSplitting();
 
     MCAPI ::std::string
     $getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix);

@@ -38,19 +38,8 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            BiomeDescription(BiomeDescription const&);
-            BiomeDescription();
-
-        public:
             // member functions
             // NOLINTBEGIN
-            MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
-            operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&&);
-
-            MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
-            operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription const&);
-
             MCAPI ~BiomeDescription();
             // NOLINTEND
 
@@ -77,17 +66,13 @@ public:
 
     public:
         // prevent constructor by default
-        BiomeJsonObject(BiomeJsonObject const&);
+        BiomeJsonObject& operator=(BiomeJsonObject const&);
         BiomeJsonObject();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&
-        operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&&);
-
-        MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&
-        operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
+        MCAPI BiomeJsonObject(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
 
         MCAPI ~BiomeJsonObject();
         // NOLINTEND
@@ -96,6 +81,12 @@ public:
         // static functions
         // NOLINTBEGIN
         MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
         // NOLINTEND
 
     public:
@@ -114,13 +105,15 @@ public:
 
 public:
     // prevent constructor by default
-    BiomeJsonDocument& operator=(BiomeJsonDocument const&);
+    BiomeJsonDocument(BiomeJsonDocument const&);
     BiomeJsonDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeJsonDocument(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
+    MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
+
+    MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
 
     MCAPI ~BiomeJsonDocument();
     // NOLINTEND
@@ -137,12 +130,6 @@ public:
     MCAPI static ::std::string const& REGEX_BIOME_IDENTIFIER();
 
     MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
     // NOLINTEND
 
 public:

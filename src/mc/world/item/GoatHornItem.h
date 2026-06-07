@@ -18,6 +18,10 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class GoatHornItem : public ::Item {
 public:
+    // prevent constructor by default
+    GoatHornItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
@@ -34,14 +38,24 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~GoatHornItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GoatHornItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void addGoatHornVarationSaveData(::Goat& goat, ::ItemStack& instance);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

@@ -58,6 +58,8 @@ public:
     );
 
     MCAPI void handle(::std::vector<::OreUI::TouchEvent> const& rawTouchEvents);
+
+    MCAPI ~TouchInputHandler();
     // NOLINTEND
 
 public:
@@ -68,6 +70,12 @@ public:
         ::std::unique_ptr<::OreUI::GesturePolicy> gesturePolicy,
         ::Option*                                 ttsOption
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

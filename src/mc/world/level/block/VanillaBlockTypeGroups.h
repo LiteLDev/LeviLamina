@@ -60,11 +60,17 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadC
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralWallFanIds();
 
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DecayingBlocks();
+
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DirtIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DoubleCutCopperSlabBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DoublePlantIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DripstoneReplaceable();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DropsSpecialShearedResource();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& FenceBlockIds();
 
@@ -81,6 +87,8 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Light
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LogAndStrippedLogBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LogBlockIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LushGroundReplaceable();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& MossBlockIds();
 
@@ -118,6 +126,12 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Sands
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SaplingBlockIds();
 
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ShearsExtremeBonusSpeed();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ShearsMajorBonusSpeed();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ShearsMinorBonusSpeed();
+
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ShelfBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ShulkerBoxIds();
@@ -133,6 +147,8 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Stain
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneBricksIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SulfurSpringReplaceable();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SupportsBigDripLeaf();
 

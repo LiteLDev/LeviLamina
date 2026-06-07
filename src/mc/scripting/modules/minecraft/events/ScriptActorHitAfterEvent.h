@@ -10,6 +10,7 @@
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEventIntermediateData; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -31,22 +32,20 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorHitAfterEvent& operator=(ScriptActorHitAfterEvent const&);
     ScriptActorHitAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHitAfterEvent(::ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
-
-    MCAPI ScriptActorHitAfterEvent(::ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
-
     MCAPI ScriptActorHitAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                            scope
     );
 
-    MCAPI ~ScriptActorHitAfterEvent();
+    MCAPI ScriptActorHitAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                             scope
+    );
     // NOLINTEND
 
 public:
@@ -58,20 +57,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
-
     MCAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                            scope
     );
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                             scope
+    );
     // NOLINTEND
 };
 

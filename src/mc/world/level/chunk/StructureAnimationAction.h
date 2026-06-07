@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/chunk/IRequestAction.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
@@ -39,8 +38,6 @@ public:
     virtual bool operator==(::IRequestAction const& action) const /*override*/;
 
     virtual void serialize(::CompoundTag& tag) /*override*/;
-
-    virtual ~StructureAnimationAction() /*override*/ = default;
     // NOLINTEND
 
 public:

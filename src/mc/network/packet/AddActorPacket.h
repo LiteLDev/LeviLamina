@@ -67,6 +67,30 @@ public:
     MCAPI AddActorPacket();
 
     MCAPI explicit AddActorPacket(::Actor& e);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::vector<::SyncedAttribute> const& getAttributes() const;
+
+    MCFOLD ::std::vector<::std::unique_ptr<::DataItem>> const& getData() const;
+
+    MCFOLD ::ActorUniqueID const getEntityId() const;
+
+    MCFOLD ::Vec3 const& getPosition() const;
+
+    MCFOLD ::Vec2 const& getRot() const;
+
+    MCFOLD ::ActorRuntimeID getRuntimeId() const;
+
+    MCFOLD ::PropertySyncData const& getSynchedProperties() const;
+
+    MCAPI ::ActorDefinitionIdentifier getType() const;
+
+    MCFOLD ::Vec3 const& getVelocity() const;
+
+    MCFOLD float getYBodyRotation() const;
+
+    MCAPI float getYHeadRotation() const;
+#endif
     // NOLINTEND
 
 public:

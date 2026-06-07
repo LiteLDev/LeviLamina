@@ -22,8 +22,6 @@ public:
     MCAPI void disconnect();
 
     MCAPI void disconnect_async();
-
-    MCFOLD bool operator==(::Bedrock::PubSub::SubscriptionBase const& other) const;
     // NOLINTEND
 };
 

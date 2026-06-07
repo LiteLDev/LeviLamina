@@ -18,18 +18,20 @@ public:
 
 public:
     // prevent constructor by default
-    AllowListPath(AllowListPath const&);
+    AllowListPath();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AllowListPath();
+    MCAPI AllowListPath(::OreUI::AllowListPath const&);
 
     MCAPI AllowListPath(::std::string id, ::Core::Path path);
 
     MCFOLD ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath&&);
 
     MCFOLD ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath const&);
+
+    MCFOLD ::std::string const& url() const;
 
     MCAPI ~AllowListPath();
     // NOLINTEND
@@ -43,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor(::OreUI::AllowListPath const&);
 
     MCAPI void* $ctor(::std::string id, ::Core::Path path);
     // NOLINTEND

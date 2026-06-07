@@ -11,17 +11,22 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentIdentity;
 class ContentTierIncompatibleReason;
 class IContentTierManager;
 class LinkedAssetValidator;
 class LoadedResourceData;
 class PackInstance;
+class PackReport;
 class PackSourceReport;
 class ResourceGroup;
 class ResourceLocation;
 class ResourceLocationPair;
 class ResourcePack;
+class ResourcePackListener;
+class ResourcePackMergeStrategy;
 class ResourcePackStack;
+class SemVersion;
 struct PackIdVersion;
 namespace Core { class Path; }
 namespace mce { struct Image; }
@@ -138,8 +143,14 @@ public:
     MCNAPI void _updateLanguageSubpacks();
 
 #ifdef LL_PLAT_C
+    MCNAPI bool areGameplayResourcesLoaded() const;
+
     MCNAPI ::ContentTierIncompatibleReason canSupportPacks();
+
+    MCNAPI void clearPackReports();
 #endif
+
+    MCNAPI void clearStack(::ResourcePackStackType stackType);
 
     MCNAPI int composeFullStack(
         ::ResourcePackStack&       output,
@@ -156,7 +167,24 @@ public:
 
     MCNAPI void finishLoadingLinkedAssets(::LinkedAssetValidator& validator);
 
+    MCNAPI void forceStackCompose_DEPRECATED();
+
+    MCNAPI ::std::shared_mutex& getFullStackAccess() const;
+
+    MCNAPI ::SemVersion getFullStackMinEngineVersion_DEPRECATED() const;
+
     MCNAPI ::std::vector<::PackInstance> getIncompatiblePacks() const;
+#endif
+
+    MCNAPI ::PackInstance* getPackForResource(::Core::Path const& resourceName) const;
+
+    MCNAPI ::PackSourceReport const* getPackSourceReport() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::PackInstance> getPacksWhereAssetExtractionNotViable(
+        ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
+        ::std::string const&                                     sourceContext
+    ) const;
 #endif
 
     MCNAPI ::ResourceGroup getResourcesOfGroup(::std::string const& group) const;
@@ -164,6 +192,8 @@ public:
     MCNAPI ::ResourceGroup getResourcesOfGroup(::PackInstance const& packInstance, ::std::string const& group) const;
 
     MCNAPI ::ResourcePackStack const& getStack(::ResourcePackStackType stackType) const;
+
+    MCNAPI void handlePendingStackChanges();
 
 #ifdef LL_PLAT_C
     MCNAPI bool hasResource(::ResourceLocation const& resourceLocation) const;
@@ -173,13 +203,41 @@ public:
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensionList
     ) const;
+
+    MCNAPI bool hasTexture(::ResourceLocation const& resourceLocation) const;
+
+    MCNAPI bool hasTexture(::ResourcePackStackType stackType, ::ResourceLocation const& resourceLocation) const;
 #endif
+
+    MCNAPI bool isAssetExtractionViableForFullStack(
+        ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
+        ::std::string const&                                     sourceContext
+    ) const;
+
+    MCNAPI bool isOnlyBaseGamePacks() const;
 
     MCNAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
 
 #ifdef LL_PLAT_C
+    MCNAPI bool
+    loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
+
+    MCNAPI void mergePackReports(::std::vector<::PackReport>& packReports);
+
+    MCNAPI void notifyJsonResourcesChanged();
+
+    MCNAPI void onBaseGamePackDownloadComplete();
+
     MCNAPI void onLanguageChanged();
+
+    MCNAPI void onLoadingFinished();
+
+    MCNAPI bool refreshStack(::ResourcePackStackType stackType);
+
+    MCNAPI void regeneratePackAssetSet();
 #endif
+
+    MCNAPI void registerResourcePackListener(::ResourcePackListener& listener);
 
     MCNAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
 
@@ -187,11 +245,23 @@ public:
     MCNAPI void removePacks(::std::vector<::gsl::not_null<::ResourcePack const*>> const& packs);
 
     MCNAPI void removeUnsupportedPacks();
+
+    MCNAPI void setCanUseGlobalPackStack(bool canUseGlobalPackStack);
 #endif
+
+    MCNAPI void setGameplayResourcesLoaded(bool gameplayResourcesLoaded);
 
     MCNAPI void setPackSourceReport(::PackSourceReport&& report);
 
     MCNAPI bool setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType);
+
+#ifdef LL_PLAT_C
+    MCNAPI bool supportsVibrantVisuals() const;
+
+    MCNAPI void unRegisterAllResourcePackListener();
+#endif
+
+    MCNAPI void unRegisterResourcePackListener(::ResourcePackListener& listener);
     // NOLINTEND
 
 public:

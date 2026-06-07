@@ -15,20 +15,4 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPos;
     ::ll::TypedStorage<8, 24, ::CompoundTag> mTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyStructureActorInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LegacyStructureActorInfo(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
-    // NOLINTEND
 };

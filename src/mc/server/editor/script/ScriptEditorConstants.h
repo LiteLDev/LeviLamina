@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class ServiceProviderCollection; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -27,9 +29,25 @@ public:
     ScriptEditorConstants();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptEditorConstants(
+        ::Editor::ServiceProviderCollection&  serviceProviders,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

@@ -99,7 +99,7 @@ public:
         ::WeakRef<::RenderChunkCoordinator>        coordinator
     );
 
-    MCAPI void _buildRanges(::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails& renderChunkBuildDetails);
+    MCAPI void _buildRanges(::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails&);
 
     MCAPI void _overrideStaticBlockLighting(
         ::BlockSource&                 region,
@@ -108,37 +108,43 @@ public:
     );
 
     MCAPI bool _sortBlocks(
-        ::BlockSource&                                                 region,
-        ::RenderChunkGeometry&                                         renderChunkGeometry,
-        bool                                                           transparentLeaves,
-        ::AirAndSimpleBlockBits&                                       airAndSimpleBlocks,
-        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails& renderChunkBuildDetails
+        ::BlockSource&         region,
+        ::RenderChunkGeometry& renderChunkGeometry,
+        bool                   airAndSimpleBlocks,
+        ::AirAndSimpleBlockBits&,
+        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails&
     );
 
     MCAPI bool _tessellateNewPipeline(
         ::RenderChunkGeometry& renderChunkGeometry,
         ::BlockSource&,
-        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails& renderChunkBuildDetails
+        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails&
     );
 
     MCAPI bool _tessellateQueues(
-        ::RenderChunkGeometry&                                         renderChunkGeometry,
-        ::BlockSource&                                                 region,
-        ::AirAndSimpleBlockBits&                                       airAndSimpleBlocks,
-        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails& renderChunkBuildDetails
+        ::RenderChunkGeometry&   renderChunkGeometry,
+        ::BlockSource&           region,
+        ::AirAndSimpleBlockBits& airAndSimpleBlocks,
+        ::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails&
     );
 
     MCAPI void _updateFacesMetadata();
 
+    MCAPI ::mce::MeshData acquireMeshData();
+
+    MCAPI void applyBuildBoundingBox(::AABB const& buildBoundingBox);
+
     MCAPI void build(
-        ::RenderChunkGeometry&                                     renderChunkGeometry,
-        bool                                                       transparentLeaves,
-        ::BakedBlockLightType                                      lightingType,
-        bool                                                       forExport,
-        ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
+        ::RenderChunkGeometry& renderChunkGeometry,
+        bool                   lightingType,
+        ::BakedBlockLightType  forExport,
+        bool                   lightingModelCapabilities,
+        ::mce::framebuilder::FrameLightingModelCapabilities const&
     );
 
     MCAPI void prepareWorldData(::BlockPos const& pos, ::ChunkSourceViewGenerateMode viewMoveMode);
+
+    MCAPI void setGUIRendering(bool guiRendering);
 
     MCAPI ~RenderChunkBuilder();
     // NOLINTEND
@@ -146,19 +152,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _checkForAirAndOpaque(
-        int                      x,
-        int                      y,
-        int                      z,
-        ::BlockPos const&        min,
-        ::BlockPos const&        max,
-        bool                     guiRendering,
-        ::BlockSource&           region,
+    MCAPI static bool checkAndSetSimpleBlockInfo(
+        ::BlockRenderLayer       renderLayer,
+        ::Block const&           block,
+        uint64                   blockBitsetIndex,
         ::AirAndSimpleBlockBits& airAndSimpleBlocks
     );
 
-    MCAPI static bool checkAndSetSimpleBlockInfo(
-        ::BlockRenderLayer       renderLayer,
+    MCAPI static void checkNeighborBlockIsAirOrSimpleBlock(
         ::Block const&           block,
         uint64                   blockBitsetIndex,
         ::AirAndSimpleBlockBits& airAndSimpleBlocks

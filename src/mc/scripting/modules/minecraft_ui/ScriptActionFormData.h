@@ -50,13 +50,12 @@ public:
 
     public:
         // prevent constructor by default
-        ButtonData(ButtonData const&);
         ButtonData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ButtonData(::ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData&&);
+        MCNAPI ButtonData(::ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData const&);
 
         MCNAPI ::ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData&
         operator=(::ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData const&);
@@ -67,7 +66,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData&&);
+        MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData const&);
         // NOLINTEND
 
     public:

@@ -88,6 +88,10 @@ public:
     MCAPI void _generateCurrentItems();
 
     MCAPI void _refreshContainer(bool fullRefresh);
+
+#ifdef LL_PLAT_C
+    MCAPI void setOnItemExpandedCallback(::std::function<void(::std::string const&, int, int)> callback);
+#endif
     // NOLINTEND
 
 public:
@@ -124,7 +128,7 @@ public:
 
     MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
 
-    MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+    MCFOLD ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
     MCFOLD int $getContainerSize() const;
 

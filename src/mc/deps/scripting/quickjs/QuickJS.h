@@ -13,7 +13,6 @@ struct JSValue;
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { class StrongObjectHandle; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct IteratorBinding; }
 namespace Scripting { struct ObjectFactory; }
@@ -21,11 +20,11 @@ namespace Scripting { struct ObjectHandle; }
 namespace Scripting::QuickJS { class ContextUserData; }
 namespace Scripting::QuickJS { class RegisteredClass; }
 namespace Scripting::QuickJS { class RegisteredEnum; }
+namespace Scripting::QuickJS { class RegisteredError; }
 namespace Scripting::QuickJS { class RegisteredInterface; }
 namespace Scripting::QuickJS { class RuntimeUserData; }
 namespace Scripting::QuickJS { struct ArgConversionResult; }
 namespace Scripting::QuickJS { struct ArrayProxy; }
-namespace Scripting::QuickJS { struct PropertyGetSet; }
 namespace Scripting::Reflection { class IFunction; }
 // clang-format on
 
@@ -44,74 +43,49 @@ MCNAPI ::JSValue CopyJSValueArrayToNativeSequenceContainer(
     ::JSContext*                     ctx,
     ::JSValue                        jsArray,
     ::entt::meta_sequence_container& view,
-    ::entt::meta_type const&         type
+    ::entt::meta_type const&
 );
 
 MCNAPI ::JSValue CopyJSValueObjectToNativeAssociativeContainer(
     ::JSContext*                        ctx,
     ::JSValue                           jsValue,
     ::entt::meta_associative_container& view,
-    ::entt::meta_type const&            type
+    ::entt::meta_type const&
 );
 
 MCNAPI ::Scripting::QuickJS::ArrayProxy CreateArrayProxy(::JSContext* ctx);
-
-MCNAPI ::Scripting::FunctionBinding CreateIteratorNextFunctionBinding(::Scripting::IteratorBinding& iteratorBinding);
 
 MCNAPI ::std::unique_ptr<::Scripting::ClassBinding>
 CreateIteratorReturnClassBinding(::Scripting::IteratorBinding& iteratorBinding);
 
 MCNAPI ::entt::meta_any ExceptionWriter(::JSContext* ctx);
 
-MCNAPI ::JSValue GenericFreeFunctionCaller(
-    ::JSContext* ctx,
-    ::JSValue    thisVal,
-    int          argc,
-    ::JSValue*   argv,
-    int          magic,
-    ::JSValue*   funcDataVal
-);
+MCNAPI ::JSValue
+GenericFreeFunctionCaller(::JSContext* ctx, ::JSValue argc, int argv, ::JSValue* funcDataVal, int, ::JSValue*);
 
 MCNAPI ::JSValue GenericObjectFunctionCaller(
     ::JSContext* ctx,
     ::JSValue    thisVal,
     int          argc,
     ::JSValue*   argv,
-    int          magic,
-    ::JSValue*   funcDataVal
+    int          funcDataVal,
+    ::JSValue*
 );
 
 MCNAPI ::JSValue
 GenericReflectionCtorCaller(::JSContext* ctx, ::JSValue newTarget, int argc, ::JSValue* argv, int jsClassIdMagic);
 
-MCNAPI ::JSValue GenericReflectionPropertyGetter(
-    ::JSContext* ctx,
-    ::JSValue    thisVal,
-    int          argc,
-    ::JSValue*   argv,
-    int          magic,
-    ::JSValue*   funcDataVal
-);
+MCNAPI ::JSValue
+GenericReflectionPropertyGetter(::JSContext* ctx, ::JSValue thisVal, int funcDataVal, ::JSValue*, int, ::JSValue*);
 
-MCNAPI ::JSValue GenericReflectionPropertySetter(
-    ::JSContext* ctx,
-    ::JSValue    thisVal,
-    int          argc,
-    ::JSValue*   argv,
-    int          magic,
-    ::JSValue*   funcDataVal
-);
+MCNAPI ::JSValue
+GenericReflectionPropertySetter(::JSContext* ctx, ::JSValue thisVal, int argv, ::JSValue* funcDataVal, int, ::JSValue*);
 
 MCNAPI ::std::string GetClassNameFromJSValue(::JSContext* ctx, ::JSValue target);
 
 MCNAPI ::Scripting::ObjectHandle GetNativeObjectHandleFromJSValue(::JSValue jsValue);
 
-MCNAPI ::Scripting::QuickJS::PropertyGetSet const&
-GetPropertyGetSetFromJSFuncData(::JSContext* ctx, ::JSValue* funcDataVal);
-
 MCNAPI ::Scripting::QuickJS::RuntimeUserData* GetRuntimeUserDataFromContext(::JSContext* ctx);
-
-MCNAPI bool HasNativeObjectHandle(::JSValue jsValue);
 
 MCNAPI void InitializeBakedProperties(
     ::JSContext*                                 ctx,
@@ -126,10 +100,6 @@ MCNAPI ::std::string JSAtomCStringToString(::JSContext* ctx, uint jsAtom);
 MCNAPI ::entt::meta_any JSErrorToNativeAny(::JSContext* ctx, ::JSValue jsValue);
 
 MCNAPI ::std::string JSValueCStringToString(::JSContext* ctx, ::JSValue jsValue);
-
-MCNAPI bool JSValueIsInfinite(::JSValue const& value);
-
-MCNAPI bool JSValueIsNan(::JSValue const& value);
 
 MCNAPI ::entt::meta_any JSValueToBaseError(::JSContext* ctx, ::JSValue jsValue);
 
@@ -152,6 +122,14 @@ MCNAPI ::JSValue NativeAnyToJSProtoClass(
     ::Scripting::QuickJS::ContextUserData&       contextData
 );
 
+MCNAPI ::JSValue NativeAnyToJSProtoError(
+    ::JSContext*                                 ctx,
+    ::JSValue                                    newTarget,
+    ::entt::meta_any&                            any,
+    ::Scripting::QuickJS::RegisteredError const& registeredError,
+    ::Scripting::QuickJS::ContextUserData&       contextData
+);
+
 MCNAPI ::Scripting::QuickJS::ArgConversionResult
 NativeAnyToJSValue(::JSContext* ctx, ::entt::meta_any& any, bool addRef, bool allowCopy);
 
@@ -162,10 +140,10 @@ MCNAPI ::JSValue NativeErrorToJSValue(::JSContext* ctx, ::entt::meta_any& any);
 
 MCNAPI ::JSValue NativeErrorToJSValueInternal(
     ::JSContext*                           ctx,
-    ::Scripting::QuickJS::ContextUserData& contextData,
-    ::entt::meta_any&                      any,
-    uint                                   jsClassId,
-    ::Scripting::LifetimeRegistry&         registry
+    ::Scripting::QuickJS::ContextUserData& any,
+    ::entt::meta_any&                      jsClassId,
+    uint                                   registry,
+    ::Scripting::LifetimeRegistry&
 );
 
 MCNAPI ::Scripting::QuickJS::ArgConversionResult NativeInterfaceToJSValue(
@@ -184,12 +162,20 @@ MCNAPI ::JSValue NativeObjectHandleToJSProtoClass(
     ::Scripting::LifetimeRegistry&               registry
 );
 
+MCNAPI ::JSValue NativeObjectHandleToJSProtoError(
+    ::JSContext*                                 ctx,
+    ::JSValue                                    newTarget,
+    ::Scripting::ObjectHandle                    objectHandle,
+    ::Scripting::QuickJS::RegisteredError const& registeredError,
+    ::Scripting::LifetimeRegistry&               registry
+);
+
 MCNAPI ::JSValue NativeObjectHandleToJSValue(
-    ::JSContext*                                ctx,
-    ::Scripting::ObjectHandle                   objectHandle,
-    bool                                        addRef,
-    bool                                        allowCopy,
-    ::Scripting::QuickJS::NativeObjectOwnership ownership
+    ::JSContext*              ctx,
+    ::Scripting::ObjectHandle objectHandle,
+    bool                      addRef,
+    bool                      ownership,
+    ::Scripting::QuickJS::NativeObjectOwnership
 );
 
 MCNAPI ::Scripting::QuickJS::ArgConversionResult NativeRegisteredEnumToJSValue(
@@ -198,17 +184,21 @@ MCNAPI ::Scripting::QuickJS::ArgConversionResult NativeRegisteredEnumToJSValue(
     ::Scripting::QuickJS::RegisteredEnum const& registeredEnum
 );
 
-MCNAPI ::JSValue PrintError(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
+MCNAPI ::JSValue PrintError(::JSContext* ctx, ::JSValue argc, int argv, ::JSValue*);
 
-MCNAPI ::JSValue PrintInfo(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
+MCNAPI ::JSValue PrintInfo(::JSContext* ctx, ::JSValue argc, int argv, ::JSValue*);
 
-MCNAPI ::JSValue PrintWarn(::JSContext* ctx, ::JSValue, int argc, ::JSValue* argv);
+MCNAPI ::JSValue PrintWarn(::JSContext* ctx, ::JSValue argc, int argv, ::JSValue*);
 
 MCNAPI ::JSValue ThrowEngineErrorToJS(::JSContext* ctx, ::std::string const& msg);
 
 MCNAPI ::JSValue ThrowJSTypeErrorWithContext(::JSContext*, ::Scripting::QuickJS::ContextUserData&, char const*, ...);
 
 MCNAPI ::JSTypedArrayEnum ToJSTypedArrayEnum(::entt::meta_type const& type);
+
+MCNAPI ::std::string WriteObject(::JSContext* ctx, ::JSValue val);
+
+MCNAPI ::std::optional<::std::string> getAssociativeContainerKeyName(::JSContext* ctx, ::JSValue jsValue, uint idx);
 
 MCNAPI ::std::optional<::Scripting::StrongObjectHandle> getHandleFromObjectFactory(
     ::JSContext*                           ctx,

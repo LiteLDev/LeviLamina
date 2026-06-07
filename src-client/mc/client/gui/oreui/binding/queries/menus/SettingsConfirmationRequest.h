@@ -28,12 +28,6 @@ public:
     SettingsConfirmationRequest();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SettingsConfirmationRequest() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SettingsConfirmationRequest(

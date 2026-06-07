@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/ItemStack.h"
@@ -20,7 +19,6 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class Dimension;
 class ILevel;
 class Level;
 class Player;
@@ -49,18 +47,6 @@ public:
         ::ll::TypedStorage<4, 4, float>            currentSpin;
         ::ll::TypedStorage<4, 4, float>            previousSpin;
         ::ll::TypedStorage<8, 24, ::WeakEntityRef> displayEntity;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~VaultClientData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -141,11 +127,19 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI static void emitActivationParticles(::BlockSource& region, ::BlockPos pos);
+#endif
+
         MCAPI static void emitConnectedParticles(
             ::BlockSource&                            region,
             ::BlockPos                                pos,
             ::VaultBlockActor::VaultSharedData const& sharedData
         );
+
+#ifdef LL_PLAT_C
+        MCAPI static void emitDeactivationParticles(::BlockSource& region, ::BlockPos pos);
+#endif
 
         MCAPI static void emitIdleParticles(
             ::BlockSource const&                      region,
@@ -157,6 +151,13 @@ public:
         playIdleSounds(::BlockSource& region, ::BlockPos pos, ::VaultBlockActor::VaultSharedData const& sharedData);
 
         MCAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
+
+        MCAPI static void tick(
+            ::BlockSource&                            region,
+            ::BlockPos                                pos,
+            ::VaultBlockActor::VaultClientData&       clientData,
+            ::VaultBlockActor::VaultSharedData const& sharedData
+        );
         // NOLINTEND
     };
 
@@ -205,6 +206,9 @@ public:
             ::SharedTypes::Legacy::LevelSoundEvent sound
         );
 
+        MCAPI static void
+        setItemsToEject(::std::vector<::ItemStack>&& itemsToEject, ::VaultBlockActor::VaultServerData& serverData);
+
         MCAPI static void tick(
             ::BlockSource&                        region,
             ::BlockPos                            pos,
@@ -229,6 +233,15 @@ public:
             ::VaultBlockActor::VaultConfig const& config,
             ::VaultBlockActor::VaultSharedData&   sharedData,
             ::VaultBlockActor::VaultServerData&   serverData
+        );
+
+        MCAPI static void unlock(
+            ::BlockSource&                        region,
+            ::BlockPos                            pos,
+            ::VaultBlockActor::VaultConfig const& config,
+            ::VaultBlockActor::VaultServerData&   serverData,
+            ::VaultBlockActor::VaultSharedData&   sharedData,
+            ::std::vector<::ItemStack>&&          itemsToEject
         );
 
         MCAPI static void updateConnectedPlayersWithinRange(
@@ -282,8 +295,14 @@ public:
 
     MCAPI void clientEmitDeactivationParticles(::BlockSource& region) const;
 
+    MCFOLD ::VaultBlockActor::VaultClientData const& getClientData() const;
+
+    MCFOLD ::ItemStack const& getDisplayedItem() const;
+
     MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
 #endif
+
+    MCAPI void tryInsertKey(::BlockSource& region, ::Player& player);
     // NOLINTEND
 
 public:

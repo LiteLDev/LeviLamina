@@ -18,7 +18,12 @@ namespace Editor::API { struct EditorExtensionOptionalParameters; }
 namespace Editor::ScriptModule { class ScriptCustomBiomeSource; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
 namespace Editor::ScriptModule { struct ScriptCustomBiomeSourceConfig; }
+namespace ScriptModuleMinecraft { class ScriptBiomeType; }
+namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
+namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
+namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptBiomeFillOptions; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
@@ -39,13 +44,12 @@ public:
 public:
     // prevent constructor by default
     EditorScriptInternalAPI& operator=(EditorScriptInternalAPI const&);
+    EditorScriptInternalAPI(EditorScriptInternalAPI const&);
     EditorScriptInternalAPI();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorScriptInternalAPI(::Editor::API::EditorScriptInternalAPI const&);
-
     MCNAPI
     EditorScriptInternalAPI(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
 
@@ -61,6 +65,15 @@ public:
         ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
                                                                           shutdownClosure,
         ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void> fillBiomes(
+        ::ScriptModuleMinecraft::ScriptDimension& dimension,
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& volume,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType> const&                biome,
+        ::std::optional<::ScriptModuleMinecraft::ScriptBiomeFillOptions> const&                              options
     );
 
     MCNAPI ::Scripting::Result_deprecated<void> fireTelemetryEvent(
@@ -86,8 +99,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::API::EditorScriptInternalAPI const&);
-
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 

@@ -6,6 +6,12 @@
 #include "mc/deps/cereal/BasicSaver.h"
 #include "mc/deps/cereal/BinarySchemaWriter.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace cereal {
 
 class BinarySaver : public ::cereal::BasicSaver {
@@ -16,15 +22,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    BinarySaver();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~BinarySaver() /*override*/;
+    MCAPI BinarySaver(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

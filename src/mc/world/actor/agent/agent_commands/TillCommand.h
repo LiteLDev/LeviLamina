@@ -32,8 +32,6 @@ public:
     virtual void execute() /*override*/;
 
     virtual bool isDone() /*override*/;
-
-    virtual ~TillCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

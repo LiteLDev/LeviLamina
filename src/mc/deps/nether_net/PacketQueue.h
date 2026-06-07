@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
+#include "mc/deps/nether_net/ESendType.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/external/webrtc/DataChannelObserver.h"
 #include "mc/external/webrtc/scoped_refptr.h"
@@ -11,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace rtc { class CopyOnWriteBuffer; }
 namespace webrtc { class DataChannelInterface; }
 namespace webrtc { struct DataBuffer; }
 // clang-format on
@@ -68,7 +70,9 @@ public:
 
         MCNAPI void _trySend();
 
-        MCNAPI void send(uchar const* source, uint64 size);
+        MCNAPI void _updateState();
+
+        MCNAPI void send(::rtc::CopyOnWriteBuffer buffer);
 
         MCNAPI void setChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> channel);
         // NOLINTEND
@@ -117,6 +121,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 120> mUnkd1700a;
     ::ll::UntypedStorage<8, 64>  mUnk9b0d07;
+    ::ll::UntypedStorage<8, 24>  mUnk236963;
     ::ll::UntypedStorage<8, 248> mUnkb28c4c;
     ::ll::UntypedStorage<8, 248> mUnk330e14;
     // NOLINTEND
@@ -128,18 +133,18 @@ public:
     PacketQueue();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~PacketQueue() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PacketQueue(
         ::NetherNet::ContextProxy const&                              ctx,
         ::brstd::move_only_function<void(::NetherNet::ESessionError)> onClose
     );
+
+    MCNAPI void _onOrderedPacket(uchar const* data, uint64 size);
+
+    MCNAPI void _sendFragment(uchar header, uchar const* payload, uint64 payloadSize, ::NetherNet::ESendType type);
+
+    MCNAPI ::std::optional<uint64> pop(uchar* destination, uint64 size);
     // NOLINTEND
 
 public:

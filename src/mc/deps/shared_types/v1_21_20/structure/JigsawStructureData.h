@@ -28,8 +28,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JigsawStructureData& operator=(JigsawStructureData const&);
+    JigsawStructureData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI JigsawStructureData(::SharedTypes::v1_21_20::JigsawStructureData const&);
+
+    MCAPI ::SharedTypes::v1_21_20::JigsawStructureData& operator=(::SharedTypes::v1_21_20::JigsawStructureData&&);
+
     MCAPI ~JigsawStructureData();
     // NOLINTEND
 
@@ -37,6 +46,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureData const&);
     // NOLINTEND
 
 public:

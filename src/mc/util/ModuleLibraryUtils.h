@@ -4,13 +4,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class ResourceLoader;
+class ResourcePackManager;
 // clang-format on
 
 namespace ModuleLibraryUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::optional<::std::string> LoadScript(::ResourceLoader& resourceLoader, ::std::string const& versionPath);
+MCNAPI ::std::optional<::std::string>
+LoadScript(::ResourcePackManager& resourcePackManager, ::std::string const& versionPath, ::std::string_view packName);
 // NOLINTEND
 
 } // namespace ModuleLibraryUtils

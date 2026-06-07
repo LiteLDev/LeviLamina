@@ -45,8 +45,6 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_MushroomCowAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

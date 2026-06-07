@@ -298,6 +298,11 @@ public:
 
     MCAPI ScriptV010Events(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::Level*> level);
 
+    MCAPI void
+    onActorCreated(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorCreateEvent>& actorEvent);
+
+    MCAPI void onLevelTick(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTickEvent>& tickEvent);
+
     MCAPI ::ScriptModuleMinecraft::ScriptV010Events& operator=(::ScriptModuleMinecraft::ScriptV010Events&&);
 
     MCAPI void registerListener(

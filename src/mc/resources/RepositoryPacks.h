@@ -36,6 +36,18 @@ public:
     MCNAPI ::std::pair<::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::RepositoryPackTuple>>>, bool>
     addResourcePackIfNotAlreadyAdded(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
 
+    MCNAPI ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::RepositoryPackTuple>>> begin() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::RepositoryPackTuple>>> begin();
+#endif
+
+    MCNAPI ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::RepositoryPackTuple>>> end() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::RepositoryPackTuple>>> end();
+#endif
+
     MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
     getPacksByCategory(::PackCategory category);
 

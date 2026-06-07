@@ -35,6 +35,7 @@ public:
         ::ll::UntypedStorage<8, 16> mUnkc4ec43;
         ::ll::UntypedStorage<8, 16> mUnkff686d;
         ::ll::UntypedStorage<8, 64> mUnk8f7071;
+        ::ll::UntypedStorage<1, 1>  mUnk8a6cb0;
         // NOLINTEND
 
     public:
@@ -42,20 +43,6 @@ public:
         MessageStatus& operator=(MessageStatus const&);
         MessageStatus(MessageStatus const&);
         MessageStatus();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::MessageTracker::MessageStatus& operator=(::MessageTracker::MessageStatus&&);
-
-        MCNAPI ~MessageStatus();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -65,7 +52,9 @@ public:
     ::ll::UntypedStorage<8, 80> mUnkc507e5;
     ::ll::UntypedStorage<8, 80> mUnk3dedd3;
     ::ll::UntypedStorage<8, 48> mUnkbcdda6;
-    ::ll::UntypedStorage<8, 16> mUnk54b795;
+    ::ll::UntypedStorage<8, 48> mUnkdc3254;
+    ::ll::UntypedStorage<8, 8>  mUnkc75976;
+    ::ll::UntypedStorage<8, 8>  mUnk11e362;
     // NOLINTEND
 
 public:
@@ -95,7 +84,8 @@ public:
         ::std::function<void(::mce::UUID, ::MessageTracker::MessageStatus&&)>&& fn
     );
 
-    MCNAPI void add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete);
+    MCNAPI void
+    add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete, bool isP2P);
 
     MCNAPI void messageAccepted(::std::string const& messageId);
 
@@ -106,11 +96,13 @@ public:
     MCNAPI void messageError(::std::string const& messageId, ::NetherNet::ESessionError error);
 
     MCNAPI void messageSent(
-        ::MessageTracker::Destination to,
-        ::std::string const&          message,
-        ::std::string const&          messageId,
-        ::std::error_code             error
+        ::std::optional<::MessageTracker::Destination> to,
+        ::std::string const&                           message,
+        ::std::string const&                           messageId,
+        ::std::error_code                              error
     );
+
+    MCNAPI bool queryAndUpdateIsMessageIgnored(::std::string const& messageId);
 
     MCNAPI ~MessageTracker();
     // NOLINTEND

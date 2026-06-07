@@ -29,18 +29,13 @@ public:
 
     public:
         // prevent constructor by default
+        Params& operator=(Params const&);
         Params(Params const&);
         Params();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::JsonRpc::ClientMessageDeliveryNotification::Params&
-        operator=(::JsonRpc::ClientMessageDeliveryNotification::Params&&);
-
-        MCNAPI ::JsonRpc::ClientMessageDeliveryNotification::Params&
-        operator=(::JsonRpc::ClientMessageDeliveryNotification::Params const&);
-
         MCNAPI ~Params();
         // NOLINTEND
 
@@ -59,7 +54,6 @@ public:
 
 public:
     // prevent constructor by default
-    ClientMessageDeliveryNotification& operator=(ClientMessageDeliveryNotification const&);
     ClientMessageDeliveryNotification(ClientMessageDeliveryNotification const&);
     ClientMessageDeliveryNotification();
 
@@ -67,6 +61,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ClientMessageDeliveryNotification(::std::string messageId);
+
+    MCNAPI ::JsonRpc::ClientMessageDeliveryNotification& operator=(::JsonRpc::ClientMessageDeliveryNotification const&);
 
     MCNAPI ~ClientMessageDeliveryNotification();
     // NOLINTEND

@@ -46,8 +46,6 @@ public:
         ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
         ::RenderParams&                                         renderParams
     ) /*override*/;
-
-    virtual ~EmitterLifetimeOnceComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

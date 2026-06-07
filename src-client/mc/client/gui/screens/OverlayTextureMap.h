@@ -29,13 +29,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OverlayTextureMap();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit OverlayTextureMap(::std::shared_ptr<::mce::TextureGroupBase> textureGroup);
+
     MCAPI ::mce::TexturePtr _getTextureHandle(::std::string effectTextureName) const;
 
     MCAPI ::mce::TexturePtr get(::OverlayTextureMap::TextureId textureId) const;
 
     MCAPI ~OverlayTextureMap();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroupBase> textureGroup);
     // NOLINTEND
 
 public:

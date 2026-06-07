@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OffhandContainerModel() /*override*/ = default;
+    virtual ~OffhandContainerModel() /*override*/;
 
     virtual void postInit() /*override*/;
 
@@ -63,6 +63,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::ContainerEnumName containerName, int containerSize, ::Player& player);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

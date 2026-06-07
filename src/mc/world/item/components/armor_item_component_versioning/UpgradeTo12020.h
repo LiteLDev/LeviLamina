@@ -29,8 +29,6 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const /*override*/;
-
-    virtual ~UpgradeTo12020() /*override*/ = default;
     // NOLINTEND
 
 public:

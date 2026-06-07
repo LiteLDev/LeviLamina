@@ -12,6 +12,10 @@ namespace Json { class Value; }
 namespace BlockPropertyToStateConverter {
 // functions
 // NOLINTBEGIN
+MCAPI void _addJSONObject(::Json::Value& obj, ::std::string const& newMember);
+
+MCAPI void _convertFormatVersion(::Json::Value& root);
+
 MCAPI void _convertPropertyToStateInBoneVisibility(::Json::Value& obj);
 
 MCAPI void _convertPropertyToStateInDescription(::Json::Value& root);
@@ -23,6 +27,8 @@ MCAPI void _convertPropertyToStateInEvents(::Json::Value& root);
 MCAPI void _convertPropertyToStateInObjectContainsConditionObject(::Json::Value& obj);
 
 MCAPI void _convertPropertyToStateInObjectContainsSetBlockStateObject(::Json::Value& obj);
+
+MCAPI void _convertPropertyToStateInPermutation(::Json::Value& root);
 
 MCAPI void _copyMembers(::Json::Value& from, ::Json::Value& to);
 

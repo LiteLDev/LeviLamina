@@ -28,23 +28,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptInventoryComponent& operator=(ScriptInventoryComponent const&);
-    ScriptInventoryComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool _isValid() const /*override*/;
-
-    virtual ~ScriptInventoryComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInventoryComponent(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
-
     MCAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
@@ -77,9 +68,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

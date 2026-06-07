@@ -5,14 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/actor/DefinitionTrigger.h"
+#include "mc/world/level/block/components/IBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace BlockEvents { class BlockEventManager; }
 namespace BlockEvents { class BlockPlayerDestroyEvent; }
 // clang-format on
 
-class OnPlayerDestroyedTrigger : public ::DefinitionTrigger {
+class OnPlayerDestroyedTrigger : public ::DefinitionTrigger, public ::IBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
@@ -22,15 +22,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnPlayerDestroyedTrigger() = default;
+    virtual ~OnPlayerDestroyedTrigger();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
+    MCAPI void onEvent(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
+    // NOLINTEND
 
-    MCAPI void onPlayerDestroy(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

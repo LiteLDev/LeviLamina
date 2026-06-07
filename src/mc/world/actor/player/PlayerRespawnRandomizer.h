@@ -32,6 +32,10 @@ public:
     MCAPI PlayerRespawnRandomizer(uint spawnRadius, ::GeneratorType const& worldType);
 
     MCAPI ::Vec3 performPrimaryJump(::Vec3 const& spawnCenter);
+
+    MCAPI ::Vec3 performSecondaryJump();
+
+    MCAPI void resetSecondary();
     // NOLINTEND
 
 public:

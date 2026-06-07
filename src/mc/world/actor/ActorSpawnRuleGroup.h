@@ -12,6 +12,7 @@ class MobSpawnRules;
 class Random;
 class ResourcePackManager;
 struct ActorDefinitionIdentifier;
+struct Tick;
 namespace br::spawn { class SpawnPlacements; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -34,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorSpawnRuleGroup() = default;
+    virtual ~ActorSpawnRuleGroup();
     // NOLINTEND
 
 public:
@@ -52,6 +53,10 @@ public:
 
     MCAPI int getActorSpawnPool(::ActorDefinitionIdentifier const& id) const;
 
+    MCAPI int getDelayEnd(::std::string const& id) const;
+
+    MCAPI void offSetDelayByCurrentTick(::Tick const& currentTick);
+
     MCAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
     // NOLINTEND
 
@@ -67,6 +72,12 @@ public:
         ::Experiments const&           experiments,
         ::IMinecraftEventing&          eventing
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

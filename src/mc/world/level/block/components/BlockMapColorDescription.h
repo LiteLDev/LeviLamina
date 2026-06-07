@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CerealSchemaUpgradeSet;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockMapColorDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -33,13 +30,13 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockMapColorDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockMapColorDescription();
+
     MCAPI BlockMapColorDescription(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
     // NOLINTEND
 
@@ -47,6 +44,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
@@ -58,13 +57,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
     // NOLINTEND
 
 public:

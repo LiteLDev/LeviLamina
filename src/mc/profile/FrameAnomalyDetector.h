@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 struct FrameAnomalyDetectionConfiguration;
+namespace flighting { class IFlightReader; }
 // clang-format on
 
 class FrameAnomalyDetector : public ::Bedrock::EnableNonOwnerReferences {
@@ -35,6 +36,7 @@ public:
     ::ll::UntypedStorage<8, 128> mUnk36e430;
     ::ll::UntypedStorage<8, 16>  mUnkca5fba;
     ::ll::UntypedStorage<1, 1>   mUnk5077f6;
+    ::ll::UntypedStorage<8, 64>  mUnk88400d;
     // NOLINTEND
 
 public:
@@ -44,27 +46,20 @@ public:
     FrameAnomalyDetector();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~FrameAnomalyDetector() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~FrameAnomalyDetector() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit FrameAnomalyDetector(::FrameAnomalyDetectionConfiguration config);
+    MCNAPI explicit FrameAnomalyDetector(::std::function<bool()>&& isInGameFunc);
+
+    MCNAPI FrameAnomalyDetector(::FrameAnomalyDetectionConfiguration config, ::std::function<bool()>&& isInGameFunc);
 
     MCNAPI void checkForStutters(
         ::std::chrono::nanoseconds              frameDelta,
         ::std::chrono::nanoseconds              medianTiming,
         ::std::chrono::steady_clock::time_point now
     );
+
+    MCNAPI void initializeFlighting(::flighting::IFlightReader const& flightReader);
 
     MCNAPI void update(::std::chrono::nanoseconds frameDelta);
 #endif
@@ -74,14 +69,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::FrameAnomalyDetectionConfiguration config);
-#endif
-    // NOLINTEND
+    MCNAPI void* $ctor(::std::function<bool()>&& isInGameFunc);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::FrameAnomalyDetectionConfiguration config, ::std::function<bool()>&& isInGameFunc);
+#endif
     // NOLINTEND
 
 public:

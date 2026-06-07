@@ -18,17 +18,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpawnActorComponent& operator=(SpawnActorComponent const&);
-    SpawnActorComponent(SpawnActorComponent const&);
-    SpawnActorComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::SpawnActorComponent& operator=(::SpawnActorComponent&&);
+    MCFOLD ::std::vector<::SpawnActorEntry>& getSpawnEntries();
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND

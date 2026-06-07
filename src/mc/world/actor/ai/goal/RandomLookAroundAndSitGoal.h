@@ -6,6 +6,11 @@
 #include "mc/world/actor/ai/goal/RandomLookAroundGoal.h"
 #include "mc/world/level/Tick.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class RandomLookAroundAndSitGoal : public ::RandomLookAroundGoal {
 public:
     // member variables
@@ -18,6 +23,10 @@ public:
     ::ll::TypedStorage<4, 4, int>    mRandomLookAroundCooldown;
     ::ll::TypedStorage<8, 8, ::Tick> mNextAvailableSitTick;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RandomLookAroundAndSitGoal();
 
 public:
     // virtual functions
@@ -33,8 +42,44 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~RandomLookAroundAndSitGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RandomLookAroundAndSitGoal(
+        ::Mob& mob,
+        bool   continueSittingOnReload,
+        bool   continueIfLeashed,
+        int    minLookCount,
+        int    maxLookCount,
+        float  minAngleOfView,
+        float  maxAngleOfView,
+        int    minLookTime,
+        int    maxLookTime,
+        float  probability,
+        int    randomLookAroundCooldown
+    );
+
+    MCAPI bool _canUse();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob& mob,
+        bool   continueSittingOnReload,
+        bool   continueIfLeashed,
+        int    minLookCount,
+        int    maxLookCount,
+        float  minAngleOfView,
+        float  maxAngleOfView,
+        int    minLookTime,
+        int    maxLookTime,
+        float  probability,
+        int    randomLookAroundCooldown
+    );
     // NOLINTEND
 
 public:

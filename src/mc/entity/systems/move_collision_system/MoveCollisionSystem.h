@@ -13,13 +13,16 @@ class AABB;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class LocalSpatialEntityFetcher;
+class ReplayStateComponent;
 class StrictEntityContext;
 struct AABBShapeComponent;
+struct ActorMovementTickNeededComponent;
 struct CollidableMobFlagComponent;
 struct CollidableMobNearFlagComponent;
 struct FallingBlockFlagComponent;
 struct MaxAutoStepComponent;
 struct MoveRequestComponent;
+struct StateVectorComponent;
 struct TickingSystemWithInfo;
 namespace BlockSourceVisitor { struct CollisionShape; }
 // clang-format on
@@ -27,13 +30,16 @@ namespace BlockSourceVisitor { struct CollisionShape; }
 namespace MoveCollisionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void addCollisionShapes(
-    ::std::vector<::BlockSourceVisitor::CollisionShape> const& tempCollisionShapes,
-    ::AABB const&                                              terrainIntersectTestBox,
-    ::MoveRequestComponent&                                    request
-);
-
 MCAPI ::TickingSystemWithInfo createCollisionShapesCopySystem();
+
+MCAPI ::TickingSystemWithInfo createSystem();
+
+MCAPI void doComponentCopySystem(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>> stateVector,
+    ::StateVectorComponent const&                                    moveRequest,
+    ::MoveRequestComponent const&                                    replay,
+    ::ReplayStateComponent&
+);
 
 MCAPI void fetchCollisionShapes(
     ::StrictEntityContext const&                       entity,

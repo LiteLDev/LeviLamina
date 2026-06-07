@@ -7,6 +7,7 @@
 #include "mc/deps/core/threading/BackgroundTaskBase.h"
 #include "mc/deps/core/threading/ITaskExecutionContext.h"
 #include "mc/deps/core/threading/SPSCQueue.h"
+#include "mc/deps/profiler/ThreadFrameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,6 +40,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk13d7dc;
     ::ll::UntypedStorage<4, 8>   mUnka1b2fe;
     ::ll::UntypedStorage<8, 32>  mUnk3a56b0;
+    ::ll::UntypedStorage<1, 1>   mUnk4f46c0;
     ::ll::UntypedStorage<8, 16>  mUnkd929e4;
     ::ll::UntypedStorage<4, 4>   mUnka494ab;
     ::ll::UntypedStorage<4, 4>   mUnke7131f;
@@ -71,13 +73,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BackgroundWorker(
-        ::std::string                                 name,
+        ::std::string_view                            name,
+        ::Core::Profile::ThreadFrameType              frameType,
         bool                                          async,
         ::Bedrock::Threading::OSThreadPriority const& priority,
         ::std::optional<uint64>                       coreAffinity,
         ::std::optional<int>                          idealCore,
-        ::WorkerPool&                                 workerPool,
-        bool                                          suppressProfiling
+        ::WorkerPool&                                 workerPool
     );
 
     MCNAPI void _doNoWorkDelay();
@@ -86,9 +88,33 @@ public:
 
     MCNAPI ::BackgroundWorker::RunOneResult _runOneTask(::RunTaskOptions const& options);
 
+    MCNAPI ::std::shared_ptr<::BackgroundTaskBase> _tryPop(::WorkerPool& pool);
+
+    MCNAPI uint64 getApproximateTaskCount() const;
+
+    MCNAPI ::RunTaskOptions getRunOptions();
+
+    MCNAPI ::std::thread::id getThreadId() const;
+
+    MCNAPI bool isIdle() const;
+
+    MCNAPI bool processTaskSync(::RunTaskOptions const& options);
+
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
+    MCNAPI void requestStop(bool wait);
+
+    MCNAPI void resortPriorityQueue();
+
     MCNAPI void start();
+
+    MCNAPI void wake();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::BackgroundWorker* getLocal();
     // NOLINTEND
 
 public:
@@ -101,13 +127,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::std::string                                 name,
+        ::std::string_view                            name,
+        ::Core::Profile::ThreadFrameType              frameType,
         bool                                          async,
         ::Bedrock::Threading::OSThreadPriority const& priority,
         ::std::optional<uint64>                       coreAffinity,
         ::std::optional<int>                          idealCore,
-        ::WorkerPool&                                 workerPool,
-        bool                                          suppressProfiling
+        ::WorkerPool&                                 workerPool
     );
     // NOLINTEND
 

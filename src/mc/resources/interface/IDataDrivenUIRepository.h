@@ -33,11 +33,7 @@ class IDataDrivenUIRepository : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IDataDrivenUIRepository() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~IDataDrivenUIRepository() /*override*/;
-#endif
 
     virtual void load(::ResourcePackManager const& resourcePackManager) = 0;
 
@@ -85,12 +81,6 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription
     subscribeToOnCompositionsReloadedAsync(::std::function<void()>&& onCompositionsReloadedAsyncCallback) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

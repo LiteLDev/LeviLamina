@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/resources/persona/PersonaColorOption.h"
+#include "mc/world/actor/player/persona/BodySize.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
@@ -10,6 +12,9 @@
 class Pack;
 class TintMapColor;
 struct PackIdVersion;
+struct PersonaAnimationDefinition;
+namespace Json { class Value; }
+namespace mce { class UUID; }
 // clang-format on
 
 class PersonaPiece {
@@ -61,6 +66,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk676bf8;
     ::ll::UntypedStorage<8, 24> mUnk252c95;
     ::ll::UntypedStorage<8, 16> mUnkb05ae8;
+    ::ll::UntypedStorage<1, 1>  mUnk50d18c;
     // NOLINTEND
 
 #ifdef LL_PLAT_S
@@ -93,19 +99,75 @@ public:
         bool                   titleLocked
     );
 
+    MCNAPI void _initSideInfo();
+
+    MCNAPI bool allowsTintOverride() const;
+
+    MCNAPI bool canBeSidePiece() const;
+
+    MCNAPI ::PersonaAnimationDefinition const& getAnimation(int index) const;
+
+    MCNAPI ::persona::BodySize::Type const& getBodyVariant() const;
+
+    MCNAPI ::std::vector<::persona::PersonaColorOption> const& getColorSwatches() const;
+
+    MCNAPI ::Json::Value const& getGeometryFileJson() const;
+
+    MCNAPI ::std::string const& getGeometryFileName() const;
+
+    MCNAPI ::std::string getLocString(::std::string const& locKey) const;
+
+    MCNAPI ::Json::Value const& getMetaFileJson() const;
+
+    MCNAPI ::PackIdVersion const& getPackIdVersion() const;
+
+    MCNAPI ::std::string const& getPieceId() const;
+
+    MCNAPI ::mce::UUID const& getPieceIdAsUUID() const;
+
     MCNAPI ::std::string getPieceName() const;
+
+    MCNAPI ::persona::PieceType const& getPieceSubType() const;
+
+    MCNAPI ::persona::PieceType const& getPieceType() const;
+
+    MCNAPI ::std::string getPieceTypeAsString() const;
+
+    MCNAPI ::std::string const& getRelativeLocation() const;
+
+    MCNAPI ::std::shared_ptr<::Pack const> getSourcePack() const;
+
+    MCNAPI ::std::string const& getThumbnailPath() const;
 
     MCNAPI ::TintMapColor getTintBaseColor() const;
 
     MCNAPI bool getTintMapColor(::TintMapColor& tintColor) const;
 
+    MCNAPI bool hasLocStringData() const;
+
     MCNAPI void hipBoneParentRetarget();
 
     MCNAPI void initLocalizationDictionary();
 
+    MCNAPI bool isColorChangeAllowed() const;
+
+    MCNAPI bool isDefaultPiece() const;
+
+    MCNAPI bool isPieceTypeX(::persona::PieceType pieceType) const;
+
+    MCNAPI bool isPlatformLocked() const;
+
+    MCNAPI bool isTitleLocked() const;
+
     MCNAPI bool isValid() const;
 
     MCNAPI bool operator!=(::PersonaPiece const& asset) const;
+
+    MCNAPI bool operator==(::PersonaPiece const& asset) const;
+
+    MCNAPI void setPackIdVersion(::PackIdVersion const& packIdVersion);
+
+    MCNAPI void setPieceId(::mce::UUID const& pieceId);
 
     MCNAPI void setPieceNameAsLocKey(::std::string const& pieceName);
 #endif
@@ -117,6 +179,13 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI static ::PersonaPiece createPersonaPieceForClassicSkin(
+        ::std::string const&   pieceId,
+        ::PackIdVersion const& packIdVersion,
+        bool                   platformLocked,
+        bool                   titleLocked
+    );
+
     MCNAPI static ::PersonaPiece createPersonaPieceFromPiecePack(
         ::std::shared_ptr<::Pack>        sourcePack,
         ::PersonaPiece::FilePaths const& filePaths,
@@ -129,7 +198,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::string const& GEOMETRY_SOURCES_KEY();
+
     MCNAPI static ::PersonaPiece const& INVALID_PIECE();
+
+    MCNAPI static ::std::string const& TEXTURE_SOURCES_KEY();
     // NOLINTEND
 
 public:

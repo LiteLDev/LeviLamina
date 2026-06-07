@@ -19,22 +19,6 @@ public:
     ActiveDirectoryIdentityParameters& operator=(ActiveDirectoryIdentityParameters const&);
     ActiveDirectoryIdentityParameters(ActiveDirectoryIdentityParameters const&);
     ActiveDirectoryIdentityParameters();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~ActiveDirectoryIdentityParameters();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace Identity

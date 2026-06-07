@@ -45,6 +45,24 @@ public:
         uint                                          maxMips
     );
 
+    MCFOLD ::cg::TextureDescription const& getAtlasTextureDescription() const;
+
+    MCAPI ::cg::ImageBuffer& getImage(uint mipLevel);
+
+    MCFOLD ::cg::TextureDescription const& getImageDescription() const;
+
+    MCFOLD ::std::vector<::cg::ImageBuffer>& getImages();
+
+    MCFOLD uint getPadSize() const;
+
+    MCFOLD uint getReductionMips() const;
+
+    MCAPI ::cg::TextureAtlasTileUVs const& getUVsForTextureIndex(int textureIndex) const;
+
+    MCAPI uint64 getUsedMemory() const;
+
+    MCAPI bool isAtlasTextureValid() const;
+
     MCAPI void updateTextureAtUVs(
         ::cg::TextureAtlasTileUVs const& inUVs,
         ::cg::ImageBuffer const* const   srcImage,
@@ -64,6 +82,8 @@ public:
         float                            fadeMipAmount,
         ::mce::Color const&              fadeMipColor
     );
+
+    MCAPI ~TextureAtlas();
 #endif
     // NOLINTEND
 
@@ -88,6 +108,14 @@ public:
         uint&                                         outMaxWidth,
         uint&                                         outMaxHeight
     );
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 };

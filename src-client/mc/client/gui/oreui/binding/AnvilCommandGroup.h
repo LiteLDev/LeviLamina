@@ -29,12 +29,6 @@ public:
     AnvilCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AnvilCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AnvilCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);

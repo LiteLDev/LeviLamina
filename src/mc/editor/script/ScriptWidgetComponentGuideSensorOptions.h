@@ -14,12 +14,6 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetComponentGuideSensorOptions : public ::Editor::ScriptModule::ScriptWidgetComponentBaseOptions {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentGuideSensorOptions() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();

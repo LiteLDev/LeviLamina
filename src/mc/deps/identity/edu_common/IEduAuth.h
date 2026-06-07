@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/network/services/CachedAsync.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -63,13 +64,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Identity::EduAuthTokenPair getTokens() const;
-
-#ifdef LL_PLAT_S
-    MCNAPI bool hasValidMessToken() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Threading::CachedAsync<::std::optional<::std::string>> getEduToken() const;
 #endif
 
+    MCNAPI ::Identity::EduAuthTokenPair getTokens() const;
+
+    MCNAPI bool hasValidMessToken() const;
+
 #ifdef LL_PLAT_C
+    MCNAPI void resetEduToken();
+
+    MCNAPI void setEduToken(::std::string const& eduToken);
+
     MCNAPI void setTokens(::Identity::EduAuthTokenPair tokens);
 #endif
     // NOLINTEND

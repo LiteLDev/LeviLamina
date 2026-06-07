@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,16 +28,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OfferFlowerGoalDefinition& operator=(OfferFlowerGoalDefinition const&);
-    OfferFlowerGoalDefinition(OfferFlowerGoalDefinition const&);
-    OfferFlowerGoalDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OfferFlowerGoalDefinition(::SharedTypes::v1_26_10::OfferFlowerGoalDefinition&&);
-
     MCAPI ~OfferFlowerGoalDefinition();
     // NOLINTEND
 
@@ -44,20 +37,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCFOLD static ::SemVersion getStrictParsingVersion();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& DEFAULT_SEARCH_AREA();
-
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::OfferFlowerGoalDefinition&&);
     // NOLINTEND
 
 public:

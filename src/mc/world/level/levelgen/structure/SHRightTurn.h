@@ -27,8 +27,6 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     ) /*override*/;
-
-    virtual ~SHRightTurn() /*override*/ = default;
     // NOLINTEND
 
 public:

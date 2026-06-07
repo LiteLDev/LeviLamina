@@ -13,24 +13,15 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkc4d592;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    Stopwatch& operator=(Stopwatch const&);
-    Stopwatch(Stopwatch const&);
-    Stopwatch();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     Stopwatch& operator=(Stopwatch const&);
     Stopwatch(Stopwatch const&);
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Stopwatch();
+    virtual ~Stopwatch() = default;
 
     virtual double stop();
 
@@ -42,25 +33,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI Stopwatch();
 
+#ifdef LL_PLAT_C
+    MCNAPI double getLast();
+
+    MCNAPI bool isReset() const;
+#endif
+
+    MCNAPI void reset();
+
     MCNAPI void start();
+
+#ifdef LL_PLAT_C
+    MCNAPI double tick();
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -43,6 +43,8 @@ public:
         SettingsFeedbackPage               = 30,
         NewPlayerPathTutorialSurvey        = 31,
         RealmsFeedbackPage                 = 32,
+        InboxFeedbackBugs                  = 33,
+        InboxFeedbackIdeas                 = 34,
     };
 
     using LaunchUri = ::std::function<void(::std::string const&)>;
@@ -63,8 +65,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~WebBrowserFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,12 +75,8 @@ public:
     MCAPI void openLink(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle);
 
     MCAPI void openLinkWithParams(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle, ::std::string const& params);
-    // NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const* const& NAME();
+    MCAPI void openManageSubscriptionsStoreLink(::std::string const& storeId);
     // NOLINTEND
 
 public:

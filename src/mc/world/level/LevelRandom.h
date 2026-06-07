@@ -26,8 +26,18 @@ public:
     virtual ::Random& getRandom() /*override*/;
 
     virtual ::Random& getThreadRandom() /*override*/;
+    // NOLINTEND
 
-    virtual ~LevelRandom() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI LevelRandom();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

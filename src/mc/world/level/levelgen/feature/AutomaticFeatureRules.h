@@ -40,15 +40,21 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        AutomaticFeatureRule& operator=(AutomaticFeatureRule const&);
+        AutomaticFeatureRule(AutomaticFeatureRule const&);
+        AutomaticFeatureRule();
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~AutomaticFeatureRule();
+        MCAPI AutomaticFeatureRule(::AutomaticFeatureRules::AutomaticFeatureRule&&);
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI void* $ctor(::AutomaticFeatureRules::AutomaticFeatureRule&&);
         // NOLINTEND
     };
 

@@ -37,6 +37,7 @@ class SignalingServiceSignInJob;
 class TestConfig;
 struct ImguiProfiler;
 struct PropertiesSettings;
+struct TextProcessorInitParams;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Bedrock::Http { class DispatcherInterface; }
@@ -51,13 +52,14 @@ namespace Core { class FileSystem; }
 class DedicatedServer : public ::IMinecraftApp, public ::Bedrock::AppIsland {
 public:
     // DedicatedServer inner types define
-    enum class StartResult : int {
+    enum class ServerExitCode : int {
         Success                      = 0,
         PortOccupied                 = 1,
         InvalidSettings              = 2,
         MissingDependency            = 3,
         RuntimeError                 = 4,
         DocumentationGenerationError = 5,
+        ScriptWatchdogTermination    = 6,
     };
 
 public:
@@ -68,7 +70,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::ServerInstanceEventCoordinator>>
                                                                                      mServerInstanceEventCoordinator;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                    mWantsToQuit;
-    ::ll::TypedStorage<4, 4, ::std::atomic<::DedicatedServer::StartResult>>          mResult;
+    ::ll::TypedStorage<4, 4, ::std::atomic<::DedicatedServer::ServerExitCode>>       mResult;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConsoleInputReader>>                mConsoleInputReader;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IGameModuleShared>>                 mGameModule;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppConfigs>>                        mAppConfig;
@@ -115,7 +117,7 @@ public:
 
     virtual bool isDedicatedServer() const /*override*/;
 
-    virtual void onNetworkMaxPlayersChanged(uint newMaxPlayerCount) /*override*/;
+    virtual void onNetworkMaxPlayersChanged(uint) /*override*/;
 
     virtual ::IGameModuleShared& getGameModuleShared() /*override*/;
 
@@ -129,13 +131,15 @@ public:
     // NOLINTBEGIN
     MCAPI DedicatedServer();
 
-    MCAPI ::std::string const& getSiftServerIdentifier(::PropertiesSettings const& properties);
+    MCAPI ::TextProcessorInitParams createTextProcessorInitParams(::PropertiesSettings const& properties) const;
 
     MCAPI void initializeAppConfigs();
 
     MCAPI void initializeCodeBuilder();
 
     MCAPI void initializeHttp(::PropertiesSettings const& properties);
+
+    MCAPI void initializeImguiProfiler();
 
     MCAPI void initializeLogging(::TestConfig& testConfig);
 
@@ -147,7 +151,7 @@ public:
         ::PropertiesSettings const&                         properties
     );
 
-    MCAPI ::DedicatedServer::StartResult runDedicatedServerLoop(
+    MCAPI ::DedicatedServer::ServerExitCode runDedicatedServerLoop(
         ::Core::FilePathManager&                                     filePathManager,
         ::PropertiesSettings const&                                  properties,
         ::LevelSettings&                                             settings,
@@ -160,7 +164,7 @@ public:
 
     MCAPI void shutdownServices();
 
-    MCAPI ::DedicatedServer::StartResult
+    MCAPI ::DedicatedServer::ServerExitCode
     start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
     // NOLINTEND
 
@@ -191,7 +195,7 @@ public:
 
     MCFOLD bool $isDedicatedServer() const;
 
-    MCFOLD void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
+    MCFOLD void $onNetworkMaxPlayersChanged(uint);
 
     MCFOLD ::IGameModuleShared& $getGameModuleShared();
 

@@ -14,18 +14,32 @@ public:
 
 public:
     // prevent constructor by default
-    EditorRealmsWorld(EditorRealmsWorld const&);
+    EditorRealmsWorld& operator=(EditorRealmsWorld const&);
     EditorRealmsWorld();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Services::EditorRealmsWorld& operator=(::Editor::Services::EditorRealmsWorld&&);
+    MCNAPI EditorRealmsWorld(::Editor::Services::EditorRealmsWorld const&);
 
-    MCNAPI ::Editor::Services::EditorRealmsWorld& operator=(::Editor::Services::EditorRealmsWorld const&);
+#ifdef LL_PLAT_C
+    MCNAPI EditorRealmsWorld(::std::string const& worldId, ::std::string const& name);
+#endif
+
+    MCNAPI ::Editor::Services::EditorRealmsWorld& operator=(::Editor::Services::EditorRealmsWorld&&);
 
 #ifdef LL_PLAT_C
     MCNAPI ~EditorRealmsWorld();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Services::EditorRealmsWorld const&);
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string const& worldId, ::std::string const& name);
 #endif
     // NOLINTEND
 

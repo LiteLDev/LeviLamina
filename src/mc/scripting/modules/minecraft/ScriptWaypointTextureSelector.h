@@ -24,20 +24,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ServerWaypoint::TextureSelector getNative() const;
-
-    MCAPI ~ScriptWaypointTextureSelector();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

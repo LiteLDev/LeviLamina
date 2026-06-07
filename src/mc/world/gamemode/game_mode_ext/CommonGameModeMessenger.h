@@ -31,7 +31,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~CommonGameModeMessenger() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~CommonGameModeMessenger() /*override*/;
+#endif
 
     virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
         ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>
@@ -54,6 +58,30 @@ public:
     virtual void sendStopItemUseOn(::BlockPos const& pos) /*override*/;
 
     virtual void tryRotateTowardsAimAssist() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit CommonGameModeMessenger(::Player& player);
+
+    MCFOLD ::Player& _getPlayer();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Player& player);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

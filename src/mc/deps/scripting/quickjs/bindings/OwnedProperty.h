@@ -17,18 +17,6 @@ public:
     OwnedProperty& operator=(OwnedProperty const&);
     OwnedProperty(OwnedProperty const&);
     OwnedProperty();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~OwnedProperty();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

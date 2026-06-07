@@ -27,30 +27,4 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> startSound;
     ::ll::TypedStorage<8, 24, ::std::vector<::SendEventStage>>       stages;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SendEventData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SendEventData(::SendEventData const&);
-
-    MCAPI ::SendEventData& operator=(::SendEventData const&);
-
-    MCAPI ~SendEventData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SendEventData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

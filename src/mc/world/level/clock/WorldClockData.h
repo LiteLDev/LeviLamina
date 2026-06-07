@@ -20,16 +20,20 @@ public:
 
 public:
     // prevent constructor by default
-    WorldClockData(WorldClockData const&);
+    WorldClockData& operator=(WorldClockData const&);
     WorldClockData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::WorldClockData& operator=(::WorldClockData&&);
+    MCAPI WorldClockData(::WorldClockData const&);
 
-    MCAPI ::WorldClockData& operator=(::WorldClockData const&);
+    MCAPI bool operator==(::WorldClockData const& rhs) const;
+    // NOLINTEND
 
-    MCAPI bool operator==(::WorldClockData const&) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WorldClockData const&);
     // NOLINTEND
 };

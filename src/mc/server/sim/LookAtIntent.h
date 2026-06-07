@@ -28,35 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LookAtIntent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LookAtIntent(
-        ::std::variant<
-            ::sim::VoidLookAtIntent,
-            ::sim::LookAtPositionIntent,
-            ::sim::ContinuousLookAtPositionIntent,
-            ::sim::LookAtEntityIntent,
-            ::sim::ContinuousLookAtEntityIntent> type
-    );
-
     MCAPI ~LookAtIntent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::variant<
-            ::sim::VoidLookAtIntent,
-            ::sim::LookAtPositionIntent,
-            ::sim::ContinuousLookAtPositionIntent,
-            ::sim::LookAtEntityIntent,
-            ::sim::ContinuousLookAtEntityIntent> type
-    );
     // NOLINTEND
 
 public:

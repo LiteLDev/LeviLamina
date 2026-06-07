@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class RenderParams;
+namespace SharedTypes::Legacy { struct DefinitionTrigger; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,17 +24,18 @@ public:
 
 public:
     // prevent constructor by default
+    DefinitionTrigger& operator=(DefinitionTrigger const&);
     DefinitionTrigger(DefinitionTrigger const&);
     DefinitionTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DefinitionTrigger(::SharedTypes::Legacy::DefinitionTrigger trigger);
+
     MCAPI bool canTrigger(::RenderParams& params) const;
 
     MCAPI ::DefinitionTrigger& operator=(::DefinitionTrigger&&);
-
-    MCAPI ::DefinitionTrigger& operator=(::DefinitionTrigger const&);
 
     MCAPI ~DefinitionTrigger();
     // NOLINTEND
@@ -42,6 +44,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::Legacy::DefinitionTrigger trigger);
     // NOLINTEND
 
 public:

@@ -58,8 +58,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setViewCommand(::ScreenViewCommand const& callback) /*override*/;
-
-    virtual ~ChatSettingsScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

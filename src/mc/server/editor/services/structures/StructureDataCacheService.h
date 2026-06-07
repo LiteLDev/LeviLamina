@@ -12,6 +12,7 @@
 // clang-format off
 class StructureTemplate;
 namespace Editor { class EditorStructureTemplate; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class StructureDataCacheReleaseStructurePayload; }
 namespace Editor::Network { class StructureDataCacheRequestStructurePayload; }
 namespace Editor::StructureDataCache { class IStructureDataProvider; }
@@ -66,6 +67,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit StructureDataCacheService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI void _handleStructureDataCacheReleaseStructurePayload(
         ::Editor::Network::StructureDataCacheReleaseStructurePayload const& payload
     );
@@ -77,6 +80,12 @@ public:
     MCNAPI void _recordClientOwnership(::mce::UUID const& structureId, ::mce::UUID const& clientId);
 
     MCNAPI void _recordClientOwnershipRelease(::mce::UUID const& structureId, ::mce::UUID const& clientId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

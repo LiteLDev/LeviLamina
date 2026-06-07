@@ -40,6 +40,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addItem(::std::string const& item, ::OreUI::AtlasIndex::ItemEntry const& entry);
+
+    MCFOLD ::std::_Tree_iterator<
+        ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::OreUI::AtlasIndex::ItemEntry>>>>
+    begin();
+
+    MCFOLD bool empty() const;
+
+    MCFOLD ::std::_Tree_iterator<
+        ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::OreUI::AtlasIndex::ItemEntry>>>>
+    end();
+
     MCAPI ::std::optional<::OreUI::AtlasIndex::ItemEntry const> findItem(::std::string_view item) const;
     // NOLINTEND
 };

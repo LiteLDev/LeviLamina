@@ -38,20 +38,18 @@ public:
     // NOLINTBEGIN
     virtual bool
     shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData) /*override*/;
-
-    virtual ~ScriptActorHurtAfterEventFilter() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHurtAfterEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter&&);
-
     MCAPI
     ScriptActorHurtAfterEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter const&);
 
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter const&);
+
+    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilterData const& data);
     // NOLINTEND
 
 public:
@@ -63,15 +61,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

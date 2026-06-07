@@ -23,26 +23,12 @@ public:
     ScriptWidgetComponentGizmoStateChangeEventParameters&
     operator=(ScriptWidgetComponentGizmoStateChangeEventParameters const&);
     ScriptWidgetComponentGizmoStateChangeEventParameters(ScriptWidgetComponentGizmoStateChangeEventParameters const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentGizmoStateChangeEventParameters();
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGizmoStateChangeEventParameters&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentGizmoStateChangeEventParameters&&);
-    // NOLINTEND
+    ScriptWidgetComponentGizmoStateChangeEventParameters();
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

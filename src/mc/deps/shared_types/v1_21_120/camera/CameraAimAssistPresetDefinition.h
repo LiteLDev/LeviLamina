@@ -28,10 +28,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CameraAimAssistPresetDefinition();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistPresetDefinition();
-
     MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&&);
 
     MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&);
@@ -42,7 +44,7 @@ public:
     MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&) const;
+    MCAPI bool operator==(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const& rhs) const;
 
     MCAPI ~CameraAimAssistPresetDefinition();
     // NOLINTEND
@@ -56,8 +58,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&);

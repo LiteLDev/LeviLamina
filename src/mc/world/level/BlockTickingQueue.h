@@ -16,9 +16,11 @@ class BlockPalette;
 class BlockPos;
 class BlockSource;
 class BlockType;
+class BoundingBox;
 class CompoundTag;
 class LevelChunk;
 class ListTag;
+struct TickDelayBlock;
 // clang-format on
 
 class BlockTickingQueue {
@@ -48,14 +50,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI void _pruneQueueForMemory();
-
-        MCAPI ~TickDataSet();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -82,10 +76,15 @@ public:
 
     MCAPI void _saveQueue(::ListTag& list, ::BlockTickingQueue::TickDataSet const& queue) const;
 
+    MCAPI void acquireAllRandomTicks(::LevelChunk& lc);
+
+    MCAPI void acquireAllTicks(::LevelChunk& lc);
+
+    MCAPI void acquireAllTicks(::BlockTickingQueue& otherQueue);
+
     MCAPI void
     add(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
 
-#ifdef LL_PLAT_C
     MCAPI void addTickToLevelChunk(
         ::LevelChunk&     lc,
         ::BlockPos const& pos,
@@ -93,13 +92,25 @@ public:
         int               tickDelay,
         int               priorityOffset
     );
-#endif
+
+    MCAPI void eliminateAllTicksZeroAndAbove();
 
     MCAPI void eliminateDuplicatesOf(::BlockType const& block);
 
     MCAPI void finishInstaticking();
 
     MCAPI bool getNextUpdateForPos(::BlockPos const& pos, ::Tick& tick) const;
+
+    MCAPI ::std::optional<::Tick> getTickDelayForNextTickUpdateAtPos(::BlockPos const& pos) const;
+
+    MCAPI ::std::unordered_multimap<::BlockPos, ::TickDelayBlock>
+    getTickDelaysInArea(::BoundingBox const& boundingBox) const;
+
+    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos) const;
+
+    MCAPI bool isEmpty() const;
+
+    MCAPI bool isInNextTickQueue(::BlockPos const& pos, ::BlockType const& blockType, int tickDelay) const;
 
     MCAPI void load(::CompoundTag const& tag, ::BlockPalette const& palette);
 
@@ -109,7 +120,13 @@ public:
 
     MCAPI void save(::CompoundTag& tag) const;
 
+    MCFOLD void setOwningChunk(::LevelChunk* owningChunk);
+
+    MCAPI void tickAllPendingTicks(::BlockSource& region, uint64 maximumTicksAllowed);
+
     MCAPI bool tickPendingTicks(::BlockSource& region, ::Tick const& until, int max, bool instaTick_);
+
+    MCAPI int ticksFromNow(int offset) const;
 
     MCAPI ~BlockTickingQueue();
     // NOLINTEND
@@ -117,6 +134,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

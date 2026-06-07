@@ -105,6 +105,8 @@ public:
     // NOLINTBEGIN
     MCAPI StructureVolumeRenderer();
 
+    MCAPI float _getAndResetFloatValue(::UIPropertyBag& bag, ::std::string const& key) const;
+
     MCAPI ::BlockPos _getBlockPosition(::UIPropertyBag const& bag) const;
 
     MCAPI ::RenderChunkInstanced& _getRenderChunkInstanced(::BlockPos const& chunkPos);
@@ -125,24 +127,17 @@ public:
         ::BlockSource&              region,
         ::IClientInstance&          client,
         ::UIControl&                owner,
-        int,
+        int                         captureDescription,
         ::std::variant<
             ::std::monostate,
             ::UIActorOffscreenCaptureDescription,
             ::UIThumbnailMeshOffscreenCaptureDescription,
             ::UIMeshOffscreenCaptureDescription,
-            ::UIStructureVolumeOffscreenCaptureDescription> const&                               captureDescription,
-        ::std::optional<::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo> requestInfo
+            ::UIStructureVolumeOffscreenCaptureDescription> const& requestInfo,
+        ::std::optional<::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo>
     );
 
     MCAPI void _renderAxisHelpers(::ScreenContext& screenContext, ::UIControl const& owner) const;
-
-    MCAPI bool _renderBlockEntities(
-        ::BaseActorRenderContext& renderContext,
-        ::BlockSource&            region,
-        ::AABB const&             area,
-        bool                      renderAlphaLayer
-    ) const;
 
     MCAPI bool _renderBlocks(::BaseActorRenderContext& renderContext, ::BlockSource& region, ::AABB const& area);
 
@@ -171,6 +166,19 @@ public:
     );
 
     MCAPI void _updatePreviewRotation(::UIControl& owner, float dt);
+
+    MCAPI void offscreenThumbnailCapture(
+        ::MinecraftUIRenderContext& renderContext,
+        ::BlockSource&              region,
+        ::IClientInstance&          client,
+        ::std::variant<
+            ::std::monostate,
+            ::UIActorOffscreenCaptureDescription,
+            ::UIThumbnailMeshOffscreenCaptureDescription,
+            ::UIMeshOffscreenCaptureDescription,
+            ::UIStructureVolumeOffscreenCaptureDescription> const&              captureDescription,
+        ::mce::StructureVolumeOffscreenUtils::StructureVolumeCaptureRequestInfo requestInfo
+    );
     // NOLINTEND
 
 public:
@@ -219,7 +227,7 @@ public:
         ::Actor*                       blockChangeSource
     );
 
-    MCAPI void $onAppResumed();
+    MCFOLD void $onAppResumed();
 
     MCAPI void $onAppSuspended();
     // NOLINTEND

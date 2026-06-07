@@ -30,7 +30,7 @@ public:
 
     // FoodItemComponentLegacy inner types define
     enum class OnUseAction : int {
-        None                 = -1,
+        None                 = 4294967295,
         ChorusTeleport       = 0,
         SuspiciousStewEffect = 1,
     };
@@ -48,9 +48,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Effect& operator=(Effect const&);
+        Effect();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI Effect(::FoodItemComponentLegacy::Effect const&);
+
         MCAPI ~Effect();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::FoodItemComponentLegacy::Effect const&);
         // NOLINTEND
 
     public:
@@ -96,20 +109,20 @@ public:
     virtual void use(bool& result, ::ItemStack& instance, ::Player& player) /*override*/;
 
     virtual ::Item const* useTimeDepleted(
-        ::ItemUseMethod& itemUseMethod,
-        ::ItemStack const&,
-        ::ItemStack& instance,
-        ::Player&    player,
-        ::Level&     level
+        ::ItemUseMethod&   itemUseMethod,
+        ::ItemStack const& instance,
+        ::ItemStack&       player,
+        ::Player&          level,
+        ::Level&
     ) /*override*/;
-
-    virtual ~FoodItemComponentLegacy() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
+    MCAPI explicit FoodItemComponentLegacy(::Item& owner);
+
+    MCAPI void _applyEatEffects(::ItemStack const& actor, ::Actor& level, ::Level&);
 
     MCAPI void _loadEffects(::Json::Value const& effectsData);
 
@@ -127,9 +140,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Item& owner);
     // NOLINTEND
 
 public:
@@ -139,18 +152,18 @@ public:
 
     MCFOLD float $getSaturationModifier() const;
 
-    MCAPI bool $canAlwaysEat() const;
+    MCFOLD bool $canAlwaysEat() const;
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
     MCAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
 
     MCAPI ::Item const* $useTimeDepleted(
-        ::ItemUseMethod& itemUseMethod,
-        ::ItemStack const&,
-        ::ItemStack& instance,
-        ::Player&    player,
-        ::Level&     level
+        ::ItemUseMethod&   itemUseMethod,
+        ::ItemStack const& instance,
+        ::ItemStack&       player,
+        ::Player&          level,
+        ::Level&
     );
 
 

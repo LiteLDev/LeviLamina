@@ -14,18 +14,6 @@ namespace mce { struct ClientTexture; }
 namespace mcr {
 
 struct DynamicTextureResourceManager
-: public ::cg::ResourceManager<::std::shared_ptr<::mce::ClientTexture>, ::mce::DynamicTexture, ::std::map> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DynamicTextureResourceManager();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-};
+: public ::cg::ResourceManager<::std::shared_ptr<::mce::ClientTexture>, ::mce::DynamicTexture, ::std::map> {};
 
 } // namespace mcr

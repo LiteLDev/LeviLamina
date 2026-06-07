@@ -189,9 +189,9 @@ public:
 
     virtual void SetFecControllerOverride(::webrtc::FecControllerOverride*);
 
-    virtual int InitEncode(::webrtc::VideoCodec const*, int, uint64);
-
     virtual int InitEncode(::webrtc::VideoCodec const*, ::webrtc::VideoEncoder::Settings const&);
+
+    virtual int InitEncode(::webrtc::VideoCodec const*, int, uint64);
 
     virtual int RegisterEncodeCompleteCallback(::webrtc::EncodedImageCallback*) = 0;
 

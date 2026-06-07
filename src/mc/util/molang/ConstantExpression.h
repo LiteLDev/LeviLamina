@@ -69,8 +69,18 @@ public:
     virtual ::std::optional<::MolangScriptArg> getValueIfConstant() const /*override*/;
 
     virtual ::Molang::details::SourceTree* getSource() /*override*/;
+    // NOLINTEND
 
-    virtual ~ConstantExpression() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ConstantExpression(::MolangScriptArg const& value);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::MolangScriptArg const& value);
     // NOLINTEND
 
 public:

@@ -26,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleCurveSimpleBase& operator=(ParticleCurveSimpleBase const&);
     ParticleCurveSimpleBase();
 
 public:
@@ -34,24 +35,12 @@ public:
     virtual uint64 _getMinCurveNodesAllowed();
 
     virtual uint64 _getMaxCurveNodesAllowed();
-
-    virtual ~ParticleCurveSimpleBase() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleCurveSimpleBase(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&);
-
     MCAPI ParticleCurveSimpleBase(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
-
-    MCAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&);
-
-    MCAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
-
-    MCAPI void validateNodeListSize();
     // NOLINTEND
 
 public:
@@ -63,15 +52,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

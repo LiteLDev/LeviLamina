@@ -9,6 +9,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -28,15 +29,15 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorHitEntityAfterEvent& operator=(ScriptActorHitEntityAfterEvent const&);
     ScriptActorHitEntityAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHitEntityAfterEvent(::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent const&);
-
-    MCAPI ~ScriptActorHitEntityAfterEvent();
+    MCAPI ScriptActorHitEntityAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                             scope
+    );
     // NOLINTEND
 
 public:
@@ -48,13 +49,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                             scope
+    );
     // NOLINTEND
 };
 

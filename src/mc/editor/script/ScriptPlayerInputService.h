@@ -11,6 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor::Input { struct BindingInfo; }
+namespace Editor::Services { class ServerPlayerInputServiceProvider; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -34,6 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptPlayerInputService(
+        ::Editor::Services::ServerPlayerInputServiceProvider* playerInputService,
+        ::Scripting::WeakLifetimeScope const&                 scope
+    );
+
     MCNAPI ::Scripting::Result_deprecated<void> focusViewport();
 
     MCNAPI ::std::optional<int>
@@ -70,6 +77,15 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Editor::Services::ServerPlayerInputServiceProvider* playerInputService,
+        ::Scripting::WeakLifetimeScope const&                 scope
+    );
     // NOLINTEND
 };
 

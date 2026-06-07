@@ -22,8 +22,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PhotoItemSavedDataCollection();
+
 #ifdef LL_PLAT_C
+    MCAPI ::PhotoItemSavedData*
+    _loadPhotoData(::ActorUniqueID const& id, ::ActorUniqueID const& owner, ::std::string const& name);
+
     MCAPI ::PhotoItemSavedData* getPhotoSavedData(::CompoundTag const& instance);
 #endif
+
+    MCAPI ~PhotoItemSavedDataCollection();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

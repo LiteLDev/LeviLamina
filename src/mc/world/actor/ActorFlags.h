@@ -130,5 +130,8 @@ enum class ActorFlags : int {
     BodyRotationAlwaysFollowsHead = 124,
     CanUseVerticalMovementAction  = 125,
     RotationLockedToVehicle       = 126,
-    Count                         = 127,
+    UsesLegacyFriction            = 127,
+    UsesUniformAirDrag            = 128,
+    NameplateDepthTested          = 129,
+    Count                         = 130,
 };

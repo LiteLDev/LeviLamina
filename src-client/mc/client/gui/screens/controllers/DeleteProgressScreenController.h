@@ -41,8 +41,6 @@ public:
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
     virtual ::std::string _getButtonADescription() /*override*/;
-
-    virtual ~DeleteProgressScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,6 +53,10 @@ public:
     );
 
     MCAPI ::std::string const _getProgressMessage() const;
+
+    MCAPI ::std::string const _getTitle() const;
+
+    MCAPI void _registerProgressBindings();
     // NOLINTEND
 
 public:

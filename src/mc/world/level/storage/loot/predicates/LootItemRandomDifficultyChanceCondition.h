@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/DenseEnumMap.h"
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
 
 // auto generated forward declare list
@@ -31,14 +33,26 @@ public:
     virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~LootItemRandomDifficultyChanceCondition() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit LootItemRandomDifficultyChanceCondition(::Json::Value const& object);
+
+    MCNAPI ::Bedrock::DenseEnumMap<::SharedTypes::Legacy::Difficulty, float, 4> const& getChances() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Json::Value const& object);
     // NOLINTEND
 
 public:

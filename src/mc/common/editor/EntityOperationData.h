@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 namespace Editor::Transactions {
 
 struct EntityOperationData {
@@ -18,6 +23,18 @@ public:
     EntityOperationData& operator=(EntityOperationData const&);
     EntityOperationData(EntityOperationData const&);
     EntityOperationData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit EntityOperationData(::Actor* entity);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Actor* entity);
+    // NOLINTEND
 };
 
 } // namespace Editor::Transactions

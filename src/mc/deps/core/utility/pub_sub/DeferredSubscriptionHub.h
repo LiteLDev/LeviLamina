@@ -50,15 +50,15 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // static functions
     // NOLINTBEGIN
-
+    MCNAPI static ::std::unique_ptr<::Bedrock::PubSub::DeferredSubscriptionHub> makePriorityHub();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

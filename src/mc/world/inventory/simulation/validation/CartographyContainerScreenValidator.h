@@ -23,10 +23,8 @@ public:
         ::ContainerScreenContext const&                     screenContext,
         ::ContainerScreenValidation&                        screenValidation,
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
-        uchar const                                         numCrafts
+        uchar const
     ) /*override*/;
-
-    virtual ~CartographyContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -38,7 +36,7 @@ public:
         ::ContainerScreenContext const&                     screenContext,
         ::ContainerScreenValidation&                        screenValidation,
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
-        uchar const                                         numCrafts
+        uchar const
     );
 
 

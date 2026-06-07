@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +11,7 @@ class Mob;
 class Vec3;
 // clang-format on
 
-class RollGoal : public ::Goal {
+class RollGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,16 +43,22 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~RollGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RollGoal(::Mob& mob, float probability);
+
     MCAPI bool _checkForDamagingBlocks() const;
 
     MCAPI void _handleRoll(int rollCounter, ::Vec3& positionDelta, float& rollX, float& rollZ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float probability);
     // NOLINTEND
 
 public:

@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InventoryContentPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -42,13 +38,15 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~InventoryContentPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI InventoryContentPacket();
+
+    MCAPI InventoryContentPacket(::ContainerID id, ::std::vector<::ItemStack> const& items);
+
     MCAPI InventoryContentPacket(
         ::ContainerID                     id,
         ::std::vector<::ItemStack> const& items,
@@ -66,18 +64,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ContainerID id, ::std::vector<::ItemStack> const& items);
+
     MCAPI void* $ctor(
         ::ContainerID                     id,
         ::std::vector<::ItemStack> const& items,
         ::FullContainerName const&        fullContainerName,
         ::ItemStack const&                storageItem
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -29,8 +29,6 @@ public:
     virtual bool isProtectionEnchant() const /*override*/;
 
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
-
-    virtual ~ProtectionEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

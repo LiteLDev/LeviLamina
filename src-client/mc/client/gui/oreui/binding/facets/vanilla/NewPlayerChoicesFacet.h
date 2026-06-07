@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class NewPlayerSystem;
-class SkinRepositoryClientInterface;
+class PersonaClient;
 // clang-format on
 
 namespace OreUI {
@@ -48,8 +48,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::NewPlayerChoicesFacet::SelectableCharacter>> mSelectableCharacters;
     ::ll::TypedStorage<1, 1, bool>                                                                mIsDirty;
-    ::ll::TypedStorage<8, 8, ::SkinRepositoryClientInterface&>                        mSkinRepositoryClientInterface;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> const> mNewPlayerSystem;
+    ::ll::TypedStorage<8, 8, ::PersonaClient&>                                                    mPersonaClient;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> const>             mNewPlayerSystem;
     // NOLINTEND
 
 public:
@@ -62,13 +62,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~NewPlayerChoicesFacet() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NewPlayerChoicesFacet(
+        ::PersonaClient&                                        personaClient,
+        ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> const& newPlayerSystem
+    );
+
     MCAPI void _populateCharacterSkinData();
 
     MCAPI void applySelectedCharacterSkin() const;
@@ -87,9 +90,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void*
+    $ctor(::PersonaClient& personaClient, ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> const& newPlayerSystem);
     // NOLINTEND
 
 public:

@@ -4,28 +4,29 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class IFileAccess;
+namespace Gameface { class ResourceResponse; }
+namespace Gameface { class ResourceStreamResponse; }
+namespace Gameface { class TemporaryTextureHolder; }
+namespace Gameface { struct ResourceRequest; }
 namespace OreUI { class ResourceAllowList; }
-namespace OreUI { class ResourceResponse; }
-namespace OreUI { class ResourceStreamResponse; }
-namespace OreUI { class TemporaryTextureHolder; }
-namespace OreUI { struct ResourceRequest; }
 // clang-format on
 
 namespace OreUI {
 
-class RegisteredResourceHandler : public ::OreUI::IResourceHandler {
+class RegisteredResourceHandler : public ::Gameface::IResourceHandler {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IFileAccess>>                    mRawFileAccess;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IFileAccess>>                    mAppPackageFileAccess;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::OreUI::ResourceAllowList> const> mResourceAllowList;
-    ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&>                              mTemporaryTextureHolder;
+    ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&>                           mTemporaryTextureHolder;
     // NOLINTEND
 
 public:
@@ -39,21 +40,37 @@ public:
     // NOLINTBEGIN
     virtual ~RegisteredResourceHandler() /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status onResourceStreamRequest(
-        ::OreUI::ResourceRequest const&  request,
-        ::OreUI::ResourceStreamResponse& response
+    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
+        ::Gameface::ResourceRequest const&  request,
+        ::Gameface::ResourceStreamResponse& response
     ) /*override*/;
 
     virtual void update() /*override*/;
     // NOLINTEND
 
 public:
-    // static variables
+    // member functions
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> PROTOCOL();
+    MCAPI RegisteredResourceHandler(
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              rawFileAccess,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              appPackageFileAccess,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
+        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              rawFileAccess,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&              appPackageFileAccess,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
+        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder
+    );
     // NOLINTEND
 
 public:
@@ -65,11 +82,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse& response);
 
     MCFOLD void $update();
     // NOLINTEND

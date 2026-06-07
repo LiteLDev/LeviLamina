@@ -35,18 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit WorkerPoolHandleImpl(::Bedrock::NotNullNonOwnerPtr<::WorkerPool> workerPool);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::WorkerPool> workerPool);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> $get() const;

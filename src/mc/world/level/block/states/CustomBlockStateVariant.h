@@ -30,8 +30,6 @@ public:
     virtual void toNBT(::CompoundTag& tag, int val) const /*override*/;
 
     virtual bool fromNBT(::CompoundTag const& tag, int& outValue) const /*override*/;
-
-    virtual ~CustomBlockStateVariant() /*override*/ = default;
     // NOLINTEND
 
 public:

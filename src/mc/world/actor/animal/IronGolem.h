@@ -11,7 +11,11 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+struct HurtEffectsSettings;
 // clang-format on
 
 class IronGolem : public ::Mob {
@@ -25,6 +29,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    IronGolem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ActorHurtResult
@@ -36,9 +44,28 @@ public:
 
     virtual float getShadowRadius() const /*override*/;
 
-    virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual void
+    hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings) /*override*/;
+    // NOLINTEND
 
-    virtual ~IronGolem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI IronGolem(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -52,7 +79,7 @@ public:
 
     MCFOLD float $getShadowRadius() const;
 
-    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 
 
     // NOLINTEND

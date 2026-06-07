@@ -31,6 +31,10 @@ public:
 
     virtual bool isCollectingMetrics() const = 0;
 
+    virtual void clearMetrics() = 0;
+
+    virtual void setCollectingMetrics(bool collecting) = 0;
+
     virtual ::Editor::Network::PayloadMetrics* _registerPayload(
         char const*                                                              payloadName,
         ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc

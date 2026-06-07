@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class CommandOrigin;
+class CommandPositionFloat;
 class Vec2;
 class Vec3;
 namespace RotationCommandUtils { class RotationData; }
@@ -20,6 +22,11 @@ MCNAPI ::Vec2 ComputeRotation(
     ::std::optional<::RotationCommandUtils::RotationData> const& rotationData,
     int                                                          commandVersion
 );
+
+MCNAPI ::Vec3 getFacingDirectionFacingEntity(::Actor const& faceEntity);
+
+MCNAPI ::Vec3
+getFacingDirectionFacingPosition(int version, ::CommandOrigin const& origin, ::CommandPositionFloat facingPos);
 // NOLINTEND
 
 } // namespace RotationCommandUtils

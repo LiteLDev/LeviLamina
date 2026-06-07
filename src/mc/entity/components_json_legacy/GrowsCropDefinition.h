@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class GrowsCropComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -19,10 +21,24 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GrowsCropDefinition();
+
+    MCAPI void initialize(::EntityContext&, ::GrowsCropComponent& component) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GrowsCropDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockSource;
 class BoundingBox;
 class Random;
@@ -33,13 +32,13 @@ public:
         int const            z,
         ::BoundingBox const& chunkBB
     ) /*override*/;
-
-    virtual ~MineshaftPiece() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _isSupportingBox(int x0, int x1, ::BlockSource& region, int y1, int z);
+
     MCAPI ::std::unique_ptr<::StructurePiece> createRandomShaftPiece(
         ::MineshaftData&                                    metadata,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
@@ -61,14 +60,6 @@ public:
         int                                                 direction,
         int                                                 depth
     );
-
-    MCAPI void setPlanksBlock(::BlockSource& region, ::Block const& planksBlock, int x, int y, int z);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -80,11 +71,5 @@ public:
     $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

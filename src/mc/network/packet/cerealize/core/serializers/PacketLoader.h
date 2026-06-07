@@ -6,6 +6,12 @@
 #include "mc/deps/cereal/BasicLoader.h"
 #include "mc/network/packet/cerealize/core/serializers/PacketSchemaReader.h"
 
+// auto generated forward declare list
+// clang-format off
+class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class PacketLoader : public ::cereal::BasicLoader {
 public:
     // member variables
@@ -14,15 +20,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    PacketLoader();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~PacketLoader() /*override*/;
+    MCAPI PacketLoader(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

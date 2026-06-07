@@ -78,14 +78,14 @@ public:
 
     virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> CreatePeerConnection(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
-        ::webrtc::PeerConnectionDependencies                       dependencies
+        ::std::unique_ptr<::cricket::PortAllocator>                allocator,
+        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface> cert_generator,
+        ::webrtc::PeerConnectionObserver*                          observer
     );
 
     virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> CreatePeerConnection(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
-        ::std::unique_ptr<::cricket::PortAllocator>                allocator,
-        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface> cert_generator,
-        ::webrtc::PeerConnectionObserver*                          observer
+        ::webrtc::PeerConnectionDependencies                       dependencies
     );
 
     virtual ::webrtc::RtpCapabilities GetRtpSenderCapabilities(::cricket::MediaType kind) const;
@@ -99,10 +99,10 @@ public:
     CreateAudioSource(::cricket::AudioOptions const& options) = 0;
 
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
-    CreateVideoTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source, ::std::string_view id) = 0;
+    CreateVideoTrack(::std::string const& label, ::webrtc::VideoTrackSourceInterface* source);
 
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
-    CreateVideoTrack(::std::string const& label, ::webrtc::VideoTrackSourceInterface* source);
+    CreateVideoTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source, ::std::string_view id) = 0;
 
     virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
     CreateAudioTrack(::std::string const& id, ::webrtc::AudioSourceInterface* source) = 0;
@@ -125,14 +125,14 @@ public:
     // NOLINTBEGIN
     MCNAPI ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> $CreatePeerConnection(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
-        ::webrtc::PeerConnectionDependencies                       dependencies
+        ::std::unique_ptr<::cricket::PortAllocator>                allocator,
+        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface> cert_generator,
+        ::webrtc::PeerConnectionObserver*                          observer
     );
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> $CreatePeerConnection(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
-        ::std::unique_ptr<::cricket::PortAllocator>                allocator,
-        ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface> cert_generator,
-        ::webrtc::PeerConnectionObserver*                          observer
+        ::webrtc::PeerConnectionDependencies                       dependencies
     );
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>

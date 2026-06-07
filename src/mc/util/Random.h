@@ -49,26 +49,8 @@ public:
 
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
-    MCAPI float nextFloat(float min, float max);
-
 #ifdef LL_PLAT_C
     MCAPI float nextGaussianFloat();
-#endif
-
-    MCAPI int nextInt(int min, int max);
-
-#ifdef LL_PLAT_C
-    MCAPI ::glm::vec3 nextVec3(float f);
-#endif
-
-    MCAPI void setSeed(uint seed);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::Random& getThreadLocal();
 #endif
     // NOLINTEND
 

@@ -15,13 +15,16 @@ class SemVersion;
 class Vec2;
 class Vec3;
 class Vec4;
+namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace JsonUtil { class EmptyClass; }
+namespace JsonUtil { class JsonSchemaNodeBase; }
 namespace SharedTypes::v1_21_100 { struct ChargeAttackGoalDefinition; }
 namespace SharedTypes::v1_21_100 { struct CircleAroundAnchorGoalDefinition; }
 namespace SharedTypes::v1_21_100 { struct ControlledByPlayerGoalDefinition; }
 namespace SharedTypes::v1_21_100 { struct DragonFlamingGoalDefinition; }
 namespace SharedTypes::v1_21_100 { struct EatMobGoalDefinition; }
+namespace SharedTypes::v1_21_110 { struct ExperienceRewardComponentDefinition; }
 namespace SharedTypes::v1_21_110 { struct RoarGoalDefinition; }
 namespace SharedTypes::v1_21_110 { struct SlimeAttackGoalDefinition; }
 namespace SharedTypes::v1_21_110 { struct SlimeFloatGoalDefinition; }
@@ -38,6 +41,8 @@ namespace SharedTypes::v1_21_120 { struct AvoidBlockGoalDefinition; }
 namespace SharedTypes::v1_21_120 { struct AvoidMobTypeGoalDefinition; }
 namespace SharedTypes::v1_21_120 { struct DigGoalDefinition; }
 namespace SharedTypes::v1_21_120 { struct DrinkMilkGoalDefinition; }
+namespace SharedTypes::v1_21_130 { struct AddRiderComponentDefinition; }
+namespace SharedTypes::v1_21_130 { struct BurnsInDaylightComponentDefinition; }
 namespace SharedTypes::v1_21_130 { struct ExploreOutskirtsGoalDefinition; }
 namespace SharedTypes::v1_21_130 { struct InvestigateSuspiciousLocationGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct DefendVillageTargetGoalDefinition; }
@@ -45,11 +50,15 @@ namespace SharedTypes::v1_26_0 { struct DelayedAttackGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct DragonChargePlayerGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct DragonStrafePlayerGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct GuardianAttackGoalDefinition; }
+namespace SharedTypes::v1_26_0 { struct MeleeAttackGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct MeleeBoxAttackGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct MoveTowardsDwellingRestrictionGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct MoveTowardsHomeRestrictionGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct NearestAttackableTargetGoalDefinition; }
 namespace SharedTypes::v1_26_0 { struct StompAttackGoalDefinition; }
+namespace SharedTypes::v1_26_0 { struct TimerActorFlag1GoalDefinition; }
+namespace SharedTypes::v1_26_0 { struct TimerActorFlag2GoalDefinition; }
+namespace SharedTypes::v1_26_0 { struct TimerActorFlag3GoalDefinition; }
 namespace SharedTypes::v1_26_10 { struct DropItemForGoalDefinition; }
 namespace SharedTypes::v1_26_10 { struct FertilizeFarmBlockGoalDefinition; }
 namespace SharedTypes::v1_26_10 { struct HarvestFarmBlockGoalDefinition; }
@@ -66,6 +75,26 @@ namespace SharedTypes::v1_26_10 { struct TeleportToOwnerGoalDefinition; }
 namespace SharedTypes::v1_26_10 { struct TradeWithPlayerGoalDefinition; }
 namespace SharedTypes::v1_26_10 { struct VillagerCelebrationGoalDefinition; }
 namespace SharedTypes::v1_26_10 { struct WorkComposterGoalDefinition; }
+namespace SharedTypes::v1_26_10 { struct WorkGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct BlockClimberComponentDefinition; }
+namespace SharedTypes::v1_26_20 { struct CanJoinRaidComponentDefinition; }
+namespace SharedTypes::v1_26_20 { struct DimensionBoundComponentDefinition; }
+namespace SharedTypes::v1_26_20 { struct EquipItemGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct GoAndGiveItemsToNoteblockGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct GoAndGiveItemsToOwnerGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct GoHomeGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct HopperComponentDefinition; }
+namespace SharedTypes::v1_26_20 { struct JumpAroundTargetGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct JumpToBlockGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct MoveAroundTargetGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct MoveIndoorsGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct MoveOutdoorsGoalDefinition; }
+namespace SharedTypes::v1_26_20 { struct OutOfControlComponentDefinition; }
+namespace SharedTypes::v1_26_20 { struct PushableByEntityDefinition; }
+namespace SharedTypes::v1_26_20 { struct SuspectTrackingComponentDefinition; }
+namespace SharedTypes::v1_26_20 { struct TransientComponentDefinition; }
+namespace SharedTypes::v1_26_20 { struct VibrationDamperComponentDefinition; }
+namespace SharedTypes::v1_26_20 { struct VibrationListenerComponentDefinition; }
 // clang-format on
 
 namespace JsonUtil {
@@ -77,6 +106,102 @@ MCNAPI void LogMissingChildSchemaOption(
     ::std::string const& missingName,
     ::std::string const& foundNodesStr,
     ::std::string const& optionsStr
+);
+
+MCNAPI void
+LogUnknownChildSchemaOption(::std::string const& childName, ::LogArea area, ::Json::Value const& childValue);
+
+#ifdef LL_PLAT_C
+MCNAPI void
+SchemaConverterCopyJsonValue(::Json::Value& newLocation, ::Json::Value const& oldLocation, ::std::string const& field);
+
+MCNAPI void SchemaConverterCopyJsonValueWithRename(
+    ::Json::Value&       newLocation,
+    ::Json::Value const& oldLocation,
+    ::std::string const& field,
+    ::std::string const& newName
+);
+
+MCNAPI void
+SchemaConverterMoveJsonValue(::Json::Value& newLocation, ::Json::Value& oldLocation, ::std::string const& field);
+#endif
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_130::AddRiderComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::BlockClimberComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_130::BurnsInDaylightComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::CanJoinRaidComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::DimensionBoundComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_20::HopperComponentDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::OutOfControlComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_20::PushableByEntityDefinition>>&
+        root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::SuspectTrackingComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::TransientComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::VibrationDamperComponentDefinition>>& root
+);
+
+MCNAPI void buildActorDefinitionSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::VibrationListenerComponentDefinition>>& root
 );
 
 MCNAPI void buildActorGoalSchema(
@@ -109,6 +234,61 @@ MCNAPI void buildActorGoalSchema(
 MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_100::EatMobGoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::GoAndGiveItemsToNoteblockGoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::GoAndGiveItemsToOwnerGoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_20::GoHomeGoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_20::JumpToBlockGoalDefinition>>&
+        root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_0::MeleeAttackGoalDefinition>>&
+        root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_20::MoveIndoorsGoalDefinition>>&
+        root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_20::MoveOutdoorsGoalDefinition>>&
+        root,
     ::std::string const&
 );
 
@@ -151,6 +331,27 @@ MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
         ::JsonUtil::EmptyClass,
         ::SharedTypes::v1_21_110::StayNearNoteblockGoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_0::TimerActorFlag1GoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_0::TimerActorFlag2GoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_0::TimerActorFlag3GoalDefinition>>& root,
     ::std::string const&
 );
 
@@ -225,6 +426,13 @@ MCNAPI void buildActorGoalSchema(
 );
 
 MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_20::EquipItemGoalDefinition>>&
+        root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
     ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
         ::JsonUtil::EmptyClass,
         ::SharedTypes::v1_21_130::ExploreOutskirtsGoalDefinition>>& root,
@@ -264,6 +472,13 @@ MCNAPI void buildActorGoalSchema(
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_0::MeleeBoxAttackGoalDefinition>>&
                          root,
     ::std::string const& name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_26_20::MoveAroundTargetGoalDefinition>>& root,
+    ::std::string const&                                           name
 );
 
 MCNAPI void buildActorGoalSchema(
@@ -417,12 +632,23 @@ MCNAPI void buildActorGoalSchema(
     ::std::string const& name
 );
 
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_26_10::WorkGoalDefinition>>& root,
+    ::std::string const&                                                                                        name
+);
+
 MCNAPI void eraseSchema(::HashedString const& name, ::SemVersion const& version);
 
 MCNAPI ::Json::Value& getMemberByCaseInsensitiveName(::Json::Value& node, ::std::string_view memberName);
 
 MCNAPI ::Json::Value const&
 getMemberByCaseInsensitiveNameConst(::Json::Value const& node, ::std::string_view memberName);
+
+MCNAPI ::std::map<::HashedString, ::std::map<::SemVersion, ::std::shared_ptr<::JsonUtil::JsonSchemaNodeBase>>>&
+getSchemaMap();
+
+MCNAPI ::Bedrock::Threading::Mutex& getSchemaMapLock();
 
 MCNAPI bool parseBannerBlockType(::BannerBlockType& outType, ::Json::Value const& root);
 

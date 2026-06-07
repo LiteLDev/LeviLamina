@@ -25,18 +25,14 @@ public:
     // NOLINTBEGIN
     MCNAPI void add(::std::shared_ptr<::IDefinitionInstance> const& definition);
 
+    MCNAPI void clear();
+
     MCNAPI void combine(::DefinitionInstanceGroup const& other);
 
-    MCNAPI ::DefinitionInstanceGroup& operator=(::DefinitionInstanceGroup&&);
+    MCNAPI bool contains(::DefinitionInstanceGroup const& other) const;
 
-    MCNAPI void remove(::std::shared_ptr<::IDefinitionInstance> const& definition);
+    MCNAPI bool overlaps(::DefinitionInstanceGroup const& other) const;
 
-    MCNAPI ~DefinitionInstanceGroup();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void subtract(::DefinitionInstanceGroup const& other);
     // NOLINTEND
 };

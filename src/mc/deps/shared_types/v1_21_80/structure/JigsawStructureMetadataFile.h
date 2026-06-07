@@ -21,15 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    JigsawStructureMetadataFile& operator=(JigsawStructureMetadataFile const&);
-    JigsawStructureMetadataFile(JigsawStructureMetadataFile const&);
-    JigsawStructureMetadataFile();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureMetadataFile(::SharedTypes::v1_21_80::JigsawStructureMetadataFile&&);
+    MCAPI bool operator==(::SharedTypes::v1_21_80::JigsawStructureMetadataFile const& rhs) const;
 
     MCAPI ~JigsawStructureMetadataFile();
     // NOLINTEND
@@ -44,12 +38,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_80::JigsawStructureMetadataFile&&);
     // NOLINTEND
 
 public:

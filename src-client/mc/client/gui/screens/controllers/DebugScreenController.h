@@ -47,6 +47,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DebugScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

@@ -19,14 +19,14 @@ public:
     virtual void preRender(::ScreenContext& screenContext) /*override*/;
 
     virtual void postRender(::ScreenContext& screenContext) /*override*/;
-
-    virtual ~RenderStageWithDefaultBackBuffer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $preRender(::ScreenContext& screenContext);
 
+    MCNAPI void $postRender(::ScreenContext& screenContext);
     // NOLINTEND
 };
 

@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
@@ -18,7 +18,7 @@ class ScreenSpecificOptionsFacet : public ::OreUI::FacetBase<::OreUI::ScreenSpec
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IOptions&>                                     mOptions;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                              mOptions;
     ::ll::TypedStorage<1, 1, bool>                                            mIsDirty;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mOptionSubscriptions;
     // NOLINTEND
@@ -33,14 +33,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~ScreenSpecificOptionsFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScreenSpecificOptionsFacet(::IOptions& options);
+    MCAPI explicit ScreenSpecificOptionsFacet(::IOptionRegistry& options);
 
     MCAPI bool getDevOreUIGameplayUI() const;
 
@@ -64,7 +62,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IOptions& options);
+    MCAPI void* $ctor(::IOptionRegistry& options);
     // NOLINTEND
 
 public:

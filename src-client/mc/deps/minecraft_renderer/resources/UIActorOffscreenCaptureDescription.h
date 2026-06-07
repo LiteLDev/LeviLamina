@@ -12,4 +12,16 @@ public:
     ::ll::TypedStorage<8, 32, ::OffscreenCaptureData> mCaptureData;
     ::ll::TypedStorage<2, 4, ::glm::vec<2, ushort>>   mRenderResolution;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~UIActorOffscreenCaptureDescription();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

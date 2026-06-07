@@ -13,4 +13,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockReducer*> mBlockReducer;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD void setBlockReducer(::BlockReducer* reducer);
+    // NOLINTEND
 };

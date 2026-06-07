@@ -22,16 +22,16 @@ public:
 
 public:
     // prevent constructor by default
-    VoxelShapesPacketPayload& operator=(VoxelShapesPacketPayload const&);
-    VoxelShapesPacketPayload(VoxelShapesPacketPayload const&);
     VoxelShapesPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VoxelShapesPacketPayload(::VoxelShapesPacketPayload&&);
-
-    MCAPI ::VoxelShapesPacketPayload& operator=(::VoxelShapesPacketPayload&&);
+    MCAPI VoxelShapesPacketPayload(
+        ::std::vector<::VoxelShapes::VoxelShape> const&                            shapes,
+        ::std::unordered_map<::HashedString, ::VoxelShapes::RegistryHandle> const& nameMap,
+        ushort                                                                     customShapeCount
+    );
 
     MCAPI ~VoxelShapesPacketPayload();
     // NOLINTEND
@@ -39,7 +39,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::VoxelShapesPacketPayload&&);
+    MCAPI void* $ctor(
+        ::std::vector<::VoxelShapes::VoxelShape> const&                            shapes,
+        ::std::unordered_map<::HashedString, ::VoxelShapes::RegistryHandle> const& nameMap,
+        ushort                                                                     customShapeCount
+    );
     // NOLINTEND
 
 public:

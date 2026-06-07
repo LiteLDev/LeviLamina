@@ -26,15 +26,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NoodleCavifierNoises& operator=(NoodleCavifierNoises const&);
-    NoodleCavifierNoises();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NoodleCavifierNoises(::NoodleCavifierNoises const&);
-
     MCAPI ~NoodleCavifierNoises();
     // NOLINTEND
 
@@ -42,12 +35,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::NoodleCavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::NoodleCavifierNoises const&);
     // NOLINTEND
 
 public:

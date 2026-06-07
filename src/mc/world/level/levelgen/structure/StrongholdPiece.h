@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~StrongholdPiece() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::StructurePiece> findAndCreatePieceFactory(
@@ -72,13 +66,13 @@ public:
     );
 
     MCAPI void generateSmallDoor(
-        ::BlockSource& region,
-        ::Random&,
-        ::BoundingBox const&             chunkBB,
-        ::StrongholdPiece::SmallDoorType doorType,
-        int                              footX,
+        ::BlockSource&                   region,
+        ::Random&                        chunkBB,
+        ::BoundingBox const&             doorType,
+        ::StrongholdPiece::SmallDoorType footX,
         int                              footY,
-        int                              footZ
+        int                              footZ,
+        int
     );
 
     MCAPI ::StructurePiece* generateSmallDoorChildForward(
@@ -87,14 +81,6 @@ public:
         ::Random&                                           random,
         int                                                 xOff,
         int                                                 yOff
-    );
-
-    MCAPI ::StructurePiece* generateSmallDoorChildLeft(
-        ::SHStartPiece&                                     startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 yOff,
-        int                                                 zOff
     );
 
     MCAPI ::StructurePiece* generateSmallDoorChildRight(
@@ -112,13 +98,7 @@ public:
     MCAPI static void forceAddPortalRoom(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
+        ::Random&
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

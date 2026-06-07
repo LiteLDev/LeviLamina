@@ -25,31 +25,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptQuickExtrudeProperties& operator=(ScriptQuickExtrudeProperties const&);
     ScriptQuickExtrudeProperties(ScriptQuickExtrudeProperties const&);
     ScriptQuickExtrudeProperties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptQuickExtrudeProperties&
-    operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptQuickExtrudeProperties&
-    operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties const&);
-
-    MCNAPI ~ScriptQuickExtrudeProperties();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

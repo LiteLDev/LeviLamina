@@ -43,14 +43,18 @@ public:
     virtual void writeLongLong(int64 v) /*override*/;
 
     virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
-
-    virtual ~VarIntDataOutput() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI explicit VarIntDataOutput(::BinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BinaryStream& stream);
     // NOLINTEND
 
 public:

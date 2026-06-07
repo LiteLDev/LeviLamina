@@ -24,6 +24,7 @@ struct MobIsJumpingFlagComponent;
 struct OnFireComponent;
 struct PassengerComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace HardcodedAnimationSystem {
@@ -34,18 +35,20 @@ addOffsetToMovementThisTick(::DynamicRenderOffsetComponent const& offset, ::Acto
 
 MCAPI void computeMovementThisTick(::StateVectorComponent const& stateVector, ::ActorWalkAnimationComponent& walk);
 
+MCAPI ::TickingSystemWithInfo createSystem();
+
 MCAPI void doHardcodedAnimation(
-    ::StrictEntityContext const&,
-    ::MobAnimationComponent&                      mobAnim,
-    ::MobBodyRotationComponent const&             bodyRot,
-    ::MobHurtTimeComponent const&                 mobHurtTime,
-    ::ActorWalkAnimationComponent&                mobWalkAnimation,
-    ::ActorDataFlagComponent const&               syncedActorData,
-    ::Optional<::BlazeFlagComponent const>        blaze,
-    ::Optional<::LavaSlimeFlagComponent const>    lavaSlime,
-    ::Optional<::OnFireComponent const>           onFire,
-    ::Optional<::PassengerComponent const>        passenger,
-    ::Optional<::MobIsJumpingFlagComponent const> isJumping
+    ::StrictEntityContext const&               mobAnim,
+    ::MobAnimationComponent&                   bodyRot,
+    ::MobBodyRotationComponent const&          mobHurtTime,
+    ::MobHurtTimeComponent const&              mobWalkAnimation,
+    ::ActorWalkAnimationComponent&             syncedActorData,
+    ::ActorDataFlagComponent const&            blaze,
+    ::Optional<::BlazeFlagComponent const>     lavaSlime,
+    ::Optional<::LavaSlimeFlagComponent const> onFire,
+    ::Optional<::OnFireComponent const>        passenger,
+    ::Optional<::PassengerComponent const>     isJumping,
+    ::Optional<::MobIsJumpingFlagComponent const>
 );
 
 MCAPI void tick(

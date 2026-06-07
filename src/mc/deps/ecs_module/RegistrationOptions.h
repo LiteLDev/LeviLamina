@@ -30,18 +30,6 @@ public:
     RegistrationOptions& operator=(RegistrationOptions const&);
     RegistrationOptions(RegistrationOptions const&);
     RegistrationOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~RegistrationOptions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ECSModule

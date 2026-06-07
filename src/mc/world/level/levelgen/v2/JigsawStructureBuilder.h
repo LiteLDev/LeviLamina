@@ -41,31 +41,38 @@ public:
     JigsawStructureBuilder();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~JigsawStructureBuilder() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type);
 
     MCAPI ::br::worldgen::JigsawStructure build();
 
+    MCAPI ::br::worldgen::JigsawStructureBuilder& dimensionPadding(uint amount);
+
+    MCAPI ::br::worldgen::JigsawStructureBuilder& liquidSettings(::br::worldgen::LiquidSettings mode);
+
+    MCAPI ::br::worldgen::JigsawStructureBuilder& maxDepth(schar depth);
+
+    MCAPI ::br::worldgen::JigsawStructureBuilder& maxDistanceFromCenter(int horizontal, int vertical);
+
+    MCAPI ::br::worldgen::JigsawStructureBuilder&
+    poolAliases(::std::vector<::std::shared_ptr<::PoolAliasBinding>>&& aliases);
+
+    MCAPI ::br::worldgen::JigsawStructureBuilder& startHeight(::br::worldgen::StructureHeightProvider&& provider);
+
     MCAPI ::br::worldgen::JigsawStructureBuilder& startPool(::std::string_view key);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::br::worldgen::JigsawStructureBuilder create(::std::string_view key, ::HashedString type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string_view key, ::HashedString type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

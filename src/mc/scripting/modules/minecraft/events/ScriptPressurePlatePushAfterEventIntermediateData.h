@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Dimension;
-struct PressurePlatePushEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -32,19 +30,6 @@ public:
     operator=(ScriptPressurePlatePushAfterEventIntermediateData const&);
     ScriptPressurePlatePushAfterEventIntermediateData(ScriptPressurePlatePushAfterEventIntermediateData const&);
     ScriptPressurePlatePushAfterEventIntermediateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    ScriptPressurePlatePushAfterEventIntermediateData(::PressurePlatePushEvent const& eventData, ::Actor const* source);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PressurePlatePushEvent const& eventData, ::Actor const* source);
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

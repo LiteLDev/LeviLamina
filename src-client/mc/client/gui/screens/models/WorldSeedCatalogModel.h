@@ -32,17 +32,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        WorldSeedFilteredLookup& operator=(WorldSeedFilteredLookup const&);
-        WorldSeedFilteredLookup(WorldSeedFilteredLookup const&);
-        WorldSeedFilteredLookup();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::WorldSeedCatalogModel::WorldSeedFilteredLookup&
-        operator=(::WorldSeedCatalogModel::WorldSeedFilteredLookup&&);
-
         MCAPI ~WorldSeedFilteredLookup();
         // NOLINTEND
 
@@ -82,9 +73,19 @@ public:
 
     MCAPI void _filterWorldSeedModels();
 
+    MCAPI bool failedFetch() const;
+
     MCAPI void fetch();
 
+    MCAPI int getNumWorldSeedModels();
+
+    MCAPI ::WorldSeedModel& getWorldSeedModel(int index);
+
+    MCFOLD ::std::vector<::WorldSeedModel>& getWorldSeedModels();
+
     MCAPI void setWorldSeedsNameFilter(::std::string const& filter);
+
+    MCAPI bool update();
 
     MCAPI ~WorldSeedCatalogModel();
     // NOLINTEND

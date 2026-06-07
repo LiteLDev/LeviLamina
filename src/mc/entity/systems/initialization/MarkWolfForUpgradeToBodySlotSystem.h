@@ -14,6 +14,7 @@ class StrictEntityContext;
 struct EntityNeedsInitializeFlagComponent;
 struct NeedsUpgradeToBodySlotFlagComponent;
 struct SkipBodySlotUpgradeFlagComponent;
+struct TickingSystemWithInfo;
 struct WolfFlagComponent;
 // clang-format on
 
@@ -33,5 +34,7 @@ public:
             ::Exclude<::SkipBodySlotUpgradeFlagComponent>>      view,
         ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent> modifier
     );
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
@@ -16,13 +15,5 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::WeakRef<::EcsEventDispatcher>> mDispatcher;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD ::StackRefResult<::EcsEventDispatcher> get();
-#endif
     // NOLINTEND
 };

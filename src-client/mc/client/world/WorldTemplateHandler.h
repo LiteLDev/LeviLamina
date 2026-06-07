@@ -68,7 +68,7 @@ public:
         ::FileArchiver::ExportType type
     ) const;
 
-    MCFOLD void _showPickFileDialog(::std::shared_ptr<::FilePickerSettings> settings) const;
+    MCFOLD void _pickFile(::std::shared_ptr<::FilePickerSettings> settings) const;
     // NOLINTEND
 
 public:

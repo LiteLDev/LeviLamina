@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GuiContentLogEndPoint();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~GuiContentLogEndPoint() /*override*/;
@@ -47,9 +51,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clear();
+    MCAPI explicit GuiContentLogEndPoint(::std::optional<::LogLevel> logLevel);
+
+    MCAPI bool getLogMessage(::std::string& message, ::LogLevel& level);
 
     MCAPI bool pushMessagesToUI(::Bedrock::NotNullNonOwnerPtr<::GuiData> const& guiData);
+
+    MCAPI void setLogLevel(::LogLevel level);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::optional<::LogLevel> logLevel);
     // NOLINTEND
 
 public:

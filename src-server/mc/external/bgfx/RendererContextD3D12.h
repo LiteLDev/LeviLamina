@@ -12,6 +12,7 @@ public:
     struct BlasBuildRequest;
     struct BlasCompactionRequest;
     struct BLASGeometryInfo;
+    struct PresentTimings;
     // clang-format on
 
     // RendererContextD3D12 inner types define
@@ -24,6 +25,8 @@ public:
     struct BlasCompactionRequest {};
 
     struct BLASGeometryInfo {};
+
+    struct PresentTimings {};
 };
 
 } // namespace bgfx::d3d12

@@ -8,12 +8,6 @@
 class ColorGraderConfigChangeConfigMappingHandler
 : public ::Editor::Services::IClientDataTransferConfigurationMappingHandler {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ColorGraderConfigChangeConfigMappingHandler() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

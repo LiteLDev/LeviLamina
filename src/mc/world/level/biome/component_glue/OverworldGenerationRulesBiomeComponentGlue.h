@@ -28,14 +28,6 @@ public:
     resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const& biomeRegistry) /*override*/;
 
     virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& biomeJsonComponent) const /*override*/;
-
-    virtual ~OverworldGenerationRulesBiomeComponentGlue() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

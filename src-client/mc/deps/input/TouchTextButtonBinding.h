@@ -29,12 +29,61 @@ public:
 
 public:
     // prevent constructor by default
-    TouchTextButtonBinding(TouchTextButtonBinding const&);
     TouchTextButtonBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TouchTextButtonBinding(::TouchTextButtonBinding const&);
+
+    MCAPI TouchTextButtonBinding(
+        ::std::string const&  aButtonName,
+        uint                  aPositionBindingName,
+        uint                  aAreaBindingName,
+        uint                  aConditionBindingName,
+        uint                  aOpacityBindingName,
+        uint                  aLabelBindingName,
+        ::std::string const&  aIconPath,
+        ::std::string const&  aPressedIconPath,
+        ::ButtonColors const& aButtonColors,
+        int                   aUvWidth,
+        int                   aUvHeight,
+        bool                  aPassThrough,
+        int                   aTouchStateRequirement,
+        bool                  aExtendButtonPressOutsideUntilReleased
+    );
+
     MCAPI ::TouchTextButtonBinding& operator=(::TouchTextButtonBinding const&);
+
+    MCAPI ~TouchTextButtonBinding();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::TouchTextButtonBinding const&);
+
+    MCAPI void* $ctor(
+        ::std::string const&  aButtonName,
+        uint                  aPositionBindingName,
+        uint                  aAreaBindingName,
+        uint                  aConditionBindingName,
+        uint                  aOpacityBindingName,
+        uint                  aLabelBindingName,
+        ::std::string const&  aIconPath,
+        ::std::string const&  aPressedIconPath,
+        ::ButtonColors const& aButtonColors,
+        int                   aUvWidth,
+        int                   aUvHeight,
+        bool                  aPassThrough,
+        int                   aTouchStateRequirement,
+        bool                  aExtendButtonPressOutsideUntilReleased
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

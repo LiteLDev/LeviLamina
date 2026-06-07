@@ -17,10 +17,7 @@ class IRNS2_Berkley : public ::RakNet::RakNetSocket2 {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::RakNet::RNS2BindResult
-    Bind(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line) = 0;
-
-    virtual ~IRNS2_Berkley() /*override*/ = default;
+    virtual ::RakNet::RNS2BindResult Bind(::RakNet::RNS2_BerkleyBindParameters*, char const*, uint) = 0;
     // NOLINTEND
 
 public:

@@ -30,12 +30,6 @@ public:
     RecipeBookSearchStringCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RecipeBookSearchStringCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RecipeBookSearchStringCommandGroup(

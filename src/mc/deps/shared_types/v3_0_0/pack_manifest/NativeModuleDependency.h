@@ -28,17 +28,13 @@ public:
 
 public:
     // prevent constructor by default
-    NativeModuleDependency(NativeModuleDependency const&);
+    NativeModuleDependency& operator=(NativeModuleDependency const&);
     NativeModuleDependency();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&&);
-
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
+    MCAPI NativeModuleDependency(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
 
     MCAPI ~NativeModuleDependency();
     // NOLINTEND
@@ -47,6 +43,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
     // NOLINTEND
 
 public:

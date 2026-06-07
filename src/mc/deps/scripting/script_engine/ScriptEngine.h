@@ -14,6 +14,7 @@ namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ScriptContextResult; }
 namespace Scripting { struct SupportedBindingModule; }
 namespace Scripting { struct Version; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -43,6 +44,10 @@ public:
 
     MCNAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
 
+#ifdef LL_PLAT_S
+    MCNAPI void clearRuntimeFactory();
+#endif
+
     MCNAPI ::Scripting::ScriptContextResult createScriptingContext(
         ::Scripting::ContextConfig const&                   config,
         ::Scripting::ModuleDescriptor const&                forModule,
@@ -54,7 +59,11 @@ public:
     MCNAPI ::std::optional<::Scripting::Version>
     getLatestVersionOfModuleWithPreRelease(::std::string const& name, ::std::string_view preRelease) const;
 
+    MCNAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptor(::mce::UUID uuid) const;
+
     MCNAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
+
+    MCNAPI ::Scripting::RegistryManager& getRegistryManager();
 
     MCNAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
 

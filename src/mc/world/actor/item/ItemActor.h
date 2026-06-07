@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
@@ -21,6 +22,7 @@ class ListTag;
 class Packet;
 class Player;
 class Vec3;
+struct AABBShapeComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -83,7 +85,7 @@ public:
 
     virtual bool isFireImmune() const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& damage, float, bool, bool) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
@@ -120,9 +122,23 @@ public:
         bool               isInItemFrame,
         bool               isFromFishing
     );
+
+    MCFOLD ::std::optional<::ItemActor::ItemRenderAdjustments> const& getRenderAdjustments() const;
+
+    MCFOLD ::std::optional<::ItemActor::ItemRenderAdjustments>& getRenderAdjustments();
 #endif
 
     MCAPI void postNormalTick();
+
+    MCAPI void setSourceEntity(::Actor const* owner);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::AABB getLiquidAABB(::AABBShapeComponent const& aabbShapeComponent);
+
+    MCAPI static ::ItemActor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:
@@ -148,13 +164,13 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCFOLD bool $canSynchronizeNewEntity() const;
+    MCAPI bool $canSynchronizeNewEntity() const;
 
     MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isFireImmune() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& damage, float, bool, bool);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 

@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MegaTreeTrunk() /*override*/ = default;
+    virtual ~MegaTreeTrunk() /*override*/;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
@@ -63,6 +63,12 @@ public:
         int                             treeHeight,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

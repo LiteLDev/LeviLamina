@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 // clang-format on
 
-class ScaredGoal : public ::Goal {
+class ScaredGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,8 +38,18 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~ScaredGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScaredGoal(::Mob& mob, int interval);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, int interval);
     // NOLINTEND
 
 public:

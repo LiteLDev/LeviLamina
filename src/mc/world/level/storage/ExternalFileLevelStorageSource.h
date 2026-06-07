@@ -32,13 +32,10 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>>  mFilePathManager;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ExternalFileLevelStorageSource();
 
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -104,23 +101,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ExternalFileLevelStorageSource(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&  pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager> const& saveTransactionManager
     );
-#endif
+
+    MCAPI void _getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&  pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager> const& saveTransactionManager
     );
-#endif
     // NOLINTEND
 
 public:

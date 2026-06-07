@@ -7,6 +7,7 @@
 class BlockPos;
 class BlockSource;
 class Container;
+class ItemActor;
 class ItemStack;
 class Vec3;
 // clang-format on
@@ -23,13 +24,26 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Hopper();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _addItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int face, int itemCount);
+    MCAPI Hopper(int moveItemSpeed, bool isEntity);
+
+    MCAPI bool _addItem(::Container& container, ::ItemActor& actor);
+
+    MCAPI ::Container* _getAttachedContainerInBlock(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
+
+    MCAPI ::std::vector<::Container*>
+    _getAttachedContainers(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
 
     MCAPI ::Container* _getContainerInBlock(::BlockSource& region, ::Vec3 const& pos);
 
     MCAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
+
+    MCAPI ::std::vector<::Container*> _getSourceContainers(::BlockSource& region, ::Vec3 const& pos);
 
     MCAPI bool
     _pushOutItems(::BlockSource& region, ::Container& fromContainer, ::Vec3 const& position, int attachedFace);
@@ -49,6 +63,8 @@ public:
 
     MCAPI bool _tryPullInItemsFromAboveContainer(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
 
+    MCAPI bool _tryPullInItemsFromWorld(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+
     MCAPI bool
     _tryPushToComposter(::BlockSource& region, ::Container& fromContainer, ::BlockPos hopperPos, int facingDirection);
 
@@ -59,5 +75,21 @@ public:
         int            slot,
         int            face
     );
+
+    MCFOLD int getCooldownTime() const;
+
+    MCFOLD bool isOnCooldown() const;
+
+    MCAPI bool isOnMoveCooldown() const;
+
+    MCFOLD void setCooldownTime(int time);
+
+    MCFOLD void setMoveCooldownTime(int time);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int moveItemSpeed, bool isEntity);
     // NOLINTEND
 };

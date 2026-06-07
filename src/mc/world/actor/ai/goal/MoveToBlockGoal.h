@@ -6,7 +6,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/util/TargetSelectionMethod.h"
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -17,7 +17,7 @@ class ItemDescriptor;
 class Mob;
 // clang-format on
 
-class MoveToBlockGoal : public ::Goal {
+class MoveToBlockGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -67,8 +67,6 @@ public:
     virtual void start() /*override*/;
 
     virtual void stop() /*override*/;
-
-    virtual ~MoveToBlockGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -90,10 +88,6 @@ public:
         ::std::vector<::ItemDescriptor>         targetBlocks,
         ::ActorFilterGroup const&               targetBlockFilter
     );
-
-    MCAPI void _checkIfStuck();
-
-    MCAPI bool _findRandomTargetBlock(::BlockSource& region, ::BlockPos const& mobPos);
 
     MCAPI bool _findTargetBlock();
 
@@ -121,12 +115,6 @@ public:
         ::std::vector<::ItemDescriptor>         targetBlocks,
         ::ActorFilterGroup const&               targetBlockFilter
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

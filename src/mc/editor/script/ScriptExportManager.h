@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class LevelData;
+class Player;
 namespace Editor::ScriptModule { class ScriptGameOptions; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
@@ -32,12 +33,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptExportManager();
+    virtual ~ScriptExportManager() = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptExportManager(::Player& player);
+
     MCNAPI void _setGameOptions(::LevelData const& levelData, ::Editor::ScriptModule::ScriptGameOptions& gameOptions);
 
     MCNAPI ::Editor::ScriptModule::ScriptGameOptions getGameOptions(::std::optional<bool> useDefault);
@@ -54,9 +57,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:

@@ -15,6 +15,7 @@ class ClientInputMappingFactory;
 class CommandRegistry;
 class EntitySystems;
 class Experiments;
+class FrameAnomalyDetector;
 class GameModuleDocumentation;
 class IClientInstance;
 class IResourcePackRepository;
@@ -22,6 +23,7 @@ class ItemRegistryRef;
 class Level;
 class MultiPlayerLevel;
 class ResourcePackStack;
+class ServerboundDiagnosticsPacket;
 struct GameModuleClientArgs;
 namespace GameplayUI { struct GameplayUIContext; }
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
@@ -41,6 +43,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkee2df3;
     ::ll::UntypedStorage<8, 8>  mUnkcb9508;
     ::ll::UntypedStorage<8, 16> mUnk33240b;
+    ::ll::UntypedStorage<8, 24> mUnk31c50a;
     ::ll::UntypedStorage<8, 8>  mUnkd23d66;
     ::ll::UntypedStorage<8, 16> mUnkd24109;
     ::ll::UntypedStorage<8, 16> mUnk852403;
@@ -79,13 +82,13 @@ public:
     virtual void deconfigureLevel(::IClientInstance& client) /*override*/;
 
     virtual void
-    configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry) /*override*/;
+    configureDocumentation(::GameModuleDocumentation& docItemRegistry, ::ItemRegistryRef const) /*override*/;
 
     virtual void tick() /*override*/;
 
     virtual void setupStandardCommands(::CommandRegistry& commandRegistry) /*override*/;
 
-    virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) /*override*/;
+    virtual void setupStartMenuScreenCommands(::CommandRegistry&) /*override*/;
 
     virtual void setupUI() /*override*/;
 
@@ -94,13 +97,24 @@ public:
     virtual ::std::unique_ptr<::ClientInputMappingFactory>
     createInputMappingFactory(::IClientInstance& client) /*override*/;
 
-    virtual void registerVanillaGoalsForUpgrader(::ActorMigratedDefinitionFactory& migratedFactory) const /*override*/;
+    virtual ::std::shared_ptr<void> registerVanillaGoalsForUpgrader(
+        ::Experiments const&              experiments,
+        ::BaseGameVersion const&          baseGameVersion,
+        ::ItemRegistryRef const           itemRegistryRef,
+        ::ActorMigratedDefinitionFactory& migratedFactory
+    ) const /*override*/;
+
+    virtual ::ServerboundDiagnosticsPacket createServerboundDiagnosticsPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VanillaGameModuleClient(::GameModuleClientArgs args, ::GameplayUI::GameplayUIContext& gameplayUIContext);
+    MCAPI VanillaGameModuleClient(
+        ::GameModuleClientArgs                                       args,
+        ::GameplayUI::GameplayUIContext&                             gameplayUIContext,
+        ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const& frameAnomalyDetector
+    );
 
     MCAPI void _configureEntitySystems(
         ::EntitySystems&                                         systemRegistry,
@@ -121,7 +135,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameModuleClientArgs args, ::GameplayUI::GameplayUIContext& gameplayUIContext);
+    MCAPI void* $ctor(
+        ::GameModuleClientArgs                                       args,
+        ::GameplayUI::GameplayUIContext&                             gameplayUIContext,
+        ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const& frameAnomalyDetector
+    );
     // NOLINTEND
 
 public:
@@ -153,13 +171,13 @@ public:
 
     MCAPI void $deconfigureLevel(::IClientInstance& client);
 
-    MCFOLD void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
+    MCFOLD void $configureDocumentation(::GameModuleDocumentation& docItemRegistry, ::ItemRegistryRef const);
 
     MCAPI void $tick();
 
     MCAPI void $setupStandardCommands(::CommandRegistry& commandRegistry);
 
-    MCFOLD void $setupStartMenuScreenCommands(::CommandRegistry& commandRegistry);
+    MCFOLD void $setupStartMenuScreenCommands(::CommandRegistry&);
 
     MCAPI void $setupUI();
 
@@ -167,7 +185,14 @@ public:
 
     MCFOLD ::std::unique_ptr<::ClientInputMappingFactory> $createInputMappingFactory(::IClientInstance& client);
 
-    MCAPI void $registerVanillaGoalsForUpgrader(::ActorMigratedDefinitionFactory& migratedFactory) const;
+    MCAPI ::std::shared_ptr<void> $registerVanillaGoalsForUpgrader(
+        ::Experiments const&              experiments,
+        ::BaseGameVersion const&          baseGameVersion,
+        ::ItemRegistryRef const           itemRegistryRef,
+        ::ActorMigratedDefinitionFactory& migratedFactory
+    ) const;
+
+    MCAPI ::ServerboundDiagnosticsPacket $createServerboundDiagnosticsPacket();
     // NOLINTEND
 
 public:

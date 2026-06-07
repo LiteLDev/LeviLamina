@@ -74,7 +74,11 @@ public:
 
     virtual void broadcastChanges() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual bool isValid(float) /*override*/;
+#else // LL_PLAT_C
     virtual bool isValid(float pickRange) /*override*/;
+#endif
 
     virtual bool tick() /*override*/;
 

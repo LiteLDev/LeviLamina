@@ -25,8 +25,6 @@ public:
     virtual bool isDone() /*override*/;
 
     virtual void tick() /*override*/;
-
-    virtual ~TurnCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

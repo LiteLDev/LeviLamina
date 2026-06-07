@@ -14,9 +14,13 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptRawMessageError : public ::Scripting::BaseError {
 public:
+    // prevent constructor by default
+    ScriptRawMessageError();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptRawMessageError();
+    MCAPI explicit ScriptRawMessageError(::std::string const& message);
     // NOLINTEND
 
 public:
@@ -26,9 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::string const& message);
     // NOLINTEND
 };
 

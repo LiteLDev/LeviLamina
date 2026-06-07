@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _initTextComponent();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;

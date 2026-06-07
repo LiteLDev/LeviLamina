@@ -57,8 +57,6 @@ public:
 
     MCAPI char const* memberName() const;
 
-    MCAPI bool operator!=(::Json::ValueIteratorBase const& other) const;
-
     MCAPI ~ValueIteratorBase();
     // NOLINTEND
 

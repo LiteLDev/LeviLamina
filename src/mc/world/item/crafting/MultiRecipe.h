@@ -23,8 +23,6 @@ public:
     virtual bool isShapeless() const /*override*/;
 
     virtual bool hasDataDrivenResult() const /*override*/;
-
-    virtual ~MultiRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:

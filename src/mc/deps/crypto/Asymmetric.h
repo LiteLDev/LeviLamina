@@ -29,11 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~Asymmetric() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~Asymmetric() /*override*/;
-#endif
 
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) /*override*/;
 
@@ -76,18 +72,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit Asymmetric(::Crypto::Asymmetric::System system);
+
+    MCNAPI bool canComputeSecret();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Crypto::Asymmetric::System system);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -41,7 +41,7 @@ public:
 
     virtual bool exhausted() const /*override*/;
 
-    virtual ::HandleRangeResult handleRange(int, int end) /*override*/;
+    virtual ::HandleRangeResult handleRange(int end, int) /*override*/;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 
     MCAPI bool $exhausted() const;
 
-    MCAPI ::HandleRangeResult $handleRange(int, int end);
+    MCAPI ::HandleRangeResult $handleRange(int end, int);
     // NOLINTEND
 
 public:

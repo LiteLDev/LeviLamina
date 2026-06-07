@@ -22,14 +22,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
-
-    virtual ~StringByteOutput() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

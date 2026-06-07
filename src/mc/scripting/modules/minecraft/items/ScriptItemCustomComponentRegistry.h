@@ -224,7 +224,7 @@ public:
         ::Scripting::WeakLifetimeScope const&                                        scope
     ) const;
 
-    MCAPI ::ScriptDeferredEventListener& $getEventListener();
+    MCFOLD ::ScriptDeferredEventListener& $getEventListener();
 
     MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
 

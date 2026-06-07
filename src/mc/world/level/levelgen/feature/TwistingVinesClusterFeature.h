@@ -17,8 +17,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // NOLINTEND
 
-    virtual ~TwistingVinesClusterFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _isInvalidPlacementLocation(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void _placeVineString(
+        ::BlockSource&    region,
+        ::Random&         random,
+        ::BlockPos const& vinePos,
+        int               vineHeight,
+        int               minAge,
+        int               maxAge
+    ) const;
     // NOLINTEND
 
 public:

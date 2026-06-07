@@ -81,13 +81,114 @@ public:
 
     MCAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
+    MCFOLD int getAboveBlockDistance() const;
+
+    MCAPI ::std::pair<int, int> const getDelayRange() const;
+
+    MCFOLD int getDelaySpawnChance() const;
+
+    MCFOLD ::std::vector<::MobSpawnerPermutation> const& getGuaranteedPermutations() const;
+
+    MCFOLD ::std::vector<::MobSpawnHerdInfo>& getHerdListMutable();
+
+    MCAPI ::std::string const getMobToDelayId() const;
+
+    MCFOLD ::std::vector<::MobSpawnerPermutation> const& getPermutations() const;
+
+    MCAPI bool getPersistence() const;
+
+    MCAPI int getPopulationCap(::SpawnConditions const& conditions) const;
+
+    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnAboveBlockList() const;
+
+    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnAboveBlockListMutable();
+
+    MCAPI int getSpawnCount(
+        ::SpawnConditions const&  conditions,
+        ::BlockSource&            region,
+        ::Random&                 random,
+        ::MobSpawnHerdInfo const& herdInfo
+    ) const;
+
+    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnOnBlockList() const;
+
+    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnOnBlockListMutable();
+
+    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnOnBlockPreventedList() const;
+
+    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnOnBlockPreventedListMutable();
+
+    MCFOLD bool isLavaSpawner() const;
+
+    MCFOLD bool isUnderwaterSpawner() const;
+
     MCAPI ::MobSpawnRules& operator=(::MobSpawnRules&&);
 
     MCAPI ::MobSpawnRules& operator=(::MobSpawnRules const&);
 
     MCAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
 
+    MCAPI ::MobSpawnRules& setAboveBlockDistance(int distance);
+
+    MCAPI ::MobSpawnRules& setBrightnessRange(int minBrightness, int maxBrightness, bool adjustForWeather);
+
+    MCAPI ::MobSpawnRules& setBubbleSpawner(bool isBubbleSpawner);
+
+    MCAPI ::MobSpawnRules& setDelayRange(int min, int max, ::std::string const& id);
+
+    MCFOLD ::MobSpawnRules& setDelaySpawnChance(int chance);
+
+    MCAPI ::MobSpawnRules& setDifficultyRange(
+        ::SharedTypes::Legacy::Difficulty minDifficulty,
+        ::SharedTypes::Legacy::Difficulty maxDifficulty
+    );
+
+    MCAPI ::MobSpawnRules& setExperimentalGameplay();
+
+    MCAPI ::MobSpawnRules&
+    setHardcodedSpawnRuleCallback(::std::function<bool(::SpawnConditions const&, ::BlockSource&)> callback);
+
+    MCAPI ::MobSpawnRules& setHeightRange(int minHeight, int maxHeight);
+
+    MCAPI ::MobSpawnRules& setLavaSpawner();
+
+    MCAPI ::MobSpawnRules& setMobEventType(::std::string const& eventName);
+
+    MCAPI ::MobSpawnRules& setPersistence(bool persistence);
+
+    MCFOLD ::MobSpawnRules& setPlayerInVillageBorderTolerance(uint tolerance);
+
+    MCAPI ::MobSpawnRules& setPlayerInVillageDistance(uint distance);
+
+    MCAPI ::MobSpawnRules& setPopulationCap(int surfaceCap, int undergroundCap);
+
+    MCAPI ::MobSpawnRules& setRarity(int rarity);
+
+    MCAPI ::MobSpawnRules& setSpawnDistanceCap(int max);
+
+    MCAPI ::MobSpawnRules& setSpawnDistances(int min, int max);
+
+    MCAPI ::MobSpawnRules& setSurfaceSpawner();
+
+    MCAPI ::MobSpawnRules& setUndergroundSpawner();
+
+    MCAPI ::MobSpawnRules& setUnderwaterSpawner();
+
+    MCAPI ::MobSpawnRules& setWorldAgeRange(uint64 min, uint64 max);
+
     MCAPI ~MobSpawnRules();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& LOW_END_MAX_SPAWN_DISTANCE();
+
+    MCAPI static int const& MAX_DEFAULT_SPAWN_DISTANCE();
+
+    MCAPI static uint64 const& MAX_WORLD_AGE();
+
+    MCAPI static int const& MIN_DEFAULT_SPAWN_DISTANCE();
     // NOLINTEND
 
 public:

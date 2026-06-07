@@ -27,14 +27,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _doGuardianPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
-
-    MCAPI static void _tickGuardianPreAIStepSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::GuardianFlagComponent>,
-            ::ActorOwnerComponent> view
-    );
+    _doGuardianPreAIStepSystem(::StrictEntityContext const& actorOwnerComponent, ::ActorOwnerComponent&);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

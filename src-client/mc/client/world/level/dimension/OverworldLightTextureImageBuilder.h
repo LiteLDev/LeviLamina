@@ -7,12 +7,6 @@
 
 class OverworldLightTextureImageBuilder : public ::BaseLightTextureImageBuilder {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OverworldLightTextureImageBuilder() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

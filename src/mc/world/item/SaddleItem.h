@@ -16,12 +16,20 @@ class Vec3;
 
 class SaddleItem : public ::Item {
 public:
+    // prevent constructor by default
+    SaddleItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~SaddleItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SaddleItem(::std::string const& nameId, short id);
     // NOLINTEND
 
 public:
@@ -30,6 +38,12 @@ public:
     MCAPI static bool _tryEquipSaddleViaComponents(::Actor& actor, ::ItemStack const& saddle);
 
     MCAPI static bool _tryEquipSaddleViaEvents(::Actor& actor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, short id);
     // NOLINTEND
 
 public:

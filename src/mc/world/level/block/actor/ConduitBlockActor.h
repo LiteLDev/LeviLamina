@@ -35,26 +35,30 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ConduitBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
 
     virtual bool hasAlphaLayer() const /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~ConduitBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ConduitBlockActor(::BlockPos const& pos);
+
     MCAPI void _animateTick(::BlockSource& region) const;
 
     MCAPI void _applyEffects(::BlockSource& region);
@@ -62,6 +66,18 @@ public:
     MCAPI void _checkShape(::BlockSource& region);
 
     MCAPI void _updateTarget(::BlockSource& region);
+
+#ifdef LL_PLAT_C
+    MCAPI void incrementAnimationValue(float animationStep);
+
+    MCAPI void incrementWindLevel();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -71,9 +87,9 @@ public:
 
     MCFOLD bool $hasAlphaLayer() const;
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 

@@ -4,27 +4,31 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/puv/ComponentStorageLoadDataRefVariant.h"
 #include "mc/resources/JsonBetaState.h"
 #include "mc/resources/MinEngineVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_26_10 { struct ActorDefinitions; }
+namespace SharedTypes::Beta { struct ActorDefinitions; }
+namespace SharedTypes::v1_26_20 { struct ActorDefinitions; }
 // clang-format on
 
 struct ActorDocumentDataParams {
 public:
-    // ActorDocumentDataParams inner types define
-    using Definitions = ::SharedTypes::v1_26_10::ActorDefinitions;
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_10::ActorDefinitions&> mValue;
-    ::ll::TypedStorage<8, 24, ::SemVersion const>                        mFormatVersion;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion const>                  mMinEngineVersion;
-    ::ll::TypedStorage<1, 1, bool const>                                 mIsBaseGamePack;
-    ::ll::TypedStorage<1, 1, ::JsonBetaState const>                      mCanUseBeta;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions>>
+                                                        mValue;
+    ::ll::TypedStorage<8, 24, ::SemVersion const>       mFormatVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion const> mMinEngineVersion;
+    ::ll::TypedStorage<1, 1, bool const>                mIsBaseGamePack;
+    ::ll::TypedStorage<1, 1, ::JsonBetaState const>     mCanUseBeta;
     // NOLINTEND
 
 public:
@@ -38,7 +42,9 @@ public:
     MCAPI ActorDocumentDataParams(::ActorDocumentDataParams const&);
 
     MCAPI ActorDocumentDataParams(
-        ::SharedTypes::v1_26_10::ActorDefinitions& value,
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions> value,
         ::SemVersion const&                        formatVersion,
         ::MinEngineVersion const&                  minEngineVersion,
         bool                                       isBaseGamePack,
@@ -54,7 +60,9 @@ public:
     MCAPI void* $ctor(::ActorDocumentDataParams const&);
 
     MCAPI void* $ctor(
-        ::SharedTypes::v1_26_10::ActorDefinitions& value,
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions> value,
         ::SemVersion const&                        formatVersion,
         ::MinEngineVersion const&                  minEngineVersion,
         bool                                       isBaseGamePack,
@@ -65,6 +73,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

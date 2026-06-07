@@ -33,13 +33,20 @@ public:
     public:
         // prevent constructor by default
         DirectoryPickerResult& operator=(DirectoryPickerResult const&);
-        DirectoryPickerResult(DirectoryPickerResult const&);
         DirectoryPickerResult();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI DirectoryPickerResult(::Bedrock::FilePickerManager::DirectoryPickerResult const&);
+
         MCNAPI ~DirectoryPickerResult();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Bedrock::FilePickerManager::DirectoryPickerResult const&);
         // NOLINTEND
 
     public:
@@ -56,8 +63,6 @@ public:
 
     virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
     pickDirectory(::Bedrock::DirectoryPickerConfig const&) = 0;
-
-    virtual ~FilePickerManager() /*override*/ = default;
     // NOLINTEND
 
 public:

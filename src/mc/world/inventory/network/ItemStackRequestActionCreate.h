@@ -25,8 +25,26 @@ public:
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
-    virtual ~ItemStackRequestActionCreate() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ItemStackRequestActionCreate();
+
+#ifdef LL_PLAT_C
+    MCNAPI explicit ItemStackRequestActionCreate(uchar resultsIndex);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(uchar resultsIndex);
+#endif
     // NOLINTEND
 
 public:

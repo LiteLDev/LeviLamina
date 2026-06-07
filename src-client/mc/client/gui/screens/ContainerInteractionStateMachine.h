@@ -57,6 +57,11 @@ public:
         bool                                                                defaultNode
     );
 
+    MCAPI void
+    forceNodeChange(::NodeId target, uint buttonId, ::std::string const& collectionName, int collectionIndex);
+
+    MCFOLD ::NodeId getCurrentNodeId() const;
+
     MCAPI ::ui::ViewRequest receiveEvent(
         ::PointerHeldScreenEventData const& pointerHeldEvent,
         ::std::string const&                collectionName,
@@ -65,6 +70,10 @@ public:
 
     MCAPI ::ui::ViewRequest
     receiveEvent(uint buttonId, ::ButtonEventType buttonType, ::std::string const& collectionName, int collectionIndex);
+
+    MCFOLD void requestNodeChange(::NodeId id);
+
+    MCAPI ::ui::ViewRequest resetToDefault(::std::string const& collectionName, int collectionIndex);
 
     MCAPI ~ContainerInteractionStateMachine();
     // NOLINTEND

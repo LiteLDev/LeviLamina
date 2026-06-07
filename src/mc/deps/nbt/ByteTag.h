@@ -35,14 +35,22 @@ public:
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
     virtual uint64 hash() const /*override*/;
-
-    virtual ~ByteTag() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ByteTag();
+
+    MCAPI explicit ByteTag(uchar data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(uchar data);
     // NOLINTEND
 
 public:

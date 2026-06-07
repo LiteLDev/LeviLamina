@@ -17,22 +17,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RarityItemComponent(RarityItemComponent const&);
-    RarityItemComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_30::RarityItemComponent& operator=(::SharedTypes::v1_21_30::RarityItemComponent&&);
-
-    MCFOLD ::SharedTypes::v1_21_30::RarityItemComponent& operator=(::SharedTypes::v1_21_30::RarityItemComponent const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

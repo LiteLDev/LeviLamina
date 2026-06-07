@@ -24,8 +24,6 @@ public:
     ) const /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~LoomInputContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

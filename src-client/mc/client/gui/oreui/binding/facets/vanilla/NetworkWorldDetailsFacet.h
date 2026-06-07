@@ -43,8 +43,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~NetworkWorldDetailsFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -79,12 +77,6 @@ public:
         ::World::ExternalServerWorldList&                          externalServerWorldList,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

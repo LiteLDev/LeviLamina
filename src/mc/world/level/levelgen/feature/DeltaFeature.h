@@ -17,13 +17,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& centerPos, ::Random& random) const /*override*/;
-
-    virtual ~DeltaFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos> _findDeltaLevel(::BlockSource& region, ::BlockPos cursor) const;
+
     MCAPI bool _isValidPlacement(::BlockSource& region, ::BlockPos cursor) const;
     // NOLINTEND
 

@@ -10,6 +10,8 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::Util {
 // functions
 // NOLINTBEGIN
+MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+
 MCAPI void bindRotationAndMirror(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 

@@ -63,7 +63,11 @@ public:
 
     MCAPI static void addUpdaters_1_21_60(::CompoundTagUpdaterContext& context);
 
+    MCAPI static void destroy();
+
     MCAPI static ::CompoundTagUpdaterContext& get();
+
+    MCAPI static void initialize();
     // NOLINTEND
 
 public:

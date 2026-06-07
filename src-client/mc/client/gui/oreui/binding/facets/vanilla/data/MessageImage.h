@@ -36,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessageImage(::OreUI::MessageImage&&);
-
     MCAPI MessageImage(::OreUI::MessageImage const&);
 
     MCAPI MessageImage(
@@ -57,8 +55,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::MessageImage&&);
-
     MCAPI void* $ctor(::OreUI::MessageImage const&);
 
     MCAPI void*

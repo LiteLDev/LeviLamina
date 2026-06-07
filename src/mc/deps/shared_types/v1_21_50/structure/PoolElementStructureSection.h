@@ -30,12 +30,13 @@ public:
 public:
     // prevent constructor by default
     PoolElementStructureSection& operator=(PoolElementStructureSection const&);
-    PoolElementStructureSection(PoolElementStructureSection const&);
     PoolElementStructureSection();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PoolElementStructureSection(::SharedTypes::v1_21_50::PoolElementStructureSection const&);
+
     MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection&
     operator=(::SharedTypes::v1_21_50::PoolElementStructureSection&&);
 
@@ -46,6 +47,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_50::PoolElementStructureSection const&);
     // NOLINTEND
 
 public:

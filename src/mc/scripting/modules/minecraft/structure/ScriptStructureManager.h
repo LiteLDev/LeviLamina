@@ -25,6 +25,7 @@ namespace ScriptModuleMinecraft { struct ScriptStructureCreateOptions; }
 namespace ScriptModuleMinecraft { struct ScriptStructurePlaceOptions; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
@@ -43,20 +44,20 @@ public:
         ::std::unordered_map<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>>>
-        mStructures;
+                                                                             mStructures;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mPackStructureIds;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptStructureManager& operator=(ScriptStructureManager const&);
     ScriptStructureManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptStructureManager(::ScriptModuleMinecraft::ScriptStructureManager&&);
-
     MCAPI ScriptStructureManager(::ScriptModuleMinecraft::ScriptStructureManager const&);
+
+    MCAPI ScriptStructureManager(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
 
     MCAPI ::std::string_view _getPlaceErrorMessage(::std::string_view key) const;
 
@@ -94,12 +95,15 @@ public:
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>
     getOrCreateScriptStructure(::StructureTemplate& structureTemplate);
 
+    MCAPI ::std::vector<::std::string> getPackStructureIds(::Scripting::ContextConfig const& contextConfig);
+
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>>
     getStructure(::std::string const& identifier);
 
     MCAPI ::std::vector<::std::string> getWorldStructureIds() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptStructureManager& operator=(::ScriptModuleMinecraft::ScriptStructureManager&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptStructureManager&
+    operator=(::ScriptModuleMinecraft::ScriptStructureManager const&);
 
     MCAPI ::Scripting::Result<::BoundingBox, ::ScriptModuleMinecraft::ScriptPlaceJigsawError> placeJigsaw(
         ::std::string const&                                                                  pool,
@@ -133,6 +137,8 @@ public:
     );
 
     MCAPI ::std::optional<::Scripting::InvalidArgumentError> validateIdentifier(::std::string const& identifier) const;
+
+    MCAPI ~ScriptStructureManager();
     // NOLINTEND
 
 public:
@@ -144,9 +150,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureManager&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureManager const&);
+
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class NativeBrushParameterChangePayload
@@ -22,9 +27,9 @@ public:
     NativeBrushParameterChangePayload();
 
 public:
-    // virtual functions
+    // static functions
     // NOLINTBEGIN
-    virtual ~NativeBrushParameterChangePayload() /*override*/ = default;
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -14,7 +14,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -43,7 +42,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
+    virtual bool mayConsumeFertilizer(::BlockSource&) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
 
@@ -56,16 +55,14 @@ public:
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~CoralFan() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI CoralFan(::std::string const& nameId, int id, ::HashedString const& deadVersion);
+
+    MCFOLD ::HashedString const& getDeadVersion() const;
 
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
@@ -77,15 +74,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
 
     MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
@@ -94,7 +85,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource&) const;
 
     MCFOLD bool $isLavaBlocking() const;
 
@@ -105,8 +96,6 @@ public:
     MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

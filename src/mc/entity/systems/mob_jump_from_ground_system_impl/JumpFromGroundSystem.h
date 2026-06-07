@@ -224,8 +224,6 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entity
     ) /*override*/;
-
-    virtual ~JumpFromGroundSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

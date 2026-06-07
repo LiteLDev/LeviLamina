@@ -22,10 +22,14 @@ class FunctionEntry;
 class ItemInstance;
 class ItemStack;
 class Level;
+class LevelChunk;
 class LevelData;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct ActorUniqueID;
+struct Tick;
+namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -46,6 +50,8 @@ MCAPI void alterSpawnableEntities(
 );
 
 MCAPI void broadcastPlayerSpawnedMobEvent(::Actor const& entity, ::Actor& summoner);
+
+MCAPI bool canBeSummoned(::ActorDefinitionIdentifier const& actorId, ::CommandOrigin const& origin);
 
 MCAPI void clearBlockEntityContents(::BlockSource& region, ::BlockPos const& pos);
 
@@ -68,23 +74,35 @@ MCAPI void displayLocalizableMessage(
 
 MCAPI ::std::string getActorName(::Actor const& actor);
 
+MCAPI ::BlockPos getFeetBlockPos(::Actor const* entity);
+
 MCAPI ::Vec3 getFeetPos(::Actor const* entity);
 
 MCAPI ::std::vector<::ActorType> getInvalidCommandEntities();
 
-#ifdef LL_PLAT_C
-MCAPI ::Player const* getOriginPlayer(::CommandOrigin const& origin);
-#endif
+MCAPI ::std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
 
 MCAPI ::std::string getTelemetryErrorList(::CommandOutput const& output);
 
+MCAPI bool isActiveTickingChunk(::LevelChunk const& chunk);
+
+MCAPI bool isActiveTickingChunk(::Tick currentLevelTick, ::Tick chunkLastTick);
+
 MCAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEntry, ::std::string const& resolvedPath);
 
-MCAPI bool isPlayerSpawnedMob(::Actor const& entity, ::Actor const& summoner);
+MCAPI void nameEntity(::Actor& actor, bool nameSet, ::Bedrock::Safety::RedactableString const& actorName);
 
 MCAPI void setDifficulty(::Level& level, ::SharedTypes::Legacy::Difficulty difficulty);
 
 MCAPI void setInitEvent(::ActorDefinitionIdentifier& actorId, ::std::string const& eventName);
+
+MCAPI ::Actor* spawnEntityAt(
+    ::BlockSource&                     region,
+    ::Vec3 const&                      pos,
+    ::ActorDefinitionIdentifier const& type,
+    ::ActorUniqueID&                   id,
+    ::Actor*                           summoner
+);
 
 MCAPI ::std::string toJsonResult(::std::string const& commandName, ::Json::Value const& rawData);
 

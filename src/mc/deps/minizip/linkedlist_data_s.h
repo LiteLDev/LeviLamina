@@ -6,8 +6,8 @@ struct linkedlist_data_s {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk4a9ca0;
-    ::ll::UntypedStorage<8, 8> mUnkc4813a;
+    ::ll::UntypedStorage<8, 8> mUnk79a7f0;
+    ::ll::UntypedStorage<8, 8> mUnk882335;
     // NOLINTEND
 
 public:

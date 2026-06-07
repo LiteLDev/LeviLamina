@@ -33,12 +33,13 @@ public:
 public:
     // prevent constructor by default
     SonicBoomGoalDefinition& operator=(SonicBoomGoalDefinition const&);
-    SonicBoomGoalDefinition(SonicBoomGoalDefinition const&);
     SonicBoomGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SonicBoomGoalDefinition(::SharedTypes::v1_21_110::SonicBoomGoalDefinition const&);
+
     MCAPI ::SharedTypes::v1_21_110::SonicBoomGoalDefinition&
     operator=(::SharedTypes::v1_21_110::SonicBoomGoalDefinition&&);
 
@@ -55,6 +56,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_110::SonicBoomGoalDefinition const&);
     // NOLINTEND
 
 public:

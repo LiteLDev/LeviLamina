@@ -148,11 +148,13 @@ public:
 
     MCAPI ::std::string const _getErrorCode() const;
 
-    MCAPI float _getLoadingBarProgress() const;
+    MCAPI ::std::string const _getProgressMessage() const;
 
     MCAPI ::std::string const _getProgressTitle() const;
 
     MCAPI bool _isInCancellableState() const;
+
+    MCAPI bool _isMobileDataIconVisible() const;
 
     MCAPI void _openConfirmationDialog();
 
@@ -163,8 +165,6 @@ public:
     MCAPI void _registerEventHandlers();
 
     MCAPI void _registerProgressBindings();
-
-    MCAPI void _setupProgressScreen(bool loadAssets);
 
     MCAPI void _updateProgressMessage(int64 const& timeNow, bool force);
     // NOLINTEND

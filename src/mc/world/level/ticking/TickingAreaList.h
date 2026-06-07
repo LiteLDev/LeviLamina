@@ -21,14 +21,6 @@ public:
         ::std::function<void(::ITickingArea const&)> requeue,
         ::LevelStorage&                              levelStorage
     ) /*override*/;
-
-    virtual ~TickingAreaList() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -25,7 +25,8 @@ public:
 
 public:
     // prevent constructor by default
-    SpawnParticleEffectPacket();
+    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&);
+    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&);
 
 public:
     // virtual functions
@@ -63,26 +64,24 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~SpawnParticleEffectPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SpawnParticleEffectPacket();
+
     MCAPI explicit SpawnParticleEffectPacket(::SpawnParticleEffectPacketPayload payload);
+
+    MCAPI ::SpawnParticleEffectPacket& operator=(::SpawnParticleEffectPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SpawnParticleEffectPacketPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SpawnParticleEffectPacketPayload payload);
     // NOLINTEND
 
 public:

@@ -23,12 +23,9 @@ public:
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
-        /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase& face, ::Actor& pos, uchar&, ::BlockPos&) const /*override*/;
 
     virtual bool isLiquidClipItem() const /*override*/;
-
-    virtual ~WaterLilyBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -37,7 +34,7 @@ public:
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCFOLD bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCFOLD bool $_calculatePlacePos(::ItemStackBase& face, ::Actor& pos, uchar&, ::BlockPos&) const;
 
     MCFOLD bool $isLiquidClipItem() const;
 

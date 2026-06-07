@@ -27,9 +27,17 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI static ::std::_List_const_iterator<
+        ::std::_List_val<::std::_List_simple_types<::std::pair<::persona::BodySize::Type const, ::persona::SizeInfo>>>>
+    _getSizeInfoIteratorByType(::persona::BodySize::Type bodySizeType);
+
     MCAPI static ::std::string getStringFromType(::persona::BodySize::Type bodySizeType);
 
+    MCAPI static ::std::string_view getTexturePathByType(::persona::BodySize::Type bodySizeType);
+
     MCAPI static ::persona::BodySize::Type getTypeFromString(::std::string_view bodySizeStr);
+
+    MCAPI static bool isValidType(::persona::BodySize::Type bodySizeType);
 #endif
     // NOLINTEND
 

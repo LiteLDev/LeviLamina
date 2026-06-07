@@ -18,31 +18,6 @@ public:
                                   mBlocks;
     ::ll::TypedStorage<4, 4, int> mDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpawnAboveBlockFilter& operator=(SpawnAboveBlockFilter const&);
-    SpawnAboveBlockFilter();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SpawnAboveBlockFilter(::SharedTypes::Legacy::Spawn::SpawnAboveBlockFilter const&);
-
-    MCAPI ~SpawnAboveBlockFilter();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::Spawn::SpawnAboveBlockFilter const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::Legacy::Spawn

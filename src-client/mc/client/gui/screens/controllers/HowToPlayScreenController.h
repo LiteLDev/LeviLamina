@@ -57,6 +57,10 @@ public:
 
     MCAPI void _registerBindings();
 
+    MCAPI void _registerControllerCallbacks();
+
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _selectNewTab(bool isInitialTab, int newTabIndex);
     // NOLINTEND
 
@@ -79,7 +83,7 @@ public:
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI bool $bind(
+    MCFOLD bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,

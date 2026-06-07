@@ -11,7 +11,7 @@ class IConnectionEventing {
 public:
     // IConnectionEventing inner types define
     enum class ConnectionFailureReason : int {
-        Unknown                     = -1,
+        Unknown                     = 4294967295,
         MismatchedMinecraftProtocol = 1,
         MismatchedRaknetVersion     = 2,
     };
@@ -39,11 +39,11 @@ public:
     virtual ~IConnectionEventing() = default;
 
     virtual void fireServerConnectionEvent(
-        ::IConnectionEventing::ServerConnectionOutcome outcome,
-        uint                                           pingLatency,
-        double                                         timeElapsed,
-        ::std::string const&                           creatorName,
-        ::std::string const&                           worldId
+        ::IConnectionEventing::ServerConnectionOutcome,
+        uint,
+        double,
+        ::std::string const&,
+        ::std::string const&
     ) = 0;
 
     virtual void fireEventOnSuccessfulClientLogin(::Level const* level) = 0;
@@ -53,11 +53,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -30,14 +30,6 @@ public:
     virtual void _write(::BinaryStream& stream) const = 0;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) = 0;
-
-    virtual ~ItemStackRequestActionCraftBase() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

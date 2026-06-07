@@ -28,24 +28,10 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        Description(Description const&);
-        Description();
-
-#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD ::SharedTypes::v1_21_100::CameraDocument::Description&
-        operator=(::SharedTypes::v1_21_100::CameraDocument::Description&&);
-
-        MCFOLD ::SharedTypes::v1_21_100::CameraDocument::Description&
-        operator=(::SharedTypes::v1_21_100::CameraDocument::Description const&);
-
         MCAPI ~Description();
 #endif
         // NOLINTEND
@@ -71,7 +57,6 @@ public:
 public:
     // prevent constructor by default
     CameraDocument& operator=(CameraDocument const&);
-    CameraDocument(CameraDocument const&);
     CameraDocument();
 
 #endif
@@ -79,7 +64,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::SharedTypes::v1_21_100::CameraDocument& operator=(::SharedTypes::v1_21_100::CameraDocument&&);
+    MCAPI CameraDocument(::SharedTypes::v1_21_100::CameraDocument const&);
 
     MCAPI ~CameraDocument();
 #endif
@@ -97,6 +82,14 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::SharedTypes::v1_21_100::CameraDocument const&);
+#endif
     // NOLINTEND
 
 public:

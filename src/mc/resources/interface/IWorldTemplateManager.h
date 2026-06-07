@@ -18,7 +18,7 @@ class IWorldTemplateManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IWorldTemplateManager() /*override*/;
+    virtual ~IWorldTemplateManager() /*override*/ = default;
 
     virtual void flushResourceLoaderTasks() = 0;
 
@@ -45,12 +45,6 @@ public:
     virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const = 0;
 
     virtual bool isInitialized() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

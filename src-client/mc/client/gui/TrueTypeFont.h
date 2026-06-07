@@ -94,7 +94,7 @@ public:
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
-    virtual ::mce::MaterialPtr& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
+    virtual ::mce::MaterialPtr& getMaterial(int, bool) const /*override*/;
 
     virtual void uploadTextureToGPU() /*override*/;
 
@@ -128,7 +128,7 @@ public:
 
     virtual void _scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode) /*override*/;
 
-    virtual ::mce::Font::Type getType(int glyphSheet) const /*override*/;
+    virtual ::mce::Font::Type getType(int) const /*override*/;
 
     virtual void fetchPage(int page) /*override*/;
 
@@ -173,9 +173,14 @@ public:
     MCAPI void
     _convertAtlas(::std::vector<uchar> const& data, ::std::shared_ptr<::cg::ImageBuffer>& atlasTexture, int atlasSize);
 
-    MCAPI void _loadSheetForGlyph(int codepoint, bool uploadTexture, bool forceReload);
+    MCAPI bool _loadCache(
+        ::Core::Path const&                   atlasPath,
+        ::std::shared_ptr<::cg::ImageBuffer>& atlasTexture,
+        ::Core::Path const&                   glyphInfoPath,
+        ::TrueTypeFont::PageOfGlyphs&         atlasGlyphInfo
+    );
 
-    MCAPI void _scalePageOfGlyphs(::TrueTypeFont::PageOfGlyphs& pageOfGlyphs) const;
+    MCAPI void _loadSheetForGlyph(int codepoint, bool uploadTexture, bool forceReload);
 
     MCAPI void
     _uploadTextureToGPU(::ResourceLocation const& resourceLocation, ::std::shared_ptr<::cg::ImageBuffer> imageBuffer);
@@ -185,6 +190,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static uint const& CACHE_VERSION();
+
+    MCAPI static ushort const& DEFAULT_ATLAS_PAGE_SIZE();
     // NOLINTEND
 
 public:
@@ -213,7 +220,7 @@ public:
 
     MCFOLD bool $_supportsShadowInSingleDraw();
 
-    MCAPI ::mce::MaterialPtr& $getMaterial(int sheet, bool isOddGuiScale) const;
+    MCAPI ::mce::MaterialPtr& $getMaterial(int, bool) const;
 
     MCAPI void $uploadTextureToGPU();
 
@@ -246,7 +253,7 @@ public:
 
     MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
 
-    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+    MCFOLD ::mce::Font::Type $getType(int) const;
 
     MCAPI void $fetchPage(int page);
 

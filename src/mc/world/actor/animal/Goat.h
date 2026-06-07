@@ -10,12 +10,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
+class Mob;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class Goat : public ::Animal {
+public:
+    // prevent constructor by default
+    Goat();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,8 +37,48 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
     virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    // NOLINTEND
 
-    virtual ~Goat() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Goat(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
+    MCAPI int getHornCount() const;
+
+    MCAPI bool isScreaming();
+
+    MCAPI void reduceHornCount();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getCustomDeathSound(::Mob const& mob);
+
+    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getCustomHurtSound(::Mob const& mob);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int& DEFAULT_HORN_COUNT();
+
+    MCAPI static int& SCREAMING_GOAT_VARIANT();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

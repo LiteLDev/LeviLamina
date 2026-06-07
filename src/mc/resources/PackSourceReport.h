@@ -18,42 +18,22 @@ public:
 public:
     // prevent constructor by default
     PackSourceReport& operator=(PackSourceReport const&);
+    PackSourceReport(PackSourceReport const&);
+    PackSourceReport();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackSourceReport();
-
-    MCNAPI PackSourceReport(::PackSourceReport&&);
-
-    MCNAPI PackSourceReport(::PackSourceReport const&);
-
 #ifdef LL_PLAT_C
     MCNAPI ::PackReport const* getReport(::PackIdVersion const& packId) const;
 #endif
 
 #ifdef LL_PLAT_S
-    MCNAPI bool hasErrors() const;
+    MCNAPI ::std::unordered_map<::PackIdVersion, ::PackReport> const& getReports() const;
 #endif
 
-    MCNAPI ::PackSourceReport& operator=(::PackSourceReport&&);
+    MCNAPI bool hasErrors() const;
 
-    MCNAPI ~PackSourceReport();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::PackSourceReport&&);
-
-    MCNAPI void* $ctor(::PackSourceReport const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void merge(::PackSourceReport&& other);
     // NOLINTEND
 };

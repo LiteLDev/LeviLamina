@@ -70,6 +70,8 @@ MCAPI ::Scripting::Version const& V2_4_0();
 MCAPI ::Scripting::Version const& V2_5_0();
 
 MCAPI ::Scripting::Version const& V2_6_0();
+
+MCAPI ::Scripting::Version const& V2_7_0();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::Releases

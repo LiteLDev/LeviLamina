@@ -436,9 +436,9 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
+            ::ll::UntypedStorage<1, 8> mUnk2e8ef6;
             ::ll::UntypedStorage<4, 8> mUnk6147ee;
             ::ll::UntypedStorage<4, 8> mUnk37edb9;
-            ::ll::UntypedStorage<1, 8> mUnk2e8ef6;
             ::ll::UntypedStorage<4, 8> mUnk9852fd;
             // NOLINTEND
         };
@@ -462,9 +462,9 @@ public:
     // NOLINTBEGIN
     virtual ~AudioProcessing() /*override*/ = default;
 
-    virtual int Initialize() = 0;
-
     virtual int Initialize(::webrtc::ProcessingConfig const&) = 0;
+
+    virtual int Initialize() = 0;
 
     virtual void ApplyConfig(::webrtc::AudioProcessing::Config const&) = 0;
 
@@ -487,23 +487,23 @@ public:
     virtual bool PostRuntimeSetting(::webrtc::AudioProcessing::RuntimeSetting) = 0;
 
     virtual int
-    ProcessStream(short const* const, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, short* const) = 0;
-
-    virtual int
     ProcessStream(float const* const*, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, float* const*) = 0;
 
-    virtual int ProcessReverseStream(
-        short const* const,
-        ::webrtc::StreamConfig const&,
-        ::webrtc::StreamConfig const&,
-        short* const
-    ) = 0;
+    virtual int
+    ProcessStream(short const* const, ::webrtc::StreamConfig const&, ::webrtc::StreamConfig const&, short* const) = 0;
 
     virtual int ProcessReverseStream(
         float const* const*,
         ::webrtc::StreamConfig const&,
         ::webrtc::StreamConfig const&,
         float* const*
+    ) = 0;
+
+    virtual int ProcessReverseStream(
+        short const* const,
+        ::webrtc::StreamConfig const&,
+        ::webrtc::StreamConfig const&,
+        short* const
     ) = 0;
 
     virtual int AnalyzeReverseStream(float const* const*, ::webrtc::StreamConfig const&) = 0;
@@ -520,17 +520,17 @@ public:
 
     virtual void set_stream_key_pressed(bool) = 0;
 
-    virtual bool CreateAndAttachAecDump(::std::string_view, int64, ::webrtc::TaskQueueBase*) = 0;
-
     virtual bool CreateAndAttachAecDump(::_iobuf*, int64, ::webrtc::TaskQueueBase*) = 0;
+
+    virtual bool CreateAndAttachAecDump(::std::string_view, int64, ::webrtc::TaskQueueBase*) = 0;
 
     virtual void AttachAecDump(::std::unique_ptr<::webrtc::AecDump>) = 0;
 
     virtual void DetachAecDump() = 0;
 
-    virtual ::webrtc::AudioProcessingStats GetStatistics() = 0;
-
     virtual ::webrtc::AudioProcessingStats GetStatistics(bool) = 0;
+
+    virtual ::webrtc::AudioProcessingStats GetStatistics() = 0;
 
     virtual ::webrtc::AudioProcessing::Config GetConfig() const = 0;
     // NOLINTEND

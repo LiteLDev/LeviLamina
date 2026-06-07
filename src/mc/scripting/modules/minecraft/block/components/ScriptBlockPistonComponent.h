@@ -13,7 +13,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class PistonBlockActor;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockPistonComponentContainer; }
@@ -35,16 +34,8 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockPistonComponent() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PistonBlockActor const* _tryGetPiston() const;
-
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getAttachedBlocks();
@@ -79,12 +70,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

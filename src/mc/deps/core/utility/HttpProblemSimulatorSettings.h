@@ -21,12 +21,6 @@ public:
     HttpProblemSimulatorSettings& operator=(HttpProblemSimulatorSettings const&);
     HttpProblemSimulatorSettings(HttpProblemSimulatorSettings const&);
     HttpProblemSimulatorSettings();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~HttpProblemSimulatorSettings() /*override*/ = default;
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Http

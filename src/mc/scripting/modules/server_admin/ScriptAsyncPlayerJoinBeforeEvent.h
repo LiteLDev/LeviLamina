@@ -25,12 +25,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptAsyncPlayerJoinBeforeEvent(ScriptAsyncPlayerJoinBeforeEvent const&);
     ScriptAsyncPlayerJoinBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptAsyncPlayerJoinBeforeEvent(::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent const&);
+
     MCNAPI ScriptAsyncPlayerJoinBeforeEvent(
         ::std::shared_ptr<::AsyncVerdictPromise>& promise,
         ::std::string                             playerId,
@@ -63,6 +64,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent const&);
+
     MCNAPI void*
     $ctor(::std::shared_ptr<::AsyncVerdictPromise>& promise, ::std::string playerId, ::std::string playerName);
     // NOLINTEND

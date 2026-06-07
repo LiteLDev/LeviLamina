@@ -6,7 +6,6 @@
 #include "mc/client/gui/oreui/interface/RouteMode.h"
 #include "mc/client/gui/oreui/interface/ViewState.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/input/TextBoxCaretMovement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +23,7 @@ class IView : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IView() /*override*/;
+    virtual ~IView() /*override*/ = default;
 
     virtual void pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode) = 0;
 
@@ -63,8 +62,6 @@ public:
 
     virtual void setTextBoxState(::TextBoxStateChange const& stateChange) = 0;
 
-    virtual ::std::optional<int> calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement) = 0;
-
     virtual void onKeyboardDismissed() = 0;
 
     virtual void setCaretLocation(int caretLocation) = 0;
@@ -74,12 +71,6 @@ public:
     virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() = 0;
 
     virtual ::OreUI::IViewTestHelper* getViewTestHelper() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

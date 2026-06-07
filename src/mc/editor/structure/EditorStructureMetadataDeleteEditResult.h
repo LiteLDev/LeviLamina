@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor {
 
 struct EditorStructureMetadataDeleteEditResult {
@@ -21,10 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult&
-    operator=(::Editor::EditorStructureMetadataDeleteEditResult&&);
-
     MCNAPI ~EditorStructureMetadataDeleteEditResult();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

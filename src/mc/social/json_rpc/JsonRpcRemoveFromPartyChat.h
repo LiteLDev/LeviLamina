@@ -38,7 +38,7 @@ public:
 #else // LL_PLAT_C
     public:
         // prevent constructor by default
-        Params(Params const&);
+        Params& operator=(Params const&);
         Params();
 
 #endif
@@ -46,13 +46,20 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
+        MCNAPI Params(::JsonRpc::JsonRpcRemoveFromPartyChat::Params const&);
+
         MCNAPI ::JsonRpc::JsonRpcRemoveFromPartyChat::Params&
         operator=(::JsonRpc::JsonRpcRemoveFromPartyChat::Params&&);
 
-        MCNAPI ::JsonRpc::JsonRpcRemoveFromPartyChat::Params&
-        operator=(::JsonRpc::JsonRpcRemoveFromPartyChat::Params const&);
-
         MCNAPI ~Params();
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(::JsonRpc::JsonRpcRemoveFromPartyChat::Params const&);
 #endif
         // NOLINTEND
 

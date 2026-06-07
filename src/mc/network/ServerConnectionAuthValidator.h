@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ConnectionRequest;
+class BaseConnectionRequest;
 class MinecraftServiceKeyManager;
 struct NetworkServerConfig;
 struct PlayerAuthenticationInfo;
@@ -20,9 +20,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<int64()>>                                    mCurrentTimeFn;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager>> mMinecraftServiceKeys;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mLegacyMultiplayerTokenTrustedKeys;
-    ::ll::TypedStorage<1, 1, bool>                          mAllowSelfSigned;
-    ::ll::TypedStorage<1, 1, bool>                          mAllowExpiredTokens;
+    ::ll::TypedStorage<1, 1, bool>                                                         mAllowSelfSigned;
+    ::ll::TypedStorage<1, 1, bool>                                                         mAllowExpiredTokens;
     // NOLINTEND
 
 public:
@@ -34,13 +33,13 @@ public:
     // NOLINTBEGIN
     MCAPI ServerConnectionAuthValidator(
         ::NetworkServerConfig const&                                networkServerConfig,
+        bool                                                        isLan,
         ::std::function<int64()>                                    currentTimeFn,
-        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys,
-        ::std::vector<::std::string> const&                         legacyMultiplayerTokenTrustedKeys
+        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys
     );
 
     MCAPI ::std::variant<::PlayerAuthenticationInfo, ::Connection::DisconnectFailReason>
-    validate(::ConnectionRequest const& connectionRequest) const;
+    _validateBase(::BaseConnectionRequest const& connectionRequest) const;
     // NOLINTEND
 
 public:
@@ -48,9 +47,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::NetworkServerConfig const&                                networkServerConfig,
+        bool                                                        isLan,
         ::std::function<int64()>                                    currentTimeFn,
-        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys,
-        ::std::vector<::std::string> const&                         legacyMultiplayerTokenTrustedKeys
+        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys
     );
     // NOLINTEND
 };

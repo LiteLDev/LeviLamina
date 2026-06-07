@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ui::DirtyFlag tick() /*override*/;
-
-    virtual ~WorldSeedCatalogScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -42,6 +40,8 @@ public:
     );
 
     MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

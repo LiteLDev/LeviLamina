@@ -5,10 +5,15 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetComponentBasePayload.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class Color; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -34,13 +39,36 @@ public:
 public:
     // prevent constructor by default
     WidgetAddClipboardComponentPayload& operator=(WidgetAddClipboardComponentPayload const&);
-    WidgetAddClipboardComponentPayload(WidgetAddClipboardComponentPayload const&);
     WidgetAddClipboardComponentPayload();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~WidgetAddClipboardComponentPayload() /*override*/;
+    MCNAPI WidgetAddClipboardComponentPayload(::Editor::Network::WidgetAddClipboardComponentPayload const&);
+
+    MCNAPI WidgetAddClipboardComponentPayload(
+        ::mce::UUID const&   serviceId,
+        ::mce::UUID const&   groupId,
+        ::mce::UUID const&   widgetId,
+        ::mce::UUID const&   componentId,
+        ::std::string const& componentName,
+        ::Vec3 const&        pos,
+        bool                 visible,
+        bool                 lockToSurface,
+        ::std::string const& clipboardItemId,
+        ::Rotation           rotation,
+        ::Mirror             mirror,
+        ::Vec3 const&        clipboardOffset,
+        ::Vec3 const&        clipboardOrigin,
+        bool                 showOutline,
+        ::mce::Color const&  outlineColor,
+        ::mce::Color const&  hullColor,
+        ::mce::Color const&  highlightOutlineColor,
+        ::mce::Color const&  highlightHullColor
+    );
+
+    MCNAPI ::Editor::Network::WidgetAddClipboardComponentPayload&
+    operator=(::Editor::Network::WidgetAddClipboardComponentPayload&&);
     // NOLINTEND
 
 public:
@@ -50,9 +78,30 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::Network::WidgetAddClipboardComponentPayload const&);
+
+    MCNAPI void* $ctor(
+        ::mce::UUID const&   serviceId,
+        ::mce::UUID const&   groupId,
+        ::mce::UUID const&   widgetId,
+        ::mce::UUID const&   componentId,
+        ::std::string const& componentName,
+        ::Vec3 const&        pos,
+        bool                 visible,
+        bool                 lockToSurface,
+        ::std::string const& clipboardItemId,
+        ::Rotation           rotation,
+        ::Mirror             mirror,
+        ::Vec3 const&        clipboardOffset,
+        ::Vec3 const&        clipboardOrigin,
+        bool                 showOutline,
+        ::mce::Color const&  outlineColor,
+        ::mce::Color const&  hullColor,
+        ::mce::Color const&  highlightOutlineColor,
+        ::mce::Color const&  highlightHullColor
+    );
     // NOLINTEND
 
 public:

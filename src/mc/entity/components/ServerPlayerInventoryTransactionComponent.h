@@ -4,13 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
-class InventoryPacket;
+class InventoryPacketHandler;
 // clang-format on
 
 struct ServerPlayerInventoryTransactionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::InventoryPacket>>> mCurrentTransactions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InventoryPacketHandler>> mCurrentTransactions;
     // NOLINTEND
 };

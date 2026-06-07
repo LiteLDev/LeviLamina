@@ -11,9 +11,13 @@ class ResourcePackListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResourcePackListener();
+    virtual ~ResourcePackListener() = default;
 
+#ifdef LL_PLAT_S
+    virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) = 0;
+#else // LL_PLAT_C
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) = 0;
+#endif
 
     virtual bool onFullPackStackInvalid();
 
@@ -21,15 +25,18 @@ public:
 
     virtual void onLanguageSubpacksChanged();
 
+#ifdef LL_PLAT_S
+    virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr);
+#else // LL_PLAT_C
     virtual void onResourceManagerDestroyed(::ResourcePackManager&);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void onJsonResourcesChanged(::ResourcePackManager&);
+#else // LL_PLAT_C
     virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
-    // NOLINTEND
+#endif
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -41,9 +48,9 @@ public:
 
     MCNAPI void $onLanguageSubpacksChanged();
 
-    MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager&);
+    MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
 
-    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
+    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager&);
 
 
     // NOLINTEND

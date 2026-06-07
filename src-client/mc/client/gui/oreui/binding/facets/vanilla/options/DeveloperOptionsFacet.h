@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 // clang-format on
 
 namespace OreUI {
@@ -16,7 +16,7 @@ class DeveloperOptionsFacet : public ::OreUI::FacetBase<::OreUI::DeveloperOption
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IOptions&> mOptions;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&> mOptions;
     // NOLINTEND
 
 public:
@@ -36,6 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DeveloperOptionsFacet(::IOptionRegistry& options);
+
     MCFOLD bool isRealmsPreproductionEnvironment() const;
     // NOLINTEND
 
@@ -43,6 +45,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IOptionRegistry& options);
     // NOLINTEND
 
 public:

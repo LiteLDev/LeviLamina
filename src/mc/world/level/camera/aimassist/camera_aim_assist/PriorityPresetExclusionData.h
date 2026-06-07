@@ -20,16 +20,22 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk1689d1;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PriorityPresetExclusionData& operator=(PriorityPresetExclusionData const&);
+    PriorityPresetExclusionData(PriorityPresetExclusionData const&);
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PriorityPresetExclusionData(PriorityPresetExclusionData const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PriorityPresetExclusionData();
-
-    MCNAPI PriorityPresetExclusionData(::CameraAimAssist::PriorityPresetExclusionData const&);
 
     MCNAPI bool isExcludedActor(::Actor const& actor) const;
 
@@ -39,6 +45,11 @@ public:
 
     MCNAPI ::CameraAimAssist::PriorityPresetExclusionData& operator=(::CameraAimAssist::PriorityPresetExclusionData&&);
 
+#ifdef LL_PLAT_C
+    MCNAPI ::CameraAimAssist::PriorityPresetExclusionData&
+    operator=(::CameraAimAssist::PriorityPresetExclusionData const&);
+#endif
+
     MCNAPI ~PriorityPresetExclusionData();
     // NOLINTEND
 
@@ -46,8 +57,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::CameraAimAssist::PriorityPresetExclusionData const&);
     // NOLINTEND
 
 public:

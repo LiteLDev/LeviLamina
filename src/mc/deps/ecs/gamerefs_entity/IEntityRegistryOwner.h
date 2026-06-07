@@ -15,17 +15,11 @@ class IEntityRegistryOwner : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEntityRegistryOwner() /*override*/;
+    virtual ~IEntityRegistryOwner() /*override*/ = default;
 
     virtual ::StackRefResult<::EntityRegistry> getEntityRegistry() = 0;
 
     virtual ::StackRefResult<::EntityRegistry const> getEntityRegistry() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

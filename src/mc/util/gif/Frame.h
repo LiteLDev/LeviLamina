@@ -29,7 +29,7 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    Frame(Frame const&);
+    Frame& operator=(Frame const&);
     Frame();
 
 #endif
@@ -37,9 +37,17 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::gif::Frame& operator=(::gif::Frame const&);
+    MCNAPI Frame(::gif::Frame const&);
 
     MCNAPI ~Frame();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::gif::Frame const&);
 #endif
     // NOLINTEND
 

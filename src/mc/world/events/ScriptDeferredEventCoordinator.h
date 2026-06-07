@@ -32,18 +32,6 @@ public:
         ::ll::TypedStorage<8, 64, ::std::function<void(::Scripting::ModuleDescriptor const&, ::Json::Value&)>>
             mDocumentationGenerationFn;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~DocumentableEventExecution();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -67,6 +55,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptDeferredEventCoordinator();
+
     MCAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
     MCAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
@@ -80,6 +70,23 @@ public:
     MCAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
     MCAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
+    MCFOLD ::Bedrock::PubSub::
+        Publisher<void(::ScriptDeferredFlushTracker&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&
+        getFlushingCoroutinePublisher();
+
+    MCAPI void sendAllDeferredEvents();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
+#endif
     // NOLINTEND
 
 public:
@@ -87,6 +94,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
     sEventExecutionOrder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

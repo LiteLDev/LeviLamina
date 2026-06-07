@@ -33,7 +33,12 @@ public:
     // NOLINTBEGIN
     virtual ~HorseContainerManagerController() /*override*/ = default;
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -42,11 +47,17 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI explicit HorseContainerManagerController(::std::weak_ptr<::HorseContainerManagerModel> ptrModel);
 
+    MCNAPI bool canWearArmor() const;
+
     MCNAPI bool canWearCarpet() const;
 
     MCNAPI bool canWearSaddle() const;
 
+    MCNAPI int getChestInventorySize() const;
+
     MCNAPI ::Actor* getEntity() const;
+
+    MCNAPI void getEquipGridSize(int& outDimX, int& outDimY) const;
 
     MCNAPI void getInventoryGridSize(int& outDimX, int& outDimY) const;
 #endif

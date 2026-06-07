@@ -23,21 +23,21 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StorageItemComponent(StorageItemComponent const&);
-    StorageItemComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_30::StorageItemComponent&
-    operator=(::SharedTypes::v1_21_30::StorageItemComponent const&);
+    MCAPI bool operator==(::SharedTypes::v1_21_30::StorageItemComponent const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

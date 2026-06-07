@@ -36,8 +36,6 @@ public:
     getDimensionLocation() const /*override*/;
 
     virtual ::std::unique_ptr<::ServerWaypoint> createWaypoint() const /*override*/;
-
-    virtual ~ScriptLocationWaypoint() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,12 +48,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

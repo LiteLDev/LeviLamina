@@ -25,8 +25,6 @@ public:
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     virtual float getViewDamping() const /*override*/;
-
-    virtual ~SpyglassItem() /*override*/ = default;
     // NOLINTEND
 
 public:

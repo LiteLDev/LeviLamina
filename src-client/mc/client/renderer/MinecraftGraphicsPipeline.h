@@ -15,16 +15,4 @@ public:
     MinecraftGraphicsPipeline& operator=(MinecraftGraphicsPipeline const&);
     MinecraftGraphicsPipeline(MinecraftGraphicsPipeline const&);
     MinecraftGraphicsPipeline();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~MinecraftGraphicsPipeline();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

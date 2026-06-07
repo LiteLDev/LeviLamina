@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny source) const /*override*/;
-
-    virtual ~FeatureUpgrader() /*override*/ = default;
     // NOLINTEND
 
 public:

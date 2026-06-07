@@ -21,4 +21,12 @@ public:
     ::ll::TypedStorage<1, 1, ::ContainerID>                           mContainerId;
     ::ll::TypedStorage<4, 4, ::InventorySource::InventorySourceFlags> mFlags;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::InventorySource const& rhs) const;
+
+    MCAPI ::std::string toString() const;
+    // NOLINTEND
 };

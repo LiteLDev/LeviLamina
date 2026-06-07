@@ -28,6 +28,7 @@ struct TextureUVCoordinateSet;
 namespace Bedrock::Threading { class Mutex; }
 namespace BlockGeometry { struct Model; }
 namespace BlockTessellationFallbackUtils { struct TessellationConfigInfo; }
+namespace ClientBlockPipeline { struct TextureUVs; }
 namespace Json { class Value; }
 namespace Json { class ValueIterator; }
 // clang-format on
@@ -70,15 +71,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockGraphics() = default;
+    virtual ~BlockGraphics();
 
-    virtual ::BlockRenderLayer getRenderLayer(::BlockSource& region, ::BlockPos const& pos) const;
+    virtual ::BlockRenderLayer getRenderLayer(::BlockSource&, ::BlockPos const&) const;
 
-    virtual int getColor(int auxData) const;
+    virtual int getColor(int) const;
 
-    virtual int getColor(::BlockSource& region, ::BlockPos const& pos) const;
+    virtual int getColor(::BlockSource&, ::BlockPos const&) const;
 
-    virtual bool isSeasonTinted(::BlockSource& region, ::BlockPos const& p) const;
+    virtual bool isSeasonTinted(::BlockSource&, ::BlockPos const&) const;
 
     virtual void onGraphicsModeChanged(bool fancy, bool fancyBubbles);
 
@@ -98,19 +99,25 @@ public:
 
     MCAPI void _logBlockTextureError(::fmt::v11::fstring<char const*> const& error) const;
 
+    MCFOLD float getAmbientOcclusionExponent() const;
+
+    MCAPI ::TextureAtlasItem const& getAtlasItem(uint64 textureSlot) const;
+
+    MCFOLD ::Block const* getBlock() const;
+
+    MCFOLD ::BlockShape getBlockShape() const;
+
+    MCAPI ::std::string const getDefaultTextureName(uint64 textureSlot) const;
+
+    MCAPI ::TextureUVCoordinateSet const& getIconTexture(int blockVariant) const;
+
     MCFOLD ::BlockRenderLayer getRenderLayer() const;
 
-    MCAPI ::TextureUVCoordinateSet const& getTexture(uint64 textureSlot, ::Block const& block) const;
+    MCFOLD ::std::string const& getSoundType() const;
 
     MCAPI ::TextureUVCoordinateSet const& getTexture(uint64 textureSlot, int blockVariant) const;
 
     MCAPI ::TextureUVCoordinateSet const& getTexture(::BlockPos const& p, uint64 textureSlot, int blockVariant) const;
-
-    MCAPI ::TextureUVCoordinateSet const&
-    getTexture(::BlockPos const& pos, uint64 textureSlot, ::Block const& block) const;
-
-    MCAPI ::std::vector<::TextureUVCoordinateSet> const&
-    getTextureCarriedVariations(uint64 textureSlot, int blockVariant) const;
 
     MCAPI ::std::vector<::TextureUVCoordinateSet> const&
     getTextureDefaultVariations(uint64 textureSlot, int blockVariant) const;
@@ -118,6 +125,8 @@ public:
     MCAPI bool isFull() const;
 
     MCAPI bool isFullAndOpaque() const;
+
+    MCAPI bool isValid() const;
 
     MCAPI ::BlockGraphics& setCarriedTextureItem(
         ::std::string const& nameUp,
@@ -129,6 +138,8 @@ public:
     );
 
     MCAPI void setDefaultCarriedTextures();
+
+    MCFOLD void setSoundType(::std::string type);
 
     MCAPI ::BlockGraphics& setTextureItem(
         ::std::string const& nameUp,
@@ -152,12 +163,20 @@ public:
 
     MCAPI static void _initBlockModels(::ResourcePackManager& packManager);
 
+    MCAPI static ::TextureUVCoordinateSet const&
+    chooseRandomTexture(float random, ::std::vector<::TextureUVCoordinateSet> const& uvsets);
+
+    MCAPI static uint64
+    chooseRandomTextureIndex(float random, ::std::vector<::ClientBlockPipeline::TextureUVs> const& uvsets);
+
     MCAPI static ::BlockGraphics* createBlockGraphics(::HashedString const& name, ::BlockShape defaultBlockShape);
 
     MCAPI static void detectAndRegisterTessellationFallbacks(
         ::std::unordered_map<::HashedString, ::BlockTessellationFallbackUtils::TessellationConfigInfo>&
             blockTessellationInfoMap
     );
+
+    MCAPI static void disableBlockType(::BlockType const& blockType);
 
     MCAPI static ::std::vector<::WeakPtr<::BlockType>> extractBlockDataValues(
         ::Json::ValueIterator const&                                        memberIterator,
@@ -173,7 +192,13 @@ public:
             blockTessellationInfoMap
     );
 
+    MCAPI static ::std::unordered_map<uint, ::BlockGraphics*> const& getBlocks();
+
     MCAPI static ::BlockGraphics const* getForBlock(::Block const& block);
+
+    MCAPI static ::BlockGraphics const* getForBlock(::BlockType const& block);
+
+    MCAPI static ::BlockGraphics const* getForBlock(uint blockID);
 
     MCAPI static ::TextureAtlasItem const& getTextureItem(
         ::std::string const&                                     name,
@@ -190,6 +215,8 @@ public:
 
     MCAPI static bool isFullAndOpaque(::Block const& block);
 
+    MCAPI static bool isInitialized();
+
     MCAPI static ::SemVersion loadBlockDataFormatVersion(::Json::Value const& root);
 
     MCAPI static ::BlockGraphics& registerBlockGraphics(
@@ -200,6 +227,8 @@ public:
 
     MCAPI static void
     registerLooseBlockGraphics(::std::unordered_map<::HashedString, ::std::vector<::Json::Value>>& blockDataValuesMap);
+
+    MCAPI static void setAtlasItemManager(::std::shared_ptr<::AtlasItemManager> atlasItemManager);
 
     MCAPI static bool setBlockShape(::BlockGraphics& block, ::Json::Value const& blockShapeData);
 
@@ -243,15 +272,21 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockRenderLayer $getRenderLayer(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD ::BlockRenderLayer $getRenderLayer(::BlockSource&, ::BlockPos const&) const;
 
-    MCFOLD int $getColor(int auxData) const;
+    MCFOLD int $getColor(int) const;
 
-    MCFOLD int $getColor(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD int $getColor(::BlockSource&, ::BlockPos const&) const;
 
-    MCFOLD bool $isSeasonTinted(::BlockSource& region, ::BlockPos const& p) const;
+    MCFOLD bool $isSeasonTinted(::BlockSource&, ::BlockPos const&) const;
 
     MCAPI void $onGraphicsModeChanged(bool fancy, bool fancyBubbles);
 

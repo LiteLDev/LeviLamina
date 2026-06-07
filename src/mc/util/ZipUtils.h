@@ -24,6 +24,9 @@ namespace Core::ZipUtils {
 // NOLINTBEGIN
 MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::PathView path);
 
+MCAPI bool
+exists(::Core::PathView zipPath, ::Core::PathView relativePath, ::Core::ZipUtils::UnzipSettings const& unzipSettings);
+
 MCAPI bool getFilenames(
     ::Core::PathView                                  zipPath,
     ::std::vector<::Core::PathBuffer<::std::string>>& result,
@@ -43,6 +46,7 @@ MCAPI ::std::error_code make_error_code(::Core::ZipUtils::ZipResult e);
 
 #ifdef LL_PLAT_C
 MCAPI ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
+#endif
 
 MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::PathView                       zipInputPath,
@@ -51,7 +55,6 @@ MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     bool                                   useLowMemMode,
     ::Core::ZipUtils::UnzipSettings const& unzipSettings
 );
-#endif
 
 MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::PathView                       zipInputPath,
@@ -77,7 +80,6 @@ zip(::Core::PathView                     inputPathIn,
     bool                                 useLowMemMode,
     ::Core::ZipUtils::ZipSettings const& zipSettings);
 
-#ifdef LL_PLAT_C
 MCAPI ::Core::ZipUtils::ZipResult
 zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
     ::Core::PathView                                        zipOutputPath,
@@ -85,7 +87,6 @@ zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
     bool                                                    useLowMemMode,
     ::std::function<::std::string(::Core::PathView)>        overrideNameCallback,
     ::Core::ZipUtils::ZipSettings const&                    zipSettings);
-#endif
 
 MCAPI ::Core::ZipUtils::ZipResult zipFromZip(
     ::Core::PathView                     zipInputPath,

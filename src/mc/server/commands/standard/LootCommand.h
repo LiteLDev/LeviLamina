@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandPositionFloat.h"
@@ -16,7 +15,6 @@ class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Dimension;
 class ItemRegistryRef;
 class ItemStack;
 class Level;
@@ -72,13 +70,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~LootCommand() /*override*/;
-#else // LL_PLAT_C
-    virtual ~LootCommand() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:
@@ -105,7 +96,7 @@ public:
         ::std::vector<::ItemStack>& items
     ) const;
 
-    MCAPI ::ItemStack getToolItemStack(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI ::std::optional<::ItemStack> getToolItemStack(::CommandOrigin const& origin) const;
     // NOLINTEND
 
 public:
@@ -118,12 +109,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -20,8 +20,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DamageSensorTrigger(DamageSensorTrigger const&);
+    DamageSensorTrigger();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::DamageSensorTrigger& operator=(::DamageSensorTrigger const&);
+
     MCAPI void setCause(::std::string const& causeName);
 
     MCAPI void setDealsDamage(::std::string const& value);

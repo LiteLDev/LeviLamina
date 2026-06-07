@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ActorTextureInfo;
-// clang-format on
-
 struct SimpleTextureData {
 public:
     // member variables
@@ -24,15 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit SimpleTextureData(::ActorTextureInfo const& info);
-
     MCNAPI ~SimpleTextureData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorTextureInfo const& info);
     // NOLINTEND
 
 public:

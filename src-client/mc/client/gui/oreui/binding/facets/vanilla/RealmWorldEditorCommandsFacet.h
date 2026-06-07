@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmWorldEditorCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmWorldEditorCommandsFacet() /*override*/ = default;
@@ -30,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmWorldEditorCommandsFacet(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
+
     MCAPI void clearRealmWorldEditorState();
 
     MCAPI void resetRealmWorld(::std::string const& realmId);
@@ -43,6 +49,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
     // NOLINTEND
 
 public:

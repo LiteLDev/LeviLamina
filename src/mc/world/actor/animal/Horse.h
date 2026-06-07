@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/animal/Animal.h"
 #include "mc/world/actor/animal/HorseFlags.h"
 
@@ -15,10 +14,14 @@ class ActorDefinitionGroup;
 class ActorHurtResult;
 class EntityContext;
 class Player;
-class Vec2;
 class Vec3;
+struct ActorDataDirtyFlagsComponent;
+struct ActorDataHorseFlagComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct RenderPositionComponent;
+struct RenderRotationComponent;
+struct StandAnimationComponent;
 struct VariantParameterList;
 // clang-format on
 
@@ -82,11 +85,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _getHorseFlag(::HorseFlags flag) const;
-
     MCAPI void _setHorseFlag(::HorseFlags flag, bool shouldAddFlag);
-
-    MCAPI bool _setHorseType(::ActorType actorType);
 
     MCAPI void openMouth();
 
@@ -98,10 +97,26 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3
-    getInterpolatedRidingOffset(::Vec2 const& renderRot, float standAnimO, float standAnim, float alpha);
+    MCAPI static ::Vec3 getInterpolatedRidingOffset(
+        ::RenderRotationComponent const& renderRotationComponent,
+        ::StandAnimationComponent const& standAnimationComponent,
+        float                            alpha
+    );
 
-    MCAPI static bool isImmobile(::EntityContext const& entity);
+    MCAPI static ::Vec3 getNewPassengerPos(
+        ::RenderPositionComponent const& horseRenderPosComponent,
+        ::RenderRotationComponent const& horseRenderRotComponent,
+        ::StandAnimationComponent const& horseStandAnimComponent,
+        float                            alpha,
+        float                            passengerPosY
+    );
+
+    MCAPI static void setHorseFlag(
+        ::ActorDataHorseFlagComponent&  actorDataHorseFlag,
+        ::ActorDataDirtyFlagsComponent& actorDataDirtyFlags,
+        ::HorseFlags                    flag,
+        bool                            shouldAddFlag
+    );
     // NOLINTEND
 
 public:

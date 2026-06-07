@@ -44,18 +44,6 @@ public:
         ::ll::TypedStorage<8, 192, ::Social::PlatformUserProfileData> mUserProfileData;
         ::ll::TypedStorage<1, 1, bool>                                mToggleState;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PlatformUserEntryData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     struct LinkedUserEntryData {
@@ -65,18 +53,6 @@ public:
         ::ll::TypedStorage<8, 8, ::Social::XboxLiveUserProfileData const*> mXboxUserProfileData;
         ::ll::TypedStorage<8, 192, ::Social::PlatformUserProfileData>      mPlatformUserProfileData;
         ::ll::TypedStorage<1, 1, bool>                                     mToggleState;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~LinkedUserEntryData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -141,17 +117,27 @@ public:
 
     MCAPI void _addToDataList(::Social::PlatformUserProfileData const& user);
 
-    MCAPI ::EntryType _getEntryTypeFromCollectionName(::std::string const& collectionName) const;
+    MCAPI ::std::string _getFirstVisiblePaginationControlsAbove(::EntryType entryType) const;
 
     MCAPI ::std::string _getHoverText(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
 
+    MCAPI ::std::string _getLinkedAccountFirstDisplayName(int collectionIndex) const;
+
     MCAPI ::std::string _getLinkedAccountFriendTitleName(int collectionIndex) const;
 
-    MCAPI uint _getTotalPages(::EntryType entryType) const;
+    MCAPI ::std::string _getLinkedAccountHoverText(int collectionIndex) const;
 
-    MCAPI uint _getVisibleEntries(::EntryType entryType) const;
+    MCAPI ::std::string _getLinkedAccountSecondDisplayName(int collectionIndex) const;
+
+    MCAPI ::std::string _getPlatformDisplayName(int collectionIndex) const;
+
+    MCAPI ::std::string _getPlatformFriendTitleName(int collectionIndex) const;
 
     MCAPI ::std::string _getXboxFriendTitleName(int collectionIndex) const;
+
+    MCAPI ::std::string _getXboxHoverText(int collectionIndex) const;
+
+    MCAPI ::std::string _getXboxLiveDisplayName(int collectionIndex) const;
 
     MCAPI ::std::string _getXboxLiveDisplayName(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
 

@@ -11,6 +11,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class FeatureRegistry;
 class Random;
 // clang-format on
 
@@ -22,11 +23,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyForestRockFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~LegacyForestRockFeature() /*override*/ = default;
 
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit LegacyForestRockFeature(::FeatureRegistry const& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FeatureRegistry const& registry);
     // NOLINTEND
 
 public:

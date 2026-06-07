@@ -71,6 +71,8 @@ MCAPI void registerEnvironmentSensingSystems(
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
+MCAPI void registerInputDependentTickFilterSystems(::EntitySystems& systemRegistry);
+
 MCAPI void registerInputIndependentTickSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
@@ -119,11 +121,6 @@ MCAPI void registerResetMovementValuesSystems(
 MCAPI void registerSharedVanillaPlayerInteractionSystems(::EntitySystems& systemRegistry);
 
 MCAPI void registerTickFilterSystems(::EntitySystems& systemRegistry);
-
-MCAPI void registerTravelEligibilitySystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
 
 #ifdef LL_PLAT_C
 MCAPI void registerVanillaClientTickingSystems(

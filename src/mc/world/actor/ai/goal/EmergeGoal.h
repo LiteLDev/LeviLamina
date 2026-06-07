@@ -5,17 +5,18 @@
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class EmergeGoal : public ::Goal {
+class EmergeGoal : public ::BaseGoal {
 public:
     // EmergeGoal inner types declare
     // clang-format off
@@ -37,9 +38,11 @@ public:
         // NOLINTEND
 
     public:
-        // virtual functions
+        // member functions
         // NOLINTBEGIN
-        virtual ~Definition() /*override*/ = default;
+        MCAPI Definition();
+
+        MCAPI void initialize(::EntityContext& entity, ::EmergeGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -49,6 +52,12 @@ public:
             ::std::string const&                                                                                   name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EmergeGoal::Definition>>& root
         );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -89,8 +98,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~EmergeGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit EmergeGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

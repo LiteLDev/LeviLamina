@@ -9,7 +9,6 @@
 // clang-format off
 class ItemInstance;
 class ItemStack;
-class ItemStackBase;
 class LootItemCondition;
 class LootTableContext;
 class Random;
@@ -26,11 +25,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetPotionFunction() /*override*/ = default;
+    virtual ~SetPotionFunction() /*override*/;
 
-    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
@@ -38,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const&) const;
+    MCFOLD ::std::string const& getPotionName() const;
     // NOLINTEND
 
 public:
@@ -49,11 +48,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

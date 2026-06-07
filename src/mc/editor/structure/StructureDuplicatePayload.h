@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,45 +23,20 @@ public:
 
 public:
     // prevent constructor by default
+    StructureDuplicatePayload& operator=(StructureDuplicatePayload const&);
+    StructureDuplicatePayload(StructureDuplicatePayload const&);
     StructureDuplicatePayload();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~StructureDuplicatePayload() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~StructureDuplicatePayload() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI StructureDuplicatePayload(::Editor::Network::StructureDuplicatePayload const&);
-
-#ifdef LL_PLAT_C
-    MCNAPI StructureDuplicatePayload(::HashedString const& newId, ::HashedString const& fromId);
-#endif
-
-    MCNAPI ::Editor::Network::StructureDuplicatePayload& operator=(::Editor::Network::StructureDuplicatePayload const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::StructureDuplicatePayload const&);
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::HashedString const& newId, ::HashedString const& fromId);
-#endif
     // NOLINTEND
 
 public:

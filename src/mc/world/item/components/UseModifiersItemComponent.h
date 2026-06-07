@@ -13,6 +13,7 @@
 class ComponentItem;
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct UseModifiersItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -28,11 +29,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UseModifiersItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~UseModifiersItemComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit UseModifiersItemComponent(::SharedTypes::v1_20_50::UseModifiersItemComponent component);
+
+    MCFOLD bool getEmitVibrations() const;
+
+    MCAPI float getMovementModifier() const;
     // NOLINTEND
 
 public:
@@ -45,6 +58,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::UseModifiersItemComponent component);
     // NOLINTEND
 
 public:

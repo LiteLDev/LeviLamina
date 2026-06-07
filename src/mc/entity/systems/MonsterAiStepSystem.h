@@ -77,8 +77,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext
     ) /*override*/;
-
-    virtual ~MonsterAiStepSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

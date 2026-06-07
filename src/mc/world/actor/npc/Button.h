@@ -12,18 +12,15 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mName;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     Button& operator=(Button const&);
-    Button(Button const&);
+    Button();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Button();
+    MCAPI Button(::npc::Button const&);
 
 #ifdef LL_PLAT_C
     MCFOLD ::npc::Button& operator=(::npc::Button&&);
@@ -37,7 +34,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCFOLD void* $ctor(::npc::Button const&);
     // NOLINTEND
 
 public:

@@ -22,19 +22,22 @@ public:
 public:
     // prevent constructor by default
     ScriptPackConfiguration& operator=(ScriptPackConfiguration const&);
+    ScriptPackConfiguration();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPackConfiguration();
-
-    MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration&&);
-
     MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration const&);
 
-#ifdef LL_PLAT_S
-    MCNAPI ::ScriptPackConfiguration& operator=(::ScriptPackConfiguration&&);
+    MCNAPI ::ScriptPackPermissions const& getPermissions() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::ScriptPackPermissions& getPermissions();
 #endif
+
+    MCNAPI ::std::unordered_map<::std::string, ::std::string> const& getSecrets() const;
+
+    MCNAPI ::std::unordered_map<::std::string, ::Json::Value> const& getVariables() const;
 
     MCNAPI ~ScriptPackConfiguration();
     // NOLINTEND
@@ -42,10 +45,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::ScriptPackConfiguration&&);
-
     MCNAPI void* $ctor(::ScriptPackConfiguration const&);
     // NOLINTEND
 

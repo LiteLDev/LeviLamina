@@ -20,18 +20,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~BuildSettingsFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BuildSettingsFacet();
+
     MCFOLD ::OreUI::GameVersionBindings const& getCurrentGameVersion() const;
 
     MCFOLD ::std::optional<::std::string> const& getDevelopmentVersion() const;
 
-    MCFOLD bool isAnyBeta() const;
+    MCAPI bool isAnyBeta() const;
 
     MCFOLD bool isBetaBuild() const;
 
@@ -42,6 +42,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

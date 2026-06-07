@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/world/level/GeneratorType.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::ScriptModule { class ScriptProjectAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -39,9 +37,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI EditorScriptAPI(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
-
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectAfterEvents>
-    _getAfterEvents() const;
 
     MCNAPI ::std::optional<::GeneratorType> _getWorldGeneratorType() const;
 

@@ -31,19 +31,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource&,
+        ::IBlockSource& processedBlockInfo,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~BlockIgnore() /*override*/;
     // NOLINTEND
 
 public:
@@ -64,20 +62,14 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource&,
+        ::IBlockSource& processedBlockInfo,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 

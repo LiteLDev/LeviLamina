@@ -14,18 +14,19 @@ public:
 
 public:
     // prevent constructor by default
+    LogContent& operator=(LogContent const&);
     LogContent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LogContent(::Editor::LogContent&&);
-
     MCNAPI LogContent(::Editor::LogContent const&);
 
-    MCNAPI ::Editor::LogContent& operator=(::Editor::LogContent&&);
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string const& getMessageStr() const;
 
-    MCNAPI ::Editor::LogContent& operator=(::Editor::LogContent const&);
+    MCNAPI ::std::string const& getSubMessageStr() const;
+#endif
 
     MCNAPI ~LogContent();
     // NOLINTEND
@@ -33,8 +34,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::LogContent&&);
-
     MCNAPI void* $ctor(::Editor::LogContent const&);
     // NOLINTEND
 

@@ -19,6 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                       mName;
+    ::ll::TypedStorage<1, 1, uchar>                                mDisplayCategoryIndex;
     ::ll::TypedStorage<8, 152, ::Dependencies>                     mDependencies;
     ::ll::TypedStorage<8, 8, ::std::vector<::ComponentInfo> (*)()> mGenerateDetailedInfo;
     // NOLINTEND
@@ -26,13 +27,12 @@ public:
 public:
     // prevent constructor by default
     SystemInfo& operator=(SystemInfo const&);
-    SystemInfo(SystemInfo const&);
     SystemInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SystemInfo(::SystemInfo&&);
+    MCAPI SystemInfo(::SystemInfo const&);
 
     MCAPI ~SystemInfo();
     // NOLINTEND
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SystemInfo&&);
+    MCAPI void* $ctor(::SystemInfo const&);
     // NOLINTEND
 
 public:

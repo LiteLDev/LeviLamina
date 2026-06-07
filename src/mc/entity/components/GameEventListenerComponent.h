@@ -13,4 +13,39 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameEventDynamicRegistration>> mListenerRegistration;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    GameEventListenerComponent& operator=(GameEventListenerComponent const&);
+    GameEventListenerComponent(GameEventListenerComponent const&);
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GameEventListenerComponent();
+
+    MCAPI GameEventListenerComponent(::GameEventListenerComponent&& other);
+
+    MCAPI bool initialize(::std::unique_ptr<::GameEventDynamicRegistration> registration);
+
+    MCAPI ::GameEventListenerComponent& operator=(::GameEventListenerComponent&& other);
+
+    MCFOLD ::GameEventDynamicRegistration* tryGetListenerRegistration() const;
+
+    MCAPI ~GameEventListenerComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+
+    MCFOLD void* $ctor(::GameEventListenerComponent&& other);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

@@ -24,6 +24,10 @@ class Vec3;
 
 class ShulkerBoxBlock : public ::ChestBlock {
 public:
+    // prevent constructor by default
+    ShulkerBoxBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
@@ -50,11 +54,15 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
 
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
+    // NOLINTEND
 
-    virtual ~ShulkerBoxBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ShulkerBoxBlock(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -67,6 +75,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -98,7 +112,7 @@ public:
         ::AABB&                    bufferValue
     ) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 

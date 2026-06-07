@@ -59,8 +59,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
-
-    virtual ~FoliageAppearanceClientBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

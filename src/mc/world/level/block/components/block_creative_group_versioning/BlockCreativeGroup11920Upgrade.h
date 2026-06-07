@@ -29,8 +29,6 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const /*override*/;
-
-    virtual ~BlockCreativeGroup11920Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:

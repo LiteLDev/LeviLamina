@@ -31,12 +31,13 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentText& operator=(ScriptWidgetComponentText const&);
+    ScriptWidgetComponentText(ScriptWidgetComponentText const&);
     ScriptWidgetComponentText();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentText() /*override*/ = default;
+    virtual ~ScriptWidgetComponentText() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
@@ -44,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentText(::Editor::ScriptModule::ScriptWidgetComponentText const&);
-
     MCNAPI ScriptWidgetComponentText(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
@@ -70,8 +69,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentText const&);
-
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
@@ -81,6 +78,12 @@ public:
         ::std::string const&                                                      textString,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> options
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

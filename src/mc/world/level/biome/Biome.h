@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/util/WeightedRandomList.h"
+#include "mc/world/level/biome/BiomeIdType.h"
 #include "mc/world/level/biome/OceanRuinConfiguration.h"
 #include "mc/world/level/biome/components/BiomeComponentStorage.h"
 #include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
@@ -16,6 +16,7 @@ class BlockPos;
 class BlockSource;
 class LevelChunk;
 class MobSpawnerData;
+struct BiomeHeight;
 namespace br::worldgen { struct SpawnerData; }
 namespace mce { class Color; }
 // clang-format on
@@ -71,19 +72,45 @@ public:
     // NOLINTBEGIN
     MCAPI Biome(::BiomeIdType id, ::std::string_view name);
 
+    MCAPI bool canHaveSnowfall(::BlockSource const& region, ::BlockPos const& pos) const;
+
     MCAPI ::VanillaBiomeTypes getBiomeType() const;
 
-    MCAPI int getMapFoliageColor() const;
+    MCFOLD float getDefaultBiomeTemperature() const;
+
+    MCFOLD float getDownfall() const;
 
     MCAPI int getMapGrassColor(::BlockPos const& pos) const;
+
+    MCFOLD ::std::array<::WeightedRandomList<::br::worldgen::SpawnerData>, 8>& getMobMapMutable();
+
+    MCFOLD ::std::vector<::std::shared_ptr<::MobSpawnerData>> const& getMobs() const;
+
+    MCFOLD ::std::vector<::std::shared_ptr<::MobSpawnerData>>& getMobsMutable();
+
+    MCAPI int getSnowAccumulationLayers() const;
 
     MCAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI ::Biome::BiomeTempCategory getTemperatureCategory() const;
 
+    MCAPI float getTemperatureWorldGen(::BlockPos const& pos, short seaLevel) const;
+
     MCAPI bool isHumid() const;
 
+    MCAPI bool isSnowCovered() const;
+
+    MCAPI ::Biome& setDepthAndScale(::BiomeHeight const& heightData);
+
     MCAPI ::Biome& setMapWaterColor(int color);
+
+    MCAPI ::Biome& setNoRain();
+
+    MCAPI ::Biome& setOceanRuinConfig(::OceanRuinConfiguration const& config);
+
+    MCAPI ::Biome& setSnowAccumulation(float minSnowLevel, float maxSnowLevel);
+
+    MCAPI ::Biome& setTemperatureAndDownfall(float temperature, float downfall);
     // NOLINTEND
 
 public:
@@ -108,6 +135,8 @@ public:
 
     MCAPI static ::mce::Color const& DEFAULT_GRASS_TINT();
 
+    MCAPI static ::mce::Color const& DEFAULT_UNDERWATER_COLOR();
+
     MCAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
 
     MCAPI static ::mce::Color const& DEFAULT_WATER_TINT();
@@ -115,6 +144,8 @@ public:
     MCAPI static ::mce::Color const& DRY_FOLIAGE_TINT();
 
     MCAPI static ::mce::Color const& EVERGREEN_FOLIAGE_TINT();
+
+    MCAPI static float const& RAIN_TEMP_THRESHOLD();
     // NOLINTEND
 
 public:

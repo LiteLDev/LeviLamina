@@ -44,17 +44,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FeatureToggle(::FeatureToggles::FeatureToggle&&);
-
         MCAPI ::FeatureToggles::FeatureToggle& operator=(::FeatureToggles::FeatureToggle&&);
 
         MCAPI ~FeatureToggle();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::FeatureToggles::FeatureToggle&&);
         // NOLINTEND
 
     public:
@@ -84,6 +76,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FeatureToggles();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FeatureToggles() /*override*/;
@@ -92,8 +88,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::function<void(::Option&)>
-    _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID optionIdToCheck) const;
+    MCAPI explicit FeatureToggles(::AppPlatform& appPlatform);
 
     MCAPI ::std::function<void(::Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(
         ::std::vector<::FeatureOptionID> expectedDisabledOptions,
@@ -104,9 +99,6 @@ public:
         ::std::vector<::FeatureOptionID> expectedDisabledOptions,
         ::std::vector<::FeatureOptionID> expectedEnabledOptions
     );
-
-    MCAPI ::std::function<void(bool&)>
-    _getLockIfOtherOptionDisabledLockCallback(::FeatureOptionID optionIdToCheck) const;
 
     MCAPI void _initialize(::AppPlatform& appPlatform);
 
@@ -125,17 +117,29 @@ public:
 
     MCAPI void _setupDependencies();
 
-#ifdef LL_PLAT_C
     MCAPI ::Option* get(::FeatureOptionID featureID);
+
+#ifdef LL_PLAT_C
+    MCAPI ::FeatureOptionID getFeatureIDFromSaveTag(::std::string_view featureSaveTag) const;
 #endif
 
     MCAPI bool isEnabled(::FeatureOptionID featureID) const;
+
+#ifdef LL_PLAT_C
+    MCFOLD bool isGraniteBayFeatureEnabled() const;
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::FeatureToggles>& mFeatureToggles();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AppPlatform& appPlatform);
     // NOLINTEND
 
 public:

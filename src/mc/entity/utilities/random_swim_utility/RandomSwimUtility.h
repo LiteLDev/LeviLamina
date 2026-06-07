@@ -15,6 +15,14 @@ namespace RandomSwimUtility { struct SwimHeightBounds; }
 namespace RandomSwimUtility {
 // functions
 // NOLINTBEGIN
+MCNAPI void applyStep(
+    ::Mob&        mob,
+    ::Vec3 const& moveDirection,
+    ::Vec3 const& desiredStepDelta,
+    float         yawTurnDegreesPerTick,
+    float         correctionEpsilonSquared
+);
+
 MCNAPI void beginRandomSwim(
     ::Mob&  mob,
     ::Vec3& randomSwimTarget,
@@ -44,8 +52,6 @@ MCNAPI void randomSwimTick(
 
 MCNAPI ::std::optional<::Vec3>
 trySelectRandomSwimTarget(::Mob& mob, int searchRadius, bool avoidSurface, int maxAttempts);
-
-MCNAPI bool turnBodyYawTowards(::Mob& mob, ::Vec3 const& toTarget, float maxDeltaDegrees);
 
 MCNAPI bool
 validateSwimTarget(::BlockSource const& region, ::Mob const& mob, ::Vec3 const& targetWorldPos, bool avoidSurface);

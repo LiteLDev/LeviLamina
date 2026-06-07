@@ -22,13 +22,14 @@ public:
 public:
     // prevent constructor by default
     WorldTemplateData& operator=(WorldTemplateData const&);
-    WorldTemplateData(WorldTemplateData const&);
     WorldTemplateData();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI WorldTemplateData(::WorldTemplateData&&);
+
+    MCNAPI WorldTemplateData(::WorldTemplateData const&);
 
     MCNAPI ~WorldTemplateData();
     // NOLINTEND
@@ -37,6 +38,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::WorldTemplateData&&);
+
+    MCNAPI void* $ctor(::WorldTemplateData const&);
     // NOLINTEND
 
 public:

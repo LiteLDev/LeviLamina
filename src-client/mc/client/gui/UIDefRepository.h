@@ -36,15 +36,29 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        UIDefNamespace();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI explicit UIDefNamespace(::std::string const& name);
+
+        MCAPI ::Json::Value const& findDefInNamespace(::std::string const& defName) const;
+
         MCAPI ~UIDefNamespace();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::string const& name);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -61,23 +75,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        DefEntry& operator=(DefEntry const&);
-        DefEntry(DefEntry const&);
-        DefEntry();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DefEntry(::UIDefRepository::DefEntry&&);
-
         MCAPI ~DefEntry();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::UIDefRepository::DefEntry&&);
         // NOLINTEND
 
     public:
@@ -149,8 +149,6 @@ public:
     virtual ::Json::Value const& getGlobalVariables() const /*override*/;
 
     virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry) /*override*/;
-
-    virtual ~UIDefRepository() /*override*/;
     // NOLINTEND
 
 public:
@@ -200,12 +198,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

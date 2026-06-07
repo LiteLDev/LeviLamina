@@ -29,21 +29,6 @@ public:
         ::ll::TypedStorage<4, 16, ::mce::Color>  color;
         ::ll::TypedStorage<8, 8, uint64>         durationMS;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DebugMarkerData(DebugMarkerData const&);
-        DebugMarkerData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::ClientboundDebugRendererPacketPayload::DebugMarkerData&
-        operator=(::ClientboundDebugRendererPacketPayload::DebugMarkerData&&);
-
-        MCAPI ::ClientboundDebugRendererPacketPayload::DebugMarkerData&
-        operator=(::ClientboundDebugRendererPacketPayload::DebugMarkerData const&);
-        // NOLINTEND
     };
 
 public:
@@ -61,26 +46,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ClientboundDebugRendererPacketPayload(::ClientboundDebugRendererPacketPayload::PayloadType type);
+
     MCAPI ClientboundDebugRendererPacketPayload(
         ::std::string               text,
         ::mce::Color const&         color,
         ::Vec3 const&               position,
         ::std::chrono::milliseconds duration
     );
-
-    MCAPI ~ClientboundDebugRendererPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ClientboundDebugRendererPacketPayload::PayloadType type);
+
     MCAPI void*
     $ctor(::std::string text, ::mce::Color const& color, ::Vec3 const& position, ::std::chrono::milliseconds duration);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

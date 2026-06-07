@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class PacketSender;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -27,7 +28,9 @@ public:
 
     using ScreenClosedCallback = ::std::function<void(uint, ::DataDrivenScreenClosedReason)>;
 
-    using PacketSenderGetter = ::std::function<::PacketSender&()>;
+    using ClientSideCloseCallbackSignature = void();
+
+    using ClientSideCloseCallback = ::std::function<void()>;
 
 public:
     // member variables
@@ -39,17 +42,45 @@ public:
             void(::std::optional<::std::string>, ::std::optional<uint>),
             ::Bedrock::PubSub::ThreadModel::SingleThreaded,
             0>>
-                                                                                   mShowDataDrivenScreenPublisher;
+        mShowDataDrivenScreenPublisher;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+                                                                                   mClientSideClosePublisher;
     ::ll::TypedStorage<8, 56, ::std::optional<::GameplayUI::DataDrivenScreenInfo>> mCurrentScreen;
-    ::ll::TypedStorage<8, 64, ::std::function<::PacketSender&()>>                  mPacketSenderGetter;
+    ::ll::TypedStorage<8, 8, ::PacketSender&>                                      mPacketSender;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DataDrivenScreenAPI& operator=(DataDrivenScreenAPI const&);
+    DataDrivenScreenAPI(DataDrivenScreenAPI const&);
+    DataDrivenScreenAPI();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void sendClosedPacket(uint formId, ::DataDrivenScreenClosedReason closeReason);
+    MCAPI explicit DataDrivenScreenAPI(::PacketSender& packetSender);
+
+    MCAPI void clientSideCloseDataDrivenScreens();
+
+    MCAPI void closeAllDataDrivenScreens();
+
+    MCAPI void closeDataDrivenScreen(uint formId);
 
     MCAPI void showDataDrivenScreen(::std::string const& screenId, uint formId, ::std::optional<uint> dataInstanceId);
+
+    MCAPI ::Bedrock::PubSub::Subscription
+    subscribeToOnClientSideClose(::std::function<void()>&& onClientSideCloseCallback);
+
+    MCAPI ::Bedrock::PubSub::Subscription subscribeToOnServerShowDataDrivenScreen(
+        ::std::function<void(::std::optional<::std::string>, ::std::optional<uint>)>&&
+            onServerShowDataDrivenScreenCallback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::PacketSender& packetSender);
     // NOLINTEND
 };
 

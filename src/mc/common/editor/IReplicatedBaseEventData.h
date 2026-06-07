@@ -12,8 +12,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void triggerEventFromPayload() const = 0;
-
-    virtual ~IReplicatedBaseEventData() /*override*/ = default;
     // NOLINTEND
 
 public:

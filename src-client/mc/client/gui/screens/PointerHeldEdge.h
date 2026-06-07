@@ -23,24 +23,4 @@ public:
     ::ll::TypedStorage<4, 4, ::NodeId> mTargetNode;
     ::ll::TypedStorage<4, 4, int>      mPriority;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PointerHeldEdge& operator=(PointerHeldEdge const&);
-    PointerHeldEdge(PointerHeldEdge const&);
-    PointerHeldEdge();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::PointerHeldEdge& operator=(::PointerHeldEdge&&);
-
-    MCAPI ~PointerHeldEdge();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

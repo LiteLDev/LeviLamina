@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AppPlatformListener();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~AppPlatformListener();
@@ -43,7 +47,7 @@ public:
 
     virtual void onOperationModeChanged(::OperationMode const operationMode);
 
-    virtual void onPerformanceModeChanged(bool const boost);
+    virtual void onPerformanceModeChanged(bool const);
 
     virtual void onPushNotificationReceived(::PushNotificationMessage const& msg);
 
@@ -57,9 +61,17 @@ public:
 
     virtual void onAppSurfaceDestroyed();
 
+#ifdef LL_PLAT_S
+    virtual void onClipboardCopy(::std::string const&);
+#else // LL_PLAT_C
     virtual void onClipboardCopy(::std::string const& clipString);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void onClipboardPaste(::std::string const&);
+#else // LL_PLAT_C
     virtual void onClipboardPaste(::std::string const& clipString);
+#endif
 
     virtual void onLowMemory(::LowMemorySeverity);
     // NOLINTEND
@@ -67,7 +79,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit AppPlatformListener(bool doInit);
+
     MCAPI void initListener(float priority);
+
+    MCAPI void terminate();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool doInit);
     // NOLINTEND
 
 public:
@@ -97,7 +119,7 @@ public:
 
     MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
 
-    MCFOLD void $onPerformanceModeChanged(bool const boost);
+    MCFOLD void $onPerformanceModeChanged(bool const);
 
     MCFOLD void $onPushNotificationReceived(::PushNotificationMessage const& msg);
 
@@ -111,9 +133,9 @@ public:
 
     MCFOLD void $onAppSurfaceDestroyed();
 
-    MCFOLD void $onClipboardCopy(::std::string const& clipString);
+    MCFOLD void $onClipboardCopy(::std::string const&);
 
-    MCFOLD void $onClipboardPaste(::std::string const& clipString);
+    MCFOLD void $onClipboardPaste(::std::string const&);
 
     MCFOLD void $onLowMemory(::LowMemorySeverity);
 

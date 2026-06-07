@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/model/FitToFrame.h"
 #include "mc/client/model/geom/Cube.h"
+#include "mc/client/model/geom/QuadUVRotation.h"
 #include "mc/client/model/geom/TextureOffset.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
@@ -52,11 +53,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Box(Box const&);
-        Box();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void _boxFaceUVToJson(
@@ -65,8 +61,6 @@ public:
             ::std::string const&                faceName,
             ::std::vector<::std::string> const& materialInstanceList
         ) const;
-
-        MCAPI ::Geometry::Box& operator=(::Geometry::Box const&);
 
         MCAPI void toJson(::Json::Value& root, ::std::vector<::std::string> const& materialInstanceList) const;
         // NOLINTEND
@@ -79,6 +73,12 @@ public:
         ::ll::TypedStorage<4, 4, uint> mPositionIndex;
         ::ll::TypedStorage<4, 4, uint> mNormalIndex;
         ::ll::TypedStorage<4, 4, uint> mUVIndex;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void toJson(::Json::Value& root) const;
         // NOLINTEND
     };
 
@@ -96,7 +96,6 @@ public:
 
     public:
         // prevent constructor by default
-        NodePolyMesh& operator=(NodePolyMesh const&);
         NodePolyMesh();
 
     public:
@@ -105,6 +104,8 @@ public:
         MCAPI NodePolyMesh(::Geometry::NodePolyMesh const&);
 
         MCAPI ::Geometry::NodePolyMesh& operator=(::Geometry::NodePolyMesh&&);
+
+        MCAPI ::Geometry::NodePolyMesh& operator=(::Geometry::NodePolyMesh const&);
 
         MCAPI void toJson(::Json::Value& root) const;
 
@@ -138,13 +139,20 @@ public:
 
     public:
         // prevent constructor by default
-        NodeTextureMesh(NodeTextureMesh const&);
         NodeTextureMesh();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::Geometry::NodeTextureMesh& operator=(::Geometry::NodeTextureMesh const&);
+        MCAPI explicit NodeTextureMesh(::std::string const& textureName);
+
+        MCAPI void toJson(::Json::Value& root) const;
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::string const& textureName);
         // NOLINTEND
     };
 
@@ -174,10 +182,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Node& operator=(Node const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Node();
@@ -194,6 +198,8 @@ public:
             bool                 ignoreInheritedScale,
             bool                 errorIfIdenticalLocatorAlreadyExists
         );
+
+        MCAPI ::Geometry::Node& operator=(::Geometry::Node const&);
 
         MCAPI void toJson(::Json::Value& root, ::std::vector<::std::string> const& materialInstanceList) const;
 
@@ -286,9 +292,17 @@ public:
     MCAPI void
     _parseBoxFaceUVs(::Geometry::Box& box, ::Json::Value const& uvNode, ::TextureUVCoordinateSet const& uvOffset);
 
-    MCAPI void _parseItemDisplayTransforms(::Json::Value const& itemTransformNode);
+    MCAPI void _parseItemDisplayTransform(::Json::Value const& itemTransformNode, ::std::string const& transformName);
+
+    MCFOLD ::std::vector<::std::string> const& getMaterialInstanceList() const;
 
     MCAPI ::Geometry::Node const* getNode(::std::string_view name) const;
+
+    MCFOLD ::std::map<::std::string, ::Geometry::Node> const& getNodes() const;
+
+    MCFOLD ::Vec2 const& getTextureDimensions() const;
+
+    MCFOLD bool isFromBaseGamePack() const;
 
     MCAPI void
     parse(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
@@ -296,6 +310,12 @@ public:
     MCAPI void toJson(::Json::Value& root) const;
 
     MCAPI ~Geometry();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::QuadUVRotation _parseUvRotation(::Json::Value const& value);
     // NOLINTEND
 
 public:

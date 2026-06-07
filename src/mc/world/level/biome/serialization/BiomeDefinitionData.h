@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/biome/BiomeIdType.h"
 #include "mc/world/level/biome/serialization/BiomeDefinitionChunkGenData.h"
 #include "mc/world/level/biome/serialization/BiomeTagsData.h"
 
@@ -27,19 +27,19 @@ public:
     ::ll::TypedStorage<4, 4, int>                                              mMapWaterColorARGB;
     ::ll::TypedStorage<1, 1, bool>                                             mRain;
     ::ll::TypedStorage<8, 32, ::std::optional<::BiomeTagsData>>                mTags;
-    ::ll::TypedStorage<8, 512, ::std::optional<::BiomeDefinitionChunkGenData>> mChunkGenData;
+    ::ll::TypedStorage<8, 896, ::std::optional<::BiomeDefinitionChunkGenData>> mChunkGenData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BiomeDefinitionData& operator=(BiomeDefinitionData const&);
-    BiomeDefinitionData(BiomeDefinitionData const&);
     BiomeDefinitionData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeDefinitionData(::BiomeDefinitionData&&);
+    MCAPI BiomeDefinitionData(::BiomeDefinitionData const&);
+
+    MCAPI ::BiomeDefinitionData& operator=(::BiomeDefinitionData const&);
 
     MCAPI void write(::BinaryStream& stream) const;
 
@@ -55,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeDefinitionData&&);
+    MCAPI void* $ctor(::BiomeDefinitionData const&);
     // NOLINTEND
 
 public:

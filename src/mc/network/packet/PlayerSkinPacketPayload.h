@@ -18,17 +18,37 @@ public:
 
 public:
     // prevent constructor by default
-    PlayerSkinPacketPayload(PlayerSkinPacketPayload const&);
+    PlayerSkinPacketPayload& operator=(PlayerSkinPacketPayload const&);
     PlayerSkinPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PlayerSkinPacketPayload(::PlayerSkinPacketPayload const&);
+
+    MCAPI PlayerSkinPacketPayload(
+        ::mce::UUID const&         uuid,
+        ::SerializedSkinRef const& skin,
+        ::std::string const&       newSkinName,
+        ::std::string const&       oldSkinName
+    );
+
     MCAPI ::PlayerSkinPacketPayload& operator=(::PlayerSkinPacketPayload&&);
 
-    MCAPI ::PlayerSkinPacketPayload& operator=(::PlayerSkinPacketPayload const&);
-
     MCAPI ~PlayerSkinPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::PlayerSkinPacketPayload const&);
+
+    MCAPI void* $ctor(
+        ::mce::UUID const&         uuid,
+        ::SerializedSkinRef const& skin,
+        ::std::string const&       newSkinName,
+        ::std::string const&       oldSkinName
+    );
     // NOLINTEND
 
 public:

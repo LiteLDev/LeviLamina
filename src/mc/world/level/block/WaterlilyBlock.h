@@ -18,6 +18,10 @@ class IConstBlockSource;
 
 class WaterlilyBlock : public ::FoliageBlock {
 public:
+    // prevent constructor by default
+    WaterlilyBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -32,8 +36,18 @@ public:
     ) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
+    // NOLINTEND
 
-    virtual ~WaterlilyBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WaterlilyBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

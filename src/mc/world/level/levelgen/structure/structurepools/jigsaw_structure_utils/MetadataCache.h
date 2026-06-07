@@ -31,20 +31,12 @@ public:
     MCAPI explicit MetadataCache(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
 
     MCAPI ::Block const* getOrCreateBlockCache(uint64 index);
-
-    MCAPI ~MetadataCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

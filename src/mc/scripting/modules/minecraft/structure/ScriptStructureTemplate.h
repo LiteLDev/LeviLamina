@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class LevelStorage;
 class StructureManager;
 class Vec3;
@@ -41,12 +42,13 @@ public:
 public:
     // prevent constructor by default
     ScriptStructureTemplate& operator=(ScriptStructureTemplate const&);
-    ScriptStructureTemplate(ScriptStructureTemplate const&);
     ScriptStructureTemplate();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptStructureTemplate(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
+
     MCAPI ScriptStructureTemplate(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
@@ -54,6 +56,9 @@ public:
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
         ::LevelStorage&                                                                     levelStorage
     );
+
+    MCFOLD ::Scripting::InvalidArgumentError
+    _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
@@ -84,6 +89,8 @@ public:
                  blockPermutation,
             bool waterlogged
         );
+
+    MCAPI ~ScriptStructureTemplate();
     // NOLINTEND
 
 public:
@@ -103,6 +110,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
+
     MCAPI void* $ctor(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
@@ -110,6 +119,12 @@ public:
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
         ::LevelStorage&                                                                     levelStorage
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

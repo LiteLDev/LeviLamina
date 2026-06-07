@@ -33,13 +33,13 @@ public:
     virtual void update() = 0;
 
     virtual void initRealmsFileDownloader(
-        ::std::string const&                      downloadId,
-        int const                                 slotIndex,
-        ::std::string const&                      downloadUrl,
-        ::FileInfo const&                         file,
-        uint64                                    fromByteOffset,
-        ::std::string const&                      downloadVersion,
-        ::std::function<void(::DownloaderResult)> callback
+        ::std::string const&,
+        int const,
+        ::std::string const&,
+        ::FileInfo const&,
+        uint64,
+        ::std::string const&,
+        ::std::function<void(::DownloaderResult)>
     ) = 0;
 
     virtual void initFileDownloader(
@@ -84,11 +84,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

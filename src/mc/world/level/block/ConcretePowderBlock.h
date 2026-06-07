@@ -12,7 +12,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class HashedString;
 class ItemInstance;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -21,11 +20,15 @@ namespace mce { class Color; }
 
 class ConcretePowderBlock : public ::FallingBlock {
 public:
+    // prevent constructor by default
+    ConcretePowderBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
+    virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
+    virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -33,34 +36,36 @@ public:
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~ConcretePowderBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ConcretePowderBlock(::std::string const& nameId, int id);
+
     MCAPI bool _tryTouchWater(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::HashedString> name) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $getDustColor(::Block const& block) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
-    MCAPI ::std::string $getDustParticleName(::Block const& block) const;
+    MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

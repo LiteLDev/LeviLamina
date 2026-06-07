@@ -32,8 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~SeedTemplateFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,7 +45,7 @@ public:
 
     MCAPI bool failedFetch() const;
 
-    MCFOLD ::std::vector<::WorldSeedModel>& getWorldSeedModels();
+    MCAPI ::std::vector<::WorldSeedModel>& getWorldSeedModels();
 
     MCAPI void refresh();
     // NOLINTEND

@@ -26,16 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FacetResourcePack& operator=(FacetResourcePack const&);
-    FacetResourcePack(FacetResourcePack const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI FacetResourcePack();
-
-    MCAPI FacetResourcePack(::OreUI::FacetResourcePack&&);
 
     MCAPI ~FacetResourcePack();
     // NOLINTEND
@@ -44,8 +37,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::OreUI::FacetResourcePack&&);
     // NOLINTEND
 
 public:

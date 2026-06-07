@@ -52,7 +52,7 @@ public:
 
     virtual bool checkSpawnObstruction() const /*override*/;
 
-    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
+    virtual bool checkSpawnRules(bool) /*override*/;
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
@@ -60,8 +60,6 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
-
-    virtual ~Squid() /*override*/;
     // NOLINTEND
 
 public:
@@ -76,7 +74,19 @@ public:
 
     MCAPI ::Vec3 _randomInkDir();
 
+    MCAPI float getTentacleAngle() const;
+
+    MCAPI float getTy();
+
+    MCFOLD float getZBodyRot() const;
+
     MCAPI void postAiStep();
+
+    MCAPI void setTx(float val);
+
+    MCAPI void setTy(float val);
+
+    MCAPI void setTz(float val);
 
     MCAPI void spawnInkParticles();
     // NOLINTEND
@@ -93,19 +103,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCFOLD bool $checkSpawnObstruction() const;
 
-    MCAPI bool $checkSpawnRules(bool fromSpawner);
+    MCAPI bool $checkSpawnRules(bool);
 
     MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

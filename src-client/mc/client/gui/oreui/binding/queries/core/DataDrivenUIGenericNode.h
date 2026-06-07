@@ -30,18 +30,13 @@ public:
 public:
     // prevent constructor by default
     DataDrivenUIGenericNode& operator=(DataDrivenUIGenericNode const&);
-    DataDrivenUIGenericNode(DataDrivenUIGenericNode const&);
     DataDrivenUIGenericNode();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataDrivenUIGenericNode() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DataDrivenUIGenericNode(::OreUI::DataDrivenUIGenericNode const& other);
+
     MCAPI DataDrivenUIGenericNode(::OreUI::DataDrivenUIGenericNode&& other);
 
     MCAPI DataDrivenUIGenericNode(
@@ -64,7 +59,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::DataDrivenUIGenericNode&& other);
+    MCFOLD void* $ctor(::OreUI::DataDrivenUIGenericNode const& other);
+
+    MCFOLD void* $ctor(::OreUI::DataDrivenUIGenericNode&& other);
 
     MCAPI void* $ctor(
         ::std::optional<::std::string>                  component,
@@ -81,12 +78,6 @@ public:
             ::OreUI::DataDrivenUIGenericNode,
             ::std::allocator<::OreUI::DataDrivenUIGenericNode>> const& childrenNodes
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -75,6 +75,8 @@ public:
 
     MCAPI void _showDlcMissingContentKeyModal();
 
+    MCAPI bool isActive();
+
     MCAPI ::DlcUIWrapperResult tick();
 
     MCAPI void tryDownload(

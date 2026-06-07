@@ -19,16 +19,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraAimAssistSettingsComponent& operator=(CameraAimAssistSettingsComponent const&);
-    CameraAimAssistSettingsComponent(CameraAimAssistSettingsComponent const&);
-    CameraAimAssistSettingsComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CameraAimAssistSettingsComponent& operator=(::CameraAimAssistSettingsComponent&&);
-
     MCAPI ~CameraAimAssistSettingsComponent();
     // NOLINTEND
 

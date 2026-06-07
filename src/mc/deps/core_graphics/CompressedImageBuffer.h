@@ -20,6 +20,7 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
+    CompressedImageBuffer& operator=(CompressedImageBuffer const&);
     CompressedImageBuffer();
 
 #endif
@@ -27,9 +28,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CompressedImageBuffer(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
+    MCAPI CompressedImageBuffer(::cg::CompressedImageBuffer const& imageBuffer);
 
-    MCAPI ~CompressedImageBuffer();
+    MCAPI CompressedImageBuffer(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
 #endif
     // NOLINTEND
 
@@ -37,15 +38,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
-#endif
-    // NOLINTEND
+    MCAPI void* $ctor(::cg::CompressedImageBuffer const& imageBuffer);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
 #endif
     // NOLINTEND
 };

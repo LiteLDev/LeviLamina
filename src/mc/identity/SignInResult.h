@@ -5,7 +5,7 @@
 namespace Social {
 
 enum class SignInResult : int {
-    Unknown            = -1,
+    Unknown            = 4294967295,
     Success            = 0,
     Failure            = 1,
     UserActionRequired = 2,

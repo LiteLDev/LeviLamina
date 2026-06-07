@@ -20,21 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI explicit ScopeExit(::std::function<void()> function);
-
-    MCNAPI ::Bedrock::ScopeExit& operator=(::std::function<void()> function);
-#endif
-
     MCNAPI ~ScopeExit();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::function<void()> function);
-#endif
     // NOLINTEND
 
 public:

@@ -7,12 +7,6 @@
 
 class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ClientLevelEventCoordinator() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

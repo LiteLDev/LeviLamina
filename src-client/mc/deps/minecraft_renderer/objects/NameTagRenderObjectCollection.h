@@ -20,8 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addTags(::std::vector<::NameTagRenderObject>&& tags);
-
     MCAPI ~NameTagRenderObjectCollection();
     // NOLINTEND
 

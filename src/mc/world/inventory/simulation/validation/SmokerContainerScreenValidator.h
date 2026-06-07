@@ -7,9 +7,15 @@
 
 class SmokerContainerScreenValidator : public ::FurnaceContainerScreenValidator {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~SmokerContainerScreenValidator() /*override*/ = default;
+    MCAPI SmokerContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

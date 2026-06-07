@@ -22,8 +22,6 @@ public:
     virtual int getMaxYSpawnOffset() const /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
-
-    virtual ~PillagerOutpostStart() /*override*/ = default;
     // NOLINTEND
 
 public:

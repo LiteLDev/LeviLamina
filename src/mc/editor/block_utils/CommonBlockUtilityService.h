@@ -149,21 +149,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit CommonBlockUtilityService(::Editor::ServiceProviderCollection& providers);
-#endif
 
     MCNAPI ::BlockSource& _getBlockSource() const;
-
-    MCNAPI ::Dimension& _getDimension() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-#endif
     // NOLINTEND
 
 public:

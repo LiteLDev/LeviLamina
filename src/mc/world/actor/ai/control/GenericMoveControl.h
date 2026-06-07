@@ -18,15 +18,27 @@ public:
     // NOLINTBEGIN
     virtual ~GenericMoveControl() /*override*/ = default;
 
-    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription* description) /*override*/;
+    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription const* description) /*override*/;
 
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GenericMoveControl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
+    MCFOLD void $initializeInternal(::Mob& mob, ::MoveControlDescription const* description);
 
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 

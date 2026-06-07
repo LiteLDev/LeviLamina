@@ -19,9 +19,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DefinitionPropertyNames& operator=(DefinitionPropertyNames const&);
+    DefinitionPropertyNames();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DefinitionPropertyNames(::UI::Resources::DefinitionPropertyNames const&);
+
     MCAPI ~DefinitionPropertyNames();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UI::Resources::DefinitionPropertyNames const&);
     // NOLINTEND
 
 public:

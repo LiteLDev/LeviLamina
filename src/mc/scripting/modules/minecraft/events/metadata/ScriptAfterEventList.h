@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScriptDeferredFlushTracker;
 namespace ScriptModuleMinecraft { struct ScriptAfterEventSignalHandle; }
 // clang-format on
 
@@ -17,23 +18,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptAfterEventList& operator=(ScriptAfterEventList const&);
-    ScriptAfterEventList(ScriptAfterEventList const&);
-    ScriptAfterEventList();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptAfterEventList& operator=(::ScriptModuleMinecraft::ScriptAfterEventList&&);
+    MCAPI void deferredFlush(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI ~ScriptAfterEventList();
-    // NOLINTEND
+    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptAfterEventSignalHandle const*>
+    getAllSignalsByEventType(uint64 signalHashCode) const;
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void postFlush();
+
+    MCAPI void preFlush();
     // NOLINTEND
 };
 

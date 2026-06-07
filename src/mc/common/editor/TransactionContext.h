@@ -9,6 +9,7 @@
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Transactions { class IOperation; }
+namespace Editor::Transactions { class IPendingOperation; }
 // clang-format on
 
 namespace Editor::Transactions {
@@ -51,11 +52,15 @@ public:
 
     MCNAPI void addOperation(::std::unique_ptr<::Editor::Transactions::IOperation> operation);
 
+    MCNAPI void addPendingOperation(::std::unique_ptr<::Editor::Transactions::IPendingOperation> operation);
+
     MCNAPI ::Scripting::Result_deprecated<int>
     commitPendingOperations(::Editor::ServiceProviderCollection& serviceProviders);
 
     MCNAPI ::Scripting::Result_deprecated<int>
     discardPendingOperations(::Editor::ServiceProviderCollection& serviceProviders);
+
+    MCNAPI bool empty() const;
 
     MCNAPI ~TransactionContext();
     // NOLINTEND

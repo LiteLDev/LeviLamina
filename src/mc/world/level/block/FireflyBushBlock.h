@@ -12,11 +12,25 @@ struct BlockAnimateTickData;
 
 class FireflyBushBlock : public ::BushBlock {
 public:
+    // prevent constructor by default
+    FireflyBushBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FireflyBushBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FireflyBushBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

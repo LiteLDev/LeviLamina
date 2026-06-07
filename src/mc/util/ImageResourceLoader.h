@@ -23,9 +23,13 @@ public:
     };
 
 public:
-    // member variables
-    // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<1, 0> mUnk5447ee;
+#else // LL_PLAT_C
     ::ll::UntypedStorage<8, 16> mUnk5447ee;
+#endif
     ::ll::UntypedStorage<8, 16> mUnk9cf0a7;
     // NOLINTEND
 

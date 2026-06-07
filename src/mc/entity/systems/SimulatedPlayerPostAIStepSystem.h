@@ -27,7 +27,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _doSimulatedPlayerPostAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
+    _doSimulatedPlayerPostAIStepSystem(::StrictEntityContext const& actorOwnerComponent, ::ActorOwnerComponent&);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

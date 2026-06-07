@@ -25,19 +25,12 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleCurveBezierChain(ParticleCurveBezierChain const&);
     ParticleCurveBezierChain();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ParticleCurveBezierChain() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
+    MCAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
 
     MCAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
     operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
@@ -55,13 +48,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
     // NOLINTEND
 
 public:

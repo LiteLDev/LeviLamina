@@ -31,12 +31,6 @@ public:
     PartyChatCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~PartyChatCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PartyChatCommandGroup(::OreUI::GameDependencies const& game);

@@ -18,6 +18,10 @@ class IConstBlockSource;
 
 class WebBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    WebBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
@@ -28,8 +32,18 @@ public:
     ) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+    // NOLINTEND
 
-    virtual ~WebBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WebBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -42,7 +56,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

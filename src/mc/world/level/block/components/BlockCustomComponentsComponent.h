@@ -14,6 +14,7 @@ class HashedString;
 struct BlockCustomComponentData;
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
+namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 // clang-format on
 
 class BlockCustomComponentsComponent {
@@ -52,17 +53,20 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockCustomComponentsComponent& operator=(BlockCustomComponentsComponent const&);
-    BlockCustomComponentsComponent(BlockCustomComponentsComponent const&);
-    BlockCustomComponentsComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
 
-    MCAPI ::BlockCustomComponentsComponent& operator=(::BlockCustomComponentsComponent&&);
+    MCAPI void finalize(
+        ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry> const& registry,
+        ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                  parameterCache
+    );
+
+    MCFOLD bool hasPlayerInteractEvent() const;
+
+    MCFOLD bool hasPlayerPlacingEvent() const;
+
+    MCFOLD bool isV1() const;
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,

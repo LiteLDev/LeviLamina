@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleDiagnostics { class IScriptSentryPlugin; }
 namespace ScriptModuleDiagnostics { struct ScriptSentryAlreadyInitializedError; }
 namespace ScriptModuleDiagnostics { struct ScriptSentryCaptureContext; }
 namespace ScriptModuleDiagnostics { struct ScriptSentryOptions; }
@@ -37,6 +38,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptSentry(::std::unique_ptr<::ScriptModuleDiagnostics::IScriptSentryPlugin> plugin);
+
     MCNAPI ::Scripting::Result<void, ::ScriptModuleDiagnostics::ScriptSentryUninitializedError>
     addBreadcrumb(::SentryBreadcrumbLevel level, ::std::string message, ::std::optional<::std::string> category);
 
@@ -59,12 +62,26 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleDiagnostics::ScriptSentryUninitializedError>
     removeTag(::std::string const& key);
+
+    MCNAPI ~ScriptSentry();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::unique_ptr<::ScriptModuleDiagnostics::IScriptSentryPlugin> plugin);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

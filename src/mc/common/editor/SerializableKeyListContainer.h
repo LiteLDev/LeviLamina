@@ -24,9 +24,24 @@ public:
     SerializableKeyListContainer();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyListContainer&
+    operator=(::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyListContainer&&);
+
+    MCNAPI ~SerializableKeyListContainer();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

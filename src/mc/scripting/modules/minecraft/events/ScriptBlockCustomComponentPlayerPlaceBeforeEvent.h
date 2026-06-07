@@ -50,17 +50,11 @@ public:
     virtual void updateEngineEvent(::BlockEvents::BlockPlayerPlacingEvent& engineEvent) const /*override*/;
 
     virtual bool shouldCancel() const /*override*/;
-
-    virtual ~ScriptBlockCustomComponentPlayerPlaceBeforeEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&
-    );
-
     MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&
     );
@@ -85,18 +79,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
 
     MCAPI void*
     $ctor(::BlockEvents::BlockPlayerPlacingEvent const& engineEvent, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -22,9 +22,9 @@ public:
 
     virtual bool CanInsertDtmf() = 0;
 
-    virtual bool InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap);
-
     virtual bool InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap, int comma_delay);
+
+    virtual bool InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap);
 
     virtual ::std::string tones() const = 0;
 

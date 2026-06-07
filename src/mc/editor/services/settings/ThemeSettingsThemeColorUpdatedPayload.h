@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/ThemeSettingsColorKey.h"
 #include "mc/editor/network/NetworkPayload.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class Color; }
 // clang-format on
 
 namespace Editor::Network {
@@ -22,16 +24,38 @@ public:
     ::ll::UntypedStorage<4, 16> mUnk577ff8;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ThemeSettingsThemeColorUpdatedPayload& operator=(ThemeSettingsThemeColorUpdatedPayload const&);
     ThemeSettingsThemeColorUpdatedPayload(ThemeSettingsThemeColorUpdatedPayload const&);
     ThemeSettingsThemeColorUpdatedPayload();
 
+#else // LL_PLAT_C
 public:
-    // virtual functions
+    // prevent constructor by default
+    ThemeSettingsThemeColorUpdatedPayload& operator=(ThemeSettingsThemeColorUpdatedPayload const&);
+    ThemeSettingsThemeColorUpdatedPayload(ThemeSettingsThemeColorUpdatedPayload const&);
+
+#endif
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~ThemeSettingsThemeColorUpdatedPayload() /*override*/;
+#ifdef LL_PLAT_C
+    MCNAPI ThemeSettingsThemeColorUpdatedPayload();
+#endif
+
+    MCNAPI ThemeSettingsThemeColorUpdatedPayload(
+        ::std::string const&                      themeId,
+        ::Editor::Settings::ThemeSettingsColorKey colorKey,
+        ::mce::Color const&                       color
+    );
+
+    MCNAPI ::mce::Color const& getColor() const;
+
+    MCNAPI ::Editor::Settings::ThemeSettingsColorKey getColorKey() const;
+
+    MCNAPI ::std::string const& getThemeId() const;
     // NOLINTEND
 
 public:
@@ -41,9 +65,14 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
+
+    MCNAPI void*
+    $ctor(::std::string const& themeId, ::Editor::Settings::ThemeSettingsColorKey colorKey, ::mce::Color const& color);
     // NOLINTEND
 
 public:

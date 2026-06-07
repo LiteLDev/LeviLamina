@@ -10,6 +10,7 @@
 namespace ScriptModuleMinecraft { class CustomCommandRegistry; }
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
+namespace ScriptModuleMinecraft { class ScriptCustomDimensionRegistry; }
 namespace ScriptModuleMinecraft { class ScriptCustomSpawnRulesRegistry; }
 // clang-format on
 
@@ -21,6 +22,7 @@ public:
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry&> mBlockComponentRegistry;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomSpawnRulesRegistry&>      mSpawnRulesRegistry;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::CustomCommandRegistry&>               mCustomCommandRegistry;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomDimensionRegistry&>       mCustomDimensionRegistry;
     ::ll::TypedStorage<8, 24, ::std::optional<::Scripting::WeakLifetimeScope>>              mSpecificScopeForEvent;
     // NOLINTEND
 

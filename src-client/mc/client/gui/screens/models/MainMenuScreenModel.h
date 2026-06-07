@@ -4,20 +4,33 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/StoreNavigationOrigin.h"
+#include "mc/client/gui/screens/controllers/ClassroomSetting.h"
+#include "mc/client/gui/screens/controllers/EduShareMethodType.h"
+#include "mc/client/gui/screens/controllers/EduShareUriType.h"
+#include "mc/client/gui/screens/controllers/MarketplacePassTabIndex.h"
+#include "mc/client/gui/screens/controllers/SettingsScreenMode.h"
 #include "mc/client/gui/screens/controllers/SlotSelectedAction.h"
 #include "mc/client/gui/screens/models/IMainMenuScreenModel.h"
 #include "mc/client/gui/screens/models/InstantiationResult.h"
 #include "mc/client/gui/screens/models/MinecraftScreenModel.h"
 #include "mc/client/gui/screens/models/PlayScreenDefaultTab.h"
 #include "mc/client/network/NetworkFilter.h"
+#include "mc/client/services/catalog/RequirementCategory.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
+#include "mc/client/store/iap/PurchasePath.h"
+#include "mc/client/store/sidebar/Type.h"
+#include "mc/client/world/JoinServerWorldResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/input/enums/RawInputType.h"
+#include "mc/events/IMinecraftEventing.h"
 #include "mc/identity/IdentityType.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/DownloadError.h"
 #include "mc/util/UploadState.h"
+#include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,6 +41,7 @@ class DlcChecker;
 class DlcId;
 class DlcUIWrapper;
 class EDUServersScreenController;
+class FlightingService;
 class IContentAccessibilityProvider;
 class IMinecraftEventing;
 class IStoreCatalogItem;
@@ -38,7 +52,9 @@ class LibraryCollectionConfig;
 class LibraryItem;
 class MainMenuScreenController;
 class MinecoinCatalogModel;
+class OfferCollectionComponent;
 class PackManifest;
+class PlatformOfferModel;
 class PlatformOfferTransactionContext;
 class PlayScreenModel;
 class ProgressHandler;
@@ -47,23 +63,34 @@ class RealmsTransactionContext;
 class ResourceLocation;
 class ResourcePackFileUploadManager;
 class SearchQuery;
+class SkinHandle;
 class SkinPackCollectionModel;
 class SkinPackModel;
 class SkinPickerUpsellTreatmentQuery;
 class StoreCatalogItem;
 class StoreCatalogRepository;
+class StoreSearchQuery;
 class TransactionContext;
 class WorldFileDownloadManager;
 class WorldFileUploadManager;
 class WorldSeedCatalogModel;
 class WorldTemplateManager;
 struct EDULibraryCategory;
+struct ExperienceConnectionData;
+struct ExperiencePromotion;
 struct LevelSummary;
 struct LinksToStyle;
+struct MinecraftScreenModelContext;
 struct PackContentItem;
+struct PackIdVersion;
+struct PackSettingsInfo;
+struct PlatformOfferPurchaseDetails;
 struct Purchase;
+struct RealmsPurchaseDetails;
 struct StoreDataDrivenScreenParams;
+struct SubmitItemRatingResult;
 struct WorldTemplateInfo;
+namespace Bedrock::Http { class Status; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Clubs { struct FeedItem; }
 namespace Core { class Path; }
@@ -76,6 +103,7 @@ namespace Realms::Stories { class RealmEvent; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
 namespace Social { class User; }
 namespace Social { struct EduDedicatedServerDetails; }
+namespace World { class LocalWorldList; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -146,11 +174,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MainMenuScreenModel(::MinecraftScreenModel::Context context);
-
-    MCFOLD ::std::weak_ptr<::MainMenuScreenModel> _getWeakPtr();
+    MCAPI explicit MainMenuScreenModel(::MinecraftScreenModelContext context);
 
     MCAPI void _showAnnouncementIfAvailable(::Bedrock::NonOwnerPointer<::AnnouncementSurface> surface);
+
+    MCAPI bool canDisableRecipeUnlockingAsDefault() const;
+
+    MCAPI void cancelCreateRealmsWorld();
 
     MCAPI void checkAndPostUnpublishedRealmEventsToRealm(
         ::Realms::RealmId                                                       realmId,
@@ -163,8 +193,16 @@ public:
 
     MCAPI void clearScreenshotsCache();
 
+    MCAPI void connectToExperience(
+        ::ExperienceConnectionData                            data,
+        ::std::function<void(::World::JoinServerWorldResult)> onErrorCallback
+    );
+
     MCAPI ::std::shared_ptr<::CatalogCollection>
     createCatalogCollection(::std::vector<::std::shared_ptr<::SearchQuery>> const& queries, int maxVisibleOffers);
+
+    MCAPI ::std::shared_ptr<::CatalogCollection>
+    createCatalogCollection(::StoreSearchQuery const& query, int maxVisibleOffers);
 
     MCAPI ::std::vector<::EDULibraryCategory> createLibraryCategoryPage(::std::vector<::std::string> const& pages);
 
@@ -177,13 +215,64 @@ public:
 
     MCAPI ::std::shared_ptr<::WorldFileUploadManager> createWorldFileUploadManager();
 
+    MCAPI void cycleNextDebugOverlayPage();
+
+    MCAPI void cyclePreviousDebugOverlayPage();
+
+    MCAPI void dismissNewPlayerFlow();
+
     MCAPI void fetchContentInRealmsPlus(::std::function<void()> callback);
 
     MCAPI void fetchLibraryWorldSize(::std::shared_ptr<::LessonItem> lessonItem);
 
+    MCAPI void fireClassroomSettingUpdated(::ClassroomSetting classroomSetting, ::SettingsScreenMode settingMode) const;
+
+    MCAPI void
+    fireEventControlRemappedByPlayer(::std::string const& actionName, ::RawInputType inputType, int keyCode) const;
+
+    MCAPI void fireEventRealmDownload(
+        ::std::string const& correlationId,
+        ::std::string const& downloadStage,
+        int                  errorCode,
+        int                  realmId,
+        int                  fileSizeKB
+    );
+
+    MCAPI void fireEventRealmUpload(
+        ::std::string const& correlationId,
+        ::std::string const& uploadStage,
+        int                  errorCode,
+        int                  realmId,
+        int                  fileSizeKB,
+        bool                 isPack
+    );
+
+    MCAPI void fireEventUnfulfilledPurchaseFound(::PlatformOfferPurchaseDetails& unfulfilledPurchase);
+
+    MCAPI void fireLibraryButtonPressedEvent(
+        ::std::string const& productId,
+        ::std::string const& worldName,
+        ::std::string const& buttonAction
+    ) const;
+
+    MCAPI void fireRealmConnectionEventGenericLambdaCalled(
+        ::IMinecraftEventing::RealmConnectionFlow   flow,
+        ::IMinecraftEventing::RealmConnectionLambda connectionLamda,
+        ::IMinecraftEventing::RealmConnectionResult result
+    );
+
+    MCAPI void fireRealmConnectionEventStart(::IMinecraftEventing::RealmConnectionFlow screen);
+
+    MCAPI void fireShareButtonPressedEvent(
+        ::std::string const& location,
+        ::EduShareUriType    shareType,
+        ::EduShareMethodType methodType,
+        bool                 includesResource
+    ) const;
+
     MCAPI void forcePersonaServiceSync() const;
 
-    MCFOLD bool fulfillPriorPlatformOfferPurchase(
+    MCAPI bool fulfillPriorPlatformOfferPurchase(
         ::std::weak_ptr<::Purchase>                          purchase,
         ::std::unique_ptr<::PlatformOfferTransactionContext> context
     );
@@ -195,9 +284,19 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider const> getAccessibilityProvider() const;
 
+    MCFOLD ::std::shared_ptr<::FlightingService> getFlightingService() const;
+
+    MCFOLD ::LegacyWorldConverter& getLegacyWorldConverter();
+
     MCAPI ::EDULibraryCategory* getLibraryCategory(::std::string const& name);
 
+    MCAPI ::std::shared_ptr<::World::LocalWorldList> getLocalWorldList() const;
+
     MCAPI ::MinecoinCatalogModel& getMinecoinCatalogModel();
+
+    MCFOLD ::Bedrock::Threading::Async<bool> getNeedsOfflineAuthCode();
+
+    MCAPI ::std::string_view getNewPlayerFlowTargetRoute() const;
 
     MCAPI ::std::shared_ptr<::Social::User> getPrimaryUser() const;
 
@@ -212,17 +311,29 @@ public:
 
     MCAPI ::StoreCatalogItem& getStoreCatalogItemByProductId(::std::string const& productId);
 
+    MCAPI bool getStoreRequiresRestoreButton() const;
+
+    MCAPI bool getStoreShouldHideUpdateRow() const;
+
     MCAPI bool getStoreSupportsSubscriptions() const;
 
     MCAPI ::std::string getSunsettingText();
+
+    MCAPI bool getUnfulfilledPlatformOfferPurchase(::PlatformOfferPurchaseDetails& details);
+
+    MCAPI bool getUnfulfilledRealmsPurchase(::RealmsPurchaseDetails& details);
 
     MCAPI int getUserCoinBalance() const;
 
     MCAPI ::std::string getUserCoinBalanceAsString() const;
 
+    MCFOLD ::std::string const getUserDisplayName() const;
+
     MCAPI ::WorldFileDownloadManager& getWorldFileDownloadManager();
 
     MCAPI ::WorldSeedCatalogModel& getWorldSeedCatalogModel();
+
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> getWorldTemplateManager() const;
 
     MCAPI bool hasDismissedNewPlayerFlow() const;
 
@@ -237,21 +348,52 @@ public:
 
     MCAPI bool isAppStoreReady() const;
 
+    MCAPI bool isConnectedToThirdPartyServer() const;
+
+    MCFOLD bool isGamePlayTipsEnabled() const;
+
+    MCAPI bool isMarketplacePassTrialAvailable() const;
+
     MCAPI bool isNewPlayerPathV3ABCTest() const;
 
     MCAPI bool isPlatformServiceMultiplayerConnected() const;
 
-    MCAPI bool isRealmsCachedTrialAvailable() const;
+    MCAPI bool isPrimaryUser() const;
 
-    MCAPI bool isRealmsOreUIPurchaseEnabled() const;
+    MCAPI bool isRealmsCachedTrialAvailable() const;
 
     MCAPI bool isRealmsTrialOfferAvailable() const;
 
+    MCAPI bool isResourcePackOnStack(::PackIdVersion const& requiredPackId) const;
+
+    MCAPI bool isSelectedSkinInitializedWithoutTimedOut() const;
+
     MCAPI bool isServiceMultiplayerAvailableAndConnected(::Social::MultiplayerServiceIdentifier service) const;
+
+    MCAPI bool isSidebarNavigationLayoutActive(::sidebar::navigationLayout::Type layoutType) const;
 
     MCAPI bool isSkinPackNew(::SkinPackModel const& skinPackModel) const;
 
+    MCAPI bool isStoreDisabled() const;
+
+    MCAPI void joinRealmWorldWithRoute(
+        ::std::string const&                      realmId,
+        ::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow
+    );
+
     MCAPI void launchSunsettingUri();
+
+    MCAPI bool meetsClientRequirement(::RequirementCategory category, ::std::string const& requirement) const;
+
+    MCAPI void navigateToAdhocScreen();
+
+    MCAPI void navigateToApplyResourcePacksScreen(::std::function<void(::MinecraftScreenModel&)> applyPacks);
+
+    MCAPI void navigateToBundleWarningScreen(
+        ::IStoreCatalogItem const&        catalogItem,
+        ::OfferCollectionComponent const& bundle,
+        ::std::function<void()>           onPurchaseCallback
+    );
 
     MCAPI void navigateToChooseRealmScreen(
         ::std::function<void(::Realms::World)> callback,
@@ -265,7 +407,7 @@ public:
         ::std::function<void(bool, int)> callback
     );
 
-    MCAPI void navigateToCreateRealmUpsellScreen(bool calledFromPlayScreen, ::std::string const& additionalScreenInfo);
+    MCAPI void navigateToContentLogHistoryScreen();
 
     MCAPI void navigateToCreateWorldUpsellScreen(bool firstTimeShown, ::std::string const& additionalScreenInfo);
 
@@ -275,7 +417,19 @@ public:
         ::Bedrock::NonOwnerPointer<::EDUServersScreenController> eduServersScreenController
     );
 
+    MCAPI void navigateToEDULibraryCategoryScreen(
+        ::std::string const&                       title,
+        ::std::string const&                       icon,
+        ::std::string const&                       description,
+        ::std::string const&                       screenshotRatio,
+        int                                        columnCount,
+        ::std::vector<::EDULibraryCategory> const& categories,
+        bool                                       firstPage
+    );
+
     MCAPI void navigateToEDULibraryRoot();
+
+    MCAPI void navigateToEDUPlayScreen();
 
     MCAPI void navigateToEDUServerResolvingProgressHandler(
         ::Social::EduDedicatedServerDetails const& details,
@@ -284,12 +438,16 @@ public:
         ::brstd::move_only_function<void()>&       reopenPasscodeEntry
     );
 
+    MCAPI void navigateToEDUServersScreen();
+
     MCAPI void navigateToEDUUploadProgressHandler(
         ::std::string const&                                        levelId,
         ::std::string const&                                        levelName,
         ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> eduCloudSaveSystem,
         ::std::optional<::CloudSaveLevelInfo>                       cloudSaveInfo
     );
+
+    MCAPI void navigateToEDUWorldTemplatesScreen();
 
     MCAPI void navigateToEDUWorldsScreen(bool fromTemplatesScreen);
 
@@ -308,18 +466,74 @@ public:
         ::std::function<void(bool)> callback
     );
 
+    MCAPI void navigateToGammaCalibrationScreen();
+
     MCAPI void navigateToLibraryItemScreen(::std::shared_ptr<::LibraryItem> item);
 
     MCAPI void navigateToLibraryItemScreen(::std::string itemId);
+
+    MCAPI void navigateToLibraryScreen(::std::shared_ptr<::LibraryCollection> collection);
+
+    MCAPI void navigateToLibrarySearchScreen(
+        ::std::shared_ptr<::LibraryCollection> collection,
+        ::std::string const&                   libraryTitle,
+        ::std::string const&                   libraryIcon
+    );
+
+    MCAPI void navigateToLibraryTagScreen(
+        ::std::shared_ptr<::LibraryCollection> collection,
+        ::std::string const&                   libraryTitle,
+        ::std::string const&                   libraryIcon,
+        ::std::string const&                   libraryPageDescription
+    );
+
+    MCAPI void navigateToLibraryWorldScreen(
+        ::std::shared_ptr<::LibraryCollection> collection,
+        ::std::string const&                   libraryTitle,
+        ::std::string const&                   libraryIcon,
+        ::std::string const&                   libraryPageDescription,
+        ::std::string const&                   categoryTitle
+    );
+
+    MCAPI void navigateToLocalWorldPickerScreen(
+        ::std::string const&                                  realmID,
+        int                                                   slotIndex,
+        ::std::function<void(::UploadState, ::Realms::World)> callback
+    );
+
+    MCAPI void navigateToMakeInfiniteScreen(::LevelSummary const& editedLevel, ::StorageVersion storageVersion);
 
     MCAPI void navigateToManifestValidationScreen(
         ::ResourceLocation const&                         resourceLocation,
         ::std::shared_ptr<::PackContentItem const> const& contentItem
     );
 
+    MCAPI void navigateToMarketplacePassPDPScreen(
+        ::MarketplacePassTabIndex         tabIndex,
+        ::sidebar::navigationLayout::Type sidebarLayoutType
+    );
+
     MCAPI void navigateToMarketplacePassPDPViewAllPacksScreen();
 
+    MCAPI void navigateToMarketplacePassPurchaseAmazonDeviceWarningScreen();
+
+    MCAPI void navigateToMarketplacePassPurchaseWarningScreen();
+
+    MCAPI void navigateToMarketplacePassUpsellScreen();
+
+    MCAPI void navigateToMarketplacePassWelcomeScreen();
+
+    MCAPI void navigateToOreUIChooseRealmSubscriptionScreen();
+
+    MCAPI void navigateToOreUIChooseSlotScreen(::std::string const& realmId);
+
+    MCAPI void navigateToOreUIRealmsCreatePreviewWithOnlyOneSubscriptionScreen();
+
+    MCAPI void navigateToPackSettingsScreen(::PackSettingsInfo packSettingsInfo);
+
     MCAPI void navigateToPlayScreen(::PlayScreenDefaultTab tab);
+
+    MCAPI void navigateToPromotionAction(::ExperiencePromotion const& promotion);
 
     MCAPI void navigateToPurchaseOfferScreen(::IStoreCatalogItem const& item, ::StoreNavigationOrigin origin, bool);
 
@@ -333,11 +547,20 @@ public:
     MCAPI void
     navigateToPurchaseOfferScreen(::mce::UUID const& uuid, ::StoreNavigationOrigin origin, ::std::string const&, bool);
 
+    MCAPI void
+    navigateToRealmsAllowListScreen(::Realms::World const& world, ::std::function<void()> followUpActionAfterCreation);
+
     MCAPI void navigateToRealmsCreateScreen(::RealmsCreateParams const& createParams);
 
     MCAPI bool navigateToRealmsOffers(::StoreDataDrivenScreenParams const& params);
 
     MCAPI void navigateToRealmsPDPViewAllPacksScreen();
+
+    MCAPI void navigateToRealmsPendingInvitesScreen(bool hasPendingInvites);
+
+    MCAPI void navigateToRealmsPlusPurchaseWarningScreen(::std::function<void()> callback);
+
+    MCAPI void navigateToRealmsWarningScreen();
 
     MCAPI void navigateToRealmsWorldProgressScreen(
         ::std::string const&                 uniqueEventName,
@@ -345,6 +568,8 @@ public:
         ::std::unique_ptr<::ProgressHandler> progressHandler,
         ::std::function<void()>              onlineSafetyCancelledCallback
     );
+
+    MCAPI void navigateToStorageSpaceWarningScreen(::std::string const& message);
 
     MCAPI void navigateToStoreInventoryScreen();
 
@@ -356,7 +581,13 @@ public:
         ::std::string const&  packTypeFilter
     );
 
+    MCAPI void navigateToSubmitFeedbackScreen(::std::string const& itemId);
+
     MCAPI void navigateToSunsettingScreen(::std::string title);
+
+    MCAPI void navigateToUGCViewerScreen(
+        ::std::function<void(::std::string const&, ::std::string const&, ::Core::Path const&)> closeCallback
+    );
 
     MCAPI void navigateToUploadPackFileProgressScreen(
         ::std::string const&                                  realmID,
@@ -371,10 +602,21 @@ public:
 
     MCAPI ::std::unique_ptr<::DlcUIWrapper> newDlcUIWrapper(::MainMenuScreenController& controller);
 
+    MCAPI void performPlayerSafetyScanRequest(
+        ::std::string const&                                        feedback,
+        ::std::function<void(::Bedrock::Http::Status const&, bool)> callback
+    );
+
     MCAPI bool prepareAppStoreForPurchases(::std::function<void(bool)> callback);
 
     MCAPI void
     purchaseMarketplacePass(::std::string const& productSku, ::std::unique_ptr<::TransactionContext>&& context);
+
+    MCAPI bool purchasePlatformOffer(
+        ::PlatformOfferModel const&               platformOfferModel,
+        ::std::unique_ptr<::TransactionContext>&& context,
+        ::PurchasePath                            path
+    );
 
     MCAPI void quickPlay();
 
@@ -385,15 +627,30 @@ public:
     MCAPI ::Bedrock::PubSub::Subscription
     registerPrimaryUserSignInSubscriber(::std::function<void(uint, ::Social::IdentityType)> listener);
 
+    MCFOLD ::Bedrock::Threading::Async<bool> requestOfflineAuthCode();
+
     MCAPI void setDeepLinkListenerMainMenuParameters(::std::function<void(::DownloadError const&)> onDownloadError);
 
     MCAPI void setHasSeenSonyTokenPopup(bool newValue);
+
+    MCAPI void setPersonaLegacySlotSkin(::SkinHandle const& skin) const;
 
     MCAPI void setStoreCatalogItemViewed(::IStoreCatalogItem const& item) const;
 
     MCAPI void setStoreCatalogItemViewed(::std::string const& productId) const;
 
+    MCAPI void showLoginAnnouncementIfAvailable();
+
+    MCAPI void showMarketplaceAnnouncementIfAvailable();
+
     MCAPI void submitReviewFor(::std::string const& productId, int rating, ::std::function<void()> successCallback);
+
+    MCAPI ::Bedrock::Threading::Async<::SubmitItemRatingResult>
+    submitReviewForEntitlementManager(::std::string const& productId, int rating);
+
+    MCAPI bool supportsFliteTTS() const;
+
+    MCAPI bool supportsXboxLiveAchievements() const;
 
     MCAPI void uploadLocalWorldFile(
         ::std::string const&                                  realmID,
@@ -406,7 +663,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenModel::Context context);
+    MCAPI void* $ctor(::MinecraftScreenModelContext context);
     // NOLINTEND
 
 public:

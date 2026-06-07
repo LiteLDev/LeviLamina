@@ -33,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SingleRoute();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool shouldAddToConfiguration() const /*override*/;
@@ -42,8 +46,26 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~SingleRoute() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SingleRoute(
+        ::std::string const&                                                                       route,
+        ::std::string const&                                                                       screenId,
+        ::std::function<::std::shared_ptr<::AbstractScene>(::SceneFactory&, ::std::string const&)> sceneCreationCallback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&                                                                       route,
+        ::std::string const&                                                                       screenId,
+        ::std::function<::std::shared_ptr<::AbstractScene>(::SceneFactory&, ::std::string const&)> sceneCreationCallback
+    );
     // NOLINTEND
 
 public:

@@ -17,13 +17,13 @@ namespace SwimControlSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void doSwimControl(
-    ::StrictEntityContext const&,
-    ::ActorDataFlagComponent const&      synchedActorDataComponent,
-    ::MovementAbilitiesComponent const&  abilitiesComponent,
-    ::ActorRotationComponent const&      actorRotationComponent,
-    ::MoveInputComponent const&          moveInputComponent,
-    ::PlayerInputRequestComponent const& request,
-    ::StateVectorComponent&              stateVectorComponent
+    ::StrictEntityContext const&         synchedActorDataComponent,
+    ::ActorDataFlagComponent const&      abilitiesComponent,
+    ::MovementAbilitiesComponent const&  actorRotationComponent,
+    ::ActorRotationComponent const&      moveInputComponent,
+    ::MoveInputComponent const&          request,
+    ::PlayerInputRequestComponent const& stateVectorComponent,
+    ::StateVectorComponent&
 );
 // NOLINTEND
 

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Social::Events { class Event; }
+// clang-format on
+
 class PlayerRespawnTelemetryData {
 public:
     // member variables
@@ -12,6 +17,12 @@ public:
     ::ll::TypedStorage<8, 8, double> mJumpDistance;
     ::ll::TypedStorage<4, 4, uint>   mPositionSourceType;
     ::ll::TypedStorage<1, 1, bool>   mChangedDimension;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void WriteEventData(::Social::Events::Event& event) const;
     // NOLINTEND
 
 public:

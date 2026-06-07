@@ -34,6 +34,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float> mDuration;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCFOLD void setValue(float duration);
+        // NOLINTEND
     };
 
     struct ShooterAmmunitionEntry {
@@ -44,33 +50,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>              useOffhand;
         ::ll::TypedStorage<1, 1, bool>              searchInventory;
         ::ll::TypedStorage<1, 1, bool>              useInCreative;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ShooterAmmunitionEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ShooterAmmunitionEntry(::ShooterItemComponent::ShooterAmmunitionEntry const&);
-
-        MCFOLD ::ShooterItemComponent::ShooterAmmunitionEntry&
-        operator=(::ShooterItemComponent::ShooterAmmunitionEntry const&);
-
-        MCAPI ~ShooterAmmunitionEntry();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::ShooterItemComponent::ShooterAmmunitionEntry const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -86,13 +65,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShooterItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ShooterItemComponent() /*override*/ = default;
+    virtual ~ShooterItemComponent() /*override*/;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
@@ -102,6 +77,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ShooterItemComponent();
+
     MCAPI explicit ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
 
     MCAPI void _consumeAmmunition(
@@ -112,7 +89,7 @@ public:
         bool               fromOffhand
     ) const;
 
-    MCAPI int _getAmmunition(::Player const* player, bool, ::ItemStack& ammo, bool& fromOffhand) const;
+    MCAPI int _getAmmunition(::Player const* player, bool ammo, ::ItemStack& fromOffhand, bool&) const;
 
     MCAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
 
@@ -136,7 +113,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GraphicsOverrideParameterPacket& operator=(GraphicsOverrideParameterPacket const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -59,14 +63,14 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~GraphicsOverrideParameterPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI GraphicsOverrideParameterPacket();
+
+    MCAPI GraphicsOverrideParameterPacket(::GraphicsOverrideParameterPacket const&);
 
     MCAPI explicit GraphicsOverrideParameterPacket(::GraphicsOverrideParameterPacketPayload payload);
     // NOLINTEND
@@ -76,13 +80,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::GraphicsOverrideParameterPacketPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor(::GraphicsOverrideParameterPacket const&);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::GraphicsOverrideParameterPacketPayload payload);
     // NOLINTEND
 
 public:

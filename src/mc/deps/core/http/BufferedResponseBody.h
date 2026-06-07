@@ -43,6 +43,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::gsl::span<uchar const> get() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::shared_ptr<::Bedrock::Http::BufferedResponseBody> create();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::error_code $start(::std::optional<uint64> size);
@@ -60,6 +72,12 @@ public:
     MCNAPI ::Bedrock::Http::ResponseBodyType $getType() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

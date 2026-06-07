@@ -19,12 +19,6 @@ public:
     ShadowStylizationConfigSessionStorage();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ShadowStylizationConfigSessionStorage() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

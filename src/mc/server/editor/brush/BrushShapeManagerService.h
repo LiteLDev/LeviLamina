@@ -18,6 +18,7 @@
 class HashedString;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::BlockMask { class BlockMaskList; }
 namespace Editor::Network { class NativeBrushBlockChangeListPayload; }
 namespace Editor::Network { class NativeBrushClientResponsePayload; }
@@ -144,11 +145,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BrushShapeManagerService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI void _handleBlockChangePayload(::Editor::Network::NativeBrushBlockChangeListPayload const& payload);
 
     MCNAPI void _handleClientResponsePayload(::Editor::Network::NativeBrushClientResponsePayload const& payload);
 
     MCNAPI void _handlePaintEventPayload(::Editor::Network::NativeBrushPaintEventPayload const& payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

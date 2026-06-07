@@ -18,7 +18,6 @@ class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class InteractionResult;
-class ItemStack;
 class Player;
 struct ActorDefinitionIdentifier;
 // clang-format on
@@ -79,8 +78,6 @@ public:
     virtual void pushActors() /*override*/;
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
-
-    virtual ~ArmorStand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -100,11 +97,45 @@ public:
 
     MCAPI void _dropHeldItemsAndResource();
 
-    MCAPI void _dropItem(::ItemStack const& item);
+    MCAPI void _hurtByProjectile(::Actor& sourceActor);
 
     MCAPI bool _trySwapItem(::Player& player, ::SharedTypes::Legacy::EquipmentSlot slot);
 
+    MCAPI void _updatePoseFromSynchedData();
+
+    MCAPI ::std::unique_ptr<::CompoundTag> _writePose() const;
+
     MCAPI void setPoseIndex(int poseIndex);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::ArmorStand::Pose const& POSE_ATHENA();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_BRANDISH();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_A();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_B();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_DEFAULT();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ENTERTAIN();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_HERO();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_HONOR();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_RIPOSTE();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_SALUTE();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_SOLEMN();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ZERO_ROTATION();
+
+    MCAPI static ::ArmorStand::Pose const& POSE_ZOMBIE();
     // NOLINTEND
 
 public:

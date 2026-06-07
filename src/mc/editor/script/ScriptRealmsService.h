@@ -49,8 +49,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptRealmsService(::Editor::ScriptModule::ScriptRealmsService&&);
-
     MCNAPI ScriptRealmsService(
         ::Editor::Services::EditorRealmsServiceProvider* realmsService,
         ::Editor::EditorPlayerServiceProvider*           playerService,
@@ -77,7 +75,7 @@ public:
         ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorldSlot>, ::Scripting::Error>>
     getSlots(::std::string const& worldId, ::Scripting::ScriptObjectFactory& factory);
 
-    MCNAPI ::Editor::ScriptModule::ScriptRealmsService& operator=(::Editor::ScriptModule::ScriptRealmsService&&);
+    MCNAPI ::Editor::ScriptModule::ScriptRealmsService& operator=(::Editor::ScriptModule::ScriptRealmsService&& other);
 
     MCNAPI ~ScriptRealmsService();
     // NOLINTEND
@@ -101,8 +99,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptRealmsService&&);
-
     MCNAPI void* $ctor(
         ::Editor::Services::EditorRealmsServiceProvider* realmsService,
         ::Editor::EditorPlayerServiceProvider*           playerService,

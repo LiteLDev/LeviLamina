@@ -40,8 +40,6 @@ public:
     virtual ::RecipeIngredient const& getIngredient(int, int) const /*override*/;
 
     virtual int size() const /*override*/;
-
-    virtual ~DecoratedPotRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:

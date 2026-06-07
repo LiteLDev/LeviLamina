@@ -61,9 +61,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Rule();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Rule();
+    MCAPI Rule(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
 
     MCAPI Rule(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
 
@@ -71,14 +75,22 @@ public:
 
     MCAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
+
+    MCAPI ~Rule();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

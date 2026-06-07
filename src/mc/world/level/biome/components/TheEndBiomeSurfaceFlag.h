@@ -7,12 +7,6 @@
 
 struct TheEndBiomeSurfaceFlag : public ::BiomeComponentBase {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~TheEndBiomeSurfaceFlag() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

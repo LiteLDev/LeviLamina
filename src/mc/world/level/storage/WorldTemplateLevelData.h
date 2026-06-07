@@ -26,11 +26,16 @@ public:
 
 public:
     // prevent constructor by default
-    WorldTemplateLevelData();
+    WorldTemplateLevelData& operator=(WorldTemplateLevelData const&);
+    WorldTemplateLevelData(WorldTemplateLevelData const&);
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldTemplateLevelData();
+
+    MCAPI WorldTemplateLevelData(::WorldTemplateLevelData&&);
+
     MCAPI WorldTemplateLevelData(
         bool                     isFromWorldTemplate,
         bool                     isWorldTemplateOptionLocked,
@@ -42,12 +47,44 @@ public:
 
     MCAPI void _setTagData(::CompoundTag& tag) const;
 
+    MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
+
+    MCFOLD ::ContentIdentity const& getContentIdentity() const;
+
+    MCAPI void getTagData(::CompoundTag const& tag);
+
+    MCFOLD ::PackIdVersion const& getWorldTemplateIdentity() const;
+
+    MCFOLD bool isFromWorldTemplate() const;
+
+    MCFOLD bool isWorldTemplateOptionLocked() const;
+
+    MCAPI void setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
+
+    MCAPI void setContentIdentity(::ContentIdentity const& contentIdentity);
+
+#ifdef LL_PLAT_C
+    MCFOLD void setIsFromWorldTemplate(bool isFromWorldTemplate);
+#endif
+
+    MCFOLD void setIsWorldTemplateOptionLocked(bool isWorldTemplateOptionLocked);
+
+    MCAPI void setMaxBaseGameVersion(::BaseGameVersion const& maxBaseGameVersion);
+
+    MCAPI void setTagData(::CompoundTag& tag) const;
+
+    MCAPI void setWorldTemplateIdentity(::PackIdVersion const& identity);
+
     MCAPI ~WorldTemplateLevelData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::WorldTemplateLevelData&&);
+
     MCAPI void* $ctor(
         bool                     isFromWorldTemplate,
         bool                     isWorldTemplateOptionLocked,

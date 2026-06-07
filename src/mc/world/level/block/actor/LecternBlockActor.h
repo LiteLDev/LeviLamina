@@ -35,9 +35,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int item, ::ItemStack const&) /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
@@ -58,22 +58,30 @@ public:
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+        int containerSlot,
+        int onNetIdChanged,
+        ::std::function<void(int, ::ItemStack const&)>
     ) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~LecternBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LecternBlockActor(::BlockPos const& pos);
+
+    MCAPI void dropBook(::BlockSource& region);
+
+    MCFOLD int getPage() const;
+
+    MCFOLD int getTotalPages() const;
+
+    MCAPI bool hasBook() const;
+
+    MCAPI bool isPageInBounds(int page) const;
 
     MCAPI void setItemFromBlock(int slot, ::ItemStack const& item);
 
@@ -89,9 +97,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int item, ::ItemStack const&);
 
     MCFOLD int $getMaxStackSize() const;
 
@@ -111,13 +119,10 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCAPI void
+    $serverInitItemStackIds(int containerSlot, int onNetIdChanged, ::std::function<void(int, ::ItemStack const&)>);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

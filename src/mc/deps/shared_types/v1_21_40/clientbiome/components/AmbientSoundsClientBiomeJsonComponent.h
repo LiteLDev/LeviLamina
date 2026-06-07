@@ -25,26 +25,20 @@ public:
 
 public:
     // prevent constructor by default
-    AmbientSoundsClientBiomeJsonComponent(AmbientSoundsClientBiomeJsonComponent const&);
     AmbientSoundsClientBiomeJsonComponent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
+    MCAPI AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
+
+    MCFOLD ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&&);
 
     MCFOLD ::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent&
@@ -64,9 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const&);
     // NOLINTEND
 
 public:

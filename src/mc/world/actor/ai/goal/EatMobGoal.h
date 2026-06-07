@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ class Mob;
 class Path;
 // clang-format on
 
-class EatMobGoal : public ::Goal {
+class EatMobGoal : public ::BaseGoal {
 public:
     // EatMobGoal inner types define
     enum class State : int {
@@ -62,14 +62,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~EatMobGoal() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI explicit EatMobGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

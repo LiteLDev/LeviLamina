@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/deps/scripting/Version.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
@@ -16,6 +17,7 @@
 // clang-format off
 class Level;
 class ScriptDeferredFlushTracker;
+namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorEventListener; }
 namespace ScriptModuleMinecraft { class ScriptAfterEventList; }
@@ -24,6 +26,7 @@ namespace ScriptModuleMinecraft { class ScriptItemEventListener; }
 namespace ScriptModuleMinecraft { class ScriptPlayerEventListener; }
 namespace ScriptModuleMinecraft { class ScriptServerNetworkEventListener; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorContainerAccessAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorDieAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEventIntermediateData; }
@@ -35,6 +38,7 @@ namespace ScriptModuleMinecraft { struct ScriptActorItemPickupAfterEventIntermed
 namespace ScriptModuleMinecraft { struct ScriptActorLoadAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptBlockContainerAccessAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptBlockExplodedAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptButtonPushAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendAfterEvent; }
@@ -81,6 +85,7 @@ namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEventIntermed
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -102,8 +107,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
-
-        virtual ~ScriptWorldAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -146,6 +149,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                      mScope;
+    ::ll::TypedStorage<8, 40, ::Scripting::Version>                                mServerModuleVersion;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Level*>>                            mLevel;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptGlobalEventListeners*> mGlobalEventListeners;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptActorEventListener>> mActorEventListener;
@@ -241,6 +245,14 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData>& eventData
     ) /*override*/;
 
+    virtual void onBlockContainerOpened(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>& eventData
+    ) /*override*/;
+
+    virtual void onBlockContainerClosed(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>& eventData
+    ) /*override*/;
+
     virtual void onActorHeal(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData>& eventData
     ) /*override*/;
@@ -268,6 +280,14 @@ public:
 
     virtual void onActorItemPickup(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>& eventData
+    ) /*override*/;
+
+    virtual void onActorContainerOpened(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>& eventData
+    ) /*override*/;
+
+    virtual void onActorContainerClosed(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onItemUse(
@@ -425,7 +445,8 @@ public:
         ::Scripting::WeakLifetimeScope const& scope,
         ::gsl::not_null<::Level*>             level,
         ::Scripting::DependencyLocator&       locator,
-        ::Scripting::ContextConfig const&     config
+        ::Scripting::ContextConfig const&     config,
+        ::Scripting::Version                  serverModuleVersion
     );
 
     MCAPI void flushActorItemDropEvents();
@@ -443,9 +464,20 @@ public:
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
+    MCAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
+
     MCAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::ScriptModuleMinecraft::ScriptWorldAfterEvents> const&
     getMetadata();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& bindingName();
     // NOLINTEND
 
 public:
@@ -455,7 +487,8 @@ public:
         ::Scripting::WeakLifetimeScope const& scope,
         ::gsl::not_null<::Level*>             level,
         ::Scripting::DependencyLocator&       locator,
-        ::Scripting::ContextConfig const&     config
+        ::Scripting::ContextConfig const&     config,
+        ::Scripting::Version                  serverModuleVersion
     );
     // NOLINTEND
 
@@ -519,6 +552,14 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData>& eventData
     );
 
+    MCAPI void $onBlockContainerOpened(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>& eventData
+    );
+
+    MCAPI void $onBlockContainerClosed(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>& eventData
+    );
+
     MCAPI void
     $onActorHeal(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData>& eventData);
 
@@ -543,6 +584,14 @@ public:
 
     MCAPI void $onActorItemPickup(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>& eventData
+    );
+
+    MCAPI void $onActorContainerOpened(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>& eventData
+    );
+
+    MCAPI void $onActorContainerClosed(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>& eventData
     );
 
     MCAPI void

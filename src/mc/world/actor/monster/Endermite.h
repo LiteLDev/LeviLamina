@@ -37,8 +37,6 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
-
-    virtual ~Endermite() /*override*/ = default;
     // NOLINTEND
 
 public:

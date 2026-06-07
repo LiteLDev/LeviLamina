@@ -42,8 +42,18 @@ public:
     virtual int getStrength() const /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~PulseCapacitor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PulseCapacitor();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

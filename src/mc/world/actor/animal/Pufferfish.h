@@ -29,8 +29,6 @@ public:
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    virtual ~Pufferfish() /*override*/ = default;
     // NOLINTEND
 
 public:

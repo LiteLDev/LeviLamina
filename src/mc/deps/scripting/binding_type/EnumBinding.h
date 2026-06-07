@@ -32,13 +32,12 @@ public:
     public:
         // prevent constructor by default
         EnumValue& operator=(EnumValue const&);
-        EnumValue(EnumValue const&);
         EnumValue();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI EnumValue(::Scripting::EnumBinding::EnumValue&&);
+        MCNAPI EnumValue(::Scripting::EnumBinding::EnumValue const&);
 
         MCNAPI ~EnumValue();
         // NOLINTEND
@@ -46,7 +45,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::Scripting::EnumBinding::EnumValue&&);
+        MCNAPI void* $ctor(::Scripting::EnumBinding::EnumValue const&);
         // NOLINTEND
 
     public:
@@ -70,14 +69,11 @@ public:
     // prevent constructor by default
     EnumBinding& operator=(EnumBinding const&);
     EnumBinding(EnumBinding const&);
+    EnumBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EnumBinding();
-
-    MCNAPI EnumBinding(::Scripting::EnumBinding&&);
-
     MCNAPI EnumBinding(
         ::std::string                                      name_,
         ::entt::meta_type                                  type_,
@@ -92,10 +88,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::Scripting::EnumBinding&&);
-
     MCNAPI void* $ctor(
         ::std::string                                      name_,
         ::entt::meta_type                                  type_,

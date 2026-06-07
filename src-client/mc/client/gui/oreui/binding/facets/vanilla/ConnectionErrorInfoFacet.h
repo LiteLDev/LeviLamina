@@ -35,8 +35,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~ConnectionErrorInfoFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -53,24 +51,12 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const* const& NAME();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler> disconnectionRequestHandler,
         ::std::function<void(::std::string const&)>                  launchUri
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

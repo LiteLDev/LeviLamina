@@ -17,6 +17,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>   mTextureUVs;
     ::ll::TypedStorage<1, 1, bool>   mPBRTextureIndices;
     ::ll::TypedStorage<1, 1, bool>   mMERSs;
+    ::ll::TypedStorage<1, 1, bool>   mGeoType;
     ::ll::TypedStorage<8, 8, uint64> mCount;
     // NOLINTEND
 };

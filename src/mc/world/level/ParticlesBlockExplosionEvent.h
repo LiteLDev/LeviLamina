@@ -22,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addExplodePosition(::Vec3 const& position);
+
 #ifdef LL_PLAT_C
     MCAPI void load(::CompoundTag const& data);
 #endif

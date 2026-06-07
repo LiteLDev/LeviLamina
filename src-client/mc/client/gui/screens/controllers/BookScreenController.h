@@ -87,6 +87,8 @@ public:
 
     MCAPI void _addPhotoPageAt(int index, ::std::string const& photoName);
 
+    MCAPI void _addTextPageAt(int index, ::std::string text);
+
     MCAPI void _deletePage(int index);
 
     MCAPI void _editPageText(int index);
@@ -107,13 +109,15 @@ public:
 
     MCAPI void _registerEventHandlers();
 
+    MCAPI void _setPageText(int index, ::std::string const& text);
+
+    MCAPI bool _signBook();
+
     MCAPI void _swapPages(int page1Index, int page2Index);
 
     MCAPI void _tickExport();
 
     MCAPI void _tryFirePageTurnSound(::UIPropertyBag const& bag) const;
-
-    MCAPI void _viewPage(int pageIndex);
     // NOLINTEND
 
 public:

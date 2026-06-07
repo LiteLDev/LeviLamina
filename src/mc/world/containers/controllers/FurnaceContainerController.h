@@ -37,15 +37,28 @@ public:
     virtual ~FurnaceContainerController() /*override*/;
 #endif
 
-    virtual ::ItemInstance const& getRecipeItem(int slot) const /*override*/;
+    virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void onRecipeSelected(::ItemInstance const&, bool);
+#else // LL_PLAT_C
     virtual void onRecipeSelected(::ItemInstance const& recipeItem, bool displayGhostItems);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void setGhostItem(::ItemInstance const&);
+#else // LL_PLAT_C
     virtual void setGhostItem(::ItemInstance const& item);
+#endif
 
     virtual ::ItemInstance const& getGhostItem() const;
 
-    virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
+#ifdef LL_PLAT_S
+    virtual int getBackgroundStyle(int, bool) const /*override*/;
+#else // LL_PLAT_C
+    virtual int getBackgroundStyle(int slot, bool) const /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -55,6 +68,10 @@ public:
     MCNAPI FurnaceContainerController(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
 
     MCNAPI void clearSelectedRecipe();
+
+    MCNAPI bool isRecipeSmeltable() const;
+
+    MCNAPI void setIsRecipeSmeltable(bool isRecipeSmeltable);
 #endif
     // NOLINTEND
 
@@ -76,7 +93,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
+    MCNAPI ::ItemInstance const& $getRecipeItem(int) const;
 
     MCNAPI void $onRecipeSelected(::ItemInstance const& recipeItem, bool displayGhostItems);
 
@@ -84,7 +101,7 @@ public:
 
     MCNAPI ::ItemInstance const& $getGhostItem() const;
 
-    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+    MCNAPI int $getBackgroundStyle(int slot, bool) const;
 #endif
 
 

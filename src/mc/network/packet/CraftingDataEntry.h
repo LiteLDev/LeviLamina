@@ -10,8 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPalette;
-class ItemInstance;
+class BinaryStream;
 class MultiRecipe;
 class ReadOnlyBinaryStream;
 class Recipe;
@@ -31,27 +30,25 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingDataEntry& operator=(CraftingDataEntry const&);
-    CraftingDataEntry(CraftingDataEntry const&);
-    CraftingDataEntry();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftingDataEntry(::CraftingDataEntry&& entry);
-
 #ifdef LL_PLAT_C
-    MCAPI void addFurnaceAuxRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
-
-    MCAPI void addFurnaceRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
-
     MCAPI void addMultiRecipe(::Recipes& recipes) const;
 
-    MCAPI void addSmithingTransformRecipe(::Recipes& recipes) const;
-#endif
+    MCAPI void addShapedChemistryRecipe(::Recipes& recipes) const;
 
-    MCAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
+    MCAPI void addShapedRecipe(::Recipes& recipes) const;
+
+    MCAPI void addShapelessChemistryRecipe(::Recipes& recipes) const;
+
+    MCAPI void addShapelessRecipe(::Recipes& recipes) const;
+
+    MCAPI void addSmithingTransformRecipe(::Recipes& recipes) const;
+
+    MCAPI void addSmithingTrimRecipe(::Recipes& recipes) const;
+
+    MCAPI void addUserDataShapelessRecipe(::Recipes& recipes) const;
+#endif
 
     MCAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
 
@@ -61,13 +58,9 @@ public:
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 #endif
 
-    MCAPI ~CraftingDataEntry();
-    // NOLINTEND
+    MCAPI void write(::BinaryStream& stream) const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CraftingDataEntry&& entry);
+    MCAPI ~CraftingDataEntry();
     // NOLINTEND
 
 public:

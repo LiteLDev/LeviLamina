@@ -18,8 +18,8 @@ namespace Editor::Prefabs {
 MCNAPI void bindType(::cereal::ReflectionCtx& ctx);
 
 MCNAPI bool operator==(
-    ::Editor::Prefabs::VisiblePrefabInstanceStructureRef const& __P0,
-    ::Editor::Prefabs::VisiblePrefabInstanceStructureRef const& __P1
+    ::Editor::Prefabs::VisiblePrefabInstanceStructureRef const&,
+    ::Editor::Prefabs::VisiblePrefabInstanceStructureRef const&
 );
 
 MCNAPI ::std::string toString(::Editor::Prefabs::PrefabInstanceErrorState state);

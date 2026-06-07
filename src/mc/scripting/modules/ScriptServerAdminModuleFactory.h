@@ -8,15 +8,16 @@
 
 // auto generated forward declare list
 // clang-format off
-class IScriptDedicatedServerUtils;
 class Level;
 class ScriptPackConfigurationManager;
+class ScriptServerNetworkHandlerReference;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
 namespace mce { class UUID; }
+class IScriptDedicatedServerUtils;
 // clang-format on
 
 class ScriptServerAdminModuleFactory : public ::Scripting::GenericModuleBindingFactory {
@@ -33,18 +34,19 @@ public:
     ScriptServerAdminModuleFactory();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptServerAdminModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptServerAdminModuleFactory(
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Level*                                                     level,
-        ::IScriptDedicatedServerUtils*                               dedicatedServerUtils
+        ::IScriptDedicatedServerUtils*                               dedicatedServerUtils,
+        ::ScriptServerNetworkHandlerReference*                       serverNetworkHandlerReference
+    );
+
+    MCNAPI void _addVersions(
+        ::Level*                               level,
+        ::IScriptDedicatedServerUtils*         dedicatedServerUtils,
+        ::ScriptServerNetworkHandlerReference* serverNetworkHandlerReference
     );
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
@@ -53,7 +55,8 @@ public:
         bool                                        allowUntagged,
         ::std::vector<::std::string> const&         allowedTags,
         ::Level*                                    level,
-        ::IScriptDedicatedServerUtils*              dedicatedServerUtils
+        ::IScriptDedicatedServerUtils*              dedicatedServerUtils,
+        ::ScriptServerNetworkHandlerReference*      serverNetworkHandlerReference
     );
     // NOLINTEND
 
@@ -66,6 +69,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 
@@ -75,7 +80,8 @@ public:
     MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Level*                                                     level,
-        ::IScriptDedicatedServerUtils*                               dedicatedServerUtils
+        ::IScriptDedicatedServerUtils*                               dedicatedServerUtils,
+        ::ScriptServerNetworkHandlerReference*                       serverNetworkHandlerReference
     );
     // NOLINTEND
 

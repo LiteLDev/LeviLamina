@@ -8,7 +8,7 @@
 #include "mc/client/gui/oreui/interface/RouteMode.h"
 #include "mc/client/gui/oreui/interface/ViewState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/input/TextBoxCaretMovement.h"
+#include "mc/external/gameface/cohtml/ControlType.h"
 #include "mc/external/gameface/cohtml/Cursors.h"
 #include "mc/external/gameface/cohtml/IViewListener.h"
 #include "mc/platform/brstd/flat_map.h"
@@ -17,7 +17,7 @@
 // clang-format off
 class IClientInstance;
 class IGamefaceTextInputProxy;
-class IOptions;
+class IOptionRegistry;
 class KeyboardManager;
 class Option;
 class ScreenContext;
@@ -119,8 +119,6 @@ public:
 
     virtual void setTextBoxState(::TextBoxStateChange const& stateChange) /*override*/;
 
-    virtual ::std::optional<int> calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement) /*override*/;
-
     virtual void onKeyboardDismissed() /*override*/;
 
     virtual void setCaretLocation(int caretLocation) /*override*/;
@@ -137,17 +135,15 @@ public:
 
     virtual ::cohtml::ScreenInfo OnScreenInfoRequested() /*override*/;
 
+    virtual void OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type) /*override*/;
+
     virtual void OnCaretRectChanged(int x, int y, uint width, uint height) /*override*/;
 
     virtual void
     OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*) /*override*/;
 
-    virtual ::cohtml::IClientSideSocket* OnCreateWebSocket(
-        ::cohtml::ISocketListener* listener,
-        char const*                url,
-        char const**               protocols,
-        uint                       protocolsCount
-    ) /*override*/;
+    virtual ::cohtml::IClientSideSocket*
+    OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint) /*override*/;
 
     virtual void OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate) /*override*/;
 
@@ -182,8 +178,6 @@ public:
         ::OreUI::ITelemetry&                             telemetry
     );
 
-    MCAPI void _unload();
-
     MCAPI void flushAudioStreams();
 
     MCAPI void initialize(
@@ -191,7 +185,7 @@ public:
         ::std::unique_ptr<::OreUI::ViewRenderer>     renderer,
         ::std::unique_ptr<::OreUI::ViewInputHandler> inputHandler,
         ::OreUI::Detail::ViewContextFactory&         contextFactory,
-        ::IOptions&                                  options
+        ::IOptionRegistry&                           options
     );
     // NOLINTEND
 
@@ -242,19 +236,17 @@ public:
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
 
-    MCAPI ::std::string_view $getUrl() const;
+    MCFOLD ::std::string_view $getUrl() const;
 
-    MCAPI ::OreUI::RouteMode $getRouteMode() const;
+    MCFOLD ::OreUI::RouteMode $getRouteMode() const;
 
     MCAPI uint $getWidth() const;
 
     MCAPI uint $getHeight() const;
 
-    MCAPI ::OreUI::ViewState $getState() const;
+    MCFOLD ::OreUI::ViewState $getState() const;
 
     MCAPI void $setTextBoxState(::TextBoxStateChange const& stateChange);
-
-    MCAPI ::std::optional<int> $calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement);
 
     MCAPI void $onKeyboardDismissed();
 
@@ -272,16 +264,13 @@ public:
 
     MCAPI ::cohtml::ScreenInfo $OnScreenInfoRequested();
 
+    MCAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
+
     MCAPI void $OnCaretRectChanged(int x, int y, uint width, uint height);
 
     MCAPI void $OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*);
 
-    MCFOLD ::cohtml::IClientSideSocket* $OnCreateWebSocket(
-        ::cohtml::ISocketListener* listener,
-        char const*                url,
-        char const**               protocols,
-        uint                       protocolsCount
-    );
+    MCFOLD ::cohtml::IClientSideSocket* $OnCreateWebSocket(::cohtml::ISocketListener*, char const*, char const**, uint);
 
     MCAPI void $OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
 

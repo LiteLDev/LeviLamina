@@ -43,7 +43,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::UpdateAttributesPacket>> mPacket;
-    ::ll::TypedStorage<4, 48, ::MovementAttributesComponent>               mMovementAttributes;
+    ::ll::TypedStorage<4, 72, ::MovementAttributesComponent>               mMovementAttributes;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::History::AttributeReplay::MovementAttributeInfo>>
         mMovementAttributesInfo;
     // NOLINTEND
@@ -63,8 +63,6 @@ public:
     virtual void advanceLiveFrame(::Actor& actor, ::std::optional<uint64>) /*override*/;
 
     virtual ::std::bitset<2> getCorrectionTypeBitset() const /*override*/;
-
-    virtual ~AttributeReplay() /*override*/ = default;
     // NOLINTEND
 
 public:

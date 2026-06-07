@@ -25,13 +25,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExplorationMapFunction() /*override*/ = default;
+    virtual ~ExplorationMapFunction() /*override*/;
 
-    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& context, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random& context, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::std::string const& getDestination() const;
     // NOLINTEND
 
 public:
@@ -42,11 +48,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random& context, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& context, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

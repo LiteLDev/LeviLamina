@@ -65,6 +65,14 @@ public:
         ::Scripting::WeakLifetimeScope const& scope,
         bool                                  allowCustomComponent
     ) const;
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
+    tryCreateComponentV010(
+        ::std::string_view                    componentName,
+        ::BlockSource&                        region,
+        ::BlockPos                            position,
+        ::Scripting::WeakLifetimeScope const& scope
+    ) const;
     // NOLINTEND
 
 public:

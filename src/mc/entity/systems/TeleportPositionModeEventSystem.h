@@ -13,6 +13,7 @@ class StrictEntityContext;
 struct InterpolateMovementNeededComponent;
 struct PlayerComponent;
 struct PlayerPositionModeComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class TeleportPositionModeEventSystem {
@@ -27,12 +28,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickTeleportPositionModeEventSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::PlayerComponent>,
-            ::ActorOwnerComponent,
-            ::PlayerPositionModeComponent const> view
-    );
+    MCAPI static ::TickingSystemWithInfo createTeleportPositionModeEventSystem();
     // NOLINTEND
 };

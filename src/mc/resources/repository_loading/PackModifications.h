@@ -104,20 +104,13 @@ public:
 public:
     // prevent constructor by default
     PackModifications& operator=(PackModifications const&);
+    PackModifications(PackModifications const&);
     PackModifications();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackModifications(::RepositoryLoading::PackModifications const&);
-
     MCNAPI ~PackModifications();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::RepositoryLoading::PackModifications const&);
     // NOLINTEND
 
 public:

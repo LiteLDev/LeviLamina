@@ -24,7 +24,7 @@ public:
     virtual void
     setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams) = 0;
 
-    virtual void update(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
+    virtual void update(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
     // NOLINTEND
 
 public:
@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
-    MCFOLD void $update(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
+    MCFOLD void $update(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
     // NOLINTEND
 };
 

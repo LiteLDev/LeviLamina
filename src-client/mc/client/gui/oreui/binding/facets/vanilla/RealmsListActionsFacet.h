@@ -20,16 +20,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsListActionsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~RealmsListActionsFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsListActionsFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
+
     MCAPI void clearRealmUnreadCount(::std::string const& realmId) const;
 
     MCFOLD void forceFetchRealmList() const;
@@ -39,6 +43,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsList> realmsList);
     // NOLINTEND
 
 public:

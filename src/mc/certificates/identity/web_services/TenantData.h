@@ -16,22 +16,6 @@ public:
     TenantData& operator=(TenantData const&);
     TenantData(TenantData const&);
     TenantData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~TenantData();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace WebServices::EduSignin

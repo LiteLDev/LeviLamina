@@ -14,23 +14,37 @@ class BlockPos;
 
 class HeavyCoreBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    HeavyCoreBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
 
     virtual bool liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~HeavyCoreBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI HeavyCoreBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
 
     MCFOLD bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,

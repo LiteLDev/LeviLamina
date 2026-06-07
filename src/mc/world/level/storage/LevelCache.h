@@ -22,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::LevelCache& moveAssignKeepLevelDataMemory(::LevelCache&& other);
+
     MCNAPI ~LevelCache();
     // NOLINTEND
 

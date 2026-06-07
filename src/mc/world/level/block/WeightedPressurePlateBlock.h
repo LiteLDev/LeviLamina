@@ -13,6 +13,7 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class ItemInstance;
+class Material;
 // clang-format on
 
 class WeightedPressurePlateBlock : public ::BasePressurePlateBlock {
@@ -21,6 +22,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int const> mMaxWeight;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WeightedPressurePlateBlock();
 
 public:
     // virtual functions
@@ -35,9 +40,19 @@ public:
 
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    // NOLINTEND
 
-    virtual ~WeightedPressurePlateBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WeightedPressurePlateBlock(::std::string const& nameId, int id, ::Material const& material, int maxWeight);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, int maxWeight);
     // NOLINTEND
 
 public:
@@ -53,7 +68,7 @@ public:
 
     MCFOLD int $getRedstoneSignal(int signal) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

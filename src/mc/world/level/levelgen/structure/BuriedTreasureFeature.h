@@ -47,10 +47,10 @@ public:
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension& generator,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& lc,
+        ::Dimension&         generator,
+        ::BiomeSource const& random,
+        ::Random&            lc,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
@@ -62,8 +62,6 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
         ::Dimension const&
     ) /*override*/;
-
-    virtual ~BuriedTreasureFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -94,10 +92,10 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension& generator,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& lc,
+        ::Dimension&         generator,
+        ::BiomeSource const& random,
+        ::Random&            lc,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     );
 

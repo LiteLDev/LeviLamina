@@ -30,6 +30,12 @@ public:
         Definition& operator=(Definition const&);
         Definition(Definition const&);
         Definition();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void initialize(::EntityContext&, ::TripodCameraActivatedComponent& component) const;
+        // NOLINTEND
     };
 
 public:

@@ -34,12 +34,12 @@ public:
     ) const /*override*/;
 
     virtual int attemptUseCharge(
-        ::IBlockWorldGenAPI&,
-        ::BlockSource*,
+        ::IBlockWorldGenAPI& charge,
+        ::BlockSource*       decayDelay,
         ::BlockPos const&,
         ::BlockPos const&,
-        int charge,
-        int decayDelay,
+        int,
+        int,
         ::Random&,
         ::SculkSpreader&,
         bool const
@@ -66,12 +66,12 @@ public:
     ) const;
 
     MCAPI int $attemptUseCharge(
-        ::IBlockWorldGenAPI&,
-        ::BlockSource*,
+        ::IBlockWorldGenAPI& charge,
+        ::BlockSource*       decayDelay,
         ::BlockPos const&,
         ::BlockPos const&,
-        int charge,
-        int decayDelay,
+        int,
+        int,
         ::Random&,
         ::SculkSpreader&,
         bool const

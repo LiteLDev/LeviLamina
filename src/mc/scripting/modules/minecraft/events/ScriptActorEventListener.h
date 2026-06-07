@@ -31,25 +31,47 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptActorEventListener();
+
+public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod) /*override*/;
+
     virtual ::EventResult onEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
     virtual ::EventResult onEvent(::ProjectileHitEvent const& projectileHitEvent) /*override*/;
+    // NOLINTEND
 
-    virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod) /*override*/;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptActorEventListener(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle,
+        bool                                                                             afterListener
+    );
+    // NOLINTEND
 
-    virtual ~ScriptActorEventListener() /*override*/ = default;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle,
+        bool                                                                             afterListener
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
+
     MCAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
 
     MCAPI ::EventResult $onEvent(::ProjectileHitEvent const& projectileHitEvent);
-
-    MCAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
 
     // NOLINTEND

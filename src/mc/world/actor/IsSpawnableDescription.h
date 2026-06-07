@@ -16,8 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* getJsonName() const /*override*/;
-
-    virtual ~IsSpawnableDescription() /*override*/ = default;
     // NOLINTEND
 
 public:

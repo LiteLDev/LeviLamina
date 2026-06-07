@@ -14,6 +14,8 @@ class Palette {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::SharedTypes::Legacy::PaletteColor fromByte(uchar id);
+
     MCNAPI static ::mce::Color const& getColor(::SharedTypes::Legacy::PaletteColor id);
     // NOLINTEND
 

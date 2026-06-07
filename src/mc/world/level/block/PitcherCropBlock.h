@@ -15,11 +15,9 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -40,18 +38,16 @@ public:
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& pathPos, ::BlockPos const&) const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
@@ -62,22 +58,15 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const /*override*/;
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* fType, ::FertilizerType) const
         /*override*/;
-
-    virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~PitcherCropBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -85,9 +74,23 @@ public:
     // NOLINTBEGIN
     MCAPI PitcherCropBlock(::std::string const& nameId, int id);
 
+    MCAPI bool _canGrow(::BlockSource const& region, ::BlockPos const& pos) const;
+
+    MCAPI bool _canLowerPartSurvive(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+
     MCAPI bool _grow(::BlockSource& region, ::BlockPos const& pos, bool instantGrowth) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD static int getLastOneBlockGrowthStage();
+#endif
+
+    MCFOLD static int getMaxGrowthStage();
     // NOLINTEND
 
 public:
@@ -101,16 +104,16 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& pathPos, ::BlockPos const&) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
@@ -120,18 +123,13 @@ public:
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const;
 
     MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
-
-    MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* fType, ::FertilizerType) const;
 
 
     // NOLINTEND

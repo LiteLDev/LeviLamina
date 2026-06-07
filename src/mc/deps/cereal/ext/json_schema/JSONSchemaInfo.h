@@ -14,24 +14,15 @@ public:
 
 public:
     // prevent constructor by default
+    JSONSchemaInfo(JSONSchemaInfo const&);
     JSONSchemaInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaInfo(::cereal::ext::internal::JSONSchemaInfo const&);
-
-    MCFOLD ::cereal::ext::internal::JSONSchemaInfo& operator=(::cereal::ext::internal::JSONSchemaInfo&&);
-
-    MCAPI ::cereal::ext::internal::JSONSchemaInfo& operator=(::cereal::ext::internal::JSONSchemaInfo const&);
+    MCFOLD ::cereal::ext::internal::JSONSchemaInfo& operator=(::cereal::ext::internal::JSONSchemaInfo const&);
 
     MCAPI ~JSONSchemaInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaInfo const&);
     // NOLINTEND
 
 public:

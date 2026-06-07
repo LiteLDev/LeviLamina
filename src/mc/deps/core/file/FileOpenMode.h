@@ -24,6 +24,28 @@ public:
     FileOpenMode& operator=(FileOpenMode const&);
     FileOpenMode(FileOpenMode const&);
     FileOpenMode();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit FileOpenMode(int openMode);
+
+#ifdef LL_PLAT_S
+    MCNAPI explicit FileOpenMode(::std::string_view spec);
+#endif
+
+    MCNAPI wchar_t const* cModeWide();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(int openMode);
+
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::std::string_view spec);
+#endif
+    // NOLINTEND
 };
 
 } // namespace Core

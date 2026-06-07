@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct CameraAimAssistActorPriorityServerComponent;
 namespace CameraAimAssistActorPriority { struct PriorityData; }
 // clang-format on
 
@@ -16,13 +17,19 @@ public:
 
 public:
     // prevent constructor by default
-    CameraAimAssistActorPriorityPacketPayload& operator=(CameraAimAssistActorPriorityPacketPayload const&);
-    CameraAimAssistActorPriorityPacketPayload(CameraAimAssistActorPriorityPacketPayload const&);
     CameraAimAssistActorPriorityPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CameraAimAssistActorPriorityPacketPayload& operator=(::CameraAimAssistActorPriorityPacketPayload&&);
+    MCAPI explicit CameraAimAssistActorPriorityPacketPayload(
+        ::CameraAimAssistActorPriorityServerComponent const& aimAssistActorPriorityComponent
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CameraAimAssistActorPriorityServerComponent const& aimAssistActorPriorityComponent);
     // NOLINTEND
 };

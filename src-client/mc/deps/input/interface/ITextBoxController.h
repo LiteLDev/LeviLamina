@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/input/TextBoxCaretMovement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,8 +20,6 @@ public:
     virtual void setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange) = 0;
 
     virtual void onKeyboardDismissed(int controllerId) = 0;
-
-    virtual ::std::optional<int> calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement) = 0;
 
     virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() = 0;
     // NOLINTEND

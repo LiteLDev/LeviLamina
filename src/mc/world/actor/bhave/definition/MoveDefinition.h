@@ -27,14 +27,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
-
-    virtual ~MoveDefinition() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

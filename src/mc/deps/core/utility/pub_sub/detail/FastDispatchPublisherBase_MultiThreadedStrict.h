@@ -21,12 +21,6 @@ public:
     FastDispatchPublisherBase_MultiThreadedStrict& operator=(FastDispatchPublisherBase_MultiThreadedStrict const&);
     FastDispatchPublisherBase_MultiThreadedStrict(FastDispatchPublisherBase_MultiThreadedStrict const&);
     FastDispatchPublisherBase_MultiThreadedStrict();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FastDispatchPublisherBase_MultiThreadedStrict() /*override*/ = default;
-    // NOLINTEND
 };
 
 } // namespace Bedrock::PubSub::Detail

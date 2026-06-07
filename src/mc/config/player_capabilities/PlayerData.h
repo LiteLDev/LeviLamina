@@ -34,8 +34,18 @@ public:
     virtual bool isTeacher() const /*override*/;
 
     virtual bool isOperator() const /*override*/;
+    // NOLINTEND
 
-    virtual ~PlayerData() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit PlayerData(::Player const& player);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Player const& player);
     // NOLINTEND
 
 public:

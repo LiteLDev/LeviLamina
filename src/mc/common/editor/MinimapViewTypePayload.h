@@ -27,12 +27,6 @@ public:
     MinimapViewTypePayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MinimapViewTypePayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

@@ -18,12 +18,6 @@ public:
     Chicken();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~Chicken() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Chicken(

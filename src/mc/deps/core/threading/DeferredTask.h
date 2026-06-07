@@ -33,7 +33,31 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI DeferredTask(::std::function<void()> const& callback, bool canSkipExecution);
+
+    MCNAPI bool isDone();
+
     MCNAPI bool tryExecute();
+
+    MCNAPI bool wait(::std::chrono::nanoseconds const& duration) const;
+
+    MCNAPI ~DeferredTask();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::function<void()> const& callback, bool canSkipExecution);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

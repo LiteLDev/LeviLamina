@@ -81,12 +81,17 @@ public:
         ::Actor*          source
     ) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::EventResult
+    onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool) /*override*/;
+#else // LL_PLAT_C
     virtual ::EventResult onBlockPlacedByPlayer(
         ::Player&         player,
         ::Block const&    placedBlock,
         ::BlockPos const& pos,
         bool              isUnderwater
     ) /*override*/;
+#endif
 
     virtual ::EventResult onBlockDestroyedByPlayer(
         ::Player&              player,
@@ -102,8 +107,18 @@ public:
         ::Block const&    hitBlock,
         uchar const       face
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~ScriptBlockGlobalEventListener() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void registerListener(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
+
+    MCAPI void
+    unregisterListener(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle);
     // NOLINTEND
 
 public:
@@ -133,7 +148,7 @@ public:
     );
 
     MCAPI ::EventResult
-    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool);
 
     MCAPI ::EventResult $onBlockDestroyedByPlayer(
         ::Player&              player,

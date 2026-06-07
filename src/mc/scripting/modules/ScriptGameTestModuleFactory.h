@@ -9,6 +9,7 @@
 // clang-format off
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
+namespace gametest { class GameTestRegistry; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -26,14 +27,10 @@ public:
     ScriptGameTestModuleFactory();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptGameTestModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptGameTestModuleFactory(::gametest::GameTestRegistry& gameTestRegistry);
+
     MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
@@ -44,9 +41,23 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::mce::UUID getModuleUUID();
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::gametest::GameTestRegistry& gameTestRegistry);
     // NOLINTEND
 
 public:

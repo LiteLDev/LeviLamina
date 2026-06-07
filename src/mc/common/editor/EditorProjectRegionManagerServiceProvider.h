@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -11,7 +11,10 @@
 class Dimension;
 struct Bounds;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Editor { class ProjectRegion; }
+namespace Editor { struct ProjectRegionConfig; }
 namespace Editor { struct ProjectRegionManagerChunkProcessingState; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Services {
@@ -21,6 +24,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EditorProjectRegionManagerServiceProvider() = default;
+
+    virtual ::WeakRef<::Editor::ProjectRegion> createRegion(
+        ::Dimension&                         dimension,
+        ::Editor::ProjectRegionConfig const& config,
+        ::std::optional<uint64>              ownerId
+    ) = 0;
+
+    virtual ::std::vector<::WeakRef<::Editor::ProjectRegion>> getAllRegions() const = 0;
+
+    virtual ::Scripting::Result_deprecated<void> destroyRegion(::mce::UUID const& id) = 0;
+
+    virtual ::WeakRef<::Editor::ProjectRegion> getRegion(::mce::UUID const& id) const = 0;
 
     virtual ::Scripting::Result_deprecated<void> regenerateRegion(
         ::DimensionType                dimensionType,

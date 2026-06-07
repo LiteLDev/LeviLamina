@@ -39,14 +39,12 @@ public:
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
         /*override*/;
 
-    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
+    virtual bool mayConsumeFertilizer(::BlockSource&) const /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource& aboveBlock, ::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
@@ -57,14 +55,20 @@ public:
         /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~DirtBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DirtBlock(::std::string const& nameId, int id, ::HashedString const& blockToTillInto);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& blockToTillInto);
     // NOLINTEND
 
 public:
@@ -72,12 +76,11 @@ public:
     // NOLINTBEGIN
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCFOLD bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCFOLD bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource&) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& aboveBlock, ::BlockPos const&, ::Block const&) const;
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 

@@ -13,13 +13,16 @@ class AABB;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class EndPortalFrameBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    EndPortalFrameBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -44,21 +47,19 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const
         /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~EndPortalFrameBlock() /*override*/ = default;
+    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EndPortalFrameBlock(::std::string const& nameId, int id);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -68,6 +69,12 @@ public:
     MCAPI static void createPortal(::BlockSource& region, ::BlockPos const& origin);
 
     MCAPI static void removePortal(::BlockSource& region, ::BlockPos const& origin);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -94,13 +101,11 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
 
 
     // NOLINTEND

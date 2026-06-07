@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI::Detail { class IPropertyObject; }
+namespace OreUI::Detail { class IdType; }
 namespace cohtml { class Binder; }
 // clang-format on
 
@@ -19,12 +20,6 @@ namespace OreUI::Detail {
 // NOLINTBEGIN
 MCAPI void
 CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, bool>* callable);
-
-MCAPI void CoherentBind(
-    ::cohtml::Binder* binder,
-    ::OreUI::Detail::CallableImpl<void, ::std::string, ::ProfanityFilterContext, bool, ::std::string, bool, bool, bool>*
-        callable
-);
 
 MCAPI void CoherentBind(
     ::cohtml::Binder*                                                                             binder,
@@ -47,6 +42,16 @@ MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<
 
 MCAPI void CoherentBind(
     ::cohtml::Binder*                                                                        binder,
+    ::OreUI::Detail::CallableImpl<void, int64, ::std::string, ::std::vector<::std::string>>* callable
+);
+
+MCAPI void CoherentBind(
+    ::cohtml::Binder*                                                                                     binder,
+    ::OreUI::Detail::CallableImpl<void, ::std::string, ::ProfanityFilterContext, bool, bool, bool, bool>* callable
+);
+
+MCAPI void CoherentBind(
+    ::cohtml::Binder*                                                                        binder,
     ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>* callable
 );
 
@@ -58,6 +63,11 @@ MCAPI void CoherentBind(
 );
 
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, int, int>* callable);
+
+MCAPI void CoherentBind(
+    ::cohtml::Binder*                                                        binder,
+    ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, bool>* callable
+);
 
 MCAPI void CoherentBind(
     ::cohtml::Binder*                                                                          binder,
@@ -103,7 +113,11 @@ MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<
 MCAPI void
 CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::CallableImpl<void, ::FileStorageDirectory>* callable);
 
+MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::IdType* id);
+
 MCAPI void CoherentBind(::cohtml::Binder* binder, ::OreUI::Detail::IPropertyObject* object);
+
+MCAPI void CoherentReadInternal(::cohtml::Binder* binder, ::OreUI::Detail::IdType& id);
 // NOLINTEND
 
 } // namespace OreUI::Detail

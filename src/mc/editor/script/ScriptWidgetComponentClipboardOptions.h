@@ -33,6 +33,8 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentClipboardOptions& operator=(ScriptWidgetComponentClipboardOptions const&);
+    ScriptWidgetComponentClipboardOptions(ScriptWidgetComponentClipboardOptions const&);
     ScriptWidgetComponentClipboardOptions();
 
 public:
@@ -40,22 +42,6 @@ public:
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void>
     validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
-
-    virtual ~ScriptWidgetComponentClipboardOptions() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentClipboardOptions(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
-
-    MCNAPI ScriptWidgetComponentClipboardOptions(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
     // NOLINTEND
 
 public:
@@ -75,25 +61,13 @@ public:
 
     MCNAPI static ::Vec3 const& DEFAULT_CLIPBOARD_ORIGIN();
 
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HIGHLIGHT_HULL_COLOR();
+
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HIGHLIGHT_OUTLINE_COLOR();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HULL_COLOR();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions&&);
-
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

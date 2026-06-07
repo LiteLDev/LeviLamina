@@ -50,7 +50,8 @@ MCAPI void blockProcess(
     ::Block const&                 block,
     ::BlockPos const&              pos,
     ::InsideGenericBlockComponent& insideGeneric,
-    ::IConstBlockSource const&     region
+    ::IConstBlockSource const&     region,
+    bool                           isSimulatingEntity
 );
 // NOLINTEND
 

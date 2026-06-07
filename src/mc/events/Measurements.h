@@ -16,18 +16,6 @@ public:
     Measurements& operator=(Measurements const&);
     Measurements(Measurements const&);
     Measurements();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~Measurements();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social::Events

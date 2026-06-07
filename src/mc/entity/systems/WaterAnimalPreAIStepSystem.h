@@ -27,14 +27,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _doWaterAnimalPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
-
-    MCAPI static void _tickWaterAnimalPreAIStepSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::WaterAnimalFlagComponent>,
-            ::ActorOwnerComponent> view
-    );
+    _doWaterAnimalPreAIStepSystem(::StrictEntityContext const& actorOwnerComponent, ::ActorOwnerComponent&);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

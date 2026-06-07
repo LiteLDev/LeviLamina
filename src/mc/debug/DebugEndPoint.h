@@ -40,14 +40,16 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
         virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) /*override*/;
-
-        virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr) /*override*/;
+#else // LL_PLAT_C
+        virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
+#endif
 
 #ifdef LL_PLAT_S
-        virtual ~VanillaWorldChecker() /*override*/;
+        virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr) /*override*/;
 #else // LL_PLAT_C
-        virtual ~VanillaWorldChecker() /*override*/ = default;
+        virtual void onResourceManagerDestroyed(::ResourcePackManager&) /*override*/;
 #endif
 
         // NOLINTEND
@@ -56,12 +58,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void checkWorldData(::Core::Path const& levelPath);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -94,24 +90,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
+#else // LL_PLAT_C
+    virtual void log(::LogArea const, ::LogLevel const, char const*) /*override*/;
+#endif
 
     virtual void flush() /*override*/;
 
+#ifdef LL_PLAT_S
     virtual void setEnabled(bool newState) /*override*/;
+#else // LL_PLAT_C
+    virtual void setEnabled(bool) /*override*/;
+#endif
 
     virtual bool isEnabled() const /*override*/;
 
     virtual bool logOnlyOnce() const /*override*/;
 
-    virtual void contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
-
-#ifdef LL_PLAT_S
-    virtual ~DebugEndPoint() /*override*/;
-#else // LL_PLAT_C
-    virtual ~DebugEndPoint() /*override*/ = default;
-#endif
-
+    virtual void contentAssert(::LogArea const, ::LogLevel const, char const*);
     // NOLINTEND
 
 public:
@@ -120,6 +117,8 @@ public:
 #ifdef LL_PLAT_S
     MCNAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
 #endif
+
+    MCNAPI void initializeContentLogging(::ResourcePackManager& mgr, ::Core::Path const& levelPath);
     // NOLINTEND
 
 public:
@@ -137,12 +136,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -156,7 +149,7 @@ public:
 
     MCNAPI bool $logOnlyOnce() const;
 
-    MCNAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
+    MCNAPI void $contentAssert(::LogArea const, ::LogLevel const, char const*);
 #endif
 
 

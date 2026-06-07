@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
@@ -12,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Dimension;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -50,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelChunkPacket() /*override*/ = default;
+    virtual ~LevelChunkPacket() /*override*/;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -64,7 +62,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelChunkPacket();
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::vector<::LevelChunkPacket::SubChunkMetadata> const& getMetadata() const;
+#endif
+
+    MCAPI void pushSubChunkMetadata(uint64 id);
+
     MCAPI ::Bedrock::Result<void> readCacheMetadata(::ReadOnlyBinaryStream& stream);
+
+    MCAPI void writeCacheMetadata(::BinaryStream& stream) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

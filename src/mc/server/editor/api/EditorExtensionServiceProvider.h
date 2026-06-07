@@ -64,8 +64,7 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() = 0;
 
-    virtual ::Scripting::Result_deprecated<void>
-    createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent) = 0;
+    virtual ::Scripting::Result_deprecated<void> createExtensionContexts(::Scripting::ContextId, bool) = 0;
     // NOLINTEND
 
 public:

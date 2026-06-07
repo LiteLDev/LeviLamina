@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<8, 64, ::BiomeFilterGroup> mBiomeFilter;
     ::ll::TypedStorage<8, 392, ::MobSpawnRules>   mSpawnCondition;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorSpawnConditionData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

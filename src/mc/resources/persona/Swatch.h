@@ -21,6 +21,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool isValid() const;
+#endif
+
     MCNAPI ~Swatch();
     // NOLINTEND
 

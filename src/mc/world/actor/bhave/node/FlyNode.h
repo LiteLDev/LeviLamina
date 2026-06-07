@@ -28,8 +28,18 @@ public:
     virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~FlyNode() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FlyNode();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

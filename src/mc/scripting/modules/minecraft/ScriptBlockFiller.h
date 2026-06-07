@@ -16,6 +16,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptListBlockVolume; }
+namespace ScriptModuleMinecraft { struct ScriptBlockFillOptions; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -31,8 +32,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlockFiller();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptBlockFiller(
+        ::ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
+        ::gsl::not_null<::Dimension*>                          dimension,
+        ::Scripting::WeakLifetimeScope                         scope
+    );
+
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>>
     fillBlocks(
@@ -44,14 +55,16 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
     );
-
-    MCAPI ~ScriptBlockFiller();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockFillOptions const& options,
+        ::gsl::not_null<::Dimension*>                          dimension,
+        ::Scripting::WeakLifetimeScope                         scope
+    );
     // NOLINTEND
 };
 

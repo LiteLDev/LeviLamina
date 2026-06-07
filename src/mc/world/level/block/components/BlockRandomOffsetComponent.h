@@ -24,8 +24,34 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockRandomOffsetComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockRandomOffsetComponent(
+        ::SharedTypes::FloatRange rangeX,
+        uint                      stepsX,
+        ::SharedTypes::FloatRange rangeY,
+        uint                      stepsY,
+        ::SharedTypes::FloatRange rangeZ,
+        uint                      stepsZ
+    );
+
     MCAPI ::Vec3 getRandomOffset(::BlockPos const& blockPos) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::SharedTypes::FloatRange rangeX,
+        uint                      stepsX,
+        ::SharedTypes::FloatRange rangeY,
+        uint                      stepsY,
+        ::SharedTypes::FloatRange rangeZ,
+        uint                      stepsZ
+    );
     // NOLINTEND
 };

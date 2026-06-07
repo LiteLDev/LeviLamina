@@ -42,6 +42,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ContentItem(::ContentSource* src, ::ContentItemType type);
+
+    MCAPI void toggleIsDescriptionExpanded();
     // NOLINTEND
 
 public:

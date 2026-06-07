@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -12,7 +12,7 @@
 class Mob;
 // clang-format on
 
-class RoarGoal : public ::Goal {
+class RoarGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,14 +42,20 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~RoarGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RoarGoal(::Mob& mob);
+
     MCAPI ::std::optional<::WeakEntityRef> _findRoarTarget() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

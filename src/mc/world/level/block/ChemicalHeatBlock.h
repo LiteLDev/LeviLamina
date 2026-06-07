@@ -10,7 +10,6 @@
 class BaseGameVersion;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -19,21 +18,23 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class ChemicalHeatBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    ChemicalHeatBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getExtraRenderLayers() const /*override*/;
 
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~ChemicalHeatBlock() /*override*/ = default;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _queueTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI ChemicalHeatBlock(::std::string const& nameId, int id);
+
+    MCAPI bool _melt(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
@@ -51,13 +52,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD int $getExtraRenderLayers() const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
 
     // NOLINTEND

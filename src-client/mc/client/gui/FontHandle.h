@@ -24,6 +24,7 @@ public:
 
 public:
     // prevent constructor by default
+    FontHandle(FontHandle const&);
     FontHandle();
 
 public:
@@ -35,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FontHandle(::FontHandle const&);
-
     MCAPI FontHandle(::FontHandle defaultFont, ::std::string const& newFontAlias);
 
     MCAPI FontHandle(
@@ -44,6 +43,12 @@ public:
         uint64                                          fontId,
         ::Bedrock::NotNullNonOwnerPtr<::FontRepository> fontRepository
     );
+
+    MCAPI ::Font& getFont() const;
+
+    MCAPI bool isLoaded() const;
+
+    MCAPI bool isValid() const;
 
     MCAPI ::FontHandle& operator=(::FontHandle const&);
     // NOLINTEND
@@ -59,8 +64,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FontHandle const&);
-
     MCAPI void* $ctor(::FontHandle defaultFont, ::std::string const& newFontAlias);
 
     MCAPI void* $ctor(

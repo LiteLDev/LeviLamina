@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Prefabs::PrefabDBTemplateLoader::v1 {
@@ -24,13 +25,12 @@ public:
 
 public:
     // prevent constructor by default
-    TemplateData(TemplateData const&);
     TemplateData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TemplateData(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&&);
+    MCNAPI TemplateData(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const&);
 
     MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&
     operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&&);
@@ -42,6 +42,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::SemVersionConstant const& VERSION();
@@ -50,7 +56,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&&);
+    MCNAPI void* $ctor(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const&);
     // NOLINTEND
 
 public:

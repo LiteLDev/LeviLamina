@@ -14,15 +14,13 @@ class StoneCutterInputContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~StoneCutterInputContainerValidation() /*override*/ = default;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
 
     // NOLINTEND

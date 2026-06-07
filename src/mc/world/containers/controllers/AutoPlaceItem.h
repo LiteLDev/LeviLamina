@@ -31,7 +31,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::string const& _collection, bool _stopWhenPlaced);
+    MCFOLD void* $ctor(::std::string const& _collection, bool _stopWhenPlaced);
 #endif
     // NOLINTEND
 

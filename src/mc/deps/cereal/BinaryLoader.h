@@ -6,6 +6,12 @@
 #include "mc/deps/cereal/BasicLoader.h"
 #include "mc/deps/cereal/BinarySchemaReader.h"
 
+// auto generated forward declare list
+// clang-format off
+class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace cereal {
 
 class BinaryLoader : public ::cereal::BasicLoader {
@@ -16,15 +22,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    BinaryLoader();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~BinaryLoader() /*override*/;
+    MCAPI BinaryLoader(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

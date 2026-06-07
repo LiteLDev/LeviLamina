@@ -19,24 +19,12 @@ public:
 
     virtual uint getTelemetryData() = 0;
 
-    virtual ~IPacketSecurityHandler();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~IPacketSecurityHandler() = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

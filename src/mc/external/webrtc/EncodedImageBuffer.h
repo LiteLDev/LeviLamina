@@ -25,9 +25,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual uchar const* data() const /*override*/;
-
     virtual uchar* data() /*override*/;
+
+    virtual uchar const* data() const /*override*/;
 
     virtual uint64 size() const /*override*/;
 
@@ -43,9 +43,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uchar const* $data() const;
-
     MCNAPI uchar* $data();
+
+    MCNAPI uchar const* $data() const;
 
     MCNAPI uint64 $size() const;
 

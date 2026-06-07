@@ -56,8 +56,8 @@ public:
 
     virtual void serverInitItemStackIds(
         int containerSlot,
-        int,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+        int onNetIdChanged,
+        ::std::function<void(int, ::ItemStack const&)>
     ) /*override*/;
 
     virtual int getContainerSize() const /*override*/;
@@ -66,13 +66,11 @@ public:
 
     virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int item, ::ItemStack const&) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~DecoratedPotBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -88,7 +86,13 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void fromItem(::ItemStack const& item);
+
+    MCFOLD ::DecoratedPotAnimation getAnimation() const;
+
+    MCAPI float getAnimationProgress(float frameAlpha) const;
 #endif
+
+    MCFOLD ::std::array<::std::string, 4> const& getSherdNames() const;
 
     MCAPI void tryAddItem(::Player& player);
     // NOLINTEND
@@ -96,7 +100,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::array<::std::string, 4>> _tryGetSherdsFromItem(::ItemStackBase const& item);
+    MCAPI static bool _areDefaultSherds(::std::array<::std::string, 4> const& sherds);
 
 #ifdef LL_PLAT_C
     MCAPI static ::std::string getDelimitedConcatenatedSherdNames(::CompoundTag const* userData);
@@ -111,6 +115,8 @@ public:
 
     MCAPI static void
     saveSherdsToTag(::CompoundTag& tag, ::std::array<::std::string, 4> const& sherds, bool forceSaveDefaultSherds);
+
+    MCAPI static ::DecoratedPotBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static ::std::optional<::std::array<::std::string, 4>> tryGetSherdsFromTag(::CompoundTag const& tag);
     // NOLINTEND
@@ -137,7 +143,7 @@ public:
     MCAPI void $tick(::BlockSource& region);
 
     MCAPI void
-    $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    $serverInitItemStackIds(int containerSlot, int onNetIdChanged, ::std::function<void(int, ::ItemStack const&)>);
 
     MCFOLD int $getContainerSize() const;
 
@@ -145,7 +151,7 @@ public:
 
     MCFOLD ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int, ::ItemStack const& item);
+    MCAPI void $setItem(int item, ::ItemStack const&);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 

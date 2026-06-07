@@ -18,13 +18,12 @@
 // clang-format off
 namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FileIndexLru; }
-namespace Core { class FileStorageAreaObserver; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class FlatFileManifestTracker; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
-namespace Core { class StorageAreaStateListener; }
 namespace Core { class StorageAreasTree; }
+namespace Core { class FileStorageAreaObserver; }
 // clang-format on
 
 namespace Core {
@@ -110,11 +109,11 @@ public:
 
     virtual bool handlesPendingWrites() const;
 
-    virtual void informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
+    virtual void informPendingWriteSize(uint64, bool const);
 
     virtual uint64 estimatePendingWriteDiskSize(uint64 rawFileSize) const;
 
-    virtual void informStorageAreaCopy(uint64 storageAreaSize);
+    virtual void informStorageAreaCopy(uint64);
 
     virtual bool supportsExtendSize() const;
 
@@ -144,7 +143,7 @@ public:
 
     virtual void enableSequentialWrites(bool);
 
-    virtual bool checkCorrupt(bool handleCorruption);
+    virtual bool checkCorrupt(bool);
 
     virtual ::Bedrock::NonOwnerPointer<::Core::FileIndexLru> getFileIndexLru();
 
@@ -156,9 +155,9 @@ public:
 
     virtual bool shouldAllowCommit() const;
 
-    virtual void trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+    virtual void trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation);
 
-    virtual void trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
+    virtual void trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation);
 
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
@@ -166,7 +165,7 @@ public:
 
     virtual ::Core::Result _commit();
 
-    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+    virtual ::Core::Result _onTransactionsEmpty(bool);
 
     virtual void _onTeardown();
     // NOLINTEND
@@ -186,19 +185,31 @@ public:
 
     MCAPI void _addWriteOperation(bool succeeded, uint64 numBytesWritten);
 
-    MCAPI void _beginTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
+    MCAPI void _beginTransaction(::Core::FileSystemImpl* pTransaction, bool);
 
     MCAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-#ifdef LL_PLAT_C
-    MCAPI void addStateListener(::Core::StorageAreaStateListener* l);
-#endif
+    MCAPI void _onDeleteFile(::Core::PathView filePath);
 
-    MCAPI bool canWrite() const;
+    MCAPI void _onWriteFile(::Core::PathView filePath);
+
+#ifdef LL_PLAT_C
+    MCAPI void addObserver(::Core::FileStorageAreaObserver& observer);
+#endif
 
     MCAPI void checkUserStorage();
 
-    MCAPI void removeStateListener(::Core::StorageAreaStateListener* l);
+#ifdef LL_PLAT_C
+    MCAPI uint64 getRestrictedMaximumFileSize() const;
+#endif
+
+    MCFOLD ::Core::PathBuffer<::std::string> const& getRootPath() const;
+
+#ifdef LL_PLAT_C
+    MCAPI void setLoggingEnabled(bool enabled);
+
+    MCAPI bool supportsFlatFiles() const;
+#endif
     // NOLINTEND
 
 public:
@@ -207,9 +218,19 @@ public:
     MCAPI static ::Core::Result
     _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
 
-#ifdef LL_PLAT_C
     MCAPI static ::Core::Result
     getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
+
+#ifdef LL_PLAT_C
+    MCAPI static void getTotalBytesWrittenAndReadFromAllStorageAreas(uint64& outBytesWritten, uint64& outBytesRead);
+#endif
+
+    MCAPI static void teardown();
+
+#ifdef LL_PLAT_C
+    MCAPI static void tickStorageAreas();
+
+    MCAPI static ::Core::Result unloadAllStorageAreaFlatFileManifests(bool isInGame);
 #endif
     // NOLINTEND
 
@@ -254,11 +275,11 @@ public:
 
     MCFOLD bool $handlesPendingWrites() const;
 
-    MCFOLD void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
+    MCFOLD void $informPendingWriteSize(uint64, bool const);
 
     MCFOLD uint64 $estimatePendingWriteDiskSize(uint64 rawFileSize) const;
 
-    MCFOLD void $informStorageAreaCopy(uint64 storageAreaSize);
+    MCFOLD void $informStorageAreaCopy(uint64);
 
     MCFOLD bool $supportsExtendSize() const;
 
@@ -288,7 +309,7 @@ public:
 
     MCFOLD void $enableSequentialWrites(bool);
 
-    MCFOLD bool $checkCorrupt(bool handleCorruption);
+    MCFOLD bool $checkCorrupt(bool);
 
     MCFOLD ::Bedrock::NonOwnerPointer<::Core::FileIndexLru> $getFileIndexLru();
 
@@ -300,17 +321,17 @@ public:
 
     MCAPI bool $shouldAllowCommit() const;
 
-    MCAPI void $trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+    MCAPI void $trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation);
 
-    MCAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
+    MCAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation);
 
     MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
-    MCFOLD bool $shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
+    MCAPI bool $shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
 
     MCFOLD ::Core::Result $_commit();
 
-    MCFOLD ::Core::Result $_onTransactionsEmpty(bool fromChild);
+    MCFOLD ::Core::Result $_onTransactionsEmpty(bool);
 
     MCFOLD void $_onTeardown();
 

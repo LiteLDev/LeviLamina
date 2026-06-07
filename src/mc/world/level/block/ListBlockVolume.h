@@ -12,6 +12,7 @@
 class BaseBlockLocationIterator;
 class BoundingBox;
 class ChunkPos;
+class ListBlockVolumeIterator;
 class Vec3;
 // clang-format on
 
@@ -27,7 +28,6 @@ public:
 
 public:
     // prevent constructor by default
-    ListBlockVolume& operator=(ListBlockVolume const&);
     ListBlockVolume();
 
 public:
@@ -54,8 +54,6 @@ public:
     virtual ::std::unordered_set<::BlockPos> getFlattenedBlockPositions() const /*override*/;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> getIterator() const /*override*/;
-
-    virtual ~ListBlockVolume() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,15 +61,29 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ListBlockVolume(::std::vector<::BlockPos> const& blockPositions);
 
+    MCAPI explicit ListBlockVolume(::std::vector<::Vec3> const& blockPositions);
+
     MCAPI ListBlockVolume(::ListBlockVolume const& rhs);
 
+    MCAPI ::ListBlockVolumeIterator begin() const;
+
+    MCAPI void erase(::std::vector<::Vec3> const& blockPositions);
+
+#ifdef LL_PLAT_S
+    MCFOLD uint64 getChangeCount() const;
+#endif
+
     MCAPI void insert(::std::vector<::Vec3> const& blockPositions);
+
+    MCAPI ::ListBlockVolume& operator=(::ListBlockVolume const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions);
+
+    MCAPI void* $ctor(::std::vector<::Vec3> const& blockPositions);
 
     MCAPI void* $ctor(::ListBlockVolume const& rhs);
     // NOLINTEND

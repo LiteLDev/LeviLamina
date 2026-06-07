@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Prefabs { class PrefabDBServerPlayerServiceProvider; }
 namespace Editor::Prefabs { struct PrefabDBInstanceInteractionEvent; }
 namespace Editor::ScriptModule { class ScriptPrefabTemplate; }
 namespace Editor::ScriptModule { class ScriptPrefabTemplateInstance; }
@@ -124,8 +123,6 @@ public:
     );
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError> _endCaptureMouseClicks();
-
-    MCNAPI ::std::shared_ptr<::Editor::Prefabs::PrefabDBServerPlayerServiceProvider> _getPrefabDBService();
 
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplate>,

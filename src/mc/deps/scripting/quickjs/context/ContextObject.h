@@ -66,18 +66,6 @@ public:
         UnhandledPromiseRejectionEntry& operator=(UnhandledPromiseRejectionEntry const&);
         UnhandledPromiseRejectionEntry(UnhandledPromiseRejectionEntry const&);
         UnhandledPromiseRejectionEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~UnhandledPromiseRejectionEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -116,13 +104,21 @@ public:
         ::std::unique_ptr<::Scripting::QuickJS::ObjectInspector>&& inspector,
         ::Scripting::IPrinter*                                     printer,
         ::Scripting::IDependencyLoader*                            loader,
-        ::JSRuntime*                                               jsRuntime,
-        ::Scripting::ContextConfig const&                          contextConfig
+        ::JSRuntime*                                               contextConfig,
+        ::Scripting::ContextConfig const&
     );
 
     MCNAPI void _bindGlobals(::Scripting::GlobalBinding const& global);
 
     MCNAPI void _bindModules(::std::vector<::Scripting::ModuleBinding> const& modules);
+
+    MCNAPI void _bindPrint(::JSContext* ctx);
+
+    MCNAPI ::JSModuleDef* _evalModuleWithErrors(
+        ::Scripting::ModuleBinding const& bindingModule,
+        ::std::string const&              moduleName,
+        ::std::string const&              js
+    );
 
     MCNAPI void _resolvePromise(::JSValue jsResolutionFunc, ::entt::meta_any& arg);
 
@@ -174,6 +170,14 @@ public:
         ::Scripting::ConstantFactory const&    constantCreator
     );
 
+    MCNAPI static ::JSValue _createConstructor(
+        ::JSContext*         ctx,
+        ::JSModuleDef*       jsModuleDef,
+        ::JSValue            jsValue,
+        ::std::string const& name,
+        uint                 jsClassId
+    );
+
     MCNAPI static ::std::unique_ptr<::Scripting::AnyAndJSValue> _createEnumReverseConstant(
         ::JSContext*                           ctx,
         ::Scripting::QuickJS::ContextUserData& contextData,
@@ -190,6 +194,12 @@ public:
         ::std::string const&                className
     );
 
+    MCNAPI static void _createGlobalEnum(
+        ::JSContext*                           ctx,
+        ::Scripting::QuickJS::ContextUserData& contextData,
+        ::Scripting::EnumBinding const&        enumBinding
+    );
+
     MCNAPI static void _createGlobalFunction(::JSContext* ctx, ::Scripting::FunctionBinding const& functionBinding);
 
     MCNAPI static void _createGlobalObject(
@@ -204,6 +214,20 @@ public:
         ::Scripting::QuickJS::ContextUserData& contextData,
         ::JSValue                              jsValue,
         ::Scripting::IteratorBinding&          iteratorBinding
+    );
+
+    MCNAPI static void _createModuleConstant(
+        ::JSContext*                           ctx,
+        ::JSModuleDef*                         jsModuleDef,
+        ::Scripting::QuickJS::ContextUserData& contextData,
+        ::Scripting::ConstantFactory const&    constantFactory
+    );
+
+    MCNAPI static void _createModuleEnum(
+        ::JSContext*                           ctx,
+        ::JSModuleDef*                         jsModuleDef,
+        ::Scripting::QuickJS::ContextUserData& contextData,
+        ::Scripting::EnumBinding const&        enumBinding
     );
 
     MCNAPI static void _createModuleFunction(
@@ -248,8 +272,8 @@ public:
         ::std::unique_ptr<::Scripting::QuickJS::ObjectInspector>&& inspector,
         ::Scripting::IPrinter*                                     printer,
         ::Scripting::IDependencyLoader*                            loader,
-        ::JSRuntime*                                               jsRuntime,
-        ::Scripting::ContextConfig const&                          contextConfig
+        ::JSRuntime*                                               contextConfig,
+        ::Scripting::ContextConfig const&
     );
     // NOLINTEND
 

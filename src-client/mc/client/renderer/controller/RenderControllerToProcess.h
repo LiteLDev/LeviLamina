@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DataDrivenGeometry;
+class RenderController;
+// clang-format on
+
 struct RenderControllerToProcess {
 public:
     // member variables
@@ -20,7 +26,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RenderControllerToProcess(
+        ::std::shared_ptr<::RenderController> renderControllerPtr,
+        ::std::weak_ptr<::DataDrivenGeometry> geo,
+        uint64                                sortIndex
+    );
+
     MCNAPI ~RenderControllerToProcess();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::shared_ptr<::RenderController> renderControllerPtr,
+        ::std::weak_ptr<::DataDrivenGeometry> geo,
+        uint64                                sortIndex
+    );
     // NOLINTEND
 
 public:

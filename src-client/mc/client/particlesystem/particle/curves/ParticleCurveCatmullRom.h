@@ -31,8 +31,6 @@ public:
     virtual float _evaluateCurve(float t, ::RenderParams& renderParams) /*override*/;
 
     virtual ::ParticleSystem::ParticleCurveType getCurveType() const /*override*/;
-
-    virtual ~ParticleCurveCatmullRom() /*override*/ = default;
     // NOLINTEND
 
 public:

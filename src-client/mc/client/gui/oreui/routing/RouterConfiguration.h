@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/interface/RouteMode.h"
-#include "mc/client/gui/oreui/interface/RoutePrerequisite.h"
 #include "mc/client/gui/oreui/routing/RouteDataParser.h"
 #include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -39,6 +37,30 @@ public:
         ::ll::TypedStorage<4, 4, ::OreUI::EntryPoints::RouteFlags const>  flags;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::IEntryPoint>> definition;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EntryPoint();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI EntryPoint(
+            ::std::string const&                    route,
+            ::OreUI::EntryPoints::RouteFlags        flags,
+            ::std::unique_ptr<::OreUI::IEntryPoint> definition
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::std::string const&                    route,
+            ::OreUI::EntryPoints::RouteFlags        flags,
+            ::std::unique_ptr<::OreUI::IEntryPoint> definition
+        );
+        // NOLINTEND
     };
 
 public:
@@ -65,14 +87,6 @@ public:
     MCAPI RouterConfiguration(::OreUI::RouterConfiguration&&);
 
     MCAPI RouterConfiguration(::OreUI::RouteDataParser&& routeDataParser, ::OreUI::DebugData const& debugData);
-
-    MCAPI void _addRoute(
-        ::std::vector<::OreUI::Route>& routes,
-        ::std::string const&           fileName,
-        ::std::string const&           route,
-        ::OreUI::RouteMode             mode,
-        ::OreUI::RoutePrerequisite     prerequisite
-    ) const;
 
     MCAPI void _fillRoutes(::std::vector<::OreUI::RouteData> const& routeData);
 

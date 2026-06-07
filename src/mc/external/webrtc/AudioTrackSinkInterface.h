@@ -9,20 +9,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void OnData(
-        void const* audio_data,
-        int         bits_per_sample,
-        int         sample_rate,
-        uint64      number_of_channels,
-        uint64      number_of_frames
-    );
-
-    virtual void OnData(
         void const*            audio_data,
         int                    bits_per_sample,
         int                    sample_rate,
         uint64                 number_of_channels,
         uint64                 number_of_frames,
         ::std::optional<int64> absolute_capture_timestamp_ms
+    );
+
+    virtual void OnData(
+        void const* audio_data,
+        int         bits_per_sample,
+        int         sample_rate,
+        uint64      number_of_channels,
+        uint64      number_of_frames
     );
 
     virtual int NumPreferredChannels() const;
@@ -34,20 +34,20 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $OnData(
-        void const* audio_data,
-        int         bits_per_sample,
-        int         sample_rate,
-        uint64      number_of_channels,
-        uint64      number_of_frames
-    );
-
-    MCNAPI void $OnData(
         void const*            audio_data,
         int                    bits_per_sample,
         int                    sample_rate,
         uint64                 number_of_channels,
         uint64                 number_of_frames,
         ::std::optional<int64> absolute_capture_timestamp_ms
+    );
+
+    MCNAPI void $OnData(
+        void const* audio_data,
+        int         bits_per_sample,
+        int         sample_rate,
+        uint64      number_of_channels,
+        uint64      number_of_frames
     );
 
     MCNAPI int $NumPreferredChannels() const;

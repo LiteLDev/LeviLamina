@@ -16,6 +16,7 @@ class BlockActorDataPacket;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class IConstBlockSource;
 class ILevel;
 class SaveContext;
 class Vec3;
@@ -62,8 +63,6 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~PistonBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -81,6 +80,8 @@ public:
     MCAPI bool _checkAttachedBlocks(::BlockSource& region);
 
     MCAPI void _checkInceptionAchievement(::BlockActor& be, ::BlockSource& region, ::BlockPos const& facingDir);
+
+    MCAPI void _clearBlockInfront(::BlockSource& region, ::BlockPos const& blockPos, ::BlockPos const& blockBehindPos);
 
     MCAPI bool _handleSlimeConnections(
         ::BlockSource&    region,
@@ -101,7 +102,12 @@ public:
         uint              searchHeight
     );
 
-    MCAPI void _sortAttachedBlocks(::BlockSource& region);
+    MCAPI bool _shouldWaterlogAttachedBlock(
+        ::BlockSource&    region,
+        ::BlockPos const& attachedBlockPos,
+        ::Block const&    attachedBlock,
+        ::Block const&    attachedExtraBlock
+    ) const;
 
     MCAPI void _spawnBlocks(::BlockSource& region);
 
@@ -109,21 +115,39 @@ public:
 
     MCAPI void _spawnMovingBlocks(::BlockSource& region);
 
+    MCAPI void _tryFixupStickyPistonArm(::BlockSource& region);
+
+    MCFOLD ::std::vector<::BlockPos> const& getAttachedBlocks() const;
+
     MCAPI ::Block const* getCorrectArmBlock() const;
 
+    MCAPI ::BlockPos const& getFacingDir(::IConstBlockSource const& region) const;
+
+    MCAPI float getProgress(float a) const;
+
+    MCAPI bool isExpanded() const;
+
+    MCAPI bool isExpanding() const;
+
+    MCAPI bool isMoving() const;
+
+    MCAPI bool isRetracted() const;
+
+    MCAPI bool isRetracting() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD bool isSticky() const;
+#endif
+
     MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
+
+    MCAPI void setShouldVerifyArmType(bool shouldVerify);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos, bool isSticky);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -141,7 +165,7 @@ public:
 
     MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

@@ -12,6 +12,7 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class IConstBlockSource;
+class Material;
 // clang-format on
 
 class GlassBlock : public ::BlockType {
@@ -24,11 +25,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GlassBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
 
     virtual bool getCollisionShapeForCamera(
         ::AABB&                    outAABB,
@@ -36,8 +41,32 @@ public:
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~GlassBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GlassBlock(
+        ::std::string const& nameId,
+        int                  id,
+        ::Material const&    material,
+        bool                 doesDrops,
+        bool                 useableInCommands,
+        bool                 doesNotCollideWithCamera
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const& nameId,
+        int                  id,
+        ::Material const&    material,
+        bool                 doesDrops,
+        bool                 useableInCommands,
+        bool                 doesNotCollideWithCamera
+    );
     // NOLINTEND
 
 public:
@@ -45,7 +74,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
 
     MCAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/chunk/vanilla_level_chunk_upgrade/Axis.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"
 
 // auto generated forward declare list
@@ -12,7 +13,6 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class LevelChunk;
-class ListTag;
 // clang-format on
 
 namespace VanillaLevelChunkUpgrade {
@@ -36,12 +36,18 @@ MCAPI bool convertZombieVillagerV1TagToV2(::CompoundTag& tag);
 
 MCAPI bool convertZombieVillagerV2TagToV1(::CompoundTag& tag);
 
-MCAPI void fillNegativeSubChunksWithAir(::LevelChunk& lc, ::BlockSource& region);
-
 MCAPI void fillNegativeSubChunksWithGeneration(::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
 MCAPI void
 fillNegativeSubChunksWithGenerationOrAir(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
+
+MCAPI void fixBlockStatesOnChunkBorderAxis(
+    ::BlockSource&                   region,
+    ::LevelChunk const&              levelChunk,
+    uchar                            chunkAxisPos,
+    ::BlockPos                       pos,
+    ::VanillaLevelChunkUpgrade::Axis fixAxis
+);
 
 MCAPI void fixStemBlockStates(::BlockSource& region, ::BlockPos updatePos, ::Block const& block);
 
@@ -52,10 +58,6 @@ MCAPI void fixUselessDynamicWater(::LevelChunk& lc, ::BlockSource& region);
 MCAPI void fixWallBlockStates(::BlockSource& region, ::BlockPos updatePos);
 
 MCAPI void fixWallChunk(::LevelChunk& lc, ::BlockSource& region);
-
-MCAPI ::std::string const& getV1CareerFromDefinitionsList(::ListTag const* definitionsList);
-
-MCAPI bool isWallBlock(::Block const& testBlock);
 
 MCAPI bool levelChunkNeedsUpgrade(::LevelChunk const& lc);
 

@@ -15,37 +15,26 @@ class CreatedOutputContainerValidation : public ::ContainerValidationBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const /*override*/;
+    virtual bool
+    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const
+        /*override*/;
 
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
 
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
-
-    virtual ~CreatedOutputContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const;
+    MCFOLD bool
+    $isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const;
 
     MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
     MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 

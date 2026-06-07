@@ -15,6 +15,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
+    MCFOLD static void debugFail(::std::string const&);
+
     MCAPI static void timeout(int seconds);
     // NOLINTEND
 };

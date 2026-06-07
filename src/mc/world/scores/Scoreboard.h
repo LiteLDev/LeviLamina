@@ -11,6 +11,7 @@
 #include "mc/world/scores/IdentityDictionary.h"
 #include "mc/world/scores/ObjectiveRenderType.h"
 #include "mc/world/scores/ObjectiveSortOrder.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 #include "mc/world/scores/ScoreboardId.h"
 #include "mc/world/scores/ScoreboardOperationResult.h"
 
@@ -68,7 +69,7 @@ public:
 
     virtual ::ScoreboardId const& createScoreboardId(::Actor const& entity);
 
-    virtual ::ScoreboardId const& createScoreboardId(::std::string const& fakePlayer);
+    virtual ::ScoreboardId const& createScoreboardId(::std::string const& name);
 
     virtual void onObjectiveAdded(::Objective const& objective);
 
@@ -96,6 +97,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Scoreboard(::CommandSoftEnumRegistry registry);
 
+    MCAPI void _addLoadedCriteria(::std::unique_ptr<::ObjectiveCriteria> newCriteria);
+
+    MCAPI void _addLoadedObjective(::std::unique_ptr<::Objective> newObjective);
+
+    MCAPI void _initCoordinator();
+
     MCAPI ::Objective*
     addObjective(::std::string const& name, ::std::string const& displayName, ::ObjectiveCriteria const& criteria);
 
@@ -118,7 +125,15 @@ public:
     MCAPI ::ObjectiveCriteria const&
     createObjectiveCriteria(::std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
 
+    MCAPI void forEachIdentityRef(::std::function<void(::ScoreboardIdentityRef&)> callback);
+
+    MCAPI void forEachObjective(::std::function<void(::Objective&)> callback);
+
     MCAPI ::ObjectiveCriteria* getCriteria(::std::string const& criteriaName) const;
+
+    MCAPI ::std::vector<::std::string> getCriteriaNames() const;
+
+    MCAPI ::ObjectiveCriteria const& getDefaultCriteria() const;
 
     MCAPI ::std::vector<::PlayerScore> getDisplayInfoFiltered(::std::string const& displaySlot) const;
 
@@ -141,34 +156,82 @@ public:
 
     MCAPI ::std::vector<::Objective const*> getObjectives() const;
 
+    MCFOLD ::ScoreboardEventCoordinator& getScoreboardEventCoordinator();
+
     MCAPI ::ScoreboardId const& getScoreboardId(::Actor const& entity) const;
+
+    MCAPI ::ScoreboardId const& getScoreboardId(::ActorUniqueID const& entityId) const;
 
     MCAPI ::ScoreboardId const& getScoreboardId(::std::string const& name) const;
 
     MCAPI ::ScoreboardId const& getScoreboardId(::Player const& player) const;
 
+    MCAPI ::ScoreboardId const& getScoreboardId(::PlayerScoreboardId const& playerId) const;
+
+    MCAPI ::ScoreboardIdentityRef* getScoreboardIdentityRef(::ScoreboardId const& scoreboardId);
+
     MCAPI ::std::vector<::ScoreboardIdentityRef> getScoreboardIdentityRefs() const;
 
     MCAPI ::std::vector<::ScoreboardId> getTrackedIds() const;
+
+    MCAPI bool hasIdentityFor(::ScoreboardId const& scoreboardId) const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool isObjectiveDisplayed(::Objective const& objective) const;
+#endif
+
+    MCAPI int modifyPlayerScore(
+        ::ScoreboardOperationResult& result,
+        ::ScoreboardId const&        id,
+        ::Objective&                 objective,
+        int                          scoreValue,
+        ::PlayerScoreSetFunction     action
+    );
+
+    MCAPI int modifyPlayerScore(
+        ::ScoreboardOperationResult& result,
+        ::ScoreboardIdentityRef*     identityRef,
+        ::Objective&                 objective,
+        int                          scoreValue,
+        ::PlayerScoreSetFunction     action
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI void onUpdateUI();
+#endif
 
     MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::CompoundTag const& loadedData);
 
     MCAPI ::ScoreboardIdentityRef const&
     registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::ActorUniqueID const& entityId);
 
+#ifdef LL_PLAT_C
     MCAPI ::ScoreboardIdentityRef const&
     registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::std::string const& name);
+#endif
 
     MCAPI ::ScoreboardIdentityRef const&
     registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 
     MCAPI bool removeObjective(::Objective* objective);
 
+    MCAPI void removeScoreListener(::Player const& player);
+
     MCAPI void removeScoreListener(::Player const& player, ::std::string const& objective);
+
+#ifdef LL_PLAT_C
+    MCAPI void replaceFakePlayer(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
+#endif
 
     MCAPI bool resetPlayerScore(::ScoreboardId const& id, ::Objective& objective);
 
     MCAPI void resetPlayerScore(::ScoreboardId const& id);
+
+#ifdef LL_PLAT_C
+    MCFOLD bool shouldUpdateUI() const;
+#endif
+
+    MCAPI ::std::optional<::ScoreInfo> tryGetIdScore(::ScoreboardId const& id, uint64 const& objectiveHash) const;
     // NOLINTEND
 
 public:
@@ -181,6 +244,8 @@ public:
     MCAPI static ::std::string const& DISPLAY_SLOT_LIST();
 
     MCAPI static ::std::string const& DISPLAY_SLOT_SIDEBAR();
+
+    MCAPI static char const*& OBJECTIVES_ENUM();
     // NOLINTEND
 
 public:
@@ -210,7 +275,7 @@ public:
 
     MCFOLD ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
 
-    MCFOLD ::ScoreboardId const& $createScoreboardId(::std::string const& fakePlayer);
+    MCFOLD ::ScoreboardId const& $createScoreboardId(::std::string const& name);
 
     MCAPI void $onObjectiveAdded(::Objective const& objective);
 

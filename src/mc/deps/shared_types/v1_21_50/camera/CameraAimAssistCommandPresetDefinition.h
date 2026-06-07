@@ -25,17 +25,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraAimAssistCommandPresetDefinition& operator=(CameraAimAssistCommandPresetDefinition const&);
-    CameraAimAssistCommandPresetDefinition(CameraAimAssistCommandPresetDefinition const&);
-    CameraAimAssistCommandPresetDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCommandPresetDefinition&
-    operator=(::SharedTypes::v1_21_50::CameraAimAssistCommandPresetDefinition&&);
-
     MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCommandPresetDefinition const& rhs) const;
     // NOLINTEND
 

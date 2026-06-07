@@ -24,24 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Map& operator=(Map const&);
-    Map(Map const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Map();
-
-    MCAPI ::BlockTessellatorCustomExtraData::Map& operator=(::BlockTessellatorCustomExtraData::Map&&);
-
     MCAPI ~Map();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

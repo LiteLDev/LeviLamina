@@ -28,8 +28,12 @@ public:
     virtual bool test(::Block const& block, ::IRandom&) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+    // NOLINTEND
 
-    virtual ~BlockMatch() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::br::worldgen::processors::BlockRules::BlockMatch from(::BlockType const& block);
     // NOLINTEND
 
 public:

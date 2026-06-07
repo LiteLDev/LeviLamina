@@ -42,9 +42,18 @@ public:
     virtual ~IntOption() /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
+#else // LL_PLAT_C
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void load(::std::string const&) /*override*/;
+#else // LL_PLAT_C
     virtual void load(::std::string const& valueString) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -76,7 +85,9 @@ public:
         ::GameVersion        version
     );
 
-    MCAPI int _validate(int value);
+    MCAPI void set(int value, bool saveOptionChange);
+
+    MCAPI void setValues(::std::vector<int> values);
 #endif
     // NOLINTEND
 

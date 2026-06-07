@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -12,7 +12,7 @@
 class Mob;
 // clang-format on
 
-class RandomStrollGoal : public ::Goal {
+class RandomStrollGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,8 +48,22 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool _setWantedPosition();
+    // NOLINTEND
 
-    virtual ~RandomStrollGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit RandomStrollGoal(::Mob& mob);
+
+    MCAPI RandomStrollGoal(::Mob& mob, float speed, int xzDist, int yDist, int interval);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+
+    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, int interval);
     // NOLINTEND
 
 public:

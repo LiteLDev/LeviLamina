@@ -11,6 +11,8 @@ namespace Editor::ScriptModule::Prefabs {
 // functions
 // NOLINTBEGIN
 MCNAPI void bindPrefabScriptErrors(::Scripting::ModuleBindingBuilder& builder);
+
+MCNAPI void bindPrefabTypes(::Scripting::ModuleBindingBuilder& builder);
 // NOLINTEND
 
 } // namespace Editor::ScriptModule::Prefabs

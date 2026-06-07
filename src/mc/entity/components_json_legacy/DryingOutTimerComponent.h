@@ -8,6 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -37,8 +41,20 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        DryingOutTimerDefinition(DryingOutTimerDefinition const&);
+        DryingOutTimerDefinition();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI DryingOutTimerDefinition(::DryingOutTimerComponent::DryingOutTimerDefinition&&);
+
+        MCAPI void initialize(::EntityContext& entity, ::DryingOutTimerComponent& dryingOutComponent) const;
+
+        MCAPI ::DryingOutTimerComponent::DryingOutTimerDefinition&
+        operator=(::DryingOutTimerComponent::DryingOutTimerDefinition const&);
+
         MCAPI ~DryingOutTimerDefinition();
         // NOLINTEND
 
@@ -50,6 +66,12 @@ public:
                 ::JsonUtil::EmptyClass,
                 ::DryingOutTimerComponent::DryingOutTimerDefinition>>& root
         );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::DryingOutTimerComponent::DryingOutTimerDefinition&&);
         // NOLINTEND
 
     public:
@@ -68,31 +90,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DryingOutTimerComponent& operator=(DryingOutTimerComponent const&);
-    DryingOutTimerComponent(DryingOutTimerComponent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DryingOutTimerComponent();
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI DryingOutTimerComponent(::DryingOutTimerComponent&&);
+    MCAPI bool canBeAffectedByWaterBottle() const;
 
-    MCAPI ~DryingOutTimerComponent();
-    // NOLINTEND
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::DryingOutTimerComponent&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void refillTimeWithWaterBottle();
     // NOLINTEND
 };

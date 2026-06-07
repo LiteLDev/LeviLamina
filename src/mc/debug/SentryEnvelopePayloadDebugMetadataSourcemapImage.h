@@ -24,17 +24,17 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadDebugMetadataSourcemapImage(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
+    SentryEnvelopePayloadDebugMetadataSourcemapImage&
+    operator=(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage&
-    operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage&&);
+    MCNAPI SentryEnvelopePayloadDebugMetadataSourcemapImage(::SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
 
     MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage&
-    operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
+    operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage&&);
 
     MCNAPI ~SentryEnvelopePayloadDebugMetadataSourcemapImage();
     // NOLINTEND
@@ -46,16 +46,14 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
 };
-
-// free functions
-// NOLINTBEGIN
-MCNAPI bool operator==(
-    ::SentryEnvelopePayloadDebugMetadataSourcemapImage const& __P0,
-    ::SentryEnvelopePayloadDebugMetadataSourcemapImage const& __P1
-);
-// NOLINTEND

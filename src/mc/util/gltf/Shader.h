@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace glTF {
 
 struct Shader {
@@ -26,6 +31,14 @@ public:
     Shader& operator=(Shader const&);
     Shader(Shader const&);
     Shader();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::Json::Value serialize() const;
+#endif
+    // NOLINTEND
 };
 
 } // namespace glTF

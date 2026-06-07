@@ -42,6 +42,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                 mIsSignedInPlatformNetwork;
     ::ll::TypedStorage<1, 1, bool>                                                 mIsRealmsPlusSubscriptionActive;
     ::ll::TypedStorage<1, 1, bool>                                                 mIsMarketplacePassSubscriptionActive;
+    ::ll::TypedStorage<1, 1, bool>                                                 mIsMarketplaceDisabled;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mCurrentXuid;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mCurrentPlatformId;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MainMenuScreenModel>>            mMainMenuScreenModel;
@@ -96,6 +97,8 @@ public:
 
     MCFOLD ::std::string const& getCurrentXuid() const;
 
+    MCAPI ::std::string getMarketplaceDisabledReason() const;
+
     MCAPI ::std::optional<::Social::UserPlatformConnectionResult> const& getSignInToPlatformNetworkResult() const;
 
     MCAPI ::OreUI::FacetTaskState getSignInToPlatformNetworkState();
@@ -104,17 +107,19 @@ public:
 
     MCFOLD bool hasPremiumNetworkAccess() const;
 
-    MCAPI bool hasValidCrossPlatformSkin() const;
+    MCFOLD bool hasValidCrossPlatformSkin() const;
 
     MCAPI bool isBanned() const;
 
     MCFOLD bool isLoggedInWithMicrosoftAccount() const;
 
-    MCAPI bool isMarketplacePassSubscriptionActive() const;
+    MCFOLD bool isMarketplaceDisabled() const;
 
-    MCAPI bool isRealmsPlusSubscriptionActive() const;
+    MCFOLD bool isMarketplacePassSubscriptionActive() const;
 
-    MCAPI bool isSignInInProgress() const;
+    MCFOLD bool isRealmsPlusSubscriptionActive() const;
+
+    MCFOLD bool isSignInInProgress() const;
 
     MCFOLD bool isSignedInPlatformNetwork() const;
 

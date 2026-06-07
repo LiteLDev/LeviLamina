@@ -15,6 +15,10 @@ class Player;
 
 class RangedWeaponItem : public ::Item {
 public:
+    // prevent constructor by default
+    RangedWeaponItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
@@ -28,14 +32,20 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
-
-    virtual ~RangedWeaponItem() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI RangedWeaponItem(::std::string const& name, short id);
+
+    MCAPI float getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, short id);
     // NOLINTEND
 
 public:
@@ -53,5 +63,11 @@ public:
     MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

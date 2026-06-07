@@ -14,6 +14,8 @@ namespace TeleportToOwnerUtils {
 // NOLINTBEGIN
 MCNAPI bool canTeleport(::Mob const& mob);
 
+MCNAPI void teleport(::Mob& mob, ::Vec3 position);
+
 MCNAPI ::std::optional<::Vec3>
 tryToGetTeleportPosition(::Mob const& mob, ::Mob const& owner, ::TeleportToOwnerParameters const& teleportParameters);
 // NOLINTEND

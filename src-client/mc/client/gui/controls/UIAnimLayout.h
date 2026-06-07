@@ -31,7 +31,6 @@ public:
 
 public:
     // prevent constructor by default
-    UIAnimLayout& operator=(UIAnimLayout const&);
     UIAnimLayout();
 
 public:
@@ -42,23 +41,17 @@ public:
     virtual bool tick(::UIControl& ownerControl, float const deltaTime) /*override*/;
 
     virtual void _reset(::UIControl& ownerControl) /*override*/;
-
-    virtual ~UIAnimLayout() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIAnimLayout(::UIAnimLayout const&);
-
     MCAPI UIAnimLayout(::UIResolvedDef const& def, ::UIAnimLayout::ApplyTo applyTo);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIAnimLayout const&);
-
     MCAPI void* $ctor(::UIResolvedDef const& def, ::UIAnimLayout::ApplyTo applyTo);
     // NOLINTEND
 

@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelDbEnv() /*override*/ = default;
+    virtual ~LevelDbEnv() /*override*/;
 
     virtual ::leveldb::Status
     NewSequentialFile(::std::string const& fname, ::leveldb::SequentialFile** result) /*override*/;
@@ -51,17 +51,17 @@ public:
 
     virtual ::leveldb::Status RenameFile(::std::string const& src, ::std::string const& target) /*override*/;
 
-    virtual ::leveldb::Status LockFile(::std::string const& fname, ::leveldb::FileLock** lock) /*override*/;
+    virtual ::leveldb::Status LockFile(::std::string const& lock, ::leveldb::FileLock**) /*override*/;
 
     virtual ::leveldb::Status UnlockFile(::leveldb::FileLock* lock) /*override*/;
 
     virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
 
-    virtual void StartThread(void (*function)(void*), void* arg) /*override*/;
+    virtual void StartThread(void (*)(void*), void*) /*override*/;
 
-    virtual ::leveldb::Status GetTestDirectory(::std::string* result) /*override*/;
+    virtual ::leveldb::Status GetTestDirectory(::std::string*) /*override*/;
 
-    virtual ::leveldb::Status NewLogger(::std::string const& fname, ::leveldb::Logger** result) /*override*/;
+    virtual ::leveldb::Status NewLogger(::std::string const& result, ::leveldb::Logger**) /*override*/;
 
     virtual uint64 NowMicros() /*override*/;
 
@@ -69,9 +69,29 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool IsComplete() const;
+
+    MCNAPI explicit LevelDbEnv(int maxOpenFiles);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::LevelDbEnv*& sSingleton();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(int maxOpenFiles);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -99,17 +119,17 @@ public:
 
     MCNAPI ::leveldb::Status $RenameFile(::std::string const& src, ::std::string const& target);
 
-    MCNAPI ::leveldb::Status $LockFile(::std::string const& fname, ::leveldb::FileLock** lock);
+    MCNAPI ::leveldb::Status $LockFile(::std::string const& lock, ::leveldb::FileLock**);
 
     MCNAPI ::leveldb::Status $UnlockFile(::leveldb::FileLock* lock);
 
     MCNAPI void $Schedule(void (*function)(void*), void* arg);
 
-    MCNAPI void $StartThread(void (*function)(void*), void* arg);
+    MCNAPI void $StartThread(void (*)(void*), void*);
 
-    MCNAPI ::leveldb::Status $GetTestDirectory(::std::string* result);
+    MCNAPI ::leveldb::Status $GetTestDirectory(::std::string*);
 
-    MCNAPI ::leveldb::Status $NewLogger(::std::string const& fname, ::leveldb::Logger** result);
+    MCNAPI ::leveldb::Status $NewLogger(::std::string const& result, ::leveldb::Logger**);
 
     MCNAPI uint64 $NowMicros();
 

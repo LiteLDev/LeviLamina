@@ -20,19 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingCatalogItem(CraftingCatalogItem const&);
-    CraftingCatalogItem();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_60::CraftingCatalogItem& operator=(::SharedTypes::v1_21_60::CraftingCatalogItem&&);
-
-    MCFOLD ::SharedTypes::v1_21_60::CraftingCatalogItem& operator=(::SharedTypes::v1_21_60::CraftingCatalogItem const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

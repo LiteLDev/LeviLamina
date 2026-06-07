@@ -55,16 +55,12 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual ::std::string const& _getName() const /*override*/;
-
-    virtual ~MultiBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCFOLD static ::std::string const& getName();
     // NOLINTEND
 
 public:
@@ -76,7 +72,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
-    MCFOLD ::std::string const& $_getName() const;
+    MCAPI ::std::string const& $_getName() const;
 
 
     // NOLINTEND

@@ -46,8 +46,6 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
-
-    virtual ~Monster() /*override*/;
     // NOLINTEND
 
 public:
@@ -71,12 +69,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $normalTick();
@@ -89,7 +81,7 @@ public:
 
     MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

@@ -22,15 +22,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SculkSensorVibrationConfig();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onSignalReceive(
-        ::BlockSource& region,
-        ::BlockPos const&,
-        ::GameEvent const& gameEvent,
-        ::Actor*           source,
-        float              distance,
-        uint               listenerRange,
+        ::BlockSource&     region,
+        ::BlockPos const&  gameEvent,
+        ::GameEvent const& source,
+        ::Actor*           distance,
+        float              listenerRange,
+        uint,
         ::Actor*
     ) /*override*/;
 
@@ -43,20 +47,30 @@ public:
     virtual void onSerializableDataChanged(::BlockSource& region) /*override*/;
 
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const /*override*/;
+    // NOLINTEND
 
-    virtual ~SculkSensorVibrationConfig() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SculkSensorVibrationConfig(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onSignalReceive(
-        ::BlockSource& region,
-        ::BlockPos const&,
-        ::GameEvent const& gameEvent,
-        ::Actor*           source,
-        float              distance,
-        uint               listenerRange,
+        ::BlockSource&     region,
+        ::BlockPos const&  gameEvent,
+        ::GameEvent const& source,
+        ::Actor*           distance,
+        float              listenerRange,
+        uint,
         ::Actor*
     );
 

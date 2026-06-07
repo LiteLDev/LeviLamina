@@ -12,7 +12,7 @@ class TcpProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TcpProxy();
+    virtual ~TcpProxy() = default;
 
     virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing) = 0;
 
@@ -36,20 +36,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

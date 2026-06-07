@@ -61,16 +61,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DynamicValue& operator=(DynamicValue const&);
-    DynamicValue(DynamicValue const&);
-    DynamicValue();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DynamicValue(::cereal::DynamicValue&&);
-
     MCAPI ::std::vector<::cereal::DynamicValue> const& asArray() const;
 
     MCAPI ::std::vector<::cereal::DynamicValue>& asArray();
@@ -87,23 +79,21 @@ public:
 
     MCAPI ::std::string const& asString() const;
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::string& asString();
+
+    MCAPI bool hasMember(::std::string const& member) const;
+#endif
+
     MCAPI uint64 hash() const;
 
-    MCAPI ::cereal::DynamicValue& operator=(::cereal::DynamicValue&&);
+#ifdef LL_PLAT_C
+    MCAPI ::cereal::DynamicValue const& operator[](::std::string const& member) const;
 
-    MCAPI ~DynamicValue();
-    // NOLINTEND
+    MCAPI ::cereal::DynamicValue& operator[](::std::string const& member);
+#endif
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::DynamicValue&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ::cereal::DynamicValue::Type type() const;
     // NOLINTEND
 };
 

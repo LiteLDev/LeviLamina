@@ -15,40 +15,32 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Color();
-
-public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI Color(::glm::vec3 const& color, float a_);
-#endif
-
-    MCAPI Color(float r_, float g_, float b_, float a_);
-
-#ifdef LL_PLAT_C
     MCAPI bool isNan() const;
 
-    MCAPI bool operator!=(::mce::Color const& c) const;
-
-    MCAPI ::mce::Color& operator*=(float s);
+    MCAPI bool operator<(::mce::Color const& c) const;
 #endif
 
     MCAPI bool operator==(::mce::Color const& c) const;
 
-#ifdef LL_PLAT_C
+    MCAPI int toABGR() const;
+
     MCAPI int toARGB() const;
-#endif
 
     MCAPI ::std::string toHexString() const;
+
+    MCAPI ::glm::vec3 toVec3() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::glm::vec4 toVec4() const;
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::mce::Color fromARGB(int col);
-
 #ifdef LL_PLAT_C
     MCAPI static ::mce::Color fromHSB(float hue, float saturation, float brightness);
 #endif
@@ -94,16 +86,6 @@ public:
     MCAPI static ::mce::Color const& WHITE();
 
     MCAPI static ::mce::Color const& YELLOW();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::glm::vec3 const& color, float a_);
-#endif
-
-    MCFOLD void* $ctor(float r_, float g_, float b_, float a_);
     // NOLINTEND
 };
 

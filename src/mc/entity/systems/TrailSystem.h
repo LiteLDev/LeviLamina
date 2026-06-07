@@ -35,8 +35,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~TrailSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

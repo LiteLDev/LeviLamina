@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/Result.h"
 #include "mc/resources/DirectoryPackAccessStrategy.h"
 #include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategyType.h"
@@ -14,7 +15,9 @@ class ContentIdentity;
 class IContentKeyProvider;
 class PackAccessStrategy;
 class ResourceLocation;
+struct StreamableAssetSource;
 namespace Bedrock::Resources::Archive { class Reader; }
+namespace Core { class InputFileStream; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
 // clang-format on
@@ -52,6 +55,9 @@ public:
 
     virtual bool isAssetExtractionViable() const /*override*/;
 
+    virtual ::Bedrock::Result<::StreamableAssetSource>
+    getStreamableSource(::Core::Path const&, ::std::optional<::Core::PathView>) const /*override*/;
+
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
 
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
@@ -62,8 +68,6 @@ public:
 
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
-
-    virtual ~EncryptedFileAccessStrategy() /*override*/;
     // NOLINTEND
 
 public:
@@ -77,6 +81,8 @@ public:
         ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet
     );
 
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> _getKeyProvider() const;
+
     MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     _loadArchive(::Core::PathView packRelativeArchiveFile, ::std::string const& key) const;
     // NOLINTEND
@@ -85,14 +91,17 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static bool
+    _getContentIdentityFromEncryptedStream(::Core::InputFileStream& stream, ::ContentIdentity& contentIdentity);
+
+    MCNAPI static bool
     _getContentIdentityFromEncryptedStream(::std::string& stream, ::ContentIdentity& contentIdentity);
 
-    MCNAPI static void _transformStream(
-        ::std::string&           stream,
-        ::std::string const&     key,
-        ::ContentIdentity const& contentIdentity,
-        uint64                   offset
-    );
+    MCNAPI static void
+    _transformStream(::std::string& stream, ::std::string const& key, ::ContentIdentity const& offset, uint64);
+
+#ifdef LL_PLAT_C
+    MCNAPI static bool contentFileExists(::Core::Path const& pathToPack);
+#endif
 
     MCNAPI static bool isValidEncryptedPack(::Core::Path const& pathToPack, ::ContentIdentity& contentIdentity);
     // NOLINTEND
@@ -107,12 +116,6 @@ public:
         bool                                                               canRecurse,
         ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -131,6 +134,9 @@ public:
     MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
     MCNAPI bool $isAssetExtractionViable() const;
+
+    MCNAPI ::Bedrock::Result<::StreamableAssetSource>
+    $getStreamableSource(::Core::Path const&, ::std::optional<::Core::PathView>) const;
 
     MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 

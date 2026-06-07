@@ -35,12 +35,6 @@ public:
     SettingsStringQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SettingsStringQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SettingsStringQuery(::OreUI::ClientDependencies const& client, ::std::string const& id);

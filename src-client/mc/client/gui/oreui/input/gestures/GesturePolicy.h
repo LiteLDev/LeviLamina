@@ -52,8 +52,6 @@ public:
     ) /*override*/;
 
     virtual void onTapRecognized(::Vec2 const& position) /*override*/;
-
-    virtual ~GesturePolicy() /*override*/;
     // NOLINTEND
 
 public:
@@ -80,12 +78,6 @@ public:
         ::std::function<::std::chrono::milliseconds()> const& getTime,
         bool                                                  isTTSEnabled
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

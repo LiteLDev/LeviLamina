@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ExperimentalVanillaDataDrivenGeometry {};
+// auto generated forward declare list
+// clang-format off
+class Experiments;
+// clang-format on
+
+class ExperimentalVanillaDataDrivenGeometry {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void addComponentsToBlocks(::Experiments const& experiments);
+    // NOLINTEND
+};

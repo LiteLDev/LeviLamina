@@ -27,12 +27,6 @@ public:
     EnumOption();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~EnumOption() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C

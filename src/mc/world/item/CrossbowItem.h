@@ -17,7 +17,6 @@ class ItemStackBase;
 class Level;
 class Mob;
 class Player;
-class Vec3;
 // clang-format on
 
 class CrossbowItem : public ::RangedWeaponItem {
@@ -30,6 +29,10 @@ public:
     ::ll::TypedStorage<4, 4, float const>                 mMultishotAngleDelta;
     ::ll::TypedStorage<4, 4, float const>                 mDefaultArrowPower;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CrossbowItem();
 
 public:
     // virtual functions
@@ -59,19 +62,23 @@ public:
     virtual int getMaxUseDuration(::ItemStack const* instance) const /*override*/;
 
     virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
-
-    virtual ~CrossbowItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 _getShootDir(::Player const& player, float angleOffset) const;
+    MCAPI CrossbowItem(::std::string const& name, int id);
 
     MCAPI void
     _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
 
     MCAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

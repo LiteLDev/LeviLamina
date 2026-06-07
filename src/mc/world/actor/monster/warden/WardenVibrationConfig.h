@@ -29,42 +29,56 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WardenVibrationConfig();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onSignalReceive(
-        ::BlockSource&    region,
-        ::BlockPos const& vibrationSourcePos,
-        ::GameEvent const&,
-        ::Actor* vibrationSource,
+        ::BlockSource&     region,
+        ::BlockPos const&  vibrationSourcePos,
+        ::GameEvent const& vibrationSource,
+        ::Actor*           projectileOwner,
         float,
         uint,
-        ::Actor* projectileOwner
+        ::Actor*
     ) /*override*/;
 
     virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
 
     virtual bool
-    shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
+    shouldListen(::BlockSource& region, ::GameEvent const& gameEventContext, ::GameEventContext const&) /*override*/;
+    // NOLINTEND
 
-    virtual ~WardenVibrationConfig() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WardenVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onSignalReceive(
-        ::BlockSource&    region,
-        ::BlockPos const& vibrationSourcePos,
-        ::GameEvent const&,
-        ::Actor* vibrationSource,
+        ::BlockSource&     region,
+        ::BlockPos const&  vibrationSourcePos,
+        ::GameEvent const& vibrationSource,
+        ::Actor*           projectileOwner,
         float,
         uint,
-        ::Actor* projectileOwner
+        ::Actor*
     );
 
     MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const& gameEventContext, ::GameEventContext const&);
 
 
     // NOLINTEND

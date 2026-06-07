@@ -92,6 +92,14 @@ public:
         ::glm::vec2 const& uvSize
     ) const;
 
+    MCAPI void _drawKeepRatio(
+        ::UIRenderContext& context,
+        ::glm::vec2 const& startPos,
+        ::glm::vec2 const& size,
+        ::glm::vec2 const& startUV,
+        ::glm::vec2 const& uvSize
+    ) const;
+
     MCAPI void _drawTiled(
         ::glm::vec2 const&                                                                                    startPos,
         ::glm::vec2 const&                                                                                    size,
@@ -113,11 +121,41 @@ public:
 
     MCAPI bool _handleTextureChange(::mce::TexturePtr const& texture);
 
+    MCAPI bool getBilinearEnabled() const;
+
+    MCAPI float getClipRatio() const;
+
+    MCFOLD ::mce::Color const& getColor() const;
+
+    MCFOLD ::ui::SliceSize const& getNineSliceSize() const;
+
+    MCFOLD ::ResourceLocation const& getResourceLocation() const;
+
+    MCFOLD ::mce::TexturePtr& getTexture();
+
+    MCAPI ::UIMaterialType getUIMaterialType() const;
+
+    MCFOLD ::glm::vec2 const& getUVSize() const;
+
+    MCFOLD ::Core::PathBuffer<::std::string> const& getZipFolder() const;
+
     MCAPI void render(::UIRenderContext& context);
+
+    MCAPI void setBilinearEnabled(bool enabled);
+
+    MCAPI void setClipRatio(float clipRatio);
+
+    MCAPI void setColor(::mce::Color const& tint);
+
+    MCAPI void setGrayscaleEnabled(bool enabled);
 
     MCAPI void setNineSliceSize(::ui::SliceSize const& sliceSize);
 
     MCAPI void setResourceLocation(::ResourceLocation const& resourceLocation);
+
+    MCAPI void setUV(::glm::vec2 const& uv);
+
+    MCAPI void setUVSize(::glm::vec2 const& uvSize);
 
     MCAPI void setZipFolder(::Core::PathView zipFolder);
     // NOLINTEND

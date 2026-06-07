@@ -17,14 +17,10 @@ namespace mce { class UUID; }
 
 class ScriptMinecraftServerUIBindingsModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptMinecraftServerUIBindingsModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptMinecraftServerUIBindingsModuleFactory();
+
     MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
@@ -39,13 +35,23 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
 
+    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
+
     MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID const& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

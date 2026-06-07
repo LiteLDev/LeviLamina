@@ -43,8 +43,6 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_EnderCrystalAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

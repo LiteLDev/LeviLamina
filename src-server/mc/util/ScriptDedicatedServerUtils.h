@@ -16,7 +16,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk597c28;
     ::ll::UntypedStorage<8, 8> mUnk9a2d8c;
+    ::ll::UntypedStorage<8, 8> mUnkc8884b;
+    ::ll::UntypedStorage<8, 8> mUnkb63ce9;
     ::ll::UntypedStorage<8, 8> mUnk4217a0;
+    ::ll::UntypedStorage<8, 8> mUnk9e3b85;
+    ::ll::UntypedStorage<8, 8> mUnkd75f95;
     // NOLINTEND
 
 public:
@@ -49,6 +53,12 @@ public:
     virtual void setAllowListEnabled(bool enabled) /*override*/;
 
     virtual bool getAllowListEnabled() const /*override*/;
+
+    virtual bool reloadPermissionsFile() /*override*/;
+
+    virtual bool reloadScriptConfig() /*override*/;
+
+    virtual bool reloadCDNConfig() /*override*/;
     // NOLINTEND
 
 public:
@@ -73,6 +83,12 @@ public:
     MCNAPI void $setAllowListEnabled(bool enabled);
 
     MCNAPI bool $getAllowListEnabled() const;
+
+    MCNAPI bool $reloadPermissionsFile();
+
+    MCNAPI bool $reloadScriptConfig();
+
+    MCNAPI bool $reloadCDNConfig();
     // NOLINTEND
 
 public:

@@ -24,22 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FlyingItem& operator=(FlyingItem const&);
-    FlyingItem();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlyingItem(::ui::FlyingItem const&);
-
     MCAPI ~FlyingItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ui::FlyingItem const&);
     // NOLINTEND
 
 public:

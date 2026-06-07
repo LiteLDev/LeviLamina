@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ContentItem.h"
-#include "mc/client/gui/screens/models/ContentItemType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
 class PackManifest;
-struct ContentSource;
 // clang-format on
 
 struct ManifestContentItem : public ::ContentItem {
@@ -24,25 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ManifestContentItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ManifestContentItem() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ManifestContentItem(::ContentSource* src, ::ContentItemType type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentSource* src, ::ContentItemType type);
     // NOLINTEND
 
 public:

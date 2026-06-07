@@ -47,7 +47,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~DateManager() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~DateManager() /*override*/;
+#endif
 
     virtual int64 _getUnixTime();
     // NOLINTEND
@@ -62,23 +66,41 @@ public:
 
     MCNAPI ::tm getDateTime(::DateManager::TimeZoneType returnType) const;
 
+    MCNAPI int64 getTime() const;
+
     MCNAPI bool isBetweenDates(::std::string const& start, ::std::string const& end) const;
+
+    MCNAPI bool isInFuture(::std::string const& strTime) const;
 
     MCNAPI bool isInPast(::std::string const& strTime) const;
 
     MCNAPI void registerScheduledCallback(::ScheduledCallback callback) const;
 
+    MCNAPI void setTime(int64 time);
+
+    MCNAPI void tick();
+
     MCNAPI ::std::string toString(::DateManager::TimeZoneType outputType, ::std::string const& format) const;
+
+    MCNAPI ::std::string toString_DateTime(::DateManager::TimeZoneType outputType) const;
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static int _parseTime(char const* str, uint64 len, uint* hours, uint* minutes, uint* seconds);
+
     MCNAPI static int
     _parseTimeZone(char const* str, uint64 len, ::DateManager::TimeZoneType* type, int* hours, int* minutes);
 
+#ifdef LL_PLAT_C
+    MCNAPI static double daysUntilDate(int64 now, int64 time);
+#endif
+
     MCNAPI static ::std::string getCurrentTimestampFileName();
+
+    MCNAPI static ::tm getRealDateTime(::DateManager::TimeZoneType returnType);
 
     MCNAPI static int64 getRealTime();
 
@@ -92,13 +114,31 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCNAPI static int64 toEpochTime(::std::string const& strTime);
+    MCNAPI static ::tm toDateTime(::std::string const& strTime);
 #endif
+
+    MCNAPI static ::tm toDateTime(int64 time, ::DateManager::TimeZoneType returnType);
+
+    MCNAPI static bool toEpochTime(
+        ::std::string const&         strTime,
+        int64*                       result,
+        ::DateManager::TimeZoneType* resultType,
+        int*                         resultTimeZoneMinutes
+    );
+
+    MCNAPI static int64 toEpochTime(::std::string const& strTime);
 
     MCNAPI static int64 toEpochTime(::tm const* dateTime, ::DateManager::TimeZoneType inputType);
 
     MCNAPI static ::std::string
     toString(::tm const& time, ::std::string const& format, ::std::optional<::std::locale> const& locale);
+
+    MCNAPI static ::std::string toString(
+        int64 const&                          time,
+        ::DateManager::TimeZoneType           outputType,
+        ::std::string const&                  format,
+        ::std::optional<::std::locale> const& locale
+    );
 
 #ifdef LL_PLAT_C
     MCNAPI static ::std::string toString_Date(::tm const& time);
@@ -106,9 +146,7 @@ public:
 
     MCNAPI static ::std::string toString_DateTime(::tm const& time, ::DateManager::TimeZoneType outputType);
 
-#ifdef LL_PLAT_C
     MCNAPI static ::std::string toString_DateTime(int64 const& time, ::DateManager::TimeZoneType outputType);
-#endif
     // NOLINTEND
 
 public:
@@ -117,6 +155,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor();
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

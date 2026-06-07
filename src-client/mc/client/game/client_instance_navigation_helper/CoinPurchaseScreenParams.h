@@ -24,18 +24,6 @@ public:
     CoinPurchaseScreenParams& operator=(CoinPurchaseScreenParams const&);
     CoinPurchaseScreenParams(CoinPurchaseScreenParams const&);
     CoinPurchaseScreenParams();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~CoinPurchaseScreenParams();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ClientInstanceNavigationHelper

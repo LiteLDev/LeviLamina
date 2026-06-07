@@ -39,6 +39,7 @@ struct PlayerComponent;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 struct UpdateWaterStateRequestComponent;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
@@ -134,13 +135,13 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-
-    virtual ~UnderWaterSensingSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createSystem();
+
     MCAPI static void doUnderWaterSensing(
         ::StrictEntityContext const&                                                          entity,
         ::StateVectorComponent const&                                                         stateVectorComponent,

@@ -78,8 +78,16 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        PingCallbackData& operator=(PingCallbackData const&);
+        PingCallbackData(PingCallbackData const&);
+        PingCallbackData();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ::RakNetConnector::PingCallbackData& operator=(::RakNetConnector::PingCallbackData&&);
+
 #ifdef LL_PLAT_C
         MCAPI ~PingCallbackData();
 #endif
@@ -159,22 +167,12 @@ public:
         virtual bool isLocal() const /*override*/;
 
         virtual bool isEncrypted() const /*override*/;
-
-        virtual ~RakNetNetworkPeer() /*override*/ = default;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RakNetNetworkPeer(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
-
         MCAPI void newData(::std::string data);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::RakNet::RakPeerInterface& rakPeer, ::NetworkIdentifier const& id);
         // NOLINTEND
 
     public:
@@ -209,7 +207,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::NetworkIdentifier>          mNATPunchServerId;
-    ::ll::TypedStorage<8, 472, ::Social::GameConnectionInfo> mBackupGameConnection;
+    ::ll::TypedStorage<8, 520, ::Social::GameConnectionInfo> mBackupGameConnection;
     ::ll::TypedStorage<1, 1, bool>                           mTryBackupConnection;
     ::ll::TypedStorage<8, 16, ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>>
                                                                    mRakPeer;
@@ -220,7 +218,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                 mIsServer;
     ::ll::TypedStorage<1, 1, bool>                                 mIsDisconnecting;
     ::ll::TypedStorage<1, 1, bool>                                 mConnectingToClient;
-    ::ll::TypedStorage<8, 472, ::Social::GameConnectionInfo>       mConnectedGameInfo;
+    ::ll::TypedStorage<8, 520, ::Social::GameConnectionInfo>       mConnectedGameInfo;
     ::ll::TypedStorage<
         8,
         64,
@@ -302,8 +300,6 @@ public:
         ::RakNet::RakPeerConfiguration const&            rakPeerConfig
     );
 
-    MCAPI ::std::shared_ptr<::RakNetConnector::RakNetNetworkPeer> _createPeer(::NetworkIdentifier const& id);
-
     MCAPI ::std::vector<::std::string> _getLocalIps() const;
 
     MCAPI ::std::vector<::RakNet::SystemAddress> _getRefinedLocalIps() const;
@@ -355,7 +351,7 @@ public:
 
     MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
 
-    MCAPI bool $isServer() const;
+    MCFOLD bool $isServer() const;
 
     MCAPI ::std::string $getLocalIp();
 

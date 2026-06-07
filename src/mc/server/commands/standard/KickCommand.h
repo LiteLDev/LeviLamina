@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~KickCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -39,12 +37,8 @@ public:
     MCAPI bool
     _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
 
-    MCAPI ::Player const* _findTarget(
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        ::Level&               level,
-        ::std::string const&   idOrName
-    ) const;
+    MCAPI ::Player const*
+    _findTarget(::CommandOrigin const& output, ::CommandOutput& level, ::Level& idOrName, ::std::string const&) const;
 
     MCAPI void _generateSuccessOutput(
         ::CommandOutput&     output,
@@ -52,12 +46,7 @@ public:
         ::std::string const& reason
     ) const;
 
-    MCAPI ::Player const* _loopPlayers(
-        ::CommandOrigin const&,
-        ::CommandOutput&,
-        ::Level&                               level,
-        ::std::function<bool(::Player const*)> condition
-    ) const;
+    MCAPI void _refreshJoinCode(::Level& level) const;
     // NOLINTEND
 
 public:

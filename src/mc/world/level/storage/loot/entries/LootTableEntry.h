@@ -28,8 +28,12 @@ public:
         /*override*/;
 
     virtual ::LootPoolEntry::EntryType getEntryType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~LootTableEntry() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::LootTable const& getLootTable() const;
     // NOLINTEND
 
 public:

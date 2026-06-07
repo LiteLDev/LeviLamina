@@ -40,6 +40,7 @@ namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataFile; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataRegistry; }
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 class StructureManager : public ::IStructureTemplateManager {
@@ -90,6 +91,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit StructureManager(::ResourcePackManager& packManager);
 
+    MCAPI ::StructureTemplate* _createAndLoadStructure(
+        ::std::string const&         structureName,
+        ::ResourcePackManager const* packManager,
+        ::LevelStorage*              levelStorage
+    );
+
     MCAPI ::std::string _createLevelStorageId(::std::string const& dimensionPrefix, ::std::string const& saveId);
 
     MCAPI bool _findResource(
@@ -105,6 +112,8 @@ public:
         ::PackInstance const&                                           pack,
         ::std::string&                                                  resourceStream
     );
+
+    MCAPI ::LegacyStructureTemplate* _getLegacy(::std::string const& structurePath);
 
     MCAPI bool _placeSegment(::StructureAnimationData& structureAnimationData);
 
@@ -124,6 +133,8 @@ public:
     MCAPI void
     _savePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
 
+    MCAPI void clearAndShutdownStructurePlacement();
+
     MCAPI ::StructureTemplate&
     cloneStructure(::StructureTemplate const& structureTemplate, ::std::string const& structureName);
 
@@ -135,6 +146,14 @@ public:
     );
 
     MCAPI ::StructureDeleteResult deleteStructure(::std::string const& structureName, ::LevelStorage& levelStorage);
+
+    MCAPI ::StructureTemplate* getOrLoadStructure(
+        ::std::string const&         structureName,
+        ::ResourcePackManager const* packManager,
+        ::LevelStorage*              levelStorage
+    );
+
+    MCAPI ::std::vector<::std::string> getPackStructureNames(::mce::UUID const& packUUID);
 
     MCAPI ::std::vector<::std::string> getStructureNames(::LevelStorage& levelStorage, bool includeUnremovable) const;
 
@@ -158,8 +177,6 @@ public:
 
     MCAPI void
     loadPlacementQueueItem(::std::string const& key, ::CompoundTag const& tag, ::Level& level, ::Dimension& dimension);
-
-    MCAPI void queueLoad(::std::unique_ptr<::StructureAnimationData> structureAnimationData);
 
     MCAPI void reset();
 
@@ -197,6 +214,13 @@ public:
         ::Core::Path const&                                        filenameWithExtension
     );
 
+#ifdef LL_PLAT_C
+    MCAPI static bool exportStructure(::StructureTemplate const& structureTemplate, ::Core::Path const& filePath);
+#endif
+
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    getStructurePath(::std::string_view structureFullName);
+
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string_view structureNamespace, ::std::string_view structureName);
     // NOLINTEND
@@ -205,6 +229,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& BEHAVIOR_PACK_STRUCTURES_FOLDER();
+
+    MCAPI static char const*& LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX();
     // NOLINTEND
 
 public:

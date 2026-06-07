@@ -11,7 +11,7 @@ class IJsonSerializable {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IJsonSerializable();
+    virtual ~IJsonSerializable() = default;
 
     virtual ::Json::Value serialize() const = 0;
 
@@ -19,20 +19,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -19,12 +19,6 @@ public:
     WaterConfigSessionStorage();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~WaterConfigSessionStorage() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

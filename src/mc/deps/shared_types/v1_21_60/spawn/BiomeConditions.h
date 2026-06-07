@@ -26,18 +26,27 @@ public:
 
 public:
     // prevent constructor by default
-    BiomeConditions(BiomeConditions const&);
+    BiomeConditions& operator=(BiomeConditions const&);
     BiomeConditions();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BiomeConditions(::SharedTypes::v1_21_60::Spawn::BiomeConditions&&);
+
+    MCAPI BiomeConditions(::SharedTypes::v1_21_60::Spawn::BiomeConditions const&);
+
     MCAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions& operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions&&);
 
-    MCAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions&
-    operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions const&);
-
     MCAPI ~BiomeConditions();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_60::Spawn::BiomeConditions&&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_60::Spawn::BiomeConditions const&);
     // NOLINTEND
 
 public:

@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-    virtual ~ParticleLifetimeKillPlaneComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

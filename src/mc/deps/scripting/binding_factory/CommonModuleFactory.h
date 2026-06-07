@@ -9,18 +9,14 @@
 // clang-format off
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
+namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
 
 class CommonModuleFactory : public ::Scripting::GenericModuleBindingFactory {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CommonModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
 public:
     // member functions
     // NOLINTBEGIN
@@ -36,8 +32,16 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 

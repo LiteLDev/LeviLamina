@@ -14,6 +14,7 @@ class Block;
 class BlockType;
 class CompoundTag;
 class Item;
+class ItemStack;
 class ReadOnlyBinaryStream;
 struct ItemTag;
 namespace Json { class Value; }
@@ -45,12 +46,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::Item const*> mItem;
         ::ll::TypedStorage<2, 2, short>         mAuxValue;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::Block const* getBlock() const;
         // NOLINTEND
     };
 
@@ -90,21 +85,13 @@ public:
 
         virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> resolve() const;
 
-        virtual ~BaseDescriptor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        virtual ~BaseDescriptor() = default;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
-
-        MCFOLD ::std::string $getFullName() const;
 
         MCAPI ::std::string $toString() const;
 
@@ -122,12 +109,6 @@ public:
 
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
 public:
@@ -137,14 +118,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemDescriptor(ItemDescriptor const&);
-    ItemDescriptor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemDescriptor();
+    virtual ~ItemDescriptor() = default;
 
     virtual void serialize(::Json::Value& val) const;
 
@@ -154,11 +130,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemDescriptor();
+
     MCAPI explicit ItemDescriptor(::Block const& block);
 
     MCAPI explicit ItemDescriptor(::BlockType const& block);
 
+    MCAPI explicit ItemDescriptor(::SharedTypes::Legacy::ItemDescriptor const& desc);
+
     MCAPI explicit ItemDescriptor(::ItemTag const& itemTag);
+
+    MCAPI ItemDescriptor(::ItemDescriptor&& rhs);
+
+    MCAPI ItemDescriptor(::ItemDescriptor const& rhs);
 
     MCAPI explicit ItemDescriptor(::ReadOnlyBinaryStream& stream);
 
@@ -167,8 +151,6 @@ public:
     MCAPI ItemDescriptor(::Item const& item, int auxValue);
 
     MCAPI ItemDescriptor(::Json::Value const& val, ::MolangVersion molangVersion);
-
-    MCAPI void _resolve() const;
 
     MCAPI bool forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const;
 
@@ -180,6 +162,8 @@ public:
 
     MCAPI ::std::string getFullName() const;
 
+    MCAPI uint64 getHash() const;
+
     MCAPI short getId() const;
 
     MCAPI int getIdAux() const;
@@ -190,17 +174,27 @@ public:
 
     MCAPI ::std::string getSerializedNameAndAux(bool removeInvalidAux) const;
 
+    MCAPI bool isDefinedAsItemName() const;
+
     MCAPI bool isNull() const;
 
     MCAPI bool isValid(bool shouldResolve) const;
+
+    MCAPI bool operator!=(::ItemDescriptor const& rhs) const;
 
     MCAPI void operator=(::ItemDescriptor&& rhs);
 
     MCAPI void operator=(::ItemDescriptor const& rhs);
 
+    MCAPI bool operator==(::ItemDescriptor const& rhs) const;
+
+    MCAPI bool sameItem(::ItemStack const& item, bool compareAux) const;
+
     MCAPI bool sameItem(::ItemDescriptor const& otherItemDescriptor, bool compareAux) const;
 
     MCAPI ::std::optional<::CompoundTag> save() const;
+
+    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
@@ -218,11 +212,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::Block const& block);
 
     MCAPI void* $ctor(::BlockType const& block);
 
+    MCAPI void* $ctor(::SharedTypes::Legacy::ItemDescriptor const& desc);
+
     MCAPI void* $ctor(::ItemTag const& itemTag);
+
+    MCAPI void* $ctor(::ItemDescriptor&& rhs);
+
+    MCAPI void* $ctor(::ItemDescriptor const& rhs);
 
     MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
 
@@ -231,12 +233,6 @@ public:
     MCAPI void* $ctor(::Item const& item, int auxValue);
 
     MCAPI void* $ctor(::Json::Value const& val, ::MolangVersion molangVersion);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

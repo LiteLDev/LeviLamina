@@ -159,9 +159,15 @@ public:
 
     MCNAPI ::LevelCache* _getLevelCache(::std::string const& levelId);
 
+    MCNAPI ::LevelSummary* _getLevelSummary(::std::string const& levelId);
+
+    MCNAPI void _notifyLevelDeleted(::std::string const& levelId);
+
     MCNAPI void _notifyLevelUpdated(::std::string const& levelId);
 
     MCNAPI void _notifyNewLevelFound(::std::string const& levelId);
+
+    MCNAPI void _notifySummaryUpdated(::std::string const& levelId);
 
     MCNAPI void _refreshSummary(::std::string const& levelId, ::LevelCache& cache);
     // NOLINTEND

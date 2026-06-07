@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FlagAllPassengersForPositioningSystem {};
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct FlagAllPassengersForPositioningSystem {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createSystem();
+    // NOLINTEND
+};

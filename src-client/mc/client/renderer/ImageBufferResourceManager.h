@@ -12,16 +12,4 @@ namespace cg { class ImageBuffer; }
 // clang-format on
 
 struct ImageBufferResourceManager
-: public ::cg::ResourceManager<::std::shared_ptr<::cg::ImageBuffer>, ::ResourceLocation, ::std::map> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ImageBufferResourceManager();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+: public ::cg::ResourceManager<::std::shared_ptr<::cg::ImageBuffer>, ::ResourceLocation, ::std::map> {};

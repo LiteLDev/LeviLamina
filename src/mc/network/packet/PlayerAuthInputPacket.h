@@ -124,7 +124,6 @@ public:
     // prevent constructor by default
     PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&);
     PlayerAuthInputPacket(PlayerAuthInputPacket const&);
-    PlayerAuthInputPacket();
 
 public:
     // virtual functions
@@ -145,21 +144,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerAuthInputPacket(::PlayerAuthInputPacket&&);
+    MCAPI PlayerAuthInputPacket();
 
-    MCAPI ::PlayerAuthInputPacket& operator=(::PlayerAuthInputPacket&&);
+    MCAPI PlayerAuthInputPacket(::PlayerAuthInputPacket&& rhs);
+
+    MCAPI bool getInput(::PlayerAuthInputPacket::InputData point) const;
+
+    MCAPI ::PlayerAuthInputPacket& operator=(::PlayerAuthInputPacket&& rhs);
 
     MCAPI ::PlayerActionComponent readIntoComponent() const;
 
 #ifdef LL_PLAT_C
     MCAPI void setFromComponent(::PlayerActionComponent& input);
+
+    MCAPI void setInput(::PlayerAuthInputPacket::InputData point, bool value);
 #endif
+
+    MCAPI ::PlayerAuthInputPacket takeCopy() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerAuthInputPacket&&);
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::PlayerAuthInputPacket&& rhs);
     // NOLINTEND
 
 public:

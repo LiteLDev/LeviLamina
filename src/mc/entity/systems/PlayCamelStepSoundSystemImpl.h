@@ -24,15 +24,15 @@ namespace PlayCamelStepSoundSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void tick(
-    ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::CamelFlagComponent>>,
-    ::StrictEntityContext const&                                       entity,
-    ::ActorDataFlagComponent const&                                    actorFlags,
-    ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
-    ::ActorUniqueIDComponent const&                                    actorUniqueID,
-    ::DimensionTypeComponent const&                                    dimensionType,
-    ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlockComponent,
-    ::SoundEventPlayerComponent const&                                 soundEventPlayerComponent,
-    ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView
+    ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::CamelFlagComponent>> entity,
+    ::StrictEntityContext const&                                                       actorFlags,
+    ::ActorDataFlagComponent const&                                                    actorIdentifier,
+    ::ActorDefinitionIdentifierComponent const&                                        actorUniqueID,
+    ::ActorUniqueIDComponent const&                                                    dimensionType,
+    ::DimensionTypeComponent const&            currentlyStandingOnBlockComponent,
+    ::CurrentlyStandingOnBlockComponent const& soundEventPlayerComponent,
+    ::SoundEventPlayerComponent const&         requestQueueView,
+    ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>&
 );
 // NOLINTEND
 

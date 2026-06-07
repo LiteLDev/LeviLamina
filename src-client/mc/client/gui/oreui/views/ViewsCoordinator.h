@@ -9,7 +9,6 @@
 #include "mc/client/gui/oreui/views/ViewsCacheRegistry.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/input/TextBoxCaretMovement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -72,7 +71,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ViewsCoordinator() /*override*/ = default;
+    virtual ~ViewsCoordinator() /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::IView> get(::OreUI::ViewId viewId) const /*override*/;
 
@@ -82,6 +81,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ViewsCoordinator(
+        ::cohtml::System*            system,
+        ::cohtml::SystemRenderer*    systemRenderer,
+        ::cohtml::ITimeZoneProvider* timeZoneProvider,
+        ::OreUI::LayoutScheduler&    layoutScheduler,
+        ::OreUI::FramesToPaintQueue& framesToPaint,
+        ::OreUI::DebugData&          debugData
+    );
+
     MCAPI ::std::unique_ptr<::OreUI::ViewInputHandler> _createInputHandler(
         ::cohtml::View&                              gamefaceView,
         ::std::unique_ptr<::OreUI::TextInputHandler> textInputHandler,
@@ -99,7 +107,7 @@ public:
 
     MCAPI ::std::vector<::OreUI::ViewId> _getViewIds();
 
-    MCAPI ::std::optional<int> calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement);
+    MCAPI void clearAllViews();
 
     MCAPI void clearUnusedCachedViews(::SubClientId subClientId);
 
@@ -115,9 +123,34 @@ public:
 
     MCAPI void onKeyboardDismissed();
 
+    MCAPI void onResume();
+
+    MCAPI void onSuspend();
+
+    MCAPI void reloadAllViews();
+
     MCAPI void setTextBoxState(::TextBoxStateChange const& stateChange);
 
     MCAPI void update(double time);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::cohtml::System*            system,
+        ::cohtml::SystemRenderer*    systemRenderer,
+        ::cohtml::ITimeZoneProvider* timeZoneProvider,
+        ::OreUI::LayoutScheduler&    layoutScheduler,
+        ::OreUI::FramesToPaintQueue& framesToPaint,
+        ::OreUI::DebugData&          debugData
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

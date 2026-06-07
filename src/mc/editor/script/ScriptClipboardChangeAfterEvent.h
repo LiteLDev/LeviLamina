@@ -26,9 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&
-    operator=(::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&&);
-
     MCNAPI ~ScriptClipboardChangeAfterEvent();
     // NOLINTEND
 

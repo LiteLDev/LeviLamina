@@ -19,10 +19,15 @@ class BlockPos;
 class BlockSource;
 class BlockTessellator;
 class Experiments;
+class Font;
 class GeometryGroup;
+class HashedString;
+class ItemStack;
 class ResourceLoadManager;
 class ResourcePackManager;
+class Tessellator;
 class Vec3;
+struct NameTagRenderObject;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class MaterialPtr; }
 namespace mce { class TextureGroup; }
@@ -55,6 +60,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockActorRenderDispatcher();
+
+    MCAPI void clearEntityRenderers();
+
+    MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
+        ::Font&              font,
+        ::Tessellator&       tessellator,
+        ::BlockActor&        entity,
+        ::std::string const& str,
+        ::Vec3               camTargetPos
+    );
+
+    MCAPI ::BlockActorRenderer* getRenderer(::BlockActor& entity);
+
+    MCAPI ::BlockActorRenderer* getRenderer(::BlockActorRendererId rendererId);
+
     MCAPI void initializeBlockEntityRenderers(
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                      geometryGroup,
         ::std::shared_ptr<::mce::TextureGroup>                                     textureGroup,
@@ -64,6 +85,18 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>                       resourceLoadManager,
         ::BaseGameVersion const&                                                   baseGameVersion,
         ::Experiments const&                                                       experiments
+    );
+
+    MCAPI void registerAdditionalBlockActorRenderers(
+        ::BlockActorRendererId const&           id,
+        ::std::unique_ptr<::BlockActorRenderer> blockActorRenderer
+    );
+
+    MCAPI void registerGameSpecificBlockActorRendererCallback(
+        ::std::function<void(
+            ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const&,
+            ::std::shared_ptr<::mce::TextureGroup>
+        )> callback
     );
 
     MCAPI void render(
@@ -91,5 +124,38 @@ public:
         int                                       breakingAmount,
         ::std::optional<::dragon::RenderMetadata> renderMetadata
     );
+
+    MCAPI void renderBanner(
+        ::BaseActorRenderContext&       entityRenderContext,
+        ::dragon::RenderMetadata const& renderMetadata,
+        ::ItemStack const&              instance,
+        bool                            longPole
+    );
+
+    MCAPI void renderShulkerBox(
+        ::BaseActorRenderContext&       entityRenderContext,
+        ::dragon::RenderMetadata const& renderMetadata,
+        ::ItemStack const&              instance
+    );
+
+    MCAPI void renderSkull(
+        ::BaseActorRenderContext&       entityRenderContext,
+        ::dragon::RenderMetadata const& renderMetadata,
+        ::Vec3 const&                   pos,
+        int                             face,
+        float                           rot,
+        ::HashedString const&           hashedString,
+        ::mce::MaterialPtr const*       forcedMat,
+        ::mce::ClientTexture const*     forceTex,
+        int                             breakingAmount,
+        float                           animationValue,
+        bool                            isGlint
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

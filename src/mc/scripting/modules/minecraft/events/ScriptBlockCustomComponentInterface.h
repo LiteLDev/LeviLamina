@@ -7,31 +7,11 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockCustomComponentInterface : public ::ScriptModuleMinecraft::ScriptCustomComponentScriptInterface<13> {
-public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentInterface& operator=(ScriptBlockCustomComponentInterface const&);
-    ScriptBlockCustomComponentInterface(ScriptBlockCustomComponentInterface const&);
-    ScriptBlockCustomComponentInterface();
-
+class ScriptBlockCustomComponentInterface : public ::ScriptModuleMinecraft::ScriptCustomComponentScriptInterface<14> {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentInterface(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
-
-    MCAPI ~ScriptBlockCustomComponentInterface();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI bool isEmpty() const;
     // NOLINTEND
 };
 

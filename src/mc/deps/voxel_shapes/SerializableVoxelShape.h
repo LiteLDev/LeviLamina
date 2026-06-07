@@ -16,16 +16,24 @@ public:
 
 public:
     // prevent constructor by default
-    SerializableVoxelShape& operator=(SerializableVoxelShape const&);
-    SerializableVoxelShape(SerializableVoxelShape const&);
     SerializableVoxelShape();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SerializableVoxelShape(::VoxelShapes::SerializableVoxelShape const&);
+
     MCNAPI ::VoxelShapes::SerializableVoxelShape& operator=(::VoxelShapes::SerializableVoxelShape&&);
 
+    MCNAPI ::VoxelShapes::SerializableVoxelShape& operator=(::VoxelShapes::SerializableVoxelShape const&);
+
     MCNAPI ~SerializableVoxelShape();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::VoxelShapes::SerializableVoxelShape const&);
     // NOLINTEND
 
 public:

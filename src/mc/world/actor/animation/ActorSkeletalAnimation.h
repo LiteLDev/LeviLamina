@@ -67,6 +67,12 @@ public:
     // NOLINTBEGIN
     MCAPI ActorSkeletalAnimation(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
 
+#ifdef LL_PLAT_C
+    MCFOLD ::std::vector<::ActorParticleEffectEvent> const& getParticleEffectEvents() const;
+#endif
+
+    MCAPI void initPrecomputedInterpolation();
+
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
 
     MCAPI ~ActorSkeletalAnimation();

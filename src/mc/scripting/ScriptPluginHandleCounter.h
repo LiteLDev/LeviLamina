@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScriptPlugin;
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { struct ObjectHandle; }
 // clang-format on
@@ -70,39 +71,47 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onMakeObject(
-        ::Scripting::LifetimeRegistry&,
-        ::Scripting::ObjectHandle,
-        ::entt::meta_type const& type,
-        uint                     size
+        ::Scripting::LifetimeRegistry& type,
+        ::Scripting::ObjectHandle      size,
+        ::entt::meta_type const&,
+        uint
     ) /*override*/;
 
     virtual void onDestroyObject(
-        ::Scripting::LifetimeRegistry&,
-        ::Scripting::ObjectHandle,
-        ::entt::meta_type const& type,
-        uint                     size
+        ::Scripting::LifetimeRegistry& type,
+        ::Scripting::ObjectHandle      size,
+        ::entt::meta_type const&,
+        uint
     ) /*override*/;
-
-    virtual ~ScriptPluginHandleCounter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptPluginHandleCounter(::ScriptPlugin& plugin);
+
     MCNAPI ::ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(::entt::meta_type const& type);
+
+    MCNAPI ::ScriptPluginHandleCounter::TypeStats const* getStatsById(uint id) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptPlugin& plugin);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void
-    $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const& type, uint size);
+    $onMakeObject(::Scripting::LifetimeRegistry& type, ::Scripting::ObjectHandle size, ::entt::meta_type const&, uint);
 
     MCNAPI void $onDestroyObject(
-        ::Scripting::LifetimeRegistry&,
-        ::Scripting::ObjectHandle,
-        ::entt::meta_type const& type,
-        uint                     size
+        ::Scripting::LifetimeRegistry& type,
+        ::Scripting::ObjectHandle      size,
+        ::entt::meta_type const&,
+        uint
     );
 
 

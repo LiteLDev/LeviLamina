@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BannerPattern;
 class ItemStackBase;
 class LoomContainerManagerModel;
 struct AutoPlaceItem;
@@ -48,31 +49,78 @@ public:
     virtual ~LoomContainerManagerController() /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual bool isOutputSlot(::std::string const&) const /*override*/;
+#else // LL_PLAT_C
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleTakeAmount(::SlotData const&, int, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleTakeAll(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual int handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
+#else // LL_PLAT_C
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::CreateContainerItemScope
+    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+#else // LL_PLAT_C
     virtual ::CreateContainerItemScope
     _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void _onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -90,11 +138,21 @@ public:
 
     MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI void _networkUpdateResultItem();
-
     MCNAPI void _setupCallbacks();
 
+    MCNAPI int getNumberOfPatterns() const;
+
+    MCNAPI ::BannerPattern const* getPattern(int collectionIndex) const;
+
+    MCNAPI ::BannerPattern const* getSelectedPattern() const;
+
+    MCNAPI int getSelectedPatternIndex() const;
+
+    MCNAPI bool isSelectedPattern(int collectionIndex) const;
+
     MCNAPI void pullInPatternItemForPattern();
+
+    MCNAPI void setSelectedPattern(int collectionIndex);
 #endif
     // NOLINTEND
 

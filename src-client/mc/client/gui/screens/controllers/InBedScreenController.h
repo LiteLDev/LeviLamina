@@ -42,6 +42,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI InBedScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player& player);
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

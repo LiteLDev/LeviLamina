@@ -12,6 +12,7 @@ struct UIStructureVolumeOffscreenCaptureDescription;
 struct UIThumbnailMeshOffscreenCaptureDescription;
 namespace mce { class MaterialPtr; }
 namespace mce { class Mesh; }
+namespace mce { class Texture; }
 namespace mce { class TexturePtr; }
 namespace mce { struct ClientTexture; }
 namespace mce { struct ServerTexture; }
@@ -30,6 +31,13 @@ MCAPI void renderMeshImmediately(
         ::UIThumbnailMeshOffscreenCaptureDescription,
         ::UIMeshOffscreenCaptureDescription,
         ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
+);
+
+MCAPI void renderMeshImmediately(
+    ::ScreenContext&                                                        screenContext,
+    ::Tessellator&                                                          tessellator,
+    ::mce::MaterialPtr const&                                               material,
+    ::std::initializer_list<::std::reference_wrapper<::mce::Texture const>> textures
 );
 
 MCAPI void renderMeshImmediately(

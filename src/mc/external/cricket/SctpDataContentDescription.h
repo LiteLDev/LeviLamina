@@ -28,9 +28,9 @@ public:
     // NOLINTBEGIN
     virtual ::cricket::MediaType type() const /*override*/;
 
-    virtual ::cricket::SctpDataContentDescription* as_sctp() /*override*/;
-
     virtual ::cricket::SctpDataContentDescription const* as_sctp() const /*override*/;
+
+    virtual ::cricket::SctpDataContentDescription* as_sctp() /*override*/;
 
     virtual bool has_codecs() const /*override*/;
 
@@ -46,9 +46,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::cricket::MediaType $type() const;
 
-    MCNAPI ::cricket::SctpDataContentDescription* $as_sctp();
-
     MCNAPI ::cricket::SctpDataContentDescription const* $as_sctp() const;
+
+    MCNAPI ::cricket::SctpDataContentDescription* $as_sctp();
 
     MCNAPI bool $has_codecs() const;
 

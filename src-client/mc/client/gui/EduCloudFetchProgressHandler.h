@@ -22,21 +22,35 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EduCloudFetchProgressHandler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
     virtual ::ProgressAnimation showLoadingBar() const /*override*/;
+    // NOLINTEND
 
-    virtual ~EduCloudFetchProgressHandler() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit EduCloudFetchProgressHandler(::std::shared_ptr<::PlayScreenModel> model);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
     // NOLINTEND
 
 public:
@@ -46,7 +60,7 @@ public:
 
     MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
     MCAPI ::std::string $getTitleText() const;
 

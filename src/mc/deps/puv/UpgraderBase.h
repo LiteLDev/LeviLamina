@@ -37,6 +37,8 @@ public:
     // NOLINTBEGIN
     MCNAPI UpgraderBase(::SemVersion const& from, ::SemVersion const& to);
 
+    MCNAPI ::SemVersion const& targetVersion() const;
+
     MCNAPI ::Puv::LoadResultAny upgrade(::Puv::LoadResultAny source) const;
     // NOLINTEND
 

@@ -3,5 +3,5 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class SkeletalHierarchyIndex : int {
-    Unknown = -1,
+    Unknown = 4294967295,
 };

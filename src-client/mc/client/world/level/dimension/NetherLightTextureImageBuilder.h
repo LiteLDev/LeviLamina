@@ -17,8 +17,6 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::BaseLightData>
     createBaseLightTextureData(::IClientInstance* client, ::BaseLightData const& currentData) /*override*/;
-
-    virtual ~NetherLightTextureImageBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:

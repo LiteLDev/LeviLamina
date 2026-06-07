@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockPrecipitationInteractionsComponentDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -33,13 +29,13 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockPrecipitationInteractionsComponentDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockPrecipitationInteractionsComponentDescription();
+
     MCAPI explicit BlockPrecipitationInteractionsComponentDescription(::PrecipitationBehavior behavior);
     // NOLINTEND
 
@@ -64,13 +60,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PrecipitationBehavior behavior);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::PrecipitationBehavior behavior);
     // NOLINTEND
 
 public:

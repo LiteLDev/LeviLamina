@@ -43,6 +43,8 @@ public:
     MCNAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
 
     MCNAPI ::Puv::LoadResultAny parse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const;
+
+    MCNAPI ::SemVersion const& parserVersion() const;
     // NOLINTEND
 
 public:

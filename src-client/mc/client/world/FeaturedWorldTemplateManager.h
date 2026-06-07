@@ -63,12 +63,20 @@ public:
     MCAPI void _onOfferPurchased(::std::string const& productId);
 
     MCAPI void _prepareOffers();
-    // NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> UPSELL_QUERY_NAME();
+    MCAPI bool areSuggestedOffersLoaded() const;
+
+    MCFOLD ::std::vector<::World::MarketplaceWorldTemplateData> const& getFeaturedWorldTemplateList() const;
+
+    MCAPI ::std::string getSeeMorePageId() const;
+
+    MCAPI ::std::optional<::std::string> getSuggestedOffersTitle() const;
+
+    MCFOLD bool isDirty() const;
+
+    MCAPI void refreshOffers();
+
+    MCAPI void update(double);
     // NOLINTEND
 
 public:

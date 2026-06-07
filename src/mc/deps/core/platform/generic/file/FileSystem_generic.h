@@ -60,8 +60,6 @@ public:
     virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) /*override*/;
 
     virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) /*override*/;
-
-    virtual ~FileSystem_generic() /*override*/ = default;
     // NOLINTEND
 
 public:

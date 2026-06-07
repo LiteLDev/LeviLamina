@@ -29,12 +29,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptActorItemPickupAfterEventIntermediateData(::Actor const& actor, ::ItemStack item);
+
+    MCAPI ~ScriptActorItemPickupAfterEventIntermediateData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Actor const& actor, ::ItemStack item);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -29,8 +29,6 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const /*override*/;
-
-    virtual ~BlockGeometry12010Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:

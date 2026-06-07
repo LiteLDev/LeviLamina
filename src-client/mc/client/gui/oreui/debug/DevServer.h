@@ -16,8 +16,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DevServer& operator=(DevServer const&);
+    DevServer(DevServer const&);
+    DevServer();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::OreUI::DevServer& operator=(::OreUI::DevServer&&);
+
     MCAPI ~DevServer();
     // NOLINTEND
 

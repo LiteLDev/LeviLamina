@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ClientInstanceScreenModel;
 class Player;
 struct ActorUniqueID;
@@ -66,8 +65,6 @@ public:
         ::std::shared_ptr<::INpcDialogueData>          dialogueData
     );
 
-    MCAPI ::Actor* _getActor() const;
-
     MCAPI void _leaveScreen(bool performClosingActions);
 
     MCAPI void _openUrl(::std::string const& url);
@@ -77,10 +74,6 @@ public:
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
-
-    MCAPI void _runCloseActions();
-
-    MCAPI void _runOpenActions();
     // NOLINTEND
 
 public:

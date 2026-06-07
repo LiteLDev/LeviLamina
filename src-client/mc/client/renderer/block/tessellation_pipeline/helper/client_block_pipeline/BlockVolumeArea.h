@@ -14,6 +14,12 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos> mMin;
     ::ll::TypedStorage<4, 12, ::BlockPos> mMax;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool isInBounds(::BlockPos const& pos) const;
+    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

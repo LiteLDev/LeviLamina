@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
+#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -39,24 +40,28 @@ public:
     ) const /*override*/;
 
     virtual bool shouldAddToConfiguration() const /*override*/;
-
-    virtual ~SendInvitesScreen() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isOreUISendInvitesScreenEnabled() const;
+    MCAPI explicit SendInvitesScreen(::ui::ScreenTechStackSelector const& screenTechStackSelector);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_ID();
+    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> LEGACY_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ui::ScreenTechStackSelector const& screenTechStackSelector);
     // NOLINTEND
 
 public:

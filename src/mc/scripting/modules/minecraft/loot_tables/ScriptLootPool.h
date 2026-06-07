@@ -11,9 +11,7 @@
 class LootPool;
 namespace ScriptModuleMinecraft { class ScriptLootItemCondition; }
 namespace ScriptModuleMinecraft { class ScriptLootPoolEntry; }
-namespace ScriptModuleMinecraft { class ScriptLootPoolTiers; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct NumberRange; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -48,18 +46,13 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptLootPool(::ScriptModuleMinecraft::ScriptLootPool const&);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::Scripting::NumberRange> const getBonusRolls() const;
-
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>
     getConditions();
 
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolEntry>>
     getEntries();
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::Scripting::NumberRange> const getRolls() const;
-
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolTiers>> const
-    getTiers() const;
+    MCAPI ~ScriptLootPool();
     // NOLINTEND
 
 public:
@@ -72,6 +65,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptLootPool const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

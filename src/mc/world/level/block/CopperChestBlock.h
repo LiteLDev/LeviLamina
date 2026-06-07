@@ -10,36 +10,42 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Experiments;
+struct CopperBlockSet;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class CopperChestBlock : public ::CopperBlock<::ChestBlock> {
 public:
+    // prevent constructor by default
+    CopperChestBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~CopperChestBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CopperChestBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

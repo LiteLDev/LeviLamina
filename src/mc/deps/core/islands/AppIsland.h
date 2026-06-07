@@ -23,16 +23,11 @@ public:
     // prevent constructor by default
     AppIsland& operator=(AppIsland const&);
     AppIsland(AppIsland const&);
-    AppIsland();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~AppIsland() /*override*/;
-#else // LL_PLAT_C
-    virtual ~AppIsland() /*override*/ = default;
-#endif
 
     virtual ushort getId() /*override*/;
 
@@ -47,6 +42,18 @@ public:
     virtual void mainUpdate() /*override*/;
 
     virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI AppIsland();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

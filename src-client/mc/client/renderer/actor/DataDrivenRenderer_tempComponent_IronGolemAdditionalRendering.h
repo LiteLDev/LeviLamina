@@ -37,8 +37,6 @@ public:
 
     virtual void
     render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_IronGolemAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

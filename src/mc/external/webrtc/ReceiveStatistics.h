@@ -21,9 +21,9 @@ public:
 
     virtual ::webrtc::StreamStatistician* GetStatistician(uint) const = 0;
 
-    virtual void SetMaxReorderingThreshold(int) = 0;
-
     virtual void SetMaxReorderingThreshold(uint, int) = 0;
+
+    virtual void SetMaxReorderingThreshold(int) = 0;
 
     virtual void EnableRetransmitDetection(uint, bool) = 0;
     // NOLINTEND

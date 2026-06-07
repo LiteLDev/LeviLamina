@@ -43,8 +43,6 @@ public:
     virtual ::Vec2 getLookDelta() /*override*/;
 
     virtual float getSecondsSinceProgramStart() /*override*/;
-
-    virtual ~CameraClientInstance() /*override*/ = default;
     // NOLINTEND
 
 public:

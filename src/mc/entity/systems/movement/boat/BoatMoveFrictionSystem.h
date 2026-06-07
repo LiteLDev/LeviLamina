@@ -20,13 +20,13 @@ namespace BoatMoveFrictionSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void boatMoveFriction(
-    ::StrictEntityContext const&,
-    ::ActorDataFlagComponent const&           synchedActorDataComponent,
-    ::BoatMovementComponent&                  boatMovementComponent,
-    ::StateVectorComponent&                   stateVectorComponent,
-    ::Optional<::BuoyancyComponent const>     buoyancyComponent,
-    ::Optional<::OnGroundFlagComponent const> isOnGround,
-    ::IConstBlockSource const&                region
+    ::StrictEntityContext const&              synchedActorDataComponent,
+    ::ActorDataFlagComponent const&           boatMovementComponent,
+    ::BoatMovementComponent&                  stateVectorComponent,
+    ::StateVectorComponent&                   buoyancyComponent,
+    ::Optional<::BuoyancyComponent const>     isOnGround,
+    ::Optional<::OnGroundFlagComponent const> region,
+    ::IConstBlockSource const&
 );
 // NOLINTEND
 

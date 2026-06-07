@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::DataStore { class PayloadEventDispatcher; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Json { class Value; }
 // clang-format on
@@ -35,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ModalToolContainer() /*override*/ = default;
+    virtual ~ModalToolContainer() /*override*/;
 
     virtual void clear() /*override*/;
     // NOLINTEND
@@ -43,6 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ModalToolContainer(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
+
     MCNAPI bool _createTool(::std::string const& id, ::Json::Value const& payload);
 
     MCNAPI void _onSelectedToolUpdated(::Json::Value const& current, ::Json::Value const& prev);
@@ -56,6 +59,8 @@ public:
     MCNAPI bool _removeTool(::std::string const& id);
 
     MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
+
+    MCNAPI ::Json::Value getSelectedToolPayload(::Editor::DataStore::PayloadDescription const&) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(
         ::Editor::DataStore::EventType                 eventType,
@@ -78,6 +83,18 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_SELECTED_TOOL();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

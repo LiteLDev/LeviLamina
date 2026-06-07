@@ -14,9 +14,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AnvilScreenControllerProxy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~AnvilScreenControllerProxy() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit AnvilScreenControllerProxy(::AnvilScreenControllerProxyCallbacks callbacks);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AnvilScreenControllerProxyCallbacks callbacks);
     // NOLINTEND
 
 public:

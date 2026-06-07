@@ -17,8 +17,6 @@ public:
     virtual uint64 runDeferredEventsForDuration(::std::chrono::milliseconds) = 0;
 
     virtual ::Bedrock::PubSub::DeferralType getDeferralType() const = 0;
-
-    virtual ~DeferredSubscriptionBase() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -18,15 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockReference();
-
     MCAPI ~BlockReference();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

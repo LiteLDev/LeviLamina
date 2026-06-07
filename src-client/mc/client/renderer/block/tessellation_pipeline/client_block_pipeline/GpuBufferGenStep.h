@@ -13,6 +13,7 @@ namespace ClientBlockPipeline { struct CulledFaceAttribute; }
 namespace ClientBlockPipeline { struct FaceDimmingAttributes; }
 namespace ClientBlockPipeline { struct FaceDirectionFaceAttributes; }
 namespace ClientBlockPipeline { struct FaceNormalAttributes; }
+namespace ClientBlockPipeline { struct GeoTypeVertexAttributes; }
 namespace ClientBlockPipeline { struct ImageUvFaceAttributes; }
 namespace ClientBlockPipeline { struct LightUvFaceAttributes; }
 namespace ClientBlockPipeline { struct MaterialFaceAttributes; }
@@ -37,16 +38,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GpuBufferGenStep();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-
-    virtual ~GpuBufferGenStep() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GpuBufferGenStep(bool emitColors, bool emitPBRTextures);
+
     MCAPI void _run(
         ::ClientBlockPipeline::PositionVertexAttributes const&          vertexPositions,
         ::ClientBlockPipeline::QuadIndicesFaceAttributes const&         faceIndices,
@@ -62,8 +67,15 @@ public:
         ::ClientBlockPipeline::VertexAOAttributes const*                vertexAO,
         ::ClientBlockPipeline::Transforms const*                        transforms,
         ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes const* textureShiftVertexNoises,
-        ::ClientBlockPipeline::NamedMeshStreams&                        outStreams
+        ::ClientBlockPipeline::GeoTypeVertexAttributes const*           outStreams,
+        ::ClientBlockPipeline::NamedMeshStreams&
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool emitColors, bool emitPBRTextures);
     // NOLINTEND
 
 public:

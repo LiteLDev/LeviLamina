@@ -8,12 +8,6 @@
 
 namespace bx {
 
-struct ReaderSeekerI : public ::bx::ReaderI, public ::bx::SeekerI {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ReaderSeekerI() /*override*/ = default;
-    // NOLINTEND
-};
+struct ReaderSeekerI : public ::bx::ReaderI, public ::bx::SeekerI {};
 
 } // namespace bx

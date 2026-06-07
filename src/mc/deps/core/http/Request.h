@@ -3,11 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/http/RequestPriority.h"
 #include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class HeaderCollection; }
+namespace Bedrock::Http { class Method; }
 namespace Bedrock::Http { class Response; }
+namespace Bedrock::Http { class RetryPolicy; }
+namespace Bedrock::Http { struct Url; }
+namespace Bedrock::Http::Internal { class IRequestBody; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
 // clang-format on
 
@@ -33,17 +39,45 @@ public:
     // NOLINTBEGIN
     MCNAPI Request();
 
-    MCNAPI Request(::Bedrock::Http::Request const&);
+    MCNAPI Request(::Bedrock::Http::Request const& rhs);
+
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IRequestBody>> getBody() const;
+
+    MCNAPI ::Bedrock::Http::HeaderCollection const& getHeaders() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Http::HeaderCollection& getHeaders();
+#endif
+
+    MCNAPI ::Bedrock::Http::Method getMethod() const;
+
+    MCNAPI ::Bedrock::Http::RequestPriority const& getPriority() const;
+
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>> getResponseBodyHandler() const;
+
+    MCNAPI ::Bedrock::Http::RetryPolicy const& getRetryPolicy() const;
+
+    MCNAPI bool const getShouldSkipTelemetry() const;
+
+    MCNAPI ::std::chrono::seconds getTimeout() const;
+
+    MCNAPI ::Bedrock::Http::Url const& getUrl() const;
 
     MCNAPI ::Bedrock::Http::Request& operator=(::Bedrock::Http::Request const&);
 
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> send();
+
+    MCNAPI void setHeaders(::Bedrock::Http::HeaderCollection const& headers);
+
+    MCNAPI void setMethod(::Bedrock::Http::Method method);
 
 #ifdef LL_PLAT_C
     MCNAPI void setResponseBodyHandler(
         ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>> responseBodyHandler
     );
 #endif
+
+    MCNAPI void setShouldSkipTelemetry(bool shouldSkipTelemetry);
 
     MCNAPI ~Request();
     // NOLINTEND
@@ -53,7 +87,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Bedrock::Http::Request const&);
+    MCNAPI void* $ctor(::Bedrock::Http::Request const& rhs);
     // NOLINTEND
 
 public:

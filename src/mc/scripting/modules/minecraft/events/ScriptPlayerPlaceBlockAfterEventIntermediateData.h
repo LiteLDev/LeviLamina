@@ -10,7 +10,6 @@
 // clang-format off
 class Block;
 class Dimension;
-class Player;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -31,22 +30,6 @@ public:
     operator=(ScriptPlayerPlaceBlockAfterEventIntermediateData const&);
     ScriptPlayerPlaceBlockAfterEventIntermediateData(ScriptPlayerPlaceBlockAfterEventIntermediateData const&);
     ScriptPlayerPlaceBlockAfterEventIntermediateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPlayerPlaceBlockAfterEventIntermediateData(
-        ::Player&         player,
-        ::BlockPos const& blockPos,
-        ::Block const&    placedBlock
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::BlockPos const& blockPos, ::Block const& placedBlock);
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

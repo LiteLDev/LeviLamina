@@ -7,9 +7,15 @@
 
 class GrindstoneContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~GrindstoneContainerScreenValidator() /*override*/ = default;
+    MCAPI GrindstoneContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

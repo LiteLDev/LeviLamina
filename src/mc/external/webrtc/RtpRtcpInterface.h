@@ -203,9 +203,9 @@ public:
 
     virtual ::webrtc::RtpSendRates GetSendRates() const = 0;
 
-    virtual ::webrtc::RTPSender* RtpSender() = 0;
-
     virtual ::webrtc::RTPSender const* RtpSender() const = 0;
+
+    virtual ::webrtc::RTPSender* RtpSender() = 0;
 
     virtual bool
     OnSendingRtpFrame(uint timestamp, int64 capture_time_ms, int payload_type, bool force_sender_report) = 0;

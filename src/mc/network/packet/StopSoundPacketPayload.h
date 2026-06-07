@@ -12,17 +12,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StopSoundPacketPayload(StopSoundPacketPayload const&);
-    StopSoundPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::StopSoundPacketPayload& operator=(::StopSoundPacketPayload&&);
-
-    MCFOLD ::StopSoundPacketPayload& operator=(::StopSoundPacketPayload const&);
-
     MCAPI ~StopSoundPacketPayload();
     // NOLINTEND
 

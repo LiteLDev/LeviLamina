@@ -192,7 +192,7 @@ public:
     virtual ::Core::Result _endTransaction();
 
     virtual ::Core::Result _writeOperation(
-        ::Core::PathView                                fullPath,
+        ::Core::PathView,
         ::Core::Result&&                                result,
         ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
         uint64                                          numBytesWritten
@@ -207,9 +207,17 @@ public:
     MCNAPI FileSystemImpl(
         ::Core::FileAccessType                             accessType,
         ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
+
+    MCNAPI FileSystemImpl(
+        ::Core::FileAccessType                             accessType,
+        ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
         ::Core::TransactionFlags                           transactionFlags,
         ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
     );
+
+    MCNAPI void _addFile(::Core::FileImpl* pFile);
 
     MCNAPI ::Core::Result _flatFileOpenFlatFile(
         ::std::unique_ptr<::Core::FileImpl>& fileOut,
@@ -221,6 +229,8 @@ public:
 
     MCNAPI ::Core::Result _flatFileUnloadManifest(::Core::PathView filePath);
 
+    MCNAPI void _initialize();
+
     MCNAPI ::Core::Result _readOperation(::Core::Result&& result, uint64 numBytesRead);
 
     MCNAPI ::Core::Result _readWriteOperation(
@@ -229,6 +239,8 @@ public:
         uint64                                          numBytesRead,
         uint64                                          numBytesWritten
     );
+
+    MCNAPI ::Core::Result addIgnoredThrottlePath(::Core::PathView path);
 
     MCNAPI ::Core::Result commit();
 
@@ -280,9 +292,29 @@ public:
 
     MCNAPI bool fileOrDirectoryExists(::Core::PathView entryPath);
 
+    MCNAPI ::Core::Result
+    getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView directoryPath);
+
+    MCNAPI ::Core::Result getDirectoryFilesAllocatedSizeRecursively(
+        uint64&          totalSize,
+        uint64&          totalAllocatedSize,
+        ::Core::PathView directoryPath
+    );
+
+    MCNAPI ::Core::Result getDirectoryFilesRecursively(
+        ::std::vector<::Core::PathBuffer<::std::string>>& files,
+        ::Core::PathView                                  directoryPath
+    );
+
+    MCNAPI ::Core::Result getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath);
+
+    MCNAPI ::Core::Result getFileOrDirectorySize(::Core::PathView entryPath, uint64* pFileSizeOut);
+
     MCNAPI ::Core::Result getFileSize(::Core::PathView filePath, uint64* pFileSize);
 
     MCNAPI ::std::shared_ptr<::Core::FlatFileManifestTracker> getFlatFileManifestTracker() const;
+
+    MCNAPI ::std::shared_ptr<::Core::FileStorageArea> getStorageArea();
 
     MCNAPI bool isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
@@ -299,9 +331,15 @@ public:
         ::Core::FileBufferingMode            fileBufferingMode
     );
 
+    MCNAPI ::Core::Result readFileData(::Core::PathView filePath, ::brstd::function_ref<void*(uint64)> data);
+
+    MCNAPI ::Core::Result removeIgnoredThrottlePath(::Core::PathView path);
+
     MCNAPI ::Core::Result renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result renameFile(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
+
+    MCNAPI ::Core::Result writeFileData(::Core::PathView filePath, void const* data, uint64 size);
     // NOLINTEND
 
 public:
@@ -319,6 +357,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Core::FileAccessType                             accessType,
+        ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
+
     MCNAPI void* $ctor(
         ::Core::FileAccessType                             accessType,
         ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
@@ -435,7 +479,7 @@ public:
     MCNAPI ::Core::Result $_endTransaction();
 
     MCNAPI ::Core::Result $_writeOperation(
-        ::Core::PathView                                fullPath,
+        ::Core::PathView,
         ::Core::Result&&                                result,
         ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
         uint64                                          numBytesWritten

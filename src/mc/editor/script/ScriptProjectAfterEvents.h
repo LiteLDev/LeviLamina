@@ -13,7 +13,10 @@
 class ScriptDeferredEventCoordinator;
 class ScriptDeferredFlushTracker;
 namespace Editor { class ServiceProviderCollection; }
+namespace Json { class Value; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -34,8 +37,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual void onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
-
-        virtual ~ScriptProjectAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -72,10 +73,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _handleSimulationTypeChanged(::SimulationType, ::SimulationType to);
+    MCNAPI ScriptProjectAfterEvents(::Editor::ScriptModule::ScriptProjectAfterEvents&&);
+
+    MCNAPI explicit ScriptProjectAfterEvents(::Scripting::WeakLifetimeScope const& scope);
+
+    MCNAPI void _handleSimulationTypeChanged(::SimulationType to, ::SimulationType);
 
     MCNAPI ::Editor::ScriptModule::ScriptProjectAfterEvents&
-    operator=(::Editor::ScriptModule::ScriptProjectAfterEvents&&);
+    operator=(::Editor::ScriptModule::ScriptProjectAfterEvents&& rhs);
 
     MCNAPI void registerListeners(
         ::ScriptDeferredEventCoordinator&    eventCoordinator,
@@ -90,9 +95,22 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
+    MCNAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
+
     MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::Editor::ScriptModule::ScriptProjectAfterEvents> const&
     getMetadata();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptProjectAfterEvents&&);
+
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

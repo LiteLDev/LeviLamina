@@ -14,6 +14,7 @@ class LevelStorageEventing;
 class SaveTransactionManager;
 class Scheduler;
 namespace Core { class FileStorageArea; }
+namespace Core { class Path; }
 // clang-format on
 
 struct DBStorageConfig {
@@ -45,7 +46,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DBStorageConfig(::Scheduler& scheduler, ::Core::Path const& path, ::std::string const& levelId);
+
     MCAPI ~DBStorageConfig();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scheduler& scheduler, ::Core::Path const& path, ::std::string const& levelId);
     // NOLINTEND
 
 public:

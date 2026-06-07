@@ -26,13 +26,13 @@ public:
     virtual ~CommandFunctionEntry() /*override*/ = default;
 
     virtual void
-    execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
+    execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
+    MCAPI void $execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder);
 
 
     // NOLINTEND

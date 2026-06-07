@@ -20,8 +20,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onCommand(::CommandOrigin const& origin, ::CommandOutput const& output) = 0;
-
-    virtual ~CommandOutputObserver() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -15,11 +15,14 @@ public:
 
 public:
     // prevent constructor by default
+    TypeNameInfo& operator=(TypeNameInfo const&);
     TypeNameInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TypeNameInfo(::Scripting::TypeNameInfo const&);
+
     MCAPI TypeNameInfo(::std::string bindingName, ::std::string typeName, bool bound);
 
     MCAPI ~TypeNameInfo();
@@ -28,6 +31,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor(::Scripting::TypeNameInfo const&);
+
     MCAPI void* $ctor(::std::string bindingName, ::std::string typeName, bool bound);
     // NOLINTEND
 

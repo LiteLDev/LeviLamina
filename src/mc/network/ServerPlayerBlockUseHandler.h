@@ -21,8 +21,7 @@ struct PlayerBlockActionData;
 namespace ServerPlayerBlockUseHandler {
 // functions
 // NOLINTBEGIN
-MCAPI ::ServerPlayerBlockUseHandler::PredictionValidationError
-getErrorForRejectedRequest(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const& request);
+MCAPI bool isValidSourceRequest(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const& request);
 
 MCAPI void onAbortDestroyBlock(::ServerPlayer& player, ::BlockPos const& pos, int face);
 
@@ -33,11 +32,7 @@ MCAPI void onBeforeMovementSimulation(
     ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilter
 );
 
-MCAPI void onCrackBlock(::ServerPlayer& player, ::BlockPos const& pos, int data);
-
 MCAPI void onStartDestroyBlock(::ServerPlayer& player, ::BlockPos const& pos, int face);
-
-MCAPI void onStopDestroyBlock(::ServerPlayer& player);
 
 MCAPI void serverTickBlockBreaking(::ServerPlayer& player, ::BlockPos const& destroyBlockPos, int facing);
 

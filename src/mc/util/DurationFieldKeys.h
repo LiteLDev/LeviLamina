@@ -26,13 +26,16 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    DurationFieldKeys(DurationFieldKeys const&);
     DurationFieldKeys();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI DurationFieldKeys(::DurationFieldKeys const&);
+#endif
+
     MCNAPI DurationFieldKeys(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
 
     MCNAPI DurationFieldKeys(
@@ -56,6 +59,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::DurationFieldKeys const&);
+#endif
+
     MCNAPI void* $ctor(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
 
     MCNAPI void* $ctor(

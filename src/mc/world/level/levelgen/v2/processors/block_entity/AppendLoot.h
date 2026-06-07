@@ -28,20 +28,12 @@ public:
         /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~AppendLoot() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::br::worldgen::processors::BlockEntity::AppendLoot from(::std::string_view lootTable);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

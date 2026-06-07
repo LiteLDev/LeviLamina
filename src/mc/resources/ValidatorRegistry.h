@@ -23,7 +23,25 @@ public:
     // clang-format on
 
     // ValidatorRegistry inner types define
-    struct ValidatorRegisterer {};
+    struct ValidatorRegisterer {
+    public:
+        // prevent constructor by default
+        ValidatorRegisterer();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI explicit ValidatorRegisterer(
+            ::std::function<void(::Bedrock::NonOwnerPointer<::ValidatorRegistry> const&)> registerFunc
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::std::function<void(::Bedrock::NonOwnerPointer<::ValidatorRegistry> const&)> registerFunc);
+        // NOLINTEND
+    };
 
     class ValidatorRegistryValidators {
     public:
@@ -35,32 +53,24 @@ public:
 
     public:
         // prevent constructor by default
-        ValidatorRegistryValidators& operator=(ValidatorRegistryValidators const&);
         ValidatorRegistryValidators(ValidatorRegistryValidators const&);
         ValidatorRegistryValidators();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ValidatorRegistryValidators(
-            ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)>
-                packValidator,
-            ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
-                subpackValidator
-        );
+#ifdef LL_PLAT_C
+        MCNAPI ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)>
+        getPackInstanceValidatorFunction() const;
+
+        MCNAPI ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
+        getSubpackInfoValidatorFunction() const;
+#endif
+
+        MCNAPI ::ValidatorRegistry::ValidatorRegistryValidators&
+        operator=(::ValidatorRegistry::ValidatorRegistryValidators const&);
 
         MCNAPI ~ValidatorRegistryValidators();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)>
-                packValidator,
-            ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
-                subpackValidator
-        );
         // NOLINTEND
 
     public:
@@ -80,12 +90,11 @@ public:
     // prevent constructor by default
     ValidatorRegistry& operator=(ValidatorRegistry const&);
     ValidatorRegistry(ValidatorRegistry const&);
-    ValidatorRegistry();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~ValidatorRegistry() /*override*/ = default;
+    MCNAPI ValidatorRegistry();
     // NOLINTEND
 
 public:
@@ -105,6 +114,12 @@ public:
         ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
             subpackValidator
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

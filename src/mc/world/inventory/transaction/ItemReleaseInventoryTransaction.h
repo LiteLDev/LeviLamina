@@ -13,6 +13,7 @@
 // clang-format off
 class BinaryStream;
 class BlockPalette;
+class InventoryTransaction;
 class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
@@ -38,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemReleaseInventoryTransaction() /*override*/ = default;
+    virtual ~ItemReleaseInventoryTransaction() /*override*/;
 
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
@@ -54,7 +55,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemReleaseInventoryTransaction();
+
+    MCAPI explicit ItemReleaseInventoryTransaction(::InventoryTransaction const& transaction);
+
     MCAPI ::ItemReleaseInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::InventoryTransaction const& transaction);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

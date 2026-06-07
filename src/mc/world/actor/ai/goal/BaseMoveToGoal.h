@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ class BlockSource;
 class Mob;
 // clang-format on
 
-class BaseMoveToGoal : public ::Goal {
+class BaseMoveToGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -69,14 +69,26 @@ public:
     virtual uint64 _getRepathTime() const;
 
     virtual void setInterval(int const interval);
-
-    virtual ~BaseMoveToGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BaseMoveToGoal(::Mob& mob, float speedMultiplier, float cooldownTimeout, float goalRadius);
+
+    MCAPI ::BlockPos _blockAboveTarget() const;
+
     MCAPI void _checkIfStuck();
+
+    MCFOLD bool _isCooldownActive() const;
+
+    MCAPI void setTargetPositionOffset(::Vec3 const& offset);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speedMultiplier, float cooldownTimeout, float goalRadius);
     // NOLINTEND
 
 public:
@@ -88,11 +100,11 @@ public:
 
     MCAPI void $start();
 
-    MCFOLD void $stop();
+    MCAPI void $stop();
 
     MCAPI void $tick();
 
-    MCAPI bool $hasReachedTarget() const;
+    MCFOLD bool $hasReachedTarget() const;
 
     MCAPI int $_nextStartTick();
 

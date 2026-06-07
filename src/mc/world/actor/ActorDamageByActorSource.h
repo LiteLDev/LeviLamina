@@ -31,7 +31,6 @@ public:
 public:
     // prevent constructor by default
     ActorDamageByActorSource& operator=(ActorDamageByActorSource const&);
-    ActorDamageByActorSource(ActorDamageByActorSource const&);
     ActorDamageByActorSource();
 
 public:
@@ -57,30 +56,22 @@ public:
     virtual ::ActorType getDamagingEntityType() const /*override*/;
 
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
-
-    virtual ~ActorDamageByActorSource() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDamageByActorSource(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+    MCAPI ActorDamageByActorSource(::ActorDamageByActorSource const&);
 
-    MCAPI ActorDamageByActorSource(::BlockSource const& region, ::SharedTypes::Legacy::ActorDamageCause cause);
+    MCAPI ActorDamageByActorSource(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorDamageByActorSource const&);
+
     MCAPI void* $ctor(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
-
-    MCAPI void* $ctor(::BlockSource const& region, ::SharedTypes::Legacy::ActorDamageCause cause);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -91,7 +82,7 @@ public:
     MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCAPI bool $getIsCreative() const;
+    MCFOLD bool $getIsCreative() const;
 
     MCFOLD bool $getIsWorldBuilder() const;
 

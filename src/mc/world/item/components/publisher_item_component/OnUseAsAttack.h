@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ItemStack;
 class Player;
 class Vec3;
@@ -21,18 +20,6 @@ struct OnUseAsAttack
 : public ::ItemComponent,
   public ::Bedrock::PubSub::
       Publisher<void(::ItemStack&, ::Player&, ::Vec3 const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OnUseAsAttack() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

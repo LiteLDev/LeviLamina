@@ -12,6 +12,7 @@ struct PlayerAddExpEvent;
 struct PlayerAddLevelEvent;
 struct PlayerArmorExchangeEvent;
 struct PlayerCloseContainerEvent;
+struct PlayerClosedContainerEvent;
 struct PlayerDamageEvent;
 struct PlayerDataDrivenScreenClosedEvent;
 struct PlayerDestroyBlockEvent;
@@ -37,6 +38,7 @@ struct PlayerInteractWithEntityAfterEvent;
 struct PlayerInteractWithEntityBeforeEvent;
 struct PlayerInventoryItemChangeEvent;
 struct PlayerOpenContainerEvent;
+struct PlayerOpenedContainerEvent;
 struct PlayerRespawnEvent;
 struct PlayerSayCommandEvent;
 struct PlayerScriptInputEvent;
@@ -68,7 +70,9 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerInputModeChangeEvent const,
                                      ::PlayerInitialSpawnEvent const,
                                      ::PlayerOpenContainerEvent const,
+                                     ::PlayerOpenedContainerEvent const,
                                      ::PlayerCloseContainerEvent const,
+                                     ::PlayerClosedContainerEvent const,
                                      ::PlayerHasInvalidContainerEvent const,
                                      ::PlayerShootArrowEvent const,
                                      ::PlayerSwingStartEvent const,
@@ -91,16 +95,4 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerInteractEvent const,
                                      ::PlayerInteractWithEntityBeforeEvent const,
                                      ::PlayerInteractWithBlockBeforeEvent const,
-                                     ::PlayerGameModeChangeEvent const> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerNotificationEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-};
+                                     ::PlayerGameModeChangeEvent const> {};

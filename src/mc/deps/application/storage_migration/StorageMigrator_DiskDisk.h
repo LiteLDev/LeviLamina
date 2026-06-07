@@ -18,9 +18,9 @@ class StorageMigrator_DiskDisk : public ::Bedrock::StorageMigration::StorageMigr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7bf352;
-    ::ll::UntypedStorage<8, 32> mUnkcc1471;
-    ::ll::UntypedStorage<8, 32> mUnk937225;
+    ::ll::UntypedStorage<8, 136> mUnkcf230f;
+    ::ll::UntypedStorage<8, 32>  mUnk48badf;
+    ::ll::UntypedStorage<8, 32>  mUnk937225;
     // NOLINTEND
 
 public:
@@ -41,7 +41,7 @@ public:
         ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>,
         ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>,
         ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>
-    ) const /*override*/;
+    ) /*override*/;
     // NOLINTEND
 
 public:

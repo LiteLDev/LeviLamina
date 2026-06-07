@@ -23,8 +23,6 @@ public:
     virtual float getShadowRadius() const /*override*/;
 
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
-
-    virtual ~Creaking() /*override*/ = default;
     // NOLINTEND
 
 public:

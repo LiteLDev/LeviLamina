@@ -13,8 +13,6 @@ namespace OreUI::Detail {
 class ICallable {
 public:
     // ICallable inner types define
-    enum class Dummy : int {};
-
     using ErrorType = int;
 
     using NameType = char const* const;

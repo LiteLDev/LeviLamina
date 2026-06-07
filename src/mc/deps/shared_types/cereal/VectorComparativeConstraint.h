@@ -32,14 +32,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~VectorComparativeConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SharedTypes::VectorComparativeConstraint
+    comparison(::SharedTypes::VectorComparativeConstraint::ComparisonRequirement constraint);
+
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
     MCAPI void validateValue(::Vec2 const& vec, ::cereal::SerializerContext& context) const;

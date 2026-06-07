@@ -36,7 +36,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~IPSupportInterface();
+        virtual ~IPSupportInterface() = default;
 
         virtual bool useIPv4Only() const = 0;
 
@@ -45,12 +45,6 @@ public:
         virtual ushort getDefaultGamePort() const = 0;
 
         virtual ushort getDefaultGamePortv6() const = 0;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:

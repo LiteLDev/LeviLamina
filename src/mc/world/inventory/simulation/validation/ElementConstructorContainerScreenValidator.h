@@ -7,9 +7,15 @@
 
 class ElementConstructorContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~ElementConstructorContainerScreenValidator() /*override*/ = default;
+    MCAPI ElementConstructorContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

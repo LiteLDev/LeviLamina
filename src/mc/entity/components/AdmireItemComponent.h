@@ -23,29 +23,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AdmireItemComponent& operator=(AdmireItemComponent const&);
-    AdmireItemComponent(AdmireItemComponent const&);
-    AdmireItemComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AdmireItemComponent(::AdmireItemComponent&&);
-
     MCAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
-
-    MCAPI ::AdmireItemComponent& operator=(::AdmireItemComponent&&);
 
     MCAPI void stopAdmiring();
 
     MCAPI ~AdmireItemComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AdmireItemComponent&&);
     // NOLINTEND
 
 public:

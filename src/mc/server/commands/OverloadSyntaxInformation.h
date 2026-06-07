@@ -16,14 +16,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OverloadSyntaxInformation& operator=(OverloadSyntaxInformation const&);
-    OverloadSyntaxInformation(OverloadSyntaxInformation const&);
-    OverloadSyntaxInformation();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::OverloadSyntaxInformation& operator=(::OverloadSyntaxInformation&&);
+    MCAPI ~OverloadSyntaxInformation();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

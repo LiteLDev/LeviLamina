@@ -8,17 +8,24 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class ActorInteraction;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
 class InteractionResult;
 class Player;
 class Vec3;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class LeashKnot : public ::HangingActor {
+public:
+    // prevent constructor by default
+    LeashKnot();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -52,8 +59,28 @@ public:
         int           sourceEntityType,
         bool          keepVelocity
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~LeashKnot() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI LeashKnot(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
+    MCAPI void _unleashAllActors();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -61,7 +88,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCFOLD void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
     MCFOLD float $getShadowRadius() const;
 

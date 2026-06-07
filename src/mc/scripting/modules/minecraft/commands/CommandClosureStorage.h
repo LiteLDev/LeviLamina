@@ -24,28 +24,6 @@ public:
                                                                                       mClosure;
     ::ll::TypedStorage<8, 136, ::ScriptModuleMinecraft::ScriptCustomCommandInterface> mCommandInterface;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandClosureStorage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CommandClosureStorage(
-        ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>>&& closure,
-        ::ScriptModuleMinecraft::ScriptCustomCommandInterface                                              builder
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>>&& closure,
-        ::ScriptModuleMinecraft::ScriptCustomCommandInterface                                              builder
-    );
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

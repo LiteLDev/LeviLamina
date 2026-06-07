@@ -22,11 +22,12 @@ namespace FlagDeadMobsSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void tick(
-    ::entt::type_list<::Include<::ActorTickedComponent, ::MobFlagComponent>, ::Exclude<::ActorRemovedFlagComponent>>,
-    ::StrictEntityContext const&                 entity,
-    ::AttributesComponent&                       attributesComponent,
-    ::Optional<::TickDeathNeededComponent>       tickDeathNeeded,
-    ::EntityModifier<::TickDeathNeededComponent> modifier
+    ::entt::type_list<::Include<::ActorTickedComponent, ::MobFlagComponent>, ::Exclude<::ActorRemovedFlagComponent>>
+                                           entity,
+    ::StrictEntityContext const&           attributesComponent,
+    ::AttributesComponent&                 tickDeathNeeded,
+    ::Optional<::TickDeathNeededComponent> modifier,
+    ::EntityModifier<::TickDeathNeededComponent>
 );
 // NOLINTEND
 

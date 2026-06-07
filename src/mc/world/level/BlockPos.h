@@ -3,13 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
+class ChunkBlockPos;
 class ChunkPos;
+class SubChunkPos;
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -29,39 +31,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BlockPos(::SubChunkPos const& subChunkPos);
+
     MCAPI explicit BlockPos(::Vec3 const& v);
 
     MCAPI BlockPos(::ChunkPos const& cp, int y);
 
+    MCAPI BlockPos(::ChunkPos const& cp, ::ChunkBlockPos const& offset, short minDimensionHeight);
+
     MCAPI BlockPos(float x, float y, float z);
-
-    MCAPI ::BlockPos above() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::BlockPos below() const;
-
-    MCAPI ::Vec3 center() const;
-#endif
 
     MCAPI ::BlockPos east() const;
 
-    MCAPI uint64 hashCode() const;
+    MCAPI ::BlockPos neighbor(uchar direction) const;
 
     MCAPI ::BlockPos north() const;
 
-    MCAPI explicit operator ::Vec3() const;
-
-    MCFOLD bool operator!=(::BlockPos const& rhs) const;
+    MCFOLD bool operator==(::BlockPos const&) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::BlockPos operator+(::BlockPos const& rhs) const;
+    MCAPI float randomFloat() const;
 #endif
 
-    MCAPI ::BlockPos operator-(::BlockPos const& rhs) const;
+    MCAPI int randomSeed() const;
+
+    MCAPI int64 randomSeed64() const;
 
     MCAPI ::BlockPos relative(uchar facing, int steps) const;
 
     MCAPI ::BlockPos south() const;
+
+    MCAPI ::std::string toCommandString() const;
+
+    MCAPI ::std::string toString() const;
 
     MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;
 
@@ -81,21 +83,22 @@ public:
 
     MCAPI static ::BlockPos const& MIN();
 
+    MCAPI static ::BlockPos const& ONE();
+
     MCAPI static ::BlockPos const& ZERO();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::SubChunkPos const& subChunkPos);
+
     MCAPI void* $ctor(::Vec3 const& v);
 
     MCAPI void* $ctor(::ChunkPos const& cp, int y);
 
+    MCAPI void* $ctor(::ChunkPos const& cp, ::ChunkBlockPos const& offset, short minDimensionHeight);
+
     MCAPI void* $ctor(float x, float y, float z);
     // NOLINTEND
 };
-
-// free functions
-// NOLINTBEGIN
-MCAPI ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
-// NOLINTEND

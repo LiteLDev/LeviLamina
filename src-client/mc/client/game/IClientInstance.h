@@ -90,7 +90,7 @@ class IContentKeyProvider;
 class IGameConnectionListener;
 class IMinecraftEventing;
 class IMinecraftGame;
-class IOptions;
+class IOptionRegistry;
 class IResourcePackRepository;
 class ISceneStack;
 class ITTSEventManager;
@@ -114,9 +114,10 @@ class MobEffectsLayout;
 class MultiPlayerLevel;
 class MusicManager;
 class Option;
-class Options;
+class OptionRegistry;
 class PackManifestFactory;
 class PacketSender;
+class PersonaClient;
 class PersonaRepository;
 class PixelCalc;
 class Player;
@@ -130,7 +131,6 @@ class ScreenContext;
 class ScreenLoadTimeTracker;
 class ShaderColor;
 class SkinRepository;
-class SkinRepositoryClientInterface;
 class SoundEngine;
 class StoreCatalogItem;
 class StoreCatalogRepository;
@@ -153,6 +153,7 @@ struct PacksInfoData;
 struct PlayerJoinWorldContext;
 struct PlayerJoinWorldTelemetryInfo;
 struct ScreenshotOptions;
+struct ServerSupportedAuthenticationTypes;
 struct SplitScreenInfo;
 namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
@@ -185,9 +186,18 @@ namespace ui { class ScreenTechStackSelector; }
 
 class IClientInstance : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // IClientInstance inner types declare
+    // clang-format off
+    class function;
+    // clang-format on
+
+    // IClientInstance inner types define
+    class function {};
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IClientInstance() /*override*/;
+    virtual ~IClientInstance() /*override*/ = default;
 
     virtual void onInitMinecraftGame() = 0;
 
@@ -260,8 +270,11 @@ public:
         ::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo
     ) = 0;
 
-    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult>
-    setupClientGame(bool joiningLocalServer, ::std::unique_ptr<::GameModuleClient> gameModuleClient) = 0;
+    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult> setupClientGame(
+        bool                                  joiningLocalServer,
+        ::ServerSupportedAuthenticationTypes  supportedAuth,
+        ::std::unique_ptr<::GameModuleClient> gameModuleClient
+    ) = 0;
 
     virtual ::BlockSource* getRegion() = 0;
 
@@ -405,7 +418,7 @@ public:
 
     virtual ::std::shared_ptr<::SkinRepository> getSkinRepository() const = 0;
 
-    virtual ::SkinRepositoryClientInterface& getSkinRepositoryClientInterface() const = 0;
+    virtual ::PersonaClient& getPersonaClient() const = 0;
 
     virtual ::PersonaRepository& getPersonaRepository() const = 0;
 
@@ -556,13 +569,13 @@ public:
 
     virtual bool isMultiPlayerClient() const = 0;
 
-    virtual ::IOptions& getOptions() = 0;
+    virtual ::IOptionRegistry& getOptions() = 0;
 
-    virtual ::IOptions const& getOptions() const = 0;
+    virtual ::IOptionRegistry const& getOptions() const = 0;
 
-    virtual ::std::shared_ptr<::Options> getOptionsPtr() = 0;
+    virtual ::std::shared_ptr<::OptionRegistry> getOptionsPtr() = 0;
 
-    virtual ::std::shared_ptr<::Options const> const getOptionsPtr() const = 0;
+    virtual ::std::shared_ptr<::OptionRegistry const> const getOptionsPtr() const = 0;
 
     virtual ::std::shared_ptr<::Social::User> const& getUser() const = 0;
 
@@ -638,7 +651,7 @@ public:
 
     virtual void setGuiScaleOffset(int guiScale) = 0;
 
-    virtual void renderImGui(::ScreenContext& screenContext, bool drawMenuBar) = 0;
+    virtual void renderImGui(::ScreenContext&, bool) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getGuiData() = 0;
 
@@ -743,7 +756,6 @@ public:
     virtual ::Vec2 getSafeZoneScale() const = 0;
 
     virtual void verifySkinApproval(
-        ::std::string const&                        serverType,
         ::std::function<void(::std::string)> const& notApprovedCallback,
         ::std::function<void()> const&              approvedCallback
     ) const = 0;
@@ -1093,12 +1105,6 @@ public:
     virtual ::std::optional<::PlayerJoinWorldTelemetryInfo> getPlayerJoinWorldTelemetryInfo() const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> getLinkedAssetValidator() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

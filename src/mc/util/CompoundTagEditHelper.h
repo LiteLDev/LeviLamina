@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 class Tag;
 // clang-format on
 
@@ -25,9 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void popChild();
-
-    MCNAPI void pushChild(::std::string const& tagName);
+    MCNAPI ::CompoundTag const* getParent() const;
 
     MCNAPI void replaceWith(::std::string const& newTagName, ::std::unique_ptr<::Tag> newTag);
 

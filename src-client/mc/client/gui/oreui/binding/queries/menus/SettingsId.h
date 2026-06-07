@@ -18,15 +18,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    SettingsId();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~SettingsId() /*override*/;
+    MCAPI SettingsId(::std::string_view id, ::OreUI::SettingsType type);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::string_view id, ::OreUI::SettingsType type);
     // NOLINTEND
 
 public:

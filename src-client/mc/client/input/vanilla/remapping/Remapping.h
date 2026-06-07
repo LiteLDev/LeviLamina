@@ -8,6 +8,8 @@
 namespace Remapping {
 // functions
 // NOLINTBEGIN
+MCAPI ::Remapping::ActionEnum getActionEnumerator(::std::string const& actionName);
+
 MCAPI ::std::string getActionName(::Remapping::ActionEnum action);
 // NOLINTEND
 

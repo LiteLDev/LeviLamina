@@ -30,8 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
-
-    MCNAPI ~ScriptFormRejectError();
     // NOLINTEND
 
 public:
@@ -44,12 +42,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

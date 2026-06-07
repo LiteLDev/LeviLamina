@@ -23,8 +23,18 @@ public:
 
     virtual ::GameControllerInputMapping const&
     getGameControllerMapping(::InputMapping const& inputMapping) /*override*/;
+    // NOLINTEND
 
-    virtual ~GamePadMapper() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GamePadMapper();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

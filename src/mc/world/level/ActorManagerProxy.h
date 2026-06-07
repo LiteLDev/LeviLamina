@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void removeActor(::Actor& actor) /*override*/;
-
-    virtual ~ActorManagerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:

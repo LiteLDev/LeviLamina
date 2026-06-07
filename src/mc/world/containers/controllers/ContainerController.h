@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/controllers/ItemAddType.h"
 #include "mc/world/containers/controllers/ItemPlaceType.h"
 #include "mc/world/containers/controllers/ItemSetType.h"
 
@@ -25,45 +26,90 @@ public:
     ::ll::TypedStorage<1, 1, bool>                               mDrop;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ContainerController() = default;
+
+#ifdef LL_PLAT_S
+    virtual ::ItemInstance const& getRecipeItem(int) const;
 #else // LL_PLAT_C
-    virtual ~ContainerController();
+    virtual ::ItemInstance const& getRecipeItem(int slot) const;
 #endif
 
-    virtual ::ItemInstance const& getRecipeItem(int slot) const;
-
+#ifdef LL_PLAT_S
+    virtual bool canRemove(int, int) const;
+#else // LL_PLAT_C
     virtual bool canRemove(int slot, int removeCount) const;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool isItemAllowed(::ItemStackBase const&) const;
+#else // LL_PLAT_C
     virtual bool isItemAllowed(::ItemStackBase const& item) const;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
+#else // LL_PLAT_C
     virtual bool isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual int getBackgroundStyle(int, bool) const;
+#else // LL_PLAT_C
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ItemSetType
+    _canSet(::ContainerScreenContext const&, int, ::ItemStackBase const&, ::ItemTransferAmount) const;
+#else // LL_PLAT_C
     virtual ::ItemSetType _canSet(
         ::ContainerScreenContext const& context,
         int                             modelSlot,
         ::ItemStackBase const&          item,
         ::ItemTransferAmount            transferAmount
     ) const;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual int _getAvailableSetCount(::ContainerScreenContext const&, int, ::ItemStackBase const&) const;
+#else // LL_PLAT_C
     virtual int
     _getAvailableSetCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& item) const;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool _canRemove(int, int) const;
+#else // LL_PLAT_C
     virtual bool _canRemove(int modelSlot, int removeCount) const;
+#endif
 
-    virtual void _onItemChanged(int modelSlot);
+    virtual void _onItemChanged(int);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI ContainerController(::std::weak_ptr<::ContainerModel> containerModel, bool shouldDrop);
+
     MCAPI int _addItem(::ContainerScreenContext const& context, int modelSlot, int addCount);
+
+    MCAPI ::ItemAddType _canAdd(
+        ::ContainerScreenContext const& context,
+        int                             slot,
+        ::ItemStackBase const&          item,
+        ::ItemTransferAmount            transferAmount
+    ) const;
 
     MCFOLD bool canConsume(int modelSlot, int removeCount) const;
 
@@ -81,6 +127,8 @@ public:
 
     MCAPI int
     getAvailableAddCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& fillItem) const;
+
+    MCAPI ::std::weak_ptr<::ContainerModel> getContainerModel() const;
 
     MCAPI ::std::string const& getContainerName() const;
 
@@ -109,9 +157,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::weak_ptr<::ContainerModel> containerModel, bool shouldDrop);
+#endif
     // NOLINTEND
 
 public:
@@ -120,7 +170,7 @@ public:
 #ifdef LL_PLAT_C
     MCFOLD ::ItemInstance const& $getRecipeItem(int slot) const;
 
-    MCFOLD bool $canRemove(int slot, int removeCount) const;
+    MCAPI bool $canRemove(int slot, int removeCount) const;
 
     MCFOLD bool $isItemAllowed(::ItemStackBase const& item) const;
 
@@ -140,7 +190,7 @@ public:
 
     MCAPI bool $_canRemove(int modelSlot, int removeCount) const;
 
-    MCFOLD void $_onItemChanged(int modelSlot);
+    MCFOLD void $_onItemChanged(int);
 #endif
 
 

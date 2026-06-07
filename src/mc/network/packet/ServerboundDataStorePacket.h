@@ -59,31 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ServerboundDataStorePacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ServerboundDataStorePacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ServerboundDataStorePacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit ServerboundDataStorePacket(::ServerboundDataStorePacketPayload payload);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ServerboundDataStorePacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

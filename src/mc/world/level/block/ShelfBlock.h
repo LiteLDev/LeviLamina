@@ -54,6 +54,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    ShelfBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -67,21 +71,21 @@ public:
         /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
 
     virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::AABB&           bufferAABB
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          bufferAABB,
+        ::AABB&
     ) const /*override*/;
 
     virtual bool isInteractiveBlock() const /*override*/;
@@ -97,13 +101,13 @@ public:
     ) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~ShelfBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ShelfBlock(::std::string const& nameId, int id);
+
     MCAPI bool
     _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type) const;
 
@@ -137,9 +141,6 @@ public:
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void _powerOnAndTryConnectNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void
-    _setShelfData(::BlockSource& region, ::BlockPos const& pos, bool powered, ::ShelfBlock::PoweredType type) const;
 
     MCAPI void
     _swapItemWithHand(::ShelfBlockActor& shelfActor, int hitSlot, ::Player& player, ::BlockSource const& region) const;
@@ -186,9 +187,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -197,20 +204,20 @@ public:
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
     MCFOLD ::AABB const& $getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::AABB&           bufferAABB
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          bufferAABB,
+        ::AABB&
     ) const;
 
     MCFOLD bool $isInteractiveBlock() const;

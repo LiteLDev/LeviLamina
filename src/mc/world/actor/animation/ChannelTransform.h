@@ -31,7 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ChannelTransform(::ExpressionNode const& expression);
+
     MCAPI explicit ChannelTransform(::ChannelTransform_Float const& rhs);
+
+    MCAPI ChannelTransform(::ExpressionNode const& expression, ::Vec3 const& axis);
+
+    MCAPI ChannelTransform(::ExpressionNode const& expression, int axisIndex);
 
     MCAPI void animate(
         ::RenderParams&     renderParams,
@@ -40,12 +46,18 @@ public:
         ::BoneTransformType boneTransformType
     ) const;
 
-    MCAPI bool operator==(::ChannelTransform const& rhs) const;
+    MCAPI bool getDataValues(::__m128& minValueVec, ::__m128& maxValueVec) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ExpressionNode const& expression);
+
     MCAPI void* $ctor(::ChannelTransform_Float const& rhs);
+
+    MCAPI void* $ctor(::ExpressionNode const& expression, ::Vec3 const& axis);
+
+    MCAPI void* $ctor(::ExpressionNode const& expression, int axisIndex);
     // NOLINTEND
 };

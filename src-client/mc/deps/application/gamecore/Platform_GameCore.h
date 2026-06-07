@@ -131,7 +131,7 @@ public:
     MCAPI
     Platform_GameCore(::HWND__* hwnd, ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
 
-    MCAPI void _cleanup();
+    MCAPI bool _checkResetGame();
 
     MCAPI ::Bedrock::Result<void> _onScreenKeyboardHeightHandler();
 
@@ -140,8 +140,6 @@ public:
     MCAPI void displayMigrationFailureScreen();
 
     MCAPI ::std::optional<::std::string> extractProtocolActivationURI();
-
-    MCAPI void firePlatformEvents(::gsl::not_null<::IMinecraftEventing*> eventing);
 
     MCAPI void performCriticalChecksTerminateOnFailure();
 

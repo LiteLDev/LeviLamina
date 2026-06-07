@@ -17,7 +17,7 @@ class TextureGroupBase : public ::std::enable_shared_from_this<::mce::TextureGro
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextureGroupBase();
+    virtual ~TextureGroupBase() = default;
 
     virtual ::mce::TexturePtr getTexture(
         ::ResourceLocation const&       resourceLocation,
@@ -25,12 +25,6 @@ public:
         ::std::optional<uint>           optLoadOrder,
         ::cg::TextureSetLayerType const textureType
     ) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPurchaseReconcilerQueriesFacet() /*override*/ = default;
+    virtual ~RealmsPurchaseReconcilerQueriesFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -63,9 +63,15 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCFOLD bool $update();
     // NOLINTEND
 
 public:

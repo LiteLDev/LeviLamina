@@ -33,21 +33,10 @@ public:
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mTemporaryOverride;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    DepenetrationComponent& operator=(DepenetrationComponent const&);
-    DepenetrationComponent(DepenetrationComponent const&);
-    DepenetrationComponent();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
-
     MCAPI ~DepenetrationComponent();
 #endif
     // NOLINTEND

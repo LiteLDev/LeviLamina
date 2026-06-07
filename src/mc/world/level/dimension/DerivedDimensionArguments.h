@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class IClientDimensionExtensions;
 class ILevel;
 class TaskGroup;
+class IClientDimensionExtensions;
 // clang-format on
 
 struct DerivedDimensionArguments {
@@ -27,16 +27,4 @@ public:
     DerivedDimensionArguments& operator=(DerivedDimensionArguments const&);
     DerivedDimensionArguments(DerivedDimensionArguments const&);
     DerivedDimensionArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~DerivedDimensionArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

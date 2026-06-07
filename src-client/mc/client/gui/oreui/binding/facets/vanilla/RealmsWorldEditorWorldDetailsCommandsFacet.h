@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsWorldEditorWorldDetailsCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsWorldEditorWorldDetailsCommandsFacet() /*override*/ = default;
@@ -31,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsWorldEditorWorldDetailsCommandsFacet(::std::weak_ptr<::Realms::RealmsWorldEditor> worldEditor);
+
     MCAPI void saveRealmDetails(::std::string const& realmId) const;
 
     MCAPI void setRealmsAreTexturePacksRequired(bool areTexturesRequired) const;
@@ -44,6 +50,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::weak_ptr<::Realms::RealmsWorldEditor> worldEditor);
     // NOLINTEND
 
 public:

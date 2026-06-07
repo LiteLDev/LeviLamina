@@ -34,8 +34,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~LegacyOnUseOnTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,12 +43,12 @@ public:
 
     MCAPI void _useOn(
         bool&              result,
-        ::ItemStack const& initialItemStack,
-        ::ItemStack&       currentItemStack,
-        ::Actor&           entity,
-        ::BlockPos const&  pos,
-        uchar              face,
-        ::Vec3 const&      clickPos
+        ::ItemStack const& currentItemStack,
+        ::ItemStack&       entity,
+        ::Actor&           pos,
+        ::BlockPos const&  face,
+        uchar              clickPos,
+        ::Vec3 const&
     );
     // NOLINTEND
 

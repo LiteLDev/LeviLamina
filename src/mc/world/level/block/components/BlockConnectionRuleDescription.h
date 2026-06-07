@@ -4,14 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/EnumSet.h"
-#include "mc/deps/shared_types/v1_26_10/block/ConnectionType.h"
-#include "mc/deps/shared_types/v1_26_10/block/Direction.h"
+#include "mc/deps/shared_types/v1_26_20/block/ConnectionType.h"
+#include "mc/deps/shared_types/v1_26_20/block/Direction.h"
 #include "mc/world/level/block/components/ConnectionID.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockConnectionRuleDescription : public ::NetworkedBlockComponentDescription<::BlockConnectionRuleDescription> {
@@ -19,8 +20,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::ConnectionID, 4>>              mConnectionsFromMask;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_10::ConnectionType>            mConnectionsFrom;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_10::Direction>> mEnabledDirections;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::ConnectionType>            mConnectionsFrom;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_20::Direction>> mEnabledDirections;
     // NOLINTEND
 
 public:
@@ -35,8 +36,6 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockConnectionRuleDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -44,15 +43,21 @@ public:
     // NOLINTBEGIN
     MCAPI BlockConnectionRuleDescription(
         ::Bedrock::EnumSet<::ConnectionID, 4>             connectionsFromMask,
-        ::std::vector<::SharedTypes::v1_26_10::Direction> enabledDirections
+        ::std::vector<::SharedTypes::v1_26_20::Direction> enabledDirections
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::
-        unordered_map<::SharedTypes::v1_26_10::ConnectionType, ::Bedrock::EnumSet<::ConnectionID, 4> const> const&
+        unordered_map<::SharedTypes::v1_26_20::ConnectionType, ::Bedrock::EnumSet<::ConnectionID, 4> const> const&
         CONNECTION_TO_MASK();
 
     MCAPI static ::std::string const& NameID();
@@ -63,14 +68,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Bedrock::EnumSet<::ConnectionID, 4>             connectionsFromMask,
-        ::std::vector<::SharedTypes::v1_26_10::Direction> enabledDirections
+        ::std::vector<::SharedTypes::v1_26_20::Direction> enabledDirections
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

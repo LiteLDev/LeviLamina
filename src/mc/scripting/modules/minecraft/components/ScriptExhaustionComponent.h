@@ -14,15 +14,15 @@ namespace ScriptModuleMinecraft {
 
 class ScriptExhaustionComponent : public ::ScriptModuleMinecraft::AttributeScriptActorComponent {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptExhaustionComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

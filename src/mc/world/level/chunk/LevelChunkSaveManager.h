@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/ChunkPos.h"
@@ -11,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkSource;
-class Dimension;
 class DimensionManager;
 class GameplayUserManager;
 class ILevelChunkEventManagerConnector;
@@ -60,17 +58,43 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkSaveManager();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelChunkSaveManager(
+        ::std::unique_ptr<::ILevelChunkSaveManagerProxy>     levelChunkSaverProxy,
+        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
+        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager
+    );
+
     MCAPI void _findRandomChunkToSave();
 
     MCAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
+    MCAPI bool _shouldDoSave() const;
+
+    MCFOLD bool isChunkSaveInProgress();
+
     MCAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+
+    MCAPI void startLeaveGame();
 
     MCAPI void trySaveChunks();
 
     MCAPI ~LevelChunkSaveManager();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::ILevelChunkSaveManagerProxy>     levelChunkSaverProxy,
+        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
+        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager
+    );
     // NOLINTEND
 
 public:

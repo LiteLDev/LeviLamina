@@ -27,11 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptModalFormDataSliderOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataSliderOptions&&);
-
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataSliderOptions&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataSliderOptions&&);
-
     MCNAPI ~ScriptModalFormDataSliderOptions();
     // NOLINTEND
 
@@ -39,12 +34,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormDataSliderOptions&&);
     // NOLINTEND
 
 public:

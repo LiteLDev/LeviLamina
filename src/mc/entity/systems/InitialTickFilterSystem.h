@@ -6,12 +6,13 @@
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntitySystems;
+class BlockPos;
 class IConstBlockSource;
 class StrictEntityContext;
 class TickWorldComponent;
@@ -20,16 +21,42 @@ struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct ActorWalkAnimationComponent;
 struct CurrentTickComponent;
+struct DimensionTypeComponent;
+struct GlobalActorComponent;
 struct InterpolateMovementNeededComponent;
+struct LocalConstBlockSourceFactoryComponent;
 struct MobBodyRotationComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 struct VehicleInputIntentComponent;
 // clang-format on
 
 namespace InitialTickFilterSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systemRegistry);
+MCAPI ::TickingSystemWithInfo createTickingAreaFilterSystem();
+
+MCAPI ::TickingSystemWithInfo createValidChunkFilterSystem();
+
+MCAPI bool hasInvalidBlock(::IConstBlockSource const& region, ::BlockPos const& blockPos);
+
+MCAPI void tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent>,
+        ::StateVectorComponent,
+        ::Optional<::ActorRotationComponent>,
+        ::Optional<::MobBodyRotationComponent>,
+        ::Optional<::ActorHeadRotationComponent>,
+        ::Optional<::ActorWalkAnimationComponent>,
+        ::Exclude<::GlobalActorComponent>>                                mainView,
+    ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const> const& dimensionView,
+    ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent const>       factory,
+    ::EntityModifier<
+        ::ActorMovementTickNeededComponent,
+        ::InterpolateMovementNeededComponent,
+        ::VehicleInputIntentComponent> modifier
+);
 
 MCAPI void tickingAreaFilterTickEntity(
     ::StrictEntityContext const&                                                                context,

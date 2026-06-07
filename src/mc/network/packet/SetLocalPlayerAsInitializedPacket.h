@@ -59,19 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~SetLocalPlayerAsInitializedPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~SetLocalPlayerAsInitializedPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI SetLocalPlayerAsInitializedPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit SetLocalPlayerAsInitializedPacket(::SetLocalPlayerAsInitializedPacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::SetLocalPlayerAsInitializedPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

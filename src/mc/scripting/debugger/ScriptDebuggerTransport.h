@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/IDebuggerTransport.h"
 
+// auto generated forward declare list
+// clang-format off
+class IScriptDebuggerWatchdog;
+// clang-format on
+
 class ScriptDebuggerTransport : public ::Scripting::IDebuggerTransport {
 public:
     // member variables
@@ -48,6 +53,18 @@ public:
     virtual bool receive(char* buffer, uint64 length) /*override*/;
 
     virtual void send(char const* buffer, uint64 length) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ScriptDebuggerTransport(::IScriptDebuggerWatchdog& debuggerWatchdog);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IScriptDebuggerWatchdog& debuggerWatchdog);
     // NOLINTEND
 
 public:

@@ -27,8 +27,6 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     ) /*override*/;
-
-    virtual ~SHStraightStairsDown() /*override*/ = default;
     // NOLINTEND
 
 public:

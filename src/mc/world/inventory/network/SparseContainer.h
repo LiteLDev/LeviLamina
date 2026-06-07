@@ -76,19 +76,35 @@ public:
     virtual ~SparseContainer() /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual ::ItemStack const& getItem(int) const /*override*/;
+#else // LL_PLAT_C
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
+#endif
 
     virtual int getContainerSize() const /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void containerContentChanged(int) /*override*/;
+#else // LL_PLAT_C
     virtual void containerContentChanged(int slot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void setItem(int, ::ItemStack const&) /*override*/;
+#else // LL_PLAT_C
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+#endif
 
     virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void startOpen(::Actor&) /*override*/;
+#else // LL_PLAT_C
     virtual void startOpen(::Actor& actor) /*override*/;
+#endif
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
@@ -108,23 +124,26 @@ public:
         ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
 
+    MCFOLD void _clearCreatedItem(int slot);
+
     MCAPI int _getAvailableAddCount(
-        ::ContainerScreenContext const& context,
-        ::ContainerEnumName             name,
-        ::ItemStack const&              itemInSlot
+        ::ContainerScreenContext const& name,
+        ::ContainerEnumName             itemInSlot,
+        ::ItemStack const&
     ) const;
 
-    MCAPI bool _isItemAllowedInSlot(::ContainerEnumName name, int slot, ::ItemStackBase const& item, int amount) const;
-#endif
+    MCAPI bool _isSlotInRange(int slot) const;
 
     MCAPI void _onItemNetworkChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-
-#ifdef LL_PLAT_C
-    MCAPI void _setBackingContainerSlot(int slot, ::ItemStack const& newItem);
 
     MCAPI void addAvailableSetCountCallback(
         ::ContainerEnumName                               name,
         ::std::function<int(int, ::ItemStackBase const&)> availableSetCountCallback
+    );
+
+    MCAPI void addItemAllowedInContainerCallback(
+        ::ContainerEnumName                           name,
+        ::std::function<bool(::ItemStackBase const&)> itemAllowedCallback
     );
 
     MCAPI void addItemAllowedInSlotCallback(
@@ -141,7 +160,14 @@ public:
         ::ContainerEnumName                           name,
         ::std::function<bool(::ItemStackBase const&)> itemAllowedCallback
     );
+#endif
 
+    MCAPI void addItemNetworkChangedCallback(
+        ::ContainerEnumName                                                name,
+        ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> itemNetworkChangedCallback
+    );
+
+#ifdef LL_PLAT_C
     MCAPI void addValidSlotForContainerCallback(
         ::ContainerEnumName        name,
         ::std::function<bool(int)> validSlotForContainerCallback
@@ -155,6 +181,12 @@ public:
         int                             amount
     ) const;
 
+    MCFOLD bool canConsume(::ContainerEnumName name, int slot, int amount) const;
+
+    MCFOLD bool canDestroy(::ContainerEnumName name, int slot, int amount) const;
+
+    MCFOLD bool canDrop(::ContainerEnumName name, int slot, int amount) const;
+
     MCAPI bool canRemove(::ContainerEnumName name, int slot, int amount) const;
 
     MCAPI ::ItemSetType canSet(
@@ -165,6 +197,15 @@ public:
         int                             amount
     ) const;
 
+    MCAPI int getAvailableAddCount(::ContainerScreenContext const& name, ::ContainerEnumName slot, int) const;
+
+    MCAPI int getAvailableAddCount(
+        ::ContainerScreenContext const& context,
+        ::ContainerEnumName             name,
+        int                             slot,
+        ::ItemStackBase const&          itemToAdd
+    ) const;
+
     MCAPI int getAvailableSetCount(
         ::ContainerScreenContext const& context,
         ::FullContainerName const&      name,
@@ -172,8 +213,16 @@ public:
         ::ItemStackBase const&          item
     ) const;
 
+    MCAPI bool isClientSide() const;
+#endif
+
+    MCAPI bool isUsingLegacyScreenTransactions() const;
+
+#ifdef LL_PLAT_C
     MCAPI bool isValidSlot(::ContainerEnumName name, int slot) const;
 #endif
+
+    MCAPI void removeItemNetworkChangedCallback(::ContainerEnumName name);
     // NOLINTEND
 
 public:

@@ -8,18 +8,24 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorDefinitionTrigger;
+class BlockPos;
+class BlockSource;
+class LookControlComponent;
 class Mob;
+class MoveControlComponent;
+class NavigationComponent;
 class Path;
 namespace RamAttackGoalUtils { class RamGoalItemDropperInterface; }
 // clang-format on
 
-class RamAttackGoal : public ::Goal {
+class RamAttackGoal : public ::BaseGoal {
 public:
     // RamAttackGoal inner types declare
     // clang-format off
@@ -107,8 +113,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~RamAttackGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -120,9 +124,17 @@ public:
 
     MCAPI bool _initiateRamAttack();
 
+    MCAPI bool _pathablePos(::BlockSource const& region, ::BlockPos blockPos);
+
     MCAPI void _resetCooldown();
 
+    MCAPI bool _setupAttackPosVector();
+
+    MCAPI bool _takeAttackPos(::NavigationComponent& navigation, ::LookControlComponent& lookControl, ::Actor& target);
+
     MCAPI void _tryKnockbackTarget();
+
+    MCAPI bool _turnToTarget(::MoveControlComponent& moveControl) const;
 
     MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
     // NOLINTEND
@@ -131,12 +143,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

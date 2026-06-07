@@ -8,7 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
-namespace ScriptModuleServerGraphics { class ScriptColorGrading; }
+namespace ScriptModuleMinecraft { class ScriptBiomeType; }
+namespace ScriptModuleServerGraphics { class ScriptBiomeColorGrading; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -18,8 +19,11 @@ class ScriptColorGradingFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerGraphics::ScriptColorGrading>
-    getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerGraphics::ScriptBiomeColorGrading> getHandle(
+        ::Scripting::WeakLifetimeScope&                 scope,
+        ::ServerLevel&                                  level,
+        ::ScriptModuleMinecraft::ScriptBiomeType const& biomeType
+    );
     // NOLINTEND
 };
 

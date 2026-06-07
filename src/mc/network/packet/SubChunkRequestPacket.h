@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/network/packet/SubChunkPacket.h"
@@ -13,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Dimension;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -29,13 +27,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mArePositionsAbsolute;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    SubChunkRequestPacket();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -53,6 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SubChunkRequestPacket();
+
 #ifdef LL_PLAT_C
     MCAPI SubChunkRequestPacket(
         ::DimensionType                     dimensionType,
@@ -65,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
 #ifdef LL_PLAT_C
     MCAPI void*
     $ctor(::DimensionType dimensionType, ::SubChunkPos const& playerPos, ::std::vector<::SubChunkPos> const& pos);

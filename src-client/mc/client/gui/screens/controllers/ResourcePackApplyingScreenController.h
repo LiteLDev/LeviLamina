@@ -39,8 +39,6 @@ public:
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
-
-    virtual ~ResourcePackApplyingScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,6 +49,8 @@ public:
         ::std::string const&                           screenName,
         ::std::function<void(::MinecraftScreenModel&)> applyPacks
     );
+
+    MCAPI void _registerBindings();
     // NOLINTEND
 
 public:

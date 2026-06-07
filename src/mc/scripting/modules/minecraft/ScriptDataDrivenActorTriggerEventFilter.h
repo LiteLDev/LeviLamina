@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptDataDrivenActorTriggerEventFilter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptDataDrivenActorTriggerEventFilter() /*override*/;
@@ -42,12 +38,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataDrivenActorTriggerEventFilter(
-        ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&
-    );
-
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
+    MCAPI bool
+    shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilterData const& data);
     // NOLINTEND
 
 public:
@@ -56,12 +48,6 @@ public:
     MCAPI static ::Scripting::InterfaceBinding bind();
 
     MCAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
     // NOLINTEND
 
 public:

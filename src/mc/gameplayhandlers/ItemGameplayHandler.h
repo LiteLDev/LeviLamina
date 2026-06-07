@@ -19,7 +19,7 @@ public:
     virtual ::HandlerResult handleEvent(::ItemGameplayEvent<void> const&) = 0;
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::MutableItemGameplayEvent<::CoordinatorResult>&) = 0;
+    handleEvent(::MutableItemGameplayEvent<::CoordinatorResult>& event) = 0;
     // NOLINTEND
 
 public:

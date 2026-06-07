@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructurePoolBlockPredicateBlockMatch();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool test(::Block const& block, ::IRandom&) const /*override*/;
@@ -32,8 +36,22 @@ public:
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+    // NOLINTEND
 
-    virtual ~StructurePoolBlockPredicateBlockMatch() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(::Block const& block);
+
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(::std::vector<::HashedString> blockMatchings);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block);
+
+    MCAPI void* $ctor(::std::vector<::HashedString> blockMatchings);
     // NOLINTEND
 
 public:

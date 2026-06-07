@@ -35,7 +35,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void tick();
+    MCAPI float _calculateIntensityAtTime() const;
 #endif
+
+    MCAPI void tick();
     // NOLINTEND
 };

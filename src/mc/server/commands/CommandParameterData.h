@@ -34,7 +34,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> mTypeIndex;
+    ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>>   mTypeIndex;
+    ::ll::TypedStorage<8, 8, ::CommandRegistry::ParamParseRule const*> mParseRule;
     ::ll::TypedStorage<
         8,
         8,
@@ -46,7 +47,7 @@ public:
             ::std::string&,
             ::std::vector<::std::string>&
         ) const>
-                                                         mParse;
+                                                         mParseOverride;
     ::ll::TypedStorage<8, 32, ::std::string>             mName;
     ::ll::TypedStorage<8, 8, char const*>                mEnumNameOrPostfix;
     ::ll::TypedStorage<4, 4, int>                        mEnumOrPostfixSymbol;
@@ -62,9 +63,72 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandParameterData& operator=(CommandParameterData const&);
+    CommandParameterData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CommandParameterData(::CommandParameterData const& p);
+
+    MCAPI CommandParameterData(
+        ::Bedrock::typeid_t<::CommandRegistry>   typeIndex,
+        ::CommandRegistry::ParamParseRule const* parseRule,
+        char const*                              name,
+        ::CommandParameterDataType               paramType,
+        char const*                              enumNameOrPostfix,
+        char const*                              chainedSubcommand,
+        int                                      offset,
+        bool                                     optional,
+        int                                      setOffset
+    );
+
+    MCAPI CommandParameterData(
+        ::Bedrock::typeid_t<::CommandRegistry>   typeIndex,
+        ::CommandRegistry::ParamParseRule const* parseRule,
+        char const*                              name,
+        ::CommandParameterDataType               paramType,
+        char const*                              enumNameOrPostfix,
+        int                                      index,
+        bool                                     optional,
+        void* (*getFn)(::Command*, int),
+        bool* (*isSetFn)(::Command*, int)
+    );
+
+    MCAPI ::CommandParameterData& addOptions(::CommandParameterOption options);
+
     MCAPI ~CommandParameterData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CommandParameterData const& p);
+
+    MCAPI void* $ctor(
+        ::Bedrock::typeid_t<::CommandRegistry>   typeIndex,
+        ::CommandRegistry::ParamParseRule const* parseRule,
+        char const*                              name,
+        ::CommandParameterDataType               paramType,
+        char const*                              enumNameOrPostfix,
+        char const*                              chainedSubcommand,
+        int                                      offset,
+        bool                                     optional,
+        int                                      setOffset
+    );
+
+    MCAPI void* $ctor(
+        ::Bedrock::typeid_t<::CommandRegistry>   typeIndex,
+        ::CommandRegistry::ParamParseRule const* parseRule,
+        char const*                              name,
+        ::CommandParameterDataType               paramType,
+        char const*                              enumNameOrPostfix,
+        int                                      index,
+        bool                                     optional,
+        void* (*getFn)(::Command*, int),
+        bool* (*isSetFn)(::Command*, int)
+    );
     // NOLINTEND
 
 public:

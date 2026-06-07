@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/puv/ParserBase.h"
 
 // auto generated forward declare list
@@ -28,14 +29,12 @@ public:
     CerealParserBase();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CerealParserBase() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI CerealParserBase(::cereal::ReflectionCtx const& ctx, ::SemVersion const& parserVersion);
+#endif
+
     MCNAPI CerealParserBase(
         ::cereal::ReflectionCtx const& ctx,
         ::SemVersion                   parserVersion,
@@ -44,16 +43,22 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static variables
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
+    MCNAPI static ::cereal::ResultCode const& StrictErrorCodes();
+
+    MCNAPI static ::cereal::ResultCode const& UnstrictErrorCodes();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion const& parserVersion);
+#endif
+
+    MCNAPI void*
+    $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
     // NOLINTEND
 
 public:

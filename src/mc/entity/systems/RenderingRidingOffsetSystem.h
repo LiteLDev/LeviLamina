@@ -28,12 +28,12 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static void _tickEntity(
-        ::StrictEntityContext const&,
-        ::VehicleComponent const&                                   vehicleComponent,
-        ::ActorOwnerComponent&                                      actorOwnerComponent,
-        ::VehicleRenderingRidingOffsetComponent&                    vehicleOffsetComponent,
-        ::CurrentTickComponent const&                               currentTickComponent,
-        ::EntityModifier<::PassengerRenderingRidingOffsetComponent> modifier
+        ::StrictEntityContext const&             vehicleComponent,
+        ::VehicleComponent const&                actorOwnerComponent,
+        ::ActorOwnerComponent&                   vehicleOffsetComponent,
+        ::VehicleRenderingRidingOffsetComponent& currentTickComponent,
+        ::CurrentTickComponent const&            modifier,
+        ::EntityModifier<::PassengerRenderingRidingOffsetComponent>
     );
 
     MCAPI static void _tickSystem(
@@ -50,7 +50,14 @@ public:
     MCAPI static ::TickingSystemWithInfo createSystem();
 
     MCAPI static ::Vec3 getInterpolatedRenderingRidingOffset(::Actor const& actor, float frameAlpha);
+#endif
 
+    MCAPI static ::Vec3 getInterpolatedRenderingRidingOffset(
+        ::PassengerRenderingRidingOffsetComponent const* passengerOffsetComponent,
+        float                                            frameAlpha
+    );
+
+#ifdef LL_PLAT_C
     MCAPI static void onActorStartRiding(::Actor& actor, ::Actor& vehicle);
 #endif
     // NOLINTEND

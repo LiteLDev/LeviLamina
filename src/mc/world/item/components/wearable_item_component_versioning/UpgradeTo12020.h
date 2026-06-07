@@ -16,8 +16,6 @@ public:
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const /*override*/;
-
-    virtual ~UpgradeTo12020() /*override*/ = default;
     // NOLINTEND
 
 public:

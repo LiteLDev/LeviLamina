@@ -12,6 +12,7 @@ class IFileAccess;
 class ResourcePackManager;
 struct PackIdVersion;
 namespace Core { class FileSystem; }
+namespace Core { class Path; }
 namespace OreUI { struct RouteData; }
 // clang-format on
 
@@ -30,12 +31,20 @@ public:
 public:
     // prevent constructor by default
     RouteDataParser& operator=(RouteDataParser const&);
-    RouteDataParser(RouteDataParser const&);
     RouteDataParser();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RouteDataParser(::OreUI::RouteDataParser const&);
+
+    MCAPI RouteDataParser(
+        ::ResourcePackManager const&                             packManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&      fileAccess,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const& fileSystem,
+        ::Core::Path const&                                      dataPath
+    );
+
     MCAPI void loadAndParse(
         ::std::string const&               routesJsonFile,
         ::std::vector<::OreUI::RouteData>& outRouteData,
@@ -43,6 +52,19 @@ public:
     ) const;
 
     MCAPI ~RouteDataParser();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::RouteDataParser const&);
+
+    MCAPI void* $ctor(
+        ::ResourcePackManager const&                             packManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&      fileAccess,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const& fileSystem,
+        ::Core::Path const&                                      dataPath
+    );
     // NOLINTEND
 
 public:

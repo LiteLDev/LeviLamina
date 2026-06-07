@@ -63,15 +63,11 @@ public:
     virtual void onBindingsReleased() /*override*/;
 
     virtual void update(double const time) /*override*/;
-
-    virtual ~CommandRegistry() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::OreUI::Detail::ICommandGroup*> getCommands() const;
-
     MCAPI void registerCommandTemplate(
         ::std::string                                                        name,
         ::std::function<::std::unique_ptr<::OreUI::Detail::ICommandGroup>()> constructor

@@ -43,8 +43,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~CustomScalingFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -77,12 +75,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

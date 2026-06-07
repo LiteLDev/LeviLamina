@@ -61,15 +61,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~RideCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RideCommand();
-
     MCAPI void evictPassengers(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void startRiding(::CommandOrigin const& origin, ::CommandOutput& output) const;
@@ -85,12 +81,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

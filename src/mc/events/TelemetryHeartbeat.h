@@ -6,6 +6,15 @@ namespace Social::Events {
 
 class TelemetryHeartbeat {
 public:
+    // TelemetryHeartbeat inner types declare
+    // clang-format off
+    struct nowFunc;
+    // clang-format on
+
+    // TelemetryHeartbeat inner types define
+    struct nowFunc {};
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk3252d9;

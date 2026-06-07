@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::JSONObject { class ObjectNode; }
+// clang-format on
+
 namespace Bedrock {
 
 class BootstrapConfig {
@@ -48,15 +53,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::BootstrapConfig::LoadResult _makeBootstrapError(char const*, ...);
 
+    MCNAPI ::Bedrock::JSONObject::ObjectNode const* getRoot() const;
+
     MCNAPI ::Bedrock::BootstrapConfig::LoadResult initialize(char const* fileName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI static ::Bedrock::BootstrapConfig& getSharedInstance();
-#endif
     // NOLINTEND
 };
 

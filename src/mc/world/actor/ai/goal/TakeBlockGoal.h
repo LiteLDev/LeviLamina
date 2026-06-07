@@ -7,19 +7,18 @@
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockDescriptor;
-class BlockPos;
-class IRandom;
+class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class TakeBlockGoal : public ::Goal {
+class TakeBlockGoal : public ::BaseGoal {
 public:
     // TakeBlockGoal inner types declare
     // clang-format off
@@ -42,9 +41,16 @@ public:
         // NOLINTEND
 
     public:
-        // virtual functions
+        // prevent constructor by default
+        Definition(Definition const&);
+        Definition();
+
+    public:
+        // member functions
         // NOLINTBEGIN
-        virtual ~Definition() /*override*/;
+        MCAPI void initialize(::EntityContext& entity, ::TakeBlockGoal& goal) const;
+
+        MCAPI ::TakeBlockGoal::Definition& operator=(::TakeBlockGoal::Definition const&);
         // NOLINTEND
 
     public:
@@ -62,13 +68,9 @@ public:
         // NOLINTBEGIN
         MCAPI static bool const& DEFAULT_AFFECTED_BY_GRIEFING_RULE();
 
-        MCAPI static bool const& DEFAULT_REQUIRES_LINE_OF_SIGHT();
-        // NOLINTEND
+        MCAPI static float const& DEFAULT_CHANCE();
 
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI static bool const& DEFAULT_REQUIRES_LINE_OF_SIGHT();
         // NOLINTEND
 
     public:
@@ -99,14 +101,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~TakeBlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPos getRandomPos(::IRandom& random) const;
+    MCAPI explicit TakeBlockGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

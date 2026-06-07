@@ -69,22 +69,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockCullingData& operator=(BlockCullingData const&);
-    BlockCullingData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockCullingData(::BlockCullingData const&);
-
     MCAPI ~BlockCullingData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockCullingData const&);
     // NOLINTEND
 
 public:

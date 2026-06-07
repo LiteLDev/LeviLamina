@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Random& getThreadRandom() /*override*/;
-
-    virtual ~ServerLevelRandom() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -11,7 +11,7 @@
 struct RecipeNetIdTag;
 // clang-format on
 
-class ItemEnchantOption {
+struct ItemEnchantOption {
 public:
     // member variables
     // NOLINTBEGIN
@@ -23,15 +23,15 @@ public:
 
 public:
     // prevent constructor by default
-    ItemEnchantOption(ItemEnchantOption const&);
+    ItemEnchantOption& operator=(ItemEnchantOption const&);
     ItemEnchantOption();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemEnchantOption(::ItemEnchantOption&&);
+    MCAPI ItemEnchantOption(::ItemEnchantOption const&);
 
-    MCAPI ::ItemEnchantOption& operator=(::ItemEnchantOption const&);
+    MCAPI bool operator==(::ItemEnchantOption const& rhs) const;
 
     MCAPI ~ItemEnchantOption();
     // NOLINTEND
@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemEnchantOption&&);
+    MCAPI void* $ctor(::ItemEnchantOption const&);
     // NOLINTEND
 
 public:

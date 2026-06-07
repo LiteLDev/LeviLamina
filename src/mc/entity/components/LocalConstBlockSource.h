@@ -14,16 +14,4 @@ public:
     LocalConstBlockSource& operator=(LocalConstBlockSource const&);
     LocalConstBlockSource(LocalConstBlockSource const&);
     LocalConstBlockSource();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LocalConstBlockSource();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

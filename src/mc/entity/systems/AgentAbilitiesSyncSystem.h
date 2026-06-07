@@ -6,7 +6,6 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/deps/ecs/systems/ITickingSystem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,13 +18,7 @@ struct PlayerComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
-class AgentAbilitiesSyncSystem : public ::ITickingSystem {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AgentAbilitiesSyncSystem() /*override*/ = default;
-    // NOLINTEND
-
+class AgentAbilitiesSyncSystem {
 public:
     // static functions
     // NOLINTBEGIN

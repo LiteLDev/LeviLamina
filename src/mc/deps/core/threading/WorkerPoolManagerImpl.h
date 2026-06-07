@@ -4,11 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/WorkerPoolManager.h"
+#include "mc/deps/profiler/ThreadFrameType.h"
 
 // auto generated forward declare list
 // clang-format off
+struct WorkerPoolConfig;
 namespace Bedrock { class WorkerPoolHandleInterface; }
-namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
 namespace Bedrock {
@@ -59,6 +60,7 @@ public:
     // prevent constructor by default
     WorkerPoolManagerImpl& operator=(WorkerPoolManagerImpl const&);
     WorkerPoolManagerImpl(WorkerPoolManagerImpl const&);
+    WorkerPoolManagerImpl();
 
 public:
     // virtual functions
@@ -66,29 +68,12 @@ public:
     virtual void init() /*override*/;
 
     virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
-        ::std::string                                 name,
-        uint64                                        threadCount,
-        ::Bedrock::Threading::OSThreadPriority const& priority,
-        ::std::optional<uint64> const                 coreAffinityMask,
-        bool                                          suppressWorkerProfiling,
-        ::std::optional<int> const                    idealCore
+        ::std::string_view               name,
+        ::Core::Profile::ThreadFrameType frameType,
+        ::WorkerPoolConfig const&        config
     ) /*override*/;
 
     virtual void tick() /*override*/;
-
-    virtual ~WorkerPoolManagerImpl() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI WorkerPoolManagerImpl();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -97,12 +82,9 @@ public:
     MCNAPI void $init();
 
     MCNAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(
-        ::std::string                                 name,
-        uint64                                        threadCount,
-        ::Bedrock::Threading::OSThreadPriority const& priority,
-        ::std::optional<uint64> const                 coreAffinityMask,
-        bool                                          suppressWorkerProfiling,
-        ::std::optional<int> const                    idealCore
+        ::std::string_view               name,
+        ::Core::Profile::ThreadFrameType frameType,
+        ::WorkerPoolConfig const&        config
     );
 
     MCNAPI void $tick();

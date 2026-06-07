@@ -22,12 +22,13 @@ public:
 public:
     // prevent constructor by default
     GiveableTrigger& operator=(GiveableTrigger const&);
+    GiveableTrigger(GiveableTrigger const&);
     GiveableTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GiveableTrigger(::GiveableTrigger const&);
+    MCAPI GiveableTrigger(::GiveableTrigger&&);
 
     MCFOLD void addItem(::ItemDescriptor const& itemDescriptor);
 
@@ -37,7 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GiveableTrigger const&);
+    MCAPI void* $ctor(::GiveableTrigger&&);
     // NOLINTEND
 
 public:

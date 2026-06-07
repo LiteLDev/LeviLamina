@@ -17,6 +17,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/core_graphics/ImageBuffer.h"
@@ -34,7 +35,6 @@ class ActorSoundIdentifier;
 class AmbientSoundController;
 class BaseActorRenderContext;
 class Block;
-class BlockActor;
 class BlockSource;
 class ClientFrameUpdateContext;
 class CompoundTag;
@@ -47,11 +47,12 @@ class LevelAnimateTickHelper;
 class LevelRenderer;
 class Matrix;
 class Mob;
-class Options;
+class OptionRegistry;
 class Player;
 class Random;
 class RenderChunkShared;
 class ScreenContext;
+class ServerSoundHandle;
 class SoundMapping;
 class SoundPlayerInterface;
 class Tessellator;
@@ -216,12 +217,13 @@ public:
                 ::Vec3 const&,
                 float,
                 ::Vec3 const&,
-                ::Vec3 const&
+                ::Vec3 const&,
+                bool
             ),
             ::Bedrock::PubSub::ThreadModel::MultiThreaded,
             0>>
                                                                  mOnSoundPlayed;
-    ::ll::TypedStorage<8, 3136, ::ServerGraphicsOverrideManager> mScriptGraphicsOverrideManager;
+    ::ll::TypedStorage<8, 3328, ::ServerGraphicsOverrideManager> mScriptGraphicsOverrideManager;
     // NOLINTEND
 
 public:
@@ -321,9 +323,7 @@ public:
 
     virtual void _releaseRespectiveResources() /*override*/;
 
-    virtual void queueRenderEntities(
-        ::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters
-    ) /*override*/;
+    virtual void queueRenderEntities(::LevelRenderPreRenderUpdateParameters const&) /*override*/;
 
     virtual void renderEntityEffects(::BaseActorRenderContext& renderContext) /*override*/;
     // NOLINTEND
@@ -333,7 +333,7 @@ public:
     // NOLINTBEGIN
     MCAPI LevelRendererPlayer(
         ::IClientInstance&                                           clientInstance,
-        ::std::shared_ptr<::Options>                                 options,
+        ::std::shared_ptr<::OptionRegistry>                          options,
         ::Level&                                                     level,
         ::LevelRenderer&                                             levelRenderer,
         ::WeakEntityRef                                              localUser,
@@ -364,10 +364,6 @@ public:
 
     MCAPI ::SkyRenderObject _extractSky(::ScreenContext& screenContext) const;
 
-    MCAPI ::TextureUVCoordinateSet _getDestructionParticlesTexture(::Block const& block);
-
-    MCAPI ::mce::MaterialPtr const& _getForcedMaterial(::BlockActor const& actor) const;
-
     MCAPI void _onLevelSoundEvent(
         ::SharedTypes::Legacy::LevelSoundEvent eventType,
         ::Vec3 const&                          pos,
@@ -376,7 +372,9 @@ public:
         bool                                   isGlobal
     );
 
-    MCAPI void _playBabySoundEvent(::Sound const& sound, ::Vec3 const& pos, ::Random& rand) const;
+    MCAPI void _playBabySoundEvent(::Sound const& sound, ::Vec3 const& pos, ::Random& rand, bool isLocalPlayer) const;
+
+    MCAPI void _playNamedSound(::HashedString const& name, ::Vec3 const& pos) const;
 
     MCAPI void _renderHighlightSelection(
         ::BaseActorRenderContext& renderContext,
@@ -402,7 +400,7 @@ public:
 
     MCAPI void _spawnSmokeParticles(::ParticleType particleType, ::Vec3 const& pos, int data);
 
-    MCAPI void addDestroyBlock(::BlockPos const& tp, float destroyRate);
+    MCAPI void _updateParticleSystemVisibility();
 
     MCAPI bool blockCanHaveCracksOverlay(::Block const& block) const;
 
@@ -417,6 +415,10 @@ public:
         ::ViewRenderData const&  renderData,
         ::SkyRenderObject const& skyData
     );
+
+    MCAPI bool canRenderNameTags(::Actor const& entity) const;
+
+    MCAPI void clearDestroyProgress();
 
     MCAPI ::CrackRenderObject createCrackRenderObject(
         ::ScreenContext&  screenContext,
@@ -438,17 +440,58 @@ public:
 
     MCAPI float getFovWithoutGameplay() const;
 
-    MCAPI ::DirectionalLightRenderData getSunState() const;
+    MCAPI ::ListenerState const& getListenerState() const;
 
-    MCAPI void playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) const;
+    MCAPI ::Bedrock::PubSub::Connector<void(
+        ::std::string const&,
+        ::std::optional<::std::string>,
+        ::Vec3 const&,
+        float,
+        ::Vec3 const&,
+        ::Vec3 const&,
+        bool
+    )>&
+    getOnSoundPlayedConnector();
+
+    MCAPI ::PlayerRenderingParameters const& getRenderingParameters() const;
+
+    MCAPI ::ServerGraphicsOverrideManager& getScriptGraphicsOverrideManager();
+
+    MCAPI float getUnderWaterVisionScale() const;
+
+    MCAPI void insertFrameParameters();
+
+    MCAPI void playDeferredSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
+
+    MCAPI void playRecord(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
+
+    MCAPI void playSound(
+        ::std::string const&                 name,
+        ::Vec3 const&                        pos,
+        float                                volume,
+        float                                pitch,
+        bool                                 isLocalPlayer,
+        ::std::optional<::ServerSoundHandle> serverSoundHandle
+    ) const;
 
     MCAPI void reinit(::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const& terrainTexture);
 
+    MCAPI void renderHitSelect(
+        ::BaseActorRenderContext& renderContext,
+        ::BlockSource&            region,
+        ::BlockPos const&         pos,
+        bool                      fancyGraphics
+    ) const;
+
     MCAPI void setItemInHandRenderingParameters(::mce::Camera& camera);
+
+    MCAPI void setPlayerRenderChunksPerfCounter(int playerChunkCount);
 
     MCAPI void setupCamera(::mce::Camera& camera, float);
 
     MCAPI void stopMusic();
+
+    MCAPI void stopRecord(::Vec3 const& pos);
 
     MCAPI void stopSound(::std::string const& name);
 
@@ -456,7 +499,11 @@ public:
 
     MCAPI void tickClouds(bool tessellateBothSides, float a);
 
+    MCAPI void tickFov();
+
     MCAPI void tickSkyColor();
+
+    MCAPI void tryReassignSoundEventToVariant(::SharedTypes::Legacy::LevelSoundEvent& eventType, ::Vec3 const& pos);
 
     MCAPI void tryReassignSoundToFallback(
         ::SharedTypes::Legacy::LevelSoundEvent& eventType,
@@ -480,14 +527,16 @@ public:
     // NOLINTBEGIN
     MCAPI static float getActorShadowOffset(::EntityContext const& entity);
 
+    MCAPI static ::Vec3 getActorShadowPosition(::EntityContext const& entity, float alpha);
+
     MCAPI static ::TextureUVCoordinateSet getDestructionParticlesTexture(::IRandom& random, ::Block const& block);
 
     MCAPI static float getNightVisionScale(::Mob const& camera, float a);
 
     MCAPI static void renderCracks(
-        ::ScreenContext&                     screenContext,
-        ::ViewRenderData const&              renderData,
-        ::CrackRenderObjectCollection const& tagCollection
+        ::ScreenContext&        screenContext,
+        ::ViewRenderData const& tagCollection,
+        ::CrackRenderObjectCollection const&
     );
     // NOLINTEND
 
@@ -496,7 +545,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::IClientInstance&                                           clientInstance,
-        ::std::shared_ptr<::Options>                                 options,
+        ::std::shared_ptr<::OptionRegistry>                          options,
         ::Level&                                                     level,
         ::LevelRenderer&                                             levelRenderer,
         ::WeakEntityRef                                              localUser,
@@ -597,7 +646,7 @@ public:
 
     MCAPI void $_releaseRespectiveResources();
 
-    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const&);
 
     MCAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
     // NOLINTEND

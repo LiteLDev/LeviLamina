@@ -30,12 +30,6 @@ public:
     RouterCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RouterCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RouterCommandGroup(::OreUI::ClientDependencies const& client);

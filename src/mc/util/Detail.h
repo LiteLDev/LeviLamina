@@ -5,7 +5,7 @@
 namespace Util::Detail {
 // functions
 // NOLINTBEGIN
-MCNAPI int compareIgnoreCase(char const* lhs, char const* rhs, uint64 size);
+MCNAPI bool isStringPrefixLexicallyNegative(char const* s);
 // NOLINTEND
 
 } // namespace Util::Detail

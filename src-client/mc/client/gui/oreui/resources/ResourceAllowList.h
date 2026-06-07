@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IResourceAllowList.h"
-#include "mc/client/gui/oreui/interface/IResourceHandler.h"
 #include "mc/client/gui/oreui/interface/ProfileImageState.h"
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 #include "mc/client/social/ProfileImageOptions.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
@@ -31,7 +31,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::ResourcePath>>         mPaths;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                 mQRCodeTargets;
     ::ll::TypedStorage<8, 24, ::std::vector<::Social::ProfileImageOptions>> mProfileImages;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::Social::ProfileImageOptions, ::OreUI::IResourceHandler::Status>>
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::Social::ProfileImageOptions, ::Gameface::ResourceHandlerStatus>>
         mProfileImageStatusMap;
     ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mNotifyProfileImageSubscribers;
@@ -56,30 +56,26 @@ public:
 
     virtual void setProfileImageStatus(
         ::Social::ProfileImageOptions const& options,
-        ::OreUI::IResourceHandler::Status    status
+        ::Gameface::ResourceHandlerStatus    status
     ) /*override*/;
 
     virtual ::OreUI::ProfileImageState getProfileImageState(::Social::ProfileImageOptions const& options) /*override*/;
-
-    virtual ~ResourceAllowList() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ResourceAllowList(::Core::Path const& packagePath);
+
+    MCAPI ::std::optional<::std::string> getQRCodeTarget(::std::string const& id) const;
+
+    MCAPI ::std::optional<::OreUI::ResourcePath> getResourcePath(::std::string const& id) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Core::Path const& packagePath);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -94,7 +90,7 @@ public:
     MCAPI ::Bedrock::PubSub::Subscription $addProfileImageStateSubscriber(::std::function<void()> const& callback);
 
     MCAPI void
-    $setProfileImageStatus(::Social::ProfileImageOptions const& options, ::OreUI::IResourceHandler::Status status);
+    $setProfileImageStatus(::Social::ProfileImageOptions const& options, ::Gameface::ResourceHandlerStatus status);
 
     MCAPI ::OreUI::ProfileImageState $getProfileImageState(::Social::ProfileImageOptions const& options);
     // NOLINTEND

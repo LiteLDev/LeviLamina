@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/util/Reference.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::Legacy::Spawn { struct PermuteType; }
+// clang-format on
+
 namespace SharedTypes::v1_21_60::Spawn {
 
 struct PermuteType {
@@ -17,18 +22,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PermuteType(PermuteType const&);
-    PermuteType();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType&&);
-
-    MCFOLD ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType const&);
-
     MCAPI ~PermuteType();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::SharedTypes::v1_21_60::Spawn::PermuteType from(::SharedTypes::Legacy::Spawn::PermuteType const& val);
     // NOLINTEND
 
 public:

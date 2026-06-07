@@ -19,18 +19,26 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    PersonaCharacterHandle(PersonaCharacterHandle const&);
+    PersonaCharacterHandle();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI PersonaCharacterHandle();
+    MCAPI PersonaCharacterHandle(::std::string const& skinName, ::persona::ProfileType type);
+
+    MCFOLD ::std::string const& getSkinName() const;
+
+    MCFOLD ::persona::ProfileType getType() const;
 
     MCAPI void invalidate();
 
-    MCFOLD ::persona::PersonaCharacterHandle& operator=(::persona::PersonaCharacterHandle const&);
+    MCAPI bool isValid() const;
+
+    MCAPI bool operator!=(::persona::PersonaCharacterHandle const& handle) const;
+
+    MCAPI bool operator==(::persona::PersonaCharacterHandle const& handle) const;
 
     MCAPI ~PersonaCharacterHandle();
 #endif
@@ -46,7 +54,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor(::std::string const& skinName, ::persona::ProfileType type);
 #endif
     // NOLINTEND
 

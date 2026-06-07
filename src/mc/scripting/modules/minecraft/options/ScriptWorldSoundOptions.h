@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct PropertyOutOfBoundsError; }
 // clang-format on
@@ -19,8 +20,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptWorldSoundOptions();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptWorldSoundOptions(::ScriptModuleMinecraft::ScriptSoundOptions const& soundOptions);
+
+    MCAPI float getPitch() const;
+
+    MCFOLD float getVolume() const;
+
     MCAPI ::std::optional<::Scripting::PropertyOutOfBoundsError> validate() const;
     // NOLINTEND
 
@@ -28,6 +39,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSoundOptions const& soundOptions);
     // NOLINTEND
 };
 

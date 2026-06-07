@@ -10,8 +10,24 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlayerScoreboardId();
+
+    MCAPI explicit PlayerScoreboardId(int64 actorUniqueId);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::PlayerScoreboardId const& INVALID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+
+    MCFOLD void* $ctor(int64 actorUniqueId);
     // NOLINTEND
 };

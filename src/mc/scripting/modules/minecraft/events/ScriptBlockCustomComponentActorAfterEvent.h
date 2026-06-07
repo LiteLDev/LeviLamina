@@ -6,12 +6,15 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentActorAfterEventIntermediateStorage; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -44,25 +47,34 @@ public:
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEvent const&
     );
 
-    MCAPI ~ScriptBlockCustomComponentActorAfterEvent();
+    MCAPI ScriptBlockCustomComponentActorAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                        scope
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCFOLD static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
+        void>>
+    tryGetComponentsToExecute(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage const& eventData
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEvent const&);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentActorAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                        scope
+    );
     // NOLINTEND
 };
 

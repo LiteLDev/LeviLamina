@@ -7,10 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ScriptModuleStartupEvent;
 namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptCustomCommandRegistry; }
+namespace ScriptModuleMinecraft { class ScriptDimensionRegistry; }
 namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptSpawnRulesRegistry; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -31,6 +34,8 @@ public:
     ::ll::
         TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomCommandRegistry>>
             mCustomCommandRegistry;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionRegistry>>
+        mDimensionRegistry;
     // NOLINTEND
 
 public:
@@ -43,10 +48,13 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptModuleStartupBeforeEvent(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
 
+    MCAPI ScriptModuleStartupBeforeEvent(
+        ::ScriptModuleStartupEvent const&     eventData,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSpawnRulesRegistry>
     _getSpawnRulesRegistry() const;
-
-    MCAPI ~ScriptModuleStartupBeforeEvent();
     // NOLINTEND
 
 public:
@@ -59,12 +67,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::ScriptModuleStartupEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

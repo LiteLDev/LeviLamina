@@ -8,18 +8,19 @@
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/actor/projectile/ProjectileAnchor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class FireAtTargetGoal : public ::Goal {
+class FireAtTargetGoal : public ::BaseGoal {
 public:
     // FireAtTargetGoal inner types declare
     // clang-format off
@@ -47,14 +48,10 @@ public:
         // NOLINTEND
 
     public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI void initialize(::EntityContext& entity, ::FireAtTargetGoal& goal) const;
+
         MCAPI void setOwnerAnchor(int const& value);
 
         MCAPI void setProjectileDefinitionByName(::std::string const& name);
@@ -122,15 +119,31 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FireAtTargetGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit FireAtTargetGoal(::Mob& mob);
+
+    MCAPI bool _isTargetWithinRange(::Vec3 const& targetPosition) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3
-    _getAnchorAndOffsetPosition(::Actor const& actor, ::ProjectileAnchor anchor, ::Vec3 const& offset);
+    MCAPI static ::Vec3 getAnchorAndOffsetPosition(
+        ::Actor const&     actor,
+        ::ProjectileAnchor anchor,
+        ::Vec3 const&      offset,
+        bool               applyRotation
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

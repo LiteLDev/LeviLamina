@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/crypto/asymmetric/system/System.h"
+#include "mc/deps/crypto/hash/HashType.h"
 
 class KeyManager {
 public:
@@ -13,12 +14,20 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkbe6af1;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     KeyManager& operator=(KeyManager const&);
     KeyManager(KeyManager const&);
     KeyManager();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    KeyManager(KeyManager const&);
+    KeyManager();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,6 +40,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI KeyManager(::std::string const& publicKey, ::Crypto::Asymmetric::System system);
+
+    MCNAPI ::std::string getPublicKey() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::KeyManager& operator=(::KeyManager const& rhs);
+#endif
+
+    MCNAPI bool
+    verify(::std::string const& data, ::std::string const& signature, ::Crypto::Hash::HashType hashType) const;
     // NOLINTEND
 
 public:

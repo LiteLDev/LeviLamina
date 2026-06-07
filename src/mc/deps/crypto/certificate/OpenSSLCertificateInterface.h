@@ -29,25 +29,50 @@ public:
     // NOLINTBEGIN
     virtual ~OpenSSLCertificateInterface() /*override*/ = default;
 
+#ifdef LL_PLAT_S
     virtual ::std::string serialize(::Crypto::Certificate::Encoding encoding) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::std::string serialize(::Crypto::Certificate::Encoding) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding encoding) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding encoding) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding) const /*override*/;
+#endif
 
     virtual ::std::string getIssuer() const /*override*/;
 
     virtual bool hasValidCertChain() const /*override*/;
 
+#ifdef LL_PLAT_S
     virtual ::std::string generateCertificateThumbprint(
         ::Crypto::Hash::HashType                hashFunction,
         ::Crypto::Certificate::ThumbprintFormat formatting
     ) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::std::string
+        generateCertificateThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const
+        /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual ::std::string generatePublicKeyThumbprint(
         ::Crypto::Hash::HashType                hashFunction,
         ::Crypto::Certificate::ThumbprintFormat formatting
     ) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::std::string
+        generatePublicKeyThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const
+        /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

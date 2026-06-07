@@ -23,36 +23,14 @@ public:
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnHitBlock;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    WeaponItemComponent& operator=(WeaponItemComponent const&);
-    WeaponItemComponent();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    WeaponItemComponent();
-
-#endif
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~WeaponItemComponent() /*override*/;
-    // NOLINTEND
-
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeaponItemComponent(::WeaponItemComponent&&);
+    MCAPI WeaponItemComponent();
 
     MCAPI WeaponItemComponent(::WeaponItemComponent const&);
 
-    MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent&&);
-
-#ifdef LL_PLAT_C
     MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
-#endif
     // NOLINTEND
 
 public:
@@ -70,15 +48,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WeaponItemComponent&&);
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::WeaponItemComponent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

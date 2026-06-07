@@ -30,8 +30,26 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     virtual int getFilteredStringIndex() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ItemStackRequestActionCraftRecipeOptional() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ItemStackRequestActionCraftRecipeOptional();
+
+#ifdef LL_PLAT_C
+    MCNAPI ItemStackRequestActionCraftRecipeOptional(::RecipeNetId const& recipeNetId, int filteredStringIndex);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::RecipeNetId const& recipeNetId, int filteredStringIndex);
+#endif
     // NOLINTEND
 
 public:

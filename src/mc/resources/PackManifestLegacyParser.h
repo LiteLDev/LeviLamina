@@ -38,7 +38,7 @@ public:
         ::std::vector<::std::string>    errorPath,
         ::PackManifest&                 manifest,
         ::PackReport&                   report,
-        bool                            allowWarnings
+        bool
     );
 
     MCNAPI static void parseDependencies(
@@ -55,7 +55,7 @@ public:
         ::std::vector<::std::string>& errorPath,
         ::PackManifest&               manifest,
         ::PackReport&                 report,
-        bool                          allowWarnings
+        bool
     );
 
     MCNAPI static ::Json::Value parseHeader(
@@ -87,7 +87,7 @@ public:
         ::std::vector<::std::string>& errorPath,
         ::PackManifest&               manifest,
         ::PackReport&                 report,
-        bool                          allowWarnings
+        bool
     );
 
     MCNAPI static void parseModules(

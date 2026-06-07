@@ -24,13 +24,6 @@ public:
     ScriptDataStoreModalToolActivationChangedEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&
-    operator=(::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();

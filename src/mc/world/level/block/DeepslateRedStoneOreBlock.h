@@ -17,6 +17,10 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class DeepslateRedStoneOreBlock : public ::RedStoneOreBlock {
 public:
+    // prevent constructor by default
+    DeepslateRedStoneOreBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
@@ -24,8 +28,18 @@ public:
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void _unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const /*override*/;
+    // NOLINTEND
 
-    virtual ~DeepslateRedStoneOreBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DeepslateRedStoneOreBlock(::std::string const& nameId, int id, bool lit);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
     // NOLINTEND
 
 public:

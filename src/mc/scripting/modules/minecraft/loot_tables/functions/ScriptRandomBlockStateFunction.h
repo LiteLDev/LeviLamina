@@ -31,14 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootItemFunction const& _getFunction() const /*override*/;
-
-    virtual ~ScriptRandomBlockStateFunction() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::string getBlockState() const;
     // NOLINTEND
 
 public:

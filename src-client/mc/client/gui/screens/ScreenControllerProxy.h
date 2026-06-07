@@ -18,11 +18,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScreenControllerProxy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScreenControllerProxy();
 
     virtual ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ScreenControllerProxy(::ScreenControllerProxyType type);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScreenControllerProxyType type);
     // NOLINTEND
 
 public:

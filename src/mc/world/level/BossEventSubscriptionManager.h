@@ -38,8 +38,6 @@ public:
     broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet) = 0;
 
     virtual bool areBossEventSubscribersReady() const = 0;
-
-    virtual ~BossEventSubscriptionManager() /*override*/ = default;
     // NOLINTEND
 
 public:

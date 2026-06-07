@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 // clang-format on
 
-class RiverFollowingGoal : public ::Goal {
+class RiverFollowingGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,14 +41,20 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~RiverFollowingGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RiverFollowingGoal(::Mob& mob, float lookAhead, float speed);
+
     MCAPI void determineSteerDirection();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float lookAhead, float speed);
     // NOLINTEND
 
 public:

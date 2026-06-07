@@ -25,9 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&
-    operator=(::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&&);
-
     MCNAPI ~ScriptCurrentThemeChangeAfterEvent();
     // NOLINTEND
 

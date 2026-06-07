@@ -44,8 +44,18 @@ public:
         ::RenderParams&                                   renderParams,
         ::std::chrono::nanoseconds const&                 dt
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~ParticleMotionParametricComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ParticleMotionParametricComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -7,12 +7,6 @@
 
 class UseActorDefinition : public ::BehaviorDefinition {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~UseActorDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

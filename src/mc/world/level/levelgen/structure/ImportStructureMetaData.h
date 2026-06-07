@@ -12,34 +12,27 @@ class StructureTemplate;
 
 struct ImportStructureMetaData : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // member variables
-    // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_C
     ::ll::TypedStorage<1, 1, bool>                                                             mIsDirty;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, bool>>                       mNewStructuresDirty;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructureTemplate const*>> mNewStructureTemplates;
-    // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ImportStructureMetaData() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ImportStructureMetaData() /*override*/;
 #endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void insertStructure(::std::string const& name, ::StructureTemplate const& temp);
+#endif
+
+    MCAPI bool const isSpecificStructureDirty(::std::string const& name);
+
+    MCAPI void setSpecificStructureDirty(::std::string const& name, bool dirty);
     // NOLINTEND
 
 public:

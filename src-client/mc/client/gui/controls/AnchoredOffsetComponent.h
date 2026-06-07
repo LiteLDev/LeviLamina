@@ -19,6 +19,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AnchoredOffsetComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~AnchoredOffsetComponent() /*override*/ = default;
@@ -31,7 +35,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit AnchoredOffsetComponent(::UIControl& owner);
+
     MCAPI void updateLayoutFromPropertyValue();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

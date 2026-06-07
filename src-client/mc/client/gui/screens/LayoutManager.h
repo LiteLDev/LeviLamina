@@ -24,10 +24,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag _update(::VisualTree& visualTree, ::UIControl const* currentFocusedControl);
+    MCAPI LayoutManager();
+
+    MCAPI ::ui::DirtyFlag _update(::VisualTree& visualTree, ::UIControl const*);
+
+    MCAPI void addDelayedLayout(::UIControl& control);
+
+    MCFOLD bool hasDelayedLayout();
 
     MCAPI void processDelayedLayout();
 
+    MCAPI void setSize(::glm::vec2 const& size);
+
     MCAPI ::ui::DirtyFlag update(::VisualTree& visualTree, ::UIControl const* currentFocusedControl);
+
+    MCAPI ~LayoutManager();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

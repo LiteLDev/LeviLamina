@@ -19,9 +19,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockPlacementCondition();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockPlacementCondition(
+        ::BlockPlacementDirectionalFilter filterMask,
+        ::std::vector<::BlockDescriptor>  blockDescriptors
+    );
+
     MCAPI ~BlockPlacementCondition();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPlacementDirectionalFilter filterMask, ::std::vector<::BlockDescriptor> blockDescriptors);
     // NOLINTEND
 
 public:

@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientCameraAimAssistPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -63,31 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ClientCameraAimAssistPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ClientCameraAimAssistPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ClientCameraAimAssistPacket();
+
+#ifdef LL_PLAT_C
     MCAPI explicit ClientCameraAimAssistPacket(::ClientCameraAimAssistPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientCameraAimAssistPacketPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ClientCameraAimAssistPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

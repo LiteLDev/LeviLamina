@@ -26,21 +26,16 @@ public:
 public:
     // prevent constructor by default
     SemVersionConstraint& operator=(SemVersionConstraint const&);
-    SemVersionConstraint(SemVersionConstraint const&);
     SemVersionConstraint();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SemVersionConstraint() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SemVersionConstraint(::SharedTypes::SemVersionConstraint&&);
+    MCAPI SemVersionConstraint(::SharedTypes::SemVersionConstraint const&);
 
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
+
+    MCAPI ::SharedTypes::SemVersionConstraint& range(::SemVersion const& min, ::SemVersion const& max);
 
     MCAPI void validateValue(::SemVersion const& vers, ::cereal::SerializerContext& context) const;
     // NOLINTEND
@@ -48,13 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::SemVersionConstraint&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SharedTypes::SemVersionConstraint const&);
     // NOLINTEND
 
 public:

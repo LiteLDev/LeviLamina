@@ -24,16 +24,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TrialModeFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~TrialModeFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TrialModeFacet(::Bedrock::NotNullNonOwnerPtr<::TrialManager> trialManager);
+
     MCFOLD ::std::optional<::OreUI::PurchaseGameError> const& getPurchaseGameError() const;
 
     MCAPI void purchaseGame(::TrialUpgradePurchaseTier tier);
@@ -43,6 +47,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::TrialManager> trialManager);
     // NOLINTEND
 
 public:

@@ -14,22 +14,23 @@ public:
     ::ll::TypedStorage<8, 112, ::BlockComponentGroupDescription> mComponents;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
-    BlockPermutationDescription(BlockPermutationDescription const&);
+    BlockPermutationDescription& operator=(BlockPermutationDescription const&);
     BlockPermutationDescription();
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::BlockPermutationDescription& operator=(::BlockPermutationDescription const&);
-#endif
+    MCAPI BlockPermutationDescription(::BlockPermutationDescription const&);
 
     MCAPI ~BlockPermutationDescription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPermutationDescription const&);
     // NOLINTEND
 
 public:

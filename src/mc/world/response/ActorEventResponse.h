@@ -25,7 +25,7 @@ public:
 
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
+                                               root,
         ::Factory<::ActorEventResponse> const& factory
     ) const;
     // NOLINTEND
@@ -33,20 +33,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
 
-    MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
-        ::Factory<::ActorEventResponse> const& factory
-    ) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

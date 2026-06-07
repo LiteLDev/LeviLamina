@@ -28,22 +28,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
+    virtual int getAvailableSetCount(int, ::ItemStackBase const&) const /*override*/;
 
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
     virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const&,
-        int const              slot,
-        ::ItemStackBase const& item,
-        int const              amount,
+        ::ContainerScreenContext const& slot,
+        int const                       item,
+        ::ItemStackBase const&          amount,
+        int const,
         bool
     ) const /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
-        /*override*/;
-
-    virtual ~HorseEquipContainerValidation() /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -59,27 +56,21 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
+    MCFOLD int $getAvailableSetCount(int, ::ItemStackBase const&) const;
 
     MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
     MCAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const&,
-        int const              slot,
-        ::ItemStackBase const& item,
-        int const              amount,
+        ::ContainerScreenContext const& slot,
+        int const                       item,
+        ::ItemStackBase const&          amount,
+        int const,
         bool
     ) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const&) const;
 
 
     // NOLINTEND

@@ -19,17 +19,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlanksBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
+    // NOLINTEND
 
-    virtual ~PlanksBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlanksBlock(::std::string const& nameId, int id, ::WoodType woodType);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::array<::std::string, 10> const& WOOD_NAMES();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::WoodType woodType);
     // NOLINTEND
 
 public:

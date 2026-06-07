@@ -62,6 +62,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UIAnimationController();
+
+    MCAPI ::std::weak_ptr<::UIControl> _getWeakFromPtr(::UIControl* control);
+
     MCAPI bool _tick(
         ::std::vector<::UIAnimationController::AnimationUIControlFunctionCallback>& animationList,
         ::mce::TimeStep const&                                                      timeStep,
@@ -69,6 +73,12 @@ public:
     );
 
     MCAPI ~UIAnimationController();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

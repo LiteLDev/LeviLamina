@@ -57,6 +57,8 @@ public:
 
     MCAPI ::SpawnClimateFinder::ResultDetails _findSpawnPositionDetailedResult() const;
 
+    MCAPI ::BlockPos findSpawnPosition() const;
+
     MCAPI ~SpawnClimateFinder();
     // NOLINTEND
 
@@ -73,6 +75,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -21,18 +21,6 @@ public:
     MutexScope& operator=(MutexScope const&);
     MutexScope(MutexScope const&);
     MutexScope();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MutexScope();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace bx

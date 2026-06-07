@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/ViewId.h"
+#include "mc/common/SubClientId.h"
 
 namespace OreUI {
 
@@ -28,6 +29,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 96, ::std::array<::std::vector<::OreUI::ViewsCacheRegistry::CachedView>, 4>> mCachedViews;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void add(::SubClientId subClientId, ::OreUI::ViewId viewId, ::std::string_view url);
+
+    MCAPI void clearForSubClient(::SubClientId subClientId);
     // NOLINTEND
 };
 

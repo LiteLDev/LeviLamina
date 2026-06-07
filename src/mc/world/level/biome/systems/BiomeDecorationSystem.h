@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
+class BiomeRegistry;
 class BlockSource;
 class BlockVolumeTarget;
 class ChunkPos;
@@ -20,6 +21,17 @@ struct BiomeDecorationFeature;
 namespace BiomeDecorationSystem {
 // functions
 // NOLINTBEGIN
+MCAPI void consolidateDecorationFeatures(::BiomeRegistry& registry);
+
+MCAPI bool decorate(
+    ::LevelChunk&                         lc,
+    ::BlockSource&                        source,
+    ::Random&                             random,
+    ::gsl::span<::BiomeDecorationFeature> featureList,
+    ::std::string const&                  pass,
+    ::IPreliminarySurfaceProvider const&  preliminarySurfaceProvider
+);
+
 MCAPI void decorate(
     ::LevelChunk&                                lc,
     ::BlockSource&                               source,

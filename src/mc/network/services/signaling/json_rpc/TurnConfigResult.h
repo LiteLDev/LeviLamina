@@ -29,16 +29,29 @@ public:
 
     public:
         // prevent constructor by default
-        TurnAuthServer(TurnAuthServer const&);
+        TurnAuthServer& operator=(TurnAuthServer const&);
         TurnAuthServer();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI TurnAuthServer(::JsonRpc::TurnConfigResult::TurnAuthServer const&);
+
         MCNAPI ::JsonRpc::TurnConfigResult::TurnAuthServer& operator=(::JsonRpc::TurnConfigResult::TurnAuthServer&&);
 
-        MCNAPI ::JsonRpc::TurnConfigResult::TurnAuthServer&
-        operator=(::JsonRpc::TurnConfigResult::TurnAuthServer const&);
+        MCNAPI ~TurnAuthServer();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::JsonRpc::TurnConfigResult::TurnAuthServer const&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

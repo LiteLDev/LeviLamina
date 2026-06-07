@@ -17,8 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick() /*override*/;
-
-    virtual ~RotateState() /*override*/ = default;
     // NOLINTEND
 
 public:

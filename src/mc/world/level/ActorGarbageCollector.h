@@ -21,7 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void clearChunkDiscardedEntities();
+
+    MCFOLD void clearPendingEntities();
+
+#ifdef LL_PLAT_C
     MCAPI void garbageCollectEntity(::OwnerPtr<::EntityContext> entity);
+#endif
 
     MCAPI void update();
 

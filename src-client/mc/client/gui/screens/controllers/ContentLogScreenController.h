@@ -21,8 +21,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
-
-    virtual ~ContentLogScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

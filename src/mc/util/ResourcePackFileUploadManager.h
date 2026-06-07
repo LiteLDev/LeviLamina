@@ -13,7 +13,10 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+class FileArchiver;
+class IFileChunkUploader;
 class ResourceLocation;
+class TaskGroup;
 namespace Core { class Path; }
 namespace Core { class PathView; }
 namespace Core::ZipUtils { class IZipUtility; }
@@ -56,13 +59,32 @@ public:
 
     virtual void
     uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex) /*override*/;
-
-    virtual ~ResourcePackFileUploadManager() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResourcePackFileUploadManager(
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>               appPlatform,
+        ::TaskGroup&                                               taskGroup,
+        ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
+        ::std::unique_ptr<::Core::ZipUtils::IZipUtility>&&         zipUtility,
+        ::std::shared_ptr<::Bedrock::Threading::SharedAsync<void>> previousUpload,
+        ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI ResourcePackFileUploadManager(
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>               appPlatform,
+        ::TaskGroup&                                               taskGroup,
+        ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const&       FileArchiver,
+        ::std::unique_ptr<::Core::ZipUtils::IZipUtility>&&         zipUtility,
+        ::std::shared_ptr<::Bedrock::Threading::SharedAsync<void>> previousUpload,
+        ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
+    );
+#endif
+
     MCAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
 
     MCAPI void _archiveAndUploadPackToRealmStorage(
@@ -109,9 +131,28 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>               appPlatform,
+        ::TaskGroup&                                               taskGroup,
+        ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
+        ::std::unique_ptr<::Core::ZipUtils::IZipUtility>&&         zipUtility,
+        ::std::shared_ptr<::Bedrock::Threading::SharedAsync<void>> previousUpload,
+        ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>               appPlatform,
+        ::TaskGroup&                                               taskGroup,
+        ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const&       FileArchiver,
+        ::std::unique_ptr<::Core::ZipUtils::IZipUtility>&&         zipUtility,
+        ::std::shared_ptr<::Bedrock::Threading::SharedAsync<void>> previousUpload,
+        ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
+    );
+#endif
     // NOLINTEND
 
 public:

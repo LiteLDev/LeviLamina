@@ -384,6 +384,8 @@ MCAPI ::HashedString const& ChippedAnvil();
 
 MCAPI ::HashedString const& ChiseledBookshelf();
 
+MCAPI ::HashedString const& ChiseledCinnabar();
+
 MCAPI ::HashedString const& ChiseledCopper();
 
 MCAPI ::HashedString const& ChiseledDeepslate();
@@ -402,6 +404,8 @@ MCAPI ::HashedString const& ChiseledSandstone();
 
 MCAPI ::HashedString const& ChiseledStoneBricks();
 
+MCAPI ::HashedString const& ChiseledSulfur();
+
 MCAPI ::HashedString const& ChiseledTuff();
 
 MCAPI ::HashedString const& ChiseledTuffBricks();
@@ -409,6 +413,26 @@ MCAPI ::HashedString const& ChiseledTuffBricks();
 MCAPI ::HashedString const& ChorusFlower();
 
 MCAPI ::HashedString const& ChorusPlant();
+
+MCAPI ::HashedString const& Cinnabar();
+
+MCAPI ::HashedString const& CinnabarBrickDoubleSlab();
+
+MCAPI ::HashedString const& CinnabarBrickSlab();
+
+MCAPI ::HashedString const& CinnabarBrickStairs();
+
+MCAPI ::HashedString const& CinnabarBrickWall();
+
+MCAPI ::HashedString const& CinnabarBricks();
+
+MCAPI ::HashedString const& CinnabarDoubleSlab();
+
+MCAPI ::HashedString const& CinnabarSlab();
+
+MCAPI ::HashedString const& CinnabarStairs();
+
+MCAPI ::HashedString const& CinnabarWall();
 
 MCAPI ::HashedString const& Clay();
 
@@ -1626,6 +1650,16 @@ MCAPI ::HashedString const& PolishedBlackstoneStairs();
 
 MCAPI ::HashedString const& PolishedBlackstoneWall();
 
+MCAPI ::HashedString const& PolishedCinnabar();
+
+MCAPI ::HashedString const& PolishedCinnabarDoubleSlab();
+
+MCAPI ::HashedString const& PolishedCinnabarSlab();
+
+MCAPI ::HashedString const& PolishedCinnabarStairs();
+
+MCAPI ::HashedString const& PolishedCinnabarWall();
+
 MCAPI ::HashedString const& PolishedDeepslate();
 
 MCAPI ::HashedString const& PolishedDeepslateDoubleSlab();
@@ -1652,6 +1686,16 @@ MCAPI ::HashedString const& PolishedGraniteSlab();
 
 MCAPI ::HashedString const& PolishedGraniteStairs();
 
+MCAPI ::HashedString const& PolishedSulfur();
+
+MCAPI ::HashedString const& PolishedSulfurDoubleSlab();
+
+MCAPI ::HashedString const& PolishedSulfurSlab();
+
+MCAPI ::HashedString const& PolishedSulfurStairs();
+
+MCAPI ::HashedString const& PolishedSulfurWall();
+
 MCAPI ::HashedString const& PolishedTuff();
 
 MCAPI ::HashedString const& PolishedTuffDoubleSlab();
@@ -1667,6 +1711,8 @@ MCAPI ::HashedString const& Poppy();
 MCAPI ::HashedString const& Portal();
 
 MCAPI ::HashedString const& Potatoes();
+
+MCAPI ::HashedString const& PotentSulfur();
 
 MCAPI ::HashedString const& PowderSnow();
 
@@ -2055,6 +2101,26 @@ MCAPI ::HashedString const& StrippedWarpedStem();
 MCAPI ::HashedString const& StructureBlock();
 
 MCAPI ::HashedString const& StructureVoid();
+
+MCAPI ::HashedString const& Sulfur();
+
+MCAPI ::HashedString const& SulfurBrickDoubleSlab();
+
+MCAPI ::HashedString const& SulfurBrickSlab();
+
+MCAPI ::HashedString const& SulfurBrickStairs();
+
+MCAPI ::HashedString const& SulfurBrickWall();
+
+MCAPI ::HashedString const& SulfurBricks();
+
+MCAPI ::HashedString const& SulfurDoubleSlab();
+
+MCAPI ::HashedString const& SulfurSlab();
+
+MCAPI ::HashedString const& SulfurStairs();
+
+MCAPI ::HashedString const& SulfurWall();
 
 MCAPI ::HashedString const& Sunflower();
 

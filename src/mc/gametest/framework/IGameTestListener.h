@@ -21,7 +21,11 @@ public:
 
     virtual void onTestFailed(::gametest::BaseGameTestInstance& test);
 
+#ifdef LL_PLAT_S
+    virtual void onTestStarted(::gametest::BaseGameTestInstance& testInstance);
+#else // LL_PLAT_C
     virtual void onTestStarted(::gametest::BaseGameTestInstance&);
+#endif
 
     virtual void onTestRetryStarted(::gametest::BaseGameTestInstance&);
 
@@ -37,7 +41,7 @@ public:
 
     MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& test);
 
-    MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance& testInstance);
 
     MCNAPI void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
 

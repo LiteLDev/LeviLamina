@@ -23,17 +23,32 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructurePoolBlockPredicateAlwaysTrueExcept();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
-    virtual bool test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const /*override*/;
+    virtual bool test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const /*override*/;
 
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+    // NOLINTEND
 
-    virtual ~StructurePoolBlockPredicateAlwaysTrueExcept() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI
+    StructurePoolBlockPredicateAlwaysTrueExcept(::std::set<::Block const*> const& cannotReplace, float probability);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::set<::Block const*> const& cannotReplace, float probability);
     // NOLINTEND
 
 public:
@@ -41,7 +56,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $test(::Block const& block, ::IRandom& random) const;
 
-    MCFOLD bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const;
+    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const;
 
     MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerCommunicationInterface;
 class ServerInstance;
 // clang-format on
 
@@ -52,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerMetricsImpl() /*override*/ = default;
+    virtual ~ServerMetricsImpl() /*override*/;
 
     virtual void sendPeriodicMetrics(::ServerInstance& serverInstance) /*override*/;
 
@@ -64,7 +65,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ServerMetricsImpl(::ServerCommunicationInterface* serverCommunicationInterface);
+
     MCNAPI void sendPeriodicMetricsInternal(::ServerInstance& serverInstance);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ServerCommunicationInterface* serverCommunicationInterface);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

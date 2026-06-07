@@ -23,9 +23,9 @@ class IConstBlockSource;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorInWallDetectionComponent;
+struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct GetAttachPositionViews;
-struct InterpolateMovementNeededComponent;
 struct MobFlagComponent;
 struct MobIsSuffocatingFlagComponent;
 struct OffsetsComponent;
@@ -40,7 +40,7 @@ struct VehicleComponent;
 
 class MobSuffocationSystemImpl
 : public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<::MobFlagComponent, ::InterpolateMovementNeededComponent, ::PlayerComponent, ::PassengerComponent>,
+      ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
       ::Read<
           ::StateVectorComponent,
           ::AABBShapeComponent,
@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::MobFlagComponent, ::InterpolateMovementNeededComponent, ::PlayerComponent, ::PassengerComponent>,
+            ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
             ::Read<
                 ::StateVectorComponent,
                 ::AABBShapeComponent,
@@ -76,18 +76,11 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
-
-    virtual ~MobSuffocationSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _hasPlayerPassenger(
-        ::Optional<::VehicleComponent const> optionalVehicleComponent,
-        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers
-    );
-
     MCAPI static bool _isShulkerInWall(
         ::StateVectorComponent const&      stateVectorComponent,
         ::AABBShapeComponent const&        aabbShapeComponent,
@@ -109,17 +102,6 @@ public:
         ::EntityModifier<::MobIsSuffocatingFlagComponent>                                         modifier,
         ::IConstBlockSource const&                                                                region
     );
-
-    MCAPI static bool isInWall(
-        ::StrictEntityContext const&           entity,
-        ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,
-        ::StateVectorComponent const&          stateVectorComponent,
-        ::AABBShapeComponent const&            aabbShapeComponent,
-        ::SynchedActorDataComponent const&     synchedActorDataComponent,
-        ::OffsetsComponent const&              offsetsComponent,
-        ::GetAttachPositionViews const&        views,
-        ::IConstBlockSource const&             region
-    );
     // NOLINTEND
 
 public:
@@ -127,7 +109,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(
         ::StrictExecutionContext<
-            ::Filter<::MobFlagComponent, ::InterpolateMovementNeededComponent, ::PlayerComponent, ::PassengerComponent>,
+            ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
             ::Read<
                 ::StateVectorComponent,
                 ::AABBShapeComponent,

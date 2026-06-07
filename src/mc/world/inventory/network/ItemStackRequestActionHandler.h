@@ -72,20 +72,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName containerName, ::Container& container);
-
-        MCAPI ~PlayerLegacyRequestSlotIdAssignment();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::ContainerEnumName containerName, ::Container& container);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -130,25 +122,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ScreenData& operator=(ScreenData const&);
-        ScreenData(ScreenData const&);
-        ScreenData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ScreenData(::ItemStackRequestActionHandler::ScreenData&&);
-
-        MCAPI ::ItemStackRequestActionHandler::ScreenData& operator=(::ItemStackRequestActionHandler::ScreenData&&);
-
         MCAPI ~ScreenData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ItemStackRequestActionHandler::ScreenData&&);
         // NOLINTEND
 
     public:
@@ -224,6 +200,8 @@ public:
 
     MCAPI void _initScreen(::ItemStackNetManagerScreen& screen);
 
+    MCAPI void _initScreenValidation();
+
     MCAPI ::std::optional<::ItemStackRequestActionHandler::RequestSlotIdAssignment> _resolveSlotIdAssignment(
         ::ItemStackRequestSlotInfo const& requestSlotInfo,
         ::ContainerRuntimeId const&       containerRuntimeId
@@ -232,7 +210,9 @@ public:
     MCAPI ::ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
 
     MCAPI ::ItemStackRequestHandlerSlotInfo
-    _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
+    _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool);
+
+    MCAPI void addFilteredStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> filteredStrings);
 
     MCAPI void addStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> strings);
 
@@ -243,17 +223,39 @@ public:
 
     MCAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
 
+    MCFOLD ::ItemStackRequestId const& getRequestId() const;
+
+    MCAPI ::ContainerScreenContext const& getScreenContext() const;
+
     MCAPI ::std::vector<::std::string> const& getStrings(::ItemStackRequestId requestId) const;
 
     MCAPI ::ItemStackNetResult handleRequestAction(::ItemStackRequestAction const& requestAction);
 
+    MCAPI bool hasFilteredStrings(::ItemStackRequestId requestId) const;
+
+    MCAPI bool isValidationCraftingImplemented();
+
+    MCAPI void normalTick();
+
+    MCAPI void removeFilteredStrings(::ItemStackRequestId requestId);
+
+    MCAPI void removeStrings(::ItemStackRequestId requestId);
+
     MCAPI ::std::vector<::ItemInstance>
     tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar numCrafts);
+
+    MCAPI ~ItemStackRequestActionHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

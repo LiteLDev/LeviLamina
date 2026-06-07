@@ -16,7 +16,7 @@ public:
 
     virtual void fireRedoEvent(::std::string const& transactionName) = 0;
 
-    virtual void fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers) = 0;
+    virtual void fireEditorKeybindUpdate(::std::string const&, int const, int const) = 0;
 
     virtual void fireEditorScriptEvent(
         ::std::string const& source,

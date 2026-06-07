@@ -31,7 +31,7 @@ public:
     ::ll::UntypedStorage<1, 2>  mUnk5d76c0;
     ::ll::UntypedStorage<4, 8>  mUnk826998;
     ::ll::UntypedStorage<1, 2>  mUnk69a81c;
-    ::ll::UntypedStorage<4, 8>  mUnk13db3f;
+    ::ll::UntypedStorage<4, 8>  mUnk54fea8;
     // NOLINTEND
 
 public:
@@ -39,12 +39,6 @@ public:
     WidgetStateChangePayload& operator=(WidgetStateChangePayload const&);
     WidgetStateChangePayload(WidgetStateChangePayload const&);
     WidgetStateChangePayload();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~WidgetStateChangePayload() /*override*/ = default;
-    // NOLINTEND
 
 public:
     // static functions

@@ -36,14 +36,7 @@ public:
 
     MCAPI uint _findOrInsertPlacementIndex(::StructureBlockPlacementInfo const& info);
 
-    MCAPI void _handleBlockPostPlacedStructure(
-        ::BlockSource&    region,
-        ::BlockPos const& localPosition,
-        ::BlockPos const& worldPosition,
-        ::Rotation        rotation
-    );
-
-    MCAPI void _setBlockPlacementInfo(::BlockPos const& pos, ::StructureBlockPlacementInfo const& info);
+    MCAPI ::StructureBlockPlacementInfo const& getBlockPlacementInfo(::BlockPos const& pos) const;
 
     MCAPI ::StructurePlacementNeighbors getNeighbors(::BlockPos const& relativePos, ::Rotation rotation);
 
@@ -71,6 +64,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

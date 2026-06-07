@@ -26,14 +26,11 @@ public:
 public:
     // prevent constructor by default
     BiomeDecorationFeature& operator=(BiomeDecorationFeature const&);
+    BiomeDecorationFeature();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeDecorationFeature();
-
-    MCAPI BiomeDecorationFeature(::BiomeDecorationFeature&&);
-
     MCAPI BiomeDecorationFeature(::BiomeDecorationFeature const&);
 
     MCAPI ~BiomeDecorationFeature();
@@ -42,10 +39,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BiomeDecorationFeature&&);
-
     MCAPI void* $ctor(::BiomeDecorationFeature const&);
     // NOLINTEND
 

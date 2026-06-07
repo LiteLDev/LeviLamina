@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MangroveTreeRoots() /*override*/ = default;
+    virtual ~MangroveTreeRoots() /*override*/;
 
     virtual ::std::optional<::BlockPos> placeRoots(
         ::IBlockWorldGenAPI& target,
@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canPlaceRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
+    MCAPI MangroveTreeRoots();
 
     MCAPI void _placeRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random) const;
 
@@ -69,6 +69,18 @@ public:
         int                             layer,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

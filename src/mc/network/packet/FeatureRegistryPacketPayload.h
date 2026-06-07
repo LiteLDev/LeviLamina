@@ -13,16 +13,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FeatureRegistryPacketPayload& operator=(FeatureRegistryPacketPayload const&);
-    FeatureRegistryPacketPayload(FeatureRegistryPacketPayload const&);
-    FeatureRegistryPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::FeatureRegistryPacketPayload& operator=(::FeatureRegistryPacketPayload&&);
-
     MCAPI ~FeatureRegistryPacketPayload();
     // NOLINTEND
 

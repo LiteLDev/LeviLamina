@@ -6,9 +6,13 @@ namespace Social {
 
 struct EduAddServerResponse {
 public:
-    // member variables
-    // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<1, 72> mUnk95caf4;
+#else // LL_PLAT_C
     ::ll::UntypedStorage<8, 72> mUnk95caf4;
+#endif
     // NOLINTEND
 
 public:

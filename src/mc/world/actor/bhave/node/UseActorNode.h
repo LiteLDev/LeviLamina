@@ -24,8 +24,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~UseActorNode() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI UseActorNode();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

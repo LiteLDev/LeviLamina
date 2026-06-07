@@ -24,15 +24,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBiomeFilter& operator=(ScriptBiomeFilter const&);
+    ScriptBiomeFilter();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::vector<::std::string>> getExcludeBiomes() const;
+    MCAPI ScriptBiomeFilter(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
 
-    MCAPI ::std::optional<::std::vector<::std::string>> getExcludeTags() const;
-
-    MCAPI ::std::optional<::std::vector<::std::string>> getIncludeBiomes() const;
-
-    MCAPI ::std::optional<::std::vector<::std::string>> getIncludeTags() const;
+    MCAPI bool isEmpty() const;
 
     MCFOLD void
     setBiomes(::std::vector<::std::string>& biomeContainer, ::std::optional<::std::vector<::std::string>> biomes);
@@ -46,12 +47,26 @@ public:
     MCAPI void setIncludeTags(::std::optional<::std::vector<::std::string>> tags);
 
     MCFOLD void setTags(::std::vector<::std::string>& tagContainer, ::std::optional<::std::vector<::std::string>> tags);
+
+    MCAPI ~ScriptBiomeFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBiomeFilter const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

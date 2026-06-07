@@ -12,7 +12,7 @@ class ChunkBuildOrderPolicyBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChunkBuildOrderPolicyBase();
+    virtual ~ChunkBuildOrderPolicyBase() = default;
 
     virtual int getChunkRebuildPriority(::ChunkPos const& cp) const = 0;
 
@@ -36,22 +36,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD uint $registerForUpdates();
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

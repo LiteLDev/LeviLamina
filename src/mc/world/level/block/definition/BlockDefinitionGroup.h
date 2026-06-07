@@ -51,7 +51,7 @@ public:
         ::ll::TypedStorage<8, 24, ::SemVersion>        mFormatVersion;
         ::ll::TypedStorage<8, 32, ::MinEngineVersion>  mMinEngineVersion;
         ::ll::TypedStorage<8, 24, ::SemVersion>        mOriginalJsonVersion;
-        ::ll::TypedStorage<8, 192, ::BlockDescription> mDescription;
+        ::ll::TypedStorage<8, 224, ::BlockDescription> mDescription;
         ::ll::TypedStorage<1, 1, ::JsonBetaState>      mIsBeta;
         ::ll::TypedStorage<8, 32, ::std::string>       mResourcePackLocation;
         ::ll::TypedStorage<8, 32, ::std::string>       mResourceFileLocation;
@@ -61,7 +61,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI BlockResource();
+
         MCAPI ~BlockResource();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -99,8 +107,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
-
-    MCAPI void _applyBlockStates(::BlockType* block, ::BlockDefinition const& definition);
 
     MCAPI void _buildBlockDescriptionSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
@@ -168,6 +174,13 @@ public:
     MCAPI ::std::unique_ptr<::BlockDefinition>
     generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::PackLoadContext& packLoadContext);
 
+    MCAPI bool generateBlockResource(
+        ::Json::Value const&                   root,
+        ::PackLoadContext const&               packLoadContext,
+        ::SemVersion const&                    originalJsonVersion,
+        ::BlockDefinitionGroup::BlockResource& out
+    );
+
     MCAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
 
     MCAPI ::std::vector<::BlockDefinition const*> getBlockDefinitions() const;
@@ -177,6 +190,8 @@ public:
     MCAPI void initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition);
 
     MCAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
+
+    MCAPI void initializeBlocks(::Level& level);
 
     MCAPI ::std::unique_ptr<::BlockDefinition> loadResource(
         ::std::string                            upgradedJsonData,
@@ -193,9 +208,13 @@ public:
 
     MCAPI void registerBlockDefinition(::std::unique_ptr<::BlockDefinition> blockDef);
 
-    MCAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool assertIfAlreadyExists);
+    MCAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool);
+
+    MCAPI void registerBlocks();
 
     MCAPI ::WeakPtr<::BlockType> registerDataDrivenBlock(::BlockDescription const& desc);
+
+    MCAPI ::BlockDefinition const* tryGetBlockDefinition(::std::string const& name) const;
 
     MCAPI ~BlockDefinitionGroup();
     // NOLINTEND

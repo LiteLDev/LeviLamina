@@ -18,13 +18,13 @@ struct ActorDataFlagComponent;
 struct ActorRotationComponent;
 struct DashActionComponent;
 struct DashCooldownTimerComponent;
-struct DashJumpFlagComponent;
 struct JumpPendingScaleComponent;
 struct JumpPreventionResult;
 struct MobEffectsComponent;
 struct MovementAttributesComponent;
 struct PlayerComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 struct TriggerJumpRequestComponent;
 struct VehicleComponent;
 // clang-format on
@@ -32,25 +32,15 @@ struct VehicleComponent;
 namespace DashActionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickApplyDashModifierSystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::DashJumpFlagComponent>,
-        ::TriggerJumpRequestComponent const,
-        ::DashActionComponent const,
-        ::MovementAttributesComponent const,
-        ::ActorRotationComponent const,
-        ::MobEffectsComponent const,
-        ::Optional<::VehicleComponent const>,
-        ::StateVectorComponent,
-        ::JumpPendingScaleComponent,
-        ::ActorDataFlagComponent,
-        ::ActorDataDirtyFlagsComponent>                                                          vehicleView,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView,
-    ::EntityModifier<::DashCooldownTimerComponent>                                               mod
-);
+MCAPI ::TickingSystemWithInfo create();
 
 MCAPI ::Vec3 dashForwardCamera(::Vec3 const& momentum, ::ActorRotationComponent const& cameraRotation);
+
+MCAPI ::Vec3 dashForwardPassengerCamera(
+    ::Vec3 const&                                                                                momentum,
+    ::VehicleComponent const&                                                                    vehicleComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> playerPassengerView
+);
 
 MCAPI void doDash(
     ::StrictEntityContext const&                                                                 context,

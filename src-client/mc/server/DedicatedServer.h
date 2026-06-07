@@ -5,5 +5,5 @@
 class DedicatedServer {
 public:
     // DedicatedServer inner types define
-    enum class StartResult : int {};
+    enum class ServerExitCode : int {};
 };

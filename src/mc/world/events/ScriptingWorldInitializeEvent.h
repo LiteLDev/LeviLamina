@@ -30,27 +30,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptingWorldInitializeEvent& operator=(ScriptingWorldInitializeEvent const&);
-    ScriptingWorldInitializeEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptingWorldInitializeEvent(::ScriptingWorldInitializeEvent const&);
-
     MCAPI ~ScriptingWorldInitializeEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptingWorldInitializeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

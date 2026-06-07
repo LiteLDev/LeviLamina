@@ -33,6 +33,8 @@ public:
     // NOLINTBEGIN
     MCAPI void load(::CompoundTag const& tag);
 
+    MCAPI void save(::CompoundTag& tag) const;
+
     MCAPI void update(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
@@ -46,7 +48,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::BlockPos, 18> _getNonCornerNeighborsOffsets(::Random& random);
+    MCAPI static ::std::optional<::BlockPos> _getValidMovementPos(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::SculkSpreader&     spreader,
+        ::Random&            random
+    );
 
     MCAPI static bool
     _isMovementUnobstructed(::IBlockWorldGenAPI& target, ::BlockPos const& fromPos, ::BlockPos const& toPos);

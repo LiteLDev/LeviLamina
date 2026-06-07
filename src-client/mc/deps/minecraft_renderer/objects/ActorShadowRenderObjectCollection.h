@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 struct ActorShadowRenderObject;
-struct FrameRenderObject;
 namespace mce { class MaterialPtr; }
 namespace mce { class Mesh; }
 // clang-format on
@@ -30,21 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorShadowRenderObjectCollection();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorShadowRenderObjectCollection(::LinearAllocator<::FrameRenderObject>& alloc);
-
     MCAPI ~ActorShadowRenderObjectCollection();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::LinearAllocator<::FrameRenderObject>& alloc);
     // NOLINTEND
 
 public:

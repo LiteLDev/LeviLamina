@@ -19,17 +19,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptSpawnEntityOptions& operator=(ScriptSpawnEntityOptions const&);
-    ScriptSpawnEntityOptions(ScriptSpawnEntityOptions const&);
-    ScriptSpawnEntityOptions();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptSpawnEntityOptions&
-    operator=(::ScriptModuleMinecraft::ScriptSpawnEntityOptions&&);
-
     MCAPI ~ScriptSpawnEntityOptions();
     // NOLINTEND
 

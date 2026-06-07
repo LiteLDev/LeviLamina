@@ -50,6 +50,8 @@ public:
         ::StructureSettings&       structureSettings
     );
 
+    MCAPI void _initialize(::IClientInstance& clientInstance);
+
     MCAPI void capture(
         uint                                       screenshotWidth,
         uint                                       screenshotHeight,
@@ -58,6 +60,8 @@ public:
         ::std::function<void(::cg::ImageBuffer&&)> callback,
         ::Vec2                                     rotation
     );
+
+    MCAPI bool isCaptureReady() const;
 
     MCAPI ~EditorThumbnailRenderer();
     // NOLINTEND

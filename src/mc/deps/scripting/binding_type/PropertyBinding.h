@@ -16,11 +16,14 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkae65ab;
     ::ll::UntypedStorage<8, 16> mUnkb9812f;
     ::ll::UntypedStorage<8, 64> mUnk8a1fda;
+    ::ll::UntypedStorage<8, 64> mUnkfebb39;
     ::ll::UntypedStorage<8, 64> mUnkb93590;
     ::ll::UntypedStorage<8, 64> mUnk848c5a;
     ::ll::UntypedStorage<1, 1>  mUnk8ffa41;
     ::ll::UntypedStorage<1, 1>  mUnkfa8fc4;
     ::ll::UntypedStorage<8, 64> mUnkc5b748;
+    ::ll::UntypedStorage<4, 4>  mUnk667c85;
+    ::ll::UntypedStorage<1, 1>  mUnk9889b0;
     // NOLINTEND
 
 public:
@@ -35,6 +38,8 @@ public:
     MCNAPI PropertyBinding(::Scripting::PropertyBinding&&);
 
     MCNAPI PropertyBinding(::Scripting::PropertyBinding const&);
+
+    MCNAPI bool isValidPropertyValue(::entt::meta_any const& any) const;
 
     MCNAPI ~PropertyBinding();
     // NOLINTEND

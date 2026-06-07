@@ -4,12 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class EntityContext;
 // clang-format on
 
@@ -22,17 +20,5 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                     mFromLocation;
     ::ll::TypedStorage<4, 4, ::DimensionType>             mToDimension;
     ::ll::TypedStorage<4, 12, ::Vec3>                     mToLocation;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerDimensionChangeAfterEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

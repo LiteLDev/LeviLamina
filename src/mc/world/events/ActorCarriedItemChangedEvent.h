@@ -18,22 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorCarriedItemChangedEvent& operator=(ActorCarriedItemChangedEvent const&);
-    ActorCarriedItemChangedEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorCarriedItemChangedEvent(::ActorCarriedItemChangedEvent const&);
-
     MCAPI ~ActorCarriedItemChangedEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorCarriedItemChangedEvent const&);
     // NOLINTEND
 
 public:

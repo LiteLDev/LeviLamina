@@ -6,6 +6,11 @@
 #include "mc/server/commands/CommandOriginData.h"
 #include "mc/server/commands/CommandOutput.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandOrigin;
+// clang-format on
+
 struct CommandOutputPacketPayload {
 public:
     // member variables
@@ -16,17 +21,20 @@ public:
 
 public:
     // prevent constructor by default
-    CommandOutputPacketPayload(CommandOutputPacketPayload const&);
     CommandOutputPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CommandOutputPacketPayload& operator=(::CommandOutputPacketPayload&&);
-
-    MCFOLD ::CommandOutputPacketPayload& operator=(::CommandOutputPacketPayload const&);
+    MCAPI CommandOutputPacketPayload(::CommandOrigin const& origin, ::CommandOutput const& output);
 
     MCAPI ~CommandOutputPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CommandOrigin const& origin, ::CommandOutput const& output);
     // NOLINTEND
 
 public:

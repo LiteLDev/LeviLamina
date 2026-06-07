@@ -13,18 +13,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 64, ::Matrix> mPostTransform;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Transforms();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

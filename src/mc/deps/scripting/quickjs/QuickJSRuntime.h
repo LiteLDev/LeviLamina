@@ -118,7 +118,7 @@ public:
     virtual ::Scripting::ResultAny getFutureResult(
         ::Scripting::ContextId                                  contextId,
         ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
-        ::entt::meta_type const&                                expectedResultType
+        ::entt::meta_type const&
     ) const /*override*/;
 
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
@@ -253,7 +253,7 @@ public:
     MCNAPI ::Scripting::ResultAny $getFutureResult(
         ::Scripting::ContextId                                  contextId,
         ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
-        ::entt::meta_type const&                                expectedResultType
+        ::entt::meta_type const&
     ) const;
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>

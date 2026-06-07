@@ -51,6 +51,8 @@ public:
         ::ActorUniqueID                                uniqueId
     );
 
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _registerStateMachine();
     // NOLINTEND
 

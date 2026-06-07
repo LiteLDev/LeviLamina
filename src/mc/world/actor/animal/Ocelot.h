@@ -5,11 +5,36 @@
 // auto generated inclusion list
 #include "mc/world/actor/animal/Animal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 class Ocelot : public ::Animal {
 public:
-    // virtual functions
+    // prevent constructor by default
+    Ocelot();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~Ocelot() /*override*/ = default;
+    MCAPI Ocelot(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

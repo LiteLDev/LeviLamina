@@ -3,17 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/NewBlockID.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/monster/Monster.h"
+#include "mc/world/level/block/NewBlockID.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
 class MobEffectInstance;
+struct ActorDefinitionIdentifier;
+struct HurtEffectsSettings;
 // clang-format on
 
 class EnderMan : public ::Monster {
@@ -27,13 +31,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnderMan();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void normalTick() /*override*/;
 
     virtual void newServerAiStep() /*override*/;
 
-    virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual void
+    hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings) /*override*/;
 
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
@@ -45,8 +54,26 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    // NOLINTEND
 
-    virtual ~EnderMan() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EnderMan(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -56,7 +83,7 @@ public:
 
     MCAPI void $newServerAiStep();
 
-    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 
     MCFOLD bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
@@ -64,7 +91,7 @@ public:
 
     MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

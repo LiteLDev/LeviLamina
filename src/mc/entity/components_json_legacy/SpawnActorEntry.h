@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<4, 4, int>                      mSpawnTimer;
     ::ll::TypedStorage<1, 1, bool>                     mStopSpawning;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SpawnActorEntry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

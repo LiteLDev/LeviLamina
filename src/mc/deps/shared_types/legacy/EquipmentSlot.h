@@ -5,7 +5,7 @@
 namespace SharedTypes::Legacy {
 
 enum class EquipmentSlot : int {
-    None          = -1,
+    None          = 4294967295,
     Begin         = 0,
     HandSlot      = 0,
     Mainhand      = 0,

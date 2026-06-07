@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AbstractCompassItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ResolvedItemIconInfo
@@ -36,8 +40,23 @@ public:
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
+    // NOLINTEND
 
-    virtual ~AbstractCompassItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI
+    AbstractCompassItem(::std::string const& name, int id, ::CompassSpriteCalculator& (*getSpriteCalculator)(::Mob&));
+
+#ifdef LL_PLAT_C
+    MCFOLD void setTextureDimensions(ushort texSizeW, ushort texSizeH);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::CompassSpriteCalculator& (*getSpriteCalculator)(::Mob&));
     // NOLINTEND
 
 public:
@@ -51,5 +70,11 @@ public:
     MCAPI int $getEnchantSlot() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

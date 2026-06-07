@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/PropertyBag.h"
+#include "mc/deps/core/utility/buffer_span.h"
 
 // auto generated forward declare list
 // clang-format off
 class UIControl;
+class UiExpression;
 namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
@@ -48,9 +50,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        PropertyChangedNotificationInfo& operator=(PropertyChangedNotificationInfo const&);
+        PropertyChangedNotificationInfo();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI PropertyChangedNotificationInfo(::UIPropertyBag::PropertyChangedNotificationInfo const&);
+
         MCAPI ~PropertyChangedNotificationInfo();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::UIPropertyBag::PropertyChangedNotificationInfo const&);
         // NOLINTEND
 
     public:
@@ -93,18 +108,34 @@ public:
     // NOLINTBEGIN
     MCAPI UIPropertyBag();
 
+    MCAPI explicit UIPropertyBag(::Json::Value const& jsonValue);
+
     MCAPI void _handlePropertyChangedNotifications(
         ::std::string_view             sourcePropertyName,
         ::Json::Value const&           newValue,
         ::UIPropertyBag::ContextObject context
     );
 
+    MCAPI void append(::UIPropertyBag const& propertyBag);
+
     MCAPI void appendNoOverwrite(::UIPropertyBag const& propertyBag);
 
-    MCAPI ::std::unique_ptr<::UIPropertyBag> clone() const;
+    MCAPI void clearWeakRegistrations();
 
     MCAPI void registerForPropertyChangedNotification(
         ::std::string const&         sourcePropertyName,
+        ::std::string const&         targetPropertyName,
+        ::std::weak_ptr<::UIControl> targetControl,
+        ::std::function<void(
+            ::std::weak_ptr<::UIControl> const&,
+            ::std::string_view,
+            ::Json::Value const&,
+            ::UIPropertyBag::ContextObject
+        )>                           callback
+    );
+
+    MCAPI void registerForPropertyChangedNotification(
+        ::UiExpression const&        sourcePropertyName,
         ::std::string const&         targetPropertyName,
         ::std::weak_ptr<::UIControl> targetControl,
         ::std::function<void(
@@ -120,12 +151,20 @@ public:
     MCAPI void set(::std::string_view key, ::glm::ivec2 gridSize);
 
     MCAPI void set(::std::string_view key, ::glm::vec2 uv);
+
+    MCAPI void set(::std::string_view key, ::buffer_span<::std::string> val);
+
+    MCAPI void set(::std::string_view key, ::buffer_span<int> val);
+
+    MCAPI void set(::std::string_view key, ::Json::Value const& val, ::UIPropertyBag::ContextObject context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::Json::Value const& jsonValue);
     // NOLINTEND
 
 public:

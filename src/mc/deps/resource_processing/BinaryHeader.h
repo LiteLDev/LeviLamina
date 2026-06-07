@@ -28,24 +28,12 @@ public:
     BinaryHeader();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~BinaryHeader();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static bool hasMagicNumber(::gsl::span<uchar const> data);
 
     MCNAPI static ::Bedrock::Result<::Bedrock::Resources::BinaryHeader, ::Puv::Logger>
     parse(::std::string_view binaryResource);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

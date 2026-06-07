@@ -8,6 +8,11 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class Block;
+class BlockType;
+class Item;
+class ReadOnlyBinaryStream;
+struct ItemTag;
 // clang-format on
 
 class ItemDescriptorCount : public ::ItemDescriptor {
@@ -18,37 +23,53 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemDescriptorCount();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void serialize(::BinaryStream& stream) const /*override*/;
-
-    virtual ~ItemDescriptorCount() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDescriptorCount(::ItemDescriptorCount const&);
+    MCAPI ItemDescriptorCount();
 
-    MCAPI explicit operator bool() const;
+    MCAPI explicit ItemDescriptorCount(::ReadOnlyBinaryStream& stream);
 
-    MCFOLD ::ItemDescriptorCount& operator=(::ItemDescriptorCount const&);
+    MCAPI ItemDescriptorCount(::Block const& block, ushort stackSize);
+
+    MCAPI ItemDescriptorCount(::BlockType const& block, ushort stackSize);
+
+    MCAPI ItemDescriptorCount(::ItemDescriptor const& descriptor, ushort stackSize);
+
+    MCAPI ItemDescriptorCount(::ItemTag const& itemTag, ushort stackSize);
+
+    MCAPI ItemDescriptorCount(::Item const& item, int auxValue, ushort stackSize);
+
+    MCAPI ItemDescriptorCount(::std::string_view item, int auxValue, ushort stackSize);
+
+    MCAPI short getStackSize() const;
+
+    MCAPI void setStackSize(short size);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemDescriptorCount const&);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
+
+    MCAPI void* $ctor(::Block const& block, ushort stackSize);
+
+    MCAPI void* $ctor(::BlockType const& block, ushort stackSize);
+
+    MCAPI void* $ctor(::ItemDescriptor const& descriptor, ushort stackSize);
+
+    MCAPI void* $ctor(::ItemTag const& itemTag, ushort stackSize);
+
+    MCAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize);
+
+    MCAPI void* $ctor(::std::string_view item, int auxValue, ushort stackSize);
     // NOLINTEND
 
 public:

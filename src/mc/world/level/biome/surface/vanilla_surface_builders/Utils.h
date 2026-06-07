@@ -12,8 +12,10 @@ class Block;
 class BlockPos;
 class BlockVolume;
 class HeightmapWrapper;
+class Pos;
 class Random;
 struct SurfaceMaterialAdjustmentEvaluated;
+struct SurfaceMaterialAttributes;
 struct SurfaceMaterialBlocks;
 // clang-format on
 
@@ -38,12 +40,27 @@ MCAPI void _buildSurface(
 
 MCAPI void buildSurface(::ISurfaceBuilder::BuildParameters const& buildParameters);
 
+MCAPI void ensureValidSurfaceMaterials(::SurfaceMaterialAttributes& surfaceMaterials);
+
 MCAPI bool isSteepTerrain(
     ::BlockVolume const&                       blocks,
     ::BlockPos const&                          pos,
     ::MountainAttributes::SteepMaterial const& steepMaterial,
     ::HeightmapWrapper const&                  preWorldGenHeightmap
 );
+
+MCAPI void maybeReplaceBlockToAvoidFalling(
+    ::Block const* block,
+    ::BlockVolume& blocks,
+    uint           blockVolumeIndexThisY,
+    ::Block const* foundationMaterial
+);
+
+MCAPI void placeBedrockCeiling(::Random& random, ::BlockVolume& blocks, ::BlockPos const& pos);
+
+MCAPI void placeBedrockFloor(::Random& random, ::BlockVolume& blocks, ::BlockPos const& pos);
+
+MCAPI ::Pos toChunkLocalPos(::BlockPos const& blockPos);
 // NOLINTEND
 
 } // namespace VanillaSurfaceBuilders::Utils

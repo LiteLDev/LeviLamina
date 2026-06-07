@@ -29,8 +29,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameCorePlayerInput();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GameCorePlayerInput(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
+
     MCAPI bool removeHardwareDeviceMapping(::APP_LOCAL_DEVICE_ID const& deviceId);
 
     MCAPI bool tryAddHardwareDeviceMapping(::GameInput::v2::IGameInputDevice* device);
@@ -44,6 +50,12 @@ public:
     );
 
     MCAPI ~GameCorePlayerInput();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
     // NOLINTEND
 
 public:

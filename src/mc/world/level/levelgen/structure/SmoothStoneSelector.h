@@ -40,21 +40,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Block const& next(::Random& random, int, int, int, bool isEdge) const /*override*/;
-
-    virtual ~SmoothStoneSelector() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ::Block const& next(::Random& random, int isEdge, int, int, bool) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $next(::Random& random, int, int, int, bool isEdge) const;
+    MCAPI ::Block const& $next(::Random& random, int isEdge, int, int, bool) const;
 
 
     // NOLINTEND

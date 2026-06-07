@@ -32,12 +32,6 @@ public:
     WidgetGroupStateChangePayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~WidgetGroupStateChangePayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

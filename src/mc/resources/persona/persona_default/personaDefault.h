@@ -10,6 +10,14 @@ namespace personaDefault {
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
 MCNAPI bool isBuiltinSkinPack(::mce::UUID const& packId);
+
+MCNAPI bool isCustomSkinPack(::mce::UUID const& packId);
+
+MCNAPI bool isPersonaPack(::mce::UUID const& packId);
+
+MCNAPI bool isPersonaSkinPack(::mce::UUID const& packId);
+
+MCNAPI bool isVanillaSkinPack(::mce::UUID const& packId);
 #endif
 // NOLINTEND
 

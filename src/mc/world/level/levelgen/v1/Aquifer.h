@@ -94,18 +94,17 @@ public:
         int                        seaLevel
     );
 
-    MCAPI float _calculatePressure(
-        ::BlockPos                    worldPos,
-        float&                        barrierNoiseValue,
-        ::Aquifer::FluidSample const& fluidYClosest1,
-        ::Aquifer::FluidSample const& fluidYClosest2
-    ) const;
-
     MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
 
-    MCAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
-
     MCAPI void computeAt(::BlockPos const& worldPos);
+
+    MCFOLD float getLastBarrier() const;
+
+    MCAPI ::Block const* getLastFluidBlockType() const;
+
+    MCFOLD int getLastFluidLevel() const;
+
+    MCFOLD bool shouldScheduleFluidUpdate() const;
     // NOLINTEND
 
 public:

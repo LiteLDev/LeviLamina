@@ -34,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BehaviorFactory();
+
     MCAPI void _initNodes();
 
     MCAPI ::std::unique_ptr<::BehaviorDefinition>
@@ -46,5 +48,13 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::BehaviorDefinition> tryGetDefinition(::std::string const& id) const;
+
+    MCAPI ::std::unique_ptr<::BehaviorNode> tryGetNode(::std::string const& id) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

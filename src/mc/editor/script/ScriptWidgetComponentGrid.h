@@ -38,6 +38,7 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentGrid& operator=(ScriptWidgetComponentGrid const&);
+    ScriptWidgetComponentGrid(ScriptWidgetComponentGrid const&);
     ScriptWidgetComponentGrid();
 
 public:
@@ -51,8 +52,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentGrid(::Editor::ScriptModule::ScriptWidgetComponentGrid const&);
-
     MCNAPI ScriptWidgetComponentGrid(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
@@ -97,8 +96,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentGrid const&);
-
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,

@@ -35,5 +35,16 @@ public:
     MCAPI void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
 
     MCAPI bool hasPendingGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) const;
+
+    MCAPI void
+    queueChunkGenerationRequest(::NetworkIdentifier const& player, ::SubClientId clientId, ::ChunkPos const& pos);
+
+    MCAPI ~ChunkGenerationManager();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

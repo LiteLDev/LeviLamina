@@ -23,11 +23,28 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInfoData>> mResourcePacks;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PacksInfoData& operator=(PacksInfoData const&);
+    PacksInfoData(PacksInfoData const&);
+    PacksInfoData();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI ::std::unordered_map<::ContentIdentity, ::std::string> collectKeys() const;
+#endif
+
+    MCAPI uint64 getRequiredResourcePackSize() const;
+
+    MCAPI uint64 getResourcePackSize() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::PacksInfoData& operator=(::PacksInfoData&&);
 #endif
 
     MCAPI ~PacksInfoData();

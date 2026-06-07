@@ -20,14 +20,28 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AuxDataBlockItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
+    // NOLINTEND
 
-    virtual ~AuxDataBlockItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AuxDataBlockItem(::std::string const& name, int id, ::Block const* parentBlock);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::Block const* parentBlock);
     // NOLINTEND
 
 public:
@@ -35,8 +49,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
 
     // NOLINTEND

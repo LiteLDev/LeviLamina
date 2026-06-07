@@ -19,16 +19,32 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandVersion();
+
+public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI bool isCompatible(int version) const;
-#endif
+    MCAPI CommandVersion(int from, int to);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::SemVersion getLatestCompatibleSemVersion(int version);
+
     MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& CurrentVersion();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(int from, int to);
     // NOLINTEND
 };

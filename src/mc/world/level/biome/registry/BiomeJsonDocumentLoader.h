@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/shared_types/beta/biome/BiomeJsonDocument.h"
 #include "mc/deps/shared_types/v1_26_0/biome/BiomeJsonDocument.h"
 
 // auto generated forward declare list
@@ -29,7 +30,7 @@ public:
             ::SharedTypes::v1_26_0::BiomeJsonDocument::BiomeJsonObject,
             ::BedrockLoadContext,
             nullptr_t,
-            ::SharedTypes::v1_26_0::BiomeJsonDocument::BiomeJsonObject>>
+            ::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject>>
         mPuvBiomeLoader;
     // NOLINTEND
 
@@ -53,8 +54,6 @@ public:
     );
 
     MCAPI void load(::Puv::Input const& input) const;
-
-    MCAPI ~BiomeJsonDocumentLoader();
     // NOLINTEND
 
 public:
@@ -71,11 +70,5 @@ public:
              biomeIdToResolvedData,
         bool betaApis
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -12,26 +12,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ResetCallbackObject();
+    virtual ~ResetCallbackObject() = default;
 
     virtual void resetCallback() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

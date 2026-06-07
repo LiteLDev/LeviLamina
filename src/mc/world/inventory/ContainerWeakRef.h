@@ -31,6 +31,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ContainerWeakRef();
+
+    MCAPI explicit ContainerWeakRef(::std::weak_ptr<::Container> ref);
+
+    MCAPI ContainerWeakRef(::BlockPos const& blockPos, ::ContainerRuntimeId const& containerRuntimeId);
+
+    MCAPI ContainerWeakRef(
+        ::ActorUniqueID const&      actorId,
+        ::ActorContainerType        containerType,
+        ::ContainerRuntimeId const& containerRuntimeId
+    );
+
     MCAPI explicit operator bool() const;
 
 #ifdef LL_PLAT_C
@@ -46,6 +58,22 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static ::Container* tryGetActorContainer(::Actor& actor, ::ActorContainerType containerType);
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::std::weak_ptr<::Container> ref);
+
+    MCAPI void* $ctor(::BlockPos const& blockPos, ::ContainerRuntimeId const& containerRuntimeId);
+
+    MCAPI void* $ctor(
+        ::ActorUniqueID const&      actorId,
+        ::ActorContainerType        containerType,
+        ::ContainerRuntimeId const& containerRuntimeId
+    );
     // NOLINTEND
 
 public:

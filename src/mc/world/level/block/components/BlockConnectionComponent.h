@@ -40,18 +40,6 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback>> mUpdateCallback;
         ::ll::TypedStorage<4, 4, int>                                                        mUpdateFlags;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ConnectionData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -61,8 +49,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockConnectionComponent& operator=(BlockConnectionComponent const&);
+    BlockConnectionComponent(BlockConnectionComponent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockConnectionComponent();
+
     MCAPI void addCallback(
         ::BlockType&                                               blockType,
         ::NeighborBlockDirections                                  neighborBlockDirections,
@@ -76,5 +71,21 @@ public:
         ::BlockPos const&         pos,
         ::NeighborBlockDirections neighborDirections
     ) const;
+
+    MCAPI ::BlockConnectionComponent& operator=(::BlockConnectionComponent&&);
+
+    MCAPI ~BlockConnectionComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

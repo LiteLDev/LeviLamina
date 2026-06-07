@@ -15,7 +15,6 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
@@ -28,13 +27,17 @@ namespace mce { class Color; }
 
 class ScaffoldingBlock : public ::FallingBlock {
 public:
+    // prevent constructor by default
+    ScaffoldingBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::HitResult clip(
@@ -54,7 +57,7 @@ public:
 
     virtual bool isLavaBlocking() const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
 
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
@@ -62,23 +65,20 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& lastPathPos, ::BlockPos const& pathPos, ::BlockPos const&) const /*override*/;
 
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~ScaffoldingBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScaffoldingBlock(::std::string const& nameId, int id);
+
     MCAPI bool _updateBlockStability(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI int calculateStability(::BlockSource const& region, ::BlockPos const& pos) const;
@@ -89,13 +89,25 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& MAX_STABILITY();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI ::HitResult $clip(
@@ -114,7 +126,7 @@ public:
 
     MCFOLD bool $isLavaBlocking() const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
 
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
@@ -126,15 +138,13 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCAPI bool $checkIsPathable(::Actor& lastPathPos, ::BlockPos const& pathPos, ::BlockPos const&) const;
 
     MCAPI ::mce::Color $getDustColor(::Block const&) const;
 
     MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

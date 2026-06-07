@@ -15,18 +15,14 @@ class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EntityComponentFactoryBase() /*override*/;
+    virtual ~EntityComponentFactoryBase() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void addComponents(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI static void removeComponents(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
     // NOLINTEND
 };

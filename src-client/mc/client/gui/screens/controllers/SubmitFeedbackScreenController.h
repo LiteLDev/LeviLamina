@@ -59,6 +59,10 @@ public:
 
     MCAPI void _processPlayerSafetyScanResponse(::Bedrock::Http::Status const& responseStatus, bool isValidText);
 
+    MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _setResponseMessage();
     // NOLINTEND
 

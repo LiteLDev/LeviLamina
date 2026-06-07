@@ -14,7 +14,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -23,6 +22,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class SeagrassBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    SeagrassBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -30,14 +33,12 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
         /*override*/;
 
-    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
+    virtual bool mayConsumeFertilizer(::BlockSource&) const /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -51,15 +52,13 @@ public:
     ) const /*override*/;
 
     virtual bool isValidAuxValue(int value) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~SeagrassBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SeagrassBlock(::std::string const& nameId, int id);
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -68,7 +67,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _tryPlaceSeaGrassOrCoral(
+        ::BlockSource&    region,
+        ::BlockPos const& abovePos,
+        ::Block const&    seaGrassBlock,
+        ::Block const&    topPlant,
+        bool              doubleGrass
+    );
+
+    MCAPI static bool isValidSpawnPosition(
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          blockAbovePos,
+        ::Block const&             seagrassBlock
+    );
+
     MCAPI static bool trySpawnSeaGrass(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -78,12 +97,11 @@ public:
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource&) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -97,8 +115,6 @@ public:
     ) const;
 
     MCFOLD bool $isValidAuxValue(int value) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

@@ -30,35 +30,20 @@ public:
     virtual ::ContentTierInfo getContentTierInfo() const /*override*/;
 
     virtual bool shouldDeviceAllowAnimation() const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ContentTierManager() /*override*/;
-#else // LL_PLAT_C
-    virtual ~ContentTierManager() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
-#endif
+
+    MCNAPI void _calculateMemoryTier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

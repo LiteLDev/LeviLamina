@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class LevelData;
+class PackCapability;
 class ResourcePackManager;
 // clang-format on
 
@@ -31,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EducationOptions() /*override*/;
+    virtual ~EducationOptions() /*override*/ = default;
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) /*override*/;
     // NOLINTEND
@@ -39,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit EducationOptions(::ResourcePackManager* packMan);
+
     MCNAPI void init(::LevelData const& levelData);
     // NOLINTEND
 
@@ -47,9 +50,15 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::ServiceReference<::EducationOptions> _getCurrentOptions();
 
+    MCNAPI static ::PackCapability getPackCapability();
+
+    MCNAPI static bool isBaseCodeBuilderEnabled();
+
     MCNAPI static bool isChemistryEnabled();
 
     MCNAPI static bool isCodeBuilderEnabled();
+
+    MCNAPI static bool isEducationEnabled();
     // NOLINTEND
 
 public:
@@ -59,9 +68,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::ResourcePackManager* packMan);
     // NOLINTEND
 
 public:

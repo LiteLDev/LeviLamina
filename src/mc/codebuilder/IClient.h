@@ -20,7 +20,7 @@ class IClient : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IClient() /*override*/;
+    virtual ~IClient() /*override*/ = default;
 
     virtual void send(::CodeBuilder::AgentMessage const& message) = 0;
 
@@ -31,12 +31,6 @@ public:
     virtual void send(::CodeBuilder::EventMessage const& message) = 0;
 
     virtual void send(::CodeBuilder::ChatMessage const& message) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

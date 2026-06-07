@@ -30,9 +30,34 @@ public:
     // NOLINTBEGIN
     virtual ~SparseContainerSetListenerClient() /*override*/ = default;
 
+#ifdef LL_PLAT_S
+    virtual void preSetItem(::Container*, int, bool, ::ItemStack*) /*override*/;
+#else // LL_PLAT_C
     virtual void preSetItem(::Container* container, int slot, bool isEmptyItem, ::ItemStack* item) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool postSetItem(::Container*, ::ItemStack&) /*override*/;
+#else // LL_PLAT_C
     virtual bool postSetItem(::Container* container, ::ItemStack& item) /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit SparseContainerSetListenerClient(::ItemStackNetManagerClient& itemStackNetManager);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ItemStackNetManagerClient& itemStackNetManager);
+#endif
     // NOLINTEND
 
 public:

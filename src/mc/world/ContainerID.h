@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ContainerID : schar {
-    None           = -1,
+    None           = 255,
     Inventory      = 0,
     First          = 1,
     Last           = 100,

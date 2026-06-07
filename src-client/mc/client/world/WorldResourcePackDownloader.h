@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class DlcDependency;
 class IClientInstance;
 class IContentAcquisition;
 class IDlcBatchModel;
@@ -76,8 +77,6 @@ public:
     virtual ::World::PackCheckResult
     checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms) const
         /*override*/;
-
-    virtual ~WorldResourcePackDownloader() /*override*/;
     // NOLINTEND
 
 public:
@@ -94,8 +93,15 @@ public:
 
     MCAPI void _checkPacks();
 
+    MCAPI void _downloadPacks();
+
     MCFOLD bool
     _hasExpiredRealmsPlusSubscription(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
+
+    MCAPI bool _hasRealmsPlusDlcDependencies(
+        ::std::vector<::DlcDependency> const& dependencies,
+        ::IStoreCatalogRepository const&      storeCatalogRepository
+    ) const;
     // NOLINTEND
 
 public:
@@ -109,12 +115,6 @@ public:
         ::IClientInstance&                                   clientInstance,
         ::ILevelListCache&                                   levelListCache
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

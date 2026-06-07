@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/client/services/messaging/player_messaging/ButtonActionType.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ButtonData;
+// clang-format on
+
 namespace OreUI {
 
 struct MessageButton {
@@ -21,13 +26,14 @@ public:
 public:
     // prevent constructor by default
     MessageButton& operator=(MessageButton const&);
-    MessageButton(MessageButton const&);
     MessageButton();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessageButton(::OreUI::MessageButton&&);
+    MCAPI MessageButton(::OreUI::MessageButton const&);
+
+    MCAPI explicit MessageButton(::ButtonData const& button);
 
     MCAPI void openExternalLink();
 
@@ -39,7 +45,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::MessageButton&&);
+    MCFOLD void* $ctor(::OreUI::MessageButton const&);
+
+    MCFOLD void* $ctor(::ButtonData const& button);
     // NOLINTEND
 
 public:

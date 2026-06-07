@@ -37,33 +37,11 @@ class Recipes {
 public:
     // Recipes inner types declare
     // clang-format off
-    struct FurnaceRecipeKey;
     struct NormalizedRectangularRecipeResults;
     class Type;
     // clang-format on
 
     // Recipes inner types define
-    struct FurnaceRecipeKey {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>             mID;
-        ::ll::TypedStorage<8, 48, ::HashedString> mTag;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~FurnaceRecipeKey();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-    };
-
     struct NormalizedRectangularRecipeResults {
     public:
         // member variables
@@ -96,18 +74,6 @@ public:
         ::ll::TypedStorage<8, 24, ::RecipeIngredient> mIngredient;
         ::ll::TypedStorage<1, 1, char>                mC;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Type();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     using TypeList = ::std::vector<::Recipes::Type>;
@@ -118,9 +84,8 @@ public:
     ::ll::TypedStorage<8, 8, ::ResourcePackManager*> mResourcePackManager;
     ::ll::TypedStorage<8, 8, ::ExternalRecipeStore>  mExternalRecipeStore;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::std::map<::std::string, ::std::shared_ptr<::Recipe>>>>
-                                                                                       mRecipes;
-    ::ll::TypedStorage<8, 16, ::std::map<::Recipes::FurnaceRecipeKey, ::ItemInstance>> mFurnaceRecipes;
-    ::ll::TypedStorage<1, 1, bool>                                                     mInitializing;
+                                   mRecipes;
+    ::ll::TypedStorage<1, 1, bool> mInitializing;
     ::ll::TypedStorage<
         8,
         16,
@@ -133,6 +98,8 @@ public:
         ::std::unordered_map<uint64, ::std::unordered_map<uint64, ::std::shared_ptr<::std::vector<::ItemInstance>>>>>
                                                                          mRecipesByInput;
     ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::Recipe*>>> mUnlockableRecipes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>       mUniqueUnlockableRecipeIds;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::unordered_map<int, ::ItemInstance>>> mFurnaceResults;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::weak_ptr<bool>, ::std::function<void()>>>> mListeners;
     ::ll::TypedStorage<8, 8, ::Level*>                                                                    mLevel;
     // NOLINTEND
@@ -145,6 +112,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Recipes(::Level* level);
+
+    MCAPI void _addFurnaceRecipeResults(::Recipe const& recipe);
 
     MCAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
 
@@ -196,12 +165,6 @@ public:
         ::RecipeUnlockingRequirement unlockingReq,
         int                          priority,
         ::SemVersion const&          formatVersion
-    );
-
-    MCAPI void addFurnaceRecipeAuxData(
-        ::ItemInstance const&                input,
-        ::ItemInstance const&                result,
-        ::std::vector<::HashedString> const& tags
     );
 
 #ifdef LL_PLAT_C
@@ -373,9 +336,9 @@ public:
 
     MCAPI ::std::pair<::std::string, ::Json::Value> extractRecipeObjInfo(::Json::Value const& obj);
 
-#ifdef LL_PLAT_C
     MCAPI void forEachRecipeFor(::HashedString const& tag, ::brstd::function_ref<void(::Recipe const&)> callback) const;
 
+#ifdef LL_PLAT_C
     MCAPI void forEachRecipeFor(
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<void(::Recipe const&)> callback
@@ -392,6 +355,9 @@ public:
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
+
+    MCAPI void
+    forEachRecipeUntil(::HashedString const& tag, ::brstd::function_ref<bool(::Recipe const&)> callback) const;
 
     MCAPI void forEachRecipeUntil(
         ::ItemInstance const&                        result,
@@ -406,14 +372,18 @@ public:
     ) const;
 #endif
 
-    MCAPI ::std::vector<::ItemInstance>
-    getFurnaceRecipeFor(::ItemStackBase const& output, ::HashedString const& tag) const;
+    MCAPI void forEachUnlockableRecipe(::brstd::function_ref<void(::Recipe const&)> callback) const;
 
     MCAPI ::ItemInstance getFurnaceRecipeResult(::ItemStackBase const& item, ::HashedString const& tag) const;
+
+    MCFOLD uint getNumberOfUnlockableRecipes() const;
 
     MCAPI ::Recipe const* getRecipeByNetId(::RecipeNetId const& netId) const;
 
     MCAPI ::Recipe* getRecipeFor(::ItemInstance const& result, ::HashedString const& tag) const;
+
+    MCFOLD ::std::map<::HashedString, ::std::map<::std::string, ::std::shared_ptr<::Recipe>>> const&
+    getRecipesAllTags() const;
 
     MCAPI void init(
         ::ResourcePackManager&   resourcePackManager,
@@ -431,6 +401,10 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void notifyRecipeListeners();
+
+    MCAPI void removeRecipeListener(::std::weak_ptr<bool> lifePtr);
+
+    MCAPI void sortRecipesByPriority(::std::vector<::std::reference_wrapper<::Recipe const>>& recipes) const;
 #endif
 
     MCAPI ~Recipes();

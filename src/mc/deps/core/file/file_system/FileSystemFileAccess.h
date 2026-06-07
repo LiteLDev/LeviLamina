@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/file_system/FileSystemMode.h"
 #include "mc/deps/core/file/file_system/IFileAccess.h"
 #include "mc/deps/core/file/file_system/IFileReadAccess.h"
 #include "mc/deps/core/file/file_system/IFileWriteAccess.h"
@@ -26,8 +27,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const /*override*/;
-
-        virtual ~FileSystemFileReadAccess() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -50,8 +49,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) /*override*/;
-
-        virtual ~FileSystemFileWriteAccess() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -86,11 +83,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~FileSystemFileAccess() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~FileSystemFileAccess() /*override*/;
-#endif
 
     virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) /*override*/;
 
@@ -105,6 +98,18 @@ public:
     virtual ::IFileWriteAccess* getWriteInterface() /*override*/;
 
     virtual void unload() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit FileSystemFileAccess(::FileSystemMode mode);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::FileSystemMode mode);
     // NOLINTEND
 
 public:

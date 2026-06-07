@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~RailActivatorSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

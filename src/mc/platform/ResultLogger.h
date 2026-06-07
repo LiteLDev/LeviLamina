@@ -25,12 +25,6 @@ public:
 
     MCNAPI static ::std::string noContextString();
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::Bedrock::LogLevel const& defaultLogLevel();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

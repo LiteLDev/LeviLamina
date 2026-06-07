@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class RenderParam : int {
-    Unknown          = -1,
+    Unknown          = 4294967295,
     FrameAlpha       = 0,
     Bob              = 1,
     ModelScale       = 2,

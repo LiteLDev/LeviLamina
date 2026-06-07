@@ -8,8 +8,10 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockPos;
 class BlockSource;
 class Player;
+class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -32,14 +34,24 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-
-    virtual ~BlockPlayerDestroyEvent() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI BlockPlayerDestroyEvent(::Player& player, ::BlockPos pos, ::Block const& destroyedBlock);
+
+    MCAPI void configureRenderParamsForTrigger(::RenderParams& params) const;
+
+    MCFOLD ::Player const& getPlayer() const;
+
+    MCFOLD bool isClientSide() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player& player, ::BlockPos pos, ::Block const& destroyedBlock);
     // NOLINTEND
 
 public:

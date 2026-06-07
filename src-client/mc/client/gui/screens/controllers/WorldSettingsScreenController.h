@@ -167,13 +167,15 @@ public:
         bool                                     unhideServerSettings
     );
 
-    MCAPI bool _achievementsWillBeDisabledOnLoad();
-
     MCAPI void _cacheGameRuleValues();
 
     MCAPI void _calculateSleepPercentageOptions();
 
+    MCAPI bool _canBroadcastOnXBL() const;
+
     MCAPI bool _canChangeWorldOption() const;
+
+    MCAPI bool _canEditDifficulty();
 
     MCAPI void _confirmationUnlockTemplatedWorldOptionsDialog();
 
@@ -185,45 +187,39 @@ public:
 
     MCAPI void _createWorldOnRealms();
 
-    MCAPI ::ui::ViewRequest _deleteWorld();
-
     MCAPI ::ui::ViewRequest _exportWorld(::FileArchiver::ExportType type);
 
     MCAPI void _fireCachedGameRuleTelemetryEventsOnExit();
 
-    MCAPI bool _getAllowCheats() const;
-
     MCAPI int _getDifficulty();
-
-    MCAPI bool _getGameRuleBool(::GameRuleId gameRuleId);
-
-    MCAPI int _getGameRuleInt(::GameRuleId gameRuleId);
 
     MCAPI bool _getMultiplayerEnabled() const;
 
     MCAPI ::std::string _getPlatformMultiplayerWarningText() const;
 
-    MCAPI uint _getRespawnRadiusMax();
-
-    MCAPI int _getWorldGameMode();
-
     MCAPI ::std::string _getWorldName();
-
-    MCAPI int _getWorldType();
 
     MCAPI ::std::string _getXBLMultiplayerWarningText() const;
 
-    MCAPI bool _hasOperatorCommandsAbility() const;
-
     MCAPI void _init();
 
-    MCAPI bool _isExperimentEnabled(int experimentIndex);
+    MCAPI bool _isAlwaysDayEnabled();
+
+    MCAPI bool _isEducationToggleEnabled();
 
     MCAPI bool _isGameRuleEnabled() const;
 
-    MCAPI bool _isMultiplayerModifiable() const;
+    MCAPI bool _isPlayerGameModeEnabled();
+
+    MCAPI bool _isServerVisibilityEnabled() const;
+
+    MCAPI bool _isWorldGameModeEnabled();
+
+    MCAPI bool _isWorldSeedEnabled();
 
     MCAPI void _limitSpawnRadiusAgainstWorldType();
+
+    MCAPI ::ui::ViewRequest _makeWorldInfinite();
 
     MCAPI bool _passedLockedContentCheck();
 
@@ -249,8 +245,6 @@ public:
 
     MCAPI void _setEducationFeaturesEnabled(bool value);
 
-    MCAPI void _setExperimentHelper(bool value, int experimentIndex);
-
     MCAPI void _setExperimentalToggleHelper(bool value, int experimentIndex);
 
     MCAPI void _setGameRule(int value, ::GameRuleId gameRuleId, bool suppressOuput);
@@ -265,9 +259,13 @@ public:
 
     MCAPI void _setMultiplayerEnabled(bool value);
 
-    MCAPI void _setPlayerGameMode(int value);
+    MCAPI void _setNEXVisible(bool value);
 
-    MCAPI void _setRandomTickSpeedString(::std::string const& value);
+    MCAPI void _setPSNVisible(bool value);
+
+    MCAPI void _setPerfectWeather(bool value);
+
+    MCAPI void _setPlayerGameMode(int value);
 
     MCAPI void _setServerVisible(bool value);
 
@@ -283,8 +281,6 @@ public:
 
     MCAPI void _setupCloudBindings();
 
-    MCAPI bool _shouldShowMultiplayerWarningMessages() const;
-
     MCAPI void _showConfirmationNoCrossPlatformPlaySkinPopup();
 
     MCAPI ::ui::ViewRequest _startEducationWorld(bool shouldHost);
@@ -293,6 +289,14 @@ public:
         ::std::string const&                         messageId,
         ::std::function<void(::ModalScreenButtonId)> callback
     );
+
+    MCAPI ::WorldSettingsScreenControllerProxy* getWorldSettingsScreenControllerProxy();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void addStaticScreenVars(::Json::Value& globalVars, bool exportDisabled, bool isMultiplayerClient);
     // NOLINTEND
 
 public:

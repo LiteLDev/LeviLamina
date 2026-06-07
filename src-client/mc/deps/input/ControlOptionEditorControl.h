@@ -44,12 +44,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
+    virtual void tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int) /*override*/;
 
     virtual void render(::InputRenderContext& context) const /*override*/;
-
-    virtual ~ControlOptionEditorControl() /*override*/;
     // NOLINTEND
 
 public:
@@ -75,15 +72,11 @@ public:
 
     MCAPI bool _isColliding(::RectangleArea const& rect, uint excludedId) const;
 
-    MCAPI bool _otherConfigsExistWithSameCategory(uint configId) const;
-
     MCAPI void _playBumpingSound(::InputEventQueue& eventQueue);
 
     MCAPI void _pushControlsInsideSafeArea();
 
     MCAPI void _setControlConfigurationActive(::InputEventQueue& eventQueue, ::ControlConfiguration* cc, bool active);
-
-    MCAPI bool areThereOverlappingControls() const;
 
     MCAPI void checkForOverlaps();
     // NOLINTEND
@@ -103,15 +96,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int);
 
     MCAPI void $render(::InputRenderContext& context) const;
     // NOLINTEND

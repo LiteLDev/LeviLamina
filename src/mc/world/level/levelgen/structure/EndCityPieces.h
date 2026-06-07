@@ -58,8 +58,7 @@ public:
         // NOLINTBEGIN
         virtual ::StructurePieceType getType() const /*override*/;
 
-        virtual void
-        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+        virtual void postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
 
         virtual void _handleDataMarker(
             ::std::string const& markerId,
@@ -68,8 +67,6 @@ public:
             ::Random&            random,
             ::BoundingBox const& chunkBB
         ) /*override*/;
-
-        virtual ~EndCityPiece() /*override*/;
         // NOLINTEND
 
     public:
@@ -99,17 +96,11 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::StructurePieceType $getType() const;
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
         MCAPI void $_handleDataMarker(
             ::std::string const& markerId,
@@ -151,12 +142,6 @@ public:
         // NOLINTBEGIN
 
         // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
     };
 
     class FatTowerGenerator : public ::EndCityPieces::SectionGenerator {
@@ -168,12 +153,10 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
+            ::BlockPos const&                                                          pieces,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Random&
         ) /*override*/;
-
-        virtual ~FatTowerGenerator() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -184,9 +167,9 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
+            ::BlockPos const&                                                          pieces,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Random&
         );
 
 
@@ -212,8 +195,6 @@ public:
             ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
             ::Random&                                                                  random
         ) /*override*/;
-
-        virtual ~HouseTowerGenerator() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -254,12 +235,10 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
+            ::BlockPos const&                                                          pieces,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Random&
         ) /*override*/;
-
-        virtual ~TowerBridgeGenerator() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -270,9 +249,9 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
+            ::BlockPos const&                                                          pieces,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Random&
         );
 
 
@@ -294,12 +273,10 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
+            ::BlockPos const&                                                          pieces,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Random&
         ) /*override*/;
-
-        virtual ~TowerGenerator() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -310,9 +287,9 @@ public:
             ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
             int                                                                        genDepth,
             ::EndCityPieces::EndCityPiece*                                             parent,
-            ::BlockPos const&                                                          offset,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
-            ::Random&                                                                  random
+            ::BlockPos const&                                                          pieces,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        random,
+            ::Random&
         );
 
 
@@ -327,14 +304,11 @@ public:
 
     using Generators = ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>>;
 
+    using SectionGenerator = ::EndCityPieces::SectionGenerator;
+
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::EndCityPieces::EndCityPiece* _addHelper(
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::std::unique_ptr<::EndCityPieces::EndCityPiece>    piece
-    );
-
     MCAPI static ::std::unique_ptr<::EndCityPieces::EndCityPiece> _createPiece(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
         ::EndCityPieces::EndCityPiece*                    parent,

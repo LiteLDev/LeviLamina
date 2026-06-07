@@ -26,7 +26,7 @@ class LevelStorageSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelStorageSource() /*override*/;
+    virtual ~LevelStorageSource() /*override*/ = default;
 
     virtual ::std::string const& getName() const = 0;
 
@@ -88,12 +88,6 @@ public:
     MCNAPI static ::std::chrono::nanoseconds const& WORLD_SAVE_FLUSH_INTERVAL();
 
     MCNAPI static ::std::chrono::nanoseconds const& WORLD_SAVE_MENU_FLUSH_INTERVAL();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

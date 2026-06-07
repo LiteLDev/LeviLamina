@@ -56,8 +56,6 @@ public:
 
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const
         /*override*/;
-
-    virtual ~SuspiciousStewItem() /*override*/ = default;
     // NOLINTEND
 
 public:

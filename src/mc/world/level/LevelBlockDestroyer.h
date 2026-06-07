@@ -7,6 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockChangeContext;
+class BlockPos;
+class BlockSource;
 class ILevelBlockDestroyerProxy;
 class LevelEventManager;
 // clang-format on
@@ -30,6 +33,13 @@ public:
     MCNAPI LevelBlockDestroyer(
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
         ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
+    );
+
+    MCNAPI bool destroyBlock(
+        ::BlockSource&              region,
+        ::BlockPos const&           pos,
+        bool                        dropResources,
+        ::BlockChangeContext const& changeSourceContext
     );
     // NOLINTEND
 

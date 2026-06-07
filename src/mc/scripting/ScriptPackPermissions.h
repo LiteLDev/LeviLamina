@@ -20,26 +20,27 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<::CommandPermissionLevel>> mCommandsPermissionLevel;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ScriptPackPermissions& operator=(ScriptPackPermissions const&);
-    ScriptPackPermissions(ScriptPackPermissions const&);
-    ScriptPackPermissions();
-
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI ::ScriptPackPermissions& operator=(::ScriptPackPermissions&&);
+    MCNAPI bool isModuleAllowed(::std::string const& moduleName) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI void setAllModulesAllowed();
 #endif
+
+    MCNAPI ~ScriptPackPermissions();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& sWildCardModuleName();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -40,6 +40,17 @@ public:
         short,
         ::DimensionHeightRange,
         ::NeighborAwareBlockUpgradeVersionType>>
+    operator()(::std::string const&) const;
+
+    MCAPI ::std::optional<::std::variant<
+        ::BaseGameVersion,
+        ::std::string,
+        ::LevelSeed64,
+        ::GeneratorType,
+        bool,
+        short,
+        ::DimensionHeightRange,
+        ::NeighborAwareBlockUpgradeVersionType>>
     operator()(::BaseGameVersion const&) const;
 
     MCAPI ~MetaDataTypeVisitor_Get();

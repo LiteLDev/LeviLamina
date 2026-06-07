@@ -23,9 +23,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SetItemNameFunction();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetItemNameFunction() /*override*/ = default;
+    virtual ~SetItemNameFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext&) /*override*/;
 
@@ -35,10 +39,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI
+    SetItemNameFunction(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::string const& name);
+
+    MCFOLD ::std::string const& getName() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates, ::std::string const& name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -17,6 +17,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void unblockReading();
+    MCAPI ConsoleInputReader();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

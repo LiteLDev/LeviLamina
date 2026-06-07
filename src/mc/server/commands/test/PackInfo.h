@@ -17,9 +17,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PackInfo& operator=(PackInfo const&);
+    PackInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PackInfo(::PackInfo const&);
+
     MCAPI ~PackInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::PackInfo const&);
     // NOLINTEND
 
 public:

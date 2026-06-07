@@ -36,14 +36,11 @@ public:
 public:
     // prevent constructor by default
     ModalScreenData& operator=(ModalScreenData const&);
+    ModalScreenData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ModalScreenData();
-
-    MCAPI ModalScreenData(::ModalScreenData&&);
-
     MCAPI ModalScreenData(::ModalScreenData const&);
 
     MCAPI ~ModalScreenData();
@@ -52,10 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ModalScreenData&&);
-
     MCAPI void* $ctor(::ModalScreenData const&);
     // NOLINTEND
 

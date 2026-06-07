@@ -25,8 +25,6 @@ public:
         /*override*/;
 
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
-
-    virtual ~InventoryContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

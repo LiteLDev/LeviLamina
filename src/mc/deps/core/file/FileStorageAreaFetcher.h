@@ -21,8 +21,6 @@ public:
     virtual ::Core::Result
     getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path) const
         /*override*/;
-
-    virtual ~FileStorageAreaFetcher() /*override*/ = default;
     // NOLINTEND
 
 public:

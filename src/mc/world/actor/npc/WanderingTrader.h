@@ -18,12 +18,6 @@ public:
     WanderingTrader();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~WanderingTrader() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI WanderingTrader(

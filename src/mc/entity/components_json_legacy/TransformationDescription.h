@@ -41,14 +41,18 @@ public:
     virtual char const* getJsonName() const /*override*/;
 
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
-
-    virtual ~TransformationDescription() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI TransformationDescription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -29,18 +29,6 @@ public:
     ScriptWidgetComponentRenderPrimType_Line();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrimType_Line() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line const& other) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();

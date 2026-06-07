@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::gametest::GameTestError> run() /*override*/;
-
-    virtual ~NativeFunctionGameTestAction() /*override*/ = default;
     // NOLINTEND
 
 public:

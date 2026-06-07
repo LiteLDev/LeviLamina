@@ -45,46 +45,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraInstruction();
-
-public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI CameraInstruction(::CameraInstruction&&);
-#endif
-
-    MCAPI CameraInstruction(::CameraInstruction const&);
-
-    MCAPI ::CameraInstruction& operator=(::CameraInstruction&&);
-
-    MCAPI ::CameraInstruction& operator=(::CameraInstruction const&);
-
     MCAPI bool operator==(::CameraInstruction const& other) const;
-
-    MCAPI ~CameraInstruction();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::CameraInstruction&&);
-#endif
-
-    MCAPI void* $ctor(::CameraInstruction const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

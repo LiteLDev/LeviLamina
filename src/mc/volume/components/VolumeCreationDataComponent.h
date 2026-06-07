@@ -15,7 +15,6 @@ public:
 public:
     // prevent constructor by default
     VolumeCreationDataComponent& operator=(VolumeCreationDataComponent const&);
-    VolumeCreationDataComponent(VolumeCreationDataComponent const&);
     VolumeCreationDataComponent();
 
 #endif
@@ -23,7 +22,21 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI VolumeCreationDataComponent(::VolumeCreationDataComponent const&);
+
+    MCNAPI VolumeCreationDataComponent(::std::string const& identifier, ::std::string const& name);
+
     MCNAPI ::VolumeCreationDataComponent& operator=(::VolumeCreationDataComponent&&);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::VolumeCreationDataComponent const&);
+
+    MCNAPI void* $ctor(::std::string const& identifier, ::std::string const& name);
 #endif
     // NOLINTEND
 };

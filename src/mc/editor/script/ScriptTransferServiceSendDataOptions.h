@@ -26,9 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptTransferServiceSendDataOptions&
-    operator=(::Editor::ScriptModule::ScriptTransferServiceSendDataOptions&&);
-
     MCNAPI ~ScriptTransferServiceSendDataOptions();
     // NOLINTEND
 

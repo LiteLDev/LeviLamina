@@ -6,7 +6,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/v1_21_130/actor/brain/MemoryIdentifierDefinition.h"
-#include "mc/deps/shared_types/v1_26_0/actor/brain/BaseSensorEntry.h"
+#include "mc/deps/shared_types/v1_26_0/actor/brain/BaseSensorEntryDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,10 +14,11 @@ namespace SharedTypes::Brain { struct EntityRefMemory; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-namespace SharedTypes::v1_26_0::Brain {
+namespace SharedTypes::v1_26_0::Brain::MemorySensors {
 
-struct InRangeOfEntitySensorEntryDefinition : public ::SharedTypes::v1_26_0::Brain::BaseSensorEntry<
-                                                  ::SharedTypes::v1_26_0::Brain::InRangeOfEntitySensorEntryDefinition> {
+struct InRangeOfEntitySensorEntryDefinition
+: public ::SharedTypes::v1_26_0::Brain::BaseSensorEntryDefinition<
+      ::SharedTypes::v1_26_0::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,19 +34,19 @@ public:
 
 public:
     // prevent constructor by default
+    InRangeOfEntitySensorEntryDefinition& operator=(InRangeOfEntitySensorEntryDefinition const&);
     InRangeOfEntitySensorEntryDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    InRangeOfEntitySensorEntryDefinition(::SharedTypes::v1_26_0::Brain::InRangeOfEntitySensorEntryDefinition const&);
+    MCAPI InRangeOfEntitySensorEntryDefinition(
+        ::SharedTypes::v1_26_0::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition&&
+    );
 
-    MCAPI ::SharedTypes::v1_26_0::Brain::InRangeOfEntitySensorEntryDefinition&
-    operator=(::SharedTypes::v1_26_0::Brain::InRangeOfEntitySensorEntryDefinition&&);
-
-    MCAPI ::SharedTypes::v1_26_0::Brain::InRangeOfEntitySensorEntryDefinition&
-    operator=(::SharedTypes::v1_26_0::Brain::InRangeOfEntitySensorEntryDefinition const&);
+    MCAPI InRangeOfEntitySensorEntryDefinition(
+        ::SharedTypes::v1_26_0::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition const&
+    );
 
     MCAPI ~InRangeOfEntitySensorEntryDefinition();
     // NOLINTEND
@@ -73,7 +74,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_0::Brain::InRangeOfEntitySensorEntryDefinition const&);
+    MCAPI void* $ctor(::SharedTypes::v1_26_0::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition&&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_26_0::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition const&);
     // NOLINTEND
 
 public:
@@ -83,4 +86,4 @@ public:
     // NOLINTEND
 };
 
-} // namespace SharedTypes::v1_26_0::Brain
+} // namespace SharedTypes::v1_26_0::Brain::MemorySensors

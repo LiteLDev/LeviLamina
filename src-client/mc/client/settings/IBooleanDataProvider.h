@@ -11,19 +11,13 @@ class IBooleanDataProvider : public ::Settings::IDataProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBooleanDataProvider() /*override*/;
+    virtual ~IBooleanDataProvider() /*override*/ = default;
 
     virtual bool getValue() const = 0;
 
     virtual void setValue(bool value) = 0;
 
     virtual bool flush();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

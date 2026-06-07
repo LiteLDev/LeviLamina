@@ -30,13 +30,12 @@ public:
 public:
     // prevent constructor by default
     MessageGamedrop& operator=(MessageGamedrop const&);
-    MessageGamedrop(MessageGamedrop const&);
     MessageGamedrop();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessageGamedrop(::OreUI::MessageGamedrop&&);
+    MCAPI MessageGamedrop(::OreUI::MessageGamedrop const&);
 
     MCAPI MessageGamedrop(
         ::MessageGamedropData const&                               item,
@@ -45,13 +44,15 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
+    MCAPI ::OreUI::MessageGamedrop& operator=(::OreUI::MessageGamedrop&&);
+
     MCAPI ~MessageGamedrop();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::MessageGamedrop&&);
+    MCAPI void* $ctor(::OreUI::MessageGamedrop const&);
 
     MCAPI void* $ctor(
         ::MessageGamedropData const&                               item,

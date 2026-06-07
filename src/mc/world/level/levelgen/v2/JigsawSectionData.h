@@ -37,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawSectionData(::br::worldgen::JigsawSectionData&&);
-
     MCAPI JigsawSectionData(::br::worldgen::JigsawSectionData const&);
 
     MCAPI ::br::worldgen::JigsawSectionDataKey push(::StructurePoolElement const* element, int depth);
@@ -51,8 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::br::worldgen::JigsawSectionData&&);
-
     MCAPI void* $ctor(::br::worldgen::JigsawSectionData const&);
     // NOLINTEND
 

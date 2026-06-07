@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
+#include "mc/world/level/biome/BiomeIdType.h"
 #include "mc/world/level/biome/climate_utils/Parameter.h"
 
 // auto generated forward declare list
@@ -13,6 +13,7 @@ class Biome;
 class BiomeRegistry;
 class Experiments;
 struct BiomeNoiseTarget;
+struct ClimateParameters;
 // clang-format on
 
 class OverworldBiomeBuilder {
@@ -48,8 +49,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldBiomeBuilder(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
-
     MCAPI void _addHighSlice(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   weirdness,
@@ -70,6 +69,9 @@ public:
         ::BiomeRegistry const&             biomeRegistry
     ) const;
 
+    MCAPI void
+    _addOffCoastBiomes(::std::vector<::BiomeNoiseTarget>& biomes, ::BiomeRegistry const& biomeRegistry) const;
+
     MCAPI void _addPeaks(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   weirdness,
@@ -77,17 +79,6 @@ public:
     ) const;
 
     MCAPI void _addSurfaceBiome(
-        ::std::vector<::BiomeNoiseTarget>& biomes,
-        ::ClimateUtils::Parameter const&   temperature,
-        ::ClimateUtils::Parameter const&   humidity,
-        ::ClimateUtils::Parameter const&   continentalness,
-        ::ClimateUtils::Parameter const&   erosion,
-        ::ClimateUtils::Parameter const&   weirdness,
-        float                              offset,
-        ::Biome const*                     second
-    ) const;
-
-    MCAPI void _addUndergroundBiome(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   temperature,
         ::ClimateUtils::Parameter const&   humidity,
@@ -107,24 +98,9 @@ public:
         ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI ::Biome const* _pickBadlandsBiome(
-        int                              humidityIndex,
-        ::ClimateUtils::Parameter const& weirdness,
-        ::BiomeRegistry const&           biomeRegistry
-    ) const;
-
-    MCAPI ::Biome const* _pickBeachBiome(int temperatureIndex, ::BiomeRegistry const& biomeRegistry) const;
-
-    MCAPI ::Biome const* _pickSlopeBiome(
-        int                              temperatureIndex,
-        int                              humidityIndex,
-        ::ClimateUtils::Parameter const& weirdness,
-        ::BiomeRegistry const&           biomeRegistry
-    ) const;
-
     MCAPI void _populateBiomeArrays(::BiomeRegistry const& biomeRegistry) const;
 
-    MCAPI void addBiomes(::std::vector<::BiomeNoiseTarget>& biomes, ::BiomeRegistry const& biomeRegistry) const;
+    MCAPI ::std::vector<::ClimateParameters> getWorldSpawnParameters() const;
     // NOLINTEND
 
 public:
@@ -157,11 +133,7 @@ public:
     MCAPI static ::ClimateUtils::Parameter const& nearInlandContinentalness();
 
     MCAPI static ::ClimateUtils::Parameter const& oceanContinentalness();
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    MCAPI static ::ClimateUtils::Parameter const& sulfurCavesWeirdness();
     // NOLINTEND
 };

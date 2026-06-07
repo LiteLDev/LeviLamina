@@ -30,37 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptTitleDisplayOptions& operator=(ScriptTitleDisplayOptions const&);
-    ScriptTitleDisplayOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptTitleDisplayOptions(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptTitleDisplayOptions&
-    operator=(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
-
-    MCAPI ~ScriptTitleDisplayOptions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

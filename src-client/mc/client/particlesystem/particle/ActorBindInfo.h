@@ -7,11 +7,6 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-// clang-format on
-
 namespace ParticleSystem {
 
 struct ActorBindInfo {
@@ -26,10 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isValid() const;
-
-    MCAPI ::Actor* resolveActor() const;
-
     MCAPI ~ActorBindInfo();
     // NOLINTEND
 

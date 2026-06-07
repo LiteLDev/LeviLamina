@@ -13,17 +13,20 @@ class StrictEntityContext;
 class UserEntityIdentifierComponent;
 struct PlayerComponent;
 struct ShouldAwardWhoNeedsRocketsAchievementFlagComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace AwardWhoNeedsRocketsAchievementSystem {
 // functions
 // NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createSystem();
+
 MCAPI void sendEvent(
-    ::entt::type_list<::Include<::PlayerComponent, ::ShouldAwardWhoNeedsRocketsAchievementFlagComponent>>,
-    ::StrictEntityContext const&                                           entity,
-    ::ActorOwnerComponent&                                                 actorOwner,
-    ::UserEntityIdentifierComponent const&                                 id,
-    ::EntityModifier<::ShouldAwardWhoNeedsRocketsAchievementFlagComponent> modifier
+    ::entt::type_list<::Include<::PlayerComponent, ::ShouldAwardWhoNeedsRocketsAchievementFlagComponent>> entity,
+    ::StrictEntityContext const&                                                                          actorOwner,
+    ::ActorOwnerComponent&                                                                                id,
+    ::UserEntityIdentifierComponent const&                                                                modifier,
+    ::EntityModifier<::ShouldAwardWhoNeedsRocketsAchievementFlagComponent>
 );
 // NOLINTEND
 

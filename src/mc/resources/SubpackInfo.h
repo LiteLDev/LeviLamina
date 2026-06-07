@@ -11,28 +11,23 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk548b8a;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     SubpackInfo& operator=(SubpackInfo const&);
-    SubpackInfo(SubpackInfo const&);
     SubpackInfo();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    SubpackInfo(SubpackInfo const&);
-    SubpackInfo();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::SubpackInfo& operator=(::SubpackInfo const&);
-#endif
+    MCNAPI SubpackInfo(::SubpackInfo const&);
 
     MCNAPI ~SubpackInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SubpackInfo const&);
     // NOLINTEND
 
 public:

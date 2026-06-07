@@ -15,19 +15,23 @@ public:
 
 public:
     // prevent constructor by default
-    PrintEvent(PrintEvent const&);
+    PrintEvent& operator=(PrintEvent const&);
     PrintEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PrintEvent(::ScriptDebuggerMessages::PrintEvent const&);
+
     MCNAPI ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent&&);
 
-    MCNAPI ::ScriptDebuggerMessages::PrintEvent& operator=(::ScriptDebuggerMessages::PrintEvent const&);
-
-    MCNAPI bool operator==(::ScriptDebuggerMessages::PrintEvent const&) const;
-
     MCNAPI ~PrintEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptDebuggerMessages::PrintEvent const&);
     // NOLINTEND
 
 public:

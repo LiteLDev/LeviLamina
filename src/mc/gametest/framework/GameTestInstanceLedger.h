@@ -3,12 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/gametest/framework/IGameTestListener.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
+class BoundingBox;
 class LevelStorage;
 namespace gametest { class BaseGameTestInstance; }
 // clang-format on
@@ -31,8 +30,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
-
-    virtual ~GameTestInstanceLedger() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -41,6 +38,8 @@ public:
     MCNAPI explicit GameTestInstanceLedger(::LevelStorage& storage);
 
     MCNAPI void clear(::DimensionType dimension);
+
+    MCNAPI ::std::vector<::BoundingBox> getBoundingBoxes(::DimensionType dimension) const;
     // NOLINTEND
 
 public:

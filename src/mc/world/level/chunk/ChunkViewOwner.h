@@ -13,4 +13,27 @@ public:
     ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mNetworkIdentifier;
     ::ll::TypedStorage<1, 1, ::SubClientId>         mSubClientId;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ChunkViewOwner& operator=(ChunkViewOwner const&);
+    ChunkViewOwner();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChunkViewOwner(::ChunkViewOwner const& copy);
+
+    MCAPI ChunkViewOwner(::NetworkIdentifier const& networkId, ::SubClientId id);
+
+    MCAPI uint64 getHash() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ChunkViewOwner const& copy);
+
+    MCAPI void* $ctor(::NetworkIdentifier const& networkId, ::SubClientId id);
+    // NOLINTEND
 };

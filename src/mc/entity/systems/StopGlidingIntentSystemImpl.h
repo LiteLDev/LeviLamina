@@ -29,22 +29,22 @@ namespace StopGlidingIntentSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void doStopGlidingIntent(
-    ::StrictEntityContext const&,
-    ::Optional<::ArmorFlyEnabledFlagComponent const>      hasArmorFlyEnabled,
-    ::Optional<::OnGroundFlagComponent const>             isOnGround,
-    ::Optional<::PassengerComponent const>                isPassenger,
-    ::Optional<::WasInWaterFlagComponent const>           wasInWater,
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily,
-    ::AABBShapeComponent const&                           aabbShapeComponent,
-    ::FallFlyTicksComponent const&                        fallFlyTicksComponent,
-    ::MoveInputComponent const&                           moveInputComponent,
-    ::StateVectorComponent const&                         stateVectorComponent,
-    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
-    ::VanillaClientGameplayComponent const&               vanillaClientGameplayComponent,
-    ::PlayerActionComponent&                              playerActionComponent,
-    ::PlayerInputRequestComponent&                        playerInputRequestComponent,
-    ::IConstBlockSource const&                            constBlockSource
+    ::StrictEntityContext const&                          hasArmorFlyEnabled,
+    ::Optional<::ArmorFlyEnabledFlagComponent const>      isOnGround,
+    ::Optional<::OnGroundFlagComponent const>             isPassenger,
+    ::Optional<::PassengerComponent const>                wasInWater,
+    ::Optional<::WasInWaterFlagComponent const>           canStandOnSnow,
+    ::Optional<::CanStandOnSnowFlagComponent const>       hasLightweightFamily,
+    ::Optional<::HasLightweightFamilyFlagComponent const> aabbShapeComponent,
+    ::AABBShapeComponent const&                           fallFlyTicksComponent,
+    ::FallFlyTicksComponent const&                        moveInputComponent,
+    ::MoveInputComponent const&                           stateVectorComponent,
+    ::StateVectorComponent const&                         synchedActorDataComponent,
+    ::ActorDataFlagComponent const&                       vanillaClientGameplayComponent,
+    ::VanillaClientGameplayComponent const&               playerActionComponent,
+    ::PlayerActionComponent&                              playerInputRequestComponent,
+    ::PlayerInputRequestComponent&                        constBlockSource,
+    ::IConstBlockSource const&
 );
 // NOLINTEND
 

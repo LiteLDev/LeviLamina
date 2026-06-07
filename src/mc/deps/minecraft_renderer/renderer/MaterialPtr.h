@@ -5,9 +5,9 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+namespace mce { class RenderMaterial; }
 namespace mce { class RenderMaterialGroupBase; }
 namespace mce { class RenderMaterialInfo; }
-namespace mce { class RenderMaterial; }
 // clang-format on
 
 namespace mce {
@@ -21,23 +21,35 @@ public:
 #endif
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MaterialPtr(MaterialPtr const&);
+    MaterialPtr();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI MaterialPtr();
-
-    MCAPI MaterialPtr(::mce::MaterialPtr const&);
-
     MCAPI MaterialPtr(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
 
     MCAPI ::HashedString const& getHashedName() const;
 
     MCAPI bool isNull() const;
 
-    MCAPI ::mce::RenderMaterial const* operator->() const;
+    MCAPI explicit operator bool() const;
+
+    MCAPI ::mce::RenderMaterial const& operator*() const;
+
+    MCFOLD ::mce::RenderMaterial const* operator->() const;
+
+    MCFOLD ::mce::RenderMaterial* operator->();
 
     MCFOLD ::mce::MaterialPtr& operator=(::mce::MaterialPtr const&);
+
+    MCFOLD bool operator==(::mce::MaterialPtr const& rhs) const;
 
     MCAPI ~MaterialPtr();
 #endif
@@ -47,10 +59,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::mce::MaterialPtr const&);
-
     MCAPI void* $ctor(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
 #endif
     // NOLINTEND

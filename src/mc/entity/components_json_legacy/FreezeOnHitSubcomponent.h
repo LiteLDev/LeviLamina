@@ -38,8 +38,6 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     virtual char const* getName() const /*override*/;
-
-    virtual ~FreezeOnHitSubcomponent() /*override*/ = default;
     // NOLINTEND
 
 public:

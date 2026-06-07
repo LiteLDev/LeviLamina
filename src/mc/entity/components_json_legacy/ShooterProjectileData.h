@@ -21,13 +21,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void setActorDefByName(::std::string const& name);
-
-    MCAPI ~ShooterProjectileData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFunction();
+    virtual ~IFunction() = default;
 
     virtual ::entt::meta_any call(::entt::meta_handle, ::entt::meta_any*, uint) = 0;
 
@@ -42,15 +42,11 @@ public:
 
     virtual bool isValidArgumentValue(::entt::meta_any const&, uint) const = 0;
 
+    virtual bool isValidVectorArgumentValue(::entt::meta_any const&, uint) const = 0;
+
     virtual ::std::optional<::entt::meta_type> getInstanceType() const = 0;
 
     virtual ::Scripting::ArgumentDetails const& getArgDetails(uint) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -16,23 +16,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    JoinablePartyFriend& operator=(JoinablePartyFriend const&);
-    JoinablePartyFriend(JoinablePartyFriend const&);
-    JoinablePartyFriend();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JoinablePartyFriend(::OreUI::JoinablePartyFriend&&);
-
     MCAPI ~JoinablePartyFriend();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::JoinablePartyFriend&&);
     // NOLINTEND
 
 public:

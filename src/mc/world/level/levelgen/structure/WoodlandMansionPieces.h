@@ -53,19 +53,13 @@ public:
 
         virtual ::std::string get2x2(::Random& random) = 0;
 
-        virtual ::std::string get2x2Secret(::Random& random) = 0;
+        virtual ::std::string get2x2Secret(::Random&) = 0;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -76,18 +70,6 @@ public:
         ::ll::TypedStorage<1, 1, ::Rotation>     mRotation;
         ::ll::TypedStorage<4, 12, ::BlockPos>    mPosition;
         ::ll::TypedStorage<8, 32, ::std::string> mWallType;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PlacementData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -104,7 +86,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void set(int x0, int y0, int x1, int y1, int value);
+        MCAPI bool edgesTo(int x, int y, int ifValue);
         // NOLINTEND
     };
 
@@ -131,8 +113,7 @@ public:
         // NOLINTBEGIN
         virtual ::StructurePieceType getType() const /*override*/;
 
-        virtual void
-        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+        virtual void postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
 
         virtual void _handleDataMarker(
             ::std::string const& markerId,
@@ -141,8 +122,6 @@ public:
             ::Random&            random,
             ::BoundingBox const& chunkBB
         ) /*override*/;
-
-        virtual ~WoodlandMansionPiece() /*override*/;
         // NOLINTEND
 
     public:
@@ -194,17 +173,11 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::StructurePieceType $getType() const;
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
         MCAPI void $_handleDataMarker(
             ::std::string const& markerId,
@@ -234,15 +207,15 @@ public:
 
         virtual ::std::string get1x1Secret(::Random& random) /*override*/;
 
-        virtual ::std::string get1x2SideEntrance(::Random& random, bool isStairsRoom) /*override*/;
+        virtual ::std::string get1x2SideEntrance(::Random& random, bool) /*override*/;
 
-        virtual ::std::string get1x2FrontEntrance(::Random& random, bool isStairsRoom) /*override*/;
+        virtual ::std::string get1x2FrontEntrance(::Random& random, bool) /*override*/;
 
         virtual ::std::string get1x2Secret(::Random& random) /*override*/;
 
         virtual ::std::string get2x2(::Random& random) /*override*/;
 
-        virtual ::std::string get2x2Secret(::Random& random) /*override*/;
+        virtual ::std::string get2x2Secret(::Random&) /*override*/;
         // NOLINTEND
 
     public:
@@ -252,15 +225,15 @@ public:
 
         MCFOLD ::std::string $get1x1Secret(::Random& random);
 
-        MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
+        MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool);
 
-        MCAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
+        MCAPI ::std::string $get1x2FrontEntrance(::Random& random, bool);
 
         MCAPI ::std::string $get1x2Secret(::Random& random);
 
         MCAPI ::std::string $get2x2(::Random& random);
 
-        MCFOLD ::std::string $get2x2Secret(::Random& random);
+        MCFOLD ::std::string $get2x2Secret(::Random&);
 
 
         // NOLINTEND
@@ -305,13 +278,8 @@ public:
 
         MCAPI void _setupThirdFloor();
 
-        MCAPI uchar get1x2RoomDirection(
-            ::WoodlandMansionPieces::SimpleGrid const& grid,
-            int                                        x,
-            int                                        y,
-            int                                        floorNum,
-            int                                        roomId
-        ) const;
+        MCAPI uchar
+        get1x2RoomDirection(::WoodlandMansionPieces::SimpleGrid const& x, int y, int floorNum, int roomId, int) const;
         // NOLINTEND
 
     public:
@@ -387,11 +355,6 @@ public:
             ::WoodlandMansionPieces::PlacementData&             data
         );
 
-        MCAPI void _traverseInnerTurn(
-            ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-            ::WoodlandMansionPieces::PlacementData&             data
-        );
-
         MCAPI void _traverseOuterWalls(
             ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
             ::WoodlandMansionPieces::PlacementData&             data,
@@ -440,7 +403,7 @@ public:
 
         virtual ::std::string get2x2(::Random& random) /*override*/;
 
-        virtual ::std::string get2x2Secret(::Random& random) /*override*/;
+        virtual ::std::string get2x2Secret(::Random&) /*override*/;
         // NOLINTEND
 
     public:
@@ -458,7 +421,7 @@ public:
 
         MCAPI ::std::string $get2x2(::Random& random);
 
-        MCFOLD ::std::string $get2x2Secret(::Random& random);
+        MCFOLD ::std::string $get2x2Secret(::Random&);
 
 
         // NOLINTEND
@@ -472,17 +435,17 @@ public:
 
     class ThirdFloorRoomCollection : public ::WoodlandMansionPieces::SecondFloorRoomCollection {
     public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~ThirdFloorRoomCollection() /*override*/ = default;
-        // NOLINTEND
-
-    public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
     };
+
+    using FloorRoomCollection = ::WoodlandMansionPieces::FloorRoomCollection;
+
+    using MansionGrid = ::WoodlandMansionPieces::MansionGrid;
+
+    using SimpleGrid = ::WoodlandMansionPieces::SimpleGrid;
 
 public:
     // static functions

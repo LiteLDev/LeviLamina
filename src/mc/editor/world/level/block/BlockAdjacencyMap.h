@@ -19,17 +19,24 @@ public:
 public:
     // prevent constructor by default
     BlockAdjacencyMap& operator=(BlockAdjacencyMap const&);
-    BlockAdjacencyMap(BlockAdjacencyMap const&);
     BlockAdjacencyMap();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI BlockAdjacencyMap(::Editor::BlockAdjacencyMap const& rhs);
+
     MCNAPI void add(::BlockPos const& pos);
 
     MCNAPI void remove(::BlockPos const& pos);
 
     MCNAPI void translate(::BlockPos const& offset);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::BlockAdjacencyMap const& rhs);
     // NOLINTEND
 };
 

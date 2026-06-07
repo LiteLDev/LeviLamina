@@ -31,21 +31,6 @@ public:
         // ClientBiomeJsonObject inner types define
         struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {
         public:
-            // prevent constructor by default
-            ComponentMap(ComponentMap const&);
-            ComponentMap();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCFOLD ::SharedTypes::v1_21_110::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
-            operator=(::SharedTypes::v1_21_110::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&&);
-
-            MCFOLD ::SharedTypes::v1_21_110::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
-            operator=(::SharedTypes::v1_21_110::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap const&);
-            // NOLINTEND
-
-        public:
             // static functions
             // NOLINTBEGIN
             MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -74,9 +59,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCFOLD ::SharedTypes::v1_21_110::ClientBiomeJsonDocument::ClientBiomeJsonObject&
-        operator=(::SharedTypes::v1_21_110::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
-
-        MCFOLD ::SharedTypes::v1_21_110::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_110::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
         MCAPI ~ClientBiomeJsonObject();
@@ -103,24 +85,20 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mFormatVersion;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
-    ClientBiomeJsonDocument(ClientBiomeJsonDocument const&);
+    ClientBiomeJsonDocument();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ClientBiomeJsonDocument();
+    MCAPI ClientBiomeJsonDocument(::SharedTypes::v1_21_110::ClientBiomeJsonDocument const&);
 
-    MCAPI ClientBiomeJsonDocument(::SharedTypes::v1_21_110::ClientBiomeJsonDocument&&);
+    MCFOLD ::SharedTypes::v1_21_110::ClientBiomeJsonDocument&
+    operator=(::SharedTypes::v1_21_110::ClientBiomeJsonDocument&&);
 
     MCAPI ~ClientBiomeJsonDocument();
-#endif
     // NOLINTEND
 
 public:
@@ -132,19 +110,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::SharedTypes::v1_21_110::ClientBiomeJsonDocument&&);
-#endif
+    MCFOLD void* $ctor(::SharedTypes::v1_21_110::ClientBiomeJsonDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCFOLD void $dtor();
-#endif
     // NOLINTEND
 };
 

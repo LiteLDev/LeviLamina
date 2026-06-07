@@ -28,12 +28,6 @@ public:
     LocaleQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~LocaleQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI LocaleQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);

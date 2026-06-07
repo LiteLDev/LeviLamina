@@ -29,12 +29,6 @@ public:
     FastDispatchPublisherBase_MultiThreaded();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FastDispatchPublisherBase_MultiThreaded() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool _loadDispatchTargets(::Bedrock::PubSub::Detail::DispatchTargets& targets) const;

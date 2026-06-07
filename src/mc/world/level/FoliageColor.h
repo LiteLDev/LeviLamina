@@ -9,6 +9,20 @@ namespace mce { class Color; }
 
 class FoliageColor {
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static int getMapBirchColor();
+
+    MCNAPI static int getMapDryColor();
+
+    MCNAPI static int getMapEvergreenColor();
+
+    MCNAPI static int getMapFoliageColor(float temp, float rain);
+
+    MCNAPI static int getMapGrassColor(float temp, float rain);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::mce::Color const& FOLIAGE_BOTTOM_LEFT();

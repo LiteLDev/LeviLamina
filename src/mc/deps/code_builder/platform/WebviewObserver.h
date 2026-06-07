@@ -16,13 +16,17 @@ class WebviewObserver : public ::Core::Observer<::WebviewObserver, ::Core::Singl
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WebviewObserver() /*override*/;
+    virtual ~WebviewObserver() /*override*/ = default;
 
     virtual void onLoadingBegin();
 
     virtual void onLoadingEnd();
 
+#ifdef LL_PLAT_S
+    virtual void onError(::WebviewError const&);
+#else // LL_PLAT_C
     virtual void onError(::WebviewError const& error);
+#endif
 
     virtual void onWebviewChanged();
 
@@ -48,19 +52,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $onLoadingBegin();
 
     MCNAPI void $onLoadingEnd();
 
-    MCNAPI void $onError(::WebviewError const& error);
+    MCNAPI void $onError(::WebviewError const&);
 
     MCNAPI void $onWebviewChanged();
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/gametest/framework/BaseGameTestInstance.h"
 
 // auto generated forward declare list
@@ -11,7 +10,6 @@
 class AABB;
 class BlockSource;
 class BoundingBox;
-class Dimension;
 class Vec3;
 // clang-format on
 

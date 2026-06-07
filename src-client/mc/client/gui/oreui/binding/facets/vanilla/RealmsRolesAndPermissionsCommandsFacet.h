@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsRolesAndPermissionsCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsRolesAndPermissionsCommandsFacet() /*override*/ = default;
@@ -32,6 +36,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsRolesAndPermissionsCommandsFacet(
+        ::std::shared_ptr<::Realms::RealmsRolesAndPermissions> rolesAndPermissions
+    );
+
     MCAPI void initRealmsRolesAndActions(::std::string const& realmId);
 
     MCAPI void initRealmsUserRoleAndActions(::std::string const& playerXuid, ::Realms::PlayerRole role);
@@ -49,6 +57,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsRolesAndPermissions> rolesAndPermissions);
     // NOLINTEND
 
 public:

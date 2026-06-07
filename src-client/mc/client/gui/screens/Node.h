@@ -30,7 +30,7 @@ public:
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onExit
     );
 
-    MCAPI ::Node& operator=(::Node const&);
+    MCFOLD ::Node& operator=(::Node const&);
 
     MCAPI ~Node();
     // NOLINTEND

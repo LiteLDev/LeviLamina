@@ -23,6 +23,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player);
+
+    MCNAPI void finalize(::SimulatedPlayer& player);
     // NOLINTEND
 };
 

@@ -19,9 +19,7 @@ public:
     virtual bool fits(::RoomDefinition const& definition) const /*override*/;
 
     virtual ::std::unique_ptr<::OceanMonumentPiece>
-    create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) /*override*/;
-
-    virtual ~FitDoubleZRoom() /*override*/ = default;
+    create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random&) /*override*/;
     // NOLINTEND
 
 public:
@@ -30,7 +28,7 @@ public:
     MCAPI bool $fits(::RoomDefinition const& definition) const;
 
     MCAPI ::std::unique_ptr<::OceanMonumentPiece>
-    $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);
+    $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random&);
 
 
     // NOLINTEND

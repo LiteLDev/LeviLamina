@@ -10,8 +10,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick() /*override*/;
-
-    virtual ~WalkState() /*override*/ = default;
     // NOLINTEND
 
 public:

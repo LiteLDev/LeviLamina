@@ -12,17 +12,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TransferPacketPayload(TransferPacketPayload const&);
-    TransferPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::TransferPacketPayload& operator=(::TransferPacketPayload&&);
-
-    MCAPI ::TransferPacketPayload& operator=(::TransferPacketPayload const&);
-
     MCAPI ~TransferPacketPayload();
     // NOLINTEND
 

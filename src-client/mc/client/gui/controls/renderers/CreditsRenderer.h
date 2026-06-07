@@ -46,6 +46,22 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                    mCentered;
         ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                      mTexturePtr;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CreditsContent();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI CreditsContent(::std::string const& text, int height, bool centered, int paddingAfter);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::string const& text, int height, bool centered, int paddingAfter);
+        // NOLINTEND
     };
 
     using clock_type = ::std::chrono::steady_clock;
@@ -78,7 +94,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreditsRenderer() /*override*/ = default;
+    virtual ~CreditsRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -134,6 +150,9 @@ public:
         int                                                ownerWidth
     );
 
+    MCAPI void
+    _parseFiles(::IClientInstance& client, ::UIControl& owner, ::std::vector<::std::string> const& filePaths);
+
     MCAPI void _parseSection(
         ::Json::Value const&                               rootData,
         ::Bedrock::NotNullNonOwnerPtr<::FontHandle> const& fontHandle,
@@ -150,9 +169,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& INDENT_TEXT();
-
-    MCAPI static ::std::string_view const& SECTION_BORDER_TEXT();
+    MCAPI static int const& FILE_PADDING();
     // NOLINTEND
 
 public:
@@ -161,6 +178,12 @@ public:
     MCAPI void* $ctor(::CreditsRenderer const&);
 
     MCAPI void* $ctor(::UIResolvedDef const& def);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

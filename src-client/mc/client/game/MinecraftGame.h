@@ -23,9 +23,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/DeferredTasksManager.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/PointerType.h"
 #include "mc/events/IMinecraftEventing.h"
@@ -34,8 +32,6 @@
 #include "mc/platform/MultiplayerLockedContext.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/resources/ResourcePackListener.h"
-#include "mc/server/commands/test/TestAssetCommandType.h"
-#include "mc/server/commands/test/TestCommandType.h"
 #include "mc/sound/MusicRepeatMode.h"
 #include "mc/world/level/LevelListener.h"
 
@@ -47,7 +43,6 @@ class ActorAnimationGroup;
 class ActorResourceDefinitionGroup;
 class AppSystemRegistry;
 class BlockCullingGroup;
-class CDNService;
 class ChunkSource;
 class ClientInstance;
 class ClientNetworkSystem;
@@ -60,7 +55,6 @@ class CubemapBackgroundResources;
 class DateManager;
 class DeferredLighting;
 class DevConsoleLogger;
-class Dimension;
 class EDUSystems;
 class EmoticonManager;
 class EntityContext;
@@ -110,7 +104,7 @@ class MinecraftInputHandler;
 class MusicManager;
 class NewPlayerSystem;
 class Option;
-class Options;
+class OptionRegistry;
 class PackDownloadManager;
 class PackManifest;
 class PackManifestFactory;
@@ -148,7 +142,6 @@ class TextureAtlas;
 class Timer;
 class TreatmentPackDownloadMonitor;
 class TrialManager;
-class UIEventCoordinator;
 class UIMeasureStrategy;
 class Vec3;
 class WorldTemplateManager;
@@ -161,6 +154,7 @@ struct GameConnectionInfoEx;
 struct LocalWorldTransferActionFunc;
 struct MinecraftGameArguments;
 struct PlayerJoinWorldContext;
+struct RealmTransferActionFunc;
 struct ScreenshotOptions;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
@@ -196,6 +190,7 @@ namespace Social { class PresenceManager; }
 namespace Social { class SocialSystem; }
 namespace Social { class User; }
 namespace World { class WorldSystem; }
+namespace dragon::framerenderer { struct DebugParameters; }
 namespace edu::auth { struct CredentialsAcquired; }
 namespace edu::auth { struct CredentialsRefreshSuccess; }
 namespace edu::auth { struct CredsLost; }
@@ -216,6 +211,7 @@ public:
     // MinecraftGame inner types declare
     // clang-format off
     struct InitContext;
+    struct TestCommandPublisher;
     struct FrameGapImpl;
     // clang-format on
 
@@ -260,6 +256,8 @@ public:
         InitContext();
     };
 
+    struct TestCommandPublisher {};
+
     struct FrameGapImpl {
     public:
         // member variables
@@ -300,8 +298,6 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnkc4eefd;
     ::ll::UntypedStorage<8, 64>  mUnk4d9a8c;
     ::ll::UntypedStorage<8, 16>  mUnke052b6;
-    ::ll::UntypedStorage<8, 64>  mUnk1a273c;
-    ::ll::UntypedStorage<8, 64>  mUnk84236d;
     ::ll::UntypedStorage<8, 8>   mUnk79ddba;
     ::ll::UntypedStorage<8, 8>   mUnkf926be;
     ::ll::UntypedStorage<8, 8>   mUnk37afa1;
@@ -437,6 +433,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk748223;
     ::ll::UntypedStorage<8, 16>  mUnkec6beb;
     ::ll::UntypedStorage<8, 8>   mUnk55dcf8;
+    ::ll::UntypedStorage<8, 8>   mUnk585275;
     ::ll::UntypedStorage<8, 16>  mUnk4877d7;
     ::ll::UntypedStorage<8, 8>   mUnkd72bcd;
     ::ll::UntypedStorage<8, 8>   mUnk6c5fec;
@@ -450,11 +447,11 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk74222f;
     ::ll::UntypedStorage<8, 8>   mUnk468478;
     ::ll::UntypedStorage<8, 8>   mUnkea13b7;
-    ::ll::UntypedStorage<8, 72>  mUnk9bce63;
+    ::ll::UntypedStorage<8, 744> mUnk9947a0;
     ::ll::UntypedStorage<8, 16>  mUnkbf42d0;
     ::ll::UntypedStorage<8, 16>  mUnk469d3c;
     ::ll::UntypedStorage<8, 8>   mUnkf245c7;
-    ::ll::UntypedStorage<8, 64>  mUnk1c142c;
+    ::ll::UntypedStorage<8, 64>  mUnk30b039;
     ::ll::UntypedStorage<8, 8>   mUnk6906a6;
     ::ll::UntypedStorage<8, 8>   mUnka198d7;
     ::ll::UntypedStorage<8, 64>  mUnk63da8b;
@@ -481,8 +478,6 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnkc5fc6f;
     ::ll::UntypedStorage<8, 8>   mUnk7e94f8;
     ::ll::UntypedStorage<8, 8>   mUnkf60a71;
-    ::ll::UntypedStorage<8, 8>   mUnkf164a7;
-    ::ll::UntypedStorage<8, 8>   mUnkea5b46;
     ::ll::UntypedStorage<8, 16>  mUnk5f5935;
     ::ll::UntypedStorage<8, 8>   mUnkd12853;
     ::ll::UntypedStorage<8, 16>  mUnk9f4932;
@@ -580,12 +575,13 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkcd32cf;
     ::ll::UntypedStorage<8, 8>   mUnk32d240;
     ::ll::UntypedStorage<8, 16>  mUnkaa8c49;
-    ::ll::UntypedStorage<8, 616> mUnkbfced1;
+    ::ll::UntypedStorage<8, 680> mUnkbfced1;
     ::ll::UntypedStorage<8, 16>  mUnka3a452;
     ::ll::UntypedStorage<8, 8>   mUnk7f0a19;
     ::ll::UntypedStorage<8, 16>  mUnk968b3f;
     ::ll::UntypedStorage<8, 8>   mUnk67f34e;
     ::ll::UntypedStorage<8, 8>   mUnkc456b9;
+    ::ll::UntypedStorage<8, 8>   mUnk804e62;
     ::ll::UntypedStorage<8, 8>   mUnk92ee4c;
     ::ll::UntypedStorage<8, 8>   mUnke4e7c9;
     ::ll::UntypedStorage<8, 8>   mUnk5e4634;
@@ -729,9 +725,19 @@ public:
     virtual void onLevelDestruction(::std::string const& levelId) /*override*/;
 
     virtual void setWorldTransferAction(
-        ::std::variant<::LocalWorldTransferActionFunc, ::ExternalWorldTransferActionFunc, ::std::monostate>
-            worldTransferAction
+        ::std::variant<
+            ::LocalWorldTransferActionFunc,
+            ::ExternalWorldTransferActionFunc,
+            ::RealmTransferActionFunc,
+            ::std::monostate>&& worldTransferAction
     ) /*override*/;
+
+    virtual ::std::variant<
+        ::LocalWorldTransferActionFunc,
+        ::ExternalWorldTransferActionFunc,
+        ::RealmTransferActionFunc,
+        ::std::monostate> const&
+    getWorldTransferAction() const /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const getWorldTransferAgent() const /*override*/;
 
@@ -837,9 +843,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getPrimaryGuiData() /*override*/;
 
-    virtual ::std::shared_ptr<::Options> getPrimaryUserOptions() /*override*/;
+    virtual ::std::shared_ptr<::OptionRegistry> getPrimaryUserOptions() /*override*/;
 
-    virtual ::std::shared_ptr<::Options const> getPrimaryUserOptions() const /*override*/;
+    virtual ::std::shared_ptr<::OptionRegistry const> getPrimaryUserOptions() const /*override*/;
 
     virtual bool isPrimaryUserSigninInProgress() const /*override*/;
 
@@ -875,8 +881,6 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::PersonaService> getPersonaService() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> getGatheringManager() const /*override*/;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::CDNService> getCDNService() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> getContentCatalogService() const /*override*/;
 
@@ -1046,24 +1050,6 @@ public:
 
     virtual void requestServerShutdown() /*override*/;
 
-    virtual void setTestExecuteCommandCallback(
-        ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const& callback
-    ) /*override*/;
-
-    virtual void setTestAssetCommandCallback(
-        ::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const& callback
-    ) /*override*/;
-
-    virtual void runTestExecuteCommandCallback(
-        ::TestCommandType                   type,
-        ::std::vector<::std::string> const& tags,
-        int                                 repeatCount
-    ) const /*override*/;
-
-    virtual void
-    runTestAssetCommandCallback(::TestAssetCommandType type, ::std::vector<::std::string> const& tags) const
-        /*override*/;
-
     virtual void setLaunchedFromLegacyVersion(bool launchedFromLegacyVersion) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const /*override*/;
@@ -1093,8 +1079,6 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> getMinecraftGraphics() /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getTextureAtlas() /*override*/;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getItemTextureAtlas() /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> getUIRepository() const /*override*/;
 
@@ -1181,10 +1165,10 @@ public:
     virtual void unMuteAudio() /*override*/;
 
     virtual uint64 generateClientId(
-        bool                              forceReset,
-        bool&                             generatedNewId,
-        uint64                            clientIdModifier,
-        ::std::shared_ptr<::Social::User> user
+        bool   generatedNewId,
+        bool&  clientIdModifier,
+        uint64 user,
+        ::std::shared_ptr<::Social::User>
     ) /*override*/;
 
     virtual bool isHostingLocalDedicatedServer() const /*override*/;
@@ -1253,13 +1237,9 @@ public:
 
     virtual bool isEditorModeEnabled() const /*override*/;
 
-    virtual ::std::shared_ptr<::ClientBlobCache::Cache> getClientBlobCache() /*override*/;
-
     virtual ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint> const getContentFileLogEndPoint() const /*override*/;
 
     virtual void tryShowXblFirstLaunchScreen(bool isUserConnectedToPlatform) /*override*/;
-
-    virtual ::std::shared_ptr<void*> requestMusicDeferment() /*override*/;
 
     virtual bool isMusicEnabled() const /*override*/;
 
@@ -1287,7 +1267,7 @@ public:
 
     virtual void onLanguageChanged(::std::string const& code, bool languageSystemInitializing) /*override*/;
 
-    virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest) /*override*/;
+    virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const&) /*override*/;
 
     virtual void onLanguagesLoaded() /*override*/;
 
@@ -1301,8 +1281,6 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> getProfanityContext() /*override*/;
 
     virtual double getGameUpdateDurationInSeconds() const /*override*/;
-
-    virtual ::std::tuple<bool, int> GetEcoModeSettings() const /*override*/;
 
     virtual void queueSubclientRemoval(::SubClientId subid) /*override*/;
 
@@ -1356,8 +1334,6 @@ public:
 
     MCAPI void _InitComplete();
 
-    MCAPI void _InitStarted();
-
     MCAPI void _LoadRendererAssets();
 
     MCAPI void _addSubClientInstanceAndAssociateToUserInternal(int controllerId, bool isInitialCheck);
@@ -1367,8 +1343,6 @@ public:
     MCAPI void _buildClientStack();
 
     MCAPI void _buildClientStartupStack();
-
-    MCAPI bool _canRender() const;
 
     MCAPI bool _clientUpdate();
 
@@ -1392,7 +1366,10 @@ public:
 
     MCAPI ::std::unique_ptr<::ResourcePackStack> _deserializeGlobalResourcePacks();
 
-    MCAPI void _deviceReinitialization(::SerialWorkList& workList);
+    MCAPI void _deviceReinitialization(
+        ::SerialWorkList&                                         workList,
+        ::std::optional<::dragon::framerenderer::DebugParameters> initDebugOptions
+    );
 
     MCAPI void _finishReloadingResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
 
@@ -1495,6 +1472,8 @@ public:
     MCAPI ::SerialWorkList::WorkResult
     _initPrimaryClientComplete(::std::shared_ptr<::MinecraftGame::InitContext> initContext);
 
+    MCAPI ::SerialWorkList::WorkResult _initPrimaryIdentity();
+
     MCAPI ::SerialWorkList::WorkResult _initProgressTips();
 
     MCAPI ::SerialWorkList::WorkResult _initPushAlwaysActiveScreen();
@@ -1521,13 +1500,15 @@ public:
 
     MCAPI ::SerialWorkList::WorkResult _initStep5();
 
-    MCAPI ::SerialWorkList::WorkResult _initStorageMigration();
+    MCFOLD ::SerialWorkList::WorkResult _initStorageMigration();
 
     MCAPI ::SerialWorkList::WorkResult _initTTS();
 
     MCAPI ::SerialWorkList::WorkResult _initTestClientInterface();
 
     MCAPI ::SerialWorkList::WorkResult _initTimePlayedNotifier();
+
+    MCAPI ::SerialWorkList::WorkResult _initTriggerSignIn();
 
     MCAPI ::SerialWorkList::WorkResult _initUILoadAsyncWait();
 
@@ -1578,6 +1559,8 @@ public:
     MCAPI ::SerialWorkList::WorkResult _initializeFrameBuilder();
 
     MCAPI void _initializeTextureStreamingResources();
+
+    MCAPI bool _isFriendsDrawerEnabledIngame() const;
 
     MCAPI bool _isGameplayPaused();
 
@@ -1669,7 +1652,7 @@ public:
 
     MCAPI void _onTTSOptionChanged(bool enabled);
 
-    MCAPI void _onTextureAtlasStatus(::TextureAtlasStatus const& status);
+    MCAPI void _onTextureAtlasStatus(::TextureAtlasStatus const&);
 
     MCAPI void _onUserSigninPlayFab(uint userId);
 
@@ -1681,9 +1664,9 @@ public:
 
     MCAPI void _performNetworkReadyActions();
 
-    MCAPI void _preCacheOutOfGameViews();
+    MCAPI bool _platformShowsHdrCalibrationScreen();
 
-    MCAPI void _pushAlwaysActiveScreens();
+    MCAPI void _preCacheOutOfGameViews();
 
     MCAPI void _recomputeResolution();
 
@@ -1726,6 +1709,8 @@ public:
 
     MCAPI void _updatePackStackForLeaveGame();
 
+    MCAPI void _updatePerformanceTrackers();
+
     MCAPI void _updateProfilerLite();
 
     MCAPI void _updateTextureAtlasPBRData(::TextureAtlas const& textureAtlas, bool terrain);
@@ -1750,9 +1735,13 @@ public:
 
     MCAPI void endFrame();
 
+    MCAPI ::std::shared_ptr<::ClientBlobCache::Cache> getClientBlobCache();
+
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> getClientInstance(::SubClientId subid);
 
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
+
+    MCAPI void handleLicenseChanged();
 
     MCAPI void handleShowUpsellScreen(bool timeExpired);
 
@@ -1769,8 +1758,6 @@ public:
     MCAPI void reloadMaterials();
 
     MCAPI void setDpadScale();
-
-    MCAPI void setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& uiEventCoordinator);
 
     MCAPI void startFrame();
 
@@ -1911,9 +1898,19 @@ public:
     MCAPI void $onLevelDestruction(::std::string const& levelId);
 
     MCAPI void $setWorldTransferAction(
-        ::std::variant<::LocalWorldTransferActionFunc, ::ExternalWorldTransferActionFunc, ::std::monostate>
-            worldTransferAction
+        ::std::variant<
+            ::LocalWorldTransferActionFunc,
+            ::ExternalWorldTransferActionFunc,
+            ::RealmTransferActionFunc,
+            ::std::monostate>&& worldTransferAction
     );
+
+    MCAPI ::std::variant<
+        ::LocalWorldTransferActionFunc,
+        ::ExternalWorldTransferActionFunc,
+        ::RealmTransferActionFunc,
+        ::std::monostate> const&
+    $getWorldTransferAction() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const $getWorldTransferAgent() const;
 
@@ -1921,7 +1918,7 @@ public:
 
     MCAPI bool $isWorldTransferInProgress() const;
 
-    MCAPI void $setResetCallbackObject(::ResetCallbackObject* obj);
+    MCFOLD void $setResetCallbackObject(::ResetCallbackObject* obj);
 
     MCAPI void $requestLeaveGame(bool switchScreen, bool sync);
 
@@ -1997,13 +1994,13 @@ public:
 
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> $getNewPlayerSystem() const;
 
-    MCAPI ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& $getClientInstanceMap() const;
+    MCFOLD ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& $getClientInstanceMap() const;
 
     MCAPI ::std::shared_ptr<::IClientInstance> $tryGetClientInstanceFromPlayerUUID(::mce::UUID const& playerId) const;
 
     MCAPI uint $getUIRenderClientMask() const;
 
-    MCFOLD uint64 $getClientInstanceCount() const;
+    MCAPI uint64 $getClientInstanceCount() const;
 
     MCAPI void $forEachClientInstance(::std::function<void(::IClientInstance&)> callback);
 
@@ -2017,15 +2014,15 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getPrimaryGuiData();
 
-    MCAPI ::std::shared_ptr<::Options> $getPrimaryUserOptions();
+    MCAPI ::std::shared_ptr<::OptionRegistry> $getPrimaryUserOptions();
 
-    MCAPI ::std::shared_ptr<::Options const> $getPrimaryUserOptions() const;
+    MCAPI ::std::shared_ptr<::OptionRegistry const> $getPrimaryUserOptions() const;
 
     MCAPI bool $isPrimaryUserSigninInProgress() const;
 
     MCAPI void $resetInput();
 
-    MCAPI ::PixelCalc const& $getDpadScale() const;
+    MCFOLD ::PixelCalc const& $getDpadScale() const;
 
     MCAPI void $setKeyboardForcedHeight(float height, bool isShowSignal);
 
@@ -2039,7 +2036,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository> $getSchematicsRepository() const;
 
-    MCAPI ::ParticleEffectGroup& $getParticleEffectGroup() const;
+    MCFOLD ::ParticleEffectGroup& $getParticleEffectGroup() const;
 
     MCAPI ::DeferredLighting& $getDeferredLighting() const;
 
@@ -2052,8 +2049,6 @@ public:
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::PersonaService> $getPersonaService() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> $getGatheringManager() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::CDNService> $getCDNService() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> $getContentCatalogService() const;
 
@@ -2097,7 +2092,7 @@ public:
 
     MCAPI ::ResourcePackManager& $getServerResourcePackManager();
 
-    MCAPI ::PackManifestFactory& $getPackManifestFactory();
+    MCFOLD ::PackManifestFactory& $getPackManifestFactory();
 
     MCAPI ::PlayerMessagingService& $getPlayerMessagingService();
 
@@ -2127,7 +2122,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> $getUserManager() const;
 
-    MCFOLD ::IMinecraftEventing& $getEventing() const;
+    MCAPI ::IMinecraftEventing& $getEventing() const;
 
     MCAPI ::ServerInstance* $getServerInstance();
 
@@ -2135,9 +2130,9 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ClientNetworkSystem> $getClientNetworkSystemPtr();
 
-    MCFOLD ::ClientNetworkSystem& $getClientNetworkSystem();
+    MCAPI ::ClientNetworkSystem& $getClientNetworkSystem();
 
-    MCFOLD ::ClientNetworkSystem const& $getClientNetworkSystem() const;
+    MCAPI ::ClientNetworkSystem const& $getClientNetworkSystem() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> $getActiveDirectoryIdentity();
 
@@ -2212,26 +2207,9 @@ public:
 
     MCFOLD ::IGameModuleApp& $getGameModule();
 
-    MCAPI ::IGameModuleShared& $getGameModuleShared();
+    MCFOLD ::IGameModuleShared& $getGameModuleShared();
 
     MCAPI void $requestServerShutdown();
-
-    MCAPI void $setTestExecuteCommandCallback(
-        ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const& callback
-    );
-
-    MCAPI void $setTestAssetCommandCallback(
-        ::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const& callback
-    );
-
-    MCAPI void $runTestExecuteCommandCallback(
-        ::TestCommandType                   type,
-        ::std::vector<::std::string> const& tags,
-        int                                 repeatCount
-    ) const;
-
-    MCAPI void
-    $runTestAssetCommandCallback(::TestAssetCommandType type, ::std::vector<::std::string> const& tags) const;
 
     MCAPI void $setLaunchedFromLegacyVersion(bool launchedFromLegacyVersion);
 
@@ -2262,8 +2240,6 @@ public:
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> $getMinecraftGraphics();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> $getTextureAtlas();
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> $getItemTextureAtlas();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> $getUIRepository() const;
 
@@ -2330,7 +2306,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> $getEntitlementManager();
 
-    MCAPI ::IDlcValidation& $getDlcValidation();
+    MCFOLD ::IDlcValidation& $getDlcValidation();
 
     MCAPI ::ServicesManager& $getServicesManager();
 
@@ -2346,12 +2322,8 @@ public:
 
     MCAPI void $unMuteAudio();
 
-    MCAPI uint64 $generateClientId(
-        bool                              forceReset,
-        bool&                             generatedNewId,
-        uint64                            clientIdModifier,
-        ::std::shared_ptr<::Social::User> user
-    );
+    MCAPI uint64
+    $generateClientId(bool generatedNewId, bool& clientIdModifier, uint64 user, ::std::shared_ptr<::Social::User>);
 
     MCFOLD bool $isHostingLocalDedicatedServer() const;
 
@@ -2361,7 +2333,7 @@ public:
 
     MCAPI void $resumeContentDownloads();
 
-    MCAPI ::UIMeasureStrategy& $getUIMeasureStrategy();
+    MCFOLD ::UIMeasureStrategy& $getUIMeasureStrategy();
 
     MCFOLD void $copyInternalSettingsFolderToExternalLocation() const;
 
@@ -2417,13 +2389,9 @@ public:
 
     MCAPI bool $isEditorModeEnabled() const;
 
-    MCAPI ::std::shared_ptr<::ClientBlobCache::Cache> $getClientBlobCache();
-
     MCAPI ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint> const $getContentFileLogEndPoint() const;
 
     MCAPI void $tryShowXblFirstLaunchScreen(bool isUserConnectedToPlatform);
-
-    MCAPI ::std::shared_ptr<void*> $requestMusicDeferment();
 
     MCAPI bool $isMusicEnabled() const;
 
@@ -2443,7 +2411,7 @@ public:
 
     MCAPI void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
 
-    MCFOLD void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
+    MCFOLD void $onLanguageKeywordsLoadedFromPack(::PackManifest const&);
 
     MCFOLD void $onLanguagesLoaded();
 
@@ -2456,8 +2424,6 @@ public:
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
 
     MCAPI double $getGameUpdateDurationInSeconds() const;
-
-    MCAPI ::std::tuple<bool, int> $GetEcoModeSettings() const;
 
     MCAPI void $queueSubclientRemoval(::SubClientId subid);
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/ecs/EntityId.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/level/BlockPos.h"
@@ -12,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class Dimension;
+class EntityContext;
 namespace PositionTrackingDB { class OperationBase; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 // clang-format on
@@ -50,7 +49,19 @@ public:
 
     MCAPI void deserialize(::CompoundTag const& tag);
 
-    MCAPI bool loadRecordFromStorage(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent);
+#ifdef LL_PLAT_C
+    MCFOLD ::DimensionType const& getDimensionType() const;
+#endif
+
+    MCAPI ::EntityContext& getEntity();
+
+    MCFOLD ::PositionTrackingId const& getId() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::BlockPos const& getPosition() const;
+#endif
+
+    MCAPI ::PositionTrackingDB::TrackingRecord::RecordStatus const getStatus() const;
 
     MCAPI bool processPendingTransactions(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent);
 

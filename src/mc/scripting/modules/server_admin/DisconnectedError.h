@@ -28,6 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DisconnectedError(::std::string const& message, ::std::string const& playerId);
+
     MCNAPI ~DisconnectedError();
     // NOLINTEND
 
@@ -35,6 +37,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& message, ::std::string const& playerId);
     // NOLINTEND
 
 public:

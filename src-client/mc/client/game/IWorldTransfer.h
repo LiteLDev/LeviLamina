@@ -10,6 +10,7 @@
 class WorldTransferAgent;
 struct ExternalWorldTransferActionFunc;
 struct LocalWorldTransferActionFunc;
+struct RealmTransferActionFunc;
 // clang-format on
 
 struct IWorldTransfer {
@@ -19,9 +20,19 @@ public:
     virtual ~IWorldTransfer() = default;
 
     virtual void setWorldTransferAction(
-        ::std::variant<::LocalWorldTransferActionFunc, ::ExternalWorldTransferActionFunc, ::std::monostate>
-            worldTransferAction
+        ::std::variant<
+            ::LocalWorldTransferActionFunc,
+            ::ExternalWorldTransferActionFunc,
+            ::RealmTransferActionFunc,
+            ::std::monostate>&& worldTransferAction
     ) = 0;
+
+    virtual ::std::variant<
+        ::LocalWorldTransferActionFunc,
+        ::ExternalWorldTransferActionFunc,
+        ::RealmTransferActionFunc,
+        ::std::monostate> const&
+    getWorldTransferAction() const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const getWorldTransferAgent() const = 0;
 

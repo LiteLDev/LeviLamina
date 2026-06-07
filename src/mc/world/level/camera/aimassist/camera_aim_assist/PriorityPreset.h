@@ -45,6 +45,14 @@ public:
         ::HashedString const&                                       defaultCategory
     );
 
+    MCNAPI ::CameraAimAssist::PriorityPresetExclusionData const& getExclusionList() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::unordered_set<::HashedString> const& getLiquidTargetingItems() const;
+#endif
+
+    MCNAPI ::HashedString const& getPriorityCategoryNameOfItem(::HashedString const& itemName) const;
+
     MCNAPI ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset&&);
 
 #ifdef LL_PLAT_C

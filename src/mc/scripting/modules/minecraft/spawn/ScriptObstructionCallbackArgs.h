@@ -7,10 +7,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
+class Mob;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptEntitySpawnType; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace br::spawn { struct EntityType; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -27,9 +31,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptObstructionCallbackArgs();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptObstructionCallbackArgs();
+    MCAPI ScriptObstructionCallbackArgs(
+        ::Scripting::WeakLifetimeScope scope,
+        ::br::spawn::EntityType const& entityType,
+        ::BlockSource&                 region,
+        ::Mob const&                   mob
+    );
     // NOLINTEND
 
 public:
@@ -39,9 +52,14 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope scope,
+        ::br::spawn::EntityType const& entityType,
+        ::BlockSource&                 region,
+        ::Mob const&                   mob
+    );
     // NOLINTEND
 };
 

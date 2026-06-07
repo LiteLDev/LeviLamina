@@ -63,7 +63,11 @@ public:
 
     MCAPI void _onWorldRecoveryDone(::Bedrock::WorldRecovery::RecoveryResult result);
 
+    MCAPI void _onWorldRecoveryUpdate(::Bedrock::WorldRecovery::RecoveryUpdate update);
+
     MCAPI void _onWorldsDirectorySelected(::std::string const& uri, ::std::string const& error);
+
+    MCAPI void _registerEventHandlers();
 
     MCAPI void _selectWorldsDirectory();
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/server/TextFilteringProcessor.h"
@@ -14,6 +15,7 @@ class BlockCommandOrigin;
 class CallbackToken;
 class IMinecraftEventing;
 class Player;
+namespace Safety { struct TextFilterResult; }
 // clang-format on
 
 namespace Bedrock::Safety {
@@ -106,6 +108,18 @@ public:
             ::std::vector<::std::string> const&,
             ::std::vector<::Safety::TextFilteringEvent> const&
         )>
+    ) /*override*/;
+
+    virtual ::Bedrock::Threading::Async<::Safety::TextFilterResult> processAnonymousMessagesAsync(
+        ::IMinecraftEventing*,
+        ::TextProcessingEventOrigin,
+        ::std::vector<::std::string> const&
+    ) /*override*/;
+
+    virtual ::Bedrock::Threading::Async<::Safety::TextFilterResult> processMessagesAsync(
+        ::Player const&,
+        ::TextProcessingEventOrigin,
+        ::std::vector<::std::string> const&
     ) /*override*/;
 
     virtual void onStartShutdown() /*override*/;

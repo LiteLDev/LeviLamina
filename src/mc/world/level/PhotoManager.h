@@ -68,9 +68,23 @@ public:
     // NOLINTBEGIN
     MCAPI PhotoManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
 
+    MCAPI ::Core::PathBuffer<::std::string> _getPhotoStoragePath();
+
     MCAPI void createPhotoStorage();
 
     MCAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
+
+    MCAPI ::PhotoStorage& getPhotoStorage();
+
+    MCFOLD ::Core::PathBuffer<::std::string> const& getScreenshotsFolder() const;
+
+    MCAPI void takePicture(
+        ::cg::ImageBuffer&                                              outImage,
+        ::Actor*                                                        camera,
+        ::Actor*                                                        target,
+        ::ScreenshotOptions&                                            screenshotOptions,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
+    );
     // NOLINTEND
 
 public:
@@ -88,7 +102,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(
+    MCFOLD ::Bedrock::PubSub::Connector<void(
         ::cg::ImageBuffer&,
         ::Actor*,
         ::Actor*,

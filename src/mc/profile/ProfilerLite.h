@@ -172,13 +172,36 @@ public:
     MCFOLD void _shutdown();
 
     MCAPI void applyProfilerOptions(bool isClientDiagnosticsEnabled);
+#endif
 
+    MCAPI void calculateAndSetServerNetworkTime(::std::chrono::steady_clock::time_point tp);
+
+    MCAPI void calculateAndSetServerTickTimes(::std::chrono::steady_clock::time_point tp);
+
+    MCAPI ::_ProfilerLiteTimer* getActiveScope(::std::thread::id threadId);
+
+    MCAPI ::std::chrono::nanoseconds getServerTickTime() const;
+
+#ifdef LL_PLAT_C
     MCAPI ::Bedrock::ScopeExit init(::Core::Path const& logFilePath);
+
+    MCAPI void initWithFlightingAndOptions(bool isClientDiagnosticsEnabled);
+
+    MCAPI bool isBenchmarkModeDone();
+
+    MCAPI void logMultipleTimedEvents(
+        ::brstd::function_ref<
+            void(::brstd::function_ref<void(::std::string const&, double), void(::std::string const&, double)>)> events
+    );
 
     MCAPI void logScreenCreationEvent(::std::string const& screenName, double creationTime, uchar clientID);
 
     MCAPI void reset();
+#endif
 
+    MCAPI void setActiveScope(::std::thread::id threadId, ::_ProfilerLiteTimer* newScope);
+
+#ifdef LL_PLAT_C
     MCAPI bool tick(
         bool                           isVSynced,
         bool                           frameDiscarded,
@@ -196,8 +219,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void
-    _writeHeadersIfEmpty(::std::string const& header, ::Core::Path logFileName, ::Core::OutputFileStream& file);
+    MCAPI static void _writeHeadersIfEmpty(::std::string const& logFileName, ::Core::Path, ::Core::OutputFileStream&);
 
     MCAPI static void getNetworkStats(::NetworkStatMetrics& stats, uint& lastSampleNum, ::TrackerType type);
 #endif

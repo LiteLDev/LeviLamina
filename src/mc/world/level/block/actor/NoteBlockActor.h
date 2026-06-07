@@ -10,6 +10,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class BlockType;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
@@ -25,25 +26,39 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NoteBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
-
-    virtual ~NoteBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit NoteBlockActor(::BlockPos const& pos);
+
     MCAPI void playNote(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI void tune();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::NoteBlockInstrument _getInstrumentForSkull(::BlockType const& blockType);
+
     MCAPI static ::std::optional<::NoteBlockInstrument> getInstrument(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

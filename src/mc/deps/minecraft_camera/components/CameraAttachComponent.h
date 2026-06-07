@@ -20,18 +20,6 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mAttachTo;
     ::ll::TypedStorage<8, 48, ::HashedString>             mLocator;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraAttachComponent& operator=(CameraAttachComponent const&);
-    CameraAttachComponent(CameraAttachComponent const&);
-    CameraAttachComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::MinecraftCamera::CameraAttachComponent& operator=(::MinecraftCamera::CameraAttachComponent&&);
-    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

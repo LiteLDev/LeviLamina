@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/goal/TransportItemsGoalSettings.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
@@ -17,7 +17,7 @@ class Mob;
 class Vec3;
 // clang-format on
 
-class TransportItemsGoal : public ::Goal {
+class TransportItemsGoal : public ::BaseGoal {
 public:
     // TransportItemsGoal inner types declare
     // clang-format off
@@ -84,18 +84,24 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~TransportItemsGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TransportItemsGoal(::Mob& mob);
+
     MCAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
 
     MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
 
+    MCAPI void _reset();
+
+    MCAPI void _startCooldown();
+
     MCAPI void _tickIdle();
+
+    MCAPI void _tickInteracting(::BlockPos const& targetPos);
 
     MCAPI void _tickQueuing(::BlockPos const& targetPos);
 
@@ -111,6 +117,12 @@ public:
         ::AABB const&        visualShape,
         ::BlockPos const&    targetPosition
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

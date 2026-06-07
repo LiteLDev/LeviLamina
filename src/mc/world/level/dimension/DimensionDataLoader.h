@@ -39,8 +39,6 @@ public:
 
     MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
     load(::Puv::Input const& input);
-
-    MCAPI ~DimensionDataLoader();
     // NOLINTEND
 
 public:
@@ -53,11 +51,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

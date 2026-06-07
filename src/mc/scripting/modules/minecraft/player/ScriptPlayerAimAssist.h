@@ -39,17 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPlayerAimAssist& operator=(ScriptPlayerAimAssist const&);
-    ScriptPlayerAimAssist(ScriptPlayerAimAssist const&);
-    ScriptPlayerAimAssist();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> _getAimAssistSettings() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerAimAssist& operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssist&&);
 
     MCAPI ::Scripting::Result<
         void,

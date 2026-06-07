@@ -24,21 +24,16 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptInvalidItemStackError& operator=(ScriptInvalidItemStackError const&);
     ScriptInvalidItemStackError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInvalidItemStackError(::ScriptModuleMinecraft::ScriptInvalidItemStackError const&);
-
     MCAPI ScriptInvalidItemStackError(
         ::ScriptModuleMinecraft::ErrorMemberType                                      memberType,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType,
         ::std::string_view                                                            functionName
     );
-
-    MCAPI ~ScriptInvalidItemStackError();
     // NOLINTEND
 
 public:
@@ -50,19 +45,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptInvalidItemStackError const&);
-
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType                                      memberType,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType,
         ::std::string_view                                                            functionName
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

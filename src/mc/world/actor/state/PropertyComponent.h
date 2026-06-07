@@ -12,6 +12,8 @@ class CompoundTag;
 class HashedString;
 class PropertyGroup;
 class RenderParams;
+class Tag;
+struct MolangScriptArg;
 struct PropertySyncData;
 // clang-format on
 
@@ -55,15 +57,36 @@ public:
 
     MCAPI int getInt(uint64 h) const;
 
+    MCAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
+
     MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
 
     MCAPI ::HashedString const& getString(uint64 h) const;
 
-    MCAPI ::PropertyComponent& operator=(::PropertyComponent&&);
+    MCAPI bool hasDirtyProperties() const;
+
+    MCAPI ::PropertySyncData packAllSyncData() const;
 
     MCAPI ::PropertySyncData packDirtySyncData();
 
+    MCAPI void readLoadedProperties(::CompoundTag const& loadedPropertyTag);
+
+    MCAPI void setAliasProperties(
+        ::std::unordered_map<::HashedString, ::std::shared_ptr<::Tag>> const& aliasProperties,
+        ::std::string const&                                                  aliasName,
+        ::std::string const&                                                  canonicalName
+    );
+
+    MCAPI ::std::optional<bool> tryGetBool(uint64 h) const;
+
+    MCAPI ::std::optional<float> tryGetFloat(uint64 h) const;
+
+    MCAPI ::std::optional<int> tryGetInt(uint64 h) const;
+
     MCAPI ::HashedString const* tryGetString(uint64 h) const;
+
+    MCAPI ::std::optional<::std::variant<int, float, bool, ::std::string>>
+    tryGetValueVariant(uint64 propertyNameHash) const;
     // NOLINTEND
 
 public:

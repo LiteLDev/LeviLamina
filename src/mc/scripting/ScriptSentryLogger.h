@@ -20,31 +20,47 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptSentryLogger();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptSentryLogger() /*override*/ = default;
 
-    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const
+    virtual void onException(::Scripting::ContextId error, ::Scripting::BaseError const&, ::entt::meta_any const&) const
         /*override*/;
 
     virtual void onPromiseRejection(
-        ::Scripting::ContextId,
-        ::Scripting::BaseError const& error,
+        ::Scripting::ContextId        error,
+        ::Scripting::BaseError const& isHandled,
         ::entt::meta_any const&,
-        bool isHandled
+        bool
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ScriptSentryLogger(::std::shared_ptr<::ScriptModuleDiagnostics::ScriptSentrySession> sentrySession);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::ScriptModuleDiagnostics::ScriptSentrySession> sentrySession);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
+    MCAPI void $onException(::Scripting::ContextId error, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
 
     MCAPI void $onPromiseRejection(
-        ::Scripting::ContextId,
-        ::Scripting::BaseError const& error,
+        ::Scripting::ContextId        error,
+        ::Scripting::BaseError const& isHandled,
         ::entt::meta_any const&,
-        bool isHandled
+        bool
     ) const;
 
 

@@ -27,11 +27,11 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>      mExitPos;
     ::ll::TypedStorage<4, 4, int>          mBedDir;
     ::ll::TypedStorage<4, 4, float>        mBodyRot;
-    ::ll::TypedStorage<4, 4, float const>  mSleepYOffset;
-    ::ll::TypedStorage<4, 4, float const>  mSleepColliderHeight;
-    ::ll::TypedStorage<4, 4, float const>  mSleepColliderWidth;
-    ::ll::TypedStorage<1, 1, bool const>   mCanSleepWhileRiding;
-    ::ll::TypedStorage<8, 8, ::Tick const> mGoalCooldownMax;
+    ::ll::TypedStorage<4, 4, float>        mSleepYOffset;
+    ::ll::TypedStorage<4, 4, float>        mSleepColliderHeight;
+    ::ll::TypedStorage<4, 4, float>        mSleepColliderWidth;
+    ::ll::TypedStorage<1, 1, bool>         mCanSleepWhileRiding;
+    ::ll::TypedStorage<8, 8, ::Tick>       mGoalCooldownMax;
     ::ll::TypedStorage<8, 8, ::Tick>       mCooldownTick;
     ::ll::TypedStorage<1, 1, bool>         mWoken;
     ::ll::TypedStorage<1, 1, bool>         mGoalEndedEarly;
@@ -59,18 +59,24 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual uint64 _getRepathTime() const /*override*/;
-
-    virtual ~SleepGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit SleepGoal(::Mob& mob);
+
     MCAPI void _findExitPos();
 
-    MCAPI void _lockPosToBedPos();
+    MCAPI void _setSleepVariables();
 
     MCAPI void _wakeUp();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

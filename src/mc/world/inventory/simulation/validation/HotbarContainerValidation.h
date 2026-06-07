@@ -23,8 +23,6 @@ public:
         /*override*/;
 
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
-
-    virtual ~HotbarContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

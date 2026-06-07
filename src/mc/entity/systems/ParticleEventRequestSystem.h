@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-
 // auto generated forward declare list
 // clang-format off
 class LevelComponent;
@@ -19,10 +16,7 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static void
-    _tick(::StrictEntityContext const&, ::LevelComponent& level, ::ParticleEventRequestQueueComponent& requests);
-
-    MCAPI static void
-    _view(::ViewT<::StrictEntityContext, ::LevelComponent, ::ParticleEventRequestQueueComponent> view);
+    _tick(::StrictEntityContext const& level, ::LevelComponent& requests, ::ParticleEventRequestQueueComponent&);
 
     MCAPI static ::TickingSystemWithInfo create();
 #endif

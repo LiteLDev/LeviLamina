@@ -29,12 +29,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~QRCodeRenderer() /*override*/ = default;
+    virtual ~QRCodeRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
     virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
 
     virtual ::UIBatchType getBatchType() const /*override*/;
 
@@ -42,11 +42,25 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setBackgroundColor(::mce::Color const& color);
+
+    MCAPI void setForegroundColor(::mce::Color const& color);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
 
     MCFOLD ::UIBatchType $getBatchType() const;
 

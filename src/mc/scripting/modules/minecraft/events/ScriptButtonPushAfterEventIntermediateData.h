@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Dimension;
-struct ButtonPushEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -29,18 +27,6 @@ public:
     ScriptButtonPushAfterEventIntermediateData& operator=(ScriptButtonPushAfterEventIntermediateData const&);
     ScriptButtonPushAfterEventIntermediateData(ScriptButtonPushAfterEventIntermediateData const&);
     ScriptButtonPushAfterEventIntermediateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptButtonPushAfterEventIntermediateData(::ButtonPushEvent const& eventData, ::Actor const* source);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ButtonPushEvent const& eventData, ::Actor const* source);
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

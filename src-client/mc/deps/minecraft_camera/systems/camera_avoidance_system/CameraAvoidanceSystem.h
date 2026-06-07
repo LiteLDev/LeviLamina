@@ -9,13 +9,11 @@
 #include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
-#include "mc/deps/minecraft_camera/systems/camera_avoidance_system/ViewportSide.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityRegistry;
 class ICameraAPI;
-class Spherical;
 class StrictEntityContext;
 class Vec3;
 struct CameraAPIComponent;
@@ -30,7 +28,6 @@ namespace MinecraftCamera { struct CameraOffsetComponent; }
 namespace MinecraftCamera { struct CameraOrbitComponent; }
 namespace MinecraftCamera { struct CameraTimeComponent; }
 namespace MinecraftCamera { struct SeatCameraRelaxDistanceSmoothingOverrideComponent; }
-namespace SharedTypes::v1_21_100 { struct CameraAvoidanceRay; }
 // clang-format on
 
 namespace CameraAvoidanceSystem {
@@ -49,37 +46,34 @@ MCAPI void _cacheOffsetWithoutComponent(
     ::EntityModifier<::CameraAvoidanceSystem::AvoidanceCache>& mod
 );
 
+MCAPI float _calculateHardDistanceConstraint(
+    ::MinecraftCamera::CameraComponent const& camera,
+    ::ICameraAPI&                             cameraAPI,
+    ::Vec3 const&                             rayStart
+);
+
 MCAPI void _distanceConstWithOrbit(
-    ::StrictEntityContext&,
-    ::MinecraftCamera::CameraComponent&      camComp,
-    ::MinecraftCamera::CameraOrbitComponent& orbitComp,
-    ::CameraAvoidanceSystem::AvoidanceCache& avoidanceCache
+    ::StrictEntityContext&                   camComp,
+    ::MinecraftCamera::CameraComponent&      orbitComp,
+    ::MinecraftCamera::CameraOrbitComponent& avoidanceCache,
+    ::CameraAvoidanceSystem::AvoidanceCache&
 );
 
 MCAPI void _distanceConstWithoutOrbit(
-    ::StrictEntityContext&,
-    ::MinecraftCamera::CameraComponent&      camComp,
-    ::CameraAvoidanceSystem::AvoidanceCache& avoidanceCache
-);
-
-MCAPI float _sweepAvoidanceRays(
-    ::ICameraAPI&                                                      cameraAPI,
-    ::Spherical const&                                                 idealSpherical,
-    ::Vec3 const&                                                      rayStart,
-    ::std::vector<::SharedTypes::v1_21_100::CameraAvoidanceRay> const& rays,
-    ::CameraAvoidanceSystem::ViewportSide                              side
+    ::StrictEntityContext&              camComp,
+    ::MinecraftCamera::CameraComponent& avoidanceCache,
+    ::CameraAvoidanceSystem::AvoidanceCache&
 );
 
 MCAPI void _tick(
-    ::StrictEntityContext&,
-    ::MinecraftCamera::CameraComponent&                  cameraComponent,
-    ::MinecraftCamera::CameraAvoidanceComponent&         avoidanceComponent,
-    ::CameraAvoidanceSystem::AvoidanceCache&             cache,
-    ::MinecraftCamera::CameraEntityStateComponent const& cachedComp,
-    ::Optional<::MinecraftCamera::SeatCameraRelaxDistanceSmoothingOverrideComponent const>
-                  relaxDistanceSmoothingOverrideComponent,
-    ::ICameraAPI& cameraAPI,
-    float         deltaTime
+    ::StrictEntityContext&                               cameraComponent,
+    ::MinecraftCamera::CameraComponent&                  avoidanceComponent,
+    ::MinecraftCamera::CameraAvoidanceComponent&         cache,
+    ::CameraAvoidanceSystem::AvoidanceCache&             cachedComp,
+    ::MinecraftCamera::CameraEntityStateComponent const& relaxDistanceSmoothingOverrideComponent,
+    ::Optional<::MinecraftCamera::SeatCameraRelaxDistanceSmoothingOverrideComponent const> cameraAPI,
+    ::ICameraAPI&                                                                          deltaTime,
+    float
 );
 
 MCAPI ::TickingSystemWithInfo createSystem();

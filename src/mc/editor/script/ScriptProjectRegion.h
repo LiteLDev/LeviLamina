@@ -18,7 +18,7 @@ class BoundingBox;
 class Vec3;
 struct Bounds;
 namespace Editor { class ProjectRegion; }
-namespace Editor::ScriptModule { class ScriptProjectRegionService; }
+namespace Editor::ScriptModule { class ScriptProjectRegionPlayerService; }
 namespace Editor::ScriptModule { class ScriptRelativeVolumeListBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorType; }
@@ -45,7 +45,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb7fbaa;
-    ::ll::UntypedStorage<8, 8>  mUnke6a8bd;
+    ::ll::UntypedStorage<8, 8>  mUnkb9a545;
     ::ll::UntypedStorage<8, 16> mUnkee141c;
     ::ll::UntypedStorage<8, 64> mUnk4fd50a;
     ::ll::UntypedStorage<8, 16> mUnk3611ec;
@@ -68,9 +68,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptProjectRegion(
-        ::WeakRef<::Editor::ProjectRegion>                  region,
-        ::Editor::ScriptModule::ScriptProjectRegionService* owner,
-        ::Scripting::WeakLifetimeScope const&               scope
+        ::WeakRef<::Editor::ProjectRegion>                        region,
+        ::Editor::ScriptModule::ScriptProjectRegionPlayerService* owner,
+        ::Scripting::WeakLifetimeScope const&                     scope
     );
 
     MCNAPI ::Scripting::Error _getInvalidRegionError() const;
@@ -119,8 +119,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> isLocationAvailable(::Vec3 const& location) const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> isSolidBlock(::Vec3 const& location) const;
-
-    MCNAPI bool isValid() const;
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> requestBlockOperationArea(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> blockList,
@@ -177,15 +175,18 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+
+    MCNAPI static ::Bounds
+    getBoundsFromNumberRange(::Scripting::NumberRange const& xExtent, ::Scripting::NumberRange const& zExtent);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::WeakRef<::Editor::ProjectRegion>                  region,
-        ::Editor::ScriptModule::ScriptProjectRegionService* owner,
-        ::Scripting::WeakLifetimeScope const&               scope
+        ::WeakRef<::Editor::ProjectRegion>                        region,
+        ::Editor::ScriptModule::ScriptProjectRegionPlayerService* owner,
+        ::Scripting::WeakLifetimeScope const&                     scope
     );
     // NOLINTEND
 

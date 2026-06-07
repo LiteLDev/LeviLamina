@@ -13,12 +13,6 @@ namespace EAS { class BoolModifier; }
 
 namespace EAS {
 
-class BoolAttribute : public ::EAS::EnvironmentAttribute<bool, ::EAS::BoolModifier, ::EAS::NoConstraint<bool>> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BoolAttribute() /*override*/ = default;
-    // NOLINTEND
-};
+class BoolAttribute : public ::EAS::EnvironmentAttribute<bool, ::EAS::BoolModifier, ::EAS::NoConstraint<bool>> {};
 
 } // namespace EAS

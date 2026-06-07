@@ -26,9 +26,7 @@ public:
         ::Random&                                           random
     ) /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~MineshaftStairs() /*override*/ = default;
+    virtual bool postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -42,7 +40,7 @@ public:
         ::Random&                                           random
     );
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
 
     // NOLINTEND

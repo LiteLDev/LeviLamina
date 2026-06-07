@@ -37,8 +37,6 @@ public:
         ::BlockPos const&                                         relativePos,
         ::Matrix const&                                           blockPosTransform
     ) const /*override*/;
-
-    virtual ~DefaultSchematicsMapper() /*override*/ = default;
     // NOLINTEND
 
 public:

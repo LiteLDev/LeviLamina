@@ -9,7 +9,6 @@
 // clang-format off
 namespace Scripting { class StrongObjectHandle; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting::Reflection { class IFunction; }
 // clang-format on
 
 namespace Scripting {
@@ -26,32 +25,18 @@ public:
 public:
     // prevent constructor by default
     ObjectFactory& operator=(ObjectFactory const&);
-    ObjectFactory(ObjectFactory const&);
     ObjectFactory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ObjectFactory(
-        ::std::string                                         name_,
-        ::std::shared_ptr<::Scripting::Reflection::IFunction> func_,
-        ::entt::meta_type                                     type_
-    );
-
-    MCNAPI ~ObjectFactory();
+    MCNAPI ObjectFactory(::Scripting::ObjectFactory const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string name_, ::std::shared_ptr<::Scripting::Reflection::IFunction> func_, ::entt::meta_type type_);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Scripting::ObjectFactory const&);
     // NOLINTEND
 };
 

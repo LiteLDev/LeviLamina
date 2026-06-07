@@ -15,6 +15,8 @@ namespace ClientInstanceNavigationHelper { struct CoinPurchaseScreenParams; }
 namespace ClientInstanceNavigationHelper {
 // functions
 // NOLINTBEGIN
+MCNAPI void navigateToCoinPurchaseScreen(::ClientInstanceNavigationHelper::CoinPurchaseScreenParams& params);
+
 MCNAPI void navigateToCoinPurchaseScreen_AssumingHasQueriedProducts(
     ::ClientInstanceNavigationHelper::CoinPurchaseScreenParams& params
 );

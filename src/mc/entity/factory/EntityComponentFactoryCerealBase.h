@@ -11,6 +11,7 @@ class CompoundTag;
 class DefinitionInstanceGroup;
 class ICerealDefinitionSerializer;
 class MinEngineVersion;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class EntityComponentFactoryCerealBase : public ::EntityComponentFactoryBase {
@@ -28,20 +29,13 @@ public:
     EntityComponentFactoryCerealBase();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~EntityComponentFactoryCerealBase() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~EntityComponentFactoryCerealBase() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI explicit EntityComponentFactoryCerealBase(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI ::cereal::ReflectionCtx& cerealContext();
+
     MCNAPI void serializeComponentDefinitions(
         ::DefinitionInstanceGroup& outputDefinitions,
         ::CompoundTag const&       input,
@@ -53,9 +47,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:

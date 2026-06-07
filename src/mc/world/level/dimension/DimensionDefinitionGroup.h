@@ -30,6 +30,7 @@ public:
         ::ll::TypedStorage<4, 4, int>             mHeightMinimum;
         ::ll::TypedStorage<4, 4, int>             mHeightMaximum;
         ::ll::TypedStorage<4, 4, ::GeneratorType> mGeneratorType;
+        ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
         // NOLINTEND
     };
 
@@ -40,25 +41,13 @@ public:
         mDimensionDefinitions;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
-    DimensionDefinitionGroup();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     DimensionDefinitionGroup();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup&&);
-
-    MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
-
     MCAPI DimensionDefinitionGroup(
         ::cereal::ReflectionCtx const& ctx,
         ::ResourcePackManager* const   rpm,
@@ -66,8 +55,20 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup const&);
+    MCAPI void forEachDimensionDefinition(
+        ::std::function<void(::std::string const&, ::DimensionDefinitionGroup::DimensionDefinition const&)> callback
+    ) const;
 #endif
+
+    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
+    getDimensionDefinition(::std::string const& dimensionName) const;
+
+    MCAPI bool isEmpty() const;
+
+    MCAPI bool tryAddDimensionDefinition(
+        ::std::string const&                                   dimensionName,
+        ::DimensionDefinitionGroup::DimensionDefinition const& dimensionDefinition
+    );
 
     MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
     tryAddDimensionDefinitionByString(
@@ -81,10 +82,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DimensionDefinitionGroup&&);
-
-    MCAPI void* $ctor(::DimensionDefinitionGroup const&);
-
     MCAPI void*
     $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm, ::IMinecraftEventing& eventing);
     // NOLINTEND

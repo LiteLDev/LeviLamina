@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
 class Block;
 class FrozenOceanBuilderNoises;
+class SurfaceBuilderData;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -27,20 +27,29 @@ public:
     // prevent constructor by default
     OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&);
     OceanFrozenSurfaceBuilder(OceanFrozenSurfaceBuilder const&);
-    OceanFrozenSurfaceBuilder();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void initBuilder(uint levelSeed) /*override*/;
 
-    virtual void initBiomeSurface(::Biome& biome) const /*override*/;
+    virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
-    virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
+    virtual bool isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const /*override*/;
 
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
+    // NOLINTEND
 
-    virtual ~OceanFrozenSurfaceBuilder() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI OceanFrozenSurfaceBuilder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -48,9 +57,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $initBuilder(uint levelSeed);
 
-    MCFOLD void $initBiomeSurface(::Biome& biome) const;
+    MCFOLD void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
-    MCAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
 

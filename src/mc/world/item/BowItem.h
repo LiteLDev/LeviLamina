@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BowItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
@@ -31,8 +35,18 @@ public:
     virtual int getEnchantSlot() const /*override*/;
 
     virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
+    // NOLINTEND
 
-    virtual ~BowItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BowItem(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

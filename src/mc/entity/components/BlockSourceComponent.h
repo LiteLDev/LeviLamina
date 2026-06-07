@@ -19,8 +19,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockSourceComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BlockSourceComponent(::WeakRef<::BlockSource> weakBlockSource);
+
     MCFOLD ::StackRefResult<::BlockSource> tryGetBlockSource() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WeakRef<::BlockSource> weakBlockSource);
     // NOLINTEND
 };

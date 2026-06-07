@@ -32,14 +32,18 @@ public:
     virtual ::SemVersion version() const /*override*/;
 
     virtual ::Puv::Input::Data data() const /*override*/;
-
-    virtual ~BinaryInput() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI explicit BinaryInput(::std::string data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string data);
     // NOLINTEND
 
 public:

@@ -22,6 +22,8 @@ namespace ParticleSystem { class ParticleMotionComponentBase; }
 namespace SharedTypes::v1_20_80 { struct ParticleCurve; }
 namespace SharedTypes::v1_20_80 { struct ParticleEffectComponents; }
 namespace SharedTypes::v1_20_80 { struct ParticleEffectData; }
+namespace SharedTypes::v1_20_80 { struct ParticleEventNode; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace ParticleSystem {
@@ -82,7 +84,23 @@ public:
         ::std::optional<::std::map<::std::string, ::SharedTypes::v1_20_80::ParticleCurve>>& curveData
     );
 
+    MCAPI void _generateEffectEvents(
+        ::std::optional<::std::map<::std::string, ::SharedTypes::v1_20_80::ParticleEventNode>>& eventData
+    );
+
+    MCAPI void _sortEffectComponentsForExecutionOrder();
+
+    MCAPI bool isManualEmitter() const;
+
     MCAPI ~ParticleEffect();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Random& getRandomNumberGenerator();
+
+    MCAPI static void registerParticleEffectData(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

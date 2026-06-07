@@ -18,18 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptLinearSpline& operator=(ScriptLinearSpline const&);
-    ScriptLinearSpline(ScriptLinearSpline const&);
-    ScriptLinearSpline();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptLinearSpline& operator=(::ScriptModuleMinecraft::ScriptLinearSpline&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

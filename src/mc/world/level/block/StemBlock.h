@@ -15,7 +15,6 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class BlockType;
-class Experiments;
 class ItemInstance;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
@@ -45,26 +44,30 @@ public:
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* fType, ::FertilizerType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual bool isStemBlock() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~StemBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StemBlock(::std::string const& nameId, int id, ::BlockType const& fruit);
+
+    MCFOLD ::BlockType const& getFruitBlock() const;
+
     MCAPI float getGrowthSpeed(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockType const& fruit);
     // NOLINTEND
 
 public:
@@ -78,14 +81,11 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* fType, ::FertilizerType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
     MCFOLD bool $isStemBlock() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

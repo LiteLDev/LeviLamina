@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace ServerConfiguration {
 
 struct PresenceConfiguration {
@@ -14,17 +19,29 @@ public:
 
 public:
     // prevent constructor by default
-    PresenceConfiguration(PresenceConfiguration const&);
+    PresenceConfiguration& operator=(PresenceConfiguration const&);
     PresenceConfiguration();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PresenceConfiguration(::ServerConfiguration::PresenceConfiguration const&);
+
     MCNAPI ::ServerConfiguration::PresenceConfiguration& operator=(::ServerConfiguration::PresenceConfiguration&&);
 
-    MCNAPI ::ServerConfiguration::PresenceConfiguration& operator=(::ServerConfiguration::PresenceConfiguration const&);
-
     MCNAPI ~PresenceConfiguration();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ServerConfiguration::PresenceConfiguration const&);
     // NOLINTEND
 
 public:

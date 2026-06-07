@@ -31,8 +31,6 @@ public:
     virtual ::leveldb::Status Flush() /*override*/;
 
     virtual ::leveldb::Status Sync() /*override*/;
-
-    virtual ~LevelDbWritableFile() /*override*/ = default;
     // NOLINTEND
 
 public:

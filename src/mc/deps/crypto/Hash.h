@@ -22,9 +22,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Hash();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Hash() /*override*/;
+    virtual ~Hash() /*override*/ = default;
 
     virtual void reset() /*override*/;
 
@@ -38,19 +42,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit Hash(::Crypto::Hash::HashType type);
+
+    MCAPI ::std::string final();
+
     MCAPI ::mce::UUID getUUID();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::Crypto::Hash::HashType type);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reset();
+    MCAPI void $reset();
 
     MCAPI void $update(void const* data, uint size);
 

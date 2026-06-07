@@ -18,8 +18,10 @@ class EntityContext;
 class GameRules;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
+class Level;
 class LevelEventListener;
 class LevelGameplayHandler;
+struct GameRuleId;
 // clang-format on
 
 class LevelEventCoordinator : public ::EventCoordinator<::LevelEventListener> {
@@ -36,15 +38,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelEventCoordinator() /*override*/ = default;
+    virtual ~LevelEventCoordinator() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelEventCoordinator();
+
+    MCAPI void _onGameRuleChange(::GameRules const& gameRules, ::GameRuleId const& gameRuleId);
+
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
 
     MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
+
+    MCFOLD ::LevelGameplayHandler& getLevelGameplayHandler();
 
     MCAPI void registerGameRules(::GameRules& gameRules);
 
@@ -58,7 +66,15 @@ public:
 
     MCAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
 
+    MCAPI void sendLevelInitialized(::Level& level);
+
     MCAPI void sendLevelRemovedActor(::Actor& actor);
+
+    MCAPI void sendLevelTick(::Level& level);
+
+    MCAPI void sendLevelTickEnd(::Level& level);
+
+    MCAPI void sendLevelTickStart(::Level& level);
 
     MCAPI void sendLevelWeatherChanged(
         ::std::string const& dimension,
@@ -67,6 +83,18 @@ public:
         bool                 isRaining,
         bool                 isLightning
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

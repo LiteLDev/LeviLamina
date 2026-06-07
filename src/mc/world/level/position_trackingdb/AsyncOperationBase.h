@@ -52,8 +52,6 @@ public:
 
     virtual bool
     _quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
-
-    virtual ~AsyncOperationBase() /*override*/ = default;
     // NOLINTEND
 
 public:

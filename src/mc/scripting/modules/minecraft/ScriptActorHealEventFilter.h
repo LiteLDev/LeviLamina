@@ -28,14 +28,19 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorHealEventFilter(ScriptActorHealEventFilter const&);
     ScriptActorHealEventFilter();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorHealEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
+
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
+
+    MCFOLD void process();
+
+    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilterData const& data) const;
 
     MCAPI ~ScriptActorHealEventFilter();
     // NOLINTEND
@@ -47,9 +52,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

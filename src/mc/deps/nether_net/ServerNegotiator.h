@@ -57,8 +57,6 @@ public:
     virtual void _onLocalIceCandidate(::webrtc::IceCandidateInterface const* iceCandidate);
 
     virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate) /*override*/;
-
-    virtual ~ServerNegotiator() /*override*/;
     // NOLINTEND
 
 public:
@@ -105,12 +103,6 @@ public:
                                          ::NetherNet::CandidateAdd> const&) const> sendMessage,
         uint64                                                                     sessionId
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

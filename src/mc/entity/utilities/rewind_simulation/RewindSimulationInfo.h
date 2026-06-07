@@ -60,22 +60,6 @@ public:
     RewindSimulationInfo& operator=(RewindSimulationInfo const&);
     RewindSimulationInfo(RewindSimulationInfo const&);
     RewindSimulationInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~RewindSimulationInfo();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace RewindSimulation

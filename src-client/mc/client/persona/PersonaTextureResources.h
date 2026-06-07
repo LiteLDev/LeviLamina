@@ -22,11 +22,19 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PersonaTextureResources();
+
+    MCNAPI ~PersonaTextureResources();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

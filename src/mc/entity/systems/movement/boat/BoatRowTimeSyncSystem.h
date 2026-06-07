@@ -15,7 +15,6 @@ struct BoatPaddleComponent;
 struct ControlledByLocalInstanceComponent;
 struct InterpolateMovementNeededComponent;
 struct SynchedActorDataComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace BoatRowTimeSyncSystem {
@@ -37,8 +36,6 @@ MCAPI void _tickBoatRowTimeWriteToSynchedActorDataComponentSystem(
         ::BoatPaddleComponent const,
         ::SynchedActorDataComponent> view
 );
-
-MCAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 // NOLINTEND
 
 } // namespace BoatRowTimeSyncSystem

@@ -35,6 +35,8 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     );
 
+    MCAPI void copyTo(::ExplosionStartedEvent& explosionStartedEvent) const;
+
     MCAPI void setImpactedBlocks(
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> const& blocks
     );

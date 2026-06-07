@@ -6,7 +6,7 @@ class IDataOutput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDataOutput() = default;
+    virtual ~IDataOutput();
 
     virtual void writeString(::std::string_view v) = 0;
 
@@ -28,14 +28,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // destructor thunk
     // NOLINTBEGIN
-
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };

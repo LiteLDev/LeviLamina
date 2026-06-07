@@ -52,7 +52,7 @@ public:
     MCAPI GrindstoneContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
 #ifdef LL_PLAT_C
-    MCAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+    MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 #endif
     // NOLINTEND
 

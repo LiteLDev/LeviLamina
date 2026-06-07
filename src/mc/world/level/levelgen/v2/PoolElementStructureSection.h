@@ -37,6 +37,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PoolElementStructureSection();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void
@@ -58,14 +62,36 @@ public:
     ) const /*override*/;
 
     virtual void placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const /*override*/;
-
-    virtual ~PoolElementStructureSection() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PoolElementStructureSection(
+        ::StructurePoolElement const&                        element,
+        ::BlockPos                                           position,
+        int                                                  groundOffset,
+        ::Rotation                                           rot,
+        ::BoundingBox                                        box,
+        ::std::vector<::br::worldgen::JigsawJunction> const& junctions,
+        ::br::worldgen::LiquidSettings                       liquidSettings
+    );
+
     MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::StructurePoolElement const&                        element,
+        ::BlockPos                                           position,
+        int                                                  groundOffset,
+        ::Rotation                                           rot,
+        ::BoundingBox                                        box,
+        ::std::vector<::br::worldgen::JigsawJunction> const& junctions,
+        ::br::worldgen::LiquidSettings                       liquidSettings
+    );
     // NOLINTEND
 
 public:

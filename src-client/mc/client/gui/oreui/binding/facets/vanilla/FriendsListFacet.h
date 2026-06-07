@@ -80,7 +80,7 @@ public:
 
     MCFOLD ::OreUI::FriendsLoadingState getXblFriendsLoadingState() const;
 
-    MCFOLD void userControlledUpdateGameList();
+    MCAPI void userControlledUpdateGameList();
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -11,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class NetworkIdentifier;
 struct ActorDefinitionTriggeredEvent;
 // clang-format on
 
@@ -60,48 +62,35 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mMobUniqueId;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DebugInfoComponent& operator=(DebugInfoComponent const&);
     DebugInfoComponent();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    DebugInfoComponent& operator=(DebugInfoComponent const&);
-    DebugInfoComponent(DebugInfoComponent const&);
-    DebugInfoComponent();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent) /*override*/;
-
-    virtual ~DebugInfoComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DebugInfoComponent(::DebugInfoComponent&&);
-
-#ifdef LL_PLAT_S
     MCAPI DebugInfoComponent(::DebugInfoComponent const&);
-#endif
+
+    MCAPI void addListener(::HashedString const& messageType, ::NetworkIdentifier source, ::SubClientId subClientId);
+
+    MCFOLD bool listenersEmpty() const;
 
     MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
+
+    MCAPI void removeListener(::HashedString const&, ::NetworkIdentifier networkIdentifier, ::SubClientId subClientId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DebugInfoComponent&&);
-
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::DebugInfoComponent const&);
-#endif
     // NOLINTEND
 
 public:

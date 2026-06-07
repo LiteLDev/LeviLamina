@@ -24,12 +24,13 @@ public:
     // prevent constructor by default
     BehaviorComponent& operator=(BehaviorComponent const&);
     BehaviorComponent(BehaviorComponent const&);
-    BehaviorComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BehaviorComponent(::BehaviorComponent&&);
+    MCAPI BehaviorComponent();
+
+    MCAPI ::BehaviorComponent& operator=(::BehaviorComponent&&);
 
     MCAPI ~BehaviorComponent();
     // NOLINTEND
@@ -37,7 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BehaviorComponent&&);
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

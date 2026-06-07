@@ -21,15 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MissingModuleRequest(::Scripting::MissingModuleRequest&&);
-
     MCNAPI ~MissingModuleRequest();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::MissingModuleRequest&&);
     // NOLINTEND
 
 public:

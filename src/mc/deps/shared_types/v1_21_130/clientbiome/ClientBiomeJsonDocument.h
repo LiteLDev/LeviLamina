@@ -32,21 +32,6 @@ public:
         // ClientBiomeJsonObject inner types define
         struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {
         public:
-            // prevent constructor by default
-            ComponentMap(ComponentMap const&);
-            ComponentMap();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
-            operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&&);
-
-            MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
-            operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap const&);
-            // NOLINTEND
-
-        public:
             // static functions
             // NOLINTBEGIN
             MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -74,9 +59,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject&
-        operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
-
         MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
@@ -111,9 +93,37 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
+    ClientBiomeJsonDocument();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ClientBiomeJsonDocument(::SharedTypes::v1_21_130::ClientBiomeJsonDocument const&);
+
+    MCFOLD ::SharedTypes::v1_21_130::ClientBiomeJsonDocument&
+    operator=(::SharedTypes::v1_21_130::ClientBiomeJsonDocument&&);
+
+    MCAPI ~ClientBiomeJsonDocument();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SharedTypes::v1_21_130::ClientBiomeJsonDocument const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

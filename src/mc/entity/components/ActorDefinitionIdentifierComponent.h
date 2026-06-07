@@ -11,16 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mIdentifier;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorDefinitionIdentifierComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

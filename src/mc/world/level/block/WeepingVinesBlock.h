@@ -14,7 +14,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Random;
@@ -24,6 +23,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class WeepingVinesBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    WeepingVinesBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -44,24 +47,20 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& region, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~WeepingVinesBlock() /*override*/ = default;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WeepingVinesBlock(::std::string const& nameId, int id);
+
     MCAPI void _tryGrow(::BlockSource& region, ::BlockPos const& pos, int age) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -85,6 +84,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
@@ -103,14 +108,11 @@ public:
     ) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& region, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
 
     // NOLINTEND

@@ -24,13 +24,30 @@ public:
     ::ll::TypedStorage<8, 48, ::npc::ActionContainer> overrideActions;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    NPCDialogueData();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI explicit NPCDialogueData(::WeakEntityRef npc);
+
     MCAPI void parsePacket(::NpcDialoguePacket const& packet, ::NpcComponent* component);
 
     MCAPI ~NPCDialogueData();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::WeakEntityRef npc);
 #endif
     // NOLINTEND
 

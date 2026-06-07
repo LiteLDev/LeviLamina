@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentCylinder const&) const;
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentCylinder const& other) const;
     // NOLINTEND
 
 public:

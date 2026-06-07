@@ -24,20 +24,13 @@ public:
 public:
     // prevent constructor by default
     ExplosionStartedEvent& operator=(ExplosionStartedEvent const&);
+    ExplosionStartedEvent(ExplosionStartedEvent const&);
     ExplosionStartedEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExplosionStartedEvent(::ExplosionStartedEvent const&);
-
     MCAPI ~ExplosionStartedEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ExplosionStartedEvent const&);
     // NOLINTEND
 
 public:

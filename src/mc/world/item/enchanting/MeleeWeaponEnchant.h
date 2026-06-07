@@ -27,8 +27,6 @@ public:
     virtual bool isMeleeDamageEnchant() const /*override*/;
 
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
-
-    virtual ~MeleeWeaponEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

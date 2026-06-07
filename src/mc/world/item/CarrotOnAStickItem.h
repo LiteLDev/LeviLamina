@@ -14,6 +14,10 @@ class Mob;
 
 class CarrotOnAStickItem : public ::Item {
 public:
+    // prevent constructor by default
+    CarrotOnAStickItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isHandEquipped() const /*override*/;
@@ -25,8 +29,18 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
+    // NOLINTEND
 
-    virtual ~CarrotOnAStickItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CarrotOnAStickItem(::std::string const& name, short id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, short id);
     // NOLINTEND
 
 public:

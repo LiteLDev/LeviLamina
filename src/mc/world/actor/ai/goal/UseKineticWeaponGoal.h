@@ -54,8 +54,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~UseKineticWeaponGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -65,9 +63,15 @@ public:
 
     MCAPI void _findRearRetreatPosition(::Actor const& target, ::SharedTypes::FloatRange distance);
 
-    MCAPI bool _isTargetTooClose(::Actor const& target) const;
+    MCAPI void _startAttacking();
 
     MCAPI void _startCooldown(::Actor const& target);
+
+    MCAPI void _startRepositioning(::Actor const& target);
+
+    MCAPI void _tickAttacking(::Actor const& target);
+
+    MCAPI void _tickRepositioning(::Actor const& target);
 
     MCAPI void _tryFindRandomRetreatPosition(::SharedTypes::FloatRange distance);
 

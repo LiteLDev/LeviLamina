@@ -10,23 +10,34 @@
 // clang-format off
 class AABB;
 class Block;
+class Material;
 // clang-format on
 
 class ChainBlock : public ::RotatedPillarBlock {
+public:
+    // prevent constructor by default
+    ChainBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual ~ChainBlock() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ChainBlock(::std::string const& nameId, int id, ::Material const& material);
+
+    MCAPI void _shapeFromAlignment(::Block const& block, ::AABB& bufferAABB) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

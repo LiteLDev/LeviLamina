@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LevelChunk;
 namespace Json { class Value; }
 // clang-format on
 
@@ -30,6 +31,14 @@ public:
         ClientSubChunkCache& operator=(ClientSubChunkCache const&);
         ClientSubChunkCache(ClientSubChunkCache const&);
         ClientSubChunkCache();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCNAPI ::Json::Value toJson() const;
+#endif
+        // NOLINTEND
     };
 
     struct ServerChunkLoading {
@@ -46,6 +55,14 @@ public:
         ServerChunkLoading& operator=(ServerChunkLoading const&);
         ServerChunkLoading(ServerChunkLoading const&);
         ServerChunkLoading();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCNAPI ::Json::Value toJson() const;
+#endif
+        // NOLINTEND
     };
 
 public:
@@ -65,6 +82,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void recordLoadedChunk(::LevelChunk const& chunk);
+
 #ifdef LL_PLAT_S
     MCNAPI ::Json::Value toJson() const;
 #endif

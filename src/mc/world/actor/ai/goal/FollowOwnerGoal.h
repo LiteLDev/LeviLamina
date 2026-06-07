@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class Mob;
 class NavigationComponent;
 class Player;
 // clang-format on
 
-class FollowOwnerGoal : public ::Goal {
+class FollowOwnerGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,40 +56,22 @@ public:
 
     virtual void
     onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
-
-    virtual ~FollowOwnerGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FollowOwnerGoal(
-        ::Mob& mob,
-        float  speed,
-        float  startDistance,
-        float  stopDistance,
-        bool   canTeleport,
-        int    postTeleportDistance,
-        bool   ignoreVibrations,
-        float  maxDistance
-    );
+    MCAPI explicit FollowOwnerGoal(::Mob& mob);
 
     MCAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
+
+    MCAPI void _tryToTeleport(::Mob& owner) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob& mob,
-        float  speed,
-        float  startDistance,
-        float  stopDistance,
-        bool   canTeleport,
-        int    postTeleportDistance,
-        bool   ignoreVibrations,
-        float  maxDistance
-    );
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

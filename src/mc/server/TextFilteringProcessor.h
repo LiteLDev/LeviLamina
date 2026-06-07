@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/server/safety/TextFilteringEvent.h"
@@ -13,6 +14,7 @@ class BlockCommandOrigin;
 class CallbackToken;
 class IMinecraftEventing;
 class Player;
+namespace Safety { struct TextFilterResult; }
 // clang-format on
 
 class TextFilteringProcessor : public ::Bedrock::EnableNonOwnerReferences {
@@ -54,6 +56,15 @@ public:
             ::std::vector<::Safety::TextFilteringEvent> const&
         )>
     ) = 0;
+
+    virtual ::Bedrock::Threading::Async<::Safety::TextFilterResult> processAnonymousMessagesAsync(
+        ::IMinecraftEventing*,
+        ::TextProcessingEventOrigin,
+        ::std::vector<::std::string> const&
+    ) = 0;
+
+    virtual ::Bedrock::Threading::Async<::Safety::TextFilterResult>
+    processMessagesAsync(::Player const&, ::TextProcessingEventOrigin, ::std::vector<::std::string> const&) = 0;
 
     virtual void onStartShutdown() = 0;
     // NOLINTEND

@@ -7,20 +7,24 @@
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockPos;
+class BlockSource;
+class EntityContext;
 class Mob;
 class Random;
+struct VariantParameterList;
 struct VariantParameterListConst;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class PlaceBlockGoal : public ::Goal {
+class PlaceBlockGoal : public ::BaseGoal {
 public:
     // PlaceBlockGoal inner types declare
     // clang-format off
@@ -44,18 +48,6 @@ public:
             ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilter;
             ::ll::TypedStorage<4, 4, int>                 mWeight;
             // NOLINTEND
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCAPI ~WeightedBlockDescriptor();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCAPI void $dtor();
-            // NOLINTEND
         };
 
     public:
@@ -73,9 +65,16 @@ public:
         // NOLINTEND
 
     public:
-        // virtual functions
+        // prevent constructor by default
+        Definition(Definition const&);
+        Definition();
+
+    public:
+        // member functions
         // NOLINTBEGIN
-        virtual ~Definition() /*override*/;
+        MCAPI void initialize(::EntityContext& entity, ::PlaceBlockGoal& goal) const;
+
+        MCAPI ::PlaceBlockGoal::Definition& operator=(::PlaceBlockGoal::Definition const&);
         // NOLINTEND
 
     public:
@@ -89,9 +88,11 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // static variables
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI static bool const& DEFAULT_AFFECTED_BY_GRIEFING_RULE();
+
+        MCAPI static float const& DEFAULT_CHANCE();
         // NOLINTEND
 
     public:
@@ -122,14 +123,23 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~PlaceBlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PlaceBlockGoal(::Mob& mob);
+
     MCAPI ::Block const* _tryGetRandomPlaceBlock(::VariantParameterListConst const& params, ::Random& random) const;
+
+    MCAPI void
+    _tryPlaceCarriedBlock(::BlockSource& region, ::BlockPos const& targetPos, ::VariantParameterList const& params);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

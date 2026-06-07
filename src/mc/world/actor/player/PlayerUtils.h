@@ -10,20 +10,23 @@ class BlockSource;
 class ItemStack;
 class Player;
 class Vec3;
+namespace mce { class Color; }
 // clang-format on
 
 namespace PlayerUtils {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
+MCAPI void addItem(::Player& player, ::ItemStack& item);
+
 MCAPI bool areMonstersNearby(::BlockSource& region, ::Vec3 const& position);
-#endif
 
 MCAPI bool canAttackActor(::Player const& player, ::Actor const& actor);
 
 MCAPI bool canUseItemToIgnite(::ItemStack const& item, ::BaseGameVersion const& baseGameVersion);
 
-MCAPI void onAttackAwardAchievements(::Player& player, float damage);
+MCAPI ::mce::Color getPlayerColor(::Player const& player);
+
+MCAPI bool willPlayerPushLoadingScreenForDimensionTransfer(::Player const& player);
 // NOLINTEND
 
 } // namespace PlayerUtils

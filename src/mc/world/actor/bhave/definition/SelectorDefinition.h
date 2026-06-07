@@ -16,8 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
-
-    virtual ~SelectorDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:

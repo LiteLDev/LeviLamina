@@ -33,12 +33,6 @@ public:
     ScriptWidgetComponentRenderPrimType_Cuboid();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrimType_Cuboid() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cuboid const& other) const;

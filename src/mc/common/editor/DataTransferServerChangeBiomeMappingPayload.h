@@ -24,18 +24,20 @@ public:
 
 public:
     // prevent constructor by default
-    DataTransferServerChangeBiomeMappingPayload(DataTransferServerChangeBiomeMappingPayload const&);
     DataTransferServerChangeBiomeMappingPayload();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataTransferServerChangeBiomeMappingPayload() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI
+    DataTransferServerChangeBiomeMappingPayload(::Editor::Network::DataTransferServerChangeBiomeMappingPayload const&);
+
+    MCNAPI DataTransferServerChangeBiomeMappingPayload(
+        ::std::string const& biomeIdentifier,
+        ::std::string const& collectionName,
+        ::std::string const& identifier
+    );
+
     MCNAPI ::Editor::Network::DataTransferServerChangeBiomeMappingPayload&
     operator=(::Editor::Network::DataTransferServerChangeBiomeMappingPayload&&);
 
@@ -50,9 +52,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::Network::DataTransferServerChangeBiomeMappingPayload const&);
+
+    MCNAPI void*
+    $ctor(::std::string const& biomeIdentifier, ::std::string const& collectionName, ::std::string const& identifier);
     // NOLINTEND
 
 public:

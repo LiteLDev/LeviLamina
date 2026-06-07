@@ -31,8 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
-
-    virtual ~MoveItemDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:

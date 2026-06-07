@@ -28,15 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptSentrySessionParameters(::ScriptModuleDiagnostics::ScriptSentrySessionParameters&&);
-
     MCNAPI ~ScriptSentrySessionParameters();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleDiagnostics::ScriptSentrySessionParameters&&);
     // NOLINTEND
 
 public:

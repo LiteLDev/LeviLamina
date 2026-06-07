@@ -14,21 +14,13 @@ public:
         ::std::unordered_map<::std::string, ::std::string> const& additionalProperties
     ) = 0;
 
-    virtual void fireEventImGuiScreenChanged(
-        ::std::string const&                                      screenName,
-        ::std::unordered_map<::std::string, ::std::string> const& additionalProperties
-    ) = 0;
+    virtual void
+    fireEventImGuiScreenChanged(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

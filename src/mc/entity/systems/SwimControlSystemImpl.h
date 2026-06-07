@@ -60,8 +60,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~SwimControlSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

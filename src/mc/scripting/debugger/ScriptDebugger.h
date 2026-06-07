@@ -18,6 +18,7 @@ class ServerLevel;
 struct ScriptDebuggerSettings;
 namespace Core { class Path; }
 namespace ScriptDebuggerMessages { struct CommandMessage; }
+namespace ScriptDebuggerMessages { struct ProfilerMessage; }
 namespace Scripting { class ScriptEngine; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -82,7 +83,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptDebugger() /*override*/ = default;
+    virtual ~ScriptDebugger() /*override*/;
 
     virtual ::ScriptDebuggerSettings const& getSettings() const /*override*/;
 
@@ -119,6 +120,8 @@ public:
 
     MCNAPI void _handleCommandMessage(::ScriptDebuggerMessages::CommandMessage const& commandMessage);
 
+    MCNAPI void _handleStopProfilerMessage(::ScriptDebuggerMessages::ProfilerMessage const& profilerMessage);
+
     MCNAPI ::std::string _sanitizeHostName(::std::string const& host) const;
 
     MCNAPI void _sendNotification(::LogLevel logLevel, ::std::string_view message);
@@ -147,6 +150,12 @@ public:
         ::IScriptDebuggerWatchdog& watchdog,
         ::IScriptTelemetryLogger&  telemetry
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

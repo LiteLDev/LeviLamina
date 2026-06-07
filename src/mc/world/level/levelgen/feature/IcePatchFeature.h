@@ -31,8 +31,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // NOLINTEND
 
-    virtual ~IcePatchFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit IcePatchFeature(int radius);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int radius);
     // NOLINTEND
 
 public:

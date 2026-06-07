@@ -69,11 +69,11 @@ public:
 
     MCFOLD int getGeneratorType() const;
 
-    MCAPI ::std::string const& getRealmsDescription() const;
+    MCFOLD ::std::string const& getRealmsDescription() const;
 
     MCFOLD ::std::string const& getRealmsName() const;
 
-    MCAPI int getSimulationDistance() const;
+    MCFOLD int getSimulationDistance() const;
 
     MCFOLD bool getStartWithBonusChest() const;
 
@@ -109,7 +109,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCFOLD bool $update();
     // NOLINTEND
 
 public:

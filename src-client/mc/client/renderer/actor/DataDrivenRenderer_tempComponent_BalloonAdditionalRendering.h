@@ -48,8 +48,6 @@ public:
     ) /*override*/;
 
     virtual ::AABB getRenderBounds(::Actor const& entity) const /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_BalloonAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

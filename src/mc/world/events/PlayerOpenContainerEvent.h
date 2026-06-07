@@ -17,16 +17,4 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos const>                    mBlockPos;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueId;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerOpenContainerEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

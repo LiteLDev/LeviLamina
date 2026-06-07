@@ -43,9 +43,9 @@ public:
 
     virtual void onChanged(::BlockSource&) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const /*override*/;
 
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -56,14 +56,28 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~BedBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BedBlockActor(::BlockPos const& pos);
+
+    MCAPI bool claimPetSleepOnBed(::ActorUniqueID petId);
+
+    MCFOLD int getColorIndex() const;
+
+    MCAPI void setColorIndex(int color);
+
+    MCAPI void startSleepingOn();
+
     MCAPI void stopSleepingOn(::BlockSource& region, bool forcefulAwake);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -75,9 +89,9 @@ public:
 
     MCFOLD void $onChanged(::BlockSource&);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
 
     MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

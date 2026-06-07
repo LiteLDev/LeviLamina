@@ -33,17 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataTracker(::OreUI::DataTracker&&);
-
     MCAPI ::OreUI::DataTracker& operator=(::OreUI::DataTracker&&);
 
     MCAPI ~DataTracker();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::DataTracker&&);
     // NOLINTEND
 
 public:

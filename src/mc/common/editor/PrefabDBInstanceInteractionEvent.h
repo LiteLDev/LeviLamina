@@ -56,18 +56,6 @@ public:
     PrefabDBInstanceInteractionEvent& operator=(PrefabDBInstanceInteractionEvent const&);
     PrefabDBInstanceInteractionEvent(PrefabDBInstanceInteractionEvent const&);
     PrefabDBInstanceInteractionEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PrefabDBInstanceInteractionEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::Prefabs

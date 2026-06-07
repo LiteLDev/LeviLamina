@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
 class BiomeSource;
 class BlockPos;
 class ChunkPos;
@@ -24,6 +25,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    AncientCityFeature();
 
 public:
     // virtual functions
@@ -50,14 +55,24 @@ public:
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension& dimension,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& chunkPos,
+        ::Dimension&         dimension,
+        ::BiomeSource const& random,
+        ::Random&            chunkPos,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~AncientCityFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AncientCityFeature(uint seed, ::BaseGameVersion const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint seed, ::BaseGameVersion const&);
     // NOLINTEND
 
 public:
@@ -85,10 +100,10 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension& dimension,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& chunkPos,
+        ::Dimension&         dimension,
+        ::BiomeSource const& random,
+        ::Random&            chunkPos,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     );
 

@@ -23,15 +23,26 @@ public:
 public:
     // prevent constructor by default
     TestConfig& operator=(TestConfig const&);
-    TestConfig(TestConfig const&);
     TestConfig();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI TestConfig(::TestConfig const&);
+
+    MCNAPI explicit TestConfig(::std::string const& fileName);
+
     MCNAPI ::TestConfig& operator=(::TestConfig&&);
 
     MCNAPI ~TestConfig();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::TestConfig const&);
+
+    MCNAPI void* $ctor(::std::string const& fileName);
     // NOLINTEND
 
 public:

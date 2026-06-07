@@ -80,6 +80,12 @@ public:
 
     virtual ::mce::Color getPlayerColor(::ActorUniqueID playerId) /*override*/;
 
+    virtual ::Scripting::Result_deprecated<void>
+    setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color) /*override*/;
+
     virtual void setMinimapUIVisible(::mce::UUID const& minimapId, bool visible) /*override*/;
 
     virtual ::std::string generateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition) /*override*/;
@@ -95,13 +101,28 @@ public:
 
     virtual void triggerInitialCacheUpdate(::mce::UUID const& minimapId, ::Vec3 const& playerPosition) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::PubSub::Subscription
+        listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)>) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::PubSub::Subscription
     listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)> callback) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::PubSub::Subscription
+        listenForPlayerMarkersChanged(::std::function<void(::mce::UUID const&)>) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::PubSub::Subscription
     listenForPlayerMarkersChanged(::std::function<void(::mce::UUID const&)> callback) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::PubSub::Subscription listenForMeMarkerChanged(::std::function<void()>) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::PubSub::Subscription listenForMeMarkerChanged(::std::function<void()> callback) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -166,6 +187,12 @@ public:
 
     MCNAPI ::mce::Color $getPlayerColor(::ActorUniqueID playerId);
 
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color);
+
     MCNAPI void $setMinimapUIVisible(::mce::UUID const& minimapId, bool visible);
 
     MCNAPI ::std::string $generateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition);
@@ -180,13 +207,11 @@ public:
 
     MCNAPI void $triggerInitialCacheUpdate(::mce::UUID const& minimapId, ::Vec3 const& playerPosition);
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)>);
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $listenForPlayerMarkersChanged(::std::function<void(::mce::UUID const&)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForPlayerMarkersChanged(::std::function<void(::mce::UUID const&)>);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForMeMarkerChanged(::std::function<void()> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForMeMarkerChanged(::std::function<void()>);
 
 
     // NOLINTEND

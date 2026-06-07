@@ -10,6 +10,7 @@
 class Block;
 class BlockType;
 class CompoundTagUpdaterContext;
+struct ItemRegistryComplexAlias;
 namespace FlatteningUtils { class RemovedState; }
 namespace FlatteningUtils { struct LegacyBlockInfo; }
 // clang-format on
@@ -30,10 +31,10 @@ assignPreFlatteningDestructionParticlesTexture(::Block const& block, ::std::stri
 #endif
 
 MCAPI ::std::vector<::WeakPtr<::BlockType const>>
-getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
+getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64);
 
-MCAPI ::std::function<::Block const*(int)>
-getSimpleBlockComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
+MCAPI ::ItemRegistryComplexAlias
+getSimpleItemComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, bool allowCommands);
 // NOLINTEND
 
 // static variables

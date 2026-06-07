@@ -20,12 +20,14 @@ public:
 
 public:
     // prevent constructor by default
-    SpawnParticleEffectPacketPayload(SpawnParticleEffectPacketPayload const&);
+    SpawnParticleEffectPacketPayload& operator=(SpawnParticleEffectPacketPayload const&);
     SpawnParticleEffectPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SpawnParticleEffectPacketPayload(::SpawnParticleEffectPacketPayload const&);
+
     MCAPI SpawnParticleEffectPacketPayload(
         ::Vec3 const&                        pos,
         ::std::string const&                 name,
@@ -33,16 +35,14 @@ public:
         ::std::optional<::MolangVariableMap> molangVariables
     );
 
-    MCAPI ::SpawnParticleEffectPacketPayload& operator=(::SpawnParticleEffectPacketPayload&&);
-
-    MCAPI ::SpawnParticleEffectPacketPayload& operator=(::SpawnParticleEffectPacketPayload const&);
-
     MCAPI ~SpawnParticleEffectPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::SpawnParticleEffectPacketPayload const&);
+
     MCAPI void* $ctor(
         ::Vec3 const&                        pos,
         ::std::string const&                 name,

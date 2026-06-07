@@ -18,6 +18,7 @@
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
+class BlockType;
 class IClientInstance;
 class ItemRegistryRef;
 class ItemStack;
@@ -58,13 +59,14 @@ public:
     public:
         // prevent constructor by default
         AtlasInfo& operator=(AtlasInfo const&);
+        AtlasInfo();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI AtlasInfo();
-
         MCAPI AtlasInfo(::UIThumbnailAtlasRenderer::AtlasInfo const&);
+
+        MCAPI AtlasInfo(::UIThumbnailAtlasRenderer::AtlasInfo&&);
 
         MCAPI ~AtlasInfo();
         // NOLINTEND
@@ -72,9 +74,9 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
-
         MCAPI void* $ctor(::UIThumbnailAtlasRenderer::AtlasInfo const&);
+
+        MCAPI void* $ctor(::UIThumbnailAtlasRenderer::AtlasInfo&&);
         // NOLINTEND
 
     public:
@@ -96,7 +98,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseActorRenderContext>>                      mRenderContext;
     ::ll::TypedStorage<4, 24, ::AABB>                                                          mArea;
     ::ll::TypedStorage<4, 64, ::Matrix>                                                        mWorldMatrix;
-    ::ll::TypedStorage<8, 528, ::mce::Mesh>                                                    mMesh;
+    ::ll::TypedStorage<8, 552, ::mce::Mesh>                                                    mMesh;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::framebuilder::RenderUIMeshDescription>> mMeshDescription;
     ::ll::TypedStorage<4, 16, ::mce::Color>                                                    mTint;
     ::ll::TypedStorage<4, 20, ::std::optional<::glm::vec4>>                                    mClipRegion;
@@ -121,11 +123,13 @@ public:
 
     MCAPI void _addItemsToMesh(::OreUI::AtlasIndex& items, float scale);
 
-    MCAPI void _capture(::mce::framebuilder::RenderUIMeshDescription&& description);
-
     MCAPI ::ItemStack _getItemStack(::std::string_view name, ::ItemRegistryRef const& registry) const;
 
     MCAPI void _initialize(bool isResume, ::UIThumbnailAtlasRenderer::AtlasInfo const& atlasInfo);
+
+    MCAPI bool _isCaptureReady() const;
+
+    MCAPI bool _isNonRenderableBlock(::BlockType const& block) const;
 
     MCAPI void _render(::ItemStack& item, float scale, float x, float y, ::ItemRenderChunkType renderType);
 
@@ -138,6 +142,12 @@ public:
     );
 
     MCAPI ~UIThumbnailAtlasRenderer();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::UIThumbnailAtlasRenderer::AtlasInfo> const getItemAtlasInfo();
     // NOLINTEND
 
 public:

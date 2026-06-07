@@ -103,6 +103,24 @@ public:
     MCAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
 
     MCAPI void enableHandleCounter(bool enabled);
+
+    MCAPI ::ScriptPluginHandleCounter* getHandleCounter() const;
+
+    MCFOLD ::std::string const& getMainScriptFilePath() const;
+
+    MCFOLD ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+
+    MCFOLD ::std::string const& getName() const;
+
+    MCFOLD ::PackIdVersion const& getPackId() const;
+
+    MCFOLD ::std::string const& getRuntimeName() const;
+
+    MCFOLD ::Scripting::ScriptContext& getScriptContext();
+
+    MCFOLD ::std::vector<::std::string> const& getScriptFilePaths() const;
+
+    MCAPI void setSentryLogger(::std::unique_ptr<::ScriptSentryLogger> sentryLogger);
     // NOLINTEND
 
 public:

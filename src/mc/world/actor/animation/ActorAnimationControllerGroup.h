@@ -44,9 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ActorAnimationControllerGroup();
-#endif
 
     MCAPI void _loadActorAnimationController(
         ::std::string const&      fileData,
@@ -55,9 +53,7 @@ public:
         ::CurrentCmdVersion       packCommandVersion
     );
 
-#ifdef LL_PLAT_C
     MCAPI ::ActorAnimationControllerPtr getActorAnimationController(::HashedString const& name);
-#endif
 
     MCAPI ::std::shared_ptr<::ActorAnimationControllerInfo> getActorAnimationControllerInfo(::HashedString const& name);
 
@@ -89,9 +85,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor();
-#endif
     // NOLINTEND
 
 public:

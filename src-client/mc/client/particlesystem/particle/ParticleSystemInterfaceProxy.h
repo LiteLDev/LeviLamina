@@ -14,7 +14,7 @@ class CompoundTag;
 class HashedString;
 class LevelRendererPlayer;
 class MolangVariableMap;
-class Options;
+class OptionRegistry;
 class Particle;
 class ParticleEngine;
 class ParticleSystemEngine;
@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleSystemInterfaceProxy() /*override*/ = default;
+    virtual ~ParticleSystemInterfaceProxy() /*override*/;
 
     virtual float getDistanceToCameraSqr(::Vec3 const& pos) const /*override*/;
 
@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI ParticleSystemInterfaceProxy(
         ::LevelRendererPlayer const&              levelRendererPlayer,
-        ::Options&                                options,
+        ::OptionRegistry&                         options,
         ::std::unique_ptr<::ParticleEngine>       particleEngine,
         ::std::unique_ptr<::ParticleSystemEngine> particleSystemEngine
     );
@@ -80,10 +80,16 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::LevelRendererPlayer const&              levelRendererPlayer,
-        ::Options&                                options,
+        ::OptionRegistry&                         options,
         ::std::unique_ptr<::ParticleEngine>       particleEngine,
         ::std::unique_ptr<::ParticleSystemEngine> particleSystemEngine
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

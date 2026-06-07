@@ -26,9 +26,44 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemListInfo& operator=(ItemListInfo const&);
+    ItemListInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemListInfo(::ItemListInfo const&);
+
+    MCAPI ItemListInfo(
+        ::std::string const&                             title,
+        ::std::function<bool(::StoreCatalogItem const&)> filterFunction,
+        bool                                             allowSeeMoreBy,
+        int                                              maxOffersVisible,
+        bool                                             isClientSideInventorySearchEnabled,
+        ::StoreCatalogCategory                           catelogCategory,
+        bool                                             showSalesCollection,
+        bool                                             hideNonSaleList
+    );
+
     MCAPI ~ItemListInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemListInfo const&);
+
+    MCAPI void* $ctor(
+        ::std::string const&                             title,
+        ::std::function<bool(::StoreCatalogItem const&)> filterFunction,
+        bool                                             allowSeeMoreBy,
+        int                                              maxOffersVisible,
+        bool                                             isClientSideInventorySearchEnabled,
+        ::StoreCatalogCategory                           catelogCategory,
+        bool                                             showSalesCollection,
+        bool                                             hideNonSaleList
+    );
     // NOLINTEND
 
 public:

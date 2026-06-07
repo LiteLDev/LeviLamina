@@ -14,6 +14,15 @@ namespace Social::Events {
 
 class PlayerTelemetry {
 public:
+    // PlayerTelemetry inner types declare
+    // clang-format off
+    struct nowFunc;
+    // clang-format on
+
+    // PlayerTelemetry inner types define
+    struct nowFunc {};
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnke716c1;

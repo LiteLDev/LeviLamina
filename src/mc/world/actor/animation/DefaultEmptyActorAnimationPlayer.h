@@ -35,8 +35,6 @@ public:
     virtual ::ActorAnimationType getAnimationType() const /*override*/;
 
     virtual ::HashedString const& getRawName() const /*override*/;
-
-    virtual ~DefaultEmptyActorAnimationPlayer() /*override*/ = default;
     // NOLINTEND
 
 public:

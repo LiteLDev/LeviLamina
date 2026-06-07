@@ -4,18 +4,6 @@
 
 namespace Bedrock::Http {
 
-struct Url : public ::std::string {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~Url();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-};
+struct Url : public ::std::string {};
 
 } // namespace Bedrock::Http

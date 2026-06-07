@@ -33,8 +33,6 @@ public:
     ) /*override*/;
 
     virtual uint getTelemetryData() /*override*/;
-
-    virtual ~PacketViolationHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

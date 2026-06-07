@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -17,7 +16,6 @@
 // clang-format off
 class BaseGameVersion;
 class Biome;
-class Dimension;
 class HashedString;
 class ILevelStorageManagerConnector;
 class IWorldRegistriesProvider;
@@ -25,12 +23,12 @@ class LevelStorage;
 class LinkedAssetValidator;
 class ResourcePackManager;
 class WellKnownTagID;
+struct BiomeHashType;
 struct BiomeIdType;
 struct BiomeJsonDocumentGlue;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
-namespace SharedTypes::v1_26_0 { struct BiomeJsonDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -50,13 +48,7 @@ public:
         using is_transparent = void;
     };
 
-    struct LoadedBiomeDocument {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_26_0::BiomeJsonDocument>> mBiomeDocument;
-        // NOLINTEND
-    };
+    struct LoadedBiomeDocument {};
 
     struct SeasonTextureRowSettings {
     public:
@@ -107,9 +99,18 @@ public:
     // NOLINTBEGIN
     MCAPI BiomeRegistry();
 
+    MCAPI void _forEachExistingBiomeAndRemovedBiome(
+        ::brstd::function_ref<void(::BiomeIdType, ::std::string const&)> callback
+    ) const;
+
     MCAPI ::Biome& _register(::std::string_view name, ::BiomeIdType id);
 
     MCAPI void _save(::LevelStorage& levelStorage) const;
+
+#ifdef LL_PLAT_C
+    MCAPI
+        uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
+#endif
 
     MCAPI bool biomeAddTag(::Biome& biome, ::HashedString tag);
 
@@ -123,13 +124,23 @@ public:
 
     MCFOLD bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
 
-#ifdef LL_PLAT_C
     MCFOLD void forEachBiome(::brstd::function_ref<void(::Biome const&)> callback) const;
-#endif
 
     MCFOLD void forEachNonConstBiome(::brstd::function_ref<void(::Biome&)> callback);
 
     MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::vector<::BiomeRegistry::SeasonTextureRowSettings> const& getSeasonTextureRowSettings() const;
+
+    MCFOLD ::std::vector<::BiomeRegistry::SeasonTextureRowSettings>& getSeasonTextureRowSettings();
+#endif
+
+    MCFOLD ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& getTagRegistry() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& getTagRegistry();
+#endif
 
     MCAPI void initServerFromPacks(
         ::IWorldRegistriesProvider& worldRegistries,
@@ -140,6 +151,8 @@ public:
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+
+    MCAPI bool isRegistrationFinished() const;
 
     MCAPI void loadAllBiomeDocuments(
         ::ResourcePackManager const&                       loader,
@@ -160,15 +173,23 @@ public:
     MCAPI ::Biome const* lookupByHash(::HashedString const& hash) const;
 #endif
 
-    MCAPI ::Biome* lookupByHash(::HashedString const& hash);
+    MCFOLD ::Biome const* lookupByHashId(::BiomeHashType id) const;
+
+    MCFOLD ::Biome* lookupByHashId(::BiomeHashType id);
 
     MCFOLD ::Biome const* lookupById(::BiomeIdType id) const;
 
     MCFOLD ::Biome* lookupById(::BiomeIdType id);
 
-    MCAPI ::Biome const* lookupByName(::std::string const& name) const;
+    MCFOLD ::Biome const* lookupByName(::std::string const& name) const;
 
-    MCAPI ::Biome* lookupByName(::std::string const& name);
+    MCFOLD ::Biome* lookupByName(::std::string const& name);
+
+    MCAPI ::Biome& registerBiomeWithExplicitId(::std::string_view name, ::BiomeIdType id);
+
+    MCAPI ::Biome& registerCustomBiome(::std::string_view name);
+
+    MCAPI void registrationFinished();
 
     MCAPI void removeFailedToLoadBiomes();
 

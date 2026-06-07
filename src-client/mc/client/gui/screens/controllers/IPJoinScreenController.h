@@ -66,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPJoinScreenController() /*override*/ = default;
+    virtual ~IPJoinScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -77,7 +77,11 @@ public:
         ::std::function<::IPJoinScreenController::JoinRequest(::IPJoinScreenController::JoinData const&)> onIdJoin
     );
 
+    MCAPI void _registerBindings();
+
     MCAPI void _registerEventHandlers();
+
+    MCAPI void setHeaderText(::std::string text);
     // NOLINTEND
 
 public:
@@ -87,6 +91,12 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>                                                         model,
         ::std::function<::IPJoinScreenController::JoinRequest(::IPJoinScreenController::JoinData const&)> onIdJoin
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

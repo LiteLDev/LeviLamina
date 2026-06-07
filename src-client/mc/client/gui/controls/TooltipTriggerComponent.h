@@ -30,17 +30,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TooltipTriggerComponent() /*override*/ = default;
+    virtual ~TooltipTriggerComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree& screenEvent,
+        ::ScreenInputContext&,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     ) /*override*/;
 
     virtual ::std::string const& getTextToSpeechComponentValue() const /*override*/;
@@ -57,18 +57,20 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
     MCAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
-    );
+    MCAPI ::ComponentReceiveActionType
+    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
 
     MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND

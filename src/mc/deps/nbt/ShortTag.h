@@ -35,8 +35,18 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual uint64 hash() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ShortTag() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ShortTag();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

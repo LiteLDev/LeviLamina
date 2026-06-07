@@ -29,18 +29,24 @@ public:
 
 public:
     // prevent constructor by default
-    AddFriendUserItem& operator=(AddFriendUserItem const&);
-    AddFriendUserItem(AddFriendUserItem const&);
     AddFriendUserItem();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddFriendUserItem(::OreUI::AddFriendUserItem&&);
-
     MCAPI AddFriendUserItem(
         ::Social::XboxLiveUserProfileData const&                   profileData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
+    );
+
+    MCAPI AddFriendUserItem(
+        ::std::string const&                  xuid,
+        ::std::string const&                  gamertag,
+        ::OreUI::AllowListProfileImage const& profileImage,
+        bool                                  isOnline,
+        bool                                  isFollowingMe,
+        bool                                  isFollowedByMe,
+        ::std::string const&                  description
     );
 
     MCAPI ~AddFriendUserItem();
@@ -49,11 +55,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::AddFriendUserItem&&);
-
     MCAPI void* $ctor(
         ::Social::XboxLiveUserProfileData const&                   profileData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
+    );
+
+    MCAPI void* $ctor(
+        ::std::string const&                  xuid,
+        ::std::string const&                  gamertag,
+        ::OreUI::AllowListProfileImage const& profileImage,
+        bool                                  isOnline,
+        bool                                  isFollowingMe,
+        bool                                  isFollowedByMe,
+        ::std::string const&                  description
     );
     // NOLINTEND
 

@@ -39,8 +39,6 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~ShearsItem() /*override*/ = default;
     // NOLINTEND
 
 public:

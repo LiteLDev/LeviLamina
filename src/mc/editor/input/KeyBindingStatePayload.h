@@ -24,6 +24,8 @@ public:
 
 public:
     // prevent constructor by default
+    KeyBindingStatePayload& operator=(KeyBindingStatePayload const&);
+    KeyBindingStatePayload(KeyBindingStatePayload const&);
     KeyBindingStatePayload();
 
 public:
@@ -35,15 +37,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI KeyBindingStatePayload(::Editor::Network::KeyBindingStatePayload const&);
-
     MCNAPI KeyBindingStatePayload(
         ::HashedString const& contextId,
         ::HashedString const& bindingId,
         ::std::optional<int>  processingState
     );
-
-    MCNAPI ::Editor::Network::KeyBindingStatePayload& operator=(::Editor::Network::KeyBindingStatePayload const&);
     // NOLINTEND
 
 public:
@@ -55,8 +53,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::KeyBindingStatePayload const&);
-
     MCNAPI void*
     $ctor(::HashedString const& contextId, ::HashedString const& bindingId, ::std::optional<int> processingState);
     // NOLINTEND

@@ -22,16 +22,4 @@ public:
                                   mElementFactory;
     ::ll::TypedStorage<4, 4, int> mWeight;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~WeightedStructureTemplateRegistration();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

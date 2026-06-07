@@ -26,19 +26,20 @@ public:
 
 public:
     // prevent constructor by default
-    DropdownSetting(DropdownSetting const&);
     DropdownSetting();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DropdownSetting(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
+
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&&);
 
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
 
-    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&) const;
+    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const& other) const;
 
     MCAPI ~DropdownSetting();
     // NOLINTEND
@@ -53,6 +54,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& TYPE_NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
     // NOLINTEND
 
 public:

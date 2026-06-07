@@ -2,19 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Exclude.h"
-#include "mc/deps/ecs/strict/Include.h"
-
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
 class Vec2;
-struct InterpolateMovementNeededComponent;
-struct MinecartFlagComponent;
 struct MovementInterpolatorComponent;
-struct OnGroundFlagComponent;
 struct StateVectorComponent;
 // clang-format on
 
@@ -27,17 +19,6 @@ public:
         ::MovementInterpolatorComponent const& movementInterpolatorComponent,
         ::StateVectorComponent&                stateVectorComponent
     );
-
-    MCAPI static void _onGroundPostTickSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Exclude<::MinecartFlagComponent>,
-            ::Include<::InterpolateMovementNeededComponent, ::OnGroundFlagComponent>,
-            ::MovementInterpolatorComponent const,
-            ::StateVectorComponent> view
-    );
-
-    MCAPI static float _tickHeadYaw(::MovementInterpolatorComponent& movementInterpolatorComponent, float yHeadRot);
 
     MCAPI static ::std::tuple<::Vec2, ::Vec2> _tickRotation(
         ::MovementInterpolatorComponent& movementInterpolatorComponent,

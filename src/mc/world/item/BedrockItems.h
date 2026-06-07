@@ -12,5 +12,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void registerItems(::ItemRegistryRef itemRegistry);
+
+    MCAPI static void unregisterItems(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

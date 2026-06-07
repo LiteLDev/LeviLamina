@@ -27,6 +27,7 @@ struct ActorRotationComponent;
 struct ActorTypeComponent;
 struct CamelFlagComponent;
 struct CanStandOnSnowFlagComponent;
+struct ClientInputLockComponent;
 struct DimensionTypeComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
@@ -86,7 +87,8 @@ struct LocalPlayerFilterAutoJumpInternal
           ::MovementAttributesComponent,
           ::DimensionTypeComponent,
           ::OnGroundFlagComponent,
-          ::StateVectorComponent>,
+          ::StateVectorComponent,
+          ::ClientInputLockComponent>,
       ::Write<::MoveInputComponent>,
       ::AddRemove<>,
       ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
@@ -127,7 +129,8 @@ public:
                 ::MovementAttributesComponent,
                 ::DimensionTypeComponent,
                 ::OnGroundFlagComponent,
-                ::StateVectorComponent>,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
             ::Write<::MoveInputComponent>,
             ::AddRemove<>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
@@ -167,7 +170,8 @@ public:
                 ::MovementAttributesComponent,
                 ::DimensionTypeComponent,
                 ::OnGroundFlagComponent,
-                ::StateVectorComponent>,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
             ::Write<::MoveInputComponent>,
             ::AddRemove<>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
@@ -175,8 +179,6 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entity
     ) /*override*/;
-
-    virtual ~LocalPlayerFilterAutoJumpInternal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -214,7 +216,8 @@ public:
                 ::MovementAttributesComponent,
                 ::DimensionTypeComponent,
                 ::OnGroundFlagComponent,
-                ::StateVectorComponent>,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
             ::Write<::MoveInputComponent>,
             ::AddRemove<>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
@@ -236,6 +239,7 @@ public:
         ::MovementAttributesComponent const&      attributes,
         ::StateVectorComponent const&             stateVector,
         ::ActorDataFlagComponent const&           synchedActorData,
+        ::ClientInputLockComponent const&         inputLock,
         ::MoveInputComponent&                     moveInput,
         ::Optional<::OnGroundFlagComponent const> isOnGround,
         ::Optional<::PassengerComponent const>    isRiding,
@@ -270,7 +274,8 @@ public:
                 ::MovementAttributesComponent,
                 ::DimensionTypeComponent,
                 ::OnGroundFlagComponent,
-                ::StateVectorComponent>,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
             ::Write<::MoveInputComponent>,
             ::AddRemove<>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
@@ -315,7 +320,8 @@ public:
                 ::MovementAttributesComponent,
                 ::DimensionTypeComponent,
                 ::OnGroundFlagComponent,
-                ::StateVectorComponent>,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
             ::Write<::MoveInputComponent>,
             ::AddRemove<>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
@@ -355,7 +361,8 @@ public:
                 ::MovementAttributesComponent,
                 ::DimensionTypeComponent,
                 ::OnGroundFlagComponent,
-                ::StateVectorComponent>,
+                ::StateVectorComponent,
+                ::ClientInputLockComponent>,
             ::Write<::MoveInputComponent>,
             ::AddRemove<>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,

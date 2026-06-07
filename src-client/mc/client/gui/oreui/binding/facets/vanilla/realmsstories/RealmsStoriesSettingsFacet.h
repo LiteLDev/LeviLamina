@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsStoriesSettingsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsStoriesSettingsFacet() /*override*/ = default;
@@ -33,6 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsStoriesSettingsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+
     MCAPI ::Realms::Stories::FetchStatus _getFetchState() const;
 
     MCAPI ::Realms::OptInState _getPlayerOptInStatus() const;
@@ -56,6 +62,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
     // NOLINTEND
 
 public:

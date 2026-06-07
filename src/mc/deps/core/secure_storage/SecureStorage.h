@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class PathView; }
+// clang-format on
+
 class SecureStorage {
 public:
     // member variables
@@ -27,6 +32,18 @@ public:
     virtual bool remove(::std::string const& key) = 0;
 
     virtual bool get(::std::string const& key, ::std::string& outValue) = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit SecureStorage(::Core::PathView settingsPath);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::PathView settingsPath);
     // NOLINTEND
 
 public:

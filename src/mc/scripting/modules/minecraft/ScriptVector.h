@@ -15,6 +15,12 @@ namespace ScriptModuleMinecraft {
 
 class ScriptVector : public ::Vec3 {
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD bool operator==(::ScriptModuleMinecraft::ScriptVector const& rhs) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

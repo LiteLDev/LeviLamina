@@ -43,14 +43,6 @@ public:
     virtual ::std::string serializeSession(::Bedrock::SessionInfo const& session) const = 0;
 
     virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view contents) const = 0;
-
-    virtual ~SessionInfoManager() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

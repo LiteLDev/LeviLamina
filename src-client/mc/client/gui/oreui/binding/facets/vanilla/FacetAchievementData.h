@@ -37,13 +37,13 @@ public:
 public:
     // prevent constructor by default
     FacetAchievementData& operator=(FacetAchievementData const&);
-    FacetAchievementData(FacetAchievementData const&);
-    FacetAchievementData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FacetAchievementData(::OreUI::FacetAchievementData&&);
+    MCAPI FacetAchievementData();
+
+    MCAPI FacetAchievementData(::OreUI::FacetAchievementData const&);
 
     MCAPI ~FacetAchievementData();
     // NOLINTEND
@@ -51,7 +51,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::FacetAchievementData&&);
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::OreUI::FacetAchievementData const&);
     // NOLINTEND
 
 public:

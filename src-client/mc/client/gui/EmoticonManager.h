@@ -19,6 +19,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EmoticonManager();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EmoticonManager() /*override*/;
@@ -27,13 +31,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _findEmoticon(::std::string const& emoticonName) const;
+    MCAPI explicit EmoticonManager(::std::string const& listFilename);
 
     MCAPI void _readEmoticonList(::ResourceLocation const& listLocation);
+
+    MCAPI ::std::string emoticonifyText(::std::string const& text) const;
 
     MCAPI void emoticonifyTextInPlace(::std::string& text) const;
 
     MCAPI void resetEmoticonData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& listFilename);
     // NOLINTEND
 
 public:

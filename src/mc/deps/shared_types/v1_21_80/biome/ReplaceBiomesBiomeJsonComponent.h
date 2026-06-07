@@ -33,19 +33,21 @@ public:
 
     public:
         // prevent constructor by default
-        BiomeReplacement(BiomeReplacement const&);
+        BiomeReplacement& operator=(BiomeReplacement const&);
         BiomeReplacement();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
-        operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&&);
-
-        MCFOLD ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
-        operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
+        MCAPI BiomeReplacement(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
 
         MCAPI ~BiomeReplacement();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
         // NOLINTEND
 
     public:
@@ -60,12 +62,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement>>
         mBiomeReplacements;
-    // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ReplaceBiomesBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

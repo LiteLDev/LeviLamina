@@ -58,8 +58,6 @@ public:
         int                  errorCode,
         ::std::string const& errorMessage
     ) /*override*/;
-
-    virtual ~PeerConnectionObserver() /*override*/ = default;
     // NOLINTEND
 
 public:

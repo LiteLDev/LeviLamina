@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityRegistry;
+class StrictEntityContext;
 // clang-format on
 
 class EntityContext : public ::EnableGetWeakRef<::EntityContext> {
@@ -20,7 +21,13 @@ public:
     // clang-format on
 
     // EntityContext inner types define
-    struct Hash {};
+    struct Hash {
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI uint64 operator()(::EntityContext const& entity) const;
+        // NOLINTEND
+    };
 
 public:
     // member variables
@@ -39,6 +46,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI EntityContext(::EntityRegistry& registry, ::StrictEntityContext const& entity);
+#endif
+
+    MCAPI EntityContext(::EntityRegistry& registry, ::EntityId entity);
+
+    MCAPI ::EntityId _getEntityId() const;
+
+    MCFOLD ::EntityRegistry& _registry() const;
+
     MCAPI ::WeakRef<::EntityContext> getWeakRef() const;
+
+    MCAPI bool isValid() const;
+
+    MCAPI bool operator==(::EntityContext const& other) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::EntityRegistry& registry, ::StrictEntityContext const& entity);
+#endif
+
+    MCAPI void* $ctor(::EntityRegistry& registry, ::EntityId entity);
     // NOLINTEND
 };

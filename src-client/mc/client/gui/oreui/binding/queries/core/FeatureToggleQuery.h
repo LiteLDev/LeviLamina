@@ -27,12 +27,6 @@ public:
     FeatureToggleQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FeatureToggleQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI FeatureToggleQuery(::OreUI::GameDependencies const& game, ::std::string const& tag);

@@ -19,8 +19,6 @@ public:
     virtual uchar getPoweroutDirection() const;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
-
-    virtual ~CapacitorComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

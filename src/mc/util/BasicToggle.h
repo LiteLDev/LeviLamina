@@ -16,4 +16,26 @@ public:
     BasicToggle& operator=(BasicToggle const&);
     BasicToggle(BasicToggle const&);
     BasicToggle();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit BasicToggle(bool startAsOn);
+
+    MCNAPI bool getStateChange();
+
+    MCNAPI bool peek() const;
+
+    MCNAPI void setIsOn(bool isOn);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(bool startAsOn);
+#endif
+    // NOLINTEND
 };

@@ -34,15 +34,11 @@ public:
 
 public:
     // prevent constructor by default
-    GalleryScreenshot& operator=(GalleryScreenshot const&);
-    GalleryScreenshot(GalleryScreenshot const&);
     GalleryScreenshot();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GalleryScreenshot(::OreUI::GalleryScreenshot&&);
-
     MCAPI GalleryScreenshot(
         ::Screenshots::GalleryScreenshot const&                    screenshot,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
@@ -74,8 +70,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GalleryScreenshot&&);
-
     MCAPI void* $ctor(
         ::Screenshots::GalleryScreenshot const&                    screenshot,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,

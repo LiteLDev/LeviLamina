@@ -59,7 +59,7 @@ MCAPI void _tickChunkMoveNeededSystemSynchronous4(
     ::StateVectorComponent const&   stateVectorComponent
 );
 
-MCAPI void _tickMoveHitboxSystem3(
+MCFOLD void _tickMoveHitboxSystem3(
     ::ActorSetPositionRequestComponent const& positionUpdateComponent,
     ::HitboxComponent&                        hitboxComponent
 );

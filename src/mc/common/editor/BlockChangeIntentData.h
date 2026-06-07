@@ -35,8 +35,6 @@ public:
         ::BlockActor const* blockActor,
         ::BlockPos const&   pos
     );
-
-    MCNAPI ~BlockChangeIntentData();
     // NOLINTEND
 
 public:
@@ -44,12 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(uint blockRuntimeId, uint extraBlockRuntimeId, ::BlockActor const* blockActor, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

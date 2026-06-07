@@ -92,19 +92,27 @@ public:
 
     MCAPI bool _fontSourcesChanged();
 
+    MCAPI ::glm::vec2 _generateTextMaxSize() const;
+
+    MCAPI int _getCaretPosition() const;
+
     MCAPI ::std::string _getMeasuredText(::UIRenderContext& context);
 
     MCAPI ::RectangleArea _getParentArea(::UIRenderContext& context);
-
-    MCAPI void _notifyOnEllipses(bool usingEllipses);
 
     MCAPI bool _updateCachedText();
 
     MCAPI ::std::string calculateUpdatedText();
 
-    MCAPI void setFontType(::std::string const& fontType);
+    MCFOLD ::mce::Color const& getColor() const;
 
-    MCAPI void setText(::std::string const& label);
+    MCAPI void setAlignment(::ui::TextAlignment alignment);
+
+    MCAPI void setColor(::mce::Color const& color);
+
+    MCAPI void setFontScaleFactor(float fontScaleFactor);
+
+    MCAPI void setFontType(::std::string const& fontType);
 
     MCAPI void setTextTTS(::std::string const& label);
     // NOLINTEND

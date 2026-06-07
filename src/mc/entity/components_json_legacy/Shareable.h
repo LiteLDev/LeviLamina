@@ -31,13 +31,5 @@ public:
     MCAPI void setCraftInto(::std::string const& name);
 
     MCAPI void setItem(::std::string const& name);
-
-    MCAPI ~Shareable();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

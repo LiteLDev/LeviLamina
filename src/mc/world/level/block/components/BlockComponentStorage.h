@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockComponentEventSubscriber;
 class BlockConnectionComponent;
 class BlockCustomComponentsComponent;
 class BlockDeprecatedR16EventListenerComponent;
@@ -36,6 +37,7 @@ struct BlockDestructionParticlesComponent;
 struct BlockDisplayNameComponent;
 struct BlockEmbeddedVisualComponent;
 struct BlockFlammableComponent;
+struct BlockFlowerPottableComponent;
 struct BlockFrictionComponent;
 struct BlockGeometryComponent;
 struct BlockItemVisualComponent;
@@ -98,16 +100,32 @@ public:
             ::Bedrock::typeid_t<void>,
             ::std::less<::Bedrock::typeid_t<void>>,
             ::std::vector<::Bedrock::typeid_t<void>>>>
-                                   mStatelessComponents;
-    ::ll::TypedStorage<1, 1, bool> mAllowModifyingComponents;
-    ::ll::TypedStorage<1, 1, bool> mAllowComponentReplacement;
-    ::ll::TypedStorage<1, 1, bool> mAllowTryGetComponentBeforeFinalization;
+                                                                                mStatelessComponents;
+    ::ll::TypedStorage<1, 1, bool>                                              mAllowModifyingComponents;
+    ::ll::TypedStorage<1, 1, bool>                                              mAllowComponentReplacement;
+    ::ll::TypedStorage<1, 1, bool>                                              mAllowTryGetComponentBeforeFinalization;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BlockComponentEventSubscriber>> mBlockComponentEventSubscriber;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _addStatelessComponent(::Bedrock::typeid_t<void> typeId);
+
+    MCAPI ::BlockComponentStorage::ComponentBase* _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
+
+    MCAPI void allowComponentReplacement();
+
+    MCAPI void allowTryGetComponentBeforeFinalization();
+
+    MCAPI void finalizeComponents();
+
+    MCFOLD bool modificationIsAllowed() const;
+
+    MCFOLD void setAllowComponentReplacement(bool allow);
+
+    MCAPI void
+    setBlockComponentEventSubscriber(::std::shared_ptr<::BlockComponentEventSubscriber> blockComponentEventSubscriber);
 
     MCAPI ~BlockComponentStorage();
     // NOLINTEND

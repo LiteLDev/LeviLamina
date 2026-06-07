@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/IScriptRef.h"
 
-// auto generated forward declare list
-// clang-format off
-struct JSValue;
-// clang-format on
-
 namespace Scripting::QuickJS {
 
 class ScriptObjRef : public ::Scripting::IScriptRef {
@@ -82,8 +77,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void pin();
-
-    MCNAPI ::std::array<::JSValue, 3> release();
 
     MCNAPI void unpin();
     // NOLINTEND

@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -30,33 +28,9 @@ public:
     DataTransferServiceRequestBiomeConfigPayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataTransferServiceRequestBiomeConfigPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI DataTransferServiceRequestBiomeConfigPayload(::mce::UUID requestId, ::HashedString identifier);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::UUID requestId, ::HashedString identifier);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

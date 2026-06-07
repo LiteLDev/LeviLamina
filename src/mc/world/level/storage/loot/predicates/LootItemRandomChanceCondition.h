@@ -31,8 +31,12 @@ public:
     virtual bool applies(::Random& random, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~LootItemRandomChanceCondition() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI float getChance() const;
     // NOLINTEND
 
 public:

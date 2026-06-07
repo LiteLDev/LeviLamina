@@ -67,7 +67,6 @@ class CorrectPlayerMovePredictionPacket;
 class CraftingDataPacket;
 class CurrentStructureFeaturePacket;
 class DeathInfoPacket;
-class DebugDrawerPacket;
 class DebugInfoPacket;
 class Dimension;
 class EditorNetworkPacket;
@@ -75,10 +74,12 @@ class EduUriResourcePacket;
 class EducationSettingsPacket;
 class EmoteListPacket;
 class EmotePacket;
+class Experiments;
 class FeatureRegistryPacket;
 class GameTestResultsPacket;
 class GraphicsOverrideParameterPacket;
 class GuiDataPickItemPacket;
+class HashedString;
 class IClientInstance;
 class IContentManager;
 class IGameConnectionListener;
@@ -117,7 +118,9 @@ class PlayerLocationPacket;
 class PlayerStartItemCooldownPacket;
 class PlayerVideoCapturePacket;
 class PositionTrackingDBServerBroadcastPacket;
+class PrimitiveShapesPacket;
 class PrivateKeyManager;
+class Recipe;
 class RefreshEntitlementsPacket;
 class RemoveObjectivePacket;
 class RemoveVolumeEntityPacket;
@@ -128,7 +131,9 @@ class ResourcePacksInfoPacket;
 class RespawnPacket;
 class ScriptMessagePacket;
 class ServerPlayerPostMovePositionPacket;
+class ServerPresenceInfoPacket;
 class ServerSettingsResponsePacket;
+class ServerStoreInfoPacket;
 class ServerToClientHandshakePacket;
 class SetDisplayObjectivePacket;
 class SetLastHurtByPacket;
@@ -168,6 +173,7 @@ class VideoCaptureSessionManager;
 class VoxelShapesPacket;
 struct ClientNetworkHandlerArguments;
 struct NetworkIdentifierWithSubId;
+struct ToastIconData;
 namespace ClientBlobCache { class Cache; }
 namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
@@ -208,6 +214,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                            mHasHandshaked;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                        mExistenceTracker;
     ::ll::TypedStorage<1, 1, bool>                                                            mPacketTelemetryEnabled;
+    ::ll::TypedStorage<1, 1, bool> mEventSynchronizationEnabled;
     ::ll::TypedStorage<
         8,
         64,
@@ -232,6 +239,7 @@ public:
     ::ll::TypedStorage<8, 128, ::ClientNetworkPackDependencies>                         mPackDependencies;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CachedHostPackIdProvider>>            mCachedHostPackIdProvider;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mHostPacksReceivedSub;
+    ::ll::TypedStorage<1, 1, bool>                                                      mAllowFurnaceRecipesUnlocking;
     // NOLINTEND
 
 public:
@@ -245,284 +253,285 @@ public:
     // NOLINTBEGIN
     virtual ~ClientNetworkHandler() /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ActorEventPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AddBehaviorTreePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::AddBehaviorTreePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AnimateEntityPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::AnimateEntityPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AvailableActorIdentifiersPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::AvailableActorIdentifiersPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::AvailableCommandsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::AvailableCommandsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AutomationClientConnectPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::AutomationClientConnectPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::BiomeDefinitionListPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::BossEventPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::BossEventPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CameraAimAssistPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPresetsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CameraAimAssistPresetsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CameraAimAssistActorPriorityPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CameraInstructionPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CameraInstructionPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CameraPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CameraPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CameraPresetsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CameraPresetsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CameraShakePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CameraShakePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CameraSplinePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CameraSplinePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ChunkRadiusUpdatedPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundControlSchemeSetPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ClientboundControlSchemeSetPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ClientboundMapItemDataPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::CommandRequestPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CompletedUsingItemPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CraftingDataPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CraftingDataPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::EmoteListPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::EmoteListPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::DebugInfoPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::DebugInfoPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::EmotePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::EmotePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::LegacyTelemetryEventPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::FeatureRegistryPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::FeatureRegistryPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::LessonProgressPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::LessonProgressPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::GuiDataPickItemPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::GuiDataPickItemPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::ItemStackResponsePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ItemStackResponsePacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::LevelEventPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::LevelEventPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::LevelEventGenericPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::LevelEventGenericPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::LevelSoundEventPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ModalFormRequestPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ModalFormRequestPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ToastRequestPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ToastRequestPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::OnScreenTextureAnimationPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::OnScreenTextureAnimationPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::NetworkChunkPublisherUpdatePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::NetworkChunkPublisherUpdatePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PhotoTransferPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PhotoTransferPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::PlayerArmorDamagePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PlayerArmorDamagePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::PlayerStartItemCooldownPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PlayerStartItemCooldownPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlaySoundPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PlaySoundPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::PlayStatusPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerFogPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PlayerFogPacket const&) /*override*/;
 
     virtual void
-    handle(::NetworkIdentifier const& source, ::PositionTrackingDBServerBroadcastPacket const& packet) /*override*/;
+    handle(::NetworkIdentifier const& packet, ::PositionTrackingDBServerBroadcastPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::RemoveObjectivePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::RemoveObjectivePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ResourcePackChunkDataPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::ResourcePackDataInfoPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::ResourcePacksInfoPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ResourcePacksInfoPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::ResourcePackStackPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::RespawnPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ScriptMessagePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ScriptMessagePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ServerSettingsResponsePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ServerSettingsResponsePacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::ServerToClientHandshakePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetDisplayObjectivePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SetDisplayObjectivePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetLastHurtByPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SetLastHurtByPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetPlayerGameTypePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SetPlayerGameTypePacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::UpdatePlayerGameTypePacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetScoreboardIdentityPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SetScoreboardIdentityPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetScorePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SetScorePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetTitlePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SetTitlePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ShowCreditsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ShowCreditsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ShowProfilePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ShowProfilePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ShowStoreOfferPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ShowStoreOfferPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::SimpleEventPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SimpleEventPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::StopSoundPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::StopSoundPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::SubChunkPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::TakeItemActorPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::TakeItemActorPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::TextPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::TextPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::TickingAreasLoadStatusPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::TickingAreasLoadStatusPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::TransferPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::TransferPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateAttributesPacket> packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::std::shared_ptr<::UpdateAttributesPacket>) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::UpdateEquipPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::UpdateEquipPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::UpdateSoftEnumPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::UpdateSoftEnumPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::UpdateTradePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::UpdateTradePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::StructureTemplateDataResponsePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::StructureTemplateDataResponsePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::EducationSettingsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::EducationSettingsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::EduUriResourcePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::EduUriResourcePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::MultiplayerSettingsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::MultiplayerSettingsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerEnchantOptionsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PlayerEnchantOptionsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CodeBuilderPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CodeBuilderPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CorrectPlayerMovePredictionPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CorrectPlayerMovePredictionPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SyncActorPropertyPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SyncActorPropertyPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::NpcDialoguePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::NpcDialoguePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::ClientboundDebugRendererPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundDebugRendererPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AddVolumeEntityPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::AddVolumeEntityPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::RemoveVolumeEntityPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::RemoveVolumeEntityPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SimulationTypePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SimulationTypePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AgentActionEventPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::AgentActionEventPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::UpdateSubChunkBlocksPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::DeathInfoPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::DeathInfoPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::EditorNetworkPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::EditorNetworkPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::GameTestResultsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::UpdateClientInputLocksPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::UpdateClientInputLocksPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerActionPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PlayerActionPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::UnlockedRecipesPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::UnlockedRecipesPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::TrimDataPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::TrimDataPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::OpenSignPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::OpenSignPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AgentAnimationPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::AgentAnimationPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::RefreshEntitlementsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::RefreshEntitlementsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SetPlayerInventoryOptionsPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SetPlayerInventoryOptionsPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::AwardAchievementPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::AwardAchievementPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::ClientboundCloseFormPacket const&) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundCloseFormPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::JigsawStructureDataPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::JigsawStructureDataPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::CurrentStructureFeaturePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::CurrentStructureFeaturePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const& source, ::PlayerVideoCapturePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PlayerVideoCapturePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::DebugDrawerPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PlayerLocationPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::PlayerLocationPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::PrimitiveShapesPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ClientboundDataStorePacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::GraphicsOverrideParameterPacket const&) /*override*/;
 
     virtual void
-    handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUICloseScreenPacket const& packet) /*override*/;
+    handle(::NetworkIdentifier const& packet, ::ClientboundDataDrivenUICloseScreenPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIReloadPacket const&) /*override*/;
 
     virtual void
-    handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIShowScreenPacket const& packet) /*override*/;
+    handle(::NetworkIdentifier const& packet, ::ClientboundDataDrivenUIShowScreenPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundTextureShiftPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ClientboundTextureShiftPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::VoxelShapesPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::VoxelShapesPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::LocatorBarPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::LocatorBarPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::SyncWorldClocksPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::SyncWorldClocksPacket const&) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundAttributeLayerSyncPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& packet, ::ClientboundAttributeLayerSyncPacket const&) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const& packet, ::ServerStoreInfoPacket const&) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const& packet, ::ServerPresenceInfoPacket const&) /*override*/;
 
     virtual void onOutgoingPacket(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
-        ::SubClientId,
-        ::SubClientId recipientSubId
+        ::SubClientId              recipientSubId,
+        ::SubClientId
     ) /*override*/;
 
     virtual void onValidPacketReceived(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
-        ::SubClientId,
-        ::SubClientId recipientSubId
+        ::SubClientId              recipientSubId,
+        ::SubClientId
     ) /*override*/;
 
     virtual void
     onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID) /*override*/;
 
     virtual void onDisconnect(
-        ::NetworkIdentifier const&               source,
-        ::Connection::DisconnectFailReason const discoReason,
-        ::Connection::DisconnectionStage const   disconnectStage,
-        ::std::string const&                     messageFromServer,
+        ::NetworkIdentifier const&               discoReason,
+        ::Connection::DisconnectFailReason const disconnectStage,
+        ::Connection::DisconnectionStage const   messageFromServer,
         ::std::string const&                     messageBodyOverride,
-        bool                                     skipMessage,
-        ::std::string const&                     telemetryOverride
+        ::std::string const&                     skipMessage,
+        bool                                     telemetryOverride,
+        ::std::string const&
     ) /*override*/;
 
-    virtual ::IncomingPacketFilterResult allowIncomingPacketId(
-        ::NetworkIdentifierWithSubId const& id,
-        ::MinecraftPacketIds                packetId,
-        uint64                              packetSize
-    ) /*override*/;
+    virtual ::IncomingPacketFilterResult
+    allowIncomingPacketId(::NetworkIdentifierWithSubId const& packetId, ::MinecraftPacketIds, uint64) /*override*/;
 
     virtual ::OutgoingPacketFilterResult
-    allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
+    allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) /*override*/;
 
     virtual void handlePacketViolation(
         ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
@@ -545,7 +554,7 @@ public:
         ::SubClientId              clientSubId
     ) /*override*/;
 
-    virtual void onSuccessfulLogin(::NetworkIdentifier const& id);
+    virtual void onSuccessfulLogin(::NetworkIdentifier const&);
     // NOLINTEND
 
 public:
@@ -555,22 +564,32 @@ public:
 
     MCAPI void _disconnectFromServer(::NetworkIdentifier const& source);
 
-    MCAPI ::ILevel* _getLevelIfValid();
+    MCAPI void _ensureVoxelShapeRegistryExists(::Experiments const& experiments);
+
+    MCAPI void _handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::LevelEventGenericPacket const& packet);
 
     MCAPI void _handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::LevelEventPacket const& packet);
 
     MCAPI void _handleLevelMusicEvent(::SharedTypes::Legacy::LevelEvent type, ::LevelEventGenericPacket const& packet);
 
     MCAPI void _handleSubChunkData(
-        ::NetworkIdentifier const&,
-        ::SubChunkPacket const&                     packet,
-        ::SubChunkPacket::SubChunkPacketData const& subChunkData,
-        ::LocalPlayer const*                        localPlayer,
-        bool                                        levelAndPlayerExists
+        ::NetworkIdentifier const&                  packet,
+        ::SubChunkPacket const&                     subChunkData,
+        ::SubChunkPacket::SubChunkPacketData const& localPlayer,
+        ::LocalPlayer const*                        levelAndPlayerExists,
+        bool
     );
 
     MCAPI void
     _handleUnlockedRecipes(::UnlockedRecipesPacket const& packet, ::UnlockedRecipesClientComponent& component);
+
+    MCAPI void _handleUnlockedRecipesByTag(
+        ::UnlockedRecipesClientComponent const&                                                   component,
+        ::std::map<::HashedString, ::std::map<::std::string, ::std::shared_ptr<::Recipe>>> const& allRecipes,
+        ::std::string const&                                                                      recipeId,
+        ::HashedString const&                                                                     tag,
+        ::std::vector<::ToastIconData>&                                                           newRecipeToastDataRef
+    );
 
     MCAPI void _respondBlobCacheStatusForSubChunk(::SubChunkPacket::SubChunkPacketData const& subChunkData);
 
@@ -606,277 +625,281 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ActorEventPacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::AddBehaviorTreePacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::AddBehaviorTreePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AnimateEntityPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::AnimateEntityPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AvailableActorIdentifiersPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::AvailableActorIdentifiersPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::AvailableCommandsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::AvailableCommandsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AutomationClientConnectPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::AutomationClientConnectPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::BiomeDefinitionListPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::BossEventPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::BossEventPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CameraAimAssistPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistPresetsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CameraAimAssistPresetsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CameraAimAssistActorPriorityPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraInstructionPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CameraInstructionPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CameraPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraPresetsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CameraPresetsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraShakePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CameraShakePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraSplinePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CameraSplinePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ChunkRadiusUpdatedPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundControlSchemeSetPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ClientboundControlSchemeSetPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ClientboundMapItemDataPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::CommandRequestPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CompletedUsingItemPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CraftingDataPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CraftingDataPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::EmoteListPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::EmoteListPacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::DebugInfoPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::DebugInfoPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::EmotePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::EmotePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::LegacyTelemetryEventPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::FeatureRegistryPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::FeatureRegistryPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::LessonProgressPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::LessonProgressPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::GuiDataPickItemPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::GuiDataPickItemPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ItemStackResponsePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ItemStackResponsePacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelEventPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::LevelEventPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelEventGenericPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::LevelEventGenericPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::LevelSoundEventPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ModalFormRequestPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ModalFormRequestPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ToastRequestPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ToastRequestPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::OnScreenTextureAnimationPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::OnScreenTextureAnimationPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::NetworkChunkPublisherUpdatePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::NetworkChunkPublisherUpdatePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PhotoTransferPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PhotoTransferPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerArmorDamagePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PlayerArmorDamagePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerStartItemCooldownPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PlayerStartItemCooldownPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlaySoundPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PlaySoundPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::PlayStatusPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerFogPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PlayerFogPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PositionTrackingDBServerBroadcastPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PositionTrackingDBServerBroadcastPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::RemoveObjectivePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::RemoveObjectivePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ResourcePackChunkDataPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackDataInfoPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePacksInfoPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ResourcePacksInfoPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackStackPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::RespawnPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ScriptMessagePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ScriptMessagePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ServerSettingsResponsePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ServerSettingsResponsePacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ServerToClientHandshakePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetDisplayObjectivePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SetDisplayObjectivePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetLastHurtByPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SetLastHurtByPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetPlayerGameTypePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SetPlayerGameTypePacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::UpdatePlayerGameTypePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetScoreboardIdentityPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SetScoreboardIdentityPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetScorePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SetScorePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetTitlePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SetTitlePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ShowCreditsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ShowCreditsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ShowProfilePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ShowProfilePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ShowStoreOfferPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ShowStoreOfferPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::SimpleEventPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SimpleEventPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::StopSoundPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::StopSoundPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::SubChunkPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::TakeItemActorPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::TakeItemActorPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::TextPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::TextPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::TickingAreasLoadStatusPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::TickingAreasLoadStatusPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::TransferPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::TransferPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateAttributesPacket> packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::std::shared_ptr<::UpdateAttributesPacket>);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::UpdateEquipPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::UpdateEquipPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::UpdateSoftEnumPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::UpdateSoftEnumPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::UpdateTradePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::UpdateTradePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::StructureTemplateDataResponsePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::StructureTemplateDataResponsePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::EducationSettingsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::EducationSettingsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::EduUriResourcePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::EduUriResourcePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::MultiplayerSettingsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::MultiplayerSettingsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerEnchantOptionsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PlayerEnchantOptionsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CodeBuilderPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CodeBuilderPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CorrectPlayerMovePredictionPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CorrectPlayerMovePredictionPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SyncActorPropertyPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SyncActorPropertyPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::NpcDialoguePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::NpcDialoguePacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientboundDebugRendererPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundDebugRendererPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AddVolumeEntityPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::AddVolumeEntityPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::RemoveVolumeEntityPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::RemoveVolumeEntityPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SimulationTypePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SimulationTypePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AgentActionEventPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::AgentActionEventPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::UpdateSubChunkBlocksPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::DeathInfoPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::DeathInfoPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::EditorNetworkPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::EditorNetworkPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::GameTestResultsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::UpdateClientInputLocksPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::UpdateClientInputLocksPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerActionPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PlayerActionPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::UnlockedRecipesPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::UnlockedRecipesPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::TrimDataPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::TrimDataPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::OpenSignPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::OpenSignPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AgentAnimationPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::AgentAnimationPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::RefreshEntitlementsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const&, ::RefreshEntitlementsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetPlayerInventoryOptionsPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::SetPlayerInventoryOptionsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AwardAchievementPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::AwardAchievementPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientboundCloseFormPacket const&);
+    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundCloseFormPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::JigsawStructureDataPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::JigsawStructureDataPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CurrentStructureFeaturePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::CurrentStructureFeaturePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerVideoCapturePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PlayerVideoCapturePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::DebugDrawerPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PlayerLocationPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerLocationPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::PrimitiveShapesPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ClientboundDataStorePacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::GraphicsOverrideParameterPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUICloseScreenPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ClientboundDataDrivenUICloseScreenPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIReloadPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIShowScreenPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ClientboundDataDrivenUIShowScreenPacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundTextureShiftPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ClientboundTextureShiftPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::VoxelShapesPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::VoxelShapesPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::LocatorBarPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::LocatorBarPacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::SyncWorldClocksPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& packet, ::SyncWorldClocksPacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundAttributeLayerSyncPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& packet, ::ClientboundAttributeLayerSyncPacket const&);
+
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ServerStoreInfoPacket const&);
+
+    MCAPI void $handle(::NetworkIdentifier const& packet, ::ServerPresenceInfoPacket const&);
 
     MCAPI void $onOutgoingPacket(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
-        ::SubClientId,
-        ::SubClientId recipientSubId
+        ::SubClientId              recipientSubId,
+        ::SubClientId
     );
 
     MCAPI void $onValidPacketReceived(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
-        ::SubClientId,
-        ::SubClientId recipientSubId
+        ::SubClientId              recipientSubId,
+        ::SubClientId
     );
 
     MCAPI void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 
     MCAPI void $onDisconnect(
-        ::NetworkIdentifier const&               source,
-        ::Connection::DisconnectFailReason const discoReason,
-        ::Connection::DisconnectionStage const   disconnectStage,
-        ::std::string const&                     messageFromServer,
+        ::NetworkIdentifier const&               discoReason,
+        ::Connection::DisconnectFailReason const disconnectStage,
+        ::Connection::DisconnectionStage const   messageFromServer,
         ::std::string const&                     messageBodyOverride,
-        bool                                     skipMessage,
-        ::std::string const&                     telemetryOverride
+        ::std::string const&                     skipMessage,
+        bool                                     telemetryOverride,
+        ::std::string const&
     );
 
     MCAPI ::IncomingPacketFilterResult
-    $allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize);
+    $allowIncomingPacketId(::NetworkIdentifierWithSubId const& packetId, ::MinecraftPacketIds, uint64);
 
     MCFOLD ::OutgoingPacketFilterResult
-    $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
+    $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&);
 
     MCAPI void $handlePacketViolation(
         ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
@@ -899,7 +922,7 @@ public:
         ::SubClientId              clientSubId
     );
 
-    MCAPI void $onSuccessfulLogin(::NetworkIdentifier const& id);
+    MCAPI void $onSuccessfulLogin(::NetworkIdentifier const&);
     // NOLINTEND
 
 public:

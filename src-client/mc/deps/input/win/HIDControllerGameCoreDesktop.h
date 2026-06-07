@@ -66,8 +66,6 @@ public:
     virtual void onAppFocusLost() /*override*/;
 
     virtual void onAppFocusGained() /*override*/;
-
-    virtual ~HIDControllerGameCoreDesktop() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -78,6 +76,8 @@ public:
     MCAPI void _enableCoreTextEdit();
 
     MCAPI void _notifyCoreTextEdit(bool textChanged);
+
+    MCAPI void setCaretScreenPosition(int x, int y);
     // NOLINTEND
 
 public:

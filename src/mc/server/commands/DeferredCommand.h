@@ -23,37 +23,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DeferredCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DeferredCommand() /*override*/ = default;
 
     virtual void execute(::MinecraftCommands& commands) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DeferredCommand(
-        ::std::unique_ptr<::CommandContext> context,
-        bool                                suppressOutput,
-        bool                                isRequest,
-        ::std::function<void(::MCRESULT)>   callback
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::CommandContext> context,
-        bool                                suppressOutput,
-        bool                                isRequest,
-        ::std::function<void(::MCRESULT)>   callback
-    );
     // NOLINTEND
 
 public:

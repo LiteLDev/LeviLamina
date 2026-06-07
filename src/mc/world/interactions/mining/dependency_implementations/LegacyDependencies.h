@@ -27,8 +27,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void hurtAndBreak(int damage) /*override*/;
-
-    virtual ~LegacyDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:

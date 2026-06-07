@@ -26,20 +26,11 @@ public:
     ::ll::UntypedStorage<8, 616> mUnkfe07cc;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    AppPlatformWindows& operator=(AppPlatformWindows const&);
-    AppPlatformWindows(AppPlatformWindows const&);
-    AppPlatformWindows();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AppPlatformWindows& operator=(AppPlatformWindows const&);
     AppPlatformWindows(AppPlatformWindows const&);
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -109,16 +100,12 @@ public:
     virtual ::Core::PathBuffer<::std::string> _getSharedDataPath() const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath() /*override*/;
-
-    virtual ~AppPlatformWindows() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI AppPlatformWindows();
-#endif
 
     MCAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
@@ -132,15 +119,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

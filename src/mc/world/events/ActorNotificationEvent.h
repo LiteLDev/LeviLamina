@@ -33,6 +33,9 @@ struct ActorRemoveEffectEvent;
 struct ActorRemovedEvent;
 struct ActorStartRidingEvent;
 struct ActorStopRidingEvent;
+struct ActorUpgradeEndedEvent;
+struct ActorUpgradeStartedEvent;
+struct ActorUpgradeTriggeredEvent;
 struct ActorUseItemEvent;
 struct KnockBackEvent;
 struct MountTamingEvent;
@@ -57,6 +60,8 @@ struct ActorNotificationEvent : public ::EventVariantImpl<
                                     ::ActorRemovedEvent const,
                                     ::ActorRemoveEffectEvent const,
                                     ::ActorStartRidingEvent const,
+                                    ::ActorUpgradeTriggeredEvent const,
+                                    ::ActorUpgradeEndedEvent const,
                                     ::ActorUseItemEvent const,
                                     ::KnockBackEvent const,
                                     ::MountTamingEvent const,
@@ -69,16 +74,5 @@ struct ActorNotificationEvent : public ::EventVariantImpl<
                                     ::ActorAddEffectEvent const,
                                     ::ActorBeforeAcquireItemEvent const,
                                     ::ActorBeforeHealEvent const,
-                                    ::ActorBeforeHurtEvent const> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorNotificationEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-};
+                                    ::ActorBeforeHurtEvent const,
+                                    ::ActorUpgradeStartedEvent const> {};

@@ -12,9 +12,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptMessageReceiveEventFilterData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptMessageReceiveEventFilterData(::std::string messageId);
+
     MCAPI ~ScriptMessageReceiveEventFilterData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::std::string messageId);
     // NOLINTEND
 
 public:

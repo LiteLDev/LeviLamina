@@ -41,15 +41,23 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorDefinitionDiffList(::ActorDefinitionGroup& definitions);
 
+    MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> _getDescriptionFrom(uint64 start, uint64 end);
+
     MCAPI void _updateStack();
 
     MCAPI void addDefinition(::std::string const& def);
+
+    MCAPI void addPendingPropertyChange(uint64 overallPropertyIndex, ::std::variant<int, float, bool, uint64> value);
 
     MCAPI void clearChangedDescription();
 
     MCAPI ::std::string definitionListToString(::std::string const& delimiter) const;
 
-    MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
+    MCFOLD ::ActorDefinitionDescriptor& getChangedDescription();
+
+    MCFOLD ::std::vector<::DiffListPair> const& getDefinitionStack() const;
+
+    MCAPI bool hasDefinition(::std::string const& def) const;
 
     MCAPI void removeDefinition(::std::string const& def);
 

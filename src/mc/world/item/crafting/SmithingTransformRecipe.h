@@ -23,19 +23,10 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRuntimeResults;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     SmithingTransformRecipe();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    SmithingTransformRecipe& operator=(SmithingTransformRecipe const&);
-    SmithingTransformRecipe(SmithingTransformRecipe const&);
-    SmithingTransformRecipe();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,17 +34,11 @@ public:
 
     virtual ::std::vector<::ItemInstance> const&
     assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const /*override*/;
-
-    virtual ~SmithingTransformRecipe() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI SmithingTransformRecipe(::SmithingTransformRecipe&&);
-#endif
-
     MCAPI SmithingTransformRecipe(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
@@ -62,6 +47,14 @@ public:
         ::Recipe::Results&&       results,
         ::HashedString const&     tag
     );
+
+    MCFOLD ::RecipeIngredient const& getAdditionIngredient() const;
+
+    MCFOLD ::RecipeIngredient const& getBaseIngredient() const;
+
+    MCAPI ::ItemInstance const& getResult() const;
+
+    MCFOLD ::RecipeIngredient const& getTemplateIngredient() const;
     // NOLINTEND
 
 public:
@@ -73,10 +66,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SmithingTransformRecipe&&);
-#endif
-
     MCAPI void* $ctor(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
@@ -85,12 +74,6 @@ public:
         ::Recipe::Results&&       results,
         ::HashedString const&     tag
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

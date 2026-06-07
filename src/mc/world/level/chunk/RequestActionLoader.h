@@ -10,6 +10,7 @@
 class CompoundTag;
 class ICommandOriginLoader;
 class IRequestAction;
+class JigsawStructureElementRegistry;
 // clang-format on
 
 class RequestActionLoader {
@@ -23,6 +24,14 @@ public:
         ::CompoundTag const&                tag,
         ::ICommandOriginLoader&             loader,
         ::std::string const&                dimensionPrefix
+    );
+
+    MCAPI static ::std::unique_ptr<::IRequestAction> load(
+        ::IRequestAction::RequestActionType     actionType,
+        ::CompoundTag const&                    tag,
+        ::ICommandOriginLoader&                 loader,
+        ::std::string const&                    dimensionPrefix,
+        ::JigsawStructureElementRegistry const& elementReg
     );
     // NOLINTEND
 };

@@ -21,8 +21,6 @@ public:
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event) = 0;
-
-    virtual ~PlayerGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

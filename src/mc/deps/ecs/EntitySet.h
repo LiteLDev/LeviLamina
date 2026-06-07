@@ -19,16 +19,4 @@ public:
     EntitySet& operator=(EntitySet const&);
     EntitySet(EntitySet const&);
     EntitySet();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EntitySet(::EntitySet&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::EntitySet&&);
-    // NOLINTEND
 };

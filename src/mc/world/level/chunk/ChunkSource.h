@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/GridArea.h"
@@ -163,6 +162,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChunkSource(::std::unique_ptr<::ChunkSource> parent);
 
+    MCAPI ChunkSource(::Dimension* dimension, int side);
+
     MCAPI bool _checkAndDispatchTaskForLevelChunk(
         ::std::pair<::ChunkPos, ::ChunkState> const& chunkPosAndExpectedState,
         bool                                         areInTask
@@ -178,7 +179,7 @@ public:
         ::ChunkState                                                stateToCheck
     );
 
-    MCAPI void _checkSpecificLevelChunkForUnblocking(
+    MCAPI void _checkLevelChunkForPostProcessing(
         ::LevelChunk const&                                         lc,
         ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid
     );
@@ -200,10 +201,10 @@ public:
     MCAPI void _handleTaskFailure(::LevelChunk& levelChunk, ::ChunkState currentState, ::ChunkState previousState);
 
     MCAPI void _launchChunkTask(
-        ::std::string_view                          taskName,
-        ::ChunkPos const&                           chunkPos,
-        bool                                        areInTask,
-        ::brstd::move_only_function<::TaskResult()> taskFunc
+        ::std::string_view areInTask,
+        ::ChunkPos const&  taskFunc,
+        bool,
+        ::brstd::move_only_function<::TaskResult()>
     );
 
     MCAPI void _launchDecorationPostProcessingTask(
@@ -211,6 +212,8 @@ public:
         ::std::shared_ptr<::ChunkViewSource> const& chunks,
         bool                                        areInTask
     );
+
+    MCAPI void _launchGenerationTask(::std::shared_ptr<::LevelChunk> const& lc, bool areInTask);
 
     MCAPI void _launchLightingTask(
         ::std::shared_ptr<::LevelChunk> const&      lc,
@@ -246,30 +249,38 @@ public:
 
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
 
-#ifdef LL_PLAT_C
     MCAPI void _structurePostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
 
+#ifdef LL_PLAT_C
     MCAPI void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
 #endif
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
     MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(
-        ::ChunkSource::LoadMode                                                                        lm,
-        bool                                                                                           circle,
-        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
-        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
-        float const*                  serverBuildRatio
+        ::ChunkSource::LoadMode                                             lm,
+        bool                                                                circle,
+        ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)> add,
+        ::ChunkSourceViewGenerateMode                                       chunkViewGenerateMode,
+        float const*                                                        serverBuildRatio
     );
 
     MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
 
-#ifdef LL_PLAT_C
     MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
-#endif
+
+    MCFOLD int getChunkSide() const;
+
+    MCFOLD ::Dimension& getDimension() const;
+
+    MCAPI ::std::shared_ptr<::LevelChunk> getGeneratedChunk(::ChunkPos const& cp);
+
+    MCFOLD ::Level& getLevel() const;
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+
+    MCAPI void setShuttingDown(bool value);
 
     MCAPI bool shouldServerGeneratePos(::ChunkPos const& chunkPos, float serverBuildRatio, int viewRadius);
     // NOLINTEND
@@ -284,6 +295,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> parent);
+
+    MCAPI void* $ctor(::Dimension* dimension, int side);
     // NOLINTEND
 
 public:

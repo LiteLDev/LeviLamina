@@ -19,21 +19,14 @@ public:
     // prevent constructor by default
     PlayerStorageIds& operator=(PlayerStorageIds const&);
     PlayerStorageIds(PlayerStorageIds const&);
+    PlayerStorageIds();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerStorageIds();
-
     MCNAPI ::PlayerStorageIds& operator=(::PlayerStorageIds&&);
 
     MCNAPI ~PlayerStorageIds();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

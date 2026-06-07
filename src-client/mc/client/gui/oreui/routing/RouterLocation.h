@@ -35,8 +35,6 @@ public:
     // NOLINTBEGIN
     MCAPI RouterLocation(::OreUI::RouterLocation const&);
 
-    MCAPI RouterLocation(::OreUI::RouterLocation&&);
-
     MCAPI RouterLocation(
         ::std::weak_ptr<::AbstractScene> scene,
         ::std::string const&             url,
@@ -48,15 +46,21 @@ public:
 
     MCFOLD ::std::string const& getFragment() const;
 
+    MCFOLD ::OreUI::RouteMode getMode() const;
+
     MCFOLD ::std::string const& getPath() const;
 
     MCFOLD ::std::string const& getQuery() const;
 
-    MCAPI bool getShouldSendTelemetryEvents() const;
+    MCFOLD ::std::weak_ptr<::AbstractScene> getScene() const;
 
     MCAPI ::std::unordered_map<::std::string, ::std::string> getTelemetryEventProperties() const;
 
     MCAPI ::std::string getTelemetryId() const;
+
+    MCFOLD ::OreUI::RouteType getType() const;
+
+    MCFOLD ::std::string const& getUrl() const;
 
     MCAPI bool isValid() const;
 
@@ -71,8 +75,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::RouterLocation const&);
-
-    MCAPI void* $ctor(::OreUI::RouterLocation&&);
 
     MCAPI void* $ctor(
         ::std::weak_ptr<::AbstractScene> scene,

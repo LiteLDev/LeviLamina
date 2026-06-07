@@ -37,14 +37,32 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     virtual void writeVariant(::BinaryStream& stream) const;
-
-    virtual ~PlayerUpdateEntityOverridesPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI PlayerUpdateEntityOverridesPacket();
+
+    MCAPI PlayerUpdateEntityOverridesPacket(
+        ::ActorUniqueID                              id,
+        uint                                         propertyIndex,
+        ::UpdateType                                 updateType,
+        ::std::variant<::std::monostate, int, float> value
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(
+        ::ActorUniqueID                              id,
+        uint                                         propertyIndex,
+        ::UpdateType                                 updateType,
+        ::std::variant<::std::monostate, int, float> value
+    );
     // NOLINTEND
 
 public:

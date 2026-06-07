@@ -20,25 +20,38 @@ class Vec3;
 
 class FlintAndSteelItem : public ::Item {
 public:
+    // prevent constructor by default
+    FlintAndSteelItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
 
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
 
-    virtual bool isDestructive(int auxValue) const /*override*/;
+    virtual bool isDestructive(int) const /*override*/;
 
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
-        /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase& face, ::Actor& pos, uchar&, ::BlockPos&) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FlintAndSteelItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FlintAndSteelItem(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -48,14 +61,14 @@ public:
 
     MCFOLD int $getEnchantSlot() const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCFOLD bool $isDestructive(int auxValue) const;
+    MCFOLD bool $isDestructive(int) const;
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase& face, ::Actor& pos, uchar&, ::BlockPos&) const;
 
 
     // NOLINTEND

@@ -82,8 +82,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~ClientMobTickDeathSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

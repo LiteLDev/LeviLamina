@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/editor/Mode.h"
 #include "mc/editor/network/NetworkPayload.h"
 
 // auto generated forward declare list
@@ -23,18 +24,29 @@ public:
     // prevent constructor by default
     ModeChangedPayload& operator=(ModeChangedPayload const&);
     ModeChangedPayload(ModeChangedPayload const&);
-    ModeChangedPayload();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~ModeChangedPayload() /*override*/ = default;
+    MCNAPI ModeChangedPayload();
+
+    MCNAPI explicit ModeChangedPayload(::Editor::Mode newMode);
+
+    MCNAPI ::Editor::Mode getNewMode() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::Editor::Mode newMode);
     // NOLINTEND
 
 public:

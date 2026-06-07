@@ -15,10 +15,6 @@ struct ResourceDropsContext;
 namespace VanillaBlockDrops::Drop {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> customWhenSilkTouch(
-    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategy
-);
-
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
 customWhenSilkTouchOrToolOtherwise(
     ::HashedString const&                                                                       toolItemId,
@@ -30,11 +26,6 @@ MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDrop
 customWhenSilkTouchOtherwise(
     ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategy,
     ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> otherDropStrategy
-);
-
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> customWhenTool(
-    ::HashedString const&                                                                       toolItemId,
-    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategy
 );
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>

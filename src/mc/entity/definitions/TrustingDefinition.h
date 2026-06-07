@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct TrustingComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -23,14 +25,15 @@ public:
     // prevent constructor by default
     TrustingDefinition& operator=(TrustingDefinition const&);
     TrustingDefinition(TrustingDefinition const&);
-    TrustingDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TrustingDefinition();
+
     MCAPI void addTrustItemByName(::std::string const& name);
 
-    MCAPI ~TrustingDefinition();
+    MCAPI void initialize(::EntityContext&, ::TrustingComponent& component) const;
     // NOLINTEND
 
 public:
@@ -42,8 +45,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

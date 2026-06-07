@@ -44,7 +44,18 @@ public:
     // prevent constructor by default
     RenderTargetState& operator=(RenderTargetState const&);
     RenderTargetState(RenderTargetState const&);
-    RenderTargetState();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI RenderTargetState();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
 };
 
 } // namespace mce

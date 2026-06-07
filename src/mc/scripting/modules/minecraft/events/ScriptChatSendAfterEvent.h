@@ -48,14 +48,9 @@ public:
 
     MCAPI void copyTo(::ChatEvent& chatEvent, ::Scripting::WeakLifetimeScope const& scope) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getSendToTargets_V010();
-
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     getTargets_V010();
-
-    MCAPI ::ScriptModuleMinecraft::ScriptChatSendAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptChatSendAfterEvent&&);
 
     MCAPI ::ScriptModuleMinecraft::ScriptChatSendAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);

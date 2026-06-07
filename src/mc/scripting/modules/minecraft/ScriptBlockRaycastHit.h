@@ -9,7 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptBlock; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -26,9 +29,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlockRaycastHit();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptBlockRaycastHit();
+    MCAPI ScriptBlockRaycastHit(
+        ::BlockSource&                        source,
+        ::BlockPos const&                     pos,
+        uchar                                 face,
+        ::Vec3 const&                         faceLocation,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -38,9 +51,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(
+        ::BlockSource&                        source,
+        ::BlockPos const&                     pos,
+        uchar                                 face,
+        ::Vec3 const&                         faceLocation,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 };
 

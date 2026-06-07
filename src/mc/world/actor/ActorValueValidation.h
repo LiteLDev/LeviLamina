@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class BlockPos;
 class Vec2;
 class Vec3;
@@ -14,13 +15,27 @@ namespace ActorValueValidation {
 // NOLINTBEGIN
 MCAPI void _fireTelemetryEvent(::BlockPos const& invalidBlockPos, char const* caller);
 
+MCAPI void _fireTelemetryEvent(::Vec2 const& invalidPos, char const* caller);
+
 MCAPI void _fireTelemetryEvent(::Vec3 const& invalidPos, char const* caller);
+
+MCAPI void _fireTelemetryEvent(::std::string const& invalidValue, char const* caller);
+
+MCAPI void _fireTelemetryEvent(float value, char const* caller);
+
+MCAPI bool isLegalPlayerPosition(::Vec3 const& pos, char const* caller);
+
+MCAPI bool validateAABB(::AABB const& aabb, char const* callerMin, char const* callerMax);
+
+MCAPI bool validateBlockPos(::BlockPos const& blockPos, char const* caller);
 
 MCAPI bool validateHeadRotationFloatValue(float value, char const* caller);
 
 MCAPI bool validateVec2Position(::Vec2 const& pos, char const* caller);
 
 MCAPI bool validateVec3Position(::Vec3 const& pos, char const* caller);
+
+MCAPI bool validateVec3Velocity(::Vec3 const& posDelta, char const* caller);
 // NOLINTEND
 
 } // namespace ActorValueValidation

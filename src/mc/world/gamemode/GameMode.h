@@ -167,15 +167,19 @@ public:
 
     MCAPI bool _attack(::Actor& entity, bool playPredictiveSound);
 
-    MCAPI ::BlockPos _calculatePlacePos(::ItemStack& heldStack, ::BlockPos const& pos, uchar& face) const;
-
-    MCAPI bool _canDestroy(::BlockPos const& pos, uchar);
-
     MCAPI bool _canUseBlock(::Block const& block);
 
-    MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
+#ifdef LL_PLAT_C
+    MCAPI bool _continueDestroyBlock(
+        ::BlockPos const&              hitPos,
+        ::Vec3 const&                  playerPos,
+        uchar                          hitFace,
+        bool&                          hasDestroyedBlock,
+        ::std::function<void()> const& crackBlock
+    );
+#endif
 
-    MCAPI void _destroyBlockInternal(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock) const;
+    MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
 
     MCAPI bool _enableBlockBreakDelay() const;
 
@@ -196,6 +200,8 @@ public:
         ::Actor const&     entity
     );
 
+    MCAPI bool _sendTryDestroyBlock(::BlockPos const& pos, uchar face);
+
     MCAPI ::std::optional<::ItemStack>
     _sendTryDestroyBlockEvent(::Block const& block, ::BlockPos const& pos, ::ItemStack itemBeforeEvent) const;
 
@@ -207,15 +213,49 @@ public:
         bool              isFirstEvent
     ) const;
 
+    MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
+
+    MCAPI bool _tickContinueDestroyBlock(
+        ::BlockPos const&              hitPos,
+        ::Vec3 const&                  playerPos,
+        uchar                          hitFace,
+        bool&                          hasDestroyedBlock,
+        ::std::function<void()> const& crackBlock
+    );
+
     MCAPI bool baseUseItem(::ItemStack const& item);
 
     MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection);
 
     MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr);
 
+    MCAPI ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
+        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
+    );
+
+    MCFOLD uchar getDestroyBlockFace() const;
+
+    MCFOLD ::BlockPos const& getDestroyBlockPos() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD float getDestroyProgress();
+#endif
+
     MCAPI float getDestroyRate(::Block const& block);
 
     MCAPI float getMaxPickRange();
+
+    MCAPI float getMaxPickRangeSqr();
+
+#ifdef LL_PLAT_C
+    MCFOLD float getOldDestroyProgress();
+#endif
+
+    MCFOLD bool isLastBuildBlockInteractive() const;
+
+#ifdef LL_PLAT_C
+    MCAPI void updateContinueBreakBlockCount();
+#endif
     // NOLINTEND
 
 public:

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
 class ReadOnlyBinaryStream;
 struct BiomeElementData;
 // clang-format on
@@ -19,14 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeSurfaceMaterialAdjustmentData& operator=(BiomeSurfaceMaterialAdjustmentData const&);
-    BiomeSurfaceMaterialAdjustmentData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeSurfaceMaterialAdjustmentData(::BiomeSurfaceMaterialAdjustmentData const&);
+    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~BiomeSurfaceMaterialAdjustmentData();
     // NOLINTEND
@@ -35,12 +31,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeSurfaceMaterialAdjustmentData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeSurfaceMaterialAdjustmentData const&);
     // NOLINTEND
 
 public:

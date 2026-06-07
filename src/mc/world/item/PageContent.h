@@ -34,11 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PageContent(::PageContent&&);
-
     MCAPI PageContent(::PageContent const&);
 
     MCAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
+
+    MCAPI ::std::unique_ptr<::CompoundTag> createTag() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::PageContent::PageType getType() const;
+#endif
 
     MCAPI ::PageContent& operator=(::PageContent&&);
 
@@ -64,8 +68,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PageContent&&);
-
     MCAPI void* $ctor(::PageContent const&);
 
     MCAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);

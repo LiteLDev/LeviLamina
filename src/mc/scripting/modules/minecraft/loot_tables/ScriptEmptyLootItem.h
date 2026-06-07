@@ -31,8 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootPoolEntry const& _getEntry() const /*override*/;
-
-    virtual ~ScriptEmptyLootItem() /*override*/ = default;
     // NOLINTEND
 
 public:

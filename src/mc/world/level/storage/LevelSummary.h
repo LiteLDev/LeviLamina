@@ -124,12 +124,36 @@ public:
 
     MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
 
+    MCAPI bool _isScreenshotIconPath(::Core::PathBuffer<::std::string> const& file);
+
 #ifdef LL_PLAT_C
     MCAPI bool cloudSaveForWorldIsEnabled() const;
 
+    MCAPI ::CloudSaveLevelInfo const& getCloudSaveInfo() const;
+
+    MCFOLD ::EduCloud::WorldSyncState const getEduCloudWorldSyncState() const;
+
+    MCAPI ::std::string getEducationCreatorId() const;
+
+    MCAPI ::std::string getEducationCreatorWorldId() const;
+
+    MCFOLD bool getPlayerHasDied() const;
+
+    MCFOLD bool getShowDaysPlayed() const;
+
+    MCFOLD int getTime() const;
+
+    MCAPI bool hasValidId() const;
+
     MCAPI bool isEditionCompatible() const;
 
+    MCAPI bool isGameVersionCompatible() const;
+
+    MCFOLD bool isHardcore() const;
+
     MCAPI bool isVersionCompatible() const;
+
+    MCAPI bool operator<(::LevelSummary const& rhs) const;
 #endif
 
     MCAPI ::LevelSummary& operator=(::LevelSummary const&);
@@ -137,8 +161,20 @@ public:
 #ifdef LL_PLAT_C
     MCAPI bool operator==(::LevelSummary const& rhs) const;
 
-    MCAPI ::LevelSummary& setId(::std::string Id);
+    MCAPI void removeCloudSave();
+
+    MCAPI void setCloudSave(::CloudSaveLevelInfo const& value);
+
+    MCAPI void setCloudSaveFileName(::std::string const& value);
+
+    MCAPI void setEduCloudWorldSyncState(::EduCloud::WorldSyncState state);
+
+    MCAPI void setEducationCreatorId(::std::string const& id);
+
+    MCAPI void setEducationCreatorWorldId(::std::string const& id);
 #endif
+
+    MCAPI ::LevelSummary& setId(::std::string Id);
 
     MCAPI ::LevelSummary& setName(::std::string Name);
 
@@ -148,10 +184,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::Core::PathBuffer<::std::string> buildCustomIconPath(::Core::Path const& worldDirectory);
+
 #ifdef LL_PLAT_C
     MCAPI static ::Core::PathBuffer<::std::string>
     buildScreenshotIconPath(::Core::Path const& worldDirectory, ::Core::Path const& previousScreenshotIconPath);
 #endif
+
+    MCAPI static ::Core::PathBuffer<::std::string> buildWorldIconPath(::Core::Path const& worldDirectory);
     // NOLINTEND
 
 public:

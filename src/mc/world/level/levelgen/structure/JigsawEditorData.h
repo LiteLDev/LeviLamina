@@ -26,13 +26,37 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    JigsawEditorData();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI JigsawEditorData();
+
     MCAPI JigsawEditorData(::JigsawEditorData const&);
+
+    MCAPI JigsawEditorData(
+        ::std::string const&           name,
+        ::std::string const&           target,
+        ::std::string const&           targetPool,
+        ::std::string const&           finalBlockName,
+        ::SharedTypes::JigsawJointType jointType,
+        int                            placement,
+        int                            selection
+    );
+
+    MCFOLD ::std::string const& getFinalBlock() const;
+
+    MCFOLD ::SharedTypes::JigsawJointType const& getJointType() const;
+
+    MCFOLD bool getJointTypeVisible() const;
+
+    MCFOLD ::std::string const& getName() const;
+
+    MCFOLD int getPlacementPriority() const;
+
+    MCFOLD int getSelectionPriority() const;
+
+    MCFOLD ::std::string const& getTarget() const;
+
+    MCFOLD ::std::string const& getTargetPool() const;
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -41,6 +65,26 @@ public:
     MCFOLD ::JigsawEditorData& operator=(::JigsawEditorData const&);
 
     MCAPI void save(::CompoundTag& tag) const;
+
+    MCFOLD void setFinalBlock(::std::string const& finalBlock);
+
+    MCFOLD void setJointType(::SharedTypes::JigsawJointType const& jointType);
+
+    MCAPI void setJointTypeFromName(::std::string const& name);
+
+    MCAPI void setJointTypeVisible(bool visible);
+
+    MCFOLD void setName(::std::string const& name);
+
+#ifdef LL_PLAT_C
+    MCFOLD void setPlacementPriority(int priority);
+
+    MCFOLD void setSelectionPriority(int priority);
+#endif
+
+    MCFOLD void setTarget(::std::string const& target);
+
+    MCAPI void setTargetPool(::std::string const& targetPool);
 
     MCAPI ~JigsawEditorData();
     // NOLINTEND
@@ -54,7 +98,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::JigsawEditorData const&);
+    MCAPI void* $ctor();
+
+    MCFOLD void* $ctor(::JigsawEditorData const&);
+
+    MCAPI void* $ctor(
+        ::std::string const&           name,
+        ::std::string const&           target,
+        ::std::string const&           targetPool,
+        ::std::string const&           finalBlockName,
+        ::SharedTypes::JigsawJointType jointType,
+        int                            placement,
+        int                            selection
+    );
     // NOLINTEND
 
 public:

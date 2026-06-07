@@ -30,8 +30,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    virtual ~VegetationFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

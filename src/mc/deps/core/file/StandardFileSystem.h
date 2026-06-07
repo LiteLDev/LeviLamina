@@ -36,7 +36,6 @@ public:
     // prevent constructor by default
     StandardFileSystem& operator=(StandardFileSystem const&);
     StandardFileSystem(StandardFileSystem const&);
-    StandardFileSystem();
 
 public:
     // virtual functions
@@ -220,8 +219,18 @@ public:
     ) /*override*/;
 
     virtual ::std::optional<uint64> _checkFileInitialSize(::Core::PathView path) /*override*/;
+    // NOLINTEND
 
-    virtual ~StandardFileSystem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI StandardFileSystem();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

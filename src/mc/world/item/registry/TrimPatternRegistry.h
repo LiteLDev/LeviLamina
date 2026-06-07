@@ -28,10 +28,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool doesPatternExist(::HashedString const& patternId) const;
+
+    MCAPI ::std::vector<::TrimPattern> getAllEntries() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::HashedString const& getItemIdByPattern(::HashedString const& patternId) const;
+#endif
+
+    MCAPI ::std::optional<::HashedString> getPatternIdByItem(::HashedString const& itemId) const;
+
 #ifdef LL_PLAT_C
     MCAPI void initializeFromTrimPatterns(::std::vector<::TrimPattern> const& patterns);
 #endif
 
     MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
+
+    MCAPI ~TrimPatternRegistry();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

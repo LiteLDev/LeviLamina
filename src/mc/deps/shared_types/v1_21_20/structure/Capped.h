@@ -36,18 +36,6 @@ public:
         ::std::variant<int, ::SharedTypes::v1_21_20::ConstantIntProvider, ::SharedTypes::v1_21_20::UniformIntProvider>>
         mLimit;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~Capped();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_20::JigsawStructure::Processors

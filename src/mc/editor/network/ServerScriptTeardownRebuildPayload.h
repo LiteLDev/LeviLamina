@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/editor/ScriptManagerEventType.h"
 #include "mc/editor/network/NetworkPayload.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ContextId; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,7 +28,6 @@ public:
     // prevent constructor by default
     ServerScriptTeardownRebuildPayload& operator=(ServerScriptTeardownRebuildPayload const&);
     ServerScriptTeardownRebuildPayload(ServerScriptTeardownRebuildPayload const&);
-    ServerScriptTeardownRebuildPayload();
 
 public:
     // virtual functions
@@ -35,9 +36,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ServerScriptTeardownRebuildPayload();
+
+    MCNAPI ServerScriptTeardownRebuildPayload(
+        ::Editor::ScriptManagerEventType eventType,
+        ::Scripting::ContextId           contextId,
+        bool                             finalEvent
+    );
+
+    MCNAPI ::Scripting::ContextId getContextId() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::Editor::ScriptManagerEventType eventType, ::Scripting::ContextId contextId, bool finalEvent);
     // NOLINTEND
 
 public:

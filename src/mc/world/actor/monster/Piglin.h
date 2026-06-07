@@ -28,8 +28,6 @@ public:
     getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
     virtual bool isDarkEnoughToSpawn() const /*override*/;
-
-    virtual ~Piglin() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,12 +48,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

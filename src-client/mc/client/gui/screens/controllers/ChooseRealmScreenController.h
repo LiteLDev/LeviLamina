@@ -51,8 +51,6 @@ public:
     virtual void onDelete() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
-
-    virtual ~ChooseRealmScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -85,12 +83,6 @@ public:
         ::SlotSelectedAction                     selectionAction,
         ::std::function<void()>                  onCancelCallback
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

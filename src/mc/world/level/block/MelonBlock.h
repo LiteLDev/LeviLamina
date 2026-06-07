@@ -7,9 +7,19 @@
 
 class MelonBlock : public ::BlockType {
 public:
-    // virtual functions
+    // prevent constructor by default
+    MelonBlock();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~MelonBlock() /*override*/ = default;
+    MCAPI MelonBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

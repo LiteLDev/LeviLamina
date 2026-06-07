@@ -20,27 +20,12 @@ public:
     // prevent constructor by default
     CategoryLogFile& operator=(CategoryLogFile const&);
     CategoryLogFile(CategoryLogFile const&);
+    CategoryLogFile();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void AddChannel(::BedrockLog::LogChannel channel);
-
-    MCNAPI CategoryLogFile();
-
-    MCNAPI ~CategoryLogFile();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -10,6 +10,8 @@
 class BlockPos;
 namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
+namespace Editor::Cursor { struct Position; }
+namespace Editor::Cursor { struct Ray; }
 // clang-format on
 
 namespace Editor::Cursor {
@@ -25,20 +27,11 @@ public:
     ::ll::UntypedStorage<4, 28> mUnkfac3b4;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    Cursor& operator=(Cursor const&);
-    Cursor(Cursor const&);
-    Cursor();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     Cursor& operator=(Cursor const&);
     Cursor(Cursor const&);
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,17 +51,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI Cursor();
+
+    MCNAPI ::std::optional<::Editor::Cursor::Position>& _getBlockPosition();
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Editor::Cursor::Position& _getManualBlockPosition();
+
+    MCNAPI ::Editor::Cursor::Ray& _getRay();
+#endif
+
+    MCNAPI ::Editor::Cursor::AttachmentProperties getAttachmentProperties() const;
+
+    MCNAPI ::std::optional<::Editor::Cursor::Position> const& getBlockPosition() const;
+
+    MCNAPI ::Editor::Cursor::CursorState getCursorState() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Editor::Cursor::Ray const& getRay() const;
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor();
-#endif
     // NOLINTEND
 
 public:

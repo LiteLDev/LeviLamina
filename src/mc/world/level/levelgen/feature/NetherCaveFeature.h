@@ -67,8 +67,6 @@ public:
         ::RenderParams&                                                     renderParams,
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const /*override*/;
-
-    virtual ~NetherCaveFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

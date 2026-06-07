@@ -43,8 +43,6 @@ public:
     virtual void _onSetLocalDescription(::webrtc::RTCError result) /*override*/;
 
     virtual void _onLocalIceCandidate(::webrtc::IceCandidateInterface const* iceCandidate) /*override*/;
-
-    virtual ~ServerNegotiatorNoTrickleIce() /*override*/ = default;
     // NOLINTEND
 
 public:

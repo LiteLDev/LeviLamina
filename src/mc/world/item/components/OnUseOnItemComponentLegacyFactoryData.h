@@ -11,6 +11,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes::Legacy { struct OnUseOnTriggerItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,36 +22,14 @@ public:
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnUseOn;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    OnUseOnItemComponentLegacyFactoryData& operator=(OnUseOnItemComponentLegacyFactoryData const&);
-    OnUseOnItemComponentLegacyFactoryData();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     OnUseOnItemComponentLegacyFactoryData();
-
-#endif
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OnUseOnItemComponentLegacyFactoryData() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OnUseOnItemComponentLegacyFactoryData(::OnUseOnItemComponentLegacyFactoryData const&);
-
-    MCAPI explicit OnUseOnItemComponentLegacyFactoryData(::DefinitionTrigger trigger);
-
-    MCFOLD ::OnUseOnItemComponentLegacyFactoryData& operator=(::OnUseOnItemComponentLegacyFactoryData&&);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::OnUseOnItemComponentLegacyFactoryData& operator=(::OnUseOnItemComponentLegacyFactoryData const&);
-#endif
+    MCAPI explicit OnUseOnItemComponentLegacyFactoryData(::SharedTypes::Legacy::OnUseOnTriggerItemComponent data);
     // NOLINTEND
 
 public:
@@ -68,15 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::OnUseOnItemComponentLegacyFactoryData const&);
-
-    MCAPI void* $ctor(::DefinitionTrigger trigger);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::SharedTypes::Legacy::OnUseOnTriggerItemComponent data);
     // NOLINTEND
 
 public:

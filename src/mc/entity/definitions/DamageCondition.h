@@ -14,13 +14,20 @@ public:
 public:
     // prevent constructor by default
     DamageCondition& operator=(DamageCondition const&);
-    DamageCondition(DamageCondition const&);
     DamageCondition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DamageCondition(::DamageCondition const&);
+
     MCAPI ~DamageCondition();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DamageCondition const&);
     // NOLINTEND
 
 public:

@@ -12,4 +12,12 @@ public:
     ::ll::TypedStorage<4, 16, ::mce::Color> color;
     ::ll::TypedStorage<1, 1, bool>          dirty;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::mce::Color const& getColor() const;
+
+    MCAPI void setColor(::mce::Color const& color);
+    // NOLINTEND
 };

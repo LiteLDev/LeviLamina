@@ -60,8 +60,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::Json::Value buildClientPayloadExecuteAction(::std::string const& id, ::Json::Value const& payload);
+
+    MCNAPI static ::Json::Value buildNotificationPayload(::std::string const& dataTag, ::std::string const& payload);
+
+    MCNAPI static ::Json::Value buildServerPayloadBindControlToAction(::Json::Value const& payload);
+
+    MCNAPI static ::Json::Value buildServerPayloadCreateOrUpdateMenu(::Json::Value const& payload);
+
+    MCNAPI static ::Json::Value buildServerPayloadCreateOrUpdateModalTool(::Json::Value const& payload);
+
+    MCNAPI static ::Json::Value buildServerPayloadDestroyMenu(::std::string const& id);
+
+    MCNAPI static ::Json::Value buildServerPayloadDestroyModalTool(::std::string const& id);
+
+    MCNAPI static ::Json::Value buildServerPayloadRemoveActionFromControl(::Json::Value const& payload);
+
     MCNAPI static ::Editor::DataStore::DeprecatedEventFactory::SerializedEvent
     getSerializedEvent(::Json::Value const& payload);
+
+    MCNAPI static ::std::optional<::Editor::DataStore::DeprecatedEventFactory::SerializedEvent>
+    tryGetSerializedEvent(::Json::Value const& payload);
     // NOLINTEND
 };
 

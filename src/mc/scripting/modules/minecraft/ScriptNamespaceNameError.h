@@ -42,8 +42,6 @@ public:
         ::std::string const&                                      message,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
     );
-
-    MCAPI ~ScriptNamespaceNameError();
     // NOLINTEND
 
 public:
@@ -65,12 +63,6 @@ public:
         ::std::string const&                                      message,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

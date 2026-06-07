@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<8, 784, ::OreUI::CommonProperties>                                       mCommonProperties;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                                mActionLabel;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<::OreUI::SettingsActionType>>> mActionType;
-    ::ll::TypedStorage<8, 1032, ::std::optional<::OreUI::SettingsConfirmationRequest>>          mConfirmationRequest;
+    ::ll::TypedStorage<8, 1048, ::std::optional<::OreUI::SettingsConfirmationRequest>>          mConfirmationRequest;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSettingsChangedSubscription;
     // NOLINTEND
 

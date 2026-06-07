@@ -27,12 +27,13 @@ public:
 public:
     // prevent constructor by default
     EatMobGoalDefinition& operator=(EatMobGoalDefinition const&);
-    EatMobGoalDefinition(EatMobGoalDefinition const&);
     EatMobGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EatMobGoalDefinition(::SharedTypes::v1_21_100::EatMobGoalDefinition const&);
+
     MCAPI ::SharedTypes::v1_21_100::EatMobGoalDefinition& operator=(::SharedTypes::v1_21_100::EatMobGoalDefinition&&);
 
     MCAPI ~EatMobGoalDefinition();
@@ -56,6 +57,12 @@ public:
     MCAPI static float const& DEFAULT_RUN_SPEED();
 
     MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_100::EatMobGoalDefinition const&);
     // NOLINTEND
 
 public:

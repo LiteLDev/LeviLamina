@@ -16,8 +16,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class ChalkboardBlockActor;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -26,6 +24,10 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class ChalkboardBlock : public ::ActorBlock {
+public:
+    // prevent constructor by default
+    ChalkboardBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,10 +52,9 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
-    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
+    virtual ::ItemInstance asItemInstance(::Block const& blockActor, ::BlockActor const*) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -63,28 +64,30 @@ public:
     virtual int getVariant(::Block const& block) const /*override*/;
 
     virtual bool getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~ChalkboardBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChalkboardBlock(::std::string const& nameId, int id);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ChalkboardBlockActor* _getBaseChalkboard(::BlockSource& region, ::BlockPos const& pos);
-
     MCAPI static void _getShape(::ChalkboardSize size, bool isOnGround, int dir, ::AABB& bufferValue);
 
 #ifdef LL_PLAT_C
     MCAPI static bool mayPlayerEdit(::Player& player, ::BlockPos const& pos);
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -111,9 +114,9 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const& blockActor, ::BlockActor const*) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -122,8 +125,6 @@ public:
     MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

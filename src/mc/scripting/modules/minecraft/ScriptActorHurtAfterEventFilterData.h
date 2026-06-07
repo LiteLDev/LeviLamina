@@ -19,24 +19,18 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorHurtAfterEventFilterData& operator=(ScriptActorHurtAfterEventFilterData const&);
-    ScriptActorHurtAfterEventFilterData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHurtAfterEventFilterData(
-        ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilterData const&
-    );
-
     MCAPI ~ScriptActorHurtAfterEventFilterData();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilterData const&);
+    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilterData create(
+        ::ScriptModuleMinecraft::ScriptActorData const& actorData,
+        ::SharedTypes::Legacy::ActorDamageCause         damageCause
+    );
     // NOLINTEND
 
 public:

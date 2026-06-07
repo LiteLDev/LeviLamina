@@ -26,21 +26,13 @@ public:
 
 public:
     // prevent constructor by default
+    InventoryAction(InventoryAction const&);
     InventoryAction();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryAction(::InventoryAction const&);
-
     MCAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
-
-    MCAPI InventoryAction(
-        ::InventorySource                   source,
-        uint                                slot,
-        ::NetworkItemStackDescriptor const& fromItem,
-        ::NetworkItemStackDescriptor const& toItem
-    );
 
     MCAPI ::InventoryAction& operator=(::InventoryAction const&);
 
@@ -52,16 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::InventoryAction const&);
-
     MCAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
-
-    MCAPI void* $ctor(
-        ::InventorySource                   source,
-        uint                                slot,
-        ::NetworkItemStackDescriptor const& fromItem,
-        ::NetworkItemStackDescriptor const& toItem
-    );
     // NOLINTEND
 
 public:

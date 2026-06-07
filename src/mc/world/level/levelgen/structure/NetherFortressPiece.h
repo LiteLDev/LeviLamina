@@ -59,8 +59,6 @@ public:
     virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~NetherFortressPiece() /*override*/;
     // NOLINTEND
 
 public:
@@ -100,15 +98,6 @@ public:
         bool                                                isCastle
     );
 
-    MCAPI ::StructurePiece* generateChildLeft(
-        ::NBStartPiece&                                     startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 yOff,
-        int                                                 zOff,
-        bool                                                isCastle
-    );
-
     MCAPI ::StructurePiece* generateChildRight(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
@@ -135,12 +124,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(int genDepth);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

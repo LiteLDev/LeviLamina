@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~UseKineticWeaponGoalDefinition();
+    MCAPI UseKineticWeaponGoalDefinition();
     // NOLINTEND
 
 public:
@@ -45,9 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 

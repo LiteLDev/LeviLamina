@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void destroy();
+    MCAPI void getData(uint64& _gpuAddress, void*& _cpuAddress, uint _offset);
     // NOLINTEND
 };
 

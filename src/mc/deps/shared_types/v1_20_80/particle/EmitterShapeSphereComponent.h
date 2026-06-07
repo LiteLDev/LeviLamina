@@ -26,20 +26,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EmitterShapeSphereComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-    virtual ~EmitterShapeSphereComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EmitterShapeSphereComponent();
+
     MCAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
     MCAPI EmitterShapeSphereComponent(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
@@ -66,15 +62,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeSphereComponent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

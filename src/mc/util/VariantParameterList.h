@@ -8,6 +8,7 @@ class Actor;
 class BlockPos;
 class Mob;
 class Player;
+struct VariantParameterListConst;
 // clang-format on
 
 struct VariantParameterList {
@@ -28,12 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VariantParameterList();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI explicit operator ::VariantParameterListConst() const;
     // NOLINTEND
 };

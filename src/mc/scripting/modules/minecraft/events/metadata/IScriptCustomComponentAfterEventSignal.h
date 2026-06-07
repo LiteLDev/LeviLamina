@@ -13,12 +13,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mEventType;
     // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~IScriptCustomComponentAfterEventSignal() /*override*/ = default;
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

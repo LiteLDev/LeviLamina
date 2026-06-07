@@ -15,25 +15,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Description();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Description(::SharedTypes::v1_21_110::Description const&);
-
-    MCFOLD ::SharedTypes::v1_21_110::Description& operator=(::SharedTypes::v1_21_110::Description&&);
-
-    MCFOLD ::SharedTypes::v1_21_110::Description& operator=(::SharedTypes::v1_21_110::Description const&);
-
     MCAPI ~Description();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_110::Description const&);
     // NOLINTEND
 
 public:

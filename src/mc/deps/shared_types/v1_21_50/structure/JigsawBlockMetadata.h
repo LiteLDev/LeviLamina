@@ -30,17 +30,18 @@ public:
 
 public:
     // prevent constructor by default
-    JigsawBlockMetadata(JigsawBlockMetadata const&);
     JigsawBlockMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI JigsawBlockMetadata(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
+
     MCFOLD ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
 
     MCFOLD ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
 
-    MCFOLD bool operator==(::SharedTypes::v1_21_50::JigsawBlockMetadata const&) const;
+    MCFOLD bool operator==(::SharedTypes::v1_21_50::JigsawBlockMetadata const& rhs) const;
 
     MCAPI ~JigsawBlockMetadata();
     // NOLINTEND
@@ -49,6 +50,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
     // NOLINTEND
 
 public:

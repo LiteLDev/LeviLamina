@@ -19,8 +19,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::mce::Color get(::BlockSource&, ::BlockPos const&) const /*override*/;
-
-    virtual ~WhiteMapPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:

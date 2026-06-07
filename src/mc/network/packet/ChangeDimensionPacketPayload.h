@@ -4,13 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/util/LoadingScreenId.h"
-
-// auto generated forward declare list
-// clang-format off
-class Dimension;
-// clang-format on
 
 struct ChangeDimensionPacketPayload {
 public:

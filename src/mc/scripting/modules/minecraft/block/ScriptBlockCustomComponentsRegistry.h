@@ -37,8 +37,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 namespace BlockEvents { class BlockRandomTickLegacyEvent; }
 namespace BlockEvents { class BlockRedstoneUpdateEvent; }
+namespace BlockEvents { class BlockStateChangeEvent; }
 namespace BlockEvents { class BlockStepOffEvent; }
 namespace BlockEvents { class BlockStepOnEvent; }
+namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentAlreadyRegisteredError; }
@@ -49,6 +51,7 @@ namespace ScriptModuleMinecraft { struct ScriptCustomComponentInvalidRegistryErr
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentParameters; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ModuleDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -68,9 +71,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 13>>
+        ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 14>>
             mEventsUsed;
-        ::ll::TypedStorage<8, 272, ::std::optional<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface>>
+        ::ll::TypedStorage<8, 288, ::std::optional<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface>>
                                                         mClosures;
         ::ll::TypedStorage<8, 40, ::Scripting::Version> mVersionBoundWith;
         ::ll::TypedStorage<1, 1, bool>                  mInitialized;
@@ -78,14 +81,30 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ScriptBlockCustomComponentData& operator=(ScriptBlockCustomComponentData const&);
+        ScriptBlockCustomComponentData();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ScriptBlockCustomComponentData(
+            ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData const&
+        );
+
         MCAPI void setClosureData(
             ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&& closures,
             ::Scripting::WeakLifetimeScope const&                          scope
         );
 
         MCAPI ~ScriptBlockCustomComponentData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void*
+        $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData const&);
         // NOLINTEND
 
     public:
@@ -109,7 +128,7 @@ public:
             ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData>>
                                                                                             mComponents;
     ::ll::TypedStorage<8, 24, ::ScriptModuleMinecraft::ScriptCustomComponentAfterEventList> mAsyncEventQueues;
-    ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 13>>
+    ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 14>>
         mV1EventSubscriptionList;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&>
         mCustomComponentParameterCache;
@@ -160,6 +179,11 @@ public:
     MCAPI void _bindComponentToCereal(
         ::HashedString const&                                               compName,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
+    );
+
+    MCAPI bool _checkDifferentEventRegistered(
+        ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 14> const& originalSet,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&                          newSet
     );
 
     MCAPI ::Scripting::Result<
@@ -229,17 +253,22 @@ public:
         ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>> const& comps
     );
 
+    MCAPI void _validateBlockQueuedTickingComponentPresentWithClosure(::Block const& block) const;
+
+    MCAPI void _validateBlockRedstoneConsumerComponentPresentWithClosure(::Block const& block) const;
+
+    MCAPI void _validateBlockStateChangeComponentPresentWithClosure(::Block const& block) const;
+
     MCAPI void beforeOnPlayerPlace(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& getCustomComponentParameterCache() const;
 
     MCAPI bool
     hasSubscriptionFor(::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type, ::Block const& block) const;
 
-    MCAPI bool hasSubscriptionFor(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type,
-        ::BlockCustomComponentsComponent const&                       customComponents
-    ) const;
-
     MCAPI void onActor(::BlockEvents::ActorEvent const& eventData) const;
+
+    MCAPI void onBlockStateChange(::BlockEvents::BlockStateChangeEvent const& eventData) const;
 
     MCAPI void onBreak(::BlockEvents::BlockBreakEvent const& eventData) const;
 
@@ -262,6 +291,11 @@ public:
     MCAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
 
     MCAPI void onStepOn(::BlockEvents::BlockStepOnEvent const& eventData) const;
+
+    MCAPI void setCerealContext(::cereal::ReflectionCtx& ctx);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*
+    tryGetRegisteredComponent(::HashedString const& name) const;
 
     MCAPI ::Scripting::Result<
         void,
@@ -298,6 +332,11 @@ public:
     _getEventMetadata();
 
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+
+    MCAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
     // NOLINTEND
 
 public:

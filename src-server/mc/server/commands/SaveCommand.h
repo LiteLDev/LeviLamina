@@ -39,17 +39,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
-
-    virtual ~SaveCommand() /*override*/ = default;
+    virtual void execute(::CommandOrigin const& output, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool saveHold(::Level& level);
-
-    MCAPI static ::std::optional<::std::vector<::SnapshotFilenameAndLength>> saveQuery();
 
     MCAPI static bool saveResume(::Level& level);
 
@@ -69,7 +65,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
+    MCAPI void $execute(::CommandOrigin const& output, ::CommandOutput&) const;
     // NOLINTEND
 
 public:

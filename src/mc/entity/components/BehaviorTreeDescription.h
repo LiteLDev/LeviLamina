@@ -16,14 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* getJsonName() const /*override*/;
-
-    virtual ~BehaviorTreeDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

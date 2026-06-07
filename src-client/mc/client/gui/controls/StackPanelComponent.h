@@ -34,6 +34,16 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::ui::OrientationType getOrientation() const;
+
+    MCFOLD bool getUseChildAnchors() const;
+
+    MCFOLD bool getUsePriority() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;

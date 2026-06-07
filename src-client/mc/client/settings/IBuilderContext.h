@@ -6,6 +6,9 @@
 #include "mc/client/game/MinecraftGameFeatures.h"
 #include "mc/client/gui/SettingsModalType.h"
 #include "mc/client/gui/SettingsTabIndex.h"
+#include "mc/client/storagemanager/ContentType.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputBindingMode.h"
 #include "mc/deps/input/InputMode.h"
@@ -16,9 +19,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentItemCollection;
 class GameEditionProperties;
 class IAdvancedGraphicsOptions;
-class IOptions;
+class IOptionRegistry;
 class InputSettingsHandler;
 class LevelDataWrapper;
 class LocalPlayer;
@@ -26,10 +30,13 @@ class MinecraftCommands;
 class PacketSender;
 class ProfanityContext;
 class SoundOptions;
+class StoreCatalogRepository;
 class TrialManager;
 class WorldSettingsRules;
 struct SettingsScreenCapabilities;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Core { class FilePathManager; }
+namespace SDL { class SessionBinaries; }
 namespace Settings { class Eventing; }
 namespace Social { class IGameConnectionInfoProvider; }
 namespace Social { class User; }
@@ -38,6 +45,10 @@ namespace Social { class User; }
 namespace Settings::RegistryBuilder {
 
 class IBuilderContext {
+public:
+    // IBuilderContext inner types define
+    using OnReload = ::std::function<void(::ContentItemCollection&)>;
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -51,9 +62,13 @@ public:
 
     virtual bool isPlayerInEditor() const = 0;
 
-    virtual ::IOptions& getOptions() = 0;
+    virtual bool isEditorModeOrInEditorWorld() const = 0;
 
-    virtual ::IOptions const& getOptions() const = 0;
+    virtual ::IOptionRegistry& getOptions() = 0;
+
+    virtual ::IOptionRegistry const& getOptions() const = 0;
+
+    virtual int getClampedGuiScaleOffset() const = 0;
 
     virtual ::SoundOptions& getSoundOptions() = 0;
 
@@ -235,7 +250,39 @@ public:
 
     virtual void navigateToXBLSignIn() = 0;
 
+    virtual void navigateToContentLogHistoryScreen() = 0;
+
     virtual bool isSupportingFramePacing() const = 0;
+
+    virtual void cancelAllDownloads() const = 0;
+
+    virtual ::StoreCatalogRepository& getStoreCatalogRepository() const = 0;
+
+    virtual ::std::shared_ptr<::SDL::SessionBinaries> getServiceSessionBinaries() const = 0;
+
+    virtual ::Core::FilePathManager& getFilePathManager() const = 0;
+
+    virtual void navigateToDeleteAreaProgressScreen(
+        ::std::string_view           screenName,
+        ::std::chrono::seconds const secondsBeforeUserCanCancel,
+        ::std::chrono::seconds const secondsBeforeClientShouldCancel,
+        ::std::vector<::std::tuple<::Core::PathBuffer<::Core::BasicStackString<char, 1024>>, ::std::string>> paths,
+        ::std::function<void()> completeCallback
+    ) const = 0;
+
+    virtual ::Bedrock::PubSub::Subscription registerToContentItemCollectionReload(
+        ::StorageManager::ContentType                   type,
+        ::std::function<void(::ContentItemCollection&)> callback
+    ) = 0;
+
+    virtual ::std::optional<::std::reference_wrapper<::ContentItemCollection>> const
+    getVisibleContentItemCollection(::StorageManager::ContentType type) const = 0;
+
+    virtual void navigateToDeleteContentLogScreen() = 0;
+
+    virtual void navigateToDeleteScriptDiagnosticScreen() = 0;
+
+    virtual ::std::string getCurrentContentLogFileName() = 0;
     // NOLINTEND
 
 public:

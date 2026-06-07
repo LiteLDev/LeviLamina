@@ -33,13 +33,23 @@ public:
     // NOLINTBEGIN
     virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
-    virtual bool test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const /*override*/;
+    virtual bool test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const /*override*/;
 
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+    // NOLINTEND
 
-    virtual ~StructurePoolBlockPredicateBlockMatchRandom() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StructurePoolBlockPredicateBlockMatchRandom(::Block const& block, float probability);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block, float probability);
     // NOLINTEND
 
 public:
@@ -47,7 +57,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $test(::Block const& block, ::IRandom& random) const;
 
-    MCFOLD bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const;
+    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const;
 
     MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 

@@ -57,7 +57,17 @@ public:
         ::std::function<::std::vector<::RectangleArea>()> inactiveAreas
     );
 
+    MCAPI void addPreviousActivePointer(int pointerId);
+
+    MCFOLD ::TouchTurnControlState const& getCurrentControlState() const;
+
+    MCFOLD ::std::set<int> const& getPreviousActivePointers() const;
+
     MCAPI void incrementMoveDelta(::InputEventQueue& eventQueue, float x, float y, int yAxisInversionFactor);
+
+    MCAPI void setCurrentControlState(::TouchTurnControlState const& touchTurnControlState);
+
+    MCFOLD void setPersistentData(bool status);
 
     MCAPI void switchState(::InputEventQueue& eventQueue, ::TouchTurnState newState);
     // NOLINTEND

@@ -19,13 +19,26 @@ public:
 public:
     // prevent constructor by default
     Proxy& operator=(Proxy const&);
-    Proxy(Proxy const&);
     Proxy();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockQueuedTickingComponentDescriptor::Proxy& operator=(::BlockQueuedTickingComponentDescriptor::Proxy&&);
+    MCAPI Proxy(::BlockQueuedTickingComponentDescriptor::Proxy const&);
+
+    MCAPI ~Proxy();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockQueuedTickingComponentDescriptor::Proxy const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

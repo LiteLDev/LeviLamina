@@ -28,24 +28,17 @@ public:
 
 public:
     // prevent constructor by default
+    ExperienceRewardComponentDefinition& operator=(ExperienceRewardComponentDefinition const&);
     ExperienceRewardComponentDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperienceRewardComponentDefinition(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition&&);
-
     MCAPI ExperienceRewardComponentDefinition(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&);
 
     MCAPI void addBredExpressionNode(::SharedTypes::Legacy::ExpressionNode const& expr);
 
     MCAPI void addDeathExpressionNode(::SharedTypes::Legacy::ExpressionNode const& expr);
-
-    MCAPI ::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition&
-    operator=(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition&&);
-
-    MCAPI ::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition&
-    operator=(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&);
 
     MCAPI ~ExperienceRewardComponentDefinition();
     // NOLINTEND
@@ -65,8 +58,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition const&);
     // NOLINTEND
 

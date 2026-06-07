@@ -11,7 +11,7 @@ struct AnimationComponentArguments;
 namespace ServerAnimationComponentFactory {
 // functions
 // NOLINTBEGIN
-MCFOLD ::std::unique_ptr<::AnimationComponent> createAnimationComponent(::AnimationComponentArguments&& args);
+MCAPI ::std::unique_ptr<::AnimationComponent> createAnimationComponent(::AnimationComponentArguments&& args);
 // NOLINTEND
 
 } // namespace ServerAnimationComponentFactory

@@ -13,17 +13,23 @@ public:
 
 public:
     // prevent constructor by default
-    EditorNetworkPacketVariantPayload(EditorNetworkPacketVariantPayload const&);
+    EditorNetworkPacketVariantPayload& operator=(EditorNetworkPacketVariantPayload const&);
     EditorNetworkPacketVariantPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EditorNetworkPacketVariantPayload(::EditorNetworkPacketVariantPayload const&);
+
     MCFOLD ::EditorNetworkPacketVariantPayload& operator=(::EditorNetworkPacketVariantPayload&&);
 
-    MCFOLD ::EditorNetworkPacketVariantPayload& operator=(::EditorNetworkPacketVariantPayload const&);
-
     MCAPI ~EditorNetworkPacketVariantPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::EditorNetworkPacketVariantPayload const&);
     // NOLINTEND
 
 public:

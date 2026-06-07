@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudContainerManagerModel() /*override*/ = default;
+    virtual ~HudContainerManagerModel() /*override*/;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
@@ -51,7 +51,7 @@ public:
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int id, int value) /*override*/;
+    virtual void setData(int, int) /*override*/;
 
     virtual void broadcastChanges() /*override*/;
 
@@ -67,6 +67,12 @@ public:
     MCAPI ::std::unordered_set<::FullContainerName> _getDynamicContainersInHotbar();
 
     MCAPI void cleanUpDynamicContainers();
+
+    MCFOLD ::Bedrock::PubSub::
+        Publisher<void(::std::vector<::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&
+        getDynamicContainerRemovalConnector();
+
+    MCAPI void refreshHotbar();
 #endif
     // NOLINTEND
 
@@ -74,6 +80,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContainerID containerId, ::Player& player);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -85,7 +97,7 @@ public:
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int id, int value);
+    MCFOLD void $setData(int, int);
 
     MCAPI void $broadcastChanges();
 

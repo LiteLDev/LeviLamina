@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -12,7 +12,7 @@
 class Mob;
 // clang-format on
 
-class ExploreOutskirtsGoal : public ::Goal {
+class ExploreOutskirtsGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -56,8 +56,18 @@ public:
     virtual void stop() /*override*/;
 
     virtual void tick() /*override*/;
+    // NOLINTEND
 
-    virtual ~ExploreOutskirtsGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ExploreOutskirtsGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

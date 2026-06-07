@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~DecodedImageCallback() = default;
 
-    virtual int Decoded(::webrtc::VideoFrame&) = 0;
+    virtual void Decoded(::webrtc::VideoFrame&, ::std::optional<int>, ::std::optional<uchar>);
 
     virtual int Decoded(::webrtc::VideoFrame&, int64);
 
-    virtual void Decoded(::webrtc::VideoFrame&, ::std::optional<int>, ::std::optional<uchar>);
+    virtual int Decoded(::webrtc::VideoFrame&) = 0;
     // NOLINTEND
 
 public:

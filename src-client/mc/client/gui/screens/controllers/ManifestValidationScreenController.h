@@ -6,6 +6,7 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/ResourceFileSystem.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -94,11 +95,15 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> const _generateIconPath(::PackManifest const& manifest) const;
 
+    MCAPI ::ResourceFileSystem _getIconFileSystem() const;
+
     MCAPI ::Core::PathBuffer<::std::string> const _getIconPath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> const _getIconZip() const;
 
     MCAPI ::std::string _getPackHeaderDescription() const;
+
+    MCAPI ::std::string _getPackHeaderSize() const;
 
     MCAPI ::std::string _getPackHeaderTitle() const;
 

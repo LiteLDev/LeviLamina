@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BoatItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isLiquidClipItem() const /*override*/;
@@ -37,8 +41,7 @@ public:
 
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     virtual bool isStackedByData() const /*override*/;
 
@@ -50,8 +53,18 @@ public:
         /*override*/;
 
     virtual ::ActorType _getActorType() const;
+    // NOLINTEND
 
-    virtual ~BoatItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BoatItem(::std::string const& name, int id, int woodType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, int woodType);
     // NOLINTEND
 
 public:
@@ -63,8 +76,7 @@ public:
 
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
     MCFOLD bool $isStackedByData() const;
 

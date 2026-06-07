@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class Dimension;
 class GameEventListener;
 // clang-format on
 
@@ -40,8 +38,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameEventDynamicRegistration();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit GameEventDynamicRegistration(::std::shared_ptr<::GameEventListener> listener);
+
     MCAPI void _onActorChangedChunk(::BlockSource const& region, ::ChunkPos toChunkPos, ::DimensionType toDimensionId);
+
+    MCAPI void onActorLoadedIntoChunk(::BlockSource const& region, ::ChunkPos chunkPos, ::DimensionType dimensionId);
+
+    MCAPI void
+    onActorMovedBetweenChunks(::BlockSource const& region, ::ChunkPos toChunkPos, ::DimensionType toDimensionId);
+
+    MCAPI void onActorRemoved();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::GameEventListener> listener);
     // NOLINTEND
 };

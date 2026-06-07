@@ -5,14 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 // clang-format on
 
-class CircleAroundAnchorGoal : public ::Goal {
+class CircleAroundAnchorGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -51,18 +51,26 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~CircleAroundAnchorGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CircleAroundAnchorGoal(::Mob& mob);
+
     MCAPI void _selectNext();
 
     MCAPI void _setAnchorAboveGround();
 
     MCAPI void _setAnchorAboveTarget();
+
+    MCAPI bool _touchingTarget() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

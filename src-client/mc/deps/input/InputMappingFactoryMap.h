@@ -11,26 +11,14 @@ class InputMappingFactoryMap {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InputMappingFactoryMap();
+    virtual ~InputMappingFactoryMap() = default;
 
     virtual ::InputMappingFactory& getInputMappingFactory(int controllerId) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

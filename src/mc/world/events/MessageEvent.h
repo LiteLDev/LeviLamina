@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+class ScriptMessagePacket;
 // clang-format on
 
 struct MessageEvent {
@@ -20,9 +21,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MessageEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MessageEvent(::ScriptMessagePacket const& packet, ::WeakRef<::EntityContext> player);
+
     MCAPI ~MessageEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptMessagePacket const& packet, ::WeakRef<::EntityContext> player);
     // NOLINTEND
 
 public:

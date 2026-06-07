@@ -3,14 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 class IFeature;
 class IWorldRegistriesProvider;
+class LinkedAssetValidator;
 class MinEngineVersion;
 class ResourcePackManager;
 namespace Json { class Value; }
@@ -34,19 +37,25 @@ public:
 
     public:
         // prevent constructor by default
-        FeatureBinaryJsonFormat(FeatureBinaryJsonFormat const&);
+        FeatureBinaryJsonFormat& operator=(FeatureBinaryJsonFormat const&);
         FeatureBinaryJsonFormat();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat const&);
+
         MCFOLD ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat&&);
 
-        MCFOLD ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat const&);
-
-        MCFOLD bool operator==(::FeatureRegistry::FeatureBinaryJsonFormat const& rhs) const;
+        MCAPI bool operator==(::FeatureRegistry::FeatureBinaryJsonFormat const& rhs) const;
 
         MCAPI ~FeatureBinaryJsonFormat();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat const&);
         // NOLINTEND
 
     public:
@@ -59,6 +68,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>>        mValidator;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::IFeature>>>              mFeatureRegistry;
     ::ll::TypedStorage<8, 24, ::std::vector<::OwnerPtr<::IFeature>>>                     mFeatureSlots;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, uint64>>              mFeatureLookupMap;
@@ -69,9 +79,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FeatureRegistry();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureRegistry();
+    MCAPI explicit FeatureRegistry(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
     MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
 
@@ -97,6 +111,14 @@ public:
         bool                         serializeFeatures
     );
 
+    MCAPI void forEachFeature(::brstd::function_ref<void(::HashedString const&, ::WeakRef<::IFeature>)> callback) const;
+
+    MCAPI ::std::vector<::std::string> getLargeFeaturePasses() const;
+
+    MCAPI ::std::vector<::std::string> getSmallFeaturePasses() const;
+
+    MCAPI bool isFeaturePassDefined(::std::string const& featurePass) const;
+
     MCAPI void loadFromDefinitions(
         ::IWorldRegistriesProvider&  worldRegistries,
         ::ResourcePackManager const& rpm,
@@ -117,11 +139,11 @@ public:
 
     MCAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
 
-#ifdef LL_PLAT_C
+    MCAPI ::std::string const& reverseLookupString(::IFeature const& feature) const;
+
     MCAPI void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
 
     MCAPI void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
-#endif
 
     MCAPI ~FeatureRegistry();
     // NOLINTEND
@@ -164,7 +186,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:

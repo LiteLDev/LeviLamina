@@ -31,4 +31,9 @@ MCAPI void testForCollidableMobs(
 );
 // NOLINTEND
 
+// static variables
+// NOLINTBEGIN
+MCAPI float const& COMMAND_INTERVAL();
+// NOLINTEND
+
 } // namespace Util::Agent

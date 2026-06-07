@@ -23,26 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerValidationCraftResult& operator=(ContainerValidationCraftResult const&);
-    ContainerValidationCraftResult(ContainerValidationCraftResult const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContainerValidationCraftResult();
-
-    MCNAPI ContainerValidationCraftResult(::ContainerValidationCraftResult&&);
-
     MCNAPI ~ContainerValidationCraftResult();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::ContainerValidationCraftResult&&);
     // NOLINTEND
 
 public:

@@ -14,4 +14,20 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>            mAcceptPosition;
     ::ll::TypedStorage<1, 1, uchar>              mNewDivergenceCounter;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MovementCorrection();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MovementCorrection(::CorrectionMethod method, ::Vec3 const& acceptPosition);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CorrectionMethod method, ::Vec3 const& acceptPosition);
+    // NOLINTEND
 };

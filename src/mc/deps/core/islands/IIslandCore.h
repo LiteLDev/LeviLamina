@@ -13,7 +13,7 @@ class IIslandCore {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IIslandCore();
+    virtual ~IIslandCore() = default;
 
     virtual ushort getId() = 0;
 
@@ -31,21 +31,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

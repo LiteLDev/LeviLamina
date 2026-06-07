@@ -11,6 +11,10 @@ namespace MobGliding {
 // functions
 // NOLINTBEGIN
 MCAPI int getFallFlyTicks(::EntityContext const& provider);
+
+MCAPI void initializeMob(::EntityContext& provider);
+
+MCAPI void setArmorFlyEnabled(::EntityContext& provider, bool value);
 // NOLINTEND
 
 } // namespace MobGliding

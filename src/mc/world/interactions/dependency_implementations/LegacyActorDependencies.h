@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isRemoved() /*override*/;
-
-    virtual ~LegacyActorDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:

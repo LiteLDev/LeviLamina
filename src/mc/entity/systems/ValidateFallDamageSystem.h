@@ -34,20 +34,6 @@ MCAPI void doValidateFallDamage(
     ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
 );
 
-MCAPI void singleTick(
-    ::StrictEntityContext& entity,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ServerPlayerComponent>,
-        ::EventingDispatcherComponent const,
-        ::Optional<::ServerPlayerCurrentMovementComponent const>,
-        ::Optional<::FallDamageResultComponent const>,
-        ::Optional<::PassengerComponent const>>                                                            mainView,
-    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const, ::FallDamageResultComponent const> vehicleView,
-    ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>   requestQueueView,
-    ::ViewT<::StrictEntityContext, ::FallDamageResultComponent const> fallDamageView
-);
-
 MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,

@@ -15,13 +15,13 @@ public:
 
 public:
     // prevent constructor by default
-    CallStackEntry(CallStackEntry const&);
+    CallStackEntry& operator=(CallStackEntry const&);
     CallStackEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Scripting::CallStackEntry& operator=(::Scripting::CallStackEntry const&);
+    MCAPI CallStackEntry(::Scripting::CallStackEntry const&);
 
     MCAPI ~CallStackEntry();
     // NOLINTEND
@@ -30,6 +30,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::CallStackEntry FromBacktrace(::std::string_view backtrace);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::Scripting::CallStackEntry const&);
     // NOLINTEND
 
 public:

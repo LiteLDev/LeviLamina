@@ -29,17 +29,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~StructureFromClipboardPayload() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~StructureFromClipboardPayload() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI
+    StructureFromClipboardPayload(::std::string const& structureId, ::std::optional<::std::string> const& fullName);
+#endif
+
     MCNAPI ::Editor::Network::StructureFromClipboardPayload&
     operator=(::Editor::Network::StructureFromClipboardPayload const&);
     // NOLINTEND
@@ -48,6 +48,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string const& structureId, ::std::optional<::std::string> const& fullName);
+#endif
     // NOLINTEND
 
 public:

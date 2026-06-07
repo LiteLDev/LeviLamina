@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -11,7 +10,6 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Dimension;
 // clang-format on
 
 class GetChunksCommand : public ::Command {
@@ -25,8 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~GetChunksCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

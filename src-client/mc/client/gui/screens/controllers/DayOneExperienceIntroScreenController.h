@@ -43,7 +43,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DayOneExperienceIntroScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
-    MCAPI ::std::string _getActiveTab() const;
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

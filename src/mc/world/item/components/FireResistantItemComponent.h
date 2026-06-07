@@ -11,6 +11,7 @@
 class ComponentItem;
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_21_90 { struct FireResistantItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,11 +23,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FireResistantItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~FireResistantItemComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit FireResistantItemComponent(::SharedTypes::v1_21_90::FireResistantItemComponent component);
     // NOLINTEND
 
 public:
@@ -39,6 +48,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::FireResistantItemComponent component);
     // NOLINTEND
 
 public:

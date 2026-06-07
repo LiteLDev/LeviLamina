@@ -22,13 +22,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void setSpringType(::std::string const& type);
-
-    MCAPI ~LeashablePreset();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

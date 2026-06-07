@@ -38,5 +38,13 @@ public:
     );
 
     MCAPI void setLevel(::Level& level);
+
+    MCAPI ~DanceComponentListener();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

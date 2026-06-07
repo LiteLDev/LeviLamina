@@ -13,17 +13,27 @@ public:
 
 public:
     // prevent constructor by default
-    GuiDataPickItemPacketPayload(GuiDataPickItemPacketPayload const&);
+    GuiDataPickItemPacketPayload& operator=(GuiDataPickItemPacketPayload const&);
     GuiDataPickItemPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GuiDataPickItemPacketPayload(::GuiDataPickItemPacketPayload const&);
+
+    MCAPI GuiDataPickItemPacketPayload(::std::string const& name, ::std::string const& effect, int slot);
+
     MCFOLD ::GuiDataPickItemPacketPayload& operator=(::GuiDataPickItemPacketPayload&&);
 
-    MCFOLD ::GuiDataPickItemPacketPayload& operator=(::GuiDataPickItemPacketPayload const&);
-
     MCAPI ~GuiDataPickItemPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::GuiDataPickItemPacketPayload const&);
+
+    MCAPI void* $ctor(::std::string const& name, ::std::string const& effect, int slot);
     // NOLINTEND
 
 public:

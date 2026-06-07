@@ -20,21 +20,14 @@ public:
     // prevent constructor by default
     RemoteClient& operator=(RemoteClient const&);
     RemoteClient(RemoteClient const&);
+    RemoteClient();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RemoteClient();
-
     MCAPI void SendOrBuffer(char const** data, uint const* lengths, int numParameters);
 
     MCAPI ~RemoteClient();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

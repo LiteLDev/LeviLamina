@@ -27,14 +27,20 @@ public:
     virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
-
-    virtual ~MoveNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MoveNode();
+
     MCAPI uchar convertDirectionStringToKeyPress(::std::string directionString);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

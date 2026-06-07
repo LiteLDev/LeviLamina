@@ -26,6 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CommandAreaFactory(::Dimension& dimension);
+
     MCAPI ::std::unique_ptr<::CommandArea> _getArea(
         ::Bounds const& requiredArea,
         bool            allowNonTickingPlayerAndTickingAreaChunks,
@@ -35,6 +37,14 @@ public:
 
     MCAPI ::std::unique_ptr<::CommandArea> _getNewCommandArea(::Bounds const& requiredArea) const;
 
+    MCAPI ::std::unique_ptr<::CommandArea> findArea(
+        ::BlockPos const& min,
+        ::BlockPos const& max,
+        bool              allowNonTickingPlayerAndTickingAreaChunks,
+        bool              allowUnloadedChunks,
+        bool              allowPlayerChunks
+    ) const;
+
     MCAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(
         ::BlockPos const& min,
         ::BlockPos const& max,
@@ -42,5 +52,17 @@ public:
         bool              allowUnloadedChunks,
         bool              allowPlayerChunks
     ) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int commandVersion);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::Dimension& dimension);
     // NOLINTEND
 };

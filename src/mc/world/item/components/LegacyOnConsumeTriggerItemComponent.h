@@ -13,7 +13,7 @@ class Actor;
 class ComponentItem;
 class HashedString;
 class ItemStack;
-struct LegacyOnConsumeTriggerItemComponentData;
+namespace SharedTypes::Legacy { struct OnConsumeTriggerItemComponent; }
 // clang-format on
 
 class LegacyOnConsumeTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -32,16 +32,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~LegacyOnConsumeTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnConsumeTriggerItemComponent(::LegacyOnConsumeTriggerItemComponentData&& data);
+    MCAPI explicit LegacyOnConsumeTriggerItemComponent(::SharedTypes::Legacy::OnConsumeTriggerItemComponent&& data);
 
-    MCAPI void _consume(::ItemStack const&, ::ItemStack& item, ::Actor& actor);
+    MCAPI void _consume(::ItemStack const& item, ::ItemStack& actor, ::Actor&);
     // NOLINTEND
 
 public:
@@ -53,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyOnConsumeTriggerItemComponentData&& data);
+    MCAPI void* $ctor(::SharedTypes::Legacy::OnConsumeTriggerItemComponent&& data);
     // NOLINTEND
 
 public:

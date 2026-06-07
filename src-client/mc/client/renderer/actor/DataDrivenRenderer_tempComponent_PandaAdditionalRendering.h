@@ -36,8 +36,6 @@ public:
 
     virtual void
     render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_PandaAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

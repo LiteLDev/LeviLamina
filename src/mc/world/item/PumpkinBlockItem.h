@@ -9,6 +9,10 @@
 
 class PumpkinBlockItem : public ::BlockItem {
 public:
+    // prevent constructor by default
+    PumpkinBlockItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getEnchantSlot() const /*override*/;
@@ -16,8 +20,18 @@ public:
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
+    // NOLINTEND
 
-    virtual ~PumpkinBlockItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PumpkinBlockItem(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

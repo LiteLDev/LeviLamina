@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
-
-    virtual ~StopCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

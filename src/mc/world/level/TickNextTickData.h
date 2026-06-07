@@ -20,4 +20,24 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     ::ll::TypedStorage<8, 8, ::Tick>         tick;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TickNextTickData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI TickNextTickData(::BlockPos const& pos, ::Block const& block, ::Tick const& tick, int pOffset);
+
+    MCNAPI bool operator==(::TickNextTickData const& t) const;
+
+    MCNAPI bool operator>(::TickNextTickData const& tnd) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::BlockPos const& pos, ::Block const& block, ::Tick const& tick, int pOffset);
+    // NOLINTEND
 };

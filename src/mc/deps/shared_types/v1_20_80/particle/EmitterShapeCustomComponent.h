@@ -23,16 +23,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EmitterShapeCustomComponent& operator=(EmitterShapeCustomComponent const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
+    // NOLINTEND
 
-#ifdef LL_PLAT_S
-    virtual ~EmitterShapeCustomComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~EmitterShapeCustomComponent() /*override*/;
-#endif
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EmitterShapeCustomComponent();
 
+    MCAPI EmitterShapeCustomComponent(::SharedTypes::v1_20_80::EmitterShapeCustomComponent&&);
+
+    MCAPI EmitterShapeCustomComponent(::SharedTypes::v1_20_80::EmitterShapeCustomComponent const&);
     // NOLINTEND
 
 public:
@@ -48,9 +55,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeCustomComponent&&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeCustomComponent const&);
     // NOLINTEND
 
 public:

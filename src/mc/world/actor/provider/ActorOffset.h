@@ -12,9 +12,13 @@ class Vec3;
 namespace ActorOffset {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_S
 MCAPI ::Vec3 getEyeOffset(::EntityContext const& entity);
-#endif
+
+MCAPI ::Vec3 getHeadOffset(::EntityContext const& entity);
+
+MCAPI float getHeightOffset(::EntityContext const& entity);
+
+MCAPI void initializeActor(::EntityContext& entity);
 
 MCAPI void initializePlayer(::EntityContext& entity);
 
@@ -34,12 +38,23 @@ MCAPI void setAABBRelativeScalingAndScaleNow(
     ::std::optional<::Vec2> mouthScalar
 );
 
-MCAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
-// NOLINTEND
+MCAPI void setAbsoluteScaling(
+    ::EntityContext&        entity,
+    ::std::optional<::Vec3> headOffset,
+    ::std::optional<::Vec3> eyeOffset,
+    ::std::optional<::Vec3> breathingOffset,
+    ::std::optional<::Vec3> mouthOffset
+);
 
-// static variables
-// NOLINTBEGIN
-MCAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
+MCAPI void setBreathingOffset(::EntityContext& entity, ::Vec3 const& breathingOffset);
+
+MCAPI void setExplosionOffset(::EntityContext& entity, float explosionOffset);
+
+MCAPI void setEyeOffset(::EntityContext& entity, ::Vec3 const& eyeOffset);
+
+MCAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
+
+MCAPI void setShulkerScaling(::EntityContext& entity);
 // NOLINTEND
 
 } // namespace ActorOffset

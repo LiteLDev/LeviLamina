@@ -57,6 +57,12 @@ public:
 
     MCAPI ::World::SessionTrackerOperationResult _processJoinedWorld(::ClientInstance& instance);
 
+    MCAPI void _queueDeleteFile();
+
+    MCAPI void _queueSerializationWork();
+
+    MCAPI void _serializeToFile() const;
+
     MCAPI ::Json::Value _serializeToJson() const;
 
     MCAPI void initialize(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager);

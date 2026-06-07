@@ -43,8 +43,6 @@ public:
     virtual void onEntered() /*override*/;
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
-
-    virtual ~SelectWorldScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,6 +67,8 @@ public:
     MCAPI void _exit(::SelectWorldResult result);
 
     MCAPI void _registerEventHandlers();
+
+    MCAPI void _triggerCallback(::SelectWorldResult result);
     // NOLINTEND
 
 public:

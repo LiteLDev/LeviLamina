@@ -29,15 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTickingArea();
-
-    MCAPI ScriptTickingArea(::ScriptModuleMinecraft::ScriptTickingArea const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptTickingArea& operator=(::ScriptModuleMinecraft::ScriptTickingArea&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptTickingArea& operator=(::ScriptModuleMinecraft::ScriptTickingArea const&);
-
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptTickingArea const&) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptTickingArea const& other) const;
 
     MCAPI ~ScriptTickingArea();
     // NOLINTEND
@@ -46,14 +38,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickingArea const&);
     // NOLINTEND
 
 public:

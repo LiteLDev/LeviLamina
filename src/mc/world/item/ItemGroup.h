@@ -23,21 +23,27 @@ public:
     MCAPI explicit ItemGroup(::ItemInstance const& itemInstance);
 
 #ifdef LL_PLAT_C
+    MCAPI ItemGroup(::ItemInstance const& itemInstance, int count);
+
+    MCAPI int getCount() const;
+
+    MCAPI ::ItemInstance const& getItemInstance() const;
+
     MCAPI ::ItemInstance getItemInstanceCopy() const;
+
+    MCFOLD ::ItemInstance const& getItemTemplate() const;
 #endif
 
-    MCAPI ~ItemGroup();
+    MCAPI bool isEmpty() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemInstance const& itemInstance);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ItemInstance const& itemInstance, int count);
+#endif
     // NOLINTEND
 };

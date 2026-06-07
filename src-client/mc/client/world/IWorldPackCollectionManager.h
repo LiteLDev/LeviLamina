@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 struct ContentSource;
+struct PackContentItem;
 struct PackSettingsInfo;
 struct WorldContentItemCollectionsModel;
 namespace Bedrock::PubSub { class Subscription; }
@@ -57,6 +58,9 @@ public:
     ) = 0;
 
     virtual ::std::optional<::PackSettingsInfo> getPackSettingsForPackIdVersion(::std::string const& packIdVersion) = 0;
+
+    virtual ::std::shared_ptr<::PackContentItem const>
+    getPackItemForPackIdVersion(::std::string_view packIdVersion) = 0;
 
     virtual ::Bedrock::PubSub::Subscription subscribeToMarketplacePackDownloadStatus(
         ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange

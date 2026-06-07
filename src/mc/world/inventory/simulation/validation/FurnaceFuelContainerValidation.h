@@ -29,8 +29,6 @@ public:
     virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~FurnaceFuelContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

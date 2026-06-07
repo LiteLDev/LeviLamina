@@ -27,8 +27,6 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     ) /*override*/;
-
-    virtual ~SHChestCorridor() /*override*/ = default;
     // NOLINTEND
 
 public:

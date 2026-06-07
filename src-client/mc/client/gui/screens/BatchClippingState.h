@@ -11,4 +11,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>        mClipsChildren;
     ::ll::TypedStorage<1, 1, bool>        mEnableScissorTest;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool isEquivalent(::BatchClippingState const& batchClippingState) const;
+    // NOLINTEND
 };

@@ -16,8 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
-
-    virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() /*override*/ = default;
     // NOLINTEND
 
 public:

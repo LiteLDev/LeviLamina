@@ -36,6 +36,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MoveActorDeltaPacket();
+
+    MCAPI explicit MoveActorDeltaPacket(::MoveActorDeltaData const& data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::MoveActorDeltaData const& data);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

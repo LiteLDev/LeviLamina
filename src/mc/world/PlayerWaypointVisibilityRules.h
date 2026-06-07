@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Player;
-// clang-format on
-
 class PlayerWaypointVisibilityRules {
 public:
     // PlayerWaypointVisibilityRules inner types define
@@ -31,6 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator()(::Player const& viewingPlayer, ::Player const& targetPlayer) const;
+    MCNAPI void set(::PlayerWaypointVisibilityRules::Flag f, bool value);
+
+    MCNAPI bool test(::PlayerWaypointVisibilityRules::Flag f) const;
     // NOLINTEND
 };

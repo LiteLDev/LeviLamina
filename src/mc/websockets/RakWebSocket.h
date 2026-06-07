@@ -108,8 +108,6 @@ public:
 
     MCNAPI ::std::string _generateBase64SHA1Key(::std::string const& key);
 
-    MCNAPI void _processClosingHandshake(bool notifyHandler);
-
     MCNAPI void _processDataFrames(::RakNet::BitStream& newIncoming);
 
     MCNAPI bool
@@ -119,11 +117,13 @@ public:
 
     MCNAPI bool _resolveURI();
 
+    MCNAPI bool _sendCloseFrame(::CloseStatusCode reason, ::std::string const&);
+
     MCNAPI bool _sendControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
 
-    MCNAPI bool _sendDataFrame(uchar const* payload, uint size, ::OpCode opCode, bool isFinalFragment);
-
     MCNAPI bool _sendNonControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);
+
+    MCNAPI bool _sendTextFrame(::std::string const& text);
 
     MCNAPI void
     _splitWebSocketURI(::std::string const& uri, ::std::string& scheme, ::std::string& host, ::std::string& path);
@@ -133,8 +133,6 @@ public:
     MCNAPI void _validateFields();
 
     MCNAPI bool _validateWebSocketURI();
-
-    MCNAPI bool send(::std::string const& message);
     // NOLINTEND
 
 public:

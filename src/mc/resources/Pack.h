@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentIdentity;
 class IContentKeyProvider;
 class IPackIOProvider;
 class IPackManifestFactory;
@@ -52,7 +53,27 @@ public:
 
     MCAPI void _loadLocalizationFiles();
 
+    MCFOLD ::PackAccessStrategy const* getAccessStrategy() const;
+
+    MCFOLD ::PackAccessStrategy* getAccessStrategy();
+
+    MCFOLD uchar getCurrentRevision() const;
+
+    MCFOLD ::PackManifest const& getManifest() const;
+
+    MCAPI ::Bedrock::NonOwnerPointer<::PackManifest const> const getManifestPtr() const;
+
+    MCFOLD ::SubpackInfoCollection const* getSubpackInfoStack() const;
+
     MCAPI void move(::Pack&& pack);
+
+    MCAPI void setManifestPackCapabilitiesTrusted();
+
+    MCAPI void setManifestSourceIdentity(::ContentIdentity const& contentIdentity);
+
+#ifdef LL_PLAT_C
+    MCAPI void setManifestTitleLocked(bool titleLocked);
+#endif
 
     MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const> upgrade);
 

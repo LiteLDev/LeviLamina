@@ -42,9 +42,9 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     virtual bool isValidRepairItem(
-        ::ItemStackBase const&,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
+        ::ItemStackBase const& repairItem,
+        ::ItemStackBase const& baseGameVersion,
+        ::BaseGameVersion const&
     ) const /*override*/;
 
     virtual void appendFormattedHovertext(
@@ -60,14 +60,30 @@ public:
 
     virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
         /*override*/;
-
-    virtual ~DiggerItem() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI DiggerItem(
+        ::std::string const&  name,
+        short                 id,
+        int                   attackDamage,
+        ::ItemTier const&     tier,
+        ::HashedString const& blockDestructionTag
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&  name,
+        short                 id,
+        int                   attackDamage,
+        ::ItemTier const&     tier,
+        ::HashedString const& blockDestructionTag
+    );
     // NOLINTEND
 
 public:
@@ -80,9 +96,9 @@ public:
     MCAPI int $getEnchantValue() const;
 
     MCAPI bool $isValidRepairItem(
-        ::ItemStackBase const&,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
+        ::ItemStackBase const& repairItem,
+        ::ItemStackBase const& baseGameVersion,
+        ::BaseGameVersion const&
     ) const;
 
     MCAPI void $appendFormattedHovertext(

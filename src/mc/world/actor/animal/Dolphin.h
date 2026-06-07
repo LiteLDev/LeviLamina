@@ -8,11 +8,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class Dolphin : public ::WaterAnimal {
+public:
+    // prevent constructor by default
+    Dolphin();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -24,8 +31,26 @@ public:
 
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    // NOLINTEND
 
-    virtual ~Dolphin() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Dolphin(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

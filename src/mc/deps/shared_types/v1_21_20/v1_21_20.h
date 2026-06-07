@@ -13,15 +13,15 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_20 {
 // functions
 // NOLINTBEGIN
+MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+
 MCAPI void bindDimensionPaddingTypes(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindIntProviderTypes(::cereal::ReflectionCtx& ctx);
 
-MCFOLD bool
-operator==(::SharedTypes::v1_21_20::FilterGroupData const& __P0, ::SharedTypes::v1_21_20::FilterGroupData const& __P1);
+MCAPI bool operator==(::SharedTypes::v1_21_20::FilterGroupData const&, ::SharedTypes::v1_21_20::FilterGroupData const&);
 
-MCAPI bool
-operator==(::SharedTypes::v1_21_20::FilterTestData const& __P0, ::SharedTypes::v1_21_20::FilterTestData const& __P1);
+MCAPI bool operator==(::SharedTypes::v1_21_20::FilterTestData const&, ::SharedTypes::v1_21_20::FilterTestData const&);
 
 MCAPI bool operator==(
     ::SharedTypes::v1_21_20::FilterGroupDataMap const& lhs,

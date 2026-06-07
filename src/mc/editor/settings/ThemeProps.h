@@ -20,23 +20,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ThemeProps(ThemeProps const&);
+    ThemeProps();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ThemeProps();
-
-    MCNAPI ThemeProps(::Editor::Settings::ThemeProps const&);
-
     MCNAPI void operator=(::Editor::Settings::ThemeProps const& other);
 
     MCNAPI ~ThemeProps();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::Editor::Settings::ThemeProps const&);
     // NOLINTEND
 
 public:

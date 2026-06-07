@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
+
 namespace LoadResultHelpers {
 
 struct ContentLogOptions {
@@ -19,20 +22,15 @@ public:
 public:
     // prevent constructor by default
     ContentLogOptions& operator=(ContentLogOptions const&);
+    ContentLogOptions(ContentLogOptions const&);
     ContentLogOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContentLogOptions(::LoadResultHelpers::ContentLogOptions const&);
+    MCNAPI void addParseFormat(::cereal::ResultCode mask, ::std::string const& formatString);
 
     MCNAPI ~ContentLogOptions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::LoadResultHelpers::ContentLogOptions const&);
     // NOLINTEND
 
 public:

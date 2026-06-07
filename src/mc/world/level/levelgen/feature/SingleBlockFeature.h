@@ -47,18 +47,6 @@ public:
         ::ll::TypedStorage<8, 176, ::BlockDescriptor> mBlockDescriptor;
         ::ll::TypedStorage<4, 4, float>               mWeight;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~WeightedBlockDescriptor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     using PlacementConditions =

@@ -76,6 +76,8 @@ public:
     ) const;
 
     MCAPI void _placeLimb(::IBlockWorldGenAPI& target, ::BlockPos const& startPos, ::BlockPos const& endPos) const;
+
+    MCAPI void _placeTrunk(::IBlockWorldGenAPI& target, ::BlockPos const& pos, int trunkHeight) const;
     // NOLINTEND
 
 public:

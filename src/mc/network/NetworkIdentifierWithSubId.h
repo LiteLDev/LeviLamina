@@ -13,4 +13,12 @@ public:
     ::ll::TypedStorage<8, 176, ::NetworkIdentifier> id;
     ::ll::TypedStorage<1, 1, ::SubClientId>         subClientId;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator<(::NetworkIdentifierWithSubId const& other) const;
+
+    MCAPI bool operator==(::NetworkIdentifierWithSubId const& other) const;
+    // NOLINTEND
 };

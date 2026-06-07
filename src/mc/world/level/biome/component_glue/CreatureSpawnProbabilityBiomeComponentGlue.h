@@ -18,8 +18,6 @@ public:
     virtual bool resolveAndValidate(::entt::meta_any const&, ::BiomeRegistry const&) /*override*/;
 
     virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& component) const /*override*/;
-
-    virtual ~CreatureSpawnProbabilityBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:

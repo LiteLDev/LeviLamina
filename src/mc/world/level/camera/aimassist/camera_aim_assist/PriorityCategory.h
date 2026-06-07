@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BlockType;
 class HashedString;
 // clang-format on
 
@@ -22,10 +24,13 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk8ec1d7;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PriorityCategory& operator=(PriorityCategory const&);
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -43,7 +48,19 @@ public:
         ::std::unordered_map<::HashedString, int> const& entityTypeFamilyPriority
     );
 
+#ifdef LL_PLAT_C
+    MCNAPI int getBlockPriority(::BlockType const& block) const;
+#endif
+
+    MCNAPI int getEntityPriority(::Actor const& entity) const;
+
+    MCNAPI ::HashedString const& getId() const;
+
     MCNAPI ::CameraAimAssist::PriorityCategory& operator=(::CameraAimAssist::PriorityCategory&&);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::CameraAimAssist::PriorityCategory& operator=(::CameraAimAssist::PriorityCategory const&);
+#endif
 
     MCNAPI ~PriorityCategory();
     // NOLINTEND

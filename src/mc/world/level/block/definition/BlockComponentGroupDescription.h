@@ -27,14 +27,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Components();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Components(::BlockComponentGroupDescription::Components const&);
-
         MCAPI void _setCustomComponent(
             ::std::string_view                               compName,
             ::std::shared_ptr<::cereal::DynamicValue> const& compData,
@@ -45,18 +39,7 @@ public:
         MCAPI ::std::shared_ptr<::cereal::DynamicValue>
         getCustomComponent(::cereal::SerializerContext const& context) const;
 
-        MCFOLD ::BlockComponentGroupDescription::Components& operator=(::BlockComponentGroupDescription::Components&&);
-
-        MCFOLD ::BlockComponentGroupDescription::Components&
-        operator=(::BlockComponentGroupDescription::Components const&);
-
         MCAPI ~Components();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockComponentGroupDescription::Components const&);
         // NOLINTEND
 
     public:
@@ -76,38 +59,17 @@ public:
 
 public:
     // prevent constructor by default
-    BlockComponentGroupDescription& operator=(BlockComponentGroupDescription const&);
+    BlockComponentGroupDescription(BlockComponentGroupDescription const&);
+    BlockComponentGroupDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockComponentGroupDescription();
-
-    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
-
-    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
-
-    MCAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
-
-    MCFOLD void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
-
-    MCFOLD void foreachDescriptionMutable(::std::function<void(::BlockComponentDescription&)> callback) const;
-
     MCAPI ::BlockComponentDescription* getComponentDescription(::std::string const& name) const;
 
-    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
+    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription const&);
 
     MCAPI ~BlockComponentGroupDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockComponentGroupDescription&&);
-
-    MCAPI void* $ctor(::BlockComponentGroupDescription const&);
     // NOLINTEND
 
 public:

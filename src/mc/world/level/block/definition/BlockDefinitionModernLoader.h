@@ -14,7 +14,7 @@ class PackLoadContext;
 class SemVersion;
 struct BlockDefinition;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
-namespace SharedTypes::v1_26_10::BlockDefinition { struct BlockDefinitionDocument; }
+namespace SharedTypes::v1_26_20::BlockDefinition { struct BlockDefinitionDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,10 +26,10 @@ public:
         8,
         256,
         ::Puv::SlicedLoader<
-            ::SharedTypes::v1_26_10::BlockDefinition::BlockDefinitionDocument,
+            ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument,
             ::BedrockLoadContext,
             nullptr_t,
-            ::SharedTypes::v1_26_10::BlockDefinition::BlockDefinitionDocument>>
+            ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument>>
         mLoader;
     // NOLINTEND
 
@@ -48,10 +48,8 @@ public:
         ::cereal::ReflectionCtx const&                            ctx
     );
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_26_10::BlockDefinition::BlockDefinitionDocument>
-    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
-
-    MCAPI ~BlockDefinitionModernLoader();
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument>
+    load(::Bedrock::Resources::MinecraftDocumentInput const& input, bool isBaseGamePack) const;
     // NOLINTEND
 
 public:
@@ -59,11 +57,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BlockDefinition blockDefinitionDocumentToBlockDefinitionTransformer(
         ::cereal::ReflectionCtx const&                                      ctx,
-        ::SharedTypes::v1_26_10::BlockDefinition::BlockDefinitionDocument&& source,
+        ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&& source,
         ::SemVersion                                                        originalJsonVersion
     );
 
-    MCAPI static ::SharedTypes::v1_26_10::BlockDefinition::BlockDefinitionDocument
+    MCAPI static ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument
     nonCerealizedBlockDefinitionUpgrader(::BlockDefinition&& source);
     // NOLINTEND
 
@@ -77,11 +75,5 @@ public:
         ::gsl::not_null<::PackLoadContext*>                       packLoadContext,
         ::cereal::ReflectionCtx const&                            ctx
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

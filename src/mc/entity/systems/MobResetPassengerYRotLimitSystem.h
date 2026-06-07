@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MobResetPassengerYRotLimitSystem {};
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct MobResetPassengerYRotLimitSystem {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createSystem();
+    // NOLINTEND
+};

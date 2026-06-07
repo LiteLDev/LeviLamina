@@ -17,14 +17,14 @@ MCNAPI void tessellate(
     ::Vec3 const&                   pos,
     ::TextureUVCoordinateSet const& tex,
     bool                            usePBRFormats,
-    bool                            center,
-    int                             width,
-    float                           rotation,
-    ::Vec3 const&                   offsetBottom,
-    bool                            renderBothSides,
+    bool                            width,
+    int                             rotation,
+    float                           offsetBottom,
+    ::Vec3 const&                   renderBothSides,
     bool                            useNormals,
-    float                           tileWidth,
-    bool                            flipHorizontal
+    bool                            tileWidth,
+    float                           flipHorizontal,
+    bool
 );
 // NOLINTEND
 

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockSource;
 class BoundingBox;
 class LevelChunk;
@@ -39,8 +38,6 @@ public:
     virtual int getWorldX(int x, int z) /*override*/;
 
     virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
-
-    virtual ~OceanMonumentPiece() /*override*/;
     // NOLINTEND
 
 public:
@@ -55,24 +52,10 @@ public:
         int                                 roomDepth
     );
 
-    MCAPI bool chunkIntersects(::BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
-
-    MCAPI void generateBoxOnFillOnly(
-        ::BlockSource&       region,
-        ::BoundingBox const& chunkBB,
-        int                  x0,
-        int                  y0,
-        int                  z0,
-        int                  x1,
-        int                  y1,
-        int                  z1,
-        ::Block const&       targetBlock
-    );
-
     MCAPI void
     generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
-    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
+    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& x, int y, int z, int);
     // NOLINTEND
 
 public:
@@ -104,12 +87,6 @@ public:
         int                                 roomHeight,
         int                                 roomDepth
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

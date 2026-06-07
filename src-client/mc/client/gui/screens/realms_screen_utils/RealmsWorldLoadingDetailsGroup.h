@@ -22,18 +22,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Realms::World>>                      mRealmWorldList;
     ::ll::TypedStorage<4, 4, ::RealmsScreenUtils::RealmsSubscriptionsLoadingState> mInitialLoadingState;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RealmsWorldLoadingDetailsGroup();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };
 
 } // namespace RealmsScreenUtils

@@ -29,8 +29,6 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
-
-    virtual ~Animal() /*override*/;
     // NOLINTEND
 
 public:
@@ -51,12 +49,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -11,6 +11,7 @@ class IClientInstance;
 class MinecraftUIRenderContext;
 class NinePatchLayer;
 class UIControl;
+class UIPropertyBag;
 class UIScene;
 // clang-format on
 
@@ -30,13 +31,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) = 0;
-
-    virtual ~HoverRenderer() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HoverRenderer();
+
+    MCAPI ::std::string _getNewContent(::UIPropertyBag const& bag) const;
+
     MCAPI ::glm::vec2
     _getNewCursorPosition(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) const;
 
@@ -44,14 +47,20 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

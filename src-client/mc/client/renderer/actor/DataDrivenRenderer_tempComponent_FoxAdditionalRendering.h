@@ -39,8 +39,6 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_FoxAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

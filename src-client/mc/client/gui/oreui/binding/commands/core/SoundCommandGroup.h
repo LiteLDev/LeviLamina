@@ -34,15 +34,11 @@ public:
     SoundCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SoundCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SoundCommandGroup(::OreUI::ClientDependencies const& client);
+
+    MCAPI void _fadeOut(uint64 handle, float duration) const;
     // NOLINTEND
 
 public:

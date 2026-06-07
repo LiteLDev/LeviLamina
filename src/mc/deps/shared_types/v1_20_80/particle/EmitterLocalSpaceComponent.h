@@ -26,8 +26,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-    virtual ~EmitterLocalSpaceComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

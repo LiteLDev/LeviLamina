@@ -23,8 +23,6 @@ public:
     virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) /*override*/;
 
     virtual void clearTempContentKeys() /*override*/;
-
-    virtual ~ServerContentKeyProviderImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -25,17 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCompoundBlockVolumeItem(ScriptCompoundBlockVolumeItem const&);
-    ScriptCompoundBlockVolumeItem();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
-    operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
-
-    MCAPI ::CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
+    MCAPI void toCompoundBlockVolumeItem(::CompoundBlockVolumeItem& item) const;
 
     MCAPI ~ScriptCompoundBlockVolumeItem();
     // NOLINTEND
@@ -49,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/item/ItemStack.h"
@@ -16,12 +15,10 @@ class Actor;
 class Block;
 class BlockSource;
 class CompoundTag;
-class Dimension;
 class Level;
 class Mob;
 class Random;
 class SpawnData;
-class Tag;
 class TrialSpawnerConfigRegistry;
 class Vec3;
 struct ActorUniqueID;
@@ -110,8 +107,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void reset();
-
         MCAPI ~Data();
         // NOLINTEND
 
@@ -135,8 +130,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TrialSpawner();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TrialSpawner(::BlockPos const& pos);
+
     MCAPI void _becomeOminous(::BlockSource& region, ::Block const& block);
 
     MCAPI void _dispenseItemAboveRandomCombatant(::BlockSource& region);
@@ -162,6 +163,8 @@ public:
 
     MCAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
 
+    MCAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos);
+
     MCAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos, ::Vec3 spawnPos);
 
     MCAPI void _tryRegisterNewPlayers(::BlockSource& region, ::TrialSpawner::SpawningLogicState currentState);
@@ -172,7 +175,17 @@ public:
 
     MCAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
 
+    MCAPI ::CompoundTag createUpdatePacket();
+
+#ifdef LL_PLAT_C
+    MCAPI float getCurrentSpinSpeed() const;
+#endif
+
     MCAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
+
+#ifdef LL_PLAT_C
+    MCAPI float getPreviousSpinSpeed() const;
+#endif
 
     MCAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
 
@@ -185,6 +198,12 @@ public:
     MCAPI void setEntityId(::ActorDefinitionIdentifier const& actorDefId, ::BlockSource& region);
 
     MCAPI void tick(::BlockSource& region);
+
+#ifdef LL_PLAT_C
+    MCAPI ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
+#endif
+
+    MCAPI ~TrialSpawner();
     // NOLINTEND
 
 public:
@@ -209,22 +228,24 @@ public:
         ::std::string const& lootTableName
     );
 
-#ifdef LL_PLAT_C
-    MCAPI static char const* _getSmallFlameParticleName(bool isOminous);
-#endif
-
-    MCAPI static bool _isAllowedToSpawnInLevel(::Level& level);
-
-    MCAPI static bool _isOminous(::BlockSource& region, ::BlockPos pos);
-
     MCAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
-
-    MCAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
 
 #ifdef LL_PLAT_C
     MCAPI static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
 
     MCAPI static void sendEjectItemParticles(::Level& level, ::BlockPos pos, bool isOminous);
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

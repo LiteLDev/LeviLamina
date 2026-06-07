@@ -29,17 +29,18 @@ public:
 
 public:
     // prevent constructor by default
-    BiomeOverworldGenRulesData& operator=(BiomeOverworldGenRulesData const&);
     BiomeOverworldGenRulesData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeOverworldGenRulesData(::BiomeOverworldGenRulesData&&);
-
     MCAPI BiomeOverworldGenRulesData(::BiomeOverworldGenRulesData const&);
 
     MCAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData&&);
+
+    MCAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData const&);
+
+    MCAPI bool operator==(::BiomeOverworldGenRulesData const& other) const;
 
     MCAPI void write(::BinaryStream& stream) const;
 
@@ -55,8 +56,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::BiomeOverworldGenRulesData&&);
-
     MCAPI void* $ctor(::BiomeOverworldGenRulesData const&);
     // NOLINTEND
 

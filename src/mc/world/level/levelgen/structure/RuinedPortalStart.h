@@ -21,8 +21,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string_view getStructureName() const /*override*/;
-
-    virtual ~RuinedPortalStart() /*override*/ = default;
     // NOLINTEND
 
 public:

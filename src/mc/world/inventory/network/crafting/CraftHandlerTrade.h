@@ -13,7 +13,7 @@
 class ContainerScreenContext;
 class ItemStack;
 class ItemStackRequestActionCraftBase;
-class MerchantRecipe;
+class ItemStackRequestActionCraftRecipeAuto;
 struct FullContainerName;
 struct RecipeNetIdTag;
 // clang-format on
@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerTrade() /*override*/ = default;
+    virtual ~CraftHandlerTrade() /*override*/;
 
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
@@ -54,14 +54,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::tuple<::ItemStackNetResult, ::MerchantRecipe const*>
-    _getMerchantRecipeFromNetId(::RecipeNetId const& tradeRecipeNetId);
+    MCAPI ::ItemStackNetResult _handleAutoTrade2(::ItemStackRequestActionCraftRecipeAuto const& requestAction);
 
     MCAPI ::ItemStackNetResult _handleTrade1(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
 
     MCAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar numCrafts);
 
     MCAPI ::ItemStackNetResult _initTrade2Consumes();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LanWorldListFacet() /*override*/ = default;
+    virtual ~LanWorldListFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -56,6 +56,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::World::LanServerWorldList& lanServerWorldList);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -38,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LanWorld(::OreUI::LanWorld&&);
-
     MCAPI explicit LanWorld(::PingedCompatibleServer const& worldInfo);
 
     MCAPI ::OreUI::LanWorld& operator=(::OreUI::LanWorld&&);
@@ -50,8 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::LanWorld&&);
-
     MCAPI void* $ctor(::PingedCompatibleServer const& worldInfo);
     // NOLINTEND
 

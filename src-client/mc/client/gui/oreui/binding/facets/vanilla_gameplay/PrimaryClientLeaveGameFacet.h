@@ -32,6 +32,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                                     mRequestLeaveGame;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string_view)>>                   mRequestJoinGame;
     ::ll::TypedStorage<8, 64, ::std::function<::mce::ViewportInfo()>>                      mGetViewportInfo;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                                     mRequestQuit;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                              mFriendsWorldToJoin;
     // NOLINTEND
 
@@ -45,8 +46,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~PrimaryClientLeaveGameFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -59,6 +58,7 @@ public:
         ::std::function<::LocalPlayer const*()>                     getLocalPlayer,
         ::std::function<void()>                                     requestLeaveGame,
         ::std::function<void(::std::string_view)>                   requestJoinGame,
+        ::std::function<void()>                                     requestQuit,
         ::std::function<::mce::ViewportInfo()>                      getViewportInfo
     );
 
@@ -66,15 +66,13 @@ public:
 
     MCAPI void _finalizeLeaveGame();
 
+    MCAPI ::std::optional<::ScreenshotOptions> _tryCreateScreenshotOptions();
+
+    MCAPI void exitApplication();
+
     MCAPI void leaveGame();
 
     MCAPI void leaveGameThenJoinFriendsWorld(::std::string const& serverId);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const* const& NAME();
     // NOLINTEND
 
 public:
@@ -87,14 +85,9 @@ public:
         ::std::function<::LocalPlayer const*()>                     getLocalPlayer,
         ::std::function<void()>                                     requestLeaveGame,
         ::std::function<void(::std::string_view)>                   requestJoinGame,
+        ::std::function<void()>                                     requestQuit,
         ::std::function<::mce::ViewportInfo()>                      getViewportInfo
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

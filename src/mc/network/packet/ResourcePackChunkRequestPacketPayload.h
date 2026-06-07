@@ -10,19 +10,29 @@ public:
     ::ll::TypedStorage<4, 4, int>            mChunk;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ResourcePackChunkRequestPacketPayload(ResourcePackChunkRequestPacketPayload const&);
     ResourcePackChunkRequestPacketPayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ResourcePackChunkRequestPacketPayload& operator=(::ResourcePackChunkRequestPacketPayload&&);
-
-    MCFOLD ::ResourcePackChunkRequestPacketPayload& operator=(::ResourcePackChunkRequestPacketPayload const&);
+#ifdef LL_PLAT_C
+    MCAPI ResourcePackChunkRequestPacketPayload(::std::string const& name, int chunk);
+#endif
 
     MCAPI ~ResourcePackChunkRequestPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::std::string const& name, int chunk);
+#endif
     // NOLINTEND
 
 public:

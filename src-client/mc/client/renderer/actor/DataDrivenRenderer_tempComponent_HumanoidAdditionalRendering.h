@@ -87,8 +87,6 @@ public:
     ) /*override*/;
 
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering() /*override*/;
     // NOLINTEND
 
 public:
@@ -179,6 +177,8 @@ public:
 
     MCNAPI bool _shouldRenderOffHandItem(::Mob const& mob, ::ItemStack const& offhandItemInstance);
 
+    MCNAPI void prepareCarriedOffhandItem(::Mob& item, ::ItemStack const&);
+
     MCNAPI void transformToRightItemSpace(
         ::std::vector<::BoneOrientation>& boneOrientations,
         ::MatrixStack::MatrixStackRef&    worldMatrix,
@@ -214,12 +214,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

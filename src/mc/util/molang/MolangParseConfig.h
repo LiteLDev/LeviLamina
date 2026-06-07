@@ -25,12 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~MolangParseConfig();
-    // NOLINTEND
+    MCAPI ::MolangParseConfig& allowSpecificQuery(::std::string queryName);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI ::MolangParseConfig& disallowSideEffects(bool countRandomAsSideEffect);
     // NOLINTEND
 };

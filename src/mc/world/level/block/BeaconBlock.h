@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Experiments;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
@@ -20,27 +19,37 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BeaconBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BeaconBlock() /*override*/ = default;
 
     virtual bool isInteractiveBlock() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BeaconBlock(::std::string const& nameId, int id, bool permanentlyRendered);
+
+    MCFOLD bool isPermanentlyRendered() const;
+
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool permanentlyRendered);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isInteractiveBlock() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

@@ -15,26 +15,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HitboxComponent& operator=(HitboxComponent const&);
-    HitboxComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HitboxComponent(::HitboxComponent const& rhs);
-
 #ifdef LL_PLAT_C
-    MCAPI ::HitboxComponent& operator=(::HitboxComponent&&);
-
     MCAPI ~HitboxComponent();
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HitboxComponent const& rhs);
     // NOLINTEND
 
 public:

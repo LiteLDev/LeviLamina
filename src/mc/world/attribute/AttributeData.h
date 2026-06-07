@@ -29,14 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AttributeData& operator=(AttributeData const&);
-    AttributeData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributeData(::AttributeData const&);
+    MCAPI AttributeData();
 
     MCAPI explicit AttributeData(::AttributeInstance const& instance);
 
@@ -50,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributeData const&);
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::AttributeInstance const& instance);
     // NOLINTEND

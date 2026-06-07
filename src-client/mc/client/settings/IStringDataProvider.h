@@ -11,7 +11,7 @@ class IStringDataProvider : public ::Settings::IDataProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStringDataProvider() /*override*/;
+    virtual ~IStringDataProvider() /*override*/ = default;
 
     virtual ::std::string getValue() const = 0;
 
@@ -20,12 +20,6 @@ public:
     virtual void commitValue();
 
     virtual bool flush();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

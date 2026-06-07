@@ -115,6 +115,8 @@ public:
     MCAPI ::std::optional<::Social::FriendData>
     _getFriendData(::std::string const& xuid, ::std::string const& platformId) const;
 
+    MCAPI ::mce::UUID _getLocalPlayerUUID() const;
+
     MCAPI void _initResources();
 
     MCAPI bool _isPlatformInviteEnabled() const;
@@ -138,7 +140,7 @@ public:
 
     MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getPlayersInMyWorld() const;
 
-    MCAPI bool isInRealm() const;
+    MCFOLD bool isInRealm() const;
 
     MCFOLD bool isLocalPlayerHosting() const;
     // NOLINTEND

@@ -14,9 +14,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FurnaceScreenControllerProxy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FurnaceScreenControllerProxy() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit FurnaceScreenControllerProxy(::FurnaceScreenControllerProxyCallbacks callbacks);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FurnaceScreenControllerProxyCallbacks callbacks);
     // NOLINTEND
 
 public:

@@ -10,7 +10,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockActor;
+class BlockPos;
+class BlockSource;
 class CauldronBlockActor;
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -25,19 +29,38 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BaseScriptBlockLiquidContainerComponentV010& operator=(BaseScriptBlockLiquidContainerComponentV010 const&);
+    BaseScriptBlockLiquidContainerComponentV010();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void> setFillLevel(int level);
 
     virtual bool _isValid() const /*override*/;
-
-    virtual ~BaseScriptBlockLiquidContainerComponentV010() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CauldronBlockActor* _tryGetCauldronBlockActor();
+    MCAPI BaseScriptBlockLiquidContainerComponentV010(
+        ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&
+    );
+
+    MCAPI BaseScriptBlockLiquidContainerComponentV010(
+        ::BlockActor&                            blockActor,
+        ::BlockSource&                           region,
+        ::BlockPos                               position,
+        ::Scripting::WeakLifetimeScope const&    scope,
+        ::CauldronLiquidType                     type,
+        ::std::string const&                     id,
+        ::ScriptModuleMinecraft::ScriptFluidType fluidtype
+    );
+
+    MCAPI bool _isValidLiquid() const;
+
+    MCAPI ::CauldronBlockActor* _tryGetCauldronBlockActor();
 
     MCAPI ::Scripting::Result_deprecated<int> getFillLevel();
     // NOLINTEND
@@ -45,7 +68,26 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCFOLD static ::ScriptModuleMinecraft::ScriptFluidType
+    _getActualCauldronLiquidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
+
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&);
+
+    MCAPI void* $ctor(
+        ::BlockActor&                            blockActor,
+        ::BlockSource&                           region,
+        ::BlockPos                               position,
+        ::Scripting::WeakLifetimeScope const&    scope,
+        ::CauldronLiquidType                     type,
+        ::std::string const&                     id,
+        ::ScriptModuleMinecraft::ScriptFluidType fluidtype
+    );
     // NOLINTEND
 
 public:

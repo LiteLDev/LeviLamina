@@ -29,19 +29,13 @@ public:
 
 public:
     // prevent constructor by default
-    WidgetAddEntityComponentPayload& operator=(WidgetAddEntityComponentPayload const&);
-    WidgetAddEntityComponentPayload(WidgetAddEntityComponentPayload const&);
     WidgetAddEntityComponentPayload();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~WidgetAddEntityComponentPayload() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI WidgetAddEntityComponentPayload(::Editor::Network::WidgetAddEntityComponentPayload const&);
+
     MCNAPI WidgetAddEntityComponentPayload(
         ::mce::UUID const&             serviceId,
         ::mce::UUID const&             groupId,
@@ -59,6 +53,9 @@ public:
 
     MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload&
     operator=(::Editor::Network::WidgetAddEntityComponentPayload&&);
+
+    MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload&
+    operator=(::Editor::Network::WidgetAddEntityComponentPayload const&);
     // NOLINTEND
 
 public:
@@ -70,6 +67,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Network::WidgetAddEntityComponentPayload const&);
+
     MCNAPI void* $ctor(
         ::mce::UUID const&             serviceId,
         ::mce::UUID const&             groupId,
@@ -84,12 +83,6 @@ public:
         ::std::optional<::std::string> selectedAnimation,
         ::std::optional<::std::string> deselectedAnimation
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

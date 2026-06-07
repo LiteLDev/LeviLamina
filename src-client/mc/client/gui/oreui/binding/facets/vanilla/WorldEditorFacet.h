@@ -105,15 +105,9 @@ public:
 
     MCAPI void _applyRulesToLevelData();
 
-    MCAPI void _cleanupWorld();
-
     MCAPI void _initializeDataBindings(::World::WorldData const& worldData);
 
-    MCAPI ::OreUI::WorldEditorFacet::InitializationResult _initializeWorld(::World::WorldID const& id);
-
     MCAPI void _resetLevelData();
-
-    MCAPI void _uninitializeWorld();
 
     MCAPI void addWorld();
 
@@ -148,6 +142,12 @@ public:
     MCAPI bool worldHasBeenModified();
 
     MCAPI bool worldIsInitialized() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isFirstWorldCuratedSeedEnabled();
     // NOLINTEND
 
 public:

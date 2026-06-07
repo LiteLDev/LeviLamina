@@ -43,8 +43,6 @@ public:
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
     virtual void postExecute(::Actor&) const;
-
-    virtual ~SummonCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

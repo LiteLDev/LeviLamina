@@ -17,17 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AttribsComposition& operator=(AttribsComposition const&);
-    AttribsComposition(AttribsComposition const&);
-    AttribsComposition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_130::DataDrivenUI::AttribsComposition&
-    operator=(::SharedTypes::v1_21_130::DataDrivenUI::AttribsComposition&&);
-
     MCAPI ~AttribsComposition();
     // NOLINTEND
 

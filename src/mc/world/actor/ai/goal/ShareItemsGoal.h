@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ class Path;
 struct MobDescriptor;
 // clang-format on
 
-class ShareItemsGoal : public ::Goal {
+class ShareItemsGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,21 +48,33 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~ShareItemsGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ShareItemsGoal(
+        ::Mob&                                mob,
+        ::std::vector<::MobDescriptor> const& mobFilters,
+        float                                 speedModifier,
+        int                                   searchRange,
+        float                                 goalRadius
+    );
+
     MCAPI ::std::pair<int, ::ItemStack>
     selectEntityToShareWith(::std::vector<::std::pair<int, ::ItemStack>> const& shareableItems);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::Mob&                                mob,
+        ::std::vector<::MobDescriptor> const& mobFilters,
+        float                                 speedModifier,
+        int                                   searchRange,
+        float                                 goalRadius
+    );
     // NOLINTEND
 
 public:

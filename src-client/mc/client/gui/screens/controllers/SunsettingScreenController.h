@@ -36,14 +36,16 @@ public:
     virtual void onOpen() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
-
-    virtual ~SunsettingScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI SunsettingScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::std::string& title);
+
+    MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

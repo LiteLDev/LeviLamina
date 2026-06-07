@@ -9,7 +9,10 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class Block;
+class BlockPos;
 class BlockSource;
+class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -33,20 +36,40 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-
-    virtual ~BlockEntityFallOnEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockEntityFallOnEvent(::BlockSource& region, ::BlockPos pos, ::Actor& entity, float fallDistance);
+
+    MCAPI void callFallOnFor(::Block const& block);
+
+    MCAPI void cancelOutFallDistance();
+
+    MCAPI void configureRenderParamsForTrigger(::RenderParams& params) const;
+
+    MCFOLD ::Actor const& getActor() const;
+
+    MCFOLD float getFallDistance() const;
+
     MCAPI void handleActorFallDamage(float distance, float multiplier, ::ActorDamageSource source);
+
+    MCFOLD bool isClientSide() const;
+
+    MCAPI void postFallOnGameEvent();
+
+    MCAPI void scaleFallDistance(float scalar);
+
+    MCAPI void setActorFallDistance(float val);
+
+    MCAPI void spawnDustParticles(uint particleCount) const;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::BlockSource& region, ::BlockPos pos, ::Actor& entity, float fallDistance);
     // NOLINTEND
 
 public:

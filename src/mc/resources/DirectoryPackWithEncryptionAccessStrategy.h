@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/Result.h"
 #include "mc/resources/PackAccessAssetGenerationResult.h"
 #include "mc/resources/PackAccessStrategy.h"
 #include "mc/resources/PackAccessStrategyType.h"
@@ -15,7 +16,9 @@ class IContentKeyProvider;
 class IFileAccess;
 class IPackIOProvider;
 class ResourceLocation;
+struct StreamableAssetSource;
 namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class DirectoryPackWithEncryptionAccessStrategy : public ::PackAccessStrategy {
@@ -75,6 +78,9 @@ public:
     virtual void unload() /*override*/;
 
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
+
+    virtual ::Bedrock::Result<::StreamableAssetSource>
+    getStreamableSource(::Core::Path const&, ::std::optional<::Core::PathView>) const /*override*/;
     // NOLINTEND
 
 public:
@@ -140,6 +146,9 @@ public:
     MCNAPI void $unload();
 
     MCNAPI ::ContentIdentity $readContentIdentity() const;
+
+    MCNAPI ::Bedrock::Result<::StreamableAssetSource>
+    $getStreamableSource(::Core::Path const&, ::std::optional<::Core::PathView>) const;
 
 
     // NOLINTEND

@@ -37,16 +37,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LocalWorldData& operator=(LocalWorldData const&);
-    LocalWorldData(LocalWorldData const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI LocalWorldData();
-
-    MCAPI LocalWorldData(::OreUI::LocalWorldData&&);
 
     MCAPI ~LocalWorldData();
     // NOLINTEND
@@ -55,8 +48,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::OreUI::LocalWorldData&&);
     // NOLINTEND
 
 public:

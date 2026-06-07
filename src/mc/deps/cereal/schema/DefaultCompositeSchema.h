@@ -18,12 +18,6 @@ namespace cereal::internal {
 
 class DefaultCompositeSchema : public ::cereal::internal::BasicSchema {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DefaultCompositeSchema() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void constraintDescriptionIfAny(

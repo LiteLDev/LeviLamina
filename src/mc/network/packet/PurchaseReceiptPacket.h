@@ -59,8 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    // NOLINTEND
 
-    virtual ~PurchaseReceiptPacket() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PurchaseReceiptPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit PurchaseReceiptPacket(::PurchaseReceiptPacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::PurchaseReceiptPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

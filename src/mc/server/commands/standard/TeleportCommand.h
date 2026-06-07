@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandPositionFloat.h"
 #include "mc/server/commands/CommandSelector.h"
@@ -18,13 +17,21 @@ class CommandArea;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Dimension;
 class TeleportTarget;
 class Vec3;
 namespace RotationCommandUtils { class RotationData; }
 // clang-format on
 
 class TeleportCommand : public ::Command {
+public:
+    // TeleportCommand inner types declare
+    // clang-format off
+    struct mApplyTeleport;
+    // clang-format on
+
+    // TeleportCommand inner types define
+    struct mApplyTeleport {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,8 +65,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~TeleportCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

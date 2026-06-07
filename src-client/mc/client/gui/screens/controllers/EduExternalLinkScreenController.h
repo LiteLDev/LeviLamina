@@ -44,14 +44,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
-
-    virtual ~EduExternalLinkScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EduExternalLinkScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+
+    MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
 
     MCAPI void _updateResourceUriState();
     // NOLINTEND

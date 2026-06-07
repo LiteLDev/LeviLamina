@@ -23,11 +23,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrimaryUserAppearanceProgressHandler() /*override*/ = default;
+    virtual ~PrimaryUserAppearanceProgressHandler() /*override*/;
 
-    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void tick(::MinecraftScreenModel&) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -39,11 +39,29 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PrimaryUserAppearanceProgressHandler();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCAPI void $onStart(::MinecraftScreenModel&);
 
-    MCFOLD void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $tick(::MinecraftScreenModel&);
 
     MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 

@@ -14,10 +14,12 @@ class ComponentItem;
 class HashedString;
 class ScriptDeferredFlushTracker;
 struct ItemCustomComponentData;
+namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 namespace ScriptModuleMinecraft::Detail { struct BeforeEventExecutor; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -62,8 +64,6 @@ public:
     virtual void onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
     virtual void onPostFlushAfterEvents() /*override*/;
-
-    virtual ~ScriptItemCustomComponentSignalCollection() /*override*/;
     // NOLINTEND
 
 public:
@@ -82,18 +82,17 @@ public:
     _getEventMetadata();
 
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+
+    MCAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

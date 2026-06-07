@@ -41,8 +41,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~EffectCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,9 +49,9 @@ public:
     MCAPI void
     _add(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::EffectDuration duration) const;
 
-#ifdef LL_PLAT_C
     MCAPI bool _checkIsValidAmplifierRange(::CommandOutput& output) const;
-#endif
+
+    MCAPI bool _checkIsValidDuration(::CommandOutput& output) const;
 
     MCAPI void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output) const;
 

@@ -32,15 +32,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view) const /*override*/;
+#else // LL_PLAT_C
     virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view sessionId) const
         /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const&) /*override*/;
+#else // LL_PLAT_C
     virtual void
     notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void notifyDoneWithSession(::std::string_view) /*override*/;
+#else // LL_PLAT_C
     virtual void notifyDoneWithSession(::std::string_view sessionId) /*override*/;
+#endif
 
-    virtual ~CrashHandlerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

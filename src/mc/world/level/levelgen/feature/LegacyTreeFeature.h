@@ -55,8 +55,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-
-    virtual ~LegacyTreeFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

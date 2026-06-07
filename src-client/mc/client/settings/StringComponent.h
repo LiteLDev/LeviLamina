@@ -56,7 +56,19 @@ public:
         ::std::optional<int>                               maxLength
     );
 
+    MCAPI void commitValue();
+
+    MCAPI bool flush();
+
+    MCAPI ::std::optional<::std::string> getFallbackValue() const;
+
+    MCAPI ::std::optional<int> getMaxLength() const;
+
     MCAPI ::std::optional<::std::string> getPlaceholder() const;
+
+    MCFOLD ::std::string getValue() const;
+
+    MCAPI bool isFormatValid() const;
 
     MCAPI bool updateValue(::std::string const& value);
     // NOLINTEND

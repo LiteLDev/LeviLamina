@@ -40,8 +40,6 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     virtual void onRemoved(::BlockSource& region) /*override*/;
-
-    virtual ~SculkSensorBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -55,6 +53,8 @@ public:
         uint                                              listenerRange,
         ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
     );
+
+    MCAPI int getLatestReceivedVibrationFrequency() const;
     // NOLINTEND
 
 public:
@@ -68,12 +68,6 @@ public:
         uint                                              listenerRange,
         ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

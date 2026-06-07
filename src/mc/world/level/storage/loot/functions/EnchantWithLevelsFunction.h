@@ -30,17 +30,25 @@ public:
     // NOLINTBEGIN
     virtual ~EnchantWithLevelsFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
     virtual int
     apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
 
     virtual int
     apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::RandomValueBounds getLevels() const;
+
+    MCFOLD bool getTreasure() const;
     // NOLINTEND
 
 public:
@@ -53,11 +61,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
     MCFOLD int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
     MCFOLD int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 

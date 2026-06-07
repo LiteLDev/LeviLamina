@@ -17,8 +17,6 @@ public:
     virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const /*override*/;
 
     virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
-
-    virtual ~PackDiscoveryError() /*override*/;
     // NOLINTEND
 
 public:
@@ -31,12 +29,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

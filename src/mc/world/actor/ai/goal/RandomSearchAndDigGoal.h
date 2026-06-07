@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/util/ExpiringTick.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
@@ -17,7 +17,7 @@ class Mob;
 class Path;
 // clang-format on
 
-class RandomSearchAndDigGoal : public ::Goal {
+class RandomSearchAndDigGoal : public ::BaseGoal {
 public:
     // RandomSearchAndDigGoal inner types define
     enum class CanUseOutcome : int {
@@ -90,8 +90,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~RandomSearchAndDigGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -109,19 +107,13 @@ public:
 
     MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
 
-    MCAPI void _triggerEvent(::ActorDefinitionTrigger const& eventTrigger) const;
+    MCAPI void _resetCooldownEndTick();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

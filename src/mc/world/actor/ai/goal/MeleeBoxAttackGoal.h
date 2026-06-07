@@ -19,9 +19,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MeleeBoxAttackGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MeleeBoxAttackGoal() /*override*/ = default;
+    virtual ~MeleeBoxAttackGoal() /*override*/;
 
     virtual void tick() /*override*/;
 
@@ -29,9 +33,27 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MeleeBoxAttackGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -32,13 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SettingsScreenCapabilities() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~SettingsScreenCapabilities() /*override*/ = default;
     // NOLINTEND
 
 public:

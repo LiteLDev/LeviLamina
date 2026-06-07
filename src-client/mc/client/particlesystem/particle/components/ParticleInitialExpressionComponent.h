@@ -38,8 +38,6 @@ public:
     virtual void update(::RenderParams& renderParams) /*override*/;
 
     virtual void renderPreparation(::RenderParams& renderParams) /*override*/;
-
-    virtual ~ParticleInitialExpressionComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

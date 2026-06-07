@@ -70,16 +70,12 @@ public:
     virtual ::std::optional<::MolangScriptArg> getValueIfConstant() const /*override*/;
 
     virtual ::Molang::details::SourceTree* getSource() /*override*/;
-
-    virtual ~SourceExpression() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit SourceExpression(::Molang::details::SourceTree node);
-#endif
 
     MCNAPI SourceExpression(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND
@@ -87,9 +83,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Molang::details::SourceTree node);
-#endif
 
     MCNAPI void* $ctor(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND

@@ -11,17 +11,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SettingsCommandPacketPayload(SettingsCommandPacketPayload const&);
-    SettingsCommandPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SettingsCommandPacketPayload& operator=(::SettingsCommandPacketPayload&&);
-
-    MCFOLD ::SettingsCommandPacketPayload& operator=(::SettingsCommandPacketPayload const&);
-
     MCAPI ~SettingsCommandPacketPayload();
     // NOLINTEND
 

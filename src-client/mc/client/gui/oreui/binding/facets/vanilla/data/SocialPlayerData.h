@@ -49,9 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SocialPlayerData(::OreUI::SocialPlayerData const&);
-
     MCAPI SocialPlayerData(::OreUI::SocialPlayerData&&);
+
+    MCAPI SocialPlayerData(::OreUI::SocialPlayerData const& data);
 
     MCAPI ~SocialPlayerData();
     // NOLINTEND
@@ -59,9 +59,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::SocialPlayerData const&);
-
     MCAPI void* $ctor(::OreUI::SocialPlayerData&&);
+
+    MCAPI void* $ctor(::OreUI::SocialPlayerData const& data);
     // NOLINTEND
 
 public:

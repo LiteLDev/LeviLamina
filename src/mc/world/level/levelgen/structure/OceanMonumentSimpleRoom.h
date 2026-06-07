@@ -11,6 +11,7 @@
 class BlockSource;
 class BoundingBox;
 class Random;
+class RoomDefinition;
 // clang-format on
 
 class OceanMonumentSimpleRoom : public ::OceanMonumentPiece {
@@ -21,13 +22,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OceanMonumentSimpleRoom();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+    // NOLINTEND
 
-    virtual ~OceanMonumentSimpleRoom() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI OceanMonumentSimpleRoom(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);
     // NOLINTEND
 
 public:

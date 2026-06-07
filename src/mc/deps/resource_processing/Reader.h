@@ -21,8 +21,6 @@ public:
     virtual bool isValid() const = 0;
 
     virtual void forEachIn(::brstd::function_ref<void(::std::string_view, ::gsl::span<uchar const>)>) const = 0;
-
-    virtual ~Reader() /*override*/ = default;
     // NOLINTEND
 
 public:

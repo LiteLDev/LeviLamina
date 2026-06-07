@@ -32,21 +32,6 @@ public:
         DequeuedEntry& operator=(DequeuedEntry const&);
         DequeuedEntry(DequeuedEntry const&);
         DequeuedEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&
-        operator=(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&&);
-
-        MCNAPI ~DequeuedEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct QueueEntry {
@@ -63,18 +48,6 @@ public:
         QueueEntry& operator=(QueueEntry const&);
         QueueEntry(QueueEntry const&);
         QueueEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~QueueEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -88,6 +61,7 @@ public:
     // prevent constructor by default
     PriorityDeferredSubscriptionHub& operator=(PriorityDeferredSubscriptionHub const&);
     PriorityDeferredSubscriptionHub(PriorityDeferredSubscriptionHub const&);
+    PriorityDeferredSubscriptionHub();
 
 public:
     // virtual functions
@@ -105,20 +79,6 @@ public:
     ) /*override*/;
 
     virtual void _runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
-
-    virtual ~PriorityDeferredSubscriptionHub() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PriorityDeferredSubscriptionHub();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -19,12 +19,6 @@ public:
     ColorGraderConfigSessionStorage();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ColorGraderConfigSessionStorage() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

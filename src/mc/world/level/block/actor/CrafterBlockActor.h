@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class CraftingContainer;
@@ -36,22 +37,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::CraftingContainer, ::std::vector<::ItemInstance>>>>
             mCachedValues;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        MCAPI ~LruCache();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        MCAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -63,11 +48,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CrafterBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string getName() const /*override*/;
 
-    virtual bool canPushInItem(int slot, int, ::ItemStack const& item) const /*override*/;
+    virtual bool canPushInItem(int slot, int item, ::ItemStack const&) const /*override*/;
 
     virtual bool isSlotDisabled(int slot) const /*override*/;
 
@@ -77,17 +66,29 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~CrafterBlockActor() /*override*/ = default;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CrafterBlockActor(::BlockPos pos);
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::bitset<9> const& getDisabledSlots() const;
+#endif
+
+    MCAPI int getDisabledSlotsCount() const;
+
+    MCAPI void onDisabledSlotToggleRequested(::BlockSource& region, int slot, bool shouldDisable);
+
+    MCAPI void setToCraftingVisualState(::BlockSource& region);
+
     MCAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
+
+    MCAPI void unsetCraftingVisualState(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -100,11 +101,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos pos);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string $getName() const;
 
-    MCAPI bool $canPushInItem(int slot, int, ::ItemStack const& item) const;
+    MCAPI bool $canPushInItem(int slot, int item, ::ItemStack const&) const;
 
     MCAPI bool $isSlotDisabled(int slot) const;
 
@@ -114,9 +121,9 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
 
 
     // NOLINTEND

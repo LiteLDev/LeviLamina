@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mRouterToken;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<uint64>>        mLength;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mAction;
-    ::ll::TypedStorage<8, 824, ::OreUI::ExposedRouterLocation>   mLocation;
+    ::ll::TypedStorage<8, 840, ::OreUI::ExposedRouterLocation>   mLocation;
     ::ll::TypedStorage<
         8,
         120,
@@ -36,12 +36,6 @@ public:
 public:
     // prevent constructor by default
     RouterQuery();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RouterQuery() /*override*/ = default;
-    // NOLINTEND
 
 public:
     // member functions

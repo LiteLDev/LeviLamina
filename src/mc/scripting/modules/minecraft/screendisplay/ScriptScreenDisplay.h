@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptScreenDisplay& operator=(ScriptScreenDisplay const&);
-    ScriptScreenDisplay(ScriptScreenDisplay const&);
-    ScriptScreenDisplay();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> _getJsonString(
@@ -55,8 +49,6 @@ public:
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isForcedHidden(::HudElement hudElement);
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptScreenDisplay& operator=(::ScriptModuleMinecraft::ScriptScreenDisplay&&);
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> resetHudElements();
 

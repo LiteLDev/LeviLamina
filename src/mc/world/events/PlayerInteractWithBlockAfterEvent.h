@@ -26,22 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerInteractWithBlockAfterEvent& operator=(PlayerInteractWithBlockAfterEvent const&);
-    PlayerInteractWithBlockAfterEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerInteractWithBlockAfterEvent(::PlayerInteractWithBlockAfterEvent const&);
-
     MCAPI ~PlayerInteractWithBlockAfterEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerInteractWithBlockAfterEvent const&);
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/screens/ConstCompositeSceneStackView.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/function_ref.h"
@@ -41,6 +42,31 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& mainStack,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& clientInstanceStack
     );
+
+    MCAPI void forEachAlwaysAcceptInputScreen(
+        ::brstd::function_ref<void(::AbstractScene&)> callback,
+        ::AbstractScene const*                        ignoreScreen
+    );
+
+    MCAPI void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback);
+
+    MCAPI void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
+
+    MCAPI void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
+
+    MCAPI void forEachVisibleScreen(
+        ::brstd::function_ref<void(::AbstractScene&)> callback,
+        bool                                          tickedLastFrame,
+        bool                                          splitscreenRenderBypassThisFrame
+    );
+
+    MCAPI ::AbstractScene* getActiveScene();
+
+    MCAPI bool hasScheduledScreens() const;
+
+    MCAPI void onGameEventNotification(::ui::GameEventNotification notification);
+
+    MCAPI bool update();
 
     MCAPI ~CompositeSceneStackView();
     // NOLINTEND

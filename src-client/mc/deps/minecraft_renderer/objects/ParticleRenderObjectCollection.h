@@ -21,23 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleRenderObjectCollection& operator=(ParticleRenderObjectCollection const&);
-    ParticleRenderObjectCollection(ParticleRenderObjectCollection const&);
-    ParticleRenderObjectCollection();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleRenderObjectCollection(::ParticleRenderObjectCollection&&);
-
     MCAPI ~ParticleRenderObjectCollection();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ParticleRenderObjectCollection&&);
     // NOLINTEND
 
 public:

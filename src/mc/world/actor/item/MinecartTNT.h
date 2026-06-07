@@ -11,11 +11,18 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
 class Block;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class MinecartTNT : public ::Minecart {
+public:
+    // prevent constructor by default
+    MinecartTNT();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,18 +36,35 @@ public:
 
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
-    virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
 
     virtual float causeFallDamageToActor(float distance, float, ::ActorDamageSource) /*override*/;
-
-    virtual ~MinecartTNT() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MinecartTNT(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI int getFuse();
+#endif
+
     MCAPI void primeFuse(::SharedTypes::Legacy::ActorDamageCause cause);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -56,7 +80,7 @@ public:
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
 
     MCAPI float $causeFallDamageToActor(float distance, float, ::ActorDamageSource);
 

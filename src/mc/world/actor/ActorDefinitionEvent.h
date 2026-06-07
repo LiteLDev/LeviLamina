@@ -31,12 +31,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorDefinitionEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorDefinitionEvent();
+
     MCAPI ActorDefinitionEvent(::ActorDefinitionEvent const&);
 
     MCAPI void _evaluateGroups(
@@ -47,12 +45,16 @@ public:
 
     MCAPI ::ActorDefinitionEvent& operator=(::ActorDefinitionEvent const&);
 
+    MCAPI void setName(::std::string name);
+
     MCAPI ~ActorDefinitionEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::ActorDefinitionEvent const&);
     // NOLINTEND
 

@@ -88,6 +88,8 @@ public:
 
     MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
 
+    MCAPI void _openWorldSettings(::std::string const& levelId);
+
     MCAPI void _openWorldSettings(::LocalWorldInfo* worldInfo);
 
     MCAPI void _registerBindings();

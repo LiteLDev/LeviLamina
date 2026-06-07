@@ -2,15 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
 class ChunkPos;
 class ChunkViewSource;
-class Dimension;
 class LevelChunk;
 class Random;
 struct Bounds;
@@ -21,7 +17,7 @@ class ITickingAreaView {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITickingAreaView();
+    virtual ~ITickingAreaView() = default;
 
     virtual void init(::Bounds const& bounds, bool isCircle) = 0;
 
@@ -31,7 +27,7 @@ public:
 
     virtual ::DimensionType getDimensionId() const = 0;
 
-    virtual ::Bounds const& getBounds() const = 0;
+    virtual ::Bounds const getBoundsCopy() const = 0;
 
     virtual bool isCircle() const = 0;
 
@@ -49,20 +45,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

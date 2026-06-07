@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/nether_net/ESendType.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/INetherNetTransportInterfaceCallbacks.h"
 #include "mc/deps/nether_net/NetworkID.h"
@@ -19,8 +20,13 @@ class NetworkIdentifier;
 class WebRTCNetworkPeer;
 struct ConnectionDefinition;
 namespace Bedrock::Http { class LibHttpClientInstance; }
+namespace Bedrock::PubSub { class Subscription; }
 namespace Json { class Value; }
 namespace NetherNet { class INetherNetTransportInterface; }
+namespace NetherNet { class ISignalingInterface; }
+namespace NetherNet { struct ILanEventHandler; }
+namespace NetherNet { struct SessionState; }
+namespace NetherNet { struct StunRelayServer; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -49,18 +55,6 @@ public:
         DisconnectEvent& operator=(DisconnectEvent const&);
         DisconnectEvent(DisconnectEvent const&);
         DisconnectEvent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~DisconnectEvent();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct NewIncomingConnectionEvent {
@@ -208,7 +202,7 @@ public:
 
     virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize) /*override*/;
 
-    virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags) /*override*/;
+    virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID flags, uint*) /*override*/;
     // NOLINTEND
 
 public:
@@ -225,14 +219,54 @@ public:
     MCAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(
         ::NetherNet::NetworkID const& remoteId,
         uint64                        sessionId,
+        bool                          isLan,
         ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&
     );
 
-    MCAPI void _queueIncomingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
+    MCAPI void _queueIncomingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId, bool isLan);
 
 #ifdef LL_PLAT_C
-    MCAPI void _queueOutgoingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
+    MCAPI void _queueOutgoingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId, bool isLan);
 #endif
+
+    MCFOLD ::NetherNet::NetworkID const& getNetworkID() const;
+
+    MCAPI bool getSessionState(
+        ::NetherNet::NetworkID     remoteId,
+        uint64                     sessionId,
+        ::NetherNet::SessionState* connectionState
+    ) const;
+
+    MCAPI bool isPacketAvailable(::NetherNet::NetworkID remoteId, uint64 sessionId, uint* pcbMessageSize) const;
+
+    MCAPI bool readPacket(
+        ::NetherNet::NetworkID remoteId,
+        uint64                 sessionId,
+        void*                  pubDest,
+        uint                   cbDest,
+        uint*                  pcbMessageSize
+    ) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::PubSub::Subscription registerLanEventHandler(::NetherNet::ILanEventHandler* handler) const;
+#endif
+
+    MCAPI bool sendPacket(
+        ::NetherNet::NetworkID remoteId,
+        uint64                 sessionId,
+        ::std::string const&   data,
+        ::NetherNet::ESendType eSendType
+    ) const;
+
+    MCAPI void setBroadcastRequestCallback(::std::function<bool(void*, int*)>&& broadcastRequestCallback);
+
+    MCAPI void setBroadcastResponseCallback(
+        ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>&& broadcastResponseCallback
+    );
+
+    MCAPI void setRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config) const;
+
+    MCAPI void setSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface>&& channel) const;
     // NOLINTEND
 
 public:
@@ -294,7 +328,7 @@ public:
 
     MCAPI bool $OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize);
 
-    MCAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags);
+    MCAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID flags, uint*);
 
 
     // NOLINTEND

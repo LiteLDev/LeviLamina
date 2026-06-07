@@ -59,6 +59,14 @@ public:
         PlacementRecord& operator=(PlacementRecord const&);
         PlacementRecord(PlacementRecord const&);
         PlacementRecord();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::br::spawn::SpawnPlacements::PlacementRecord& finalizeMob(::br::spawn::FinalizeMobToken token);
+
+        MCAPI ::br::spawn::SpawnPlacements::PlacementRecord& obstruction(::br::spawn::ObstructionPredicateToken token);
+        // NOLINTEND
     };
 
 public:
@@ -118,6 +126,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SpawnPlacements();
+
+    MCAPI void clearReloadablePredicates();
+
+    MCAPI ::br::spawn::EntityPredicateToken findEntityPredicate(::std::string_view key) const;
+
+    MCAPI ::br::spawn::HeightmapToken findHeightmap(::std::string_view key) const;
+
+    MCAPI ::br::spawn::ObstructionPredicateToken findObstruction(::std::string_view key) const;
+
+    MCAPI ::br::spawn::PlacementTypeToken findPlacementType(::std::string_view key) const;
 
     MCAPI bool isEntityPredicateKeyRecordable(::std::string_view key) const;
 

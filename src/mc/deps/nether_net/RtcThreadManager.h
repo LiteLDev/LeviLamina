@@ -6,7 +6,6 @@
 // clang-format off
 struct ThreadConfiguration;
 namespace rtc { class SocketServer; }
-namespace rtc { class Thread; }
 // clang-format on
 
 namespace NetherNet {
@@ -28,15 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::rtc::Thread* GetRtcThread() const;
-
     MCNAPI void Initialize(
         char const*                              threadName,
         ::ThreadConfiguration const&             threadConfiguration,
         ::std::unique_ptr<::rtc::SocketServer>&& socketServer
     );
 
-    MCNAPI void SetRtcThread(::std::shared_ptr<::rtc::Thread> rtcThread);
+    MCNAPI bool IsOnThread() const;
 
     MCNAPI void Shutdown();
     // NOLINTEND

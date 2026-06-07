@@ -13,6 +13,7 @@
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
+namespace Scripting { class Release; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -21,25 +22,19 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockMapColorComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockMapColorComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> color() const;
 
     MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptTintMethod> tintMethod() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptRGBA tintedColor() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCFOLD static ::std::optional<::Scripting::Release> overrideEnumVersion();
 
     MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockMapColorComponent>>

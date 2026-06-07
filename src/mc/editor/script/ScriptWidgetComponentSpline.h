@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentSpline() /*override*/ = default;
+    virtual ~ScriptWidgetComponentSpline() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
@@ -86,8 +86,6 @@ public:
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _setSplineType(::Scripting::RenderHelper::SplineType t);
 
-    MCNAPI void _setupSplineHelper();
-
     MCNAPI ::Scripting::Result<
         ::Scripting::RenderHelper::SplineType,
         ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
@@ -112,6 +110,12 @@ public:
         ::Editor::ScriptModule::ScriptWidgetService&                                parentService,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentSplineOptions> options
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

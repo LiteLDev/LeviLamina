@@ -2,16 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/editor/datastore/DeprecatedEventFactory.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Editor::DataStore { struct PayloadDescription; }
+namespace Json { class Value; }
 // clang-format on
 
 namespace Editor::DataStore {
 // functions
 // NOLINTBEGIN
-MCNAPI bool
-operator==(::Editor::DataStore::PayloadDescription const& __P0, ::Editor::DataStore::PayloadDescription const& __P1);
+MCNAPI ::Json::Value _createClientActionEvent(
+    ::Editor::DataStore::DeprecatedEventFactory::ClientActionEventType type,
+    ::Json::Value const&                                               payload
+);
+
+MCNAPI ::Json::Value
+_createServerUXEvent(::Editor::DataStore::DeprecatedEventFactory::ServerUXEventType type, ::Json::Value const& payload);
+
+MCNAPI bool operator==(::Editor::DataStore::PayloadDescription const&, ::Editor::DataStore::PayloadDescription const&);
 // NOLINTEND
 
 } // namespace Editor::DataStore

@@ -77,7 +77,7 @@ public:
 
     virtual void saveBlockData(::CompoundTag& tag, ::BlockSource& region) const;
 
-    virtual void loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper);
+    virtual void loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
 
     virtual void onCustomTagLoadDone(::BlockSource& region);
 
@@ -101,7 +101,7 @@ public:
 
     virtual void triggerEvent(int b0, int b1);
 
-    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
+    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
     virtual float getShadowRadius(::BlockSource& region) const;
 
@@ -169,17 +169,73 @@ public:
 
     MCAPI void _loadCustomNameFromUpdatePacket(::CompoundTag const& data);
 
+    MCAPI void _saveCustomNameToUpdatePacket(::CompoundTag& tag) const;
+
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Safety::RedactableString getDisplayName() const;
+    MCAPI bool canRenderCustomName() const;
+
+    MCAPI float distanceToSqr(::Vec3 const& to) const;
 #endif
 
+    MCFOLD ::AABB const& getAABB() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> getClientUpdatePacket(::BlockSource& region);
+
+    MCAPI ::Bedrock::Safety::RedactableString getDisplayName() const;
+
+    MCFOLD ::ActorTerrainInterlockData& getEntityTerrainInterlockData();
+
+    MCAPI ::std::string getFilteredNameTag() const;
+#endif
+
+    MCFOLD ::BlockPos const& getPosition() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::BlockActorRendererId getRendererId() const;
+#endif
+
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> getServerUpdatePacket(::BlockSource& region);
+
+    MCFOLD ::BlockActorType getType() const;
+
+    MCAPI bool hasCustomName() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool hasFilteredNameTag() const;
+#endif
+
+    MCAPI bool isChanged() const;
+
+    MCAPI bool isCustomNameSaved() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool isInWorld() const;
+#endif
+
+    MCAPI bool isMovable() const;
+
+    MCFOLD bool isType(::BlockActorType type) const;
+
+    MCFOLD void moveTo(::BlockPos const& newPos);
+
     MCAPI bool onUpdatePacket(::CompoundTag const& data, ::BlockSource& region, ::Player const* fromPlayer);
+
+    MCAPI void setCanRenderCustomName(bool value);
+
+    MCAPI void setChanged();
+
+    MCAPI void setCustomNameSaved(bool saveCustomName);
+
+    MCAPI void setMovable(bool canMove);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::BlockActorType, ::std::string> const& _getClassIdMap();
+
+    MCFOLD static bool isType(::BlockActor& te, ::BlockActorType type);
 
     MCAPI static ::std::shared_ptr<::BlockActor>
     loadStatic(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
@@ -208,7 +264,7 @@ public:
 
     MCFOLD void $saveBlockData(::CompoundTag& tag, ::BlockSource& region) const;
 
-    MCFOLD void $loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper);
+    MCFOLD void $loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
 
     MCFOLD void $onCustomTagLoadDone(::BlockSource& region);
 
@@ -232,7 +288,7 @@ public:
 
     MCFOLD void $triggerEvent(int b0, int b1);
 
-    MCFOLD void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
+    MCFOLD void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
     MCFOLD float $getShadowRadius(::BlockSource& region) const;
 

@@ -34,13 +34,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) /*override*/;
-
-    virtual ~RoutesJsonMergeStrategy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _addRoutes(::OreUI::RouteData const& newRouteData);
+
     MCAPI void _removeRoutes(::OreUI::RouteData const& newRouteData);
     // NOLINTEND
 

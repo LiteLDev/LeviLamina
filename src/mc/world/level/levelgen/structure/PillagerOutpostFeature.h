@@ -60,14 +60,12 @@ public:
     virtual bool shouldPostProcessMobs() const /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension& generator,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& lc,
+        ::Dimension&         generator,
+        ::BiomeSource const& random,
+        ::Random&            lc,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
-
-    virtual ~PillagerOutpostFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -111,10 +109,10 @@ public:
     MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension& generator,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& lc,
+        ::Dimension&         generator,
+        ::BiomeSource const& random,
+        ::Random&            lc,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     );
 

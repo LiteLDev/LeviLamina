@@ -17,7 +17,7 @@ class IEditorPlayer : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEditorPlayer() /*override*/;
+    virtual ~IEditorPlayer() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() = 0;
 
@@ -30,12 +30,6 @@ public:
     virtual bool isClientSide() const = 0;
 
     virtual void _onTick() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -34,6 +34,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NautilusArmorItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isBodyArmor() const /*override*/;
@@ -46,14 +50,26 @@ public:
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~NautilusArmorItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI NautilusArmorItem(::std::string const& name, int id, ::NautilusArmorItem::Tier tier);
+
+    MCFOLD ::NautilusArmorItem::Tier getTier() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static bool _tryEquipNautilusArmor(::Actor* actor, ::ItemStack const& nautilusArmor);
+    MCAPI static bool _tryEquipNautilusArmor(::Actor* actor, ::ItemStack const& nautilusArmor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::NautilusArmorItem::Tier tier);
     // NOLINTEND
 
 public:
@@ -67,7 +83,7 @@ public:
 
     MCAPI float $getKnockbackResistanceValue() const;
 
-    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
 
     // NOLINTEND

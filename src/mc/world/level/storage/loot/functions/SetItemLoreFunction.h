@@ -35,6 +35,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::std::vector<::std::string> const& getLore() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>

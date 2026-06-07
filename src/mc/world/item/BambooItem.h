@@ -16,6 +16,10 @@ class Vec3;
 
 class BambooItem : public ::BlockItem {
 public:
+    // prevent constructor by default
+    BambooItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
@@ -23,8 +27,18 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~BambooItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BambooItem(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

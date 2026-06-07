@@ -31,14 +31,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid() const /*override*/;
-
-    virtual ~PrivateKeyManager() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System system);
+
+#ifdef LL_PLAT_S
+    MCNAPI PrivateKeyManager(
+        ::std::string const&         publicKey,
+        ::std::string const&         privateKey,
+        ::Crypto::Asymmetric::System system
+    );
+#endif
 
     MCNAPI ::std::string computeSecret(::KeyManager const& peer) const;
 
@@ -51,12 +57,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Crypto::Asymmetric::System system);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_S
+    MCNAPI void*
+    $ctor(::std::string const& publicKey, ::std::string const& privateKey, ::Crypto::Asymmetric::System system);
+#endif
     // NOLINTEND
 
 public:

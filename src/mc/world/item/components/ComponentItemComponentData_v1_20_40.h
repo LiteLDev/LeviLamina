@@ -46,7 +46,7 @@ public:
     ::ll::TypedStorage<8, 80, ::std::optional<::ChargeableItemComponentLegacyFactoryData>>    chargeableItemComponent;
     ::ll::TypedStorage<8, 80, ::std::optional<::CooldownItemComponent>>                       cooldownItemComponent;
     ::ll::TypedStorage<8, 40, ::std::optional<::DurabilityItemComponent>>                     durabilityItemComponent;
-    ::ll::TypedStorage<8, 104, ::std::optional<::DiggerItemComponentLegacyFactoryData>>       diggerItemComponent;
+    ::ll::TypedStorage<8, 136, ::std::optional<::DiggerItemComponentLegacyFactoryData>>       diggerItemComponent;
     ::ll::TypedStorage<8, 56, ::std::optional<::DisplayNameItemComponent>>                    displayNameItemComponent;
     ::ll::TypedStorage<8, 240, ::std::optional<::EntityPlacerItemComponentLegacyFactoryData>> entityPlacerItemComponent;
     ::ll::TypedStorage<8, 40, ::std::optional<::FoodItemComponentData_v1_20_30>>              foodItemComponent;

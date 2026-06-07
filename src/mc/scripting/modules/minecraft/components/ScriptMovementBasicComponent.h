@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/scripting/modules/minecraft/components/MovementScriptActorComponent.h"
+#include "mc/scripting/modules/minecraft/components/DerivedMovementScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,29 +12,21 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptMovementBasicComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual bool _isValid() const /*override*/;
-
-    virtual ~ScriptMovementBasicComponent() /*override*/ = default;
-    // NOLINTEND
-
+class ScriptMovementBasicComponent : public ::ScriptModuleMinecraft::DerivedMovementScriptActorComponent<728> {
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding _bind();
 
     MCAPI static ::Scripting::ClassBinding _bindV010();
+
+    MCAPI static ::std::vector<::Scripting::ClassBinding> bind();
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // static variables
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
-
-
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

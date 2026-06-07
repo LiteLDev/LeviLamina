@@ -24,10 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Mesh();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Mesh();
-
     MCNAPI Mesh(::dragon::mesh::Mesh const&);
 
     MCNAPI Mesh(
@@ -44,9 +46,6 @@ public:
 
     MCNAPI bool areBuffersValid() const;
 
-    MCNAPI ::mce::ServerResourcePointer<::dragon::ResolvedVertexBufferResource> const&
-    getVertexBuffer(uchar index) const;
-
     MCNAPI ::dragon::mesh::Mesh& operator=(::dragon::mesh::Mesh const&);
 
     MCNAPI ~Mesh();
@@ -55,8 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::dragon::mesh::Mesh const&);
 
     MCNAPI void* $ctor(

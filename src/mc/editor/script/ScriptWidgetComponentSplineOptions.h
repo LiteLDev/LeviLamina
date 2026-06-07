@@ -27,28 +27,9 @@ public:
     ScriptWidgetComponentSplineOptions();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentSplineOptions() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentSplineOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentSplineOptions&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

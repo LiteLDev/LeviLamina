@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ContextId; }
+// clang-format on
+
 namespace Scripting {
 
 class ScriptValue {
@@ -17,12 +23,27 @@ public:
     // prevent constructor by default
     ScriptValue& operator=(ScriptValue const&);
     ScriptValue(ScriptValue const&);
-    ScriptValue();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptValue();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptValue();
+
+    MCNAPI ::Scripting::ContextId getContextId() const;
+
+    MCNAPI ::Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

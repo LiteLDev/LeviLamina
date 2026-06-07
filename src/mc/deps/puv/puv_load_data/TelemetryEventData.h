@@ -42,12 +42,11 @@ public:
     // prevent constructor by default
     TelemetryEventData& operator=(TelemetryEventData const&);
     TelemetryEventData(TelemetryEventData const&);
+    TelemetryEventData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TelemetryEventData();
-
     MCNAPI void _calculatePuvStepStats(
         ::std::vector<double>& times,
         double&                min,
@@ -59,17 +58,13 @@ public:
 
     MCNAPI void addLoadTime(::PuvLoadData::LoadResultWithTiming const& loadTime);
 
-#ifdef LL_PLAT_C
+    MCNAPI void calculateStats();
+
+    MCNAPI bool filesWereLoaded() const;
+
     MCNAPI void tryAddPackName(::std::string const& packName);
-#endif
 
     MCNAPI ~TelemetryEventData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

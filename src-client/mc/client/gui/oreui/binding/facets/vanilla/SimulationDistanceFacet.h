@@ -18,14 +18,24 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
+    // NOLINTEND
 
-    virtual ~SimulationDistanceFacet() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SimulationDistanceFacet();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

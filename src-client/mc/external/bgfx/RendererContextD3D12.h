@@ -15,7 +15,6 @@
 #include "mc/external/bgfx/FrameBufferHandle.h"
 #include "mc/external/bgfx/GuardedPagedHeapBackedArray.h"
 #include "mc/external/bgfx/IndexBufferHandle.h"
-#include "mc/external/bgfx/NvApi.h"
 #include "mc/external/bgfx/OcclusionQueryD3D12.h"
 #include "mc/external/bgfx/ProfilerEvents.h"
 #include "mc/external/bgfx/ProgramD3D12.h"
@@ -33,7 +32,7 @@
 #include "mc/external/bgfx/VertexBufferHandle.h"
 #include "mc/external/bgfx/VertexDecl.h"
 #include "mc/external/bgfx/VertexDeclHandle.h"
-#include "mc/external/bgfx/ViewProfilerD3D12.h"
+#include "mc/external/bgfx/ViewProfilerManager.h"
 #include "mc/external/bgfx/acceleration_structure_build_flags/Enum.h"
 #include "mc/external/bgfx/renderer_type/Enum.h"
 #include "mc/external/bgfx/texture_format/Enum.h"
@@ -66,7 +65,6 @@ namespace bgfx::d3d12 { class StagingBufferD3D12; }
 namespace bgfx::d3d12 { struct CommandContextD3D12; }
 namespace bgfx::d3d12 { struct CommandList; }
 namespace bgfx::d3d12 { struct CommandListD3D12; }
-namespace bgfx::d3d12 { struct ConstantBufferDataContainer; }
 namespace bgfx::d3d12 { struct ResourceCreate; }
 namespace bgfx::d3d12 { struct TextureD3D12; }
 // clang-format on
@@ -81,6 +79,7 @@ public:
     struct BlasBuildRequest;
     struct BlasCompactionRequest;
     struct BLASGeometryInfo;
+    struct PresentTimings;
     // clang-format on
 
     // RendererContextD3D12 inner types define
@@ -106,7 +105,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -158,6 +157,16 @@ public:
         // NOLINTEND
     };
 
+    struct PresentTimings {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, int64> m_flipCompletionTime;
+        ::ll::TypedStorage<8, 8, int64> m_gpuFlipRequestTime;
+        ::ll::TypedStorage<8, 8, int64> m_cpuFlipRequestTime;
+        // NOLINTEND
+    };
+
     using ASScratchBuffer =
         ::bgfx::RingBuffer<::bgfx::d3d12::StagingBufferD3D12, uint64, void*, ::bgfx::d3d12::RingBufferAllocator<0>>;
 
@@ -173,7 +182,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                    m_rldoEnabled;
     ::ll::TypedStorage<1, 1, bool>                    m_useBufferHeaps;
     ::ll::TypedStorage<8, 448, ::bgfx::Dxgi>          m_dxgi;
-    ::ll::TypedStorage<8, 48, ::bgfx::NvApi>          m_nvapi;
     ::ll::TypedStorage<8, 8, void*>                   m_kernel32dll;
     ::ll::TypedStorage<8, 8, void*>                   m_d3d12dll;
     ::ll::TypedStorage<8, 8, void*>                   m_renderdocdll;
@@ -184,28 +192,28 @@ public:
         ::std::unique_ptr<
             ::bgfx::
                 RingBuffer<::bgfx::d3d12::StagingBufferD3D12, uint64, void*, ::bgfx::d3d12::RingBufferAllocator<2>>>>
-                                                                   m_uploadBuffer;
-    ::ll::TypedStorage<8, 56, ::bgfx::d3d12::FenceSyncContext>     m_sync;
-    ::ll::TypedStorage<4, 4, ::D3D_FEATURE_LEVEL>                  m_featureLevel;
-    ::ll::TypedStorage<4, 4, ::D3D_SHADER_MODEL>                   m_shaderModel;
-    ::ll::TypedStorage<4, 4, ::D3D_DRIVER_TYPE>                    m_driverType;
-    ::ll::TypedStorage<4, 16, ::D3D12_FEATURE_DATA_ARCHITECTURE>   m_architecture;
-    ::ll::TypedStorage<4, 60, ::D3D12_FEATURE_DATA_D3D12_OPTIONS>  m_options;
-    ::ll::TypedStorage<8, 8, void*>                                m_swapchainWaitableObject;
-    ::ll::TypedStorage<8, 8, ::IDXGISwapChain3*>                   m_swapChain;
-    ::ll::TypedStorage<8, 8, ::ID3D12Resource*>                    m_msaaRenderTarget;
-    ::ll::TypedStorage<8, 8, int64>                                m_presentElapsed;
-    ::ll::TypedStorage<2, 2, ushort>                               m_numWindows;
-    ::ll::TypedStorage<2, 256, ::bgfx::FrameBufferHandle[128]>     m_windows;
-    ::ll::TypedStorage<8, 8, ::ID3D12Device*>                      m_device;
-    ::ll::TypedStorage<8, 8, ::ID3D12Device5*>                     m_device5;
-    ::ll::TypedStorage<8, 30880, ::bgfx::d3d12::TimerQueryD3D12>   m_gpuTimer;
-    ::ll::TypedStorage<8, 552, ::bgfx::d3d12::OcclusionQueryD3D12> m_occlusionQuery;
-    ::ll::TypedStorage<8, 73768, ::bgfx::d3d12::ViewProfilerD3D12> m_profiler;
-    ::ll::TypedStorage<1, 1, ::bgfx::ProfilerEvents>               m_profilerEvents;
-    ::ll::TypedStorage<8, 56, ::bgfx::d3d12::BufferHeap* [7]>      m_bufferHeaps;
-    ::ll::TypedStorage<8, 24, ::ID3D12CommandSignature* [3]>       m_commandSignature;
-    ::ll::TypedStorage<8, 8, ::bgfx::d3d12::CommandList*>          m_globalCommands;
+                                                                                              m_uploadBuffer;
+    ::ll::TypedStorage<8, 56, ::bgfx::d3d12::FenceSyncContext>                                m_sync;
+    ::ll::TypedStorage<4, 4, ::D3D_FEATURE_LEVEL>                                             m_featureLevel;
+    ::ll::TypedStorage<4, 4, ::D3D_SHADER_MODEL>                                              m_shaderModel;
+    ::ll::TypedStorage<4, 4, ::D3D_DRIVER_TYPE>                                               m_driverType;
+    ::ll::TypedStorage<4, 16, ::D3D12_FEATURE_DATA_ARCHITECTURE>                              m_architecture;
+    ::ll::TypedStorage<4, 60, ::D3D12_FEATURE_DATA_D3D12_OPTIONS>                             m_options;
+    ::ll::TypedStorage<8, 8, void*>                                                           m_swapchainWaitableObject;
+    ::ll::TypedStorage<8, 8, ::IDXGISwapChain3*>                                              m_swapChain;
+    ::ll::TypedStorage<8, 8, ::ID3D12Resource*>                                               m_msaaRenderTarget;
+    ::ll::TypedStorage<8, 8, int64>                                                           m_presentElapsed;
+    ::ll::TypedStorage<2, 2, ushort>                                                          m_numWindows;
+    ::ll::TypedStorage<2, 256, ::bgfx::FrameBufferHandle[128]>                                m_windows;
+    ::ll::TypedStorage<8, 8, ::ID3D12Device*>                                                 m_device;
+    ::ll::TypedStorage<8, 8, ::ID3D12Device5*>                                                m_device5;
+    ::ll::TypedStorage<8, 30880, ::bgfx::d3d12::TimerQueryD3D12>                              m_gpuTimer;
+    ::ll::TypedStorage<8, 552, ::bgfx::d3d12::OcclusionQueryD3D12>                            m_occlusionQuery;
+    ::ll::TypedStorage<8, 73768, ::bgfx::ViewProfilerManager<::bgfx::d3d12::TimerQueryD3D12>> m_profiler;
+    ::ll::TypedStorage<1, 1, ::bgfx::ProfilerEvents>                                          m_profilerEvents;
+    ::ll::TypedStorage<8, 56, ::bgfx::d3d12::BufferHeap* [7]>                                 m_bufferHeaps;
+    ::ll::TypedStorage<8, 24, ::ID3D12CommandSignature* [3]>                                  m_commandSignature;
+    ::ll::TypedStorage<8, 8, ::bgfx::d3d12::CommandList*>                                     m_globalCommands;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::bgfx::d3d12::CommandContextD3D12>>> m_commandContext;
     ::ll::TypedStorage<4, 12, ::bgfx::Resolution>                                                   m_resolution;
     ::ll::TypedStorage<1, 1, bool>                                                                  m_wireframe;
@@ -243,12 +251,11 @@ public:
     ::ll::TypedStorage<8, 507904, ::bgfx::d3d12::ProgramD3D12[2048]>                             m_program;
     ::ll::TypedStorage<8, 753696, ::bgfx::GuardedPagedHeapBackedArray<::bgfx::d3d12::TextureD3D12, 4096>> m_textures;
     ::ll::TypedStorage<4, 5376, ::bgfx::VertexDecl[64]>                                                   m_vertexDecls;
-    ::ll::TypedStorage<8, 13312, ::bgfx::d3d12::FrameBufferD3D12[128]>   m_frameBuffers;
-    ::ll::TypedStorage<4, 7176, ::bgfx::UniformRegistry>                 m_uniformReg;
-    ::ll::TypedStorage<8, 8, int64>                                      m_flipCompletionTime;
-    ::ll::TypedStorage<8, 8, int64>                                      m_gpuFlipRequestTime;
-    ::ll::TypedStorage<8, 8, int64>                                      m_cpuFlipRequestTime;
-    ::ll::TypedStorage<8, 24, ::bgfx::TextVideoMem>                      m_textVideoMem;
+    ::ll::TypedStorage<8, 13312, ::bgfx::d3d12::FrameBufferD3D12[128]>                               m_frameBuffers;
+    ::ll::TypedStorage<4, 7176, ::bgfx::UniformRegistry>                                             m_uniformReg;
+    ::ll::TypedStorage<8, 16, ::std::map<uint, ::bgfx::d3d12::RendererContextD3D12::PresentTimings>> m_presentTimings;
+    ::ll::TypedStorage<8, 8, ::bgfx::d3d12::RendererContextD3D12::PresentTimings*>                   m_completedTiming;
+    ::ll::TypedStorage<8, 24, ::bgfx::TextVideoMem>                                                  m_textVideoMem;
     ::ll::TypedStorage<4, 4, uint>                                       m_backBufferColorIdx;
     ::ll::TypedStorage<1, 1, bool>                                       m_directAccessSupport;
     ::ll::TypedStorage<8, 183184, ::bgfx::d3d12::ResourceStatesMananger> m_states;
@@ -371,10 +378,10 @@ public:
         ::bgfx::TextureHandle      _handle,
         ::bgfx::RendererType::Enum _type,
         void*                      _texturePtr,
-        void*                      _deferredRef
+        void*                      ref
     ) /*override*/;
 
-    virtual void overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags) /*override*/;
+    virtual void overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint) /*override*/;
 
     virtual uint64 getInternal(::bgfx::TextureHandle _handle) /*override*/;
 
@@ -434,17 +441,17 @@ public:
 
     virtual void destroyUniform(::bgfx::UniformHandle _handle) /*override*/;
 
-    virtual void requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath) /*override*/;
+    virtual void requestScreenShot(::bgfx::FrameBufferHandle _filePath, char const*) /*override*/;
 
     virtual void updateViewName(ushort _id, char const* _name) /*override*/;
 
     virtual void updateUniform(void* _uniformsTarget, ushort _loc, void const* _data, uint _size) /*override*/;
 
-    virtual void setMarker(void*, char const* _marker, uint) /*override*/;
+    virtual void setMarker(void*, char const*, uint) /*override*/;
 
     virtual void invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle) /*override*/;
 
-    virtual void setName(::bgfx::Handle _handle, char const* _name) /*override*/;
+    virtual void setName(::bgfx::Handle _handle, char const*) /*override*/;
 
     virtual void submit(
         ::bgfx::Frame*               _render,
@@ -458,7 +465,7 @@ public:
 
     virtual bool updateResolution(::bgfx::Resolution const& _resolution);
 
-    virtual void updateFlipRate(::bgfx::Resolution const& _resolution);
+    virtual void updateFlipRate(::bgfx::Resolution const&);
 
     virtual void kick(bool _alloc);
 
@@ -481,8 +488,6 @@ public:
     // NOLINTBEGIN
     MCAPI RendererContextD3D12();
 
-    MCAPI void allocGlobalCommands();
-
     MCAPI ::bgfx::d3d12::ResourceCreate allocateResource(
         wchar_t const*                    _name,
         ::bgfx::d3d12::HeapProperty::Enum _heapProperty,
@@ -491,15 +496,7 @@ public:
         ::D3D12_RESOURCE_FLAGS            _flags
     );
 
-    MCAPI void enableDynamicTextureHandles();
-
-    MCAPI void finishAll(bool _alloc);
-
     MCAPI ::D3D12_CPU_DESCRIPTOR_HANDLE getRtv(::bgfx::FrameBufferHandle _fbh);
-
-    MCAPI ::D3D12_CPU_DESCRIPTOR_HANDLE getRtv(::bgfx::FrameBufferHandle _fbh, uchar _attachment);
-
-    MCAPI void invalidateCache();
 
     MCAPI void postReset(bool _swapChainReset);
 
@@ -507,23 +504,9 @@ public:
 
     MCAPI void saveDREDInfo();
 
-    MCAPI void setShaderUniform4f(
-        uchar                                       _flags,
-        uint                                        _regIndex,
-        void const*                                 _val,
-        uint                                        _numRegs,
-        ::bgfx::d3d12::ConstantBufferDataContainer& _constantBuffers
-    );
-
-    MCAPI void setShaderUniform4x4f(
-        uchar                                       _flags,
-        uint                                        _regIndex,
-        void const*                                 _val,
-        uint                                        _numRegs,
-        ::bgfx::d3d12::ConstantBufferDataContainer& _constantBuffers
-    );
-
     MCAPI void submitBlit(::bgfx::d3d12::CommandListD3D12& _commandList, ::bgfx::BlitState& _bs, ushort _view);
+
+    MCAPI void updateBufferHeapFences(::bgfx::d3d12::RendererContextD3D12::BufferHeapUpdateMode bufferHeapUpdateMode);
 
     MCAPI void updateMsaa(::DXGI_FORMAT _format);
     // NOLINTEND
@@ -638,14 +621,10 @@ public:
     MCAPI void
     $resizeTexture(::bgfx::TextureHandle _handle, ushort _width, ushort _height, uchar _numMips, ushort _numLayers);
 
-    MCAPI void $wrapExternalTexture(
-        ::bgfx::TextureHandle      _handle,
-        ::bgfx::RendererType::Enum _type,
-        void*                      _texturePtr,
-        void*                      _deferredRef
-    );
+    MCAPI void
+    $wrapExternalTexture(::bgfx::TextureHandle _handle, ::bgfx::RendererType::Enum _type, void* _texturePtr, void* ref);
 
-    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags);
+    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint);
 
     MCAPI uint64 $getInternal(::bgfx::TextureHandle _handle);
 
@@ -695,17 +674,17 @@ public:
 
     MCAPI void $destroyUniform(::bgfx::UniformHandle _handle);
 
-    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath);
+    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _filePath, char const*);
 
     MCAPI void $updateViewName(ushort _id, char const* _name);
 
     MCAPI void $updateUniform(void* _uniformsTarget, ushort _loc, void const* _data, uint _size);
 
-    MCFOLD void $setMarker(void*, char const* _marker, uint);
+    MCFOLD void $setMarker(void*, char const*, uint);
 
     MCAPI void $invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle);
 
-    MCAPI void $setName(::bgfx::Handle _handle, char const* _name);
+    MCAPI void $setName(::bgfx::Handle _handle, char const*);
 
     MCAPI void
     $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad& _clearQuad, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
@@ -716,7 +695,7 @@ public:
 
     MCAPI bool $updateResolution(::bgfx::Resolution const& _resolution);
 
-    MCFOLD void $updateFlipRate(::bgfx::Resolution const& _resolution);
+    MCFOLD void $updateFlipRate(::bgfx::Resolution const&);
 
     MCAPI void $kick(bool _alloc);
 

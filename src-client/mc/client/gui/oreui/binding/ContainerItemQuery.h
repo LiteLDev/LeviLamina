@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/gameplay/api/gameplayui/ContainerItemType.h"
+#include "mc/client/gui/oreui/binding/ContainerItemBindings.h"
 #include "mc/client/gui/oreui/binding/QueryBase.h"
-#include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/containers/ContainerEnumName.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace GameplayUI { struct ContainerItem; }
 namespace GameplayUI { struct GameplayUIContext; }
 namespace OreUI { class ClientDependencies; }
 namespace OreUI { class GameDependencies; }
@@ -24,14 +21,7 @@ class ContainerItemQuery : public ::OreUI::QueryBase<::OreUI::ContainerItemQuery
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                mSubscription;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mAmount;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mName;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mImage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mHasDamageValue;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<short>>                                      mMaxDamage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<short>>                                      mDamageValue;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::GameplayUI::ContainerItemType>>            mContainerItemType;
+    ::ll::TypedStorage<8, 1832, ::OreUI::ContainerItemBindings>                               mItemBindings;
     ::ll::TypedStorage<1, 1, ::ContainerEnumName>                                             mContainerName;
     ::ll::TypedStorage<4, 4, int>                                                             mIndex;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
@@ -44,9 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double) /*override*/;
-
-    virtual ~ContainerItemQuery() /*override*/;
+    virtual void update(double time) /*override*/;
     // NOLINTEND
 
 public:
@@ -58,8 +46,6 @@ public:
         ::ContainerEnumName                containerName,
         int                                index
     );
-
-    MCAPI void _updateProperties(::GameplayUI::ContainerItem const& item);
     // NOLINTEND
 
 public:
@@ -80,15 +66,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCAPI void $update(double time);
     // NOLINTEND
 
 public:

@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageDependencyScreenController() /*override*/ = default;
+    virtual ~StorageDependencyScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -71,6 +71,12 @@ public:
         ::IContentManager&                                     contentManager,
         ::std::vector<::std::shared_ptr<::ContentItem const>>& selectedItems
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

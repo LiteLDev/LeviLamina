@@ -22,10 +22,10 @@ namespace PlayerInputPermissionEventSystem {
 MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void processChanges(
-    ::entt::type_list<::Include<::ActorTickedComponent, ::PlayerComponent>>,
-    ::ClientInputLockComponent const& clientInputLock,
-    ::ClientInputLockLastComponent&   clientInputLockLast,
-    ::Optional<::ActorOwnerComponent> actorOwner
+    ::entt::type_list<::Include<::ActorTickedComponent, ::PlayerComponent>> clientInputLock,
+    ::ClientInputLockComponent const&                                       clientInputLockLast,
+    ::ClientInputLockLastComponent&                                         actorOwner,
+    ::Optional<::ActorOwnerComponent>
 );
 // NOLINTEND
 

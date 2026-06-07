@@ -22,6 +22,10 @@ class ItemInstance;
 
 class TallGrassBlock : public ::FoliageBlock {
 public:
+    // prevent constructor by default
+    TallGrassBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
@@ -35,18 +39,26 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType) const
         /*override*/;
 
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    // NOLINTEND
 
-    virtual ~TallGrassBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TallGrassBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -63,12 +75,11 @@ public:
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType) const;
 
     MCAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 

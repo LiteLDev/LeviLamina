@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
+namespace RakNet { class BitStream; }
 // clang-format on
 
 class RegionFile {
@@ -36,6 +37,8 @@ public:
     MCNAPI explicit RegionFile(::Core::Path const& basePath);
 
     MCNAPI bool open();
+
+    MCNAPI bool readChunk(int x, int z, ::RakNet::BitStream** destChunkData);
     // NOLINTEND
 
 public:

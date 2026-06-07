@@ -14,4 +14,22 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                 mLastBlockBeingDestroyed;
     ::ll::TypedStorage<8, 16, ::ItemDescriptor>      mLastItemUsedToDestroy;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayerDestroyProgressCacheComponent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit PlayerDestroyProgressCacheComponent(uint64 initBlock);
+
+    MCAPI void reset();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint64 initBlock);
+    // NOLINTEND
 };

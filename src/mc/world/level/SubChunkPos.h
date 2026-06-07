@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class SubChunkPos {
 public:
     // member variables
@@ -12,8 +17,36 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SubChunkPos();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SubChunkPos(::BlockPos const& bp);
+
+    MCAPI explicit operator ::BlockPos() const;
+
+#ifdef LL_PLAT_C
+    MCAPI explicit operator ::glm::ivec3() const;
+#endif
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::SubChunkPos const& MAX();
+
+    MCAPI static ::SubChunkPos const& MIN();
+
+    MCAPI static ::SubChunkPos const& ONE();
+
     MCAPI static ::SubChunkPos const& ZERO();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& bp);
     // NOLINTEND
 };

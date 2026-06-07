@@ -15,7 +15,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -26,6 +25,10 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class RedStoneWireBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    RedStoneWireBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -49,20 +52,16 @@ public:
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
 
     virtual bool canSpawnOn(::Actor*) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~RedStoneWireBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RedStoneWireBlock(::std::string const& nameId, int id);
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -76,6 +75,12 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static bool shouldConnectTo(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction);
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -100,12 +105,9 @@ public:
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
 
     MCFOLD bool $canSpawnOn(::Actor*) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

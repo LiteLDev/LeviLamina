@@ -23,21 +23,6 @@ public:
 public:
     // prevent constructor by default
     GetAttachPositionViews& operator=(GetAttachPositionViews const&);
+    GetAttachPositionViews(GetAttachPositionViews const&);
     GetAttachPositionViews();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI GetAttachPositionViews(::GetAttachPositionViews&&);
-
-    MCNAPI GetAttachPositionViews(::GetAttachPositionViews const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::GetAttachPositionViews&&);
-
-    MCNAPI void* $ctor(::GetAttachPositionViews const&);
-    // NOLINTEND
 };

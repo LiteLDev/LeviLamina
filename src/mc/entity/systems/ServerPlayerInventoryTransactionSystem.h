@@ -10,6 +10,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class BlockPalette;
+class EntityContext;
 class InventoryTransactionPacket;
 class ServerPlayer;
 class StrictEntityContext;
@@ -17,6 +18,7 @@ struct ActorRotationComponent;
 struct CameraAimAssistComponent;
 struct MoveInputComponent;
 struct ServerPlayerInventoryTransactionComponent;
+struct ServerPlayerMovementComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -40,6 +42,9 @@ MCAPI void transactInventoryPacket(
     ::ServerPlayer&                     player,
     ::BlockPalette&                     blockPalette
 );
+
+MCAPI void
+transferInventoryTransactionPackets(::ServerPlayerMovementComponent const& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 
 } // namespace ServerPlayerInventoryTransactionSystem

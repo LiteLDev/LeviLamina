@@ -18,12 +18,13 @@ namespace EmitJumpPreventedEventSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void doEmitJumpPreventedEventSystem(
-    ::StrictEntityContext&,
-    ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,
-    ::ActorOwnerComponent&               actorOwnerComponent
+    ::StrictEntityContext&               triggerJumpRequestComponent,
+    ::TriggerJumpRequestComponent const& actorOwnerComponent,
+    ::ActorOwnerComponent&
 );
 
-MCAPI void tickEmitJumpPreventedEventSystem(
+MCAPI void singleTickEmitJumpPreventedEventSystem(
+    ::StrictEntityContext& entity,
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::MobFlagComponent>,

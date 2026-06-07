@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 namespace Core { class FileStorageArea; }
 namespace Core { class PathView; }
 // clang-format on
@@ -39,9 +40,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::Core::StorageAreasTree::TreeChild& operator=(::Core::StorageAreasTree::TreeChild&&);
+        MCNAPI TreeChild(::HashedString key, ::std::unique_ptr<::Core::StorageAreasTree::TreeNode> node);
 
         MCNAPI ~TreeChild();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::HashedString key, ::std::unique_ptr<::Core::StorageAreasTree::TreeNode> node);
         // NOLINTEND
 
     public:
@@ -64,6 +71,18 @@ public:
         TreeNode& operator=(TreeNode const&);
         TreeNode(TreeNode const&);
         TreeNode();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~TreeNode();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -83,6 +102,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void forEachStorageArea(::std::function<void(::Core::FileStorageArea&)>&& visitorFunction);
+
     MCNAPI ::Bedrock::Result<::std::shared_ptr<::Core::FileStorageArea>> getStorageArea(::Core::PathView path) const;
 
     MCNAPI void insertStorageArea(::Core::FileStorageArea& storageArea);

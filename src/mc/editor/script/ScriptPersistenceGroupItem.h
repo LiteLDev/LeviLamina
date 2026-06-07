@@ -3,11 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::ScriptModule { class ScriptPersistenceGroup; }
+namespace Editor::Services { class PersistenceItem; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -34,6 +38,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptPersistenceGroupItem(
+        ::WeakRef<::Editor::Services::PersistenceItem>  persistenceItem,
+        ::Editor::ScriptModule::ScriptPersistenceGroup* owner,
+        ::Scripting::WeakLifetimeScope const&           scope
+    );
+
     MCNAPI ::Scripting::Error _getInvalidGroupItemError() const;
 
     MCNAPI ::Scripting::Result_deprecated<void> commit();
@@ -51,6 +61,16 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::WeakRef<::Editor::Services::PersistenceItem>  persistenceItem,
+        ::Editor::ScriptModule::ScriptPersistenceGroup* owner,
+        ::Scripting::WeakLifetimeScope const&           scope
+    );
     // NOLINTEND
 };
 

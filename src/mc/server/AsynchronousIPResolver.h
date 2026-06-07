@@ -2,35 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/threading/SharedAsync.h"
+
 class AsynchronousIPResolver {
-public:
-    // AsynchronousIPResolver inner types declare
-    // clang-format off
-    struct ResolvedIp;
-    // clang-format on
-
-    // AsynchronousIPResolver inner types define
-    struct ResolvedIp {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk3e6974;
-        ::ll::UntypedStorage<1, 1>  mUnkcaa023;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ResolvedIp& operator=(ResolvedIp const&);
-        ResolvedIp(ResolvedIp const&);
-        ResolvedIp();
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnka91997;
-    ::ll::UntypedStorage<8, 16> mUnk4c128c;
-    ::ll::UntypedStorage<8, 16> mUnkba7ec2;
+    ::ll::UntypedStorage<8, 16> mUnk227489;
+    ::ll::UntypedStorage<8, 16> mUnkbeda29;
     // NOLINTEND
 
 #ifdef LL_PLAT_S
@@ -52,13 +33,21 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit AsynchronousIPResolver(::std::string url);
 
-    MCNAPI void _resolve();
+    MCNAPI ::Bedrock::Threading::SharedAsync<::std::string> _resolve();
+
+    MCNAPI void _resolveIfNeeded();
+
+    MCNAPI ::std::string getIp() const;
+
+    MCNAPI ::std::string const& getOriginalUrl() const;
+
+    MCNAPI bool isDone() const;
 
 #ifdef LL_PLAT_C
     MCNAPI ::AsynchronousIPResolver& operator=(::AsynchronousIPResolver const&);
-#endif
 
     MCNAPI ~AsynchronousIPResolver();
+#endif
     // NOLINTEND
 
 public:
@@ -70,6 +59,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -28,11 +28,16 @@ public:
 
 public:
     // prevent constructor by default
+    MessageItem& operator=(MessageItem const&);
     MessageItem();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MessageItem(::OreUI::MessageItem const&);
+
+    MCAPI MessageItem(::OreUI::MessageItem&&);
+
     MCAPI MessageItem(
         ::MessageItemData const&                                   item,
         ::std::function<::ImageData(::std::string)>                imageLookup,
@@ -46,6 +51,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::MessageItem const&);
+
+    MCAPI void* $ctor(::OreUI::MessageItem&&);
+
     MCAPI void* $ctor(
         ::MessageItemData const&                                   item,
         ::std::function<::ImageData(::std::string)>                imageLookup,

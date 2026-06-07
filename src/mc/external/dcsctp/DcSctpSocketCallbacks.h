@@ -30,9 +30,9 @@ public:
 
     virtual ::dcsctp::SendPacketStatus SendPacketWithStatus(::rtc::ArrayView<uchar const> data);
 
-    virtual ::std::unique_ptr<::dcsctp::Timeout> CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
-
     virtual ::std::unique_ptr<::dcsctp::Timeout> CreateTimeout();
+
+    virtual ::std::unique_ptr<::dcsctp::Timeout> CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
 
     virtual ::dcsctp::TimeMs TimeMillis();
 
@@ -87,9 +87,9 @@ public:
 
     MCNAPI ::dcsctp::SendPacketStatus $SendPacketWithStatus(::rtc::ArrayView<uchar const> data);
 
-    MCNAPI ::std::unique_ptr<::dcsctp::Timeout> $CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
-
     MCNAPI ::std::unique_ptr<::dcsctp::Timeout> $CreateTimeout();
+
+    MCNAPI ::std::unique_ptr<::dcsctp::Timeout> $CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision);
 
     MCNAPI ::dcsctp::TimeMs $TimeMillis();
 

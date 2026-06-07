@@ -25,7 +25,12 @@ public:
     // NOLINTBEGIN
     virtual ~BeaconPaymentContainerController() /*override*/ = default;
 
-    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const /*override*/;
+#ifdef LL_PLAT_S
+    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const /*override*/;
+#else // LL_PLAT_C
+    virtual bool isItemFiltered(::Recipes const& item, ::ItemStackBase const&) const /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -48,7 +53,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+    MCNAPI bool $isItemFiltered(::Recipes const& item, ::ItemStackBase const&) const;
 #endif
 
 

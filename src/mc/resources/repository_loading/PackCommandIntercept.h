@@ -43,20 +43,12 @@ public:
     virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) /*override*/;
 
     virtual ::TaskGroup& getTaskGroup() /*override*/;
-
-    virtual ~PackCommandIntercept() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<void> submitAll(::PackCommand::IPackCommandPipeline& pipeline);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

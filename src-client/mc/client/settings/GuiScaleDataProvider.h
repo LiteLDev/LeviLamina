@@ -4,11 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/client/settings/IOptionsDataProvider.h"
+#include "mc/client/settings/LocStringData.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 namespace Settings { struct OptionData; }
 namespace Settings::RegistryBuilder { class IBuilderContext; }
 // clang-format on
@@ -19,10 +20,15 @@ class GuiScaleDataProvider : public ::Settings::IOptionsDataProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IOptions&>                            mOptions;
-    ::ll::TypedStorage<8, 64, ::std::function<int()>>                mGetOptimalGuiScale;
-    ::ll::TypedStorage<8, 64, ::std::function<int()>>                mGetMaxGuiScale;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>        mInfo;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>      mOptions;
+    ::ll::TypedStorage<8, 64, ::std::function<int()>> mGetOptimalGuiScale;
+    ::ll::TypedStorage<8, 64, ::std::function<int()>> mGetMaxGuiScale;
+    ::ll::TypedStorage<8, 64, ::std::function<int()>> mGetClampedGuiScaleOffset;
+    ::ll::TypedStorage<
+        8,
+        80,
+        ::std::optional<::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>>
+                                                                     mInfo;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mGuiScaleSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mGuiAccessibilityScalingSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mSceneSizeChangedSubscription;
@@ -46,9 +52,9 @@ public:
 
     virtual void setValue(int value) /*override*/;
 
-    virtual ::std::optional<::std::string> const& getInfo() const /*override*/;
-
-    virtual ~GuiScaleDataProvider() /*override*/;
+    virtual ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    getInfo() const /*override*/;
     // NOLINTEND
 
 public:
@@ -76,12 +82,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canModify() const;
@@ -92,7 +92,9 @@ public:
 
     MCAPI void $setValue(int value);
 
-    MCFOLD ::std::optional<::std::string> const& $getInfo() const;
+    MCFOLD ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    $getInfo() const;
     // NOLINTEND
 
 public:

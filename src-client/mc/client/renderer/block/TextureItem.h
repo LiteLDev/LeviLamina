@@ -14,4 +14,16 @@ public:
     ::ll::TypedStorage<8, 64, ::TextureAtlasItem> defaultItem;
     ::ll::TypedStorage<8, 64, ::TextureAtlasItem> carriedItem;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~TextureItem();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

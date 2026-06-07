@@ -41,11 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~IFileChunkUploader() = default;
-#else // LL_PLAT_C
     virtual ~IFileChunkUploader();
-#endif
 
     virtual void initFileUploader(
         ::std::string const&        uploadId,
@@ -60,7 +56,7 @@ public:
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-    virtual void confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+    virtual void confirmChunkReceived(::FileInfo const&, ::FileChunkInfo const&);
 
     virtual void uploadChunk(
         ::FileInfo const&           file,
@@ -70,13 +66,13 @@ public:
     );
 
     virtual void uploadStream(
-        ::FileInfo const&                                               file,
-        uint64                                                          streamSize,
-        ::std::string const&                                            boundary,
-        ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
+        ::FileInfo const& onCompleteCallback,
+        uint64,
+        ::std::string const&,
+        ::std::function<void(::IFileChunkUploader::UploadStreamResult)>
     );
 
-    virtual bool canCancelUpload(::FileInfo const& file) const = 0;
+    virtual bool canCancelUpload(::FileInfo const&) const = 0;
 
     virtual void cancelUpload(::FileInfo const& file) = 0;
 
@@ -85,6 +81,18 @@ public:
     virtual float getUploadProgress(::FileInfo const& file) const = 0;
 
     virtual ::FileChunkInfo getChunkInfo(::FileInfo const& file, int chunkID) const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI IFileChunkUploader();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -101,7 +109,7 @@ public:
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-    MCNAPI void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+    MCNAPI void $confirmChunkReceived(::FileInfo const&, ::FileChunkInfo const&);
 
     MCNAPI void $uploadChunk(
         ::FileInfo const&           file,
@@ -111,10 +119,10 @@ public:
     );
 
     MCNAPI void $uploadStream(
-        ::FileInfo const&                                               file,
-        uint64                                                          streamSize,
-        ::std::string const&                                            boundary,
-        ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
+        ::FileInfo const& onCompleteCallback,
+        uint64,
+        ::std::string const&,
+        ::std::function<void(::IFileChunkUploader::UploadStreamResult)>
     );
 
     MCNAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;

@@ -41,14 +41,22 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~PlayerLocationPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI PlayerLocationPacket();
+
+    MCAPI PlayerLocationPacket(::PlayerLocationPacket::Type type, ::ActorUniqueID const& id, ::Vec3 const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::PlayerLocationPacket::Type type, ::ActorUniqueID const& id, ::Vec3 const& pos);
     // NOLINTEND
 
 public:

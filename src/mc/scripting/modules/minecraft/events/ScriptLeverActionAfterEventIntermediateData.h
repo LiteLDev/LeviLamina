@@ -9,8 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-class Player;
-struct LeverActionEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -30,18 +28,6 @@ public:
     ScriptLeverActionAfterEventIntermediateData& operator=(ScriptLeverActionAfterEventIntermediateData const&);
     ScriptLeverActionAfterEventIntermediateData(ScriptLeverActionAfterEventIntermediateData const&);
     ScriptLeverActionAfterEventIntermediateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptLeverActionAfterEventIntermediateData(::LeverActionEvent const& eventData, ::Player const* player);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::LeverActionEvent const& eventData, ::Player const* player);
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

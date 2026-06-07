@@ -17,7 +17,7 @@ public:
     public:
         // WebsocketServerMetaDataPayload inner types define
         enum class MetaDataPayloadType : int {
-            Unknown  = -1,
+            Unknown  = 4294967295,
             TextHtml = 0,
         };
 
@@ -57,8 +57,6 @@ public:
     virtual void _updateState() /*override*/;
 
     virtual uint _genMaskingKey() const /*override*/;
-
-    virtual ~RakWebSocketServer() /*override*/ = default;
     // NOLINTEND
 
 public:

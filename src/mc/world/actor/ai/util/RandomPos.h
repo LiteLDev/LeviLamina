@@ -34,13 +34,39 @@ public:
         ::SolidityCheckType blockTest
     );
 
+    MCAPI static ::std::optional<::Vec3> generateRandomSpawnPos(
+        ::BlockSource& region,
+        ::Random&      random,
+        ::Vec3 const&  inPos,
+        int            numAttempts,
+        int            xzDist,
+        int            yDist,
+        ::Vec3*        dir
+    );
+
     MCAPI static ::std::optional<::Vec3>
     getPos(::Mob& mob, int xzDist, int yDist, int tries, ::SolidityCheckType blockTest);
 
     MCAPI static ::std::optional<::Vec3>
     getPosAvoid(::Mob& mob, int xzDist, int yDist, ::Vec3 const& avoidPos, ::SolidityCheckType blockTest, int tries);
 
+    MCAPI static ::std::optional<::Vec3> getPosInDirection(
+        ::Mob&              mob,
+        int                 xzDist,
+        int                 yDist,
+        int                 yOffset,
+        bool                canFly,
+        bool                canSwim,
+        ::Vec3*             direction,
+        ::IntRange const&   hoverHeight,
+        int                 tries,
+        ::SolidityCheckType blockTest
+    );
+
     MCAPI static ::std::optional<::Vec3> getPosTowards(::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
+
+    MCAPI static ::std::optional<::Vec3>
+    getPosTowards(::Random& random, ::Mob& mob, int xzDist, int yDist, ::Vec3 const& towardsPos);
 
     MCAPI static ::std::optional<::Vec3>
     getSpawnPos(::BlockSource& region, ::Random& random, ::Vec3 const& inPos, int xzDist, int yDist, int numAttempts);

@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~AchievementCategoriesFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

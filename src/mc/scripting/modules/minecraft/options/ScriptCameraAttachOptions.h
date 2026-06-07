@@ -25,19 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptCameraAttachOptions();
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraAttachOptions const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

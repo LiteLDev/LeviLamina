@@ -35,8 +35,6 @@ public:
 
     MCAPI explicit ScriptActorEventFilterData(::ScriptModuleMinecraft::ScriptActorData const& data);
 
-    MCAPI ScriptActorEventFilterData(::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
-
     MCAPI ~ScriptActorEventFilterData();
     // NOLINTEND
 
@@ -53,8 +51,6 @@ public:
     MCAPI void* $ctor(::Actor const& actor);
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const& data);
-
-    MCAPI void* $ctor(::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
     // NOLINTEND
 
 public:

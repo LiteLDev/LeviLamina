@@ -173,8 +173,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~MoveTowardsClosestSpaceSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

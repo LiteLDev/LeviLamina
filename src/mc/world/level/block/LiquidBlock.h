@@ -10,7 +10,7 @@
 class Actor;
 class BlockPos;
 class BlockSource;
-class Experiments;
+class Material;
 class Random;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
@@ -18,22 +18,26 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class LiquidBlock : public ::LiquidBlockBase {
 public:
+    // prevent constructor by default
+    LiquidBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~LiquidBlock() /*override*/ = default;
+    virtual void entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LiquidBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
+
+    MCAPI int _getStartingPass(::BlockSource const& region, ::BlockPos const& blockPos) const;
 
     MCAPI bool _isLiquidBlocking(
         ::BlockSource&    region,
@@ -58,7 +62,15 @@ public:
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
+    MCAPI bool shouldBecomeStatic(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -66,9 +78,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const;
 
 
     // NOLINTEND

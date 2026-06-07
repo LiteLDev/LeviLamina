@@ -11,16 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 320, ::EducationLevelSettings> mEducationLevelSettings;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~EducationSettingsPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

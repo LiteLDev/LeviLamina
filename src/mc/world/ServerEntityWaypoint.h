@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+namespace mce { class Color; }
 // clang-format on
 
 class ServerEntityWaypoint : public ::ServerWaypoint {
@@ -25,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ServerEntityWaypoint();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::ActorUniqueID> tryGetActorID() const /*override*/;
@@ -34,14 +39,40 @@ public:
     virtual void update(::Player const& viewingPlayer) /*override*/;
 
     virtual bool isValid() const /*override*/;
-
-    virtual ~ServerEntityWaypoint() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ServerEntityWaypoint(
+        ::WeakEntityRef const&                   entityRef,
+        ::ActorUniqueID const&                   actorID,
+        ::EntityWaypointVisibilityRules          entityRules,
+        ::ServerWaypoint::TextureSelector const& textureSelector,
+        ::std::optional<::mce::Color> const&     color
+    );
+
+    MCAPI bool _shouldUpdateClientWorldPosition(
+        ::WorldPosition const&                  viewingPlayerWorldPos,
+        ::WorldPosition const&                  observedActorWorldPos,
+        ::std::optional<::WorldPosition> const& prevObservedActorPos
+    );
+
+    MCAPI void _updateAuthority(::Player const& viewingPlayer);
+
     MCAPI void _updatePosition(::Player const& viewingPlayer);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::WeakEntityRef const&                   entityRef,
+        ::ActorUniqueID const&                   actorID,
+        ::EntityWaypointVisibilityRules          entityRules,
+        ::ServerWaypoint::TextureSelector const& textureSelector,
+        ::std::optional<::mce::Color> const&     color
+    );
     // NOLINTEND
 
 public:

@@ -59,19 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~RequestChunkRadiusPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~RequestChunkRadiusPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI RequestChunkRadiusPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit RequestChunkRadiusPacket(::RequestChunkRadiusPacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::RequestChunkRadiusPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

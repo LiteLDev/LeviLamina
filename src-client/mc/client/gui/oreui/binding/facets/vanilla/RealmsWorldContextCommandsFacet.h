@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsWorldContextCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsWorldContextCommandsFacet() /*override*/ = default;
@@ -30,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsWorldContextCommandsFacet(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
+
     MCAPI void fetchRealmsWorld(::std::string const& realmId);
 
     MCAPI void resetWorldContext();
@@ -39,6 +45,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
     // NOLINTEND
 
 public:

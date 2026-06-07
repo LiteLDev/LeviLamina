@@ -19,9 +19,9 @@ public:
     // NOLINTBEGIN
     virtual ~SmeltItemFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& context, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& itemInstance, ::Random& context, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
@@ -29,9 +29,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemStack& item, ::Random& context, ::LootTableContext&);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& context, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

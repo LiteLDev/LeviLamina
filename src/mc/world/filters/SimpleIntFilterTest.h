@@ -32,8 +32,6 @@ public:
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
 
     virtual ::Json::Value _serializeValue() const /*override*/;
-
-    virtual ~SimpleIntFilterTest() /*override*/ = default;
     // NOLINTEND
 
 public:

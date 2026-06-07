@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void* realloc(void* ptr, uint64 newSize);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 

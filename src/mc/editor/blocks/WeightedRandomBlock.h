@@ -4,7 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
+class Block;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor {
@@ -26,7 +27,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::HashedString _getBlock() const;
+    MCNAPI WeightedRandomBlock(::Block const* block, int weight);
+
+    MCNAPI int getWeight() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Block const* block, int weight);
     // NOLINTEND
 };
 

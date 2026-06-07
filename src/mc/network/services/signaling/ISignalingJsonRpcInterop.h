@@ -30,7 +30,7 @@ public:
     ) const = 0;
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>>
-    sendJsonRpc(::std::string const& message) const = 0;
+    sendJsonRpc(::std::optional<::std::string> const& messageId, ::std::string const& message) const = 0;
 
     virtual ::std::shared_ptr<::MessageTracker> getMessageTracker() = 0;
 

@@ -12,9 +12,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RuntimeCondition();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RuntimeCondition(::std::string const& id);
+
     MCAPI ~RuntimeCondition();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::std::string const& id);
     // NOLINTEND
 
 public:

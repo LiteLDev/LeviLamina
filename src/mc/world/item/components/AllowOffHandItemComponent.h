@@ -25,8 +25,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~AllowOffHandItemComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD bool getAllowOffHand() const;
     // NOLINTEND
 
 public:

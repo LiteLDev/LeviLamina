@@ -21,6 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::pair<int, int> getFirstAndLastIndex() const;
+
     MCAPI ~BundleTooltipLayoutData();
     // NOLINTEND
 

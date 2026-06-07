@@ -16,17 +16,31 @@ public:
 
 public:
     // prevent constructor by default
-    CreatePhotoPacketPayload(CreatePhotoPacketPayload const&);
+    CreatePhotoPacketPayload& operator=(CreatePhotoPacketPayload const&);
     CreatePhotoPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CreatePhotoPacketPayload& operator=(::CreatePhotoPacketPayload&&);
+    MCAPI CreatePhotoPacketPayload(::CreatePhotoPacketPayload const&);
 
-    MCAPI ::CreatePhotoPacketPayload& operator=(::CreatePhotoPacketPayload const&);
+#ifdef LL_PLAT_C
+    MCAPI CreatePhotoPacketPayload(::ActorUniqueID, ::std::string const& photoName);
+#endif
+
+    MCFOLD ::CreatePhotoPacketPayload& operator=(::CreatePhotoPacketPayload&&);
 
     MCAPI ~CreatePhotoPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::CreatePhotoPacketPayload const&);
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ActorUniqueID, ::std::string const& photoName);
+#endif
     // NOLINTEND
 
 public:

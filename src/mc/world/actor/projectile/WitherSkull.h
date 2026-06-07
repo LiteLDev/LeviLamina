@@ -9,8 +9,11 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
 class Block;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -20,6 +23,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int> mLifetime;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WitherSkull();
 
 public:
     // virtual functions
@@ -37,8 +44,26 @@ public:
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual float getInertia() /*override*/;
+    // NOLINTEND
 
-    virtual ~WitherSkull() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WitherSkull(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

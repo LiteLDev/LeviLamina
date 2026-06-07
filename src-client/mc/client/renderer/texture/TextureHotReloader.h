@@ -43,12 +43,6 @@ public:
     TextureHotReloader();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~TextureHotReloader() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI TextureHotReloader(

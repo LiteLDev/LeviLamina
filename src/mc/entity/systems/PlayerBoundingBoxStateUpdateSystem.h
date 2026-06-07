@@ -152,8 +152,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext
     ) /*override*/;
-
-    virtual ~PlayerBoundingBoxStateUpdateSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

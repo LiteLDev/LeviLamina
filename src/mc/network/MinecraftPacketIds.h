@@ -233,7 +233,7 @@ enum class MinecraftPacketIds : int {
     PlayerUpdateEntityOverridesPacket        = 325,
     PlayerLocation                           = 326,
     ClientboundControlSchemeSetPacket        = 327,
-    DebugDrawerPacket                        = 328,
+    PrimitiveShapesPacket                    = 328,
     ServerboundPackSettingChangePacket       = 329,
     ClientboundDataStore                     = 330,
     GraphicsParameterOverridePacket          = 331,
@@ -251,5 +251,7 @@ enum class MinecraftPacketIds : int {
     ServerboundDataDrivenScreenClosed        = 343,
     SyncWorldClocks                          = 344,
     ClientboundAttributeLayerSyncPacket      = 345,
-    EndId                                    = 346,
+    ServerStoreInfo                          = 346,
+    ServerPresenceInfo                       = 347,
+    EndId                                    = 348,
 };

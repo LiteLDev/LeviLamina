@@ -19,17 +19,14 @@ public:
 
 public:
     // prevent constructor by default
+    EnvironmentAttributeData& operator=(EnvironmentAttributeData const&);
     EnvironmentAttributeData(EnvironmentAttributeData const&);
     EnvironmentAttributeData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::EAS::EnvironmentAttributeData& operator=(::EAS::EnvironmentAttributeData&&);
-
-    MCNAPI ::EAS::EnvironmentAttributeData& operator=(::EAS::EnvironmentAttributeData const&);
-
-    MCNAPI bool operator==(::EAS::EnvironmentAttributeData const&) const;
+    MCNAPI bool operator==(::EAS::EnvironmentAttributeData const& other) const;
     // NOLINTEND
 };
 

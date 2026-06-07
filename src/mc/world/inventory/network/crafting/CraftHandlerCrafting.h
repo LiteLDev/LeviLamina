@@ -11,11 +11,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class CraftingContainer;
 class ItemInstance;
 class ItemStack;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftRecipeAuto;
 class Player;
+class Recipe;
 class Recipes;
 struct CreativeItemNetIdTag;
 struct FullContainerName;
@@ -42,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerCrafting() /*override*/ = default;
+    virtual ~CraftHandlerCrafting() /*override*/;
 
     virtual ::ItemStackNetResult handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
@@ -70,6 +72,14 @@ public:
 
     MCAPI ::ItemStackNetResult
     _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
+
+    MCAPI bool _recipeMatches(::Recipe const* recipe, ::CraftingContainer& currentCraftingItems);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -26,24 +26,9 @@ public:
     ScriptModalFormResponse();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormResponse&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormResponse&&);
-
-    MCNAPI ~ScriptModalFormResponse();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

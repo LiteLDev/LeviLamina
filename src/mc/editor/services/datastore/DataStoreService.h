@@ -14,6 +14,7 @@
 class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::DataStore { class PayloadEventDispatcher; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Network { class DataStoreEventPayload; }
 namespace Editor::Network { class ServerScriptTeardownRebuildPayload; }
@@ -88,6 +89,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit DataStoreService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI ::Editor::DataStore::PayloadEventDispatcher& _getDispatcher();
 
     MCNAPI void _handleDataStoreEventPacket(::Editor::Network::DataStoreEventPayload const& packet);
 

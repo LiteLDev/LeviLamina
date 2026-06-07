@@ -28,11 +28,19 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BoneAnimation(::std::string const& name);
+
+    MCAPI ~BoneAnimation();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

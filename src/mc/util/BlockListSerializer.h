@@ -15,7 +15,11 @@ class BlockListSerializer {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void loadJSON(::Json::Value value, ::MolangVersion molangVersion, ::BlockDescriptor& blockDescriptor);
+
     MCNAPI static void
     loadJSON(::Json::Value value, ::MolangVersion molangVersion, ::std::vector<::BlockDescriptor>& blockDescriptors);
+
+    MCNAPI static void saveJSON(::std::vector<::BlockDescriptor> const& blockDescriptors, ::Json::Value& value);
     // NOLINTEND
 };

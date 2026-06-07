@@ -31,6 +31,8 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptTripWireTripAfterEvent& operator=(ScriptTripWireTripAfterEvent const&);
+    ScriptTripWireTripAfterEvent(ScriptTripWireTripAfterEvent const&);
     ScriptTripWireTripAfterEvent();
 
 public:
@@ -40,6 +42,9 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
+
+    MCAPI ::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&&);
     // NOLINTEND
 
 public:

@@ -51,16 +51,31 @@ public:
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::ActorDefinition>> mActorDefinition;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScriptActorType();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit ScriptActorType(::ActorDefinition& definition);
+#endif
+
     MCAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
 
+    MCFOLD ::std::reference_wrapper<::ActorDefinition> getDefinition() const;
+
     MCAPI ::std::string getId() const;
 
     MCAPI ::std::string getLocalizationKey() const;
+
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorType const& other) const;
     // NOLINTEND
 
 public:
@@ -70,6 +85,14 @@ public:
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::ActorDefinition& actorDef);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::ActorDefinition& definition);
+#endif
     // NOLINTEND
 };
 

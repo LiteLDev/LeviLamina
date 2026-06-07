@@ -26,6 +26,8 @@ public:
 
 public:
     // prevent constructor by default
+    MouseBindingRegisterPayload& operator=(MouseBindingRegisterPayload const&);
+    MouseBindingRegisterPayload(MouseBindingRegisterPayload const&);
     MouseBindingRegisterPayload();
 
 public:
@@ -37,16 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MouseBindingRegisterPayload(::Editor::Network::MouseBindingRegisterPayload const&);
-
     MCNAPI MouseBindingRegisterPayload(
         ::HashedString const&                contextId,
         ::HashedString const&                bindingId,
         ::Editor::Input::MouseBinding const& binding
     );
-
-    MCNAPI ::Editor::Network::MouseBindingRegisterPayload&
-    operator=(::Editor::Network::MouseBindingRegisterPayload const&);
     // NOLINTEND
 
 public:
@@ -58,8 +55,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::MouseBindingRegisterPayload const&);
-
     MCNAPI void* $ctor(
         ::HashedString const&                contextId,
         ::HashedString const&                bindingId,

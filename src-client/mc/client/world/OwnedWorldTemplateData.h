@@ -32,17 +32,18 @@ public:
 
 public:
     // prevent constructor by default
-    OwnedWorldTemplateData(OwnedWorldTemplateData const&);
     OwnedWorldTemplateData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OwnedWorldTemplateData(::World::OwnedWorldTemplateData&&);
+    MCAPI OwnedWorldTemplateData(::World::OwnedWorldTemplateData const&);
 
     MCAPI ::std::string const& getCreator() const;
 
     MCAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData const&);
+
+    MCAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData&&);
 
     MCAPI ~OwnedWorldTemplateData();
     // NOLINTEND
@@ -70,7 +71,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::OwnedWorldTemplateData&&);
+    MCAPI void* $ctor(::World::OwnedWorldTemplateData const&);
     // NOLINTEND
 
 public:

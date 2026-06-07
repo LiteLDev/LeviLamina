@@ -25,14 +25,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch const&);
-
-    MCAPI ~RandomBlockStateMatch();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

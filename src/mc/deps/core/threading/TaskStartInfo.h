@@ -21,24 +21,8 @@ public:
     TaskStartInfo();
 
 public:
-    // member functions
+    // static variables
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI explicit TaskStartInfo(char const* name);
-
-    MCNAPI explicit TaskStartInfo(::std::string_view name);
-#endif
-
-    MCNAPI ::TaskStartInfo& startWithDelay(::std::chrono::nanoseconds delay);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(char const* name);
-
-    MCNAPI void* $ctor(::std::string_view name);
-#endif
+    MCNAPI static ::std::thread::id const& NoAffinity();
     // NOLINTEND
 };

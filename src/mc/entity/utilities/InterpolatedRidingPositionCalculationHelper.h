@@ -25,6 +25,8 @@ struct InterpolatedRidingPositionCalculationHelper {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::Vec3 getCamelInterpolatedRidingOffset(bool isSitting);
+
     MCNAPI static ::Vec3 getHorseInterpolatedRidingOffset(
         ::StrictEntityContext const&                                                                            entity,
         ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>, ::StandAnimationComponent const> const& horses,
@@ -50,11 +52,5 @@ public:
         ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::MobBodyRotationComponent const> const& mobs,
         float                                                                                                  alpha
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::Vec3 const& BASE_OFFSET();
     // NOLINTEND
 };

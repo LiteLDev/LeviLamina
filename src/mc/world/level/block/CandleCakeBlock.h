@@ -14,7 +14,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class ItemInstance;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -22,11 +21,15 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class CandleCakeBlock : public ::AbstractCandleBlock {
 public:
+    // prevent constructor by default
+    CandleCakeBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const /*override*/;
 
-    virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
+    virtual ::AABB const& getVisualShape(::Block const& bufferAABB, ::AABB&) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -37,32 +40,28 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
-        /*override*/;
+    virtual int getComparatorSignal(::BlockSource&, ::BlockPos const&, ::Block const&, uchar) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
     virtual bool isCandleCakeBlock() const /*override*/;
 
     virtual int _getNumCandles(::Block const&) const /*override*/;
 
     virtual void _iterateCandles(
-        ::Block const&                                  block,
-        ::BlockPos const&                               pos,
-        ::brstd::function_ref<void(::Vec3 const&, int)> callback
+        ::Block const&    pos,
+        ::BlockPos const& callback,
+        ::brstd::function_ref<void(::Vec3 const&, int)>
     ) const /*override*/;
 
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~CandleCakeBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CandleCakeBlock(::std::string const& nameId, int id);
+
     MCAPI void _popCandle(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -79,11 +78,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& bufferAABB, ::AABB&) const;
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -93,24 +98,21 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCFOLD int $getComparatorSignal(::BlockSource&, ::BlockPos const&, ::Block const&, uchar) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
     MCFOLD bool $isCandleCakeBlock() const;
 
     MCFOLD int $_getNumCandles(::Block const&) const;
 
     MCAPI void $_iterateCandles(
-        ::Block const&                                  block,
-        ::BlockPos const&                               pos,
-        ::brstd::function_ref<void(::Vec3 const&, int)> callback
+        ::Block const&    pos,
+        ::BlockPos const& callback,
+        ::brstd::function_ref<void(::Vec3 const&, int)>
     ) const;
 
     MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

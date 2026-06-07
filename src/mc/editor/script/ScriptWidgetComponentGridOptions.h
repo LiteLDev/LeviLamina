@@ -11,6 +11,7 @@
 class AABB;
 class Vec2;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -29,6 +30,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentGridOptions& operator=(ScriptWidgetComponentGridOptions const&);
     ScriptWidgetComponentGridOptions(ScriptWidgetComponentGridOptions const&);
     ScriptWidgetComponentGridOptions();
 
@@ -36,19 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void>
-    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
-
-    virtual ~ScriptWidgetComponentGridOptions() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGridOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentGridOptions&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGridOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentGridOptions const&);
+    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -66,24 +56,26 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Vec2 const& DEFAULT_GRID_COUNT();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_COLOR();
 
-    MCNAPI static ::Vec2 const& DEFAULT_GRID_SIZE();
+    MCNAPI static ::Vec2 const& MAX_GRID_COUNT();
 
-    MCNAPI static ::Vec2 const& DEFAULT_NORMALIZED_ORIGIN();
-    // NOLINTEND
+    MCNAPI static ::Vec2 const& MAX_GRID_SIZE();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI static ::Vec2 const& MAX_NORMALIZED_ORIGIN();
+
+    MCNAPI static ::Vec2 const& MIN_GRID_COUNT();
+
+    MCNAPI static ::Vec2 const& MIN_GRID_SIZE();
+
+    MCNAPI static ::Vec2 const& MIN_NORMALIZED_ORIGIN();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void>
-    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const;
 
 
     // NOLINTEND

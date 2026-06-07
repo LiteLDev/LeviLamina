@@ -32,9 +32,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptCustomComponentNameError();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptCustomComponentNameError();
+    MCAPI ScriptCustomComponentNameError(
+        ::HashedString const&                                           componentName,
+        ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason reason
+    );
     // NOLINTEND
 
 public:
@@ -50,9 +57,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void*
+    $ctor(::HashedString const& componentName, ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason reason);
     // NOLINTEND
 };
 

@@ -18,17 +18,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DurabilitySensorItemComponent& operator=(DurabilitySensorItemComponent const&);
-    DurabilitySensorItemComponent(DurabilitySensorItemComponent const&);
-    DurabilitySensorItemComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_10::DurabilitySensorItemComponent&
-    operator=(::SharedTypes::v1_21_10::DurabilitySensorItemComponent&&);
-
     MCAPI ~DurabilitySensorItemComponent();
     // NOLINTEND
 
@@ -36,6 +27,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:

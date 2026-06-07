@@ -27,16 +27,4 @@ struct LevelNotificationEvent : public ::EventVariantImpl<
                                     ::LevelStartLeaveGameEvent const,
                                     ::LevelGameRuleChangeEvent const,
                                     ::ScriptingWorldInitializeEvent const,
-                                    ::LevelWeatherChangedEvent const> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LevelNotificationEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+                                    ::LevelWeatherChangedEvent const> {};

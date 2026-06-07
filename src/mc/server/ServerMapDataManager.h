@@ -11,8 +11,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class DimensionManager;
 class EntityContext;
 class IGameplayUserManagerConnector;
+class IMapDataManagerOptions;
+class LevelStorage;
 class MapItemSavedData;
 struct ActorUniqueID;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -29,6 +32,10 @@ public:
                                                                mOnCreateMapSavedData;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserAdded;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ServerMapDataManager();
 
 public:
     // virtual functions
@@ -50,7 +57,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ServerMapDataManager(
+        ::DimensionManager&                         dimensionManager,
+        ::LevelStorage*                             levelStorage,
+        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
+        ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
+
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::DimensionManager&                         dimensionManager,
+        ::LevelStorage*                             levelStorage,
+        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
+        ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
     // NOLINTEND
 
 public:

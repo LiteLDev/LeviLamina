@@ -38,8 +38,6 @@ public:
         ::ParticleSystem::CommonParticle&                 particle,
         ::RenderParams&                                   renderParams
     ) /*override*/;
-
-    virtual ~ParticleLifetimeKillPlaneComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

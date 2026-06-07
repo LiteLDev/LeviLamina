@@ -17,10 +17,10 @@ namespace SoundEventSystem {
 MCAPI ::TickingSystemWithInfo create();
 
 MCAPI void doSoundEventSystem(
-    ::StrictEntityContext const&,
-    ::LevelComponent&                  level,
-    ::SoundEventRequestQueueComponent& requests,
-    ::GetAttachPositionViews const&    getAttachPosViews
+    ::StrictEntityContext const&       level,
+    ::LevelComponent&                  requests,
+    ::SoundEventRequestQueueComponent& getAttachPosViews,
+    ::GetAttachPositionViews const&
 );
 // NOLINTEND
 

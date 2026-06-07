@@ -64,16 +64,14 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~ItemFrameBlockActor() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemFrameBlockActor(::BlockPos const& pos, ::BlockActorType type);
+    MCAPI explicit ItemFrameBlockActor(::BlockPos const& pos);
 
-    MCAPI void _checkMapRemoval(::BlockSource& region, ::ItemInstance& item);
+    MCAPI ItemFrameBlockActor(::BlockPos const& pos, ::BlockActorType type);
 
     MCAPI void
     _updateBit(::BlockSource& region, ::BlockStateVariant<bool> const& vanillaState, ::HashedString const& itemName);
@@ -82,21 +80,47 @@ public:
 
     MCAPI void dropFramedItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
 
+#ifdef LL_PLAT_C
+    MCFOLD ::ClockSpriteCalculator& getClockCalculator();
+
+    MCFOLD ::CompassSpriteCalculator& getCompassCalculator();
+#endif
+
+    MCFOLD ::ItemInstance const& getFramedItem() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::CompassSpriteCalculator& getRecoveryCompassCalculator();
+#endif
+
+    MCFOLD float getRotation();
+
+#ifdef LL_PLAT_C
+    MCFOLD bool const ignoreLighting() const;
+#endif
+
+    MCAPI void rotateFramedItem(::BlockSource& region, ::Actor& entitySource);
+
     MCAPI void setItem(::BlockSource& region, ::ItemInstance const& item, ::Actor* entitySource);
+
+#ifdef LL_PLAT_C
+    MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
+#endif
 
     MCAPI void updateNameTag();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
+    MCAPI static float const& ROTATION_DEGREES();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::BlockPos const& pos);
+
+    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
     // NOLINTEND
 
 public:

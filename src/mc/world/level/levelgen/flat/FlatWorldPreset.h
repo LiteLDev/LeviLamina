@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
+#include "mc/world/level/biome/BiomeIdType.h"
 #include "mc/world/level/levelgen/flat/FlatWorldPresetID.h"
 
 // auto generated forward declare list
@@ -29,13 +29,5 @@ public:
 #endif
 
     MCAPI ::Json::Value toJson() const;
-
-    MCAPI ~FlatWorldPreset();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

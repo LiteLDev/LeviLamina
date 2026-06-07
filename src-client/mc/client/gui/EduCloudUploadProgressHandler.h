@@ -63,13 +63,15 @@ public:
     // NOLINTBEGIN
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onComplete(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+
+    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -78,8 +80,6 @@ public:
     virtual ::std::string getName() const /*override*/;
 
     virtual ::ProgressAnimation showLoadingBar() const /*override*/;
-
-    virtual ~EduCloudUploadProgressHandler() /*override*/;
     // NOLINTEND
 
 public:
@@ -92,7 +92,17 @@ public:
         ::std::optional<::CloudSaveLevelInfo>                       cloudSaveLevelInfo
     );
 
+    MCAPI bool exitingErrorScreen() const;
+
+    MCAPI ::std::optional<::CloudSaveLevelInfo> getCloudSaveLevelInfo() const;
+
+    MCAPI ::std::chrono::milliseconds const getIsDoneInterval() const;
+
+    MCFOLD ::std::string getLevelId() const;
+
     MCAPI ::std::string const getUploadErrorCode() const;
+
+    MCFOLD ::MSGraph::GraphResponse getUploadErrorStatus() const;
 
     MCAPI void getUploadErrorStrings(::MSGraph::GraphResponse errorStatus);
 
@@ -113,27 +123,23 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI void $onCancel(::MinecraftScreenModel&);
 
     MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCFOLD ::std::string $getTitleText() const;
 
     MCAPI ::std::string $getName() const;
 

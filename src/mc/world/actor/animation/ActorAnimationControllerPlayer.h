@@ -68,8 +68,6 @@ public:
     virtual ::HashedString const& getRawName() const /*override*/;
 
     virtual void visit(::AnimationVisitor&& dispatcher) /*override*/;
-
-    virtual ~ActorAnimationControllerPlayer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -83,13 +81,6 @@ public:
         ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
     );
 
-    MCAPI void applyStateAnimationToPose(
-        ::ApplyAnimationContext const&                                                    applyContext,
-        ::RenderParams&                                                                   renderParams,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
-        float                                                                             blendWeight
-    );
-
     MCAPI void blendViaShortestPath(
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>> const&
@@ -97,7 +88,7 @@ public:
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>> const&
               blendInBoneOrientationsMap,
         float blendInWeight,
-        float blendWeight
+        float
     );
 
 #ifdef LL_PLAT_C

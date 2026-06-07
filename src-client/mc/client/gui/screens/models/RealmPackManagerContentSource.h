@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/PackManagerContentSourceImpl.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class IContentSourceRepository;
 struct ContentItem;
+struct PackManagerContentSourceArgs;
 namespace Realms { struct Content; }
 // clang-format on
 
@@ -20,11 +23,33 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmPackManagerContentSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content) /*override*/;
+    // NOLINTEND
 
-    virtual ~RealmPackManagerContentSource() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RealmPackManagerContentSource(
+        ::PackManagerContentSourceArgs&&                          args,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository,
+        int64                                                     realmId
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::PackManagerContentSourceArgs&&                          args,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository,
+        int64                                                     realmId
+    );
     // NOLINTEND
 
 public:

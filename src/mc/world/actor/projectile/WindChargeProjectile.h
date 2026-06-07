@@ -8,13 +8,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
 // clang-format on
 
 class WindChargeProjectile : public ::PredictableProjectile {
+public:
+    // prevent constructor by default
+    WindChargeProjectile();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,8 +37,26 @@ public:
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
     virtual void outOfWorld() /*override*/;
+    // NOLINTEND
 
-    virtual ~WindChargeProjectile() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WindChargeProjectile(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -45,7 +70,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
+    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
 
     MCAPI void $outOfWorld();
 

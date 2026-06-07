@@ -23,8 +23,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UIModification();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UIModification(::Json::Value& baseArray, bool isControlsArray);
+
     MCAPI int _findIndex(::UICondition const& condition, ::UIOperation operation, ::PackReportInfo& packReportInfo);
 
     MCAPI void applyModification();
@@ -45,5 +51,11 @@ public:
 
     MCAPI void
     replace(::UICondition const& condition, ::Json::Value const& replaceValue, ::PackReportInfo& packReportInfo);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Json::Value& baseArray, bool isControlsArray);
     // NOLINTEND
 };

@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/WidgetCollisionType.h"
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetCommonBasePayload.h"
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -40,9 +43,25 @@ public:
     WidgetCreateWidgetPayload();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~WidgetCreateWidgetPayload() /*override*/;
+    MCNAPI WidgetCreateWidgetPayload(
+        ::mce::UUID const&                     serviceId,
+        ::mce::UUID const&                     groupId,
+        ::mce::UUID const&                     widgetId,
+        ::Vec3 const&                          pos,
+        bool                                   selectable,
+        bool                                   visible,
+        float                                  collisionRadius,
+        ::Vec3 const&                          collisionOffset,
+        bool                                   snapToBlock,
+        bool                                   bindPositionToBlockCursor,
+        bool                                   lockToSurface,
+        ::std::string                          widgetName,
+        ::Vec3 const&                          worldBoundsMin,
+        ::Vec3 const&                          worldBoundsMax,
+        ::Editor::Widgets::WidgetCollisionType collisionType
+    );
     // NOLINTEND
 
 public:
@@ -52,9 +71,25 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(
+        ::mce::UUID const&                     serviceId,
+        ::mce::UUID const&                     groupId,
+        ::mce::UUID const&                     widgetId,
+        ::Vec3 const&                          pos,
+        bool                                   selectable,
+        bool                                   visible,
+        float                                  collisionRadius,
+        ::Vec3 const&                          collisionOffset,
+        bool                                   snapToBlock,
+        bool                                   bindPositionToBlockCursor,
+        bool                                   lockToSurface,
+        ::std::string                          widgetName,
+        ::Vec3 const&                          worldBoundsMin,
+        ::Vec3 const&                          worldBoundsMax,
+        ::Editor::Widgets::WidgetCollisionType collisionType
+    );
     // NOLINTEND
 
 public:

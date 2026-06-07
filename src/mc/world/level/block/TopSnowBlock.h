@@ -19,6 +19,7 @@ class BlockType;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class ItemInstance;
 class Player;
 class Random;
 class Vec3;
@@ -38,6 +39,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TopSnowBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
@@ -46,10 +51,10 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual bool getCollisionShapeForCamera(
@@ -76,7 +81,7 @@ public:
 
     virtual bool isPreservingMediumWhenPlaced(::BlockType const* medium) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -97,7 +102,7 @@ public:
         ::BlockType const& newBlock
     ) const /*override*/;
 
-    virtual bool canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    virtual bool canBeBuiltOver(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const /*override*/;
 
     virtual bool canProvideSupport(::Block const& block, uchar, ::BlockSupportType) const /*override*/;
 
@@ -112,13 +117,17 @@ public:
         /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~TopSnowBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TopSnowBlock(::std::string const& nameId, int id, bool usePartialHeight, bool allowFallOnPlace);
+
+    MCAPI bool _canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockType const* newBlock) const;
+
+    MCAPI ::ItemInstance getResourceItemFromFalling() const;
+
     MCAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -135,6 +144,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Block const& buildSnowBlock(::BlockSource& region, ::BlockPos const& pos, int height, bool additive);
 
+    MCFOLD static ::Block const& getCoveredBlock(::BlockSource const& region, ::BlockPos const& pos);
+
     MCAPI static ::Block const&
     getSnowBlockToBuild(::BlockSource const& region, ::BlockPos const& pos, int height, bool additive);
     // NOLINTEND
@@ -142,9 +153,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static int const& MAX_HEIGHT();
+
     MCAPI static ::BaseGameVersion const& TOP_SNOW_FALL_ON_PLACE();
 
     MCAPI static ::BaseGameVersion const& TOP_SNOW_JAVA_PARITY_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool usePartialHeight, bool allowFallOnPlace);
     // NOLINTEND
 
 public:
@@ -155,10 +174,10 @@ public:
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI bool $getCollisionShapeForCamera(
@@ -189,7 +208,7 @@ public:
 
     MCAPI bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -208,7 +227,7 @@ public:
         ::BlockType const& newBlock
     ) const;
 
-    MCAPI bool $canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canBeBuiltOver(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar, ::BlockSupportType) const;
 

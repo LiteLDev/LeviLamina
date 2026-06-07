@@ -43,6 +43,9 @@ public:
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& enchantmentId);
+
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
+    getAllEnchantmentTypes(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:

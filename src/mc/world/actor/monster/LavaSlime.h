@@ -30,8 +30,6 @@ public:
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
     virtual bool isOnFire() const /*override*/;
-
-    virtual ~LavaSlime() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -3,14 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ContainerModel;
 class ContainerScreenContext;
 class ItemStack;
+class Player;
+struct ActorUniqueID;
 // clang-format on
 
 class HorseContainerManagerModel : public ::LevelContainerManagerModel {
@@ -21,11 +23,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HorseContainerManagerModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~HorseContainerManagerModel() /*override*/ = default;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
@@ -37,15 +43,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onEquipSlotChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI HorseContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
 
-    MCFOLD ::Actor* getEntity() const;
+    MCAPI void _onChestSlotChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+
+    MCAPI void _onEquipSlotChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 

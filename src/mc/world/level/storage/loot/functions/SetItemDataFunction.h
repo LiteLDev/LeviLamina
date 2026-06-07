@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class Item;
 class ItemInstance;
 class ItemStack;
@@ -70,7 +69,7 @@ public:
         ::WeakPtr<::Item>&   outItem
     );
 
-    MCAPI void _applyImplForNormalBlock(::Block const*& inOutBlock, ::Random& random);
+    MCFOLD ::RandomValueBounds getValue() const;
     // NOLINTEND
 
 public:

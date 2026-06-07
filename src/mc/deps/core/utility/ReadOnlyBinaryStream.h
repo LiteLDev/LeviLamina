@@ -15,13 +15,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                mHasOverflowed;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ReadOnlyBinaryStream();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,9 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI explicit ReadOnlyBinaryStream(::std::string&& buffer);
+
     MCAPI ReadOnlyBinaryStream(::std::string_view buffer, bool copyBuffer);
-#endif
+
+    MCAPI bool canReadBool() const;
 
     MCAPI ::Bedrock::Result<void> ensureReadCompleted() const;
 
@@ -50,6 +49,8 @@ public:
     MCAPI ::Bedrock::Result<void> getRawBytes(::buffer_span_mut<uchar> outBuffer, uint64 length);
 
     MCAPI ::Bedrock::Result<int> getSignedBigEndianInt();
+
+    MCAPI ::Bedrock::Result<schar> getSignedByte();
 
     MCAPI ::Bedrock::Result<int> getSignedInt();
 
@@ -76,20 +77,22 @@ public:
     MCAPI ::Bedrock::Result<int> getVarInt();
 
     MCAPI ::Bedrock::Result<int64> getVarInt64();
+
+    MCFOLD bool hasOverflowed() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string&& buffer);
+
     MCAPI void* $ctor(::std::string_view buffer, bool copyBuffer);
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

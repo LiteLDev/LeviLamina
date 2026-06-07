@@ -25,13 +25,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~EmitterLifetimeOnceComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~EmitterLifetimeOnceComponent() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -44,12 +37,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

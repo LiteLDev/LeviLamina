@@ -29,14 +29,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~ImmediateRespawnFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ImmediateRespawnFacet(::Bedrock::NotNullNonOwnerPtr<::Minecraft const> minecraft);
+
+    MCAPI void _updateImmediateRespawn();
     // NOLINTEND
 
 public:

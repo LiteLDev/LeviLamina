@@ -39,7 +39,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LegacyWorldConversionManager(::MainMenuScreenModel& screenModel);
 
+    MCAPI ::LoadingState getConversionState() const;
+
+    MCAPI float getProgress() const;
+
     MCAPI void reset();
+
+    MCFOLD void setLegacyWorldConversionProgress(float progress);
 
     MCAPI void tryAcquireMissingDlc(::std::string const& levelId, ::std::function<void(bool)> downloadCompleteCallback);
     // NOLINTEND
@@ -53,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

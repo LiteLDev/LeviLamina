@@ -21,6 +21,12 @@ public:
     ::ll::TypedStorage<2, 8192, ::bgfx::VertexDeclHandle[4096]> m_vertexBufferRef;
     ::ll::TypedStorage<2, 8192, ::bgfx::VertexDeclHandle[4096]> m_dynamicVertexBufferRef;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::bgfx::VertexDeclHandle release(::bgfx::VertexDeclHandle _declHandle);
+    // NOLINTEND
 };
 
 } // namespace bgfx

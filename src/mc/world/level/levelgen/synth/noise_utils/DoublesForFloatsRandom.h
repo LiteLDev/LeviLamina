@@ -12,8 +12,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual float nextFloat() /*override*/;
-
-    virtual ~DoublesForFloatsRandom() /*override*/ = default;
     // NOLINTEND
 
 public:

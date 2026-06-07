@@ -33,4 +33,9 @@ MCNAPI void processBorderCells(
 );
 // NOLINTEND
 
+// static variables
+// NOLINTBEGIN
+MCNAPI int const& AIR_DENSITY();
+// NOLINTEND
+
 } // namespace BlendingDataFactoryUtil

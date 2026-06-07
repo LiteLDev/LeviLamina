@@ -33,14 +33,31 @@ public:
 
 public:
     // prevent constructor by default
-    CameraAimAssistPacketPayload(CameraAimAssistPacketPayload const&);
     CameraAimAssistPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CameraAimAssistPacketPayload& operator=(::CameraAimAssistPacketPayload&&);
+    MCAPI explicit CameraAimAssistPacketPayload(::CameraAimAssistPacketPayload::Action action);
 
-    MCAPI ::CameraAimAssistPacketPayload& operator=(::CameraAimAssistPacketPayload const&);
+    MCAPI CameraAimAssistPacketPayload(
+        ::std::string                              presetId,
+        ::Vec2 const&                              viewAngle,
+        float                                      distance,
+        ::CameraAimAssistPacketPayload::TargetMode targetMode
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CameraAimAssistPacketPayload::Action action);
+
+    MCAPI void* $ctor(
+        ::std::string                              presetId,
+        ::Vec2 const&                              viewAngle,
+        float                                      distance,
+        ::CameraAimAssistPacketPayload::TargetMode targetMode
+    );
     // NOLINTEND
 };

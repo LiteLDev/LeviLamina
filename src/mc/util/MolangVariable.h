@@ -26,10 +26,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangVariable& operator=(MolangVariable const&);
+    MolangVariable();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MolangVariable(::MolangVariable const& rhs);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::MolangVariableIndex
     _findOrAddVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
+
+    MCAPI static void _resetToLowWaterMark();
+
+    MCAPI static void _updateLowWaterMark();
 
 #ifdef LL_PLAT_C
     MCAPI static ::MolangVariableIndex getVariableIndex(::HashedString const& name);
@@ -37,7 +52,11 @@ public:
 
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
 
-    MCAPI static ::HashedString const& getVariableName(::MolangVariableIndex index);
+    MCAPI static ::MolangVariableIndex getVariableIndex(::HashedString const& name, bool allowSpecialCharacters);
+
+    MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
+
+    MCAPI static void initVariableMaps();
 
     MCAPI static void processWaterMark();
     // NOLINTEND
@@ -54,5 +73,11 @@ public:
     MCAPI static ::std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap();
 
     MCAPI static ::std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap_LowWaterMark();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::MolangVariable const& rhs);
     // NOLINTEND
 };

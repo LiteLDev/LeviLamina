@@ -52,6 +52,10 @@ public:
     MCAPI EncyclopediaScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::EncyclopediaTopicIndex topic);
 
     MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
+
+    MCAPI void _selectNewTab(bool isInitialTab, int newTabIndex);
     // NOLINTEND
 
 public:
@@ -65,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $onOpen();
 
-    MCAPI bool $bind(
+    MCFOLD bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,

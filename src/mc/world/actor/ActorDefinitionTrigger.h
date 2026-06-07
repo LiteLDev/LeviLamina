@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+struct VariantParameterListConst;
 namespace SharedTypes::v1_21_120 { struct ActorDefinitionTrigger; }
 // clang-format on
 
@@ -22,12 +24,17 @@ public:
 
 public:
     // prevent constructor by default
-    ActorDefinitionTrigger(ActorDefinitionTrigger const&);
+    ActorDefinitionTrigger& operator=(ActorDefinitionTrigger const&);
+    ActorDefinitionTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionTrigger();
+    MCAPI ActorDefinitionTrigger(::ActorDefinitionTrigger const&);
+
+    MCAPI explicit ActorDefinitionTrigger(::SharedTypes::v1_21_120::ActorDefinitionTrigger const& other);
+
+    MCAPI bool canTrigger(::Actor const& entity, ::VariantParameterListConst const& list) const;
 
     MCAPI void convertToSharedTypeActorDefinitionTrigger(
         ::SharedTypes::v1_21_120::ActorDefinitionTrigger& outputSharedTypeTrigger
@@ -35,15 +42,15 @@ public:
 
     MCAPI ::ActorDefinitionTrigger& operator=(::ActorDefinitionTrigger&&);
 
-    MCAPI ::ActorDefinitionTrigger& operator=(::ActorDefinitionTrigger const&);
-
     MCAPI ~ActorDefinitionTrigger();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::ActorDefinitionTrigger const&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_120::ActorDefinitionTrigger const& other);
     // NOLINTEND
 
 public:

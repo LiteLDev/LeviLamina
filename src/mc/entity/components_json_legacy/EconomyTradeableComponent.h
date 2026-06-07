@@ -18,7 +18,7 @@ class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
 struct IntRange;
-struct Trade;
+struct Tick;
 struct TradeTable;
 // clang-format on
 
@@ -47,6 +47,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit EconomyTradeableComponent(::Actor& owner);
+
     MCAPI void _calculateDemandPrices(
         int               lowTierDiscount,
         int               highTierDiscount,
@@ -60,15 +62,13 @@ public:
 
     MCAPI ::TradeTable* _getTradeTable();
 
-    MCAPI uint _getTradeTierFromCurrentExp() const;
-
-    MCAPI void _rearrangeTradeList(::std::vector<::Trade>& tradeList, uint64 sampleCount);
-
     MCAPI void _setMaxTradeTier(int tradeTier);
 
     MCAPI void _setTradeTier(int tradeTier);
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI bool canLevelUp() const;
 
     MCAPI ::UpdateTradePacket createDataPacket(::ContainerID containerID);
 
@@ -76,13 +76,31 @@ public:
 
     MCAPI ::IntRange getCurrentCuredDiscount() const;
 
-    MCAPI int getCurrentNearbyCuredDiscount() const;
+    MCFOLD ::std::string const& getDisplayName() const;
 
     MCAPI ::InteractionResult getInteraction(::Player& player, ::ActorInteraction& interaction);
 
     MCAPI ::MerchantRecipeList* getOffers();
 
+    MCFOLD int getRiches() const;
+
+    MCAPI uint getTradeExpForCurrentLevel() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<uint> getTradeExpRequirements() const;
+#endif
+
     MCAPI uint getTradeTier() const;
+
+#ifdef LL_PLAT_C
+    MCAPI void handleHaggleAudioCue(bool canPlayValidHaggleSound);
+#endif
+
+    MCAPI bool hasSupplyRemaining() const;
+
+    MCFOLD void initFromDefinition();
+
+    MCAPI ::std::string const& loadDisplayName();
 
     MCAPI void loadOffersFromTag(::CompoundTag const* tag);
 
@@ -94,6 +112,10 @@ public:
 
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
+    MCAPI void reloadComponent();
+
+    MCAPI void resupplyTrades();
+
     MCAPI void setCurrentTradeExp(int currentTradeExp);
 
 #ifdef LL_PLAT_C
@@ -102,10 +124,42 @@ public:
 
     MCAPI void setNearbyCuredDiscount(int discount);
 
+    MCAPI void setOffers(::MerchantRecipeList& offers);
+
+    MCFOLD void setRiches(int riches);
+
+    MCAPI bool shouldConvertTrades() const;
+
+    MCAPI bool shouldPersistTrades() const;
+
+    MCAPI bool showTradeScreen();
+
+    MCAPI void tickDiscountDegradationTimer(::Tick currentTick);
+
     MCAPI void tryIncrementCuredDiscount();
 
     MCAPI void tryIncrementNearbyCuredDiscount();
 
     MCAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
+
+    MCAPI ~EconomyTradeableComponent();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isUseNewTradeScreen(::Actor const& owner);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

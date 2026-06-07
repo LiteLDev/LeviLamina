@@ -31,12 +31,6 @@ public:
     ScriptPackConfigurationManager();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptPackConfigurationManager() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptPackConfigurationManager(::ScriptPackConfigurationManager&&);
@@ -45,17 +39,25 @@ public:
 
     MCNAPI explicit ScriptPackConfigurationManager(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
 
+    MCNAPI ::std::optional<::CommandsRegistryConfiguration> const& getCommandsRegistryConfiguration() const;
+
+#ifdef LL_PLAT_S
+    MCNAPI ::std::optional<::Core::PathBuffer<::std::string>> const& getConfigPath() const;
+#endif
+
+#ifdef LL_PLAT_C
+    MCNAPI ::ScriptPackConfiguration& getDefaultPackConfiguration();
+#endif
+
     MCNAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 
 #ifdef LL_PLAT_S
     MCNAPI void loadConfigs(::cereal::ReflectionCtx const& ctx);
-#endif
-    // NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& sDefaultConfigurationName();
+    MCNAPI void setSentryMaxEventsPerWindow(::std::optional<uint> maxEvents);
+
+    MCNAPI void setSentryRateLimitWindow(::std::optional<::std::chrono::seconds> rateLimitWindow);
+#endif
     // NOLINTEND
 
 public:
@@ -66,12 +68,6 @@ public:
     MCNAPI void* $ctor(::ScriptPackConfigurationManager const&);
 
     MCNAPI void* $ctor(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

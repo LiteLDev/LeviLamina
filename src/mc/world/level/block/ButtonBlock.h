@@ -16,6 +16,7 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class Material;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -30,17 +31,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ButtonBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
 
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -79,21 +84,20 @@ public:
 
     virtual bool isButtonBlock() const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
-
-    virtual ~ButtonBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ButtonBlock(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
+
     MCAPI void
     _buttonUnpressed(::BlockSource& region, ::Block const& buttonBlock, ::Vec3 const& pos, ::Actor* sourceActor) const;
 
@@ -104,7 +108,7 @@ public:
     MCAPI void
     buttonPressed(::BlockSource& region, ::Block const& buttonBlock, ::Vec3 const& pos, ::Actor* sourceActor) const;
 
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -118,17 +122,23 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
@@ -142,13 +152,13 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -168,9 +178,9 @@ public:
 
     MCFOLD bool $isButtonBlock() const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

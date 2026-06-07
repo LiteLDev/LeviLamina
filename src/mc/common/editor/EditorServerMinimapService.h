@@ -7,13 +7,12 @@
 #include "mc/common/editor/MinimapCacheClearMode.h"
 #include "mc/common/editor/MinimapMarkerType.h"
 #include "mc/common/editor/MinimapViewType.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
+class Biome;
 class ICustomBiomeSource;
 class Player;
 class Vec2;
@@ -23,7 +22,7 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class RequestBlockColorsPayload; }
 namespace Editor::Network { class RequestPlayersPayload; }
 namespace Editor::Network { struct BlockColorInfo; }
-namespace Editor::Services { class EditorProjectRegionServiceProvider; }
+namespace Editor::Services { class EditorProjectRegionPlayerServiceProvider; }
 namespace Editor::Services { class MinimapItem; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
@@ -39,6 +38,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnkcbf122;
     ::ll::UntypedStorage<8, 64> mUnk514da7;
     ::ll::UntypedStorage<8, 64> mUnk3a2a8e;
+    ::ll::UntypedStorage<8, 64> mUnk2a898b;
     // NOLINTEND
 
 public:
@@ -93,14 +93,18 @@ public:
     setCustomBiome(::mce::UUID const& minimapId, ::mce::UUID const& customBiomeId) /*override*/;
 
     virtual ::mce::Color getPlayerColor(::ActorUniqueID playerId) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorServerMinimapService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _cleanupDisconnectedPlayers(::std::unordered_set<::ActorUniqueID> const& currentPlayerIds);
 
     MCNAPI ::std::vector<::Editor::Network::BlockColorInfo> _collectBlockColors(
         ::Player*                          player,
@@ -113,30 +117,25 @@ public:
         int                                previousRadius
     );
 
+    MCNAPI ::mce::Color _getDefaultBiomeColor(::Biome const* biome) const;
+
     MCNAPI ::mce::Color _getOrAssignPlayerColor(::ActorUniqueID playerId);
 
     MCNAPI bool _getOrCreateRegionRef(
-        ::Editor::Network::RequestBlockColorsPayload const&     payload,
-        ::Editor::Services::EditorProjectRegionServiceProvider* regionServiceProvider,
-        ::WeakRef<::Editor::ProjectRegion>&                     out,
-        bool&                                                   neededBoundsUpdate
+        ::Editor::Network::RequestBlockColorsPayload const&           payload,
+        ::Editor::Services::EditorProjectRegionPlayerServiceProvider* regionServiceProvider,
+        ::WeakRef<::Editor::ProjectRegion>&                           out,
+        bool&                                                         neededBoundsUpdate
     );
 
     MCNAPI void _handleRequestBlockColorsPayload(::Editor::Network::RequestBlockColorsPayload const& payload);
 
     MCNAPI void _handleRequestPlayersPayload(::Editor::Network::RequestPlayersPayload const& payload);
 
-    MCNAPI void _notifyMinimapActiveStatusChange(::mce::UUID const& minimapId, bool isActive);
-
-    MCNAPI void _notifyMinimapMapSizeChange(::mce::UUID const& minimapId, int mapWidth, int mapHeight);
-
     MCNAPI void _notifyMinimapMarkerTypeChange(
         ::mce::UUID const&                                                 minimapId,
         ::std::unordered_set<::Editor::Services::MinimapMarkerType> const& markerTypes
     );
-
-    MCNAPI void
-    _notifyMinimapViewTypeChange(::mce::UUID const& minimapId, ::Editor::Services::MinimapViewType viewType);
 
     MCNAPI void _processBlockColorsRequest(
         ::Editor::Network::RequestBlockColorsPayload const& payload,
@@ -144,12 +143,6 @@ public:
     );
 
     MCNAPI void _sendEmptyBlockColorResponse(::mce::UUID const& minimapId, ::DimensionType dimensionId);
-
-    MCNAPI void _sendInitialColorBlocks(
-        ::mce::UUID const&                        minimapId,
-        ::Editor::Services::MinimapItem const&    item,
-        ::Editor::Services::MinimapCacheClearMode clearMode
-    );
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     _setCustomBiomeInternal(::mce::UUID const& minimapId, ::WeakRef<::ICustomBiomeSource> const& customBiomeSource);
@@ -210,6 +203,12 @@ public:
     $setCustomBiome(::mce::UUID const& minimapId, ::mce::UUID const& customBiomeId);
 
     MCNAPI ::mce::Color $getPlayerColor(::ActorUniqueID playerId);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color);
 
 
     // NOLINTEND

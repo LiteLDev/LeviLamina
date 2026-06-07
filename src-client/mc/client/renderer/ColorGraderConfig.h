@@ -7,11 +7,13 @@
 #include "mc/client/renderer/RenderingResourcePackJsonConfig.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/external/render_dragon/frame_renderer/modules/Tonemapper.h"
 #include "mc/external/render_dragon/frame_renderer/modules/Type.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class IMinecraftEventing;
 class LinkedAssetValidator;
 class LocalPlayer;
 class ResourcePackManager;
@@ -61,21 +63,9 @@ public:
 
             public:
                 // prevent constructor by default
+                ColorGradingDescription& operator=(ColorGradingDescription const&);
                 ColorGradingDescription(ColorGradingDescription const&);
                 ColorGradingDescription();
-
-            public:
-                // member functions
-                // NOLINTBEGIN
-                MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGradingDescription&
-                operator=(::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::
-                              ColorGradingDescription const&);
-
-                MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGradingDescription&
-                operator=(
-                    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGradingDescription&&
-                );
-                // NOLINTEND
 
             public:
                 // static functions
@@ -174,6 +164,12 @@ public:
                 ColorGrading& operator=(ColorGrading const&);
                 ColorGrading(ColorGrading const&);
                 ColorGrading();
+
+            public:
+                // static functions
+                // NOLINTBEGIN
+                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+                // NOLINTEND
             };
 
             struct ToneMapping {
@@ -205,25 +201,15 @@ public:
             // NOLINTEND
 
         public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ColorGradingSettings();
-
-            MCNAPI ColorGradingSettings(::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings const&);
-
-            MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings&
-            operator=(::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings const&);
-
-            MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings&
-            operator=(::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings&&);
-            // NOLINTEND
+            // prevent constructor by default
+            ColorGradingSettings& operator=(ColorGradingSettings const&);
+            ColorGradingSettings(ColorGradingSettings const&);
+            ColorGradingSettings();
 
         public:
-            // constructor thunks
+            // static functions
             // NOLINTBEGIN
-            MCNAPI void* $ctor();
-
-            MCNAPI void* $ctor(::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings const&);
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
         };
 
@@ -237,12 +223,16 @@ public:
     public:
         // prevent constructor by default
         ColorGradingParametersSrcV0& operator=(ColorGradingParametersSrcV0 const&);
-        ColorGradingParametersSrcV0(ColorGradingParametersSrcV0 const&);
         ColorGradingParametersSrcV0();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ColorGradingParametersSrcV0(::ColorGraderConfig::ColorGradingParametersSrcV0 const&);
+
+        MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV0&
+        operator=(::ColorGraderConfig::ColorGradingParametersSrcV0&&);
+
         MCNAPI ~ColorGradingParametersSrcV0();
         // NOLINTEND
 
@@ -250,6 +240,12 @@ public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static ::SemVersionConstant const& VERSION();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::ColorGraderConfig::ColorGradingParametersSrcV0 const&);
         // NOLINTEND
 
     public:
@@ -302,6 +298,8 @@ public:
                 // NOLINTBEGIN
                 MCNAPI static bool& DEFAULT_ENABLED();
 
+                MCNAPI static float& DEFAULT_TEMPERATURE();
+
                 MCNAPI static ::dragon::framerenderer::modules::TemperatureGrading::Type& DEFAULT_TYPE();
                 // NOLINTEND
             };
@@ -321,6 +319,12 @@ public:
                 ColorGrading& operator=(ColorGrading const&);
                 ColorGrading(ColorGrading const&);
                 ColorGrading();
+
+            public:
+                // static functions
+                // NOLINTBEGIN
+                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+                // NOLINTEND
             };
 
         public:
@@ -332,25 +336,15 @@ public:
             // NOLINTEND
 
         public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ColorGradingSettings();
-
-            MCNAPI ColorGradingSettings(::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings const&);
-
-            MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings&
-            operator=(::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings const&);
-
-            MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings&
-            operator=(::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings&&);
-            // NOLINTEND
+            // prevent constructor by default
+            ColorGradingSettings& operator=(ColorGradingSettings const&);
+            ColorGradingSettings(ColorGradingSettings const&);
+            ColorGradingSettings();
 
         public:
-            // constructor thunks
+            // static functions
             // NOLINTBEGIN
-            MCNAPI void* $ctor();
-
-            MCNAPI void* $ctor(::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings const&);
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
         };
 
@@ -363,6 +357,7 @@ public:
 
     public:
         // prevent constructor by default
+        ColorGradingParametersSrcV1& operator=(ColorGradingParametersSrcV1 const&);
         ColorGradingParametersSrcV1();
 
     public:
@@ -372,9 +367,6 @@ public:
 
         MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV1&
         operator=(::ColorGraderConfig::ColorGradingParametersSrcV1&&);
-
-        MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV1&
-        operator=(::ColorGraderConfig::ColorGradingParametersSrcV1 const&);
 
         MCNAPI ~ColorGradingParametersSrcV1();
         // NOLINTEND
@@ -434,11 +426,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ColorGraderConfig(::IMinecraftEventing& eventing);
+
+    MCNAPI bool addNewColorGradingConfigSetting(
+        ::HashedString const&                             identifier,
+        ::ColorGraderConfig::ColorGradingParametersSrcV1& inColorGradingSettings
+    );
+
     MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV1 const&
     findColorGradingSettings(::HashedString const& identifier) const;
 
+    MCNAPI ::dragon::framerenderer::modules::ColorGradingParameters getColorGradingParameters() const;
+
+    MCNAPI ::dragon::framerenderer::modules::ColorGradingParameters
+    getColorGradingParameters(::HashedString colorGradingIdentifier) const;
+
     MCNAPI ::dragon::framerenderer::modules::ColorGradingParameters
     getColorGradingParameters(::ColorGraderConfig::ColorGradingParametersSrcV1 const& settings) const;
+
+    MCNAPI ::dragon::framerenderer::modules::Tonemapper getTonemapper() const;
+
+    MCNAPI bool setColorGradingConfigSettings(
+        ::HashedString const&                                   identifier,
+        ::ColorGraderConfig::ColorGradingParametersSrcV1 const& inColorGradingSettings
+    );
 
     MCNAPI void
     setDefaultColorGradingSettings(::ColorGraderConfig::ColorGradingParametersSrcV1 const& inColorGradingSettings);
@@ -448,8 +459,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void _fillDefaultTemperatureParameters(
-        ::ColorGraderConfig::ColorGradingParametersSrcV0 const& src,
-        ::ColorGraderConfig::ColorGradingParametersSrcV1&       dst
+        ::ColorGraderConfig::ColorGradingParametersSrcV0 const& dst,
+        ::ColorGraderConfig::ColorGradingParametersSrcV1&
     );
 
     MCNAPI static void bindColorGradingParameters(::cereal::ReflectionCtx& ctx);
@@ -470,6 +481,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& PAYLOAD_KEY();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
@@ -506,27 +523,22 @@ public:
 // free functions
 // NOLINTBEGIN
 MCNAPI bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P1
+    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings const&,
+    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings const&
 );
 
 MCNAPI bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P1
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const&,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const&
 );
 
 MCNAPI bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P1
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const&,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const&
 );
 
 MCNAPI bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P1
-);
-
-MCNAPI bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P1
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const&,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const&
 );
 // NOLINTEND

@@ -12,8 +12,6 @@ public:
     virtual void start() /*override*/;
 
     virtual void tick() /*override*/;
-
-    virtual ~IdleState() /*override*/ = default;
     // NOLINTEND
 
 public:

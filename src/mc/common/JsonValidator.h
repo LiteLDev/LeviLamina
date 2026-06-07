@@ -33,10 +33,12 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Property();
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Property();
-
         MCNAPI Property(::JsonValidator::Property&&);
 
         MCNAPI Property(::JsonValidator::Property const&);
@@ -46,9 +48,9 @@ public:
         MCNAPI ::JsonValidator::Property&
         addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
 
-#ifdef LL_PLAT_C
         MCNAPI ::JsonValidator::Property& addType(::Json::ValueType type);
-#endif
+
+        MCNAPI ::JsonValidator::Property& description(::std::string const& description);
 
         MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
 
@@ -56,14 +58,16 @@ public:
 
         MCNAPI ::JsonValidator::Property& operator[](::std::string const& propName);
 
+        MCNAPI ::JsonValidator::Property& requireConditionalProperty();
+
+        MCNAPI ::JsonValidator::Property& required();
+
         MCNAPI ~Property();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
-
         MCNAPI void* $ctor(::JsonValidator::Property&&);
 
         MCNAPI void* $ctor(::JsonValidator::Property const&);

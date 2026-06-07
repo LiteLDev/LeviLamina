@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class Item;
 // clang-format on
 
 class ItemStackDescriptor : public ::ItemDescriptorCount {
@@ -21,24 +22,23 @@ public:
     // prevent constructor by default
     ItemStackDescriptor& operator=(ItemStackDescriptor const&);
     ItemStackDescriptor(ItemStackDescriptor const&);
-    ItemStackDescriptor();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ItemStackDescriptor() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemStackDescriptor();
+
+    MCAPI ItemStackDescriptor(::Item const& item, int auxValue, ushort stackSize, ::CompoundTag const* userData);
+
     MCAPI ::ItemStackDescriptor& operator=(::ItemStackDescriptor&& other);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize, ::CompoundTag const* userData);
     // NOLINTEND
 
 public:

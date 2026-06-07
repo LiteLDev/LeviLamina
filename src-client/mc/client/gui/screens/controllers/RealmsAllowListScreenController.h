@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/gui/screens/controllers/RealmPlayer.h"
 #include "mc/client/network/realms/RealmsAPI.h"
@@ -26,13 +27,13 @@ class RealmsAllowListScreenController : public ::MainMenuScreenController {
 public:
     // RealmsAllowListScreenController inner types define
     enum class SearchState : int {
-        NotInitialized = -1,
+        NotInitialized = 4294967295,
         NotFound       = 0,
         Found          = 1,
     };
 
     enum class RealmPlayerList : int {
-        InvalidMemberList    = -1,
+        InvalidMemberList    = 4294967295,
         MembersList          = 0,
         InvitedFriendsList   = 1,
         UninvitedFriendsList = 2,
@@ -153,6 +154,8 @@ public:
 
     MCAPI void _handleDoesNotHavePermission(::std::function<void()> newWorldCallback);
 
+    MCAPI ::ui::ViewRequest _handleInviteClick(::UIPropertyBag* bag);
+
     MCAPI void _handlePlayerInvite(::RealmPlayer& player);
 
     MCAPI void _handleUpdateFailed(::std::function<void()> callback);
@@ -164,13 +167,7 @@ public:
 
     MCAPI void _initializePlayerList(::std::function<void()> callback);
 
-    MCAPI bool _isFriend(::std::string const& xuid);
-
     MCAPI void _joinRealm();
-
-    MCAPI void _markStatusNoLongerChanged(::std::map<::std::string, ::RealmsAPI::InviteAction> const& changed);
-
-    MCAPI void _refreshOrExit(::std::function<void()> callback);
 
     MCAPI void _registerBindings();
 
@@ -183,8 +180,6 @@ public:
     MCAPI bool _shouldUpdateFriendsList();
 
     MCAPI void _sortPlayerList();
-
-    MCAPI void _updateAllListModels();
 
     MCAPI void _updateFriendsList();
 
@@ -210,6 +205,8 @@ public:
         ::PlayerPermissionLevel permission,
         ::PlayerPermissionLevel oldPermission
     );
+
+    MCAPI void updateWorld(::Realms::World const& world, ::std::function<void()> callback);
     // NOLINTEND
 
 public:
@@ -241,7 +238,7 @@ public:
 
     MCAPI ::std::string $_getButtonBDescription();
 
-    MCFOLD bool $_getGamepadHelperVisible() const;
+    MCAPI bool $_getGamepadHelperVisible() const;
     // NOLINTEND
 
 public:

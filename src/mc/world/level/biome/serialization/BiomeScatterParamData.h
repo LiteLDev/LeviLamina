@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class ReadOnlyBinaryStream;
 struct BiomeCoordinateData;
 // clang-format on
@@ -31,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void write(::BinaryStream& stream) const;
+    MCAPI bool operator==(::BiomeScatterParamData const& other) const;
 
     MCAPI ~BiomeScatterParamData();
     // NOLINTEND

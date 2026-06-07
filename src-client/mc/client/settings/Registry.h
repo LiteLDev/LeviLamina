@@ -96,9 +96,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void refresh();
-
     MCAPI void refresh(::std::string_view id);
+
+    MCAPI void registerSettingsFactory(
+        ::std::string_view                      key,
+        ::std::function<::std::vector<::std::unique_ptr<::std::variant<
+            ::Settings::BooleanComponent,
+            ::Settings::NumberComponent<int>,
+            ::Settings::NumberComponent<float>,
+            ::Settings::OptionComponent,
+            ::Settings::StringComponent,
+            ::Settings::ActionComponent,
+            ::Settings::TextComponent,
+            ::Settings::GroupInfoComponent,
+            ::Settings::BannerComponent>>>()>&& factory
+    );
     // NOLINTEND
 
 public:

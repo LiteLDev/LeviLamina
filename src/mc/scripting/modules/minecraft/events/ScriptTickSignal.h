@@ -49,23 +49,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Slot& operator=(Slot const&);
-        Slot(Slot const&);
-        Slot();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Slot(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
-
         MCAPI ~Slot();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickSignal::Slot&&);
         // NOLINTEND
 
     public:
@@ -126,7 +112,19 @@ public:
         ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>&      activeList
     );
 
+    MCAPI void _removeAllExpired(::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>& activeList);
+
+    MCAPI void _removeById(uint id, ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>& activeList);
+
+    MCAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
+
+    MCAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
+
     MCAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
+
+    MCAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
+
+    MCAPI void unschedule(uint id);
     // NOLINTEND
 };
 

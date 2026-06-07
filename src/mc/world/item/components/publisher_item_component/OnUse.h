@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ItemStack;
 class Player;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
@@ -19,18 +18,6 @@ namespace PublisherItemComponent {
 struct OnUse : public ::ItemComponent,
                public ::Bedrock::PubSub::
                    Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OnUse() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

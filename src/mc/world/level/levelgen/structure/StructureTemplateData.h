@@ -31,6 +31,7 @@ public:
     // prevent constructor by default
     StructureTemplateData& operator=(StructureTemplateData const&);
     StructureTemplateData(StructureTemplateData const&);
+    StructureTemplateData();
 
 public:
     // virtual functions
@@ -41,17 +42,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateData();
-
-    MCAPI StructureTemplateData(::StructureTemplateData&&);
-
     MCAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
 
     MCAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
+    MCAPI ::StructureLoadResult _parseFormatVersion(::CompoundTag const& tag);
+
+    MCAPI ::StructureLoadResult _parseNeighborAwareBlockUpgradeVersion(::CompoundTag const& tag);
+
     MCAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
 
     MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
+
+    MCAPI ::CompoundTag const* _parseStructureTag(::CompoundTag const& tag);
 
     MCAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
 
@@ -61,31 +64,53 @@ public:
 
     MCAPI void _savePalettes(::CompoundTag& structureTag) const;
 
+    MCAPI void _saveSize(::CompoundTag& tag) const;
+
+    MCAPI void _saveStructureTag(::CompoundTag& tag) const;
+
+    MCAPI void _saveStructureWorldOrigin(::CompoundTag& tag) const;
+
+    MCAPI ::StructureLoadResult _validateSizeAndBlockIndicesSize() const;
+
+    MCAPI void addPalette(::std::string const& name, ::StructureBlockPalette blockPalette);
+
+    MCAPI void clear();
+
+    MCFOLD ::std::unordered_map<::std::string, ::StructureBlockPalette> const& getAllPalettes() const;
+
+    MCFOLD ::std::vector<int> const& getBlockIndices() const;
+
+    MCFOLD ::std::vector<int> const& getExtraBlockIndices() const;
+
     MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
+
+    MCFOLD ::BlockPos const& getSize() const;
+
+    MCFOLD ::BlockPos const& getStructureWorldOrigin() const;
 
     MCAPI bool load(::CompoundTag const& tag);
 
     MCAPI ::StructureTemplateData& operator=(::StructureTemplateData&&);
+
+    MCAPI bool operator==(::StructureTemplateData const& other) const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
     MCAPI void setBlockIndices(::std::vector<int> blockIndices);
 
     MCAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
+
+    MCFOLD void setSize(::BlockPos const& size);
+
+    MCAPI void setStructureWorldOrigin(::BlockPos const& structureWorldOrigin);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static int const& CURRENT_FORMAT_VERSION();
+
     MCAPI static ::std::string const& DEFAULT_PALETTE_NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::StructureTemplateData&&);
     // NOLINTEND
 
 public:

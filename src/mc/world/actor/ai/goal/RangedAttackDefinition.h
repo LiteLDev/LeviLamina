@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class RangedAttackGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -37,9 +39,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~RangedAttackDefinition() /*override*/ = default;
+    MCAPI RangedAttackDefinition();
+
+    MCAPI void initialize(::EntityContext& entity, ::RangedAttackGoal& goal) const;
     // NOLINTEND
 
 public:
@@ -49,6 +53,12 @@ public:
         ::std::string const&                                                                                   name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RangedAttackDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

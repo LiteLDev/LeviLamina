@@ -33,8 +33,22 @@ public:
     // NOLINTBEGIN
     MCAPI void addPickPicture(::Core::PathBuffer<::std::string> const& photoPath);
 
+    MCAPI ::std::string getPickPhotoName(int index);
+
     MCAPI void getPickPics();
 
+    MCAPI ::Core::PathBuffer<::std::string> const* getPickPicture(int index);
+
+    MCAPI uint64 getPickPictureSize();
+
     MCAPI void removePickPicture(int index);
+
+    MCAPI ~PortfolioScreenManager();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

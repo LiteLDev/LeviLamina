@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsPurchaseCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsPurchaseCommandsFacet() /*override*/;
@@ -32,6 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RealmsPurchaseCommandsFacet(
+        ::std::shared_ptr<::Realms::RealmsPurchase>           realmsPurchase,
+        ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
+    );
+
     MCAPI void fulfillPriorRealmsPurchase(::std::string const& xuid);
 
     MCAPI void prepareAppStoreForReconciliation(::std::string const& xuid);
@@ -49,6 +58,15 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::Realms::RealmsPurchase>           realmsPurchase,
+        ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
+    );
     // NOLINTEND
 
 public:

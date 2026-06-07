@@ -19,13 +19,10 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelData const> const> mLevelData;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     MapDataManagerOptions();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,24 +33,18 @@ public:
     virtual bool hasMapsCenteredToOrigin() const /*override*/;
 
     virtual ::BlockPos const& getWorldCenter() const /*override*/;
-
-    virtual ~MapDataManagerOptions() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI explicit MapDataManagerOptions(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
-#endif
     // NOLINTEND
 
 public:

@@ -37,8 +37,6 @@ public:
     virtual bool isReplayNeeded(::AdvanceFrameResult) const /*override*/;
 
     virtual void notifyOfExternalCorrection(uint64 frame) /*override*/;
-
-    virtual ~ServerCorrectionPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:

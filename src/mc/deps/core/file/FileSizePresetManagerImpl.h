@@ -35,8 +35,6 @@ public:
     presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize) /*override*/;
 
     virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView filePath) /*override*/;
-
-    virtual ~FileSizePresetManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

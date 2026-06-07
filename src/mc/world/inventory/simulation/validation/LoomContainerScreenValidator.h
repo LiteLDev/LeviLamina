@@ -7,9 +7,15 @@
 
 class LoomContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~LoomContainerScreenValidator() /*override*/ = default;
+    MCAPI LoomContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

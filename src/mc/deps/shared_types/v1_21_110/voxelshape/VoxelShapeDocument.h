@@ -23,16 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    VoxelShapeDocument& operator=(VoxelShapeDocument const&);
-    VoxelShapeDocument(VoxelShapeDocument const&);
-    VoxelShapeDocument();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_110::VoxelShapeDocument& operator=(::SharedTypes::v1_21_110::VoxelShapeDocument&&);
-
     MCAPI ~VoxelShapeDocument();
     // NOLINTEND
 
@@ -51,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

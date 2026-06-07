@@ -16,23 +16,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                      mOperatorStatusChanged;
     ::ll::TypedStorage<1, 1, bool>                      mHasPlatformProfile;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RealmPlayer(RealmPlayer const&);
-    RealmPlayer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::RealmPlayer& operator=(::RealmPlayer const&);
-
-    MCAPI ~RealmPlayer();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

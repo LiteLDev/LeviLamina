@@ -3,25 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BlockSource;
 namespace ScriptModuleMinecraft { struct ScriptBlockInvalidComponentError; }
+namespace Scripting { class Release; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockRedstoneProducerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockRedstoneProducerComponent() /*override*/ = default;
-    // NOLINTEND
-
 public:
     // member functions
     // NOLINTBEGIN
@@ -42,6 +41,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCFOLD static ::std::optional<::Scripting::Release> overrideEnumVersion();
+
+    MCAPI static ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockRedstoneProducerComponent>>
+    tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

@@ -61,6 +61,8 @@ public:
 
     MCAPI void _finalizeMessage();
 
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _setMessageToSign(::std::string message);
     // NOLINTEND
 

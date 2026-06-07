@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/util/Reference.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_120 {
 
 struct CameraAimAssistPresetExclusionDefinition {
@@ -19,21 +24,30 @@ public:
 
 public:
     // prevent constructor by default
-    CameraAimAssistPresetExclusionDefinition(CameraAimAssistPresetExclusionDefinition const&);
+    CameraAimAssistPresetExclusionDefinition& operator=(CameraAimAssistPresetExclusionDefinition const&);
     CameraAimAssistPresetExclusionDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetExclusionDefinition&
-    operator=(::SharedTypes::v1_21_120::CameraAimAssistPresetExclusionDefinition&&);
+    MCAPI
+    CameraAimAssistPresetExclusionDefinition(::SharedTypes::v1_21_120::CameraAimAssistPresetExclusionDefinition const&);
 
-    MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetExclusionDefinition&
-    operator=(::SharedTypes::v1_21_120::CameraAimAssistPresetExclusionDefinition const&);
-
-    MCAPI bool operator==(::SharedTypes::v1_21_120::CameraAimAssistPresetExclusionDefinition const&) const;
+    MCAPI bool operator==(::SharedTypes::v1_21_120::CameraAimAssistPresetExclusionDefinition const& rhs) const;
 
     MCAPI ~CameraAimAssistPresetExclusionDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_120::CameraAimAssistPresetExclusionDefinition const&);
     // NOLINTEND
 
 public:

@@ -105,13 +105,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~CameraCommand() /*override*/;
-#else // LL_PLAT_C
-    virtual ~CameraCommand() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:
@@ -149,6 +142,86 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static char const*& ENUM_OPTION_ATTACH_TO_ENTITY();
+
+    MCAPI static char const*& ENUM_OPTION_CLEAR();
+
+    MCAPI static char const*& ENUM_OPTION_COLOR();
+
+    MCAPI static char const*& ENUM_OPTION_DEFAULT();
+
+    MCAPI static char const*& ENUM_OPTION_DETACH_FROM_ENTITY();
+
+    MCAPI static char const*& ENUM_OPTION_EASE();
+
+    MCAPI static char const*& ENUM_OPTION_ENTITY_OFFSET();
+
+    MCAPI static char const*& ENUM_OPTION_FACING();
+
+    MCAPI static char const*& ENUM_OPTION_FADE();
+
+    MCAPI static char const*& ENUM_OPTION_FOV();
+
+    MCAPI static char const*& ENUM_OPTION_FOV_CLEAR();
+
+    MCAPI static char const*& ENUM_OPTION_POS();
+
+    MCAPI static char const*& ENUM_OPTION_ROT();
+
+    MCAPI static char const*& ENUM_OPTION_SET();
+
+    MCAPI static char const*& ENUM_OPTION_SPLINE();
+
+    MCAPI static char const*& ENUM_OPTION_TARGET();
+
+    MCAPI static char const*& ENUM_OPTION_TARGET_OFFSET();
+
+    MCAPI static char const*& ENUM_OPTION_TARGET_REMOVE();
+
+    MCAPI static char const*& ENUM_OPTION_TIME();
+
+    MCAPI static char const*& ENUM_OPTION_VIEW_OFFSET();
+
+    MCAPI static char const*& OPTION_ATTACH_TO_ENTITY();
+
+    MCAPI static char const*& OPTION_CLEAR();
+
+    MCAPI static char const*& OPTION_COLOR();
+
+    MCAPI static char const*& OPTION_DEFAULT();
+
+    MCAPI static char const*& OPTION_DETACH_FROM_ENTITY();
+
+    MCAPI static char const*& OPTION_EASE();
+
+    MCAPI static char const*& OPTION_ENTITY_OFFSET();
+
+    MCAPI static char const*& OPTION_FACING();
+
+    MCAPI static char const*& OPTION_FADE();
+
+    MCAPI static char const*& OPTION_FOV();
+
+    MCAPI static char const*& OPTION_FOV_CLEAR();
+
+    MCAPI static char const*& OPTION_POS();
+
+    MCAPI static char const*& OPTION_ROT();
+
+    MCAPI static char const*& OPTION_SET();
+
+    MCAPI static char const*& OPTION_SPLINE();
+
+    MCAPI static char const*& OPTION_TARGET();
+
+    MCAPI static char const*& OPTION_TARGET_OFFSET();
+
+    MCAPI static char const*& OPTION_TARGET_REMOVE();
+
+    MCAPI static char const*& OPTION_TIME();
+
+    MCAPI static char const*& OPTION_VIEW_OFFSET();
+
     MCAPI static ::BaseGameVersion const& REMOVE_IGNORE_STARTING_VALUE_COMPONENT_VERSION();
     // NOLINTEND
 
@@ -156,12 +229,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

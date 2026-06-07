@@ -99,9 +99,13 @@ public:
 
     MCAPI void _populateClientIds();
 
+    MCAPI void _processAbilityChange(int index, bool checked);
+
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
+
+    MCAPI void _registerSubControllers();
 
     MCAPI void _setCurrentPermissionLevel(::PlayerPermissionLevel permissionLevel, bool checkDefaultCustomAbilities);
 

@@ -79,8 +79,6 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
-
-    virtual ~HopperBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -94,6 +92,8 @@ public:
 
     MCAPI void _tick(::BlockSource& region, int maxRecursion);
 
+    MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
+
     MCAPI ::FurnaceBlockActor* getAttachedFurnace(::BlockSource& region);
 
     MCAPI bool isAttachedToChestAndFurnace(::BlockSource& region);
@@ -101,6 +101,10 @@ public:
     MCAPI bool isAttachedToContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
 
     MCAPI bool isSourceOfContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
+
+    MCAPI void updateCooldownAfterMove(::Tick const& currentTick, int time);
+
+    MCAPI void updateMoveCooldownAfterMove(::Tick const& currentTick, int time);
     // NOLINTEND
 
 public:
@@ -136,7 +140,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCFOLD void $setContainerChanged(int slot);
+    MCAPI void $setContainerChanged(int slot);
 
     MCFOLD void $onRemoved(::BlockSource&);
 

@@ -8,7 +8,6 @@ class AtlasItemManager;
 class ItemRegistryRef;
 class ItemStackBase;
 class ResourceLocation;
-class TextureAtlasItem;
 struct ResolvedItemIconInfo;
 struct TextureUVCoordinateSet;
 namespace cg { class TextureSetImageContainer; }
@@ -20,12 +19,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void clearTextureTessellatorData();
 
+    MCAPI static ::cg::TextureSetImageContainer const* findTextureTessellatorData(::ResourceLocation const& location);
+
     MCAPI static ::TextureUVCoordinateSet const& getIcon(::ResolvedItemIconInfo const& texInfo, bool);
 
     MCAPI static ::TextureUVCoordinateSet const&
     getIcon(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane);
-
-    MCAPI static ::TextureAtlasItem const& getTextureItem(::std::string const& name);
 
     MCAPI static ::TextureUVCoordinateSet const& getTextureUVCoordinateSet(::std::string const& name, int id);
 
@@ -33,6 +32,8 @@ public:
         ::ItemRegistryRef                                                          registry,
         ::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer>&& availableIconTextures
     );
+
+    MCAPI static void setAtlasItemManager(::std::shared_ptr<::AtlasItemManager> itemsTextureAtlas);
 
     MCAPI static bool trySetIconInfo(::std::string const& iconName, int& outFrameCount);
 

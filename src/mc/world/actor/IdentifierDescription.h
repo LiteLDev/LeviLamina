@@ -13,28 +13,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IdentifierDescription(IdentifierDescription const&);
-    IdentifierDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* getJsonName() const /*override*/;
-
-    virtual ~IdentifierDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::IdentifierDescription& operator=(::IdentifierDescription const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -3,38 +3,40 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/controls/renderers/UIThumbnailAtlasRenderer.h"
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 #include "mc/client/gui/oreui/resources/AtlasIndex.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
-#include "mc/external/gameface/cohtml/IAsyncResourceResponse.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { class ResourceResponse; }
-namespace OreUI { class ResourceStreamResponse; }
-namespace OreUI { class TemporaryTextureHolder; }
+namespace Gameface { class ResourceResponse; }
+namespace Gameface { class ResourceStreamResponse; }
+namespace Gameface { class TemporaryTextureHolder; }
+namespace Gameface { class UserImageData; }
+namespace Gameface { struct ResourceRequest; }
 namespace OreUI { class UIBlockThumbnailAtlasManager; }
-namespace OreUI { struct ResourceRequest; }
 // clang-format on
 
 namespace OreUI {
 
-class BlockResourceHandler : public ::OreUI::IResourceHandler {
+class BlockResourceHandler : public ::Gameface::IResourceHandler {
 public:
     // BlockResourceHandler inner types define
-    using ReqResponsePair = ::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>;
+    using ReqResponsePair = ::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>>>
+    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse>>>
                                                                                 mBlockRequestsQueue;
     ::ll::TypedStorage<1, 1, bool>                                              mBlockRequestsQueuePending;
-    ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&>                  mTextureHolder;
+    ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&>               mTextureHolder;
     ::ll::TypedStorage<8, 16, ::OreUI::AtlasIndex::ItemEntry>                   mAir;
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                mAtlasTexturePtr;
     ::ll::TypedStorage<8, 16, ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager>> mAtlasManager;
@@ -56,11 +58,11 @@ public:
 
     virtual void update() /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceStreamRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceStreamResponse&) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
 
     virtual void onViewCreate(::IClientInstance& primaryClient) /*override*/;
 
@@ -70,11 +72,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cohtml::IAsyncResourceResponse::UserImageData _generateUserImage(::OreUI::ResourceRequest const& request);
+    MCAPI explicit BlockResourceHandler(::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
 
-    MCAPI void _handleImageRequestAsync(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
+    MCAPI void _buildUserImageData(
+        ::Gameface::UserImageData&                   userImageData,
+        ::UIThumbnailAtlasRenderer::AtlasInfo const& atlasInfo,
+        ::OreUI::AtlasIndex::ItemEntry&              entry
+    );
+
+    MCAPI ::Gameface::UserImageData _generateUserImage(::Gameface::ResourceRequest const& request);
+
+    MCAPI void
+    _handleImageRequestAsync(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
     MCAPI void _rejectResourceRequests();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
     // NOLINTEND
 
 public:
@@ -82,11 +99,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $update();
 
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceStreamResponse&);
+    MCFOLD ::Gameface::ResourceHandlerStatus
+    $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
 
     MCAPI void $onViewCreate(::IClientInstance& primaryClient);
 

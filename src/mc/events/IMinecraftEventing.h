@@ -15,6 +15,7 @@
 #include "mc/client/gui/screens/controllers/SettingsScreenMode.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/MultiplayerState.h"
+#include "mc/client/social/ServiceState.h"
 #include "mc/client/store/iap/transactions/TransactionStatus.h"
 #include "mc/client/util/edu_cloud_utils/Operation.h"
 #include "mc/common/SubClientId.h"
@@ -84,7 +85,6 @@ class PackSettings;
 class PerfContextTrackerReport;
 class Player;
 class PlayerRespawnTelemetryData;
-class PushNotificationMessage;
 class ScriptPluginResult;
 class StructureEditorData;
 class StructureTelemetryClientData;
@@ -92,13 +92,12 @@ struct AsyncJoinAllow;
 struct AsyncJoinDeny;
 struct ChunkRecyclerTelemetryOutput;
 struct DBStoragePerformanceTelemetryData;
-struct ExtraLicenseData;
-struct ImageTelemetryInfo;
 struct LevelStorageEventingContext;
 struct LowMemoryReport;
 struct NewBlockID;
 struct PacksInfoData;
 struct ProfilerLiteTelemetry;
+struct ResourceProcessingPerfData;
 struct SplitScreenUpdatedEventData;
 struct StackStats;
 struct WebviewDownloadInfo;
@@ -106,6 +105,7 @@ namespace Bedrock { class CrashTelemetryProcessor; }
 namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
 namespace Bedrock::Http { class Status; }
+namespace Bedrock::Profile::Whisker { struct ScopeData; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core::Profile { struct FileCounters; }
 namespace Json { class Value; }
@@ -119,10 +119,14 @@ namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Measurement; }
 namespace Social::Events { class OptionChange; }
 namespace Social::Events { class Property; }
-namespace Social::Events { struct InboxSummaryData; }
 namespace Social::Events { struct ServerTelemetryData; }
 namespace Webview { struct TelemetryCommonProperties; }
+namespace dragon::texturestreaming { struct TextureStreamingPerformanceTelemetryData; }
 namespace mce { class UUID; }
+class PushNotificationMessage;
+struct ExtraLicenseData;
+struct ImageTelemetryInfo;
+namespace Social::Events { struct InboxSummaryData; }
 // clang-format on
 
 class IMinecraftEventing : public ::Bedrock::EnableNonOwnerReferences,
@@ -258,7 +262,7 @@ public:
         Started   = 1,
         Completed = 2,
         Resumed   = 3,
-        Canceled  = -1,
+        Canceled  = 4294967295,
     };
 
     enum class FileTransmissionType : int {
@@ -294,7 +298,7 @@ public:
     };
 
     enum class MultiplayerSessionUpdateTrigger : int {
-        None         = -1,
+        None         = 4294967295,
         PlayerJoined = 0,
         PlayerLeft   = 1,
     };
@@ -363,12 +367,6 @@ public:
         TimedOut                      = 8,
     };
 
-    enum class ServerType : int {
-        Unknown         = 0,
-        DedicatedServer = 1,
-        PublicServer    = 2,
-    };
-
     enum class ShareMode : int {
         Share = 1,
         Copy  = 2,
@@ -395,7 +393,7 @@ public:
     };
 
     enum class StructureBlockActionType : int {
-        Unknown     = -1,
+        Unknown     = 4294967295,
         Save        = 0,
         Load        = 1,
         Export      = 2,
@@ -449,7 +447,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMinecraftEventing() /*override*/;
+    virtual ~IMinecraftEventing() /*override*/ = default;
 
     virtual void init(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform) = 0;
 
@@ -600,17 +598,31 @@ public:
         uint                                                         verdictQueueLength
     ) = 0;
 
+    virtual void fireEventNPLNLifecycle(
+        int                        eventType,
+        ::Social::MultiplayerState multiplayerState,
+        ::Social::ServiceState     serviceState
+    ) = 0;
+
+    virtual void fireEventNPLNRpcFailure(
+        int                                     rpcType,
+        int                                     statusCode,
+        ::Social::MultiplayerState              multiplayerState,
+        ::Social::ServiceState                  serviceState,
+        ::std::optional<::std::chrono::seconds> requiredDelay
+    ) = 0;
+
     virtual void fireEventHttpClientError(::std::string const& error) = 0;
 
     virtual void
     fireGlobalResourcePackCrashRecovery(::PackInstance& packInstance, ::mce::UUID recoveryID, int order) = 0;
 
     virtual void fireServerConnectionEvent(
-        ::IConnectionEventing::ServerConnectionOutcome outcome,
-        uint                                           pingLatency,
-        double                                         timeElapsed,
-        ::std::string const&                           creatorName,
-        ::std::string const&                           worldId
+        ::IConnectionEventing::ServerConnectionOutcome,
+        uint,
+        double,
+        ::std::string const&,
+        ::std::string const&
     ) = 0;
 
     virtual void fireServerConnectionAttemptEvent(
@@ -687,7 +699,16 @@ public:
         int                                                                                         fpsThrottle
     ) = 0;
 
-    virtual void fireEventDevSlashCommandExecuted(::std::string const& commandName, ::std::string const& command) = 0;
+    virtual void fireEventProfilerCapture(
+        ::std::string_view const                                                           triggerReason,
+        ::std::chrono::minutes const                                                       temp_gameSessionLengthMins,
+        ::gsl::span<::gsl::not_null<::Bedrock::Profile::Whisker::ScopeData const*>> const& whiskerScopes
+    ) = 0;
+
+    virtual void
+    fireTextureStreamingPerf(::dragon::texturestreaming::TextureStreamingPerformanceTelemetryData const& perfData) = 0;
+
+    virtual void fireEventDevSlashCommandExecuted(::std::string const&, ::std::string const&) = 0;
 
     virtual void fireCommandParseTableTelemetry(
         bool const                                                         isServer,
@@ -804,11 +825,7 @@ public:
 
     virtual void fireEventServerRespawnSearchTime(::Player& player, ::PlayerRespawnTelemetryData const& data) = 0;
 
-    virtual void firePackSettingsEvent(
-        ::PackSettings const& packSettings,
-        ::PackManifest const& manifest,
-        ::std::string         serializedPackSettings
-    ) = 0;
+    virtual void firePackSettingsEvent(::PackSettings const&, ::PackManifest const&, ::std::string) = 0;
 
     virtual void removeTestBuildIdTag() = 0;
 
@@ -892,6 +909,8 @@ public:
         uint64               premiumSpace
     ) = 0;
 
+    virtual void fireEventTotalDlcSizes(uint64 resourceSize, uint64 worldTemplateSize) = 0;
+
     virtual void
     fireEventPlatformStorePurchaseFailure(::std::string const& productId, ::std::string const& errorMessage) = 0;
 
@@ -906,6 +925,8 @@ public:
 
     virtual void
     fireEventTreatmentsSet(::std::vector<::std::string> const& treatments, ::std::string const& treatmentContext) = 0;
+
+    virtual void updateAppliedTreatmentPacks(::std::vector<::std::string> const& treatmentTags) = 0;
 
     virtual void fireEventProgressionsSet(::std::vector<::std::string> const& progressions) = 0;
 
@@ -930,6 +951,15 @@ public:
     virtual void setConnectionGUID(::std::string const& connectionGUID) = 0;
 
     virtual void removeConnectionGUID() = 0;
+
+    virtual void
+    trySetExperienceIdentifiers(::std::string const& experienceId, ::std::string const& existingSessionId) = 0;
+
+    virtual void removeExperienceIdentifiers() = 0;
+
+    virtual ::std::string getExperienceId() const = 0;
+
+    virtual ::std::string getExperienceSessionId() const = 0;
 
     virtual void fireEventSearchCatalogRequest(
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer
@@ -1029,10 +1059,10 @@ public:
     ) = 0;
 
     virtual void fireWorldConversionAttemptEvent(
-        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)>
     ) = 0;
 
-    virtual void fireWorldConversionInitiatedEvent(::std::string const& converterVersion) = 0;
+    virtual void fireWorldConversionInitiatedEvent(::std::string const&) = 0;
 
     virtual void fireWorldUpgradedToCnCPart2(
         bool                 willUpgrade,
@@ -1439,13 +1469,13 @@ public:
     virtual void fireEventPushNotificationOpened(::std::string const& threadId, ::std::string const& deepLink) = 0;
 
     virtual void firePerfTestEvent(
-        ::std::string const&                                    testArtifact,
-        ::std::string const&                                    modelName,
-        ::std::string const&                                    renderSize,
-        uint                                                    renderDistance,
-        uint                                                    simDistance,
-        ::std::string const&                                    memorySize,
-        ::std::vector<::std::pair<::std::string, float>> const& testArtifactData
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        uint,
+        uint,
+        ::std::string const&,
+        ::std::vector<::std::pair<::std::string, float>> const&
     ) = 0;
 
     virtual void fireEventLicenseCheck(bool isLicensed, ::ExtraLicenseData& data) = 0;
@@ -1561,7 +1591,7 @@ public:
 
     virtual void fireEventMultiplayerSessionUpdate(::Bedrock::NonOwnerPointer<::Level> level) = 0;
 
-    virtual void fireEventLevelDestruct(bool isTransfer) = 0;
+    virtual void fireEventLevelDestruct() = 0;
 
     virtual void flagEventDeepLink() = 0;
 
@@ -1780,7 +1810,6 @@ public:
 
     virtual void fireBannedSkinVerificationEvent(
         uint const&          userId,
-        ::std::string const& serverType,
         ::std::string const& skinData,
         bool                 wasApproved,
         int const            eventCode,
@@ -1811,14 +1840,14 @@ public:
     virtual void fireEventTextProcessorStartupFailed(::std::string const& stage, int retryCount, int maxRetryCount) = 0;
 
     virtual void firePlayerAccountMetadata(
-        ::Social::PermissionCheckResult multiPlayerAllowed,
-        ::Social::PermissionCheckResult chatAllowed,
-        ::Social::PermissionCheckResult addFriendAllowed,
-        ::Social::PermissionCheckResult ugcAllowed,
-        ::Social::PermissionCheckResult clubsAllowed,
-        ::Social::PermissionCheckResult viewProfilesAllowed,
-        bool                            isChildAccount,
-        bool                            isGuest
+        ::Social::PermissionCheckResult,
+        ::Social::PermissionCheckResult,
+        ::Social::PermissionCheckResult,
+        ::Social::PermissionCheckResult,
+        ::Social::PermissionCheckResult,
+        ::Social::PermissionCheckResult,
+        bool,
+        bool
     ) = 0;
 
     virtual void fireEventBlockUser(::std::string const& xuid, bool isSuccess, bool isBlocked) = 0;
@@ -1830,8 +1859,11 @@ public:
         ::Bedrock::StorageMigration::StorageMigrationType migrationType,
         int                                               numFilesMigrated,
         int                                               numFilesTotal,
+        double                                            migratedMB,
+        double                                            totalMB,
         ::std::chrono::nanoseconds                        duration,
-        ::std::string const&                              failureReason
+        ::std::string const&                              failureReason,
+        ::std::string const&                              failureFolder
     ) = 0;
 
     virtual void fireEventConnectedStorageResult(
@@ -1882,6 +1914,10 @@ public:
         ::std::string const& partyId
     ) = 0;
 
+    virtual void fireEventPartyButtonPressed(::std::string const& buttonName, ::std::string const& partyId) = 0;
+
+    virtual void fireEventPartyTravelToastExpired(::std::string const& travelMode, ::std::string const& partyId) = 0;
+
     virtual void fireEventGoogleAccountHoldWarning(bool navigatedToSubscription) = 0;
 
     virtual void fireDelayedEventReportOfflineAction(::std::string const& offlineAction) = 0;
@@ -1889,12 +1925,11 @@ public:
     virtual void
     fireEventFeedbackSubmitted(::std::string const& productId, bool safetyCheckSuccessful, bool isValidText) = 0;
 
-    virtual void fireEventTrackDeeplinks(
-        ::std::string const& deeplinkDestination,
-        ::std::string const& deeplinkSource,
-        ::std::string const& educationReferrerId,
-        ::std::string const& educationReferrerType
-    ) = 0;
+    virtual void
+    fireEventTrackDeeplinks(::std::string const&, ::std::string const&, ::std::string const&, ::std::string const&) = 0;
+
+    virtual void
+    fireEventUriActivation(::std::string const& activationIdentifier, ::std::string const& activationParameters) = 0;
 
     virtual void
     firePlayerUnexpectedFallDamage(float const fallDistance, bool isVehicle, float const divergenceAmount) = 0;
@@ -1928,6 +1963,7 @@ public:
     virtual void fireEventWriteBudgetLow(
         uint64                     remainingWriteBudget,
         float                      writeRateMBPerMin,
+        float                      writeCountPerMin,
         ::std::chrono::nanoseconds timeSinceLastLargeFileTransactionCompleted,
         bool                       anyLargeFileTransactionInProgress,
         ::std::string const&       correlationId
@@ -1973,9 +2009,9 @@ public:
         bool                 deviceSupportsReasonLowMem
     ) = 0;
 
-    virtual void fireEventBug1341395(::std::string const& details) = 0;
+    virtual void fireEventBug1341395(::std::string const&) = 0;
 
-    virtual void fireEventImmersiveReaderStatus(::Bedrock::Http::Status const status) = 0;
+    virtual void fireEventImmersiveReaderStatus(::Bedrock::Http::Status const) = 0;
 
     virtual void fireEventPacketSerializationMismatch(
         ::MinecraftPacketIds packetId,
@@ -1987,12 +2023,8 @@ public:
     fireEventPUVLoad(::std::string const& resourceCategory, ::PuvLoadData::TelemetryEventData&& loadData) = 0;
 
     virtual void fireEventRemoteDesktop(bool isRemoteDesktop) = 0;
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual void fireEventResourceProcessingPerf(::ResourceProcessingPerfData const& data) = 0;
     // NOLINTEND
 
 public:

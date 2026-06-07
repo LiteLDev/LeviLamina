@@ -8,12 +8,15 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
 class ItemStack;
 class MobEffectInstance;
 class Player;
 class Vec3;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
@@ -37,6 +40,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Arrow();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -56,24 +63,42 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual ::mce::Color getEffectColor();
-
-    virtual ~Arrow() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Arrow(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void addMobEffect(::MobEffectInstance effect);
 
     MCAPI int getAuxValue() const;
+
+    MCAPI int getEnchantPunch() const;
 
     MCAPI void setCritical(bool isCrit);
 
     MCAPI void setEnchantFlame(int level);
 
+    MCAPI void setEnchantInfinity(int level);
+
     MCAPI void setEnchantPower(int level);
 
     MCAPI void setEnchantPunch(int level);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

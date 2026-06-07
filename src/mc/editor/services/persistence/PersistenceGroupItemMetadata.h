@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/editor/PersistenceScope.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Services {
 
 struct PersistenceGroupItemMetadata {
@@ -21,13 +29,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Services::PersistenceGroupItemMetadata&
-    operator=(::Editor::Services::PersistenceGroupItemMetadata&&);
+    MCNAPI PersistenceGroupItemMetadata(
+        ::std::string const&                 groupItemVersionedName,
+        ::Editor::Services::PersistenceScope scope
+    );
 
     MCNAPI ::Editor::Services::PersistenceGroupItemMetadata&
     operator=(::Editor::Services::PersistenceGroupItemMetadata const&);
 
     MCNAPI ~PersistenceGroupItemMetadata();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& groupItemVersionedName, ::Editor::Services::PersistenceScope scope);
     // NOLINTEND
 
 public:

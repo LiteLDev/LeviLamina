@@ -14,6 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk34d931;
+    ::ll::UntypedStorage<8, 64> mUnk5232c0;
     ::ll::UntypedStorage<1, 1>  mUnk6122b2;
     // NOLINTEND
 
@@ -28,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPropertySetter() = default;
 
-    virtual ::Scripting::ResultAny set(::entt::meta_handle instance, ::entt::meta_any value) = 0;
+    virtual ::Scripting::ResultAny set(::entt::meta_handle, ::entt::meta_any) = 0;
 
     virtual ::entt::meta_type type() const = 0;
 

@@ -2,4 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CannotBeAttackedDefinition {};
+// auto generated inclusion list
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
+struct CannotBeAttackedDefinition {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCFOLD static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CannotBeAttackedDefinition>>& root
+    );
+    // NOLINTEND
+};

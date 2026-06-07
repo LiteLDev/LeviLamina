@@ -36,6 +36,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                                        mAutoRefetchAttempsCounter;
     ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
                                                                mListSubscribers;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mServersChangedSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mMCTokenUpdateSubscription;
     // NOLINTEND
 
@@ -63,7 +64,9 @@ public:
 
     MCAPI void _fetchWorlds(bool forceFetch);
 
-    MCAPI void _onMCTokenUpdated(::ServicesManager*);
+    MCFOLD void _onMCTokenUpdated(::ServicesManager*);
+
+    MCFOLD void _onServersChanged();
 
     MCAPI void _refreshWorlds();
 
@@ -73,7 +76,17 @@ public:
 
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
+    MCFOLD ::std::vector<::std::shared_ptr<::NetworkWorldInfo>> const& getWorlds() const;
+
+    MCAPI bool isFetchingServers() const;
+
+    MCAPI void refreshRepository();
+
     MCAPI ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
+
+    MCAPI void sort();
+
+    MCAPI void update(double timestampMs);
 
     MCAPI ~ThirdPartyWorldList();
     // NOLINTEND

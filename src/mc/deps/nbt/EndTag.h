@@ -29,8 +29,6 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual uint64 hash() const /*override*/;
-
-    virtual ~EndTag() /*override*/ = default;
     // NOLINTEND
 
 public:

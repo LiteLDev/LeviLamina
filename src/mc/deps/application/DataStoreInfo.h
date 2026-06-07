@@ -18,18 +18,6 @@ public:
     DataStoreInfo& operator=(DataStoreInfo const&);
     DataStoreInfo(DataStoreInfo const&);
     DataStoreInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DataStoreInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Bedrock::DataStoreDetail

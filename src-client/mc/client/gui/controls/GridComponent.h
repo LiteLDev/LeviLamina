@@ -11,6 +11,7 @@
 // clang-format off
 class UIControl;
 class UIControlFactory;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -51,8 +52,6 @@ public:
     virtual void onNotifyChildAdded() /*override*/;
 
     virtual void onNotifyChildRemoved() /*override*/;
-
-    virtual ~GridComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -60,25 +59,63 @@ public:
     // NOLINTBEGIN
     MCAPI GridComponent(::UIControl& owner, ::std::weak_ptr<::UIControlFactory> factoryPtr);
 
+    MCAPI void _assignStaticGridItemIndexes();
+
+    MCAPI void _cacheGridItemControlAt(::UIControl& owner, uint64 const& index);
+
     MCAPI void _createGridItemAt(int index);
+
+    MCAPI void _reconstructGridItem(::UIControl& gridItem, int gridItemIndex);
+
+    MCAPI ::std::pair<int, int> getClippedCollectionRange() const;
+
+    MCFOLD ::std::string const& getCollectionName() const;
+
+    MCAPI int getExpectedSize() const;
+
+    MCFOLD ::glm::ivec2 const& getGridDimensions() const;
+
+    MCAPI ::ui::OrientationType const& getGridFillDirection() const;
+
+    MCFOLD ::std::shared_ptr<::UIControl> getGridItemTemplate() const;
+
+    MCFOLD ::ui::OrientationType const& getGridRescalingType() const;
+
+    MCFOLD int getMaximumGridItems() const;
+
+    MCAPI bool getNeedsRescaling() const;
+
+    MCFOLD bool isDynamic() const;
 
     MCAPI bool partiallyCreateGridItems(int startIndex, int endIndex);
 
     MCAPI void reassignGridPositions();
 
     MCAPI void refreshGridItems();
+
+    MCFOLD ::Bedrock::PubSub::Subscription registerGridCompletionListener(::std::function<void(uint64)> callback);
+
+    MCFOLD void setCollectionName(::std::string const& collectionName);
+
+    MCFOLD void setGridDimensionBinding(::std::string const& binding);
+
+    MCAPI void setGridDimensions(::glm::ivec2 const& dimensions);
+
+    MCAPI void setGridFillDirection(::ui::OrientationType const& val);
+
+    MCAPI void setGridItemTemplate(::std::shared_ptr<::UIControl> gridItemTemplate);
+
+    MCAPI void setGridRescalingType(::ui::OrientationType const& val);
+
+    MCFOLD void setLowMemoryMode(bool lowMemoryMode);
+
+    MCAPI void setMaximumGridItems(int val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UIControl& owner, ::std::weak_ptr<::UIControlFactory> factoryPtr);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

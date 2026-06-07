@@ -29,8 +29,6 @@ public:
     virtual ::EventResult onObjectiveRemoved(::std::string const& objective) /*override*/;
 
     virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const& id) /*override*/;
-
-    virtual ~ScriptScoreboardListener() /*override*/ = default;
     // NOLINTEND
 
 public:

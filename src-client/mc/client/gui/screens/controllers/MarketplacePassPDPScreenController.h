@@ -142,7 +142,7 @@ public:
 
     MCAPI void $onEntered();
 
-    MCFOLD void $onLeave();
+    MCAPI void $onLeave();
 
     MCAPI ::ui::DirtyFlag $tick();
 

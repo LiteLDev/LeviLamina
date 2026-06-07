@@ -14,21 +14,33 @@ class ItemDescriptor;
 
 class ChestBoatItem : public ::BoatItem {
 public:
+    // prevent constructor by default
+    ChestBoatItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     virtual ::ActorType _getActorType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ChestBoatItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChestBoatItem(::std::string const& name, int id, int woodType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, int woodType);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
     MCAPI ::ActorType $_getActorType() const;
 

@@ -7,6 +7,7 @@
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class EntityContext;
-class Experiments;
 struct BlockAnimateTickData;
 struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -30,9 +30,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SculkSensorBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
 
     virtual void onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const /*override*/;
 
@@ -40,9 +44,7 @@ public:
 
     virtual bool isSignalSource() const /*override*/;
 
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
@@ -52,7 +54,7 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar) const
         /*override*/;
 
     virtual bool liquidCanFlowIntoFromDirection(
@@ -60,15 +62,15 @@ public:
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~SculkSensorBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SculkSensorBlock(::std::string const& nameId, int id);
+
+    MCAPI SculkSensorBlock(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -77,12 +79,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setCooldownPhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
-
     MCAPI static void _setInactivePhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
     MCAPI static void
     _tryResonateVibration(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int vibrationFrequency);
+
+#ifdef LL_PLAT_C
+    MCAPI static bool isActive(::Block const& block);
+#endif
+
+    MCAPI static bool isActive(::BlockSource& region, ::BlockPos const& pos);
+
+#ifdef LL_PLAT_C
+    MCAPI static bool isInactive(::Block const& block);
+#endif
+
+    MCAPI static bool isOnCooldown(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void setActivePhase(
         ::BlockSource&    region,
@@ -94,9 +106,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
 
     MCAPI void $onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const;
 
@@ -104,8 +124,7 @@ public:
 
     MCFOLD bool $isSignalSource() const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -115,15 +134,13 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar) const;
 
     MCFOLD bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

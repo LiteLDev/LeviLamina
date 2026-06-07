@@ -30,9 +30,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~FurnaceInputContainerController() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~FurnaceInputContainerController() /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const /*override*/;
+#else // LL_PLAT_C
     virtual bool isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -52,6 +61,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, ::HashedString const& recipeTag);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

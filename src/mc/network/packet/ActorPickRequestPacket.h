@@ -59,19 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ActorPickRequestPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ActorPickRequestPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ActorPickRequestPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit ActorPickRequestPacket(::ActorPickRequestPacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ActorPickRequestPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

@@ -22,4 +22,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SaveContext::SaveUseCase> mSaveUseCase;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::SaveContext::SaveOperation getOperation() const;
+
+    MCAPI bool isMoveContext() const;
+    // NOLINTEND
 };

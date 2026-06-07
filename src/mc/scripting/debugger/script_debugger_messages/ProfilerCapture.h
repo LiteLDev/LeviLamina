@@ -15,19 +15,30 @@ public:
 
 public:
     // prevent constructor by default
-    ProfilerCapture(ProfilerCapture const&);
     ProfilerCapture();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ProfilerCapture(::ScriptDebuggerMessages::ProfilerCapture const&);
+
+    MCNAPI ProfilerCapture(::std::string const& captureBasePath, ::std::string&& captureData);
+
     MCNAPI ::ScriptDebuggerMessages::ProfilerCapture& operator=(::ScriptDebuggerMessages::ProfilerCapture&&);
 
     MCNAPI ::ScriptDebuggerMessages::ProfilerCapture& operator=(::ScriptDebuggerMessages::ProfilerCapture const&);
 
-    MCNAPI bool operator==(::ScriptDebuggerMessages::ProfilerCapture const&) const;
+    MCNAPI bool operator==(::ScriptDebuggerMessages::ProfilerCapture const& other) const;
 
     MCNAPI ~ProfilerCapture();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptDebuggerMessages::ProfilerCapture const&);
+
+    MCNAPI void* $ctor(::std::string const& captureBasePath, ::std::string&& captureData);
     // NOLINTEND
 
 public:

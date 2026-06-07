@@ -36,14 +36,6 @@ public:
         ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
     );
 
-    MCAPI static void _tickWitherBossPreAIStepSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::WitherBossFlagComponent>,
-            ::ActorOwnerComponent>                             view,
-        ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
-    );
-
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -23,8 +23,6 @@ public:
     virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const /*override*/;
 
     virtual float getAfterBreachArmorFraction(int level, float const armorFraction) const /*override*/;
-
-    virtual ~BreachEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

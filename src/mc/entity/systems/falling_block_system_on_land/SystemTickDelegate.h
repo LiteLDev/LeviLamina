@@ -29,14 +29,6 @@ public:
     virtual void onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual void breakBlock(::FallingBlockActor& fallingBlock) /*override*/;
-
-    virtual ~SystemTickDelegate() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

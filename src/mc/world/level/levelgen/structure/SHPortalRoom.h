@@ -23,12 +23,10 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual void addChildren(
-        ::StructurePiece&                                   startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
+        ::StructurePiece& startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>&,
+        ::Random&
     ) /*override*/;
-
-    virtual ~SHPortalRoom() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -36,12 +34,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&,
-        int footX,
-        int footY,
-        int footZ,
-        int direction,
-        int genDepth
+        ::Random&                                           footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 genDepth,
+        int
     );
     // NOLINTEND
 
@@ -52,11 +50,8 @@ public:
 
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $addChildren(
-        ::StructurePiece&                                   startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
-    );
+    MCAPI void
+    $addChildren(::StructurePiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>&, ::Random&);
 
 
     // NOLINTEND

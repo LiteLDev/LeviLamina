@@ -43,12 +43,11 @@ public:
     // prevent constructor by default
     ModuleBinding& operator=(ModuleBinding const&);
     ModuleBinding(ModuleBinding const&);
+    ModuleBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ModuleBinding();
-
     MCNAPI ModuleBinding(::Scripting::ModuleBinding&&);
 
     MCNAPI ModuleBinding(
@@ -77,8 +76,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Scripting::ModuleBinding&&);
 
     MCNAPI void* $ctor(

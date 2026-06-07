@@ -20,7 +20,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Mob&>        mTarget;
     ::ll::TypedStorage<4, 12, ::Vec3 const> mDirection;
     ::ll::TypedStorage<4, 4, float const>   mForce;
-    ::ll::TypedStorage<4, 4, float const>   mHeightCap;
+    ::ll::TypedStorage<4, 4, float const>   mVerticalVelocityCap;
     ::ll::TypedStorage<1, 1, bool const>    mSlowdownSelf;
     // NOLINTEND
 

@@ -10,8 +10,11 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
 class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class GlowSquid : public ::Squid {
@@ -21,6 +24,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTime;
     ::ll::TypedStorage<1, 1, bool>                                    mGoingDark;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    GlowSquid();
 
 public:
     // virtual functions
@@ -35,14 +42,26 @@ public:
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const /*override*/;
-
-    virtual ~GlowSquid() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _startGoingDark();
+    MCAPI GlowSquid(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

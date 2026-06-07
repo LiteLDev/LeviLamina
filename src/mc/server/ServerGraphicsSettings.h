@@ -14,4 +14,10 @@ public:
     ServerGraphicsSettings& operator=(ServerGraphicsSettings const&);
     ServerGraphicsSettings(ServerGraphicsSettings const&);
     ServerGraphicsSettings();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool getDisableClientVibrantVisuals() const;
+    // NOLINTEND
 };

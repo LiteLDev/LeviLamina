@@ -53,8 +53,6 @@ public:
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
-
-    virtual ~FishingRodItem() /*override*/ = default;
     // NOLINTEND
 
 public:

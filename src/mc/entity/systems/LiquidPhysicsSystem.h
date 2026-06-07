@@ -27,14 +27,14 @@ namespace LiquidPhysicsSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void _liquidBlockFetch(
-    ::StrictEntityContext const&,
-    ::StateVectorComponent&                    stateVector,
-    ::UpdateWaterStateRequestComponent&        request,
-    ::AABBShapeComponent const&                aabbShape,
-    ::SubBBsComponent const&                   subBBs,
-    ::Optional<::ItemActorFlagComponent const> maybeItem,
-    ::std::vector<::LiquidBlockEntry>&         scratch,
-    ::IConstBlockSource const&                 region
+    ::StrictEntityContext const&               stateVector,
+    ::StateVectorComponent&                    request,
+    ::UpdateWaterStateRequestComponent&        aabbShape,
+    ::AABBShapeComponent const&                subBBs,
+    ::SubBBsComponent const&                   maybeItem,
+    ::Optional<::ItemActorFlagComponent const> scratch,
+    ::std::vector<::LiquidBlockEntry>&         region,
+    ::IConstBlockSource const&
 );
 
 MCAPI void _markForLiquidFlow(
@@ -68,6 +68,8 @@ MCAPI void _tickLiquidBlocksFetch(
 );
 
 MCAPI ::TickingSystemWithInfo createFilterSystem(bool isClientSide);
+
+MCAPI ::TickingSystemWithInfo createLiquidFetchingSystem();
 // NOLINTEND
 
 } // namespace LiquidPhysicsSystem

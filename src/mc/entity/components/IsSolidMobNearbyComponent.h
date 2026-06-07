@@ -26,24 +26,4 @@ public:
             ::std::equal_to<::StrictEntityContext>>>
         mNearbyColliders;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IsSolidMobNearbyComponent& operator=(IsSolidMobNearbyComponent const&);
-    IsSolidMobNearbyComponent(IsSolidMobNearbyComponent const&);
-    IsSolidMobNearbyComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI IsSolidMobNearbyComponent(::IsSolidMobNearbyComponent&&);
-
-    MCAPI ::IsSolidMobNearbyComponent& operator=(::IsSolidMobNearbyComponent&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IsSolidMobNearbyComponent&&);
-    // NOLINTEND
 };

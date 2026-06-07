@@ -34,11 +34,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetBannerDetailsFunction() /*override*/ = default;
+    virtual ~SetBannerDetailsFunction() /*override*/;
 
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
@@ -46,7 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _apply(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) const;
+    MCAPI void _apply(::ItemStackBase& item, ::Random&, ::LootTableContext&) const;
+
+    MCFOLD ::BannerBlockType getBannerType() const;
+
+    MCFOLD ::ItemColor getBaseColor() const;
+
+    MCFOLD ::std::vector<::std::pair<uchar, ::ItemColor>> const& getPatterns() const;
     // NOLINTEND
 
 public:
@@ -60,11 +66,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

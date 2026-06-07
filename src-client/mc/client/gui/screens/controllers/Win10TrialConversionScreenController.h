@@ -36,6 +36,8 @@ public:
     MCAPI explicit Win10TrialConversionScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
 
     MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

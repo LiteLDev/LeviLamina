@@ -16,13 +16,20 @@ public:
 public:
     // prevent constructor by default
     AzureIdentityConfig& operator=(AzureIdentityConfig const&);
-    AzureIdentityConfig(AzureIdentityConfig const&);
     AzureIdentityConfig();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI AzureIdentityConfig(::Bedrock::Services::AzureIdentityConfig const&);
+
     MCNAPI ~AzureIdentityConfig();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Bedrock::Services::AzureIdentityConfig const&);
     // NOLINTEND
 
 public:

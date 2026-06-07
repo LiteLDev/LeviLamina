@@ -19,17 +19,16 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptTransferCollectionNameData(ScriptTransferCollectionNameData const&);
+    ScriptTransferCollectionNameData& operator=(ScriptTransferCollectionNameData const&);
     ScriptTransferCollectionNameData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
-    operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData&&);
+    MCNAPI ScriptTransferCollectionNameData(::Editor::ScriptModule::ScriptTransferCollectionNameData const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
-    operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData const&);
+    operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData&&);
 
     MCNAPI ~ScriptTransferCollectionNameData();
     // NOLINTEND
@@ -38,6 +37,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindInterface();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptTransferCollectionNameData const&);
     // NOLINTEND
 
 public:

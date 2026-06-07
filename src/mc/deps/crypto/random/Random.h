@@ -10,9 +10,7 @@ namespace mce { class UUID; }
 namespace Crypto::Random {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
 MCFOLD ::mce::UUID generateCryptographicPlatformUUID();
-#endif
 
 MCFOLD ::mce::UUID generateUUID();
 

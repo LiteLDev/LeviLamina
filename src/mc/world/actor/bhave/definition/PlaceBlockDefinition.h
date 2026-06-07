@@ -7,12 +7,6 @@
 
 class PlaceBlockDefinition : public ::BehaviorDefinition {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~PlaceBlockDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

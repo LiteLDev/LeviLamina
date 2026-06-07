@@ -33,18 +33,36 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AnimatedGifRenderer() /*override*/ = default;
+    virtual ~AnimatedGifRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
     virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&) /*override*/;
 
     virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
 
     virtual ::UIBatchType getBatchType() const /*override*/;
 
     virtual int getCustomId() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AnimatedGifRenderer();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -54,7 +72,7 @@ public:
 
     MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
 
     MCFOLD ::UIBatchType $getBatchType() const;
 

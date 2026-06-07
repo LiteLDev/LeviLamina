@@ -29,15 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AllPaths(::ResourcePackPaths::AllPaths&&);
-
     MCNAPI ~AllPaths();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourcePackPaths::AllPaths&&);
     // NOLINTEND
 
 public:

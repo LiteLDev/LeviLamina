@@ -13,13 +13,22 @@ public:
 public:
     // prevent constructor by default
     FogCommandSettings& operator=(FogCommandSettings const&);
-    FogCommandSettings(FogCommandSettings const&);
     FogCommandSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FogCommandSettings(::FogCommandSettings const&);
+
+    MCFOLD ::FogCommandSettings& operator=(::FogCommandSettings&&);
+
     MCAPI ~FogCommandSettings();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::FogCommandSettings const&);
     // NOLINTEND
 
 public:

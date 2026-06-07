@@ -63,7 +63,7 @@ public:
 
     MCAPI void _registerBindings();
 
-    MCAPI void _sendCustomFormData();
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

@@ -35,17 +35,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FilterGroupData& operator=(FilterGroupData const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI FilterGroupData();
-
-    MCAPI FilterGroupData(::SharedTypes::v1_21_20::FilterGroupData&&);
-
-    MCAPI FilterGroupData(::SharedTypes::v1_21_20::FilterGroupData const&);
 
     MCAPI ~FilterGroupData();
     // NOLINTEND
@@ -60,10 +52,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::FilterGroupData&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::FilterGroupData const&);
     // NOLINTEND
 
 public:

@@ -31,12 +31,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorComponents();
+
     MCAPI ::std::unordered_map<
         ::std::string_view,
         ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory>> const&
     _getOrCreateActorComponentFactories() const;
 
     MCAPI ::std::vector<::std::string_view> getSupportedComponentIds(::WeakRef<::EntityContext> entityRef) const;
+
+    MCAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory> const&
+    tryGetFactory(::std::string const& componentName);
     // NOLINTEND
 
 public:
@@ -48,6 +53,12 @@ public:
         ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&                 actorComponentTypesEnum,
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 

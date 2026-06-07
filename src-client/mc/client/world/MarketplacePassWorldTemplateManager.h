@@ -76,7 +76,19 @@ public:
 
     MCAPI void _prepareOffers();
 
+    MCAPI bool areSuggestedOffersLoaded() const;
+
+    MCFOLD ::std::vector<::World::MarketplaceWorldTemplateData> const& getMarketplacePassWorldTemplateList() const;
+
+    MCAPI ::std::string getSeeMorePageId() const;
+
+    MCAPI ::std::optional<::std::string> getSuggestedOffersTitle() const;
+
+    MCFOLD bool isDirty() const;
+
     MCAPI void isTemplateOwnedThroughPassOnly(::std::string const& templateId, ::std::function<void(bool)> callback);
+
+    MCAPI void refreshOffers();
 
     MCAPI void update(double);
     // NOLINTEND

@@ -23,8 +23,6 @@ public:
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
         uchar const                                         numCrafts
     ) /*override*/;
-
-    virtual ~ContainerScreenValidationCrafting() /*override*/ = default;
     // NOLINTEND
 
 public:

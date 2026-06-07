@@ -23,6 +23,10 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class FireworksItem : public ::Item {
 public:
+    // prevent constructor by default
+    FireworksItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::InteractionResult
@@ -42,8 +46,12 @@ public:
     ) const /*override*/;
 
     virtual bool isDestructive(int) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FireworksItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FireworksItem(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -67,6 +75,12 @@ public:
     MCAPI static ::std::string const& TAG_E_FLIGHT();
 
     MCAPI static ::std::string const& TAG_FIREWORKS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
-
-    virtual ~MusicClientBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

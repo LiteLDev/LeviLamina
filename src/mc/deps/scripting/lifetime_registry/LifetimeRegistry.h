@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class ILifetimeObjectListener; }
+namespace Scripting { class ILifetimeScopeListener; }
 namespace Scripting { class IScriptRef; }
 namespace Scripting { class LifetimeRegistryReference; }
 namespace Scripting { struct ContextId; }
@@ -43,7 +45,17 @@ public:
     MCNAPI void
     _destroyObject(::Scripting::ObjectHandle handle, ::Scripting::internal::BaseScriptComponent& baseScriptComp);
 
-    MCNAPI void destroyLifetimeScope(bool expectAllDead);
+    MCNAPI bool _doTypesMatch(::Scripting::ObjectHandle handle, ::entt::meta_type const& expectedType);
+
+    MCNAPI void addObjectListener(::std::weak_ptr<::Scripting::ILifetimeObjectListener> objectListener);
+
+    MCNAPI void addReference(::Scripting::ObjectHandle handle);
+
+    MCNAPI void destroyLifetimeScope(bool);
+
+    MCNAPI ::Scripting::IScriptRef* getScriptRef(::Scripting::ObjectHandle handle);
+
+    MCNAPI void removeObjectListener(::std::shared_ptr<::Scripting::ILifetimeObjectListener> strongListener);
 
     MCNAPI bool removeReference(::Scripting::ObjectHandle handle);
 
@@ -55,15 +67,27 @@ public:
 
     MCNAPI ::entt::meta_any resolveAsWeakTypedObjectHandle(::Scripting::ObjectHandle handle);
 
+    MCNAPI ::entt::meta_type const& resolvedType(::Scripting::ObjectHandle handle);
+
+    MCNAPI void setScopeListener(::std::weak_ptr<::Scripting::ILifetimeScopeListener> scopeListener);
+
     MCNAPI void setScriptRef(::Scripting::ObjectHandle handle, ::std::unique_ptr<::Scripting::IScriptRef>&& scriptRef);
 
     MCNAPI bool valid(::Scripting::ObjectHandle const& handle);
+
+    MCNAPI ~LifetimeRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Scripting::ContextId contextId, ::Scripting::LifetimeRegistryReference& registryRef);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

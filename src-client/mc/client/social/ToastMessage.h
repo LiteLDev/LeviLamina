@@ -60,6 +60,8 @@ public:
 
     MCAPI explicit ToastMessage(::std::string const& message);
 
+    MCAPI ToastMessage(::ToastMessageType type, ::std::string const& title, ::std::string const& subtitle);
+
     MCAPI ToastMessage(
         ::ToastMessageType   type,
         ::std::string const& title,
@@ -75,13 +77,21 @@ public:
         float                displaySeconds
     );
 
-    MCAPI ::std::vector<::ToastIconData> getIconIds() const;
-
-    MCAPI bool mergeMessage(::ToastMessage& other);
+    MCAPI ToastMessage(
+        ::ToastMessageType                  type,
+        ::std::string const&                title,
+        ::std::string const&                subtitle,
+        ::std::string const&                messageId,
+        bool                                isSilent,
+        ::std::string const&                link,
+        ::PlayerMessaging::ButtonActionType buttonActionType
+    );
 
     MCAPI ::ToastMessage& operator=(::ToastMessage const&);
 
     MCAPI ::ToastMessage& operator=(::ToastMessage&&);
+
+    MCAPI void setIconIds(::std::vector<::ToastIconData> ids);
 
     MCAPI ~ToastMessage();
     // NOLINTEND
@@ -95,6 +105,8 @@ public:
 
     MCAPI void* $ctor(::std::string const& message);
 
+    MCAPI void* $ctor(::ToastMessageType type, ::std::string const& title, ::std::string const& subtitle);
+
     MCAPI void* $ctor(
         ::ToastMessageType   type,
         ::std::string const& title,
@@ -108,6 +120,16 @@ public:
         ::std::string const& subtitle,
         ::Json::Value const& propertyBag,
         float                displaySeconds
+    );
+
+    MCAPI void* $ctor(
+        ::ToastMessageType                  type,
+        ::std::string const&                title,
+        ::std::string const&                subtitle,
+        ::std::string const&                messageId,
+        bool                                isSilent,
+        ::std::string const&                link,
+        ::PlayerMessaging::ButtonActionType buttonActionType
     );
     // NOLINTEND
 

@@ -35,8 +35,6 @@ public:
 
     virtual void
     setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams) /*override*/;
-
-    virtual ~EmitterLocalSpaceComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

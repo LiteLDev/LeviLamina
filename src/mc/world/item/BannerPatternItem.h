@@ -29,13 +29,35 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BannerPatternItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isPattern() const /*override*/;
 
     virtual int getPatternIndex() const /*override*/;
+    // NOLINTEND
 
-    virtual ~BannerPatternItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BannerPatternItem(::std::string const& name, int id, ::BannerPatternItem::Type type);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string_view getItemNameIdForType(::BannerPatternItem::Type type);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::BannerPatternItem::Type type);
     // NOLINTEND
 
 public:

@@ -63,4 +63,5 @@ enum class ActorEvent : uchar {
     DrinkMilk                        = 78,
     ShakeWetnessStop                 = 79,
     KineticDamageDealt               = 80,
+    HurtWithoutReceivingDamage       = 81,
 };

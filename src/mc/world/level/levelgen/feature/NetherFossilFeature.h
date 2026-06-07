@@ -22,16 +22,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetherFossilFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
-
-    virtual ~NetherFossilFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NetherFossilFeature(::std::vector<::HashedString>&& validGroundBlocks, bool mayPlaceInLava);
+
     MCAPI void _tryPlaceDriedGhastBlock(
         ::BlockSource&    region,
         ::BlockPos const& aabbMin,
@@ -45,6 +49,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_LOCATION_FOSSIL();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::HashedString>&& validGroundBlocks, bool mayPlaceInLava);
     // NOLINTEND
 
 public:

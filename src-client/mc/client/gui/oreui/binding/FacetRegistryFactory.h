@@ -43,11 +43,16 @@ public:
 
     public:
         // prevent constructor by default
+        FacetData& operator=(FacetData const&);
         FacetData();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI FacetData(::OreUI::FacetRegistryFactory::FacetData const&);
+
+        MCAPI FacetData(::OreUI::FacetRegistryFactory::FacetData&&);
+
         MCAPI FacetData(
             char const*                                                                         name,
             ::OreUI::FacetAvailability                                                          availability,
@@ -58,6 +63,10 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCFOLD void* $ctor(::OreUI::FacetRegistryFactory::FacetData const&);
+
+        MCFOLD void* $ctor(::OreUI::FacetRegistryFactory::FacetData&&);
+
         MCAPI void* $ctor(
             char const*                                                                         name,
             ::OreUI::FacetAvailability                                                          availability,
@@ -94,6 +103,10 @@ public:
     );
 
     MCAPI void _registerCoreFacets();
+
+    MCAPI void _registerDebugFacets();
+
+    MCAPI void _registerTestFacets();
 
     MCAPI void _registerVanillaFacets();
 

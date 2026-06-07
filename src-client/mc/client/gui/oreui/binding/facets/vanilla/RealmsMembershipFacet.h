@@ -39,8 +39,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~RealmsMembershipFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,9 +68,9 @@ public:
 
     MCAPI ::std::string const& getJoinedRealmName() const;
 
-    MCAPI ::Realms::RealmsMembership::LeaveRealmResult const& getLeaveRealmResult() const;
+    MCFOLD ::Realms::RealmsMembership::LeaveRealmResult const& getLeaveRealmResult() const;
 
-    MCFOLD ::OreUI::FacetTaskState getLeaveRealmTaskProgress() const;
+    MCAPI ::OreUI::FacetTaskState getLeaveRealmTaskProgress() const;
 
     MCAPI void joinRealm(::std::string const& inviteCode);
 

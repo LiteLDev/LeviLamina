@@ -39,8 +39,6 @@ public:
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const /*override*/;
 
     virtual bool _needsPostProcessing(::BlockSource& region) /*override*/;
-
-    virtual ~VillagePiece() /*override*/ = default;
     // NOLINTEND
 
 public:

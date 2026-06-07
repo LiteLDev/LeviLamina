@@ -7,11 +7,6 @@
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/resources/InvalidPacksFilterGroup.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ContentSource;
-// clang-format on
-
 struct InvalidResourceItem : public ::ContentItem {
 public:
     // member variables
@@ -21,25 +16,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InvalidResourceItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InvalidResourceItem() /*override*/ = default;
+    virtual ~InvalidResourceItem() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit InvalidResourceItem(::ContentSource* src);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentSource* src);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -18,21 +18,30 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk445a81;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
-    GatheringsConfigurationJoinInfo(GatheringsConfigurationJoinInfo const&);
+    GatheringsConfigurationJoinInfo& operator=(GatheringsConfigurationJoinInfo const&);
     GatheringsConfigurationJoinInfo();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    GatheringsConfigurationJoinInfo();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GatheringsConfigurationJoinInfo(::ServerConfiguration::GatheringsConfigurationJoinInfo&&);
+    MCNAPI GatheringsConfigurationJoinInfo(::ServerConfiguration::GatheringsConfigurationJoinInfo const&);
 
     MCNAPI ::ServerConfiguration::GatheringsConfigurationJoinInfo&
     operator=(::ServerConfiguration::GatheringsConfigurationJoinInfo&&);
 
+#ifdef LL_PLAT_C
     MCNAPI ::ServerConfiguration::GatheringsConfigurationJoinInfo&
     operator=(::ServerConfiguration::GatheringsConfigurationJoinInfo const&);
+#endif
 
     MCNAPI ~GatheringsConfigurationJoinInfo();
     // NOLINTEND
@@ -40,7 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerConfiguration::GatheringsConfigurationJoinInfo&&);
+    MCNAPI void* $ctor(::ServerConfiguration::GatheringsConfigurationJoinInfo const&);
     // NOLINTEND
 
 public:

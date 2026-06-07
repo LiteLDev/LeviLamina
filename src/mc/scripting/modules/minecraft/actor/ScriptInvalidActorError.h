@@ -40,14 +40,12 @@ public:
         ::std::string_view                          entityName
     );
 
-#ifdef LL_PLAT_C
     MCAPI ScriptInvalidActorError(
         ::ScriptModuleMinecraft::ErrorMemberType        memberType,
         ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
         ::std::string_view                              functionName,
         ::std::string_view                              entityName
     );
-#endif
 
     MCAPI ScriptInvalidActorError(
         ::ScriptModuleMinecraft::ErrorMemberType memberType,
@@ -56,6 +54,9 @@ public:
         ::std::string_view                       functionName,
         ::std::string_view                       entityName
     );
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptInvalidActorError&
+    operator=(::ScriptModuleMinecraft::ScriptInvalidActorError&&);
 
     MCAPI ~ScriptInvalidActorError();
     // NOLINTEND
@@ -69,7 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptInvalidActorError const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptInvalidActorError const&);
 
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType    memberType,
@@ -78,14 +79,12 @@ public:
         ::std::string_view                          entityName
     );
 
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType        memberType,
         ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
         ::std::string_view                              functionName,
         ::std::string_view                              entityName
     );
-#endif
 
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType memberType,

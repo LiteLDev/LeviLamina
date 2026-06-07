@@ -28,24 +28,16 @@ public:
 
 public:
     // prevent constructor by default
-    JSONSchemaValidation& operator=(JSONSchemaValidation const&);
     JSONSchemaValidation(JSONSchemaValidation const&);
     JSONSchemaValidation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaValidation(::cereal::ext::internal::JSONSchemaValidation&&);
-
-    MCAPI ::cereal::ext::internal::JSONSchemaValidation& operator=(::cereal::ext::internal::JSONSchemaValidation&&);
+    MCAPI ::cereal::ext::internal::JSONSchemaValidation&
+    operator=(::cereal::ext::internal::JSONSchemaValidation const&);
 
     MCAPI ~JSONSchemaValidation();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaValidation&&);
     // NOLINTEND
 
 public:

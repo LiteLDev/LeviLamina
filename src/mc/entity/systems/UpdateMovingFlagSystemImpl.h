@@ -11,8 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
 struct ControlledByLocalInstanceComponent;
-struct InterpolateMovementNeededComponent;
 struct PassengerComponent;
 struct SetMovingFlagRequestComponent;
 struct StateVectorComponent;
@@ -22,12 +22,12 @@ namespace UpdateMovingFlagSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void doTickMovingFlagSystem(
-    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
-    ::StrictEntityContext const&                                                    context,
-    ::StateVectorComponent const&                                                   stateVectorComponent,
-    ::Optional<::PassengerComponent const>                                          passengerComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::ControlledByLocalInstanceComponent>> vehicleView,
-    ::EntityModifier<::SetMovingFlagRequestComponent>                               modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>                context,
+    ::StrictEntityContext const&                                                    stateVectorComponent,
+    ::StateVectorComponent const&                                                   passengerComponent,
+    ::Optional<::PassengerComponent const>                                          vehicleView,
+    ::ViewT<::StrictEntityContext, ::Include<::ControlledByLocalInstanceComponent>> modifier,
+    ::EntityModifier<::SetMovingFlagRequestComponent>
 );
 // NOLINTEND
 

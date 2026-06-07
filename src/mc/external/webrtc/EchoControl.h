@@ -40,9 +40,9 @@ public:
 
     virtual void AnalyzeCapture(::webrtc::AudioBuffer*) = 0;
 
-    virtual void ProcessCapture(::webrtc::AudioBuffer*, bool) = 0;
-
     virtual void ProcessCapture(::webrtc::AudioBuffer*, ::webrtc::AudioBuffer*, bool) = 0;
+
+    virtual void ProcessCapture(::webrtc::AudioBuffer*, bool) = 0;
 
     virtual ::webrtc::EchoControl::Metrics GetMetrics() const = 0;
 

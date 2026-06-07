@@ -7,11 +7,13 @@
 #include "mc/client/network/realms/FailureReason.h"
 #include "mc/client/network/realms/GenericStatus.h"
 #include "mc/client/network/realms/RealmsAPI.h"
+#include "mc/client/realms/PlayerRoleActions.h"
 #include "mc/client/world/JoinRealmWorldResult.h"
 #include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/events/IMinecraftEventing.h"
+#include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,6 +25,7 @@ class INetworkGameConnector;
 class ProgressHandler;
 class RealmsAPI;
 struct IGameServerShutdown;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Parties { class IPartyProvider; }
 namespace Realms { struct RealmId; }
@@ -53,11 +56,14 @@ public:
                                                                mJoinRealmWorldResultPublisher;
     ::ll::TypedStorage<8, 104, ::ui::ProgressScreenNavigation> mProgressScreenNavigation;
     ::ll::TypedStorage<8, 64, ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()>>
-                                                                        mGetPartyProvider;
-    ::ll::TypedStorage<8, 64, ::std::function<bool(::Realms::RealmId)>> mIsRealmJoinable;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AsyncTracker>>         mAsyncTracker;
-    ::ll::TypedStorage<1, 1, bool>                                      mJoinRealmWorldInProgress;
-    ::ll::TypedStorage<1, 1, bool>                                      mIsEditorMode;
+        mGetPartyProvider;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::Realms::World const&, ::Realms::PlayerRoleActions)>>
+                                                                mCanUserDoRealmRoleAction;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AsyncTracker>> mAsyncTracker;
+    ::ll::TypedStorage<1, 1, bool>                              mJoinRealmWorldInProgress;
+    ::ll::TypedStorage<1, 1, bool>                              mIsEditorMode;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mRealmName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>     mRealmXuids;
     // NOLINTEND
 
 public:
@@ -70,16 +76,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RealmWorldJoiner(
-        ::IClientInstance&                                                       client,
-        ::INetworkGameConnector&                                                 networkGameConnector,
-        ::IGameServerShutdown&                                                   gameServerShutdown,
-        ::IMinecraftEventing&                                                    minecraftEventing,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&             userManager,
-        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                        appPlatform,
-        ::std::weak_ptr<::RealmsAPI>                                             realmsAPI,
-        ::ui::ProgressScreenNavigation                                           progressScreenNavigation,
-        ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider,
-        ::std::function<bool(::Realms::RealmId)>&&                               isRealmJoinable
+        ::IClientInstance&                                                         client,
+        ::INetworkGameConnector&                                                   networkGameConnector,
+        ::IGameServerShutdown&                                                     gameServerShutdown,
+        ::IMinecraftEventing&                                                      minecraftEventing,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&               userManager,
+        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                          appPlatform,
+        ::std::weak_ptr<::RealmsAPI>                                               realmsAPI,
+        ::ui::ProgressScreenNavigation                                             progressScreenNavigation,
+        ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()>   getPartyProvider,
+        ::std::function<bool(::Realms::World const&, ::Realms::PlayerRoleActions)> canUserDoRealmRoleAction
     );
 
     MCAPI ::World::JoinRealmWorldResult _fetchWorldByRealmId(
@@ -92,28 +98,6 @@ public:
             ::std::optional<::Realms::FailureReason>,
             ::std::optional<::World::RealmsJoinData>
         )>  onRealmJoined
-    );
-
-    MCAPI ::std::optional<::std::string> _getPartyId();
-
-    MCAPI void _handleFetchedWorldResult(
-        ::Realms::GenericStatus                   status,
-        ::Realms::World                           world,
-        ::IMinecraftEventing::RealmConnectionFlow fromFlow,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, ::std::unique_ptr<::ProgressHandler>)>
-            onRealmFetched,
-        ::std::function<void(
-            ::IMinecraftEventing::RealmConnectionResult,
-            ::std::optional<::Realms::FailureReason>,
-            ::std::optional<::World::RealmsJoinData>
-        )>  onRealmJoined
-    );
-
-    MCAPI void _handleFetchedWorldResultV2(
-        ::std::string const&                      realmId,
-        ::Realms::GenericStatus                   status,
-        ::Realms::World                           world,
-        ::IMinecraftEventing::RealmConnectionFlow fromFlow
     );
 
     MCAPI bool _isUserWorldOwner(::Realms::World const& world) const;
@@ -137,6 +121,8 @@ public:
         ::std::optional<::std::string>              realmId
     );
 
+    MCAPI ::std::optional<::World::JoinRealmWorldResult> _joinRealmValidations();
+
     MCAPI void _joinRealmsWorld(
         ::Realms::World                                                  world,
         ::std::function<void(::Social::GameConnectionInfo const&, bool)> successCallback,
@@ -149,6 +135,8 @@ public:
     );
 
     MCAPI bool _shouldShowHardcoreWarning() const;
+
+    MCAPI bool _shouldShowRealmWarning(::OptionID optionID) const;
 
     MCAPI void joinRealmWorld(
         ::Realms::RealmId                                    realmId,
@@ -165,6 +153,12 @@ public:
 
     MCAPI void joinRealmWorldV2(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
 
+    MCAPI void resetPartyJoinRealmsWarnings();
+
+    MCFOLD ::Bedrock::PubSub::Subscription subscribeToJoinRealmWorldResultPublisher(
+        ::std::function<void(::World::JoinRealmWorldResult)> onJoinRealmWorldResult
+    );
+
     MCAPI ~RealmWorldJoiner();
     // NOLINTEND
 
@@ -172,16 +166,16 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::IClientInstance&                                                       client,
-        ::INetworkGameConnector&                                                 networkGameConnector,
-        ::IGameServerShutdown&                                                   gameServerShutdown,
-        ::IMinecraftEventing&                                                    minecraftEventing,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&             userManager,
-        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                        appPlatform,
-        ::std::weak_ptr<::RealmsAPI>                                             realmsAPI,
-        ::ui::ProgressScreenNavigation                                           progressScreenNavigation,
-        ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider,
-        ::std::function<bool(::Realms::RealmId)>&&                               isRealmJoinable
+        ::IClientInstance&                                                         client,
+        ::INetworkGameConnector&                                                   networkGameConnector,
+        ::IGameServerShutdown&                                                     gameServerShutdown,
+        ::IMinecraftEventing&                                                      minecraftEventing,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&               userManager,
+        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                          appPlatform,
+        ::std::weak_ptr<::RealmsAPI>                                               realmsAPI,
+        ::ui::ProgressScreenNavigation                                             progressScreenNavigation,
+        ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()>   getPartyProvider,
+        ::std::function<bool(::Realms::World const&, ::Realms::PlayerRoleActions)> canUserDoRealmRoleAction
     );
     // NOLINTEND
 

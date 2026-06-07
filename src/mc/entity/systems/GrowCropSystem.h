@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~GrowCropSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

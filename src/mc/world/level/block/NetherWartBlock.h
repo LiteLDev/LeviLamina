@@ -13,7 +13,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -21,6 +20,10 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class NetherWartBlock : public ::FoliageBlock {
+public:
+    // prevent constructor by default
+    NetherWartBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,22 +37,26 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~NetherWartBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NetherWartBlock(::std::string const& nameId, int id);
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -65,13 +72,11 @@ public:
     ) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

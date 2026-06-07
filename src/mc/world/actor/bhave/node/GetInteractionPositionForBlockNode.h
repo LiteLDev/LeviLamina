@@ -29,14 +29,20 @@ public:
     virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
-
-    virtual ~GetInteractionPositionForBlockNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GetInteractionPositionForBlockNode();
+
     MCAPI ::Facing::Name parseFacingNameFromString(::std::string facingString);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

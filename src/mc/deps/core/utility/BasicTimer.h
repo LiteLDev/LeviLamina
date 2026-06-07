@@ -11,33 +11,30 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<double()>> mGetCurrentTimeCallback;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     BasicTimer();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    BasicTimer& operator=(BasicTimer const&);
-    BasicTimer(BasicTimer const&);
-    BasicTimer();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
 
 #ifdef LL_PLAT_C
+    MCAPI void finishTimer();
+
+    MCFOLD double getTimeDelay() const;
+
     MCAPI bool hasExpired() const;
-
-    MCAPI ::BasicTimer& operator=(::BasicTimer&&);
-
-    MCAPI void resetTime();
 #endif
 
-    MCAPI ~BasicTimer();
+    MCAPI bool isFinished() const;
+
+    MCAPI void resetTime();
+
+#ifdef LL_PLAT_C
+    MCAPI void resetTime(double newTimeDelay);
+#endif
     // NOLINTEND
 
 public:
@@ -50,11 +47,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(double timeDelay, ::std::function<double()> getTimeCallback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

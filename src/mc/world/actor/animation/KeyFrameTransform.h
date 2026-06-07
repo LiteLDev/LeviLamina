@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/animation/BoneTransformType.h"
 #include "mc/world/actor/animation/KeyFrameLerpMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class ExpressionNode;
+class BoneOrientation;
 class KeyFrameTransformData;
-class Vec3;
+class RenderParams;
 // clang-format on
 
 class KeyFrameTransform {
@@ -24,21 +25,23 @@ public:
 public:
     // prevent constructor by default
     KeyFrameTransform& operator=(KeyFrameTransform const&);
-    KeyFrameTransform(KeyFrameTransform const&);
     KeyFrameTransform();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI KeyFrameTransform(::KeyFrameTransform&&);
+
+    MCAPI KeyFrameTransform(::KeyFrameTransform const&);
+
+    MCAPI void animate(
+        ::RenderParams&     renderParams,
+        ::BoneOrientation&  destBoneOrientation,
+        float               scale,
+        ::BoneTransformType boneTransformType
+    ) const;
+
     MCAPI ::KeyFrameTransform& operator=(::KeyFrameTransform&&);
-
-    MCAPI void set(::ExpressionNode const& expression);
-
-#ifdef LL_PLAT_S
-    MCAPI void set(::ExpressionNode const& expression, ::Vec3 const& axis);
-#endif
-
-    MCAPI void set(::ExpressionNode const& expression, int axisIndex);
 
     MCAPI ~KeyFrameTransform();
     // NOLINTEND
@@ -52,6 +55,14 @@ public:
         ::KeyFrameTransform& p2,
         ::KeyFrameTransform* p3
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::KeyFrameTransform&&);
+
+    MCAPI void* $ctor(::KeyFrameTransform const&);
     // NOLINTEND
 
 public:

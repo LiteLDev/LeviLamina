@@ -40,14 +40,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorHurtAfterEvent& operator=(ScriptActorHurtAfterEvent const&);
     ScriptActorHurtAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
-
     MCAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
     MCAPI ScriptActorHurtAfterEvent(
@@ -57,6 +54,9 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
     MCAPI ~ScriptActorHurtAfterEvent();
     // NOLINTEND
@@ -72,8 +72,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
     MCAPI void* $ctor(

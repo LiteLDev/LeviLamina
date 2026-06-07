@@ -5,10 +5,14 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyObject.h"
+#include "mc/client/gui/oreui/binding/properties/RedactableStringProperty.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/social/ChatMessageType.h"
 
 // auto generated forward declare list
 // clang-format off
+class ProfanityContext;
+namespace Bedrock::Safety { class RedactableString; }
 namespace OreUI::Detail { class IPropertyObject; }
 // clang-format on
 
@@ -20,51 +24,47 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>             mId;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<uint>>                      mOrder;
-    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>             mMessage;
+    ::ll::TypedStorage<8, 312, ::OreUI::RedactableStringProperty>            mMessage;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>             mSenderXuid;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::Social::ChatMessageType>> mType;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ChatMessageObject& operator=(ChatMessageObject const&);
+    ChatMessageObject(ChatMessageObject const&);
     ChatMessageObject();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ChatMessageObject() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChatMessageObject(::OreUI::ChatMessageObject&&);
+
     MCAPI ChatMessageObject(
-        ::OreUI::Detail::IPropertyObject* parent,
-        ::std::string                     id,
-        uint                              order,
-        ::std::string                     content,
-        ::std::string                     senderXuid,
-        ::Social::ChatMessageType         type
+        ::OreUI::Detail::IPropertyObject*                 parent,
+        ::std::string                                     id,
+        uint                                              order,
+        ::Bedrock::Safety::RedactableString               content,
+        ::std::string                                     senderXuid,
+        ::Social::ChatMessageType                         type,
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::OreUI::Detail::IPropertyObject* parent,
-        ::std::string                     id,
-        uint                              order,
-        ::std::string                     content,
-        ::std::string                     senderXuid,
-        ::Social::ChatMessageType         type
-    );
-    // NOLINTEND
+    MCAPI void* $ctor(::OreUI::ChatMessageObject&&);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::OreUI::Detail::IPropertyObject*                 parent,
+        ::std::string                                     id,
+        uint                                              order,
+        ::Bedrock::Safety::RedactableString               content,
+        ::std::string                                     senderXuid,
+        ::Social::ChatMessageType                         type,
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext
+    );
     // NOLINTEND
 
 public:

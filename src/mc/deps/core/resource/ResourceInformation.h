@@ -6,6 +6,11 @@
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/platform/UUID.h"
 
+// auto generated forward declare list
+// clang-format off
+struct PackIdVersion;
+// clang-format on
+
 class ResourceInformation {
 public:
     // ResourceInformation inner types define
@@ -49,6 +54,15 @@ public:
     MCAPI ResourceInformation(::ResourceInformation const&);
 
     MCAPI ResourceInformation(
+        ::std::string const& description,
+        ::SemVersion const&  version,
+        ::mce::UUID const&   uuid,
+        ::std::string const& type,
+        ::std::string const& language,
+        ::std::string const& entry
+    );
+
+    MCAPI ResourceInformation(
         ::std::string const&                description,
         ::SemVersion const&                 version,
         ::mce::UUID const&                  uuid,
@@ -61,6 +75,8 @@ public:
     MCAPI ::ResourceInformation& operator=(::ResourceInformation const&);
 #endif
 
+    MCAPI bool satisfies(::PackIdVersion const& pack) const;
+
     MCAPI ~ResourceInformation();
     // NOLINTEND
 
@@ -68,12 +84,23 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ResourceInformation::ResourceType ResourceTypeFromString(::std::string const& value);
+
+    MCAPI static ::std::string const& StringFromResourceType(::ResourceInformation::ResourceType value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ResourceInformation const&);
+
+    MCAPI void* $ctor(
+        ::std::string const& description,
+        ::SemVersion const&  version,
+        ::mce::UUID const&   uuid,
+        ::std::string const& type,
+        ::std::string const& language,
+        ::std::string const& entry
+    );
 
     MCAPI void* $ctor(
         ::std::string const&                description,

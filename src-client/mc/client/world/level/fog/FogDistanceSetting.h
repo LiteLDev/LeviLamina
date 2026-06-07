@@ -23,8 +23,34 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FogDistanceSetting();
+
+    MCAPI
+    FogDistanceSetting(::mce::Color const& color, float start, float end, ::FogDistanceSetting::DistanceType type);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::FogDistanceSetting convertToFixedDistance(::FogDistanceSetting const& setting, float renderDistance);
+
+    MCAPI static ::FogDistanceSetting
+    lerp(::FogDistanceSetting const& src, ::FogDistanceSetting const& dst, float alpha);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FogDistanceSetting const& ZERO_SETTING();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::mce::Color const& color, float start, float end, ::FogDistanceSetting::DistanceType type);
     // NOLINTEND
 };

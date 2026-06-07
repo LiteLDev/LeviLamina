@@ -21,20 +21,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* getJsonName() const /*override*/;
-
-    virtual ~RuntimeIdentifierDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void parse(::Json::Value const& root);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

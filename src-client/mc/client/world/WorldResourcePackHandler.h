@@ -246,9 +246,9 @@ public:
         ::std::string                           packID,
         ::std::shared_ptr<::ContentItem> const& contentItem,
         ::ContentViews const&                   contentViews,
-        ::ContentType                           contentType,
-        ::World::PackStatus                     packStatus,
-        bool                                    isEduMode
+        ::ContentType                           packStatus,
+        ::World::PackStatus,
+        bool
     );
 
     MCAPI ::World::PackActionError _handlePackMoveError(

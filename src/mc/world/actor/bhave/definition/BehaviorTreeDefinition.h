@@ -15,4 +15,18 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                          mStringInput;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorDefinition>> mRoot;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::BehaviorDefinition const* getRoot() const;
+
+    MCAPI ~BehaviorTreeDefinition();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };

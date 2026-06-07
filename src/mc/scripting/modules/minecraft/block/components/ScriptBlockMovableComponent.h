@@ -12,6 +12,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
+namespace Scripting { class Release; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
@@ -19,12 +20,6 @@ namespace Scripting { struct EnumBinding; }
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockMovableComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockMovableComponent() /*override*/ = default;
-    // NOLINTEND
-
 public:
     // member functions
     // NOLINTBEGIN
@@ -49,6 +44,8 @@ public:
     MCAPI static ::Scripting::EnumBinding bindMovementType();
 
     MCAPI static ::Scripting::EnumBinding bindStickyType();
+
+    MCFOLD static ::std::optional<::Scripting::Release> overrideEnumVersion();
     // NOLINTEND
 
 public:

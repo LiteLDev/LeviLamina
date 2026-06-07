@@ -74,6 +74,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptDiagnostics(::std::vector<::gsl::not_null<::IScriptStatPublisher*>>&& publishers);
+
     MCNAPI void addStatCollector(
         uint64                                                                 collectionTickFrequency,
         ::std::function<::std::optional<::ScriptStat>(uint64, uint64, uint64)> collectorFn,
@@ -84,7 +86,15 @@ public:
 
     MCNAPI void collectStats(uint64 currentTick);
 
+    MCNAPI void onPostReload();
+
     MCNAPI ~ScriptDiagnostics();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::vector<::gsl::not_null<::IScriptStatPublisher*>>&& publishers);
     // NOLINTEND
 
 public:

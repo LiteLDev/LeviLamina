@@ -29,6 +29,10 @@ public:
 
     MCAPI ::std::vector<int> getAvailableSlots(::Container& container, ::Random& random);
 
+    MCFOLD ::std::string getDir() const;
+
+    MCFOLD ::std::vector<::std::unique_ptr<::LootPool>> const& getPools() const;
+
     MCAPI ::std::vector<::ItemStack> getRandomItems(::Random& random, ::LootTableContext& context) const;
 
     MCAPI void shuffleAndSplitItems(::std::vector<::ItemStack>& result, int availableSlots, ::Random& random);

@@ -14,6 +14,7 @@ class BoundingBox;
 class ChunkPos;
 class SimpleBlockVolume;
 class Vec3;
+namespace Editor { class RelativeVolumeListBlockVolumeIterator; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -31,10 +32,6 @@ public:
     ::ll::UntypedStorage<4, 16> mUnkbfff20;
     ::ll::UntypedStorage<8, 8>  mUnk89b559;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RelativeVolumeListBlockVolume();
 
 public:
     // virtual functions
@@ -60,34 +57,61 @@ public:
     virtual ::std::unordered_set<::BlockPos> getFlattenedBlockPositions() const /*override*/;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> getIterator() const /*override*/;
-
-    virtual ~RelativeVolumeListBlockVolume() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RelativeVolumeListBlockVolume();
+
+    MCNAPI explicit RelativeVolumeListBlockVolume(::std::optional<::BlockPos> const& origin);
+
     MCNAPI RelativeVolumeListBlockVolume(::Editor::RelativeVolumeListBlockVolume&& rhs);
 
     MCNAPI RelativeVolumeListBlockVolume(::Editor::RelativeVolumeListBlockVolume const& rhs);
+
+    MCNAPI RelativeVolumeListBlockVolume(
+        ::std::unordered_set<::BlockPos> const& blockPositions,
+        ::std::optional<::BlockPos> const&      origin
+    );
 
     MCNAPI RelativeVolumeListBlockVolume(
         ::std::vector<::Vec3> const&       blockPositions,
         ::std::optional<::BlockPos> const& origin
     );
 
+    MCNAPI RelativeVolumeListBlockVolume(::Vec3 const& pos, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI RelativeVolumeListBlockVolume(::BlockVolumeBase const& vol, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI RelativeVolumeListBlockVolume(::SimpleBlockVolume const& volume, ::std::optional<::BlockPos> const& origin);
+
     MCNAPI void add(::SimpleBlockVolume const& _relativeVolume);
+
+    MCNAPI void add(::std::unordered_set<::BlockPos> const& blockPositions);
+
+    MCNAPI void add(::std::vector<::BlockPos> const& blockPositions);
 
     MCNAPI void add(::std::vector<::Vec3> const& blockPositions);
 
+    MCNAPI void add(::BlockPos const& pos);
+
     MCNAPI void add(::Vec3 const& pos);
+
+    MCNAPI void add(::Editor::RelativeVolumeListBlockVolume const& volume);
+
+    MCNAPI ::Editor::RelativeVolumeListBlockVolumeIterator begin() const;
 
     MCNAPI ::std::vector<::SimpleBlockVolume>
     calculateVolumetricDifference(::SimpleBlockVolume const& volA, ::SimpleBlockVolume const& volB);
 
     MCNAPI void clear();
 
+    MCNAPI void clearOrigin();
+
     MCNAPI void enableAdjacencyMap();
+
+    MCNAPI ::Editor::RelativeVolumeListBlockVolumeIterator end() const;
 
 #ifdef LL_PLAT_C
     MCNAPI void forEachRelativeBlockPosition(::std::function<bool(::BlockPos const&)> callback) const;
@@ -95,15 +119,35 @@ public:
 
     MCNAPI ::std::vector<::BlockPos> getBlockPositionList(bool relative) const;
 
-    MCNAPI ::std::unordered_set<::BlockPos> getBlockPositionSet(bool relative) const;
+#ifdef LL_PLAT_C
+    MCNAPI uint64 getChangeCount() const;
+#endif
+
+    MCNAPI ::std::optional<::BlockPos> getOrigin() const;
+
+    MCNAPI ::std::vector<::Vec3> getVec3PositionList(bool relative) const;
+
+    MCNAPI ::std::vector<::SimpleBlockVolume> const& getVolumeCollection() const;
+
+    MCNAPI int getVolumeCount() const;
 
     MCNAPI bool hasAdjacent(::BlockPos const& pos, ::BlockPos const& offset) const;
 
-#ifdef LL_PLAT_C
+    MCNAPI bool isEmpty() const;
+
+    MCNAPI bool isValid() const;
+
     MCNAPI void moveTo(::BlockPos const& pos);
+
+#ifdef LL_PLAT_C
+    MCNAPI bool operator!=(::SimpleBlockVolume const& rhs) const;
 #endif
 
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume& operator=(::BlockPos const& location);
+
     MCNAPI ::Editor::RelativeVolumeListBlockVolume& operator=(::Vec3 const& location);
+
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume& operator=(::std::vector<::BlockPos> const& locations);
 
     MCNAPI ::Editor::RelativeVolumeListBlockVolume& operator=(::std::vector<::Vec3> const& locations);
 
@@ -111,13 +155,27 @@ public:
 
     MCNAPI ::Editor::RelativeVolumeListBlockVolume& operator=(::Editor::RelativeVolumeListBlockVolume const& rhs);
 
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume& operator=(::SimpleBlockVolume const& volume);
+
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume& operator=(::BlockVolumeBase const& volumeBase);
+
     MCNAPI bool operator==(::Editor::RelativeVolumeListBlockVolume const& rhs) const;
 
+    MCNAPI void remove(::std::unordered_set<::BlockPos> const& blockPositions);
+
+    MCNAPI void remove(::std::vector<::BlockPos> const& blockPositions);
+
     MCNAPI void remove(::std::vector<::Vec3> const& blockPositions);
+
+    MCNAPI void remove(::BlockPos const& pos);
 
     MCNAPI void remove(::Vec3 const& pos);
 
     MCNAPI void remove(::SimpleBlockVolume const& relativeVolume);
+
+    MCNAPI void remove(::Editor::RelativeVolumeListBlockVolume const& volume);
+
+    MCNAPI void setOrigin(::BlockPos const& origin);
     // NOLINTEND
 
 public:
@@ -129,17 +187,24 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::std::optional<::BlockPos> const& origin);
+
     MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume&& rhs);
 
     MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume const& rhs);
 
-    MCNAPI void* $ctor(::std::vector<::Vec3> const& blockPositions, ::std::optional<::BlockPos> const& origin);
-    // NOLINTEND
+    MCNAPI void*
+    $ctor(::std::unordered_set<::BlockPos> const& blockPositions, ::std::optional<::BlockPos> const& origin);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::std::vector<::Vec3> const& blockPositions, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI void* $ctor(::Vec3 const& pos, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI void* $ctor(::BlockVolumeBase const& vol, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI void* $ctor(::SimpleBlockVolume const& volume, ::std::optional<::BlockPos> const& origin);
     // NOLINTEND
 
 public:

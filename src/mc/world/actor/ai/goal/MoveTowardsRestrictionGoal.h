@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 // clang-format on
 
-class MoveTowardsRestrictionGoal : public ::Goal {
+class MoveTowardsRestrictionGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MoveTowardsRestrictionGoal() /*override*/ = default;
+    virtual ~MoveTowardsRestrictionGoal() /*override*/;
 
     virtual bool canContinueToUse() /*override*/;
 
@@ -39,7 +39,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit MoveTowardsRestrictionGoal(::Mob& mob);
+
+    MCFOLD ::Mob const& _getMob() const;
+
     MCAPI bool _randomizeWantedPositionTowardsRestriction(::Vec3 const& restrictionCenter);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -50,5 +66,11 @@ public:
     MCFOLD void $start();
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

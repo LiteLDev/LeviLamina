@@ -27,17 +27,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptInputEventFilter(ScriptInputEventFilter const&);
-    ScriptInputEventFilter();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInputEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&&);
+    MCFOLD void process();
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter const&);
+    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilterData const& data) const;
 
     MCAPI ~ScriptInputEventFilter();
     // NOLINTEND
@@ -46,12 +40,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&&);
     // NOLINTEND
 
 public:

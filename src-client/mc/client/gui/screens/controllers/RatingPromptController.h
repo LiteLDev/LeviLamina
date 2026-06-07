@@ -38,6 +38,8 @@ public:
         ::std::string const&                      image,
         ::std::string const&                      buttonName
     );
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

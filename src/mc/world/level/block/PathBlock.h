@@ -14,7 +14,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
@@ -41,14 +40,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -61,16 +60,19 @@ public:
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
         /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~PathBlock() /*override*/ = default;
+    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PathBlock(
+        ::std::string const&  nameId,
+        int                   id,
+        ::HashedString const& blockToTillInto,
+        ::HashedString const& baseBlock
+    );
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -83,17 +85,24 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& nameId, int id, ::HashedString const& blockToTillInto, ::HashedString const& baseBlock);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
@@ -103,9 +112,7 @@ public:
 
     MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
 
 
     // NOLINTEND

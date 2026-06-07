@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::JSONObject { class Node; }
+namespace Bedrock::JSONObject { class ValueWrapper; }
 // clang-format on
 
 namespace Bedrock::JSONObject {
@@ -16,13 +17,19 @@ class MutableObjectHelper : public ::Bedrock::JSONObject::ObjectHelperBase<0> {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~MutableObjectHelper();
+    MCNAPI MutableObjectHelper();
+
+    MCNAPI ::std::pair<
+        ::std::_Tree_iterator<::std::_Tree_val<
+            ::std::_Tree_simple_types<::std::pair<::std::string_view const, ::Bedrock::JSONObject::Node*>>>>,
+        bool>
+    insert(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

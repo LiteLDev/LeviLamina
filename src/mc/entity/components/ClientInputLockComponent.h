@@ -18,6 +18,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyActiveCategoryLocks();
+#ifdef LL_PLAT_C
+    MCAPI void deserialize(uint data);
+#endif
+
+    MCAPI bool hasLockCategory(::ClientInputLockCategory category) const;
+
+    MCAPI bool hasLockType(::ClientInputLockType lock) const;
+
+    MCFOLD uint serialize() const;
+
+    MCAPI void setLockCategory(::ClientInputLockCategory category, bool state);
     // NOLINTEND
 };

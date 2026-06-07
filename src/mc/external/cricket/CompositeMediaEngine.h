@@ -35,13 +35,13 @@ public:
 
     virtual bool Init() /*override*/;
 
-    virtual ::cricket::VoiceEngineInterface& voice() /*override*/;
-
     virtual ::cricket::VoiceEngineInterface const& voice() const /*override*/;
 
-    virtual ::cricket::VideoEngineInterface& video() /*override*/;
+    virtual ::cricket::VoiceEngineInterface& voice() /*override*/;
 
     virtual ::cricket::VideoEngineInterface const& video() const /*override*/;
+
+    virtual ::cricket::VideoEngineInterface& video() /*override*/;
     // NOLINTEND
 
 public:

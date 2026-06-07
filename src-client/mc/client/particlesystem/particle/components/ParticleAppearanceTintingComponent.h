@@ -38,6 +38,18 @@ public:
         ::ll::TypedStorage<4, 16, float[4]>                          mCol;
         ::ll::TypedStorage<4, 16, float[4]>                          mParticleColorFloat;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ParticleColors();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -66,15 +78,11 @@ public:
         ::ParticleSystem::CommonParticle&                 particle,
         ::RenderParams&                                   renderParams
     ) /*override*/;
-
-    virtual ~ParticleAppearanceTintingComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _initColorNode(::std::array<::ExpressionNode, 4>& node);
-
     MCAPI void _parseColorBlock(::ConstDeserializeDataParams const& deserializeDataParams, float value);
 
     MCAPI void _parseGradientBlock(::ConstDeserializeDataParams const& deserializeDataParams);

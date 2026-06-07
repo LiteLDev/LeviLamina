@@ -6,12 +6,13 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/shared_types/item/EnchantSlot.h"
 #include "mc/deps/shared_types/item/ItemCooldownType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
-#include "mc/world/item/enchanting/Enchant.h"
 #include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
@@ -40,13 +41,13 @@ class Player;
 class SemVersion;
 class Vec3;
 struct ComponentItemDataAll_Latest;
-struct ComponentItemData_Legacy;
-struct ItemIconInfoFactory;
+struct ItemComprehensiveLoadResult;
+struct ItemIconInfo;
+struct LegacyEventItemComponentData;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Core { class Path; }
-namespace Json { class Value; }
-namespace PuvLoadData { struct LoadResultWithTiming; }
+namespace SharedTypes::Legacy { struct ComponentItemData; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -61,7 +62,7 @@ public:
     bool                                                    mIsLiquidClipped          : 1;
     ::ll::TypedStorage<4, 4, float>                         mSpeed;
     ::ll::TypedStorage<4, 4, int>                           mDamage;
-    ::ll::TypedStorage<4, 4, ::Enchant::Slot>               mEnchantSlot;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::EnchantSlot>    mEnchantSlot;
     ::ll::TypedStorage<4, 4, int>                           mEnchantValue;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mAlias;
     ::ll::TypedStorage<1, 1, bool>                          mIsAttachable;
@@ -82,10 +83,10 @@ public:
     // NOLINTBEGIN
     virtual ~ComponentItem() /*override*/;
 
-    virtual ::PuvLoadData::LoadResultWithTiming initServer(
-        ::Json::Value const& data,
-        ::SemVersion const&  documentVersion,
-        ::PackLoadContext&   packLoadContext
+    virtual void initServer(
+        ::ItemComprehensiveLoadResult&& data,
+        ::SemVersion const&             documentVersion,
+        ::PackLoadContext&              packLoadContext
     ) /*override*/;
 
     virtual void tearDown() /*override*/;
@@ -149,11 +150,9 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    virtual bool isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const /*override*/;
+    virtual bool
+    isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const
+        /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
 
@@ -234,11 +233,11 @@ public:
 
     virtual int getVariant(int, int, bool) const;
 
-    virtual ::PuvLoadData::LoadResultWithTiming initClient(
-        ::Json::Value const& data,
-        ::SemVersion const&  documentVersion,
-        ::PackLoadContext&   packLoadContext,
-        ::ItemIconInfoFactory
+    virtual void initClient(
+        ::ItemComprehensiveLoadResult&& data,
+        ::SemVersion const&             documentVersion,
+        ::PackLoadContext&              packLoadContext,
+        ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
     ) /*override*/;
 
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
@@ -308,30 +307,79 @@ public:
 
     MCAPI void _loadItemTagsNetworkTag(::ListTag const& listTag);
 
-    MCAPI ::PuvLoadData::LoadResultWithTiming _validateSchemaAndInitItem(
-        ::Json::Value const&           itemData,
-        ::SemVersion const&            documentVersion,
-        ::PackLoadContext&             packLoadContext,
-        bool                           isServer,
-        ::cereal::ReflectionCtx const& ctx
-    );
-
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void
-    init(::ComponentItemDataAll_Latest&& data, ::SemVersion const& documentVersion, ::Experiments const& experiments);
+    MCAPI bool checkComponentDataForContentErrors() const;
+
+    MCAPI ::IconItemComponent const* getIconComponent() const;
+
+    MCAPI float getMovementModifier() const;
+
+    MCAPI void init(
+        ::ComponentItemDataAll_Latest&&                 data,
+        ::SemVersion const&                             documentVersion,
+        ::std::optional<::LegacyEventItemComponentData> legacyEventData,
+        ::Experiments const&                            experiments
+    );
+
+    MCAPI ::Bedrock::PubSub::Connector<void(int&, ::ItemStack&, ::Actor&, ::Mob&)>& onBeforeDurabilityDamage();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHitActor();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&)>& onHitBlock();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHurtActor();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&)>&
+    onMiningBlock();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Player&)>& onUse();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Player&, ::Vec3 const&)>& onUseAsAttack();
+
+    MCAPI ::Bedrock::PubSub::Connector<
+        void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&)>&
+    onUseOn();
+
+    MCAPI ::Bedrock::PubSub::Connector<void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>&
+    onUseTimeDepleted();
+
+    MCAPI void setBlockTypeForRendering(::WeakPtr<::BlockType const> const& block);
+
+    MCAPI void setEnchantSlot(::SharedTypes::EnchantSlot enchantSlot);
+
+    MCAPI void setEnchantValue(int enchantValue);
+
+#ifdef LL_PLAT_C
+    MCAPI void setIsAttachable(bool value);
+#endif
+
+    MCAPI void setIsLiquidClipped(bool isLiquidClipped);
+
+    MCAPI void setRequiresInteract(bool requiresInteract);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _moveDataToComponentItem(::ComponentItem& item, ::ComponentItemData_Legacy& data);
+    MCAPI static void _moveDataToComponentItem(::ComponentItem& item, ::SharedTypes::Legacy::ComponentItemData& data);
+
+    MCAPI static ::std::optional<::LegacyEventItemComponentData>
+    makeLegacyEvents(::PackLoadContext& packLoadContext, ::ComponentItemDataAll_Latest const& data);
 
     MCAPI static void registerItemComponentTypes(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
+    MCAPI static ::std::tuple<
+        ::SemVersion,
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>,
+        bool>
+    upgradeJson(
         ::cereal::ReflectionCtx const& ctx,
-        ::std::string&                 document,
+        ::std::string_view             document,
+        bool                           isBaseGamePack,
         ::Core::Path const&            resourceName,
         bool                           betaApis,
         ::std::optional<::SemVersion>  minVersion
@@ -353,8 +401,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::PuvLoadData::LoadResultWithTiming
-    $initServer(::Json::Value const& data, ::SemVersion const& documentVersion, ::PackLoadContext& packLoadContext);
+    MCAPI void $initServer(
+        ::ItemComprehensiveLoadResult&& data,
+        ::SemVersion const&             documentVersion,
+        ::PackLoadContext&              packLoadContext
+    );
 
     MCFOLD void $tearDown();
 
@@ -400,7 +451,7 @@ public:
 
     MCAPI int $getAttackDamage() const;
 
-    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+    MCAPI bool $isGlint(::ItemStackBase const& stack) const;
 
     MCAPI bool $canDestroyInCreative() const;
 
@@ -417,11 +468,8 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI bool $isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const;
+    MCAPI bool
+    $isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const;
 
     MCAPI int $getEnchantSlot() const;
 
@@ -497,11 +545,11 @@ public:
 
     MCFOLD int $getVariant(int, int, bool) const;
 
-    MCAPI ::PuvLoadData::LoadResultWithTiming $initClient(
-        ::Json::Value const& data,
-        ::SemVersion const&  documentVersion,
-        ::PackLoadContext&   packLoadContext,
-        ::ItemIconInfoFactory
+    MCAPI void $initClient(
+        ::ItemComprehensiveLoadResult&& data,
+        ::SemVersion const&             documentVersion,
+        ::PackLoadContext&              packLoadContext,
+        ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
     );
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
@@ -527,7 +575,7 @@ public:
 
     MCAPI ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
 
-    MCFOLD bool
+    MCAPI bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;

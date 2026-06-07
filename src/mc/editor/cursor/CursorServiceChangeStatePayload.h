@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Cursor { struct CursorState; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -33,9 +34,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit CursorServiceChangeStatePayload(::Editor::Cursor::CursorState const& state);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Cursor::CursorState const& state);
     // NOLINTEND
 
 public:

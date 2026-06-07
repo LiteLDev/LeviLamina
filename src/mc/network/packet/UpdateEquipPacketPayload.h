@@ -18,24 +18,4 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueID;
     ::ll::TypedStorage<8, 24, ::CompoundTag>                       mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateEquipPacketPayload& operator=(UpdateEquipPacketPayload const&);
-    UpdateEquipPacketPayload(UpdateEquipPacketPayload const&);
-    UpdateEquipPacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::UpdateEquipPacketPayload& operator=(::UpdateEquipPacketPayload&&);
-
-    MCAPI ~UpdateEquipPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

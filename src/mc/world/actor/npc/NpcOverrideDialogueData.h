@@ -20,6 +20,13 @@ public:
     ::ll::TypedStorage<8, 176, ::NPCDialogueData> mData;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    NpcOverrideDialogueData();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,8 +47,22 @@ public:
     virtual ::Actor* getActor() /*override*/;
 
     virtual ::Actor const* getActor() const /*override*/;
+    // NOLINTEND
 
-    virtual ~NpcOverrideDialogueData() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit NpcOverrideDialogueData(::NPCDialogueData&& overrideData);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::NPCDialogueData&& overrideData);
+#endif
     // NOLINTEND
 
 public:

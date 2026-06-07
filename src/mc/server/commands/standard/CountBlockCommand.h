@@ -28,8 +28,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
-
-    virtual ~CountBlockCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

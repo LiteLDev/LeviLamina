@@ -12,21 +12,10 @@ public:
     ::ll::TypedStorage<8, 80, ::BaseAttributeMap> mAttributes;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    AttributesComponent& operator=(AttributesComponent const&);
-    AttributesComponent(AttributesComponent const&);
-    AttributesComponent();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::AttributesComponent& operator=(::AttributesComponent&&);
-
     MCAPI ~AttributesComponent();
 #endif
     // NOLINTEND

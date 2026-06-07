@@ -19,25 +19,28 @@ public:
 
 public:
     // prevent constructor by default
-    DropdownOption(DropdownOption const&);
+    DropdownOption& operator=(DropdownOption const&);
     DropdownOption();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DropdownOption(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
+
     MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&&);
-
-    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
-
-    MCFOLD bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
     // NOLINTEND
 };
 

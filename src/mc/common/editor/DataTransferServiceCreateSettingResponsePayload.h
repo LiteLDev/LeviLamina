@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -26,23 +27,25 @@ public:
 
 public:
     // prevent constructor by default
-    DataTransferServiceCreateSettingResponsePayload(DataTransferServiceCreateSettingResponsePayload const&);
     DataTransferServiceCreateSettingResponsePayload();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~DataTransferServiceCreateSettingResponsePayload() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DataTransferServiceCreateSettingResponsePayload() /*override*/;
-#endif
-
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataTransferServiceCreateSettingResponsePayload(
+        ::Editor::Network::DataTransferServiceCreateSettingResponsePayload const&
+    );
+
+#ifdef LL_PLAT_C
+    MCNAPI DataTransferServiceCreateSettingResponsePayload(
+        ::mce::UUID          requestId,
+        ::std::string const& collectionName,
+        ::std::string const& identifier,
+        ::std::string const& message,
+        bool                 success
+    );
+#endif
+
     MCNAPI ::Editor::Network::DataTransferServiceCreateSettingResponsePayload&
     operator=(::Editor::Network::DataTransferServiceCreateSettingResponsePayload&&);
 
@@ -57,9 +60,19 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::Network::DataTransferServiceCreateSettingResponsePayload const&);
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::mce::UUID          requestId,
+        ::std::string const& collectionName,
+        ::std::string const& identifier,
+        ::std::string const& message,
+        bool                 success
+    );
+#endif
     // NOLINTEND
 
 public:

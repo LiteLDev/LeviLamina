@@ -6,22 +6,26 @@ class PrintStream {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrintStream() = default;
+    virtual ~PrintStream();
 
-    virtual void print(::std::string const& s);
+    virtual void print(::std::string const&);
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void println(::std::string const& s);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $print(::std::string const& s);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

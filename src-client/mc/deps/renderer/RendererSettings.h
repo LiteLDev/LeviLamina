@@ -36,7 +36,18 @@ public:
     // prevent constructor by default
     RendererSettings& operator=(RendererSettings const&);
     RendererSettings(RendererSettings const&);
-    RendererSettings();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI RendererSettings();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
 };
 
 } // namespace mce

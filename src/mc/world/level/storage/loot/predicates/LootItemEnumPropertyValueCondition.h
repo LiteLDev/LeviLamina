@@ -33,8 +33,6 @@ public:
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
 
     virtual bool _hasPropertyValue(::PropertyComponent const& component) const /*override*/;
-
-    virtual ~LootItemEnumPropertyValueCondition() /*override*/ = default;
     // NOLINTEND
 
 public:

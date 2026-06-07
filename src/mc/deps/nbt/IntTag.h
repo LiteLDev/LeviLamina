@@ -35,14 +35,22 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual uint64 hash() const /*override*/;
-
-    virtual ~IntTag() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI IntTag();
+
+    MCAPI explicit IntTag(int data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(int data);
     // NOLINTEND
 
 public:

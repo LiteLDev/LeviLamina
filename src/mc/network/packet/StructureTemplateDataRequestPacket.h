@@ -23,13 +23,11 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
-    StructureTemplateDataRequestPacket();
+    StructureTemplateDataRequestPacket& operator=(StructureTemplateDataRequestPacket const&);
+    StructureTemplateDataRequestPacket(StructureTemplateDataRequestPacket const&);
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,38 +64,24 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~StructureTemplateDataRequestPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI StructureTemplateDataRequestPacket();
-#endif
 
-#ifdef LL_PLAT_C
     MCAPI explicit StructureTemplateDataRequestPacket(::StructureTemplateDataRequestPacketPayload payload);
-#endif
+
+    MCAPI ::StructureTemplateDataRequestPacket& operator=(::StructureTemplateDataRequestPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor();
-#endif
 
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::StructureTemplateDataRequestPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

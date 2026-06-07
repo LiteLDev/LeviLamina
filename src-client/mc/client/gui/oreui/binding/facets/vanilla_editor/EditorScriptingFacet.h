@@ -64,10 +64,10 @@ public:
     MCAPI explicit EditorScriptingFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
 
     MCAPI void _handleDataStoreEvent(
-        ::HashedString const&          dataTag,
-        ::Editor::DataStore::EventType eventType,
-        ::Json::Value const&           payload,
-        ::Editor::DataStore::PayloadDescription const&
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
     );
 
     MCAPI void addCleanupMessage(::std::string const& id, ::std::string const& payload);

@@ -7,11 +7,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
 class Motif;
 class Packet;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Painting : public ::HangingActor {
@@ -20,6 +23,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Motif const*> mMotif;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Painting();
 
 public:
     // virtual functions
@@ -41,8 +48,32 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    // NOLINTEND
 
-    virtual ~Painting() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Painting(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI void clientInitialize(int dir, ::std::string const& motifName);
+#endif
+
+    MCFOLD ::Motif const& getCurrentMotif() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

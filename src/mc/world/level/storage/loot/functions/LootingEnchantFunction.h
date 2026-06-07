@@ -37,6 +37,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI int _getLootingEnchantLevel(::LootTableContext& context) const;
+
+    MCFOLD ::RandomValueBounds getDamage() const;
     // NOLINTEND
 
 public:

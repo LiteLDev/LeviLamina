@@ -12,10 +12,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Dimension;
-class Experiments;
-class IRandom;
-class Level;
 class Player;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -30,15 +26,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TurtleEggBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void entityInside(::BlockSource&, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
+    virtual void entityInside(::BlockSource& pos, ::BlockPos const& entity, ::Actor&) const /*override*/;
 
     virtual void transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, float fallDistance) const
         /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
@@ -47,16 +46,14 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~TurtleEggBlock() /*override*/ = default;
+    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TurtleEggBlock(::std::string const& nameId, int id);
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -72,18 +69,22 @@ public:
 
     MCAPI static void
     _destroyEgg(::BlockSource& region, ::BlockPos const& pos, ::Actor& actor, int randomness, bool brokenWithSilkTouch);
+    // NOLINTEND
 
-    MCAPI static bool shouldUpdateHatchLevel(::Level const& level, ::Dimension const& dimension, ::IRandom& random);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $entityInside(::BlockSource&, ::BlockPos const& pos, ::Actor& entity) const;
+    MCAPI void $entityInside(::BlockSource& pos, ::BlockPos const& entity, ::Actor&) const;
 
     MCAPI void $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, float fallDistance) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
     MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
@@ -91,9 +92,7 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
 
 
     // NOLINTEND

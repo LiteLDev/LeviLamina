@@ -11,6 +11,7 @@
 // clang-format off
 class Container;
 class ContainerModel;
+struct ContainerOwner;
 struct PlayerContainerRefresher;
 // clang-format on
 
@@ -42,6 +43,18 @@ public:
 
     MCAPI void
     broadcastChanges(::PlayerContainerRefresher const& refresher, ::std::function<void()> contentsChangedCallback);
+
+    MCFOLD ::ContainerID getContainerId() const;
+
+    MCAPI ::FullContainerName getDynamicContainerId() const;
+
+    MCAPI ::std::vector<::ItemStack> const& getItems() const;
+
+    MCFOLD ::ItemStack const& getStorageItemForNetworkPacket() const;
+
+    MCAPI void shareContainer(::ContainerOwner& containerOwner);
+
+    MCAPI ~DynamicContainerManager();
     // NOLINTEND
 
 public:
@@ -53,5 +66,11 @@ public:
         ::std::shared_ptr<::Container>      container,
         ::ItemStack const&                  storageItem
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

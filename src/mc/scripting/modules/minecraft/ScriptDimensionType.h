@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -20,16 +16,37 @@ public:
     ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScriptDimensionType();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getTypeId() const;
+#ifdef LL_PLAT_C
+    MCAPI explicit ScriptDimensionType(::DimensionType dimensionType);
+#endif
+
+    MCFOLD ::DimensionType getDimensionType() const;
+
+    MCFOLD bool operator==(::ScriptModuleMinecraft::ScriptDimensionType const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& module);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::DimensionType dimensionType);
+#endif
     // NOLINTEND
 };
 

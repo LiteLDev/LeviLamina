@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Settings { struct ThemeProps; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,16 +21,30 @@ public:
     ::ll::UntypedStorage<8, 176> mUnkd67276;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ThemeSettingsChangedPayload& operator=(ThemeSettingsChangedPayload const&);
     ThemeSettingsChangedPayload(ThemeSettingsChangedPayload const&);
     ThemeSettingsChangedPayload();
 
+#else // LL_PLAT_C
 public:
-    // virtual functions
+    // prevent constructor by default
+    ThemeSettingsChangedPayload& operator=(ThemeSettingsChangedPayload const&);
+    ThemeSettingsChangedPayload(ThemeSettingsChangedPayload const&);
+
+#endif
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~ThemeSettingsChangedPayload() /*override*/;
+#ifdef LL_PLAT_C
+    MCNAPI ThemeSettingsChangedPayload();
+#endif
+
+    MCNAPI explicit ThemeSettingsChangedPayload(::Editor::Settings::ThemeProps const& props);
+
+    MCNAPI ::Editor::Settings::ThemeProps const& getThemeSettingsProps() const;
     // NOLINTEND
 
 public:
@@ -39,9 +54,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
+
+    MCNAPI void* $ctor(::Editor::Settings::ThemeProps const& props);
     // NOLINTEND
 
 public:

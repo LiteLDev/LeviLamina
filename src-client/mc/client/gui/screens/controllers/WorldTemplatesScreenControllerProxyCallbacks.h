@@ -19,9 +19,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldTemplatesScreenControllerProxyCallbacks& operator=(WorldTemplatesScreenControllerProxyCallbacks const&);
+    WorldTemplatesScreenControllerProxyCallbacks();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldTemplatesScreenControllerProxyCallbacks(::WorldTemplatesScreenControllerProxyCallbacks const&);
+
     MCAPI ~WorldTemplatesScreenControllerProxyCallbacks();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::WorldTemplatesScreenControllerProxyCallbacks const&);
     // NOLINTEND
 
 public:

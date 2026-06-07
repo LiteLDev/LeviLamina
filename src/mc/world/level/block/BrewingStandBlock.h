@@ -16,7 +16,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -25,6 +24,10 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class BrewingStandBlock : public ::ActorBlock {
+public:
+    // prevent constructor by default
+    BrewingStandBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -52,14 +55,14 @@ public:
     ) const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -72,23 +75,26 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const
         /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~BrewingStandBlock() /*override*/ = default;
+    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BrewingStandBlock(::std::string const& nameId, int id);
+
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -118,14 +124,14 @@ public:
     ) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -137,14 +143,11 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
 
 
     // NOLINTEND

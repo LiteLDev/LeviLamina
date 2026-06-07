@@ -16,24 +16,19 @@ class CombinedHotbarAndInventoryContainerValidation : public ::ContainerValidati
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const
-        /*override*/;
+    virtual bool isItemAllowedToRemove(::ContainerScreenContext const& item, ::ItemStackBase const&) const /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
-        /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& container, ::Container const&) const /*override*/;
 
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
-
-    virtual ~CombinedHotbarAndInventoryContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool
-    $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
+    MCFOLD bool $isItemAllowedToRemove(::ContainerScreenContext const& item, ::ItemStackBase const&) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& container, ::Container const&) const;
 
     MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 

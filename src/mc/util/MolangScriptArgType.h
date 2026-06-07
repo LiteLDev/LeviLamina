@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class MolangScriptArgType : int {
-    Unset                  = -1,
+    Unset                  = 4294967295,
     Float                  = 0,
     HashType64             = 1,
     MolangLoopBreak        = 2,

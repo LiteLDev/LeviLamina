@@ -22,49 +22,59 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MaterialReducerInputValidation();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
+        ::ContainerScreenContext const& item,
         int const                       amount,
+        ::ItemStackBase const&,
+        int const,
         bool
     ) const /*override*/;
 
-    virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
+    virtual int getAvailableSetCount(int, ::ItemStackBase const&) const /*override*/;
 
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
 
     virtual bool canDestroy(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~MaterialReducerInputValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit MaterialReducerInputValidation(::ContainerScreenContext const& screenContext);
+
     MCAPI bool isItemAllowed(::ItemStackBase const& item) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContainerScreenContext const& screenContext);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
+        ::ContainerScreenContext const& item,
         int const                       amount,
+        ::ItemStackBase const&,
+        int const,
         bool
     ) const;
 
-    MCFOLD int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
+    MCFOLD int $getAvailableSetCount(int, ::ItemStackBase const&) const;
 
     MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
     MCFOLD bool $canDestroy(::ContainerScreenContext const& screenContext) const;
 

@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    StructureFromSelectionPayload& operator=(StructureFromSelectionPayload const&);
     StructureFromSelectionPayload(StructureFromSelectionPayload const&);
     StructureFromSelectionPayload();
 
@@ -34,13 +35,6 @@ public:
     virtual ~StructureFromSelectionPayload() /*override*/;
 #endif
 
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::StructureFromSelectionPayload&
-    operator=(::Editor::Network::StructureFromSelectionPayload const&);
     // NOLINTEND
 
 public:

@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 // clang-format on
 
-class RiseToLiquidLevelGoal : public ::Goal {
+class RiseToLiquidLevelGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,14 +34,20 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~RiseToLiquidLevelGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RiseToLiquidLevelGoal(::Mob& mob, float liquidYOffset, float riseDelta, float sinkDelta);
+
     MCAPI float findLiquidLevel();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float liquidYOffset, float riseDelta, float sinkDelta);
     // NOLINTEND
 
 public:

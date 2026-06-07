@@ -13,16 +13,21 @@ public:
 
 public:
     // prevent constructor by default
-    ClientboundDataDrivenUIShowScreenPacketPayload(ClientboundDataDrivenUIShowScreenPacketPayload const&);
     ClientboundDataDrivenUIShowScreenPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ClientboundDataDrivenUIShowScreenPacketPayload&
-    operator=(::ClientboundDataDrivenUIShowScreenPacketPayload&&);
+    MCAPI ClientboundDataDrivenUIShowScreenPacketPayload(
+        ::std::string const&  screenId,
+        uint                  formId,
+        ::std::optional<uint> dataInstanceId
+    );
+    // NOLINTEND
 
-    MCAPI ::ClientboundDataDrivenUIShowScreenPacketPayload&
-    operator=(::ClientboundDataDrivenUIShowScreenPacketPayload const&);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& screenId, uint formId, ::std::optional<uint> dataInstanceId);
     // NOLINTEND
 };

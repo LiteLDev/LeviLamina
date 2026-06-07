@@ -9,7 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Mob;
 struct ActorUniqueID;
+struct MobDescriptor;
 struct TrustComponent;
 // clang-format on
 
@@ -22,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DefendTrustedTargetGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -29,14 +35,38 @@ public:
     virtual void start() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~DefendTrustedTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DefendTrustedTargetGoal(
+        ::Mob&                                 mob,
+        ::std::vector<::MobDescriptor> const&  targetTypes,
+        float                                  within,
+        int                                    attackInterval,
+        bool                                   mustSee,
+        int                                    mustSeeForgetTicks,
+        ::SharedTypes::Legacy::LevelSoundEvent sound,
+        ::ActorDefinitionTrigger const&        onStartEvent
+    );
+
     MCAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&                                 mob,
+        ::std::vector<::MobDescriptor> const&  targetTypes,
+        float                                  within,
+        int                                    attackInterval,
+        bool                                   mustSee,
+        int                                    mustSeeForgetTicks,
+        ::SharedTypes::Legacy::LevelSoundEvent sound,
+        ::ActorDefinitionTrigger const&        onStartEvent
+    );
     // NOLINTEND
 
 public:

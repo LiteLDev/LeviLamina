@@ -12,7 +12,6 @@
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 #include "mc/deps/renderer/MatrixStack.h"
-#include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/block/BlockShape.h"
 
@@ -85,7 +84,29 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
+            MCNAPI Scoped(
+                ::ItemInHandRenderer::OffsetForLowAspectRatio::Direction direction,
+                ::MatrixStack::MatrixStackRef&                           worldMatrix,
+                ::mce::ViewportInfo const&                               viewportInfo,
+                ::mce::Camera const&                                     camera,
+                bool                                                     isFirstPerson,
+                float                                                    xScale
+            );
+
             MCNAPI ~Scoped();
+            // NOLINTEND
+
+        public:
+            // constructor thunks
+            // NOLINTBEGIN
+            MCNAPI void* $ctor(
+                ::ItemInHandRenderer::OffsetForLowAspectRatio::Direction direction,
+                ::MatrixStack::MatrixStackRef&                           worldMatrix,
+                ::mce::ViewportInfo const&                               viewportInfo,
+                ::mce::Camera const&                                     camera,
+                bool                                                     isFirstPerson,
+                float                                                    xScale
+            );
             // NOLINTEND
 
         public:
@@ -94,19 +115,6 @@ public:
             MCNAPI void $dtor();
             // NOLINTEND
         };
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static bool apply(
-            ::ItemInHandRenderer::OffsetForLowAspectRatio::Direction direction,
-            ::MatrixStack::MatrixStackRef&                           worldMatrix,
-            ::mce::ViewportInfo const&                               viewportInfo,
-            ::mce::Camera const&                                     camera,
-            bool                                                     isFirstPerson,
-            float                                                    xScale
-        );
-        // NOLINTEND
     };
 
     using RenderMap = ::std::map<::ItemInHandRenderFrameId, ::ItemRenderCall>;
@@ -173,6 +181,8 @@ public:
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
     );
 
+    MCAPI void _applyBreathingBob(::MatrixStack::MatrixStackRef& worldMatrix, float time, float bobHeight) const;
+
     MCAPI void _applyDefaultItemTransforms(
         ::MatrixStack::MatrixStackRef& worldMatrix,
         ::ItemStack const&             item,
@@ -212,17 +222,14 @@ public:
 
     MCAPI bool _areNotMatchingChemistrySticks(::ItemStack& itemBefore, ::ItemStack const& itemAfter);
 
-    MCAPI ::Vec3
-    _calculateOffhandWorldTranslation(::Player const& player, ::BaseActorRenderContext const& renderContext) const;
-
-    MCAPI ::InHandUpdateType _checkAndUpdateIfItemChanged(
-        ::ItemStack&       itemBefore,
-        ::ItemStack const& itemAfter,
-        bool               isMainHand,
-        bool               slotChanged
-    );
-
     MCAPI ::ItemRenderCall* _getRenderCall(::Mob* mob, ::ItemStack const& itemInstance, int fallbackFrame);
+
+    MCAPI ::Vec3 _getScreenRatioAdjustment(
+        ::BaseActorRenderContext const& renderContext,
+        ::Vec3                          worldTranslate,
+        float                           horizontalSplitScreenOffset,
+        float                           verticalSplitScreenOffset
+    ) const;
 
     MCAPI void _pushSparklerParticles(::BaseActorRenderContext& renderContext, ::ItemStack const& item, ::Level& level);
 
@@ -302,18 +309,12 @@ public:
     MCAPI void _renderItemInMainHand(
         ::BaseActorRenderContext& renderContext,
         ::Player&                 player,
-        float                     xRot,
         float                     inverseArmHeight,
-        float                     attackValue
+        float                     attackValue,
+        float
     );
 
-    MCAPI void _renderItemInOffhand(
-        ::BaseActorRenderContext& renderContext,
-        ::Player&                 player,
-        float                     xRot,
-        float                     inverseArmHeight,
-        float                     attackValue
-    );
+    MCAPI void _renderItemInOffhand(::BaseActorRenderContext& renderContext, ::Player& player, float, float, float);
 
     MCAPI void _renderMiniMapHand(::BaseActorRenderContext& renderContext, ::Player& player, bool inOffhand);
 
@@ -371,10 +372,14 @@ public:
     MCAPI ::mce::MaterialPtr const&
     getObjectMaterial(::ItemRenderCall const& renderObject, ::ItemContextFlags itemFlags) const;
 
+    MCAPI ::mce::TexturePtr const& getObjectTexture(::ItemRenderCall const& renderObject, bool glint) const;
+
     MCAPI ::ItemRenderCall const&
     getRenderCallAtFrame(::BaseActorRenderContext& renderContext, ::ItemStack const& item, int frame);
 
     MCAPI void initMaterials(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCAPI void onItemUsed();
 
     MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 
@@ -410,6 +415,8 @@ public:
 
     MCAPI void
     renderOffhandItem(::BaseActorRenderContext& renderContext, ::Player& player, ::ItemContextFlags itemFlags);
+
+    MCAPI void shutdown();
 
     MCAPI void
     tessellateAtFrame(::BaseActorRenderContext& renderContext, ::Mob* mob, ::ItemStack const& item, int frame);

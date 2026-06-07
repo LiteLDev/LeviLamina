@@ -40,18 +40,6 @@ public:
         ::ll::TypedStorage<8, 32, ::LayoutVariable::RuleValue> mMinValue;
         ::ll::TypedStorage<8, 32, ::LayoutVariable::RuleValue> mMaxValue;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~MinMaxRuleValue();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -75,13 +63,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LayoutVariable(::UIControl& control, ::LayoutVariableType type);
+
     MCAPI void _addDependsOnMeEntriesForInvalidation(bool checkForDuplicates);
 
+    MCAPI void _clearSatisfied();
+
     MCAPI float _getMaxSiblingValue() const;
-
-    MCAPI ::LayoutRule& _getOrCreateMaxRule();
-
-    MCAPI ::LayoutRule& _getOrCreateMinRule();
 
     MCAPI void _initialize(bool checkForDuplicates);
 
@@ -90,11 +78,17 @@ public:
     MCAPI void
     _invalidateDependencies(::std::function<void(::VariableRef const&)> invalidCallback, bool forceInvalidation);
 
+    MCAPI void _removeDependsOnMeEntries();
+
     MCAPI void addPostComputationalNeeds(::std::vector<::PostOperation>& postOperations, ::VariableRef& var);
+
+    MCAPI void clearOverrideValue();
+
+    MCAPI void initialize();
 
     MCAPI bool isSatisfiable() const;
 
-    MCAPI void overrideGridLayoutRule(::UIControl& control, ::UIControl& parent, ::LayoutVariableType type);
+    MCAPI void overrideGridLayoutRule(::UIControl& control, ::UIControl& type, ::LayoutVariableType);
 
     MCAPI void overrideRenderableLayoutRule(::UIControl& control, ::LayoutVariableType type);
 
@@ -102,7 +96,11 @@ public:
 
     MCAPI void removeDeadDependencies();
 
+    MCAPI void removeDependencies();
+
     MCAPI ::ui::DirtyFlag satisfy();
+
+    MCAPI void setGridItemLayoutRule(::UIControl& control, ::UIControl& parent, ::LayoutVariableType type);
 
     MCAPI void setOverrideValue(float inValue);
 
@@ -111,5 +109,19 @@ public:
     MCAPI void setStackPanelItemLayoutRule(::UIControl& control, ::UIControl& parent, ::LayoutVariableType type);
 
     MCAPI ::std::string toString(::LayoutVariableStringType type) const;
+
+    MCAPI ~LayoutVariable();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& control, ::LayoutVariableType type);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

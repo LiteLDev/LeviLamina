@@ -35,8 +35,6 @@ public:
     virtual ::std::optional<::std::string> loadScript(::std::string const& path) /*override*/;
 
     virtual ::std::string removeRootFromPath(::std::string const& path) /*override*/;
-
-    virtual ~ScriptPluginPackSource() /*override*/ = default;
     // NOLINTEND
 
 public:

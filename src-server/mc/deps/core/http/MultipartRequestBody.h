@@ -34,8 +34,6 @@ public:
     virtual ::std::string const& getLoggableSource() const /*override*/;
 
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
-
-    virtual ~MultipartRequestBody() /*override*/ = default;
     // NOLINTEND
 
 public:

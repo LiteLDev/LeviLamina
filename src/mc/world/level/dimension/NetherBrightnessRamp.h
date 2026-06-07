@@ -10,8 +10,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual float getBaseAmbientValue() const /*override*/;
-
-    virtual ~NetherBrightnessRamp() /*override*/ = default;
     // NOLINTEND
 
 public:

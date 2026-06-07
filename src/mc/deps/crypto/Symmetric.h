@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Symmetric() /*override*/;
+    virtual ~Symmetric() /*override*/ = default;
 
     virtual void init(::std::string const& key, ::std::string const& IV) /*override*/;
 
@@ -53,12 +53,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Crypto::Symmetric::System system, ::Crypto::Symmetric::OperationMode mode);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -23,14 +23,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PropertyGroupManager();
+
     MCAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
+
+    MCFOLD ::std::unordered_map<::HashedString, ::std::shared_ptr<::PropertyGroup const>> const&
+    getAllPropertyGroups() const;
 
 #ifdef LL_PLAT_C
     MCAPI void ingestActorPropertyDataTag(::CompoundTag const& propertyData);
-
-    MCAPI void registerGroup(::HashedString const& id, ::std::shared_ptr<::PropertyGroup const> group);
 #endif
 
+    MCAPI void registerGroup(::HashedString const& id, ::std::shared_ptr<::PropertyGroup const> group);
+
     MCAPI void tryInitPropertiesOnActor(::Actor& actor) const;
+
+    MCAPI ~PropertyGroupManager();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

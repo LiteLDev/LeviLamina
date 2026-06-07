@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Network { struct DataTransferServiceSendNewDataOptions; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,18 +27,21 @@ public:
 
 public:
     // prevent constructor by default
-    DataTransferServiceSendDataPayload(DataTransferServiceSendDataPayload const&);
     DataTransferServiceSendDataPayload();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataTransferServiceSendDataPayload() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataTransferServiceSendDataPayload(::Editor::Network::DataTransferServiceSendDataPayload const&);
+
+    MCNAPI DataTransferServiceSendDataPayload(
+        ::std::string const&                                                      collectionName,
+        ::std::string const&                                                      identifier,
+        ::std::string const&                                                      jsonData,
+        bool                                                                      lockToBiome,
+        ::std::optional<::Editor::Network::DataTransferServiceSendNewDataOptions> options
+    );
+
     MCNAPI ::Editor::Network::DataTransferServiceSendDataPayload&
     operator=(::Editor::Network::DataTransferServiceSendDataPayload&&);
 
@@ -52,9 +56,17 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::Network::DataTransferServiceSendDataPayload const&);
+
+    MCNAPI void* $ctor(
+        ::std::string const&                                                      collectionName,
+        ::std::string const&                                                      identifier,
+        ::std::string const&                                                      jsonData,
+        bool                                                                      lockToBiome,
+        ::std::optional<::Editor::Network::DataTransferServiceSendNewDataOptions> options
+    );
     // NOLINTEND
 
 public:

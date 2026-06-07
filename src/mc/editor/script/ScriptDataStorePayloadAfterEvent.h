@@ -20,12 +20,15 @@ public:
 public:
     // prevent constructor by default
     ScriptDataStorePayloadAfterEvent& operator=(ScriptDataStorePayloadAfterEvent const&);
-    ScriptDataStorePayloadAfterEvent(ScriptDataStorePayloadAfterEvent const&);
     ScriptDataStorePayloadAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptDataStorePayloadAfterEvent(::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent const&);
+
+    MCNAPI ScriptDataStorePayloadAfterEvent(::std::string const& dataTag, ::std::string const& payload);
+
     MCNAPI ::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&
     operator=(::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&&);
     // NOLINTEND
@@ -34,6 +37,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent const&);
+
+    MCNAPI void* $ctor(::std::string const& dataTag, ::std::string const& payload);
     // NOLINTEND
 };
 

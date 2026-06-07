@@ -12,8 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     bool                           network : 1;
-    ::SubChunkStorageUnit::Type    type    : 7;
     ::ll::TypedStorage<1, 1, char> raw;
+    ::SubChunkStorageUnit::Type    type : 7;
     // NOLINTEND
 };
 } // namespace SubChunkStorageUnit

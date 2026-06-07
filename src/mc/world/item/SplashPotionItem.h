@@ -32,14 +32,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SplashPotionItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Potion::PotionType getPotionType() const /*override*/;
 
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -48,8 +52,7 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
@@ -64,8 +67,18 @@ public:
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~SplashPotionItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SplashPotionItem(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -75,8 +88,7 @@ public:
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -85,8 +97,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 

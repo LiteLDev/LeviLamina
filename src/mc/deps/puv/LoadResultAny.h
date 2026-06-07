@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersion;
 namespace Puv { class Logger; }
 // clang-format on
 
@@ -29,6 +30,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LoadResultAny(::Puv::LoadResultAny&&);
+
+    MCNAPI bool isValid() const;
+
+    MCNAPI ::Puv::Logger const& log() const;
+
+    MCNAPI ::Puv::Logger& log();
+
+    MCNAPI explicit operator bool() const;
+
+    MCNAPI ::Puv::LoadResultAny& operator=(::Puv::LoadResultAny&&);
+
+    MCNAPI ::SemVersion const& version() const;
 
     MCNAPI ~LoadResultAny();
     // NOLINTEND

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/util/ExpiringTick.h"
 
 // auto generated forward declare list
@@ -12,7 +12,7 @@
 class Mob;
 // clang-format on
 
-class SonicBoomGoal : public ::Goal {
+class SonicBoomGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -55,8 +55,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~SonicBoomGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SonicBoomGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

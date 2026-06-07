@@ -39,19 +39,11 @@ public:
     MCAPI int getDistanceUntilEdge(::BlockPos const& pos, int direction, int facing);
 
     MCAPI bool isValid(::BlockSource& region);
-
-    MCAPI ~EndPortalShape();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockSource& region, ::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

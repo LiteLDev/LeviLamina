@@ -6,7 +6,7 @@ struct curfile64_info {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88>    mUnkcf4fad;
+    ::ll::UntypedStorage<1, 88>    mUnka024c0;
     ::ll::UntypedStorage<4, 4>     mUnkabdefb;
     ::ll::UntypedStorage<4, 4>     mUnkc28a4d;
     ::ll::UntypedStorage<8, 8>     mUnkbd0ba6;

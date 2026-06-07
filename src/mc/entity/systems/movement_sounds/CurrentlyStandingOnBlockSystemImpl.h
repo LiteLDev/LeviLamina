@@ -49,8 +49,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~CurrentlyStandingOnBlockSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

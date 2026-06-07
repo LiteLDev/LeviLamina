@@ -50,13 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptJigsawService(::Editor::ScriptModule::ScriptJigsawService&&);
-
     MCNAPI ScriptJigsawService(
         ::Editor::Services::EditorJigsawServiceProvider* jigsawService,
         ::Editor::EditorPlayerServiceProvider*           playerService,
         ::Scripting::WeakLifetimeScope const&            scope
     );
+
+    MCNAPI void deleteRegistryData(::std::string const& registryName);
 
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::Promise<::std::vector<::Editor::Services::EditorJigsawSection>, ::Scripting::Error>>
@@ -83,7 +83,7 @@ public:
 
     MCNAPI ::std::vector<::std::string> getRegistryList();
 
-    MCNAPI ::Editor::ScriptModule::ScriptJigsawService& operator=(::Editor::ScriptModule::ScriptJigsawService&&);
+    MCNAPI ::Editor::ScriptModule::ScriptJigsawService& operator=(::Editor::ScriptModule::ScriptJigsawService&& other);
 
     MCNAPI void setJigsawBlockData(::Vec3& pos, ::Editor::Services::JigsawBlockData& jigsawData);
 
@@ -119,8 +119,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptJigsawService&&);
-
     MCNAPI void* $ctor(
         ::Editor::Services::EditorJigsawServiceProvider* jigsawService,
         ::Editor::EditorPlayerServiceProvider*           playerService,

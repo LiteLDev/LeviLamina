@@ -28,12 +28,6 @@ public:
     AdminLogCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AdminLogCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AdminLogCommandGroup(::OreUI::GameDependencies const& game);

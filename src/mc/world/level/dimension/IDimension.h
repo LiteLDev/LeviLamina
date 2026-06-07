@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
@@ -13,7 +12,6 @@ class BiomeRegistry;
 class Block;
 class BlockPos;
 class BlockSource;
-class Dimension;
 class ILevelStorageManagerConnector;
 class Packet;
 class Player;
@@ -26,7 +24,7 @@ class IDimension {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDimension();
+    virtual ~IDimension() = default;
 
     virtual bool isNaturalDimension() const = 0;
 
@@ -59,19 +57,13 @@ public:
         ::std::vector<::NetworkIdentifierWithSubId>& result
     ) const = 0;
 
-    virtual void updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual void updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
+    MCFOLD void $updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
 
 
     // NOLINTEND

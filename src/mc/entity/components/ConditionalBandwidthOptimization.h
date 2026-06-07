@@ -17,16 +17,4 @@ public:
     ConditionalBandwidthOptimization& operator=(ConditionalBandwidthOptimization const&);
     ConditionalBandwidthOptimization(ConditionalBandwidthOptimization const&);
     ConditionalBandwidthOptimization();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ConditionalBandwidthOptimization();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

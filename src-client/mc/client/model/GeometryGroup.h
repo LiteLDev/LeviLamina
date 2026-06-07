@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Geometry;
 class GeometryInfo;
 class GeometryInheritanceTree;
 class GeometryPtr;
@@ -51,10 +52,8 @@ public:
     // NOLINTBEGIN
     MCAPI GeometryGroup();
 
-    MCAPI ::std::shared_ptr<::GeometryInfo> _findOrAddGeometryInfo(
-        ::HashedString const&                                          name,
-        ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>& geometryLock
-    );
+    MCAPI ::std::shared_ptr<::GeometryInfo>
+    _findOrAddGeometryInfo(::HashedString const& name, ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>&);
 
     MCAPI void _loadModelsAsync(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
@@ -74,6 +73,10 @@ public:
 
     MCAPI ::GeometryPtr getGeometry(::HashedString const& geometryName);
 
+    MCAPI ::std::shared_ptr<::GeometryInfo> getGeometryInfo(::HashedString const& name);
+
+    MCFOLD ::std::weak_ptr<::GeometryGroup> getWeakPtrToThis();
+
     MCAPI void loadGeometriesAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
@@ -87,6 +90,10 @@ public:
         ::std::string const&      content,
         ::MinEngineVersion const& minEngineVersion
     );
+
+    MCAPI void removeGeometry(::HashedString const& name);
+
+    MCAPI void setGeometry(::HashedString const& name, ::std::unique_ptr<::Geometry>&& ptr);
     // NOLINTEND
 
 public:
@@ -114,17 +121,6 @@ public:
     _buildGeometryFileSchema_v1_8();
 
     MCAPI static void _buildInheritanceTree(
-        ::std::string const&,
-        ::std::string const&                  sourceFilePathWithExtension,
-        ::Json::Value&                        value,
-        ::MinEngineVersion const&             minEngineVersion,
-        ::GeometryInheritanceTree&            inheritance,
-        bool                                  isFromBaseGamePack,
-        bool                                  requireMinecraftNamespace,
-        ::std::function<void(::Json::Value&)> postLoadFixup
-    );
-
-    MCAPI static void _buildInheritanceTree(
         ::std::string const&                  fileName,
         ::std::string const&                  sourceFilePathWithExtension,
         ::std::string const&                  fileContent,
@@ -133,6 +129,17 @@ public:
         bool                                  isFromBaseGamePack,
         bool                                  requireMinecraftNamespace,
         ::std::function<void(::Json::Value&)> postLoadFixup
+    );
+
+    MCAPI static void _buildInheritanceTree(
+        ::std::string const&       sourceFilePathWithExtension,
+        ::std::string const&       value,
+        ::Json::Value&             minEngineVersion,
+        ::MinEngineVersion const&  inheritance,
+        ::GeometryInheritanceTree& isFromBaseGamePack,
+        bool                       requireMinecraftNamespace,
+        bool                       postLoadFixup,
+        ::std::function<void(::Json::Value&)>
     );
 
     MCAPI static ::std::pair<::std::string, ::std::string> _getParent(::std::string const& fullName);

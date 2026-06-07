@@ -24,13 +24,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_21_80::JigsawStructureMetadata const&) const;
+    MCAPI ~JigsawStructureMetadata();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -13,6 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockSource;
 class Vec3;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
@@ -41,9 +42,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlock& operator=(ScriptBlock const&);
+    ScriptBlock(ScriptBlock const&);
+    ScriptBlock();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isValid() const;
+    MCAPI ScriptBlock(::ScriptModuleMinecraft::ScriptBlock&& rhs);
+
+    MCAPI ScriptBlock(::BlockSource& region, ::BlockPos pos, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
@@ -90,6 +99,10 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     east(int steps) const;
 
+    MCAPI ::Block const& getBlock() const;
+
+    MCFOLD ::BlockPos const& getBlockPos() const;
+
     MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>>
     getComponent_010(
@@ -117,8 +130,6 @@ public:
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> getDimension() const;
 
-    MCAPI ::std::string getId_010() const;
-
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -137,8 +148,6 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getLocation() const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::BlockPos> getLocation_010() const;
-
     MCAPI ::Scripting::Result<
         ::ScriptModuleMinecraft::ScriptRGBA,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -156,9 +165,6 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getPermutation() const;
-
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>
-    getPermutation_010() const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<int>,
@@ -275,11 +281,15 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     offset(::Vec3 const& offset) const;
 
+    MCAPI ::ScriptModuleMinecraft::ScriptBlock& operator=(::ScriptModuleMinecraft::ScriptBlock&& rhs);
+
     MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     setPermutation(::ScriptModuleMinecraft::ScriptBlockPermutation const& blockData);
+
+    MCAPI void setPermutation_010(::ScriptModuleMinecraft::ScriptBlockPermutation const& blockData);
 
     MCAPI ::Scripting::Result<
         void,
@@ -291,6 +301,8 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
             ::std::string> const& blockType
     );
+
+    MCAPI void setType_010(::ScriptModuleMinecraft::ScriptBlockType const& blockType);
 
     MCAPI ::Scripting::Result<
         void,
@@ -316,6 +328,8 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     west(int steps) const;
+
+    MCAPI ~ScriptBlock();
     // NOLINTEND
 
 public:
@@ -346,6 +360,20 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
             ::std::string> const& blockTypeOrBlockTypeName
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlock&& rhs);
+
+    MCAPI void* $ctor(::BlockSource& region, ::BlockPos pos, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

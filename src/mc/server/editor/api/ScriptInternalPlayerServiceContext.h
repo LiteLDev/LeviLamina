@@ -25,7 +25,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk4c1358;
     ::ll::UntypedStorage<8, 32> mUnk33b9c0;
     ::ll::UntypedStorage<8, 32> mUnkba562f;
-    ::ll::UntypedStorage<8, 32> mUnk28d71a;
+    ::ll::UntypedStorage<8, 32> mUnk153cbb;
     ::ll::UntypedStorage<8, 32> mUnkf85b4c;
     ::ll::UntypedStorage<8, 32> mUnk37c655;
     ::ll::UntypedStorage<8, 32> mUnk3ff4a3;
@@ -45,8 +45,6 @@ public:
         ::Editor::ServiceProviderCollection&  playerServices,
         ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCNAPI ~ScriptInternalPlayerServiceContext();
     // NOLINTEND
 
 public:
@@ -62,12 +60,6 @@ public:
 
     MCNAPI void*
     $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

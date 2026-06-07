@@ -36,6 +36,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                           mUpdateBindsFromRoot;
     ::ll::TypedStorage<1, 1, bool>                                           mTextEditFocusChanged;
     ::ll::TypedStorage<1, 1, bool>                                           mTextEditAlwaysListeningChanged;
+    ::ll::TypedStorage<1, 1, bool>                                           mRootControlDestroyed;
+    ::ll::TypedStorage<1, 1, bool>                                           mRootControlWasInitialized;
     ::ll::TypedStorage<8, 16, ::Json::Value>                                 mInitGlobalVars;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VisualTreeProxy>>           mProxy;
     // NOLINTEND
@@ -83,12 +85,34 @@ public:
     // NOLINTBEGIN
     MCAPI VisualTree(::std::string const& rootControlName, ::Json::Value const& initGlobalVars);
 
+    MCAPI void clearBindUpdateFromRoot();
+
+    MCAPI void clearControlCollectionUpdateFromRoot();
+
+    MCAPI void clearControlsToBind();
+
+    MCAPI void clearControlsToRemoveFromCollections();
+
     MCAPI void clearControlsUpdate(bool clearBacklog);
+
+    MCAPI void clearTextEditAlwaysListeningChanged();
+
+    MCAPI void clearTextEditFocusChanged();
+
+    MCAPI void destroyAsync(::TaskGroup& taskGroup);
+
+    MCFOLD bool getClearPersistantMeshes();
 
     MCAPI ::std::shared_ptr<::UIControl> getControlByName(::std::string const& name, bool visibleOnly);
 
     MCAPI ::std::vector<::std::shared_ptr<::UIControl>>
     getControls(::std::function<bool(::UIControl const&)> predicate);
+
+    MCFOLD ::std::vector<::std::shared_ptr<::UIControl>>&& getControlsToBind();
+
+    MCFOLD ::std::vector<::std::shared_ptr<::UIControl>> const& getControlsToRemoveFromCollections();
+
+    MCAPI ::std::vector<::std::shared_ptr<::UIControl>> const& getControlsToUpdate();
 
     MCAPI ::std::shared_ptr<::UIControl> getFirstControl(::std::function<bool(::UIControl const&)> const& predicate);
 
@@ -98,16 +122,52 @@ public:
     MCAPI ::std::shared_ptr<::UIControl>
     getFirstVisibleControl(::std::function<bool(::UIControl const&)> const& predicate);
 
+    MCFOLD ::Json::Value const& getInitGlobalVars() const;
+
+    MCAPI ::std::shared_ptr<::UIControl> getInitialSelectedControl() const;
+
+    MCFOLD ::VisualTreeProxy* getProxy();
+
+    MCFOLD ::std::shared_ptr<::UIControl> getRootControl();
+
     MCAPI ::std::vector<::std::shared_ptr<::UIControl>>
     getVisibleControls(::std::function<bool(::UIControl const&)> predicate);
 
+    MCAPI bool hasControlsToBind() const;
+
+    MCAPI bool hasControlsToUpdate();
+
     MCAPI void initRootControl(::std::shared_ptr<::UIControl> rootControl);
+
+    MCFOLD bool needsControlBindsFromRoot() const;
+
+    MCFOLD bool needsControlCollectionUpdateFromRoot() const;
 
     MCAPI ::std::unique_ptr<::VisualTree> recreateControlTree(::UIControlFactory& controlFactory);
 
     MCAPI void removeDeadDependencies();
 
-    MCAPI void setRootControlName(::std::string const& name);
+    MCAPI void removeDirtyFlag(::ui::DirtyFlag flag);
+
+    MCAPI void reset();
+
+    MCAPI void setClearPersistantMeshes(bool clearMeshes);
+
+    MCAPI void setDirty(bool dirty);
+
+    MCAPI void setInitialSelectedControl(::std::shared_ptr<::UIControl> control);
+
+    MCAPI void setMeasureStrategy(::UIMeasureStrategy* measureStrategy);
+
+    MCFOLD void setRootControlName(::std::string const& name);
+
+    MCAPI void storeGlobalVars(::Json::Value const& vars);
+
+    MCFOLD bool textEditAlwaysListeningChanged() const;
+
+    MCFOLD bool textEditFocusChanged() const;
+
+    MCAPI void visitTree(::UIControl* fromControl, ::std::function<bool(::UIControl&, int, bool)> visitor);
     // NOLINTEND
 
 public:

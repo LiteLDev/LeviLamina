@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 namespace Settings::RegistryBuilder { class IBuilderContext; }
 // clang-format on
 
@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::OptionID>                                    mOptionId;
-    ::ll::TypedStorage<8, 8, ::IOptions&>                                   mOptions;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                            mOptions;
     ::ll::TypedStorage<8, 8, ::Settings::RegistryBuilder::IBuilderContext&> mContext;
     // NOLINTEND
 
@@ -37,8 +37,6 @@ public:
     virtual void setValue(bool value) /*override*/;
 
     virtual bool canModify() const /*override*/;
-
-    virtual ~TextureStreamingDataProvider() /*override*/ = default;
     // NOLINTEND
 
 public:

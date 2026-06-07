@@ -50,8 +50,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~WorldTemplateOperationsFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -63,6 +61,8 @@ public:
     );
 
     MCAPI void _beginTemplateDownload();
+
+    MCAPI void _handleInitialisingState();
 
     MCAPI void _updateDownloadProgress();
 
@@ -112,12 +112,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager>           ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::World::MarketplacePassWorldTemplateManager> marketplacePassWorldTemplateManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

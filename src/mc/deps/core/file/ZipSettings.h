@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/ZipFileRestrictions.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/ZipCompressionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +32,8 @@ public:
     // NOLINTBEGIN
     MCAPI ZipSettings();
 
+    MCAPI explicit ZipSettings(::Core::ZipUtils::ZipCompressionLevel compression);
+
     MCAPI ~ZipSettings();
     // NOLINTEND
 
@@ -38,6 +41,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::Core::ZipUtils::ZipCompressionLevel compression);
     // NOLINTEND
 
 public:

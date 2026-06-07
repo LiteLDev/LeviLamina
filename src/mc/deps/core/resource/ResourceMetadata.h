@@ -15,12 +15,12 @@ public:
 
 public:
     // prevent constructor by default
-    ResourceMetadata(ResourceMetadata const&);
+    ResourceMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourceMetadata();
+    MCNAPI ResourceMetadata(::ResourceMetadata const&);
 
     MCNAPI ::ResourceMetadata& operator=(::ResourceMetadata const&);
 
@@ -28,9 +28,15 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static char const*& PRODUCT_TYPE_ADD_ON();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::ResourceMetadata const&);
     // NOLINTEND
 
 public:

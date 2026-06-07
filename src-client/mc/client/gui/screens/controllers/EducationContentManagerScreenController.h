@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 
 // auto generated forward declare list
@@ -59,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EducationContentManagerScreenController() /*override*/;
+    virtual ~EducationContentManagerScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -77,7 +78,11 @@ public:
 
     MCAPI void cancelWorldDownload();
 
+    MCAPI void cancelWorldLaunch();
+
     MCAPI void importWorld(::LessonItem& item);
+
+    MCAPI bool isDownloadInProgress() const;
 
     MCAPI void launchWorld(
         ::LessonItem&                              item,
@@ -85,6 +90,9 @@ public:
         ::std::function<void()> const&             onLaunchFailed,
         ::std::function<void(::LevelData&)> const& onLevelDataConstructed
     );
+
+    MCAPI ::ui::DirtyFlag
+    tick(::LessonItem& activeItem, ::std::function<void(::LevelData&)> const& onLevelDataConstructed);
     // NOLINTEND
 
 public:
@@ -99,12 +107,6 @@ public:
         ::ToastManager&                                             tm,
         ::EducationContentManagerScreenController::OptionalBehavior optionalBehavior
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

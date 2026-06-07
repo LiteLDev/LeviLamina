@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ class Mob;
 struct MobDescriptor;
 // clang-format on
 
-class SwimWithEntityGoal : public ::Goal {
+class SwimWithEntityGoal : public ::BaseGoal {
 public:
     // SwimWithEntityGoal inner types define
     enum class EntityGoals : int {
@@ -62,16 +62,20 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~SwimWithEntityGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canSwimWith(::Actor& entity);
+    MCAPI explicit SwimWithEntityGoal(::Mob& mob);
 
     MCAPI bool _setWantedMob();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

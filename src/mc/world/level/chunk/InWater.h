@@ -20,8 +20,6 @@ public:
     // NOLINTBEGIN
     virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const&) const
         /*override*/;
-
-    virtual ~InWater() /*override*/ = default;
     // NOLINTEND
 
 public:

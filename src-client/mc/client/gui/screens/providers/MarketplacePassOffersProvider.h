@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::function<bool(::StoreCatalogItem const&)> _getFilterFunction() /*override*/;
-
-    virtual ~MarketplacePassOffersProvider() /*override*/ = default;
     // NOLINTEND
 
 public:

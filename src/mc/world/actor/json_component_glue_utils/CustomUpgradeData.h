@@ -21,23 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CustomUpgradeData& operator=(CustomUpgradeData const&);
-    CustomUpgradeData(CustomUpgradeData const&);
-    CustomUpgradeData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CustomUpgradeData(::JsonComponentGlueUtils::CustomUpgradeData&&);
-
     MCAPI ~CustomUpgradeData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::JsonComponentGlueUtils::CustomUpgradeData&&);
     // NOLINTEND
 
 public:

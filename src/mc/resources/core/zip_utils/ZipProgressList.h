@@ -27,6 +27,12 @@ public:
     MCAPI uint64 _getSum(::std::function<uint(::std::shared_ptr<::Core::ZipUtils::ZipProgress>)> getNumCallback);
 
     MCAPI ::std::shared_ptr<::Core::ZipUtils::ZipProgress> createProgress();
+
+    MCAPI uint64 getCount();
+
+    MCAPI float getProgress();
+
+    MCAPI uint64 getTotal();
 #endif
     // NOLINTEND
 };

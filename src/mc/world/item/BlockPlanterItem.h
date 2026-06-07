@@ -33,8 +33,6 @@ public:
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual ::BlockPlanterItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
-
-    virtual ~BlockPlanterItem() /*override*/ = default;
     // NOLINTEND
 
 public:

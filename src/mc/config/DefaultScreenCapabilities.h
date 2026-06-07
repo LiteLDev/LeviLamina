@@ -7,12 +7,6 @@
 
 struct DefaultScreenCapabilities : public ::TypedScreenCapabilities<::DefaultScreenCapabilities> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DefaultScreenCapabilities() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

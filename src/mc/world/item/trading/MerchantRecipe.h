@@ -48,10 +48,6 @@ public:
     MCAPI MerchantRecipe();
 #endif
 
-    MCAPI MerchantRecipe(::MerchantRecipe&&);
-
-    MCAPI MerchantRecipe(::MerchantRecipe const&);
-
     MCAPI explicit MerchantRecipe(::CompoundTag const* tag);
 
     MCAPI MerchantRecipe(::ItemInstance const& buy, ::ItemInstance const& sell);
@@ -67,7 +63,43 @@ public:
         ::BaseGameVersion baseGameVersion
     );
 
+    MCAPI void calculateDemandPricesDefaults();
+
     MCAPI ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
+
+    MCFOLD int getBaseCountA() const;
+
+    MCAPI int getBaseCountB() const;
+
+    MCFOLD ::ItemInstance const& getBuyAItem() const;
+
+    MCFOLD ::ItemInstance const& getBuyBItem() const;
+
+    MCAPI int getDemand() const;
+
+    MCFOLD int getMaxUses() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::RecipeNetId const& getNetId() const;
+#endif
+
+    MCFOLD ::ItemInstance const& getSellItem() const;
+
+    MCFOLD int getTier() const;
+
+    MCFOLD uint getTraderExp() const;
+
+    MCFOLD int getUses() const;
+
+    MCAPI bool hasSecondaryBuyItem() const;
+
+    MCAPI void increaseMaxUses(int amount);
+
+    MCAPI void increaseUses(int count);
+
+    MCAPI void init(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+
+    MCAPI bool isOutOfUses() const;
 
     MCAPI bool isSame(::MerchantRecipe const& lhs) const;
 
@@ -75,7 +107,23 @@ public:
 
     MCAPI void load(::CompoundTag const* tag);
 
-    MCAPI ::MerchantRecipe& operator=(::MerchantRecipe const&);
+    MCAPI void setDemand(int demand);
+
+    MCAPI void setMaxUses(int maxUses);
+
+    MCAPI void setPriceMultiplierA(float priceMultiplier);
+
+    MCAPI void setPriceMultiplierB(float priceMultiplier);
+
+    MCAPI void setRewardExp(bool rewardExp);
+
+    MCFOLD void setTier(int tier);
+
+    MCAPI void setTraderExp(uint traderExp);
+
+    MCAPI void setUses(int uses);
+
+    MCFOLD bool shouldRewardExp() const;
 
     MCAPI ~MerchantRecipe();
     // NOLINTEND
@@ -86,10 +134,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void* $ctor();
 #endif
-
-    MCFOLD void* $ctor(::MerchantRecipe&&);
-
-    MCFOLD void* $ctor(::MerchantRecipe const&);
 
     MCAPI void* $ctor(::CompoundTag const* tag);
 

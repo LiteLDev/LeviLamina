@@ -40,6 +40,12 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::IHandlerFactory>> mHandlerFactory;
         ::ll::TypedStorage<8, 8, void*>                                               mHandle;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void bind(::std::string const& queryName, ::OreUI::Detail::Binder const& binder);
+        // NOLINTEND
     };
 
     class LiveQuery {
@@ -193,6 +199,8 @@ public:
         ::std::unique_ptr<::OreUI::Detail::IQuery> query,
         int                                        rank
     );
+
+    MCAPI void _destroyQuery(::OreUI::Detail::IdType const& id);
 
     MCAPI void _syncQueries();
 

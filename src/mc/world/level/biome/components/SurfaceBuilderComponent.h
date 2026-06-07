@@ -18,9 +18,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SurfaceBuilderComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SurfaceBuilderComponent() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SurfaceBuilderComponent(::ISurfaceBuilder const& builder);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ISurfaceBuilder const& builder);
     // NOLINTEND
 
 public:

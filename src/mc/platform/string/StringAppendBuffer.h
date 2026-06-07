@@ -23,14 +23,6 @@ public:
     virtual int overflow(int c) /*override*/;
 
     virtual int64 xsputn(char const* s, int64 n) /*override*/;
-
-    virtual ~StringAppendBuffer() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

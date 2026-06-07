@@ -21,8 +21,6 @@ public:
     virtual ::leveldb::Status Read(uint64 n, ::leveldb::Slice* result, char* scratch) /*override*/;
 
     virtual ::leveldb::Status Skip(uint64 n) /*override*/;
-
-    virtual ~LevelDbSequentialFile() /*override*/ = default;
     // NOLINTEND
 
 public:

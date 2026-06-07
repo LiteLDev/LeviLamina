@@ -16,9 +16,10 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
-class IStructureWireframeQueue;
 class LevelChunk;
 class SaveContext;
+namespace mce { class Color; }
+class IStructureWireframeQueue;
 // clang-format on
 
 class StructureBlockActor : public ::BlockActor {
@@ -30,13 +31,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                            mIsPowered;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     StructureBlockActor();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -56,19 +54,15 @@ public:
 
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~StructureBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI explicit StructureBlockActor(::BlockPos const& pos);
-#endif
 
     MCAPI bool _loadStructure(::BlockSource& region, ::BlockPos const& position, ::BaseGameVersion const& version);
 
@@ -76,19 +70,40 @@ public:
 
     MCAPI bool _saveStructure(::BlockSource& region, ::BlockPos const& position, bool redstoneTriggered);
 
+#ifdef LL_PLAT_C
+    MCAPI void _triggerLoad(::BlockSource& region, ::BlockPos const& pos, ::BaseGameVersion const& version);
+#endif
+
+    MCFOLD ::StructureEditorData const& getStructureData() const;
+
+#ifdef LL_PLAT_C
+    MCAPI void
+    onBoundsChanged(::IStructureWireframeQueue& wireframeQueue, ::StructureEditorData const& newStructureData);
+#endif
+
+    MCAPI void setIsWaterlogged(bool waterlogged);
+
     MCAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
-#ifdef LL_PLAT_S
     MCAPI void setStructureData(::StructureEditorData const& data);
-#endif
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& MAX_WIREFRAME_RENDER_DISTANCE();
+
+    MCAPI static ::mce::Color const& X_AXIS_COLOR();
+
+    MCAPI static ::mce::Color const& Y_AXIS_COLOR();
+
+    MCAPI static ::mce::Color const& Z_AXIS_COLOR();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::BlockPos const& pos);
-#endif
     // NOLINTEND
 
 public:
@@ -110,7 +125,7 @@ public:
 
     MCAPI void $onChunkUnloaded(::LevelChunk& lc);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

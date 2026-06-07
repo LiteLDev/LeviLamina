@@ -36,6 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptCustomCommandRegistry(::ScriptModuleMinecraft::CustomCommandRegistry& customCommandRegistry);
+
     MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
@@ -63,6 +65,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::CustomCommandRegistry& customCommandRegistry);
     // NOLINTEND
 };
 

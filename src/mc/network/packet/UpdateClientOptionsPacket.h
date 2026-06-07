@@ -59,19 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~UpdateClientOptionsPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~UpdateClientOptionsPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI UpdateClientOptionsPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit UpdateClientOptionsPacket(::UpdateClientOptionsPacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::UpdateClientOptionsPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

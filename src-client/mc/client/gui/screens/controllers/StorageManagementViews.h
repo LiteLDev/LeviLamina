@@ -60,11 +60,15 @@ public:
 
     MCAPI void _onSelectedReloaded(::ContentItemCollection& selectedView);
 
+    MCAPI void deselectItem(::ContentItem const& item);
+
     MCAPI ::std::vector<::std::shared_ptr<::ContentItem const>> getAndExpandSelectedItems() const;
 
     MCAPI ::ContentItemCollection& getSelectedView();
 
     MCAPI ::std::array<::gsl::not_null<::std::shared_ptr<::StorageManagementViews::ContentTab>>, 6> getTabs();
+
+    MCAPI void selectItem(::std::shared_ptr<::ContentItem const> item);
 
     MCAPI ~StorageManagementViews();
     // NOLINTEND

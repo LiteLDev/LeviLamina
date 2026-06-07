@@ -22,24 +22,9 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentTextOptions& operator=(ScriptWidgetComponentTextOptions const&);
     ScriptWidgetComponentTextOptions(ScriptWidgetComponentTextOptions const&);
     ScriptWidgetComponentTextOptions();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentTextOptions() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentTextOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentTextOptions const&);
-    // NOLINTEND
 
 public:
     // static functions
@@ -51,12 +36,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_COLOR();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

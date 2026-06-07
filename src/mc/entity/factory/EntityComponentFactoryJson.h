@@ -25,21 +25,9 @@ public:
     EntityComponentFactoryJson();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~EntityComponentFactoryJson() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -29,8 +29,6 @@ public:
         ::ItemRegistryRef                       itemRegistry,
         bool                                    usingUpcomingCreatorFeaturesExperiment
     );
-
-    MCAPI ~TradeTableData();
     // NOLINTEND
 
 public:
@@ -47,11 +45,5 @@ public:
         ::ItemRegistryRef                       itemRegistry,
         bool                                    usingUpcomingCreatorFeaturesExperiment
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

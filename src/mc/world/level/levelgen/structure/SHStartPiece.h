@@ -28,14 +28,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
-
-    virtual ~SHStartPiece() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

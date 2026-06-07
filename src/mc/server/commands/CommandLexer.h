@@ -73,12 +73,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CommandLexer(::std::string const& commandInput);
+
+    MCFOLD ::CommandLexer::Token const& next() const;
+
     MCAPI void step();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool isDigit(char c);
+
     MCAPI static bool isIdentifierCharacter(char c);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& commandInput);
     // NOLINTEND
 };

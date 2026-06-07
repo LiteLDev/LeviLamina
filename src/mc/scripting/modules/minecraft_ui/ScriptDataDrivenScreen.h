@@ -59,7 +59,11 @@ public:
             ::ScriptModuleMinecraftServerUIPrivateBindings::ScriptDataDrivenScreenRejectError>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::EngineError>
-    showScreen(::Scripting::DependencyLocator& locator, ::Scripting::ScriptObjectFactory& factory);
+    showScreen(
+        ::std::optional<uint>             instanceId,
+        ::Scripting::DependencyLocator&   locator,
+        ::Scripting::ScriptObjectFactory& factory
+    );
 
     MCNAPI ~ScriptDataDrivenScreen();
     // NOLINTEND

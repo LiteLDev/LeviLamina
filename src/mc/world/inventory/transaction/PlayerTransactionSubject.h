@@ -93,8 +93,6 @@ public:
     virtual void sendBlockInteractedWith(::BlockPos const& pos) /*override*/;
 
     virtual ::DepenetrationComponent& getDepenetrationComponent() /*override*/;
-
-    virtual ~PlayerTransactionSubject() /*override*/ = default;
     // NOLINTEND
 
 public:

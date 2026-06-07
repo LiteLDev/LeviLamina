@@ -59,16 +59,17 @@ private:
     using mapped_const_iterator =
         std::conditional_t<no_mapped_container, no_mapped_iterator, typename mapped_container_type::const_iterator>;
 
+public:
     template <typename KeysIterator, typename ValuesIterator, typename Reference>
-    class zip_iterator_impl {
+    class iterator_impl {
     public:
         using difference_type   = typename std::iterator_traits<KeysIterator>::difference_type;
         using reference         = Reference;
         using iterator_category = typename std::iterator_traits<KeysIterator>::iterator_category;
 
     public:
-        zip_iterator_impl() = default;
-        zip_iterator_impl(KeysIterator keysIt, ValuesIterator valuesIt) : mKeysIt(keysIt), mValuesIt(valuesIt) {}
+        iterator_impl() = default;
+        iterator_impl(KeysIterator keysIt, ValuesIterator valuesIt) : mKeysIt(keysIt), mValuesIt(valuesIt) {}
 
         reference operator*() const {
             if constexpr (no_mapped_container) {
@@ -78,53 +79,53 @@ private:
             }
         }
 
-        zip_iterator_impl& operator++() {
+        iterator_impl& operator++() {
             ++mKeysIt;
             ++mValuesIt;
             return *this;
         }
 
-        zip_iterator_impl operator++(int) {
+        iterator_impl operator++(int) {
             auto copy = *this;
             ++(*this);
             return copy;
         }
 
-        zip_iterator_impl& operator--() {
+        iterator_impl& operator--() {
             --mKeysIt;
             --mValuesIt;
             return *this;
         }
 
-        zip_iterator_impl operator--(int) {
+        iterator_impl operator--(int) {
             auto copy = *this;
             --(*this);
             return copy;
         }
 
-        zip_iterator_impl& operator+=(difference_type offset) {
+        iterator_impl& operator+=(difference_type offset) {
             mKeysIt   += offset;
             mValuesIt += offset;
             return *this;
         }
 
-        zip_iterator_impl& operator-=(difference_type offset) {
+        iterator_impl& operator-=(difference_type offset) {
             mKeysIt   -= offset;
             mValuesIt -= offset;
             return *this;
         }
 
-        zip_iterator_impl operator+(difference_type offset) const {
-            return zip_iterator_impl(mKeysIt + offset, mValuesIt + offset);
+        iterator_impl operator+(difference_type offset) const {
+            return iterator_impl(mKeysIt + offset, mValuesIt + offset);
         }
 
-        zip_iterator_impl operator-(difference_type offset) const {
-            return zip_iterator_impl(mKeysIt - offset, mValuesIt - offset);
+        iterator_impl operator-(difference_type offset) const {
+            return iterator_impl(mKeysIt - offset, mValuesIt - offset);
         }
 
-        difference_type      operator-(zip_iterator_impl const& other) const { return mKeysIt - other.mKeysIt; }
-        bool                 operator==(zip_iterator_impl const& other) const { return mKeysIt == other.mKeysIt; }
-        std::strong_ordering operator<=>(zip_iterator_impl const& other) const { return mKeysIt <=> other.mKeysIt; }
+        difference_type      operator-(iterator_impl const& other) const { return mKeysIt - other.mKeysIt; }
+        bool                 operator==(iterator_impl const& other) const { return mKeysIt == other.mKeysIt; }
+        std::strong_ordering operator<=>(iterator_impl const& other) const { return mKeysIt <=> other.mKeysIt; }
 
     private:
         KeysIterator   mKeysIt{};
@@ -132,11 +133,11 @@ private:
     };
 
 public:
-    using zip_iterator = zip_iterator_impl<
+    using zip_iterator = iterator_impl<
         typename key_container_type::iterator,
         mapped_iterator,
         std::conditional_t<no_mapped_container, key_type const&, std::pair<key_type const&, T&>>>;
-    using const_zip_iterator = zip_iterator_impl<
+    using const_zip_iterator = iterator_impl<
         typename key_container_type::const_iterator,
         mapped_const_iterator,
         std::conditional_t<no_mapped_container, key_type const&, std::pair<key_type const&, T const&>>>;

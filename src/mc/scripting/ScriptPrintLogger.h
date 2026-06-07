@@ -17,49 +17,61 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptPrintLogger() /*override*/ = default;
 
-    virtual void onInfo(::Scripting::ContextId, ::std::string_view message) const /*override*/;
+    virtual void onInfo(::Scripting::ContextId message, ::std::string_view) const /*override*/;
 
-    virtual void onWarn(::Scripting::ContextId, ::std::string_view message) const /*override*/;
+    virtual void onWarn(::Scripting::ContextId message, ::std::string_view) const /*override*/;
 
-    virtual void onError(::Scripting::ContextId, ::std::string_view message) const /*override*/;
+    virtual void onError(::Scripting::ContextId message, ::std::string_view) const /*override*/;
 
-    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const
+    virtual void onException(::Scripting::ContextId error, ::Scripting::BaseError const&, ::entt::meta_any const&) const
         /*override*/;
 
     virtual bool
-    shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const& errorAny) const
+    shouldPrintException(::Scripting::ContextId errorAny, ::Scripting::BaseError const&, ::entt::meta_any const&) const
         /*override*/;
 
     virtual void onPromiseRejection(
-        ::Scripting::ContextId,
-        ::Scripting::BaseError const& error,
+        ::Scripting::ContextId        error,
+        ::Scripting::BaseError const& isHandled,
         ::entt::meta_any const&,
-        bool isHandled
+        bool
     ) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPrintLogger();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInfo(::Scripting::ContextId, ::std::string_view message) const;
+    MCAPI void $onInfo(::Scripting::ContextId message, ::std::string_view) const;
 
-    MCAPI void $onWarn(::Scripting::ContextId, ::std::string_view message) const;
+    MCAPI void $onWarn(::Scripting::ContextId message, ::std::string_view) const;
 
-    MCAPI void $onError(::Scripting::ContextId, ::std::string_view message) const;
+    MCAPI void $onError(::Scripting::ContextId message, ::std::string_view) const;
 
-    MCAPI void $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
+    MCAPI void $onException(::Scripting::ContextId error, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
 
     MCAPI bool $shouldPrintException(
-        ::Scripting::ContextId,
+        ::Scripting::ContextId errorAny,
         ::Scripting::BaseError const&,
-        ::entt::meta_any const& errorAny
+        ::entt::meta_any const&
     ) const;
 
     MCAPI void $onPromiseRejection(
-        ::Scripting::ContextId,
-        ::Scripting::BaseError const& error,
+        ::Scripting::ContextId        error,
+        ::Scripting::BaseError const& isHandled,
         ::entt::meta_any const&,
-        bool isHandled
+        bool
     ) const;
 
 

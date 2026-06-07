@@ -22,7 +22,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCFOLD ::NetworkAddress& operator=(::NetworkAddress const&);
+    MCAPI ::NetworkAddress& operator=(::NetworkAddress const&);
 
     MCAPI ~NetworkAddress();
 #endif

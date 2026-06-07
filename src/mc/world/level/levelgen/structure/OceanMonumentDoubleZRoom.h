@@ -19,9 +19,7 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~OceanMonumentDoubleZRoom() /*override*/ = default;
+    virtual bool postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -29,7 +27,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
 
     // NOLINTEND

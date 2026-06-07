@@ -13,16 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ITreeCanopy>> mPtr;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ITreeCanopyWrapper();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

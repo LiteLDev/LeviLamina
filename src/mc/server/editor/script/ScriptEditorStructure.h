@@ -8,12 +8,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Vec3;
 namespace Editor { class EditorStructureTemplate; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct InvalidArgumentError; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -36,7 +38,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> _getEditorStructureTemplate() const;
+    MCNAPI ::Scripting::InvalidArgumentError
+    _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
 
     MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
@@ -49,6 +52,10 @@ public:
 
     MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
     getDisplayName() const;
+
+    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> getEditorStructureTemplate() const;
+
+    MCNAPI ::mce::UUID getId() const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
     getNormalizedOrigin() const;
@@ -74,15 +81,11 @@ public:
     MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
     getTags();
 
-    MCNAPI ::std::string getUUID() const;
-
     MCNAPI bool isValid() const;
 
     MCNAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
         isWaterlogged(::Vec3 const& location) const;
-
-    MCNAPI ::Editor::ScriptModule::ScriptEditorStructure& operator=(::Editor::ScriptModule::ScriptEditorStructure&&);
 
     MCNAPI ::Scripting::
         Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError>

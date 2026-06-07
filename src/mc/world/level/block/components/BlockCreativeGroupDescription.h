@@ -5,13 +5,25 @@
 // auto generated inclusion list
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
+// auto generated forward declare list
+// clang-format off
+class CerealSchemaUpgradeSet;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct BlockCreativeGroupDescription : public ::BlockComponentDescription {
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
+    // NOLINTEND
 
-    virtual ~BlockCreativeGroupDescription() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:

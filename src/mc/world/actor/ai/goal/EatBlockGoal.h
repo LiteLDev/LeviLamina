@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ class ExpressionNode;
 class Mob;
 // clang-format on
 
-class EatBlockGoal : public ::Goal {
+class EatBlockGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,20 +46,20 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~EatBlockGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit EatBlockGoal(::Mob& mob);
+
     MCAPI float getEatSuccessChance(::Actor& owner) const;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

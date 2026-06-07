@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BiomeIdType.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/ScalarOptional.h"
+#include "mc/world/level/biome/BiomeIdType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -63,8 +63,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChunkBlenderFactory();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChunkBlenderFactory(bool isClientSide, short dimensionMinHeight);
+
     MCAPI ::std::shared_ptr<::ChunkBlender> _createChunkBlendingAttenuator(::ChunkPos const& lcPosition) const;
 
     MCAPI ::std::vector<::std::array<::ChunkBlenderUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(
@@ -81,6 +87,16 @@ public:
         bool                  adjacentChunk
     ) const;
 
+    MCAPI void freeChunkBlenderCache();
+
     MCAPI ::std::shared_ptr<::ChunkBlender> getOrCreateChunkBlender(::ChunkPos const& lcPosition);
+
+    MCFOLD bool isClientSide() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool isClientSide, short dimensionMinHeight);
     // NOLINTEND
 };

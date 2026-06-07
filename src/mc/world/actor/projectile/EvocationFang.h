@@ -8,7 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
 class Mob;
+struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 // clang-format on
 
@@ -20,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EvocationFang();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void normalTick() /*override*/;
@@ -29,14 +36,28 @@ public:
     virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
-
-    virtual ~EvocationFang() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EvocationFang(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void _dealDamageTo(::Mob& entity);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>> getActiveFacets() = 0;
-
-    virtual ~IFacetProvider() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -48,8 +48,6 @@ public:
 #endif
 
     MCAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
-
-    MCAPI ~ValueIterator();
     // NOLINTEND
 
 public:
@@ -60,12 +58,6 @@ public:
 #endif
 
     MCFOLD void* $ctor(::Json::ValueConstIterator const& other);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

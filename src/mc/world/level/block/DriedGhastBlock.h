@@ -10,13 +10,16 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class DriedGhastBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    DriedGhastBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -25,18 +28,22 @@ public:
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~DriedGhastBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DriedGhastBlock(::std::string const& nameId, int id);
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -47,8 +54,6 @@ public:
     MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
     MCAPI int $getVariant(::Block const& block) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

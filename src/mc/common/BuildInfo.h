@@ -13,6 +13,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mCommitId;
     ::ll::TypedStorage<8, 32, ::std::string> mBranchId;
     ::ll::TypedStorage<8, 32, ::std::string> mFlavor;
+    ::ll::TypedStorage<8, 32, ::std::string> mMergeBaseSha;
     // NOLINTEND
 
 public:

@@ -27,14 +27,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~BlockEventListener() = default;
-#else // LL_PLAT_C
-    virtual ~BlockEventListener();
-#endif
 
+#ifdef LL_PLAT_S
+    virtual ::EventResult onBlockPlacedByPlayer(::Player&, ::Block const&, ::BlockPos const&, bool);
+#else // LL_PLAT_C
     virtual ::EventResult
     onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+#endif
 
     virtual ::EventResult onBlockDestroyedByPlayer(
         ::Player&              player,
@@ -67,17 +67,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult
-    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
-
     MCFOLD ::EventResult $onBlockDestroyedByPlayer(
         ::Player&              player,
         ::Block const&         destroyedBlock,
@@ -109,14 +100,13 @@ public:
 
     MCFOLD ::EventResult $onUnknownBlockReceived(::Level& level, ::NewBlockID const& blockId, ushort data);
 
+#ifdef LL_PLAT_C
+    MCFOLD ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+
     MCFOLD ::EventResult $onEvent(::BlockNotificationEvent const& event);
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

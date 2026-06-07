@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/editor/OperationType.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
@@ -29,17 +32,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void addBlock(::Block const* block);
+
 #ifdef LL_PLAT_C
+    MCNAPI bool containsBlock(::Block const* block) const;
+
     MCNAPI bool containsBlock(::HashedString const& blockName) const;
 #endif
 
     MCNAPI void fromStringList(::std::vector<::std::string> const& blockNames);
 
 #ifdef LL_PLAT_C
-    MCNAPI bool match(::Block const* block) const;
+    MCNAPI bool const getAlwaysMatch() const;
+
+    MCNAPI ::Editor::BlockMask::OperationType getOperationType() const;
 #endif
 
-    MCNAPI ::std::vector<::std::string> toStringList() const;
+    MCNAPI bool isDisabled() const;
+
+    MCNAPI bool match(::Block const* block) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI void setAlwaysMatch(bool alwaysMatch);
+#endif
+
+    MCNAPI void setOperationType(::Editor::BlockMask::OperationType operationType);
 
     MCNAPI ~BlockMaskList();
     // NOLINTEND

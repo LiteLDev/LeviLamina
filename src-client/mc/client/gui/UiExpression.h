@@ -18,15 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UiExpression& operator=(UiExpression const&);
-    UiExpression(UiExpression const&);
-    UiExpression();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addToken(::ExprToken tok);
+    MCFOLD bool empty() const;
 
     MCAPI ::Json::Value evaluate(::UIPropertyBag* bag) const;
 
@@ -34,7 +28,7 @@ public:
 
     MCAPI uint64 forEachPropertyToken(::std::function<void(::ExprToken&)> callback);
 
-    MCAPI ::UiExpression& operator=(::UiExpression&&);
+    MCFOLD bool isStatic() const;
 
     MCAPI ~UiExpression();
     // NOLINTEND

@@ -15,10 +15,4 @@ public:
     Xoroshiro128PlusPlus& operator=(Xoroshiro128PlusPlus const&);
     Xoroshiro128PlusPlus(Xoroshiro128PlusPlus const&);
     Xoroshiro128PlusPlus();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI int64 nextLong();
-    // NOLINTEND
 };

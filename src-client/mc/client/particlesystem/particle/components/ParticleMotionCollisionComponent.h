@@ -69,8 +69,6 @@ public:
     ) /*override*/;
 
     virtual int getSortOrderNumber() const /*override*/;
-
-    virtual ~ParticleMotionCollisionComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

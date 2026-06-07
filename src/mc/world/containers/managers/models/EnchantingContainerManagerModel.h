@@ -10,9 +10,10 @@
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
-class ItemEnchantOption;
+class ItemEnchants;
 class ItemStack;
 class Player;
+struct ItemEnchantOption;
 // clang-format on
 
 class EnchantingContainerManagerModel : public ::ContainerManagerModel {
@@ -36,11 +37,11 @@ public:
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int id, int value) /*override*/;
+    virtual void setData(int, int) /*override*/;
 
     virtual bool isValid(float pickRange) /*override*/;
 
@@ -54,7 +55,35 @@ public:
     // NOLINTBEGIN
     MCAPI EnchantingContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
+#ifdef LL_PLAT_C
+    MCAPI void fireItemEnchantedEvent(::ItemStack const& item, ::ItemEnchants const& enchants);
+#endif
+
+    MCFOLD ::std::vector<::ItemEnchantOption> const& getEnchantOptions() const;
+
+#ifdef LL_PLAT_C
+    MCAPI int getLapisCount();
+
+    MCAPI void getNewEnchantmentSeed();
+
+    MCAPI bool getShouldBookBeOpen() const;
+#endif
+
     MCAPI void recalculateOptions();
+
+#ifdef LL_PLAT_C
+    MCAPI void registerOptionsChangedCallback(::std::function<void(::EnchantingContainerManagerModel&)> callback);
+
+    MCAPI void setOptions(::std::vector<::ItemEnchantOption> const& options);
+
+    MCAPI void setShouldBookBeOpen(bool shouldBeOpen);
+#endif
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& NUM_OPTIONS();
     // NOLINTEND
 
 public:
@@ -68,11 +97,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int id, int value);
+    MCFOLD void $setData(int, int);
 
     MCAPI bool $isValid(float pickRange);
 

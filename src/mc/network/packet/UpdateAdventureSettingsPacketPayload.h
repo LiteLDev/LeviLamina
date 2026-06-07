@@ -11,4 +11,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 5, ::AdventureSettings> mAdventureSettings;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void fillIn(::AdventureSettings& adventureSettings) const;
+#endif
+    // NOLINTEND
 };

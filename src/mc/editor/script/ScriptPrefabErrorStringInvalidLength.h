@@ -38,6 +38,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::std::string _getStringMessage(::std::string const& s, int len, int maxLen);
+
     MCNAPI static ::Scripting::ErrorBinding bindScript();
     // NOLINTEND
 

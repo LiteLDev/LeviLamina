@@ -18,24 +18,24 @@ public:
     virtual ~BrewingStandFuelContainerValidation() /*override*/ = default;
 
     virtual bool
-    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool) const
+    isItemAllowedInSlot(::ContainerScreenContext const& item, int const, ::ItemStackBase const&, int const, bool) const
         /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const&,
+        ::ContainerScreenContext const& item,
         int const,
-        ::ItemStackBase const& item,
+        ::ItemStackBase const&,
         int const,
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
 
     // NOLINTEND

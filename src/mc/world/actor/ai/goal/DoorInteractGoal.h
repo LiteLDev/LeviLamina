@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Direction.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ class Mob;
 class Path;
 // clang-format on
 
-class DoorInteractGoal : public ::Goal {
+class DoorInteractGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -53,6 +53,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit DoorInteractGoal(::Mob& mob);
+
+    MCAPI bool _mobHasExited();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::DoorBlock const* _findBlockingDoorAtPos(
@@ -62,6 +70,12 @@ public:
         ::Direction::Type& dirIn,
         ::Direction::Type& dirOut
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

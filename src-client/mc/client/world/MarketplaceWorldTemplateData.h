@@ -41,8 +41,6 @@ public:
     // NOLINTBEGIN
     MCAPI MarketplaceWorldTemplateData(::World::MarketplaceWorldTemplateData const&);
 
-    MCAPI MarketplaceWorldTemplateData(::World::MarketplaceWorldTemplateData&&);
-
     MCAPI ::World::MarketplaceWorldTemplateData& operator=(::World::MarketplaceWorldTemplateData const&);
 
     MCAPI ~MarketplaceWorldTemplateData();
@@ -59,8 +57,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::World::MarketplaceWorldTemplateData const&);
-
-    MCAPI void* $ctor(::World::MarketplaceWorldTemplateData&&);
     // NOLINTEND
 
 public:

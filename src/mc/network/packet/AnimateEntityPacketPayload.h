@@ -25,13 +25,22 @@ public:
 
 public:
     // prevent constructor by default
-    AnimateEntityPacketPayload(AnimateEntityPacketPayload const&);
     AnimateEntityPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimateEntityPacketPayload(::AnimateEntityPacketPayload&&);
+    MCAPI AnimateEntityPacketPayload(::AnimateEntityPacketPayload const&);
+
+    MCAPI AnimateEntityPacketPayload(
+        ::std::vector<::ActorRuntimeID> const& runtimeIds,
+        ::std::string const&                   animation,
+        ::std::string const&                   nextState,
+        float                                  blendOutTime,
+        ::std::string const&                   stopExpression,
+        ::MolangVersion                        stopExpressionVersion,
+        ::std::string const&                   controller
+    );
 
     MCAPI ::AnimateEntityPacketPayload& operator=(::AnimateEntityPacketPayload&&);
 
@@ -43,7 +52,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AnimateEntityPacketPayload&&);
+    MCAPI void* $ctor(::AnimateEntityPacketPayload const&);
+
+    MCAPI void* $ctor(
+        ::std::vector<::ActorRuntimeID> const& runtimeIds,
+        ::std::string const&                   animation,
+        ::std::string const&                   nextState,
+        float                                  blendOutTime,
+        ::std::string const&                   stopExpression,
+        ::MolangVersion                        stopExpressionVersion,
+        ::std::string const&                   controller
+    );
     // NOLINTEND
 
 public:

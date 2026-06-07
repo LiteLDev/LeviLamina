@@ -18,6 +18,7 @@ class StoreDataDrivenScreenController;
 class UIPropertyBag;
 struct CharacterSelectorData;
 struct LinksToStyle;
+struct ToggleChangeEventData;
 // clang-format on
 
 class CharacterSelectorModel : public ::Bedrock::EnableNonOwnerReferences {
@@ -51,7 +52,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI bool nextPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
+
         MCAPI void openCurrentPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController) const;
+
+        MCAPI bool prevPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
         // NOLINTEND
 
     public:
@@ -107,6 +112,8 @@ public:
 
     MCAPI void _loadContentFromSkins();
 
+    MCAPI void _setUpBeforeCharacterEditorScreen();
+
     MCAPI void bindPreviewSkin(::UIPropertyBag& bag);
 
     MCAPI void castBack(::StoreDataDrivenScreenController& controller);
@@ -115,19 +122,47 @@ public:
 
     MCAPI void castRight(::StoreDataDrivenScreenController& controller);
 
+    MCAPI void castSelect();
+
     MCAPI void closeCharacterSelectModal();
 
     MCAPI void closeDialog(::StoreDataDrivenScreenController& controller);
 
+    MCAPI void closeEditPersona();
+
+    MCAPI void createSelectedPersona();
+
+    MCAPI ::std::string getAppearanceName() const;
+
+    MCAPI ::glm::ivec2 getGridParams() const;
+
+    MCAPI bool getIsFirstLoading() const;
+
     MCAPI ::std::string getPersonaConfirmText() const;
 
+    MCAPI ::std::string getPreviewImageFilePath(int index) const;
+
+    MCAPI bool getTypeToggleState(int index) const;
+
+    MCAPI bool isCastCharacterScreenModalOpen() const;
+
+    MCAPI bool isPreviewVisible(int index) const;
+
+    MCAPI bool isSectionVisible(int index) const;
+
+    MCAPI bool isSelectedCharacterReady() const;
+
     MCAPI void launchDifferenceInformationPopup();
+
+    MCAPI void loadSkinBasedOnSelection(::UIPropertyBag const& bag);
 
     MCAPI void openCharacterSelectModal(::CharacterSelectorVisibility previewMode);
 
     MCAPI void openDefaultSelector(::StoreDataDrivenScreenController& controller);
 
     MCAPI void tick(::ui::DirtyFlag& dirtyFlags);
+
+    MCAPI bool toggleCreatePersonaChoice(::ToggleChangeEventData const& toggleData);
     // NOLINTEND
 
 public:

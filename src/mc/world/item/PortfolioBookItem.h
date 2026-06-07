@@ -16,8 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
-
-    virtual ~PortfolioBookItem() /*override*/ = default;
     // NOLINTEND
 
 public:

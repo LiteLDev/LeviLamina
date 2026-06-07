@@ -25,33 +25,20 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShooterComponent& operator=(ShooterComponent const&);
-    ShooterComponent(ShooterComponent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShooterComponent();
-
     MCAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
 
-    MCAPI void onShoot(::Actor& owner);
+    MCFOLD bool hasMagicAttacks() const;
 
-    MCAPI ::ShooterComponent& operator=(::ShooterComponent&&);
+    MCAPI void onShoot(::Actor& owner);
 
     MCAPI ~ShooterComponent();
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

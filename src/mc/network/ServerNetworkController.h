@@ -31,8 +31,6 @@ public:
     virtual bool isDedicatedServer() const /*override*/;
 
     virtual bool canChangePermission(::ServerPlayer const& player) const /*override*/;
-
-    virtual ~ServerNetworkController() /*override*/ = default;
     // NOLINTEND
 
 public:

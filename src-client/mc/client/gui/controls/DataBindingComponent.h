@@ -53,8 +53,6 @@ public:
         // NOLINTBEGIN
         MCAPI DataBinding(::DataBindingComponent::DataBinding const&);
 
-        MCAPI DataBinding(::DataBindingComponent::DataBinding&&);
-
         MCAPI ~DataBinding();
         // NOLINTEND
 
@@ -62,8 +60,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::DataBindingComponent::DataBinding const&);
-
-        MCAPI void* $ctor(::DataBindingComponent::DataBinding&&);
         // NOLINTEND
 
     public:
@@ -83,18 +79,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DataBindingComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
-
-    virtual ~DataBindingComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DataBindingComponent(::UIControl& owner);
+
     MCAPI void _addBindings(
         ::BindingType        bindingType,
         ::std::string const& collectionName,
@@ -106,12 +106,29 @@ public:
     MCAPI void
     _bind(::ScreenController& controller, bool visible, ::std::vector<::DataBindingComponent::DataBinding>& bindings);
 
+    MCAPI bool _isCollectionSizeBinding(::DataBindingComponent::DataBinding const& binding) const;
+
+    MCAPI void _updateCollectionBindingIndicies();
+
     MCAPI void
     _updateCustomComponentsPostBinding(::std::string_view propertyName, ::UIControl& owner, ::UiExpression expression);
+
+    MCAPI void addCollectionBinding(
+        ::std::string const& collectionName,
+        ::UiExpression       bindingExpression,
+        ::std::string const& bindingNameOverride,
+        ::BindingCondition   bindingCondition
+    );
 
     MCAPI void addCollectionDetailsBinding(
         ::std::string const& collectionName,
         ::std::string const& collectionPrefix,
+        ::BindingCondition   bindingCondition
+    );
+
+    MCAPI void addGlobalBinding(
+        ::UiExpression       bindingExpression,
+        ::std::string const& bindingNameOverride,
         ::BindingCondition   bindingCondition
     );
 
@@ -120,12 +137,24 @@ public:
         ::UiExpression                  sourcePropertyName,
         ::std::string const&            targetPropertyName
     );
+
+    MCAPI void bindAlwaysBinds(::ScreenController& controller, bool visible);
+
+    MCAPI void bindHighPriorityBinds(::ScreenController& controller, bool visible);
+
+    MCAPI void bindLowPriorityBinds(::ScreenController& controller, bool visible);
+
+    MCFOLD bool getDirty() const;
+
+    MCAPI bool hasAlwaysBinds() const;
+
+    MCFOLD void setDirty(bool dirty);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
@@ -14,7 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Dimension;
+class BlockSource;
 class Level;
 class MapDecoration;
 class MapItemSavedData;
@@ -60,8 +59,6 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~ClientboundMapItemDataPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -88,9 +85,32 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
-#endif
+
+    MCAPI ::DimensionType getDimensionId() const;
+
+    MCAPI ::ActorUniqueID getMapId() const;
+
+    MCFOLD ::std::vector<::ActorUniqueID> const& getMapIds() const;
+
+    MCAPI ::BlockPos getMapOrigin() const;
+
+    MCFOLD schar getScale() const;
+
+    MCAPI bool hasEmptyOrBlackPixels() const;
+
+    MCFOLD bool isLocked() const;
 
     MCAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
+
+    MCAPI bool isTextureUpdate() const;
+
+    MCAPI void resampleClientMap(
+        ::MapItemSavedData& map,
+        ::BlockSource&      region,
+        ::BlockPos const&   updatePosition,
+        int                 scale
+    ) const;
+#endif
     // NOLINTEND
 
 public:
@@ -114,12 +134,6 @@ public:
         bool                isLocked,
         ::BlockPos const&   mapOrigin
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

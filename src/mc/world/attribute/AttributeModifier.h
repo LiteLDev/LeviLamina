@@ -22,7 +22,6 @@ public:
 public:
     // prevent constructor by default
     AttributeModifier(AttributeModifier const&);
-    AttributeModifier();
 
 public:
     // virtual functions
@@ -35,6 +34,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AttributeModifier();
+
+    MCAPI AttributeModifier(
+        ::mce::UUID          id,
+        ::std::string const& name,
+        float                amount,
+        int                  operation,
+        int                  operand,
+        bool                 serializable
+    );
+
+    MCAPI AttributeModifier(
+        ::mce::UUID                  id,
+        ::std::string const&         name,
+        float                        amount,
+        ::AttributeModifierOperation operation,
+        ::AttributeOperands          operand,
+        bool                         serializable
+    );
+
+    MCFOLD float getAmount() const;
+
+    MCFOLD ::mce::UUID const& getId() const;
+
+    MCFOLD ::std::string const& getName() const;
+
+    MCFOLD int getOperand() const;
+
+    MCFOLD int getOperation() const;
+
     MCAPI ::AttributeModifier& operator=(::AttributeModifier const& rhs);
     // NOLINTEND
 
@@ -42,6 +71,24 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& mInvalidUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void*
+    $ctor(::mce::UUID id, ::std::string const& name, float amount, int operation, int operand, bool serializable);
+
+    MCAPI void* $ctor(
+        ::mce::UUID                  id,
+        ::std::string const&         name,
+        float                        amount,
+        ::AttributeModifierOperation operation,
+        ::AttributeOperands          operand,
+        bool                         serializable
+    );
     // NOLINTEND
 
 public:

@@ -78,8 +78,6 @@ public:
     virtual ::DataLoadHelperType getType() const /*override*/;
 
     virtual ::ActorUniqueID _generateNewID();
-
-    virtual ~StructureDataLoadHelper() /*override*/;
     // NOLINTEND
 
 public:
@@ -108,12 +106,6 @@ public:
         ::Mirror          mirror,
         ::Level&          level
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

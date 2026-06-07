@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemRegistryRef;
 struct ItemData;
 // clang-format on
 
@@ -15,14 +16,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemRegistryPacketPayload();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ItemRegistryPacketPayload();
+    MCAPI explicit ItemRegistryPacketPayload(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

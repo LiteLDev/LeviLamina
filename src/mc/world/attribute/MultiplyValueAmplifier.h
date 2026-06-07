@@ -15,15 +15,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual float getAmount(int amplification, float scale) const /*override*/;
-
-    virtual ~MultiplyValueAmplifier() /*override*/ = default;
+    virtual float getAmount(int amplification, float) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getAmount(int amplification, float scale) const;
+    MCAPI float $getAmount(int amplification, float) const;
 
 
     // NOLINTEND

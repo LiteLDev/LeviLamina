@@ -18,6 +18,10 @@ class ItemInstance;
 
 class BeetrootBlock : public ::CropBlock {
 public:
+    // prevent constructor by default
+    BeetrootBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
@@ -32,10 +36,20 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~BeetrootBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BeetrootBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -53,7 +67,7 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
 
     // NOLINTEND

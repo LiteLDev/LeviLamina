@@ -9,8 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class IEntitlementManager;
+class PersonaClient;
 class SkinPackModel;
-class SkinRepositoryClientInterface;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -35,28 +35,16 @@ public:
 
     virtual void collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::SkinRepositoryClientInterface&                     skinRepo,
+        ::PersonaClient&                                     skinRepo,
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     ) = 0;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SkinPackCollector();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

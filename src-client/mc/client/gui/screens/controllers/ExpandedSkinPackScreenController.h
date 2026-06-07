@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ExpandedSkinPackScreenController() /*override*/ = default;
+    virtual ~ExpandedSkinPackScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -71,6 +71,12 @@ public:
         ::SkinPackModel&           skinPackModel,
         ::SkinPackCollectionModel& skinPackCollection
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

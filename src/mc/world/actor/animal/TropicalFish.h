@@ -9,10 +9,17 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class TropicalFish : public ::WaterAnimal {
+public:
+    // prevent constructor by default
+    TropicalFish();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -24,8 +31,26 @@ public:
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
+    // NOLINTEND
 
-    virtual ~TropicalFish() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TropicalFish(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

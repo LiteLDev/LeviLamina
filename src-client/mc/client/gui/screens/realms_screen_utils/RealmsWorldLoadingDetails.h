@@ -15,18 +15,6 @@ public:
     ::ll::TypedStorage<8, 808, ::RealmsWorldInfo>                                  world;
     ::ll::TypedStorage<4, 4, ::RealmsScreenUtils::RealmsSubscriptionsLoadingState> loadingState;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~RealmsWorldLoadingDetails();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace RealmsScreenUtils

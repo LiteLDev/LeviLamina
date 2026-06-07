@@ -23,8 +23,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~PlaceBlockNode() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlaceBlockNode();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

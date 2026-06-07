@@ -27,17 +27,16 @@ public:
         120,
         ::OreUI::PropertyVector<::std::string, ::std::allocator<::OreUI::Detail::ObservableValue<::std::string>>>>
         mParameters;
+    ::ll::TypedStorage<
+        8,
+        120,
+        ::OreUI::PropertyVector<::std::string, ::std::allocator<::OreUI::Detail::ObservableValue<::std::string>>>>
+        mKeys;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     AdminLogData();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AdminLogData() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
@@ -49,12 +48,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Realms::AdminLog const& adminLog);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

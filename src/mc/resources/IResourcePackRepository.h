@@ -35,7 +35,7 @@ class IResourcePackRepository : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IResourcePackRepository() /*override*/;
+    virtual ~IResourcePackRepository() /*override*/ = default;
 
     virtual void getResourcePacksByPackId(
         ::std::vector<::PackInstanceId> const& packInstanceIds,
@@ -70,10 +70,6 @@ public:
     virtual ::std::shared_ptr<::ResourcePack> getVanillaPack() const = 0;
 
     virtual bool setServicePacks(::std::vector<::PackIdVersion> servicePackIds) = 0;
-
-    virtual bool hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const = 0;
-
-    virtual ::std::vector<::PackIdVersion> const& getServicePacks() const = 0;
 
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const = 0;
 
@@ -154,12 +150,6 @@ public:
     virtual bool isInitialized() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> getContentSourceRepository() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

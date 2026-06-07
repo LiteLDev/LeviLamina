@@ -30,19 +30,11 @@ public:
     MCAPI void load(::CompoundTag const* tag);
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
-
-    MCAPI ~ActorInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

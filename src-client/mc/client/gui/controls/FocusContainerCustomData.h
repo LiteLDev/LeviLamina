@@ -12,15 +12,25 @@ public:
 
 public:
     // prevent constructor by default
-    FocusContainerCustomData(FocusContainerCustomData const&);
+    FocusContainerCustomData& operator=(FocusContainerCustomData const&);
     FocusContainerCustomData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::FocusContainerCustomData& operator=(::FocusContainerCustomData const&);
+    MCAPI FocusContainerCustomData(::FocusContainerCustomData const&);
+
+    MCAPI FocusContainerCustomData(::std::string const& name, ::std::string const& id);
 
     MCAPI ~FocusContainerCustomData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::FocusContainerCustomData const&);
+
+    MCFOLD void* $ctor(::std::string const& name, ::std::string const& id);
     // NOLINTEND
 
 public:

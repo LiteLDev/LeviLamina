@@ -30,16 +30,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const /*override*/;
+    virtual bool
+    isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const
+        /*override*/;
 
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const /*override*/;
+    virtual int getAnimationFrameFor(::Mob* item, bool, ::ItemStack const*, bool) const /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               item,
@@ -55,8 +53,6 @@ public:
     virtual int getArmorValue() const /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getBreakSound() const /*override*/;
-
-    virtual ~WolfArmorItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -82,16 +78,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const;
+    MCAPI bool
+    $isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const;
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
+    MCAPI int $getAnimationFrameFor(::Mob* item, bool, ::ItemStack const*, bool) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               item,

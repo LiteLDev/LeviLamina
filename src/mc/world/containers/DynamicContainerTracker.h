@@ -58,7 +58,15 @@ public:
 
     MCAPI void giveContainerLifetimes(::ContainerOwner& containerOwner) const;
 
+    MCFOLD bool hasTrackingData() const;
+
+    MCAPI void mark(::ItemStack const& item);
+
+    MCAPI void sweep();
+
     MCAPI ::std::optional<::ItemStack> tryTrackContainer(::ItemStack const& item);
+
+    MCAPI ~DynamicContainerTracker();
     // NOLINTEND
 
 public:
@@ -66,5 +74,11 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::WeakRef<::IContainerRegistryAccess> registryAccess, ::WeakRef<::IContainerRegistryTracker> registryManager);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

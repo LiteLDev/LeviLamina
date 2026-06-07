@@ -14,8 +14,6 @@ public:
     virtual int getMaxCost(int level) const /*override*/;
 
     virtual int getMaxLevel() const /*override*/;
-
-    virtual ~LootEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

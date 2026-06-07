@@ -201,13 +201,13 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<4, 8> mUnk6c4087;
-            ::ll::UntypedStorage<8, 8> mUnkca219d;
-            ::ll::UntypedStorage<4, 8> mUnkfc70c9;
             ::ll::UntypedStorage<1, 8> mUnkf1ece9;
-            ::ll::UntypedStorage<8, 8> mUnk96d23a;
-            ::ll::UntypedStorage<8, 8> mUnkff09e7;
+            ::ll::UntypedStorage<4, 8> mUnkfc70c9;
             ::ll::UntypedStorage<8, 8> mUnkb1fba7;
+            ::ll::UntypedStorage<8, 8> mUnkca219d;
+            ::ll::UntypedStorage<4, 8> mUnk6c4087;
+            ::ll::UntypedStorage<8, 8> mUnkff09e7;
+            ::ll::UntypedStorage<8, 8> mUnk96d23a;
             // NOLINTEND
         };
 

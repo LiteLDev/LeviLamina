@@ -9,11 +9,14 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class Experiments;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class StonecutterBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    StonecutterBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -23,17 +26,21 @@ public:
 
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~StonecutterBlock() /*override*/ = default;
+    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StonecutterBlock(::std::string const& nameId, int id);
+
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -45,9 +52,7 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
 
 
     // NOLINTEND

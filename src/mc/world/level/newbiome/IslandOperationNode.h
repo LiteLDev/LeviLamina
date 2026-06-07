@@ -21,8 +21,6 @@ public:
         ::Pos2d const&                                                             origin,
         ::Pos2d const&                                                             size
     ) const /*override*/;
-
-    virtual ~IslandOperationNode() /*override*/ = default;
     // NOLINTEND
 
 public:

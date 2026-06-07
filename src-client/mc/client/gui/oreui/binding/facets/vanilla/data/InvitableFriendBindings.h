@@ -31,15 +31,11 @@ public:
 
 public:
     // prevent constructor by default
-    InvitableFriendBindings& operator=(InvitableFriendBindings const&);
-    InvitableFriendBindings(InvitableFriendBindings const&);
     InvitableFriendBindings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InvitableFriendBindings(::OreUI::InvitableFriendBindings&&);
-
     MCAPI InvitableFriendBindings(
         ::Social::FriendData const&                                friendData,
         ::Social::FriendInviteType                                 inviteEntryType,
@@ -54,8 +50,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::InvitableFriendBindings&&);
-
     MCAPI void* $ctor(
         ::Social::FriendData const&                                friendData,
         ::Social::FriendInviteType                                 inviteEntryType,

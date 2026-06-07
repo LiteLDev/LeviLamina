@@ -19,6 +19,7 @@
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/deps/minecraft_renderer/renderer/Mesh.h"
 #include "mc/platform/threading/Mutex.h"
+#include "mc/util/HudElement.h"
 #include "mc/util/HudVisibility.h"
 #include "mc/util/ProfanityFilterContext.h"
 #include "mc/world/ContainerID.h"
@@ -30,10 +31,12 @@ class Config;
 class DevConsoleLogger;
 class GuiMessage;
 class IClientInstance;
+class IOptionRegistry;
 class ItemStackBase;
 class TextObjectRoot;
 class Vec2;
 struct ContentLogMessage;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -72,6 +75,19 @@ public:
         // NOLINTBEGIN
         MCAPI MessageConfig(::GuiData::MessageConfig const&);
 
+        MCAPI MessageConfig(
+            ::GuiMessage::MessageType             _messageType,
+            ::std::string const&                  _username,
+            ::std::string const&                  _message,
+            ::std::optional<::std::string> const& _filteredMessage,
+            ::std::string const&                  _ttsMessage,
+            float                                 _lifeTime,
+            bool                                  _forceVisible,
+            bool                                  _ttsRequired,
+            ::std::string const&                  _xuid,
+            ::std::string const&                  _platformId
+        );
+
         MCAPI ~MessageConfig();
         // NOLINTEND
 
@@ -79,6 +95,19 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::GuiData::MessageConfig const&);
+
+        MCAPI void* $ctor(
+            ::GuiMessage::MessageType             _messageType,
+            ::std::string const&                  _username,
+            ::std::string const&                  _message,
+            ::std::optional<::std::string> const& _filteredMessage,
+            ::std::string const&                  _ttsMessage,
+            float                                 _lifeTime,
+            bool                                  _forceVisible,
+            bool                                  _ttsRequired,
+            ::std::string const&                  _xuid,
+            ::std::string const&                  _platformId
+        );
         // NOLINTEND
 
     public:
@@ -137,9 +166,9 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mShowProgress;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mTipMessage;
     ::ll::TypedStorage<4, 4, float>                                                   mTipMessageLength;
-    ::ll::TypedStorage<8, 528, ::mce::Mesh>                                           mRcFeedbackOuter;
-    ::ll::TypedStorage<8, 528, ::mce::Mesh>                                           mRcFeedbackInner;
-    ::ll::TypedStorage<8, 528, ::mce::Mesh>                                           mVignette;
+    ::ll::TypedStorage<8, 552, ::mce::Mesh>                                           mRcFeedbackOuter;
+    ::ll::TypedStorage<8, 552, ::mce::Mesh>                                           mRcFeedbackInner;
+    ::ll::TypedStorage<8, 552, ::mce::Mesh>                                           mVignette;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                     mInvFillMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                     mCursorMat;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger>>      mDevConsoleLogger;
@@ -165,9 +194,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onConfigChanged(::Config const& c) /*override*/;
-
-    virtual ~GuiData() /*override*/;
+    virtual void onConfigChanged(::Config const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -189,7 +216,7 @@ public:
 
     MCAPI void addContentLogMessage(::ContentLogMessage const& message);
 
-    MCAPI void addSubtitle(::std::string const& message, ::SoundDirection direction);
+    MCAPI void addSubtitle(::std::string const& message, ::SoundDirection direction, bool isLocalPlayer);
 
     MCAPI float calculateGuiScale(
         ::Vec2 const&                  totalScreenSize,
@@ -198,11 +225,25 @@ public:
         ::cg::math::Rect<float> const& clientViewportModifiers
     );
 
+    MCAPI int calculateMaxGuiScaleIndex(::Vec2 const& screenSize) const;
+
     MCAPI int calculateOptimalGuiScaleIndex(::Vec2 const& safezoneClientScreenSize) const;
+
+    MCAPI float ceilAlignToScreenPixel(float v) const;
+
+    MCAPI ::Vec2 ceilToGuiScale(::Vec2 const& screenSize) const;
+
+    MCAPI void clearContentLogMessages();
+
+    MCAPI void clearDevConsoleScreenMessages();
 
     MCAPI void clearPlayerMessages();
 
     MCAPI void clearSessionState();
+
+    MCAPI void clearTitle();
+
+    MCAPI void clearTitleMessages();
 
     MCAPI void displayAnnouncementMessage(
         ::std::string const&                  author,
@@ -256,6 +297,12 @@ public:
         ::std::string const& platformId
     );
 
+    MCAPI void displayTextObjectWhisperMessage(
+        ::TextObjectRoot const& textObject,
+        ::std::string const&    xuid,
+        ::std::string const&    platformId
+    );
+
     MCAPI void displayWhisperMessage(
         ::std::string const&                  author,
         ::std::string const&                  message,
@@ -264,60 +311,202 @@ public:
         ::std::string const&                  platformId
     );
 
+    MCAPI void flashSlot(int slotId);
+
     MCAPI float floorAlignToScreenPixel(float v) const;
 
     MCAPI void flushQueuedDevConsoleMessages();
 
+    MCAPI int getClampedGuiScaleOffset() const;
+
+    MCAPI ::Vec2 getClientWindowOffset() const;
+
+    MCFOLD ::std::vector<::ContentLogMessage> const& getContentLogMessages() const;
+
+    MCAPI ::CoordinateCaptureType getCoordinateCaptureType() const;
+
+    MCAPI ::PlayerInventorySlotData getCurrentDropSlot() const;
+
+    MCAPI float getCurrentDropTicks() const;
+
+    MCFOLD ::mce::MaterialPtr const& getCursorMat() const;
+
+    MCFOLD ::std::vector<::std::string> const& getDevConsoleScreenMessages();
+
     MCAPI float getGuiScale() const;
+
+    MCAPI ::RectangleArea const& getHUDHotbarRectangle() const;
+
+    MCFOLD ::std::array<::HudVisibility, 13> const& getHudVisibilityState() const;
+
+    MCAPI ::mce::MaterialPtr const& getInvFillMat() const;
+
+    MCFOLD float getInvGuiScale() const;
+
+    MCAPI ::std::string const& getLastChatMessage();
+
+    MCAPI ::std::string const& getLastContentLogMessage() const;
+
+    MCAPI ::std::string const& getLastDevConsoleMessage();
+
+    MCAPI ::std::string const getLastFilteredChatMessage();
 
     MCAPI ::RectangleArea getLayoutCustomizationMainPanelRectangle() const;
 
+    MCAPI ::RectangleArea getLayoutCustomizationSubPanelRectangle() const;
+
+    MCFOLD ::std::vector<::GuiMessage>& getMessageList();
+
+    MCAPI bool getNewJukeboxPopupNotice(::std::string& message, ::std::string& subtitle);
+
+    MCAPI bool getNewPopupNotice(::std::string& message, ::std::string& subtitle);
+
+    MCFOLD uint64 getNumContentLogErrors() const;
+
+    MCFOLD int getNumSlots() const;
+
+    MCAPI ::IOptionRegistry const& getOptions() const;
+
+    MCAPI short getPointerX() const;
+
+    MCAPI short getPointerY() const;
+
     MCAPI ::std::vector<::GuiMessage> getPreexistingMessages();
+
+    MCAPI ::mce::Mesh& getRcFeedbackInner();
+
+    MCFOLD ::mce::Mesh& getRcFeedbackOuter();
 
     MCAPI ::RectangleArea getSafeScreenZoneArea() const;
 
+    MCFOLD ::ScreenSizeData const& getScreenSizeData() const;
+
+    MCFOLD ::std::string const& getServerSettings();
+
+    MCAPI uint getServerSettingsId();
+
+    MCFOLD bool getShowProgress() const;
+
+    MCFOLD ::std::vector<::GuiMessage>& getSubtitleList();
+
+    MCAPI bool getTipMessage(::std::string& message);
+
+    MCFOLD ::TitleMessage const& getTitleMessage() const;
+
+    MCAPI ::mce::Mesh& getVignette();
+
     MCAPI ::RectangleArea getWYSIWYGBottomHudReservedArea() const;
+
+    MCAPI ::RectangleArea getWYSIWYGBottomReservedArea() const;
+
+    MCAPI ::RectangleArea getWYSIWYGLeftReservedArea() const;
+
+    MCAPI ::RectangleArea getWYSIWYGRightReservedArea() const;
 
     MCAPI ::RectangleArea getWYSIWYGSafeScreenZoneArea() const;
 
     MCAPI ::RectangleArea getWYSIWYGTopReservedArea() const;
 
+    MCAPI float getXToScreenRatio(float x) const;
+
+    MCAPI float getYToScreenRatio(float y) const;
+
     MCAPI bool handleClick();
 
+    MCAPI bool isHudElementVisible(::HudElement hudElement) const;
+
+    MCFOLD bool isMuteChat() const;
+
     MCAPI bool isOddGuiScale() const;
+
+    MCFOLD void onLevelGenerated();
 
     MCAPI void postError(int errCode);
 
     MCAPI ::RectangleArea const& recomputeHUDHotbarRectangle(float scale);
 
+    MCAPI ::Bedrock::PubSub::Subscription registerToGuiScaleChangedEvent(::std::function<void()> callback);
+
+    MCAPI ::Bedrock::PubSub::Subscription registerToServerFormDataAvailableEvent(::std::function<void()> callback);
+
+    MCAPI void resetTitle();
+
+    MCFOLD bool screenSizeDataValid() const;
+
     MCAPI void setActionBarMessage(::std::string const& message, ::std::optional<::std::string> const& filteredMessage);
+
+    MCAPI void setCoordinateCaptureType(::CoordinateCaptureType coordinateCaptureType);
+
+    MCAPI void setGuiScale(float scale);
+
+    MCAPI void setHudVisibilityState(::std::vector<::HudElement> const& hudElements, ::HudVisibility hudVisibility);
+
+    MCAPI void setLastSelectedSlot(int slot, ::ContainerID containerId);
+
+    MCAPI void setMenuPointerPressed(bool pressed);
+
+    MCAPI void setMuteChat(bool isMuted);
+
+    MCFOLD void setOverlappingControlsExist(bool overlappingControlsExist);
 
     MCAPI void setScreenSizeData(::ScreenSizeData const& screenSizeData);
 
+    MCAPI void setServerSettings(uint id, ::std::string const& settings);
+
+    MCAPI void setShowProgress(bool value);
+
+    MCAPI void setSubtitle(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
+
     MCAPI void setTextToSpeechEnabled(bool enabled);
 
+    MCAPI void setTitle(::std::string const& title, ::std::optional<::std::string> filteredTitle);
+
+    MCAPI void setTitleAnimationTimes(int fadeInTime, int stayTime, int fadeOutTime);
+
     MCAPI ::RectangleArea setTouchToolbarArea(::RectangleArea const& toolbarArea);
+
+    MCAPI void showJukeboxPopupNotice(::std::string const& message, ::std::string const& subtitle);
 
     MCAPI void showPopupNotice(::ItemStackBase const& item);
 
     MCAPI void showPopupNotice(::std::string const& message, ::std::string const& subtitle);
 
+    MCAPI void showTipMessage(::std::string const& message);
+
     MCAPI void tick();
+
+    MCAPI void toggleMuteChat();
+
+    MCAPI void updateGuiScaleAndScreenSize(
+        ::Vec2 const&                  totalScreenSize,
+        ::Vec2 const&                  safeZone,
+        float                          forcedGuiScale,
+        ::Vec2 const&                  clientScreenSize,
+        ::cg::math::Rect<float> const& clientViewportModifiers
+    );
+
+    MCAPI void updatePointerLocation(short x, short y);
+
+    MCAPI void useEditorGuiScale(bool shouldUse);
+
+    MCAPI bool wasToolbarClicked() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int getGuiScaleIndexForLargeScreen(::Vec2 const& screenSize);
+    MCAPI static int calculateMinimumAllowedScale(int maxScale);
 
-    MCAPI static int getGuiScaleIndexForSmallScreen(::Vec2 const& screenSize);
-
-    MCAPI static int getGuiScaleIndexForSplitscreenConsole(::Vec2 const& screenSize);
+    MCAPI static float resolveGuiScale(int index);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static float const& BUTTONS_TRANSPARENCY();
+
+    MCAPI static float const& DropTicks();
+
     MCAPI static ::std::array<float, 8> const& GUI_SCALE_VALUES();
     // NOLINTEND
 
@@ -328,15 +517,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onConfigChanged(::Config const& c);
+    MCAPI void $onConfigChanged(::Config const&);
     // NOLINTEND
 
 public:

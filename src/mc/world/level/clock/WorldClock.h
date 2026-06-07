@@ -9,11 +9,13 @@
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/platform/brstd/flat_map.h"
+#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
 class TimeMarker;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class WorldClock {
@@ -33,6 +35,8 @@ public:
     using OnResumeSignature = void(::std::string const&);
 
     using OnTimeMarkerSignature = void(::std::string const&, ::Bedrock::NonOwnerPointer<::TimeMarker const> const);
+
+    using OnTimeModifiedSignature = void(::std::string const&, int);
 
 public:
     // member variables
@@ -77,6 +81,11 @@ public:
             ::Bedrock::PubSub::ThreadModel::MultiThreaded,
             0>>
         mOnTimeMarker;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::std::string const&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnTimeModified;
     // NOLINTEND
 
 public:
@@ -86,11 +95,35 @@ public:
 
     MCAPI WorldClock(::WorldClock const& rhs);
 
+    MCAPI WorldClock(::HashedString const& name, ::std::initializer_list<::TimeMarker> timeMarkers);
+
+    MCAPI bool _validateTimeMarker(::TimeMarker const& timeMarker);
+
+#ifdef LL_PLAT_C
+    MCAPI void forEachTimeMarker(::brstd::function_ref<void(::TimeMarker const&)> callback) const;
+#endif
+
     MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
 
-    MCAPI void setTime(int time);
+    MCAPI void tick();
+
+    MCAPI ::Bedrock::NonOwnerPointer<::TimeMarker> const tryGetTimeMarker(uint64 timeMarkerId);
 
     MCAPI ~WorldClock();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static uint const& MAX_NAME_LENGTH();
+
+    MCAPI static uint const& MAX_TIMEMARKERS_CAPACITY();
     // NOLINTEND
 
 public:
@@ -99,6 +132,8 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::WorldClock const& rhs);
+
+    MCAPI void* $ctor(::HashedString const& name, ::std::initializer_list<::TimeMarker> timeMarkers);
     // NOLINTEND
 
 public:

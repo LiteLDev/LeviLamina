@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Objective;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
@@ -31,13 +30,16 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptScoreboardObjective& operator=(ScriptScoreboardObjective const&);
-    ScriptScoreboardObjective(ScriptScoreboardObjective const&);
     ScriptScoreboardObjective();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptScoreboardObjective(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard> scoreboardHandle,
+        ::std::string const&                                                          objectiveId
+    );
+
     MCAPI ::Scripting::Result_deprecated<int> _modifyScore(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
@@ -46,8 +48,6 @@ public:
         ::PlayerScoreSetFunction setFunction,
         int                      score
     );
-
-    MCAPI ::ScriptModuleMinecraft::ScriptScoreboard* _tryGetScoreboard() const;
 
     MCAPI ::Scripting::Result_deprecated<int> addScore(
         ::std::variant<
@@ -82,8 +82,7 @@ public:
             ::std::string> const& participant
     ) const;
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptScoreboardObjective&
-    operator=(::ScriptModuleMinecraft::ScriptScoreboardObjective&&);
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptScoreboardObjective const& other) const;
 
     MCAPI ::Scripting::Result_deprecated<bool> removeParticipant(
         ::std::variant<
@@ -99,14 +98,21 @@ public:
             ::std::string>& participant,
         int                 score
     );
-
-    MCAPI ::Objective* tryGetObjective() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard> scoreboardHandle,
+        ::std::string const&                                                          objectiveId
+    );
     // NOLINTEND
 };
 

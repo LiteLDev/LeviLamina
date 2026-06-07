@@ -18,10 +18,4 @@ public:
     AzureFileDownloader& operator=(AzureFileDownloader const&);
     AzureFileDownloader(AzureFileDownloader const&);
     AzureFileDownloader();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AzureFileDownloader() /*override*/ = default;
-    // NOLINTEND
 };

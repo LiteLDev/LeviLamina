@@ -28,27 +28,22 @@ public:
 
 public:
     // prevent constructor by default
+    ExprToken& operator=(ExprToken const&);
     ExprToken(ExprToken const&);
     ExprToken();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _parseOperator(::std::string_view str);
+
     MCAPI void _parseToken(::std::string_view str);
-
-    MCAPI bool asBool() const;
-
-    MCAPI float asFloat() const;
-
-    MCAPI int asInt() const;
 
     MCAPI ::std::string_view asString() const;
 
-    MCAPI ::ExprToken& operator=(::ExprToken const&);
-
     MCAPI ::ExprToken& operator=(::ExprToken&&);
 
-    MCAPI ~ExprToken();
+    MCAPI void replaceWith(::std::string_view fromStringView);
     // NOLINTEND
 
 public:
@@ -56,16 +51,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ExprToken createBoolToken(bool fromBool);
 
+    MCAPI static ::ExprToken createExpressionToken(::UiExpression expression);
+
     MCAPI static ::ExprToken createFloatToken(float fromFloat);
 
     MCAPI static ::ExprToken createIntToken(int fromInt);
 
     MCAPI static ::ExprToken createStringToken(::std::string_view fromStr, ::ExprToken::StringOption evalString);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

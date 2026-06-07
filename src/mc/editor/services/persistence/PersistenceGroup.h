@@ -4,14 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/PersistenceGroupItemChangeAction.h"
+#include "mc/common/editor/PersistenceGroupType.h"
+#include "mc/common/editor/PersistenceScope.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Services { class PersistenceItem; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Services {
@@ -42,6 +47,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PersistenceGroup(
+        ::Core::PathBuffer<::std::string>&       path,
+        int                                      version,
+        ::Editor::Services::PersistenceScope     scope,
+        ::std::string&                           groupNamespace,
+        ::std::string&                           name,
+        ::Editor::Services::PersistenceGroupType groupType,
+        ::cereal::ReflectionCtx&                 cerealContext
+    );
+
     MCNAPI ::std::string _getValidKeyName(::std::string const& key) const;
 
     MCNAPI bool _hasItem(::std::string const& itemName) const;
@@ -58,10 +73,18 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceItem>>
     fetchItem(::std::string const& itemName) const;
 
+    MCNAPI ::Editor::Services::PersistenceGroupType const getGroupType() const;
+
     MCNAPI ::std::string getNamespaceVersionedName() const;
 
     MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceItem>>
     getOrCreateItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
+
+    MCNAPI ::Editor::Services::PersistenceScope getScope() const;
+
+    MCNAPI int const getVersion() const;
+
+    MCNAPI ::WeakRef<::Editor::Services::PersistenceGroup> const getWeakRef();
 
     MCNAPI ::std::vector<::std::string> listItems() const;
 
@@ -75,6 +98,20 @@ public:
     MCNAPI bool operator==(::Editor::Services::PersistenceGroup const& other) const;
 
     MCNAPI ~PersistenceGroup();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Core::PathBuffer<::std::string>&       path,
+        int                                      version,
+        ::Editor::Services::PersistenceScope     scope,
+        ::std::string&                           groupNamespace,
+        ::std::string&                           name,
+        ::Editor::Services::PersistenceGroupType groupType,
+        ::cereal::ReflectionCtx&                 cerealContext
+    );
     // NOLINTEND
 
 public:

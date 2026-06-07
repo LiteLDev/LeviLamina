@@ -7,6 +7,8 @@
 #include "mc/world/Direction.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/BlockActorRendererId.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,6 +18,7 @@ class Block;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class DataLoadHelper;
 class ILevel;
 class ItemStackBase;
@@ -49,6 +52,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SerializedActorBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -66,13 +73,18 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~SerializedActorBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SerializedActorBlockActor(
+        ::BlockPos const&           pos,
+        ::BlockActorType            type,
+        ::BlockActorRendererId      rendererId,
+        ::ActorDefinitionIdentifier defaultActorIdentifier
+    );
+
     MCAPI ::Actor* _loadSerializedActor(
         ::BlockSource&  region,
         ::ActorFactory& actorFactory,
@@ -83,9 +95,15 @@ public:
     MCAPI void
     executeEvent(::BlockSource&, ::BlockPos const& pos, ::Block const&, ::std::string const& eventName, ::Actor& actor);
 
+    MCFOLD int getPose() const;
+
+    MCAPI int getSignalStrength() const;
+
     MCAPI void loadUserData(::CompoundTag const& tag);
 
     MCAPI void saveUserData(::CompoundTag& tag) const;
+
+    MCAPI void setPose(int pose);
 
     MCAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);
 
@@ -96,8 +114,14 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
+    MCAPI static int getPoseFromTag(::CompoundTag const& tag);
+
+    MCAPI static bool isItemSerializedActorBlock(::ItemStackBase const& item);
+
+    MCAPI static bool isSerializedActorBlock(::BlockType const& block);
 #endif
+
+    MCAPI static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
     // NOLINTEND
 
 public:
@@ -110,6 +134,17 @@ public:
     MCAPI static ::std::string_view const& POSE_TAG_NAME();
 
     MCAPI static ::std::string_view const& SAVE_DATA_TAG_NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BlockPos const&           pos,
+        ::BlockActorType            type,
+        ::BlockActorRendererId      rendererId,
+        ::ActorDefinitionIdentifier defaultActorIdentifier
+    );
     // NOLINTEND
 
 public:

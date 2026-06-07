@@ -24,12 +24,13 @@ public:
 public:
     // prevent constructor by default
     JSONSchemaProperty& operator=(JSONSchemaProperty const&);
-    JSONSchemaProperty(JSONSchemaProperty const&);
     JSONSchemaProperty();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI JSONSchemaProperty(::JSONSchemaProperty const&);
+
     MCNAPI JSONSchemaProperty(
         ::std::string    filename,
         ::JSONSchemaArea areaType,
@@ -37,12 +38,28 @@ public:
         ::SemVersion     optionalVersion
     );
 
+#ifdef LL_PLAT_S
+    MCNAPI ::JSONSchemaArea area() const;
+
+    MCNAPI ::std::string const& name() const;
+#endif
+
+    MCNAPI ::JSONSchemaProperty& operator=(::JSONSchemaProperty&&);
+
+#ifdef LL_PLAT_S
+    MCNAPI ::JSONSchemaPath path() const;
+
+    MCNAPI ::SemVersion const& version() const;
+#endif
+
     MCNAPI ~JSONSchemaProperty();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::JSONSchemaProperty const&);
+
     MCNAPI void*
     $ctor(::std::string filename, ::JSONSchemaArea areaType, ::JSONSchemaPath pathType, ::SemVersion optionalVersion);
     // NOLINTEND

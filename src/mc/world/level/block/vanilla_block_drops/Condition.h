@@ -19,9 +19,6 @@ MCAPI ::std::function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext co
 );
 
 MCAPI ::std::function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
-fortuneBonusRandomChanceOneIn(::std::vector<int> possibilities);
-
-MCAPI ::std::function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
 toolMatches(::HashedString const& itemId);
 // NOLINTEND
 

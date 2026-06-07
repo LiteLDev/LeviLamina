@@ -50,19 +50,12 @@ public:
     public:
         // prevent constructor by default
         TemplatePoolData& operator=(TemplatePoolData const&);
-        TemplatePoolData(TemplatePoolData const&);
         TemplatePoolData();
 
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        MCNAPI TemplatePoolData(
-            ::std::string const&                                        templateId,
-            ::std::set<::std::string> const&                            structNames,
-            ::std::map<::std::string, ::std::set<::std::string>> const& structTargetNames
-        );
-#endif
+        MCNAPI TemplatePoolData(::Editor::Services::EditorJigsawService::TemplatePoolData const&);
 
         MCNAPI ~TemplatePoolData();
         // NOLINTEND
@@ -70,13 +63,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        MCNAPI void* $ctor(
-            ::std::string const&                                        templateId,
-            ::std::set<::std::string> const&                            structNames,
-            ::std::map<::std::string, ::std::set<::std::string>> const& structTargetNames
-        );
-#endif
+        MCNAPI void* $ctor(::Editor::Services::EditorJigsawService::TemplatePoolData const&);
         // NOLINTEND
 
     public:
@@ -175,6 +162,8 @@ public:
 
     MCNAPI void _loadBehaviorPackJigsawRegistries(::ResourcePackManager& packManager);
 
+    MCNAPI void _loadWorldJigsawRegistries();
+
     MCNAPI void _saveFile(
         ::Editor::Services::EditorRegistryFile& regFile,
         ::Core::PathBuffer<::std::string>       jigsawPath,
@@ -186,12 +175,6 @@ public:
 
     MCNAPI bool
     _validateRegistry(::std::string registryName, ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> editorPlayer);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& SERVICE_NAME();
     // NOLINTEND
 
 public:

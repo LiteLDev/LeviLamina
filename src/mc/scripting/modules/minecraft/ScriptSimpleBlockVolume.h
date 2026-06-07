@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
+class SimpleBlockVolume;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -27,8 +28,6 @@ public:
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() /*override*/;
-
-    virtual ~ScriptSimpleBlockVolume() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -37,6 +36,8 @@ public:
     MCAPI ScriptSimpleBlockVolume();
 
     MCAPI ScriptSimpleBlockVolume(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+
+    MCAPI explicit ScriptSimpleBlockVolume(::SimpleBlockVolume const& rhs);
 
     MCAPI ScriptSimpleBlockVolume(::Vec3 const& from, ::Vec3 const& to);
 
@@ -73,6 +74,8 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+
+    MCAPI void* $ctor(::SimpleBlockVolume const& rhs);
 
     MCAPI void* $ctor(::Vec3 const& from, ::Vec3 const& to);
     // NOLINTEND

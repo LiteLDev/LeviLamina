@@ -80,6 +80,11 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI ClientNetworkSystem(
+        ::brstd::function_ref<::NetworkSystem::Dependencies()> dependencies,
+        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()>
+    );
+
+    MCNAPI ClientNetworkSystem(
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                        networkToggles,
@@ -117,6 +122,10 @@ public:
 
     MCNAPI ::std::optional<::NetworkIdentifier> tryGetLocalNetworkId() const;
 
+#ifdef LL_PLAT_C
+    MCNAPI ::std::optional<::NetworkIdentifier> tryGetPrimaryNetworkId() const;
+#endif
+
     MCNAPI ::std::optional<::NetworkIdentifier> tryGetServerId() const;
     // NOLINTEND
 
@@ -141,6 +150,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::brstd::function_ref<::NetworkSystem::Dependencies()> dependencies,
+        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()>
+    );
+
     MCNAPI void* $ctor(
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,

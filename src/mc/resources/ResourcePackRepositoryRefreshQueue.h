@@ -83,5 +83,19 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<void> _tryCompleteInitialization(::TaskGroup& taskGroup);
+
+    MCNAPI ::Bedrock::Threading::Async<void> initialize(::TaskGroup& taskGroup);
+
+    MCNAPI ::ResourcePackRepositoryRefreshQueue::RefreshResult refreshPacks(::TaskGroup& taskGroup);
+
+    MCNAPI ::Bedrock::Threading::Async<void> reloadUserPacks(::TaskGroup& taskGroup);
+
+    MCNAPI ~ResourcePackRepositoryRefreshQueue();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

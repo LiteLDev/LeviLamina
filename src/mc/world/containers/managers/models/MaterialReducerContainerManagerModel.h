@@ -30,19 +30,17 @@ public:
     // NOLINTBEGIN
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
+    virtual void setSlot(int, ::ItemStack const&, bool) /*override*/;
 
-    virtual ::ItemStack const& getSlot(int slot) const /*override*/;
+    virtual ::ItemStack const& getSlot(int) const /*override*/;
 
-    virtual void setData(int id, int value) /*override*/;
+    virtual void setData(int, int) /*override*/;
 
     virtual bool isValid(float pickRange) /*override*/;
 
     virtual void broadcastChanges() /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
-
-    virtual ~MaterialReducerContainerManagerModel() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,6 +50,8 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::ItemStack const& getInput();
+
+    MCAPI ::ItemStack const& getOutput(int slot);
 #endif
     // NOLINTEND
 
@@ -66,11 +66,11 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCFOLD void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCFOLD void $setSlot(int, ::ItemStack const&, bool);
 
-    MCFOLD ::ItemStack const& $getSlot(int slot) const;
+    MCFOLD ::ItemStack const& $getSlot(int) const;
 
-    MCFOLD void $setData(int id, int value);
+    MCFOLD void $setData(int, int);
 
     MCAPI bool $isValid(float pickRange);
 

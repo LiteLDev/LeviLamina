@@ -7,6 +7,8 @@ namespace TargetNearbyDefaults {
 // NOLINTBEGIN
 MCAPI float const& INSIDE_RANGE();
 
+MCAPI bool const& MUST_SEE();
+
 MCAPI float const& OUTSIDE_RANGE();
 // NOLINTEND
 

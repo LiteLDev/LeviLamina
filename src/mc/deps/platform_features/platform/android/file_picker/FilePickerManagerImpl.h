@@ -21,8 +21,6 @@ public:
 
     virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
     pickDirectory(::Bedrock::DirectoryPickerConfig const&) /*override*/;
-
-    virtual ~FilePickerManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

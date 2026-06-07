@@ -16,18 +16,6 @@ public:
     UnknownPresetId& operator=(UnknownPresetId const&);
     UnknownPresetId(UnknownPresetId const&);
     UnknownPresetId();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~UnknownPresetId();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace CameraAimAssistErrorType

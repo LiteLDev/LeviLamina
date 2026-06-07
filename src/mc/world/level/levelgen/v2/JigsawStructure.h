@@ -37,15 +37,12 @@ public:
 public:
     // prevent constructor by default
     JigsawStructure& operator=(JigsawStructure const&);
-    JigsawStructure(JigsawStructure const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::GenerationStub>
     findValidGenerationPoint(::br::worldgen::GenerationContext& context) const /*override*/;
-
-    virtual ~JigsawStructure() /*override*/;
     // NOLINTEND
 
 public:
@@ -53,7 +50,7 @@ public:
     // NOLINTBEGIN
     MCAPI JigsawStructure();
 
-    MCAPI JigsawStructure(::br::worldgen::JigsawStructure&&);
+    MCAPI JigsawStructure(::br::worldgen::JigsawStructure const&);
     // NOLINTEND
 
 public:
@@ -61,13 +58,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::br::worldgen::JigsawStructure&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::br::worldgen::JigsawStructure const&);
     // NOLINTEND
 
 public:

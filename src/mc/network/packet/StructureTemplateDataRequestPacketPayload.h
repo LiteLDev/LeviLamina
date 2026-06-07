@@ -18,17 +18,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureTemplateDataRequestPacketPayload& operator=(StructureTemplateDataRequestPacketPayload const&);
+    StructureTemplateDataRequestPacketPayload();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataRequestPacketPayload();
-
-    MCAPI StructureTemplateDataRequestPacketPayload(::StructureTemplateDataRequestPacketPayload&&);
-
     MCAPI StructureTemplateDataRequestPacketPayload(::StructureTemplateDataRequestPacketPayload const&);
 
-    MCAPI ::StructureTemplateDataRequestPacketPayload& operator=(::StructureTemplateDataRequestPacketPayload&&);
-
-    MCAPI ::StructureTemplateDataRequestPacketPayload& operator=(::StructureTemplateDataRequestPacketPayload const&);
+#ifdef LL_PLAT_C
+    MCAPI StructureTemplateDataRequestPacketPayload(
+        ::std::string const&                structureName,
+        ::BlockPos const&                   blockPos,
+        ::StructureSettings const&          structureSettings,
+        ::StructureTemplateRequestOperation requestOperation
+    );
+#endif
 
     MCAPI ~StructureTemplateDataRequestPacketPayload();
     // NOLINTEND
@@ -36,11 +42,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::StructureTemplateDataRequestPacketPayload&&);
-
     MCAPI void* $ctor(::StructureTemplateDataRequestPacketPayload const&);
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::std::string const&                structureName,
+        ::BlockPos const&                   blockPos,
+        ::StructureSettings const&          structureSettings,
+        ::StructureTemplateRequestOperation requestOperation
+    );
+#endif
     // NOLINTEND
 
 public:

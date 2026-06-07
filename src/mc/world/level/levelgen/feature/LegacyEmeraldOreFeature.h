@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool placeOre(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;

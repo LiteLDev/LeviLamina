@@ -112,13 +112,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~AnnouncementFacet() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AnnouncementFacet(
+        ::PlayerMessagingService&                                         service,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
+    );
+
     MCAPI void _getMessageData();
 
     MCAPI void reportClick(
@@ -139,9 +142,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::PlayerMessagingService&                                         service,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
+    );
     // NOLINTEND
 
 public:

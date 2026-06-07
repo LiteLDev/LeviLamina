@@ -10,9 +10,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockActor;
 class BlockPos;
 class BlockSource;
-class CauldronBlockActor;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
@@ -26,14 +26,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool _isValid() const /*override*/;
-
-    virtual ~ScriptBlockFluidContainerComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CauldronBlockActor* _tryGetCauldronBlockActor();
+    MCAPI ::std::optional<int> _tryGetFillLevel() const;
 
     MCAPI ::Scripting::Result_deprecated<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
 
@@ -55,8 +53,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
-    _getActualCauldronFluidType(::BlockSource& region, ::BlockPos position);
+    MCFOLD static ::ScriptModuleMinecraft::ScriptFluidType
+    _getActualCauldronFluidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
 
     MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>>

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScriptPlugin;
 class ScriptSentryLogger;
 // clang-format on
 
@@ -34,6 +35,18 @@ public:
     virtual void setSentryLogger(::std::unique_ptr<::ScriptSentryLogger> sentryLogger) /*override*/;
 
     virtual ::std::string const& getPlatformName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit MinecraftScriptSentryPlugin(::ScriptPlugin& plugin);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptPlugin& plugin);
     // NOLINTEND
 
 public:

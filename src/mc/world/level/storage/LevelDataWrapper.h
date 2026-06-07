@@ -20,33 +20,50 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk9c0114;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     LevelDataWrapper& operator=(LevelDataWrapper const&);
     LevelDataWrapper(LevelDataWrapper const&);
     LevelDataWrapper();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    LevelDataWrapper& operator=(LevelDataWrapper const&);
+    LevelDataWrapper(LevelDataWrapper const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onLevelUpdated(::std::string const& levelId) /*override*/;
-
-    virtual void onLevelDeleted(::std::string const& levelId) /*override*/;
-
-    virtual void onStorageChanged() /*override*/;
-
 #ifdef LL_PLAT_S
-    virtual ~LevelDataWrapper() /*override*/ = default;
+    virtual void onLevelUpdated(::std::string const&) /*override*/;
 #else // LL_PLAT_C
-    virtual ~LevelDataWrapper() /*override*/;
+    virtual void onLevelUpdated(::std::string const& levelId) /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual void onLevelDeleted(::std::string const&) /*override*/;
+#else // LL_PLAT_C
+    virtual void onLevelDeleted(::std::string const& levelId) /*override*/;
+#endif
+
+    virtual void onStorageChanged() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI LevelDataWrapper();
+
+    MCNAPI ::LevelData& operator*();
+
+    MCNAPI ::LevelData const* operator->() const;
+
+    MCNAPI ::LevelData* operator->();
+
     MCNAPI void reset();
 
     MCNAPI void resetLevelDataPointer();
@@ -58,9 +75,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

@@ -6,6 +6,11 @@
 // clang-format off
 namespace Json { class Value; }
 namespace NetherNet { class PeerConnectionObserver; }
+namespace NetherNet { struct SessionState; }
+namespace webrtc { class RTCIceCandidatePairStats; }
+namespace webrtc { class RTCLocalIceCandidateStats; }
+namespace webrtc { class RTCRemoteIceCandidateStats; }
+namespace webrtc { class RTCTransportStats; }
 // clang-format on
 
 namespace NetherNet {
@@ -50,6 +55,8 @@ public:
             MCNAPI ::NetherNet::Statistics::Snapshot::CandidateInfo&
             operator=(::NetherNet::Statistics::Snapshot::CandidateInfo&&);
 
+            MCNAPI ::Json::Value toJson() const;
+
             MCNAPI ~CandidateInfo();
             // NOLINTEND
 
@@ -83,8 +90,8 @@ public:
             ::ll::UntypedStorage<8, 8>  mUnkffaa5c;
             ::ll::UntypedStorage<4, 4>  mUnk843055;
             ::ll::UntypedStorage<8, 8>  mUnk24f73f;
-            ::ll::UntypedStorage<4, 4>  mUnka45791;
-            ::ll::UntypedStorage<4, 4>  mUnk83582e;
+            ::ll::UntypedStorage<4, 4>  mUnkf1cbb8;
+            ::ll::UntypedStorage<4, 4>  mUnkdb74d9;
             // NOLINTEND
 
         public:
@@ -100,6 +107,14 @@ public:
             operator=(::NetherNet::Statistics::Snapshot::CandidatePairInfo&&);
 
             MCNAPI ::Json::Value toJson() const;
+
+            MCNAPI ~CandidatePairInfo();
+            // NOLINTEND
+
+        public:
+            // destructor thunk
+            // NOLINTBEGIN
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -195,6 +210,15 @@ public:
         int                  errorCode,
         ::std::string const& errorMessage
     );
+
+    MCNAPI void addSnapshot(
+        ::gsl::span<::std::reference_wrapper<::webrtc::RTCTransportStats const>>          transportsStats,
+        ::gsl::span<::std::reference_wrapper<::webrtc::RTCLocalIceCandidateStats const>>  localCandidatesStats,
+        ::gsl::span<::std::reference_wrapper<::webrtc::RTCRemoteIceCandidateStats const>> remoteCandidatesStats,
+        ::gsl::span<::std::reference_wrapper<::webrtc::RTCIceCandidatePairStats const>>   candidatePairsStats
+    );
+
+    MCNAPI bool getLastSnapshot(::NetherNet::SessionState& state) const;
     // NOLINTEND
 
 public:

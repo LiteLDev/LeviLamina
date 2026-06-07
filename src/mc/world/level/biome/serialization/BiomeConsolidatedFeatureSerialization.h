@@ -25,6 +25,13 @@ MCAPI void applySerializedConsolidatedFeature(
     ::BiomeStringList const&              stringList
 );
 
+MCAPI void applySerializedConsolidatedFeatureData(
+    ::BiomeConsolidatedFeaturesData const&               data,
+    ::BiomeDecorationAttributes<::ConsolidatedFeatures>& consolidatedFeatures,
+    ::FeatureRegistry&                                   featureRegistry,
+    ::BiomeStringList const&                             stringList
+);
+
 MCAPI ::std::optional<::BiomeConsolidatedFeatureData> serializeConsolidatedFeature(
     ::BiomeDecorationFeature const& consolidatedFeature,
     ::FeatureRegistry const&        featureRegistry,

@@ -13,6 +13,7 @@ class HashedString;
 class Player;
 namespace Editor { class IEditorPlayer; }
 namespace Editor { class LogMessage; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct LogContent; }
 // clang-format on
 
@@ -47,14 +48,24 @@ public:
     virtual void flush() /*override*/;
 
     virtual ::std::vector<::Editor::LogMessage> const& getMessages() const /*override*/;
-
-    virtual ~ServerLoggingService() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI explicit ServerLoggingService(::Editor::ServiceProviderCollection& providers);
+#endif
+
     MCNAPI void _dispatchLogMessagePayload(::Editor::LogMessage message, ::Editor::IEditorPlayer* editorPlayer);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+#endif
     // NOLINTEND
 
 public:

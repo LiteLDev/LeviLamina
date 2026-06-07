@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ByteArrayTag& operator=(ByteArrayTag const&);
-    ByteArrayTag(ByteArrayTag const&);
-    ByteArrayTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Tag::Type getId() const /*override*/;
@@ -45,14 +39,18 @@ public:
     virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
     virtual uint64 hash() const /*override*/;
-
-    virtual ~ByteArrayTag() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ByteArrayTag& operator=(::ByteArrayTag&&);
+    MCAPI ByteArrayTag();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -15,12 +15,6 @@ namespace BlockGeometrySerializer {
 
 struct Constraint : public ::cereal::ConstraintHandle<::BlockGeometrySerializer::Constraint> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~Constraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void validateValue(::BlockGeometrySerializer::Proxy const& proxy, ::cereal::SerializerContext& context) const;

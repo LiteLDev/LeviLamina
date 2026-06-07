@@ -35,7 +35,7 @@ public:
 
     MCAPI void init(int (*_fn)(::bx::Thread*, void*), void* _userData, uint _stackSize, char const* _name);
 
-    MCFOLD bool isRunning() const;
+    MCAPI bool isRunning() const;
 
     MCAPI void setThreadName(char const* _name);
 

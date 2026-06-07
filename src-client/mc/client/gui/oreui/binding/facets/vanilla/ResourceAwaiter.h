@@ -34,8 +34,6 @@ public:
     virtual ::OreUI::IResourceAwaiter::Status updateStatus() /*override*/;
 
     virtual void refreshResources() /*override*/;
-
-    virtual ~ResourceAwaiter() /*override*/ = default;
     // NOLINTEND
 
 public:

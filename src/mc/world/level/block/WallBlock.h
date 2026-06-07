@@ -17,10 +17,10 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
+class Material;
 class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -28,6 +28,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class WallBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    WallBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,7 +45,7 @@ public:
         /*override*/;
 
     virtual ::AABB const&
-    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
+    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const& bufferAABB, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
     virtual ::AABB getCollisionShape(
@@ -58,11 +62,11 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
 
     virtual bool isWallBlock() const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
 
     virtual ::HitResult clip(
         ::Block const&                                     block,
@@ -76,19 +80,17 @@ public:
 
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~WallBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WallBlock(::std::string const& nameId, int id, ::BlockType const& baseBlock);
+
+    MCAPI WallBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI ::WallConnectionType
     _desiredConnectionState(::BlockSource& region, ::BlockPos const& pos, uchar neighbor) const;
-
-    MCAPI bool _isCovered(::BlockSource& region, ::BlockPos const& pos, ::AABB const& testAABB) const;
 
     MCAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -108,7 +110,21 @@ public:
     // NOLINTBEGIN
     MCAPI static float const& POST_HEIGHT();
 
+    MCAPI static float const& POST_WIDTH();
+
     MCAPI static ::BaseGameVersion const& WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+
+    MCAPI static float const& WALL_HEIGHT();
+
+    MCAPI static float const& WALL_WIDTH();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockType const& baseBlock);
+
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -127,10 +143,10 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
+        ::Block const&             block,
+        ::IConstBlockSource const& bufferAABB,
         ::BlockPos const&,
-        ::AABB& bufferAABB
+        ::AABB&
     ) const;
 
     MCAPI ::AABB $getCollisionShape(
@@ -147,11 +163,11 @@ public:
         ::AABB&                    bufferValue
     ) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
 
     MCFOLD bool $isWallBlock() const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
 
     MCFOLD ::HitResult $clip(
         ::Block const&                                     block,
@@ -164,8 +180,6 @@ public:
     ) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

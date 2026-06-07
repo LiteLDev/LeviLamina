@@ -33,7 +33,7 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual bool update(::IClientInstance&, ::UIControl& owner, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& owner, ::UIControl&, ::UIScene const&) /*override*/;
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
@@ -44,6 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FlyingItemRenderer();
+
     MCAPI void _addNewFlyingItems(::UIPropertyBag& bag);
 
     MCAPI void _renderGuiIcon(
@@ -65,11 +67,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance&, ::UIControl& owner, ::UIScene const&);
+    MCAPI bool $update(::IClientInstance& owner, ::UIControl&, ::UIScene const&);
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 

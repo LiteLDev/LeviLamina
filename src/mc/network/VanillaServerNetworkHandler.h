@@ -38,6 +38,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI VanillaServerNetworkHandler(
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> bedrockHandler,
+        ::ServerInstance&                                     serverInstance
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> bedrockHandler, ::ServerInstance& serverInstance);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet);

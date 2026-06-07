@@ -32,14 +32,28 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
 
-    virtual ~CodeBuilderActorInfoCommand() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI CodeBuilderActorInfoCommand();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

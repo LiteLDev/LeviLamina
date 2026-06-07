@@ -119,6 +119,7 @@
 #include "stb_truetype.h"
 
 struct HWND__;
+struct HKEY__;
 struct HICON__;
 struct tagRECT;
 struct _TP_CALLBACK_INSTANCE;
@@ -235,7 +236,10 @@ using ldouble  = long double;
 using FacingID = uchar;
 
 template <typename T0, typename T1>
-class AutomaticID;
+class AutomaticID {
+public:
+    T1 mValue;
+};
 class Dimension;
 using DimensionType = AutomaticID<Dimension, int>;
 
@@ -367,7 +371,7 @@ namespace ll {
 
 template <size_t Align, size_t Size>
 struct UntypedStorage {
-    alignas(Align) std::byte data[Size];
+    alignas(Align) std::byte data[Size == 0 ? 1 : Size];
 
     template <class T>
     [[nodiscard]] T& as() & {

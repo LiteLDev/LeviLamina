@@ -27,12 +27,6 @@ public:
     ScriptRandomDifficultyChanceCondition();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::vector<float> getChances() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

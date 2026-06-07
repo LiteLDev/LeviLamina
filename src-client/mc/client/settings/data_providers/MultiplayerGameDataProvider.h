@@ -33,8 +33,18 @@ public:
     virtual void setValue(bool) /*override*/;
 
     virtual bool canModify() const /*override*/;
+    // NOLINTEND
 
-    virtual ~MultiplayerGameDataProvider() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MultiplayerGameDataProvider(::Settings::RegistryBuilder::IBuilderContext& context);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Settings::RegistryBuilder::IBuilderContext& context);
     // NOLINTEND
 
 public:

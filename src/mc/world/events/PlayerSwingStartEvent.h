@@ -17,22 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerSwingStartEvent& operator=(PlayerSwingStartEvent const&);
-    PlayerSwingStartEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerSwingStartEvent(::PlayerSwingStartEvent const&);
-
     MCAPI ~PlayerSwingStartEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerSwingStartEvent const&);
     // NOLINTEND
 
 public:

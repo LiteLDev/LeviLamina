@@ -36,7 +36,7 @@ public:
     ::ll::TypedStorage<8, 8, ::LevelSummary const&>                          mEditedLevel;
     ::ll::TypedStorage<4, 4, ::StorageVersion>                               mStorageVersion;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>              mUnloaded;
-    ::ll::TypedStorage<8, 376, ::GridArea<::std::shared_ptr<::LevelChunk>>>  mView;
+    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>>>  mView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkSource>>               mLegacySource;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LevelStorage>> mLevelStorage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                 mIOTaskGroup;
@@ -61,13 +61,13 @@ public:
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onExit(::MinecraftScreenModel&) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -108,13 +108,13 @@ public:
 
     MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onCancel(::MinecraftScreenModel&);
 
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $onExit(::MinecraftScreenModel&);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 

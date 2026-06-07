@@ -14,16 +14,4 @@ public:
     ResourceTaskGroupScope& operator=(ResourceTaskGroupScope const&);
     ResourceTaskGroupScope(ResourceTaskGroupScope const&);
     ResourceTaskGroupScope();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ResourceTaskGroupScope();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

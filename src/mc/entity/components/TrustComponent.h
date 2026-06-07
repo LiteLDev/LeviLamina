@@ -24,6 +24,8 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
+    MCAPI void assignTrustedPlayer(::ActorUniqueID const& playerID);
+
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 };

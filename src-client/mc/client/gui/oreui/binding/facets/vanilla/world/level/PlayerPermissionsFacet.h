@@ -89,8 +89,6 @@ public:
         ::std::function<bool()>              isHostingLocalDedicatedServer
     );
 
-    MCAPI void _clearResources();
-
     MCAPI bool _evaluateCanEditPermissions();
 
     MCAPI bool _evaluateCanKickPlayer(::ActorUniqueID playerId);
@@ -102,6 +100,8 @@ public:
     MCAPI void _reloadPermissions();
 
     MCAPI void _syncFromManager(::ActorUniqueID playerId);
+
+    MCAPI bool _validateLocalPlayer();
 
     MCAPI bool areCheatsEnabled() const;
 

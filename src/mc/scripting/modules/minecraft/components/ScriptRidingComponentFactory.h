@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/GenericScriptActorComponentFactory.h"
+#include "mc/scripting/modules/minecraft/components/GenericScriptActorComponentFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,8 +28,6 @@ public:
     ) /*override*/;
 
     virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
-
-    virtual ~ScriptRidingComponentFactory() /*override*/ = default;
     // NOLINTEND
 
 public:

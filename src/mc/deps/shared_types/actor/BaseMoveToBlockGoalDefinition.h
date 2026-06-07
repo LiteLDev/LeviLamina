@@ -22,6 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BaseMoveToBlockGoalDefinition();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -31,6 +37,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 

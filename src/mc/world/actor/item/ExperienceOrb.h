@@ -10,13 +10,16 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
 class Level;
 class Player;
 class Vec3;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -41,6 +44,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ExperienceOrb();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -55,21 +62,25 @@ public:
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& damage, float, bool, bool) /*override*/;
 
     virtual void doWaterSplashEffect() /*override*/;
-
-    virtual ~ExperienceOrb() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ExperienceOrb(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void _handleMending(::Player& player);
 
     MCAPI void _tryMergeExistingOrbs();
 
-    MCAPI int getValue() const;
+    MCAPI int getIconIndex() const;
 
     MCAPI void postNormalTick();
     // NOLINTEND
@@ -81,12 +92,33 @@ public:
 
     MCAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
 
+    MCAPI static void spawnOrb(::BlockSource& region, ::Vec3 const& pos, int orbXPValue);
+
     MCAPI static void spawnOrbs(
         ::BlockSource&            region,
         ::Vec3 const&             pos,
         int                       xpValue,
         ::ExperienceOrb::DropType dropType,
         ::Player*                 owner
+    );
+
+    MCAPI static void spawnOrbs(
+        ::BlockSource&            region,
+        ::Vec3 const&             pos,
+        int                       randValueMin,
+        int                       randValueMax,
+        ::ExperienceOrb::DropType dropType,
+        ::Player*                 owner
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
     );
     // NOLINTEND
 
@@ -105,7 +137,7 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& damage, float, bool, bool);
 
     MCFOLD void $doWaterSplashEffect();
 

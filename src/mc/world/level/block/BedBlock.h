@@ -12,12 +12,10 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class IConstBlockSource;
 class ItemInstance;
 class Player;
 class Vec3;
-struct UpdateEntityAfterFallOnInterface;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -25,6 +23,10 @@ namespace mce { class Color; }
 // clang-format on
 
 class BedBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    BedBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -42,15 +44,10 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
+    virtual ::ItemInstance asItemInstance(::Block const& blockActor, ::BlockActor const*) const /*override*/;
 
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
         /*override*/;
-
-    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
-        /*override*/;
-
-    virtual bool isBounceBlock() const /*override*/;
 
     virtual bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
@@ -63,19 +60,19 @@ public:
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    virtual bool canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const /*override*/;
+    virtual bool canSpawnAt(::BlockSource const&, ::BlockPos const&) const /*override*/;
 
     virtual ::mce::Color getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~BedBlock() /*override*/ = default;
+    virtual float getBounciness(::IConstBlockSource const&, ::BlockPos const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BedBlock(::std::string const& nameId, int id);
+
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -89,13 +86,23 @@ public:
     MCAPI static ::std::optional<::BlockPos>
     findWakeupPosition(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::Vec3> const& enteredBedPos);
 
+    MCAPI static bool isDangerousSpawnPosition(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static bool isValidStandUpPosition(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static void setOccupied(::BlockSource& region, ::BlockPos const& pos, bool occupied);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<int[][2]> HEAD_DIRECTION_OFFSETS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -113,13 +120,9 @@ public:
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const& blockActor, ::BlockActor const*) const;
 
     MCAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
-
-    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
-
-    MCFOLD bool $isBounceBlock() const;
 
     MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -131,11 +134,11 @@ public:
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCFOLD bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSpawnAt(::BlockSource const&, ::BlockPos const&) const;
 
     MCAPI ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI float $getBounciness(::IConstBlockSource const&, ::BlockPos const&) const;
 
 
     // NOLINTEND

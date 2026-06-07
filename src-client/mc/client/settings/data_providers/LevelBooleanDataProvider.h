@@ -41,8 +41,6 @@ public:
     virtual bool getValue() const /*override*/;
 
     virtual void setValue(bool value) /*override*/;
-
-    virtual ~LevelBooleanDataProvider() /*override*/ = default;
     // NOLINTEND
 
 public:

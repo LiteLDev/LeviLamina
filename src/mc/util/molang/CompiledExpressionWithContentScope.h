@@ -36,8 +36,6 @@ public:
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;
 
     virtual ::MolangScriptArg const& evalGeneric(::RenderParams& params) const /*override*/;
-
-    virtual ~CompiledExpressionWithContentScope() /*override*/ = default;
     // NOLINTEND
 
 public:

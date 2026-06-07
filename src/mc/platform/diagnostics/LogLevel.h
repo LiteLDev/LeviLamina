@@ -28,16 +28,6 @@ public:
     ::ll::TypedStorage<1, 1, ::Bedrock::LogLevel::Type> mType;
     ::ll::TypedStorage<1, 1, bool>                      mLogInPublish;
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::LogLevel const& Error();
-
-    MCAPI static ::Bedrock::LogLevel const& Info();
-
-    MCAPI static ::Bedrock::LogLevel const& Warning();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

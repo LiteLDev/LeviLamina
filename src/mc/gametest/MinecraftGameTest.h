@@ -13,6 +13,8 @@ class BlockSource;
 class Dimension;
 class Level;
 namespace gametest { class BaseGameTestInstance; }
+namespace gametest { class GameTestRegistry; }
+namespace gametest { class GameTestTicker; }
 namespace gametest { class IGameTestListener; }
 namespace gametest { struct TestParameters; }
 // clang-format on
@@ -36,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGameTest() /*override*/ = default;
+    virtual ~MinecraftGameTest() /*override*/;
 
     virtual void onLevelDestruction(::std::string const&) /*override*/;
     // NOLINTEND
@@ -47,6 +49,16 @@ public:
     MCNAPI explicit MinecraftGameTest(::Level& level);
 
     MCNAPI void clearAllTests(::BlockSource& region);
+
+    MCNAPI ::gametest::GameTestRegistry& getRegistry();
+
+    MCNAPI ::gametest::GameTestTicker& getTicker();
+
+    MCNAPI void loadExistingTests(::Level& level);
+
+    MCNAPI void registerDefaultGameBatches(::Level& level);
+
+    MCNAPI void registerNativeGameTests();
 
     MCNAPI ::std::string
     runTest(::std::string const& testName, ::Dimension& dimension, ::gametest::TestParameters const& params);
@@ -63,12 +75,20 @@ public:
 
     MCNAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>> const&
     runTests(::Dimension& dimension, ::gametest::TestParameters&& params);
+
+    MCNAPI void stopAllTests();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Level& level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

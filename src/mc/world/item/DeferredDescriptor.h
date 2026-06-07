@@ -46,8 +46,6 @@ public:
     virtual bool shouldResolve() const /*override*/;
 
     virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> resolve() const /*override*/;
-
-    virtual ~DeferredDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:

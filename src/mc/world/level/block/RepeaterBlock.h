@@ -13,7 +13,6 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class BlockType;
-class Experiments;
 class ItemInstance;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -23,6 +22,10 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class RepeaterBlock : public ::DiodeBlock {
+public:
+    // prevent constructor by default
+    RepeaterBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,15 +61,13 @@ public:
     virtual ::Block const* getOffBlock(::Block const* block) const /*override*/;
 
     virtual bool isAlternateInput(::Block const& block) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~RepeaterBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RepeaterBlock(::std::string const& nameId, int id, bool on);
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -84,6 +85,12 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<int const[]> DELAYS();
 
     MCAPI static ::std::add_lvalue_reference_t<float const[]> DELAY_RENDER_OFFSETS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
     // NOLINTEND
 
 public:
@@ -119,8 +126,6 @@ public:
     MCAPI ::Block const* $getOffBlock(::Block const* block) const;
 
     MCAPI bool $isAlternateInput(::Block const& block) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

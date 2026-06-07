@@ -97,7 +97,7 @@ public:
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
+    createExtensionContexts(::Scripting::ContextId finalEvent, bool) /*override*/;
     // NOLINTEND
 
 public:
@@ -166,8 +166,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $destroyRegisteredExtensions();
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent);
+    MCNAPI ::Scripting::Result_deprecated<void> $createExtensionContexts(::Scripting::ContextId finalEvent, bool);
 
 
     // NOLINTEND

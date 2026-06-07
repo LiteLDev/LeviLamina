@@ -29,16 +29,4 @@ public:
     BlockTryPlaceByPlayerEvent& operator=(BlockTryPlaceByPlayerEvent const&);
     BlockTryPlaceByPlayerEvent(BlockTryPlaceByPlayerEvent const&);
     BlockTryPlaceByPlayerEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BlockTryPlaceByPlayerEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

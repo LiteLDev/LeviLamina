@@ -15,7 +15,6 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk180b5b;
     ::ll::UntypedStorage<8, 16> mUnk2265cb;
     ::ll::UntypedStorage<8, 16> mUnk6e9ba2;
-    ::ll::UntypedStorage<8, 16> mUnk3b6e23;
     ::ll::UntypedStorage<8, 16> mUnk206bd2;
     ::ll::UntypedStorage<8, 16> mUnk49f4a5;
     // NOLINTEND
@@ -29,17 +28,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorkerPoolGlobalState(::WorkerPoolGlobalState&&);
-
     MCNAPI ::WorkerPoolGlobalState& operator=(::WorkerPoolGlobalState&&);
 
     MCNAPI ~WorkerPoolGlobalState();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::WorkerPoolGlobalState&&);
     // NOLINTEND
 
 public:

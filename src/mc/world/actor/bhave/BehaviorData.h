@@ -59,6 +59,8 @@ public:
     template <typename T0>
     struct Data {};
 
+    using DataProxy = ::BehaviorData::DataProxy;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -67,15 +69,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BehaviorData& operator=(BehaviorData const&);
-    BehaviorData(BehaviorData const&);
-    BehaviorData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BehaviorData& operator=(::BehaviorData&&);
+    MCAPI void copyData(::std::string const& from, ::std::string const& to, ::BehaviorData& other);
+
+    MCAPI bool hasData(::std::string const& strId) const;
+
+    MCAPI bool hasDataOfType(::std::string const& strId, ::BehaviorData::DataType type) const;
 
     MCAPI ~BehaviorData();
     // NOLINTEND

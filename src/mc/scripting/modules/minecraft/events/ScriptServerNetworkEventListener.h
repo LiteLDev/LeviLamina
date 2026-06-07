@@ -28,13 +28,33 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptServerNetworkEventListener();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ChatEvent const& chatEvent) /*override*/;
 
     virtual ::EventResult onMessage(::MessageEvent const& messageEvent) /*override*/;
+    // NOLINTEND
 
-    virtual ~ScriptServerNetworkEventListener() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptServerNetworkEventListener(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
     // NOLINTEND
 
 public:

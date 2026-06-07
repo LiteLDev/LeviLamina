@@ -11,7 +11,9 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class LayeredAbilities;
 class ReadOnlyBinaryStream;
+struct ActorUniqueID;
 // clang-format on
 
 class UpdateAbilitiesPacket : public ::Packet {
@@ -31,14 +33,28 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~UpdateAbilitiesPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI UpdateAbilitiesPacket();
+
+    MCAPI UpdateAbilitiesPacket(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
+
+#ifdef LL_PLAT_C
+    MCAPI void fillIn(::LayeredAbilities& layeredAbilities) const;
+
+    MCAPI ::ActorUniqueID getTargetPlayer() const;
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
     // NOLINTEND
 
 public:

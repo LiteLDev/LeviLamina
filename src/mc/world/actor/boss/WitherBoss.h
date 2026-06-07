@@ -17,6 +17,7 @@ class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
+class Block;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -25,6 +26,7 @@ class Level;
 class MobEffectInstance;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct HurtEffectsSettings;
 struct VariantParameterList;
 namespace mce { class UUID; }
 // clang-format on
@@ -100,7 +102,8 @@ public:
 
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
-    virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual void
+    hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -124,8 +127,6 @@ public:
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    virtual ~WitherBoss() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -149,13 +150,13 @@ public:
 
     MCAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
 
-    MCAPI ::ActorUniqueID getAlternativeTarget(int headIndex);
+    MCAPI void awardSpawnWitherAchievement() const;
 
-    MCAPI ::Vec3 getHeadPos(int headID) const;
+    MCAPI void baseDie();
 
-#ifdef LL_PLAT_S
+    MCAPI ::Vec2 getHeadRot(int headID) const;
+
     MCAPI int getInvulnerableTicks() const;
-#endif
 
     MCAPI bool hasAerialAttack() const;
 
@@ -163,11 +164,23 @@ public:
 
     MCAPI ::WitherBossPreAIStepResult preAiStep();
 
-    MCAPI void setAerialAttack(bool aerialAttack);
+    MCAPI void removeSkeleton();
 
     MCAPI void setAlternativeTarget(int headIndex, ::ActorUniqueID entityId);
 
-    MCAPI void setInvulnerableTicks(int invulnerableTicks);
+    MCAPI void setIsPathing(bool isPathing);
+
+    MCAPI void setShotDelay(int delay);
+
+    MCAPI void setWantsToMove(bool shouldMove);
+
+    MCAPI bool wantsToMove();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool canDestroy(::Block const& block, ::WitherBoss::WitherAttackType attackType);
     // NOLINTEND
 
 public:
@@ -203,7 +216,7 @@ public:
 
     MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
-    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

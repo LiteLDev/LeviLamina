@@ -44,12 +44,13 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentGizmo& operator=(ScriptWidgetComponentGizmo const&);
+    ScriptWidgetComponentGizmo(ScriptWidgetComponentGizmo const&);
     ScriptWidgetComponentGizmo();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentGizmo() /*override*/ = default;
+    virtual ~ScriptWidgetComponentGizmo() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
 
@@ -60,8 +61,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentGizmo(::Editor::ScriptModule::ScriptWidgetComponentGizmo const&);
-
     MCNAPI ScriptWidgetComponentGizmo(
         ::Editor::ServiceProviderCollection&                                       serviceProviders,
         ::mce::UUID const&                                                         componentId,
@@ -105,8 +104,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentGizmo const&);
-
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                       serviceProviders,
         ::mce::UUID const&                                                         componentId,
@@ -115,6 +112,12 @@ public:
         ::Editor::ScriptModule::ScriptWidgetService&                               parentService,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions> options
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

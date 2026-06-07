@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/MainMenuScreenModel.h"
-#include "mc/client/gui/screens/models/MinecraftScreenModel.h"
 #include "mc/client/world/LocalWorldInfo.h"
 
 class WorldConversionCompleteModel : public ::MainMenuScreenModel {
@@ -15,25 +14,25 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldConversionCompleteModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldConversionCompleteModel() /*override*/ = default;
+    virtual ~WorldConversionCompleteModel() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldConversionCompleteModel(::MinecraftScreenModel::Context context);
+    MCFOLD ::LocalWorldInfo const& getImportedWorld() const;
+
+    MCAPI void setImportedWorld(::std::string const& levelId);
+
+    MCAPI void startImportedWorld();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenModel::Context context);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

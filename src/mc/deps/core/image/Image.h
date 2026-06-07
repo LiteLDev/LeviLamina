@@ -25,19 +25,10 @@ public:
     ::ll::TypedStorage<8, 24, ::mce::Blob>       mImageBytes;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Image();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    Image& operator=(Image const&);
-    Image(Image const&);
-    Image();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -49,17 +40,13 @@ public:
 
     MCAPI ::mce::Image clone() const;
 
-#ifdef LL_PLAT_C
-    MCFOLD ::mce::Image& operator=(::mce::Image&&);
-#endif
+    MCAPI bool isEmpty() const;
 
     MCAPI void resizeImageBytesToFitImageDescription();
 
 #ifdef LL_PLAT_C
     MCAPI void setRawImage(::mce::Blob&& contents);
 #endif
-
-    MCAPI ~Image();
     // NOLINTEND
 
 public:
@@ -70,12 +57,6 @@ public:
 #endif
 
     MCAPI void* $ctor(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScriptDeferredEventCoordinator;
 class ScriptDeferredFlushTracker;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorBlockPaletteEventActivePaletteChanged; }
@@ -24,7 +25,10 @@ namespace Editor::Cursor { struct Position; }
 namespace Editor::Selection { struct SelectionVolumeEvent; }
 namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
 namespace Editor::Services { class EditorSettingsServiceProvider; }
+namespace Json { class Value; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ModuleDescriptor; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
@@ -48,8 +52,6 @@ public:
         // NOLINTBEGIN
         virtual void
         onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
-
-        virtual ~ScriptExtensionContextAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -87,6 +89,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptExtensionContextAfterEvents(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
+
+    MCNAPI ScriptExtensionContextAfterEvents(
+        ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
+        ::Scripting::WeakLifetimeScope const&              scope
+    );
 
     MCNAPI void _handleBlockPaletteChanged(
         ::Editor::Services::EditorBlockPaletteServiceProvider const* paletteService,
@@ -129,7 +136,7 @@ public:
     );
 
     MCNAPI ::Editor::ScriptModule::ScriptExtensionContextAfterEvents&
-    operator=(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
+    operator=(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&& rhs);
 
     MCNAPI void registerListeners(::Editor::ServiceProviderCollection& serviceProviders);
 
@@ -141,6 +148,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
+    MCNAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
+
     MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::Editor::ScriptModule::ScriptExtensionContextAfterEvents> const&
     getMetadata();
@@ -150,6 +162,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
+
+    MCNAPI void* $ctor(
+        ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
+        ::Scripting::WeakLifetimeScope const&              scope
+    );
     // NOLINTEND
 
 public:

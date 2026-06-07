@@ -10,6 +10,7 @@
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/packet/LevelSoundEventPacket.h"
 #include "mc/world/level/ILevelSoundManagerConnector.h"
+#include "mc/world/level/ServerSoundInstanceManager.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,6 +19,7 @@ class IDimension;
 class LevelEventCoordinator;
 class PacketSender;
 class Player;
+class ServerSoundHandle;
 class SoundPlayerInterface;
 class Vec3;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -38,7 +40,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 120, ::LevelSoundEventPacket>                    mPacket;
+        ::ll::TypedStorage<8, 136, ::LevelSoundEventPacket>                    mPacket;
         ::ll::TypedStorage<8, 24, ::std::vector<::NetworkIdentifierWithSubId>> mNetworkIds;
         // NOLINTEND
 
@@ -59,7 +61,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 120, ::LevelSoundEventPacket> mPacket;
+        ::ll::TypedStorage<8, 136, ::LevelSoundEventPacket> mPacket;
         // NOLINTEND
 
     public:
@@ -79,7 +81,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 120, ::LevelSoundEventPacket>      mPacket;
+        ::ll::TypedStorage<8, 136, ::LevelSoundEventPacket>      mPacket;
         ::ll::TypedStorage<8, 184, ::NetworkIdentifierWithSubId> mNetworkId;
         // NOLINTEND
 
@@ -100,7 +102,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 120, ::LevelSoundEventPacket> mPacket;
+        ::ll::TypedStorage<8, 136, ::LevelSoundEventPacket> mPacket;
         // NOLINTEND
 
     public:
@@ -125,6 +127,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::ServerSoundInstanceManager>                                 mServerSoundInstanceManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SoundPlayerInterface>>           mSoundPlayer;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PacketSender>>                mLevelPacketSender;
     ::ll::TypedStorage<1, 1, bool>                                                          mIsClientSide;
@@ -151,7 +154,7 @@ public:
         8,
         128,
         ::Bedrock::PubSub::Publisher<
-            void(::std::string const&, ::Vec3 const&, float, float),
+            void(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>),
             ::Bedrock::PubSub::ThreadModel::MultiThreaded,
             0>>
         mOnLevelSoundEventWithVolumeAndPitch;
@@ -177,7 +180,8 @@ public:
         void(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
     getOnLevelSoundEventConnector() /*override*/;
 
-    virtual ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
+    virtual ::Bedrock::PubSub::Connector<
+        void(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>)>&
     getOnLevelSoundEventWithVolumeAndPitchConnector() /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void(::std::string const&)>& getOnStopLevelSoundEventConnector() /*override*/;
@@ -185,8 +189,6 @@ public:
     virtual ::Bedrock::PubSub::Connector<void()>& getOnStopAllLevelSoundsEventConnector() /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void()>& getOnStopMusicEventConnector() /*override*/;
-
-    virtual ~LevelSoundManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -200,14 +202,6 @@ public:
         bool                                                   isServerAuthSoundEnabled
     );
 
-    MCAPI void _queueSoundPacket(
-        ::std::variant<
-            ::LevelSoundManager::QueuedSoundSendPacket,
-            ::LevelSoundManager::QueuedSoundBroadcastPacket,
-            ::LevelSoundManager::QueuedSoundBroadcastUserIdPacket,
-            ::LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket> packet
-    );
-
     MCAPI void broadcastSoundEvent(
         ::IDimension&                          dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,
@@ -215,7 +209,8 @@ public:
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
         bool                                   isGlobal,
-        ::Player*                              primaryLocalPlayer
+        ::Player*                              primaryLocalPlayer,
+        ::std::optional<::Vec3> const&         fireAtPosition
     );
 
     MCAPI void playPredictiveSynchronizedSound(
@@ -225,15 +220,8 @@ public:
         ::Player*                              targetPlayer,
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
-    );
-
-    MCAPI void playSound(
-        ::SharedTypes::Legacy::LevelSoundEvent type,
-        ::Vec3 const&                          pos,
-        int                                    data,
-        ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     );
 
     MCAPI void playSynchronizedSound_DEPRECATED(
@@ -243,8 +231,11 @@ public:
         ::Player*                              primaryLocalPlayer,
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     );
+
+    MCAPI void processQueuedSoundPackets();
     // NOLINTEND
 
 public:
@@ -260,26 +251,21 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Bedrock::PubSub::Connector<
         void(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
     $getOnLevelSoundEventConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
+    MCFOLD ::Bedrock::PubSub::Connector<
+        void(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>)>&
     $getOnLevelSoundEventWithVolumeAndPitchConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
 
 
     // NOLINTEND

@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ExpressionNode;
 struct BlockGeometryDescription;
 namespace ClientBlockPipeline { struct BlockSchematic; }
 // clang-format on
@@ -18,6 +19,7 @@ public:
     // BlockGeometryComponent inner types declare
     // clang-format off
     struct DefaultPlusEmbeddedRenderer;
+    struct DefaultPlusExtraBlockRenderer;
     struct DefaultRenderer;
     // clang-format on
 
@@ -30,10 +32,20 @@ public:
         // NOLINTEND
     };
 
+    struct DefaultPlusExtraBlockRenderer {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 64, ::Matrix> mTransformationMatrix;
+        // NOLINTEND
+    };
+
     struct DefaultRenderer {};
 
-    using Renderer = ::std::
-        variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>;
+    using Renderer = ::std::variant<
+        ::BlockGeometryComponent::DefaultRenderer,
+        ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer,
+        ::BlockGeometryComponent::DefaultPlusExtraBlockRenderer>;
 
 public:
     // member variables
@@ -52,8 +64,10 @@ public:
     ::ll::TypedStorage<
         4,
         68,
-        ::std::
-            variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>>
+        ::std::variant<
+            ::BlockGeometryComponent::DefaultRenderer,
+            ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer,
+            ::BlockGeometryComponent::DefaultPlusExtraBlockRenderer>>
         mRenderer;
     // NOLINTEND
 
@@ -78,6 +92,24 @@ public:
 #endif
 
     MCAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::map<::std::string, ::ExpressionNode> const& getBoneVisibilities() const;
+
+    MCFOLD ::HashedString const& getCullingLayer() const;
+
+    MCFOLD ::HashedString const& getCullingName() const;
+
+    MCAPI bool hasLockedUVs() const;
+#endif
+
+    MCFOLD bool ignoreGeometryForIsSolid() const;
+
+    MCFOLD bool isFullBlock() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD bool isFullBlockV1() const;
+#endif
 
     MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
 

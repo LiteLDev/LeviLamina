@@ -14,7 +14,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
@@ -27,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DaylightDetectorBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -35,9 +38,7 @@ public:
 
     virtual void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
 
     virtual bool isInteractiveBlock() const /*override*/;
 
@@ -45,22 +46,25 @@ public:
 
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~DaylightDetectorBlock() /*override*/ = default;
+    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DaylightDetectorBlock(::std::string const& nameId, int id, bool isInverted);
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool isInverted);
     // NOLINTEND
 
 public:
@@ -72,8 +76,7 @@ public:
 
     MCAPI void $updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 
@@ -81,11 +84,9 @@ public:
 
     MCFOLD int $getVariant(::Block const& block) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
 
 
     // NOLINTEND

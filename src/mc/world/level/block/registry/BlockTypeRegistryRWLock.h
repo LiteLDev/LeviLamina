@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<bool, ::std::allocator<bool>>>
         mSharedLockIsLockedForRead;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockTypeRegistryRWLock();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };

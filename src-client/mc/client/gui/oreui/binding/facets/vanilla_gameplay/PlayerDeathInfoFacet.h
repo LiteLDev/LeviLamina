@@ -30,13 +30,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~PlayerDeathInfoFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PlayerDeathInfoFacet(::IClientInstance& client);
+
     MCAPI ::std::string _getLatestDeathInfo() const;
     // NOLINTEND
 
@@ -44,6 +44,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IClientInstance& client);
     // NOLINTEND
 
 public:

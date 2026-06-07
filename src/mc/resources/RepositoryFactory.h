@@ -20,8 +20,6 @@ public:
         /*override*/;
 
     virtual ::std::unique_ptr<::IPackIOProvider> createIO() const /*override*/;
-
-    virtual ~RepositoryFactory() /*override*/ = default;
     // NOLINTEND
 
 public:

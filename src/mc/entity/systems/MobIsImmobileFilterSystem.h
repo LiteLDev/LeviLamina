@@ -7,10 +7,10 @@
 struct TickingSystemWithInfo;
 // clang-format on
 
-struct MobIsImmobileFilterSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
-};
+namespace MobIsImmobileFilterSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createSystem();
+// NOLINTEND
+
+} // namespace MobIsImmobileFilterSystem

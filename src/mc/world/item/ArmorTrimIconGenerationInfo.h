@@ -43,6 +43,22 @@ public:
         ::std::string const&      trimPalette
     );
 
+    MCFOLD ::ResourceLocation const& getArmorTextureLocation() const;
+
+    MCFOLD ::ResourceLocation const& getTrimKeyPaletteLocation() const;
+
+    MCFOLD ::ResourceLocation const& getTrimTextureLocation() const;
+
+    MCFOLD ::ResourceLocation const& getTrimValuePaletteLocation() const;
+
+    MCFOLD ::ResourceLocation const& getTrimmedArmorLocation() const;
+
+    MCFOLD ::std::string const& getTrimmedArmorName() const;
+
+    MCFOLD bool isLeatherArmor() const;
+
+    MCAPI bool isValid() const;
+
     MCAPI ~ArmorTrimIconGenerationInfo();
 #endif
     // NOLINTEND

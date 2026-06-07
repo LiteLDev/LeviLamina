@@ -14,23 +14,23 @@ class SemVersion;
 
 class PlayerUIContainer : public ::SimpleContainer {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~PlayerUIContainer() /*override*/;
-    // NOLINTEND
+    // prevent constructor by default
+    PlayerUIContainer();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PlayerUIContainer(::std::string const& name, bool customName, int size);
+
     MCAPI void load(::ListTag const& inventoryList, ::SemVersion const& version);
 
     MCAPI ::std::unique_ptr<::ListTag> save(::SaveContext const& saveContext) const;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::string const& name, bool customName, int size);
     // NOLINTEND
 
 public:

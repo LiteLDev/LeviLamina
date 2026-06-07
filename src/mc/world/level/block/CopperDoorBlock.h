@@ -8,27 +8,50 @@
 
 // auto generated forward declare list
 // clang-format off
-class Experiments;
+class Material;
+struct CopperBlockSet;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class CopperDoorBlock : public ::CopperBlock<::DoorBlock> {
 public:
+    // prevent constructor by default
+    CopperDoorBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const /*override*/;
+    // NOLINTEND
 
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CopperDoorBlock(
+        ::std::string const&    nameId,
+        int                     id,
+        ::CopperBlockSet const& copperSet,
+        ::Material const&       material,
+        ::DoorBlock::DoorType   doorType
+    );
+    // NOLINTEND
 
-    virtual ~CopperDoorBlock() /*override*/ = default;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&    nameId,
+        int                     id,
+        ::CopperBlockSet const& copperSet,
+        ::Material const&       material,
+        ::DoorBlock::DoorType   doorType
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

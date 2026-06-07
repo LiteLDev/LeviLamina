@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct Version; }
+// clang-format on
+
 namespace Scripting {
 
 struct MinorVersionPromotion {
@@ -23,7 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MinorVersionPromotion(::Scripting::MinorVersionPromotion&&);
+    MCNAPI MinorVersionPromotion(
+        ::Scripting::ModuleDescriptor const& promotedModule_,
+        ::Scripting::ModuleDescriptor const& requestedBy_,
+        ::Scripting::Version const&          originalVersion_,
+        ::Scripting::Version const&          promotedToVersion_
+    );
 
     MCNAPI ~MinorVersionPromotion();
     // NOLINTEND
@@ -31,7 +42,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::MinorVersionPromotion&&);
+    MCNAPI void* $ctor(
+        ::Scripting::ModuleDescriptor const& promotedModule_,
+        ::Scripting::ModuleDescriptor const& requestedBy_,
+        ::Scripting::Version const&          originalVersion_,
+        ::Scripting::Version const&          promotedToVersion_
+    );
     // NOLINTEND
 
 public:

@@ -26,8 +26,18 @@ public:
     virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~AttackNode() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AttackNode();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

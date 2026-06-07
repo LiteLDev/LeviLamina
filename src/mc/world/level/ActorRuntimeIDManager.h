@@ -48,14 +48,26 @@ public:
 
     MCAPI void _removeEntity(::EntityContext const& entity);
 
+    MCFOLD ::ActorRuntimeID getNextRuntimeID();
+
     MCAPI ::Actor* getRuntimeActorEntity(::ActorRuntimeID actorId, bool getRemoved) const;
 
+    MCAPI ::std::vector<::Actor*> getRuntimeActorList() const;
+
     MCAPI void initialize(::IActorManagerConnector& actorManagerConnector);
+
+    MCAPI ~ActorRuntimeIDManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

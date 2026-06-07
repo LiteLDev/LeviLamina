@@ -9,28 +9,44 @@
 // clang-format off
 class Block;
 class BlockActor;
-class Experiments;
+class BlockPos;
+class BlockSource;
 class ItemInstance;
+class Material;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class BuddingAmethystBlock : public ::AmethystBlock {
+public:
+    // prevent constructor by default
+    BuddingAmethystBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     virtual bool isSilentWhenJumpingOff() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~BuddingAmethystBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BuddingAmethystBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool canBudGrowAtPos(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -39,8 +55,6 @@ public:
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCFOLD bool $isSilentWhenJumpingOff() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

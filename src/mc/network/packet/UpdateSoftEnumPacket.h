@@ -59,8 +59,6 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~UpdateSoftEnumPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -77,12 +75,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::UpdateSoftEnumPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

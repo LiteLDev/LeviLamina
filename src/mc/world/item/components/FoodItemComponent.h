@@ -15,6 +15,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class CerealSchemaUpgradeSet;
 class ComponentItem;
 class HashedString;
 class Item;
@@ -23,6 +24,7 @@ class Level;
 class Player;
 class SemVersion;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace SharedTypes::v1_20_50 { struct FoodItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -53,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FoodItemComponent() /*override*/ = default;
+    virtual ~FoodItemComponent() /*override*/;
 
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
@@ -79,6 +81,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FoodItemComponent();
+
+    MCAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
+
+    MCAPI ::ItemDescriptor getUsingConvertsToItemDescriptor() const;
+
     MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
     // NOLINTEND
 
@@ -92,6 +100,22 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

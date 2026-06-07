@@ -52,8 +52,6 @@ public:
         float                                             lastDistance,
         float                                             distance
     ) /*override*/;
-
-    virtual ~EmitterLifetimeEventsComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -61,12 +59,6 @@ public:
     // NOLINTBEGIN
     MCAPI void
     _parseEvent(::ConstDeserializeDataParams const& deserializeDataParams, ::std::vector<::HashedString>& eventList);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

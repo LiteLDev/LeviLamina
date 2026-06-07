@@ -27,13 +27,13 @@ public:
     virtual ::StructurePieceType getType() const /*override*/;
 
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~BuriedTreasurePiece() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _buryChest(::BlockSource& region, ::Random& random, ::BlockPos& blockPos) const;
+
     MCAPI bool _isCovered(::BlockSource const& region, ::BlockPos const& blockPos) const;
     // NOLINTEND
 

@@ -42,13 +42,7 @@ public:
 
     virtual bool canExtendSize() const /*override*/;
 
-    virtual void preemptiveExtendSize(
-        uint64 const            expectedContentSize,
-        ::std::function<void()> successCallback,
-        ::std::function<void()> failureCallback
-    ) /*override*/;
-
-    virtual ~TestMemoryStorageArea() /*override*/ = default;
+    virtual void preemptiveExtendSize(uint64 const, ::std::function<void()>, ::std::function<void()>) /*override*/;
     // NOLINTEND
 
 public:

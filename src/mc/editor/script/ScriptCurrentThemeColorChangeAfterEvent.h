@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -26,8 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptCurrentThemeColorChangeAfterEvent&
-    operator=(::Editor::ScriptModule::ScriptCurrentThemeColorChangeAfterEvent&&);
+    MCNAPI
+    ScriptCurrentThemeColorChangeAfterEvent(::std::string colorKey, ::ScriptModuleMinecraft::ScriptRGBA const& color);
 
     MCNAPI ~ScriptCurrentThemeColorChangeAfterEvent();
     // NOLINTEND
@@ -36,6 +37,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string colorKey, ::ScriptModuleMinecraft::ScriptRGBA const& color);
     // NOLINTEND
 
 public:

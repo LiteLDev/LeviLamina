@@ -62,7 +62,7 @@ public:
 
     virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool forceUnicode) const /*override*/;
 
-    virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
+    virtual ::mce::MaterialPtr const& getMaterial(int isOddGuiScale, bool) const /*override*/;
 
     virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
@@ -144,7 +144,7 @@ public:
 
     MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
 
-    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+    MCAPI ::mce::MaterialPtr const& $getMaterial(int isOddGuiScale, bool) const;
 
     MCAPI void $loadFontData(bool uploadTextureImmediately);
 

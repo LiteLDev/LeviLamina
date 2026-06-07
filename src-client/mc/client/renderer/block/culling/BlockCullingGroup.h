@@ -5,11 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class IMinecraftEventing;
+class ResourceLoadManager;
+class ResourcePackManager;
 struct BlockCullingData;
 namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace cereal { struct ReflectionCtx; }
@@ -38,12 +41,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BlockCullingGroup(::IMinecraftEventing& eventing);
+
     MCAPI ::PuvLoadData::LoadResultWithTiming _parseBlockCullingData(
         ::std::string_view             fileWithExtension,
         ::std::string const&           fileData,
         ::MolangVersion                molangVersion,
         bool                           isBaseGamePack,
         ::cereal::ReflectionCtx const& ctx
+    );
+
+    MCAPI void loadBlockCullingDataAsync(
+        ::ResourcePackManager&                               resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
+        ::cereal::ReflectionCtx const&                       ctx
     );
     // NOLINTEND
 
@@ -57,6 +68,12 @@ public:
         bool                           isBaseGamePack,
         ::cereal::ReflectionCtx const& ctx
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

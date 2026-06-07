@@ -17,10 +17,4 @@ public:
     PBRFallbackConfigSessionStorage& operator=(PBRFallbackConfigSessionStorage const&);
     PBRFallbackConfigSessionStorage(PBRFallbackConfigSessionStorage const&);
     PBRFallbackConfigSessionStorage();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~PBRFallbackConfigSessionStorage() /*override*/ = default;
-    // NOLINTEND
 };

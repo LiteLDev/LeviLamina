@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI {
+namespace Gameface {
 
 class RequestResourceRange {
 public:
@@ -15,4 +15,4 @@ public:
     struct RangeInBytes {};
 };
 
-} // namespace OreUI
+} // namespace Gameface

@@ -21,8 +21,6 @@ public:
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int) /*override*/;
-
-    virtual ~DebugScreenRenderer() /*override*/ = default;
     // NOLINTEND
 
 public:

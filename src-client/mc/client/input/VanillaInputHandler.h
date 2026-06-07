@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::ClientMoveInputHandler> _createClientMoveInputHandler() /*override*/;
-
-    virtual ~VanillaInputHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

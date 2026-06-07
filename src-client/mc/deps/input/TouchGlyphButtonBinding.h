@@ -31,12 +31,65 @@ public:
 
 public:
     // prevent constructor by default
-    TouchGlyphButtonBinding(TouchGlyphButtonBinding const&);
     TouchGlyphButtonBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TouchGlyphButtonBinding(::TouchGlyphButtonBinding const&);
+
+    MCAPI TouchGlyphButtonBinding(
+        ::std::string const&  aButtonName,
+        uint                  aAreaBindingName,
+        uint                  aConditionBindingName,
+        uint                  aOpacityBindingName,
+        ::std::string const&  aIconPath,
+        ::std::string const&  aPressedIconPath,
+        ::ButtonColors const& aButtonColors,
+        int                   aUvWidth,
+        int                   aUvHeight,
+        bool                  aPassThrough,
+        int                   aTouchStateRequirement,
+        float                 glyphScale,
+        bool                  aPromiscuous,
+        bool                  aExtendButtonPressOutsideUntilReleased,
+        float                 innerPaddingX,
+        float                 innerPaddingY
+    );
+
     MCAPI ::TouchGlyphButtonBinding& operator=(::TouchGlyphButtonBinding const&);
+
+    MCAPI ~TouchGlyphButtonBinding();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::TouchGlyphButtonBinding const&);
+
+    MCAPI void* $ctor(
+        ::std::string const&  aButtonName,
+        uint                  aAreaBindingName,
+        uint                  aConditionBindingName,
+        uint                  aOpacityBindingName,
+        ::std::string const&  aIconPath,
+        ::std::string const&  aPressedIconPath,
+        ::ButtonColors const& aButtonColors,
+        int                   aUvWidth,
+        int                   aUvHeight,
+        bool                  aPassThrough,
+        int                   aTouchStateRequirement,
+        float                 glyphScale,
+        bool                  aPromiscuous,
+        bool                  aExtendButtonPressOutsideUntilReleased,
+        float                 innerPaddingX,
+        float                 innerPaddingY
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

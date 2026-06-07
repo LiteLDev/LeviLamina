@@ -48,8 +48,7 @@ public:
 
     virtual void fireRedoEvent(::std::string const& transactionName) /*override*/;
 
-    virtual void
-    fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers) /*override*/;
+    virtual void fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const) /*override*/;
 
     virtual void fireEditorScriptEvent(
         ::std::string const& source,
@@ -94,7 +93,7 @@ public:
 
     MCNAPI void $fireRedoEvent(::std::string const& transactionName);
 
-    MCNAPI void $fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers);
+    MCNAPI void $fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const);
 
     MCNAPI void
     $fireEditorScriptEvent(::std::string const& source, ::std::string const& eventName, ::std::string const& metadata);

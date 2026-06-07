@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockPos;
 class BlockSource;
 // clang-format on
 
@@ -31,14 +32,24 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-
-    virtual ~ActorEvent() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ActorEvent(::BlockPos pos, ::Actor& entity, ::std::string const& name);
+
+    MCFOLD ::Actor& getEntity() const;
+
+    MCFOLD ::std::string const& getName() const;
+
+    MCFOLD bool isClientSide() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::BlockPos pos, ::Actor& entity, ::std::string const& name);
     // NOLINTEND
 
 public:

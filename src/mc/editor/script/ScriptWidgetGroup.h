@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetGroup() = default;
+    virtual ~ScriptWidgetGroup();
 
     virtual void _performDeleteGroup() /*override*/;
 
@@ -90,8 +90,6 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const& options
     );
 
-    MCNAPI void _deleteThisGroup();
-
     MCNAPI void _forEachWidget(
         ::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>)> fn
     ) const;
@@ -115,6 +113,8 @@ public:
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptSetVisible(bool visible);
 
+    MCNAPI void _setVisible(bool visible);
+
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
     getWidget(::mce::UUID const& widgetId) const;
     // NOLINTEND
@@ -134,6 +134,12 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

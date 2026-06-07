@@ -56,8 +56,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~TickingAreaCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -66,8 +64,7 @@ public:
     MCAPI void
     _add(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
 
-    MCAPI void
-    _list(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
+    MCAPI void _list(::CommandOrigin const& output, ::CommandOutput& level, ::Level& dimension, ::Dimension&) const;
 
     MCAPI void
     _preload(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
@@ -76,7 +73,7 @@ public:
     _remove(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
 
     MCAPI void
-    _removeAll(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
+    _removeAll(::CommandOrigin const& output, ::CommandOutput& level, ::Level& dimension, ::Dimension&) const;
     // NOLINTEND
 
 public:

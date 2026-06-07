@@ -10,6 +10,7 @@
 // clang-format off
 class Level;
 struct LevelNotificationEvent;
+namespace gametest { class GameTestTicker; }
 // clang-format on
 
 class GameTestLevelListener : public ::LevelEventListener {
@@ -31,8 +32,18 @@ public:
     virtual ::EventResult onLevelTickEnd(::Level&) /*override*/;
 
     virtual ::EventResult onEvent(::LevelNotificationEvent const& event) /*override*/;
+    // NOLINTEND
 
-    virtual ~GameTestLevelListener() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit GameTestLevelListener(::gametest::GameTestTicker& testTicker);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::gametest::GameTestTicker& testTicker);
     // NOLINTEND
 
 public:

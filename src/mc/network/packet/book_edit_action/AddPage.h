@@ -15,25 +15,21 @@ public:
 
 public:
     // prevent constructor by default
-    AddPage(AddPage const&);
+    AddPage& operator=(AddPage const&);
     AddPage();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AddPage(::BookEditAction::AddPage const&);
+
     MCFOLD ::BookEditAction::AddPage& operator=(::BookEditAction::AddPage&&);
-
-    MCFOLD ::BookEditAction::AddPage& operator=(::BookEditAction::AddPage const&);
-
-    MCFOLD bool operator==(::BookEditAction::AddPage const&) const;
-
-    MCAPI ~AddPage();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD void* $ctor(::BookEditAction::AddPage const&);
     // NOLINTEND
 };
 

@@ -10,29 +10,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TagMatch(TagMatch const&);
-    TagMatch();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&&);
-
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch const&);
-
-    MCAPI ~TagMatch();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule

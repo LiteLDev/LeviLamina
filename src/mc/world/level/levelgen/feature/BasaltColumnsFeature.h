@@ -17,13 +17,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    virtual ~BasaltColumnsFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::optional<::BlockPos>
+    _findSurface(::BlockSource& region, ::BlockPos cursor, int limit, int yDirection) const;
+
     MCAPI void _placeColumnCluster(::BlockSource& region, ::BlockPos origin, int columnHeight, int reach) const;
     // NOLINTEND
 

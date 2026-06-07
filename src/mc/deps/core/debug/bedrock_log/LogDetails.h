@@ -4,11 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/diagnostics/LogAreaID.h"
+#include "mc/platform/diagnostics/bedrock_log/LogChannel.h"
 
 // auto generated forward declare list
 // clang-format off
-class LogSettingsUpdater;
 namespace Core { class Path; }
+class LogSettingsUpdater;
 // clang-format on
 
 namespace BedrockLog {
@@ -54,6 +55,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit LogDetails(::BedrockLog::LogChannel channel);
+
     MCAPI void _appendLogEntryMetadata(
         ::std::string& logEntry,
         ::std::string  timestamp,
@@ -90,9 +93,7 @@ public:
 
     MCAPI void _openLogFile();
 
-#ifdef LL_PLAT_C
     MCAPI void _updateAllSettings(::LogSettingsUpdater& _settings);
-#endif
 
     MCAPI void closeLog();
 
@@ -116,6 +117,20 @@ public:
 #endif
 
     MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
+
+    MCAPI ~LogDetails();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BedrockLog::LogChannel channel);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

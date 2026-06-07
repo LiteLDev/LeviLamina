@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StringTag& operator=(StringTag const&);
-    StringTag(StringTag const&);
-    StringTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void write(::IDataOutput& dos) const /*override*/;
@@ -41,28 +35,22 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual uint64 hash() const /*override*/;
-
-    virtual ~StringTag() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StringTag(::std::string data);
+    MCAPI StringTag();
 
-    MCAPI ::StringTag& operator=(::StringTag&&);
+    MCAPI explicit StringTag(::std::string data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string data);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::string data);
     // NOLINTEND
 
 public:

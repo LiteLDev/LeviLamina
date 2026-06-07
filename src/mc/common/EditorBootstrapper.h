@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class LevelData;
+class PackCapability;
 namespace Bedrock { class ActivationArguments; }
 // clang-format on
 
@@ -28,12 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorBootstrapper() /*override*/ = default;
+    virtual ~EditorBootstrapper() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool isEditorModeEnabled() const;
+
     MCNAPI void processActivationArguments(::Bedrock::ActivationArguments const& args);
 
 #ifdef LL_PLAT_S
@@ -42,11 +45,15 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
+    // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& EDITOR_MODE_ARGUMENT_KEY();
+    MCNAPI static ::PackCapability getPackCapability(::std::optional<bool> creator_editor_override);
+    // NOLINTEND
 
-    MCNAPI static ::std::string const& EDITOR_MODE_ARGUMENT_VALUE();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

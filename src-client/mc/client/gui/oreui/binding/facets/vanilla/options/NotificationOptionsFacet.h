@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 // clang-format on
 
 namespace OreUI {
@@ -16,8 +16,8 @@ class NotificationOptionsFacet : public ::OreUI::FacetBase<::OreUI::Notification
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IOptions&> mOptions;
-    ::ll::TypedStorage<1, 1, bool>        mIsDirty;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&> mOptions;
+    ::ll::TypedStorage<1, 1, bool>               mIsDirty;
     // NOLINTEND
 
 public:
@@ -30,13 +30,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~NotificationOptionsFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit NotificationOptionsFacet(::IOptionRegistry& options);
+
     MCAPI bool getDoNotAddonStackingWarning() const;
 
     MCAPI bool getDoNotShowAlternativeStorageHasWorlds() const;
@@ -65,9 +65,19 @@ public:
 
     MCAPI bool getDoNotShowOldWorldsWarning() const;
 
+    MCAPI bool getDoNotShowPartiesNotSupportedWarning() const;
+
+    MCAPI bool getDoNotShowPartyAddMembersToRealmModal() const;
+
+    MCAPI bool getDoNotShowPartyPermissionRequiredRealmsWarning() const;
+
+    MCAPI bool getDoNotShowPartyWorldCapacityRealmsWarning() const;
+
     MCAPI bool getDoNotShowUsingExternalStorageWarning() const;
 
     MCAPI bool getdoNotShowManageFeedDeleteWarning() const;
+
+    MCAPI void resetPartyJoinRealmsWarnings();
 
     MCAPI void setDisableHardcoreModeWarningOnce(bool newValue);
 
@@ -99,6 +109,14 @@ public:
 
     MCAPI void setDoNotShowOldWorldsWarning(bool newValue);
 
+    MCAPI void setDoNotShowPartiesNotSupportedWarning(bool newValue);
+
+    MCAPI void setDoNotShowPartyAddMembersToRealmModal(bool newValue);
+
+    MCAPI void setDoNotShowPartyPermissionRequiredRealmsWarning(bool newValue);
+
+    MCAPI void setDoNotShowPartyWorldCapacityRealmsWarning(bool newValue);
+
     MCAPI void setDoNotShowUsingExternalStorageWarning(bool newValue);
 
     MCAPI void setdoNotShowManageFeedDeleteWarning(bool newValue);
@@ -108,6 +126,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IOptionRegistry& options);
     // NOLINTEND
 
 public:

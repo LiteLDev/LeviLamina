@@ -16,6 +16,7 @@ class ItemStack;
 class Player;
 class SemVersion;
 class Vec3;
+namespace SharedTypes::v1_21_90 { struct PiercingWeaponItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -33,13 +34,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~PiercingWeaponItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PiercingWeaponItemComponent();
+
+    MCAPI explicit PiercingWeaponItemComponent(::SharedTypes::v1_21_90::PiercingWeaponItemComponent const& data);
+
     MCAPI void _onUseAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const;
     // NOLINTEND
 
@@ -53,6 +56,14 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::PiercingWeaponItemComponent const& data);
     // NOLINTEND
 
 public:

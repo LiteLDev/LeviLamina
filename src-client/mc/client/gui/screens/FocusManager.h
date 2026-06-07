@@ -9,11 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class FocusContainerComponent;
 class FocusManagerProxy;
 class UIControl;
 struct SweepDescription;
 struct SweepResult;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -60,9 +60,9 @@ public:
     // NOLINTBEGIN
     MCAPI FocusManager();
 
-    MCAPI ::std::shared_ptr<::UIControl> _findFocusContainerControlFor(::std::shared_ptr<::UIControl> forControl) const;
+    MCAPI bool _canControlBeFocused(::UIControl& control) const;
 
-    MCAPI int _findFocusControlIndex(::UIControl const& startControl) const;
+    MCAPI ::std::shared_ptr<::UIControl> _findFocusContainerControlFor(::std::shared_ptr<::UIControl> forControl) const;
 
     MCAPI ::SweepResult _getControlAtFocusPoint(
         ::SweepDescription const&                            desc,
@@ -84,12 +84,6 @@ public:
     MCAPI void _setFocusControlInternal(::UIControl const& control, bool allowDefault, bool overrideLastFocus);
 
     MCAPI void _sweepForClosestControl(::std::shared_ptr<::UIControl> focusedControl);
-
-    MCAPI ::SweepResult _sweepForControl(
-        ::SweepDescription const&                            desc,
-        ::std::vector<::std::shared_ptr<::UIControl>> const& controls,
-        bool                                                 hasWrapped
-    );
 
     MCAPI ::SweepResult _sweepForControlDirectional(
         ::SweepDescription const&                            desc,
@@ -120,19 +114,48 @@ public:
 
     MCAPI void _updateRootOfFocusTree();
 
-    MCAPI bool _useLastFocus(
-        ::ui::CardinalDirection    direction,
-        ::FocusContainerComponent* toFocusContainerComp,
-        ::FocusContainerComponent* fromFocusContainerComp
-    ) const;
-
     MCAPI void addControl(::UIControl& control);
 
     MCAPI void clearPendingFocusControl();
 
     MCAPI void defaultFocus();
 
+    MCAPI bool focusPositionCaptured();
+
+    MCAPI void forceRepeatTTS();
+
+    MCAPI bool getAndResetRepeatTTS();
+
+    MCAPI bool getAndResetScrollToFocusedControlIfClipped();
+
+    MCAPI ::std::shared_ptr<::UIControl> getCurrentModalRoot();
+
+    MCAPI ::std::shared_ptr<::UIControl> getFocusedControl();
+
+    MCAPI ::std::shared_ptr<::UIControl> getPreviousFocusedControl();
+
+    MCFOLD ::FocusManagerProxy* getProxy();
+
+    MCAPI ::std::shared_ptr<::UIControl> getRootOfFocusTree();
+
+    MCAPI bool hasControl(::UIControl const& control) const;
+
     MCAPI bool hasFocusedControl();
+
+    MCFOLD bool hasPendingFocusControl() const;
+
+    MCAPI bool hasRequestedFocusReset();
+
+    MCAPI bool isActive() const;
+
+    MCAPI bool isHoveringOverNothing() const;
+
+    MCFOLD ::Bedrock::PubSub::Subscription
+    listenToFocusChange(::std::function<void(::std::weak_ptr<::UIControl>, ::std::weak_ptr<::UIControl>)> func);
+
+    MCAPI void moveFocus(::ui::CardinalDirection direction, bool overrideOrigin, ::glm::vec2 overridePos);
+
+    MCAPI void onFocusContainerLostFocus();
 
     MCAPI void removeControl(
         ::UIControl& control,
@@ -140,13 +163,27 @@ public:
             controlsToRemove
     );
 
+    MCAPI void requestFocusReset(bool focusPositionSetFlag);
+
+    MCAPI void setActive(bool active);
+
     MCAPI bool setFocusControl(::UIControl const& control, bool allowDefault);
 
+    MCAPI void setFocusPosition(::glm::vec2 const& pos);
+
+    MCAPI void setFocusPositionCaptured(bool captured);
+
     MCAPI void setFocusedControlToLostFocus();
+
+    MCAPI void setIncludeMagnetControls(bool include);
+
+    MCAPI void setLostFocusControl(::std::shared_ptr<::UIControl> control);
 
     MCAPI void setModalRoot(::std::shared_ptr<::UIControl>& control);
 
     MCAPI void setPendingFocusControl(::std::string const& name, ::std::string const& collectionName, int index);
+
+    MCFOLD void setSize(::glm::vec2 const& size);
 
     MCAPI void updateDefaultFocusIfNeeded();
 

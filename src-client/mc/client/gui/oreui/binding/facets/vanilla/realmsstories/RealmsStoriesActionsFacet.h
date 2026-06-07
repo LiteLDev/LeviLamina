@@ -31,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsStoriesActionsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsStoriesActionsFacet() /*override*/ = default;
@@ -41,6 +45,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RealmsStoriesActionsFacet(
+        ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
+        ::std::shared_ptr<::MainMenuScreenModel>                mainMenuScreenModel
+    );
+
     MCAPI void _blockPlayerFromRealm(::std::string const& xuid);
 
     MCAPI void _clearDeleteStatus(::std::string const& feedItemId);
@@ -149,6 +158,15 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
+        ::std::shared_ptr<::MainMenuScreenModel>                mainMenuScreenModel
+    );
     // NOLINTEND
 
 public:

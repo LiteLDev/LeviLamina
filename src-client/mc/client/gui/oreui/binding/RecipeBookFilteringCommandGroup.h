@@ -29,12 +29,6 @@ public:
     RecipeBookFilteringCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RecipeBookFilteringCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

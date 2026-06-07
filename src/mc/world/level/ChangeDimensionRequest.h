@@ -4,12 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class Dimension;
 // clang-format on
 
 class ChangeDimensionRequest {
@@ -35,9 +33,46 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChangeDimensionRequest& operator=(ChangeDimensionRequest const&);
+    ChangeDimensionRequest(ChangeDimensionRequest const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChangeDimensionRequest();
+
+    MCAPI ChangeDimensionRequest(::ChangeDimensionRequest&& other);
+
+    MCAPI ChangeDimensionRequest(
+        ::DimensionType fromId,
+        ::DimensionType toId,
+        ::Vec3          fromLocation,
+        ::Vec3          toLocation,
+        bool            usePortal,
+        bool            respawn
+    );
+
+    MCAPI ::ChangeDimensionRequest& operator=(::ChangeDimensionRequest&& other);
+
     MCAPI ~ChangeDimensionRequest();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ChangeDimensionRequest&& other);
+
+    MCAPI void* $ctor(
+        ::DimensionType fromId,
+        ::DimensionType toId,
+        ::Vec3          fromLocation,
+        ::Vec3          toLocation,
+        bool            usePortal,
+        bool            respawn
+    );
     // NOLINTEND
 
 public:

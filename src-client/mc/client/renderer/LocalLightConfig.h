@@ -56,16 +56,13 @@ public:
 
     public:
         // prevent constructor by default
+        LocalLightConfigSettingsV0& operator=(LocalLightConfigSettingsV0 const&);
+        LocalLightConfigSettingsV0(LocalLightConfigSettingsV0 const&);
         LocalLightConfigSettingsV0();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI LocalLightConfigSettingsV0(::LocalLightConfig::LocalLightConfigSettingsV0 const&);
-
-        MCNAPI ::LocalLightConfig::LocalLightConfigSettingsV0&
-        operator=(::LocalLightConfig::LocalLightConfigSettingsV0 const&);
-
         MCNAPI ::LocalLightConfig::LocalLightConfigSettingsV0&
         operator=(::LocalLightConfig::LocalLightConfigSettingsV0&&);
 
@@ -82,12 +79,6 @@ public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static ::SemVersionConstant const& VERSION();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::LocalLightConfig::LocalLightConfigSettingsV0 const&);
         // NOLINTEND
 
     public:
@@ -129,6 +120,8 @@ public:
     loadFromString(::cereal::ReflectionCtx const& ctx, ::std::string const& pointLightsJson);
 
     MCNAPI ::std::optional<::std::string> serializeToString(::cereal::ReflectionCtx const& ctx) const;
+
+    MCNAPI void setConfig(::LocalLightConfig::LocalLightConfigSettingsV0 const& other);
     // NOLINTEND
 
 public:
@@ -169,11 +162,3 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// free functions
-// NOLINTBEGIN
-MCNAPI bool operator==(
-    ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P0,
-    ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P1
-);
-// NOLINTEND

@@ -64,17 +64,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Tag& emplace(::Tag&& tag);
-
-#ifdef LL_PLAT_C
-    MCAPI ::Tag* get();
-#endif
-
-    MCAPI ~CompoundTagVariant();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

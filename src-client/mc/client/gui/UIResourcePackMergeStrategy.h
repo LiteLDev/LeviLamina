@@ -31,14 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) /*override*/;
-
-    virtual ~UIResourcePackMergeStrategy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

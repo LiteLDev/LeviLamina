@@ -10,6 +10,7 @@
 // clang-format off
 class Container;
 class ContainerScreenContext;
+class ItemDescriptor;
 class ItemStackBase;
 // clang-format on
 
@@ -21,28 +22,51 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DynamicContainerValidation();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
-        /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& container, ::Container const&) const /*override*/;
 
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
-        int const,
-        ::ItemStackBase const& item,
-        int const              amount,
-        bool                   isInternalTransfer
+        int const                       item,
+        ::ItemStackBase const&          amount,
+        int const                       isInternalTransfer,
+        bool
     ) const /*override*/;
 
     virtual int
     getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~DynamicContainerValidation() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit DynamicContainerValidation(::FullContainerName containerName);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool
+    isAllowedItemInVector(::ItemDescriptor const& item, ::std::vector<::ItemDescriptor> const& allowedItems);
+
+    MCAPI static bool
+    isBannedItemInVector(::ItemDescriptor const& item, ::std::vector<::ItemDescriptor> const& bannedItems);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FullContainerName containerName);
     // NOLINTEND
 
 public:
@@ -50,16 +74,16 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& container, ::Container const&) const;
 
     MCAPI bool $isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
-        int const,
-        ::ItemStackBase const& item,
-        int const              amount,
-        bool                   isInternalTransfer
+        int const                       item,
+        ::ItemStackBase const&          amount,
+        int const                       isInternalTransfer,
+        bool
     ) const;
 
     MCAPI int

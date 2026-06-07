@@ -5,28 +5,4 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 
-struct ItemTag : public ::HashedString {
-public:
-    // prevent constructor by default
-    ItemTag();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ItemTag(::std::string const& str);
-
-    MCAPI ~ItemTag();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::string const& str);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+struct ItemTag : public ::HashedString {};

@@ -28,18 +28,19 @@ public:
 
 public:
     // prevent constructor by default
-    CameraSplineDefinition(CameraSplineDefinition const&);
     CameraSplineDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CameraSplineDefinition(::SharedTypes::v1_26_0::CameraSplineDefinition const&);
+
     MCAPI ::SharedTypes::v1_26_0::CameraSplineDefinition& operator=(::SharedTypes::v1_26_0::CameraSplineDefinition&&);
 
     MCAPI ::SharedTypes::v1_26_0::CameraSplineDefinition&
     operator=(::SharedTypes::v1_26_0::CameraSplineDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_0::CameraSplineDefinition const&) const;
+    MCAPI bool operator==(::SharedTypes::v1_26_0::CameraSplineDefinition const& rhs) const;
 
     MCAPI ~CameraSplineDefinition();
     // NOLINTEND
@@ -48,6 +49,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_26_0::CameraSplineDefinition const&);
     // NOLINTEND
 
 public:

@@ -32,16 +32,16 @@ MCAPI ::TickingSystemWithInfo createSystem();
 MCAPI void tick(
     ::entt::type_list<
         ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>,
-        ::Exclude<::ActorRemovedFlagComponent, ::SwitchingVehiclesFlagComponent>>,
-    ::StrictEntityContext const&             entity,
-    ::PassengerComponent const&              passengerComponent,
-    ::StateVectorComponent const&            stateVectorComponent,
-    ::EntityModifier<::SendPacketsComponent> modifier,
+        ::Exclude<::ActorRemovedFlagComponent, ::SwitchingVehiclesFlagComponent>> entity,
+    ::StrictEntityContext const&                                                  passengerComponent,
+    ::PassengerComponent const&                                                   stateVectorComponent,
+    ::StateVectorComponent const&                                                 modifier,
+    ::EntityModifier<::SendPacketsComponent>                                      vehicleView,
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::VehicleComponent>,
         ::Exclude<::DoesServerAuthOnlyDismountFlagComponent>,
-        ::RuntimeIDComponent const> vehicleView
+        ::RuntimeIDComponent const>
 );
 // NOLINTEND
 

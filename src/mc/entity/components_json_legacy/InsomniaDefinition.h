@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class InsomniaComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -15,6 +17,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mDaysUntilInsomnia;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void initialize(::EntityContext& entity, ::InsomniaComponent& component) const;
     // NOLINTEND
 
 public:

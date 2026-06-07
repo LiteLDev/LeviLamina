@@ -30,11 +30,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~CraftingInputContainerController() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~CraftingInputContainerController() /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual int getBackgroundStyle(int, bool) const /*override*/;
+#else // LL_PLAT_C
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
+#else // LL_PLAT_C
     virtual ::ItemInstance const& getRecipeItem(int slot) const /*override*/;
+#endif
 
     virtual void clearSelectedRecipe() /*override*/;
     // NOLINTEND
@@ -60,6 +72,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -40,8 +40,6 @@ public:
 
     virtual bool
     encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
-
-    virtual ~OpenSSLSymmetricInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

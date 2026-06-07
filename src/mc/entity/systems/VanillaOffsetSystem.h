@@ -18,10 +18,11 @@
 class Actor;
 class Vec3;
 struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
 struct BaseGameVersionComponent;
-struct InterpolateMovementNeededComponent;
 struct IsHorizontalPoseFlagComponent;
 struct OffsetsComponent;
+struct PassengerRenderingRidingOffsetComponent;
 struct PlayerComponent;
 struct PlayerIsSleepingFlagComponent;
 struct TickingSystemWithInfo;
@@ -29,7 +30,7 @@ struct VanillaOffsetComponent;
 // clang-format on
 
 struct VanillaOffsetSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
-                                 ::Filter<::PlayerComponent, ::InterpolateMovementNeededComponent>,
+                                 ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
                                  ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
                                  ::Write<::VanillaOffsetComponent>,
                                  ::AddRemove<::IsHorizontalPoseFlagComponent>,
@@ -39,7 +40,7 @@ struct VanillaOffsetSystem : public ::IStrictTickingSystem<::StrictExecutionCont
 public:
     // VanillaOffsetSystem inner types define
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
-        ::Filter<::PlayerComponent, ::InterpolateMovementNeededComponent>,
+        ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
         ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
         ::Write<::VanillaOffsetComponent>,
         ::AddRemove<::IsHorizontalPoseFlagComponent>,
@@ -58,7 +59,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::PlayerComponent, ::InterpolateMovementNeededComponent>,
+            ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
             ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
             ::Write<::VanillaOffsetComponent>,
             ::AddRemove<::IsHorizontalPoseFlagComponent>,
@@ -66,8 +67,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~VanillaOffsetSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -76,6 +75,13 @@ public:
     MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
     MCAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
+
+    MCAPI static ::Vec3 getCameraPosition(
+        ::Vec3 const&                                    interpolatedRidingPosition,
+        ::PassengerRenderingRidingOffsetComponent const* passengerOffset,
+        ::VanillaOffsetComponent const*                  cameraOffset,
+        float                                            alpha
+    );
     // NOLINTEND
 
 public:
@@ -83,7 +89,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(
         ::StrictExecutionContext<
-            ::Filter<::PlayerComponent, ::InterpolateMovementNeededComponent>,
+            ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
             ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
             ::Write<::VanillaOffsetComponent>,
             ::AddRemove<::IsHorizontalPoseFlagComponent>,

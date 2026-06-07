@@ -37,7 +37,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI explicit Copy(::std::shared_ptr<::Localization const> original);
+
         MCNAPI ~Copy();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::std::shared_ptr<::Localization const> original);
         // NOLINTEND
 
     public:
@@ -63,20 +71,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ImmutableLocalization(::Localization&& value);
+    MCNAPI bool _compareAndSwap(::ImmutableLocalization::Copy&& copy);
 
     MCNAPI void _setValue(::std::shared_ptr<::Localization const> value);
 
     MCNAPI void modifyAdditive(::brstd::function_ref<void(::Localization&)> modifier);
 
     MCNAPI void modifyReplace(::brstd::function_ref<void(::Localization&)> modifier);
-
-    MCNAPI ::ImmutableLocalization& operator=(::Localization&& rhs);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Localization&& value);
     // NOLINTEND
 };

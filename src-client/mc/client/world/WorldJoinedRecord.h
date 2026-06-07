@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldJoinedRecord();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~WorldJoinedRecord();
@@ -38,13 +42,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldJoinedRecord(::std::string const& name, ::GameType gameType, bool isEditorWorld);
+
     MCAPI ::Json::Value serialize() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, ::GameType gameType, bool isEditorWorld);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

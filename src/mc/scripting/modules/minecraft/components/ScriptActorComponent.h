@@ -10,6 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Mob;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -55,7 +57,9 @@ public:
 
     MCAPI ::Scripting::Error _setPropertyError(::std::string_view propertyName) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> getEntityV1() const;
+    MCAPI ::Actor* _tryGetOwner() const;
+
+    MCAPI ::Mob* _tryGetOwnerAsMob() const;
 
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,

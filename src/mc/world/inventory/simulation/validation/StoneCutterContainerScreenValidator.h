@@ -29,13 +29,13 @@ public:
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
         uchar const                                         numCrafts
     ) /*override*/;
-
-    virtual ~StoneCutterContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StoneCutterContainerScreenValidator();
+
     MCAPI ::ItemInstance
     _getResultFromId(::ContainerScreenContext const& screenContext, ::RecipeNetId const& recipeNetId);
 
@@ -44,6 +44,12 @@ public:
         ::RecipeNetId const&            recipeNetId,
         ::ItemStack const&              inputStack
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

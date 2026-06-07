@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/BlockType.h"
+#include "mc/world/level/block/LeverDirection.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,6 +24,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class LeverBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    LeverBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -62,18 +67,32 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
-
-    virtual ~LeverBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LeverBlock(::std::string const& nameId, int id);
+
+    MCAPI uchar _getFacing(::Block const& block) const;
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void toggle(::BlockSource& region, ::BlockPos const& pos, ::Player* player) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::LeverDirection getLeverFacing(int facing);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -94,7 +113,7 @@ public:
 
     MCFOLD bool $canSpawnOn(::Actor*) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 

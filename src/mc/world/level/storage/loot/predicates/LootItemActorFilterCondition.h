@@ -30,8 +30,6 @@ public:
     virtual bool applies(::Random&, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
-
-    virtual ~LootItemActorFilterCondition() /*override*/ = default;
     // NOLINTEND
 
 public:

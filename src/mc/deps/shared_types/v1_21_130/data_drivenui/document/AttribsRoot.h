@@ -17,19 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AttribsRoot(AttribsRoot const&);
-    AttribsRoot();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_130::DataDrivenUI::AttribsRoot&
-    operator=(::SharedTypes::v1_21_130::DataDrivenUI::AttribsRoot&&);
-
-    MCFOLD ::SharedTypes::v1_21_130::DataDrivenUI::AttribsRoot&
-    operator=(::SharedTypes::v1_21_130::DataDrivenUI::AttribsRoot const&);
-
     MCAPI ~AttribsRoot();
     // NOLINTEND
 

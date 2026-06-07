@@ -14,15 +14,11 @@ namespace mce { class UUID; }
 
 class ScriptDiagnosticsModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptDiagnosticsModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptDiagnosticsModuleFactory();
+
+    MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&  moduleBuilder,
@@ -34,6 +30,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 

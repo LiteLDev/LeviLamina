@@ -101,9 +101,13 @@ public:
 
     MCAPI void _maybeUpdateActiveNowTip();
 
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _removeInterruption(::GameTipConstants::Interruption interruption);
 
     MCAPI void _stopDisplayingActiveTip();
+
+    MCAPI bool isDisplayingTip() const;
     // NOLINTEND
 
 public:

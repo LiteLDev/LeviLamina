@@ -25,26 +25,15 @@ public:
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnConsume;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     FoodItemComponentLegacyFactoryData& operator=(FoodItemComponentLegacyFactoryData const&);
     FoodItemComponentLegacyFactoryData();
 
-#else // LL_PLAT_C
-#endif
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FoodItemComponentLegacyFactoryData() /*override*/ = default;
-    // NOLINTEND
-
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI FoodItemComponentLegacyFactoryData(::FoodItemComponentLegacyFactoryData const&);
-#endif
     // NOLINTEND
 
 public:
@@ -60,9 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::FoodItemComponentLegacyFactoryData const&);
-#endif
     // NOLINTEND
 
 public:

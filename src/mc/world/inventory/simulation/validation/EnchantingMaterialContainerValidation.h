@@ -24,8 +24,6 @@ public:
     ) const /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~EnchantingMaterialContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

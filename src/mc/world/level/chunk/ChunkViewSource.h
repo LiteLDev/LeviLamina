@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
@@ -14,6 +13,7 @@
 class BlockPos;
 class ChunkPos;
 class LevelChunk;
+class LevelChunkBlockActorAccessToken;
 class Random;
 struct Bounds;
 struct LevelChunkFinalDeleter;
@@ -24,7 +24,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ChunkSource::LoadMode>                       mParentLoadMode;
-    ::ll::TypedStorage<8, 376, ::GridArea<::std::shared_ptr<::LevelChunk>>> mArea;
+    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>>> mArea;
     ::ll::TypedStorage<8, 8, ::ChunkSource&>                                mMainSource;
     // NOLINTEND
 
@@ -48,8 +48,6 @@ public:
     virtual bool isWithinWorldLimit(::ChunkPos const& cp) const /*override*/;
 
     virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc) /*override*/;
-
-    virtual ~ChunkViewSource() /*override*/;
     // NOLINTEND
 
 public:
@@ -65,33 +63,59 @@ public:
         ::Bounds const&                                             bounds
     );
 
+#ifdef LL_PLAT_C
+    MCAPI void addChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
+#endif
+
+    MCAPI void clear();
+
     MCAPI void clearEntryAtChunkPos(::ChunkPos const& chunkPos);
 
+    MCFOLD ::std::vector<::LevelChunkBlockActorAccessToken> enableBlockEntityAccess();
+
+    MCFOLD ::GridArea<::std::shared_ptr<::LevelChunk>>& getArea();
+
+#ifdef LL_PLAT_C
+    MCAPI ::DimensionType getDimensionId() const;
+#endif
+
     MCAPI void move(
-        ::Bounds const&               bounds,
-        bool                          isCircle,
-        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
-        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
-        float const*                                                                                   serverBuildRatio
+        ::Bounds const&                                                     bounds,
+        bool                                                                isCircle,
+        ::ChunkSourceViewGenerateMode                                       chunkViewGenerateMode,
+        ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)> add,
+        float const*                                                        serverBuildRatio
     );
 
     MCAPI void move(
-        ::BlockPos const&             blockMin,
-        ::BlockPos const&             blockMax,
-        bool                          isCircle,
-        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
-        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
-        float const*                                                                                   serverBuildRatio
+        ::BlockPos const&                                                   blockMin,
+        ::BlockPos const&                                                   blockMax,
+        bool                                                                isCircle,
+        ::ChunkSourceViewGenerateMode                                       chunkViewGenerateMode,
+        ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)> add,
+        float const*                                                        serverBuildRatio
     );
 
     MCAPI void move(
-        ::BlockPos const&             center,
-        int                           radius,
-        bool                          isCircle,
-        ::ChunkSourceViewGenerateMode chunkViewGenerateMode,
-        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
-        float const*                                                                                   serverBuildRatio
+        ::BlockPos const&                                                   center,
+        int                                                                 radius,
+        bool                                                                isCircle,
+        ::ChunkSourceViewGenerateMode                                       chunkViewGenerateMode,
+        ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)> add,
+        float const*                                                        serverBuildRatio
     );
+
+    MCAPI void rebuildSpecificArea(
+        ::Bounds const& bounds,
+        bool,
+        ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)>
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::ChunkSourceViewGenerateMode getGenerateMode(bool isClientSide, bool isClientSideGenerationEnabled);
     // NOLINTEND
 
 public:
@@ -106,12 +130,6 @@ public:
         ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
         ::Bounds const&                                             bounds
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

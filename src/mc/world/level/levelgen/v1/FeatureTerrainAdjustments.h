@@ -36,14 +36,14 @@ public:
     public:
         // prevent constructor by default
         Descriptions& operator=(Descriptions const&);
-        Descriptions();
+        Descriptions(Descriptions const&);
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Descriptions(::FeatureTerrainAdjustments::Descriptions const&);
+        MCAPI Descriptions();
 
-        MCAPI ::FeatureTerrainAdjustments::Descriptions& operator=(::FeatureTerrainAdjustments::Descriptions&&);
+        MCAPI ::FeatureTerrainAdjustments::Descriptions& operator=(::FeatureTerrainAdjustments::Descriptions&& other);
 
         MCAPI ~Descriptions();
         // NOLINTEND
@@ -51,7 +51,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::FeatureTerrainAdjustments::Descriptions const&);
+        MCFOLD void* $ctor();
         // NOLINTEND
 
     public:
@@ -101,6 +101,10 @@ public:
         ::BlockPos const&                                currentPos,
         float                                            noiseValue
     );
+
+    MCAPI static ::BeardKernel& getBeardKernel();
+
+    MCAPI static bool shouldDoTerrainAdjustments(::FeatureTerrainAdjustments::Descriptions const& descriptions);
     // NOLINTEND
 
 public:

@@ -14,13 +14,12 @@ class AABB;
 class Actor;
 class Block;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRedstoneUpdateEvent; }
+struct BlockGraphicsModeChangeContext;
 // clang-format on
 
 class BaseRailBlock : public ::BlockType {
@@ -56,6 +55,8 @@ public:
 
         MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
 
+        MCAPI bool hasNeighborRail(::BlockPos const& pos);
+
         MCAPI void place(int signalStrength, bool first);
 
         MCAPI void removeSoftConnections();
@@ -85,6 +86,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BaseRailBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -98,7 +103,7 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
+    virtual ::BlockRenderLayer getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const
         /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -118,19 +123,15 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
-
-    virtual ~BaseRailBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void _onRedstoneUpdateBase(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCAPI BaseRailBlock(::std::string const& nameId, int id, bool usesDataBit);
 
-    MCFOLD void _updatePlacement(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void _onRedstoneUpdateBase(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -141,6 +142,24 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static bool isCorner(::BlockSource const& region, ::BlockPos const& pos);
+
+    MCAPI static bool isFacingWestEast(::BlockSource const& region, ::BlockPos const& pos);
+
+    MCAPI static bool isRail(::Block const& block);
+
+    MCAPI static bool isRail(::IConstBlockSource const& region, ::BlockPos const& pos);
+
+    MCAPI static bool isSlope(::Block const& block);
+
+    MCAPI static bool isSlope(int railDirection);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool usesDataBit);
     // NOLINTEND
 
 public:
@@ -157,11 +176,11 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCFOLD bool $isRailBlock() const;
 
@@ -175,10 +194,14 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
     MCAPI void $_onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -22,14 +22,28 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StrippedLogBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
 
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~StrippedLogBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StrippedLogBlock(::std::string const& nameId, int id, ::std::optional<::LogBlockMapColors> mapColors);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::std::optional<::LogBlockMapColors> mapColors);
     // NOLINTEND
 
 public:

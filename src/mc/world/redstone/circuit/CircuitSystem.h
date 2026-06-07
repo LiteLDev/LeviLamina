@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
 #include "mc/world/redstone/circuit/CircuitSceneGraph.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseCircuitComponent;
+class BlockPos;
 class BlockSource;
+class ChunkPos;
 // clang-format on
 
 class CircuitSystem {
@@ -20,13 +21,7 @@ public:
     // clang-format on
 
     // CircuitSystem inner types define
-    class LevelChunkTracking {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::BlockPos> mChunkPos;
-        // NOLINTEND
-    };
+    class LevelChunkTracking {};
 
 public:
     // member variables
@@ -40,6 +35,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CircuitSystem();
+
+    MCAPI void cacheValues();
+
+    MCAPI void checkLocks();
+
     MCAPI ::BaseCircuitComponent*
     createComponent(::BlockPos const& pos, uchar direction, ::std::unique_ptr<::BaseCircuitComponent> newComponent);
 
@@ -49,7 +50,18 @@ public:
 
     MCAPI int getStrength(::BlockPos const& pos);
 
+    MCAPI void invalidatePos(::BlockPos const& pos);
+
     MCAPI bool isAvailableAt(::BlockPos const& pos);
+
+    MCAPI bool isConnectionAllowed(
+        ::BaseCircuitComponent& component,
+        ::BlockPos const&       componentPos,
+        uchar                   connectionDirection,
+        bool                    directilyPowered
+    );
+
+    MCAPI void preSetupPoweredBlocks(::ChunkPos const& chunkPos);
 
     MCAPI void removeComponents(::BlockPos const& pos);
 
@@ -57,11 +69,19 @@ public:
 
     MCAPI void updateBlocks(::BlockSource& region, ::BlockPos const& chunkPos);
 
+    MCAPI void updateDependencies(::BlockSource* region);
+
     MCAPI void updateIndividualBlock(
         ::gsl::not_null<::BaseCircuitComponent*> component,
-        ::BlockPos const&                        chunkPos,
         ::BlockPos const&                        pos,
-        ::BlockSource&                           region
+        ::BlockPos const&                        region,
+        ::BlockSource&
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -75,8 +75,6 @@ public:
         ) const /*override*/;
 
         virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
-
-        virtual ~UpdateCardinalGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -121,8 +119,6 @@ public:
         ) const /*override*/;
 
         virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
-
-        virtual ~UpdateFacingGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -166,31 +162,17 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     virtual ::std::string const& _getName() const /*override*/;
-
-    virtual ~PlacementDirection() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockTrait::PlacementDirection CardinalDirection(float _yRotationOffset);
-
-    MCAPI static ::BlockTrait::PlacementDirection FacingDirection(float _yRotationOffset);
-
     MCAPI static void _addCornerConnection(
         ::BlockType&                                                 blockType,
         ::std::vector<::SharedTypes::Legacy::BlockDescriptor> const& blocksToCornerWith
     );
 
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCFOLD static ::std::string const& getName();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -202,7 +184,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCFOLD ::std::string const& $_getName() const;
+    MCAPI ::std::string const& $_getName() const;
 
 
     // NOLINTEND

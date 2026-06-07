@@ -27,8 +27,20 @@ public:
     // NOLINTBEGIN
     virtual bool
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+    // NOLINTEND
 
-    virtual ~DirectionalProducerComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DirectionalProducerComponent();
+
+    MCFOLD void setAllowedConnections(::std::bitset<6> allowedConnections);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

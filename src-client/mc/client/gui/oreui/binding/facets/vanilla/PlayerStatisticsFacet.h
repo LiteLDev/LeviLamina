@@ -39,18 +39,31 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                                name;
         ::ll::TypedStorage<8, 32, ::std::string>                                label;
         ::ll::TypedStorage<4, 4, ::OreUI::PlayerStatisticsFacet::StatisticIcon> icon;
-        ::ll::TypedStorage<4, 4, int>                                           valueRaw;
+        ::ll::TypedStorage<8, 8, double>                                        valueRaw;
         ::ll::TypedStorage<8, 32, ::std::string>                                valueDisplay;
         ::ll::TypedStorage<8, 32, ::std::string>                                valueNarration;
-        ::ll::TypedStorage<4, 4, int>                                           currentUserValueRaw;
+        ::ll::TypedStorage<8, 8, double>                                        currentUserValueRaw;
         ::ll::TypedStorage<8, 32, ::std::string>                                currentUserValueDisplay;
         ::ll::TypedStorage<8, 32, ::std::string>                                currentUserValueNarration;
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Statistic& operator=(Statistic const&);
+        Statistic();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI Statistic(::OreUI::PlayerStatisticsFacet::Statistic const&);
+
         MCAPI ~Statistic();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::OreUI::PlayerStatisticsFacet::Statistic const&);
         // NOLINTEND
 
     public:
@@ -60,14 +73,7 @@ public:
         // NOLINTEND
     };
 
-    struct FacetPlayerStatisticData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                                                      mLoaded;
-        ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerStatisticsFacet::Statistic>> mData;
-        // NOLINTEND
-    };
+    struct FacetPlayerStatisticData {};
 
 public:
     // member variables

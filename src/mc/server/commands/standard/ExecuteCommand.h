@@ -42,8 +42,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
 
-    virtual ~ExecuteCommand() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ExecuteCommand();
     // NOLINTEND
 
 public:
@@ -58,6 +62,12 @@ public:
     );
 
     MCAPI static void setup(::CommandRegistry& registry, bool isLegacyActive, int newExecuteStartVersion);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

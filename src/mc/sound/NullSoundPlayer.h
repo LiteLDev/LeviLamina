@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/audio/SoundPlayerInterface.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/sound/SoundPlayerInterface.h"
 
 // auto generated forward declare list
 // clang-format off
+class ServerSoundHandle;
 class Vec3;
 struct LoopingSoundAttributes;
 struct LoopingSoundState;
@@ -22,7 +23,8 @@ class NullSoundPlayer : public ::SoundPlayerInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual uint64 play(::std::string const&, ::Vec3 const&, float, float) /*override*/;
+    virtual uint64
+    play(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>) /*override*/;
 
     virtual uint64 playUI(::std::string const&, float, float) /*override*/;
 
@@ -71,6 +73,8 @@ public:
 
     virtual bool isPlayingSound(::Core::Path const&) const /*override*/;
 
+    virtual bool isPlayingSound(::ServerSoundHandle) const /*override*/;
+
     virtual uint64 playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&) /*override*/;
 
     virtual void stopAllDelayedSoundActions() /*override*/;
@@ -78,14 +82,12 @@ public:
     virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const /*override*/;
 
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const /*override*/;
-
-    virtual ~NullSoundPlayer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint64 $play(::std::string const&, ::Vec3 const&, float, float);
+    MCNAPI uint64 $play(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>);
 
     MCNAPI uint64 $playUI(::std::string const&, float, float);
 
@@ -132,6 +134,8 @@ public:
     MCNAPI bool $isPlayingSound(uint64) const;
 
     MCNAPI bool $isPlayingSound(::Core::Path const&) const;
+
+    MCNAPI bool $isPlayingSound(::ServerSoundHandle) const;
 
     MCNAPI uint64 $playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
 

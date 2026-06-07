@@ -17,8 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const /*override*/;
-
-    virtual ~WaterlilyFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

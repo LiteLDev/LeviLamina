@@ -12,9 +12,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HashedString();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HashedString();
+#ifdef LL_PLAT_C
+    MCAPI explicit HashedString(nullptr_t);
+#endif
 
     MCAPI HashedString(::HashedString&& rhs);
 
@@ -30,13 +36,21 @@ public:
 
     MCFOLD char const* c_str() const;
 
-    MCAPI bool empty() const;
+    MCAPI void clear();
 
-    MCAPI explicit operator ::std::string_view() const;
+    MCFOLD bool empty() const;
 
-    MCFOLD ::HashedString& operator=(::HashedString&& rhs);
+    MCFOLD uint64 getHash() const;
 
-    MCFOLD ::HashedString& operator=(::HashedString const& rhs);
+    MCFOLD uint getHash32Bits() const;
+
+    MCFOLD ::std::string const& getString() const;
+
+    MCFOLD bool isEmpty() const;
+
+    MCAPI ::HashedString& operator=(::HashedString&& rhs);
+
+    MCAPI ::HashedString& operator=(::HashedString const& rhs);
 
     MCAPI ~HashedString();
     // NOLINTEND
@@ -46,7 +60,9 @@ public:
     // NOLINTBEGIN
     MCAPI static uint64 computeHash(::std::string const& str);
 
-    MCFOLD static ::HashedString const& getEmptyString();
+    MCAPI static uint64 computeHash(char const* str);
+
+    MCAPI static ::HashedString const& getEmptyString();
     // NOLINTEND
 
 public:
@@ -58,13 +74,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(nullptr_t);
+#endif
 
     MCAPI void* $ctor(::HashedString&& rhs);
 
     MCAPI void* $ctor(::HashedString const& rhs);
 
-    MCFOLD void* $ctor(::std::string const& str);
+    MCAPI void* $ctor(::std::string const& str);
 
     MCAPI void* $ctor(char const* str);
 
@@ -86,5 +104,5 @@ MCAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
 
 MCAPI bool operator<(::HashedString const& lhs, ::HashedString const& rhs);
 
-MCFOLD bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
+MCAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
 // NOLINTEND

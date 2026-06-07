@@ -14,8 +14,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI AtomicTimeAccumulator();
+
     MCAPI void addTime(::std::chrono::nanoseconds const& time);
-#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

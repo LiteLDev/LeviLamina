@@ -21,6 +21,7 @@ public:
 
 public:
     // prevent constructor by default
+    StructureDeletePayload& operator=(StructureDeletePayload const&);
     StructureDeletePayload(StructureDeletePayload const&);
     StructureDeletePayload();
 
@@ -33,12 +34,6 @@ public:
     virtual ~StructureDeletePayload() /*override*/;
 #endif
 
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::StructureDeletePayload& operator=(::Editor::Network::StructureDeletePayload const&);
     // NOLINTEND
 
 public:

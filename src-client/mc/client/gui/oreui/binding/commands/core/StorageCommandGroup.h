@@ -9,7 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
+namespace OreUI { class ClientDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -18,14 +19,24 @@ class StorageCommandGroup : public ::OreUI::CommandGroupBase<::OreUI::StorageCom
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IOptions>>                          mOptions;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IOptionRegistry>>                   mOptions;
     ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, ::FileStorageDirectory>> mChangeStorage;
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    StorageCommandGroup();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~StorageCommandGroup() /*override*/ = default;
+    MCAPI explicit StorageCommandGroup(::OreUI::ClientDependencies const& client);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:

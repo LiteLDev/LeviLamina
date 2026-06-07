@@ -16,6 +16,7 @@ namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Services { class DataStoreServiceProvider; }
 namespace Json { class Value; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -36,8 +37,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
-
-        virtual ~ScriptDataStoreAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -74,17 +73,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDataStoreAfterEvents(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
-
     MCNAPI void _handleDataStorePayloadEvent(
-        ::HashedString const& dataTag,
-        ::Editor::DataStore::EventType,
-        ::Json::Value const& payload,
+        ::HashedString const&          dataTag,
+        ::Editor::DataStore::EventType payload,
+        ::Json::Value const&           desc,
         ::Editor::DataStore::PayloadDescription const&
     );
 
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreAfterEvents&
-    operator=(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
+    operator=(::Editor::ScriptModule::ScriptDataStoreAfterEvents&& rhs);
 
     MCNAPI void registerListeners(::Editor::Services::DataStoreServiceProvider& dataStoreService);
 
@@ -95,6 +92,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+
+    MCNAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
     // NOLINTEND
 
 public:
@@ -103,12 +105,6 @@ public:
     MCNAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::Editor::ScriptModule::ScriptDataStoreAfterEvents> const&
     mMetadata();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
     // NOLINTEND
 
 public:

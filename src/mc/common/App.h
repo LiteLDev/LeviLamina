@@ -14,12 +14,20 @@ public:
     ::ll::UntypedStorage<1, 1> mUnke11601;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     App& operator=(App const&);
     App(App const&);
     App();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    App& operator=(App const&);
+    App(App const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,24 +37,33 @@ public:
 
     virtual void changeContext() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void quit(::std::string const&, ::std::string const&) /*override*/;
+#else // LL_PLAT_C
     virtual void quit(::std::string const& src, ::std::string const& reason) /*override*/;
+#endif
 
     virtual bool wantToQuit() /*override*/;
 
     virtual void initImpl() = 0;
-
-#ifdef LL_PLAT_S
-    virtual ~App() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~App() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI App();
+
+    MCNAPI void initialize();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
@@ -70,6 +87,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
+    MCNAPI static void** $vftableForIApp();
+
     MCNAPI static void** $vftableForAppPlatformListener();
     // NOLINTEND
 };

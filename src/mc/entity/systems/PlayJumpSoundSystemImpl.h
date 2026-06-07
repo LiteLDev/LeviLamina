@@ -92,8 +92,6 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-
-    virtual ~PlayJumpSoundSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -39,16 +39,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootItemFunction const& _getFunction() const /*override*/;
-
-    virtual ~ScriptSetBannerDetailsFunction() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptSetBannerDetailsFunction(::ScriptModuleMinecraft::ScriptSetBannerDetailsFunction const&);
-
-    MCAPI ::std::string getColor() const;
 
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBannerPattern>>
     getPatterns();

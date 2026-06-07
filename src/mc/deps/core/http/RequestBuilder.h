@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/http/RequestPriority.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class Method; }
+namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http::Internal { class IRequestBody; }
 namespace Core { class Path; }
@@ -20,26 +25,36 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnkd459f4;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     RequestBuilder& operator=(RequestBuilder const&);
     RequestBuilder(RequestBuilder const&);
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    RequestBuilder& operator=(RequestBuilder const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RequestBuilder();
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Http::RequestBuilder& DEL();
+#endif
+
+    MCNAPI ::Bedrock::Http::RequestBuilder& GET();
 
 #ifdef LL_PLAT_C
-    MCNAPI RequestBuilder(::Bedrock::Http::RequestBuilder const&);
+    MCNAPI ::Bedrock::Http::RequestBuilder& HEAD();
+#endif
 
+    MCNAPI ::Bedrock::Http::RequestBuilder& POST();
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Http::RequestBuilder& PUT();
+#endif
+
+    MCNAPI RequestBuilder();
+
+    MCNAPI ::Bedrock::Http::RequestBuilder&
+    addHeader(::std::string const& header, ::std::string const& value, bool ignoreRestrictedHeaderCheck);
+
+#ifdef LL_PLAT_C
     MCNAPI ::Bedrock::Http::RequestBuilder& body(::gsl::span<uchar> const& binaryData);
 
     MCNAPI ::Bedrock::Http::RequestBuilder&
@@ -52,12 +67,22 @@ public:
 
     MCNAPI ::Bedrock::Http::RequestBuilder& body(::std::string const& plainText);
 
+    MCNAPI ::Bedrock::Http::Request& build();
+
 #ifdef LL_PLAT_C
     MCNAPI ::Bedrock::Http::RequestBuilder& contentType(::std::string const& contentType);
+#endif
 
+    MCNAPI ::Bedrock::Http::RequestBuilder& method(::Bedrock::Http::Method method);
+
+    MCNAPI ::Bedrock::Http::RequestBuilder& priority(::Bedrock::Http::RequestPriority priority);
+
+#ifdef LL_PLAT_C
     MCNAPI ::Bedrock::Http::RequestBuilder&
     retryPolicy(::std::function<::std::optional<::std::chrono::seconds>(::Bedrock::Http::Response const&)>&& policy);
 #endif
+
+    MCNAPI ::Bedrock::Http::RequestBuilder& timeout(::std::chrono::seconds timeout);
 
     MCNAPI ::Bedrock::Http::RequestBuilder& url(::std::string const& url);
 
@@ -68,10 +93,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Bedrock::Http::RequestBuilder const&);
-#endif
     // NOLINTEND
 
 public:

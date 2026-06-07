@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace OreUI { class ClientDependencies; }
 namespace Settings { class IRegistry; }
 // clang-format on
 
@@ -22,9 +23,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    InvokeActionCommand();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~InvokeActionCommand() /*override*/ = default;
+    MCAPI explicit InvokeActionCommand(::OreUI::ClientDependencies const& client);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:

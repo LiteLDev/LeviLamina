@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
@@ -93,6 +94,15 @@ public:
         ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
         ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
     getIsEnabled() const;
+
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& getOnRemoveEvent();
+
+    MCFOLD ::Bedrock::PubSub::Connector<void(::std::variant<
+                                             bool,
+                                             ::std::optional<::ScriptModuleMinecraft::ScriptRGB>,
+                                             ::ScriptModuleMinecraft::ScriptWaypointTextureSelector,
+                                             ::ScriptModuleMinecraft::ScriptDimensionLocation> const&)>&
+    getOnSetPropertyEvent();
 
     MCAPI ::Scripting::Result<
         ::ScriptModuleMinecraft::ScriptWaypointTextureSelector,

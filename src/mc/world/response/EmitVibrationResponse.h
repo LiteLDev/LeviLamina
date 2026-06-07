@@ -39,8 +39,6 @@ public:
                                                root,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
-
-    virtual ~EmitVibrationResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

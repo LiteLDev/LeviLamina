@@ -17,8 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~BreakBlocksSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

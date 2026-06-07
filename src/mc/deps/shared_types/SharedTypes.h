@@ -18,13 +18,19 @@ MCAPI void bindEasing(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindFacing(::cereal::ReflectionCtx& ctx);
 
+MCAPI void bindGlmIVec2(::cereal::ReflectionCtx& ctx);
+
 MCAPI void bindGlmVec2(::cereal::ReflectionCtx& ctx);
+
+MCAPI void bindGlmVec3(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindHashedString(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindItemCooldownType(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindJigsawJointType(::cereal::ReflectionCtx& ctx);
+
+MCAPI void bindLinkedAssetTypes(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindSemVersion(::cereal::ReflectionCtx& ctx);
 
@@ -33,6 +39,8 @@ MCAPI void bindUUID(::cereal::ReflectionCtx& ctx);
 MCAPI void bindVec2(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindVec3(::cereal::ReflectionCtx& ctx);
+
+MCAPI ::std::string getItemCooldownTypeHelp();
 // NOLINTEND
 
 } // namespace SharedTypes

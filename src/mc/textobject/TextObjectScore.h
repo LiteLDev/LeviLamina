@@ -33,8 +33,6 @@ public:
     virtual ::Json::Value asJsonValue() const /*override*/;
 
     virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
-
-    virtual ~TextObjectScore() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,8 +49,6 @@ public:
     MCNAPI static ::std::string const& RAW_TEXT_SCORE_NAME_KEY();
 
     MCNAPI static ::std::string const& RAW_TEXT_SCORE_OBJECTIVE_KEY();
-
-    MCNAPI static ::std::string const& RAW_TEXT_SCORE_STAR();
     // NOLINTEND
 
 public:
