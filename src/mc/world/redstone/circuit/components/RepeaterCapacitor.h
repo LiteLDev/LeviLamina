@@ -43,10 +43,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
+        ::CircuitSceneGraph&         info,
+        ::CircuitTrackingInfo const& dampening,
+        int&                         bDirectlyPowered,
+        bool&
     ) /*override*/;
 
     virtual void updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos) /*override*/;
@@ -64,15 +64,27 @@ public:
     virtual ::RedstoneLogicExecutionFlags getLogicExecutionFlags() const /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~RepeaterCapacitor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RepeaterCapacitor();
+
+    MCAPI void setDelay(int delay);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
 
     MCAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
 

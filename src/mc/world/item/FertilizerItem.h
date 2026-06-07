@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FertilizerItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
@@ -40,8 +44,20 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~FertilizerItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FertilizerItem(::std::string const& name, int id, ::FertilizerType type);
+
+    MCFOLD ::FertilizerType getFertilizerType() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::FertilizerType type);
     // NOLINTEND
 
 public:
@@ -57,5 +73,11 @@ public:
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -87,19 +87,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ActorDefinition(ActorDefinition const&);
-        ActorDefinition();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::LegacyTelemetryEventPacketPayload::ActorDefinition&
-        operator=(::LegacyTelemetryEventPacketPayload::ActorDefinition&&);
-
-        MCFOLD ::LegacyTelemetryEventPacketPayload::ActorDefinition&
-        operator=(::LegacyTelemetryEventPacketPayload::ActorDefinition const&);
-
         MCAPI ~ActorDefinition();
         // NOLINTEND
 
@@ -146,19 +135,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CodeBuilderRuntimeAction(CodeBuilderRuntimeAction const&);
-        CodeBuilderRuntimeAction();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::LegacyTelemetryEventPacketPayload::CodeBuilderRuntimeAction&
-        operator=(::LegacyTelemetryEventPacketPayload::CodeBuilderRuntimeAction&&);
-
-        MCFOLD ::LegacyTelemetryEventPacketPayload::CodeBuilderRuntimeAction&
-        operator=(::LegacyTelemetryEventPacketPayload::CodeBuilderRuntimeAction const&);
-
         MCAPI ~CodeBuilderRuntimeAction();
         // NOLINTEND
 
@@ -178,19 +156,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CodeBuilderScoreboard(CodeBuilderScoreboard const&);
-        CodeBuilderScoreboard();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::LegacyTelemetryEventPacketPayload::CodeBuilderScoreboard&
-        operator=(::LegacyTelemetryEventPacketPayload::CodeBuilderScoreboard&&);
-
-        MCFOLD ::LegacyTelemetryEventPacketPayload::CodeBuilderScoreboard&
-        operator=(::LegacyTelemetryEventPacketPayload::CodeBuilderScoreboard const&);
-
         MCAPI ~CodeBuilderScoreboard();
         // NOLINTEND
 
@@ -258,19 +225,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        MobKilled(MobKilled const&);
-        MobKilled();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::LegacyTelemetryEventPacketPayload::MobKilled&
-        operator=(::LegacyTelemetryEventPacketPayload::MobKilled&&);
-
-        MCAPI ::LegacyTelemetryEventPacketPayload::MobKilled&
-        operator=(::LegacyTelemetryEventPacketPayload::MobKilled const&);
-
         MCAPI ~MobKilled();
         // NOLINTEND
 
@@ -357,21 +313,24 @@ public:
 
     public:
         // prevent constructor by default
-        SlashCommand(SlashCommand const&);
+        SlashCommand& operator=(SlashCommand const&);
         SlashCommand();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::LegacyTelemetryEventPacketPayload::SlashCommand&
+        MCAPI SlashCommand(::LegacyTelemetryEventPacketPayload::SlashCommand const&);
+
+        MCFOLD ::LegacyTelemetryEventPacketPayload::SlashCommand&
         operator=(::LegacyTelemetryEventPacketPayload::SlashCommand&&);
 
-        MCAPI ::LegacyTelemetryEventPacketPayload::SlashCommand&
-        operator=(::LegacyTelemetryEventPacketPayload::SlashCommand const&);
-
-        MCAPI bool operator==(::LegacyTelemetryEventPacketPayload::SlashCommand const&) const;
-
         MCAPI ~SlashCommand();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::LegacyTelemetryEventPacketPayload::SlashCommand const&);
         // NOLINTEND
 
     public:
@@ -388,6 +347,24 @@ public:
         ::ll::TypedStorage<4, 4, int> mRedstoneLevel;
         // NOLINTEND
     };
+
+    using Achievement = ::LegacyTelemetryEventPacketPayload::Achievement;
+
+    using ActorDefinition = ::LegacyTelemetryEventPacketPayload::ActorDefinition;
+
+    using BellUsed = ::LegacyTelemetryEventPacketPayload::BellUsed;
+
+    using BossKilled = ::LegacyTelemetryEventPacketPayload::BossKilled;
+
+    using CauldronUsed = ::LegacyTelemetryEventPacketPayload::CauldronUsed;
+
+    using CodeBuilderRuntimeAction = ::LegacyTelemetryEventPacketPayload::CodeBuilderRuntimeAction;
+
+    using CodeBuilderScoreboard = ::LegacyTelemetryEventPacketPayload::CodeBuilderScoreboard;
+
+    using ComposterUsed = ::LegacyTelemetryEventPacketPayload::ComposterUsed;
+
+    using Empty = ::LegacyTelemetryEventPacketPayload::Empty;
 
     using EventData = ::std::variant<
         ::LegacyTelemetryEventPacketPayload::Achievement,
@@ -412,6 +389,32 @@ public:
         ::LegacyTelemetryEventPacketPayload::CodeBuilderScoreboard,
         ::LegacyTelemetryEventPacketPayload::ItemUsed,
         ::LegacyTelemetryEventPacketPayload::Empty>;
+
+    using Interaction = ::LegacyTelemetryEventPacketPayload::Interaction;
+
+    using ItemUsed = ::LegacyTelemetryEventPacketPayload::ItemUsed;
+
+    using MobBorn = ::LegacyTelemetryEventPacketPayload::MobBorn;
+
+    using MobKilled = ::LegacyTelemetryEventPacketPayload::MobKilled;
+
+    using POICauldronUsed = ::LegacyTelemetryEventPacketPayload::POICauldronUsed;
+
+    using PiglinBarter = ::LegacyTelemetryEventPacketPayload::PiglinBarter;
+
+    using PlayerDied = ::LegacyTelemetryEventPacketPayload::PlayerDied;
+
+    using PlayerWaxedOrUnwaxedCopper = ::LegacyTelemetryEventPacketPayload::PlayerWaxedOrUnwaxedCopper;
+
+    using PortalCreated = ::LegacyTelemetryEventPacketPayload::PortalCreated;
+
+    using PortalUsed = ::LegacyTelemetryEventPacketPayload::PortalUsed;
+
+    using RaidUpdate = ::LegacyTelemetryEventPacketPayload::RaidUpdate;
+
+    using SlashCommand = ::LegacyTelemetryEventPacketPayload::SlashCommand;
+
+    using TargetBlockHit = ::LegacyTelemetryEventPacketPayload::TargetBlockHit;
 
 public:
     // member variables
@@ -446,17 +449,5 @@ public:
             ::LegacyTelemetryEventPacketPayload::ItemUsed,
             ::LegacyTelemetryEventPacketPayload::Empty>>
         mEventData;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LegacyTelemetryEventPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

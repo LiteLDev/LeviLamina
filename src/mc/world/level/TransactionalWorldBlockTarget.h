@@ -30,9 +30,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TransactionalWorldBlockTarget();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransactionalWorldBlockTarget() /*override*/;
+    virtual ~TransactionalWorldBlockTarget() /*override*/ = default;
 
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
@@ -86,9 +90,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI explicit TransactionalWorldBlockTarget(::IBlockWorldGenAPI& target);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IBlockWorldGenAPI& target);
     // NOLINTEND
 
 public:
@@ -105,7 +115,7 @@ public:
     MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
 
-    MCFOLD bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
+    MCAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
     MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
@@ -121,9 +131,9 @@ public:
 
     MCAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD short $getMaxHeight() const;
+    MCAPI short $getMaxHeight() const;
 
-    MCFOLD short $getMinHeight() const;
+    MCAPI short $getMinHeight() const;
 
     MCFOLD bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
 

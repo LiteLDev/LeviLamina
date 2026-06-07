@@ -67,8 +67,6 @@ public:
         ) const /*override*/;
 
         virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
-
-        virtual ~UpdateBlockFaceGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -107,8 +105,6 @@ public:
         ) const /*override*/;
 
         virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
-
-        virtual ~UpdateVerticalHalfGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -141,10 +137,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlacementPosition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&) /*override*/;
@@ -154,38 +146,12 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual ::std::string const& _getName() const /*override*/;
-
-    virtual ~PlacementPosition() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlacementPosition(bool blockFace, bool verticalHalf);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockTrait::PlacementPosition BlockFace();
-
-    MCAPI static ::BlockTrait::PlacementPosition VerticalHalf();
-
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCFOLD static ::std::string const& getName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool blockFace, bool verticalHalf);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -197,7 +163,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
-    MCFOLD ::std::string const& $_getName() const;
+    MCAPI ::std::string const& $_getName() const;
 
 
     // NOLINTEND

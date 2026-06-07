@@ -20,6 +20,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+struct ServerPBRTextureData;
 namespace Json { class Value; }
 // clang-format on
 
@@ -62,16 +64,14 @@ public:
     virtual void parseShader(::Json::Value const& root) /*override*/;
 
     virtual void appendShaderPathForGfxAPI() /*override*/;
-
-    virtual ~RenderMaterial() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderMaterial(::mce::RenderMaterial const&);
-
     MCAPI explicit RenderMaterial(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
+
+    MCAPI RenderMaterial(::mce::RenderMaterial const& parent);
 
     MCAPI ::mce::ActorMaterialVariation getActorVariation(::mce::MaterialRenderType renderType);
 
@@ -79,27 +79,30 @@ public:
 
     MCAPI ::std::optional<::mce::MaterialType> const getMaterialType();
 
+    MCFOLD ::mce::VertexFormat const& getVertexFormat() const;
+
+    MCAPI void parseBlendState(::Json::Value const& root);
+
     MCAPI void parseDepthStencilState(::Json::Value const& root);
+
+    MCAPI void parseRasterizerState(::Json::Value const& root);
 
     MCAPI void parseRenderTargetFormat(::Json::Value const& root);
 
     MCAPI void parseSamplers(::Json::Value const& root);
 
     MCAPI void parseVertexFields(::Json::Value const& root);
+
+    MCAPI bool
+    validateTextures(::ServerPBRTextureData const& textureData, ::HashedString const& renderControllerName) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::RenderMaterial const&);
-
     MCAPI void* $ctor(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::mce::RenderMaterial const& parent);
     // NOLINTEND
 
 public:

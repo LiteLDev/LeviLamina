@@ -34,6 +34,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::RandomValueBounds getValue() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);

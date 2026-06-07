@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/platform/brstd/bitset.h"
 #include "mc/world/Container.h"
 #include "mc/world/item/ClockSpriteCalculator.h"
 #include "mc/world/item/CompassSpriteCalculator.h"
@@ -80,8 +81,6 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~ShelfBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -92,6 +91,26 @@ public:
     MCAPI void _loadItems(::CompoundTag const& base, ::ILevel& level);
 
     MCAPI void _setItemInternal(int slot, ::ItemStack const& item, bool isLoading, bool emitVibrations);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::ClockSpriteCalculator& getClockCalculator();
+
+    MCFOLD ::CompassSpriteCalculator& getCompassCalculator();
+#endif
+
+    MCAPI ::brstd::bitset<3, uchar> getOccupiedSlots();
+
+#ifdef LL_PLAT_C
+    MCAPI ::CompassSpriteCalculator& getRecoveryCompassCalculator();
+
+    MCAPI bool isSlotOccupied(int slot) const;
+#endif
+
+    MCAPI void setItemWithoutVibrations(int slot, ::ItemStack const& item);
+
+#ifdef LL_PLAT_C
+    MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
+#endif
 
     MCAPI void updateItemCalculators(::ItemStack const& item, ::BlockSource const& region);
     // NOLINTEND

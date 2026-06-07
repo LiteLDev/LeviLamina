@@ -14,11 +14,14 @@ struct InvalidChunkFoundWhileTeleportingFlagComponent;
 struct ServerPlayerMovementComponent;
 struct ServerPlayerTeleportingFlagComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace ServerPlayerTeleportProtectionSystem {
 // functions
 // NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createSystem();
+
 MCAPI void tickTeleportProtection(
     ::StrictEntityContext const&                                 context,
     ::StateVectorComponent const&                                stateVector,

@@ -34,10 +34,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setMapping(
-        ::InputEventQueue&,
-        ::BindingFactory const&,
-        ::InputMapping const& inputMapping,
-        int                   controllerId
+        ::InputEventQueue&      inputMapping,
+        ::BindingFactory const& controllerId,
+        ::InputMapping const&,
+        int
     ) /*override*/;
 
     virtual void clearMapping(int controllerId) /*override*/;
@@ -50,27 +50,27 @@ public:
     virtual void changeControllerId(int oldId, int newId) /*override*/;
 
     virtual void clearInputDeviceQueue() /*override*/;
-
-    virtual ~DeviceButtonMapper() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DeviceButtonMapper();
+
     MCAPI void handleButtonEvent(::InputEventQueue& eventQueue, ::DeviceButtonEvent const& buttonEvent);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void
-    $setMapping(::InputEventQueue&, ::BindingFactory const&, ::InputMapping const& inputMapping, int controllerId);
+    $setMapping(::InputEventQueue& inputMapping, ::BindingFactory const& controllerId, ::InputMapping const&, int);
 
     MCAPI void $clearMapping(int controllerId);
 

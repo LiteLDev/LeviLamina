@@ -23,8 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~NonPrimaryClientLeaveGameFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -35,15 +33,9 @@ public:
         ::std::function<void(::std::string_view)> requestJoinGame
     );
 
-    MCFOLD void leaveGame();
+    MCAPI void leaveGame();
 
     MCAPI void leaveGameThenJoinFriendsWorld(::std::string const& serverId);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const* const& NAME();
     // NOLINTEND
 
 public:

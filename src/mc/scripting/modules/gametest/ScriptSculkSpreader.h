@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class SculkSpreader;
 class Vec3;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -30,13 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SculkSpreader* _getSculkSpreader() const;
-
     MCAPI void addCursorsWithOffset(::Vec3 const& offset, int charge);
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;
-
-    MCAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
 

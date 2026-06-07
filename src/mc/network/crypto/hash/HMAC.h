@@ -32,6 +32,8 @@ public:
 
     MCAPI void _final(::std::string& out);
 
+    MCAPI uint64 resultSize() const;
+
     MCAPI void signAndAppend(::std::string const& data, ::std::string& out, uint64 counter);
     // NOLINTEND
 

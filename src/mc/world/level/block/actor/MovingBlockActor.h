@@ -72,9 +72,27 @@ public:
 
     MCAPI ::std::pair<::AABB, ::AABB> _getWrappedBlockCollisionShapes(::IConstBlockSource const& region) const;
 
+    MCAPI ::std::shared_ptr<::BlockActor> aquireWrappedBlockActor();
+
     MCAPI ::Vec3 getDrawPos(::IConstBlockSource const& region, float a) const;
 
+    MCFOLD ::Block const& getWrappedBlock() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::BlockActor* getWrappedBlockActor();
+#endif
+
+    MCFOLD ::Block const& getWrappedExtraBlock();
+
     MCAPI void moveCollidedEntities(::PistonBlockActor& pistonBlock, ::BlockSource& region);
+
+    MCAPI void registerPiston(::BlockSource const& region, ::BlockPos const& pistonPos);
+
+    MCAPI void setWrappedBlock(::Block const& inBlock);
+
+    MCAPI void setWrappedBlockActor(::std::shared_ptr<::BlockActor> be);
+
+    MCFOLD void setWrappedExtraBlock(::Block const& extraBlock);
     // NOLINTEND
 
 public:

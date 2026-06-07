@@ -41,7 +41,7 @@ public:
         Json::Value::ArrayValues::iterator  array_;
         Json::Value::ObjectValues::iterator map_;
     };
-    ::ll::TypedStorage<1, 1, bool> isArray_;
+    bool isArray_;
     // NOLINTEND
 
 public:
@@ -61,8 +61,6 @@ public:
     MCAPI bool isEqual(::Json::ValueIteratorBase const& other) const;
 
     MCAPI char const* memberName() const;
-
-    MCAPI bool operator!=(::Json::ValueIteratorBase const& other) const;
     // NOLINTEND
 
 public:

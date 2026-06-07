@@ -13,32 +13,4 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>    mPos;
     ::ll::TypedStorage<8, 24, ::CompoundTag> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockActorDataPacketPayload& operator=(BlockActorDataPacketPayload const&);
-    BlockActorDataPacketPayload(BlockActorDataPacketPayload const&);
-    BlockActorDataPacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockActorDataPacketPayload(::BlockPos const& pos, ::CompoundTag tag);
-
-    MCAPI ::BlockActorDataPacketPayload& operator=(::BlockActorDataPacketPayload&&);
-
-    MCAPI ~BlockActorDataPacketPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::CompoundTag tag);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -8,13 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
-class FlowerPotBlockActor;
 class ItemInstance;
 class Player;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -23,6 +20,10 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class FlowerPotBlock : public ::ActorBlock {
+public:
+    // prevent constructor by default
+    FlowerPotBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,7 +34,7 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -44,27 +45,17 @@ public:
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~FlowerPotBlock() /*override*/ = default;
+    virtual ::ItemInstance asItemInstance(::Block const& blockActor, ::BlockActor const*) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FlowerPotBlock(::std::string const& nameId, int id);
+
     MCAPI bool _tryPlaceFlower(::Player& player, ::BlockPos const& blockPos) const;
 
     MCAPI bool _tryTakeFlower(::Player& player, ::BlockPos const& blockPos) const;
-
-    MCAPI void _updateFlowerPotEntity(
-        ::BlockSource&         region,
-        ::BlockPos const&      blockPos,
-        ::FlowerPotBlockActor* flowerPotEntity,
-        ::Block const*         flowerBlock,
-        ::Actor*               sourceActor
-    ) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
@@ -74,9 +65,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static bool isValidResource(::Block const& plant);
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -88,7 +79,7 @@ public:
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -98,9 +89,7 @@ public:
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI ::ItemInstance $asItemInstance(::Block const& blockActor, ::BlockActor const*) const;
 
 
     // NOLINTEND

@@ -23,7 +23,7 @@ public:
 
     virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) = 0;
 
-    virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId) = 0;
+    virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId, bool isLan) = 0;
 
     virtual void OnSessionClose(
         ::NetherNet::NetworkID     networkID,

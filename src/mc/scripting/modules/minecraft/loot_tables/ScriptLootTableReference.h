@@ -31,14 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootPoolEntry const& _getEntry() const /*override*/;
-
-    virtual ~ScriptLootTableReference() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::string const getPath() const;
     // NOLINTEND
 
 public:

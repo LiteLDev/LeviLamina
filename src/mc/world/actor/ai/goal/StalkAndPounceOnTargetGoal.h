@@ -4,17 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Mob;
 class Vec3;
 // clang-format on
 
-class StalkAndPounceOnTargetGoal : public ::Goal {
+class StalkAndPounceOnTargetGoal : public ::BaseGoal {
 public:
     // StalkAndPounceOnTargetGoal inner types define
     enum class StalkAndPounceState : uchar {
@@ -65,18 +64,28 @@ public:
     virtual bool canBeInterrupted() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~StalkAndPounceOnTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StalkAndPounceOnTargetGoal(
+        ::Mob&                    mob,
+        ::ActorFilterGroup const& stuckBlocks,
+        float                     stalkSpeed,
+        float                     stalkGiveUpDist,
+        float                     leapHeight,
+        float                     leapDist,
+        float                     maxPounceDist,
+        float                     strikeDistance,
+        float                     interestedTime,
+        float                     stuckTime,
+        bool                      setPersistent
+    );
+
     MCAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
     MCAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
-
-    MCAPI bool _isStuckBlock(::BlockPos blockPos) const;
 
     MCAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
 
@@ -85,6 +94,24 @@ public:
     MCAPI void _stalkPrey(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
     MCAPI void _stuck();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&                    mob,
+        ::ActorFilterGroup const& stuckBlocks,
+        float                     stalkSpeed,
+        float                     stalkGiveUpDist,
+        float                     leapHeight,
+        float                     leapDist,
+        float                     maxPounceDist,
+        float                     strikeDistance,
+        float                     interestedTime,
+        float                     stuckTime,
+        bool                      setPersistent
+    );
     // NOLINTEND
 
 public:

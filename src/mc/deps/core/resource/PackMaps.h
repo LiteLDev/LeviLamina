@@ -15,4 +15,16 @@ public:
     PackMaps& operator=(PackMaps const&);
     PackMaps(PackMaps const&);
     PackMaps();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~PackMaps();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

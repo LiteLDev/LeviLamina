@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/events/MinecraftEventing.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class Dimension;
 class ItemDescriptor;
 class ItemInstance;
 class Mob;
@@ -38,6 +36,9 @@ public:
     MCNAPI AchievementEventing();
 
     MCNAPI void AwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievementId);
+
+    MCNAPI void
+    BlockBroken(::Player const& player, ::Block const& destroyedBlock, int method, int variantData, ushort auxType);
 
 #ifdef LL_PLAT_C
     MCNAPI void BlockPlaced(::Player const& player, ::Block const& placedBlock, bool underWater, ushort auxType);

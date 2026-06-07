@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/biome/registry/SurfaceBuilderType.h"
+#include "mc/world/level/biome/SurfaceBuilderType.h"
 
 // auto generated forward declare list
 // clang-format off

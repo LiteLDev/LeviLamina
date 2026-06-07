@@ -59,18 +59,18 @@ public:
 
     virtual void update(double) /*override*/;
 
-    virtual void onLowDiskSpace(bool bSet) /*override*/;
+    virtual void onLowDiskSpace(bool) /*override*/;
 
-    virtual void onOutOfDiskSpace(bool bSet) /*override*/;
+    virtual void onOutOfDiskSpace(bool) /*override*/;
 
     virtual void onExtendDiskSpace(
-        bool                                            bSet,
-        ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr,
-        uint64                                          freeSpace,
-        ::std::function<void()>                         onHandledEventCallback
+        bool,
+        ::std::weak_ptr<::Core::FileStorageArea> const&,
+        uint64,
+        ::std::function<void()>
     ) /*override*/;
 
-    virtual void onCriticalDiskError(bool bSet, ::Core::LevelStorageState const& errorCode) /*override*/;
+    virtual void onCriticalDiskError(bool, ::Core::LevelStorageState const&) /*override*/;
     // NOLINTEND
 
 public:

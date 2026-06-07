@@ -106,8 +106,6 @@ public:
 
     virtual bool allowGameArguments() const;
 
-    virtual bool canUseAzureNotebooks() const;
-
     virtual ::AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const;
 
     virtual bool isSaveToCloudOn() const;
@@ -143,6 +141,17 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AppConfigs(::AppConfigsDependencies&& dependencies);
+
+#ifdef LL_PLAT_C
+    MCAPI bool canAccessWorld(::LevelSummary const& levelSummary) const;
+
+    MCFOLD void setLeaveGameOverride(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&, ::SceneFactory&)> leaveGameCallback
+    );
+
+    MCAPI bool
+    tryLeaveGameOverride(::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack, ::SceneFactory& sceneFactory);
+#endif
     // NOLINTEND
 
 public:
@@ -211,8 +220,6 @@ public:
     MCFOLD bool $useEduDemoUpsellDialog() const;
 
     MCFOLD bool $allowGameArguments() const;
-
-    MCFOLD bool $canUseAzureNotebooks() const;
 
     MCFOLD ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
 

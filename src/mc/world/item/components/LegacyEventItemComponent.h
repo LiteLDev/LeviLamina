@@ -9,6 +9,7 @@
 // clang-format off
 class ComponentItem;
 class DefinitionEvent;
+class HashedString;
 class ILegacyItemTriggerHandler;
 struct LegacyEventItemComponentData;
 namespace Bedrock::PubSub { class Subscription; }
@@ -31,14 +32,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~LegacyEventItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LegacyEventItemComponent(::LegacyEventItemComponentData&& componentData);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

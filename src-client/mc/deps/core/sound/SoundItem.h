@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
+
 class SoundItem {
 public:
     // member variables
@@ -25,15 +30,36 @@ public:
 
 public:
     // prevent constructor by default
-    SoundItem(SoundItem const&);
+    SoundItem& operator=(SoundItem const&);
     SoundItem();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SoundItem(::SoundItem&&);
+    MCNAPI SoundItem(::SoundItem const&);
 
-    MCNAPI ::SoundItem& operator=(::SoundItem const&);
+    MCNAPI SoundItem(
+        ::Core::Path const& soundName,
+        float               volume,
+        float               pitch,
+        float               minDistance,
+        float               maxDistance,
+        int                 weight,
+        bool                stream,
+        bool                is3D,
+        bool                interruptible,
+        bool                useLegacyMaxDistance
+    );
+
+    MCNAPI bool getLoadFromMemory() const;
+
+    MCNAPI ::std::string const& getResourceStream() const;
+
+    MCNAPI ::Core::PathBuffer<::std::string> const& getSoundName() const;
+
+    MCNAPI bool isInterruptible() const;
+
+    MCNAPI bool isStream() const;
 
     MCNAPI ~SoundItem();
     // NOLINTEND
@@ -41,7 +67,20 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SoundItem&&);
+    MCNAPI void* $ctor(::SoundItem const&);
+
+    MCNAPI void* $ctor(
+        ::Core::Path const& soundName,
+        float               volume,
+        float               pitch,
+        float               minDistance,
+        float               maxDistance,
+        int                 weight,
+        bool                stream,
+        bool                is3D,
+        bool                interruptible,
+        bool                useLegacyMaxDistance
+    );
     // NOLINTEND
 
 public:

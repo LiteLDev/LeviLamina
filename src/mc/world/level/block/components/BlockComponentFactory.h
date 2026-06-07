@@ -11,6 +11,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class CerealDocumentUpgrader;
+class CerealSchemaUpgrade;
 class Experiments;
 class PackLoadContext;
 class PackLoadRequirement;
@@ -108,16 +110,34 @@ public:
     MCAPI ::std::unique_ptr<::BlockComponentDescription>
     createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
+    MCFOLD ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>> const&
+    getSchema() const;
+
     MCAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
-    contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
+    MCAPI static void
+    addAllComponentUpgrades(::CerealDocumentUpgrader& documentUpgrader, ::cereal::ReflectionCtx const& ctx);
+
+    MCAPI static void addComponentMetadata(
+        ::cereal::ReflectionCtx&                     ctx,
+        ::std::string const&                         componentName,
+        ::BlockComponentFactory::ComponentMetadata&& metadata
+    );
 
     MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void registerComponentUpgrade(
+        ::CerealDocumentUpgrader&                documentUpgrader,
+        ::std::shared_ptr<::CerealSchemaUpgrade> upgrade
+    );
+
+    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata> const*
+    registeredCerealComponents(::cereal::ReflectionCtx const& ctx);
 
     MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
     setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);

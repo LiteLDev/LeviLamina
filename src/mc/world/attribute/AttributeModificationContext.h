@@ -13,4 +13,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BaseAttributeMap*> mAttributeMap;
     // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD static ::AttributeModificationContext createNoUpdateContext();
+#endif
+    // NOLINTEND
 };

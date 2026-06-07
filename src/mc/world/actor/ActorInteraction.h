@@ -19,13 +19,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorInteraction();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ActorInteraction(bool noCapture);
+
     MCAPI void capture(::brstd::move_only_function<void()> interactFunc);
+
+    MCFOLD ::std::string const& getInteractText() const;
+
+    MCAPI void interact();
 
     MCFOLD void setInteractText(::std::string text);
 
+    MCFOLD bool shouldCapture() const;
+
     MCAPI ~ActorInteraction();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool noCapture);
     // NOLINTEND
 
 public:

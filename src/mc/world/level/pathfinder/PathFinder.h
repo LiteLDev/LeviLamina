@@ -6,7 +6,6 @@
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/CachedChunkBlockSource.h"
 #include "mc/world/level/block/BlockProperty.h"
-#include "mc/world/level/pathfinder/ActorPathingData.h"
 #include "mc/world/level/pathfinder/BinaryHeap.h"
 #include "mc/world/level/pathfinder/CanClimbIntoNode.h"
 #include "mc/world/level/pathfinder/CanJumpIntoNode.h"
@@ -83,23 +82,12 @@ public:
         ::std::function<bool(::Block const&, ::BlockPos const&)> extraCondition
     );
 
-    MCNAPI bool _checkForDamagingBlock(
-        ::ActorPathingData const&     data,
-        ::BlockPos const&             pos,
-        ::Block const&                block,
-        int                           radius,
-        ::BreakBlocksComponent const* breakBlocksComponent
-    );
-
     MCNAPI ::NodeType _classifyDoorNode(
         ::ActorPathingData const& data,
         ::Block const&            testBlock,
         ::BlockPos const&         testPos,
         ::BlockPos const&         lastPathPos
     );
-
-    MCNAPI ::NodeType
-    _classifyNode(::ActorPathingData const& data, ::BlockPos const& fromPos, ::BlockPos const& testPos);
 
     MCNAPI ::NodeType _classifyNode(
         ::ActorPathingData const& data,
@@ -135,9 +123,6 @@ public:
         float             maxReachableHeight,
         ::BlockPos const& actorSize
     ) const;
-
-    MCNAPI ::ActorPathingData::MinMaxHeightCacheEntry
-    _getMinAndMaxHeightAroundBlock(::ActorPathingData const& data, ::BlockPos const& blockPos, float mobHeight) const;
 
     MCNAPI int _getNeighbors(
         ::ActorPathingData const& data,
@@ -178,6 +163,8 @@ public:
     MCNAPI ::PathfinderNode*
     _getWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
 
+    MCNAPI bool _isBlockWater(::BlockPos const& pos) const;
+
     MCNAPI ::NodeType _isFreeStartNode(
         ::ActorPathingData const& data,
         ::AABB const&             entityAABB,
@@ -196,7 +183,20 @@ public:
     );
 
     MCNAPI ::std::unique_ptr<::Path>
-    _reconstructPath(::PathfinderNode* to, ::PathCompletionType completionType, ::ActorUniqueID actorId);
+    _reconstructPath(::PathfinderNode* to, ::PathCompletionType completionType, ::ActorUniqueID);
+
+    MCNAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
+
+    MCNAPI ::std::unique_ptr<::Path> findPath(::Actor& from, int x, int y, int z, float maxDist);
+
+    MCNAPI ::NodeType isFree(
+        ::Actor&           actor,
+        ::BlockPos const&  fromPos,
+        ::BlockPos const&  testPos,
+        ::BlockPos const&  size,
+        ::CanJumpIntoNode  jumpIntoNode,
+        ::CanClimbIntoNode climbIntoNode
+    );
 
     MCNAPI ::NodeType isFree(
         ::ActorPathingData const& data,

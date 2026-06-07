@@ -4,25 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 
 // auto generated forward declare list
 // clang-format off
 class ResourceLocation;
 class ResourcePackManager;
-namespace OreUI { class ResourceResponse; }
-namespace OreUI { class ResourceStreamResponse; }
-namespace OreUI { class TemporaryTextureHolder; }
-namespace OreUI { struct ResourceRequest; }
+namespace Gameface { class ResourceResponse; }
+namespace Gameface { class ResourceStreamResponse; }
+namespace Gameface { class TemporaryTextureHolder; }
+namespace Gameface { struct ResourceRequest; }
 // clang-format on
 
 namespace OreUI {
 
-class PackResourceHandler : public ::OreUI::IResourceHandler {
+class PackResourceHandler : public ::Gameface::IResourceHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ResourcePackManager const&>     mPackManager;
-    ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&> mTemporaryTextureHolder;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager const&>        mPackManager;
+    ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&> mTemporaryTextureHolder;
     // NOLINTEND
 
 public:
@@ -36,12 +37,12 @@ public:
     // NOLINTBEGIN
     virtual ~PackResourceHandler() /*override*/ = default;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status onResourceStreamRequest(
-        ::OreUI::ResourceRequest const&  request,
-        ::OreUI::ResourceStreamResponse& response
+    virtual ::Gameface::ResourceHandlerStatus onResourceStreamRequest(
+        ::Gameface::ResourceRequest const&  request,
+        ::Gameface::ResourceStreamResponse& response
     ) /*override*/;
 
     virtual void update() /*override*/;
@@ -50,24 +51,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PackResourceHandler(
+        ::ResourcePackManager const&        packManager,
+        ::Gameface::TemporaryTextureHolder& temporaryTextureHolder
+    );
+
     MCAPI ::std::optional<::ResourceLocation>
-    _getAssetResourceLocationFromResourcePackManager(::OreUI::ResourceRequest const& request) const;
+    _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
     // NOLINTEND
 
 public:
-    // static variables
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> PROTOCOL();
+    MCAPI void*
+    $ctor(::ResourcePackManager const& packManager, ::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse& response);
 
     MCFOLD void $update();
     // NOLINTEND

@@ -40,7 +40,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BinaryRequestBody(::gsl::span<uchar const> data);
+
+    MCNAPI ::gsl::span<uchar const> _getData() const;
+
     MCNAPI void setData(::gsl::span<uchar const> data);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::shared_ptr<::Bedrock::Http::BinaryRequestBody> create(::gsl::span<uchar const> data);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::gsl::span<uchar const> data);
     // NOLINTEND
 
 public:

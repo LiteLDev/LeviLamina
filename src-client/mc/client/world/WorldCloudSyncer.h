@@ -19,22 +19,17 @@ public:
     // NOLINTBEGIN
     virtual ~WorldCloudSyncer() /*override*/ = default;
 
-    virtual void
-    syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) /*override*/;
-
-    virtual void syncWorldManifest(
+    virtual void syncWorld(
         ::World::WorldID const&,
-        ::std::function<void(::World::WorldCloudSyncResult)> const&
+        ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete
     ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&);
-
-    MCFOLD void
-    $syncWorldManifest(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&);
+    MCAPI void
+    $syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const& onComplete);
     // NOLINTEND
 
 public:

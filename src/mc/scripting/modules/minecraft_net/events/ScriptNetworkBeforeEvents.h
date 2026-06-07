@@ -9,11 +9,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerLevel;
 struct IncomingPacketEvent;
 struct OutgoingPacketEvent;
 namespace ScriptModuleMinecraftNet { struct ScriptPacketReceiveBeforeEvent; }
 namespace ScriptModuleMinecraftNet { struct ScriptPacketSendBeforeEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -54,10 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptNetworkBeforeEvents(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
+    MCNAPI ScriptNetworkBeforeEvents(::Scripting::WeakLifetimeScope scope, ::gsl::not_null<::ServerLevel*> level);
 
-    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&
-    operator=(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
+    MCNAPI void registerListeners();
     // NOLINTEND
 
 public:
@@ -69,7 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::gsl::not_null<::ServerLevel*> level);
     // NOLINTEND
 
 public:

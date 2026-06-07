@@ -26,15 +26,15 @@ public:
 
 public:
     // prevent constructor by default
-    PlanterItemComponent(PlanterItemComponent const&);
+    PlanterItemComponent& operator=(PlanterItemComponent const&);
     PlanterItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_26_0::PlanterItemComponent& operator=(::SharedTypes::v1_26_0::PlanterItemComponent&&);
+    MCAPI PlanterItemComponent(::SharedTypes::v1_26_0::PlanterItemComponent const&);
 
-    MCAPI ::SharedTypes::v1_26_0::PlanterItemComponent& operator=(::SharedTypes::v1_26_0::PlanterItemComponent const&);
+    MCAPI ::SharedTypes::v1_26_0::PlanterItemComponent& operator=(::SharedTypes::v1_26_0::PlanterItemComponent&&);
 
     MCAPI ~PlanterItemComponent();
     // NOLINTEND
@@ -48,6 +48,18 @@ public:
         ::std::optional<::SharedTypes::v1_21_40::PlanterItemComponent>& oldDefinition,
         ::std::optional<::SharedTypes::v1_26_0::PlanterItemComponent>&  newDefinition
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_26_0::PlanterItemComponent const&);
     // NOLINTEND
 
 public:

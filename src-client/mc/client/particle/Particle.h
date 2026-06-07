@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/particle/ParticleLayer.h"
 #include "mc/client/renderer/texture/TextureUVCoordinateSet.h"
-#include "mc/common/BrightnessPair.h"
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/world/level/block/BrightnessPair.h"
 #include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
@@ -17,7 +17,6 @@ class Actor;
 class BlockSource;
 class CompoundTag;
 class ParticleEngine;
-class Vec2;
 struct ParticleRenderContext;
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
@@ -60,15 +59,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Particle();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~Particle();
 
-    virtual void init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine) = 0;
+    virtual void init(::Vec3 const&, ::Vec3 const&, int, ::ParticleEngine&) = 0;
 
     virtual void addTagData(::CompoundTag const& tag);
 
@@ -88,19 +83,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Particle(::BlockSource& source, ::ParticleType type);
-
-    MCAPI void _generateVertexOffsets(
-        ::Vec3 const& cameraPos,
-        float&        out_xa,
-        float&        out_za,
-        float&        out_xa2,
-        float&        out_za2,
-        float&        out_ya
-    );
-
     MCAPI void
     _init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine, ::CompoundTag const* tag);
+
+    MCAPI void _updateVertexData(::ParticleRenderContext const& renderContext, float sqDist);
 
     MCAPI void move(::Vec3 const& delta);
     // NOLINTEND
@@ -109,8 +95,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initStaticResources(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI static ::Vec2 packLighting(::BrightnessPair const& ambientLighting, ::mce::Color const& lightColor);
     // NOLINTEND
 
 public:
@@ -125,12 +109,6 @@ public:
     MCAPI static ::mce::TexturePtr& PARTICLE_ATLAS();
 
     MCAPI static ::mce::TexturePtr& TERRAIN_ATLAS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& source, ::ParticleType type);
     // NOLINTEND
 
 public:

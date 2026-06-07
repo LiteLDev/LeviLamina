@@ -19,15 +19,21 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mLastUpdated;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
-    CloudSaveLevelInfo(CloudSaveLevelInfo const&);
     CloudSaveLevelInfo();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CloudSaveLevelInfo(::CloudSaveLevelInfo&&);
+#ifdef LL_PLAT_C
+    MCAPI CloudSaveLevelInfo();
+#endif
+
+    MCAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
 
     MCAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
 
@@ -40,9 +46,23 @@ public:
         ::std::string lastUpdated,
         bool          needsUpload
     );
+
+    MCFOLD ::std::string const& cTag() const;
+
+    MCFOLD ::std::string const& driveItemId() const;
+
+    MCFOLD ::std::string const& fileName() const;
 #endif
 
     MCAPI bool const hasInfo() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::string const& lastUpdated() const;
+
+    MCFOLD bool const& needsUpload() const;
+
+    MCAPI bool operator!=(::CloudSaveLevelInfo const& other) const;
+#endif
 
     MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
 
@@ -54,13 +74,25 @@ public:
 
     MCAPI void serialize(::CompoundTag& tag) const;
 
+#ifdef LL_PLAT_C
+    MCFOLD void setCloudFileName(::std::string const& fileName);
+
+    MCFOLD void setNeedsUpload(bool const& needsUpload);
+
+    MCFOLD ::std::string const& userId() const;
+#endif
+
     MCAPI ~CloudSaveLevelInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CloudSaveLevelInfo&&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
+
+    MCAPI void* $ctor(::CloudSaveLevelInfo const&);
 
     MCAPI void* $ctor(::CompoundTag const& tag);
 

@@ -22,4 +22,30 @@ public:
             ::Bedrock::DDUI::DataStoreRemoval>>>
         mUpdates;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ClientboundDataStorePacketPayload();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ClientboundDataStorePacketPayload(
+        ::std::vector<::std::variant<
+            ::Bedrock::DDUI::DataStoreUpdate,
+            ::Bedrock::DDUI::DataStoreChange,
+            ::Bedrock::DDUI::DataStoreRemoval>> updates
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::vector<::std::variant<
+            ::Bedrock::DDUI::DataStoreUpdate,
+            ::Bedrock::DDUI::DataStoreChange,
+            ::Bedrock::DDUI::DataStoreRemoval>> updates
+    );
+    // NOLINTEND
 };

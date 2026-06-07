@@ -10,11 +10,13 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class Item;
+class ItemDescriptor;
 class SaveContext;
 // clang-format on
 
@@ -41,9 +43,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BrewingStandBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrewingStandBlockActor() /*override*/ = default;
+    virtual ~BrewingStandBlockActor() /*override*/;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
@@ -71,7 +77,7 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -91,9 +97,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BrewingStandBlockActor(::BlockPos const& pos);
+
     MCAPI void brew();
 
     MCAPI bool canBrew();
+
+    MCFOLD int getBrewTime() const;
+
+    MCFOLD int getFuelAmount() const;
+
+    MCFOLD int getFuelTotal() const;
+
+    MCAPI int getPotionSlotUsage() const;
+
+    MCFOLD void setBrewTime(int value);
+
+    MCFOLD void setFuelAmount(int value);
+
+    MCFOLD void setFuelTotal(int value);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isFuel(::ItemDescriptor const& itemDescriptor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -113,7 +153,7 @@ public:
 
     MCFOLD void $stopOpen(::Actor& actor);
 
-    MCFOLD void $setContainerChanged(int slot);
+    MCAPI void $setContainerChanged(int slot);
 
     MCFOLD void $onRemoved(::BlockSource&);
 
@@ -125,7 +165,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

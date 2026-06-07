@@ -24,22 +24,32 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptInputInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptInputInfo(::ScriptModuleMinecraft::ScriptActorData const& playerData);
+
     MCAPI ::Scripting::Result<::InputMode, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::EngineError>
     getLastInputModeUsed() const;
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> isHotbarOnlyTouch() const;
 
-#ifdef LL_PLAT_C
     MCAPI void updatePlayerData(::ScriptModuleMinecraft::ScriptActorData const& playerData);
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const& playerData);
     // NOLINTEND
 };
 

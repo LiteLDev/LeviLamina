@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition>> mCategories;
     ::ll::TypedStorage<1, 1, ::CameraAimAssistPresetsPacketOperation>                                    mOperation;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CameraAimAssistPresetsPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

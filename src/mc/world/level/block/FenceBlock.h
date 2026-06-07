@@ -19,11 +19,16 @@ class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ItemInstance;
+class Material;
 class Player;
 class Vec3;
 // clang-format on
 
 class FenceBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    FenceBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -68,7 +73,7 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
 
     virtual ::HitResult clip(
         ::Block const&                                     block,
@@ -79,13 +84,13 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
-
-    virtual ~FenceBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FenceBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI void fetchPathableNeighbors(
         ::std::vector<::BlockPos>& outNeighbors,
         ::BlockSource&             region,
@@ -95,21 +100,15 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::AABB const& _getShape(
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::Block const&             block,
-        ::AABB&                    bufferValue,
-        bool                       isCollisionShape
-    );
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -155,7 +154,7 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
 
     MCFOLD ::HitResult $clip(
         ::Block const&                                     block,

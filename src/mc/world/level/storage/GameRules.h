@@ -25,7 +25,7 @@ class GameRules : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // GameRules inner types define
     enum class GameRulesIndex : int {
-        InvalidGameRule           = -1,
+        InvalidGameRule           = 4294967295,
         CommandBlockOutput        = 0,
         DoDaylightCycle           = 1,
         DoEntityDrops             = 2,
@@ -124,9 +124,17 @@ public:
 
     MCAPI bool getBool(::GameRuleId ruleType, bool defaultValue) const;
 
+    MCAPI float getFloat(::GameRuleId ruleType) const;
+
     MCAPI int getInt(::GameRuleId ruleType) const;
 
+    MCAPI ::GameRule const* getRule(::GameRuleId rule) const;
+
+    MCFOLD ::std::vector<::GameRule> const& getRules() const;
+
     MCAPI void getTagData(::CompoundTag const& tag, ::BaseGameVersion const& version);
+
+    MCAPI bool hasRule(::GameRuleId ruleType) const;
 
     MCAPI ::GameRuleId nameToGameRuleIndex(::std::string const& name) const;
 
@@ -134,16 +142,25 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI bool operator==(::GameRules const& rhs) const;
-
-    MCAPI ::Bedrock::PubSub::Subscription
-    registerOnGameRuleChangeCallback(::std::function<void(::GameRules const&, ::GameRuleId const&)> callback);
 #endif
+
+    MCFOLD ::Bedrock::PubSub::Subscription
+    registerOnGameRuleChangeCallback(::std::function<void(::GameRules const&, ::GameRuleId const&)> callback);
 
     MCAPI void setMarketplaceOverrides();
 
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
         ::GameRuleId                 rule,
         int                          value,
+        bool                         returnPacket,
+        bool*                        pValueValidated,
+        bool*                        pValueChanged,
+        ::GameRule::ValidationError* errorOutput
+    );
+
+    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
+        ::GameRuleId                 rule,
+        float                        value,
         bool                         returnPacket,
         bool*                        pValueValidated,
         bool*                        pValueChanged,
@@ -171,6 +188,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static int const& DEFAULT_RANDOMTICKSPEED();
+
+    MCAPI static int const& MAX_FUNCTIONCOMMANDLIMIT();
+
+    MCAPI static uint const& MAX_PLAYER_SPAWN_RADIUS();
+
+    MCAPI static int const& MAX_RANDOMTICKSPEED();
+
+    MCAPI static uint const& MIN_PLAYER_SPAWN_RADIUS();
+
     MCAPI static ::std::string const& WORLD_POLICY_TAG_NAME();
     // NOLINTEND
 

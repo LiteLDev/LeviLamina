@@ -26,21 +26,28 @@ public:
 public:
     // prevent constructor by default
     BlockSchematicPart& operator=(BlockSchematicPart const&);
-    BlockSchematicPart(BlockSchematicPart const&);
     BlockSchematicPart();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockSchematicPart(::ClientBlockPipeline::BlockSchematicPart const&);
+
     MCAPI ::ClientBlockPipeline::BlockSchematicPart& operator=(::ClientBlockPipeline::BlockSchematicPart&&);
 
     MCAPI ~BlockSchematicPart();
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ClientBlockPipeline::BlockSchematicPart const&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -10,6 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class SemVersion;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockEmbeddedVisualDescription : public ::NetworkedBlockComponentDescription<::BlockEmbeddedVisualDescription> {
@@ -21,6 +23,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockEmbeddedVisualDescription(BlockEmbeddedVisualDescription const&);
+    BlockEmbeddedVisualDescription();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -29,13 +36,41 @@ public:
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    virtual ~BlockEmbeddedVisualDescription() /*override*/ = default;
+    virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BlockEmbeddedVisualDescription(
+        ::BlockGeometryDescription const&          geometryDescription,
+        ::BlockMaterialInstancesDescription const& materialInstanceDescription
+    );
+
+    MCFOLD ::BlockEmbeddedVisualDescription& operator=(::BlockEmbeddedVisualDescription&&);
+
+    MCFOLD ::BlockEmbeddedVisualDescription& operator=(::BlockEmbeddedVisualDescription const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BlockGeometryDescription const&          geometryDescription,
+        ::BlockMaterialInstancesDescription const& materialInstanceDescription
+    );
     // NOLINTEND
 
 public:
@@ -46,6 +81,8 @@ public:
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCFOLD void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
 
     // NOLINTEND

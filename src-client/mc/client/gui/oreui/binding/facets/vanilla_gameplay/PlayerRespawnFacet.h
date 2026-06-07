@@ -36,8 +36,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~PlayerRespawnFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

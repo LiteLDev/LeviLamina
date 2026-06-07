@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class FileOpenMode; }
-// clang-format on
-
 class LevelDbLazyFile {
 public:
     // member variables
@@ -29,13 +24,17 @@ public:
     // NOLINTBEGIN
     MCNAPI ::leveldb::Status Append(::leveldb::Slice const& slice);
 
-    MCNAPI ::leveldb::Status Flush();
+    MCNAPI ::leveldb::Status Close();
 
-    MCNAPI LevelDbLazyFile(::std::string filename, ::Core::FileOpenMode openMode, int maxOpenFiles);
+    MCNAPI ::leveldb::Status Flush();
 
     MCNAPI ::leveldb::Status Read(uint64 n, ::leveldb::Slice* result, char* scratch);
 
     MCNAPI ::leveldb::Status Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const;
+
+    MCNAPI ::leveldb::Status Skip(uint64 n);
+
+    MCNAPI auto _lazyOpen() const;
 
     MCNAPI ~LevelDbLazyFile();
     // NOLINTEND
@@ -44,12 +43,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::atomic<uint64>& mFileCount();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string filename, ::Core::FileOpenMode openMode, int maxOpenFiles);
     // NOLINTEND
 
 public:

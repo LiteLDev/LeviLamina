@@ -32,8 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~WorldTemplateListFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -60,12 +58,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager>      worldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

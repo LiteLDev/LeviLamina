@@ -25,7 +25,7 @@ class IMessenger : public ::Bedrock::EnableNonOwnerReferences, public ::CodeBuil
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IMessenger() /*override*/;
+    virtual ~IMessenger() /*override*/ = default;
 
     virtual void
     onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const = 0;
@@ -129,12 +129,6 @@ public:
         ::ItemInstance const&   tradedFor,
         int                     traderEmeraldCount
     ) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

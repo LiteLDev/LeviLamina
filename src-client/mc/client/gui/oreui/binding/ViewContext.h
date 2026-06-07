@@ -25,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ViewContext();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onReadyForBindings() /*override*/;
@@ -38,8 +42,24 @@ public:
     virtual ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const /*override*/;
 
     virtual ::std::vector<::OreUI::Detail::ICommandGroup*> getCommands() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ViewContext() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ViewContext(
+        ::std::unique_ptr<::OreUI::Detail::QueryRegistry>   queries,
+        ::std::unique_ptr<::OreUI::Detail::CommandRegistry> commands
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::OreUI::Detail::QueryRegistry>   queries,
+        ::std::unique_ptr<::OreUI::Detail::CommandRegistry> commands
+    );
     // NOLINTEND
 
 public:

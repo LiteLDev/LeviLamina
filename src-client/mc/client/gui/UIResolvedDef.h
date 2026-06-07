@@ -24,6 +24,7 @@
 class IUIDefRepository;
 class UIPropertyBag;
 class UiExpression;
+class Vec2;
 namespace mce { class Color; }
 namespace ui { struct LayoutOffset; }
 namespace ui { struct SliceSize; }
@@ -46,12 +47,15 @@ public:
 public:
     // prevent constructor by default
     UIResolvedDef& operator=(UIResolvedDef const&);
-    UIResolvedDef(UIResolvedDef const&);
     UIResolvedDef();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UIResolvedDef(::UIResolvedDef const&);
+
+    MCAPI UIResolvedDef(::std::vector<::Json::Value*>* variablesStack, ::Json::Value const& resolvedVal);
+
     MCAPI UIResolvedDef(
         ::std::vector<::Json::Value*>* variablesStack,
         ::std::string_view             defNamespace,
@@ -81,6 +85,8 @@ public:
     MCAPI uint getAsButtonId(::std::string_view key, uint defaultValue) const;
 
     MCAPI ::ui::ClipDirection getAsClipDirection(::std::string_view key, ::ui::ClipDirection defaultValue) const;
+
+    MCAPI ::Vec2 getAsClipOffset(::std::string_view key) const;
 
     MCAPI ::mce::Color getAsColor(::std::string_view key, ::mce::Color const& defaultValue) const;
 
@@ -122,13 +128,25 @@ public:
 
     MCAPI ::ToggleManagerBehavior getAsToggleManagerBehavior(::std::string_view key, ::ToggleManagerBehavior) const;
 
-    MCAPI ::glm::vec2 getAsUV(::std::string_view key, ::glm::vec2 const& defaultValue) const;
+    MCFOLD ::glm::vec2 getAsUV(::std::string_view key, ::glm::vec2 const& defaultValue) const;
+
+    MCFOLD ::glm::vec2 getAsUVSize(::std::string_view key, ::glm::vec2 const& defaultValue) const;
+
+    MCAPI uint getAsUnsignedInt(::std::string_view key, uint defaultValue) const;
 
     MCAPI ::UIDefType getDefType() const;
+
+    MCFOLD ::std::string const& getName() const;
+
+    MCFOLD ::std::string const& getNamespace() const;
 
     MCAPI ::Json::Value const& getValue(::std::string_view key, bool forceExpressionEval) const;
 
     MCAPI bool hasValue(::std::string_view key) const;
+
+    MCFOLD bool isIgnored() const;
+
+    MCAPI bool isNamed() const;
 
     MCAPI ~UIResolvedDef();
     // NOLINTEND
@@ -177,6 +195,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::UIResolvedDef const&);
+
+    MCAPI void* $ctor(::std::vector<::Json::Value*>* variablesStack, ::Json::Value const& resolvedVal);
+
     MCAPI void* $ctor(
         ::std::vector<::Json::Value*>* variablesStack,
         ::std::string_view             defNamespace,

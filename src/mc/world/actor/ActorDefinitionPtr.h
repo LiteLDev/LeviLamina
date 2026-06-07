@@ -18,7 +18,6 @@ public:
 
 public:
     // prevent constructor by default
-    ActorDefinitionPtr& operator=(ActorDefinitionPtr const&);
     ActorDefinitionPtr();
 
 public:
@@ -26,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI ActorDefinitionPtr(::ActorDefinitionPtr const& rhs);
 
-    MCAPI ActorDefinitionPtr(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
+    MCAPI ::ActorDefinitionPtr& operator=(::ActorDefinitionPtr const& rhs);
 
     MCAPI ~ActorDefinitionPtr();
     // NOLINTEND
@@ -41,8 +40,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorDefinitionPtr const& rhs);
-
-    MCAPI void* $ctor(::ActorDefinitionGroup& group, ::ActorDefinition& EntityDefinition);
     // NOLINTEND
 
 public:

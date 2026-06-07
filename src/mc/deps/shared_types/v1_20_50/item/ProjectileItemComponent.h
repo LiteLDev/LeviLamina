@@ -21,19 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ProjectileItemComponent(ProjectileItemComponent const&);
-    ProjectileItemComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_20_50::ProjectileItemComponent&
-    operator=(::SharedTypes::v1_20_50::ProjectileItemComponent&&);
-
-    MCFOLD ::SharedTypes::v1_20_50::ProjectileItemComponent&
-    operator=(::SharedTypes::v1_20_50::ProjectileItemComponent const&);
-
     MCAPI ~ProjectileItemComponent();
     // NOLINTEND
 
@@ -41,6 +30,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:

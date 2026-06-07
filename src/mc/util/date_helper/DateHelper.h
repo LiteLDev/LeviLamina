@@ -20,6 +20,12 @@ MCNAPI ::std::string getDateAsFormattedString(int64 time);
 MCNAPI ::std::string getDurationAsString(
     ::std::chrono::seconds       duration,
     ::DateHelper::DurationFields fields,
+    ::DateHelper::DurationFormat format
+);
+
+MCNAPI ::std::string getDurationAsString(
+    ::std::chrono::seconds       duration,
+    ::DateHelper::DurationFields fields,
     ::DateHelper::DurationFormat format,
     ::I18n&                      i18n
 );

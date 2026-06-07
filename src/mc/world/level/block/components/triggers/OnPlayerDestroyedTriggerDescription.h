@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
-
-    virtual ~OnPlayerDestroyedTriggerDescription() /*override*/ = default;
     // NOLINTEND
 
 public:

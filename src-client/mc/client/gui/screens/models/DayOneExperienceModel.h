@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/LegacyWorldConversionManager.h"
 #include "mc/client/gui/screens/models/MainMenuScreenModel.h"
-#include "mc/client/gui/screens/models/MinecraftScreenModel.h"
 #include "mc/client/legacy/ImportStatus.h"
 #include "mc/util/CallbackToken.h"
+#include "mc/world/actor/player/LoadingState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,6 +15,7 @@ class LegacyOptionsParser;
 class Skin;
 struct ImportResult;
 struct LegacyWorldInfo;
+struct MinecraftScreenModelContext;
 namespace Legacy { class WorldImporter; }
 // clang-format on
 
@@ -50,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DayOneExperienceModel(::MinecraftScreenModel::Context context);
+    MCAPI explicit DayOneExperienceModel(::MinecraftScreenModelContext context);
 
     MCAPI void _fetchWorlds();
 
@@ -63,7 +64,33 @@ public:
 
     MCAPI void convertLegacyWorld(uint worldIndex, ::std::function<void()> failureCallback);
 
+    MCAPI void exitDayOneExperience(int screensToPop);
+
     MCAPI void fetchLegacySkin();
+
+    MCAPI bool finishedRetrievingWorlds() const;
+
+    MCAPI ::Skin const* getDisplaySkin() const;
+
+    MCAPI float getLegacyWorldConversionProgress() const;
+
+    MCAPI ::LoadingState getLegacyWorldConversionState() const;
+
+    MCAPI ::LegacyWorldInfo const& getWorldAt(int index) const;
+
+    MCAPI uint getWorldCount() const;
+
+    MCAPI bool hasSkin() const;
+
+    MCAPI void initSkin();
+
+    MCAPI void initWorlds();
+
+    MCFOLD bool isFetchingWorlds() const;
+
+    MCAPI bool isSkinRetrievalFinished() const;
+
+    MCFOLD bool needsRetrievalOnNetworkAvailable() const;
 
     MCAPI void onWizardComplete();
     // NOLINTEND
@@ -71,7 +98,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenModel::Context context);
+    MCAPI void* $ctor(::MinecraftScreenModelContext context);
     // NOLINTEND
 
 public:

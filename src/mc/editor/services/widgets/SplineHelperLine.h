@@ -19,8 +19,6 @@ public:
     virtual ::std::optional<::std::vector<::Vec3>>
     calculateInterpolatedPoints(::std::vector<::Vec3> const& controlPoints, int const maxStepsPerControlSegment) const
         /*override*/;
-
-    virtual ~SplineHelperLine() /*override*/ = default;
     // NOLINTEND
 
 public:

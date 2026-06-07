@@ -21,23 +21,15 @@ public:
     // NOLINTBEGIN
     MCAPI ResultAny();
 
-    MCAPI ResultAny(::Scripting::ResultAny&&);
+    MCFOLD ::Scripting::ResultAny& operator=(::Scripting::ResultAny&& rhs);
 
-    MCAPI explicit ResultAny(::entt::meta_any&& resultAny);
+    MCAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const& rhs);
 
-    MCFOLD ::Scripting::ResultAny& operator=(::Scripting::ResultAny&&);
-
-    MCAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const&);
-
-#ifdef LL_PLAT_C
     MCAPI ::entt::meta_any toAny();
-#endif
 
     MCAPI ::entt::meta_any toAny() const;
 
     MCAPI ::entt::meta_any toErrorAny() const;
-
-    MCAPI ~ResultAny();
     // NOLINTEND
 
 public:
@@ -52,16 +44,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::Scripting::ResultAny&&);
-
-    MCAPI void* $ctor(::entt::meta_any&& resultAny);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

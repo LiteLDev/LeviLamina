@@ -28,6 +28,8 @@ public:
 #ifdef LL_PLAT_S
     MCNAPI explicit JSONSchemaBuilder(::cereal::ReflectionCtx& context);
 
+    MCNAPI ::JSONSchemaBuilder& minecraftVersion(::std::string version);
+
     MCNAPI ~JSONSchemaBuilder();
 #endif
     // NOLINTEND

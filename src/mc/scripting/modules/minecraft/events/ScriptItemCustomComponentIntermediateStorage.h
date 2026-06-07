@@ -14,18 +14,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemCustomComponentIntermediateStorage
 : public ::ScriptModuleMinecraft::ScriptCustomComponentPubSubAdapterStorage<
-      ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptItemCustomComponentIntermediateStorage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+      ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> {};
 
 } // namespace ScriptModuleMinecraft

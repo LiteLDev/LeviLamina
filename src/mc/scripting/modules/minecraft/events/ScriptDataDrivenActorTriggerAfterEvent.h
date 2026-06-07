@@ -10,6 +10,7 @@
 struct ActorDefinitionModifier;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -31,18 +32,21 @@ public:
 public:
     // prevent constructor by default
     ScriptDataDrivenActorTriggerAfterEvent& operator=(ScriptDataDrivenActorTriggerAfterEvent const&);
-    ScriptDataDrivenActorTriggerAfterEvent(ScriptDataDrivenActorTriggerAfterEvent const&);
     ScriptDataDrivenActorTriggerAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    ScriptDataDrivenActorTriggerAfterEvent(::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent const&);
+
+    MCAPI ScriptDataDrivenActorTriggerAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>
+                                              actorDefinitionEvent,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+
     MCAPI ::std::vector<::ActorDefinitionModifier> getModifiers() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&&);
-
-    MCAPI ~ScriptDataDrivenActorTriggerAfterEvent();
     // NOLINTEND
 
 public:
@@ -54,9 +58,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>
+                                              actorDefinitionEvent,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 };
 

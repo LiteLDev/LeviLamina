@@ -7,12 +7,6 @@
 
 class BarrelContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BarrelContainerScreenValidator() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

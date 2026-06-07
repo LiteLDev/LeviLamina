@@ -11,6 +11,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_21_90 { struct KineticWeaponItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,9 +23,13 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~KineticWeaponItemComponent() /*override*/ = default;
+    MCAPI KineticWeaponItemComponent();
+
+    MCAPI explicit KineticWeaponItemComponent(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
+
+    MCFOLD ::KineticDamageSettings const& getSettings() const;
     // NOLINTEND
 
 public:
@@ -32,11 +37,19 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
     // NOLINTEND
 
 public:

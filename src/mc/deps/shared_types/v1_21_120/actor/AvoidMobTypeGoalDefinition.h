@@ -40,15 +40,13 @@ public:
 public:
     // prevent constructor by default
     AvoidMobTypeGoalDefinition& operator=(AvoidMobTypeGoalDefinition const&);
+    AvoidMobTypeGoalDefinition(AvoidMobTypeGoalDefinition const&);
+    AvoidMobTypeGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AvoidMobTypeGoalDefinition();
-
     MCAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
-
-    MCAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
 
     MCAPI ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
@@ -71,11 +69,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const&);
     // NOLINTEND
 
 public:

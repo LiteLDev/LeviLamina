@@ -17,7 +17,7 @@ class GenericPathNavigation : public ::PathNavigation {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description) /*override*/;
+    virtual void initializeInternal(::Mob& mob, ::NavigationDescription const* description) /*override*/;
 
     virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
@@ -26,14 +26,12 @@ public:
     virtual void stop(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
     virtual void updatePath(::NavigationComponent& parent, ::Mob& mob) /*override*/;
-
-    virtual ~GenericPathNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
+    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription const* description);
 
     MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 

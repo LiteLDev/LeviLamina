@@ -30,7 +30,6 @@ public:
 public:
     // prevent constructor by default
     CameraAvoidanceComponent& operator=(CameraAvoidanceComponent const&);
-    CameraAvoidanceComponent(CameraAvoidanceComponent const&);
     CameraAvoidanceComponent();
 
 #endif
@@ -38,7 +37,17 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI CameraAvoidanceComponent(::MinecraftCamera::CameraAvoidanceComponent const&);
+
     MCAPI ::MinecraftCamera::CameraAvoidanceComponent& operator=(::MinecraftCamera::CameraAvoidanceComponent&&);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::MinecraftCamera::CameraAvoidanceComponent const&);
 #endif
     // NOLINTEND
 };

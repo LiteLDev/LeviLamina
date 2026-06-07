@@ -56,12 +56,6 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SurfaceMaterialAdjustmentAttributes() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(

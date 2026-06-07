@@ -27,10 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
-
-    virtual ~CustomZoneControl() /*override*/ = default;
+    virtual void tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int) /*override*/;
     // NOLINTEND
 
 public:
@@ -48,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int);
     // NOLINTEND
 
 public:

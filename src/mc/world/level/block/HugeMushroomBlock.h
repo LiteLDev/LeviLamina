@@ -5,13 +5,32 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BlockType.h"
 
+// auto generated forward declare list
+// clang-format off
+class Material;
+// clang-format on
+
 class HugeMushroomBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    HugeMushroomBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockType& init() /*override*/;
+    // NOLINTEND
 
-    virtual ~HugeMushroomBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI HugeMushroomBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

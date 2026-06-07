@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Pack;
+// clang-format on
+
 namespace PackCommand {
 
 struct PackAssociations {
@@ -17,6 +22,12 @@ public:
     PackAssociations& operator=(PackAssociations const&);
     PackAssociations(PackAssociations const&);
     PackAssociations();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Pack* operator->();
+    // NOLINTEND
 };
 
 } // namespace PackCommand

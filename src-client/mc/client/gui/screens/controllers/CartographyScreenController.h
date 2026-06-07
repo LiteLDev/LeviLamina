@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CartographyScreenController() /*override*/ = default;
+    virtual ~CartographyScreenController() /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
 
@@ -54,6 +54,8 @@ public:
         ::ActorUniqueID                                uniqueId
     );
 
+    MCAPI ::std::string _getOutputDescription() const;
+
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
@@ -70,6 +72,12 @@ public:
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -8,8 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -25,9 +28,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LightningBolt();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
@@ -40,20 +47,34 @@ public:
     virtual float getShadowRadius() const /*override*/;
 
     virtual bool shouldAlwaysRender();
-
-    virtual ~LightningBolt() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LightningBolt(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI bool _shouldSetOnFire() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 

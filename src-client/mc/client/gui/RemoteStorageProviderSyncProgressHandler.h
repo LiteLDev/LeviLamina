@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/ProgressHandler.h"
+#include "mc/platform/ErrorInfo.h"
 #include "mc/util/CallbackToken.h"
 #include "mc/world/actor/player/LoadingState.h"
 
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-namespace Core { class Result; }
 // clang-format on
 
 class RemoteStorageProviderSyncProgressHandler : public ::ProgressHandler {
@@ -32,16 +32,44 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::RemoteStorageProviderSyncProgressHandler::State> mState;
-        ::ll::TypedStorage<1, 1, bool>                                              mSyncSuccess;
-        ::ll::TypedStorage<8, 64, ::std::function<void(::Core::Result)>>            mCompletedCallback;
-        ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                               mCompletedCallbackCalled;
+        ::ll::TypedStorage<4, 4, ::RemoteStorageProviderSyncProgressHandler::State>                  mState;
+        ::ll::TypedStorage<8, 72, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>> mSyncSuccess;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>
+                                                      mCompletedCallback;
+        ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mCompletedCallbackCalled;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SyncState();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void onCompleted(::Core::Result&& result, bool canceled);
+        MCAPI explicit SyncState(
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>&& completedCallback
+        );
+
+        MCAPI void onCompleted(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> result, bool canceled);
+
+        MCAPI ~SyncState();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>&& completedCallback
+        );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -49,8 +77,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RemoteStorageProviderSyncProgressHandler::SyncState>> mSyncState;
-    ::ll::TypedStorage<8, 64, ::std::function<::CallbackToken(::std::function<void(::Core::Result)>)>>  mActionCallback;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::Core::Result)>>  mOnProgressHandlerCompletion;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<
+            ::CallbackToken(::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>)>>
+        mActionCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>>
+                                                                      mOnProgressHandlerCompletion;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTimestamp;
     ::ll::TypedStorage<8, 16, ::CallbackToken>                        mSyncToken;
     ::ll::TypedStorage<8, 32, ::std::string>                          mScreenName;
@@ -65,15 +99,15 @@ public:
     // NOLINTBEGIN
     virtual ~RemoteStorageProviderSyncProgressHandler() /*override*/;
 
-    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
     virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
@@ -86,10 +120,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RemoteStorageProviderSyncProgressHandler(
-        ::std::function<::CallbackToken(::std::function<void(::Core::Result)>)> actionCallback,
-        ::std::function<void(::Core::Result)>                                   completedCallback,
-        ::std::function<void(::Core::Result)>                                   onProgressHandlerCompletion,
-        ::std::string const&                                                    screenName
+        ::std::function<
+            ::CallbackToken(::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>)>
+                                                                                                 actionCallback,
+        ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)> completedCallback,
+        ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>
+                             onProgressHandlerCompletion,
+        ::std::string const& screenName
     );
     // NOLINTEND
 
@@ -97,10 +134,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::function<::CallbackToken(::std::function<void(::Core::Result)>)> actionCallback,
-        ::std::function<void(::Core::Result)>                                   completedCallback,
-        ::std::function<void(::Core::Result)>                                   onProgressHandlerCompletion,
-        ::std::string const&                                                    screenName
+        ::std::function<
+            ::CallbackToken(::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>)>
+                                                                                                 actionCallback,
+        ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)> completedCallback,
+        ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>
+                             onProgressHandlerCompletion,
+        ::std::string const& screenName
     );
     // NOLINTEND
 
@@ -113,15 +153,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCAPI void $onStart(::MinecraftScreenModel&);
 
     MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCAPI void $onCancel(::MinecraftScreenModel&);
 
     MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
     MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 

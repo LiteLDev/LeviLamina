@@ -24,6 +24,18 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(::CompoundTagEditHelper&)>>> mUpdates;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CompoundTagUpdater::Node>>>   mChildren;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Node();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -37,5 +49,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag) const;
+
+    MCFOLD uint getVersion() const;
     // NOLINTEND
 };

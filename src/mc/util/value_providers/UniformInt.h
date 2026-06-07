@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Random;
+// clang-format on
+
 namespace ValueProviders {
 
 struct UniformInt {
@@ -17,6 +22,12 @@ public:
     UniformInt& operator=(UniformInt const&);
     UniformInt(UniformInt const&);
     UniformInt();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI int generateNext(::Random& random) const;
+    // NOLINTEND
 };
 
 } // namespace ValueProviders

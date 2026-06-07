@@ -20,6 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool matchesContainerAndSlot(::ItemStackRequestSlotInfo const& other) const;
+
     MCNAPI ~ItemStackRequestSlotInfo();
     // NOLINTEND
 

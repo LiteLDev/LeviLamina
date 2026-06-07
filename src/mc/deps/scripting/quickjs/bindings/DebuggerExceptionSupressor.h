@@ -16,18 +16,6 @@ public:
     DebuggerExceptionSupressor& operator=(DebuggerExceptionSupressor const&);
     DebuggerExceptionSupressor(DebuggerExceptionSupressor const&);
     DebuggerExceptionSupressor();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DebuggerExceptionSupressor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

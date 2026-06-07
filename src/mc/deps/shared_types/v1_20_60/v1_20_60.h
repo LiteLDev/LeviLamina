@@ -4,16 +4,15 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_20_60 { struct ComponentItemComponentData; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_60 {
 // functions
 // NOLINTBEGIN
-MCAPI bool operator==(
-    ::SharedTypes::v1_20_60::ComponentItemComponentData const& __P0,
-    ::SharedTypes::v1_20_60::ComponentItemComponentData const& __P1
-);
+MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+
+MCAPI void bindItemComponentTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_20_60

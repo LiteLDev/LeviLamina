@@ -27,17 +27,16 @@ public:
 
 public:
     // prevent constructor by default
-    Contents(Contents const&);
+    Contents& operator=(Contents const&);
     Contents();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&&);
+    MCAPI Contents(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const&);
 
     MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const&);
+    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&&);
 
     MCAPI ~Contents();
     // NOLINTEND
@@ -54,6 +53,12 @@ public:
     MCAPI static ::std::string const& DEFAULT_FALLBACK();
 
     MCAPI static ::SemVersionConstant const& VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const&);
     // NOLINTEND
 
 public:

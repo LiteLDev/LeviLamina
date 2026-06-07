@@ -34,19 +34,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Contents(Contents const&);
-    Contents();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&&);
-
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents const&);
-
     MCAPI ~Contents();
     // NOLINTEND
 

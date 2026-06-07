@@ -30,14 +30,10 @@ public:
     ScriptStringBlockProperty();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptStringBlockProperty() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptStringBlockProperty(::ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
+
     MCAPI ScriptStringBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
@@ -48,7 +44,7 @@ public:
     MCAPI ::Scripting::Result_deprecated<::std::string> getState() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
-    operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&&);
+    operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
 
     MCAPI ::Scripting::Result_deprecated<void> setState(::std::string state);
     // NOLINTEND
@@ -62,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStringBlockProperty&& rhs);
+
     MCAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,

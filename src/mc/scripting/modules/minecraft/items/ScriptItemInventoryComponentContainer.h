@@ -12,7 +12,9 @@
 // clang-format off
 class Container;
 class ItemContext;
+namespace ScriptModuleMinecraft { class ScriptContainerRules; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -27,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptItemInventoryComponentContainer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptItemInventoryComponentContainer() /*override*/ = default;
@@ -36,6 +42,28 @@ public:
     virtual ::Container* _tryGetContainer() const /*override*/;
 
     virtual ::ItemContext _getItemContext(int slot) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptItemInventoryComponentContainer(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> weakItemStackHandle,
+        ::FullContainerName const&                                                   fullContainerName,
+        ::ScriptModuleMinecraft::ScriptContainerRules const&                         containerRules,
+        ::Scripting::WeakLifetimeScope const&                                        scope
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> weakItemStackHandle,
+        ::FullContainerName const&                                                   fullContainerName,
+        ::ScriptModuleMinecraft::ScriptContainerRules const&                         containerRules,
+        ::Scripting::WeakLifetimeScope const&                                        scope
+    );
     // NOLINTEND
 
 public:

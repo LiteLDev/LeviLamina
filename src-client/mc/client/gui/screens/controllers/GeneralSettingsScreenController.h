@@ -118,8 +118,6 @@ public:
 
     MCAPI ::std::vector<int> _getGUIScaleValues() const;
 
-    MCAPI ::std::vector<::PackInstanceId> _getModelManagerIdentities();
-
     MCAPI ::ui::ViewRequest _handleLanguageChoiceClick(int i);
 
     MCAPI void _initLanguageList();
@@ -130,11 +128,11 @@ public:
 
     MCAPI void _registerEventHandlers();
 
+    MCAPI void _registerPSPreviewButtonCallbacks();
+
     MCAPI void _registerPlayerNameEditBoxCallbacks();
 
     MCAPI void _setFancyBubbles(bool value);
-
-    MCAPI void _setFancyBubblesHelper(bool value);
 
     MCAPI void
     _setGlobalStack(::std::vector<::PackInstanceId> const& modelManagerIdentities, bool anyVersion, bool saveStack);
@@ -152,7 +150,11 @@ public:
         ::std::function<void(::ModalScreenButtonId)> callback
     );
 
+    MCAPI ::GeneralSettingsScreenControllerProxy* getGeneralSettingsScreenControllerProxy();
+
     MCAPI void setGuiScaleOption(int guiScaleOffset);
+
+    MCAPI void startExitProcess();
     // NOLINTEND
 
 public:

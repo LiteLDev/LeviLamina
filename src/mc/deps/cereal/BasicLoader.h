@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class BasicSerializerContext; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaReader; }
 namespace cereal::internal { class BasicSchema; }
@@ -44,12 +45,16 @@ public:
         ::cereal::LoaderConfig const&  config
     );
 
+    MCFOLD ::cereal::BasicSerializerContext& getLog();
+
     MCAPI bool loadImpl(
         ::cereal::SchemaReader&                reader,
         ::entt::meta_handle                    handle,
         ::entt::meta_any const&                loadContext,
         ::cereal::internal::BasicSchema const& fallback
     );
+
+    MCAPI void setConfig(::cereal::LoaderConfig const& config);
     // NOLINTEND
 
 public:

@@ -13,6 +13,10 @@ class PackLoadContext;
 
 class ItemEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
 public:
+    // prevent constructor by default
+    ItemEventResponseFactory();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ItemEventResponseFactory() /*override*/;
@@ -20,6 +24,18 @@ public:
     virtual void initializeFactory(::PackLoadContext const& packLoadContext) /*override*/;
 
     virtual void initSchema() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ItemEventResponseFactory(::PackLoadContext const& packLoadContext);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::PackLoadContext const& packLoadContext);
     // NOLINTEND
 
 public:

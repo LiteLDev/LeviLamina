@@ -41,20 +41,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mDirectlyPowered;
     ::ll::TypedStorage<4, 4, int>                           mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CircuitTrackingInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CircuitTrackingInfo(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
-    // NOLINTEND
 };

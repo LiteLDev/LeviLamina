@@ -35,7 +35,13 @@ public:
 
     MCAPI void addFade(float inTime, float requestedHoldTime, float outTime, float targetAlpha);
 
-    MCAPI float evaluate(float time) const;
+    MCAPI void advanceTime(float deltaTime);
+
+    MCFOLD float getCurrentValue() const;
+
+    MCFOLD bool isActive() const;
+
+    MCAPI void reset();
 #endif
     // NOLINTEND
 };

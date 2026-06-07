@@ -25,8 +25,6 @@ public:
     // NOLINTBEGIN
     virtual void
     doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller) /*override*/;
-
-    virtual ~VanillaSystemsEventingAdapter() /*override*/ = default;
     // NOLINTEND
 
 public:

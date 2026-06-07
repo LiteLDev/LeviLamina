@@ -15,12 +15,17 @@ struct FallDistanceComponent;
 struct MobFlagComponent;
 struct PassengerComponent;
 struct PlayerComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 struct PassengerTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createMobPostPassengerTickSystem();
+
+    MCAPI static ::TickingSystemWithInfo createPlayerPostPassengerTickSystem();
+
     MCAPI static void tickMob(
         ::ViewT<
             ::StrictEntityContext,

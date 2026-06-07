@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EnchantingContainerManagerModel;
 class ItemStackRequestActionCraftBase;
 class Player;
 struct RecipeNetIdTag;
@@ -34,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerEnchant() /*override*/ = default;
+    virtual ~CraftHandlerEnchant() /*override*/;
 
     virtual ::ItemStackNetResult
     _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
@@ -47,9 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EnchantingContainerManagerModel& _getEnchantingModel() const;
-
     MCAPI ::ItemStackNetResult _handleEnchant(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

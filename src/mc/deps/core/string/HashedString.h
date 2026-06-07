@@ -140,13 +140,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(nullptr_t);
+#endif
 
     MCAPI void* $ctor(::HashedString&& rhs);
 
     MCAPI void* $ctor(::HashedString const& rhs);
 
-    MCFOLD void* $ctor(::std::string const& str);
+    MCAPI void* $ctor(::std::string const& str);
 
     MCAPI void* $ctor(char const* str);
 

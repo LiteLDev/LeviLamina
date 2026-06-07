@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace webrtc { class SessionDescriptionInterface; }
-// clang-format on
-
 namespace NetherNet {
 
 class ConnectResponse {
@@ -32,19 +27,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NetherNet::ConnectResponse Create(uint64 sessionId, ::std::string sdp);
-
-    MCNAPI static ::std::optional<::NetherNet::ConnectResponse>
-    TryCreate(uint64 sessionId, ::webrtc::SessionDescriptionInterface const& session);
-
     MCNAPI static ::std::optional<::NetherNet::ConnectResponse>
     TryParse(::std::array<::std::string_view, 3> const& tokens);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& kIdentifier();
     // NOLINTEND
 };
 

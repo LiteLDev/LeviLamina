@@ -42,8 +42,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~PlayerShowcasedGalleryFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -92,12 +90,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<4, 4, float>                                mHealth;
     ::ll::TypedStorage<4, 16, ::mce::Color>                        mBarColor;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BossInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

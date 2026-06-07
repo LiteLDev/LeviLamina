@@ -16,7 +16,7 @@ struct SimpleMesh {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 288, ::mce::MeshData>                     mMeshData;
+    ::ll::TypedStorage<8, 312, ::mce::MeshData>                     mMeshData;
     ::ll::TypedStorage<8, 24, ::std::vector<::TessellatorQuadInfo>> mQuadInfoList;
     // NOLINTEND
 };

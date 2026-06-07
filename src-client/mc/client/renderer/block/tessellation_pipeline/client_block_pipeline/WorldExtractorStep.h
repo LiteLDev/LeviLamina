@@ -106,8 +106,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-
-    virtual ~WorldExtractorStep() /*override*/ = default;
     // NOLINTEND
 
 public:

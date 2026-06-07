@@ -38,16 +38,14 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptCamera& operator=(ScriptCamera const&);
-    ScriptCamera(ScriptCamera const&);
     ScriptCamera();
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::Player* _tryGetPlayer() const;
-#endif
+    MCAPI explicit ScriptCamera(::Player const& player);
+
+    MCAPI explicit ScriptCamera(::WeakEntityRef const& playerRef);
 
     MCAPI ::Scripting::Result_deprecated<void> cameraAttachToEntity(
         ::std::optional<::ScriptModuleMinecraft::ScriptCameraAttachOptions> const& attachOptions
@@ -57,8 +55,6 @@ public:
     cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 
     MCAPI ::Scripting::Result_deprecated<void> clearCamera() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptCamera& operator=(::ScriptModuleMinecraft::ScriptCamera&&);
 
     MCAPI ::Scripting::Result_deprecated<void> playAnimation(
         ::std::variant<
@@ -118,6 +114,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player const& player);
+
+    MCAPI void* $ctor(::WeakEntityRef const& playerRef);
     // NOLINTEND
 };
 

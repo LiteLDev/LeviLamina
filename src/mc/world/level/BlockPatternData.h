@@ -30,16 +30,4 @@ public:
                                   mLookup;
     ::ll::TypedStorage<4, 4, int> mPatternLength;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BlockPatternData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

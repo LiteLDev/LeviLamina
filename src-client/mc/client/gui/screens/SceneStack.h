@@ -16,7 +16,7 @@
 // clang-format off
 class AbstractScene;
 class CachedScenes;
-class Options;
+class OptionRegistry;
 class SceneStackProxy;
 class TaskGroup;
 class UIEventCoordinator;
@@ -58,19 +58,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SceneStackEvent();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+        virtual ~SceneStackEvent() = default;
         // NOLINTEND
     };
 
@@ -122,9 +110,33 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        PopScreenEvent();
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ~PopScreenEvent() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI PopScreenEvent(
+            int                                   popCount,
+            ::std::optional<::OreUI::RouteAction> routeAction,
+            ::std::vector<::std::string> const&   expectedScreenNames
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            int                                   popCount,
+            ::std::optional<::OreUI::RouteAction> routeAction,
+            ::std::vector<::std::string> const&   expectedScreenNames
+        );
         // NOLINTEND
 
     public:
@@ -212,7 +224,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mDeferUpdatesUntilNextTick;
     ::ll::TypedStorage<1, 1, bool>                                mBufferTextCharEvents;
     ::ll::TypedStorage<8, 24, ::std::vector<::TextCharEventData>> mBufferedTextCharEventData;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Options>>         mOptions;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::OptionRegistry>>  mOptions;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>    mAsyncLoadOptionSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>    mScreenAnimationsSubscription;
     ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
@@ -255,7 +267,7 @@ public:
 
     virtual void reload() /*override*/;
 
-    virtual void setOptions(::std::weak_ptr<::Options> options) /*override*/;
+    virtual void setOptions(::std::weak_ptr<::OptionRegistry> options) /*override*/;
 
     virtual void
     registerSceneChangeCallback(void* token, ::std::function<void(::AbstractScene&)> sceneChangeCallback) /*override*/;
@@ -457,12 +469,12 @@ public:
     MCAPI static void _forEachVisibleScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         ::std::function<::AbstractScene*(int)>        getScreen,
-        bool,
-        bool   splitscreenRenderBypassThisFrame,
-        uint64 topStackIndex,
-        uint64 startIndex,
-        uint64 endIndex,
-        bool   renderDrawLastScreens
+        bool                                          splitscreenRenderBypassThisFrame,
+        bool                                          topStackIndex,
+        uint64                                        startIndex,
+        uint64                                        endIndex,
+        uint64                                        renderDrawLastScreens,
+        bool
     );
 
     MCAPI static void forEachVisibleScreen(
@@ -495,7 +507,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reload();
 
-    MCAPI void $setOptions(::std::weak_ptr<::Options> options);
+    MCAPI void $setOptions(::std::weak_ptr<::OptionRegistry> options);
 
     MCAPI void $registerSceneChangeCallback(void* token, ::std::function<void(::AbstractScene&)> sceneChangeCallback);
 
@@ -576,13 +588,13 @@ public:
 
     MCFOLD bool $hasChangedThisFrame() const;
 
-    MCAPI bool $isEmpty() const;
+    MCFOLD bool $isEmpty() const;
 
     MCAPI uint64 $getSize() const;
 
     MCAPI void $setScreenTickingFlag(bool screenIsTicking);
 
-    MCAPI bool $getScreenTickingFlag() const;
+    MCFOLD bool $getScreenTickingFlag() const;
 
     MCAPI ::ui::SceneType $getNonTerminatingSceneType() const;
 
@@ -622,9 +634,9 @@ public:
 
     MCAPI void $handleTextChar(::std::string const& inputUtf8);
 
-    MCAPI void $setBufferTextCharEvents(bool pushTextCharEvents);
+    MCFOLD void $setBufferTextCharEvents(bool pushTextCharEvents);
 
-    MCAPI bool $isBufferingTextCharEvents() const;
+    MCFOLD bool $isBufferingTextCharEvents() const;
 
     MCAPI bool $isOnSceneStack(::ui::SceneType sceneType) const;
 

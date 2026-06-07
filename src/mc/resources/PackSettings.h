@@ -55,9 +55,13 @@ public:
         uint64                                                                       lastUsed
     );
 
+    MCNAPI ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> const& getNameValueMap() const;
+
 #ifdef LL_PLAT_C
     MCNAPI void setValue(::std::string const& name, ::std::variant<float, bool, ::std::string> const& value);
 #endif
+
+    MCNAPI ~PackSettings();
     // NOLINTEND
 
 public:
@@ -77,5 +81,11 @@ public:
             0>>                                                                      publisher,
         uint64                                                                       lastUsed
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

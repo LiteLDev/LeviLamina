@@ -19,6 +19,7 @@ struct MobAllowStandSlidingFlagComponent;
 struct MobFlagComponent;
 struct MobIsJumpingFlagComponent;
 struct MoveRequestComponent;
+struct MovedOnSpawnComponent;
 struct MovementAttributesComponent;
 struct OnGroundFlagComponent;
 struct PlayerComponent;
@@ -29,26 +30,6 @@ struct VehicleInputIntentComponent;
 namespace VanillaSystems::MoveSpeedCapSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void singleTick(
-    ::StrictEntityContext&                                 entity,
-    ::ViewT<::StrictEntityContext, ::MoveRequestComponent> view,
-    ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>
-        actorView,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::MobFlagComponent>,
-        ::MovementAttributesComponent const,
-        ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>> mobView,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::ActorDataFlagComponent const,
-        ::Optional<::VehicleInputIntentComponent const>,
-        ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>,
-        ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>>               horseView,
-    ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>>                                onlyHorseView,
-    ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const> playerView
-);
-
 MCAPI void tickMoveSpeedCap(
     ::StrictEntityContext&  context,
     ::MoveRequestComponent& moveRequestComponent,
@@ -58,7 +39,8 @@ MCAPI void tickMoveSpeedCap(
         ::StrictEntityContext,
         ::Include<::MobFlagComponent>,
         ::MovementAttributesComponent const,
-        ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>> mobView,
+        ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>,
+        ::Optional<::MovedOnSpawnComponent const>> mobView,
     ::ViewT<
         ::StrictEntityContext,
         ::ActorDataFlagComponent const,

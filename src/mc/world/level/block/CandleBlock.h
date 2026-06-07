@@ -15,13 +15,16 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class ItemInstance;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class CandleBlock : public ::AbstractCandleBlock {
+public:
+    // prevent constructor by default
+    CandleBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,7 +34,7 @@ public:
 
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
 
     virtual int _getNumCandles(::Block const& block) const /*override*/;
 
@@ -42,15 +45,13 @@ public:
     ) const /*override*/;
 
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~CandleBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CandleBlock(::std::string const& nameId, int id);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -67,6 +68,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
@@ -75,7 +82,7 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
 
     MCAPI int $_getNumCandles(::Block const& block) const;
 
@@ -86,8 +93,6 @@ public:
     ) const;
 
     MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

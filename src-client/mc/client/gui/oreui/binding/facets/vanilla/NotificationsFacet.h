@@ -29,13 +29,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~NotificationsFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit NotificationsFacet(::ToastManager& toastManager);
+
     MCAPI void _queueSnackbar(::std::string const& message);
     // NOLINTEND
 
@@ -43,6 +43,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ToastManager& toastManager);
     // NOLINTEND
 
 public:

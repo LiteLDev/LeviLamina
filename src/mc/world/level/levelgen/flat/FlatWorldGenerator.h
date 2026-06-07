@@ -70,7 +70,7 @@ public:
     ) /*override*/;
 
     virtual void
-    prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool) /*override*/;
+    prepareHeights(::BlockVolume& box, ::ChunkPos const& zxHeights, ::std::vector<short>*, bool) /*override*/;
 
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks) /*override*/;
 
@@ -88,8 +88,6 @@ public:
 
     virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const
         /*override*/;
-
-    virtual ~FlatWorldGenerator() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -127,7 +125,7 @@ public:
         ::std::optional<::HashedString> biomeTag
     );
 
-    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool);
+    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& zxHeights, ::std::vector<short>*, bool);
 
     MCFOLD void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
 
@@ -135,7 +133,7 @@ public:
 
     MCAPI ::BlockPos $findSpawnPosition() const;
 
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCFOLD ::BiomeSource const& $getBiomeSource() const;
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 

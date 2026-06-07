@@ -8,11 +8,6 @@
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/level/levelgen/v2/OverrideState.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ActorDefinitionIdentifier;
-// clang-format on
-
 namespace br::worldgen {
 
 struct SpawnerData : public ::WeightedRandom::WeighedRandomItem {
@@ -57,19 +52,9 @@ public:
     // NOLINTEND
 
 public:
-    SpawnerData& operator=(SpawnerData&&)      = default;
-    SpawnerData& operator=(SpawnerData const&) = default;
-
-public:
-    // prevent constructor by default
-    SpawnerData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnerData(::br::worldgen::SpawnerData&&);
-
-    MCAPI SpawnerData(::br::worldgen::SpawnerData const&);
+    MCAPI ::br::worldgen::SpawnerData inBrightness(short minBrightness, short maxBrightness) const;
 
     MCAPI ::br::worldgen::SpawnerData inRawBrightness(short minBrightness, short maxBrightness) const;
 
@@ -77,32 +62,22 @@ public:
 
     MCAPI ::br::worldgen::SpawnerData spawnsUnderground(::br::worldgen::OverrideState state) const;
 
-    MCAPI ::br::worldgen::SpawnerData withPopulation(short surfacePop, short undergroundPop) const;
+    MCAPI ::br::worldgen::SpawnerData spawnsUnderwater(::br::worldgen::OverrideState state) const;
 
-    MCAPI ~SpawnerData();
+    MCAPI ::br::worldgen::SpawnerData withPopulation(short surfacePop, short undergroundPop) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI static ::br::worldgen::SpawnerData
+    make(::ActorDefinitionIdentifier entity, short probabilityWeight, short minCount, short maxCount);
+
+    MCAPI static ::br::worldgen::SpawnerData
+    make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
+
     MCAPI static ::br::worldgen::SpawnerData
     make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::SpawnerData&&);
-
-    MCAPI void* $ctor(::br::worldgen::SpawnerData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

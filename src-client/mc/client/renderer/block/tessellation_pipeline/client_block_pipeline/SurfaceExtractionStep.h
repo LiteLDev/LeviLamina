@@ -4,25 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/tessellation_pipeline/client_block_pipeline/Step.h"
+#include "mc/client/renderer/block/tessellation_pipeline/helper/client_block_pipeline/ArrayCache.h"
 #include "mc/client/renderer/block/tessellation_pipeline/helper/client_block_pipeline/VectorCache.h"
-#include "mc/world/Flip.h"
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class Matrix;
 class Vec3;
+namespace BlockGeoType { class GeoTypeResolver; }
 namespace ClientBlockPipeline { class Inputs; }
 namespace ClientBlockPipeline { class Material; }
 namespace ClientBlockPipeline { class StepResult; }
 namespace ClientBlockPipeline { struct BlockLookupData; }
 namespace ClientBlockPipeline { struct BlockLookupId; }
-namespace ClientBlockPipeline { struct BoxSchematic; }
 namespace ClientBlockPipeline { struct CompleteOpaqueFullBlock; }
 namespace ClientBlockPipeline { struct CompleteOpaqueFullBlockIds; }
 namespace ClientBlockPipeline { struct CustomGeometryBox; }
 namespace ClientBlockPipeline { struct CustomGeometryFace; }
-namespace ClientBlockPipeline { struct IResolvedTint; }
+namespace ClientBlockPipeline { struct GeoTypeVertexAttributes; }
 namespace ClientBlockPipeline { struct ImageUvFaceAttributes; }
 namespace ClientBlockPipeline { struct MaterialFaceAttributes; }
 namespace ClientBlockPipeline { struct PartialOpaqueFullBlock; }
@@ -41,34 +42,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-
-    virtual ~SurfaceExtractionStep() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addUvTransformsForUnitCubes(
-        ::ClientBlockPipeline::BoxSchematic const*    box,
-        ::Flip                                        isotropicFlip,
-        uchar                                         faceIndex,
-        ::ClientBlockPipeline::ImageUvFaceAttributes& faceImageUvs
-    );
-
     MCAPI static ::Matrix
     _getUnitCubeWorldTransform(::ClientBlockPipeline::BlockLookupData const& blockData, ::Vec3 const& localPosition);
-
-    MCAPI static void addFaceMaterial(
-        ::ClientBlockPipeline::VectorCache<
-            ::ClientBlockPipeline::BlockLookupData,
-            ::ClientBlockPipeline::BlockLookupId> const& blockLookupCache,
-        ::ClientBlockPipeline::BlockLookupId             id,
-        uchar                                            facing,
-        ::ClientBlockPipeline::IResolvedTint const&      resolvedTint,
-        ::ClientBlockPipeline::MaterialFaceAttributes&   faceMaterials,
-        ::ClientBlockPipeline::TintFaceAttributes&       faceTints,
-        float                                            worldPositionRandom
-    );
 
     MCAPI static void extractComplexGeometries(
         ::ClientBlockPipeline::VectorCache<
@@ -82,7 +62,9 @@ public:
         ::ClientBlockPipeline::MaterialFaceAttributes&                  faceMaterials,
         ::ClientBlockPipeline::TintFaceAttributes&                      faceTints,
         ::ClientBlockPipeline::TextureShiftNoiseCache const*            textureShiftNoiseCache,
-        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&       textureShiftVertexNoises
+        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&       textureShiftVertexNoises,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const&,
+        ::ClientBlockPipeline::GeoTypeVertexAttributes&
     );
 
     MCAPI static void extractFaceMaterialsFromCompleteOpaqueFullBlocks(
@@ -118,7 +100,9 @@ public:
         ::ClientBlockPipeline::PositionVertexAttributes&                     vertexPositions,
         ::ClientBlockPipeline::QuadIndicesFaceAttributes&                    faceIndices,
         ::ClientBlockPipeline::TextureShiftNoiseCache const*                 textureShiftNoiseCache,
-        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&            textureShiftVertexNoises
+        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&            textureShiftVertexNoises,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const&,
+        ::ClientBlockPipeline::GeoTypeVertexAttributes&
     );
 
     MCAPI static void extractVerticesAndQuadsFromPartialOpaqueFullBlocks(
@@ -130,13 +114,17 @@ public:
         ::ClientBlockPipeline::PositionVertexAttributes&                    vertexPositions,
         ::ClientBlockPipeline::QuadIndicesFaceAttributes&                   faceIndices,
         ::ClientBlockPipeline::TextureShiftNoiseCache const*                textureShiftNoiseCache,
-        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&           textureShiftVertexNoises
+        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&           textureShiftVertexNoises,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const&,
+        ::ClientBlockPipeline::GeoTypeVertexAttributes&
     );
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::BlockGeoType::GeoTypeResolver& mGeoTypeResolver();
+
     MCAPI static float& mLastPositionRandom();
 
     MCAPI static ::ClientBlockPipeline::Material const*& mLastResolvedMaterial();

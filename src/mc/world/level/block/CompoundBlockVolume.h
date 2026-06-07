@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundBlockVolumeItem;
-class CompoundBlockVolumeIterator;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CompoundBlockVolume : public ::Bedrock::EnableNonOwnerReferences {
@@ -25,24 +25,36 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompoundBlockVolume(CompoundBlockVolume const&);
-    CompoundBlockVolume();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CompoundBlockVolume() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CompoundBlockVolume();
+
+    MCAPI CompoundBlockVolume(::CompoundBlockVolume const& other);
+
     MCAPI void _recalculateBounds();
 
-    MCAPI ::CompoundBlockVolumeIterator begin() const;
+    MCAPI uint64 capacity() const;
+
+    MCAPI void clear(bool resetOrigin);
 
     MCAPI void forEachPosition(::brstd::function_ref<bool(::BlockPos const&)> callback) const;
+
+    MCAPI void
+    forEachVolumeItem(::brstd::function_ref<bool(::CompoundBlockVolumeItem&, ::CompoundBlockVolume const&)> func);
+
+    MCAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
+
+    MCAPI ::BoundingBox getBoundingBox() const;
+
+    MCAPI ::BlockPos getMax() const;
+
+    MCAPI ::BlockPos getMin() const;
+
+    MCFOLD ::BlockPos const& getOrigin() const;
+
+    MCAPI ::std::vector<::CompoundBlockVolumeItem> getVolumeList() const;
+
+    MCFOLD bool isEmpty() const;
 
     MCAPI bool isInside(::BlockPos const& pos) const;
 
@@ -52,12 +64,32 @@ public:
 
     MCAPI ::std::optional<::CompoundBlockVolumeItem>
     peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
+
+    MCAPI bool popVolume();
+
+    MCFOLD void pushVolume(::CompoundBlockVolumeItem&& item);
+
+    MCFOLD void pushVolume(::CompoundBlockVolumeItem const& item);
+
+    MCAPI void setOrigin(::BlockPos const& newPos, bool preserveExistingVolumes);
+
+    MCAPI void translateOrigin(::BlockPos const& deltaPos, bool preserveExistingVolumes);
+
+    MCAPI uint64 volumeCount() const;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::CompoundBlockVolume const& other);
     // NOLINTEND
 
 public:

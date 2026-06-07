@@ -63,8 +63,8 @@ public:
         customComponentsItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_21_10::DamageAbsorptionItemComponent>>
         damageAbsorptionItemComponent;
-    ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::v1_20_50::DamageItemComponent>>  damageItemComponent;
-    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::DiggerItemComponent>> diggerItemComponent;
+    ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::v1_20_50::DamageItemComponent>>   damageItemComponent;
+    ::ll::TypedStorage<8, 136, ::std::optional<::SharedTypes::v1_20_50::DiggerItemComponent>> diggerItemComponent;
     ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::DisplayNameItemComponent>>
         displayNameItemComponent;
     ::ll::TypedStorage<4, 16, ::std::optional<::SharedTypes::v1_20_50::DurabilityItemComponent>>
@@ -128,6 +128,8 @@ public:
 
     MCAPI ::SharedTypes::v1_21_40::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_40::ComponentItemComponentData const&);
+
+    MCAPI bool operator==(::SharedTypes::v1_21_40::ComponentItemComponentData const&) const;
 
     MCAPI ~ComponentItemComponentData();
     // NOLINTEND

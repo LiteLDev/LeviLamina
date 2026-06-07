@@ -25,13 +25,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PersistenceGroupMetadata(PersistenceGroupMetadata const&);
-    PersistenceGroupMetadata();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PersistenceGroupMetadata();
+
+    MCNAPI PersistenceGroupMetadata(::Editor::Services::PersistenceGroupMetadata const&);
+
     MCNAPI PersistenceGroupMetadata(
         ::std::string const&                 groupNamespace,
         ::std::string const&                 name,
@@ -55,6 +54,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::Editor::Services::PersistenceGroupMetadata const&);
+
     MCNAPI void* $ctor(
         ::std::string const&                 groupNamespace,
         ::std::string const&                 name,

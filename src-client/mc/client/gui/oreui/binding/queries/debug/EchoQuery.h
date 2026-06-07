@@ -14,12 +14,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::OreUI::Property<int64>> mNumber;
     // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~EchoQuery() /*override*/ = default;
-    // NOLINTEND
 };
 
 } // namespace OreUI::Debug

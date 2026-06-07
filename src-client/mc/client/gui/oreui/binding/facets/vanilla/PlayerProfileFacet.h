@@ -55,16 +55,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        PlayerProfileDataWrapper& operator=(PlayerProfileDataWrapper const&);
-        PlayerProfileDataWrapper(PlayerProfileDataWrapper const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI PlayerProfileDataWrapper();
-
-        MCAPI PlayerProfileDataWrapper(::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&&);
 
         MCAPI ::RelationshipStatus favoriteStatus() const;
 
@@ -107,8 +100,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor();
-
-        MCAPI void* $ctor(::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&&);
         // NOLINTEND
 
     public:
@@ -124,6 +115,26 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 40, ::Social::PlayerProfileState>                            state;
         ::ll::TypedStorage<8, 1096, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper> data;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlayerProfileWrapper();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI PlayerProfileWrapper(
+            ::Social::PlayerProfileState                            inState,
+            ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&& inData
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void*
+        $ctor(::Social::PlayerProfileState inState, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&& inData);
         // NOLINTEND
     };
 
@@ -170,6 +181,9 @@ public:
     );
 
     MCAPI void _applySocialChange(::Social::SocialChangeResult const& result);
+
+    MCAPI bool
+    _isInSameGame(::Social::PlayerProfile const& playerProfile, ::std::vector<::std::string> const& uids) const;
 
     MCAPI ::OreUI::PlayerProfileFacet::PlayerProfileWrapper&
     _updateTrackedProfile(::Social::PlayerProfile const& playerProfile);

@@ -35,8 +35,6 @@ public:
     // NOLINTBEGIN
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
-
-    virtual ~LabelControl() /*override*/ = default;
     // NOLINTEND
 
 public:

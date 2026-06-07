@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Player;
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -27,35 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPlayerGameModeChangeAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPlayerGameModeChangeAfterEvent(
-        ::Player const&                       player,
-        ::GameType                            fromGameMode,
-        ::GameType                            toGameMode,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Player const&                       player,
-        ::GameType                            fromGameMode,
-        ::GameType                            toGameMode,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
     // NOLINTEND
 };
 

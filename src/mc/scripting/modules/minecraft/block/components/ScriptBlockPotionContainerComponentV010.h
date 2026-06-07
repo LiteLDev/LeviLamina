@@ -21,12 +21,6 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockPotionContainerComponentV010
 : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockPotionContainerComponentV010() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<void> setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);

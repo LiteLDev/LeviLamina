@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    RequestLoadRealmsWorldSlotsPayload& operator=(RequestLoadRealmsWorldSlotsPayload const&);
     RequestLoadRealmsWorldSlotsPayload(RequestLoadRealmsWorldSlotsPayload const&);
     RequestLoadRealmsWorldSlotsPayload();
 
@@ -29,13 +30,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RequestLoadRealmsWorldSlotsPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::RequestLoadRealmsWorldSlotsPayload&
-    operator=(::Editor::Network::RequestLoadRealmsWorldSlotsPayload const&);
     // NOLINTEND
 
 public:

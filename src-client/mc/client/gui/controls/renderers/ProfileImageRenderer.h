@@ -35,14 +35,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProfileImageRenderer() /*override*/ = default;
+    virtual ~ProfileImageRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&) /*override*/;
 
     virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
 
     virtual ::UIBatchType getBatchType() const /*override*/;
 
@@ -62,13 +62,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
 
     MCFOLD ::UIBatchType $getBatchType() const;
 

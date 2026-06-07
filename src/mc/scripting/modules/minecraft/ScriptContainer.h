@@ -34,7 +34,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptContainer& operator=(ScriptContainer const&);
     ScriptContainer();
 
 public:
@@ -93,7 +92,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptContainer(::ScriptModuleMinecraft::ScriptContainer const&);
+    MCAPI explicit ScriptContainer(::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
@@ -103,6 +102,18 @@ public:
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
     contains(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCAPI ::Scripting::Result<::std::optional<int>, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    find(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCAPI ::Scripting::Result<::std::optional<int>, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    findLast(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
+
+    MCAPI ::Scripting::Result<::std::optional<int>, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    firstEmptySlot() const;
+
+    MCAPI ::Scripting::Result<::std::optional<int>, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    firstItem() const;
 
     MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> getWeight() const;
 
@@ -126,7 +137,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptContainer const&);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

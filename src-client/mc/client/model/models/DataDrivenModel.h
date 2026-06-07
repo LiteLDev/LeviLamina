@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DataDrivenModel() /*override*/ = default;
+    virtual ~DataDrivenModel() /*override*/;
     // NOLINTEND
 
 public:
@@ -115,10 +115,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool shouldRenderAttachable(
+    MCNAPI static bool shouldRenderAttachableOnActor(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
+        bool                         isSpectator,
         bool                         isFirstPerson,
+        bool                         isRenderingOnMap,
         bool                         lessThanOrEqualToVersion_1_16_210,
         bool                         hideArmor
     );
@@ -134,6 +136,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

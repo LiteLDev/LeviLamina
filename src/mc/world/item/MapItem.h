@@ -30,6 +30,10 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class MapItem : public ::ComplexItem {
 public:
+    // prevent constructor by default
+    MapItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
@@ -57,13 +61,15 @@ public:
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
-
-    virtual ~MapItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MapItem(::std::string const& itemName, short itemId);
+
+    MCAPI void blockTick(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void updateMap(::Level& level, ::Actor& player, ::MapItemSavedData& map) const;
     // NOLINTEND
 
@@ -98,6 +104,10 @@ public:
     );
 
     MCAPI static void serializeMapData(::std::vector<::MapSample> const& mapSamples, ::std::string& output);
+
+    MCAPI static void setItemInstanceInfo(::ItemStackBase& item, ::MapItemSavedData& savedData);
+
+    MCAPI static void setMapNameIndex(::ItemStack& item, int mapNameIndex);
     // NOLINTEND
 
 public:
@@ -116,6 +126,12 @@ public:
     MCAPI static ::std::string const& TAG_MAP_SCALING();
 
     MCAPI static ::std::string const& TAG_MAP_UUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& itemName, short itemId);
     // NOLINTEND
 
 public:

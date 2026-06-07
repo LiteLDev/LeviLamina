@@ -12,13 +12,16 @@ class AABB;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class HangingRootsBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    HangingRootsBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,16 +38,20 @@ public:
         /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~HangingRootsBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HangingRootsBlock(::std::string const& nameId, int id);
+
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -62,8 +69,6 @@ public:
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

@@ -18,16 +18,4 @@ public:
     ::ll::TypedStorage<4, 4, int>                         mAddLevel;
     ::ll::TypedStorage<4, 4, int>                         mNewLevel;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerAddLevelEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

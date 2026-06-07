@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
 #include "mc/world/actor/DefintionDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class PropertyGroup;
+namespace Json { class Value; }
 // clang-format on
 
 struct ActorPropertiesDescription : public ::DefintionDescription {
@@ -18,28 +20,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorPropertiesDescription(ActorPropertiesDescription const&);
-    ActorPropertiesDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual char const* getJsonName() const /*override*/;
-
-    virtual ~ActorPropertiesDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ActorPropertiesDescription& operator=(::ActorPropertiesDescription const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void parse(::Json::Value& root, ::MolangVersion molangVersion);
     // NOLINTEND
 
 public:

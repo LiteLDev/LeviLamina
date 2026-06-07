@@ -44,31 +44,31 @@ public:
     virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
     virtual void updateParticleAppearance(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::ParticleSystem::CommonParticle& particle,
-        ::RenderParams&                   renderParams
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams
     ) /*override*/;
 
     virtual void updateEmitterAppearance(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::RenderParams&                                   renderParams
     ) /*override*/;
-
-    virtual ~ParticleAppearanceBillboardComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ParticleAppearanceBillboardComponent();
+
     MCAPI void _parseFlipbook(::ConstDeserializeDataParams const& deserializeDataParams);
 
     MCAPI void _parseTextureWidthHeight(::Json::Value const& uvs);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -81,9 +81,9 @@ public:
     MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
 
     MCAPI void $updateParticleAppearance(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::ParticleSystem::CommonParticle& particle,
-        ::RenderParams&                   renderParams
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams
     );
 
     MCAPI void

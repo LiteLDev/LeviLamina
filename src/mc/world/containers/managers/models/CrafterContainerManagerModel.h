@@ -40,6 +40,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CrafterContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+
+#ifdef LL_PLAT_C
+    MCAPI ::ItemInstance getLastCraftableItem() const;
+#endif
     // NOLINTEND
 
 public:

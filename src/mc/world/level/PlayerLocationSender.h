@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class PacketSender;
 class Player;
 class UserEntityIdentifierComponent;
@@ -72,8 +70,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerLocationSender();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PlayerLocationSender(
+        ::PacketSender& packetSender,
+        int             simulationDistanceChunks,
+        float           simulationDistanceMultiplyFactor
+    );
+
     MCAPI void _checkPlayerPairAndMaybeSendPacket(
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::Player const&                        viewingPlayer,
@@ -95,9 +103,11 @@ public:
 
     MCAPI void _updatePlayerData(::Player const& player);
 
-#ifdef LL_PLAT_S
+    MCAPI void checkPlayerPairsAndMaybeSendPackets(::std::vector<::WeakEntityRef> const& gameplayUsers);
+
+    MCAPI void sendPacketsHidingAllPlayers(::std::vector<::WeakEntityRef> const& gameplayUsers);
+
     MCAPI void updatePlayersData(::std::vector<::WeakEntityRef> const& gameplayUsers);
-#endif
 
     MCAPI ~PlayerLocationSender();
     // NOLINTEND
@@ -106,6 +116,13 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::PlayerLocationSender::PlayerLocationData const& NULL_PLAYER_LOCATION_DATA();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::PacketSender& packetSender, int simulationDistanceChunks, float simulationDistanceMultiplyFactor);
     // NOLINTEND
 
 public:

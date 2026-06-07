@@ -41,18 +41,16 @@ public:
 
 #endif
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MessPublicKeyManager() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI MessPublicKeyManager();
+#endif
 
     MCNAPI ::std::vector<::std::string> getMessLoginPublicKeys();
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::std::string> getMessSigningPublicKeys();
 
     MCNAPI void
     requestPublicKeys(::MessPublicKeyManager::PublicKeysEndpoint endpoint, ::std::function<void(bool)> callback);

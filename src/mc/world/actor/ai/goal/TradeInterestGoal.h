@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/Tick.h"
 
@@ -14,7 +14,7 @@ class Mob;
 class Player;
 // clang-format on
 
-class TradeInterestGoal : public ::Goal {
+class TradeInterestGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,20 +57,28 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~TradeInterestGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TradeInterestGoal(
+        ::Mob& mob,
+        float  interestDistance,
+        float  interestTime,
+        float  removeTime,
+        float  carriedTime,
+        float  cooldown
+    );
+
     MCAPI bool _isLookingAtMe(::Player const& target) const;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void*
+    $ctor(::Mob& mob, float interestDistance, float interestTime, float removeTime, float carriedTime, float cooldown);
     // NOLINTEND
 
 public:

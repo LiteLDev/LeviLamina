@@ -21,17 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCustomCommandResult& operator=(ScriptCustomCommandResult const&);
-    ScriptCustomCommandResult(ScriptCustomCommandResult const&);
-    ScriptCustomCommandResult();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptCustomCommandResult&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandResult&&);
-
     MCAPI ~ScriptCustomCommandResult();
     // NOLINTEND
 

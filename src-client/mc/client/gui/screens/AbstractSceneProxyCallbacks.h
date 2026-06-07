@@ -21,9 +21,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AbstractSceneProxyCallbacks& operator=(AbstractSceneProxyCallbacks const&);
+    AbstractSceneProxyCallbacks();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AbstractSceneProxyCallbacks(::AbstractSceneProxyCallbacks const&);
+
     MCAPI ~AbstractSceneProxyCallbacks();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::AbstractSceneProxyCallbacks const&);
     // NOLINTEND
 
 public:

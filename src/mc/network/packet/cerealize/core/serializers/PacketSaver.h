@@ -6,6 +6,12 @@
 #include "mc/deps/cereal/BasicSaver.h"
 #include "mc/network/packet/cerealize/core/serializers/PacketSchemaWriter.h"
 
+// auto generated forward declare list
+// clang-format off
+class BinaryStream;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class PacketSaver : public ::cereal::BasicSaver {
 public:
     // member variables
@@ -14,15 +20,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    PacketSaver();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~PacketSaver() /*override*/;
+    MCAPI PacketSaver(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

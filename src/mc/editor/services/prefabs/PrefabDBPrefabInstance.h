@@ -3,19 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/editor/services/prefabs/PrefabInstanceErrorState.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class Vec3;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstanceStructureRef; }
 namespace Editor::Prefabs { class PrefabDBTemplate; }
 namespace Editor::Prefabs::PrefabDBInstanceLoader::v1 { struct InstanceData; }
+namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Prefabs {
@@ -32,7 +34,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk84103e;
     ::ll::UntypedStorage<1, 1>  mUnk5e54e3;
     ::ll::UntypedStorage<8, 24> mUnk721c86;
-    ::ll::UntypedStorage<4, 4>  mUnk116d29;
+    ::ll::UntypedStorage<4, 4>  mUnkb40479;
     ::ll::UntypedStorage<4, 4>  mUnk496546;
     ::ll::UntypedStorage<1, 1>  mUnk5b6077;
     ::ll::UntypedStorage<1, 1>  mUnkcf8fe6;
@@ -40,12 +42,14 @@ public:
 
 public:
     // prevent constructor by default
-    PrefabDBPrefabInstance(PrefabDBPrefabInstance const&);
+    PrefabDBPrefabInstance& operator=(PrefabDBPrefabInstance const&);
     PrefabDBPrefabInstance();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PrefabDBPrefabInstance(::Editor::Prefabs::PrefabDBPrefabInstance const&);
+
     MCNAPI PrefabDBPrefabInstance(
         ::WeakRef<::Editor::Prefabs::PrefabDBTemplate>                     prefabTemplateRef,
         ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& data,
@@ -60,24 +64,69 @@ public:
         ::Mirror                                       mirror
     );
 
+    MCNAPI ::Editor::Prefabs::PrefabInstanceErrorState
+    addError(::Editor::Prefabs::PrefabInstanceErrorState state) const;
+
     MCNAPI void clearDirty() const;
+
+    MCNAPI ::DimensionType getDimensionType() const;
+
+    MCNAPI ::mce::UUID const& getInstanceId() const;
+
+    MCNAPI ::Editor::Prefabs::PrefabDBPrefabInstanceStructureRef*
+    getInstanceStructureRef(::mce::UUID const& prefabStructureId);
+
+    MCNAPI ::std::vector<::Editor::Prefabs::PrefabDBPrefabInstanceStructureRef> const& getInstanceStructureRefs() const;
+
+    MCNAPI ::Mirror getMirror() const;
+
+    MCNAPI ::Vec3 const& getPosition() const;
+
+    MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> getPrefabTemplateRef() const;
+
+    MCNAPI ::Rotation getRotation() const;
+
+    MCNAPI ::mce::UUID const& getTemplateId() const;
 
     MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> getWeakRef();
 
     MCNAPI bool isDirty() const;
 
-    MCNAPI ::Editor::Prefabs::PrefabDBPrefabInstance& operator=(::Editor::Prefabs::PrefabDBPrefabInstance const&);
-
     MCNAPI ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData saveToFileData() const;
 
+    MCNAPI void setMirror(::Mirror mirror);
+
+    MCNAPI void setPosition(::Vec3 const& position);
+
+    MCNAPI void setRotation(::Rotation rotation);
+
+    MCNAPI ::std::_Vector_const_iterator<
+        ::std::_Vector_val<::std::_Simple_types<::Editor::Prefabs::PrefabDBPrefabInstanceStructureRef>>>
+    structureRefcBegin() const;
+
+    MCNAPI ::std::_Vector_const_iterator<
+        ::std::_Vector_val<::std::_Simple_types<::Editor::Prefabs::PrefabDBPrefabInstanceStructureRef>>>
+    structureRefcEnd() const;
+
     MCNAPI void updateFromTemplate(::WeakRef<::Editor::Prefabs::PrefabDBTemplate> templateRef);
+
+    MCNAPI ::Editor::Prefabs::PrefabInstanceErrorState
+    validate(::Editor::ServiceProviderCollection& serviceProviders) const;
 
     MCNAPI ~PrefabDBPrefabInstance();
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Prefabs::PrefabDBPrefabInstance const&);
+
     MCNAPI void* $ctor(
         ::WeakRef<::Editor::Prefabs::PrefabDBTemplate>                     prefabTemplateRef,
         ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& data,

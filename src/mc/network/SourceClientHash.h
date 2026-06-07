@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/SubClientId.h"
+
+// auto generated forward declare list
+// clang-format off
+class NetworkIdentifier;
+// clang-format on
+
 class SourceClientHash {
 public:
     // member variables
@@ -14,4 +22,16 @@ public:
     SourceClientHash& operator=(SourceClientHash const&);
     SourceClientHash(SourceClientHash const&);
     SourceClientHash();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI SourceClientHash(::NetworkIdentifier source, ::SubClientId subClientId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::NetworkIdentifier source, ::SubClientId subClientId);
+    // NOLINTEND
 };

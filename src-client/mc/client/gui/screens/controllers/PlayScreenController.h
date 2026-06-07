@@ -24,6 +24,7 @@ class DlcUIWrapper;
 class PlatformMultiplayerRestrictions;
 class PlayScreenModel;
 class ServicesManager;
+class UIPropertyBag;
 struct ImportResult;
 struct LegacyWorldInfo;
 struct NetworkWorldInfo;
@@ -137,38 +138,40 @@ public:
 
     MCAPI ::ui::ViewRequest _convertLegacyWorld(::LegacyWorldInfo const& world);
 
+    MCAPI void _displayImportRetailWorldModal(uint64 worldSize, ::std::function<void(::ModalScreenButtonId)> callback);
+
     MCAPI void _displayRealmsFailedToJoinModal(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void _errorStoreUnavailable();
 
-    MCAPI ::LegacyWorldInfo const& _getBetaRetailLegacyWorld(int index) const;
+    MCFOLD int _getCollectionIndex(::UIPropertyBag* bag) const;
+
+    MCAPI ::std::string _getCrossPlatformFriendWorldIconFromCollection(int index) const;
 
     MCAPI ::std::string _getCrossPlatformFriendsGridWarningText();
+
+    MCAPI ::std::string _getFriendWorldIconFromCollection(int index) const;
 
     MCAPI ::std::string _getFriendsGridWarningText();
 
     MCAPI ::std::string _getGeneralMultiplayerWarningText();
 
-    MCAPI int _getIndexForRealmsCollection(::std::string const& collectionName, int collectionIndex) const;
-
-    MCAPI ::LegacyWorldInfo const& _getLegacyWorld(int index);
-
     MCAPI ::std::function<void(::Legacy::ImportStatus, float, ::std::shared_ptr<::ImportResult>)>
     _getLegacyWorldConvertCallback(::LegacyWorldInfo const& worldInfo, ::std::string const& levelId);
 
-    MCAPI ::NetworkWorldInfo const& _getNetworkWorld(int index, ::NetworkWorldType networkType);
-
     MCAPI ::NetworkWorldType _getNetworkWorldTypeFromCollection(::std::string const& collectionName) const;
 
-    MCAPI ::std::string _getRealmsUnavailableMessage() const;
+    MCAPI ::std::string _getOwnershipVerificationStateText() const;
 
-    MCAPI int _getTotalServerCount() const;
+    MCAPI ::std::string _getRealmsUnavailableMessage() const;
 
     MCAPI ::ui::ViewRequest _handleLeaveRealm(int index);
 
     MCAPI ::ui::ViewRequest _handleStartNetworkItem(int index, ::NetworkWorldType nwt);
 
     MCAPI ::ui::ViewRequest _handleStartRealm(int index);
+
+    MCAPI void _importRetailWorld(::std::string const& worldId);
 
     MCAPI bool _isRealmCreationPossible() const;
 
@@ -202,7 +205,7 @@ public:
 
     MCAPI void _updateNeedsOfflineAuthCode();
 
-    MCAPI bool _userGeneratedContentRestrictionsDialogCheck() const;
+    MCAPI bool _worldHasHeader(::NetworkWorldType type, int collectionIndex);
 
     MCAPI bool _worldHasImage(::NetworkWorldType type, int collectionIndex);
     // NOLINTEND

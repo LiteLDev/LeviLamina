@@ -22,12 +22,11 @@ public:
     // prevent constructor by default
     FileDataContainer& operator=(FileDataContainer const&);
     FileDataContainer(FileDataContainer const&);
+    FileDataContainer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FileDataContainer();
-
     MCNAPI ~FileDataContainer();
     // NOLINTEND
 
@@ -51,12 +50,6 @@ public:
         ::cereal::ReflectionCtx&                                           ctx,
         ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const& templateData
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -30,12 +30,6 @@ public:
     MCNAPI static ::std::optional<::NetherNet::CandidateAdd>
     TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& kIdentifier();
-    // NOLINTEND
 };
 
 } // namespace NetherNet

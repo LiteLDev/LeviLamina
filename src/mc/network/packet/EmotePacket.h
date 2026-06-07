@@ -23,18 +23,6 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    EmotePacket& operator=(EmotePacket const&);
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    EmotePacket& operator=(EmotePacket const&);
-    EmotePacket();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -71,18 +59,12 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~EmotePacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI EmotePacket();
-#endif
-
-    MCAPI EmotePacket(::EmotePacket const&);
 
 #ifdef LL_PLAT_C
     MCAPI explicit EmotePacket(::EmotePacketPayload payload);
@@ -92,21 +74,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor();
-#endif
-
-    MCAPI void* $ctor(::EmotePacket const&);
 
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::EmotePacketPayload payload);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -118,7 +90,7 @@ public:
 
     MCFOLD ::SerializationMode $getSerializationMode() const;
 
-    MCAPI void $setSerializationMode(::SerializationMode mode);
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
 
     MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,

@@ -8,11 +8,6 @@
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
 #include "mc/world/actor/ai/village/POIType.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class WorkGoal : public ::MoveToPOIGoal {
 public:
     // member variables
@@ -36,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorkGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
@@ -55,24 +46,12 @@ public:
     virtual void tick() /*override*/;
 
     virtual void useWorkstation();
-
-    virtual ~WorkGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorkGoal(::Mob& mob);
-
-    MCAPI bool _isInsideOrIsNotRaining();
-
     MCAPI void playPOISoundEvent() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

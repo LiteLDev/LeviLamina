@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +16,7 @@ class MoveToLiquidGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::MaterialType> mMaterialType;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::MaterialType> mMaterialType;
     // NOLINTEND
 
 public:
@@ -31,8 +31,6 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool findTargetBlock() /*override*/;
-
-    virtual ~MoveToLiquidGoal() /*override*/ = default;
     // NOLINTEND
 
 public:

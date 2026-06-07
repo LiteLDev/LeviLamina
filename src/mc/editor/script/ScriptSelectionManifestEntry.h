@@ -19,18 +19,13 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptSelectionManifestEntry& operator=(ScriptSelectionManifestEntry const&);
     ScriptSelectionManifestEntry(ScriptSelectionManifestEntry const&);
     ScriptSelectionManifestEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptSelectionManifestEntry&
-    operator=(::Editor::ScriptModule::ScriptSelectionManifestEntry&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptSelectionManifestEntry&
-    operator=(::Editor::ScriptModule::ScriptSelectionManifestEntry const&);
-
     MCNAPI ~ScriptSelectionManifestEntry();
     // NOLINTEND
 

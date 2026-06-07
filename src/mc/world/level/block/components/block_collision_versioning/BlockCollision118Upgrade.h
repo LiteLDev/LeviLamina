@@ -29,8 +29,6 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&
     ) const /*override*/;
-
-    virtual ~BlockCollision118Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:

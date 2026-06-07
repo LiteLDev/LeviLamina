@@ -14,7 +14,6 @@ class Actor;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class Player;
-class ResourceLocation;
 class ScreenContext;
 class UIControl;
 class UICustomRenderer;
@@ -45,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudCameraRenderer() /*override*/;
+    virtual ~HudCameraRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -71,20 +70,12 @@ public:
 
     MCAPI void
     _drawPicture(::ScreenContext& screenContext, float slideOffScreenRatio, int screenWidth, int screenHeight);
-
-    MCAPI ::ResourceLocation _getOverlayResourceLocation() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

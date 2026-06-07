@@ -12,26 +12,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MobEventFilter(MobEventFilter const&);
-    MobEventFilter();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEventFilter(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
-
-    MCFOLD ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
-
-    MCFOLD ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter const&);
-
     MCAPI ~MobEventFilter();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
     // NOLINTEND
 
 public:

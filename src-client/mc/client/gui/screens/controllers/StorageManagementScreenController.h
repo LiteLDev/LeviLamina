@@ -88,14 +88,16 @@ public:
 
     MCAPI ::ui::ViewRequest _deleteSelectedResources();
 
-    MCAPI void _deselectPacks();
-
     MCAPI void _displayImportRetailWorldModal(uint64 worldSize, ::std::function<void(::ModalScreenButtonId)> callback);
+
+    MCAPI ::LegacyWorldInfo _getLegacyWorld(int worldIndex);
 
     MCAPI ::std::function<void(::Legacy::ImportStatus, float, ::std::shared_ptr<::ImportResult>)>
     _getLegacyWorldConvertCallback(::LegacyWorldInfo const& worldInfo, ::std::string const& levelId);
 
     MCAPI ::std::string _getLegacyWorldsSize(uint numberElements, uint64 size);
+
+    MCAPI ::LegacyWorldInfo _getRetailToPreviewWorld(int worldIndex);
 
     MCAPI void _onWorldConversionCompleted(::std::shared_ptr<::ImportResult> result, ::std::string const& levelId);
 
@@ -111,13 +113,7 @@ public:
 
     MCAPI ::ui::ViewRequest _selectRetailToPreviewWorld(int worldIndex);
 
-    MCAPI void _syncLegacyWorlds();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _deleteResources(::IStorageManagementModel& model, ::StorageManagementViews& views);
+    MCAPI ::StorageManagementScreenControllerProxy* getStorageManagementScreenControllerProxy();
     // NOLINTEND
 
 public:

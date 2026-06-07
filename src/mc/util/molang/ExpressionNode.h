@@ -15,6 +15,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class HashedString;
 class MaterialVariants;
 class RenderParams;
@@ -52,33 +53,21 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk749abb;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         ResourceReference& operator=(ResourceReference const&);
         ResourceReference(ResourceReference const&);
         ResourceReference();
 
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        ResourceReference& operator=(ResourceReference const&);
-        ResourceReference(ResourceReference const&);
-
-#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI ResourceReference();
-
         MCNAPI explicit ResourceReference(::MolangDataDrivenGeometry const& geometry);
 
         MCNAPI explicit ResourceReference(::MaterialVariants const& matVariants);
 
         MCNAPI explicit ResourceReference(::MolangClientTextureSet const& textureSet);
-
-        MCNAPI ~ResourceReference();
 #endif
         // NOLINTEND
 
@@ -86,21 +75,11 @@ public:
         // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI void* $ctor();
-
         MCNAPI void* $ctor(::MolangDataDrivenGeometry const& geometry);
 
         MCNAPI void* $ctor(::MaterialVariants const& matVariants);
 
         MCNAPI void* $ctor(::MolangClientTextureSet const& textureSet);
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -120,13 +99,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::variant<::std::unique_ptr<::Molang::details::IComplexExpression>, float>> mImpl;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ExpressionNode();
-
-#else // LL_PLAT_C
-#endif
 public:
     ExpressionNode(
         std::string const&                expression,
@@ -143,11 +115,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ExpressionNode();
-#endif
-
-    MCAPI ExpressionNode(::ExpressionNode&&);
 
 #ifdef LL_PLAT_C
     MCAPI explicit ExpressionNode(::MaterialVariants const& materialVariants);
@@ -155,9 +123,11 @@ public:
 
     MCAPI ExpressionNode(::ExpressionNode const& rhs);
 
-#ifdef LL_PLAT_C
     MCAPI explicit ExpressionNode(::Molang::details::SourceTree root);
-#endif
+
+    MCAPI explicit ExpressionNode(float value);
+
+    MCAPI ExpressionNode(::std::string_view expression, ::MolangParseConfig const& config);
 
     MCAPI ExpressionNode(::std::string const& expression, ::MolangVersion molangVersion);
 
@@ -169,21 +139,33 @@ public:
 
     MCAPI ExpressionNode(::MolangScriptArg const& value, ::ExpressionOp op);
 
-    MCAPI float evalAsFloat(::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::MolangScriptArg> _getValueIfConstant() const;
+
+    MCAPI void clear();
 
     MCAPI ::MolangScriptArg const& evalGeneric(::RenderParams& renderParams) const;
 
     MCAPI ::std::string getExpressionString() const;
 
+    MCAPI ::MolangVersion const getMolangVersion() const;
+
+    MCAPI ::ExpressionOp getOp() const;
+
 #ifdef LL_PLAT_C
     MCAPI bool hasVariableAssignments() const;
+
+    MCAPI bool isConstantValue() const;
 #endif
+
+    MCAPI bool isInitialized() const;
+
+    MCAPI bool isValid() const;
 
     MCAPI ::MolangCompileResult link();
 
-    MCAPI ::ExpressionNode& operator=(::ExpressionNode&&);
-
 #ifdef LL_PLAT_C
+    MCAPI bool needsToCompile() const;
+
     MCAPI ::ExpressionNode& operator=(::MaterialVariants const& materialVariants);
 #endif
 
@@ -193,12 +175,17 @@ public:
 
     MCAPI bool parse(::std::string_view expression, ::MolangParseConfig const& config);
 
+    MCAPI bool parse(::std::string_view expression, ::MolangVersion version, ::gsl::span<::HashedString const> idSet);
+
 #ifdef LL_PLAT_C
     MCAPI void
     replaceArrayVariables(::std::unordered_map<::HashedString, ::ExpressionNode>& dataMap, bool compileProgram);
-#endif
 
-    MCAPI ~ExpressionNode();
+    MCAPI ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>
+    replaceResourceVariables(::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>& resourceTable);
+
+    MCAPI void validateArrayVariables() const;
+#endif
     // NOLINTEND
 
 public:
@@ -206,13 +193,20 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _initializeMolangQueries(::ExpressionQueries&& queries);
 
+    MCAPI static void assertMolangInitialized();
+
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
+    MCAPI static ::Experiments& getExperiments();
+
 #ifdef LL_PLAT_S
-    MCAPI static void initializeMolang(::ExpressionQueries&& queries);
+    MCAPI static ::std::unordered_multimap<::HashedString, ::MolangQueryFunction> const& getQueryFunctionAccessors();
+
+    MCAPI static ::std::unordered_map<::HashedString, ::std::unordered_set<::HashedString>> const& getQuerySets();
 #endif
 
-#ifdef LL_PLAT_C
+    MCAPI static void initializeMolang(::ExpressionQueries&& queries);
+
     MCAPI static ::std::function<
         ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*
     queryFunctionAccessorFromString(
@@ -221,7 +215,6 @@ public:
         ::MolangQueryFunctionReturnType& functionReturnType,
         bool                             missingIsOkay_returnNullIfSo
     );
-#endif
 
     MCAPI static ::MolangQueryFunction& registerQueryFunction(
         ::std::string_view queryFunctionName,
@@ -233,6 +226,15 @@ public:
         uint64                              maxArgumentCount,
         ::std::initializer_list<int> const& experiments
     );
+
+    MCAPI static void setExperiments(::Experiments const& experiments);
+
+#ifdef LL_PLAT_C
+    MCAPI static void
+    setParticleTintFunc(::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)> tintFunc);
+
+    MCAPI static ::std::string& toLowerInPlaceExceptStrings(::std::string& expression);
+#endif
 
     MCAPI static void
     unregisterQueryFunction(::std::string const& queryFunctionName, ::HashedString querySetIdentifier);
@@ -255,11 +257,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
-
-    MCAPI void* $ctor(::ExpressionNode&&);
+    MCFOLD void* $ctor();
 
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::MaterialVariants const& materialVariants);
@@ -267,9 +265,11 @@ public:
 
     MCAPI void* $ctor(::ExpressionNode const& rhs);
 
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::Molang::details::SourceTree root);
-#endif
+
+    MCAPI void* $ctor(float value);
+
+    MCAPI void* $ctor(::std::string_view expression, ::MolangParseConfig const& config);
 
     MCAPI void* $ctor(::std::string const& expression, ::MolangVersion molangVersion);
 
@@ -281,15 +281,11 @@ public:
 
     MCAPI void* $ctor(::MolangScriptArg const& value, ::ExpressionOp op);
     // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 // free functions
 // NOLINTBEGIN
+MCAPI bool operator!=(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
+
 MCAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
 // NOLINTEND

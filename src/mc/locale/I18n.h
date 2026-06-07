@@ -20,7 +20,7 @@ class I18n {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~I18n();
+    virtual ~I18n() = default;
 
     virtual void clearLanguages() = 0;
 
@@ -111,21 +111,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

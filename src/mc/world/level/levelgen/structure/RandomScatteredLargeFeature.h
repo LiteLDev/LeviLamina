@@ -60,14 +60,12 @@ public:
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&                         dimension,
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        ::ChunkPos const&                    cp,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+        ::Dimension&         dimension,
+        ::BiomeSource const& biomeSource,
+        ::Random&            cp,
+        ::ChunkPos const&    preliminarySurfaceLevel,
+        ::IPreliminarySurfaceProvider const&
     ) /*override*/;
-
-    virtual ~RandomScatteredLargeFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -111,11 +109,11 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension&                         dimension,
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        ::ChunkPos const&                    cp,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+        ::Dimension&         dimension,
+        ::BiomeSource const& biomeSource,
+        ::Random&            cp,
+        ::ChunkPos const&    preliminarySurfaceLevel,
+        ::IPreliminarySurfaceProvider const&
     );
 
 

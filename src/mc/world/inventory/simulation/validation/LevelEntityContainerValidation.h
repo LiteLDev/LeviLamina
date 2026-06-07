@@ -19,8 +19,6 @@ public:
 
     virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
         /*override*/;
-
-    virtual ~LevelEntityContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

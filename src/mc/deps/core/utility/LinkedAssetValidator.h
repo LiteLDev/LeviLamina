@@ -35,18 +35,6 @@ public:
         KnownObject& operator=(KnownObject const&);
         KnownObject(KnownObject const&);
         KnownObject();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~KnownObject();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct KnownObjectHasher {};
@@ -99,15 +87,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI explicit AssetCollection(bool isClientCollection);
-
         MCNAPI ~AssetCollection();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(bool isClientCollection);
         // NOLINTEND
 
     public:
@@ -132,17 +112,9 @@ public:
     LinkedAssetValidator();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~LinkedAssetValidator() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI explicit LinkedAssetValidator(bool isClient);
-#endif
 
     MCNAPI void _initThreadAssetCollection();
 
@@ -157,7 +129,15 @@ public:
     MCNAPI void addReference(int assetType, ::std::string const& identifier, ::std::string contextString);
 
 #ifdef LL_PLAT_C
+    MCNAPI void finishLoading();
+
+    MCNAPI bool isClient() const;
+#endif
+
     MCNAPI void reset();
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::std::string> validateLinkedAssets();
 #endif
     // NOLINTEND
 
@@ -170,15 +150,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void* $ctor(bool isClient);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

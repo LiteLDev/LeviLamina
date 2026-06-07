@@ -30,18 +30,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64>                                              mStructure;
         ::ll::TypedStorage<8, 16, ::std::weak_ptr<::br::worldgen::StructureInstance>> mInstance;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~StructurePair();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct StructureTempOwner {
@@ -51,6 +39,18 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<int>>                                                  mTimers;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance>>> mInstances;
         ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                                  mMutex;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~StructureTempOwner();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

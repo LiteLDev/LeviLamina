@@ -68,8 +68,6 @@ public:
     virtual ::HashedString const& getRawName() const /*override*/;
 
     virtual void visit(::AnimationVisitor&& dispatcher) /*override*/;
-
-    virtual ~ActorSkeletalAnimationPlayer() /*override*/;
     // NOLINTEND
 
 public:
@@ -114,12 +112,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $applyToPose(
@@ -133,9 +125,10 @@ public:
 
     MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
 
-    MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
+    MCFOLD void
+    $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
-    MCAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
+    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
     MCFOLD bool $hasAnimationFinished() const;
 

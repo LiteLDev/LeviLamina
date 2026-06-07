@@ -10,6 +10,7 @@
 // clang-format off
 class Level;
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Transactions { struct EntityOperationData; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
 
@@ -52,6 +53,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI EntityOperation(
+        ::Editor::Transactions::EntityOperationData&&          entityData,
+        ::Editor::Transactions::EntityOperation::OperationType type
+    );
+
     MCNAPI ::Scripting::Result_deprecated<void> _loadEntity(::Level* level);
 
     MCNAPI ::Scripting::Result_deprecated<void>
@@ -70,6 +76,15 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& DEFAULT_OPERATION_NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Editor::Transactions::EntityOperationData&&          entityData,
+        ::Editor::Transactions::EntityOperation::OperationType type
+    );
     // NOLINTEND
 
 public:

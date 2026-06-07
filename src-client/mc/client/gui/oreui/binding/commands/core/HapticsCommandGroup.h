@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+namespace OreUI { class GameDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -28,9 +29,15 @@ public:
     HapticsCommandGroup();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~HapticsCommandGroup() /*override*/ = default;
+    MCAPI explicit HapticsCommandGroup(::OreUI::GameDependencies const& game);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:

@@ -38,8 +38,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~FriendWorldListFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -74,12 +72,6 @@ public:
         ::std::shared_ptr<::Social::FriendList>                   friendList,
         ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager> partyTravelManager
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

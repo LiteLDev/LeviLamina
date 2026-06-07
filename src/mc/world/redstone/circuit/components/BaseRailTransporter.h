@@ -36,7 +36,7 @@ public:
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
+        ::CircuitSceneGraph&,
         ::CircuitTrackingInfo const& info,
         int&                         dampening,
         bool&                        bDirectlyPowered
@@ -45,8 +45,6 @@ public:
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
-
-    virtual ~BaseRailTransporter() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +53,7 @@ public:
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph&, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 

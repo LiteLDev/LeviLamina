@@ -90,7 +90,7 @@ public:
     // NOLINTBEGIN
     MCAPI ParticleEffectData_Legacy();
 
-    MCAPI ParticleEffectData_Legacy(::ParticleSystem::ParticleEffectData_Legacy&&);
+    MCAPI ParticleEffectData_Legacy(::ParticleSystem::ParticleEffectData_Legacy&& other);
 
     MCAPI bool _extractBasicRenderParameters(::Json::Value const& node);
 
@@ -123,7 +123,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::ParticleSystem::ParticleEffectData_Legacy&&);
+    MCAPI void* $ctor(::ParticleSystem::ParticleEffectData_Legacy&& other);
     // NOLINTEND
 
 public:

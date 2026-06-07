@@ -27,15 +27,11 @@ public:
     ScriptDebugUtilitiesModuleFactory();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptDebugUtilitiesModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptDebugUtilitiesModuleFactory(::ServerLevel* level);
+
+    MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
         ::Scripting::ModuleBindingBuilder&  moduleBuilder,
@@ -47,6 +43,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 

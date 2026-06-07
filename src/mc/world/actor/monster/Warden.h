@@ -12,7 +12,10 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Warden : public ::Monster {
@@ -22,6 +25,10 @@ public:
     ::ll::TypedStorage<8, 8, ::Tick>                           mTouchAngerCooldownExpiryTick;
     ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mSonicBoomCooldown;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Warden();
 
 public:
     // virtual functions
@@ -47,8 +54,26 @@ public:
 
     virtual ::ActorHurtResult
     doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
+    // NOLINTEND
 
-    virtual ~Warden() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Warden(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

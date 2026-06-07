@@ -6,17 +6,16 @@
 #include "mc/client/gui/CraftingType.h"
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/ViewRequest.h"
-#include "mc/client/gui/screens/controllers/CategoryTabState.h"
 #include "mc/client/gui/screens/controllers/ContainerScreenController.h"
 #include "mc/client/gui/screens/controllers/FadeInIconBehavior.h"
 #include "mc/client/gui/screens/controllers/RepeatCraftButtonData.h"
 #include "mc/client/social/IToastListener.h"
+#include "mc/deps/shared_types/item/CreativeItemCategory.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/controllers/ItemCraftType.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
 #include "mc/world/inventory/InventoryLeftTabIndex.h"
-#include "mc/world/item/CreativeItemCategory.h"
 #include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
@@ -46,11 +45,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::InventoryLeftTabIndex> tabIndex;
-        ::ll::TypedStorage<4, 4, ::CreativeItemCategory>  category;
-        ::ll::TypedStorage<1, 1, ::ContainerEnumName>     container;
-        ::ll::TypedStorage<8, 32, ::std::string>          tabName;
-        ::ll::TypedStorage<8, 32, ::std::string>          factoryName;
+        ::ll::TypedStorage<4, 4, ::InventoryLeftTabIndex>             tabIndex;
+        ::ll::TypedStorage<4, 4, ::SharedTypes::CreativeItemCategory> category;
+        ::ll::TypedStorage<1, 1, ::ContainerEnumName>                 container;
+        ::ll::TypedStorage<8, 32, ::std::string>                      tabName;
         // NOLINTEND
 
     public:
@@ -120,12 +118,9 @@ public:
     ::ll::TypedStorage<4, 4, int>                                         mRepeatCraftLoopStartTime;
     ::ll::TypedStorage<8, 48, ::CraftingScreenController::ScrollItemData> mNeedToScrollToItem;
     ::ll::TypedStorage<8, 136, ::RepeatCraftButtonData>                   mRepeatCraftButton;
-    ::ll::TypedStorage<1, 1, bool>                                        mHasInitalCategoryTabsState;
-    ::ll::TypedStorage<4, 4, int>                                         mTicksLeftUntilCategoryTabUpdate;
     ::ll::TypedStorage<4, 4, int>                                         mTabFiltersDirty;
     ::ll::TypedStorage<4, 4, int>                                         mSelectedLeftTab;
     ::ll::TypedStorage<4, 4, int>                                         mSelectedRightTab;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::InventoryLeftTabIndex, ::CategoryTabState>> mCategoryTabsState;
     // NOLINTEND
 
 public:
@@ -221,10 +216,6 @@ public:
 
     MCAPI void _cycleLayout(int dir);
 
-    MCAPI void _cycleRightSideInventoryTab(int dir);
-
-    MCAPI void _destroyCategoryTabs();
-
     MCAPI void _evacuateCraftingGrid();
 
     MCAPI int _findNextLeftSideInventoryTab(int dir) const;
@@ -239,6 +230,8 @@ public:
 
     MCAPI ::std::string _getRecipeHoverText(::std::string const& collectionName, int collectionIndex);
 
+    MCAPI void _handleAutoDestroy(::std::string const& collectionName, int collectionIndex);
+
     MCAPI void _handleCraftItem(::ItemCraftType);
 
     MCAPI void _handleCreativeHotbarPlaceAll(::std::string const& collectionName, int collectionIndex);
@@ -247,7 +240,13 @@ public:
 
     MCAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex, bool displayOnly);
 
-    MCAPI bool _isRecipeBookOnlyLayoutAvailable() const;
+    MCAPI bool _isConstructionTabVisible() const;
+
+    MCAPI bool _isEquipmentTabVisible() const;
+
+    MCAPI bool _isItemsTabVisible() const;
+
+    MCAPI bool _isNatureTabVisible() const;
 
     MCAPI void _loadPlayerInventoryOptions();
 
@@ -268,18 +267,7 @@ public:
 
     MCAPI void _setInitialTabsSelected(int defaultLeftTab, int defaultRightTab);
 
-    MCAPI void _setIsFiltering(bool craftableFilterOn);
-
-    MCAPI void _setLayout(int layoutIndex, bool saveOptions);
-
     MCAPI void _setLeftSideInventoryTab(int tabIndex, bool saveOptions);
-
-    MCAPI bool _shouldAlwaysShowAllTabs() const;
-
-    MCAPI void _showAllTabs();
-
-    MCAPI void
-    _showCategoryTab(::CraftingScreenController::CategoryTabInfo const& categoryTab, bool animated, int tabsToSlide);
 
     MCAPI ::std::string _tabIndexToCollectionName(::InventoryLeftTabIndex index) const;
 
@@ -292,7 +280,7 @@ public:
 
     MCAPI void _tryHoverOnIngredientSetChanged();
 
-    MCAPI ::ui::DirtyFlag _updateCategoryTabs();
+    MCAPI void _updateInteractionCollectionName();
     // NOLINTEND
 
 public:
@@ -304,11 +292,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& RECIPE_BOOK_COLLECTION_NAME();
-
     MCAPI static ::std::vector<::CraftingScreenController::CategoryTabInfo> const& mCategoryTabs();
-
-    MCAPI static int& mTabsWaitingToBeAnimatedIn();
     // NOLINTEND
 
 public:

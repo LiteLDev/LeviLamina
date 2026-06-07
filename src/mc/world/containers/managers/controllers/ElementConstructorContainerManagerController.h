@@ -7,7 +7,6 @@
 #include "mc/world/containers/controllers/ItemTakeType.h"
 #include "mc/world/containers/managers/controllers/ContainerManagerController.h"
 #include "mc/world/item/ItemInstance.h"
-#include "mc/world/level/block/ElementType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,30 +41,73 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ElementConstructorContainerManagerController() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ElementConstructorContainerManagerController() /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
+#else // LL_PLAT_C
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleTakeAll(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual int handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType) /*override*/;
+#else // LL_PLAT_C
     virtual void
     handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool isOutputSlot(::std::string const&) const /*override*/;
+#else // LL_PLAT_C
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::CreateContainerItemScope
+    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+#else // LL_PLAT_C
     virtual ::CreateContainerItemScope
     _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -75,8 +117,6 @@ public:
     MCNAPI explicit ElementConstructorContainerManagerController(
         ::std::weak_ptr<::ElementConstructorContainerManagerModel> containerManagerModel
     );
-
-    MCNAPI ::ItemInstance _getElementItem(::ElementType type) const;
 
     MCNAPI bool _handleOutputSwap(::SlotData const& src, ::SlotData const& dest, ::ItemTransferAmount amount);
 
@@ -90,7 +130,11 @@ public:
 
     MCNAPI bool outputInteractWouldCausePlace(::SlotData const& src);
 
+    MCNAPI void setParticleCallback(::std::function<void(int, int, int)> callback);
+
     MCNAPI void updateOutput(int protons, int electrons, int neutrons);
+
+    MCNAPI void updateOutputFromSlot(::SlotData const& src);
 #endif
     // NOLINTEND
 
@@ -100,6 +144,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::weak_ptr<::ElementConstructorContainerManagerModel> containerManagerModel);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>              mRealmsWorldPackEditorFetchStatusSub;
     ::ll::TypedStorage<4, 12, ::Realms::RealmsWorldPackEditor::FetchStatus> mRealmsWorldPackEditorFetchStatus;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>              mRealmsWorldPackEditorSaveStatusSub;
-    ::ll::TypedStorage<4, 12, ::Realms::RealmsWorldPackEditor::SaveStatus>  mRealmsWorldPackEditorSaveStatus;
+    ::ll::TypedStorage<8, 56, ::Realms::RealmsWorldPackEditor::SaveStatus>  mRealmsWorldPackEditorSaveStatus;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>              mRealmsWorldPackEditorPackContentChangedSub;
     ::ll::TypedStorage<1, 1, bool>                                          mIsPackContentChanged;
     ::ll::TypedStorage<8, 24, ::std::vector<::World::PackDetails>>          mSelectedResourcePackDetails;
@@ -87,7 +87,7 @@ public:
 
     MCFOLD ::std::vector<::World::PackDetails> const& getGlobalResourcePacks() const;
 
-    MCAPI bool getIsPackEditorContentChanged() const;
+    MCFOLD bool getIsPackEditorContentChanged() const;
 
     MCFOLD ::std::optional<::IMarketplacePackDownloader::MarketplacePackDownloadStatus> const&
     getMarketplacePackDownloadStatus();
@@ -98,11 +98,13 @@ public:
 
     MCFOLD ::std::optional<::World::PackActionError> const& getPackApplicationError() const;
 
+    MCFOLD ::std::optional<::std::string> const& getPackEditorFailedUploadPackName() const;
+
     MCAPI ::std::optional<::Realms::GenericStatus> getPackEditorFetchError() const;
 
     MCFOLD ::Realms::RealmsWorldPackEditor::ProcessState getPackEditorFetchState() const;
 
-    MCAPI ::std::optional<::Realms::GenericStatus> getPackEditorSaveError() const;
+    MCAPI ::std::optional<::Realms::GenericStatus> const& getPackEditorSaveError() const;
 
     MCFOLD ::Realms::RealmsWorldPackEditor::ProcessState getPackEditorSaveState() const;
 

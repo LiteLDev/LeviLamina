@@ -23,6 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool operator==(::SharedTypes::v1_21_50::JigsawStructureMetadataFile const& rhs) const;
+
     MCAPI ~JigsawStructureMetadataFile();
     // NOLINTEND
 

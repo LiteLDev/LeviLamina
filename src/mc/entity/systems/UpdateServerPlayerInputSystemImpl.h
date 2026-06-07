@@ -2,17 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Include.h"
-
 // auto generated forward declare list
 // clang-format off
-class StrictEntityContext;
 struct ActorHeadRotationComponent;
 struct ActorRotationComponent;
-struct InterpolateMovementNeededComponent;
-struct PlayerComponent;
 struct PlayerInputModeComponent;
 struct PlayerInteractionModelComponent;
 struct ServerPlayerCurrentMovementComponent;
@@ -29,18 +22,6 @@ MCAPI void _handlePlayerAuthInputPacket(
     ::PlayerInputModeComponent&             playerInputModeComponent,
     ::PlayerInteractionModelComponent&      playerInteractionModelComponent,
     ::ServerPlayerCurrentMovementComponent& serverPlayerCurrentMovementComponent
-);
-
-MCAPI void _tickUpdateServerPlayerInputSystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::InterpolateMovementNeededComponent, ::PlayerComponent>,
-        ::StateVectorComponent const,
-        ::ActorHeadRotationComponent,
-        ::ActorRotationComponent,
-        ::PlayerInputModeComponent,
-        ::PlayerInteractionModelComponent,
-        ::ServerPlayerCurrentMovementComponent> view
 );
 // NOLINTEND
 

@@ -40,20 +40,13 @@ public:
 public:
     // prevent constructor by default
     ContentManagerFactoryArgs& operator=(ContentManagerFactoryArgs const&);
+    ContentManagerFactoryArgs(ContentManagerFactoryArgs const&);
     ContentManagerFactoryArgs();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContentManagerFactoryArgs(::ContentManagerFactoryArgs const&);
-
     MCAPI ~ContentManagerFactoryArgs();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentManagerFactoryArgs const&);
     // NOLINTEND
 
 public:

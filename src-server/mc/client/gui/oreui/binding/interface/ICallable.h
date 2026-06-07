@@ -4,10 +4,6 @@
 
 namespace OreUI::Detail {
 
-class ICallable {
-public:
-    // ICallable inner types define
-    enum class Dummy : int {};
-};
+class ICallable {};
 
 } // namespace OreUI::Detail

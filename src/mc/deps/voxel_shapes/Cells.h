@@ -35,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Cells(::VoxelShapes::Cells&&);
-
     MCNAPI void forEachBox(
         ::brstd::function_ref<
             void(schar, schar, schar, schar, schar, schar) const,
@@ -49,10 +47,6 @@ public:
     MCNAPI ::VoxelShapes::Cells reverseAxes(bool reverseX, bool reverseY, bool reverseZ) const;
 
     MCNAPI ::VoxelShapes::Cells rotate(::VoxelShapes::AxesPermutation const& rotation) const;
-
-    MCNAPI ::VoxelShapes::SerializableCells toSerializable() const;
-
-    MCNAPI ~Cells();
     // NOLINTEND
 
 public:
@@ -68,18 +62,6 @@ public:
         ::VoxelShapes::IndexMerger const& zMerger,
         ::VoxelShapes::JoinOperation      operation
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::VoxelShapes::Cells&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

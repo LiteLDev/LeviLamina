@@ -60,7 +60,15 @@ public:
         ::std::unique_ptr<::Settings::IActionDataProvider> dataProvider
     );
 
+    MCAPI bool flush();
+
     MCAPI ::std::string getActionLabel() const;
+
+    MCAPI ::std::optional<::Settings::SettingsActionType> getActionType() const;
+
+    MCFOLD ::std::optional<::Settings::ConfirmationRequest> const& getConfirmationRequest() const;
+
+    MCAPI bool invokeClickCallback();
     // NOLINTEND
 
 public:

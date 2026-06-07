@@ -46,7 +46,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LevelStorage>>                  mLevelStorage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkSource>>                                mLegacySource;
     ::ll::TypedStorage<4, 4, ::World::InfiniteWorldConverter::State>                          mState;
-    ::ll::TypedStorage<8, 376, ::GridArea<::std::shared_ptr<::LevelChunk>>>                   mView;
+    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>>>                   mView;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>                               mUnloaded;
     ::ll::TypedStorage<4, 4, float>                                                           mProgress;
     ::ll::TypedStorage<8, 32, ::World::WorldID>                                               mWorldId;
@@ -71,8 +71,6 @@ public:
 
     MCAPI void _makeBackupOfLevel(::World::WorldID const& id);
 
-    MCAPI void _resetState();
-
     MCAPI void _tick();
 
     MCAPI void makeWorldInfinite(
@@ -80,6 +78,8 @@ public:
         ::std::function<void()>                                        onCompleteCallback,
         ::std::function<void(::World::InfiniteWorldConverter::Result)> onErrorCallback
     );
+
+    MCAPI void update(double);
 
     MCAPI ~InfiniteWorldConverter();
     // NOLINTEND

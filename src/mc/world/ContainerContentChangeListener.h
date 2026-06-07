@@ -6,26 +6,14 @@ class ContainerContentChangeListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void containerContentChanged(int slot) = 0;
+    virtual void containerContentChanged(int iSlot) = 0;
 
-    virtual ~ContainerContentChangeListener();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~ContainerContentChangeListener() = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

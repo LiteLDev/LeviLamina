@@ -21,8 +21,6 @@ public:
     virtual void reinit(::Item const& item, int count, int auxValue) /*override*/;
 
     virtual void reinit(::std::string_view const name, int count, int auxValue) /*override*/;
-
-    virtual ~ItemInstance() /*override*/;
     // NOLINTEND
 
 public:
@@ -41,6 +39,8 @@ public:
     MCAPI ItemInstance(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
     MCAPI ::ItemInstance clone() const;
+
+    MCAPI ::ItemInstance& operator=(::ItemInstance const& rhs);
     // NOLINTEND
 
 public:
@@ -69,12 +69,6 @@ public:
     MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

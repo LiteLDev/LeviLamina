@@ -11,16 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorRemovedEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

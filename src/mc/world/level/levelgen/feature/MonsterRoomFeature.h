@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/Direction.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 // auto generated forward declare list
@@ -25,8 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Direction::Type
-    _getDirection(::BlockSource& region, ::BlockPos const& blockPos, int offsetX, int offsetZ) const;
+    MCAPI MonsterRoomFeature();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

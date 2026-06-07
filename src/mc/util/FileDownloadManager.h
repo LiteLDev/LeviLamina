@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/DownloadError.h"
+#include "mc/util/DownloadState.h"
 #include "mc/util/DownloaderResult.h"
 
 // auto generated forward declare list
@@ -69,6 +71,8 @@ public:
         ::std::function<void(uint64, bool)> writeComplete
     );
 
+    MCNAPI bool canCancelDownload() const;
+
     MCNAPI void downloadFile(
         ::std::string const&                                           downloadId,
         ::std::string const&                                           downloadUrl,
@@ -79,6 +83,16 @@ public:
         ::std::function<void(::Core::Path const&, ::DownloaderResult)> onCompleteCallback,
         int                                                            slotIndex
     );
+
+    MCNAPI uint64 getDownloadSize() const;
+
+    MCNAPI ::DownloadState getDownloadState() const;
+
+    MCNAPI ::DownloadError const& getError() const;
+
+    MCNAPI uint64 getFileSize() const;
+
+    MCNAPI void pauseDownload();
 #endif
     // NOLINTEND
 

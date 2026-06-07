@@ -24,6 +24,8 @@ public:
 
 public:
     // prevent constructor by default
+    KeyBindingUnregisterPayload& operator=(KeyBindingUnregisterPayload const&);
+    KeyBindingUnregisterPayload(KeyBindingUnregisterPayload const&);
     KeyBindingUnregisterPayload();
 
 public:
@@ -35,12 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI KeyBindingUnregisterPayload(::Editor::Network::KeyBindingUnregisterPayload const&);
-
     MCNAPI KeyBindingUnregisterPayload(::HashedString const& contextId, ::HashedString const& bindingId);
-
-    MCNAPI ::Editor::Network::KeyBindingUnregisterPayload&
-    operator=(::Editor::Network::KeyBindingUnregisterPayload const&);
     // NOLINTEND
 
 public:
@@ -52,8 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::KeyBindingUnregisterPayload const&);
-
     MCNAPI void* $ctor(::HashedString const& contextId, ::HashedString const& bindingId);
     // NOLINTEND
 

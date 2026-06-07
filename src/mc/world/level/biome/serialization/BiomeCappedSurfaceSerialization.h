@@ -17,6 +17,8 @@ MCAPI void applySerializedCappedSurfaceData(
     ::CappedSurfaceAttributes&      cappedSurface,
     ::BlockPalette const&           blockPalette
 );
+
+MCAPI void serializeCappedSurfaceData(::CappedSurfaceAttributes const& cappedSurface, ::BiomeCappedSurfaceData& data);
 // NOLINTEND
 
 } // namespace BiomeCappedSurfaceSerialization

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class EntityContext;
 // clang-format on
 
 class LegacyActorArmorChangedListener : public ::ContainerContentChangeListener {
@@ -35,8 +36,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void containerContentChanged(::Actor& actor);
+    // NOLINTEND
 
-    MCNAPI void validateFlyEnabledItem(::Actor& actor);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void initializeEntity(::EntityContext& entity);
     // NOLINTEND
 
 public:

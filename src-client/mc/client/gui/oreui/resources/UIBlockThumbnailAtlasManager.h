@@ -110,6 +110,8 @@ public:
 
     MCAPI void _generateItemIndex(bool stripVanillaNamespace);
 
+    MCAPI ::OreUI::UIBlockThumbnailAtlasManager::AtlasData& _getAtlasData(::std::string_view atlasName);
+
     MCAPI ::mce::TexturePtr _getAtlasTexture(::ItemStack const& item, ::ItemGraphics const& itemGraphics);
 
     MCAPI ::OreUI::UIBlockThumbnailAtlasManager::AtlasData&
@@ -118,6 +120,21 @@ public:
     MCAPI ::mce::TexturePtr _getShulkerBoxTexture(::ItemStack const& item) const;
 
     MCAPI void _unloadAtlasTextures();
+
+    MCAPI bool buildThumbnailAtlas(bool isResume);
+
+    MCAPI ::std::optional<::std::pair<::UIThumbnailAtlasRenderer::AtlasInfo, ::OreUI::AtlasIndex::ItemEntry>>
+    findItemAndAtlasInfo(::std::string_view name) const;
+
+    MCFOLD ::std::map<::std::string, ::mce::Color> const& getBlockAverageColorMap();
+
+    MCAPI ::std::shared_ptr<::OreUI::AtlasIndex> getIndex(::std::string_view atlasName) const;
+
+    MCAPI bool isThumbnailAtlasEnabled() const;
+
+    MCAPI void onAppResume();
+
+    MCAPI bool rebuildThumbnailAtlas(bool isResume);
 
     MCAPI ~UIBlockThumbnailAtlasManager();
     // NOLINTEND

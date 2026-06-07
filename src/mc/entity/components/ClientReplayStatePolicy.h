@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/entity/components/IReplayStatePolicy.h"
 #include "mc/entity/components/ReplayStateConfig.h"
 #include "mc/entity/utilities/AdvanceFrameResult.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class EntityContext;
 class PlayerAuthInputPacket;
 struct MovementCorrection;
@@ -33,8 +31,6 @@ public:
     shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) /*override*/;
 
     virtual void notifyOfExternalCorrection(uint64) /*override*/;
-
-    virtual ~ClientReplayStatePolicy() /*override*/ = default;
     // NOLINTEND
 
 public:

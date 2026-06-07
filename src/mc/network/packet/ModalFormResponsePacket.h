@@ -60,19 +60,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ModalFormResponsePacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ModalFormResponsePacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI ModalFormResponsePacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit ModalFormResponsePacket(::ModalFormResponsePacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ModalFormResponsePacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

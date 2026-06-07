@@ -27,21 +27,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~GameplayUIContext() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeAPI(::IClientInstance& client);
-    // NOLINTEND
+    MCAPI void deinitializeAPI();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void initializeAPI(::IClientInstance& client);
     // NOLINTEND
 
 public:

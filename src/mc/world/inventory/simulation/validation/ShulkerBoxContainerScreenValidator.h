@@ -7,9 +7,15 @@
 
 class ShulkerBoxContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~ShulkerBoxContainerScreenValidator() /*override*/ = default;
+    MCAPI ShulkerBoxContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

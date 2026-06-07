@@ -12,16 +12,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mId;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MobSpawnerPermutation();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct BoatPaddleComponent;
 struct MoveInputComponent;
@@ -18,30 +17,29 @@ struct PassengerComponent;
 struct PlayerInputModeComponent;
 struct PlayerInputRequestComponent;
 struct PlayerInteractionModelComponent;
+struct TickingSystemWithInfo;
 struct VehicleInputIntentComponent;
 // clang-format on
 
 namespace BoatPaddleInputSystem {
 // functions
 // NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createPassengerSystem();
+
+MCAPI ::TickingSystemWithInfo createVehicleSystem();
+
 MCAPI void doPassengerTick(
-    ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
-    ::StrictEntityContext const&                               context,
-    ::MoveInputComponent const&                                moveInputComponent,
-    ::PlayerInputModeComponent const&                          playerInputModeComponent,
-    ::PassengerComponent const&                                passengerComponent,
-    ::Optional<::PlayerInteractionModelComponent const> const& playerInteractionModelComponent,
+    ::entt::type_list<::Include<::PlayerInputRequestComponent>> context,
+    ::StrictEntityContext const&                                moveInputComponent,
+    ::MoveInputComponent const&                                 playerInputModeComponent,
+    ::PlayerInputModeComponent const&                           passengerComponent,
+    ::PassengerComponent const&                                 playerInteractionModelComponent,
+    ::Optional<::PlayerInteractionModelComponent const> const&  vehicleView,
     ::ViewT<
         ::StrictEntityContext,
         ::ActorRotationComponent const,
         ::BoatPaddleComponent const,
-        ::VehicleInputIntentComponent> const& vehicleView
-);
-
-MCAPI void doVehicleTick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::VehicleInputIntentComponent const& vehicleInputIntent,
-    ::BoatPaddleComponent&               boatPaddle
+        ::VehicleInputIntentComponent> const&
 );
 // NOLINTEND
 

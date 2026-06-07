@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _registerEventHandlers();
+    // NOLINTEND
+
+public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftableForEnableNonOwnerReferences();

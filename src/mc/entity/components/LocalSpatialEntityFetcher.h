@@ -14,16 +14,4 @@ public:
     LocalSpatialEntityFetcher& operator=(LocalSpatialEntityFetcher const&);
     LocalSpatialEntityFetcher(LocalSpatialEntityFetcher const&);
     LocalSpatialEntityFetcher();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LocalSpatialEntityFetcher();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

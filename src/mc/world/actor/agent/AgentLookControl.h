@@ -17,8 +17,12 @@ public:
     virtual void initializeInternal(::Mob& mob) /*override*/;
 
     virtual void tick(::Mob& mob) /*override*/;
+    // NOLINTEND
 
-    virtual ~AgentLookControl() /*override*/ = default;
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float& sBaseYMax();
     // NOLINTEND
 
 public:

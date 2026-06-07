@@ -28,10 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorAnimationPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ActorAnimationPlayer();
@@ -45,7 +41,11 @@ public:
 
     virtual void resetAnimation() = 0;
 
+#ifdef LL_PLAT_S
+    virtual void buildBoneToPartMapping(::AnimationComponent&);
+#else // LL_PLAT_C
     virtual void buildBoneToPartMapping(::AnimationComponent& animationComponent);
+#endif
 
     virtual void
     bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
@@ -64,18 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorAnimationPlayer(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -84,7 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
+    MCFOLD void $buildBoneToPartMapping(::AnimationComponent&);
 
     MCFOLD void
     $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);

@@ -30,25 +30,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>              searchInventory;
         ::ll::TypedStorage<1, 1, bool>              useInCreative;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ShooterAmmunitionEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ShooterAmmunitionEntry(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
-
-        MCFOLD ::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
-        operator=(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
-        // NOLINTEND
     };
 
 public:
@@ -59,12 +40,6 @@ public:
     ::ll::TypedStorage<4, 4, float> mDrawDuration;
     ::ll::TypedStorage<1, 1, bool>  mScalePowerByDrawDuration;
     ::ll::TypedStorage<1, 1, bool>  mChargeOnDraw;
-    // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ShooterItemComponentLegacyFactoryData() /*override*/ = default;
     // NOLINTEND
 
 public:

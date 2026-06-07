@@ -28,8 +28,6 @@ public:
     virtual void initRegistry(::EntityRegistry& registry) /*override*/;
 
     virtual void registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args) /*override*/;
-
-    virtual ~ActorMoveModule() /*override*/ = default;
     // NOLINTEND
 
 public:

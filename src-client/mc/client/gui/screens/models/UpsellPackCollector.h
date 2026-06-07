@@ -13,9 +13,9 @@
 class ContentCatalogService;
 class IEntitlementManager;
 class MainMenuScreenModel;
+class PersonaClient;
 class SkinPackModel;
 class SkinPickerUpsellTreatmentQuery;
-class SkinRepositoryClientInterface;
 struct SkinPackMeta;
 namespace mce { class UUID; }
 // clang-format on
@@ -47,11 +47,11 @@ public:
 
     virtual bool exhausted() const /*override*/;
 
-    virtual ::HandleRangeResult handleRange(int, int end) /*override*/;
+    virtual ::HandleRangeResult handleRange(int end, int) /*override*/;
 
     virtual void collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::SkinRepositoryClientInterface&                     skinRepo,
+        ::PersonaClient&                                     skinRepo,
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     ) /*override*/;
@@ -76,11 +76,11 @@ public:
 
     MCAPI bool $exhausted() const;
 
-    MCAPI ::HandleRangeResult $handleRange(int, int end);
+    MCAPI ::HandleRangeResult $handleRange(int end, int);
 
     MCAPI void $collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::SkinRepositoryClientInterface&                     skinRepo,
+        ::PersonaClient&                                     skinRepo,
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
         ::std::unordered_set<::mce::UUID>&                   handledPackSet
     );

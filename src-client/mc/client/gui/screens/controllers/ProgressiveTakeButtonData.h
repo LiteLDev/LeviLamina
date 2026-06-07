@@ -34,10 +34,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getTakeAmount(int stackSize) const;
+    MCAPI bool isActiveContainerSlot(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI void
-    initialize(::std::string const& collectionName, int collectionIndex, ::ProgressiveTakeBarLocation displayLocation);
+    MCAPI void reset();
+
+    MCAPI void updateStoredValuePointer();
 
     MCAPI ~ProgressiveTakeButtonData();
     // NOLINTEND

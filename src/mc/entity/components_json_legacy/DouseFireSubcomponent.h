@@ -32,7 +32,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DouseFireSubcomponent();
+
     MCAPI void douseFire(::Actor& owner, ::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

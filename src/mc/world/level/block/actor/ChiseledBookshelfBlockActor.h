@@ -60,7 +60,7 @@ public:
 
     virtual bool isEmpty() const /*override*/;
 
-    virtual bool canPushInItem(int slot, int, ::ItemStack const& item) const /*override*/;
+    virtual bool canPushInItem(int slot, int item, ::ItemStack const&) const /*override*/;
 
     virtual bool canPullOutItem(int slot, int, ::ItemStack const&) const /*override*/;
 
@@ -68,15 +68,13 @@ public:
 
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~ChiseledBookshelfBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -88,6 +86,8 @@ public:
 
     MCAPI void _setItemInternal(int slot, ::ItemStack const& item, bool isLoading);
 
+    MCFOLD uint getLastInteractedSlot() const;
+
     MCAPI ::ItemStack retrieveBook(int slot);
     // NOLINTEND
 
@@ -95,6 +95,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool allowedItem(::ItemStack const& item);
+
+    MCAPI static ::ChiseledBookshelfBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -132,7 +134,7 @@ public:
 
     MCAPI bool $isEmpty() const;
 
-    MCAPI bool $canPushInItem(int slot, int, ::ItemStack const& item) const;
+    MCAPI bool $canPushInItem(int slot, int item, ::ItemStack const&) const;
 
     MCAPI bool $canPullOutItem(int slot, int, ::ItemStack const&) const;
 
@@ -140,7 +142,7 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PropertySyncData& operator=(::PropertySyncData&&);
+    MCFOLD ::PropertySyncData& operator=(::PropertySyncData&&);
 
     MCAPI ~PropertySyncData();
     // NOLINTEND

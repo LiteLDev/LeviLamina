@@ -8,7 +8,7 @@ struct float4x4_t {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::__m128[4]> col;
+    ::ll::TypedStorage<4, 64, float[4][4]> col;
     // NOLINTEND
 };
 

@@ -69,20 +69,14 @@ public:
     virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) /*override*/;
 
     virtual void close() /*override*/;
-
-    virtual ~DynamicValueSchemaWriter() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool write(::cereal::DynamicValue value);
-    // NOLINTEND
+    MCFOLD ::cereal::DynamicValue& value();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI bool write(::cereal::DynamicValue value);
     // NOLINTEND
 
 public:

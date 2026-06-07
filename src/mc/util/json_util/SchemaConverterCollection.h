@@ -19,16 +19,15 @@ public:
 public:
     // prevent constructor by default
     SchemaConverterCollection& operator=(SchemaConverterCollection const&);
+    SchemaConverterCollection(SchemaConverterCollection const&);
     SchemaConverterCollection();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SchemaConverterCollection(::JsonUtil::SchemaConverterCollection const&);
-
-#ifdef LL_PLAT_C
     MCNAPI explicit SchemaConverterCollection(::Json::Value& node);
-#endif
+
+    MCNAPI ::JsonUtil::SchemaConverterCollection copy() const;
 
     MCNAPI ::JsonUtil::SchemaConverterCollection&
     operator()(::std::string const& filterString, bool forceCaseInsensitive);
@@ -41,11 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::JsonUtil::SchemaConverterCollection const&);
-
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Json::Value& node);
-#endif
     // NOLINTEND
 
 public:

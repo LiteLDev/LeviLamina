@@ -33,18 +33,6 @@ public:
         ::ll::TypedStorage<4, 8, ::glm::vec2>        mUV;
         ::ll::TypedStorage<4, 8, ::glm::vec2>        mUVScale;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~BannerPatternTextureInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -58,14 +46,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BannerPatternRenderer() /*override*/ = default;
+    virtual ~BannerPatternRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&) /*override*/;
 
     virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BannerPatternRenderer();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -73,9 +79,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
     // NOLINTEND
 
 public:

@@ -25,11 +25,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CommandItem();
+
+    MCAPI explicit CommandItem(uint64 versionId);
+
+    MCAPI CommandItem(int id, short version, bool overrideAux);
+
 #ifdef LL_PLAT_C
     MCAPI ::ItemInstance createInstance(int count) const;
 #endif
 
     MCAPI ::std::optional<::ItemInstance>
     createInstance(int count, int aux, ::CommandOutput& output, bool requireExactAux) const;
+
+    MCFOLD int getId() const;
+
+    MCAPI explicit operator bool() const;
+
+    MCAPI explicit operator uint64() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCFOLD void* $ctor(uint64 versionId);
+
+    MCAPI void* $ctor(int id, short version, bool overrideAux);
     // NOLINTEND
 };

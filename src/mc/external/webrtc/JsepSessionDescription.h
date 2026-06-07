@@ -40,9 +40,9 @@ public:
 
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const /*override*/;
 
-    virtual ::cricket::SessionDescription* description() /*override*/;
-
     virtual ::cricket::SessionDescription const* description() const /*override*/;
+
+    virtual ::cricket::SessionDescription* description() /*override*/;
 
     virtual ::std::string session_id() const /*override*/;
 
@@ -98,9 +98,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface> $Clone() const;
 
-    MCNAPI ::cricket::SessionDescription* $description();
-
     MCNAPI ::cricket::SessionDescription const* $description() const;
+
+    MCNAPI ::cricket::SessionDescription* $description();
 
     MCNAPI ::std::string $session_id() const;
 

@@ -5,11 +5,23 @@
 // auto generated inclusion list
 #include "mc/world/item/Item.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundTag;
+struct ActorUniqueID;
+// clang-format on
+
 class PhotoItem : public ::Item {
 public:
-    // virtual functions
+    // static functions
     // NOLINTBEGIN
-    virtual ~PhotoItem() /*override*/ = default;
+#ifdef LL_PLAT_C
+    MCAPI static ::ActorUniqueID getPhotoId(::CompoundTag const& tag);
+
+    MCAPI static ::std::string const& getPhotoName(::CompoundTag const& tag);
+
+    MCAPI static ::ActorUniqueID getPhotoOwner(::CompoundTag const& tag);
+#endif
     // NOLINTEND
 
 public:

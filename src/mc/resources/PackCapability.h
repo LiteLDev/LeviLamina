@@ -93,16 +93,4 @@ public:
     PackCapability& operator=(PackCapability const&);
     PackCapability(PackCapability const&);
     PackCapability();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PackCapability();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

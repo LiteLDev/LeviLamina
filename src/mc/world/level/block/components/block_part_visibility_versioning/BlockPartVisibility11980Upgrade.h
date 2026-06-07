@@ -28,8 +28,6 @@ public:
             ::rapidjson::CrtAllocator>&,
         ::SemVersion const&
     ) const /*override*/;
-
-    virtual ~BlockPartVisibility11980Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:

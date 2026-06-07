@@ -29,12 +29,26 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI explicit UserCacheManager(::Core::PathBuffer<::std::string> const& cachePath);
+
     MCNAPI void _getDirectoryContents(
         ::std::vector<::Bedrock::DirectoryEntry>& folders,
         ::Core::PathBuffer<::std::string> const&  filePath
     ) const;
 
     MCNAPI void _getDirectorySizeAndDeleteDirectoryContents(::Core::PathBuffer<::std::string> const& path) const;
+
+    MCNAPI bool clearDownloadStorageIfFull(::std::vector<::Bedrock::DirectoryEntry>& folders);
+
+    MCNAPI bool clearUserStorageIfFull(::std::vector<::Bedrock::DirectoryEntry>& folders);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const& cachePath);
 #endif
     // NOLINTEND
 };

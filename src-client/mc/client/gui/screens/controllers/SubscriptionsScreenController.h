@@ -58,6 +58,8 @@ public:
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
+
+    MCAPI bool shouldShowSubscriptionsTab() const;
     // NOLINTEND
 
 public:

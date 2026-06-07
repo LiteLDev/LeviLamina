@@ -23,4 +23,20 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint> mAnimOverrideBitmask;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI SkinAdjustments();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor();
+#endif
+    // NOLINTEND
 };

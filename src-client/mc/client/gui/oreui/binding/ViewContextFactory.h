@@ -53,8 +53,6 @@ public:
     ViewContextFactory(::OreUI::GameDependencies gameDependencies, ::OreUI::ClientDependencies clientDependencies);
 
     MCAPI ::std::unique_ptr<::OreUI::Detail::ViewContext> makeContext(::OreUI::Detail::Binder& binder);
-
-    MCAPI ~ViewContextFactory();
     // NOLINTEND
 
 public:
@@ -82,12 +80,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies gameDependencies, ::OreUI::ClientDependencies clientDependencies);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

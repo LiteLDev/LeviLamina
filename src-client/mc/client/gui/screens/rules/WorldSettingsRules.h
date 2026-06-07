@@ -4,11 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
 class MinecraftCommands;
-class SkinRepositoryClientInterface;
+class PersonaClient;
 class TrialManager;
 namespace Social { class IUserManager; }
 namespace Social { class MultiplayerServiceManager; }
@@ -41,7 +43,7 @@ public:
                                                                  mMultiplayerServiceManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::User>> mUser;
     ::ll::TypedStorage<8, 8, ::MinecraftCommands&>               mCommands;
-    ::ll::TypedStorage<8, 8, ::SkinRepositoryClientInterface&>   mSkinRepositoryClientInterface;
+    ::ll::TypedStorage<8, 8, ::PersonaClient&>                   mPersonaClient;
     ::ll::TypedStorage<1, 1, bool>                               mIsEditorModeEnabled;
     // NOLINTEND
 
@@ -54,11 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSettingsRules(::WorldSettingsRules&&);
-
     MCAPI WorldSettingsRules(
         ::MinecraftCommands&                                                      commands,
-        ::SkinRepositoryClientInterface&                                          skinRepositoryClientInterface,
+        ::PersonaClient&                                                          personaClient,
         ::Bedrock::NotNullNonOwnerPtr<::TrialManager> const&                      trialManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&              userManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> const& multiplayerServiceManager,
@@ -68,17 +68,39 @@ public:
 
     MCAPI bool _isAdhocEnabled() const;
 
+    MCAPI bool _isCrossPlatformPlayEnabled() const;
+
+    MCAPI bool _isPlatformServiceMultiplayerConnected() const;
+
+    MCAPI ::CommandPermissionLevel getCommandPermissionLevel(::PlayerPermissionLevel playerPermission) const;
+
+    MCAPI ::WorldSettingsRules::GeneralMultiplayerWarningState getGeneralMultiplayerWarningState() const;
+
+    MCFOLD bool isEditorModeEnabled() const;
+
+    MCAPI bool isMultiplayerSupported() const;
+
+    MCAPI bool isPlatformBroadcastFriendsOfFriendsOptionSupported() const;
+
+    MCAPI bool isPlatformBroadcastInviteOptionSupported() const;
+
+    MCAPI bool isPlatformBroadcastOptionModifiable() const;
+
+    MCAPI bool isPlatformBroadcastingSupported() const;
+
+    MCAPI bool isUsingSwitchAdHocMode() const;
+
+    MCAPI bool shouldShowMultiplayerWarningMessages() const;
+
     MCAPI ~WorldSettingsRules();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WorldSettingsRules&&);
-
     MCAPI void* $ctor(
         ::MinecraftCommands&                                                      commands,
-        ::SkinRepositoryClientInterface&                                          skinRepositoryClientInterface,
+        ::PersonaClient&                                                          personaClient,
         ::Bedrock::NotNullNonOwnerPtr<::TrialManager> const&                      trialManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&              userManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> const& multiplayerServiceManager,

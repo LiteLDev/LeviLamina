@@ -172,8 +172,6 @@ public:
         ::Editor::ScriptModule::ScriptPrefabErrorStringInvalidLength>
     _setTags(::std::vector<::std::string> const& newTags);
 
-    MCNAPI ::StackRefResult<::Editor::Prefabs::PrefabDBTemplate const> getTemplate() const;
-
     MCNAPI ::StackRefResult<::Editor::Prefabs::PrefabDBTemplate> getTemplate();
     // NOLINTEND
 

@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmBackupsCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmBackupsCommandsFacet() /*override*/ = default;
@@ -30,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmBackupsCommandsFacet(::std::shared_ptr<::Realms::RealmsBackups> realmsBackups);
+
     MCAPI void clearRealmBackupsState();
 
     MCAPI void downloadRealmWorld(::std::string const& realmId, ::std::string const& realmName, int activeSlotIndex);
@@ -39,6 +45,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsBackups> realmsBackups);
     // NOLINTEND
 
 public:

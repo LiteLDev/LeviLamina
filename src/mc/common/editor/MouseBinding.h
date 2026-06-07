@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/editor/MouseActionCategory.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -23,9 +26,21 @@ public:
     MouseBinding();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit MouseBinding(::Editor::Input::MouseActionCategory mouseAction);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Input::MouseActionCategory mouseAction);
     // NOLINTEND
 };
 

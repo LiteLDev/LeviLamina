@@ -19,8 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcDialogueButton();
-
     MCAPI ~NpcDialogueButton();
     // NOLINTEND
 
@@ -28,12 +26,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::NpcDialogueButton parse(::Json::Value const& root, ::std::string const& fileName, int);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

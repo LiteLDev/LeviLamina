@@ -16,8 +16,6 @@ public:
     virtual uint64 getSize() const = 0;
 
     virtual ::Bedrock::Result<void> toBuffer(::gsl::span<uchar>) const = 0;
-
-    virtual ~Builder() /*override*/ = default;
     // NOLINTEND
 
 public:

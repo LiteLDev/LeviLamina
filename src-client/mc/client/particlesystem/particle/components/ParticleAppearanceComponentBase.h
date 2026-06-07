@@ -52,6 +52,12 @@ public:
         ::Vec3 const&                                     spawnDirection
     );
 
+    MCFOLD void $updateParticleAppearance(
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams
+    );
+
     MCFOLD void
     $updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
     // NOLINTEND

@@ -18,7 +18,7 @@ namespace StructurePoolUtils {
 MCNAPI void registerDataDrivenStructures(
     ::JigsawStructureRegistry&                                 jigsawStructureRegistry,
     ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
-    ::FeatureRegistry const&                                   features
+    ::FeatureRegistry&                                         features
 );
 // NOLINTEND
 

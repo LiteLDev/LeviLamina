@@ -32,6 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StructureFeatureRegistry();
+
     MCAPI bool findNearestStructureFeature(
         ::Dimension&                    dimension,
         ::IPreliminarySurfaceProvider&  surfaceProvider,
@@ -49,7 +51,19 @@ public:
 
     MCAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
+    MCFOLD ::br::worldgen::StructureCache& structureCache();
+
+    MCAPI void tick();
+
+    MCAPI void waitForBlueprints() const;
+
     MCAPI ~StructureFeatureRegistry();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

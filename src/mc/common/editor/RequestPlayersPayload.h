@@ -27,12 +27,6 @@ public:
     RequestPlayersPayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RequestPlayersPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

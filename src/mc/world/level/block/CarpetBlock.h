@@ -15,25 +15,29 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class Container;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
+class Material;
 class Vec3;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CarpetBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    CarpetBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -43,23 +47,26 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~CarpetBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CarpetBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -68,25 +75,23 @@ public:
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
 
     // NOLINTEND

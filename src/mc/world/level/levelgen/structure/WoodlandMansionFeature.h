@@ -58,14 +58,12 @@ public:
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension& dimension,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& lc,
+        ::Dimension&         dimension,
+        ::BiomeSource const& random,
+        ::Random&            lc,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
-
-    virtual ~WoodlandMansionFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -107,10 +105,10 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension& dimension,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& lc,
+        ::Dimension&         dimension,
+        ::BiomeSource const& random,
+        ::Random&            lc,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     );
 

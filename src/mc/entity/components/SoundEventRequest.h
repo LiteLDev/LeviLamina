@@ -4,13 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
+class Block;
 class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifier;
@@ -49,7 +48,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 176> mUnk2dde30;
         ::ll::UntypedStorage<8, 8>   mUnk1e75b0;
-        ::ll::UntypedStorage<4, 4>   mUnkd9e8f3;
+        ::ll::UntypedStorage<4, 4>   mUnk7d8120;
         ::ll::UntypedStorage<4, 4>   mUnk36ff99;
         ::ll::UntypedStorage<1, 1>   mUnk9a24f2;
         ::ll::UntypedStorage<1, 1>   mUnkad3962;
@@ -83,7 +82,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 176> mUnka6339b;
         ::ll::UntypedStorage<8, 8>   mUnkfb0b6a;
-        ::ll::UntypedStorage<4, 4>   mUnk8f8bf9;
+        ::ll::UntypedStorage<4, 4>   mUnka2b904;
         ::ll::UntypedStorage<4, 4>   mUnka2d7c8;
         ::ll::UntypedStorage<1, 1>   mUnkf05fad;
         ::ll::UntypedStorage<1, 1>   mUnk53aaf0;
@@ -154,6 +153,26 @@ public:
         ::SharedTypes::Legacy::ActorLocation   location,
         int                                    data,
         bool                                   isGlobal
+    );
+
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
+        ::ActorDataFlagComponent const&        actorData,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::StrictEntityContext const&           entity,
+        ::SharedTypes::Legacy::ActorLocation   location,
+        float                                  volume,
+        float                                  pitch
+    );
+
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
+        ::ActorDataFlagComponent const&        actorFlags,
+        ::ActorDefinitionIdentifier const&     identifier,
+        ::ActorUniqueID                        actorId,
+        ::DimensionType                        dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::StrictEntityContext const&           entity,
+        ::SharedTypes::Legacy::ActorLocation   location,
+        ::Block const&                         block
     );
 
     MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(

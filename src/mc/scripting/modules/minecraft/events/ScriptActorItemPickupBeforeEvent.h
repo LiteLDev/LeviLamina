@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ActorBeforeAcquireItemEvent;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -24,15 +26,15 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorItemPickupBeforeEvent& operator=(ScriptActorItemPickupBeforeEvent const&);
     ScriptActorItemPickupBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorItemPickupBeforeEvent(::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent const&);
-
-    MCAPI ~ScriptActorItemPickupBeforeEvent();
+    MCAPI ScriptActorItemPickupBeforeEvent(
+        ::ActorBeforeAcquireItemEvent const&  acquireItemEvent,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -44,13 +46,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void*
+    $ctor(::ActorBeforeAcquireItemEvent const& acquireItemEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

@@ -27,21 +27,9 @@ public:
     MinimapPlayersPayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MinimapPlayersPayload() /*override*/;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

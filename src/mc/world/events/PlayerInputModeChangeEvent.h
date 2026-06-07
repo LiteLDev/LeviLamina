@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, ::InputMode>                 mNewInputModeUsed;
     ::ll::TypedStorage<4, 4, ::InputMode>                 mPreviousInputModeUsed;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerInputModeChangeEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

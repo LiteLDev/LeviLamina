@@ -41,6 +41,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkEventManager();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~LevelChunkEventManager() /*override*/ = default;
@@ -55,13 +59,33 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit LevelChunkEventManager(
+        ::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy
+    );
+
+    MCAPI void onChunkDiscarded(::LevelChunk& levelChunk);
+
+    MCAPI void onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
+
+    MCAPI void onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>& $getOnChunkLoadedConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>& $getOnChunkReloadedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& $getOnChunkDiscardedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& $getOnChunkDiscardedConnector();
 
 
     // NOLINTEND

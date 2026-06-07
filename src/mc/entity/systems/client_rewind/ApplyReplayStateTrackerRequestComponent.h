@@ -11,7 +11,7 @@ struct ApplyReplayStateTrackerRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::ReplayStateTrackerDiff> mToApply;
+    ::ll::TypedStorage<8, 104, ::ReplayStateTrackerDiff> mToApply;
     // NOLINTEND
 };
 

@@ -18,6 +18,7 @@ class IMinecraftEventing;
 class IResourcePackRepository;
 class PacketSender;
 class Scheduler;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorInitParams; }
 namespace Scripting { struct ContextId; }
@@ -33,6 +34,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka0ac2a;
     ::ll::UntypedStorage<8, 8>  mUnkb39dbf;
+    ::ll::UntypedStorage<8, 48> mUnkdce6e6;
+    ::ll::UntypedStorage<8, 48> mUnk64e7d8;
     // NOLINTEND
 
 public:
@@ -63,6 +66,12 @@ public:
     scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) /*override*/;
 
     virtual void tryClearPlaytestRoundtripInfo() /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription
+    registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManager&)> func) /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription
+    registerLevelTickSubscriber(::std::function<void(::Editor::EditorManager&)> func) /*override*/;
 
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() /*override*/;
     // NOLINTEND
@@ -114,6 +123,12 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
 
     MCNAPI void $tryClearPlaytestRoundtripInfo();
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManager&)> func);
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $registerLevelTickSubscriber(::std::function<void(::Editor::EditorManager&)> func);
 
     MCNAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
 

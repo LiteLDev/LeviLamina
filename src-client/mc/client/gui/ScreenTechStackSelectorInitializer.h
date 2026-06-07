@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
@@ -13,7 +13,7 @@ namespace ui::ScreenTechStackSelectorInitializer {
 // NOLINTBEGIN
 MCAPI void initialize(
     ::ui::ScreenTechStackSelector& screenTechStackSelector,
-    ::IOptions&                    options,
+    ::IOptionRegistry&             options,
     bool                           isEditorEnabled,
     bool                           isEduMode,
     ::std::function<bool()>        isTrial,

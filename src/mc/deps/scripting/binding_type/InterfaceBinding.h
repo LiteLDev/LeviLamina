@@ -28,13 +28,12 @@ public:
 public:
     // prevent constructor by default
     InterfaceBinding& operator=(InterfaceBinding const&);
-    InterfaceBinding(InterfaceBinding const&);
     InterfaceBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI InterfaceBinding(::Scripting::InterfaceBinding&&);
+    MCNAPI InterfaceBinding(::Scripting::InterfaceBinding const&);
 
     MCNAPI InterfaceBinding(
         ::std::string                               name_,
@@ -51,7 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::InterfaceBinding&&);
+    MCNAPI void* $ctor(::Scripting::InterfaceBinding const&);
 
     MCNAPI void* $ctor(
         ::std::string                               name_,

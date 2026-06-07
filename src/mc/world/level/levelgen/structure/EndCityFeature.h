@@ -46,23 +46,33 @@ public:
     virtual bool shouldPostProcessMobs() const /*override*/;
 
     virtual bool isFeatureChunk(
-        ::BiomeSource const&,
-        ::Random&                            random,
-        ::ChunkPos const&                    pos,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
+        ::BiomeSource const&                 random,
+        ::Random&                            pos,
+        ::ChunkPos const&                    levelSeed,
+        uint                                 preliminarySurfaceLevel,
+        ::IPreliminarySurfaceProvider const& dimension,
+        ::Dimension const&
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension& dimension,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& pos,
+        ::Dimension&         dimension,
+        ::BiomeSource const& random,
+        ::Random&            pos,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~EndCityFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EndCityFeature(::Dimension& dimension, uint& seed);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension, uint& seed);
     // NOLINTEND
 
 public:
@@ -81,19 +91,19 @@ public:
     MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI bool $isFeatureChunk(
-        ::BiomeSource const&,
-        ::Random&                            random,
-        ::ChunkPos const&                    pos,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
+        ::BiomeSource const&                 random,
+        ::Random&                            pos,
+        ::ChunkPos const&                    levelSeed,
+        uint                                 preliminarySurfaceLevel,
+        ::IPreliminarySurfaceProvider const& dimension,
+        ::Dimension const&
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension& dimension,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& pos,
+        ::Dimension&         dimension,
+        ::BiomeSource const& random,
+        ::Random&            pos,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     );
 

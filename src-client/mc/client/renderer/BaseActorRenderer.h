@@ -8,52 +8,30 @@
 
 // auto generated forward declare list
 // clang-format off
-class Font;
-class ScreenContext;
+class Quaternion;
 class Tessellator;
 class Vec3;
 struct NameTagRenderObject;
-struct ViewRenderData;
 namespace mce { class Color; }
 namespace mce { class Mesh; }
 // clang-format on
 
 class BaseActorRenderer : public ::ActorShaderManager {
 public:
-    // BaseActorRenderer inner types declare
-    // clang-format off
-    struct NameplateBackgroundInfo;
-    // clang-format on
-
     // BaseActorRenderer inner types define
-    struct NameplateBackgroundInfo {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>> mesh;
-        ::ll::TypedStorage<4, 4, int>                             width;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~NameplateBackgroundInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
+    using NameplateBackgroundInfo = ::std::variant<::std::shared_ptr<::mce::Mesh>, int>;
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mNameTagBackgroundMat;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mNameTagBackgroundWithBackfaceMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mNameTagTextMat;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mNameTagTextWithBackfaceMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mDepthTestedNameTagMat;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mDepthTestedNameTagWithBackfaceMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mDepthTestedNameTextMat;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mDepthTestedNameTextWithBackfaceMat;
     // NOLINTEND
 
 public:
@@ -68,28 +46,42 @@ public:
     MCAPI BaseActorRenderer();
 
     MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
-        ::Tessellator&            tessellator,
-        ::std::string const&      str,
-        ::std::vector<int> const& widths,
-        ::Vec3 const&             pos,
-        ::mce::Color const&       color,
-        float                     scale
+        ::Tessellator&                       tessellator,
+        ::std::string const&                 str,
+        ::std::vector<int> const&            widths,
+        ::Vec3 const&                        pos,
+        ::mce::Color const&                  color,
+        float                                scale,
+        ::std::optional<::Quaternion> const& rotation,
+        ::std::optional<::mce::Color> const& backgroundColor,
+        bool                                 depthTest,
+        bool                                 showBackface,
+        bool                                 showTextBackface
     ) const;
+
+    MCFOLD ::mce::MaterialPtr& getDepthTestedNameTagMat();
+
+    MCFOLD ::mce::MaterialPtr& getDepthTestedNameTextMat();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BaseActorRenderer::NameplateBackgroundInfo
-    _makeTextBackground(::Tessellator& tessellator, ::std::string const& str, ::std::vector<int> const& widths);
-
-    MCAPI static void renderText(
-        ::ScreenContext&             screenContext,
-        ::ViewRenderData const&      viewData,
-        ::NameTagRenderObject const& tagData,
-        ::Font&                      font,
-        ::mce::Mesh const&           nameplateBackgroundMesh
+    MCAPI static ::NameTagRenderObject _extractRenderTextObject(
+        ::Tessellator&                       tessellator,
+        ::std::string const&                 str,
+        ::std::vector<int> const&            widths,
+        ::Vec3 const&                        pos,
+        ::mce::Color const&                  textColor,
+        ::mce::MaterialPtr const*            tagMatOverride,
+        ::mce::MaterialPtr const*            textMatOverride,
+        ::mce::Color const&                  tagColor,
+        float                                scale,
+        ::std::optional<::Quaternion> const& rotation
     );
+
+    MCAPI static ::std::variant<::std::shared_ptr<::mce::Mesh>, int>
+    _makeTextBackground(::Tessellator& tessellator, ::std::string const& str, ::std::vector<int> const& widths);
     // NOLINTEND
 
 public:

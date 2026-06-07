@@ -6,13 +6,16 @@
 // clang-format off
 class PacketSender;
 class UserEntityIdentifierComponent;
-namespace Bedrock::DDUI { class DataStoreSyncClient; }
 namespace Bedrock::DDUI { class DataStoreSyncServer; }
+namespace cereal { class DynamicValue; }
+namespace Bedrock::DDUI { class DataStoreSyncClient; }
 // clang-format on
 
 namespace Bedrock::DDUI {
 // functions
 // NOLINTBEGIN
+MCAPI bool isEqual(::std::variant<double, bool, ::std::string> const& primitive, ::cereal::DynamicValue const& obj);
+
 MCAPI void sendDataStorePacketsToClient(
     ::Bedrock::DDUI::DataStoreSyncServer&  dataSync,
     ::PacketSender&                        packetSender,

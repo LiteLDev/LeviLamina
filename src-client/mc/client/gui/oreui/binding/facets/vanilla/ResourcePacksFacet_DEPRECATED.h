@@ -147,6 +147,18 @@ public:
         ::ll::TypedStorage<4, 4, ::PackListType>                                             mToPackList;
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PackContentItem const>>                mPackItem;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~PendingBehaviourPackRemoval();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
     };
 
     struct PackActivationRequest {
@@ -158,9 +170,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        PackActivationRequest& operator=(PackActivationRequest const&);
+        PackActivationRequest();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI PackActivationRequest(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest const&);
+
         MCAPI ~PackActivationRequest();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest const&);
         // NOLINTEND
 
     public:
@@ -306,6 +331,8 @@ public:
         ::ContentType                              contentType
     );
 
+    MCAPI void _reserveMemoryUpfront();
+
     MCAPI void
     _reserveMemoryUpfrontOnPackCollection(::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection);
 
@@ -328,6 +355,8 @@ public:
     MCAPI void _showPackSettings(::OreUI::FacetResourcePackId const& packId);
 
     MCAPI void _showUnspecifiedErrorPrompt();
+
+    MCAPI void _startDownload();
 
     MCAPI void _tryActivatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
 
@@ -361,9 +390,9 @@ public:
 
     MCAPI ::OreUI::Prompt const& getPrompt() const;
 
-    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getRealmsTexturePacks() const;
+    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getRealmsTexturePacks() const;
 
-    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
+    MCFOLD ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
 
     MCFOLD ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus getStatus() const;
 
@@ -389,8 +418,6 @@ public:
         ::OreUI::ResourcePacksFacet_DEPRECATED::PromptActionType type,
         ::OreUI::PromptActionVariant                             variant
     );
-
-    MCAPI static char const* _getIdForPromptType(::OreUI::ResourcePacksFacet_DEPRECATED::PromptType type);
     // NOLINTEND
 
 public:

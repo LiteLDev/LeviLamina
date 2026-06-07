@@ -42,8 +42,6 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void pushActors() /*override*/;
-
-    virtual ~Bat() /*override*/ = default;
     // NOLINTEND
 
 public:

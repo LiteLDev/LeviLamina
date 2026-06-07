@@ -9,22 +9,26 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk64a1c3;
+    ::ll::UntypedStorage<8, 8>  mUnk568197;
     ::ll::UntypedStorage<8, 64> mUnk574b18;
     ::ll::UntypedStorage<8, 64> mUnkcd9943;
     ::ll::UntypedStorage<8, 64> mUnk8d35f7;
+    ::ll::UntypedStorage<4, 4>  mUnk68464d;
     ::ll::UntypedStorage<1, 1>  mUnk29a49a;
     ::ll::UntypedStorage<1, 1>  mUnk853fc6;
+    ::ll::UntypedStorage<1, 1>  mUnke3b46c;
     ::ll::UntypedStorage<8, 64> mUnk2c8f9c;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ArgumentDetails& operator=(ArgumentDetails const&);
-    ArgumentDetails();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ArgumentDetails();
+
     MCNAPI ArgumentDetails(::Scripting::ArgumentDetails&&);
 
     MCNAPI ArgumentDetails(::Scripting::ArgumentDetails const&);
@@ -35,6 +39,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::Scripting::ArgumentDetails&&);
 
     MCNAPI void* $ctor(::Scripting::ArgumentDetails const&);

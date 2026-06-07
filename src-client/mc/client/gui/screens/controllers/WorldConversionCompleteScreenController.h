@@ -43,6 +43,8 @@ public:
     );
 
     MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

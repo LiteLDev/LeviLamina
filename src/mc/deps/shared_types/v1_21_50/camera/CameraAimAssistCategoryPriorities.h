@@ -26,21 +26,18 @@ public:
 
 public:
     // prevent constructor by default
-    CameraAimAssistCategoryPriorities& operator=(CameraAimAssistCategoryPriorities const&);
+    CameraAimAssistCategoryPriorities(CameraAimAssistCategoryPriorities const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI CameraAimAssistCategoryPriorities();
 
-    MCAPI CameraAimAssistCategoryPriorities(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
-
-    MCAPI CameraAimAssistCategoryPriorities(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&);
-
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&) const;
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
+    operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&);
 
     MCAPI ~CameraAimAssistCategoryPriorities();
     // NOLINTEND
@@ -55,10 +52,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&);
     // NOLINTEND
 
 public:

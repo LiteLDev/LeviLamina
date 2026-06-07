@@ -2,10 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/resources/MERSTextureMode.h"
+#include "mc/deps/minecraft_renderer/resources/NormalTextureMode.h"
+
 // auto generated forward declare list
 // clang-format off
 struct PBRTexturePtrs;
 namespace mce { class TexturePtr; }
+namespace mce { struct ClientTexture; }
 // clang-format on
 
 class ClientPBRTextureData {
@@ -46,6 +51,30 @@ public:
         ::mce::TexturePtr const& extra2
     );
 
+    MCNAPI ClientPBRTextureData(
+        ::mce::ClientTexture const* color,
+        ::mce::ClientTexture const* mers,
+        ::MERSTextureMode           mersMode,
+        ::mce::ClientTexture const* normal,
+        ::NormalTextureMode         normalMode,
+        ::mce::ClientTexture const* extra1,
+        ::mce::ClientTexture const* extra2
+    );
+
+    MCNAPI ::mce::ClientTexture const* const getColorTexture() const;
+
+    MCNAPI ::mce::ClientTexture const* const getExtra1Texture() const;
+
+    MCNAPI ::mce::ClientTexture const* const getExtra2Texture() const;
+
+    MCNAPI ::mce::ClientTexture const* const getMERSTexture() const;
+
+    MCNAPI ::MERSTextureMode const& getMERSTextureMode() const;
+
+    MCNAPI ::mce::ClientTexture const* const getNormalTexture() const;
+
+    MCNAPI ::NormalTextureMode const& getNormalTextureMode() const;
+
     MCNAPI bool isColorTextureValid() const;
 
     MCNAPI bool isExtra1TextureValid() const;
@@ -55,6 +84,12 @@ public:
     MCNAPI bool isMERSTextureValid() const;
 
     MCNAPI bool isNormalTextureValid() const;
+
+    MCNAPI void setColorTexture(::mce::ClientTexture const& colorTexture);
+
+    MCNAPI void setExtra2Texture(::mce::ClientTexture const& texture);
+
+    MCNAPI void setGlintTexture(::mce::ClientTexture const& glintTexture);
     // NOLINTEND
 
 public:
@@ -62,5 +97,15 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::PBRTexturePtrs const& texturePtrs, ::mce::TexturePtr const& extra1, ::mce::TexturePtr const& extra2);
+
+    MCNAPI void* $ctor(
+        ::mce::ClientTexture const* color,
+        ::mce::ClientTexture const* mers,
+        ::MERSTextureMode           mersMode,
+        ::mce::ClientTexture const* normal,
+        ::NormalTextureMode         normalMode,
+        ::mce::ClientTexture const* extra1,
+        ::mce::ClientTexture const* extra2
+    );
     // NOLINTEND
 };

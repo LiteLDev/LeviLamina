@@ -30,15 +30,9 @@ public:
     EntityPlacerItemComponentLegacyFactoryData();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~EntityPlacerItemComponentLegacyFactoryData() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData&&);
+    MCAPI ::EntityPlacerItemComponentLegacyFactoryData& operator=(::EntityPlacerItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
@@ -49,18 +43,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

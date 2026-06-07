@@ -51,8 +51,6 @@ public:
     virtual bool isValid() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~MovePlayerPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -79,12 +77,6 @@ public:
         int                                         cause,
         int                                         sourceEntityType
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

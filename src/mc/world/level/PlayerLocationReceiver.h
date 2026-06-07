@@ -35,4 +35,16 @@ public:
             ::std::vector<::std::optional<::Vec3>>>>
         mCurrentPlayerLocationData;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void hideAllPlayers();
+
+#ifdef LL_PLAT_C
+    MCNAPI void hidePlayer(::ActorUniqueID const& id);
+
+    MCNAPI void updatePlayer(::ActorUniqueID const& id, ::Vec3 const& pos);
+#endif
+    // NOLINTEND
 };

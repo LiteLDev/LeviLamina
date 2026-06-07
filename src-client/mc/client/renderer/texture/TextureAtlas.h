@@ -15,12 +15,15 @@
 
 // auto generated forward declare list
 // clang-format off
+class AbstractTextureAccessor;
 class AtlasItemManager;
 class ResourcePackManager;
+class TextureAtlasItem;
 class TextureAtlasTile;
 struct ParsedAtlasNode;
 struct ParsedAtlasNodeElement;
 struct RuntimeImageGeneratorInfo;
+struct TextureAtlasItemTextureSetTranslation;
 struct TextureAtlasResourceCallbacks;
 namespace Json { class Value; }
 namespace cg { class ImageBuffer; }
@@ -97,6 +100,12 @@ public:
         ::ParsedAtlasNodeElement&          element
     );
 
+    MCAPI void _calculateAtlasTilesDimensions(
+        ::AbstractTextureAccessor&         textureAccessor,
+        ::std::vector<::TextureAtlasTile>& textureAtlasTiles,
+        uint                               maxTileDimension
+    );
+
     MCAPI ::TextureAtlasResourceCallbacks _createAtlas(
         ::Json::Value const&                               root,
         ::std::function<void(::TextureAtlasStatus const&)> statusCallback,
@@ -128,6 +137,8 @@ public:
         bool                                   isRefreshing
     );
 
+    MCAPI void addRuntimeImageGenerator(::std::weak_ptr<::RuntimeImageGeneratorInfo> info);
+
     MCAPI ::TextureAtlasResourceCallbacks createAtlasFromJson(
         ::Json::Value const&                               json,
         ::ResourcePackManager&                             resourcePackManager,
@@ -153,7 +164,15 @@ public:
             outCopyOfSourceImages
     );
 
+    MCAPI uint getColorMipCount() const;
+
     MCAPI ::ResourceLocation const& getPathFromName(::std::string const& name) const;
+
+    MCAPI ::TextureAtlasItem const& getTextureItem(::std::string const& textureName) const;
+
+    MCAPI ::TextureAtlasItemTextureSetTranslation const& getTextureItemTextureSetTranslation(int index) const;
+
+    MCAPI uint64 getUsedMemory() const;
 
     MCAPI ::TextureAtlasResourceCallbacks loadMetaFile(
         ::ResourcePackManager&                             resourcePackManager,

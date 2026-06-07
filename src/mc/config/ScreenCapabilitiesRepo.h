@@ -11,15 +11,15 @@ struct ScreenCapabilitiesRepo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkc06811;
-    ::ll::UntypedStorage<8, 72>  mUnkca7600;
-    ::ll::UntypedStorage<8, 56>  mUnkbb5cb9;
-    ::ll::UntypedStorage<8, 48>  mUnkd3cde1;
-    ::ll::UntypedStorage<8, 104> mUnk1c510f;
-    ::ll::UntypedStorage<8, 16>  mUnk23eeca;
-    ::ll::UntypedStorage<8, 16>  mUnk65af2c;
-    ::ll::UntypedStorage<8, 16>  mUnk23d02c;
-    ::ll::UntypedStorage<8, 48>  mUnkdae3f3;
+    ::ll::UntypedStorage<8, 16> mUnkc06811;
+    ::ll::UntypedStorage<8, 72> mUnkca7600;
+    ::ll::UntypedStorage<8, 56> mUnkbb5cb9;
+    ::ll::UntypedStorage<8, 48> mUnkd3cde1;
+    ::ll::UntypedStorage<8, 8>  mUnk1c510f;
+    ::ll::UntypedStorage<8, 16> mUnk23eeca;
+    ::ll::UntypedStorage<8, 16> mUnk65af2c;
+    ::ll::UntypedStorage<8, 16> mUnk23d02c;
+    ::ll::UntypedStorage<8, 48> mUnkdae3f3;
     // NOLINTEND
 
 public:
@@ -33,11 +33,19 @@ public:
     MCNAPI ScreenCapabilitiesRepo();
 
     MCNAPI ::std::unique_ptr<::IScreenCapabilities> get(::std::string const& screenName) const;
+
+    MCNAPI ~ScreenCapabilitiesRepo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

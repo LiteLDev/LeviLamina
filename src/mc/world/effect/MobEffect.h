@@ -19,7 +19,6 @@ class BaseAttributeMap;
 class BaseGameVersion;
 class CompoundTag;
 class Experiments;
-class InstantaneousAttributeBuff;
 class TemporalAttributeBuff;
 struct EffectDuration;
 // clang-format on
@@ -49,30 +48,15 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        FactorCalculationData(FactorCalculationData const&);
-        FactorCalculationData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);
-
         MCAPI ::std::unique_ptr<::CompoundTag> save() const;
-
-        MCAPI ~FactorCalculationData();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
         MCAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -121,9 +105,9 @@ public:
 
     virtual void onEffectExpired(::Actor& target) const;
 
-    virtual void onActorDied(::Actor& target, int amplifier) const;
+    virtual void onActorDied(::Actor&, int) const;
 
-    virtual void onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
+    virtual void onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
     virtual void
     applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
@@ -147,9 +131,6 @@ public:
         bool                 drawParticles
     );
 
-    MCAPI ::InstantaneousAttributeBuff
-    _createInstantBuff(::AttributeBuff const& baseBuff, int amplification, float scale) const;
-
     MCAPI ::TemporalAttributeBuff
     _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
 
@@ -165,21 +146,38 @@ public:
         int                 amplification
     ) const;
 
+    MCFOLD ::mce::Color const& getColor() const;
+
+    MCFOLD ::std::string const& getDescriptionId() const;
+
+    MCAPI float getDurationModifier() const;
+
 #ifdef LL_PLAT_C
     MCAPI ::std::string const& getIconName() const;
 #endif
 
-    MCAPI void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCFOLD uint getId() const;
 
-    MCAPI ::MobEffect& setFactorCalculationData(::MobEffect::FactorCalculationData const& factorCalculationData);
+    MCAPI ::HashedString const& getParticleEffect(bool isAmbient) const;
 
-    MCAPI void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCFOLD ::std::string const& getResourceName() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool hasIcon() const;
+#endif
+
+    MCFOLD bool isHarmful() const;
+
+    MCFOLD bool isVisible() const;
 
     MCAPI void updateModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
         ::EffectDuration    durationTicks,
         int                 amplification
     ) const;
+
+    MCFOLD ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>> const&
+    viewAttributeModifiers() const;
     // NOLINTEND
 
 public:
@@ -188,15 +186,15 @@ public:
     MCAPI static void
     darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
 
-#ifdef LL_PLAT_C
     MCAPI static ::MobEffect* getById(uint effectId);
-#endif
 
     MCAPI static ::MobEffect* getByName(::std::string const& name);
 
-    MCAPI static ::MobEffect::FactorCalculationData getDarknessEffectFactorCalculationData();
+    MCAPI static ::std::string getNameById(uint effectId);
 
     MCAPI static void initEffects(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+
+    MCAPI static void shutdownEffects();
     // NOLINTEND
 
 public:
@@ -207,6 +205,8 @@ public:
     MCAPI static ::MobEffect*& BAD_OMEN();
 
     MCAPI static ::MobEffect*& BLINDNESS();
+
+    MCAPI static ::MobEffect*& BREATH_OF_THE_NAUTILUS();
 
     MCAPI static ::MobEffect*& CONDUIT_POWER();
 
@@ -311,9 +311,9 @@ public:
 
     MCFOLD void $onEffectExpired(::Actor& target) const;
 
-    MCFOLD void $onActorDied(::Actor& target, int amplifier) const;
+    MCFOLD void $onActorDied(::Actor&, int) const;
 
-    MCFOLD void $onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
+    MCFOLD void $onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
     MCAPI void
     $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;

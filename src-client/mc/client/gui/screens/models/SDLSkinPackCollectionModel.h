@@ -12,12 +12,12 @@
 class DlcId;
 class IContentAcquisition;
 class IEntitlementManager;
+class IPersonaClient;
 class ISkinRepository;
-class ISkinRepositoryClientInterface;
 class IStoreCatalogItem;
 class IStoreCatalogRepository;
+class PersonaClient;
 class SkinPackModel;
-class SkinRepositoryClientInterface;
 namespace mce { class UUID; }
 namespace persona { class DlcImportTracker; }
 // clang-format on
@@ -26,11 +26,11 @@ class SDLSkinPackCollectionModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::DlcBatchCacheModel>                                     mDlcBatchCacheModel;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ISkinRepository>>                     mSkinRepository;
-    ::ll::TypedStorage<8, 8, ::SkinRepositoryClientInterface&>                          mSkinRepositoryClientInterface;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>>     mEntitlementManager;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository>> mStoreCatalogRepository;
+    ::ll::TypedStorage<8, 72, ::DlcBatchCacheModel>                                          mDlcBatchCacheModel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ISkinRepository>>                          mSkinRepository;
+    ::ll::TypedStorage<8, 8, ::PersonaClient&>                                               mPersonaClient;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>>          mEntitlementManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository>>      mStoreCatalogRepository;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::persona::DlcImportTracker>>> mTrackedImports;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::SkinPackModel>>>             mSkinPacks;
     ::ll::TypedStorage<8, 8, uint64>                                                         mStartFetchIndex;
@@ -54,7 +54,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalog,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
         ::std::shared_ptr<::ISkinRepository>                     skinRepository,
-        ::ISkinRepositoryClientInterface&                        skinRepositoryClientInterface
+        ::IPersonaClient&                                        personaClient
     );
 
     MCAPI void _addSkinPackModel(::mce::UUID const& packId, int index);
@@ -63,11 +63,25 @@ public:
 
     MCAPI void _extractDlcIdFromOffer(::std::vector<::DlcId>& dlcIds, ::IStoreCatalogItem const& calatogItem);
 
+    MCAPI void addBuiltInSkinPackModel(::std::shared_ptr<::SkinPackModel> skinPackModel);
+
     MCAPI uint64 collectLegacyAndSideLoadedSkinPacks();
 
     MCAPI void collectOffers(::std::vector<::gsl::not_null<::IStoreCatalogItem*>> const& offers);
 
     MCAPI uint64 collectSkinsForOffline(bool collectOwnedSkins, ::mce::UUID const& packId);
+
+    MCAPI ::std::shared_ptr<::SkinPackModel> getFirstSkinPack() const;
+
+    MCAPI uint64 getNumSkinPacks() const;
+
+    MCAPI ::std::shared_ptr<::SkinPackModel> getSkinPackAtIndex(uint64 const& skinPackIndex) const;
+
+    MCFOLD uint64 getVisibleEndRange() const;
+
+    MCAPI void incrementVisibleEndRange(uint64 const& increment);
+
+    MCAPI void setMaxPacksPerFetch(uint const& maxPacksPerFetch);
 
     MCAPI void tick(::ui::DirtyFlag& dirtyFlags);
 
@@ -82,7 +96,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalog,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
         ::std::shared_ptr<::ISkinRepository>                     skinRepository,
-        ::ISkinRepositoryClientInterface&                        skinRepositoryClientInterface
+        ::IPersonaClient&                                        personaClient
     );
     // NOLINTEND
 

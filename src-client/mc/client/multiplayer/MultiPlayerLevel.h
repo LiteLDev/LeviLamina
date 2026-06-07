@@ -32,6 +32,7 @@ class NetworkIdentifier;
 class SerializedSkinRef;
 class SubChunkManager;
 class SubChunkPacket;
+class SubChunkPacketHandler;
 class SubChunkRequestManager;
 class TickTimeManager;
 class TickTimeManagerClient;
@@ -172,7 +173,13 @@ public:
         bool           subChunkVisibilityChanged
     );
 
+    MCAPI void addSubChunkPacketHandler(::std::shared_ptr<::SubChunkPacketHandler> handler);
+
     MCAPI void cameraTick();
+
+    MCAPI ::ArmorTrimIconGenerator& getArmorTrimIconGenerator();
+
+    MCFOLD ::std::weak_ptr<::ClientSubChunkLighter> getClientSubChunkLighter() const;
     // NOLINTEND
 
 public:
@@ -249,7 +256,7 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
 
-    MCFOLD ::ArmorTrimUnloader* $getArmorTrimUnloader();
+    MCAPI ::ArmorTrimUnloader* $getArmorTrimUnloader();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
 
@@ -257,7 +264,7 @@ public:
 
     MCAPI void $subChunkTickAndSendRequests();
 
-    MCAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
+    MCFOLD ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
 
     MCFOLD ::TickTimeManager const& $_getTickTimeManager() const;
 

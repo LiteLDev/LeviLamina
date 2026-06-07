@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,6 +24,7 @@ public:
 
 public:
     // prevent constructor by default
+    EditorReplicationDeletePayload& operator=(EditorReplicationDeletePayload const&);
     EditorReplicationDeletePayload(EditorReplicationDeletePayload const&);
     EditorReplicationDeletePayload();
 
@@ -35,14 +37,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::EditorReplicationDeletePayload&
-    operator=(::Editor::Network::EditorReplicationDeletePayload const&);
+    MCNAPI EditorReplicationDeletePayload(::HashedString const& id, uint typeHash);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::HashedString const& id, uint typeHash);
     // NOLINTEND
 
 public:

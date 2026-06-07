@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,28 +23,16 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk98f1e1;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         VolumeDescription& operator=(VolumeDescription const&);
         VolumeDescription(VolumeDescription const&);
         VolumeDescription();
 
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        VolumeDescription(VolumeDescription const&);
-        VolumeDescription();
-
-#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription&&);
-
-        MCNAPI ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription const&);
-
         MCNAPI ~VolumeDescription();
 #endif
         // NOLINTEND
@@ -65,17 +54,28 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk8a75ea;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     VolumeDefinition& operator=(VolumeDefinition const&);
     VolumeDefinition(VolumeDefinition const&);
     VolumeDefinition();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    VolumeDefinition();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ~VolumeDefinition();
+    MCNAPI VolumeDefinition(::VolumeDefinition const&);
+
+    MCNAPI ::VolumeDefinition& operator=(::VolumeDefinition&&);
+
+    MCNAPI ::VolumeDefinition& operator=(::VolumeDefinition const&);
 #endif
     // NOLINTEND
 
@@ -85,6 +85,8 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
+
+    MCNAPI static ::SemVersionConstant const& getMaxSupportedVersion();
     // NOLINTEND
 
 public:
@@ -94,10 +96,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::VolumeDefinition const&);
 #endif
     // NOLINTEND
 };

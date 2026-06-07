@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LocalConnector() /*override*/ = default;
+    virtual ~LocalConnector() /*override*/;
 
     virtual ::std::string getLocalIp() /*override*/;
 
@@ -64,6 +64,8 @@ public:
 
     MCNAPI void disconnect();
 
+    MCNAPI void host(::NetworkIdentifier const& id);
+
     MCNAPI void onRemoteDisconnected(::LocalConnector& otherConnector);
 
     MCNAPI void runEvents();
@@ -79,6 +81,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Connector::ConnectionCallbacks& callbacks, ::NetworkIdentifier const& localId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -14,6 +14,7 @@ class BlockSource;
 class IRandom;
 class Mob;
 class ServerLevel;
+struct ServerScriptManagerEvents;
 namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
 namespace ScriptModuleMinecraft { struct ScriptSpawnRulesInvalidRegistryError; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -46,13 +47,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _onReload() /*override*/;
-
-    virtual ~ScriptCustomSpawnRulesRegistry() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptCustomSpawnRulesRegistry(::ServerScriptManagerEvents& events, ::ServerLevel& level);
+
     MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
@@ -78,6 +79,12 @@ public:
         ::std::string const&                                                                id,
         ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> callback
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ServerScriptManagerEvents& events, ::ServerLevel& level);
     // NOLINTEND
 
 public:

@@ -36,8 +36,6 @@ public:
     virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
-
-    virtual ~SelectItemNode() /*override*/ = default;
     // NOLINTEND
 
 public:

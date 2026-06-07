@@ -14,12 +14,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 120, ::cereal::INISchemaWriter> mWriter;
     // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~INISaver() /*override*/ = default;
-    // NOLINTEND
 };
 
 } // namespace cereal

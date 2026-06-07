@@ -36,18 +36,32 @@ public:
 
 public:
     // prevent constructor by default
-    PermissionsHandler(PermissionsHandler const&);
+    PermissionsHandler& operator=(PermissionsHandler const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI PermissionsHandler();
 
+    MCAPI PermissionsHandler(::PermissionsHandler const& rhs);
+
     MCAPI void addSaveData(::CompoundTag& tag) const;
+
+    MCFOLD ::CommandPermissionLevel getCommandPermissions() const;
+
+    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::optional<::std::reference_wrapper<
+        ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
+    getPlayerPermissionsChangedPublisher() const;
+#endif
 
     MCAPI bool loadSaveData(::CompoundTag const& tag);
 
-    MCAPI ::PermissionsHandler& operator=(::PermissionsHandler const&);
+    MCFOLD void setCommandPermissions(::CommandPermissionLevel permissions);
+
+    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
 
     MCAPI ~PermissionsHandler();
     // NOLINTEND
@@ -77,6 +91,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::PermissionsHandler const& rhs);
     // NOLINTEND
 
 public:

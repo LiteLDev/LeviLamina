@@ -25,8 +25,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
-
-    virtual ~DryFoliageColorClientBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

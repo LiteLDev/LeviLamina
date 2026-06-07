@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/BaseError.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct Error; }
+// clang-format on
+
 namespace ScriptUtils {
 
 struct FunctionError : public ::Scripting::BaseError {
@@ -17,19 +22,13 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit FunctionError(::std::string_view functionName);
 
-    MCNAPI ~FunctionError();
+    MCNAPI explicit operator ::Scripting::Error() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string_view functionName);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

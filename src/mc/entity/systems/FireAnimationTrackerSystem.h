@@ -19,9 +19,12 @@ class FireAnimationTrackerSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual void tick(::EntityRegistry&) /*override*/;
+#else // LL_PLAT_C
     virtual void tick(::EntityRegistry& registry) /*override*/;
+#endif
 
-    virtual ~FireAnimationTrackerSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

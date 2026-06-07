@@ -30,20 +30,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~HoverTextColorItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HoverTextColorItemComponent(::HoverTextColorItemComponent const&);
-
     MCAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
-
-    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent&&);
-
-    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent const&);
     // NOLINTEND
 
 public:
@@ -61,8 +53,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HoverTextColorItemComponent const&);
-
     MCAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
     // NOLINTEND
 

@@ -45,9 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double) /*override*/;
-
-    virtual ~TradeOfferQuery() /*override*/;
+    virtual void update(double time) /*override*/;
     // NOLINTEND
 
 public:
@@ -79,15 +77,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCAPI void $update(double time);
     // NOLINTEND
 
 public:

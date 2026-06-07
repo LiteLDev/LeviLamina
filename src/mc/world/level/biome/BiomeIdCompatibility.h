@@ -11,6 +11,13 @@ namespace BiomeIdCompatibility {
 // functions
 // NOLINTBEGIN
 MCAPI ::std::string_view getFixedBiomeName(::BiomeIdType biomeId);
+
+MCAPI bool isReserved(::BiomeIdType id);
+// NOLINTEND
+
+// static variables
+// NOLINTBEGIN
+MCAPI ::BiomeIdType const& MAX_CUSTOM_BIOMES();
 // NOLINTEND
 
 } // namespace BiomeIdCompatibility

@@ -111,6 +111,8 @@ public:
 
     MCAPI ::LibraryItem* _getItem(::UIPropertyBag& bag) const;
 
+    MCAPI void _handleFetchCompletion();
+
     MCAPI void _handleFetchErrors();
 
     MCAPI void _initialize();
@@ -120,8 +122,6 @@ public:
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
-
-    MCAPI bool isSearchResultScreen() const;
     // NOLINTEND
 
 public:

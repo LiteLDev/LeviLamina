@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/ScriptActorEventFilterData.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+struct ActorUniqueID;
+namespace ScriptModuleMinecraft { struct ScriptActorData; }
+// clang-format on
+
 namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptDataDrivenActorTriggerEventFilterData {
@@ -16,9 +23,32 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptDataDrivenActorTriggerEventFilterData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptDataDrivenActorTriggerEventFilterData(
+        ::std::string const&   eventType,
+        ::ActorUniqueID const& actorId,
+        ::HashedString const&  typeIdHash
+    );
+
     MCAPI ~ScriptDataDrivenActorTriggerEventFilterData();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilterData
+    create(::std::string const& eventType, ::ScriptModuleMinecraft::ScriptActorData const& actor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& eventType, ::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
     // NOLINTEND
 
 public:

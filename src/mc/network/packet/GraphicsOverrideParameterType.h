@@ -52,4 +52,7 @@ enum class GraphicsOverrideParameterType : uchar {
     FlashIlluminance        = 46,
     AmbientColor            = 47,
     AmbientIlluminance      = 48,
+    EmissiveDesaturation    = 49,
+    SkyIntensity            = 50,
+    OrbitalOffsetDegrees    = 51,
 };

@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +13,6 @@ struct PassengerComponent;
 struct PassengersChangedFlagComponent;
 struct RecalculateControlledByLocalInstanceRequestComponent;
 struct RemovePassengersComponent;
-struct StopRidingRequestComponent;
 struct VehicleComponent;
 // clang-format on
 
@@ -31,28 +29,10 @@ MCAPI void removePassengersSystem(
         ::PassengersChangedFlagComponent> modifier
 );
 
-MCAPI void singleTickPassengerRemovePassengerSystem(
-    ::StrictEntityContext const&                                                                        passenger,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent>, ::PassengerComponent const> view,
-    ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent>               vehicleView,
-    ::EntityModifier<
-        ::VehicleComponent,
-        ::RecalculateControlledByLocalInstanceRequestComponent,
-        ::PassengersChangedFlagComponent> modifier
-);
-
 MCAPI void singleTickRemovePassenger(
     ::StrictEntityContext const&                                                          passengerEntity,
     ::PassengerComponent const&                                                           passengerComponent,
     ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent> vehicleView,
-    ::EntityModifier<
-        ::VehicleComponent,
-        ::RecalculateControlledByLocalInstanceRequestComponent,
-        ::PassengersChangedFlagComponent> modifier
-);
-
-MCAPI void tickRemovePassengersSystem(
-    ::ViewT<::StrictEntityContext, ::RemovePassengersComponent, ::VehicleComponent> view,
     ::EntityModifier<
         ::VehicleComponent,
         ::RecalculateControlledByLocalInstanceRequestComponent,

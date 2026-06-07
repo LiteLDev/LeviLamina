@@ -19,8 +19,22 @@ public:
     virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) /*override*/;
 
     virtual void clearTempContentKeys() /*override*/;
+    // NOLINTEND
 
-    virtual ~SkinPackContentKeyProvider() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI SkinPackContentKeyProvider();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

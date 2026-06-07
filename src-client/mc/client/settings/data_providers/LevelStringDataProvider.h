@@ -44,8 +44,6 @@ public:
     virtual void setValue(::std::string_view value) /*override*/;
 
     virtual void commitValue() /*override*/;
-
-    virtual ~LevelStringDataProvider() /*override*/;
     // NOLINTEND
 
 public:
@@ -70,12 +68,6 @@ public:
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
         ::std::unique_ptr<::Settings::IStringPropertyHandler>                                    delegate
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

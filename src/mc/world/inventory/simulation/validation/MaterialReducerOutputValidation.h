@@ -21,8 +21,6 @@ public:
         /*override*/;
 
     virtual bool canDestroy(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~MaterialReducerOutputValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

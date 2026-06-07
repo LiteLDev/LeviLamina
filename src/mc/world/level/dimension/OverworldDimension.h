@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"
 #include "mc/world/level/storage/StorageVersion.h"
@@ -69,7 +68,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCFOLD ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
     MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);

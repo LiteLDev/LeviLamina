@@ -25,7 +25,7 @@ class IEduMultiplayerHeadless : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // IEduMultiplayerHeadless inner types define
     enum class ServerHealth : int {
-        Unknown = -1,
+        Unknown = 4294967295,
         Poor    = 0,
         Mid     = 1,
         Good    = 2,
@@ -36,10 +36,18 @@ public:
     // NOLINTBEGIN
     virtual void hostServer();
 
+#ifdef LL_PLAT_S
+    virtual ::Social::EduJoinerResponse tryAcceptJoiner(::std::string const&, ::std::string const&);
+#else // LL_PLAT_C
     virtual ::Social::EduJoinerResponse
     tryAcceptJoiner(::std::string const& sessionToken, ::std::string const& joinerToHostNonce);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::std::string getHostToJoinerNonce(::std::string const&) const;
+#else // LL_PLAT_C
     virtual ::std::string getHostToJoinerNonce(::std::string const& sessionToken) const;
+#endif
 
     virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners();
 
@@ -77,13 +85,6 @@ public:
     virtual ::std::string getHostIp() const;
 
     virtual int getHostPort() const;
-
-#ifdef LL_PLAT_S
-    virtual ~IEduMultiplayerHeadless() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~IEduMultiplayerHeadless() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -98,12 +99,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::EducationServicesEnvironment& mCachedEnvironment();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

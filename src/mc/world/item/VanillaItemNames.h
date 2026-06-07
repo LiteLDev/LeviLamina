@@ -1020,6 +1020,10 @@ MCAPI ::HashedString const& Sugar();
 
 MCAPI ::HashedString const& SugarCane();
 
+MCAPI ::HashedString const& SulfurCubeBucket();
+
+MCAPI ::HashedString const& SulfurCubeSpawnEgg();
+
 MCAPI ::HashedString const& SuspiciousStew();
 
 MCAPI ::HashedString const& SweetBerries();

@@ -14,12 +14,6 @@ struct BiomeTagSetIDType;
 
 struct BiomeTagComponent : public ::BiomeComponentBase, public ::TagsComponent<::IDType<::BiomeTagSetIDType>> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BiomeTagComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

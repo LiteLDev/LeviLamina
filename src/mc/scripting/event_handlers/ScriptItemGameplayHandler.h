@@ -26,8 +26,6 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ItemUseOnEvent& itemEvent) /*override*/;
 
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ItemUseEvent& itemEvent) /*override*/;
-
-    virtual ~ScriptItemGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

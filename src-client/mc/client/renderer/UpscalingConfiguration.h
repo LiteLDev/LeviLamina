@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/options/UpscalingMode.h"
 #include "mc/client/options/UpscalingQuality.h"
 #include "mc/external/render_dragon/frame_renderer/modules/UpscalingParameters.h"
 
@@ -37,20 +38,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI Configs();
-
-        MCAPI Configs(::UpscalingConfiguration::Configs const&);
-
-        MCFOLD ::UpscalingConfiguration::Configs& operator=(::UpscalingConfiguration::Configs&&);
-
-        MCFOLD ::UpscalingConfiguration::Configs& operator=(::UpscalingConfiguration::Configs const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor();
-
-        MCFOLD void* $ctor(::UpscalingConfiguration::Configs const&);
         // NOLINTEND
     };
 
@@ -63,6 +56,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::dragon::framerenderer::modules::UpscalingParameters getUpscalingParameters(::UpscalingMode mode) const;
+
     MCAPI ::dragon::framerenderer::modules::UpscalingParameters
     getUpscalingParameters(::UpscalingQuality quality, ::glm::vec<2, ushort> const& targetResolution) const;
     // NOLINTEND
@@ -71,10 +66,15 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static ::dragon::framerenderer::modules::UpscalingParameters resolveAutomaticUpscalingParameters(
+        ::dragon::framerenderer::modules::UpscalingParameters params,
+        ::glm::vec2 const&                                    targetResolution
+    );
     // NOLINTEND
 };
 
 // free functions
 // NOLINTBEGIN
-MCAPI bool operator==(::UpscalingConfiguration::Configs const& __P0, ::UpscalingConfiguration::Configs const& __P1);
+MCAPI bool operator==(::UpscalingConfiguration::Configs const&, ::UpscalingConfiguration::Configs const&);
 // NOLINTEND

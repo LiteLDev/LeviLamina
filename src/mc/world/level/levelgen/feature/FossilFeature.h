@@ -10,6 +10,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class BoundingBox;
 class Random;
 // clang-format on
 
@@ -25,8 +26,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FossilFeature() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static uint64 _countEmptyCorners(::BlockSource const& region, ::BoundingBox const& boundingBox);
+
+    MCFOLD static bool _overlapsWithStructureFeature(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ServerLevelEventCoordinator() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);

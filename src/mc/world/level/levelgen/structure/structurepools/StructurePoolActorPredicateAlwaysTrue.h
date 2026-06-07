@@ -17,8 +17,6 @@ public:
     virtual bool test(::std::string const&) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
-
-    virtual ~StructurePoolActorPredicateAlwaysTrue() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -32,7 +32,6 @@ enum class BlockProperty : uint64 {
     CausesDamage                     = 1ull << 29,
     BreaksWhenFallenOnByFallingBlock = 1ull << 30,
     Liquid                           = 1ull << 32,
-    SnowRecoverable                  = 1ull << 34,
     Scaffolding                      = 1ull << 35,
     CanSupportCenterHangingBlock     = 1ull << 36,
     BreaksWhenHitByArrowDeprecated   = 1ull << 37,

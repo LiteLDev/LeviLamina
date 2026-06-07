@@ -124,8 +124,6 @@ public:
         ::World::WorldID const&                        worldId,
         ::std::function<void(::World::WorldID const&)> onComplete
     ) /*override*/;
-
-    virtual ~WorldStorageHandler() /*override*/;
     // NOLINTEND
 
 public:
@@ -141,11 +139,15 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv
     );
 
+    MCAPI ::World::IWorldStorageHandler::DuplicateWorldResult _canCreateCopy(::World::WorldID const& worldId) const;
+
     MCAPI void _exportWorld(
         ::World::WorldID const&                                                 worldId,
         ::FileArchiver::ExportType                                              exportType,
         ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     );
+
+    MCAPI uint64 _getWorldSizeInBytes(::World::WorldID const& worldId) const;
 
     MCAPI ::std::string _makeBackupOfLevel(::World::WorldID const& id);
 
@@ -187,12 +189,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::variant<::World::IWorldStorageHandler::ReadWorldError, ::World::IWorldStorageHandler::CachedWorldData>
@@ -206,7 +202,7 @@ public:
 
     MCAPI void $deleteWorld(::World::WorldID const& id);
 
-    MCFOLD void $reloadWorld(::World::WorldID const& id);
+    MCAPI void $reloadWorld(::World::WorldID const& id);
 
     MCAPI ::Bedrock::Threading::Async<void> $clearPlayerData(
         ::World::WorldID const&                                                    worldId,

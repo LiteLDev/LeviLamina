@@ -19,16 +19,9 @@ public:
 
 public:
     // prevent constructor by default
+    VerboseCameraList& operator=(VerboseCameraList const&);
     VerboseCameraList(VerboseCameraList const&);
     VerboseCameraList();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::CameraPresetsInternals::VerboseCameraList& operator=(::CameraPresetsInternals::VerboseCameraList&&);
-
-    MCNAPI ::CameraPresetsInternals::VerboseCameraList& operator=(::CameraPresetsInternals::VerboseCameraList const&);
-    // NOLINTEND
 
 public:
     // static functions

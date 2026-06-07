@@ -229,8 +229,6 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-
-    virtual ~System() /*override*/;
     // NOLINTEND
 
 public:
@@ -277,12 +275,48 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     );
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static auto createViews(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::CollidableMobFlagComponent,
+                ::FallingBlockFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::MaxAutoStepComponent,
+                ::CollidableMobNearFlagComponent>,
+            ::Write<::MoveRequestComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<
+                ::ExternalDataComponent,
+                ::LocalConstBlockSourceFactoryComponent,
+                ::LocalSpatialEntityFetcherFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
     // NOLINTEND
 
 public:

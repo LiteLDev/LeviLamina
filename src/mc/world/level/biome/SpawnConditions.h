@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
 
+// auto generated forward declare list
+// clang-format off
+class MobSpawnRules;
+// clang-format on
+
 class SpawnConditions {
 public:
     // member variables
@@ -17,5 +22,12 @@ public:
     ::ll::TypedStorage<8, 8, uint64>      delayEndWorldAge;
     ::ll::TypedStorage<4, 4, int>         rawBrightness;
     ::ll::TypedStorage<4, 12, ::BlockPos> pos;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::SpawnConditions
+    createSpawnConditionsWithSpawnRules(::SpawnConditions const& spawnConditions, ::MobSpawnRules const& spawnRules);
     // NOLINTEND
 };

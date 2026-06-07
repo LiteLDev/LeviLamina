@@ -7,7 +7,6 @@
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 #include "mc/client/gui/screens/controllers/CodeScreenControllerProxy.h"
-#include "mc/client/gui/screens/controllers/CodeScreenViewOption.h"
 #include "mc/client/gui/screens/controllers/UriData.h"
 #include "mc/deps/code_builder/platform/WebviewObserver.h"
 #include "mc/events/OpenCodeMethod.h"
@@ -31,9 +30,8 @@ public:
         MemoryWarning            = 2,
         MemoryError              = 3,
         NetworkError             = 4,
-        DeprecatedIDEWarning     = 5,
-        TynkerDeprecated         = 6,
-        AzurenotebooksDeprecated = 7,
+        TynkerDeprecated         = 5,
+        AzurenotebooksDeprecated = 6,
     };
 
 public:
@@ -87,25 +85,19 @@ public:
     // NOLINTBEGIN
     MCAPI CodeScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
 
+    MCAPI bool _deviceHasEnoughMemory() const;
+
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
 
     MCAPI void _selectEditor(::std::string const& url);
-
-    MCAPI void _setViewOption(::CodeScreenViewOption view);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool validateUri(::std::string const& uri);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& INTERFACE_KEY();
     // NOLINTEND
 
 public:

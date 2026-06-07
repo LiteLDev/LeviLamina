@@ -11,10 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::HWND__*> mHWnd;
     // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~HIDControllerWin32() /*override*/ = default;
-    // NOLINTEND
 };

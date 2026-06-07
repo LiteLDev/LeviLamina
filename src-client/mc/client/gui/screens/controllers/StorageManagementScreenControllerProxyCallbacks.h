@@ -19,9 +19,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StorageManagementScreenControllerProxyCallbacks& operator=(StorageManagementScreenControllerProxyCallbacks const&);
+    StorageManagementScreenControllerProxyCallbacks();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StorageManagementScreenControllerProxyCallbacks(::StorageManagementScreenControllerProxyCallbacks const&);
+
     MCAPI ~StorageManagementScreenControllerProxyCallbacks();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::StorageManagementScreenControllerProxyCallbacks const&);
     // NOLINTEND
 
 public:

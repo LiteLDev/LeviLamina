@@ -46,6 +46,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit WorldTransferFacet(::World::WorldTransferer& worldTransferer);
+
     MCAPI void backupWorld(::std::string const& world);
 
     MCFOLD ::OreUI::FacetTaskState const getBackupWorldProgress();
@@ -71,6 +73,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::World::WorldTransferer& worldTransferer);
     // NOLINTEND
 
 public:

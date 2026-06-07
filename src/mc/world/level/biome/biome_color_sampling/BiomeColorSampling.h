@@ -17,13 +17,13 @@ namespace BiomeColorSampling { class TessellationPolicy; }
 namespace BiomeColorSampling {
 // functions
 // NOLINTBEGIN
-MCAPI int getMapBirchFoliageColor(::Biome const& biome, ::BlockPos const&);
+MCAPI int getMapBirchFoliageColor(::Biome const&, ::BlockPos const&);
 
 MCAPI int getMapDefaultFoliageColor(::Biome const& biome, ::BlockPos const&);
 
-MCAPI int getMapDryFoliageColor(::Biome const& biome, ::BlockPos const&);
+MCAPI int getMapDryFoliageColor(::Biome const&, ::BlockPos const&);
 
-MCAPI int getMapEvergreenFoliageColor(::Biome const& biome, ::BlockPos const&);
+MCAPI int getMapEvergreenFoliageColor(::Biome const&, ::BlockPos const&);
 
 MCAPI int getMapGrassColor(::Biome const& biome, ::BlockPos const& pos);
 

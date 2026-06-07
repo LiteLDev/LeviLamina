@@ -53,13 +53,13 @@ public:
     // NOLINTBEGIN
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
@@ -67,11 +67,9 @@ public:
 
     virtual ::std::string getTTSProgressMessage() const /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
     virtual ::ProgressAnimation showLoadingBar() const /*override*/;
-
-    virtual ~EduCloudDownloadProgressHandler() /*override*/;
     // NOLINTEND
 
 public:
@@ -92,6 +90,20 @@ public:
     MCAPI ::std::string _updateProgressMessage(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI void _updateTitle();
+
+    MCFOLD bool canLaunchLocalWorld() const;
+
+    MCAPI void exitErrorPopup(::MinecraftScreenModel& minecraftScreenModel, bool launch);
+
+    MCFOLD ::EduCloudUtils::Operation getCurrentOperation() const;
+
+    MCFOLD ::DownloadError getDownloadErrorStatus() const;
+
+    MCFOLD ::MSGraph::GraphResponse getGraphErrorStatus() const;
+
+    MCFOLD ::ImportFailure getImportErrorStatus() const;
+
+    MCFOLD ::MSGraph::GraphResponse getSyncErrorStatus() const;
     // NOLINTEND
 
 public:
@@ -109,23 +121,17 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCAPI void $onCancel(::MinecraftScreenModel&);
 
     MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
     MCFOLD ::std::string $getTitleText() const;
 
@@ -133,7 +139,7 @@ public:
 
     MCFOLD ::std::string $getTTSProgressMessage() const;
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
     MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND

@@ -44,8 +44,6 @@ public:
 
     MCAPI void merge(::cereal::internal::ConstraintDescription const& other);
 
-    MCAPI explicit operator bool() const;
-
     MCAPI ::cereal::internal::ConstraintDescription& operator=(::cereal::internal::ConstraintDescription&&);
 
     MCAPI ::cereal::internal::ConstraintDescription& operator=(::cereal::internal::ConstraintDescription const&);

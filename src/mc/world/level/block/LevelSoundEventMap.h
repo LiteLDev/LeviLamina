@@ -12,6 +12,10 @@ public:
     // NOLINTBEGIN
     MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getId(::std::string const& type);
 
+#ifdef LL_PLAT_C
+    MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getIdOtherwiseContentError(::std::string const& type);
+#endif
+
     MCAPI static ::std::string const& getName(::SharedTypes::Legacy::LevelSoundEvent type);
     // NOLINTEND
 

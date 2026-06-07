@@ -19,24 +19,46 @@ public:
 
 public:
     // prevent constructor by default
-    SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&);
+    SerializedPersonaPieceHandle& operator=(SerializedPersonaPieceHandle const&);
     SerializedPersonaPieceHandle();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SerializedPersonaPieceHandle(::SerializedPersonaPieceHandle const&);
+
+    MCAPI SerializedPersonaPieceHandle(
+        ::std::string const& pieceId,
+        ::persona::PieceType pieceType,
+        ::mce::UUID          packId,
+        bool                 isDefaultPiece,
+        ::std::string const& productId
+    );
+
     MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle&&);
 
-    MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle const&);
-
-    MCAPI bool operator==(::SerializedPersonaPieceHandle const&) const;
+    MCAPI bool operator==(::SerializedPersonaPieceHandle const& rhs) const;
 
     MCAPI ~SerializedPersonaPieceHandle();
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SerializedPersonaPieceHandle const&);
+
+    MCAPI void* $ctor(
+        ::std::string const& pieceId,
+        ::persona::PieceType pieceType,
+        ::mce::UUID          packId,
+        bool                 isDefaultPiece,
+        ::std::string const& productId
+    );
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

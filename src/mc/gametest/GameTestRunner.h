@@ -20,6 +20,9 @@ class GameTestRunner {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::std::vector<::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>>>
+    _subdivideBatch(::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>>& batch, int maxTestsPerBatch);
+
     MCNAPI static void clearMarkers(::Level& level);
 
     MCNAPI static ::std::vector<::gametest::GameTestBatch> groupTestsIntoBatches(

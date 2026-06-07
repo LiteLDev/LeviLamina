@@ -13,23 +13,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SignalNameSubscriberCount& operator=(SignalNameSubscriberCount const&);
-    SignalNameSubscriberCount(SignalNameSubscriberCount const&);
-    SignalNameSubscriberCount();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SignalNameSubscriberCount(::ScriptModuleMinecraft::SignalNameSubscriberCount&&);
-
     MCAPI ~SignalNameSubscriberCount();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::SignalNameSubscriberCount&&);
     // NOLINTEND
 
 public:

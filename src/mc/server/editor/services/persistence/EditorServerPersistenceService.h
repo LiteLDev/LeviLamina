@@ -14,6 +14,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class PersistenceQuerySharedGroupPayload; }
 namespace Editor::Services { class PersistenceGroup; }
 namespace Editor::Services { class PersistenceItem; }
@@ -40,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorServerPersistenceService() /*override*/ = default;
+    virtual ~EditorServerPersistenceService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -77,18 +78,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit EditorServerPersistenceService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI ::Editor::Services::PersistenceGroupMetadata _createMetadata(
         ::std::string const&                 namespacedName,
         ::Editor::Services::PersistenceScope scope,
         ::std::optional<int>                 version
     );
 
-#ifdef LL_PLAT_S
     MCNAPI void _dispatchGroupItemsToClient(
         ::Editor::Services::PersistenceGroupItemMetadata     item,
         ::Editor::Services::PersistenceGroupItemChangeAction action
     );
-#endif
 
     MCNAPI void _dispatchGroupToClients(
         ::Editor::Services::PersistenceGroupChangeAction action,
@@ -104,7 +105,19 @@ public:
         ::StackRefResult<::Editor::Services::PersistenceItem>& item
     );
 
-    MCNAPI void _handleQuerySharedGroupPayload(::Editor::Network::PersistenceQuerySharedGroupPayload const& payload);
+    MCNAPI void _handleQuerySharedGroupPayload(::Editor::Network::PersistenceQuerySharedGroupPayload const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

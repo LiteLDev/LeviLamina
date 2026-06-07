@@ -27,9 +27,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit Speed(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
+
+    MCNAPI float getFlySpeedMultiplier() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Editor::Settings::SpeedProps const& getProperties() const;
 #endif
+
+    MCNAPI void setFlySpeedMultiplier(float newSpeed);
+
+    MCNAPI void updateSettings(::Editor::Settings::SpeedProps const& props, bool notifyUpdate);
+
+    MCNAPI ~Speed();
     // NOLINTEND
 
 public:
@@ -41,9 +51,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
-#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

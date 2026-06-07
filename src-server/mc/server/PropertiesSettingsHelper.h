@@ -17,6 +17,9 @@ namespace PropertiesSettingsHelper {
 // NOLINTBEGIN
 MCNAPI ::std::unordered_map<::std::string, ::std::string> getChangedValues(::PropertiesSettings const& properties);
 
+MCNAPI ::std::string const&
+getCustomProperty(::PropertiesSettings const& properties, ::std::string const& propertyName);
+
 MCNAPI ::NetworkServerConfig getNetworkServerConfig(::PropertiesSettings const& properties, bool isEduMode);
 
 MCNAPI void overrideTelemetryData(

@@ -19,12 +19,6 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockSnowContainerComponentV010
 : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockSnowContainerComponentV010() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

@@ -17,18 +17,6 @@ public:
     PrivilegeScope& operator=(PrivilegeScope const&);
     PrivilegeScope(PrivilegeScope const&);
     PrivilegeScope();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PrivilegeScope();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

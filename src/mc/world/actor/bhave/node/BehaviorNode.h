@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BehaviorNode();
+    virtual ~BehaviorNode() = default;
 
     virtual ::BehaviorStatus tick(::Actor& owner) = 0;
 
@@ -37,9 +37,17 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI BehaviorNode();
+
+    MCFOLD ::BehaviorData& getBehaviorData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

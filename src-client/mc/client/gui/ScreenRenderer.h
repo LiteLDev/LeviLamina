@@ -36,9 +36,21 @@ public:
 
     class QuadBuffer : public ::std::vector<::Vec2> {
     public:
+        // prevent constructor by default
+        QuadBuffer();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI explicit QuadBuffer(uint64 estimatedQuadCount);
+
         MCAPI ~QuadBuffer();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(uint64 estimatedQuadCount);
         // NOLINTEND
 
     public:
@@ -51,6 +63,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScreenRenderer();
+
     MCAPI void blit(
         ::ScreenContext&          screenContext,
         ::mce::TexturePtr const&  tex,
@@ -112,12 +126,30 @@ public:
     MCAPI void
     fill(::ScreenContext& screenContext, float x0, float y0, float x1, float y1, ::mce::Color const& color) const;
 
+    MCAPI void fill(::ScreenContext& screenContext, int x0, int y0, int x1, int y1, ::mce::Color const& color) const;
+
+    MCAPI void fillGradient(
+        ::ScreenContext&    screenContext,
+        ::glm::vec2 const&  pos,
+        ::glm::vec2 const&  size,
+        ::mce::Color const& color1,
+        ::mce::Color const& color2
+    );
+
     MCAPI void fillGradient(
         ::ScreenContext&    screenContext,
         float               x0,
         float               y0,
         float               x1,
         float               y1,
+        ::mce::Color const& color1,
+        ::mce::Color const& color2
+    );
+
+    MCAPI void fillHorizontalGradient(
+        ::ScreenContext&    screenContext,
+        ::glm::vec2 const&  pos,
+        ::glm::vec2 const&  size,
         ::mce::Color const& color1,
         ::mce::Color const& color2
     );
@@ -148,6 +180,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void destroyInstance();
+
+    MCAPI static bool hasMaterial(::ScreenRenderer::ScreenMaterial mat);
+
     MCAPI static void loadMaterials();
 
     MCAPI static ::ScreenRenderer& singleton();
@@ -159,5 +195,11 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<::mce::MaterialPtr[]> mScreenMaterials();
 
     MCAPI static ::std::unique_ptr<::ScreenRenderer>& singletonPtr();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

@@ -19,12 +19,13 @@ public:
 public:
     // prevent constructor by default
     ScriptOperationPayload& operator=(ScriptOperationPayload const&);
-    ScriptOperationPayload(ScriptOperationPayload const&);
     ScriptOperationPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptOperationPayload(::Editor::Transactions::ScriptOperationPayload const&);
+
     MCNAPI ScriptOperationPayload(
         ::std::string const&                                                        payload,
         ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
@@ -37,6 +38,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Transactions::ScriptOperationPayload const&);
+
     MCNAPI void* $ctor(
         ::std::string const&                                                        payload,
         ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,

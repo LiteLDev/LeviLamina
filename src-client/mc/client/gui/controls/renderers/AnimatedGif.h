@@ -27,20 +27,28 @@ public:
 
 public:
     // prevent constructor by default
-    AnimatedGif& operator=(AnimatedGif const&);
-    AnimatedGif(AnimatedGif const&);
     AnimatedGif();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AnimatedGif(::AnimatedGif const&);
+
     MCAPI ::mce::Image makeCurrentFrame();
 
     MCAPI ::AnimatedGif& operator=(::AnimatedGif&&);
 
+    MCAPI ::AnimatedGif& operator=(::AnimatedGif const&);
+
     MCAPI bool setAnimationProgress(::std::chrono::steady_clock::time_point now);
 
     MCAPI ~AnimatedGif();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AnimatedGif const&);
     // NOLINTEND
 
 public:

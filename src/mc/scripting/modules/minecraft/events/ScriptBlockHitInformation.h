@@ -38,8 +38,6 @@ public:
         ::ProjectileHitEvent const&           projectileHitEvent,
         ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCAPI ~ScriptBlockHitInformation();
     // NOLINTEND
 
 public:
@@ -52,12 +50,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

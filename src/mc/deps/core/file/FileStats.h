@@ -27,11 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addWriteOperation(bool succeeded, uint64 numBytesWritten);
+    MCNAPI uint64 getAllocatedUsedFileSystemSize() const;
 
-    MCNAPI void clear();
-
-    MCNAPI void notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
+    MCNAPI void setFileSystemUsedSize(int64 newSize, int64 newAllocatedSize);
     // NOLINTEND
 };
 

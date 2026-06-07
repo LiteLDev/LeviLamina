@@ -11,8 +11,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JoinCodeIconData& operator=(JoinCodeIconData const&);
+    JoinCodeIconData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI JoinCodeIconData(::JoinCodeIconData const&);
+
     MCAPI ~JoinCodeIconData();
     // NOLINTEND
 
@@ -20,6 +27,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::JoinCodeIconData> const& gData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::JoinCodeIconData const&);
     // NOLINTEND
 
 public:

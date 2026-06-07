@@ -31,18 +31,14 @@ public:
     GameInviteCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~GameInviteCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit GameInviteCommandGroup(::OreUI::GameDependencies const& game);
 
     MCAPI void
     _invitePlatformPlayers(::OreUI::InvocationStatus status, ::std::vector<::std::string> const& uuids) const;
+
+    MCAPI void _inviteXboxPlayers(::OreUI::InvocationStatus status, ::std::vector<::std::string> const& xuids) const;
     // NOLINTEND
 
 public:

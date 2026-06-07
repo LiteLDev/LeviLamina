@@ -59,12 +59,6 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SchematicsRepository() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SchematicsRepository();
@@ -90,7 +84,13 @@ public:
         ::Experiments const*
     );
 
-    MCAPI bool _validateSchematic(::HashedString const& name, ::ClientBlockPipeline::BlockSchematic& schematic);
+    MCAPI bool _validateSchematic(
+        ::HashedString const&                  name,
+        ::ClientBlockPipeline::BlockSchematic& schematic,
+        bool                                   checkAllPartsWithinBufferLimit
+    );
+
+    MCFOLD ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> getMaterialRepo() const;
 
     MCAPI void initialize();
 
@@ -101,6 +101,8 @@ public:
         ::BlockCullingGroup&                  cullingGroup,
         ::Experiments const*                  experiments
     );
+
+    MCFOLD void setValidation(::ClientBlockPipeline::SchematicsRepository::Validation schematicValidation);
 
     MCAPI bool validateTransformedBounds(::Block const& block) const;
     // NOLINTEND

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptPressurePlatePopAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -26,9 +27,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptPressurePlatePopAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPressurePlatePopAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                               scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                               scope
+    );
     // NOLINTEND
 };
 

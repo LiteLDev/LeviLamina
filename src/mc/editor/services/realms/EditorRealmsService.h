@@ -92,9 +92,17 @@ public:
 
     virtual void loadRealmsWorldList() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void loadRealmsWorldSlots(::std::string const&) /*override*/;
+#else // LL_PLAT_C
     virtual void loadRealmsWorldSlots(::std::string const& worldId) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void downloadRealmWorld(::std::string const&, int const) /*override*/;
+#else // LL_PLAT_C
     virtual void downloadRealmWorld(::std::string const& worldId, int const slotId) /*override*/;
+#endif
 
     virtual bool const canUploadWorld() const /*override*/;
 
@@ -106,7 +114,13 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EditorRealmsService(::Editor::ServiceProviderCollection& providers);
 
+    MCNAPI bool const _canUploadWorld() const;
+
     MCNAPI void _handleServiceStatusPayload(::Editor::Network::EditorRealmsStatusPayload const& payload);
+
+#ifdef LL_PLAT_C
+    MCNAPI void sendIsRealmsServiceAvailablePayload();
+#endif
 
     MCNAPI void sendServiceStatusPayload();
     // NOLINTEND
@@ -166,9 +180,9 @@ public:
 
     MCNAPI void $loadRealmsWorldList();
 
-    MCNAPI void $loadRealmsWorldSlots(::std::string const& worldId);
+    MCNAPI void $loadRealmsWorldSlots(::std::string const&);
 
-    MCNAPI void $downloadRealmWorld(::std::string const& worldId, int const slotId);
+    MCNAPI void $downloadRealmWorld(::std::string const&, int const);
 
     MCNAPI bool const $canUploadWorld() const;
 

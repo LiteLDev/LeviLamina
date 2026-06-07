@@ -34,8 +34,6 @@ public:
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
-
-    virtual ~StructurePoolBlockPredicateLinearPosition() /*override*/ = default;
     // NOLINTEND
 
 public:

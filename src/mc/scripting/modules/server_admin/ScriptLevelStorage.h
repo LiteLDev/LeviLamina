@@ -36,13 +36,6 @@ public:
         ScriptLevelStorageQuerySnapshotFile& operator=(ScriptLevelStorageQuerySnapshotFile const&);
         ScriptLevelStorageQuerySnapshotFile(ScriptLevelStorageQuerySnapshotFile const&);
         ScriptLevelStorageQuerySnapshotFile();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::ScriptModuleServerAdmin::ScriptLevelStorage::ScriptLevelStorageQuerySnapshotFile&
-        operator=(::ScriptModuleServerAdmin::ScriptLevelStorage::ScriptLevelStorageQuerySnapshotFile&&);
-        // NOLINTEND
     };
 
 public:

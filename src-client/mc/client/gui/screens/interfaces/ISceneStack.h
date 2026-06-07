@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class AbstractScene;
-class Options;
+class OptionRegistry;
 class SceneStackProxy;
 struct ScreenThreshold;
 namespace Bedrock::PubSub { class Subscription; }
@@ -76,11 +76,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISceneStack() /*override*/;
+    virtual ~ISceneStack() /*override*/ = default;
 
     virtual void reload() = 0;
 
-    virtual void setOptions(::std::weak_ptr<::Options> options) = 0;
+    virtual void setOptions(::std::weak_ptr<::OptionRegistry> options) = 0;
 
     virtual void
     registerSceneChangeCallback(void* token, ::std::function<void(::AbstractScene&)> sceneChangeCallback) = 0;
@@ -230,12 +230,6 @@ public:
     virtual void setScreenThreshold(::ScreenThreshold const& screenThreshold) = 0;
 
     virtual ::Bedrock::PubSub::Subscription registerSceneStackDestroyedListener(::std::function<void()> callback) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

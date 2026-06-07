@@ -12,7 +12,7 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
+class Material;
 class Vec3;
 struct BlockAnimateTickData;
 struct Brightness;
@@ -20,6 +20,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class AbstractCandleBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    AbstractCandleBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,8 +44,6 @@ public:
 
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
     virtual int _getNumCandles(::Block const& block) const;
 
     virtual void _iterateCandles(
@@ -51,14 +53,14 @@ public:
     ) const;
 
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
-
-    virtual ~AbstractCandleBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addExtinguishEffects(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI AbstractCandleBlock(::std::string const& nameId, int id, ::Material const& material);
+
+    MCAPI void _addExtinguishEffects(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
 
     MCAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -66,6 +68,20 @@ public:
     _extinguish(::Actor* extinguisher, ::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canBeLit(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static bool _isLit(::Block const& block);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -87,6 +103,22 @@ public:
 
     MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
 
+    MCFOLD int $_getNumCandles(::Block const& block) const;
 
+    MCFOLD void $_iterateCandles(
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
+    ) const;
+
+    MCFOLD void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

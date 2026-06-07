@@ -34,8 +34,6 @@ public:
                                        componentSchema,
         ::BlockComponentFactory const& factory
     ) const /*override*/;
-
-    virtual ~OnFallOnTriggerDescription() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -113,26 +113,6 @@ public:
         ::ll::TypedStorage<4, 4, ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode> connectMode;
         ::ll::TypedStorage<1, 1, bool>                                               applicationHandshakeCompleted;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI RemoteSystemStruct();
-
-        MCAPI ~RemoteSystemStruct();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     struct BufferedCommandStruct {
@@ -282,8 +262,7 @@ public:
         int                         threadPriority
     ) /*override*/;
 
-    virtual bool
-    InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey) /*override*/;
+    virtual bool InitializeSecurity(char const*, char const*, bool) /*override*/;
 
     virtual void DisableSecurity() /*override*/;
 
@@ -463,8 +442,7 @@ public:
 
     virtual ::RakNet::SystemAddress GetSystemAddressFromGuid(::RakNet::RakNetGUID const input) const /*override*/;
 
-    virtual bool GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const input, char* client_public_key) const
-        /*override*/;
+    virtual bool GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const, char*) const /*override*/;
 
     virtual void SetTimeoutTime(uint timeMS, ::RakNet::SystemAddress const target) /*override*/;
 
@@ -527,7 +505,7 @@ public:
     virtual void
     SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*)) /*override*/;
 
-    virtual void ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance) /*override*/;
+    virtual void ApplyNetworkSimulator(float, ushort, ushort) /*override*/;
 
     virtual void SetPerConnectionOutgoingBandwidthLimit(uint maxBitsPerSecond) /*override*/;
 
@@ -558,7 +536,7 @@ public:
 
     virtual void DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct* s, char const* file, uint line) /*override*/;
 
-    virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const* file, uint line) /*override*/;
+    virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const*, uint) /*override*/;
 
     virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct) /*override*/;
     // NOLINTEND
@@ -570,8 +548,6 @@ public:
 
     MCAPI ::RakNet::Packet* AllocPacket(uint dataSize, char const* file, uint line);
 
-    MCAPI ::RakNet::Packet* AllocPacket(uint dataSize, uchar* data, char const* file, uint line);
-
     MCAPI bool AllowIncomingConnections() const;
 
     MCAPI ::RakNet::RakPeer::RemoteSystemStruct* AssignSystemAddressToRemoteSystemList(
@@ -582,11 +558,13 @@ public:
         ::RakNet::SystemAddress                            bindingAddress,
         int                                                incomingMTU,
         ::RakNet::RakNetGUID                               guid,
-        bool                                               useSecurity
+        bool
     );
 
     MCAPI void
     CallPluginCallbacks(::DataStructures::List<::RakNet::PluginInterface2*>& pluginList, ::RakNet::Packet* packet);
+
+    MCAPI void ClearBufferedCommands();
 
     MCAPI void ClearBufferedPackets();
 
@@ -600,8 +578,6 @@ public:
         ::PacketPriority               disconnectionNotificationPriority
     );
 
-    MCAPI void DerefAllSockets();
-
     MCAPI void DereferenceRemoteSystem(::RakNet::SystemAddress const& sa);
 
     MCAPI void FillIPList();
@@ -611,7 +587,7 @@ public:
     MCAPI int GetIndexFromSystemAddress(::RakNet::SystemAddress systemAddress, bool calledFromNetworkThread) const;
 
     MCAPI ::RakNet::RakPeer::RemoteSystemStruct*
-    GetRemoteSystem(::RakNet::AddressOrGUID systemIdentifier, bool calledFromNetworkThread, bool onlyActive) const;
+    GetRemoteSystemFromGUID(::RakNet::RakNetGUID guid, bool onlyActive) const;
 
     MCAPI ::RakNet::RakPeer::RemoteSystemStruct* GetRemoteSystemFromSystemAddress(
         ::RakNet::SystemAddress systemAddress,
@@ -630,9 +606,6 @@ public:
         ::PacketPriority        disconnectionNotificationPriority
     );
 
-    MCAPI void
-    OnConnectedPong(uint64 sendPingTime, uint64 sendPongTime, ::RakNet::RakPeer::RemoteSystemStruct* remoteSystem);
-
     MCAPI void OnConnectionRequest(::RakNet::RakPeer::RemoteSystemStruct* remoteSystem, uint64 incomingTimestamp);
 
     MCAPI void ParseConnectionRequestPacket(
@@ -647,6 +620,8 @@ public:
     MCAPI RakPeer();
 
     MCAPI void ReferenceRemoteSystem(::RakNet::SystemAddress const& sa, uint remoteSystemListIndex);
+
+    MCAPI void RemoveFromActiveSystemList(::RakNet::SystemAddress const& sa);
 
     MCAPI void SendBuffered(
         char const*                                        data,
@@ -678,26 +653,26 @@ public:
         ushort               remotePort,
         char const*          passwordData,
         int                  passwordDataLength,
-        ::RakNet::PublicKey* publicKey,
-        uint                 connectionSocketIndex,
+        ::RakNet::PublicKey* connectionSocketIndex,
         uint                 extraData,
         uint                 sendConnectionAttemptCount,
         uint                 timeBetweenSendConnectionAttemptsMS,
-        uint                 timeoutTime
+        uint                 timeoutTime,
+        uint
     );
 
     MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
-        char const*              host,
-        ushort                   remotePort,
-        char const*              passwordData,
-        int                      passwordDataLength,
-        ::RakNet::PublicKey*     publicKey,
-        uint                     connectionSocketIndex,
-        uint                     extraData,
-        uint                     sendConnectionAttemptCount,
-        uint                     timeBetweenSendConnectionAttemptsMS,
-        uint                     timeoutTime,
-        ::RakNet::RakNetSocket2* socket
+        char const*          host,
+        ushort               remotePort,
+        char const*          passwordData,
+        int                  passwordDataLength,
+        ::RakNet::PublicKey* connectionSocketIndex,
+        uint                 extraData,
+        uint                 sendConnectionAttemptCount,
+        uint                 timeBetweenSendConnectionAttemptsMS,
+        uint                 timeoutTime,
+        uint                 socket,
+        ::RakNet::RakNetSocket2*
     );
 
     MCAPI bool SendImmediate(
@@ -712,6 +687,8 @@ public:
         uint64                  currentTime,
         uint                    receipt
     );
+
+    MCAPI void ShiftIncomingTimestamp(uchar* data, ::RakNet::SystemAddress const& systemAddress) const;
     // NOLINTEND
 
 public:
@@ -738,7 +715,7 @@ public:
         int                         threadPriority
     );
 
-    MCFOLD bool $InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey);
+    MCFOLD bool $InitializeSecurity(char const*, char const*, bool);
 
     MCFOLD void $DisableSecurity();
 
@@ -908,8 +885,7 @@ public:
 
     MCAPI ::RakNet::SystemAddress $GetSystemAddressFromGuid(::RakNet::RakNetGUID const input) const;
 
-    MCFOLD bool
-    $GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const input, char* client_public_key) const;
+    MCFOLD bool $GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const, char*) const;
 
     MCAPI void $SetTimeoutTime(uint timeMS, ::RakNet::SystemAddress const target);
 
@@ -963,7 +939,7 @@ public:
 
     MCAPI void $SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*));
 
-    MCFOLD void $ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance);
+    MCFOLD void $ApplyNetworkSimulator(float, ushort, ushort);
 
     MCAPI void $SetPerConnectionOutgoingBandwidthLimit(uint maxBitsPerSecond);
 
@@ -989,7 +965,7 @@ public:
 
     MCAPI void $DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct* s, char const* file, uint line);
 
-    MCAPI ::RakNet::RNS2RecvStruct* $AllocRNS2RecvStruct(char const* file, uint line);
+    MCAPI ::RakNet::RNS2RecvStruct* $AllocRNS2RecvStruct(char const*, uint);
 
     MCAPI void $OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct);
 

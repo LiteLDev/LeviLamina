@@ -20,7 +20,6 @@ class ItemStackBase;
 class Player;
 class UIPropertyBag;
 struct ActorUniqueID;
-struct FurnaceOptions;
 struct SlotData;
 namespace Json { class Value; }
 // clang-format on
@@ -164,19 +163,11 @@ public:
 
     MCAPI ::std::string _getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI ::FurnaceOptions const& _getFurnaceOptions() const;
-
     MCAPI ::std::string _getRecipeHoverText(::std::string const& collectionName, int collectionIndex);
 
     MCAPI void _handleClearGrid();
 
-    MCAPI void _handleRecipeBookSelectSlot(::std::string const& collectionName, int collectionIndex);
-
-    MCAPI bool _isBlocksTabVisible() const;
-
-    MCAPI bool _isFoodTabVisible() const;
-
-    MCAPI bool _isItemsTabVisible() const;
+    MCAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex);
 
     MCAPI bool _isRecipeIngredientSelected(::std::string const& collectionName, int collectionIndex) const;
 
@@ -196,16 +187,12 @@ public:
 
     MCAPI void _selectRecipe(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI void _setIsFiltering(bool smeltableFilterOn);
-
     MCAPI void _setLeftSideTab(int tabIndex);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& RECIPE_BOOK_COLLECTION_NAME();
-
     MCAPI static ::std::unordered_map<int, ::FurnaceScreenController::CategoryTabInfo> const& mCategoryTabs();
     // NOLINTEND
 

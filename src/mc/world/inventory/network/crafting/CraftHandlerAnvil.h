@@ -34,7 +34,7 @@ public:
 
     virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
 
-    virtual void _postCraftRequest(bool const wasSuccess) /*override*/;
+    virtual void _postCraftRequest(bool const) /*override*/;
 
     virtual ::Recipes const* _getLevelRecipes() const /*override*/;
     // NOLINTEND

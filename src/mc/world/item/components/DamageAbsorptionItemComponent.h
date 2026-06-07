@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace SharedTypes::v1_21_10 { struct DamageAbsorptionItemComponent; }
 // clang-format on
 
@@ -25,21 +24,9 @@ public:
     DamageAbsorptionItemComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DamageAbsorptionItemComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DamageAbsorptionItemComponent(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

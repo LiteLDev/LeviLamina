@@ -27,6 +27,8 @@ public:
 
 public:
     // prevent constructor by default
+    BlockPaletteItemChangedPayload& operator=(BlockPaletteItemChangedPayload const&);
+    BlockPaletteItemChangedPayload(BlockPaletteItemChangedPayload const&);
     BlockPaletteItemChangedPayload();
 
 public:
@@ -38,16 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&);
-
     MCNAPI BlockPaletteItemChangedPayload(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
-
-    MCNAPI ::Editor::Network::BlockPaletteItemChangedPayload&
-    operator=(::Editor::Network::BlockPaletteItemChangedPayload const&);
     // NOLINTEND
 
 public:
@@ -59,8 +56,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::BlockPaletteItemChangedPayload const&);
-
     MCNAPI void* $ctor(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,

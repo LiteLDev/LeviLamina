@@ -102,6 +102,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StructureTemplate(::StructureTemplate&& other);
+
     MCAPI explicit StructureTemplate(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
     MCAPI StructureTemplate(
@@ -114,7 +116,7 @@ public:
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
 
-    MCAPI void _clearStructureData();
+    MCFOLD void _clearStructureData();
 
     MCAPI void _fillBlockInfo(
         ::BlockSource&    region,
@@ -131,6 +133,13 @@ public:
         ::StructureBlockPalette&         palette
     );
 
+    MCAPI int _getOrCreateIndex(
+        ::BlockPos                       position,
+        ::Block const&                   block,
+        ::std::map<::Block const*, int>& indexMap,
+        ::StructureBlockPalette&         palette
+    );
+
     MCAPI void _placeEntitiesInWorld(
         ::BlockSource&                 region,
         ::DataLoadHelper&              dataLoadHelper,
@@ -139,24 +148,26 @@ public:
     ) const;
 
     MCAPI void _placeNextBlockSegmentInWorld(
-        ::BlockSource&                 region,
-        uint64                         startPlacement,
-        uint64                         endPlacement,
-        ::StructureSettings const&     structureSettings,
-        ::DataLoadHelper&              dataLoadHelper,
-        ::StructureBlockPalette const& structureBlockPalette,
-        ::BlockPalette const&          globalBlockPalette,
-        ::BlockPos                     position,
-        ::BlockPos const&              offset,
-        ::Vec3 const&                  pivot,
-        ::Rotation                     rotation,
-        ::Mirror                       mirror,
-        float                          integrityValue,
-        uint                           integritySeed,
-        ::StructureTelemetryServerData*,
-        bool updateItemData,
-        bool ignoreJigsawBlocks
+        ::BlockSource&                  region,
+        uint64                          startPlacement,
+        uint64                          endPlacement,
+        ::StructureSettings const&      structureSettings,
+        ::DataLoadHelper&               dataLoadHelper,
+        ::StructureBlockPalette const&  structureBlockPalette,
+        ::BlockPalette const&           globalBlockPalette,
+        ::BlockPos                      position,
+        ::BlockPos const&               offset,
+        ::Vec3 const&                   pivot,
+        ::Rotation                      rotation,
+        ::Mirror                        mirror,
+        float                           integrityValue,
+        uint                            integritySeed,
+        ::StructureTelemetryServerData* updateItemData,
+        bool                            ignoreJigsawBlocks,
+        bool
     ) const;
+
+    MCFOLD ::IStructureTemplate const& asStructureTemplate() const;
 
     MCAPI void fillFromWorld(
         ::BlockSource&             region,
@@ -166,11 +177,17 @@ public:
 
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const getUnknownBlockRegistry() const;
+    MCFOLD ::std::string const& getName() const;
+
+    MCFOLD bool getRemovable() const;
+
+    MCFOLD ::BlockPos const& getSize() const;
+
+    MCAPI bool isLoaded() const;
 
     MCAPI bool const isWaterlogged(::BlockPos const& pos) const;
 
-    MCAPI ::StructureTemplate& operator=(::StructureTemplate&&);
+    MCAPI ::StructureTemplate& operator=(::StructureTemplate&& other);
 
     MCAPI bool operator==(::StructureTemplate const& other) const;
 
@@ -199,7 +216,18 @@ public:
 
     MCAPI bool setBlock(::BlockPos const& pos, ::Block const* block, bool waterlogged);
 
+    MCAPI void setName(::std::string const& name);
+
     MCAPI void setStructureTemplateData(::StructureTemplateData const& data);
+
+    MCAPI bool structureTemplateDataIsValid(
+        ::BlockSource const&       region,
+        ::std::string const&       structureName,
+        ::BlockPos const&          capturePosition,
+        ::StructureSettings const& structureSettings
+    ) const;
+
+    MCAPI ::Block const* tryGetBlockAtPos(::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
@@ -226,14 +254,14 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BlockPos const& INVALID_POSITION();
-
     MCAPI static int const& NO_BLOCK_INDEX_VALUE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::StructureTemplate&& other);
+
     MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
     MCAPI void*
@@ -258,7 +286,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> $save() const;
 
-    MCAPI void $clear();
+    MCFOLD void $clear();
 
     MCAPI ::BoundingBox
     $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;

@@ -58,10 +58,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JSONSchemaBody();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaBody();
-
     MCAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody&&);
 
     MCAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody const&);
@@ -91,8 +93,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody&&);
 
     MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody const&);

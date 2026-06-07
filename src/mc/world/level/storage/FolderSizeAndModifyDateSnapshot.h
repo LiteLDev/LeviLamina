@@ -49,6 +49,14 @@ public:
     // NOLINTBEGIN
     MCNAPI FolderSizeAndModifyDateSnapshot();
 
+    MCNAPI FolderSizeAndModifyDateSnapshot(::FolderSizeAndModifyDateSnapshot&&);
+
+#ifdef LL_PLAT_C
+    MCNAPI uint64 numBytes() const;
+
+    MCNAPI uint64 numFiles() const;
+#endif
+
     MCNAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot&&);
 
     MCNAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot const&);
@@ -66,6 +74,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::FolderSizeAndModifyDateSnapshot&&);
     // NOLINTEND
 
 public:

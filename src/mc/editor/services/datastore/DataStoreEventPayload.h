@@ -27,6 +27,7 @@ public:
 
 public:
     // prevent constructor by default
+    DataStoreEventPayload& operator=(DataStoreEventPayload const&);
     DataStoreEventPayload();
 
 public:
@@ -46,8 +47,6 @@ public:
         ::std::optional<::std::string>                 payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
-
-    MCNAPI ::Editor::Network::DataStoreEventPayload& operator=(::Editor::Network::DataStoreEventPayload const&);
     // NOLINTEND
 
 public:

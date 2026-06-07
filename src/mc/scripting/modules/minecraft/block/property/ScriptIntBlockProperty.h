@@ -30,14 +30,10 @@ public:
     ScriptIntBlockProperty();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptIntBlockProperty() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptIntBlockProperty(::ScriptModuleMinecraft::ScriptIntBlockProperty&& rhs);
+
     MCAPI ScriptIntBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
@@ -47,7 +43,8 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<int> getState() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptIntBlockProperty& operator=(::ScriptModuleMinecraft::ScriptIntBlockProperty&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptIntBlockProperty&
+    operator=(::ScriptModuleMinecraft::ScriptIntBlockProperty&& rhs);
 
     MCAPI ::Scripting::Result_deprecated<void> setState(int state);
     // NOLINTEND
@@ -61,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptIntBlockProperty&& rhs);
+
     MCAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,

@@ -19,8 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    JigsawStructureDataPacketPayload& operator=(JigsawStructureDataPacketPayload const&);
-    JigsawStructureDataPacketPayload(JigsawStructureDataPacketPayload const&);
     JigsawStructureDataPacketPayload();
 
 public:
@@ -33,21 +31,11 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> getJigsawStrutureData() const;
 #endif
-
-    MCFOLD ::JigsawStructureDataPacketPayload& operator=(::JigsawStructureDataPacketPayload&&);
-
-    MCAPI ~JigsawStructureDataPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

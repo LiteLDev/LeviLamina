@@ -11,7 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 class GamePadRemappingLayout;
-class IOptions;
+class IOptionRegistry;
+class KeyboardRemappingLayout;
 class RemappingLayout;
 struct ChordButtonMapping;
 struct DeviceButtonMapping;
@@ -26,28 +27,33 @@ class VanillaClientInputMappingFactory : public ::ClientInputMappingFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                             mIsEdu;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IOptions>>     mOptions;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mRegenerateTemplatesDueToScriptKeys;
+    ::ll::TypedStorage<1, 1, bool>                                mIsEdu;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IOptionRegistry>> mOptions;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>    mRegenerateTemplatesDueToScriptKeys;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    VanillaClientInputMappingFactory();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void createInputMappingTemplates(::IOptions& options) /*override*/;
+    virtual void createInputMappingTemplates(::IOptionRegistry& options) /*override*/;
 
-    virtual void _updateKeyboardAndMouseControls(::IOptions& options) /*override*/;
+    virtual void _updateKeyboardAndMouseControls(::IOptionRegistry& options) /*override*/;
 
     virtual void _updateGameControllerControls() /*override*/;
 
     virtual void _updateTouchMappingControls() /*override*/;
-
-    virtual ~VanillaClientInputMappingFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    VanillaClientInputMappingFactory(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout, bool isEdu);
+
     MCAPI void _addBlockSelectButton(::TouchInputMapping& touchMapping) const;
 
     MCAPI void _addClassicDPadButtons(::TouchInputMapping& touchMapping, bool sneak, bool jump) const;
@@ -61,8 +67,7 @@ public:
 
     MCAPI void _addDebugChords(::std::vector<::ChordButtonMapping>& result);
 
-    MCAPI void
-    _addDebugKeyboardControls(::KeyboardInputMapping& keyboardMapping, ::MouseInputMapping& mouseMapping) const;
+    MCAPI void _addDebugKeyboardControls(::KeyboardInputMapping& keyboardMapping, ::MouseInputMapping&) const;
 
     MCAPI void _addFullKeyboardGamePlayControls(
         ::KeyboardInputMapping& keyboardMapping,
@@ -119,8 +124,6 @@ public:
     MCFOLD void
     _createBedKeyboardAndMouseMapping(::KeyboardInputMapping& bedKeyboardMapping, ::MouseInputMapping& bedMouseMapping);
 
-    MCAPI ::TestAutoInputMapping _createBedTestAutoInputMapping();
-
     MCAPI ::TouchInputMapping _createBedTouchMapping();
 
     MCAPI ::GameControllerInputMapping _createBoatAndMinecartGameControllerMapping();
@@ -139,6 +142,11 @@ public:
 
     MCAPI ::TouchInputMapping _createDeathTouchMapping();
 
+    MCAPI void _createEditorKeyboardAndMouseMapping(
+        ::KeyboardInputMapping& editorKeyboardMapping,
+        ::MouseInputMapping&    editorMouseMapping
+    );
+
     MCAPI ::GameControllerInputMapping _createEmoteGameControllerMapping();
 
     MCAPI void _createExpediateEmoteKeyboardAndMouseMapping(
@@ -147,8 +155,6 @@ public:
     );
 
     MCFOLD ::GameControllerInputMapping _createFlyingGameControllerMapping();
-
-    MCAPI ::TouchInputMapping _createFlyingTouchMapping();
 
     MCAPI ::GameControllerInputMapping _createGazeMouseControllerMapping();
 
@@ -167,6 +173,11 @@ public:
     MCAPI ::std::vector<::DeviceButtonMapping> _createNormalGamePlayDeviceButtonMapping();
 
     MCAPI ::GameControllerInputMapping _createNormalGamePlayGameControllerMapping();
+
+    MCAPI void _createNormalGamePlayKeyboardAndMouseMapping(
+        ::KeyboardInputMapping& normalGamePlayKeyboardMapping,
+        ::MouseInputMapping&    normalGamePlayMouseMapping
+    );
 
     MCAPI ::TestAutoInputMapping _createNormalGamePlayTestAutoInputMapping();
 
@@ -218,8 +229,6 @@ public:
 
     MCAPI bool _isUsingActionButtons() const;
 
-    MCAPI bool _isUsingNewTouchControls() const;
-
     MCAPI void _populateFullKeyboardDefaults(::RemappingLayout& layout) const;
 
     MCAPI void _populateGamepadDefaults(::RemappingLayout& layout) const;
@@ -234,11 +243,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout, bool isEdu);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $createInputMappingTemplates(::IOptions& options);
+    MCAPI void $createInputMappingTemplates(::IOptionRegistry& options);
 
-    MCAPI void $_updateKeyboardAndMouseControls(::IOptions& options);
+    MCAPI void $_updateKeyboardAndMouseControls(::IOptionRegistry& options);
 
     MCAPI void $_updateGameControllerControls();
 

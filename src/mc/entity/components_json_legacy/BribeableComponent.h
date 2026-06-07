@@ -5,7 +5,11 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorInteraction;
 class BribeableDefinition;
+class CompoundTag;
+class DataLoadHelper;
+class InteractionResult;
 class ItemStack;
 class Player;
 // clang-format on
@@ -23,12 +27,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BribeableComponent();
+
     MCAPI void _bribe(::Actor& owner, ::Player& player);
 
     MCAPI bool _canBribe(::ItemStack const& item);
 
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+
     MCAPI bool clientBribeCheck(::Actor& owner);
 
+    MCFOLD int& getBribeCooldown();
+
+    MCFOLD int& getBribeTimer();
+
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
     MCAPI void resetBribe(::Actor& owner);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

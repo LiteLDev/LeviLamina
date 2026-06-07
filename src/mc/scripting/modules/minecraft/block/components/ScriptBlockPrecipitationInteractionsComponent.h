@@ -10,18 +10,13 @@
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
+namespace Scripting { class Release; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockPrecipitationInteractionsComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockPrecipitationInteractionsComponent() /*override*/ = default;
-    // NOLINTEND
-
 public:
     // member functions
     // NOLINTBEGIN
@@ -35,6 +30,12 @@ public:
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    isSnowLoggable() const;
+
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     obstructsRain() const;
     // NOLINTEND
 
@@ -42,6 +43,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCFOLD static ::std::optional<::Scripting::Release> overrideEnumVersion();
     // NOLINTEND
 
 public:

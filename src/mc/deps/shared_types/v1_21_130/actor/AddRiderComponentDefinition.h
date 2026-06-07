@@ -27,17 +27,28 @@ public:
 
     public:
         // prevent constructor by default
-        RiderData(RiderData const&);
+        RiderData& operator=(RiderData const&);
         RiderData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData&
-        operator=(::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData&&);
+        MCAPI RiderData(::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData const&);
 
         MCFOLD ::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData&
-        operator=(::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData const&);
+        operator=(::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData&&);
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::SharedTypes::v1_21_130::AddRiderComponentDefinition::RiderData const&);
         // NOLINTEND
     };
 
@@ -52,12 +63,13 @@ public:
 public:
     // prevent constructor by default
     AddRiderComponentDefinition& operator=(AddRiderComponentDefinition const&);
-    AddRiderComponentDefinition(AddRiderComponentDefinition const&);
     AddRiderComponentDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AddRiderComponentDefinition(::SharedTypes::v1_21_130::AddRiderComponentDefinition const&);
+
     MCAPI ::SharedTypes::v1_21_130::AddRiderComponentDefinition&
     operator=(::SharedTypes::v1_21_130::AddRiderComponentDefinition&&);
 
@@ -74,6 +86,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_130::AddRiderComponentDefinition const&);
     // NOLINTEND
 
 public:

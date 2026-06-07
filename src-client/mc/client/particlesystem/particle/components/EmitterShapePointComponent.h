@@ -40,8 +40,18 @@ public:
         ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
         ::RenderParams&                                         renderParams
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~EmitterShapePointComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EmitterShapePointComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

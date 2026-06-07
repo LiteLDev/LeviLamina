@@ -30,7 +30,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptItemInventoryComponent& operator=(ScriptItemInventoryComponent const&);
     ScriptItemInventoryComponent();
 
 public:
@@ -42,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemInventoryComponent(::ScriptModuleMinecraft::ScriptItemInventoryComponent const&);
-
     MCAPI ScriptItemInventoryComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
@@ -61,15 +58,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCAPI static ::std::string const& getTypeName();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemInventoryComponent const&);
-
     MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope

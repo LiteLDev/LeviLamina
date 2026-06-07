@@ -71,6 +71,8 @@ public:
         ::GameInput::v2::GameInputDeviceStatus currentStatus
     );
 
+    MCAPI void _taskSubmitted(::XTaskQueueObject* taskQueue, ::XTaskQueuePort port);
+
     MCAPI ::Bedrock::Result<void> initialize();
     // NOLINTEND
 
@@ -80,11 +82,11 @@ public:
     MCAPI static ::std::string _generateGameInputKindString(::GameInput::v2::GameInputDeviceInfo const& deviceInfo);
 
     MCAPI static void _onDeviceStatusChangedCallback(
+        uint64                             context,
+        void*                              device,
+        ::GameInput::v2::IGameInputDevice* currentStatus,
         uint64,
-        void*                              context,
-        ::GameInput::v2::IGameInputDevice* device,
-        uint64,
-        ::GameInput::v2::GameInputDeviceStatus currentStatus,
+        ::GameInput::v2::GameInputDeviceStatus,
         ::GameInput::v2::GameInputDeviceStatus
     );
 

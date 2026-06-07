@@ -20,6 +20,8 @@ namespace ScriptModuleMinecraftServerUI {
 // NOLINTBEGIN
 MCNAPI ::Scripting::EnumBinding bindScriptFormRejectReason();
 
+MCNAPI ::Scripting::EnumBinding bindTextFilteringEnums();
+
 MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> resolveRawMessageAsJson(
     ::Player&                                                                                player,
     ::CurrentCmdVersion                                                                      commandVersion,

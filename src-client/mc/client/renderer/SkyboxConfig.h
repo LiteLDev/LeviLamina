@@ -37,7 +37,7 @@ public:
 // free functions
 // NOLINTBEGIN
 MCNAPI bool operator==(
-    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P0,
-    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P1
+    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters const&,
+    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters const&
 );
 // NOLINTEND

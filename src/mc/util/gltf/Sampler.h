@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 namespace glTF {
 
 struct Sampler {
@@ -44,17 +49,37 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk2ae111;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Sampler& operator=(Sampler const&);
     Sampler(Sampler const&);
     Sampler();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Sampler& operator=(Sampler const&);
+    Sampler(Sampler const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI Sampler();
+
+    MCNAPI ::Json::Value serialize() const;
+
     MCNAPI ~Sampler();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 

@@ -22,6 +22,10 @@ public:
 
     MCAPI static ::TickingSystemWithInfo createClearPlayerActionComponentSystem();
 
+    MCAPI static ::TickingSystemWithInfo createPostTravelSystems();
+
+    MCAPI static ::TickingSystemWithInfo createServerPlayerMovementFinalSystem();
+
     MCAPI static ::TickingSystemWithInfo createServerPlayerResetFallDistanceSystem();
     // NOLINTEND
 };

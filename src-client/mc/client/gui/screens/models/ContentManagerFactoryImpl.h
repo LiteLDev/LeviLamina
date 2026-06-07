@@ -67,8 +67,6 @@ public:
 
         virtual ::std::string const*
         getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const /*override*/;
-
-        virtual ~PackManagerContentQueriesImpl() /*override*/;
         // NOLINTEND
 
     public:
@@ -87,12 +85,6 @@ public:
             ::Bedrock::NonOwnerPointer<::StoreCatalogRepository>       storeCatalog,
             ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -116,6 +108,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 184, ::ContentManagerFactoryArgs> mArgs;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ContentManagerFactoryImpl();
 
 public:
     // virtual functions
@@ -185,18 +181,24 @@ public:
     virtual bool allowsResourcePackDevelopment() const /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::AppPlatform> getPlatform() const /*override*/;
-
-    virtual ~ContentManagerFactoryImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ContentManagerFactoryImpl(::ContentManagerFactoryArgs const& args);
+
     MCAPI ::PackManagerContentSourceArgs createPackManagerArgs(
         ::ContentType                                   type,
         ::ContentFlags                                  flags,
         ::std::vector<::PackManagerContentSourceData>&& data
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ContentManagerFactoryArgs const& args);
     // NOLINTEND
 
 public:

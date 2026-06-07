@@ -37,6 +37,8 @@ public:
 
     MCAPI ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> getMaterialRepository() const;
 
+    MCFOLD bool getTextureShiftsEnabled() const;
+
     MCAPI ~TessellatorContext();
     // NOLINTEND
 

@@ -13,7 +13,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class ItemInstance;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -25,6 +24,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool const> mLit;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FurnaceBlock();
 
 public:
     // virtual functions
@@ -47,15 +50,13 @@ public:
 
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~FurnaceBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FurnaceBlock(::std::string const& nameId, int id, bool lit);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -70,6 +71,12 @@ public:
         ::Block const&    unlitFurnace,
         ::Block const&    litFurnace
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
     // NOLINTEND
 
 public:
@@ -93,8 +100,6 @@ public:
 
     MCFOLD int
     $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

@@ -12,7 +12,6 @@ class CommandOutput;
 class CommandRegistry;
 class Level;
 class Player;
-namespace Social { class GameConnectionInfo; }
 // clang-format on
 
 class TransferServerCommand : public ::ServerCommand {
@@ -28,22 +27,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~TransferServerCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::Social::GameConnectionInfo _convertToDestination() const;
-
     MCAPI ::Player const* _findTarget(::CommandOutput& output, ::Level& level, ::std::string const& pfidOrMSA) const;
-#endif
 
-#ifdef LL_PLAT_C
     MCAPI ::Player const* _loopPlayers(::Level& level, ::std::function<bool(::Player const*)> condition) const;
-#endif
     // NOLINTEND
 
 public:

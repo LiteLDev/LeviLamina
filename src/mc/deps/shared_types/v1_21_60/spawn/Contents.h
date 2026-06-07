@@ -34,6 +34,8 @@ public:
     // NOLINTBEGIN
     MCAPI Contents(::SharedTypes::v1_21_60::Spawn::Contents const&);
 
+    MCAPI ::SharedTypes::v1_21_60::Spawn::Contents& operator=(::SharedTypes::v1_21_60::Spawn::Contents&&);
+
     MCAPI ~Contents();
     // NOLINTEND
 

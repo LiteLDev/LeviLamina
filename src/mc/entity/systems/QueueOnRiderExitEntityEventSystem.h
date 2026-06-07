@@ -31,17 +31,6 @@ MCAPI void queueRequest(
     ::EntityModifier<::ExecuteEntityEventRequestComponent>                                   modifier
 );
 
-MCAPI void singleTick(
-    ::StrictEntityContext const& passenger,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::StopRidingRequestComponent>,
-        ::Exclude<::ActorIsBeingDestroyedFlagComponent>,
-        ::PassengerComponent const>                                                          passengerView,
-    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::RideableComponent const> vehicleView,
-    ::EntityModifier<::ExecuteEntityEventRequestComponent>                                   modifier
-);
-
 MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,

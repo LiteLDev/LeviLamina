@@ -5,19 +5,41 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/ScriptServerStateMonitor.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ServerScriptManagerEvents;
+namespace SharedTypes { class DynamicValueComplexityConstraint; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptCustomComponentRegistry : public ::ScriptModuleMinecraft::ScriptServerStateMonitor {
 public:
-    // virtual functions
+    // prevent constructor by default
+    ScriptCustomComponentRegistry();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~ScriptCustomComponentRegistry() /*override*/;
+    MCAPI explicit ScriptCustomComponentRegistry(::ServerScriptManagerEvents& events);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static ::SharedTypes::DynamicValueComplexityConstraint makeJsonParametersConstraint();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ServerScriptManagerEvents& events);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

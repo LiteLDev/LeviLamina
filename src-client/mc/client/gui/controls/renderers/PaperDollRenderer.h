@@ -75,7 +75,7 @@ public:
         int                         pass
     ) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -96,8 +96,8 @@ public:
         ::MinecraftUIRenderContext& renderContext,
         ::IClientInstance&          client,
         ::UIControl&                owner,
-        int,
-        ::OffscreenCaptureData const* uiActorCaptureData
+        int                         uiActorCaptureData,
+        ::OffscreenCaptureData const*
     );
 
     MCAPI ::HashedString const& getActorType(::UIControl& owner) const;
@@ -135,7 +135,7 @@ public:
     MCAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
     // NOLINTEND
 
 public:

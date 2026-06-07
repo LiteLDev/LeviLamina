@@ -7,10 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class Container;
 class ItemStack;
 // clang-format on
 
 class ClientScratchContainer : public ::SimpleContainer {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ClientScratchContainer();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -21,8 +29,22 @@ public:
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~ClientScratchContainer() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit ClientScratchContainer(::Container const& backingContainer);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Container const& backingContainer);
+#endif
     // NOLINTEND
 
 public:

@@ -23,8 +23,6 @@ public:
     virtual void normalTick() /*override*/;
 
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
-
-    virtual ~Phantom() /*override*/ = default;
     // NOLINTEND
 
 public:

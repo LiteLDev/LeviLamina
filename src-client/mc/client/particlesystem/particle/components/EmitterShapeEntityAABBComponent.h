@@ -42,8 +42,6 @@ public:
         ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
         ::RenderParams&                                         renderParams
     ) /*override*/;
-
-    virtual ~EmitterShapeEntityAABBComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

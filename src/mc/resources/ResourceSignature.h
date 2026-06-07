@@ -33,6 +33,12 @@ public:
 
     MCNAPI void _loadSignaturesFile(::Core::Path const& filePath, ::PackAccessStrategy const& accessStrategy);
 
+#ifdef LL_PLAT_C
+    MCNAPI bool areKnownFilesValid(::PackAccessStrategy const& accessStrategy);
+
+    MCNAPI bool areKnownFilesValidRequireSignatureExists(::PackAccessStrategy const& accessStrategy);
+#endif
+
     MCNAPI ~ResourceSignature();
     // NOLINTEND
 

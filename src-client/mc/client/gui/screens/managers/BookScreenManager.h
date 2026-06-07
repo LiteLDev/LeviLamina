@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/util/ViewStatus.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
 class JpegCommentWriter;
 class PacketSender;
 class Player;
@@ -44,7 +46,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::ItemStack const& _getBook();
+
     MCAPI ::Core::PathBuffer<::std::string> _getExportTempDir();
+
+    MCAPI ::ViewStatus _viewPage(::PageContent const& page);
 
     MCAPI void addPageAt(int index, ::PageContent const& page);
 
@@ -61,11 +67,57 @@ public:
 
     MCAPI bool finalizeBook(::std::string const& title, ::std::string const& author, ::std::string const& authorXUID);
 
+    MCAPI void fireBookEditedEvent() const;
+
+    MCAPI void fireBookExportEvent() const;
+
+    MCAPI void firePageTurnSound(::std::string const& eventName, float volume, float pitch) const;
+
+    MCAPI void fireSignedBookOpenedEvent(
+        ::std::string const& author,
+        ::std::string const& authorXUID,
+        ::std::string const& playerXUID
+    ) const;
+
+    MCAPI ::std::vector<::PageContent> getBookPages();
+
+    MCFOLD ::std::vector<::Core::PathBuffer<::std::string>> const& getExportFiles();
+
+    MCAPI ::std::optional<::std::string> const getFilteredSignedAuthor();
+
+    MCAPI ::std::optional<::std::string> const getFilteredTitle();
+
+    MCAPI int getLecternBookPage() const;
+
+    MCAPI ::std::string getPickPhotoInventoryName(int index);
+
+    MCAPI ::std::string getPickPhotoName(int index);
+
+    MCAPI ::Core::PathBuffer<::std::string> const* getPickPicture(int index);
+
+    MCAPI ::Core::PathBuffer<::std::string> const* getPickPictureInventory(int index);
+
+    MCAPI uint64 getPickPictureInventorySize();
+
+    MCAPI uint64 getPickPictureSize();
+
     MCAPI ::Core::PathBuffer<::std::string> getScreenshotPath(::PageContent const& page);
 
     MCAPI ::std::string const& getSignedAuthor();
 
+    MCAPI ::std::string const& getTitle();
+
+    MCAPI ::std::string const& getXUID();
+
+    MCFOLD bool isOnLectern() const;
+
+    MCAPI bool lecternHasBook() const;
+
+    MCAPI bool lecternIsValid() const;
+
     MCAPI void populatePickPics(::std::vector<::PageContent> const& pages);
+
+    MCAPI void setExitPage(int page);
 
     MCAPI void startBookExport();
 
@@ -74,5 +126,15 @@ public:
     MCAPI float tickBookDownload(::std::vector<::PageContent> const& pages);
 
     MCAPI void updateLectern(int page);
+
+    MCAPI bool viewPage(::PageContent const& page);
+
+    MCAPI ~BookScreenManager();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

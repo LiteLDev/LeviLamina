@@ -141,12 +141,6 @@ public:
     Variant mTagStorage;
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     LLNDAPI static ll::Expected<CompoundTagVariant>
     parse(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt) noexcept;
 

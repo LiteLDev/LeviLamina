@@ -15,21 +15,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PieceWeight();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PieceWeight(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
-
     MCAPI ~PieceWeight();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& pieceClass, int weight, int maxPlaceCount, int minDepth, bool allowInRow);
     // NOLINTEND
 
 public:

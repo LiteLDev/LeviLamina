@@ -54,6 +54,10 @@ public:
 
     MCAPI void _onButtonPress(int emoteIndex);
 
+    MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _sendButtonPressedMessage(bool slotSet) const;
     // NOLINTEND
 

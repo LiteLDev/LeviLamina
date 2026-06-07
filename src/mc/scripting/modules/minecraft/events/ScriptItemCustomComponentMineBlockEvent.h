@@ -96,16 +96,8 @@ public:
     ScriptItemCustomComponentMineBlockEvent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptItemCustomComponentMineBlockEvent() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentMineBlockEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent&&);
-
     MCAPI
     ScriptItemCustomComponentMineBlockEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent const&);
 
@@ -124,20 +116,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent const&);
 
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentMineBlockEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                        scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

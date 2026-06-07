@@ -7,9 +7,19 @@
 
 class RecoveryCompassItem : public ::AbstractCompassItem {
 public:
-    // virtual functions
+    // prevent constructor by default
+    RecoveryCompassItem();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~RecoveryCompassItem() /*override*/ = default;
+    MCAPI RecoveryCompassItem(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

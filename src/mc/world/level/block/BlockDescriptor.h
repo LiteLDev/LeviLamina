@@ -14,6 +14,7 @@ class Block;
 class BlockState;
 class CompoundTag;
 class ExpressionNode;
+namespace SharedTypes::Legacy { struct BlockDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -76,17 +77,16 @@ public:
 
     public:
         // prevent constructor by default
-        State(State const&);
         State();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI State(::HashedString name, int intState);
+
         MCAPI State(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
 
         MCAPI State(::HashedString name, ::std::string const& stringState);
-
-        MCAPI ::BlockDescriptor::State& operator=(::BlockDescriptor::State const&);
 
         MCAPI ~State();
         // NOLINTEND
@@ -94,6 +94,8 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCAPI void* $ctor(::HashedString name, int intState);
+
         MCAPI void* $ctor(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
 
         MCAPI void* $ctor(::HashedString name, ::std::string const& stringState);
@@ -130,6 +132,8 @@ public:
     // NOLINTBEGIN
     MCAPI BlockDescriptor();
 
+    MCAPI explicit BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor desc);
+
     MCAPI explicit BlockDescriptor(::HashedString const& fullName);
 
     MCAPI BlockDescriptor(::BlockDescriptor&& rhs);
@@ -140,13 +144,19 @@ public:
 
     MCAPI bool _anyTagsMatch(::Block const& block) const;
 
-    MCAPI void _resolve(bool logInvalidBlocks) const;
-
     MCAPI bool _statesMatch(::Block const& block) const;
 
     MCAPI ::Block const& getBlockOrUnknownBlock() const;
 
     MCAPI ::BlockDescriptor::CompareType const& getCompareType() const;
+
+    MCAPI ::std::string const& getFullName() const;
+
+    MCFOLD ::std::vector<::BlockDescriptor::State> const& getStates() const;
+
+    MCAPI ::std::string getTagExpression() const;
+
+    MCAPI bool isValid() const;
 
     MCAPI bool matches(::Block const& block) const;
 
@@ -156,7 +166,15 @@ public:
 
     MCAPI void operator=(::BlockDescriptor const& rhs);
 
+    MCAPI bool operator==(::BlockDescriptor const& rhs) const;
+
+    MCFOLD void setContentLogOnError(bool value) const;
+
     MCAPI ::std::unique_ptr<::CompoundTag> toCompoundTag() const;
+
+    MCAPI ::Block const* tryGetBlock() const;
+
+    MCAPI ::Block const* tryGetBlockNoLogging() const;
 
     MCAPI ~BlockDescriptor();
     // NOLINTEND
@@ -166,11 +184,16 @@ public:
     // NOLINTBEGIN
     MCAPI static bool anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::Block const& block);
 
+    MCAPI static bool
+    anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::BlockDescriptor const& otherBlockDescriptor);
+
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCAPI static ::BlockDescriptor fromCompoundTag(::CompoundTag const& tag);
 
     MCAPI static ::BlockDescriptor fromTagExpression(::std::string const& tagExpression, ::MolangVersion molangVersion);
+
+    MCAPI static ::SharedTypes::Legacy::BlockDescriptor toSharedTypes(::BlockDescriptor const& instance);
     // NOLINTEND
 
 public:
@@ -187,6 +210,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
 
     MCAPI void* $ctor(::HashedString const& fullName);
 

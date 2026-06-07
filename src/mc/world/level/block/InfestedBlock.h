@@ -22,18 +22,26 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InfestedBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const* tryGetUninfested(::Block const& block) const /*override*/;
 
     virtual void spawnAfterBreak(
-        ::BlockSource& region,
-        ::Block const&,
-        ::BlockPos const&             pos,
-        ::ResourceDropsContext const& resourceDropsContext
+        ::BlockSource&    region,
+        ::Block const&    pos,
+        ::BlockPos const& resourceDropsContext,
+        ::ResourceDropsContext const&
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~InfestedBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI InfestedBlock(::std::string const& nameId, int id, ::HashedString const& uninfestedBlockId);
     // NOLINTEND
 
 public:
@@ -43,15 +51,21 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& uninfestedBlockId);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Block const* $tryGetUninfested(::Block const& block) const;
 
-    MCFOLD void $spawnAfterBreak(
-        ::BlockSource& region,
-        ::Block const&,
-        ::BlockPos const&             pos,
-        ::ResourceDropsContext const& resourceDropsContext
+    MCAPI void $spawnAfterBreak(
+        ::BlockSource&    region,
+        ::Block const&    pos,
+        ::BlockPos const& resourceDropsContext,
+        ::ResourceDropsContext const&
     ) const;
 
 

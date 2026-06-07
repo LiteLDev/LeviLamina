@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/sim/ExecutionResult.h"
 #include "mc/server/sim/MoveInDirectionIntent.h"
 #include "mc/server/sim/MoveToPositionIntent.h"
 #include "mc/server/sim/NavigateToEntityIntent.h"
@@ -32,17 +33,13 @@ public:
         mType;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     MovementIntent();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit MovementIntent(
         ::std::variant<
             ::sim::VoidMoveIntent,
@@ -51,9 +48,8 @@ public:
             ::sim::NavigateToPositionsIntent,
             ::sim::NavigateToEntityIntent> type
     );
-#endif
 
-    MCNAPI void finalize(::SimulatedPlayer& player);
+    MCNAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player);
 
     MCNAPI ~MovementIntent();
     // NOLINTEND
@@ -61,7 +57,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(
         ::std::variant<
             ::sim::VoidMoveIntent,
@@ -70,7 +65,6 @@ public:
             ::sim::NavigateToPositionsIntent,
             ::sim::NavigateToEntityIntent> type
     );
-#endif
     // NOLINTEND
 
 public:

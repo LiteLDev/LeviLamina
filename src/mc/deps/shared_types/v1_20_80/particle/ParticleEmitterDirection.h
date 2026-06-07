@@ -21,11 +21,18 @@ public:
     ::ll::TypedStorage<8, 152, ::std::optional<::std::array<::SharedTypes::Legacy::ExpressionNode, 3>>> mDirectionExpr;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ParticleEmitterDirection();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ~ParticleEmitterDirection();
+    MCAPI explicit ParticleEmitterDirection(::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprArray);
 #endif
     // NOLINTEND
 
@@ -36,10 +43,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprArray);
 #endif
     // NOLINTEND
 };

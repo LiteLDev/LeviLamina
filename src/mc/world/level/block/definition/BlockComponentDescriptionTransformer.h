@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 struct BlockComponentDescription;
-namespace SharedTypes::v1_26_10::BlockDefinition { struct BlockComponents; }
+namespace SharedTypes::v1_26_20::BlockDefinition { struct BlockComponents; }
 // clang-format on
 
 struct BlockComponentDescriptionTransformer {
@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void transform(
         ::BlockComponentDescription const&                         blockComponentDescription,
-        ::SharedTypes::v1_26_10::BlockDefinition::BlockComponents& blockComponents
+        ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents& blockComponents
     );
     // NOLINTEND
 };

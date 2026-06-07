@@ -18,25 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerInventoryItemChangeEvent& operator=(PlayerInventoryItemChangeEvent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerInventoryItemChangeEvent();
-
-    MCAPI PlayerInventoryItemChangeEvent(::PlayerInventoryItemChangeEvent const&);
-
     MCAPI ~PlayerInventoryItemChangeEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::PlayerInventoryItemChangeEvent const&);
     // NOLINTEND
 
 public:

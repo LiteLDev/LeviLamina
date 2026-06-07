@@ -29,8 +29,20 @@ public:
     virtual ::Bedrock::PubSub::Connector<void()>* getContainerRemovedConnector() /*override*/;
 
     virtual bool hasRemovedSubscribers() const /*override*/;
+    // NOLINTEND
 
-    virtual ~EnderChestContainer() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EnderChestContainer();
+
+    MCAPI void setActiveChest(::ChestBlockActor* chest);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

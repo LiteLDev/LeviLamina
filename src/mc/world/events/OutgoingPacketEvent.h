@@ -20,9 +20,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OutgoingPacketEvent();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI OutgoingPacketEvent(::std::vector<::WeakRef<::EntityContext>> recipient, ::MinecraftPacketIds packetId);
+
     MCAPI ~OutgoingPacketEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::WeakRef<::EntityContext>> recipient, ::MinecraftPacketIds packetId);
     // NOLINTEND
 
 public:

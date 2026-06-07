@@ -12,10 +12,13 @@
 // clang-format off
 namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
+namespace Core { class FileSystemImpl; }
+namespace Core { class FlatFileManifestTracker; }
 namespace Core { class FlatFileSearchResult; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace Core { struct DirectoryIterationItem; }
+namespace Core { struct ExcludedPath; }
 // clang-format on
 
 namespace Core {
@@ -37,6 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FlatFileSystemImpl(
+        ::Core::FileSystemImpl&                            fileSystemImplementation,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
+
     MCNAPI ::Core::FlatFileSearchResult
     _findFileOrDirectoryEntry(::Core::PathView filePath, ::Core::PathView manifestPath, bool skipDeleted);
 
@@ -45,6 +53,13 @@ public:
         ::Core::PathView manifestPath,
         uint64&          seekPositionOut,
         uint64&          fileSizeOut
+    );
+
+    MCNAPI ::Core::Result copyFlatFile(
+        ::Core::PathView                           sourceDirectoryPath,
+        ::Core::PathView                           targetDirectoryPath,
+        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
+        ::std::vector<::Core::ExcludedPath> const& excludedFiles
     );
 
     MCNAPI ::Core::Result createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
@@ -56,7 +71,13 @@ public:
         bool             deleteRecursively
     );
 
+    MCNAPI bool directoryExists(::Core::PathView directoryPath, ::Core::PathView manifestPath);
+
+    MCNAPI bool fileExists(::Core::PathView filePath, ::Core::PathView manifestPath);
+
     MCNAPI bool fileOrDirectoryExists(::Core::PathView path, ::Core::PathView manifestPath);
+
+    MCNAPI ::Core::Result getFileSize(::Core::PathView filePath, ::Core::PathView manifestPath, uint64* pFileSize);
 
     MCNAPI bool isDirectoryPathAFlatFile(::Core::PathView directoryPath);
 
@@ -80,14 +101,15 @@ public:
         ::Core::PathBuffer<::std::string>& manifestFilePath,
         bool                               shouldIncludeParentDir
     );
-
-    MCNAPI ~FlatFileSystemImpl();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(
+        ::Core::FileSystemImpl&                            fileSystemImplementation,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
     // NOLINTEND
 };
 

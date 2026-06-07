@@ -11,7 +11,6 @@ class AABB;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class IConstBlockSource;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -19,14 +18,18 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class BorderBlock : public ::WallBlock {
 public:
+    // prevent constructor by default
+    BorderBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
-    virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
+    virtual ::AABB const& getVisualShape(::Block const& bufferAABB, ::AABB&) const /*override*/;
 
     virtual ::AABB const&
-    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
+    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const& bufferAABB, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -36,16 +39,20 @@ public:
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~BorderBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BorderBlock(::std::string const& nameId, int id);
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -53,13 +60,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& bufferAABB, ::AABB&) const;
 
     MCFOLD ::AABB const& $getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
+        ::Block const&             block,
+        ::IConstBlockSource const& bufferAABB,
         ::BlockPos const&,
-        ::AABB& bufferAABB
+        ::AABB&
     ) const;
 
     MCFOLD int $getVariant(::Block const& block) const;
@@ -69,8 +76,6 @@ public:
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

@@ -49,27 +49,6 @@ public:
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Model&                        model,
-        ::ClientPBRTextureData const&   actorTextureData
-    ) const;
-
-    MCAPI void _renderModel(
-        ::ScreenContext&                screenContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::Model&                        model,
-        ::ActorTextureInfo const&       actorTextureInfo
-    ) const;
-
-    MCAPI void _renderModel(
-        ::ScreenContext&                screenContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::Model&                        model,
-        ::mce::ClientTexture const&     texture
-    ) const;
-
-    MCAPI void _renderModel(
-        ::ScreenContext&                screenContext,
-        ::dragon::RenderMetadata const& renderMetadata,
-        ::Model&                        model,
         ::ClientPBRTextureData const&   actorTextureData,
         ::mce::MaterialPtr const&       forcedMaterial
     ) const;
@@ -105,7 +84,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

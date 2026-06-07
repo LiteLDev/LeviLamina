@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptHttpRequestLimitExceededError();
+    MCNAPI ScriptHttpRequestLimitExceededError(uint64 maxConcurrentRequests, uint64 inFlightRequests);
     // NOLINTEND
 
 public:
@@ -39,9 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(uint64 maxConcurrentRequests, uint64 inFlightRequests);
     // NOLINTEND
 };
 

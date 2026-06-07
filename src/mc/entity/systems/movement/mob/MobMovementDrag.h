@@ -25,14 +25,16 @@ MCAPI void forLiquidDragSystems(::std::function<void(::TickingSystemWithInfo&&)>
 
 MCAPI void forNormalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
+MCAPI void forWingFlapDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+
 MCAPI void tickApplyWaterDrag(
-    ::entt::type_list<::Include<::WaterTravelFlagComponent>>,
-    ::Optional<::OnGroundFlagComponent const>  onGroundFlag,
-    ::Optional<::WaterMovementComponent const> waterMovement,
-    ::ActorDataFlagComponent const&            actorDataFlagComponent,
-    ::SwimSpeedMultiplierComponent const&      swimSpeedMultiplierComponent,
-    ::WaterWalkSpeedEnchantComponent const&    waterWalkSpeedEnchantComponent,
-    ::StateVectorComponent&                    stateVectorComponent
+    ::entt::type_list<::Include<::WaterTravelFlagComponent>> onGroundFlagComponent,
+    ::Optional<::OnGroundFlagComponent const>                waterMovementComponent,
+    ::Optional<::WaterMovementComponent const>               actorDataFlagComponent,
+    ::ActorDataFlagComponent const&                          swimSpeedMultiplierComponent,
+    ::SwimSpeedMultiplierComponent const&                    waterWalkSpeedEnchantComponent,
+    ::WaterWalkSpeedEnchantComponent const&                  stateVectorComponent,
+    ::StateVectorComponent&
 );
 // NOLINTEND
 

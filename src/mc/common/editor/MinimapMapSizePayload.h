@@ -28,12 +28,6 @@ public:
     MinimapMapSizePayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MinimapMapSizePayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

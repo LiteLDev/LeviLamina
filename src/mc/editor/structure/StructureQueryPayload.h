@@ -23,6 +23,7 @@ public:
 
 public:
     // prevent constructor by default
+    StructureQueryPayload& operator=(StructureQueryPayload const&);
     StructureQueryPayload(StructureQueryPayload const&);
     StructureQueryPayload();
 
@@ -35,12 +36,6 @@ public:
     virtual ~StructureQueryPayload() /*override*/;
 #endif
 
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::StructureQueryPayload& operator=(::Editor::Network::StructureQueryPayload const&);
     // NOLINTEND
 
 public:

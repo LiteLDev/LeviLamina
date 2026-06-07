@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/level/Tick.h"
 
@@ -33,24 +34,52 @@ public:
 public:
     // prevent constructor by default
     AngryComponent& operator=(AngryComponent const&);
-    AngryComponent(AngryComponent const&);
-    AngryComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AngryComponent();
+
+    MCAPI AngryComponent(::AngryComponent&&);
+
+    MCAPI AngryComponent(::AngryComponent const&);
+
     MCAPI bool canGetAngry(::Mob& owner, ::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee) const;
 
-    MCAPI ::AngryComponent& operator=(::AngryComponent&&);
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent const getAngrySound(::Mob const& mob) const;
+
+    MCFOLD bool getBroadcastAnger() const;
+
+    MCFOLD bool getBroadcastAngerOnAttack() const;
+
+    MCFOLD bool getBroadcastAngerOnBeingAttacked() const;
+
+    MCFOLD bool getBroadcastAngerWhenDying() const;
+
+    MCFOLD ::ActorFilterGroup const& getBroadcastFilter() const;
+
+    MCFOLD int getBroadcastRange() const;
+
+    MCFOLD bool getHasTicked() const;
+
+    MCFOLD ::Tick const getNextSoundEventTick() const;
 
     MCAPI void restartTimer(::Mob& owner);
 
-    MCAPI ~AngryComponent();
+    MCAPI void setAngry(::Mob& owner, bool value);
+
+    MCAPI void setHasTicked(bool hasTicked);
+
+    MCAPI void setNextSoundEventTick(::Mob const& mob);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
+
+    MCFOLD void* $ctor(::AngryComponent&&);
+
+    MCFOLD void* $ctor(::AngryComponent const&);
     // NOLINTEND
 };

@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/gameplay/api/gameplayui/AnvilInfo.h"
-#include "mc/client/gui/gameplay/api/gameplayui/QueryConnector.h"
+#include "mc/client/gui/gameplay/api/gameplayui/ContainerItemType.h"
 #include "mc/client/gui/gameplay/data/gameplayui/ChestType.h"
-#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/client/gui/gameplay/data/gameplayui/ContainerColorMode.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/containers/ContainerEnumName.h"
@@ -32,7 +32,7 @@ class ItemRegistryRef;
 class ItemStackBase;
 class LocalPlayer;
 class Trade2ContainerManagerModel;
-namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
+namespace GameplayUI { struct BrewingStandInfo; }
 namespace GameplayUI { struct ContainerItem; }
 namespace GameplayUI { struct TradeOfferInfo; }
 namespace GameplayUI { struct TradeOverview; }
@@ -67,6 +67,18 @@ public:
         ::ll::TypedStorage<8, 40, ::SlotData> lastPlaceOneSelectedSlot;
         ::ll::TypedStorage<8, 40, ::SlotData> lastPlaceOneDestinationSlot;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SplitSingleState& operator=(SplitSingleState const&);
+        SplitSingleState(SplitSingleState const&);
+        SplitSingleState();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::GameplayUI::ContainerAPI::SplitSingleState& operator=(::GameplayUI::ContainerAPI::SplitSingleState&&);
+        // NOLINTEND
     };
 
 public:
@@ -88,20 +100,7 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                                           mContainerBlockPos;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                       mUniqueActorId;
     ::ll::TypedStorage<8, 80, ::GameplayUI::AnvilInfo>                              mAnvilInfo;
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::Bedrock::PubSub::Publisher<void(::ItemStackBase const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-        mPreviewItemPublisher;
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::Bedrock::PubSub::Publisher<void(::std::string const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-        mRecipeBookSearchPublisher;
-    ::ll::
-        TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-                                                                               mRecipeBookIsFilteringPublisher;
-    ::ll::TypedStorage<8, 184, ::GameplayUI::ContainerAPI::SplitMultipleState> mSplitMultipleState;
+    ::ll::TypedStorage<8, 184, ::GameplayUI::ContainerAPI::SplitMultipleState>      mSplitMultipleState;
     ::ll::TypedStorage<8, 88, ::std::optional<::GameplayUI::ContainerAPI::SplitSingleState>> mSplitSingleState;
     // NOLINTEND
 
@@ -114,9 +113,18 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ContainerAPI(::std::function<::ItemRegistryRef()> getItemRegistryRef);
 
+    MCAPI ::GameplayUI::ContainerItem
+    _containerItemFromItemStack(::ItemStackBase const& item, ::GameplayUI::ContainerItemType containerItemType) const;
+
     MCAPI void _recipeAutoCraft(::ContainerEnumName collectionName, int collectionIndex, ::ItemCraftType craftType);
 
-    MCAPI ::std::shared_ptr<::ContainerModel> _tryGetContainerModel(::ContainerEnumName containerName);
+    MCAPI ::std::shared_ptr<::ContainerModel> _tryGetContainerModel(::ContainerEnumName containerName) const;
+
+    MCAPI void _tryUpdateCraftingContainer();
+
+    MCAPI void autoCraftAllItemsFromRecipe(::ContainerEnumName sourceName, int sourceIndex);
+
+    MCAPI void autoCraftOneItemFromRecipe(::ContainerEnumName sourceName, int sourceIndex);
 
     MCAPI void autoPlaceItems(::ContainerEnumName sourceName, int sourceIndex);
 
@@ -130,23 +138,47 @@ public:
 
     MCAPI void dropOneItem(::ContainerEnumName sourceName, int sourceIndex);
 
-    MCAPI ::std::optional<::GameplayUI::AnvilInfo> getAnvilInfo();
+    MCAPI ::std::optional<::GameplayUI::AnvilInfo> getAnvilInfo() const;
 
-    MCAPI ::GameplayUI::ContainerItem getCraftingScreenContainerItem(::ContainerEnumName containerName, int index);
+    MCAPI ::std::optional<::GameplayUI::BrewingStandInfo> getBrewingStandInfo() const;
 
-    MCAPI ::GameplayUI::TradeOfferInfo getTradeOfferInfo(int tradeTier, int tradeIndex);
+    MCAPI ::std::vector<::GameplayUI::ContainerItem> getBundleContent(int bundleID) const;
 
-    MCAPI ::GameplayUI::TradeOverview getTradeOverview();
+    MCAPI ::std::optional<::GameplayUI::ChestType> getChestType() const;
 
-    MCAPI ::GameplayUI::ContainerItem getTradeScreenResultPreviewContainerItem(int index);
+    MCAPI ::std::optional<::GameplayUI::ContainerColorMode> getContainerColorMode();
 
-    MCAPI ::GameplayUI::TradeTierInfo getTradeTierInfo(int tradeTier);
+    MCAPI ::std::optional<::GameplayUI::ContainerItem>
+    getContainerItem(::ContainerEnumName containerName, int index) const;
+
+    MCAPI ::std::string getContainerName() const;
+
+    MCAPI ::std::optional<int> getContainerSize(::ContainerEnumName containerName) const;
+
+    MCAPI ::std::optional<::GameplayUI::ContainerItem>
+    getCraftingScreenContainerItem(::ContainerEnumName containerName, int index) const;
+
+    MCAPI ::std::string getRecipeBookSearchString() const;
+
+    MCAPI ::GameplayUI::TradeOfferInfo getTradeOfferInfo(int tradeTier, int tradeIndex) const;
+
+    MCAPI ::GameplayUI::TradeOverview getTradeOverview() const;
+
+    MCAPI ::GameplayUI::ContainerItem getTradeScreenResultPreviewContainerItem(int index) const;
+
+    MCAPI ::GameplayUI::TradeTierInfo getTradeTierInfo(int tradeTier) const;
+
+    MCAPI bool isItemStackableWithCursor(::ContainerEnumName containerName, int index) const;
+
+    MCAPI bool isRecipeBookFiltering() const;
 
     MCAPI void onPlayerOpenContainer(
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockPos const&                    blockPos,
         ::ActorUniqueID const&               uniqueId
     );
+
+    MCAPI void performAutoTrade(int tradeTier, int tradeIndex);
 
     MCAPI void placeAllItems(
         ::ContainerEnumName selectedName,
@@ -170,14 +202,13 @@ public:
         int                 destinationIndex
     );
 
-    MCAPI ::GameplayUI::QueryConnector<::GameplayUI::ContainerItem>
-    queryContainerItem(::ContainerEnumName containerName, int index);
+    MCAPI void pullInIngredientsForSelectedTrade();
 
-    MCAPI ::GameplayUI::QueryConnector<::std::string> queryContainerName();
-
-    MCAPI ::GameplayUI::QueryConnector<::std::string> queryRecipeBookSearchString();
+    MCAPI void resetSplitStack();
 
     MCAPI void selectRecipe(::ContainerEnumName sourceName, int sourceIndex, bool displayOnly);
+
+    MCAPI void selectTrade(int tradeTier, int tradeIndex);
 
     MCAPI void setAnvilPreviewItemName(::std::string const& name);
 
@@ -228,8 +259,6 @@ public:
         ::ContainerEnumName sourceName,
         int                 sourceIndex
     );
-
-    MCAPI ::std::optional<::GameplayUI::ChestType> tryGetChestType();
 
     MCAPI ~ContainerAPI();
     // NOLINTEND

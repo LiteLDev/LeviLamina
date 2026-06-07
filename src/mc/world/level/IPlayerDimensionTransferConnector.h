@@ -3,13 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
-
-// auto generated forward declare list
-// clang-format off
-class Dimension;
-// clang-format on
 
 class IPlayerDimensionTransferConnector {
 public:

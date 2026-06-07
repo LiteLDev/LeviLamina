@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChestScreenController() /*override*/ = default;
+    virtual ~ChestScreenController() /*override*/;
 
     virtual void _registerCoalesceOrder() /*override*/;
 
@@ -51,6 +51,12 @@ public:
         ::ActorUniqueID                                uniqueId,
         ::BlockActorType                               blockEntityType
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

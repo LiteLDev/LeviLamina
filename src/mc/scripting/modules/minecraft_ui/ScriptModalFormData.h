@@ -60,9 +60,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormData::IconData&
-        operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormData::IconData&&);
-
         MCNAPI ~IconData();
         // NOLINTEND
 

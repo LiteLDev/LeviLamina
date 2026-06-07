@@ -19,16 +19,16 @@ public:
 
 public:
     // prevent constructor by default
-    AllowListProfileImage(AllowListProfileImage const&);
+    AllowListProfileImage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AllowListProfileImage();
-
-    MCAPI AllowListProfileImage(::OreUI::AllowListProfileImage&&);
+    MCAPI AllowListProfileImage(::OreUI::AllowListProfileImage const&);
 
     MCAPI AllowListProfileImage(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
+
+    MCFOLD ::Social::ProfileImageOptions const& imageOptions() const;
 
     MCAPI void invalidate();
 
@@ -36,15 +36,15 @@ public:
 
     MCAPI ::OreUI::AllowListProfileImage& operator=(::OreUI::AllowListProfileImage&&);
 
+    MCFOLD ::std::string const& url() const;
+
     MCAPI ~AllowListProfileImage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::OreUI::AllowListProfileImage&&);
+    MCAPI void* $ctor(::OreUI::AllowListProfileImage const&);
 
     MCAPI void* $ctor(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
     // NOLINTEND
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

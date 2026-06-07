@@ -43,7 +43,19 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlatformStoreIconModel(::SubClientId subClientId);
 
+    MCAPI void _updatePlatformStoreIcon();
+
+    MCAPI void setIsCheckoutInProgress(bool isCheckoutInProgress);
+
+    MCAPI void setIsInGameBrowsing(bool isInGameBrowsing);
+
     MCAPI ~PlatformStoreIconModel();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isIconVisible();
     // NOLINTEND
 
 public:

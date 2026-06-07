@@ -24,12 +24,6 @@ public:
     SettingsBooleanConfirmationRequest();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SettingsBooleanConfirmationRequest() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SettingsBooleanConfirmationRequest(
@@ -51,12 +45,6 @@ public:
         ::std::string acceptLabel,
         ::std::string cancelLabel
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

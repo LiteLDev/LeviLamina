@@ -49,12 +49,11 @@ public:
 public:
     // prevent constructor by default
     Interaction& operator=(Interaction const&);
+    Interaction();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Interaction();
-
     MCAPI Interaction(::Interaction&&);
 
     MCAPI Interaction(::Interaction const&);
@@ -83,16 +82,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::ItemSlotInfo> _tryConvertStringToItemSlotInfo(::std::string const& string);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Interaction&&);
 
     MCAPI void* $ctor(::Interaction const&);

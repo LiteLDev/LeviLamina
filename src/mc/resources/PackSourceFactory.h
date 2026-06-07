@@ -24,6 +24,7 @@ class WorldHistoryPackSource;
 class WorldTemplateCollectionView;
 class WorldTemplatePackSource;
 struct PackIdVersion;
+struct PackSourceOptions;
 namespace Core { class Path; }
 namespace PackCommand { class IPackCommandPipeline; }
 namespace Realms { class RealmsServicePackSource; }
@@ -145,6 +146,14 @@ public:
         ::PackOrigin        packOrigin,
         bool                isDevDirectory
     );
+
+#ifdef LL_PLAT_C
+    MCAPI ::PackSourceOptions createPackSourceOptions();
+
+    MCAPI void deleteDirectoryPackSourcesFromDirectory(::Core::Path const& directoryPath);
+
+    MCFOLD ::RealmsUnknownPackSources& getRealmsUnknownPackSources();
+#endif
     // NOLINTEND
 
 public:

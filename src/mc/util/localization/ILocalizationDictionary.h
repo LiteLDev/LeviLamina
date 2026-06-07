@@ -16,12 +16,20 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkeb4635;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ILocalizationDictionary& operator=(ILocalizationDictionary const&);
     ILocalizationDictionary(ILocalizationDictionary const&);
     ILocalizationDictionary();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ILocalizationDictionary& operator=(ILocalizationDictionary const&);
+    ILocalizationDictionary(ILocalizationDictionary const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -42,9 +50,27 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI ILocalizationDictionary();
+
+    MCNAPI void _clearLocFilePath();
+
+    MCNAPI void _updateLocAndFilePath(::Core::Path const& locFilePath);
+
     MCNAPI bool _updateLocPath(::Core::Path const& locFilePath);
 
+    MCNAPI ::std::string const& getLocCode() const;
+
+    MCNAPI ::Core::Path const& getLocFilePath() const;
+
     MCNAPI void updateLoc();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 

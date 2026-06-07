@@ -56,7 +56,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk290b2b;
     ::ll::UntypedStorage<8, 8>   mUnk86b77f;
     ::ll::UntypedStorage<1, 1>   mUnk827706;
-    ::ll::UntypedStorage<8, 64>  mUnk266a17;
+    ::ll::UntypedStorage<8, 64>  mUnkf026ca;
     ::ll::UntypedStorage<8, 64>  mUnk41af43;
     ::ll::UntypedStorage<8, 64>  mUnk76de62;
     ::ll::UntypedStorage<8, 16>  mUnk3728ac;
@@ -73,13 +73,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit DiskAccessDiagnostics(::std::chrono::nanoseconds logInterval);
+
 #ifdef LL_PLAT_C
     MCNAPI void _checkWriteBudget(
         ::std::chrono::steady_clock::time_point currentTime,
         uint64                                  budgetLowPoint,
         uint64                                  budgetReplenishPoint,
         uint64                                  currentWriteBudget,
-        double                                  writesPerMinute,
+        double                                  writesMBPerMinute,
+        double                                  writeCountPerMinute,
+        double                                  writeCountLimitPerMinute,
+        uint                                    writeCountLimitPerPeriod,
         ::std::optional<uint64>                 osMaxWriteSpeed
     );
 
@@ -94,6 +99,12 @@ public:
 #endif
 
     MCNAPI ~DiskAccessDiagnostics();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::chrono::nanoseconds logInterval);
     // NOLINTEND
 
 public:

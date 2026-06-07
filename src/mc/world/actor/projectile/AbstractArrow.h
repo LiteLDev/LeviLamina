@@ -63,8 +63,6 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
-
-    virtual ~AbstractArrow() /*override*/;
     // NOLINTEND
 
 public:
@@ -76,7 +74,17 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _playPickupSound();
+    MCAPI bool _canPickup(::Player const& player) const;
+
+    MCAPI void _defineEntityData();
+
+    MCAPI bool isPlayerOwned() const;
+
+    MCAPI void setFavoredSlot(int favoredSlot);
+
+    MCAPI void setIsCreative(bool creativeOnly);
+
+    MCAPI void setIsPlayerOwned(bool isPlayerOwned);
     // NOLINTEND
 
 public:
@@ -96,21 +104,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCFOLD void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $lerpMotion(::Vec3 const& delta);
 
-    MCFOLD void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
     MCAPI void $playerTouch(::Player& player);
 

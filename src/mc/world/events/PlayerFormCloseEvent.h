@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, uint>                        mFormId;
     ::ll::TypedStorage<4, 4, ::PlayerFormCloseReason>     mFormCloseReason;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerFormCloseEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::ContentItem>(::PackManifest&)>>
         mGetContentItemByManifest;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ContentManagerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

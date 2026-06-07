@@ -7,17 +7,18 @@
 #include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Mob;
+class NavigationComponent;
 class Path;
 namespace SharedTypes::v1_21_120 { struct MeleeAttackBaseGoalDefinition; }
 // clang-format on
 
-class MeleeAttackBaseGoal : public ::Goal {
+class MeleeAttackBaseGoal : public ::BaseGoal {
 public:
     // MeleeAttackBaseGoal inner types declare
     // clang-format off
@@ -114,9 +115,49 @@ public:
 
     MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
 
+    MCAPI void _attemptMoveToTarget(::Actor const& target);
+
     MCAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
 
+    MCAPI void _decrementAttackTicks();
+
+    MCAPI void _decrementPathRecalculationTicks();
+
+    MCFOLD ::Vec3 const& _getLastCachedTargetPosition() const;
+
+    MCFOLD ::Mob& _getMob() const;
+
     MCAPI ::Mob& _getNavigatingMob() const;
+
+    MCAPI ::NavigationComponent* _getNavigationComponent() const;
+
+    MCAPI ::Actor* _getTarget() const;
+
+    MCFOLD int _getTicksToRecalculatePath() const;
+
+    MCAPI void _increasePathRecalculationFailureTick();
+
+    MCAPI bool _isNavigationDoneOrStuck() const;
+
+    MCAPI void _resetAttackTicks();
+
+    MCAPI void _setHasAttacked();
+
+    MCAPI bool _shouldRecalculatePath(bool canReachTarget) const;
+
+    MCAPI bool _targetPositionPutsMobInSun();
+
+    MCAPI void _tryLookAtTarget(::Actor const& target) const;
+
+    MCFOLD int getAttackTicks() const;
+
+    MCFOLD int getCooldownTicks() const;
+
+    MCAPI float getMeleeFOV() const;
+
+    MCAPI bool hasAttackTicksLeft() const;
+
+    MCAPI bool isWithinFoV(::Vec3 const& position) const;
     // NOLINTEND
 
 public:
@@ -128,7 +169,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

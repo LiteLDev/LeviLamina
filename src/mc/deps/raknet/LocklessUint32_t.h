@@ -15,7 +15,22 @@ public:
     // prevent constructor by default
     LocklessUint32_t& operator=(LocklessUint32_t const&);
     LocklessUint32_t(LocklessUint32_t const&);
-    LocklessUint32_t();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI uint Decrement();
+
+    MCFOLD uint Increment();
+
+    MCAPI LocklessUint32_t();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+    // NOLINTEND
 };
 
 } // namespace RakNet

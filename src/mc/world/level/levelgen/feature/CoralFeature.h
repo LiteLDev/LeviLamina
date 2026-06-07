@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    virtual ~CoralFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,12 +53,12 @@ public:
     ) const;
 
     MCAPI void _buildSmallClump(
-        ::BlockSource&             region,
-        ::BlockPos const&          pos,
-        ::Random&                  random,
-        ::std::vector<::BlockPos>& topDec,
-        ::std::vector<::std::pair<::BlockPos, uchar>>&,
-        ::gsl::not_null<::Block const*> block
+        ::BlockSource&                                 region,
+        ::BlockPos const&                              pos,
+        ::Random&                                      random,
+        ::std::vector<::BlockPos>&                     topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>& block,
+        ::gsl::not_null<::Block const*>
     ) const;
 
     MCAPI void _buildSpire(
@@ -72,19 +70,22 @@ public:
         ::gsl::not_null<::Block const*>                block
     ) const;
 
+    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color) const;
+
     MCAPI int _getColor(::Block const& block) const;
+
+    MCAPI void _placeCoral(
+        ::BlockSource&                                 region,
+        ::BlockPos const&                              pos,
+        ::Random&                                      random,
+        ::std::vector<::BlockPos>&                     topDec,
+        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
+        int                                            color
+    ) const;
 
     MCFOLD void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
 
-    MCAPI bool
-    _setBlock(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color) const;
-
-    MCAPI bool _setBlockOnSolid(
-        ::BlockSource&                  region,
-        ::BlockPos const&               pos,
-        ::gsl::not_null<::Block const*> block,
-        int                             color
-    ) const;
+    MCFOLD void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void _starCorners(
         ::BlockSource&                  region,

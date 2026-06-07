@@ -18,6 +18,7 @@ class Experiments;
 class IContentManager;
 class LevelDataWrapper;
 class LevelSeed64;
+class MainMenuScreenModel;
 struct LevelSummary;
 struct LocalWorldInfo;
 struct PackManagerContentSource;
@@ -44,6 +45,10 @@ public:
     using IntegerOptionSetter = ::std::function<void(int)>;
 
 public:
+    // prevent constructor by default
+    SettingsScreenControllerBase();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SettingsScreenControllerBase() /*override*/;
@@ -56,6 +61,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit SettingsScreenControllerBase(::std::shared_ptr<::MainMenuScreenModel> model);
+
     MCAPI void _addResourcePacks(::LocalWorldInfo const& worldInfo);
 
     MCAPI bool _copyResourcePacks(
@@ -95,6 +102,8 @@ public:
     );
 
     MCAPI void _removeResourcePacks();
+
+    MCAPI ::ui::ViewRequest _showLowDiskSpaceWarning();
 
     MCAPI void confirmationHardcoreDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
@@ -148,9 +157,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

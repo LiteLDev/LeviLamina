@@ -25,8 +25,6 @@ public:
     resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const& registry) /*override*/;
 
     virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& biomeJsonComponent) const /*override*/;
-
-    virtual ~ReplaceBiomesBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -154,7 +154,7 @@ public:
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const /*override*/;
 
     virtual void
-    decorateWorldGenPostProcess(::Biome const&, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
+    decorateWorldGenPostProcess(::Biome const& lc, ::LevelChunk& source, ::BlockSource& random, ::Random&) const
         /*override*/;
 
     virtual void _prepareHeights(
@@ -186,6 +186,8 @@ public:
     // NOLINTBEGIN
     MCAPI OverworldGeneratorMultinoise(::Dimension& dimension, ::LevelSeed64 seed, ::Biome const* biomeOverride);
 
+    MCAPI ::TerrainInfo _computeOffsetAndFactor(::DividedPos2d<4> worldQuartPos) const;
+
     MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(
         ::ChunkPos const&             chunkPos,
         ::ChunkLocalNoiseCache const& chunkLocalNoiseCache,
@@ -194,14 +196,14 @@ public:
     ) const;
 
     MCAPI ::OverworldGeneratorMultinoise::BlockGenerationResult const _updateNoiseAndGenerateBaseBlock(
-        float             noiseValue,
-        ::BlockPos const& worldPosition,
-        short,
-        ::Aquifer*            aquiferPtr,
-        bool                  shouldTickUpdate,
-        ::ChunkBlender const* chunkBlender,
-        ::Block const&        stone,
-        ::OreVeinifier*       oreVeinifier
+        float                 noiseValue,
+        ::BlockPos const&     worldPosition,
+        short                 aquiferPtr,
+        ::Aquifer*            shouldTickUpdate,
+        bool                  chunkBlender,
+        ::ChunkBlender const* stone,
+        ::Block const&        oreVeinifier,
+        ::OreVeinifier*
     ) const;
     // NOLINTEND
 
@@ -273,7 +275,7 @@ public:
     MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
     MCAPI void
-    $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
+    $decorateWorldGenPostProcess(::Biome const& lc, ::LevelChunk& source, ::BlockSource& random, ::Random&) const;
 
     MCAPI void $_prepareHeights(
         ::BlockVolume&                                                  box,

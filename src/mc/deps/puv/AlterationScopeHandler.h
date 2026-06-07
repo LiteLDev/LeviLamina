@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/puv/CerealUpgraderBase.h"
+// auto generated forward declare list
+// clang-format off
+namespace Puv::internal { struct AlterationNode; }
+// clang-format on
 
 namespace Puv::internal {
 
@@ -11,8 +13,8 @@ struct AlterationScopeHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6db354;
-    ::ll::UntypedStorage<8, 8> mUnk3d4368;
+    ::ll::UntypedStorage<8, 8> mUnkd5b277;
+    ::ll::UntypedStorage<8, 8> mUnk48a1e1;
     // NOLINTEND
 
 public:
@@ -24,21 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AlterationScopeHandler(::Puv::internal::CerealUpgraderBase::AlterationNode const*& node, uint id);
-
-    MCNAPI ~AlterationScopeHandler();
+    MCNAPI AlterationScopeHandler(::Puv::internal::AlterationNode const*& node, uint id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Puv::internal::CerealUpgraderBase::AlterationNode const*& node, uint id);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Puv::internal::AlterationNode const*& node, uint id);
     // NOLINTEND
 };
 

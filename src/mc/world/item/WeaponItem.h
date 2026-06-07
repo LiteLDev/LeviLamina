@@ -44,14 +44,14 @@ public:
 
     virtual bool isHandEquipped() const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
     virtual bool isValidRepairItem(
-        ::ItemStackBase const&,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
+        ::ItemStackBase const& repairItem,
+        ::ItemStackBase const& baseGameVersion,
+        ::BaseGameVersion const&
     ) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
@@ -66,14 +66,20 @@ public:
     ) const /*override*/;
 
     virtual bool canDestroyInCreative() const /*override*/;
-
-    virtual ~WeaponItem() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI WeaponItem(::std::string const& name, int id, ::ItemTier const& tier);
+
+    MCFOLD void setAttackDamage(int damage);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::ItemTier const& tier);
     // NOLINTEND
 
 public:
@@ -87,14 +93,14 @@ public:
 
     MCFOLD bool $isHandEquipped() const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 
     MCAPI bool $isValidRepairItem(
-        ::ItemStackBase const&,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
+        ::ItemStackBase const& repairItem,
+        ::ItemStackBase const& baseGameVersion,
+        ::BaseGameVersion const&
     ) const;
 
     MCFOLD int $getEnchantSlot() const;

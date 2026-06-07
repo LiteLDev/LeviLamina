@@ -95,7 +95,7 @@ public:
     ::ll::UntypedStorage<4, 24>  mUnk8b3e64;
     ::ll::UntypedStorage<4, 4>   mUnkd94f43;
     ::ll::UntypedStorage<1, 1>   mUnk3f5c44;
-    ::ll::UntypedStorage<4, 8>   mUnk1d6cf3;
+    ::ll::UntypedStorage<4, 8>   mUnkbeb243;
     ::ll::UntypedStorage<8, 112> mUnk30dd27;
     ::ll::UntypedStorage<8, 64>  mUnk50bcf6;
     ::ll::UntypedStorage<8, 24>  mUnka95670;
@@ -110,7 +110,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidget() = default;
+    virtual ~ScriptWidget();
 
     virtual ::AABB const& _getWorldBounds() const /*override*/;
 
@@ -346,8 +346,6 @@ public:
 
     MCNAPI void _setVisible(bool visible);
 
-    MCNAPI ::std::optional<::std::string> getDimensionId() const;
-
     MCNAPI ::mce::UUID const& getGroupId() const;
 
     MCNAPI ::Scripting::Result_deprecated<void> setDimensionId(::std::optional<::std::string> const& dimensionId);
@@ -374,6 +372,12 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const&     options,
         ::Scripting::WeakLifetimeScope const&                                         scope
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

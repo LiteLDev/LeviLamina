@@ -11,10 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::EducationEditionOffer> mValue;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::EducationEditionOfferValue& operator=(::EducationEditionOffer value);
-    // NOLINTEND
 };

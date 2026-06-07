@@ -5,7 +5,7 @@
 namespace SharedTypes::Legacy {
 
 enum class SlotWithDropChance : int {
-    None     = -1,
+    None     = 4294967295,
     Begin    = 0,
     Mainhand = 0,
     Offhand  = 1,

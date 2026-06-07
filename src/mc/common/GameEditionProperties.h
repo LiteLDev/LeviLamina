@@ -19,7 +19,23 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI explicit GameEditionProperties(::std::string_view edition);
+
+    MCNAPI bool isConsoleEdition() const;
+
+    MCNAPI bool isIosEducationEdition() const;
+
+    MCNAPI bool isPocketEdition() const;
+
     MCNAPI ~GameEditionProperties();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string_view edition);
 #endif
     // NOLINTEND
 

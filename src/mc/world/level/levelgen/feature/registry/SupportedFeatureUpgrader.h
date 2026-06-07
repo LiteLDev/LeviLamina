@@ -12,16 +12,4 @@ public:
     ::ll::TypedStorage<8, 24, ::SemVersion> mFromVersion;
     ::ll::TypedStorage<8, 24, ::SemVersion> mToVersion;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SupportedFeatureUpgrader();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

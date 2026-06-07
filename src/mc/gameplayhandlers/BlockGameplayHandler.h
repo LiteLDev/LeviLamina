@@ -25,7 +25,7 @@ public:
     handleEvent(::BlockGameplayEvent<::std::optional<::std::string>> const&) = 0;
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::MutableBlockGameplayEvent<::CoordinatorResult>&) = 0;
+    handleEvent(::MutableBlockGameplayEvent<::CoordinatorResult>& event) = 0;
     // NOLINTEND
 
 public:

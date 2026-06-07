@@ -36,8 +36,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBookError(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
-
-    MCAPI ~ScriptBookError();
     // NOLINTEND
 
 public:
@@ -52,12 +50,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

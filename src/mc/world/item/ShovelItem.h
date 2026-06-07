@@ -23,8 +23,6 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~ShovelItem() /*override*/ = default;
     // NOLINTEND
 
 public:

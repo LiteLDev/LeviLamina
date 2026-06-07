@@ -24,18 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void finish();
-
-    MCAPI void write(uint _value);
-
     MCAPI void
     writeUniformHandle(::bgfx::UniformType::Enum _type, ushort _loc, ::bgfx::UniformHandle _handle, ushort _num);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::bgfx::UniformBuffer* create(uint _size);
     // NOLINTEND
 };
 

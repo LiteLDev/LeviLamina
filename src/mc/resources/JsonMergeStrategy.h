@@ -31,34 +31,51 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) /*override*/;
-
-    virtual bool _parseJson(::Json::Reader& reader, ::std::string const& fileName, ::Json::Value& root) const;
-
-    virtual void _preMergeTransform(::Json::Value& value);
-
-    virtual void _preMergePacketTransform(int const);
-
 #ifdef LL_PLAT_S
-    virtual ~JsonMergeStrategy() /*override*/ = default;
+    virtual void mergeFiles(::std::vector<::LoadedResourceData> const&) /*override*/;
 #else // LL_PLAT_C
-    virtual ~JsonMergeStrategy() /*override*/;
+    virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual bool _parseJson(::Json::Reader&, ::std::string const&, ::Json::Value&) const;
+#else // LL_PLAT_C
+    virtual bool _parseJson(::Json::Reader& reader, ::std::string const& fileName, ::Json::Value& root) const;
+#endif
+
+#ifdef LL_PLAT_S
+    virtual void _preMergeTransform(::Json::Value&);
+#else // LL_PLAT_C
+    virtual void _preMergeTransform(::Json::Value& value);
+#endif
+
+    virtual void _preMergePacketTransform(int const);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI JsonMergeStrategy(
+        ::std::string const&                                               fileName,
+        ::Json::Value&                                                     root,
+        ::std::function<bool(::Json::Value&, ::Json::Value const&)> const& preMergeCallback
+    );
+
     MCNAPI void _recursiveMerge(::Json::Value& root, ::Json::Value const& object);
 #endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::std::string const&                                               fileName,
+        ::Json::Value&                                                     root,
+        ::std::function<bool(::Json::Value&, ::Json::Value const&)> const& preMergeCallback
+    );
+#endif
     // NOLINTEND
 
 public:

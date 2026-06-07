@@ -8,7 +8,7 @@ struct SetViewportCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk277331;
+    ::ll::UntypedStorage<1, 0> mUnk277331;
     // NOLINTEND
 
 public:

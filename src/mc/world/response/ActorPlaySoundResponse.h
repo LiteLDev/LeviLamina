@@ -39,8 +39,6 @@ public:
                                                root,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
-
-    virtual ~ActorPlaySoundResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

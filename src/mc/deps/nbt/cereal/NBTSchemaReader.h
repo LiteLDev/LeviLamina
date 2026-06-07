@@ -7,6 +7,11 @@
 #include "mc/deps/cereal/schema/SchemaReader.h"
 #include "mc/platform/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+class Tag;
+// clang-format on
+
 class NBTSchemaReader : public ::cereal::SchemaReader {
 public:
     // NBTSchemaReader inner types declare
@@ -87,7 +92,7 @@ public:
 
     virtual uint64 members() /*override*/;
 
-    virtual uint64 length(uint64 expectedSize) /*override*/;
+    virtual uint64 length(uint64) /*override*/;
 
     virtual bool pushMember(::std::string_view const name) /*override*/;
 
@@ -96,14 +101,18 @@ public:
     virtual void pushElement(uint64 index) /*override*/;
 
     virtual void pop() /*override*/;
-
-    virtual ~NBTSchemaReader() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI explicit NBTSchemaReader(::gsl::not_null<::Tag const*> tag);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::gsl::not_null<::Tag const*> tag);
     // NOLINTEND
 
 public:
@@ -150,7 +159,7 @@ public:
 
     MCNAPI uint64 $members();
 
-    MCNAPI uint64 $length(uint64 expectedSize);
+    MCNAPI uint64 $length(uint64);
 
     MCNAPI bool $pushMember(::std::string_view const name);
 

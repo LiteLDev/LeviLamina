@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Attribute; }
+namespace mce { class SampleDescription; }
 // clang-format on
 
 namespace mce {
@@ -43,12 +44,24 @@ public:
     // prevent constructor by default
     RenderDeviceBase& operator=(RenderDeviceBase const&);
     RenderDeviceBase(RenderDeviceBase const&);
-    RenderDeviceBase();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RenderDeviceBase();
+
+    MCNAPI ::mce::SampleDescription getClosestSupportedSampleDescription(
+        ::std::vector<::mce::SampleDescription> const& supportedMultisampleQualityLevels,
+        ::mce::SampleDescription const&                sampleDescription
+    ) const;
+
     MCNAPI ~RenderDeviceBase();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

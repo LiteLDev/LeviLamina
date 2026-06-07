@@ -28,8 +28,13 @@ public:
     virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+    // NOLINTEND
 
-    virtual ~RandomBlockStateMatch() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::br::worldgen::processors::BlockRules::RandomBlockStateMatch
+    from(::Block const& block, float probability);
     // NOLINTEND
 
 public:

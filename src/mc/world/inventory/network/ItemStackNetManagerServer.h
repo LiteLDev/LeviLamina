@@ -14,7 +14,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class ContainerScreenContext;
+class ItemStack;
 class ItemStackNetManagerScreen;
 class ItemStackRequestActionHandler;
 class ItemStackRequestBatch;
@@ -23,6 +25,7 @@ class ServerPlayer;
 class TextFilteringProcessor;
 struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
+struct ItemStackRequestSlotInfo;
 struct ItemStackResponseInfo;
 // clang-format on
 
@@ -102,18 +105,29 @@ public:
 
     MCAPI void _queueRequests(::ItemStackRequestBatch const& requestBatch);
 
+    MCAPI ::gsl::final_action<::std::function<void()>> _retainSetItemStackNetIdVariantScope();
+
     MCAPI void _sendResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
 
     MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
 
     MCAPI bool _tryFilterText(::ItemStackRequestData const* requestData);
 
-#ifdef LL_PLAT_C
     MCAPI void handleRequest(
         ::std::unique_ptr<::ItemStackRequestData>            request,
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
     );
-#endif
+
+    MCAPI void handleRequestBatch(
+        ::ItemStackRequestBatch const&                       requestBatch,
+        ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
+    );
+
+    MCAPI bool itemMatches(::ItemStackRequestSlotInfo const& slotInfo, ::ItemStack const& expectedItem);
+
+    MCAPI void normalTick();
+
+    MCAPI void startCrafting(bool workbench, ::BlockPos const& pos);
 
     MCAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND
@@ -139,7 +153,7 @@ public:
 
     MCAPI bool $allowInventoryTransactionManager() const;
 
-    MCFOLD void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
 

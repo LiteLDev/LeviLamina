@@ -7,12 +7,6 @@
 
 class BrewingStandContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BrewingStandContainerScreenValidator() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

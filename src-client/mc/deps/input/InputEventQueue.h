@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/input/InputEvent.h"
-#include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/enums/ButtonState.h"
 #include "mc/deps/input/enums/DirectionId.h"
 #include "mc/deps/input/enums/FocusImpact.h"
-#include "mc/deps/input/enums/RawInputType.h"
 
 class InputEventQueue {
 public:
@@ -20,6 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI InputEventQueue();
+
     MCAPI void enqueueButton(
         uint          id,
         ::ButtonState state,
@@ -35,6 +35,8 @@ public:
 
     MCAPI void enqueueClearPointerLocationWithId(int id);
 
+    MCAPI void enqueueClearPointerLocations();
+
     MCAPI void enqueueDirection(
         ::DirectionId directionId,
         float         x,
@@ -44,28 +46,20 @@ public:
         bool          inputClearingEvent
     );
 
-    MCAPI void enqueuePointerLocation(
-        ::InputMode   inputMode,
-        short         x,
-        short         y,
-        ::FocusImpact focusImpact,
-        bool          forceMotionlessPointer,
-        int           controllerId
-    );
-
     MCAPI void enqueuePointerLocationWithId(int id, short x, short y, bool updateActionPointer);
-
-    MCAPI void
-    enqueueRawInput(int id, ::RawInputType keyType, ::ButtonState state, int controllerId, bool allowRemapping);
-
-    MCAPI void enqueueTextChar(::std::string utf8Input, ::FocusImpact focusImpact, int controllerId);
 
     MCAPI ~InputEventQueue();
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

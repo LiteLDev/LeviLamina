@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class VillagerBase;
 // clang-format on
 
-class ReceiveLoveGoal : public ::Goal {
+class ReceiveLoveGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,8 +33,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~ReceiveLoveGoal() /*override*/ = default;
     // NOLINTEND
 
 public:

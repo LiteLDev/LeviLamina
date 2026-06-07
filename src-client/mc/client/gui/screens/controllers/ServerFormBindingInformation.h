@@ -25,8 +25,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void createBindingData(::Json::Value const& formData) /*override*/;
-
-    virtual ~ServerFormBindingInformation() /*override*/ = default;
     // NOLINTEND
 
 public:

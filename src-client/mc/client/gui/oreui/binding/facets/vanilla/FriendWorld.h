@@ -22,6 +22,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                            mFriendOfFriendWorld;
     ::ll::TypedStorage<1, 1, bool>                            mIsSupportedForPartyTravel;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mRealmId;
+    ::ll::TypedStorage<1, 1, bool>                            mIsEditorWorld;
     // NOLINTEND
 
 public:
@@ -33,19 +34,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FriendWorld(::OreUI::FriendWorld&&);
-
     MCAPI ::OreUI::FriendWorld& operator=(::OreUI::FriendWorld&&);
 
     MCAPI bool operator==(::OreUI::FriendWorld const&) const;
 
     MCAPI ~FriendWorld();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::FriendWorld&&);
     // NOLINTEND
 
 public:

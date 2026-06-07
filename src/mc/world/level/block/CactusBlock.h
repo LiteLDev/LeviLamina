@@ -13,12 +13,11 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
+struct BlockGraphicsModeChangeContext;
 // clang-format on
 
 class CactusBlock : public ::BlockType {
@@ -29,17 +28,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CactusBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
@@ -53,33 +56,39 @@ public:
 
     virtual bool isValidAuxValue(int value) const /*override*/;
 
-    virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~CactusBlock() /*override*/ = default;
+    virtual bool dealsContactDamage(::Actor const&, ::Block const&, bool) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CactusBlock(::std::string const& nameId, int id, bool growCactusFlowers);
+
+    MCAPI bool _neighborsDestroy(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool growCactusFlowers);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
@@ -91,9 +100,7 @@ public:
 
     MCFOLD bool $isValidAuxValue(int value) const;
 
-    MCFOLD bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD bool $dealsContactDamage(::Actor const&, ::Block const&, bool) const;
 
 
     // NOLINTEND

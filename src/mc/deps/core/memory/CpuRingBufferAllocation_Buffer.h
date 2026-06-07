@@ -12,19 +12,7 @@ public:
     // clang-format on
 
     // CpuRingBufferAllocation_Buffer inner types define
-    class Buffer {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk47b70f;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Buffer& operator=(Buffer const&);
-        Buffer(Buffer const&);
-        Buffer();
-    };
+    class Buffer {};
 };
 
 } // namespace Core

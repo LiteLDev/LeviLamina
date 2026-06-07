@@ -22,15 +22,14 @@ public:
 public:
     // prevent constructor by default
     ScriptSplineAnimation& operator=(ScriptSplineAnimation const&);
-    ScriptSplineAnimation(ScriptSplineAnimation const&);
     ScriptSplineAnimation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptSplineAnimation& operator=(::ScriptModuleMinecraft::ScriptSplineAnimation&&);
+    MCAPI ScriptSplineAnimation(::ScriptModuleMinecraft::ScriptSplineAnimation const&);
 
-    MCAPI ~ScriptSplineAnimation();
+    MCFOLD ::ScriptModuleMinecraft::ScriptSplineAnimation& operator=(::ScriptModuleMinecraft::ScriptSplineAnimation&&);
     // NOLINTEND
 
 public:
@@ -40,9 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSplineAnimation const&);
     // NOLINTEND
 };
 

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
+#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,11 +35,43 @@ public:
     ::ll::TypedStorage<2, 2, ushort>                  mCustomPermissionFlags;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    RequestPermissionsPacketPayload();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI explicit RequestPermissionsPacketPayload(::PlayerPermissionLevel playerPermissions);
+
+    MCAPI RequestPermissionsPacketPayload(
+        ::ActorUniqueID         targetPlayer,
+        ::PlayerPermissionLevel playerPermissions,
+        ::Abilities const&      abilities
+    );
+
     MCAPI void _setFromAbilities(::Abilities const& abilities);
+#endif
+
+    MCAPI bool getCustomAbilityValue(::AbilitiesIndex ability) const;
+
+    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
+
+    MCFOLD ::ActorUniqueID getTargetPlayerId() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::PlayerPermissionLevel playerPermissions);
+
+    MCAPI void*
+    $ctor(::ActorUniqueID targetPlayer, ::PlayerPermissionLevel playerPermissions, ::Abilities const& abilities);
 #endif
     // NOLINTEND
 };

@@ -21,19 +21,20 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptCustomBiomeConfig(ScriptCustomBiomeConfig const&);
+    ScriptCustomBiomeConfig& operator=(ScriptCustomBiomeConfig const&);
     ScriptCustomBiomeConfig();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptCustomBiomeConfig(::Editor::ScriptModule::ScriptCustomBiomeConfig const&);
+
     MCNAPI void addToMap(::std::map<::std::string, ::CustomBiome>& map) const;
 
     MCNAPI ::Editor::ScriptModule::ScriptCustomBiomeConfig&
     operator=(::Editor::ScriptModule::ScriptCustomBiomeConfig&&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptCustomBiomeConfig&
-    operator=(::Editor::ScriptModule::ScriptCustomBiomeConfig const&);
+    MCNAPI ~ScriptCustomBiomeConfig();
     // NOLINTEND
 
 public:
@@ -43,6 +44,18 @@ public:
 
     MCNAPI static ::std::map<::std::string, ::CustomBiome>
     buildMap(::std::vector<::Editor::ScriptModule::ScriptCustomBiomeConfig> const& listOfCustomBiomes);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptCustomBiomeConfig const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -25,23 +25,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Identifier& operator=(Identifier const&);
-        Identifier(Identifier const&);
-        Identifier();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Identifier(::CraftingItemCatalogMergeResult::Identifier&&);
-
         MCAPI ~Identifier();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::CraftingItemCatalogMergeResult::Identifier&&);
         // NOLINTEND
 
     public:
@@ -90,6 +76,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ::CraftingItemCatalogMergeResult::Group* findGroup(::std::string_view groupName);
+
         MCAPI ~Category();
         // NOLINTEND
 
@@ -113,6 +101,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addItemToGroupIfNotDuplicateItem(
+        ::CraftingItemCatalogMergeResult::Group& group,
+        ::ItemInstance const&                    itemInstance,
+        ::std::string const&                     itemName
+    );
+
+    MCAPI ::CraftingItemCatalogMergeResult::Category&
+    getCategory(::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory);
+
+    MCAPI void insertAfterGroup(
+        ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
+        ::std::string_view                                   groupName,
+        ::CraftingItemCatalogMergeResult::Group              insertGroup
+    );
+
     MCAPI void insertAfterItemsGroup(
         ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
         ::std::string_view                                   itemName,

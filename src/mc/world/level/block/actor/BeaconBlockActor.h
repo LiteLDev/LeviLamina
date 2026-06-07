@@ -62,7 +62,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& tag, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
 
     virtual bool hasAlphaLayer() const /*override*/;
 
@@ -70,9 +70,9 @@ public:
 
     virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int, ::ItemStack const&) /*override*/;
 
     virtual void removeItem(int slot, int count) /*override*/;
 
@@ -86,17 +86,14 @@ public:
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void
+    serverInitItemStackIds(int onNetIdChanged, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
     virtual ::Container* getContainer() /*override*/;
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
@@ -108,22 +105,36 @@ public:
 
     MCAPI void _applyEffects(::BlockSource& region);
 
+    MCAPI int _getEffectTier(int effectId) const;
+
     MCAPI void
     _notifyBeamSectionsChange(::BlockSource& region, ::std::vector<::BeaconBeamSection> const& oldBeamSections);
 
-    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
-
-    MCAPI bool _setEffect(int effectId, int& outEffectId, int& outTier);
+    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const&) const;
 
     MCAPI void checkAchievement(::BlockSource& region);
 
     MCAPI void checkShape(::BlockSource& region);
 
+#ifdef LL_PLAT_C
+    MCAPI bool clientRenderingNeedsUpdate() const;
+#endif
+
     MCAPI void generateBeamSections(::BlockSource& region);
 
+#ifdef LL_PLAT_C
     MCAPI ::CompoundTag getBeaconData(::SaveContext const& saveContext);
 
+    MCFOLD ::std::vector<::MobEffect*> const& getEffects() const;
+
+    MCAPI int getMaxSelections() const;
+#endif
+
     MCAPI bool isEffectAvailable(int effectId) const;
+
+    MCAPI bool isSecondaryAvailable() const;
+
+    MCAPI bool setPrimaryEffect(int effectId);
 
     MCAPI bool setSecondaryEffect(int effectId);
     // NOLINTEND
@@ -155,7 +166,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& tag, ::CompoundTag const&, ::DataLoadHelper&);
 
     MCFOLD bool $hasAlphaLayer() const;
 
@@ -163,9 +174,9 @@ public:
 
     MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
-    MCFOLD ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int) const;
 
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int, ::ItemStack const&);
 
     MCFOLD void $removeItem(int slot, int count);
 
@@ -179,17 +190,13 @@ public:
 
     MCFOLD void $stopOpen(::Actor& actor);
 
-    MCFOLD void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCFOLD void $serverInitItemStackIds(int onNetIdChanged, int, ::std::function<void(int, ::ItemStack const&)>);
 
     MCFOLD ::Container* $getContainer();
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

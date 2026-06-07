@@ -27,13 +27,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Player();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Player();
-
     MCNAPI Player(::Realms::Player const&);
-
-    MCNAPI Player(::Realms::Player&&);
 
     MCNAPI ::Realms::Player& operator=(::Realms::Player const&);
 
@@ -49,11 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Realms::Player const&);
-
-    MCNAPI void* $ctor(::Realms::Player&&);
     // NOLINTEND
 
 public:

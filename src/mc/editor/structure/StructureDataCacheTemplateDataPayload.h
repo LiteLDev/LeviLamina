@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -29,27 +30,21 @@ public:
     StructureDataCacheTemplateDataPayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~StructureDataCacheTemplateDataPayload() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI StructureDataCacheTemplateDataPayload(::mce::UUID const& itemId, ::CompoundTag const& data);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::UUID const& itemId, ::CompoundTag const& data);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::mce::UUID const& itemId, ::CompoundTag const& data);
     // NOLINTEND
 
 public:

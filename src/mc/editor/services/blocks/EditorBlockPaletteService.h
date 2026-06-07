@@ -118,19 +118,17 @@ public:
 
     MCNAPI void _addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 
-#ifdef LL_PLAT_C
     MCNAPI ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
     _checkAndClampWeights(::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> item);
-#endif
 
     MCNAPI ::Scripting::Result_deprecated<void> _checkForDuplicateBlocks(
         ::HashedString const&                                                                          paletteId,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCNAPI ::Editor::EditorBlockPalette& _getActivePalette() const;
-
     MCNAPI ::Scripting::Error _getAttemptingToRemoveOnlyPaletteError(::HashedString const& paletteId) const;
+
+    MCNAPI ::Scripting::Error _getDuplicateBlockFoundError(::HashedString const& paletteId) const;
 
     MCNAPI ::Scripting::ArgumentOutOfBoundsError _getIndexOutOfBoundsError(int param, int argIndex, int max) const;
 
@@ -147,6 +145,8 @@ public:
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
+
+    MCNAPI ::Scripting::Result_deprecated<void> _updateSelectedPaletteIndex(int index);
     // NOLINTEND
 
 public:

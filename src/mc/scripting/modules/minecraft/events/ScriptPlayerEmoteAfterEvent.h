@@ -23,30 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPlayerEmoteAfterEvent& operator=(ScriptPlayerEmoteAfterEvent const&);
-    ScriptPlayerEmoteAfterEvent(ScriptPlayerEmoteAfterEvent const&);
-    ScriptPlayerEmoteAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent&&);
-
-    MCAPI ~ScriptPlayerEmoteAfterEvent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

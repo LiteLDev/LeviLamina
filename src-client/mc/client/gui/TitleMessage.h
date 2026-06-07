@@ -20,22 +20,57 @@ public:
 public:
     // prevent constructor by default
     TitleMessage(TitleMessage const&);
-    TitleMessage();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TitleMessage();
+
     MCAPI void clearTitleMessages();
 
     MCAPI ::TitleMessage& copyTitleMessageWithSubtitle(::TitleMessage const& sourceTitle);
+
+    MCFOLD ::std::string const& getActionBarMessage() const;
+
+    MCFOLD int getFadeInTime() const;
+
+    MCFOLD int getFadeOutTime() const;
+
+    MCFOLD ::std::optional<::std::string> const& getFilteredActionBarMessage() const;
+
+    MCFOLD ::std::optional<::std::string> const& getFilteredSubtitle() const;
+
+    MCFOLD ::std::optional<::std::string> const& getFilteredTitle() const;
+
+    MCFOLD int getStayTime() const;
+
+    MCFOLD ::std::string const& getSubtitle() const;
+
+    MCFOLD ::std::string const& getTitle() const;
+
+    MCFOLD bool hasSubtitle() const;
+
+    MCFOLD bool hasTitle() const;
 
     MCAPI ::TitleMessage& operator=(::TitleMessage const&);
 
     MCAPI void resetTitle();
 
+    MCAPI void setActionBarMessage(::std::string const& message, ::std::optional<::std::string> filteredMessage);
+
     MCAPI void setSubtitle(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
 
+    MCAPI void setTitle(::std::string const& title, ::std::optional<::std::string> filteredTitle);
+
+    MCAPI void setTitleAnimationTimes(int fadeInTime, int stayTime, int fadeOutTime);
+
     MCAPI ~TitleMessage();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

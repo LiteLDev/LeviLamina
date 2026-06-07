@@ -17,8 +17,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptActorHealEventFilterData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    ScriptActorHealEventFilterData(::ScriptModuleMinecraft::ScriptActorData actorData, ::ActorHealCause healCause);
+
     MCAPI ~ScriptActorHealEventFilterData();
     // NOLINTEND
 
@@ -27,6 +34,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilterData
     create(::ScriptModuleMinecraft::ScriptActorData actorData, ::ActorHealCause healCause);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData actorData, ::ActorHealCause healCause);
     // NOLINTEND
 
 public:

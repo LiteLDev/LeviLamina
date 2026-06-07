@@ -21,9 +21,6 @@ class PersonaTextureComposer {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::persona::AnimatedTextureType
-    _findMatchingAnimatedTextureType(bool isFace, uint width, uint height, int frames);
-
     MCNAPI static bool _findMatchingTextureSet(
         ::std::vector<::AnimatedTextureContainer>& animatedTextures,
         ::persona::TextureTintCollection&          textureCollection
@@ -45,13 +42,6 @@ public:
         ::IImageCache&              textureGroup
     );
 
-    MCNAPI static ::cg::ImageBuffer const* _loadImage(
-        ::PackAccessStrategy const& strategy,
-        ::std::string const&        path,
-        ::std::string const&        uniquePath,
-        ::mce::TextureGroup&        textureGroup
-    );
-
     MCNAPI static void _readTextureIntoAtlas(
         ::cg::ImageBuffer&            atlasImage,
         ::persona::TextureTint const& textureTint,
@@ -61,6 +51,9 @@ public:
         ::TextureUVCoordinateSet&     uvs,
         ::glm::ivec2 const*           maxDimensionsSlice
     );
+
+    MCNAPI static bool
+    _validateAnimatedTextureType(::persona::AnimatedTextureType type, uint width, uint height, int frames);
 
     MCNAPI static ::std::shared_ptr<::persona::TextureTint> buildAdditiveTexture(
         ::std::string const&                    characterName,

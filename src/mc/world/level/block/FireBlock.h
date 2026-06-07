@@ -13,17 +13,19 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class IRandom;
-class Random;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class FireBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    FireBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,31 +37,26 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
+    getOutline(::Block const& bufferValue, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const /*override*/;
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     virtual bool mayPick() const /*override*/;
 
-    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
+    virtual void entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const /*override*/;
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~FireBlock() /*override*/ = default;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const&, ::BlockPos const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI FireBlock(::std::string const& nameId, int id);
 
     MCAPI bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -84,7 +81,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static bool canBurn(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static bool isSolidToppedBlock(::IConstBlockSource const& region, ::BlockPos const& pos);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -98,21 +105,19 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
+    $getOutline(::Block const& bufferValue, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $mayPick() const;
 
-    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
+    MCAPI void $entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const&, ::BlockPos const&) const;
 
 
     // NOLINTEND

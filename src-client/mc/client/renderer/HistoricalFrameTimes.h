@@ -17,18 +17,19 @@ public:
     // prevent constructor by default
     HistoricalFrameTimes& operator=(HistoricalFrameTimes const&);
     HistoricalFrameTimes(HistoricalFrameTimes const&);
+    HistoricalFrameTimes();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI HistoricalFrameTimes();
+    MCNAPI float getHistoricalAverageFrameTime(uint64 numHistoricalFrames) const;
+
+    MCNAPI float getHistoricalMaximumFrameTime(uint64 numHistoricalFrames) const;
+
+    MCNAPI float getHistoricalMinimumFrameTime(uint64 numHistoricalFrames) const;
+
+    MCNAPI float getLastFrameTime(uint64 historicalFrameOffset) const;
 
     MCNAPI void setCurrentFrameTime(float frameTime);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };

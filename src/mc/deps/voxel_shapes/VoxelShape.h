@@ -28,6 +28,7 @@ public:
 
 public:
     // prevent constructor by default
+    VoxelShape& operator=(VoxelShape const&);
     VoxelShape();
 
 public:
@@ -46,15 +47,17 @@ public:
 
     MCNAPI ::VoxelShapes::VoxelShape computeFaceShape(uchar face) const;
 
-    MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
+#ifdef LL_PLAT_C
+    MCNAPI bool isEmpty() const;
 
-    MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape const&);
+    MCNAPI bool isUnitCube() const;
+#endif
+
+    MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
 
     MCNAPI bool operator==(::VoxelShapes::VoxelShape const& rhs) const;
 
     MCNAPI void rotate(::Vec3 const& rotationDegrees, ::Vec3 const& rotationPivot);
-
-    MCNAPI ::std::vector<::AABB> toAabbs() const;
 
     MCNAPI ::VoxelShapes::SerializableVoxelShape toSerializable() const;
 

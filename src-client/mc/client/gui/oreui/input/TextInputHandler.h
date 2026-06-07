@@ -3,17 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/oreui/input/GamefaceImeComposer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/RectangleArea.h"
-#include "mc/deps/input/TextBoxSelection.h"
 #include "mc/external/gameface/cohtml/ITextInputHandler.h"
 
 // auto generated forward declare list
 // clang-format off
 class GuiData;
 class KeyboardManager;
-namespace OreUI { struct TextInputResult; }
+struct TextBoxSelection;
+namespace OreUI::InputUtils { struct TextInputResult; }
 namespace cohtml { class IInputProxy; }
+namespace cohtml { class View; }
 namespace cohtml::TextInput { struct Selection; }
 // clang-format on
 
@@ -31,25 +33,28 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>      mCurrentText;
-        ::ll::TypedStorage<4, 16, ::RectangleArea>    mCaretArea;
-        ::ll::TypedStorage<4, 16, ::RectangleArea>    mControlArea;
-        ::ll::TypedStorage<4, 12, ::TextBoxSelection> mSelection;
-        ::ll::TypedStorage<4, 4, int const>           mMaxLength;
-        ::ll::TypedStorage<1, 1, bool const>          mIsMultiline;
+        ::ll::TypedStorage<8, 8, ::cohtml::IInputProxy&>                         mInputProxy;
+        ::ll::TypedStorage<8, 56, ::std::optional<::OreUI::GamefaceImeComposer>> mImeComposer;
+        ::ll::TypedStorage<4, 20, ::std::optional<::RectangleArea>>              mCaretArea;
+        ::ll::TypedStorage<4, 4, int const>                                      mMaxLength;
+        ::ll::TypedStorage<1, 1, bool const>                                     mIsMultiline;
+        ::ll::TypedStorage<1, 1, bool>                                           mIgnoreTextCallbacks;
         // NOLINTEND
-    };
 
-    using OnTextChangedCallback = ::std::function<void(::OreUI::TextInputResult)>;
+    public:
+        // prevent constructor by default
+        TextInputState& operator=(TextInputState const&);
+        TextInputState(TextInputState const&);
+        TextInputState();
+    };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::KeyboardManager&>                                          mKeyboardManager;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GuiData>>                   mGuiData;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::OreUI::TextInputResult)>>            mOnTextChangedCallback;
-    ::ll::TypedStorage<1, 1, bool>                                                        mReportTextInputChanges;
-    ::ll::TypedStorage<8, 96, ::std::optional<::OreUI::TextInputHandler::TextInputState>> mTextInputState;
+    ::ll::TypedStorage<8, 8, ::KeyboardManager&>                                           mKeyboardManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GuiData>>                    mGuiData;
+    ::ll::TypedStorage<8, 8, ::cohtml::View*>                                              mView;
+    ::ll::TypedStorage<8, 104, ::std::optional<::OreUI::TextInputHandler::TextInputState>> mTextInputState;
     // NOLINTEND
 
 public:
@@ -61,54 +66,70 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection) /*override*/;
+    virtual void OnSelectionChanged(::cohtml::IInputProxy*, ::cohtml::TextInput::Selection) /*override*/;
 
     virtual void OnTextChanged(
-        ::cohtml::IInputProxy* proxy,
-        char const*            addedChars,
-        uint                   addedCount,
-        char const*            removedChars,
-        uint                   removedCount,
-        uint                   index
+        ::cohtml::IInputProxy* addedChars,
+        char const*            addedCount,
+        uint                   removedChars,
+        char const*            removedCount,
+        uint                   index,
+        uint
     ) /*override*/;
 
     virtual void OnFocus(::cohtml::IInputProxy* proxy) /*override*/;
 
     virtual void OnBlur(::cohtml::IInputProxy*) /*override*/;
-
-    virtual ~TextInputHandler() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateFromInputProxy(::cohtml::IInputProxy& proxy);
+    MCAPI TextInputHandler(::Bedrock::NotNullNonOwnerPtr<::GuiData> guiData, ::KeyboardManager& keyboardManager);
 
-    MCAPI ::std::optional<::OreUI::TextInputResult>
-    calculateChange(::std::string const& currentInput, ::std::string const& newInput) const;
+    MCAPI void _handleLostFocus();
+
+    MCAPI void _sendTextChangedEvent(::OreUI::InputUtils::TextInputResult const& inputResult);
+
+    MCAPI ::std::optional<::RectangleArea> getTextInputControlArea();
 
     MCAPI ::std::string getTextInputText();
+
+    MCAPI void handleNativeTextInput(::std::string_view text);
+
+    MCAPI void imeConfirmComposition();
+
+    MCAPI void imeConfirmComposition(::std::string const& utf8Text);
+
+    MCAPI void imeEndComposition();
+
+    MCAPI void imeReplaceCompositionTextRange(::std::string const& replacement, int from, int to);
+
+    MCAPI void imeStartComposition();
+
+    MCAPI void imeUpdateCompositionText(::std::string const& utf8Text);
+
+    MCAPI void setText(::std::string const& text, ::std::optional<::TextBoxSelection> const& selection);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GuiData> guiData, ::KeyboardManager& keyboardManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection);
+    MCAPI void $OnSelectionChanged(::cohtml::IInputProxy*, ::cohtml::TextInput::Selection);
 
     MCAPI void $OnTextChanged(
-        ::cohtml::IInputProxy* proxy,
-        char const*            addedChars,
-        uint                   addedCount,
-        char const*            removedChars,
-        uint                   removedCount,
-        uint                   index
+        ::cohtml::IInputProxy* addedChars,
+        char const*            addedCount,
+        uint                   removedChars,
+        char const*            removedCount,
+        uint                   index,
+        uint
     );
 
     MCAPI void $OnFocus(::cohtml::IInputProxy* proxy);

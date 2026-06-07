@@ -34,10 +34,6 @@ public:
     virtual ::EducationEditionOffer getEducationEditionOffering() const /*override*/;
 
     virtual ::std::unique_ptr<::IContentAccessibilityProvider> createContentAccessibility() const /*override*/;
-
-    virtual bool canUseAzureNotebooks() const /*override*/;
-
-    virtual ~EduAppConfigs() /*override*/ = default;
     // NOLINTEND
 
 public:

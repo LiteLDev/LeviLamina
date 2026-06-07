@@ -28,8 +28,16 @@ public:
     ) const /*override*/;
 
     virtual ::ContentItemCollectionVersion getVersion() const /*override*/;
+    // NOLINTEND
 
-    virtual ~MutableContentItemCollection() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void forceVersion();
+
+    MCFOLD ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem>>> const& get() const;
+
+    MCAPI void set(::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem>>>&& items);
     // NOLINTEND
 
 public:

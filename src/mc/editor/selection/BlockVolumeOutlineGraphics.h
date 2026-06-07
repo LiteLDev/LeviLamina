@@ -4,15 +4,6 @@
 
 namespace Editor {
 
-class BlockVolumeOutlineGraphics {
-public:
-    // BlockVolumeOutlineGraphics inner types declare
-    // clang-format off
-    struct Face;
-    // clang-format on
-
-    // BlockVolumeOutlineGraphics inner types define
-    struct Face {};
-};
+class BlockVolumeOutlineGraphics {};
 
 } // namespace Editor

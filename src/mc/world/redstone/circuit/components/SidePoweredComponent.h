@@ -35,7 +35,7 @@ public:
 
     virtual bool canConsumerPower() const /*override*/;
 
-    virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent) /*override*/;
+    virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const*) /*override*/;
 
     virtual void removeFromAnySourceList(::BaseCircuitComponent const* component) /*override*/;
     // NOLINTEND
@@ -43,13 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SidePoweredComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void _removeSideSource(::BlockPos const& posSource);
     // NOLINTEND
 
 public:
@@ -69,7 +63,7 @@ public:
 
     MCFOLD bool $canConsumerPower() const;
 
-    MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
+    MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const*);
 
     MCAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
 

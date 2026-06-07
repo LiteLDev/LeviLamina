@@ -17,26 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStopUseOnEvent& operator=(ItemStopUseOnEvent const&);
-    ItemStopUseOnEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStopUseOnEvent(::ItemStopUseOnEvent&&);
-
-    MCAPI ItemStopUseOnEvent(::ItemStopUseOnEvent const&);
-
     MCAPI ~ItemStopUseOnEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStopUseOnEvent&&);
-
-    MCAPI void* $ctor(::ItemStopUseOnEvent const&);
     // NOLINTEND
 
 public:

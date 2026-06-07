@@ -36,20 +36,41 @@ public:
 
     virtual void zeroAllTimes() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void reserveEntity(::EntityId) /*override*/;
+#else // LL_PLAT_C
     virtual void reserveEntity(::EntityId entity) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void reserveSystems(uint64) /*override*/;
+#else // LL_PLAT_C
     virtual void reserveSystems(uint64 numSystems) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void addTime(
+        ::EntityId,
+        ::TickingSystemId,
+        ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual void addTime(
         ::EntityId                                                           entity,
         ::TickingSystemId                                                    system,
         ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>> dur
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void
+        addNonSystemTime(::EntityId, ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>) /*override*/;
+#else // LL_PLAT_C
     virtual void addNonSystemTime(
         ::EntityId                                                           entity,
         ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>> dur
     ) /*override*/;
+#endif
 
     virtual ::brstd::flat_map<
         ::EntityId,
@@ -59,8 +80,6 @@ public:
         ::std::vector<
             ::Bedrock::small_vector<::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>, 400>>>
     exportData() const /*override*/;
-
-    virtual ~SingleEntityTrackingSheet() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -14,17 +14,23 @@ public:
 
 public:
     // prevent constructor by default
-    Description(Description const&);
+    Description& operator=(Description const&);
     Description();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Description(::SharedTypes::Legacy::Spawn::Description const&);
+
     MCFOLD ::SharedTypes::Legacy::Spawn::Description& operator=(::SharedTypes::Legacy::Spawn::Description&&);
 
-    MCFOLD ::SharedTypes::Legacy::Spawn::Description& operator=(::SharedTypes::Legacy::Spawn::Description const&);
-
     MCAPI ~Description();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SharedTypes::Legacy::Spawn::Description const&);
     // NOLINTEND
 
 public:

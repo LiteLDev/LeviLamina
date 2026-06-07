@@ -26,6 +26,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Core::Path getProfileSavePath(::std::string const& runtimeId);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& DIAGNOSTICS_CAPTURES_FOLDER();

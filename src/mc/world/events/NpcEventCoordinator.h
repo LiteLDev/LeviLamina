@@ -7,14 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ActorUniqueID;
+struct INpcDialogueData;
 class NpcEventListener;
 // clang-format on
 
 class NpcEventCoordinator : public ::EventCoordinator<::NpcEventListener> {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~NpcEventCoordinator() /*override*/ = default;
+#ifdef LL_PLAT_C
+    MCAPI void sendNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
+
+    MCAPI void sendNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
+#endif
     // NOLINTEND
 
 public:

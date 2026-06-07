@@ -39,6 +39,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FocusComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FocusComponent() /*override*/;
@@ -48,10 +52,10 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree& screenEvent,
+        ::ScreenInputContext&,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     ) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
@@ -60,20 +64,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FocusComponent(::UIControl& owner);
+
     MCAPI void _captureFocusPoint();
 
-    MCAPI void _resetDirectionalOverrides();
-
     MCAPI bool checkFocusChangeOverride(::ui::CardinalDirection dir, ::std::string const& checkName) const;
+
+    MCFOLD int getDefaultFocusPrecedence() const;
+
+    MCAPI bool getFocusEnabled() const;
+
+    MCFOLD ::std::string const& getFocusIdentifier() const;
+
+    MCAPI bool getFocusMagnetEnabled() const;
+
+    MCAPI bool getFocusWrapEnabled() const;
+
+    MCAPI bool getResetOnFocusLost() const;
+
+    MCAPI bool hasFocusChangeOverride(::ui::CardinalDirection dir) const;
+
+    MCFOLD void initialize(::FocusManager& manager);
 
     MCAPI void registerNewLookupMapEntry(
         ::std::string const&                                                focusID,
         ::std::unordered_map<::ui::CardinalDirection, ::std::string> const& mapping
     );
 
+    MCFOLD void setDefaultFocusPrecedence(int precedence);
+
     MCAPI void setFocusChangeOverride(::ui::CardinalDirection dir, ::std::string const& str);
 
+    MCAPI void setFocusEnabled(bool focusEnabled);
+
     MCAPI void setFocusIdentifier(::std::string const& str);
+
+    MCAPI void setFocusMagnetEnabled(bool focusMagnetEnabled);
+
+    MCAPI void setFocusWrapEnabled(bool focusWrapEnabled);
+
+    MCAPI void setResetOnFocusLost(bool resetOnFocusLost);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
@@ -89,12 +125,8 @@ public:
 
     MCAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
-    );
+    MCAPI ::ComponentReceiveActionType
+    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
 
     MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
     // NOLINTEND

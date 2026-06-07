@@ -15,18 +15,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mPlayer;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentPlayerBreakAfterEventIntermediateStorage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

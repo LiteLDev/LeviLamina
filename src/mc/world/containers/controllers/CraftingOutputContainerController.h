@@ -30,17 +30,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~CraftingOutputContainerController() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~CraftingOutputContainerController() /*override*/;
+#endif
 
-    virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
+#ifdef LL_PLAT_S
+    virtual int getBackgroundStyle(int, bool) const /*override*/;
+#else // LL_PLAT_C
+    virtual int getBackgroundStyle(int slot, bool) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void onRecipeSelected(::Recipe const*, uint64, bool) /*override*/;
+#else // LL_PLAT_C
     virtual void onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems) /*override*/;
+#endif
 
-    virtual ::ItemInstance const& getRecipeItem(int slot) const /*override*/;
+    virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
 
     virtual void clearSelectedRecipe() /*override*/;
 
-    virtual bool _canRemove(int slot, int removeCount) const /*override*/;
+#ifdef LL_PLAT_S
+    virtual bool _canRemove(int, int) const /*override*/;
+#else // LL_PLAT_C
+    virtual bool _canRemove(int modelSlot, int removeCount) const /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -60,18 +77,24 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+    MCNAPI int $getBackgroundStyle(int slot, bool) const;
 
     MCNAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
 
-    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
+    MCNAPI ::ItemInstance const& $getRecipeItem(int) const;
 
     MCNAPI void $clearSelectedRecipe();
 
-    MCNAPI bool $_canRemove(int slot, int removeCount) const;
+    MCNAPI bool $_canRemove(int modelSlot, int removeCount) const;
 #endif
 
 

@@ -33,11 +33,11 @@ public:
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int id, int value) /*override*/;
+    virtual void setData(int, int) /*override*/;
 
     virtual void broadcastChanges() /*override*/;
 
@@ -52,6 +52,8 @@ public:
     MCAPI LoomContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
 #ifdef LL_PLAT_C
+    MCAPI void fireFruitOnTheLoomAchievementEvent();
+
     MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 #endif
     // NOLINTEND
@@ -67,11 +69,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int id, int value);
+    MCFOLD void $setData(int, int);
 
     MCFOLD void $broadcastChanges();
 

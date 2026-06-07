@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
 class GroupSizeDefinition {
 public:
     // member variables
@@ -15,4 +23,12 @@ public:
     GroupSizeDefinition& operator=(GroupSizeDefinition const&);
     GroupSizeDefinition(GroupSizeDefinition const&);
     GroupSizeDefinition();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GroupSizeDefinition>>& root
+    );
+    // NOLINTEND
 };

@@ -19,8 +19,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::mce::Color const& get(int, uchar) const /*override*/;
-
-    virtual ~SingleResolvedTint() /*override*/ = default;
     // NOLINTEND
 
 public:

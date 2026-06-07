@@ -8,7 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
-namespace ScriptModuleServerGraphics { class ScriptWater; }
+namespace ScriptModuleMinecraft { class ScriptBiomeType; }
+namespace ScriptModuleServerGraphics { class ScriptBiomeWater; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -18,8 +19,11 @@ class ScriptWaterFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerGraphics::ScriptWater>
-    getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerGraphics::ScriptBiomeWater> getHandle(
+        ::Scripting::WeakLifetimeScope&                 scope,
+        ::ServerLevel&                                  level,
+        ::ScriptModuleMinecraft::ScriptBiomeType const& biomeType
+    );
     // NOLINTEND
 };
 

@@ -7,11 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Player;
-struct ItemStartUseEvent;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -28,50 +25,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptItemStartUseAfterEvent& operator=(ScriptItemStartUseAfterEvent const&);
-    ScriptItemStartUseAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptItemStartUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
-
-    MCAPI ScriptItemStartUseAfterEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Player const&                                                                player,
-        ::ItemStartUseEvent const&                                                     itemEvent,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
-
-    MCAPI ~ScriptItemStartUseAfterEvent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Player const&                                                                player,
-        ::ItemStartUseEvent const&                                                     itemEvent,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -9,7 +9,6 @@
 // auto generated inclusion list
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/common/SubClientId.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/server/ServerPlayer.h"
@@ -18,7 +17,6 @@
 #include "mc/server/sim/LookDuration.h"
 #include "mc/server/sim/MovementIntent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ActorSwingSource.h"
 #include "mc/world/actor/player/PlayerMovementSettings.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
@@ -27,10 +25,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockSource;
 class ChunkSource;
 class ChunkViewSource;
-class Dimension;
 class EntityContext;
 class ItemStack;
 class Level;
@@ -138,8 +134,6 @@ public:
     virtual ::std::shared_ptr<::ChunkViewSource> _createChunkSource(::ChunkSource& mainChunkSource) /*override*/;
 
     virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance) /*override*/;
-
-    virtual ~SimulatedPlayer() /*override*/;
     // NOLINTEND
 
 public:
@@ -168,17 +162,21 @@ public:
     MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
     _createNavigationResult(::NavigationComponent* navigation) const;
 
-    MCFOLD ::BlockSource& _getRegion();
-
-    MCAPI bool _trySwing(::ActorSwingSource swingSource);
+    MCAPI void _updateDestroyBlock();
 
     MCAPI void _updateMovement();
 
     MCAPI void _updateRidingComponents();
 
+    MCAPI ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> getGameTestHelper() const;
+
+    MCAPI void postAiStep();
+
     MCAPI void preAiStep();
 
     MCAPI void setGameTestHelper(::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> gameTestHelper);
+
+    MCAPI void setXuid(::std::string const& xuid);
 
     MCAPI bool simulateAttack();
 
@@ -189,6 +187,8 @@ public:
     MCAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
 
     MCAPI bool simulateJump();
+
+    MCAPI void simulateLookAt(::Vec3 const& pos);
 
     MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType = sim::LookDuration::Instant);
 
@@ -203,9 +203,20 @@ public:
 
     MCAPI void simulateSetBodyRotation(float degY);
 
+    MCAPI bool simulateSetItem(::ItemStack& item, bool selectSlot, int slot);
+
     MCAPI void simulateStopDestroyingBlock();
 
+    MCAPI bool simulateUseItem(::ItemStack& item);
+
     MCAPI bool simulateUseItemInSlot(int slot);
+
+    MCAPI bool simulateUseItemInSlotOnBlock(
+        int                                   slot,
+        ::BlockPos const&                     pos,
+        ::ScriptModuleMinecraft::ScriptFacing face,
+        ::Vec3 const&                         facePos
+    );
 
     MCAPI bool simulateUseItemOnBlock(
         ::ItemStack&                          item,
@@ -218,6 +229,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::SimulatedPlayer* create(
+        ::std::string const&                                  name,
+        ::Vec3 const&                                         spawnPos,
+        ::DimensionType                                       dimensionId,
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> serverNetworkHandler,
+        ::std::string const&                                  xuid,
+        ::std::optional<::ActorUniqueID>                      idOverride
+    );
+
     MCAPI static ::SimulatedPlayer* create(
         ::std::string const&                                  name,
         ::Vec3 const&                                         spawnPos,
@@ -251,12 +271,6 @@ public:
         bool                                               enableItemStackNetManager,
         ::EntityContext&                                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -30,13 +30,11 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree& screenEvent,
+        ::ScreenInputContext&,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     ) /*override*/;
-
-    virtual ~ScrollbarBoxComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -46,12 +44,8 @@ public:
 
     MCFOLD void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
-    );
+    MCAPI ::ComponentReceiveActionType
+    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
     // NOLINTEND
 
 public:

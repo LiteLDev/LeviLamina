@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/Version.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
@@ -65,8 +66,9 @@ class ScriptWorldBeforeEvents
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                                                   mScope;
-    ::ll::TypedStorage<8, 8, ::Level*>                                                                          mLevel;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 40, ::Scripting::Version>           mServerModuleVersion;
+    ::ll::TypedStorage<8, 8, ::Level*>                        mLevel;
     ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldBeforeEvents>> mHandle;
     ::ll::TypedStorage<
         8,
@@ -296,7 +298,11 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptWorldBeforeEvents(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
 
-    MCAPI ScriptWorldBeforeEvents(::Scripting::WeakLifetimeScope scope, ::Level* level);
+    MCAPI ScriptWorldBeforeEvents(
+        ::Scripting::WeakLifetimeScope scope,
+        ::Level*                       level,
+        ::Scripting::Version           serverModuleVersion
+    );
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::SignalNameSubscriberCount> getFineGrainedSignalSubscriberStats() const;
 
@@ -317,7 +323,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
 
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Level* level);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Level* level, ::Scripting::Version serverModuleVersion);
     // NOLINTEND
 
 public:

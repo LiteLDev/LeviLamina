@@ -26,14 +26,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doWitchPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
-
-    MCAPI static void _tickWitchPreAIStepSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::WitchFlagComponent>,
-            ::ActorOwnerComponent> view
-    );
+    MCAPI static void _doWitchPreAIStepSystem(::StrictEntityContext const& actorOwnerComponent, ::ActorOwnerComponent&);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

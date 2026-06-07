@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
 class ItemStack;
+class Level;
 class Recipes;
 class ServerPlayer;
 class StrictEntityContext;
@@ -70,13 +70,11 @@ public:
         ::std::optional<::RecipeUnlockingSystem::InventoryChangedData> const& inventoryChanged
     );
 
-    MCAPI static void _useContext(
-        ::UnlockedRecipesServerComponent&              unlockedComp,
-        ::Recipes const&                               recipes,
-        ::RecipeUnlockingRequirement::UnlockingContext context,
-        ::std::vector<::std::string>&                  unlockedRecipeIds
-    );
+    MCAPI static void
+    _updateRecipeUnlocking(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
+
+    MCAPI static bool isEnabled(::Level const& level);
     // NOLINTEND
 };

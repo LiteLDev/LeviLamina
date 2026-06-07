@@ -35,6 +35,8 @@ public:
     // NOLINTBEGIN
     MCAPI ComponentRenderBatch(::ComponentRenderBatch const&);
 
+    MCAPI uint getNumInstances() const;
+
     MCAPI ~ComponentRenderBatch();
     // NOLINTEND
 

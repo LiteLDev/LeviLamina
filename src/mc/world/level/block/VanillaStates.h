@@ -14,7 +14,6 @@
 #include "mc/world/level/block/CreakingHeartState.h"
 #include "mc/world/level/block/DirtType.h"
 #include "mc/world/level/block/DoublePlantType.h"
-#include "mc/world/level/block/DripstoneThickness.h"
 #include "mc/world/level/block/EggCount.h"
 #include "mc/world/level/block/FlowerType.h"
 #include "mc/world/level/block/FrontAndTop.h"
@@ -34,6 +33,7 @@
 #include "mc/world/level/block/SandstoneType.h"
 #include "mc/world/level/block/SaplingType_DEPRECATED.h"
 #include "mc/world/level/block/SeagrassType.h"
+#include "mc/world/level/block/SpeleothemThickness.h"
 #include "mc/world/level/block/SpongeType.h"
 #include "mc/world/level/block/StalkThickness.h"
 #include "mc/world/level/block/StoneBrickType.h"
@@ -62,6 +62,10 @@ namespace VanillaStates {
 // functions
 // NOLINTBEGIN
 MCAPI ::BlockState const* getState(::HashedString const& name);
+
+MCAPI void registerStates();
+
+MCAPI void unregisterStates();
 // NOLINTEND
 
 // static variables
@@ -206,8 +210,6 @@ MCAPI ::BlockStateVariant<bool> const& DoorHingeBit();
 
 MCAPI ::BlockStateVariant<bool> const& DragDown();
 
-MCAPI ::BlockStateVariant<::DripstoneThickness> const& DripstoneThickness();
-
 MCAPI ::BlockStateVariant<bool> const& EndPortalEyeBit();
 
 MCAPI ::BlockStateVariant<bool> const& ExplodeBit();
@@ -301,6 +303,8 @@ MCAPI ::BlockStateVariant<int> const& SculkSensorPhase();
 MCAPI ::BlockStateVariant<::SeagrassType> const& SeagrassType();
 
 MCAPI ::BlockStateVariant<int> const& ShelfConnectionType();
+
+MCAPI ::BlockStateVariant<::SpeleothemThickness> const& SpeleothemThickness();
 
 MCAPI ::BlockStateVariant<int> const& Stability();
 

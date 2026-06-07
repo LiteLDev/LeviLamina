@@ -22,6 +22,7 @@
 class Actor;
 class BlockSource;
 class CompoundTag;
+class DynamicContainerTracker;
 class ItemDescriptor;
 class ItemStack;
 class Random;
@@ -45,18 +46,6 @@ public:
         ::ll::
             TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
                 mPublisher;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PublisherWrapper();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -212,7 +201,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Container(::Container const&);
+    MCAPI Container(::Container const& backingContainer);
 
     MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
@@ -229,16 +218,44 @@ public:
     MCAPI void
     _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
+    MCAPI int _getEmptySlotsCount(int start, int end) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void _initRuntimeId(::ContainerRuntimeId const& containerIdToCopy);
+#endif
+
     MCAPI void
     _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
+    MCAPI void addCloseListener(::ContainerCloseListener* listener);
+
+    MCFOLD ::SharedTypes::Legacy::ContainerType getContainerType() const;
+
+    MCFOLD ::SharedTypes::Legacy::ContainerType getGameplayContainerType() const;
+
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator) const;
+
+    MCAPI int getItemCount(::ItemDescriptor const& descriptor) const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::Bedrock::Safety::RedactableString const& getName() const;
+#endif
 
     MCAPI int getRedstoneSignalFromContainer(::BlockSource& region);
 
+    MCFOLD ::ContainerRuntimeId const& getRuntimeId() const;
+
+    MCAPI void initRuntimeId();
+
     MCAPI ::Container& operator=(::Container const&);
 
+    MCAPI void receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
+
     MCAPI void removeCloseListener(::ContainerCloseListener* listener);
+
+    MCAPI void serverInitItemStackIdsAll(::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+
+    MCFOLD void setGameplayContainerType(::SharedTypes::Legacy::ContainerType type);
 
     MCAPI void triggerTransactionChange(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
@@ -248,7 +265,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
 
-    MCAPI static ::std::function<bool(::ItemStack const&)> sameItemAndAuxComparator(::ItemDescriptor const& descriptor);
+    MCAPI static ::std::string const& getContainerTypeName(::SharedTypes::Legacy::ContainerType type);
     // NOLINTEND
 
 public:
@@ -261,7 +278,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Container const&);
+    MCAPI void* $ctor(::Container const& backingContainer);
 
     MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
@@ -320,7 +337,7 @@ public:
 
     MCAPI ::std::vector<::ItemStack const*> const $getSlots() const;
 
-    MCFOLD int $getEmptySlotsCount() const;
+    MCAPI int $getEmptySlotsCount() const;
 
     MCAPI int $getItemCount(::ItemStack const& compare) const;
 
@@ -342,7 +359,7 @@ public:
 
     MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI bool $hasCustomName() const;
+    MCFOLD bool $hasCustomName() const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag);
 

@@ -26,12 +26,6 @@ public:
     TemplateExportScreenController();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~TemplateExportScreenController() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit TemplateExportScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
@@ -52,15 +46,15 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCFOLD static bool isTemplateExportDisabled();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:

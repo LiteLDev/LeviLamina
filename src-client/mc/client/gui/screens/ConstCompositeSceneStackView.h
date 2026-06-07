@@ -19,11 +19,29 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ConstCompositeSceneStackView();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ConstCompositeSceneStackView(
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> const& mainStack,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> const& clientInstanceStack
+    );
+
     MCAPI ::std::string getTopScreenName() const;
 
     MCAPI ~ConstCompositeSceneStackView();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> const& mainStack,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> const& clientInstanceStack
+    );
     // NOLINTEND
 
 public:

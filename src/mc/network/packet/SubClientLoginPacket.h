@@ -42,6 +42,26 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SubClientLoginPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit SubClientLoginPacket(::SubClientConnectionRequest const& connectionRequest);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::SubClientConnectionRequest const& connectionRequest);
+#endif
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

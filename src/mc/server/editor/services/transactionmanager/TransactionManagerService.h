@@ -50,8 +50,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::PlayerDimensionChangeBeforeEvent const&) /*override*/;
-
     virtual ~TransactionManagerService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
@@ -110,6 +108,8 @@ public:
     virtual void clearAllTransactionData() /*override*/;
 
     virtual bool isBusy() const /*override*/;
+
+    virtual ::EventResult onEvent(::PlayerDimensionChangeBeforeEvent const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -144,8 +144,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeBeforeEvent const&);
-
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
@@ -199,6 +197,8 @@ public:
     MCNAPI void $clearAllTransactionData();
 
     MCNAPI bool $isBusy() const;
+
+    MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeBeforeEvent const&);
 
 
     // NOLINTEND

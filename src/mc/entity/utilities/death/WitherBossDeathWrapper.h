@@ -23,6 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void explode();
+    MCAPI explicit WitherBossDeathWrapper(::WitherBoss& wither);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::WitherBoss& wither);
     // NOLINTEND
 };

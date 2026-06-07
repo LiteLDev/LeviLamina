@@ -2,19 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Poi { struct RegionId; }
-// clang-format on
-
 namespace Poi {
 
 struct Region {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk11dd56;
-    ::ll::UntypedStorage<8, 64> mUnkfa4299;
+    ::ll::UntypedStorage<8, 64> mUnk126dfe;
+    ::ll::UntypedStorage<8, 80> mUnkb039e8;
     ::ll::UntypedStorage<8, 8>  mUnkd30fd1;
     ::ll::UntypedStorage<4, 24> mUnkcfe556;
     // NOLINTEND

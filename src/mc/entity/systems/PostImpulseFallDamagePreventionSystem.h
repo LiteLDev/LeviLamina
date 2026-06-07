@@ -11,11 +11,11 @@
 // clang-format off
 class StrictEntityContext;
 struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
 struct AutoClimbTravelFlagComponent;
 struct FallDistanceComponent;
 struct GlidingTravelFlagComponent;
 struct HasTeleportedFlagComponent;
-struct InterpolateMovementNeededComponent;
 struct LavaTravelFlagComponent;
 struct LevitateTravelFlagComponent;
 struct OnGroundFlagComponent;
@@ -23,6 +23,7 @@ struct PassengerComponent;
 struct PlayerComponent;
 struct PostImpulseFallDamagePreventionComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 struct WasInWaterFlagComponent;
 // clang-format on
 
@@ -30,22 +31,24 @@ namespace PostImpulseFallDamagePreventionSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void _tickPostImpulseFallDamagePreventionSystem(
-    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::FallDistanceComponent>>,
-    ::StrictEntityContext const&                                 entity,
-    ::StateVectorComponent const&                                svc,
-    ::PostImpulseFallDamagePreventionComponent&                  postImpulseFallDamagePreventionComponent,
-    ::Optional<::PlayerComponent const>                          playerComponent,
-    ::Optional<::WasInWaterFlagComponent const>                  wasInWater,
-    ::Optional<::OnGroundFlagComponent const>                    onGround,
-    ::Optional<::LevitateTravelFlagComponent const>              isLevitating,
-    ::Optional<::AutoClimbTravelFlagComponent const>             isClimbing,
-    ::Optional<::GlidingTravelFlagComponent const>               isGliding,
-    ::Optional<::LavaTravelFlagComponent const>                  isInLava,
-    ::Optional<::PassengerComponent const>                       isPassenger,
-    ::Optional<::HasTeleportedFlagComponent const>               didTeleport,
-    ::Optional<::ActorDataFlagComponent const>                   actorDataFlag,
-    ::EntityModifier<::PostImpulseFallDamagePreventionComponent> modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::FallDistanceComponent>> entity,
+    ::StrictEntityContext const&                                                              svc,
+    ::StateVectorComponent const&                    postImpulseFallDamagePreventionComponent,
+    ::PostImpulseFallDamagePreventionComponent&      playerComponent,
+    ::Optional<::PlayerComponent const>              wasInWater,
+    ::Optional<::WasInWaterFlagComponent const>      onGround,
+    ::Optional<::OnGroundFlagComponent const>        isLevitating,
+    ::Optional<::LevitateTravelFlagComponent const>  isClimbing,
+    ::Optional<::AutoClimbTravelFlagComponent const> isGliding,
+    ::Optional<::GlidingTravelFlagComponent const>   isInLava,
+    ::Optional<::LavaTravelFlagComponent const>      isPassenger,
+    ::Optional<::PassengerComponent const>           didTeleport,
+    ::Optional<::HasTeleportedFlagComponent const>   actorDataFlag,
+    ::Optional<::ActorDataFlagComponent const>       modifier,
+    ::EntityModifier<::PostImpulseFallDamagePreventionComponent>
 );
+
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace PostImpulseFallDamagePreventionSystem

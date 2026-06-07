@@ -16,12 +16,6 @@ public:
     CalibratedSculkSensorBlockActor();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CalibratedSculkSensorBlockActor() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CalibratedSculkSensorBlockActor(::BlockPos const& pos);

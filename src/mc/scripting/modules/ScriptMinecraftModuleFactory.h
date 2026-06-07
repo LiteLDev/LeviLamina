@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerLevel;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
@@ -39,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptMinecraftModuleFactory(::ServerLevel* level);
+
     MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding
@@ -50,6 +53,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string getModuleName(::Scripting::Version version);
 
+    MCNAPI static ::mce::UUID getModuleUUID();
+
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
 
     MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
@@ -58,7 +63,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& LegacyModuleName();
+
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID const& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ServerLevel* level);
     // NOLINTEND
 
 public:

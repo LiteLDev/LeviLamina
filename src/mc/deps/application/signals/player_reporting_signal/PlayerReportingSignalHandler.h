@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class SignalReceiver; }
 namespace Json { class Value; }
 namespace PlayerReportingSignal { class GetReportJson; }
 namespace PlayerReportingSignal { class ResetAll; }
@@ -39,17 +40,27 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI PlayerReportingSignalHandler(::Bedrock::SignalReceiver* listener, bool isTestHandler);
+
     MCNAPI ::Json::Value _getReportDataJson();
 
     MCNAPI void _getReportJsonHandler(::PlayerReportingSignal::GetReportJson const& signal);
 
-    MCNAPI void _resetAll(::PlayerReportingSignal::ResetAll const& signal);
+    MCNAPI void _resetAll(::PlayerReportingSignal::ResetAll const&);
 
     MCNAPI void _sendReport(::PlayerReportingSignal::SendReport const& signal);
 
     MCNAPI void _setDataHandler(::PlayerReportingSignal::SetData const& signal);
 
     MCNAPI void _setJsonHandler(::PlayerReportingSignal::SetJson const& signal);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Bedrock::SignalReceiver* listener, bool isTestHandler);
 #endif
     // NOLINTEND
 

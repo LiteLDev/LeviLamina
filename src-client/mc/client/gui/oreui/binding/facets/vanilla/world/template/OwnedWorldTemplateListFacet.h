@@ -37,8 +37,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~OwnedWorldTemplateListFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -78,6 +78,8 @@ public:
 
     MCAPI void _registerEventHandlers();
 
+    MCAPI void _registerExpandableEventHandlers();
+
     MCAPI void _registerSubControllers(
         ::std::shared_ptr<::PlayScreenModel> model,
         ::IResourcePackRepository&           resourcePackRepository,
@@ -87,6 +89,10 @@ public:
     );
 
     MCAPI void _registerTagEventHandlers();
+
+    MCAPI void _showDownloadError();
+
+    MCAPI ::std::string const& getProductId() const;
     // NOLINTEND
 
 public:

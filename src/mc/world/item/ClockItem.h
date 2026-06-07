@@ -22,14 +22,32 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ClockItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool const) const /*override*/;
+    // NOLINTEND
 
-    virtual ~ClockItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ClockItem(::std::string const& name, int id);
+
+#ifdef LL_PLAT_C
+    MCFOLD void setTextureDimensions(ushort texSizeW, ushort texSizeH);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

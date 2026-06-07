@@ -132,13 +132,13 @@ public:
     _getVolume() const;
 
     MCNAPI void _handleVolumeChangeEvent(
-        ::Editor::RelativeVolumeListBlockVolume const&,
-        ::Editor::RelativeVolumeListBlockVolumeAction action,
+        ::Editor::RelativeVolumeListBlockVolume const& action,
+        ::Editor::RelativeVolumeListBlockVolumeAction  variantData,
         ::std::variant<
             ::Vec3 const,
             ::std::vector<::Vec3> const,
             ::Editor::RelativeVolumeListBlockVolume const,
-            ::SimpleBlockVolume const> const& variantData
+            ::SimpleBlockVolume const> const&
     );
 
     MCNAPI ::Vec3 _resolveSize();

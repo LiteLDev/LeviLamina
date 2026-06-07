@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class IBlockWorldGenAPI;
 // clang-format on
 
 class PartiallyExposedBlobFeature : public ::IFeature {
@@ -25,8 +26,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
+    // NOLINTEND
 
-    virtual ~PartiallyExposedBlobFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool canBePlaced(::IBlockWorldGenAPI const& target, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

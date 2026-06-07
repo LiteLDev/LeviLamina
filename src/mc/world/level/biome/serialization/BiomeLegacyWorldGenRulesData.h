@@ -19,20 +19,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BiomeLegacyWorldGenRulesData();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeLegacyWorldGenRulesData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

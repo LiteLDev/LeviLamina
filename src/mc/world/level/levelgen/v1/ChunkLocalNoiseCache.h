@@ -41,12 +41,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChunkLocalNoiseCache();
+
+    MCAPI ChunkLocalNoiseCache(::DividedPos2d<4> worldQuartPos, int cellCountXZ);
+
+    MCAPI ::ChunkLocalNoiseCache::CacheEntry const& getCacheEntry(::DividedPos2d<4> const& quartPos) const;
+
+    MCAPI void setCacheEntry(::DividedPos2d<4> const& quartPos, ::ChunkLocalNoiseCache::CacheEntry const& cacheEntry);
+
     MCAPI ~ChunkLocalNoiseCache();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::DividedPos2d<4> worldQuartPos, int cellCountXZ);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

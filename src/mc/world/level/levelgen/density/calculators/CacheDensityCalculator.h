@@ -36,6 +36,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                            mCalculatorMutex;
     ::ll::TypedStorage<2, 2, ushort>                                                         mInput;
     ::ll::TypedStorage<8, 64, ::std::optional<::CacheDensityCalculator::CachedVolume const>> mCachedVolume;
     // NOLINTEND

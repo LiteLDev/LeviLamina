@@ -19,20 +19,27 @@ class ScriptPlayerIterator : public ::ScriptModuleMinecraft::ScriptVectorIterato
                                  ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> {
 public:
     // prevent constructor by default
-    ScriptPlayerIterator& operator=(ScriptPlayerIterator const&);
-    ScriptPlayerIterator(ScriptPlayerIterator const&);
     ScriptPlayerIterator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerIterator& operator=(::ScriptModuleMinecraft::ScriptPlayerIterator&&);
+    MCAPI explicit ScriptPlayerIterator(
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>&& scriptPlayers
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>&& scriptPlayers);
     // NOLINTEND
 };
 

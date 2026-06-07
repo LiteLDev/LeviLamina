@@ -5,11 +5,12 @@
 namespace Safety {
 
 enum class TextFilteringEvent : int {
-    FloodingDetectedSqueltchRequired = 0,
-    FloodingDetectedKickRequired     = 1,
-    TextProcessorOffline             = 2,
-    TextProcessorServiceUnreachable  = 3,
-    DisabledByPlayer                 = 4,
+    Muted                            = 0,
+    FloodingDetectedSuppressRequired = 1,
+    FloodingDetectedKickRequired     = 2,
+    TextProcessorOffline             = 3,
+    TextProcessorServiceUnreachable  = 4,
+    DisabledByPlayer                 = 5,
 };
 
 }

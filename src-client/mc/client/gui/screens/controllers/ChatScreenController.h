@@ -89,8 +89,6 @@ public:
     MCAPI
     ChatScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, bool openWithCommand, bool isDevConsole);
 
-    MCAPI void _beginNewCommand();
-
     MCAPI void _buildHostButtons();
 
     MCAPI void _getBottomButtonFocusOverrideDown(::std::string& focusOverride);
@@ -108,13 +106,11 @@ public:
 
     MCAPI void _handleChatMessage(::std::string const& message, ::std::string const& ttsMessage);
 
-    MCAPI void _handleMenuCancel();
-
     MCAPI void _handleSelectSentMessage(::ChatScreenController::SelectionDirection direction);
 
-    MCAPI void _initScreenControllerProxy();
+    MCAPI bool _hostOptionNavigation();
 
-    MCAPI void _pasteClipboardInChat();
+    MCAPI void _initScreenControllerProxy();
 
     MCAPI void _refreshChatMessages();
 
@@ -141,6 +137,12 @@ public:
     MCAPI void _teleportWhereHelper();
 
     MCAPI void _teleportWhoHelper();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const* const& DEV_CONSOLE_SCREEN_NAME();
     // NOLINTEND
 
 public:

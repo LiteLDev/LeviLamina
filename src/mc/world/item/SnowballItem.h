@@ -47,8 +47,6 @@ public:
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
-
-    virtual ~SnowballItem() /*override*/ = default;
     // NOLINTEND
 
 public:

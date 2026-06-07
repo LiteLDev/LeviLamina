@@ -10,29 +10,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ProtectedBlock(ProtectedBlock const&);
-    ProtectedBlock();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&&);
-
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock const&);
-
-    MCAPI ~ProtectedBlock();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_20::JigsawStructure::Processors

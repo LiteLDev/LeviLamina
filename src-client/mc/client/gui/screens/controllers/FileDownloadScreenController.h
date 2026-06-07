@@ -87,6 +87,8 @@ public:
         ::std::function<void(bool)>              callback
     );
 
+    MCAPI bool _canCancelDownload() const;
+
     MCAPI void _displayDownloadErrorPopup(::DownloadError downloadError);
 
     MCAPI void _registerBindings();

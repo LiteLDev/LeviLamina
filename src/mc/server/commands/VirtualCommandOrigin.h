@@ -87,8 +87,6 @@ public:
     virtual ::CompoundTag serialize() const /*override*/;
 
     virtual bool isValid() const /*override*/;
-
-    virtual ~VirtualCommandOrigin() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -114,6 +112,8 @@ public:
         ::CommandPositionFloat const&      commandPosition,
         int                                version
     );
+
+    MCFOLD ::CommandOrigin* getOrigin() const;
     // NOLINTEND
 
 public:
@@ -160,9 +160,9 @@ public:
 
     MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCFOLD ::Level* $getLevel() const;
+    MCAPI ::Level* $getLevel() const;
 
-    MCFOLD ::Dimension* $getDimension() const;
+    MCAPI ::Dimension* $getDimension() const;
 
     MCAPI ::Actor* $getEntity() const;
 

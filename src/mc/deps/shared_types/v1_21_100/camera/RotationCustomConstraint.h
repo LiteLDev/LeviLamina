@@ -15,12 +15,6 @@ namespace SharedTypes::v1_21_100 {
 
 class RotationCustomConstraint : public ::cereal::ConstraintHandle<::SharedTypes::v1_21_100::RotationCustomConstraint> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RotationCustomConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;

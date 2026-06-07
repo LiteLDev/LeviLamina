@@ -24,14 +24,36 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CachedScenes();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CachedScenes(bool lowMemoryDevice);
+
     MCAPI void cacheVisualTree(
         ::std::unique_ptr<::VisualTree>       screen,
         ::std::shared_ptr<::UIControlFactory> factory,
         ::std::unique_ptr<::LayoutManager>    layoutManager
     );
 
+    MCAPI void clearCache();
+
     MCAPI ::std::unique_ptr<::CachedScene> getCachedScene(::Json::Value const& info);
+
+    MCAPI ~CachedScenes();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool lowMemoryDevice);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

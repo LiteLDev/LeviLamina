@@ -25,9 +25,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsStoriesSessionsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesSessionsFacet() /*override*/ = default;
+    virtual ~RealmsStoriesSessionsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -35,6 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsStoriesSessionsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+
     MCAPI ::Realms::Stories::FetchStatus _getFetchSessionsState() const;
 
     MCAPI void _regenerateView();
@@ -44,6 +50,18 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

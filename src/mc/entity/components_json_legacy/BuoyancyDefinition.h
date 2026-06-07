@@ -33,6 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BuoyancyDefinition();
+
     MCAPI void _addLiquidBlockDescriptor(::BlockDescriptor const& liquidBlockDescriptor);
 
     MCAPI ::Json::Value _serialize() const;
@@ -42,8 +44,6 @@ public:
     MCAPI void setMovementType(::std::string const& movementType);
 
     MCAPI void uninitialize(::EntityContext& entity, ::BuoyancyComponent&) const;
-
-    MCAPI ~BuoyancyDefinition();
     // NOLINTEND
 
 public:
@@ -55,8 +55,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

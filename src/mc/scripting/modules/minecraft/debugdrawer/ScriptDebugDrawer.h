@@ -11,8 +11,8 @@
 // clang-format off
 class ServerLevel;
 namespace ScriptModuleDebugUtilities { class ScriptDebugShape; }
-namespace ScriptModuleDebugUtilities { struct ScriptDebugDrawerDataComponent; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
+namespace ScriptModuleMinecraft { struct ScriptPrimitiveShapesDataComponent; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -26,9 +26,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                               mScope;
-    ::ll::TypedStorage<8, 8, ::ServerLevel&>                                                mLevel;
-    ::ll::TypedStorage<8, 8, ::ScriptModuleDebugUtilities::ScriptDebugDrawerDataComponent*> mDataComponent;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                              mScope;
+    ::ll::TypedStorage<8, 8, ::ServerLevel&>                                               mLevel;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptPrimitiveShapesDataComponent*> mDataComponent;
     // NOLINTEND
 
 public:
@@ -48,6 +48,8 @@ public:
     MCAPI void _removeAll();
 
     MCAPI void _removeShape(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape> shape);
+
+    MCAPI ~ScriptDebugDrawer();
     // NOLINTEND
 
 public:
@@ -57,6 +59,12 @@ public:
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugDrawer>
     getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

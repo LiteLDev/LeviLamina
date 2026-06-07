@@ -11,6 +11,7 @@ class TaskGroup;
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 namespace Bedrock::Services { struct AzureGetTokenHttpResponse; }
+namespace Bedrock::Services { struct AzureIdentityConfig; }
 namespace Bedrock::Services { struct ClientAssertion; }
 // clang-format on
 
@@ -47,6 +48,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
+    MCNAPI AzureGetTokenHttpCall(
+        ::Bedrock::Services::AzureIdentityConfig const& config,
+        ::Bedrock::Services::ClientAssertion            clientAssertionAuth
+    );
+
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Services::AzureGetTokenHttpResponse> send(::TaskGroup& taskGroup);
 #endif
     // NOLINTEND
@@ -63,6 +69,17 @@ public:
     );
 
     MCNAPI static ::Bedrock::Services::AzureGetTokenHttpResponse _parseResponse(::Bedrock::Http::Response response);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(
+        ::Bedrock::Services::AzureIdentityConfig const& config,
+        ::Bedrock::Services::ClientAssertion            clientAssertionAuth
+    );
 #endif
     // NOLINTEND
 

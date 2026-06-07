@@ -27,6 +27,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk152713;
+    ::ll::UntypedStorage<8, 64> mUnkb7d9d3;
     // NOLINTEND
 
 public:
@@ -84,16 +85,14 @@ public:
     virtual void _initializeInternal() /*override*/;
 
     virtual ::Core::Result _writeOperation(
-        ::Core::PathView                                fullPath,
-        ::Core::Result&&                                result,
-        ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
-        uint64                                          numBytesWritten
+        ::Core::PathView,
+        ::Core::Result&&,
+        ::std::function<void(::Core::FileStorageArea*)>,
+        uint64
     ) /*override*/;
 
     virtual ::std::unique_ptr<::Core::FileImpl>
     _createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64);
-
-    virtual ~MemoryFileSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

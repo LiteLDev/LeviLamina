@@ -20,11 +20,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FireflyBushClusterFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FireflyBushClusterFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit FireflyBushClusterFeature(bool needsAdjacentWater);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool needsAdjacentWater);
     // NOLINTEND
 
 public:

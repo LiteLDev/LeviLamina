@@ -14,12 +14,10 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Player;
 namespace BlockEvents { class BlockPlaceEvent; }
-namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class DoublePlantBaseBlock : public ::FoliageBlock {
@@ -30,19 +28,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DoublePlantBaseBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const /*override*/;
 
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     virtual ::AABB getCollisionShape(
         ::Block const&,
@@ -59,26 +59,28 @@ public:
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
         /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual ::Block const& _keepRelevantStateForDropping(::Block const& block) const;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~DoublePlantBaseBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DoublePlantBaseBlock(::std::string const& nameId, int id);
+
     MCAPI void _preventCreativeDropFromBottomPart(::Player const& player, ::BlockPos const& bottomHalfPos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -88,13 +90,11 @@ public:
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const;
 
     MCFOLD void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
@@ -109,15 +109,18 @@ public:
 
     MCFOLD bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
     MCAPI ::Block const& $_keepRelevantStateForDropping(::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

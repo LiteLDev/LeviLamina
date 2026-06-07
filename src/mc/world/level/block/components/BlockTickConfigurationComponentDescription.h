@@ -26,8 +26,6 @@ public:
     virtual ::std::string const& getName() const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockTickConfigurationComponentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:

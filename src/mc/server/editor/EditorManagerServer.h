@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/EditorManager.h"
-#include "mc/server/editor/serviceproviders/EditorManagerServerServiceProvider.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
@@ -23,7 +22,6 @@ class Player;
 class Scheduler;
 class ServerInstance;
 struct ScriptingWorldInitializeEvent;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class FilePathManager; }
 namespace Editor { class IEditorPlayer; }
 namespace Editor { struct EditorInitParams; }
@@ -35,7 +33,6 @@ namespace Scripting { struct ContextId; }
 namespace Editor {
 
 class EditorManagerServer : public ::Editor::EditorManager,
-                            public ::Editor::Services::EditorManagerServerServiceProvider,
                             public ::EventListenerDispatcher<::LevelEventListener>,
                             public ::ServerInstanceEventListener {
 public:
@@ -45,8 +42,6 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk2bb08a;
     ::ll::UntypedStorage<8, 8>  mUnkf4abda;
     ::ll::UntypedStorage<8, 24> mUnk62d704;
-    ::ll::UntypedStorage<8, 48> mUnkc95cac;
-    ::ll::UntypedStorage<8, 48> mUnk86a141;
     ::ll::UntypedStorage<8, 8>  mUnke15a95;
     // NOLINTEND
 
@@ -59,10 +54,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
-
-    virtual ::EventResult onLevelTick(::Level&) /*override*/;
-
     virtual ~EditorManagerServer() /*override*/;
 
     virtual bool isClientSide() const /*override*/;
@@ -72,6 +63,10 @@ public:
     virtual ::EventResult onServerLevelInitialized(::ServerInstance& instance, ::Level& level) /*override*/;
 
     virtual ::EventResult onStartLeaveGame(::ServerInstance& instance) /*override*/;
+
+    virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
+
+    virtual ::EventResult onLevelTick(::Level&) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() /*override*/;
 
@@ -84,12 +79,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     ) /*override*/;
-
-    virtual ::Bedrock::PubSub::Subscription
-    registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func) /*override*/;
-
-    virtual ::Bedrock::PubSub::Subscription
-    registerLevelTickSubscriber(::std::function<void(::Editor::EditorManagerServer&)> func) /*override*/;
     // NOLINTEND
 
 public:
@@ -125,10 +114,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
-
-    MCNAPI ::EventResult $onLevelTick(::Level&);
-
     MCNAPI bool $isClientSide() const;
 
     MCNAPI ::std::unique_ptr<::Editor::IEditorPlayer> $createPlayer(::Player& player);
@@ -136,6 +121,10 @@ public:
     MCNAPI ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
 
     MCNAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
+
+    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
+
+    MCNAPI ::EventResult $onLevelTick(::Level&);
 
     MCNAPI ::Scripting::Result_deprecated<void> $scriptingTeardown();
 
@@ -148,12 +137,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     );
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func);
-
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $registerLevelTickSubscriber(::std::function<void(::Editor::EditorManagerServer&)> func);
-
 
     // NOLINTEND
 
@@ -163,8 +146,6 @@ public:
     MCNAPI static void** $vftableForIEditorManager();
 
     MCNAPI static void** $vftableForEditorServiceList();
-
-    MCNAPI static void** $vftableForEditorManagerServerServiceProvider();
 
     MCNAPI static void** $vftableForEditorManagerServiceProvider();
 

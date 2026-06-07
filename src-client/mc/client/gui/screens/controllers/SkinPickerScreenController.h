@@ -75,17 +75,11 @@ public:
 
     MCAPI ::ui::ViewRequest _equipPreviewedSkin();
 
-    MCAPI bool _getAcceptButtonEnabled() const;
-
     MCAPI ::std::string _getSkinName(::SkinHandle const& handle) const;
 
     MCAPI ::std::string _getSkinPackName(int index) const;
 
     MCAPI bool _isCustomSkin(::SkinHandle const& skin) const;
-
-    MCAPI bool _isEquipablePreviewHandle() const;
-
-    MCAPI bool _isLimitedUsagePreviewHandle() const;
 
     MCAPI void _pickCustomSkin();
 

@@ -53,20 +53,6 @@ public:
     ) /*override*/;
 
     virtual bool areBossEventSubscribersReady() const /*override*/;
-
-    virtual ~BossEventSubscriptionManagerImpl() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BossEventSubscriptionManagerImpl();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

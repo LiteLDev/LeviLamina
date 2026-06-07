@@ -51,18 +51,6 @@ public:
             ::Settings::BannerComponent>*>
         mRebindAction;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~InputBindingGroup();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Settings::InputControlsSettingsHelper

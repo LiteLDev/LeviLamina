@@ -24,21 +24,14 @@ public:
 
 public:
     // prevent constructor by default
+    PlanterItemComponentLegacyFactoryData& operator=(PlanterItemComponentLegacyFactoryData const&);
     PlanterItemComponentLegacyFactoryData(PlanterItemComponentLegacyFactoryData const&);
     PlanterItemComponentLegacyFactoryData();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~PlanterItemComponentLegacyFactoryData() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData&&);
-
-    MCAPI ::PlanterItemComponentLegacyFactoryData& operator=(::PlanterItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:
@@ -49,12 +42,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

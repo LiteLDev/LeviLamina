@@ -35,6 +35,7 @@ namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
+namespace ScriptModuleMinecraft { struct ScriptPartyInfo; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSoundOptions; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
@@ -106,8 +107,6 @@ public:
     virtual bool isValid() const /*override*/;
 
     virtual ::ScoreboardId const& _getScoreboardId(::Scoreboard const& scoreboard) const /*override*/;
-
-    virtual ~ScriptPlayer() /*override*/;
     // NOLINTEND
 
 public:
@@ -121,8 +120,6 @@ public:
         ::ScriptModuleMinecraft::ScriptActorData const& playerData,
         ::Scripting::WeakLifetimeScope const&           scope
     );
-
-    MCAPI uint _calculateTotalXp(::Player const& player) const;
 
     MCAPI ::Scripting::Result_deprecated<void> _playOrQueueMusic(
         ::Player&                                                    player,
@@ -154,6 +151,18 @@ public:
     MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCamera>>
     getCamera();
 
+    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getChatDisplayName() const;
+
+    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getChatMessagePrefix() const;
+
+    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getChatNamePrefix() const;
+
+    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getChatNameSuffix() const;
+
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptClientSystemInfo>>
     getClientSystemInfo();
@@ -168,11 +177,7 @@ public:
 
     MCAPI ::Scripting::Result<::GraphicsMode, ::ScriptModuleMinecraft::ScriptInvalidActorError> getGraphicsMode() const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptInputInfo> getInputInfo() const;
-
     MCAPI ::Scripting::Result_deprecated<int> getItemCooldownLeft(::std::string const& type) const;
-
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLocatorBar> getLocatorBar();
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
 
@@ -180,8 +185,10 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScreenDisplay>>
     getOrCreateScreenDisplay();
 
-    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
-    getPartyId() const;
+    MCAPI ::Scripting::Result<
+        ::std::optional<::ScriptModuleMinecraft::ScriptPartyInfo>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getPartyInfo() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getPlayerLevel() const;
 
@@ -244,6 +251,15 @@ public:
         ) const;
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setChatMessagePrefix(::std::optional<::std::string> const& prefix);
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setChatNamePrefix(::std::optional<::std::string> const& prefix);
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setChatNameSuffix(::std::optional<::std::string> const& suffix);
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setCommandPermissionLevel(::CommandPermissionLevel commandPermissionLevel);
 
     MCAPI ::Scripting::Result<
@@ -288,15 +304,16 @@ public:
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     stopSound(::std::string const& soundID);
 
-#ifdef LL_PLAT_C
     MCAPI ::Player* tryGetPlayer() const;
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>
+    getHandle(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);
@@ -311,12 +328,6 @@ public:
 
     MCAPI void*
     $ctor(::ScriptModuleMinecraft::ScriptActorData const& playerData, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

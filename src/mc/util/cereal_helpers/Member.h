@@ -44,6 +44,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI Member(::std::string_view name, ::std::vector<::std::string> enumValues, bool required);
+
+    MCNAPI Member(
+        ::std::string_view            name,
+        ::CerealHelpers::Member::Type type,
+        bool                          required,
+        ::std::optional<float>        min,
+        ::std::optional<float>        max
+    );
+
     MCNAPI bool check(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
@@ -55,14 +65,20 @@ public:
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
     ) const;
-
-    MCNAPI ~Member();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::std::string_view name, ::std::vector<::std::string> enumValues, bool required);
+
+    MCNAPI void* $ctor(
+        ::std::string_view            name,
+        ::CerealHelpers::Member::Type type,
+        bool                          required,
+        ::std::optional<float>        min,
+        ::std::optional<float>        max
+    );
     // NOLINTEND
 };
 

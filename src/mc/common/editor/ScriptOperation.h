@@ -33,11 +33,9 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getName() /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection&) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
-
-    virtual ~ScriptOperation() /*override*/ = default;
+    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection&) /*override*/;
     // NOLINTEND
 
 public:
@@ -59,9 +57,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_undo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result_deprecated<void> $_undo(::Editor::ServiceProviderCollection&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection& services);
+    MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection&);
 
 
     // NOLINTEND

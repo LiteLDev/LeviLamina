@@ -32,19 +32,12 @@ public:
         // prevent constructor by default
         ItemTypeList& operator=(ItemTypeList const&);
         ItemTypeList(ItemTypeList const&);
+        ItemTypeList();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ItemTypeList();
-
         MCNAPI ~ItemTypeList();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -110,6 +103,8 @@ public:
 
     MCNAPI ::Json::Value blocksToJson() const;
 
+    MCNAPI ::Json::Value getFileJson(::std::string const& filePath, ::std::string const& fileContents) const;
+
     MCNAPI ::Json::Value getFilepathJson(::std::string const& filePath) const;
 
     MCNAPI ::Json::Value getTutorialJson(::std::string const& tutorialPath) const;
@@ -117,6 +112,8 @@ public:
     MCNAPI ::Json::Value itemsToJson() const;
 
     MCNAPI ::Json::Value mobsToJson() const;
+
+    MCNAPI ~GameContext();
     // NOLINTEND
 
 public:
@@ -134,6 +131,12 @@ public:
         ::CodeBuilder::GameContext::ItemTypeList                          items,
         ::std::function<::ILevel*()>                                      levelGetter
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

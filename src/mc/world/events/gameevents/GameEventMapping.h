@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/events/gameevents/game_event_config/GameEventType.h"
+
 // auto generated forward declare list
 // clang-format off
 class GameEvent;
@@ -14,6 +17,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::GameEvent const* creatorNameToEvent(::std::string const& name);
+
+    MCAPI static ::GameEvent const& typeToEvent(::GameEventConfig::GameEventType);
     // NOLINTEND
 
 public:

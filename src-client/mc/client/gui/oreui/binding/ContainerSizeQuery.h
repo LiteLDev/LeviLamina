@@ -5,11 +5,12 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/QueryBase.h"
 #include "mc/client/gui/oreui/binding/properties/Property.h"
-#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/containers/ContainerEnumName.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace GameplayUI { struct GameplayUIContext; }
 namespace OreUI { class ClientDependencies; }
 namespace OreUI { class GameDependencies; }
 // clang-format on
@@ -20,8 +21,9 @@ class ContainerSizeQuery : public ::OreUI::QueryBase<::OreUI::ContainerSizeQuery
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mSubscription;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>         mSize;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mSize;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName>                                             mContainerName;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 
 public:
@@ -31,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerSizeQuery() /*override*/ = default;
+    virtual void update(double time) /*override*/;
     // NOLINTEND
 
 public:
@@ -40,7 +42,7 @@ public:
     MCAPI ContainerSizeQuery(
         ::OreUI::GameDependencies const&   game,
         ::OreUI::ClientDependencies const& client,
-        ::ContainerEnumName                container
+        ::ContainerEnumName                containerName
     );
     // NOLINTEND
 
@@ -50,8 +52,14 @@ public:
     MCAPI void* $ctor(
         ::OreUI::GameDependencies const&   game,
         ::OreUI::ClientDependencies const& client,
-        ::ContainerEnumName                container
+        ::ContainerEnumName                containerName
     );
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $update(double time);
     // NOLINTEND
 
 public:

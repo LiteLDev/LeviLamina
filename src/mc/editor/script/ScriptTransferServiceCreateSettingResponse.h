@@ -24,13 +24,6 @@ public:
     ScriptTransferServiceCreateSettingResponse();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptTransferServiceCreateSettingResponse&
-    operator=(::Editor::ScriptModule::ScriptTransferServiceCreateSettingResponse&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();

@@ -9,6 +9,7 @@
 // clang-format off
 class SemVersion;
 namespace Puv { class Logger; }
+namespace Puv { class VersionRange; }
 namespace cereal { class BasicSerializerContext; }
 // clang-format on
 
@@ -18,6 +19,8 @@ namespace Puv {
 MCNAPI ::Puv::Logger makeLogger(::cereal::BasicSerializerContext const& log);
 
 MCNAPI ::std::optional<::SemVersion> pickJsonFormatVersion(::std::string_view input);
+
+MCNAPI ::Puv::VersionRange sanitizeRange(::Puv::VersionRange const& range, ::SemVersion const& currentGameSemVersion);
 
 MCNAPI ::SemVersion::MatchType versionFromJson(
     ::rapidjson::

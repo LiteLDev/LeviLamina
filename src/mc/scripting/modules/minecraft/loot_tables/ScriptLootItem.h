@@ -10,7 +10,6 @@
 // clang-format off
 class LootItem;
 class LootPoolEntry;
-namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptLootItemFunction; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -40,8 +39,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootPoolEntry const& _getEntry() const /*override*/;
-
-    virtual ~ScriptLootItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,9 +46,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemFunction>>
     getFunctions();
-
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
-    getName() const;
     // NOLINTEND
 
 public:

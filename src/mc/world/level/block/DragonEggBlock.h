@@ -11,7 +11,6 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Player;
 class Random;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -19,6 +18,10 @@ namespace mce { class Color; }
 // clang-format on
 
 class DragonEggBlock : public ::FallingBlock {
+public:
+    // prevent constructor by default
+    DragonEggBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -28,16 +31,14 @@ public:
 
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~DragonEggBlock() /*override*/ = default;
+    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DragonEggBlock(::std::string const& nameId, int id);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -45,6 +46,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _attemptTeleport(::BlockSource& region, ::Random& random, ::BlockPos const& pos);
+
+    MCAPI static void _teleport(::BlockSource& region, ::BlockPos const& fromPos, ::BlockPos const& toPos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -56,9 +65,7 @@ public:
 
     MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
 
 
     // NOLINTEND

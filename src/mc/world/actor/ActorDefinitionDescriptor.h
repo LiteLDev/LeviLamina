@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/small_vector_base.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/entity/factory/DefinitionInstanceGroup.h"
 #include "mc/world/actor/ActorAliasDescription.h"
@@ -21,22 +22,56 @@ class Actor;
 class ActorDefinitionEvent;
 class ActorDefinitionTrigger;
 struct ActorDefinitionAttribute;
-struct Description;
+struct ActorDefinitionEventStackEntry;
+struct AmphibiousMoveControlDescription;
+struct AttackDescription;
+struct BehaviorTreeDescription;
+struct BreakBlocksDescription;
+struct BreakDoorAnnotationDescription;
+struct BucketableDescription;
+struct CommandBlockDescription;
+struct ContainerDescription;
+struct DwellerDescription;
+struct DynamicJumpControlDescription;
+struct EconomyTradeableDescription;
+struct GenericMoveControlDescription;
+struct GlideMoveControlDescription;
+struct HideDescription;
+struct IllagerBeastBlockedDescription;
+struct JumpControlDescription;
 struct LegacyGoalDefinition;
+struct ManagedWanderingTraderDescription;
+struct MobEffectChangeDescription;
+struct MoveControlBasicDescription;
+struct MoveControlDolphinDescription;
+struct MoveControlFlyDescription;
+struct MoveControlHoverDescription;
+struct MoveControlSkipDescription;
+struct MoveControlSwayDescription;
+struct NavigationClimbDescription;
+struct NavigationFloatDescription;
+struct NavigationFlyDescription;
+struct NavigationGenericDescription;
+struct NavigationHoverDescription;
+struct NavigationSwimDescription;
+struct NavigationWalkDescription;
+struct OpenDoorAnnotationDescription;
+struct PersistentDescription;
+struct PreferredPathDescription;
+struct ProjectileDescription;
+struct SlimeMoveControlDescription;
+struct StrengthDescription;
+struct TeleportDescription;
+struct TradeResupplyDescription;
+struct TrailDescription;
+struct TransformationDescription;
+struct TripodCameraDescription;
+struct TrustDescription;
 struct VariantParameterList;
 namespace SharedTypes::v1_21_100 { struct TickWorldDefinition; }
 // clang-format on
 
 class ActorDefinitionDescriptor {
-public:
-    // ActorDefinitionDescriptor inner types declare
-    // clang-format off
-    struct IsHiddenWhenInvisibleDescription;
-    // clang-format on
-
-    // ActorDefinitionDescriptor inner types define
-    struct IsHiddenWhenInvisibleDescription {};
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -55,50 +90,50 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mEventHandlers;
     ::ll::TypedStorage<8, 72, ::DefinitionInstanceGroup>                                   mDefinitionGroup;
     ::ll::TypedStorage<8, 72, ::DefinitionInstanceGroup>                                   mGoalDefinitionGroup;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mAttack;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mMobEffects;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mAmphibiousMoveControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mBehavior;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mBreakBlocks;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mBreakDoorAnnotation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mBucketable;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mCommandBlock;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mContainer;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mDweller;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mGenericMoveControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mGlideMoveControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mHide;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mIllagerBeastBlocked;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mManagedWanderingTrader;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mMoveControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mDolphinSwimControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mFlyControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mHopControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mHoverControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mSwimControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mWallClimberNavigation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mFloatNavigation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mFlyingNavigation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mHoverNavigation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mGenericNavigation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mWaterboundNavigation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mNavigation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mPersistent;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mPreferredPath;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mProjectile;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mSlimeMoveControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mStrength;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mTrail;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mTeleport;
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_100::TickWorldDefinition*>               mTickWorld;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mTradeResupply;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mTrust;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mEconomyTradeable;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mTransformation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mDynamicJumpControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mJumpControl;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mOpenDoorAnnotation;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mTripodCamera;
+    ::ll::TypedStorage<8, 8, ::AttackDescription const*>                                   mAttack;
+    ::ll::TypedStorage<8, 8, ::MobEffectChangeDescription const*>                          mMobEffects;
+    ::ll::TypedStorage<8, 8, ::AmphibiousMoveControlDescription const*>                    mAmphibiousMoveControl;
+    ::ll::TypedStorage<8, 8, ::BehaviorTreeDescription const*>                             mBehavior;
+    ::ll::TypedStorage<8, 8, ::BreakBlocksDescription const*>                              mBreakBlocks;
+    ::ll::TypedStorage<8, 8, ::BreakDoorAnnotationDescription const*>                      mBreakDoorAnnotation;
+    ::ll::TypedStorage<8, 8, ::BucketableDescription const*>                               mBucketable;
+    ::ll::TypedStorage<8, 8, ::CommandBlockDescription const*>                             mCommandBlock;
+    ::ll::TypedStorage<8, 8, ::ContainerDescription const*>                                mContainer;
+    ::ll::TypedStorage<8, 8, ::DwellerDescription const*>                                  mDweller;
+    ::ll::TypedStorage<8, 8, ::GenericMoveControlDescription const*>                       mGenericMoveControl;
+    ::ll::TypedStorage<8, 8, ::GlideMoveControlDescription const*>                         mGlideMoveControl;
+    ::ll::TypedStorage<8, 8, ::HideDescription const*>                                     mHide;
+    ::ll::TypedStorage<8, 8, ::IllagerBeastBlockedDescription const*>                      mIllagerBeastBlocked;
+    ::ll::TypedStorage<8, 8, ::ManagedWanderingTraderDescription const*>                   mManagedWanderingTrader;
+    ::ll::TypedStorage<8, 8, ::MoveControlBasicDescription const*>                         mMoveControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlDolphinDescription const*>                       mDolphinSwimControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlFlyDescription const*>                           mFlyControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlSkipDescription const*>                          mHopControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlHoverDescription const*>                         mHoverControl;
+    ::ll::TypedStorage<8, 8, ::MoveControlSwayDescription const*>                          mSwimControl;
+    ::ll::TypedStorage<8, 8, ::NavigationClimbDescription const*>                          mWallClimberNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationFloatDescription const*>                          mFloatNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationFlyDescription const*>                            mFlyingNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationHoverDescription const*>                          mHoverNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationGenericDescription const*>                        mGenericNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationSwimDescription const*>                           mWaterboundNavigation;
+    ::ll::TypedStorage<8, 8, ::NavigationWalkDescription const*>                           mNavigation;
+    ::ll::TypedStorage<8, 8, ::PersistentDescription const*>                               mPersistent;
+    ::ll::TypedStorage<8, 8, ::PreferredPathDescription const*>                            mPreferredPath;
+    ::ll::TypedStorage<8, 8, ::ProjectileDescription const*>                               mProjectile;
+    ::ll::TypedStorage<8, 8, ::SlimeMoveControlDescription const*>                         mSlimeMoveControl;
+    ::ll::TypedStorage<8, 8, ::StrengthDescription const*>                                 mStrength;
+    ::ll::TypedStorage<8, 8, ::TrailDescription const*>                                    mTrail;
+    ::ll::TypedStorage<8, 8, ::TeleportDescription const*>                                 mTeleport;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_100::TickWorldDefinition const*>         mTickWorld;
+    ::ll::TypedStorage<8, 8, ::TradeResupplyDescription const*>                            mTradeResupply;
+    ::ll::TypedStorage<8, 8, ::TrustDescription const*>                                    mTrust;
+    ::ll::TypedStorage<8, 8, ::EconomyTradeableDescription const*>                         mEconomyTradeable;
+    ::ll::TypedStorage<8, 8, ::TransformationDescription const*>                           mTransformation;
+    ::ll::TypedStorage<8, 8, ::DynamicJumpControlDescription const*>                       mDynamicJumpControl;
+    ::ll::TypedStorage<8, 8, ::JumpControlDescription const*>                              mJumpControl;
+    ::ll::TypedStorage<8, 8, ::OpenDoorAnnotationDescription const*>                       mOpenDoorAnnotation;
+    ::ll::TypedStorage<8, 8, ::TripodCameraDescription const*>                             mTripodCamera;
     // NOLINTEND
 
 public:
@@ -116,6 +151,14 @@ public:
 
     MCAPI bool contains(::ActorDefinitionDescriptor const& rhs) const;
 
+    MCAPI ::std::optional<::ActorDefinitionAttribute> findAttributeByName(::std::string const& attributeName) const;
+
+    MCAPI bool hasJumpSubComponent();
+
+    MCAPI bool hasMovementSubComponent();
+
+    MCAPI bool hasNavigationSubComponent();
+
     MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
 
     MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor const&);
@@ -130,31 +173,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _executeEvent(
-        ::Actor&                                                              entity,
-        ::std::string const&                                                  name,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::VariantParameterList const&                                         list
-    );
-
-    MCAPI static bool _executeTrigger(
-        ::Actor&                                                              entity,
-        ::ActorDefinitionTrigger const&                                       trigger,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::VariantParameterList const&                                         list
-    );
-
-    MCAPI static void _forceExecuteTrigger(
-        ::Actor&                                                              entity,
-        ::ActorDefinitionTrigger const&                                       trigger,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::VariantParameterList const&                                         list
-    );
-
     MCAPI static bool executeEvent(::Actor& entity, ::std::string const& name, ::VariantParameterList const& list);
 
     MCAPI static bool
     executeTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
+
+    MCAPI static void
+    forceExecuteTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
+
+    MCAPI static void forceExecuteTriggerChain(
+        ::Actor&                                                        entity,
+        ::ActorDefinitionTrigger const&                                 trigger,
+        ::Bedrock::small_vector_base<::ActorDefinitionEventStackEntry>& eventStack,
+        ::VariantParameterList const&                                   list
+    );
+
+    MCAPI static bool hasEvent(::Actor const& entity, ::std::string const& name);
     // NOLINTEND
 
 public:

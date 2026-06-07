@@ -31,14 +31,40 @@ public:
     // NOLINTBEGIN
     virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const
         /*override*/;
-
-    virtual ~StructureHeightProvider() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI StructureHeightProvider();
+
+    MCAPI StructureHeightProvider(::br::worldgen::StructureHeightProvider&& other);
+
+    MCAPI StructureHeightProvider(::br::worldgen::StructureHeightProvider const& other);
+
+    MCAPI explicit StructureHeightProvider(::br::worldgen::ConstantHeight provider);
+
+    MCAPI explicit StructureHeightProvider(::br::worldgen::UniformHeight provider);
+
+    MCAPI ::br::worldgen::HeightProvider const* operator->() const;
+
+    MCFOLD ::br::worldgen::StructureHeightProvider& operator=(::br::worldgen::StructureHeightProvider&& other);
+
+    MCFOLD ::br::worldgen::StructureHeightProvider& operator=(::br::worldgen::StructureHeightProvider const& other);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCFOLD void* $ctor(::br::worldgen::StructureHeightProvider&& other);
+
+    MCFOLD void* $ctor(::br::worldgen::StructureHeightProvider const& other);
+
+    MCAPI void* $ctor(::br::worldgen::ConstantHeight provider);
+
+    MCAPI void* $ctor(::br::worldgen::UniformHeight provider);
     // NOLINTEND
 
 public:

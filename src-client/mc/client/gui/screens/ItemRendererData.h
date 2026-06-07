@@ -29,15 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemRendererData();
-
     MCAPI ~ItemRendererData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

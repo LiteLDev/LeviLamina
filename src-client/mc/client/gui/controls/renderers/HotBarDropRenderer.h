@@ -36,7 +36,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HotBarDropRenderer();
+
     MCAPI void _renderDropProgress(::ScreenContext& screenContext, ::IClientInstance& client, ::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

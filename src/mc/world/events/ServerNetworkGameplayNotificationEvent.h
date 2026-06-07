@@ -16,16 +16,4 @@ struct OutgoingPacketEvent;
 // clang-format on
 
 struct ServerNetworkGameplayNotificationEvent
-: public ::EventVariantImpl<::ChatEvent const, ::IncomingPacketEvent const, ::OutgoingPacketEvent const> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ServerNetworkGameplayNotificationEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+: public ::EventVariantImpl<::ChatEvent const, ::IncomingPacketEvent const, ::OutgoingPacketEvent const> {};

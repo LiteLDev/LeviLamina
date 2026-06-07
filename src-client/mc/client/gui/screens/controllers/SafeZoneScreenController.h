@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
-#include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,12 +48,6 @@ public:
     MCAPI explicit SafeZoneScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
 
     MCAPI void _calculateSafeZoneValue();
-
-    MCAPI void _initFromCurrentSafeZoneValue(
-        ::OptionID optionID,
-        float&     localSafeZoneScaleFactor,
-        float&     safeZoneSliderPercent
-    ) const;
 
     MCAPI void _registerBindings();
 

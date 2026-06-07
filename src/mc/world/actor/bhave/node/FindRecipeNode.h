@@ -24,8 +24,6 @@ public:
     virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
-
-    virtual ~FindRecipeNode() /*override*/ = default;
     // NOLINTEND
 
 public:

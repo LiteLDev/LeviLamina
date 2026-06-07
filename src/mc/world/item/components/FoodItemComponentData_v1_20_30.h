@@ -23,15 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FoodItemComponentData_v1_20_30();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FoodItemComponentData_v1_20_30(::FoodItemComponentData_v1_20_30 const&);
-
-    MCAPI ::FoodItemComponentData_v1_20_30& operator=(::FoodItemComponentData_v1_20_30 const&);
+    MCAPI FoodItemComponentData_v1_20_30();
     // NOLINTEND
 
 public:
@@ -47,6 +41,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FoodItemComponentData_v1_20_30 const&);
+    MCAPI void* $ctor();
     // NOLINTEND
 };

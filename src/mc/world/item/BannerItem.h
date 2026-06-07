@@ -61,8 +61,12 @@ public:
     virtual bool isWearableThroughLootTable(::CompoundTag const* userData) const /*override*/;
 
     virtual void fixupCommon(::ItemStackBase& item) const /*override*/;
+    // NOLINTEND
 
-    virtual ~BannerItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BannerItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -70,6 +74,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::pair<::gsl::not_null<::BannerPattern const*>, ::ItemColor>>
     getPatternAndColorPairsFromItemStack(::ItemStackBase const& item);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

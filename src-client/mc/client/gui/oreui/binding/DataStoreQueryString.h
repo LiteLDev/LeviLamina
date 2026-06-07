@@ -29,12 +29,6 @@ public:
     DataStoreQueryString();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataStoreQueryString() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI DataStoreQueryString(
@@ -46,12 +40,12 @@ public:
     );
 
     MCAPI DataStoreQueryString(
-        ::OreUI::GameDependencies const&,
-        ::OreUI::ClientDependencies const& client,
-        ::std::string                      dataStoreName,
+        ::OreUI::GameDependencies const&   client,
+        ::OreUI::ClientDependencies const& dataStoreName,
         ::std::string                      propertyName,
         ::std::string                      path,
-        bool                               getRawMessage
+        ::std::string                      getRawMessage,
+        bool
     );
     // NOLINTEND
 
@@ -67,12 +61,12 @@ public:
     );
 
     MCAPI void* $ctor(
-        ::OreUI::GameDependencies const&,
-        ::OreUI::ClientDependencies const& client,
-        ::std::string                      dataStoreName,
+        ::OreUI::GameDependencies const&   client,
+        ::OreUI::ClientDependencies const& dataStoreName,
         ::std::string                      propertyName,
         ::std::string                      path,
-        bool                               getRawMessage
+        ::std::string                      getRawMessage,
+        bool
     );
     // NOLINTEND
 

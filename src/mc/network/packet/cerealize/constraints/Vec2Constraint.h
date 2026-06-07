@@ -9,6 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Vec2;
+namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
@@ -21,15 +23,13 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~Vec2Constraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea contextArea) const;
+
+    MCAPI ::Vec2Constraint& range(::Vec2 min, ::Vec2 max, bool exclusive);
+
+    MCAPI void validateValue(::Vec2 const& comp, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:

@@ -7,6 +7,11 @@
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/legacy/ActorUniqueID.h"
 
+// auto generated forward declare list
+// clang-format off
+class Painting;
+// clang-format on
+
 struct AddPaintingPacketPayload {
 public:
     // member variables
@@ -20,17 +25,20 @@ public:
 
 public:
     // prevent constructor by default
-    AddPaintingPacketPayload(AddPaintingPacketPayload const&);
     AddPaintingPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AddPaintingPacketPayload& operator=(::AddPaintingPacketPayload&&);
-
-    MCAPI ::AddPaintingPacketPayload& operator=(::AddPaintingPacketPayload const&);
+    MCAPI explicit AddPaintingPacketPayload(::Painting const& painting);
 
     MCAPI ~AddPaintingPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Painting const& painting);
     // NOLINTEND
 
 public:

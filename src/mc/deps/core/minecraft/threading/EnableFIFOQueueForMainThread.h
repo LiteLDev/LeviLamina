@@ -20,19 +20,30 @@ public:
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>           mQueueMutex;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~EnableFIFOQueueForMainThread() /*override*/ = default;
-    // NOLINTEND
+    // prevent constructor by default
+    EnableFIFOQueueForMainThread();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI explicit EnableFIFOQueueForMainThread(::std::string name);
+
     MCAPI void _runNextTask();
 
     MCAPI void queueForMainThreadFIFO(::std::function<void()>&& task);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string name);
 #endif
     // NOLINTEND
 

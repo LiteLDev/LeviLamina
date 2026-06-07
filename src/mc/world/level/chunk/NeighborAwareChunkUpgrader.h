@@ -28,14 +28,6 @@ public:
         ::Block const&                 block,
         ::BlockPos const&              blockPos
     ) const /*override*/;
-
-    virtual ~NeighborAwareChunkUpgrader() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

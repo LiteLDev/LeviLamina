@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -81,19 +80,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockCommandOrigin(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI ::std::string _getName(::BlockSource& region) const;
     // NOLINTEND
 
 public:
-    // static functions
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::BlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
+    MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -103,7 +104,7 @@ public:
 
     MCFOLD ::std::string $getName() const;
 
-    MCAPI ::BlockPos $getBlockPosition() const;
+    MCFOLD ::BlockPos $getBlockPosition() const;
 
     MCAPI ::Vec3 $getWorldPosition() const;
 

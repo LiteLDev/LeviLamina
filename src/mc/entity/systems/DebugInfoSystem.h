@@ -22,8 +22,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry&) /*override*/;
-
-    virtual ~DebugInfoSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

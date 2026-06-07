@@ -24,14 +24,6 @@ public:
     virtual ::ScriptDeferredEventListener& getEventListener() = 0;
 
     virtual void setCerealContext(::cereal::ReflectionCtx& ctx);
-
-    virtual ~IScriptItemCustomComponentRegistry() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

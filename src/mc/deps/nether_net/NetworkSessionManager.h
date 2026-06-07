@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkSessionManager() /*override*/ = default;
+    virtual ~NetworkSessionManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -84,8 +84,8 @@ public:
     MCNAPI ::gsl::not_null<::NetherNet::NetworkSession*> FindOrCreateSpecificSession(
         ::NetherNet::NetworkID                                          remoteId,
         uint64                                                          connectionId,
-        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock,
-        bool                                                            disableTrickleIce
+        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& disableTrickleIce,
+        bool
     );
 
     MCNAPI bool
@@ -101,13 +101,15 @@ public:
 
     MCNAPI ::NetherNet::NetworkSession* InitiateOutgoingSession(
         ::NetherNet::NetworkID                                          remoteID,
-        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock,
-        bool                                                            disableTrickleIce
+        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& disableTrickleIce,
+        bool
     );
 
     MCNAPI bool IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize) const;
 
     MCNAPI void NotifyOnSessionOpen(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
+
+    MCNAPI bool OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote, bool disableTrickleIce);
 
     MCNAPI void PeriodicDeadSessionCleanupOnSignalThread();
 
@@ -121,18 +123,18 @@ public:
     ) const;
 
     MCNAPI void ProcessSignal(
+        ::NetherNet::NetworkID           remoteID,
+        ::NetherNet::CandidateAdd const& signal,
+        ::NetherNet::SignalingChannelId  disableTrickleIce,
+        bool
+    );
+
+    MCNAPI void ProcessSignal(
         ::NetherNet::NetworkID              remoteID,
         ::NetherNet::ConnectResponse const& signal,
         ::NetherNet::SignalingChannelId,
         bool
     ) const;
-
-    MCNAPI void ProcessSignal(
-        ::NetherNet::NetworkID           remoteID,
-        ::NetherNet::CandidateAdd const& signal,
-        ::NetherNet::SignalingChannelId,
-        bool disableTrickleIce
-    );
 
     MCNAPI bool
     ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);
@@ -157,6 +159,12 @@ public:
             ::NetherNet::CandidateAdd> const&            signal,
         ::std::optional<::NetherNet::SignalingChannelId> preference
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

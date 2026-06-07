@@ -31,8 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onOpen() /*override*/;
-
-    virtual ~ExternalLinkModalDialogPopup() /*override*/;
     // NOLINTEND
 
 public:
@@ -61,12 +59,6 @@ public:
         ::std::string const&                      secondButtonText,
         ::std::function<void()> const&            callback
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

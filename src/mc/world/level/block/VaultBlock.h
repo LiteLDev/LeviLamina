@@ -12,13 +12,16 @@
 class Actor;
 class Block;
 class BlockPos;
-class Experiments;
 class Vec3;
 struct Brightness;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class VaultBlock : public ::ActorBlock {
+public:
+    // prevent constructor by default
+    VaultBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,16 +40,20 @@ public:
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~VaultBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI VaultBlock(::std::string const& nameId, int id);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -66,13 +73,11 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD ::Block const& $getRenderBlock() const;
+    MCAPI ::Block const& $getRenderBlock() const;
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
     MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

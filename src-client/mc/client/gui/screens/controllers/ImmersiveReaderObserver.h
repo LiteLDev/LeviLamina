@@ -16,8 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onMessageRecieved(::std::string const& message) /*override*/;
-
-    virtual ~ImmersiveReaderObserver() /*override*/ = default;
     // NOLINTEND
 
 public:

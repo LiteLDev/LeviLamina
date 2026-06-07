@@ -37,14 +37,8 @@ MCAPI void _doPlayerPreMoveSystem(
 MCAPI void _singleTickDebugCameraFilterSystem(
     ::StrictEntityContext&                                                                    entity,
     ::ViewT<::StrictEntityContext, ::Include<::LocalPlayerComponent, ::MoveRequestComponent>> view,
-    ::EntityModifier<::MoveRequestComponent>                                                  modifier,
-    ::OptionalGlobal<::DebugCameraIsActiveComponent>                                          debugCamera
-);
-
-MCAPI void _tickDebugCameraFilterSystem(
-    ::ViewT<::StrictEntityContext, ::Include<::LocalPlayerComponent, ::MoveRequestComponent>> view,
-    ::EntityModifier<::MoveRequestComponent>                                                  modifier,
-    ::OptionalGlobal<::DebugCameraIsActiveComponent>                                          debugCamera
+    ::EntityModifier<::MoveRequestComponent>                                                  debugCamera,
+    ::OptionalGlobal<::DebugCameraIsActiveComponent>
 );
 #endif
 // NOLINTEND

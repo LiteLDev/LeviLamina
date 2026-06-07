@@ -59,8 +59,6 @@ public:
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
-
-    virtual ~ClassroomSettingsScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -70,6 +68,8 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel>            model,
         ::ClassroomSettingsScreenControllerCallbacks const& screenCallbacks
     );
+
+    MCAPI ::std::string _getEduSharedResourceName() const;
 
     MCAPI void _registerEventHandlers();
 
@@ -83,12 +83,6 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel>            model,
         ::ClassroomSettingsScreenControllerCallbacks const& screenCallbacks
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -36,12 +36,15 @@ public:
 
     public:
         // prevent constructor by default
-        SurfaceMaterialAdjustmentMaterials& operator=(SurfaceMaterialAdjustmentMaterials const&);
         SurfaceMaterialAdjustmentMaterials();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI SurfaceMaterialAdjustmentMaterials(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&&
+        );
+
         MCAPI SurfaceMaterialAdjustmentMaterials(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                 SurfaceMaterialAdjustmentMaterials const&
@@ -52,12 +55,20 @@ public:
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&&
         );
 
+        MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&
+        operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                      SurfaceMaterialAdjustmentMaterials const&);
+
         MCAPI ~SurfaceMaterialAdjustmentMaterials();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&&
+        );
+
         MCAPI void* $ctor(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                 SurfaceMaterialAdjustmentMaterials const&
@@ -85,31 +96,6 @@ public:
                                                          mHeightRange;
         ::ll::TypedStorage<4, 8, ::std::optional<float>> mNoiseFrequencyScale;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SurfaceMaterialAdjustment(SurfaceMaterialAdjustment const&);
-        SurfaceMaterialAdjustment();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI SurfaceMaterialAdjustment(
-            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&
-        );
-
-        MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
-        operator=(
-            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment const&
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void*
-        $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);
-        // NOLINTEND
     };
 
 public:
@@ -121,12 +107,6 @@ public:
         ::std::optional<::std::vector<
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment>>>
         mAdjustments;
-    // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SurfaceMaterialAdjustmentsBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -25,12 +26,18 @@ public:
 public:
     // prevent constructor by default
     ScriptPlayerLeaveAfterEvent& operator=(ScriptPlayerLeaveAfterEvent const&);
-    ScriptPlayerLeaveAfterEvent(ScriptPlayerLeaveAfterEvent const&);
     ScriptPlayerLeaveAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptPlayerLeaveAfterEvent(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent const&);
+
+    MCAPI ScriptPlayerLeaveAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&
+    );
+
     MCFOLD ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
     // NOLINTEND
@@ -41,6 +48,17 @@ public:
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::ClassBinding bindV010();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 };
 

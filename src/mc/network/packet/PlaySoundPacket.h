@@ -29,10 +29,6 @@ public:
                                       PlaySoundPacketPayload(std::forward<Args>(args)...) {}
 
 public:
-    // prevent constructor by default
-    PlaySoundPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -68,26 +64,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~PlaySoundPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PlaySoundPacket();
+
     MCAPI explicit PlaySoundPacket(::PlaySoundPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlaySoundPacketPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::PlaySoundPacketPayload payload);
     // NOLINTEND
 
 public:

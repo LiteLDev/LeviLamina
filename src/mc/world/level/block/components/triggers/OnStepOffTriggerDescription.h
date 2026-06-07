@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
-
-    virtual ~OnStepOffTriggerDescription() /*override*/ = default;
     // NOLINTEND
 
 public:

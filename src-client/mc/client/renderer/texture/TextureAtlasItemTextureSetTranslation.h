@@ -65,20 +65,13 @@ public:
 public:
     // prevent constructor by default
     TextureAtlasItemTextureSetTranslation& operator=(TextureAtlasItemTextureSetTranslation const&);
+    TextureAtlasItemTextureSetTranslation(TextureAtlasItemTextureSetTranslation const&);
     TextureAtlasItemTextureSetTranslation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TextureAtlasItemTextureSetTranslation(::TextureAtlasItemTextureSetTranslation const&);
-
     MCNAPI ~TextureAtlasItemTextureSetTranslation();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::TextureAtlasItemTextureSetTranslation const&);
     // NOLINTEND
 
 public:

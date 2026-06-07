@@ -28,14 +28,6 @@ public:
         int                                  count
     );
 
-    MCNAPI static bool _slotBoundsValid(
-        ::Util::ReplacementResults& replacementResults,
-        int                         slotId,
-        int                         sizeForSlotIdCheck,
-        ::std::optional<int>        consecutiveSlotFillCount,
-        ::std::optional<int>        sizeForCountCheck
-    );
-
     MCNAPI static ::Util::ReplacementResults replaceActorSlotsOrError(::Util::ActorReplacementParams& actorParams);
 
     MCNAPI static ::Util::ReplacementResults

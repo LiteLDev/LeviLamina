@@ -23,18 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingCatalogGroup& operator=(CraftingCatalogGroup const&);
-    CraftingCatalogGroup(CraftingCatalogGroup const&);
-    CraftingCatalogGroup();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

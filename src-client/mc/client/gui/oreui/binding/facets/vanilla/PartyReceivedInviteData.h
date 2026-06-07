@@ -17,23 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PartyReceivedInviteData& operator=(PartyReceivedInviteData const&);
-    PartyReceivedInviteData(PartyReceivedInviteData const&);
-    PartyReceivedInviteData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PartyReceivedInviteData(::OreUI::PartyReceivedInviteData&&);
-
     MCAPI ~PartyReceivedInviteData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::PartyReceivedInviteData&&);
     // NOLINTEND
 
 public:

@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class Player;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }

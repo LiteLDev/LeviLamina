@@ -21,8 +21,6 @@ public:
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext
     ) /*override*/;
-
-    virtual ~CalibratedSculkSensorVibrationConfig() /*override*/ = default;
     // NOLINTEND
 
 public:

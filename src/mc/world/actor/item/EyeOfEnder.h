@@ -10,7 +10,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
 class Player;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -25,31 +28,49 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EyeOfEnder();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     virtual void lerpMotion(::Vec3 const& delta) /*override*/;
 
     virtual void normalTick() /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
-
-    virtual ~EyeOfEnder() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EyeOfEnder(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void preNormalTick();
 
     MCAPI void signalTo(::Player const& player, ::BlockPos& target);
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
     MCAPI void $lerpMotion(::Vec3 const& delta);
 

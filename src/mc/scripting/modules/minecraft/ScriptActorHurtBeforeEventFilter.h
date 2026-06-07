@@ -29,14 +29,21 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorHurtBeforeEventFilter(ScriptActorHurtBeforeEventFilter const&);
     ScriptActorHurtBeforeEventFilter();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    ScriptActorHurtBeforeEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
+
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
+
+    MCFOLD void process();
+
+    MCAPI bool
+    shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilterData const& data) const;
 
     MCAPI ~ScriptActorHurtBeforeEventFilter();
     // NOLINTEND
@@ -48,9 +55,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

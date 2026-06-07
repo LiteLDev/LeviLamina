@@ -37,9 +37,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
-
     MCAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptCustomCommandInterface&
+    operator=(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
 
     MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& other) const;
 
@@ -55,8 +56,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
     // NOLINTEND
 

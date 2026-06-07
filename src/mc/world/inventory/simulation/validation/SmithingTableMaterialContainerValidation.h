@@ -23,9 +23,7 @@ public:
         bool
     ) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~SmithingTableMaterialContainerValidation() /*override*/ = default;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -39,7 +37,7 @@ public:
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
 
     // NOLINTEND

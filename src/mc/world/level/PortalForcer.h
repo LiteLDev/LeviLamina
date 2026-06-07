@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/util/Random.h"
-#include "mc/world/Pos.h"
 #include "mc/world/level/PortalRecord.h"
 #include "mc/world/level/saveddata/SavedData.h"
 
@@ -16,7 +14,6 @@ class BaseGameVersion;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
-class Dimension;
 class Level;
 class PortalShape;
 struct DimensionTransitionComponent;
@@ -30,13 +27,7 @@ public:
     // clang-format on
 
     // PortalForcer inner types define
-    class PortalPosition : public ::Pos {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int> lastUsed;
-        // NOLINTEND
-    };
+    class PortalPosition {};
 
     using CachedPortalMap = ::std::unordered_map<::BlockPos, ::PortalForcer::PortalPosition>;
 
@@ -63,13 +54,13 @@ public:
     virtual void deserialize(::CompoundTag const& tag) /*override*/;
 
     virtual void serialize(::CompoundTag& tag) const /*override*/;
-
-    virtual ~PortalForcer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PortalForcer(::Level& level);
+
     MCAPI ::std::optional<::PortalRecord> _findPortal(
         ::DimensionType   dimensionId,
         ::BlockPos const& centerBlockPos,
@@ -77,7 +68,18 @@ public:
         ::BlockPos&       targetBlockPos
     ) const;
 
+    MCAPI ::PortalRecord const& addPortalRecord(::DimensionType dimensionType, ::PortalShape const& shape);
+
+    MCAPI ::PortalRecord const& addPortalRecord(::DimensionType dimensionType, ::PortalRecord toAdd);
+
     MCAPI ::PortalRecord const& createPortal(::Actor const& entity, int radius);
+
+    MCAPI bool findPortal(
+        ::DimensionType   dimensionId,
+        ::BlockPos const& centerBlockPos,
+        int               radius,
+        ::BlockPos&       targetBlockPos
+    ) const;
 
     MCAPI void force(::Actor& entity, ::DimensionTransitionComponent const& portalEntranceComponent);
 
@@ -93,17 +95,17 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool canPortalReplaceBlock(::BlockSource& region, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
 
     MCAPI static ::std::string const& PORTAL_FILE_ID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:

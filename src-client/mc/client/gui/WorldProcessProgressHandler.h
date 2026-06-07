@@ -29,17 +29,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldProcessProgressHandler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~WorldProcessProgressHandler() /*override*/ = default;
 
-    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void tick(::MinecraftScreenModel&) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
     virtual ::std::string getTTSProgressMessage() const /*override*/;
 
@@ -49,15 +53,35 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WorldProcessProgressHandler(
+        ::WorldProcessProgressHandler::Type worldProcessType,
+        ::std::function<float()>            tickCallback,
+        ::std::function<::LoadingState()>   getLoadingStateCallback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::WorldProcessProgressHandler::Type worldProcessType,
+        ::std::function<float()>            tickCallback,
+        ::std::function<::LoadingState()>   getLoadingStateCallback
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCAPI void $tick(::MinecraftScreenModel&);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
     MCAPI ::std::string $getTTSProgressMessage() const;
 

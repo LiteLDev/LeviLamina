@@ -33,6 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI char const* getCString(uint64* outputLength) const;
+
     MCNAPI bool set(::std::string_view str, bool copy);
     // NOLINTEND
 };

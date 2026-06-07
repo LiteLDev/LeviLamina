@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptAimAssistCategory& operator=(ScriptAimAssistCategory const&);
-    ScriptAimAssistCategory(ScriptAimAssistCategory const&);
-    ScriptAimAssistCategory();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const* _getCategoryDefinition() const;
@@ -48,9 +42,6 @@ public:
 
     MCAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::EngineError>
     getEntityTypeFamilyPriorities() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptAimAssistCategory&
-    operator=(::ScriptModuleMinecraft::ScriptAimAssistCategory&&);
     // NOLINTEND
 
 public:

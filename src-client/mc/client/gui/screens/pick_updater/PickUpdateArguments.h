@@ -31,18 +31,6 @@ public:
     PickUpdateArguments& operator=(PickUpdateArguments const&);
     PickUpdateArguments(PickUpdateArguments const&);
     PickUpdateArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PickUpdateArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PickUpdater

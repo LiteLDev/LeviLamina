@@ -21,7 +21,15 @@ MCNAPI ::mce::Color const* ColorFromColorCode(::std::string const& colorCode);
 MCNAPI ::std::string_view const FormatCodeFromName(::std::string const& str);
 
 #ifdef LL_PLAT_C
+MCNAPI bool IsColorCode(char c);
+#endif
+
+MCNAPI bool IsFormatOrColorCode(char c);
+
+#ifdef LL_PLAT_C
 MCNAPI ::std::string NameFromFormatCode(::std::string const& formatCode);
+
+MCNAPI void setColors(::std::array<::mce::Color, 28> const& colors);
 #endif
 // NOLINTEND
 

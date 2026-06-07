@@ -15,7 +15,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -28,9 +27,13 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class PortalBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    PortalBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
+    virtual bool mayPick(::BlockSource const& region, ::Block const&, bool) const /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -51,10 +54,10 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
-    virtual void entityInside(::BlockSource&, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
+    virtual void entityInside(::BlockSource& pos, ::BlockPos const& entity, ::Actor&) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -62,15 +65,13 @@ public:
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~PortalBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PortalBlock(::std::string const& nameId, int id);
+
     MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -91,9 +92,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const&, bool) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -114,17 +121,15 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
 
-    MCAPI void $entityInside(::BlockSource&, ::BlockPos const& pos, ::Actor& entity) const;
+    MCAPI void $entityInside(::BlockSource& pos, ::BlockPos const& entity, ::Actor&) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCFOLD bool $isLavaBlocking() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

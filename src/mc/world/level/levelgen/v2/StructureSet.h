@@ -57,8 +57,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI StructureSet(
-        ::std::initializer_list<::br::worldgen::StructureSet::Entry> entries,
-        ::br::worldgen::StructurePlacement                           placement
+        ::std::vector<::br::worldgen::StructureSet::Entry> entries,
+        ::br::worldgen::StructurePlacement                 placement
     );
 
     MCAPI bool contains(::HashedString type) const;
@@ -74,10 +74,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::initializer_list<::br::worldgen::StructureSet::Entry> entries,
-        ::br::worldgen::StructurePlacement                           placement
-    );
+    MCAPI void*
+    $ctor(::std::vector<::br::worldgen::StructureSet::Entry> entries, ::br::worldgen::StructurePlacement placement);
     // NOLINTEND
 };
 

@@ -13,4 +13,10 @@ public:
         Width  = 1,
         Height = 2,
     };
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::ActorDataBoundingBoxComponent const& other) const;
+    // NOLINTEND
 };

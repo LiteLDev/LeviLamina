@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class IFileAccess;
+struct zlib_filefunc64_32_def_s;
 // clang-format on
 
 class ZlibFileAccessWrapper {
@@ -28,6 +29,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ZlibFileAccessWrapper(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess);
+
+    MCNAPI ::zlib_filefunc64_32_def_s* getZipFunctions() const;
 
     MCNAPI ~ZlibFileAccessWrapper();
     // NOLINTEND

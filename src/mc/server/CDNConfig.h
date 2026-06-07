@@ -14,28 +14,34 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::Path const>                                       mPath;
     // NOLINTEND
 
-public:
-    // virtual functions
-    // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    virtual ~CDNConfig() /*override*/;
+public:
+    // prevent constructor by default
+    CDNConfig();
+
 #else // LL_PLAT_C
-    virtual ~CDNConfig() /*override*/ = default;
 #endif
-
-    // NOLINTEND
-
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
+    MCNAPI explicit CDNConfig(::Core::Path const& filePath);
+
     MCNAPI void _readConfigFile();
+#endif
+
+    MCNAPI ::std::vector<::std::pair<::std::string, ::std::string>> getCDNUrls();
+
+#ifdef LL_PLAT_S
+    MCNAPI void reloadUrls();
 #endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::Core::Path const& filePath);
+#endif
     // NOLINTEND
 };

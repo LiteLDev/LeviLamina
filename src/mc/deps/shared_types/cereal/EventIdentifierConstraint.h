@@ -16,12 +16,6 @@ namespace SharedTypes {
 
 class EventIdentifierConstraint : public ::cereal::ConstraintHandle<::SharedTypes::EventIdentifierConstraint> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~EventIdentifierConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;

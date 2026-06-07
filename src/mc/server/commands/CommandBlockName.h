@@ -17,15 +17,32 @@ public:
     // NOLINTEND
 
 public:
+    CommandBlockName() = default;
+
+
+public:
     LLNDAPI std::string const& getBlockName() const;
     LLNDAPI std::string getDescriptionId() const;
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CommandBlockName(uint64 blockNameHash);
+
+    MCAPI explicit operator uint64() const;
+
     MCAPI ::CommandBlockNameResult resolveBlock(int data) const;
 
     MCAPI ::CommandBlockNameResult
     resolveBlock(::std::vector<::BlockStateCommandParam> const& states, ::CommandOutput& output) const;
+
+    MCAPI ::CommandBlockNameResult
+    resolveBlock(::std::vector<::BlockStateCommandParam> const& states, int data, ::CommandOutput& output) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(uint64 blockNameHash);
     // NOLINTEND
 };

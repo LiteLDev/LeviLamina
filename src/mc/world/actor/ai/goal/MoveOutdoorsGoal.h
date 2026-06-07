@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 #include "mc/world/level/Tick.h"
 
@@ -12,59 +10,19 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-namespace JsonUtil { class EmptyClass; }
+class Mob;
 // clang-format on
 
 class MoveOutdoorsGoal : public ::BaseMoveToBlockGoal {
 public:
-    // MoveOutdoorsGoal inner types declare
-    // clang-format off
-    class MoveOutdoorsDefinition;
-    // clang-format on
-
-    // MoveOutdoorsGoal inner types define
-    class MoveOutdoorsDefinition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float> mSpeedModifier;
-        ::ll::TypedStorage<4, 4, int>   mSearchRange;
-        ::ll::TypedStorage<4, 4, int>   mSearchHeight;
-        ::ll::TypedStorage<4, 4, int>   mSearchCount;
-        ::ll::TypedStorage<4, 4, float> mGoalRadius;
-        ::ll::TypedStorage<4, 4, float> mTimeoutCooldown;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~MoveOutdoorsDefinition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveOutdoorsGoal::MoveOutdoorsDefinition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::MoveOutdoorsGoal::MoveOutdoorsDefinition> mDefinition;
-    ::ll::TypedStorage<8, 8, ::Tick>                                      mNextTargetTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextTargetTick;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveOutdoorsGoal();
 
 public:
     // virtual functions
@@ -78,20 +36,24 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~MoveOutdoorsGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _setNextTargetTick();
+    MCAPI explicit MoveOutdoorsGoal(::Mob& mob);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool mobHasClearSpaceAbove(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

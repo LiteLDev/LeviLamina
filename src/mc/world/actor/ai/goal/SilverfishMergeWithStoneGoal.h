@@ -35,8 +35,18 @@ public:
     virtual void start() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~SilverfishMergeWithStoneGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SilverfishMergeWithStoneGoal(::Silverfish& silverfish);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Silverfish& silverfish);
     // NOLINTEND
 
 public:

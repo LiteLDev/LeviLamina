@@ -10,6 +10,7 @@
 // clang-format off
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
+namespace Bedrock::Http::Internal { class IRequestBody; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
 namespace Bedrock::Threading { class Mutex; }
 struct HC_CALL;
@@ -35,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibHttpClientImpl() /*override*/ = default;
+    virtual ~LibHttpClientImpl() /*override*/;
 
     virtual void initialize() /*override*/;
 
@@ -59,15 +60,24 @@ public:
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     _retry(::gsl::not_null<::HC_CALL*> callHandle, ::std::chrono::seconds delay);
 
+    MCNAPI void _track(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Request&& request);
+
+    MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IRequestBody>
+    _tryGetRequestBody(::gsl::not_null<::HC_CALL*> call);
+
     MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>
     _tryGetResponseBody(::gsl::not_null<::HC_CALL*> call);
-
-    MCNAPI void _untrack(::gsl::not_null<::HC_CALL*> callHandle);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static long
+    _convertRequestBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Request const& request);
+
+    MCNAPI static long
+    _convertRequestHeaders(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Request const& request);
+
     MCNAPI static long
     _convertResponseBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
 
@@ -76,16 +86,10 @@ public:
 
     MCNAPI static long _createCallHandle(::HC_CALL** outHandle, ::Bedrock::Http::Request const& request);
 
-    MCNAPI static long _requestBodyRead(
-        ::HC_CALL* call,
-        uint64     offset,
-        uint64     bytesAvailable,
-        void*      context,
-        uchar*     destination,
-        uint64*    bytesWritten
-    );
+    MCNAPI static long
+    _requestBodyRead(::HC_CALL* call, uint64 bytesAvailable, uint64 destination, void* bytesWritten, uchar*, uint64*);
 
-    MCNAPI static long _responseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void* context);
+    MCNAPI static long _responseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void*);
     // NOLINTEND
 
 public:
@@ -100,6 +104,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -21,6 +21,7 @@ public:
     // clang-format off
     struct ChatMessageData;
     struct DropdownOption;
+    struct ChatSelection;
     // clang-format on
 
     // PlayerReportFacet inner types define
@@ -37,16 +38,23 @@ public:
 
     public:
         // prevent constructor by default
-        ChatMessageData(ChatMessageData const&);
         ChatMessageData();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ChatMessageData(::OreUI::PlayerReportFacet::ChatMessageData const&);
+
         MCAPI ::OreUI::PlayerReportFacet::ChatMessageData&
         operator=(::OreUI::PlayerReportFacet::ChatMessageData const&);
 
         MCAPI ~ChatMessageData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::OreUI::PlayerReportFacet::ChatMessageData const&);
         // NOLINTEND
 
     public:
@@ -65,9 +73,42 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        DropdownOption();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI DropdownOption(::std::string label, int value);
+
         MCAPI ~DropdownOption();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::std::string label, int value);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
+    struct ChatSelection {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::std::vector<int>> mSelectedMessages;
+        ::ll::TypedStorage<1, 1, bool>                mIsPartyChatReport;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ChatSelection();
         // NOLINTEND
 
     public:
@@ -87,8 +128,10 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                              mPlatformId;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mGalleryScreenshotId;
     ::ll::TypedStorage<8, 24, ::std::vector<int>>                                         mSelectedChatMessages;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsPartyChatReport;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mPartyId;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::ChatMessageData>> mReportableChatMessages;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::ChatMessageData>> mReportablePartyChatMessages;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::DropdownOption>>  mReportAreaOptions;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::DropdownOption>>  mReportReasonOptions;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>                                     mScreenshotPath;
@@ -122,6 +165,8 @@ public:
     MCAPI void finishReport();
 
     MCAPI bool getHasReachedReportLimit() const;
+
+    MCAPI bool isPartyChatAvailable() const;
 
     MCAPI bool isWorldChatAvailable() const;
 

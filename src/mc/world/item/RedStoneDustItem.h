@@ -24,8 +24,6 @@ public:
         /*override*/;
 
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
-
-    virtual ~RedStoneDustItem() /*override*/ = default;
     // NOLINTEND
 
 public:

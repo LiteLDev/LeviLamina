@@ -50,8 +50,6 @@ public:
     virtual bool needsToCompile() const /*override*/;
 
     virtual ::Molang::details::SourceTree* getSource() /*override*/;
-
-    virtual ~CompiledExpressionWithSource() /*override*/ = default;
     // NOLINTEND
 
 public:

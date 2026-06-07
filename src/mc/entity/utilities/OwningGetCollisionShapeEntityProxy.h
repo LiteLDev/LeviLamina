@@ -58,12 +58,6 @@ public:
     OwningGetCollisionShapeEntityProxy();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OwningGetCollisionShapeEntityProxy() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

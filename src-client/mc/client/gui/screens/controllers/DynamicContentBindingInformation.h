@@ -23,6 +23,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD void setEmoticonifyTextCallback(::std::function<::std::string(::std::string const&)> callback);
+
+    MCAPI void setOnContentItemChangedCallback(::std::function<void(::Json::Value&)> const& callback);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $createBindingData(::Json::Value const& contentData);

@@ -310,10 +310,15 @@ public:
         bool      useActorRotation
     ) const;
 
+    MCAPI void _computeEmitterWorldPositionAndVelocity(::Matrix const& actorTransform, ::std::chrono::nanoseconds& dt);
+
     MCAPI void _createBoundEmitterFromEvent(::ParticleSystem::ParticleVisualEffectEvent const& event);
 
-    MCAPI void
-    _createEmitterFromEvent(::ParticleSystem::ParticleVisualEffectEvent const& event, ::Matrix const& transform);
+    MCAPI void _createManualParticleFromEvent(
+        ::ParticleSystem::ParticleVisualEffectEvent const& event,
+        ::Vec3 const&                                      velocity,
+        ::Vec3 const&                                      position
+    );
 
     MCAPI void _emitNewParticle(
         ::ParticleSystem::ParticleEffect const& effect,
@@ -454,7 +459,7 @@ public:
 
     MCAPI ::ParticleSystem::ActorBindInfo $getActorBindInfo() const;
 
-    MCAPI ::Vec3 const& $getPosition() const;
+    MCFOLD ::Vec3 const& $getPosition() const;
 
     MCAPI ::Matrix const& $getTransform() const;
 
@@ -464,7 +469,7 @@ public:
 
     MCAPI void $setMaxNumParticles(uint64 num);
 
-    MCAPI uint64 $getMaxNumParticles() const;
+    MCFOLD uint64 $getMaxNumParticles() const;
 
     MCFOLD uint64 $getNumParticles() const;
 
@@ -497,7 +502,7 @@ public:
 
     MCAPI ::std::vector<::AABB> const& $getCollisionShapesForBlockPosition(::BlockPos const& blockPosition);
 
-    MCAPI ::std::vector<::AABB>& $getCollisionAabbList();
+    MCFOLD ::std::vector<::AABB>& $getCollisionAabbList();
 
     MCAPI ::std::vector<::ParticleSystem::ComponentAccessParticleEmitter::CollisionHelper>& $getCollisionSweepList();
 

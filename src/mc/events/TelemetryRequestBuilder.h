@@ -7,18 +7,6 @@
 
 namespace Bedrock::Http {
 
-class TelemetryRequestBuilder : public ::Bedrock::Http::RequestBuilder {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~TelemetryRequestBuilder();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-};
+class TelemetryRequestBuilder : public ::Bedrock::Http::RequestBuilder {};
 
 } // namespace Bedrock::Http

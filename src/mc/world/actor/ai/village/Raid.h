@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CompoundTag;
 // clang-format on
 
@@ -118,29 +119,31 @@ public:
         ::std::function<bool()>&&                                                              isVillageDefeatedCallback
     );
 
-    MCAPI float _calcBossBarUsingHealth() const;
-
-    MCAPI float _calcBossBarUsingMobs() const;
-
-    MCAPI float _getTotalRaiderHealth() const;
+    MCAPI void _tickAwardingRewards();
 
     MCAPI void _tickGroupInPlay();
 
+    MCAPI void _tickSpawningGroup();
+
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
+    MCAPI void addPlayerToHeroList(::Actor const& actor);
+
+    MCAPI void addRaider(::ActorUniqueID const& actor, float maxHealth);
+
+    MCAPI void appendDebugInfo(::std::string& infoString) const;
+
     MCAPI float getBossBarFilledFraction() const;
+
+    MCFOLD uint64 getRemainingRaiders() const;
+
+    MCAPI bool isRaider(::ActorUniqueID actor) const;
 
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
 
     MCAPI void tick(::Tick tick);
 
     MCAPI ~Raid();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::Vec3 const& INVALID_SPAWN_POINT();
     // NOLINTEND
 
 public:

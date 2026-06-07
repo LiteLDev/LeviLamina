@@ -37,15 +37,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const
-        /*override*/;
+    virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const*) const /*override*/;
 
-    virtual bool containsOnly(int, int, int, int, ::gsl::span<::BiomeIdType const> allowed) const /*override*/;
+    virtual bool containsOnly(int allowed, int, int, int, ::gsl::span<::BiomeIdType const>) const /*override*/;
 
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
-    virtual ::BiomeArea
-    getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const /*override*/;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const&) const
+        /*override*/;
 
     virtual bool hasBiomeById(::BiomeIdType id) const /*override*/;
 
@@ -54,21 +53,30 @@ public:
     virtual ::BiomeSourceType const getType() const /*override*/;
 
     virtual ::Biome const* _getBiome(::GetBiomeOptions const&) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FixedBiomeSource() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit FixedBiomeSource(::Biome const& fixedBiome);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Biome const& fixedBiome);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const;
+    MCAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const*) const;
 
-    MCAPI bool $containsOnly(int, int, int, int, ::gsl::span<::BiomeIdType const> allowed) const;
+    MCAPI bool $containsOnly(int allowed, int, int, int, ::gsl::span<::BiomeIdType const>) const;
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCAPI ::BiomeArea
-    $getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const& getBiomeOptions) const;
+    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale, ::GetBiomeOptions const&) const;
 
     MCAPI bool $hasBiomeById(::BiomeIdType id) const;
 

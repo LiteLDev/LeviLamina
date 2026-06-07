@@ -59,20 +59,12 @@ public:
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     virtual bool isDestructive(int) const /*override*/;
-
-    virtual ~OminousBottleItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI OminousBottleItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_AMPLIFIER();
     // NOLINTEND
 
 public:

@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/chunks/point_lighting/ILightLODResourceProvider.h"
-#include "mc/client/renderer/chunks/point_lighting/LightingTier.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 namespace PointLighting { struct AnalyticLightResources; }
 namespace PointLighting { struct BakedLightResources; }
 // clang-format on
@@ -36,9 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool allTierResourcesAcquired(::BlockPos const& blockPos, ::PointLighting::LightingTier tier) const;
+    MCAPI ~LightLODResourceManager();
+    // NOLINTEND
 
-    MCAPI bool canReserve(::BlockPos const& blockPos, ::PointLighting::LightingTier tier) const;
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

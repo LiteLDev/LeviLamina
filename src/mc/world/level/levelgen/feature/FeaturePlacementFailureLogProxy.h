@@ -16,8 +16,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FeaturePlacementFailureLogProxy();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FeaturePlacementFailureLogProxy(::FeaturePlacementFailureLog& logger);
+
     MCAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::FeaturePlacementFailureLog& logger);
     // NOLINTEND
 };

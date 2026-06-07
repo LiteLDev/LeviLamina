@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,6 +29,10 @@ public:
     MCAPI explicit BlockMaterialInstancesComponent(
         ::BlockMaterialInstancesDescription const& blockMaterialInstancesDescription
     );
+
+#ifdef LL_PLAT_C
+    MCAPI ::BlockRenderLayer getRenderLayer() const;
+#endif
     // NOLINTEND
 
 public:

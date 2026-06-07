@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/BasicDirectoryStorageArea.h"
+#include "mc/deps/core/file/FileAccessType.h"
 #include "mc/deps/core/file/FileStorageArea.h"
 
 // auto generated forward declare list
@@ -63,8 +64,18 @@ public:
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo() /*override*/;
 
     virtual bool shouldRecordFileError(::Core::PathView path, ::std::error_code error) const /*override*/;
+    // NOLINTEND
 
-    virtual ~StorageArea_windows() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI StorageArea_windows(::Core::FileAccessType accessType, ::Core::PathView rootPath, bool usesFlatFile);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::FileAccessType accessType, ::Core::PathView rootPath, bool usesFlatFile);
     // NOLINTEND
 
 public:

@@ -17,7 +17,7 @@ class IEventListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEventListener();
+    virtual ~IEventListener() = default;
 
     virtual void
     recordEvent(::Social::Events::Event const& event, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform) = 0;
@@ -30,21 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

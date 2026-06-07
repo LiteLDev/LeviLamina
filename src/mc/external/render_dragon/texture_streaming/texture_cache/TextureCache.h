@@ -5,6 +5,9 @@
 namespace dragon::texturestreaming {
 
 template <typename T0>
-class TextureCache {};
+class TextureCache {
+public:
+    struct TextureCacheDiskStats {};
+};
 
 } // namespace dragon::texturestreaming

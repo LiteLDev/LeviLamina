@@ -5,7 +5,7 @@
 namespace OreUI {
 
 enum class InvocationResult : schar {
-    Invalid = -1,
+    Invalid = 255,
     Success = 0,
     Fail    = 1,
 };

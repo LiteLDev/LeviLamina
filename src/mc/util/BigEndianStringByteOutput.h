@@ -21,14 +21,6 @@ public:
     virtual void writeInt(int v) /*override*/;
 
     virtual void writeLongLong(int64 v) /*override*/;
-
-    virtual ~BigEndianStringByteOutput() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

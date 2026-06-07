@@ -47,6 +47,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void clearCapturingKeymapping();
+
+    MCAPI void enqueueDeferredCallback(::std::function<void()> callback);
+
+    MCFOLD ::std::optional<::InputSettingsHandler::KeymappingInfo> const& getCapturingKeymapping();
+
     MCAPI void setCapturingKeymapping(::InputSettingsHandler::KeymappingInfo info);
     // NOLINTEND
 };

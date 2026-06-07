@@ -14,21 +14,9 @@ namespace SharedTypes::v1_21_130 {
 
 struct ActorDefinitions : public ::SharedTypes::v1_21_120::ActorDefinitions {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorDefinitions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

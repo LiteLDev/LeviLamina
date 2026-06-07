@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class IGameTestListener; }
 // clang-format on
 
@@ -25,21 +26,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit MultipleTestTracker(
+        ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>> const& tests
+    );
+
     MCNAPI void addListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
+
+    MCNAPI ~MultipleTestTracker();
     // NOLINTEND
 
 public:
-    // static variables
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& sFailedOptionalTest();
+    MCNAPI void* $ctor(::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>> const& tests);
+    // NOLINTEND
 
-    MCNAPI static ::std::string const& sFailedRequiredTest();
-
-    MCNAPI static ::std::string const& sNotStartedTest();
-
-    MCNAPI static ::std::string const& sOnGoingTest();
-
-    MCNAPI static ::std::string const& sSuccessfulTest();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

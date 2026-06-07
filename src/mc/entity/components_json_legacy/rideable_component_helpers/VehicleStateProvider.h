@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ActorUniqueID;
 struct RideableComponentData;
 struct StrictActorIDEntityContextPair;
 namespace RideableComponentHelpers { class IRideableActor; }
@@ -24,8 +25,15 @@ public:
         ::RideableComponentHelpers::IRideableActor const&      vehicleActor,
         ::RideableComponentHelpers::IRideableActor const&      passengerActor
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~VehicleStateProvider() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isPassenger(
+        ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
+        ::ActorUniqueID const&                                 passengerID
+    );
     // NOLINTEND
 
 public:
@@ -39,12 +47,6 @@ public:
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

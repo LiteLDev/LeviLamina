@@ -33,9 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeItem(::TradeItem&&);
+    MCAPI TradeItem(::TradeItem&& item);
 
-    MCAPI ::TradeItem& operator=(::TradeItem&&);
+    MCAPI ::TradeItem& operator=(::TradeItem&& item);
 
     MCAPI ~TradeItem();
     // NOLINTEND
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TradeItem&&);
+    MCAPI void* $ctor(::TradeItem&& item);
     // NOLINTEND
 
 public:

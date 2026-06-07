@@ -2,38 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Include.h"
-
 // auto generated forward declare list
 // clang-format off
-class StrictEntityContext;
-struct InterpolateMovementNeededComponent;
 struct MoveInputComponent;
 struct MovementAbilitiesComponent;
-struct PlayerInputRequestComponent;
 struct StateVectorComponent;
-struct WasInWaterFlagComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
-class WaterSinkInputSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void doInWaterSinkInputSystem(
-        ::MovementAbilitiesComponent const& abilitiesComponent,
-        ::MoveInputComponent const&         moveInputComponent,
-        ::StateVectorComponent&             stateVectorComponent
-    );
+namespace WaterSinkInputSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createWaterSinkInputSystem();
 
-    MCAPI static void tickWaterSinkInputSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::PlayerInputRequestComponent, ::WasInWaterFlagComponent>,
-            ::MovementAbilitiesComponent const,
-            ::MoveInputComponent const,
-            ::StateVectorComponent> view
-    );
-    // NOLINTEND
-};
+MCAPI void doInWaterSinkInputSystem(
+    ::MovementAbilitiesComponent const& abilitiesComponent,
+    ::MoveInputComponent const&         moveInputComponent,
+    ::StateVectorComponent&             stateVectorComponent
+);
+// NOLINTEND
+
+} // namespace WaterSinkInputSystem

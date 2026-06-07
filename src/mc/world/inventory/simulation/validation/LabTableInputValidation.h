@@ -28,8 +28,6 @@ public:
         /*override*/;
 
     virtual bool canDestroy(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~LabTableInputValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -29,15 +29,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LayEggGoalDefinition(LayEggGoalDefinition const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI LayEggGoalDefinition();
 
     MCAPI LayEggGoalDefinition(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
+
+    MCAPI LayEggGoalDefinition(::SharedTypes::v1_26_10::LayEggGoalDefinition const&);
 
     MCAPI ::SharedTypes::v1_26_10::LayEggGoalDefinition& operator=(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
 
@@ -71,6 +69,8 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_26_10::LayEggGoalDefinition const&);
     // NOLINTEND
 
 public:

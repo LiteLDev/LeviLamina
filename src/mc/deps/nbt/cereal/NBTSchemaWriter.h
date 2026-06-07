@@ -57,7 +57,6 @@ public:
     // prevent constructor by default
     NBTSchemaWriter& operator=(NBTSchemaWriter const&);
     NBTSchemaWriter(NBTSchemaWriter const&);
-    NBTSchemaWriter();
 
 public:
     // virtual functions
@@ -78,9 +77,9 @@ public:
 
     virtual bool write(uint value) /*override*/;
 
-    virtual bool write(int64) /*override*/;
+    virtual bool write(int64 value) /*override*/;
 
-    virtual bool write(uint64) /*override*/;
+    virtual bool write(uint64 value) /*override*/;
 
     virtual bool write(float value) /*override*/;
 
@@ -102,17 +101,23 @@ public:
 
     virtual ::cereal::SchemaRWType openObject() /*override*/;
 
-    virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) /*override*/;
+    virtual ::cereal::SchemaRWType openArray(bool, uint64) /*override*/;
 
     virtual void close() /*override*/;
-
-    virtual ~NBTSchemaWriter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI NBTSchemaWriter();
+
     MCNAPI bool _serializeTag(::std::unique_ptr<::Tag> tag);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -134,9 +139,9 @@ public:
 
     MCNAPI bool $write(uint value);
 
-    MCNAPI bool $write(int64);
+    MCNAPI bool $write(int64 value);
 
-    MCNAPI bool $write(uint64);
+    MCNAPI bool $write(uint64 value);
 
     MCNAPI bool $write(float value);
 
@@ -158,7 +163,7 @@ public:
 
     MCNAPI ::cereal::SchemaRWType $openObject();
 
-    MCNAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
+    MCNAPI ::cereal::SchemaRWType $openArray(bool, uint64);
 
     MCNAPI void $close();
 

@@ -49,7 +49,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~ITemplate();
+        virtual ~ITemplate() = default;
 
         virtual ::std::vector<::JigsawBlockInfo> const& getJigsawMarkers() const = 0;
 
@@ -59,21 +59,9 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
 
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -103,8 +91,6 @@ public:
         virtual ::BlockPos getSize(::Rotation rotation) const /*override*/;
 
         virtual bool isLegacyStructure() const /*override*/;
-
-        virtual ~LazyTemplate() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -285,11 +271,22 @@ public:
     MCAPI ::SharedTypes::v1_21_80::JigsawStructureMetadata const& _getMetadata() const;
 
     MCAPI uint64 _getMetadataKey() const;
+
+    MCFOLD ::std::string const& getLocation() const;
+
+    MCAPI ::SharedTypes::v1_21_80::JigsawStructureMetadata const& getMetadata() const;
+
+    MCFOLD uint64 getMetadataKey() const;
+
+    MCAPI bool operator!=(::StructurePoolElement const& rhs) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
+    empty();
+
     MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
     single(::std::string_view location);
 
@@ -299,6 +296,14 @@ public:
         ::gsl::not_null<::std::shared_ptr<
             ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const>>
             processors
+    );
+
+    MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
+    single(
+        ::std::string_view                                                   location,
+        ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*    blockRules,
+        ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules,
+        ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*    actorRules
     );
     // NOLINTEND
 

@@ -59,8 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    // NOLINTEND
 
-    virtual ~ServerboundLoadingScreenPacket() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ServerboundLoadingScreenPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit ServerboundLoadingScreenPacket(::ServerboundLoadingScreenPacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ServerboundLoadingScreenPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

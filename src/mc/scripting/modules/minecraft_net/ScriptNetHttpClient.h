@@ -11,9 +11,12 @@
 // clang-format off
 class Scheduler;
 namespace ScriptModuleMinecraftNet { class INativeHttpDelegate; }
-namespace ScriptModuleMinecraftNet { class ScriptHttpRequestBodyTooLargeError; }
-namespace ScriptModuleMinecraftNet { class ScriptHttpRequestNotAllowedError; }
-namespace ScriptModuleMinecraftNet { class ScriptMalformedHttpRequestError; }
+namespace ScriptModuleMinecraftNet { class ScriptHttpRequestLimitExceededError; }
+namespace ScriptModuleMinecraftNet { class ScriptInternalHttpRequestError; }
+namespace ScriptModuleMinecraftNet { class ScriptMalformedUriError; }
+namespace ScriptModuleMinecraftNet { class ScriptRequestBodyTooLargeError; }
+namespace ScriptModuleMinecraftNet { class ScriptTLSOnlyError; }
+namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetModuleConfig; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
@@ -21,7 +24,6 @@ namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
-namespace Util::Url { struct ComponentsView; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -62,21 +64,22 @@ public:
             ::std::unique_ptr<::ScriptModuleMinecraftNet::INativeHttpDelegate> delegate
         );
 
-        MCNAPI bool _uriAllowed(::std::string const& uri, ::Util::Url::ComponentsView const& requestComponents) const;
+        MCNAPI void cleanUp();
 
         MCNAPI ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
             ::Scripting::Error,
-            ::ScriptModuleMinecraftNet::ScriptHttpRequestBodyTooLargeError,
-            ::ScriptModuleMinecraftNet::ScriptHttpRequestNotAllowedError,
-            ::ScriptModuleMinecraftNet::ScriptMalformedHttpRequestError>
+            ::ScriptModuleMinecraftNet::ScriptRequestBodyTooLargeError,
+            ::ScriptModuleMinecraftNet::ScriptInternalHttpRequestError,
+            ::ScriptModuleMinecraftNet::ScriptHttpRequestLimitExceededError,
+            ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
+            ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
+            ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError>
         process(
-            ::Scripting::WeakLifetimeScope const&,
-            ::Scripting::ScriptObjectFactory&                                                         factory,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
+            ::Scripting::WeakLifetimeScope const& factory,
+            ::Scripting::ScriptObjectFactory&     requestHandle,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const&
         );
-
-        MCNAPI ~RequestProcessor();
         // NOLINTEND
 
     public:
@@ -89,12 +92,6 @@ public:
             ::std::unique_ptr<::ScriptModuleMinecraftNet::INativeHttpDelegate> delegate
         );
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -105,6 +102,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptNetHttpClient& operator=(ScriptNetHttpClient const&);
     ScriptNetHttpClient(ScriptNetHttpClient const&);
     ScriptNetHttpClient();
 
@@ -118,25 +116,30 @@ public:
         ::std::unique_ptr<::ScriptModuleMinecraftNet::INativeHttpDelegate> delegate
     );
 
+    MCNAPI void cancelAll(::std::string const& reason);
+
     MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
         ::Scripting::Error,
-        ::ScriptModuleMinecraftNet::ScriptHttpRequestBodyTooLargeError,
-        ::ScriptModuleMinecraftNet::ScriptHttpRequestNotAllowedError,
-        ::ScriptModuleMinecraftNet::ScriptMalformedHttpRequestError>
+        ::ScriptModuleMinecraftNet::ScriptRequestBodyTooLargeError,
+        ::ScriptModuleMinecraftNet::ScriptInternalHttpRequestError,
+        ::ScriptModuleMinecraftNet::ScriptHttpRequestLimitExceededError,
+        ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
+        ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
+        ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError>
     get(::Scripting::WeakLifetimeScope const& scope,
         ::Scripting::ScriptObjectFactory&     factory,
         ::std::string const&                  uri);
 
-    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHttpClient&
-    operator=(::ScriptModuleMinecraftNet::ScriptNetHttpClient const&);
-
     MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
         ::Scripting::Error,
-        ::ScriptModuleMinecraftNet::ScriptHttpRequestBodyTooLargeError,
-        ::ScriptModuleMinecraftNet::ScriptHttpRequestNotAllowedError,
-        ::ScriptModuleMinecraftNet::ScriptMalformedHttpRequestError>
+        ::ScriptModuleMinecraftNet::ScriptRequestBodyTooLargeError,
+        ::ScriptModuleMinecraftNet::ScriptInternalHttpRequestError,
+        ::ScriptModuleMinecraftNet::ScriptHttpRequestLimitExceededError,
+        ::ScriptModuleMinecraftNet::ScriptTLSOnlyError,
+        ::ScriptModuleMinecraftNet::ScriptMalformedUriError,
+        ::ScriptModuleMinecraftNet::ScriptUriNotAllowedError>
     request(
         ::Scripting::WeakLifetimeScope const&                                                     scope,
         ::Scripting::ScriptObjectFactory&                                                         factory,

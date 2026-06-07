@@ -41,8 +41,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~OfferRepositoryFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -66,7 +64,7 @@ public:
 
     MCFOLD bool isRealmsCoreOfferAvailable() const;
 
-    MCAPI bool isRealmsPlusOfferAvailable() const;
+    MCFOLD bool isRealmsPlusOfferAvailable() const;
 
     MCFOLD bool isRealmsTrialOfferAvailable() const;
 
@@ -83,12 +81,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> offerRepository);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

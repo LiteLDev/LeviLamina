@@ -10,6 +10,7 @@
 // clang-format off
 class Block;
 class HashedString;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorBlockPalette; }
 namespace Editor { struct ProbabilityBlockPaletteItem; }
 namespace Editor { struct SimpleBlockPaletteItem; }
@@ -24,6 +25,10 @@ namespace Editor::Services {
 
 class ServerBlockPaletteService : public ::Editor::Services::EditorBlockPaletteService {
 public:
+    // prevent constructor by default
+    ServerBlockPaletteService();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ServerBlockPaletteService() /*override*/ = default;
@@ -36,7 +41,7 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int index) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> setPaletteItem(
         ::HashedString const&                                                                          paletteId,
@@ -74,6 +79,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ServerBlockPaletteService(::Editor::ServiceProviderCollection& serviceProviders);
+
     MCNAPI ::Scripting::Result_deprecated<void> _setActiveAndSyncPalette(::HashedString const& paletteId);
 
     MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncPaletteItem(
@@ -82,9 +89,13 @@ public:
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-#ifdef LL_PLAT_S
     MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncSelectedPaletteIndex(int index);
-#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders);
     // NOLINTEND
 
 public:
@@ -98,7 +109,7 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $setSelectedPaletteItemIndex(int index);
+    MCNAPI ::Scripting::Result_deprecated<void> $setSelectedPaletteItemIndex(int);
 
     MCNAPI ::Scripting::Result_deprecated<void> $setPaletteItem(
         ::HashedString const&                                                                          paletteId,

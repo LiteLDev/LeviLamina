@@ -88,21 +88,27 @@ public:
         )> closure
     );
 
-#ifdef LL_PLAT_S
     MCNAPI void tick();
-#endif
 
     MCNAPI bool unsubscribe(
         ::Scripting::Closure<::Scripting::Future<void()>(
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>
         )> const& closure
     );
+
+    MCNAPI ~ScriptAsyncJoinEventSignal();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

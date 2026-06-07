@@ -27,6 +27,7 @@ class MinecraftInputMappingFactoryMap;
 class MouseMapper;
 class SplitscreenJoinListener;
 struct ControllerIDtoClientMap;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -91,10 +92,29 @@ public:
 
     MCAPI void _registerMenuButton(::std::string const& buttonName, bool suspendable);
 
+    MCAPI void changeControllerId(int oldId, int newId);
+
+    MCAPI void clearInputDeviceQueues();
+
+    MCAPI void clearInputDeviceQueuesForFrame();
+
+    MCAPI void
+    getCursorPos(float& xCursor, float& yCursor, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client) const;
+
+    MCFOLD ::InputSettingsHandler& getInputSettingsHandler();
+
     MCAPI void init(::IGameModuleApp& gameModuleApp);
 
     MCAPI ::ClientMoveInputHandler*
     initClientInput(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::IGameModuleApp& gameModuleApp);
+
+    MCAPI ::Bedrock::PubSub::Subscription
+    registerToInputModePublisher(::std::function<void(::IClientInstance&, ::InputMode)> callback);
+
+    MCFOLD ::Bedrock::PubSub::Subscription
+    registerToRawInputEventPublisher(::std::function<void(int, ::RawInputType, ::ButtonState, bool)> callback);
+
+    MCFOLD ::Bedrock::PubSub::Subscription subscribeToRawInput(::std::function<void(::IClientInstance&)> callback);
 
     MCAPI void tick(
         ::IMinecraftGame&                                               mcGame,

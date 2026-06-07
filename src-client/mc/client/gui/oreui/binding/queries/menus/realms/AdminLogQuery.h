@@ -31,12 +31,6 @@ public:
     AdminLogQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AdminLogQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AdminLogQuery(::OreUI::GameDependencies const& game);

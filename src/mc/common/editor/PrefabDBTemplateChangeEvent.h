@@ -18,18 +18,6 @@ public:
     PrefabDBTemplateChangeEvent& operator=(PrefabDBTemplateChangeEvent const&);
     PrefabDBTemplateChangeEvent(PrefabDBTemplateChangeEvent const&);
     PrefabDBTemplateChangeEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PrefabDBTemplateChangeEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::Prefabs

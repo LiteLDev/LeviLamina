@@ -139,6 +139,7 @@
 #include "stb_truetype.h"
 
 struct HWND__;
+struct HKEY__;
 struct HICON__;
 struct tagRECT;
 struct _TP_CALLBACK_INSTANCE;
@@ -247,7 +248,10 @@ namespace DirectX {
 #include "mc/math/vector/Vecs.h"               // for vector types
 
 template <typename T0, typename T1>
-class AutomaticID;
+class AutomaticID {
+public:
+    T1 mValue;
+};
 class Dimension;
 using DimensionType = AutomaticID<Dimension, int>;
 

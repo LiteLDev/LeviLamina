@@ -11,7 +11,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
-namespace SharedTypes { struct IntRange; }
+struct IntRange;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,9 +24,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    DurabilityItemComponent();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~DurabilityItemComponent() /*override*/ = default;
+    MCAPI explicit DurabilityItemComponent(int maxDamage);
+
+    MCAPI ::IntRange getDamageChanceRange() const;
+
+    MCFOLD int getMaxDamage() const;
+
+    MCFOLD void setMaxDamage(int maxDamage);
     // NOLINTEND
 
 public:
@@ -39,6 +49,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int maxDamage);
     // NOLINTEND
 
 public:

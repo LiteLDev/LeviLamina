@@ -4,10 +4,11 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Gameface { class ISyncStreamReader; }
 namespace cohtml { class IAsyncResourceStreamResponse; }
 // clang-format on
 
-namespace OreUI {
+namespace Gameface {
 
 class ResourceStreamResponse {
 public:
@@ -15,6 +16,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::cohtml::IAsyncResourceStreamResponse*> mResponse;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void setStreamReader(::Gameface::ISyncStreamReader* reader);
+    // NOLINTEND
 };
 
-} // namespace OreUI
+} // namespace Gameface

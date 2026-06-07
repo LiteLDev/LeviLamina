@@ -18,6 +18,8 @@ public:
 
     MCAPI static ::Bedrock::Threading::OSThreadPriority const& High();
 
+    MCAPI static ::Bedrock::Threading::OSThreadPriority const& Low();
+
     MCAPI static ::Bedrock::Threading::OSThreadPriority const& Normal();
     // NOLINTEND
 };

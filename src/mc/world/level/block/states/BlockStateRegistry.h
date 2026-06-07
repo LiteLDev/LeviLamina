@@ -16,10 +16,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::BlockState const*>> mBlockStateMap;
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BlockStateRegistry& get();
-    // NOLINTEND
 };

@@ -9,6 +9,7 @@
 // clang-format off
 class EntityContext;
 class IConstBlockSource;
+struct StateVectorComponent;
 // clang-format on
 
 namespace PlayerTravelledEvent {
@@ -16,6 +17,14 @@ namespace PlayerTravelledEvent {
 // NOLINTBEGIN
 MCNAPI ::PlayerTravelledEvent::TravelMethod
 getTravelledMethod(::EntityContext const& entity, ::IConstBlockSource const& region);
+
+MCNAPI bool isFrostWalking(::StateVectorComponent const& stateVector, ::IConstBlockSource const& region);
+
+MCNAPI bool onClimbableBlock(
+    ::StateVectorComponent const& stateVector,
+    ::IConstBlockSource const&    region,
+    ::EntityContext const&        entity
+);
 // NOLINTEND
 
 } // namespace PlayerTravelledEvent

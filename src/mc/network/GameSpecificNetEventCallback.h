@@ -20,14 +20,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

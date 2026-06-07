@@ -10,6 +10,7 @@
 class DimensionManager;
 class GameplayUserManager;
 class IPlayerTickProxy;
+struct Tick;
 // clang-format on
 
 class PlayerTickManager {
@@ -35,6 +36,10 @@ public:
         ::std::unique_ptr<::IPlayerTickProxy>                playerTickProxy,
         bool                                                 isClientSide
     );
+
+    MCAPI void processPlayerNetworking(::Tick const& currentTick);
+
+    MCAPI void tick(::Tick const& currentTick);
 
     MCAPI ~PlayerTickManager();
     // NOLINTEND

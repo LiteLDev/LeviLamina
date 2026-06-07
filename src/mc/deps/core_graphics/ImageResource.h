@@ -40,6 +40,16 @@ public:
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
         MCAPI ::cg::ImageResource::StreamedResource& operator=(::cg::ImageResource::StreamedResource&&);
+
+        MCAPI ~StreamedResource();
+#endif
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCFOLD void $dtor();
 #endif
         // NOLINTEND
     };

@@ -20,14 +20,17 @@ public:
 public:
     // prevent constructor by default
     ScriptPackSettingChangeAfterEvent& operator=(ScriptPackSettingChangeAfterEvent const&);
-    ScriptPackSettingChangeAfterEvent(ScriptPackSettingChangeAfterEvent const&);
     ScriptPackSettingChangeAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent&&);
+    MCAPI ScriptPackSettingChangeAfterEvent(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent const&);
+
+    MCAPI ScriptPackSettingChangeAfterEvent(
+        ::std::string const&                       settingName,
+        ::std::variant<float, bool, ::std::string> settingValue
+    );
 
     MCAPI ~ScriptPackSettingChangeAfterEvent();
     // NOLINTEND
@@ -36,6 +39,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent const&);
+
+    MCAPI void* $ctor(::std::string const& settingName, ::std::variant<float, bool, ::std::string> settingValue);
     // NOLINTEND
 
 public:

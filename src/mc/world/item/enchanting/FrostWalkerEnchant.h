@@ -16,8 +16,6 @@ public:
     virtual int getMaxLevel() const /*override*/;
 
     virtual bool isTreasureOnly() const /*override*/;
-
-    virtual ~FrostWalkerEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

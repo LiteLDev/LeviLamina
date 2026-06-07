@@ -59,6 +59,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                   mMultipleHits;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionIdentifier>>            mIgnoredEntities;
     ::ll::TypedStorage<1, 1, bool>                                                   mHitNearestPassenger;
+    ::ll::TypedStorage<1, 1, bool>                                                   mIsolatedPhysics;
     ::ll::TypedStorage<4, 4, float>                                                  mReflectImmunityInSeconds;
     // NOLINTEND
 
@@ -68,8 +69,6 @@ public:
     virtual char const* getJsonName() const /*override*/;
 
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
-
-    virtual ~ProjectileDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -82,12 +81,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
@@ -132,12 +131,6 @@ public:
     );
 
     MCAPI void _finalizeDimensionChange(::Player& player, ::ChangeDimensionRequest const& changeRequest);
-
-    MCAPI void _loadAgentFromTag(
-        ::Player&                 player,
-        ::ChangeDimensionRequest& changeRequest,
-        ::AddLimboActorHelper&    addLimboActorHelper
-    );
     // NOLINTEND
 
 public:

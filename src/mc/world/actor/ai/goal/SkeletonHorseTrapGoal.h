@@ -4,16 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/Difficulty.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Horse;
-class Player;
 class Skeleton;
 // clang-format on
 
-class SkeletonHorseTrapGoal : public ::Goal {
+class SkeletonHorseTrapGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,18 +37,22 @@ public:
     virtual void start() /*override*/;
 
     virtual void appendDebugInfo(::std::string& debugInfo) const /*override*/;
-
-    virtual ~SkeletonHorseTrapGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SkeletonHorseTrapGoal(::Horse& mob, int trapLifeTicks, float triggerDistance);
+
     MCAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const&);
 
-    MCAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const&, ::Horse const& otherHorse);
+    MCAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& otherHorse, ::Horse const&);
+    // NOLINTEND
 
-    MCAPI ::Player* _getClosestPlayer() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Horse& mob, int trapLifeTicks, float triggerDistance);
     // NOLINTEND
 
 public:

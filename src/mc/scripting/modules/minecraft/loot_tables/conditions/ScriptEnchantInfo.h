@@ -27,12 +27,6 @@ public:
     ScriptEnchantInfo();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::string getEnchantment() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 class CommandArea;
 class CompoundTag;
-class Dimension;
 // clang-format on
 
 class StructureAnimationData {
@@ -50,9 +49,37 @@ public:
         ::BlockPos const&                placementPos
     );
 
+    MCAPI bool allBlocksPlaced() const;
+
+    MCAPI uint getBlocksExpectedToPlace(uint64 currentTick) const;
+
+    MCFOLD uint getBlocksPlaced() const;
+
+    MCAPI ::BlockSource& getDimensionBlockSource() const;
+
+    MCFOLD ::BlockPos const& getPosition() const;
+
+    MCFOLD uint getQueueID() const;
+
+    MCFOLD ::std::string const& getStructureName() const;
+
+    MCFOLD ::StructureSettings const& getStructureSettings() const;
+
+    MCFOLD uchar getStructureVersion() const;
+
+    MCFOLD ::DimensionType const& getTargetDimension() const;
+
+    MCFOLD uint getTotalBlocks() const;
+
     MCAPI ::CompoundTag& serialize(::CompoundTag& tag);
 
+    MCFOLD void setBlocksPlaced(uint blocksPlaced);
+
     MCAPI void setCmdArea(::std::unique_ptr<::CommandArea> cmdArea);
+
+    MCAPI void setQueueID(uint queueID);
+
+    MCAPI void setTargetDimension(::DimensionType const& targetDimension);
 
     MCAPI ~StructureAnimationData();
     // NOLINTEND

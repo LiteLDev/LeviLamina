@@ -38,6 +38,36 @@ public:
         ::ll::TypedStorage<4, 4, ::ScreenEventType>                       mScreenEventType;
         ::ll::TypedStorage<4, 8, ::SoundEventConditions>                  mEventConditions;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SoundEventInfo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI SoundEventInfo(
+            ::std::string                 soundName,
+            float                         volume,
+            float                         pitch,
+            ::std::chrono::milliseconds   minTimeBetweenPlays,
+            ::ScreenEventType             screenEventType,
+            ::SoundEventConditions const& screenEventConditions
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::std::string                 soundName,
+            float                         volume,
+            float                         pitch,
+            ::std::chrono::milliseconds   minTimeBetweenPlays,
+            ::ScreenEventType             screenEventType,
+            ::SoundEventConditions const& screenEventConditions
+        );
+        // NOLINTEND
     };
 
 public:
@@ -62,10 +92,10 @@ public:
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree& screenEvent,
+        ::ScreenInputContext&,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     ) /*override*/;
     // NOLINTEND
 
@@ -91,12 +121,8 @@ public:
 
     MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
-    );
+    MCAPI ::ComponentReceiveActionType
+    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
     // NOLINTEND
 
 public:

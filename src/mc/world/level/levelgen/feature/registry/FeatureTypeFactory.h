@@ -38,7 +38,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FeatureTypeFactory();
+
     MCAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
+
+    MCAPI ::FeatureTypeVersion getFeatureTypeVersion(::std::string const& featureTypeName) const;
 
     MCAPI bool processFeature(
         ::IWorldRegistriesProvider&  lookupProvider,
@@ -48,6 +52,12 @@ public:
         ::Json::Value const&         featureData,
         ::MinEngineVersion const&    minEngineVersion
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

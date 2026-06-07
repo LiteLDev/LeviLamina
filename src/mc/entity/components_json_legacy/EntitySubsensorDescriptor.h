@@ -6,6 +6,11 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/world/actor/ActorFilterGroup.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntitySubsensor;
+// clang-format on
+
 struct EntitySubsensorDescriptor {
 public:
     // member variables
@@ -21,9 +26,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EntitySubsensorDescriptor& operator=(EntitySubsensorDescriptor const&);
+    EntitySubsensorDescriptor();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EntitySubsensorDescriptor(::EntitySubsensorDescriptor const&);
+
+    MCAPI void initialize(::EntitySubsensor& subsensor) const;
+
     MCAPI ~EntitySubsensorDescriptor();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::EntitySubsensorDescriptor const&);
     // NOLINTEND
 
 public:

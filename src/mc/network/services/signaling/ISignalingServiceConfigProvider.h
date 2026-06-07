@@ -19,40 +19,18 @@ public:
     // clang-format on
 
     // ISignalingServiceConfigProvider inner types define
-    struct Token : public ::std::string {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Token();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-    };
+    struct Token : public ::std::string {};
 
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ISignalingServiceConfigProvider() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ISignalingServiceConfigProvider() /*override*/;
-#endif
 
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(bool useJsonRpc, ::std::string const& id) = 0;
 
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() = 0;
 
     virtual void reset() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

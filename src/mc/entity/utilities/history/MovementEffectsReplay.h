@@ -31,13 +31,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual void advanceFrame(::EntityContext&) const /*override*/;
+#else // LL_PLAT_C
     virtual void advanceFrame(::EntityContext& entity) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) /*override*/;
+#else // LL_PLAT_C
     virtual void advanceLiveFrame(::Actor& actor, ::std::optional<uint64>) /*override*/;
+#endif
 
     virtual ::std::bitset<2> getCorrectionTypeBitset() const /*override*/;
-
-    virtual ~MovementEffectsReplay() /*override*/ = default;
     // NOLINTEND
 
 public:

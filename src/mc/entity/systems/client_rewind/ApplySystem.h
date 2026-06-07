@@ -24,14 +24,14 @@ struct ActorDataFlagComponent;
 struct ActorDataHorseFlagComponent;
 struct ActorDataJumpDurationComponent;
 struct ActorDataSeatOffsetComponent;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 namespace ClientRewind { struct ApplyReplayStateTrackerRequestComponent; }
 // clang-format on
 
 namespace ClientRewind {
 
 struct ApplySystem : public ::IStrictTickingSystem<::StrictExecutionContext<
-                         ::Filter<::ActorMovementTickNeededComponent>,
+                         ::Filter<::InterpolateMovementNeededComponent>,
                          ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
                          ::Write<
                              ::ActorDataFlagComponent,
@@ -47,7 +47,7 @@ struct ApplySystem : public ::IStrictTickingSystem<::StrictExecutionContext<
 public:
     // ApplySystem inner types define
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
-        ::Filter<::ActorMovementTickNeededComponent>,
+        ::Filter<::InterpolateMovementNeededComponent>,
         ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
         ::Write<
             ::ActorDataFlagComponent,
@@ -66,7 +66,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
             ::Write<
                 ::ActorDataFlagComponent,
@@ -78,12 +78,12 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
+            ::EntityFactoryT<>>&
     ) /*override*/;
 
     virtual void singleTick(
         ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
             ::Write<
                 ::ActorDataFlagComponent,
@@ -95,11 +95,9 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext,
-        ::StrictEntityContext&   entityContext
+            ::EntityFactoryT<>>&,
+        ::StrictEntityContext&
     ) /*override*/;
-
-    virtual ~ApplySystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -122,48 +120,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
-            ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
-            ::Write<
-                ::ActorDataFlagComponent,
-                ::ActorDataHorseFlagComponent,
-                ::ActorDataJumpDurationComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataSeatOffsetComponent,
-                ::ActorDataDirtyFlagsComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
-    );
 
-    MCAPI void $singleTick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
-            ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
-            ::Write<
-                ::ActorDataFlagComponent,
-                ::ActorDataHorseFlagComponent,
-                ::ActorDataJumpDurationComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataSeatOffsetComponent,
-                ::ActorDataDirtyFlagsComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext,
-        ::StrictEntityContext&   entityContext
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

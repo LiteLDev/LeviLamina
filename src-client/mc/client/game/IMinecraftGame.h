@@ -20,15 +20,12 @@
 #include "mc/deps/core/islands/AppIsland.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/DeferredTasksManager.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/PointerType.h"
 #include "mc/events/NetworkType.h"
 #include "mc/platform/MultiplayerLockedContext.h"
-#include "mc/server/commands/test/TestAssetCommandType.h"
-#include "mc/server/commands/test/TestCommandType.h"
 #include "mc/sound/MusicRepeatMode.h"
 
 // auto generated forward declare list
@@ -39,7 +36,6 @@ class ActorAnimationGroup;
 class ActorResourceDefinitionGroup;
 class AppSystemRegistry;
 class BlockCullingGroup;
-class CDNService;
 class ChunkSource;
 class ClientNetworkSystem;
 class ClubsService;
@@ -51,7 +47,6 @@ class CubemapBackgroundResources;
 class DateManager;
 class DeferredLighting;
 class DevConsoleLogger;
-class Dimension;
 class EDUSystems;
 class EmoticonManager;
 class EntityContext;
@@ -94,7 +89,7 @@ class MinecraftGraphics;
 class MinecraftInputHandler;
 class MusicManager;
 class NewPlayerSystem;
-class Options;
+class OptionRegistry;
 class PackDownloadManager;
 class PackManifestFactory;
 class PackSourceFactory;
@@ -133,7 +128,6 @@ struct ControllerIDtoClientMap;
 struct PlayerJoinWorldContext;
 struct ScreenshotOptions;
 namespace Bedrock::PubSub { class Subscription; }
-namespace ClientBlobCache { class Cache; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
 namespace OreUI { class DataProviderManager_DEPRECATED; }
@@ -272,23 +266,6 @@ public:
 
     virtual bool isResuming() const = 0;
 
-    virtual void setTestExecuteCommandCallback(
-        ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const& callback
-    ) = 0;
-
-    virtual void setTestAssetCommandCallback(
-        ::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const& callback
-    ) = 0;
-
-    virtual void runTestExecuteCommandCallback(
-        ::TestCommandType                   type,
-        ::std::vector<::std::string> const& tags,
-        int                                 repeatCount
-    ) const = 0;
-
-    virtual void
-    runTestAssetCommandCallback(::TestAssetCommandType type, ::std::vector<::std::string> const& tags) const = 0;
-
     virtual uint64 getClientInstanceCount() const = 0;
 
     virtual void setProfilerIsOn(bool val) = 0;
@@ -413,12 +390,7 @@ public:
 
     virtual void onClientCreatedLevel(::IClientInstance& client) = 0;
 
-    virtual uint64 generateClientId(
-        bool                              forceReset,
-        bool&                             generatedNewId,
-        uint64                            clientIdModifier,
-        ::std::shared_ptr<::Social::User> user
-    ) = 0;
+    virtual uint64 generateClientId(bool, bool&, uint64, ::std::shared_ptr<::Social::User>) = 0;
 
     virtual ::std::weak_ptr<::RealmsAPI> getRealms() = 0;
 
@@ -445,8 +417,6 @@ public:
     virtual ::GameRenderer& getGameRenderer() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getTextureAtlas() = 0;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getItemTextureAtlas() = 0;
 
     virtual bool hasActorResourceDefinitionGroup() const = 0;
 
@@ -487,8 +457,6 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::PersonaService> getPersonaService() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> getGatheringManager() const = 0;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::CDNService> getCDNService() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> getContentCatalogService() const = 0;
 
@@ -662,17 +630,15 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ScreenshotRecorder> getScreenshotRecorder() = 0;
 
-    virtual ::std::shared_ptr<::ClientBlobCache::Cache> getClientBlobCache() = 0;
-
     virtual ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint> const getContentFileLogEndPoint() const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() = 0;
 
-    virtual ::std::shared_ptr<::Options> getPrimaryUserOptions() = 0;
+    virtual ::std::shared_ptr<::OptionRegistry> getPrimaryUserOptions() = 0;
 
-    virtual ::std::shared_ptr<::Options const> getPrimaryUserOptions() const = 0;
+    virtual ::std::shared_ptr<::OptionRegistry const> getPrimaryUserOptions() const = 0;
 
     virtual void tryShowXblFirstLaunchScreen(bool isUserConnectedToPlatform) = 0;
 
@@ -682,8 +648,6 @@ public:
     virtual uchar getSplitScreenCount() const = 0;
 
     virtual ::IGameModuleApp& getGameModule() = 0;
-
-    virtual ::std::shared_ptr<void*> requestMusicDeferment() = 0;
 
     virtual bool isMusicEnabled() const = 0;
 
@@ -721,8 +685,6 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> getProfanityContext() = 0;
 
     virtual double getGameUpdateDurationInSeconds() const = 0;
-
-    virtual ::std::tuple<bool, int> GetEcoModeSettings() const = 0;
     // NOLINTEND
 
 public:

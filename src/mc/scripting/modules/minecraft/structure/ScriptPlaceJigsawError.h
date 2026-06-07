@@ -21,8 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptPlaceJigsawError(::std::string message);
-
-    MCAPI ~ScriptPlaceJigsawError();
     // NOLINTEND
 
 public:
@@ -35,12 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string message);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

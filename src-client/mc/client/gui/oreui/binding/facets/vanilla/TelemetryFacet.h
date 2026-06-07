@@ -33,13 +33,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~TelemetryFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TelemetryFacet(::OreUI::ITelemetry& telemetry);
+
     MCAPI void discardTrackedOptions();
 
     MCAPI void fireEvent(
@@ -75,6 +75,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::ITelemetry& telemetry);
     // NOLINTEND
 
 public:

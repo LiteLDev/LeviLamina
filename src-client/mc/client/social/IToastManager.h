@@ -17,14 +17,6 @@ public:
     virtual void pushToast(::ToastMessage&& message) = 0;
 
     virtual bool isEditorModeEnabled() const = 0;
-
-    virtual ~IToastManager() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

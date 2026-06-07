@@ -36,9 +36,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI DeleteFileEntry(::Core::PathBuffer<::std::string> fileName, bool wasRename);
+
         MCNAPI ::leveldb::Status execute(::leveldb::Env* targetEnv);
 
         MCNAPI ~DeleteFileEntry();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Core::PathBuffer<::std::string> fileName, bool wasRename);
         // NOLINTEND
 
     public:
@@ -81,20 +89,24 @@ public:
     virtual ::leveldb::Status RemoveFile(::std::string const& f) /*override*/;
 
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
-
-    virtual ~SnapshotEnv() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _isQueuedForRemoval(::Core::PathBuffer<::std::string> const& file);
+    MCNAPI explicit SnapshotEnv(::leveldb::Env* env);
 
-    MCNAPI ::leveldb::Status _newWrappedWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
+    MCNAPI bool _isQueuedForRemoval(::Core::PathBuffer<::std::string> const& file);
 
     MCNAPI ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::Core::Path const& dir);
 
     MCNAPI void releaseSnapshot();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::leveldb::Env* env);
     // NOLINTEND
 
 public:

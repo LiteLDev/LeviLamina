@@ -25,8 +25,6 @@ public:
         /*override*/;
 
     virtual ::mce::Color get(::Block const&) const /*override*/;
-
-    virtual ~GrassTessellationPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:

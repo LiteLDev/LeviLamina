@@ -6,6 +6,11 @@
 #include "mc/world/attribute/AttributeBuff.h"
 #include "mc/world/attribute/AttributeBuffType.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDamageSource;
+// clang-format on
+
 class InstantaneousAttributeBuff : public ::AttributeBuff {
 public:
     // prevent constructor by default
@@ -24,12 +29,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI InstantaneousAttributeBuff(float amount, ::ActorDamageSource const& source);
+
     MCAPI InstantaneousAttributeBuff(float amount, ::AttributeBuffType type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(float amount, ::ActorDamageSource const& source);
+
     MCAPI void* $ctor(float amount, ::AttributeBuffType type);
     // NOLINTEND
 

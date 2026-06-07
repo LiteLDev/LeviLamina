@@ -16,8 +16,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
+    // NOLINTEND
 
-    virtual ~HoverMoveControl() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI HoverMoveControl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

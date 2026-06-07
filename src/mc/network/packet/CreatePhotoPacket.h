@@ -59,31 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~CreatePhotoPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CreatePhotoPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI CreatePhotoPacket();
+
+    MCAPI explicit CreatePhotoPacket(::CreatePhotoPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::CreatePhotoPacketPayload payload);
     // NOLINTEND
 
 public:

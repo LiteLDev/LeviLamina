@@ -7,9 +7,19 @@
 
 class CameraItem : public ::Item {
 public:
-    // virtual functions
+    // prevent constructor by default
+    CameraItem();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~CameraItem() /*override*/ = default;
+    MCAPI CameraItem(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

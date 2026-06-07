@@ -49,15 +49,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
-
-    virtual ~ServerRestartService() /*override*/;
+    virtual ~ServerRestartService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     virtual ::std::string_view getServiceName() const /*override*/;
+
+    virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
 
     virtual void requestReloadScriptsAndFunctions() /*override*/;
     // NOLINTEND
@@ -72,6 +72,8 @@ public:
 
     MCNAPI void _onTick();
 
+    MCNAPI void _performScriptAndFunctionRestartRequest();
+
     MCNAPI bool _validateRequest();
     // NOLINTEND
 
@@ -82,21 +84,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
-
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
 
     MCNAPI void $requestReloadScriptsAndFunctions();
 

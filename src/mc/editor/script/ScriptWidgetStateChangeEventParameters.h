@@ -28,13 +28,6 @@ public:
     ScriptWidgetStateChangeEventParameters();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters&
-    operator=(::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();

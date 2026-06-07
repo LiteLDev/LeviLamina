@@ -33,10 +33,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setMapping(
-        ::InputEventQueue&      eventQueue,
-        ::BindingFactory const& bindingFactory,
-        ::InputMapping const&   inputMapping,
-        int                     controllerId
+        ::InputEventQueue&      inputMapping,
+        ::BindingFactory const& controllerId,
+        ::InputMapping const&,
+        int
     ) /*override*/;
 
     virtual void clearMapping(int controllerId) /*override*/;
@@ -45,27 +45,18 @@ public:
 
     virtual void clearInputDeviceQueueForFrame() /*override*/;
 
-    virtual bool tick(
-        ::InputEventQueue&                                              eventQueue,
-        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map
-    ) /*override*/;
+    virtual bool tick(::InputEventQueue&, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&) /*override*/;
 
     virtual ::InputMode getInputMode() const /*override*/;
 
     virtual void changeControllerId(int oldId, int newId) /*override*/;
-
-    virtual ~BehaviorActionMapper() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMapping(
-        ::InputEventQueue&      eventQueue,
-        ::BindingFactory const& bindingFactory,
-        ::InputMapping const&   inputMapping,
-        int                     controllerId
-    );
+    MCAPI void
+    $setMapping(::InputEventQueue& inputMapping, ::BindingFactory const& controllerId, ::InputMapping const&, int);
 
     MCAPI void $clearMapping(int controllerId);
 
@@ -73,8 +64,7 @@ public:
 
     MCFOLD void $clearInputDeviceQueueForFrame();
 
-    MCFOLD bool
-    $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map);
+    MCFOLD bool $tick(::InputEventQueue&, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&);
 
     MCFOLD ::InputMode $getInputMode() const;
 

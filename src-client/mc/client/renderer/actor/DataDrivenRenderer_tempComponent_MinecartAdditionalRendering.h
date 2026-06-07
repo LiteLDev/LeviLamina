@@ -11,6 +11,8 @@ class Actor;
 class ActorRenderData;
 class BaseActorRenderContext;
 class Block;
+class BlockTessellator;
+class DataDrivenRenderer;
 class RenderParams;
 // clang-format on
 
@@ -47,19 +49,28 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_MinecartAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataDrivenRenderer_tempComponent_MinecartAdditionalRendering(
+        ::std::shared_ptr<::DataDrivenRenderer> renderer,
+        ::BlockTessellator&                     commonRenderer
+    );
+
     MCNAPI void renderMinecartContents(
         ::BaseActorRenderContext& renderContext,
         ::Actor&                  cart,
         float                     actorFrameAlpha,
         ::Block const&            block
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer, ::BlockTessellator& commonRenderer);
     // NOLINTEND
 
 public:

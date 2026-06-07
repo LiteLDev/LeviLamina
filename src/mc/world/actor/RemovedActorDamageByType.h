@@ -27,8 +27,6 @@ public:
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
     virtual ::ActorType getEntityType() const /*override*/;
-
-    virtual ~RemovedActorDamageByType() /*override*/ = default;
     // NOLINTEND
 
 public:

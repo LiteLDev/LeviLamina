@@ -10,6 +10,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct FuelItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,9 +22,15 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    FuelItemComponent();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~FuelItemComponent() /*override*/ = default;
+    MCAPI explicit FuelItemComponent(::SharedTypes::v1_20_50::FuelItemComponent component);
+
+    MCFOLD void setFuelDuration(float fuelDuration);
     // NOLINTEND
 
 public:
@@ -36,6 +43,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::FuelItemComponent component);
     // NOLINTEND
 
 public:

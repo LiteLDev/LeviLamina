@@ -33,8 +33,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootItemFunction const& _getFunction() const /*override*/;
-
-    virtual ~ScriptSetItemCountFunction() /*override*/ = default;
     // NOLINTEND
 
 public:

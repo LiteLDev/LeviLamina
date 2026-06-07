@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
-class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -25,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~CanDestroyInCreativeItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -37,8 +34,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

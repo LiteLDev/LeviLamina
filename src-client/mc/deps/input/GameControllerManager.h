@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameControllerManager() /*override*/ = default;
+    virtual ~GameControllerManager() /*override*/;
 
     virtual ::std::weak_ptr<::IGameController> getGameController(int id) /*override*/;
 
@@ -82,6 +82,10 @@ public:
 
     MCAPI void feedTrigger(int gameControllerId, int triggerId, float magnitude);
 
+    MCAPI bool getGameControllerIsConnected(int gameControllerId) const;
+
+    MCAPI bool isAdequateController(int gameControllerId);
+
     MCAPI void setGameControllerConnected(int gameControllerId, bool isConnected);
     // NOLINTEND
 
@@ -95,6 +99,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

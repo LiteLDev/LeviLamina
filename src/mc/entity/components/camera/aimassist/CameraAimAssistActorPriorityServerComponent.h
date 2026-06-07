@@ -20,16 +20,29 @@ public:
 
 public:
     // prevent constructor by default
-    CameraAimAssistActorPriorityServerComponent& operator=(CameraAimAssistActorPriorityServerComponent const&);
+    CameraAimAssistActorPriorityServerComponent(CameraAimAssistActorPriorityServerComponent const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI CameraAimAssistActorPriorityServerComponent();
 
-    MCAPI CameraAimAssistActorPriorityServerComponent(::CameraAimAssistActorPriorityServerComponent const&);
+    MCAPI void clearDirty();
+
+    MCFOLD ::std::map<::CameraAimAssistActorPriority::PriorityKey, int> const& getActorPriorities() const;
+
+    MCAPI int getOrCreateActorIndex(::HashedString const& actorId);
+
+    MCAPI int getOrCreateCategoryIndex(::HashedString const& categoryId);
+
+    MCAPI int getOrCreatePresetIndex(::HashedString const& presetId);
+
+    MCFOLD bool isDirty() const;
 
     MCAPI ::CameraAimAssistActorPriorityServerComponent& operator=(::CameraAimAssistActorPriorityServerComponent&&);
+
+    MCAPI ::CameraAimAssistActorPriorityServerComponent&
+    operator=(::CameraAimAssistActorPriorityServerComponent const&);
 
     MCAPI void setExclusion(::HashedString const& presetId, ::HashedString const& actorId, bool isExcluded);
 
@@ -47,8 +60,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CameraAimAssistActorPriorityServerComponent const&);
     // NOLINTEND
 
 public:

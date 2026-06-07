@@ -151,8 +151,6 @@ public:
         ::ChunkPos const&                 chunkPos,
         ::SurfaceLevelCache const&        surfaceLevelCache
     );
-
-    MCAPI ::SurfaceLevelCache createSurfaceLevelCache(::ChunkPos chunkPos) const;
     // NOLINTEND
 
 public:

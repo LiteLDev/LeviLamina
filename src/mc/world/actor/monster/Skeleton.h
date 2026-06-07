@@ -55,8 +55,6 @@ public:
     virtual bool canFreeze() const /*override*/;
 
     virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
-
-    virtual ~Skeleton() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,7 +66,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCFOLD void setSkeletonType(::Skeleton::SkeletonType type);
+    MCAPI void setWitherParent(::WitherBoss* wither);
     // NOLINTEND
 
 public:

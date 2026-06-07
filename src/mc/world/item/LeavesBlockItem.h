@@ -32,8 +32,6 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
-
-    virtual ~LeavesBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:

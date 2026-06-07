@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Settings { struct LocStringData; }
 namespace Settings { struct OptionData; }
 // clang-format on
 
@@ -22,9 +23,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AsyncOptionsDataProvider();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncOptionsDataProvider() /*override*/ = default;
+    virtual ~AsyncOptionsDataProvider() /*override*/;
 
     virtual void setChangeListener(::std::function<void()> callback) /*override*/;
 
@@ -36,9 +41,29 @@ public:
 
     virtual void setValue(int value) /*override*/;
 
-    virtual ::std::optional<::std::string> const& getInfo() const /*override*/;
+    virtual ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    getInfo() const /*override*/;
 
     virtual bool flush() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit AsyncOptionsDataProvider(::std::unique_ptr<::Settings::IOptionsDataProvider> delegateProvider);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::unique_ptr<::Settings::IOptionsDataProvider> delegateProvider);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -54,7 +79,9 @@ public:
 
     MCFOLD void $setValue(int value);
 
-    MCFOLD ::std::optional<::std::string> const& $getInfo() const;
+    MCFOLD ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    $getInfo() const;
 
     MCAPI bool $flush();
     // NOLINTEND

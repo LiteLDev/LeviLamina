@@ -13,13 +13,20 @@ public:
 public:
     // prevent constructor by default
     PortMappingInfo& operator=(PortMappingInfo const&);
-    PortMappingInfo(PortMappingInfo const&);
     PortMappingInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PortMappingInfo(::PortMappingInfo const&);
+
     MCNAPI ~PortMappingInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::PortMappingInfo const&);
     // NOLINTEND
 
 public:

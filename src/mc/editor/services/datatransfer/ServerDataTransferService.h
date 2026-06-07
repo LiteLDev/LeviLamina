@@ -76,13 +76,15 @@ public:
 
     public:
         // prevent constructor by default
-        PendingCreateSettingRequest& operator=(PendingCreateSettingRequest const&);
         PendingCreateSettingRequest(PendingCreateSettingRequest const&);
         PendingCreateSettingRequest();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::Editor::Services::ServerDataTransferService::PendingCreateSettingRequest&
+        operator=(::Editor::Services::ServerDataTransferService::PendingCreateSettingRequest const&);
+
         MCNAPI ~PendingCreateSettingRequest();
         // NOLINTEND
 
@@ -165,6 +167,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::Editor::Services::ServerDataTransferService::RegisteredCollection&
+        operator=(::Editor::Services::ServerDataTransferService::RegisteredCollection&&);
+
         MCNAPI ~RegisteredCollection();
         // NOLINTEND
 

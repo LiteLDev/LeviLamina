@@ -23,19 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OwnedWorldTemplateDataBindings& operator=(OwnedWorldTemplateDataBindings const&);
-    OwnedWorldTemplateDataBindings(OwnedWorldTemplateDataBindings const&);
-    OwnedWorldTemplateDataBindings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OwnedWorldTemplateDataBindings(::OreUI::OwnedWorldTemplateDataBindings&&);
-
     MCAPI bool canBeRated();
-
-    MCAPI ~OwnedWorldTemplateDataBindings();
     // NOLINTEND
 
 public:
@@ -45,18 +35,6 @@ public:
         ::World::OwnedWorldTemplateData const&                     ownedWorldTemplateData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::OwnedWorldTemplateDataBindings&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -67,9 +67,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeviceInformationQuery() /*override*/;
+    virtual ~DeviceInformationQuery() /*override*/ = default;
 
-    virtual void onOperationModeChanged(::OperationMode operationMode) /*override*/;
+    virtual void onOperationModeChanged(::OperationMode) /*override*/;
     // NOLINTEND
 
 public:
@@ -87,15 +87,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onOperationModeChanged(::OperationMode operationMode);
+    MCFOLD void $onOperationModeChanged(::OperationMode);
     // NOLINTEND
 
 public:

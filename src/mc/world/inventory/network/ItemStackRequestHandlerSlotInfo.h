@@ -30,4 +30,10 @@ public:
     ItemStackRequestHandlerSlotInfo& operator=(ItemStackRequestHandlerSlotInfo const&);
     ItemStackRequestHandlerSlotInfo(ItemStackRequestHandlerSlotInfo const&);
     ItemStackRequestHandlerSlotInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit operator bool() const;
+    // NOLINTEND
 };

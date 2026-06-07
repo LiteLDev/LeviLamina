@@ -15,20 +15,4 @@ public:
     TemporaryItemCounter& operator=(TemporaryItemCounter const&);
     TemporaryItemCounter(TemporaryItemCounter const&);
     TemporaryItemCounter();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~TemporaryItemCounter();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };

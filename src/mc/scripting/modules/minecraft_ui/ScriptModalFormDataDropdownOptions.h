@@ -26,11 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptModalFormDataDropdownOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions&&);
-
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions&&);
-
     MCNAPI ~ScriptModalFormDataDropdownOptions();
     // NOLINTEND
 
@@ -38,12 +33,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormDataDropdownOptions&&);
     // NOLINTEND
 
 public:

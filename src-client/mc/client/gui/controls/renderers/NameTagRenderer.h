@@ -31,8 +31,22 @@ public:
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
+    // NOLINTEND
 
-    virtual ~NameTagRenderer() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI NameTagRenderer();
+
+    MCAPI void setBackgroundColor(::mce::Color const& color);
+
+    MCAPI void setTextColor(::mce::Color const& color);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

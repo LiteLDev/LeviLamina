@@ -48,6 +48,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorRenderData(bool isInUI, ::Actor& actor, ::Vec3 const& cameraTargetPosition, float frameAlpha);
+
     MCAPI ActorRenderData(
         bool                  isInUI,
         ::AnimationComponent& animationComponent,
@@ -56,20 +58,62 @@ public:
         float                 frameAlpha
     );
 
+    MCAPI void _Level_setupShading(
+        ::BaseActorRenderContext& renderContext,
+        ::mce::Color const&       overlayColor,
+        ::mce::Color const&       changeColor,
+        ::mce::Color const&       changeColor2,
+        ::Vec4 const&             uvAnim,
+        float                     br,
+        bool                      ignoreLighting,
+        bool                      filterLighting,
+        bool                      isEnchanted
+    ) const;
+
     MCAPI void _UI_setupShading(
         ::BaseActorRenderContext& renderContext,
+        ::mce::Color const&       uvAnim,
         ::mce::Color const&,
         ::mce::Color const&,
-        ::mce::Color const&,
-        ::Vec4 const& uvAnim,
+        ::Vec4 const&,
         float,
         bool,
         bool
     ) const;
 
+    MCAPI void applyCustomScale(::Matrix& worldMatrix) const;
+
     MCAPI void applyGlobalAnims(::Matrix& worldMatrix, ::BaseActorRenderContext& renderContext) const;
 
-    MCAPI void update(float frameAlpha, ::Vec3 const& cameraTargetPosition);
+    MCFOLD ::Actor* getActor() const;
+
+    MCFOLD ::AnimationComponent& getAnimationComponent() const;
+
+    MCAPI float getBodyYawDegrees(float frameAlpha) const;
+
+    MCAPI float getHeightOffset() const;
+
+    MCFOLD bool getIgnoreLighting() const;
+
+    MCFOLD ::ItemStack const* getItemStack() const;
+
+    MCFOLD ::MolangVariableMap& getMolangVariables() const;
+
+    MCFOLD void setItemStack(::ItemStack const* item);
+
+    MCAPI void setupShading(
+        ::BaseActorRenderContext& renderContext,
+        ::mce::Color const&       overlayColor,
+        ::mce::Color const&       changeColor,
+        ::mce::Color const&       changeColor2,
+        ::Vec4 const&             uvAnim,
+        float                     br,
+        bool                      isEnchanted,
+        bool                      ignoreLighting,
+        bool                      filterLighting
+    ) const;
+
+    MCAPI bool shouldRender() const;
 
     MCAPI void updateMolangVariables(::RenderParams& renderParams) const;
     // NOLINTEND
@@ -77,6 +121,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static float
+    additionalDamageNearbyMobsYRotation(::Mob const& mob, float actorFrameAlpha, bool isFirstPersonPlayer);
+
     MCAPI static ::std::optional<::std::pair<float, float>>
     getDamageOrGlidingXYRotation(::Mob const& mob, float actorFrameAlpha, bool isFirstPersonPlayer);
 
@@ -90,6 +137,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(bool isInUI, ::Actor& actor, ::Vec3 const& cameraTargetPosition, float frameAlpha);
+
     MCAPI void* $ctor(
         bool                  isInUI,
         ::AnimationComponent& animationComponent,

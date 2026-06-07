@@ -12,17 +12,13 @@ namespace SharedTypes::Legacy::Spawn { struct MobEventFilter; }
 namespace SharedTypes::Legacy::Spawn {
 // functions
 // NOLINTBEGIN
-MCAPI bool operator==(
-    ::SharedTypes::Legacy::Spawn::BiomeConditions const& __P0,
-    ::SharedTypes::Legacy::Spawn::BiomeConditions const& __P1
-);
+MCAPI bool
+operator==(::SharedTypes::Legacy::Spawn::BiomeConditions const&, ::SharedTypes::Legacy::Spawn::BiomeConditions const&);
 
-MCFOLD bool operator==(::SharedTypes::Legacy::Spawn::Herd const& __P0, ::SharedTypes::Legacy::Spawn::Herd const& __P1);
+MCFOLD bool operator==(::SharedTypes::Legacy::Spawn::Herd const&, ::SharedTypes::Legacy::Spawn::Herd const&);
 
-MCFOLD bool operator==(
-    ::SharedTypes::Legacy::Spawn::MobEventFilter const& __P0,
-    ::SharedTypes::Legacy::Spawn::MobEventFilter const& __P1
-);
+MCFOLD bool
+operator==(::SharedTypes::Legacy::Spawn::MobEventFilter const&, ::SharedTypes::Legacy::Spawn::MobEventFilter const&);
 // NOLINTEND
 
 } // namespace SharedTypes::Legacy::Spawn

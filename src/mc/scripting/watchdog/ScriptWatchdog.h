@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ScriptPluginManager;
+class ServerLevel;
+namespace Scripting { class IWatchdog; }
+namespace Scripting { struct ContextId; }
+// clang-format on
+
 class ScriptWatchdog {
 public:
     // member variables
@@ -15,13 +23,19 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptWatchdog& operator=(ScriptWatchdog const&);
     ScriptWatchdog(ScriptWatchdog const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptWatchdog();
+
+    MCNAPI void disableTimingWarnings(::Scripting::ContextId contextId, bool disabled);
+
+    MCNAPI void
+    initWatchdogHandler(::Scripting::IWatchdog& watchdog, ::ServerLevel& level, ::ScriptPluginManager* pluginManager);
+
+    MCNAPI ::ScriptWatchdog& operator=(::ScriptWatchdog const&);
 
     MCNAPI ~ScriptWatchdog();
     // NOLINTEND

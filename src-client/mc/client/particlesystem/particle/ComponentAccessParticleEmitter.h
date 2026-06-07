@@ -36,6 +36,22 @@ public:
         ::ll::TypedStorage<4, 4, float>   mHitAlpha;
         ::ll::TypedStorage<1, 1, uchar>   mHitAxis;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CollisionHelper();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI CollisionHelper(float alpha, uchar hitAxis, ::AABB const& hitShape);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(float alpha, uchar hitAxis, ::AABB const& hitShape);
+        // NOLINTEND
     };
 
 public:
@@ -117,20 +133,12 @@ public:
     ) = 0;
 
     virtual bool getAreParticlesFromActorButWorldRelative() const = 0;
-
-    virtual ~ComponentAccessParticleEmitter() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setEmitRate(float emitRate);
+    MCFOLD void $setEmitRate(float emitRate);
 
     MCFOLD float $getEmitRate() const;
 

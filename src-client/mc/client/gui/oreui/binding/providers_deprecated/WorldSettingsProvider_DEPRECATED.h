@@ -104,9 +104,39 @@ public:
         ::OreUI::Router&                                                  router
     );
 
-    MCAPI void _setEditorWorldFlags();
-
     MCAPI bool arePacksDifferentFromSnapshotPacks() const;
+
+    MCAPI bool consumeDirtyFlag();
+
+    MCAPI bool consumeInitializeResourcePacksFlag();
+
+    MCAPI bool consumeReloadInitialTemplate();
+
+    MCAPI bool consumeResetFlag();
+
+    MCAPI bool getHasNonAddonBehaviourPack() const;
+
+    MCAPI ::std::string getInitialLoadTemplateID();
+
+    MCFOLD ::LevelDataWrapper& getLevelData();
+
+    MCAPI ::OreUI::LevelDataBindings& getLevelDataBindings();
+
+    MCAPI ::LevelSummary& getLevelSummary();
+
+    MCAPI ::std::shared_ptr<::MainMenuScreenController> getMainMenuScreenController() const;
+
+    MCAPI ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel() const;
+
+    MCAPI bool getTemplateLoadingCompletedFlag() const;
+
+    MCAPI ::WorldCreationHelper& getWorldCreationHelper();
+
+    MCAPI ::std::string const& getWorldPreviewImagePath() const;
+
+    MCAPI ::WorldSettingsRules& getWorldSettingsRules();
+
+    MCAPI bool isFromWorldTemplate() const;
 
     MCAPI void onRouteChanged(
         ::std::optional<::OreUI::RouterLocation> const& previousLocation,
@@ -118,10 +148,18 @@ public:
 
     MCAPI void saveResourcePacksSnapshot();
 
+    MCAPI void saveSettingsSnapshot();
+
     MCAPI void setContentViews(
         ::std::shared_ptr<::ContentViews> texturePackViews,
         ::std::shared_ptr<::ContentViews> behaviorPackViews
     );
+
+    MCAPI void setEditorWorldCreationFlag(bool brandNewWorld);
+
+    MCAPI void setHasNonAddonBehaviourPack(bool value);
+
+    MCAPI void setWorldCreated(bool worldCreated);
 
     MCAPI void setWorldPreviewImagePath(::std::string const& worldPreviewImagePath);
 
@@ -129,6 +167,10 @@ public:
     startLoadingTemplate(::std::string const& worldTemplateId);
 
     MCAPI ::OreUI::WorldSettingsProvider_DEPRECATED::TemplateLoadingState tickTemplateLoader();
+
+    MCAPI void toggleTemplateLoadingComplete();
+
+    MCAPI void tryDeleteWorld();
 
     MCAPI ~WorldSettingsProvider_DEPRECATED();
     // NOLINTEND

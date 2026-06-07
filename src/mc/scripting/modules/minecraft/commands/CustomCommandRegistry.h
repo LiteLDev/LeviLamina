@@ -143,11 +143,20 @@ public:
     MCAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&
     _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string_view newNamespace);
 
+    MCAPI bool _isDuplicateCommand(::std::string const& name) const;
+
+    MCAPI bool _isDuplicateEnum(::std::string const& name) const;
+
     MCAPI void _processRegistrations();
 
     MCAPI void _reloadRegistrations();
 
     MCAPI ::std::optional<::std::string> _tryClaimAlias(::std::string const& commandName);
+
+    MCAPI void _tryRegisterAlias(::std::string const& commandName, ::std::optional<::std::string> const& aliasOpt);
+
+    MCAPI bool
+    _validParametersForReload(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& newInterface) const;
 
     MCAPI ::std::optional<::std::string> _validateEnumDependencies(
         ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,

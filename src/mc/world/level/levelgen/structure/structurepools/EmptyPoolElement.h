@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
@@ -12,11 +13,16 @@
 class BlockPos;
 class BlockSource;
 class BoundingBox;
+class IStructureTemplateManager;
 class JigsawBlockInfo;
 class LegacyStructureSettings;
 // clang-format on
 
 class EmptyPoolElement : public ::StructurePoolElement {
+public:
+    // prevent constructor by default
+    EmptyPoolElement();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,8 +40,18 @@ public:
     virtual bool isValid() const /*override*/;
 
     virtual ::StructurePoolElementType type() const /*override*/;
+    // NOLINTEND
 
-    virtual ~EmptyPoolElement() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit EmptyPoolElement(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
     // NOLINTEND
 
 public:

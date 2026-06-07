@@ -6,7 +6,6 @@
 #include "mc/common/SubClientId.h"
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
@@ -159,6 +158,7 @@ class ServerNetworkEventCoordinator;
 class ServerParticleManager;
 class ServerPlayerEventCoordinator;
 class ServerPlayerSleepManager;
+class ServerSoundHandle;
 class SoundPlayerInterface;
 class Spawner;
 class StartGamePacket;
@@ -166,7 +166,6 @@ class StrictEntityContext;
 class StructureManager;
 class StructureSpawnRegistry;
 class SubChunkPacket;
-class SubChunkRequestManager;
 class SurfaceBuilderRegistry;
 class TagCacheManager;
 class TaskGroup;
@@ -212,6 +211,7 @@ class CameraRegistry;
 class MultiPlayerLevel;
 class Particle;
 class SubChunkManager;
+class SubChunkRequestManager;
 class TrustedSkinHelper;
 // clang-format on
 
@@ -219,7 +219,7 @@ class ILevel : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ILevel() /*override*/;
+    virtual ~ILevel() /*override*/ = default;
 
     virtual bool initialize(
         ::std::string const&   levelName,
@@ -235,11 +235,13 @@ public:
 
     virtual bool isLeaveGameDone() = 0;
 
+    virtual bool isDimensionTypeActive(::DimensionType dimensionType) const = 0;
+
     virtual ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType) = 0;
 
     virtual ::WeakRef<::Dimension> getDimension(::DimensionType id) const = 0;
 
-    virtual ::DimensionType getLastOrDefaultSpawnDimensionId(::DimensionType lastDimensionId) const = 0;
+    virtual ::DimensionType resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const = 0;
 
     virtual void forEachDimension(::std::function<bool(::Dimension&)> callback) = 0;
 
@@ -628,7 +630,13 @@ public:
         float const                            pitch
     ) = 0;
 
-    virtual void playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) = 0;
+    virtual void playSound(
+        ::std::string const&                 name,
+        ::Vec3 const&                        pos,
+        float                                volume,
+        float                                pitch,
+        ::std::optional<::ServerSoundHandle> serverSoundHandle
+    ) = 0;
 
     virtual void playSound(
         ::IConstBlockSource const&             region,
@@ -709,7 +717,8 @@ public:
         ::Vec3 const&                          pos,
         ::Block const&                         block,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     ) = 0;
 
     virtual void broadcastSoundEvent(
@@ -718,7 +727,8 @@ public:
         ::Vec3 const&                          pos,
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     ) = 0;
 
     virtual void broadcastSoundEvent(
@@ -727,10 +737,16 @@ public:
         ::Vec3 const&                          pos,
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     ) = 0;
 
-    virtual void broadcastActorEvent(::Actor& actor, ::ActorEvent eventId, int data) const = 0;
+    virtual void broadcastActorEvent(
+        ::Actor&                       actor,
+        ::ActorEvent                   eventId,
+        int                            data,
+        ::std::optional<::Vec3> const& fireAtPosition
+    ) const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> getActorEventBroadcaster() const = 0;
 
@@ -924,13 +940,13 @@ public:
     virtual ::TradeTables* getTradeTables();
 
     virtual void decrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+        ::std::string const&,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) = 0;
 
     virtual void incrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+        ::std::string const&,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() = 0;
@@ -1188,15 +1204,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void addParticleEffect(::HashedString const& effect, ::Vec3 const& emitterPosition);
-#endif
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ::MapItemSavedData&
+    createMapSavedData(::ActorUniqueID const& uuid, ::BlockPos const& origin, ::DimensionType dimension);
     // NOLINTEND
 
 public:

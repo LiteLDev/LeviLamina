@@ -58,6 +58,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CameraRegistry();
+
     MCAPI void _createEntityFromPreset(
         uint64                                             presetIndex,
         ::EntityRegistry&                                  entityRegistry,
@@ -70,6 +72,8 @@ public:
 
     MCAPI void loadFrom(::ResourcePackManager const& packManager);
 
+    MCAPI void registerCameraDefinitionFilename(::std::string_view filename);
+
     MCAPI void
     setupPresets(::EntityRegistry& entityRegistry, ::CameraPresets const& presets, ::Experiments const& experiments);
     // NOLINTEND
@@ -81,8 +85,14 @@ public:
         uint64                                       presetIndex,
         ::OwnerPtr<::EntityId>&                      cameraEntity,
         ::SharedTypes::v1_21_90::CameraPreset const& preset,
-        ::Experiments const&                         experiments
+        ::Experiments const&
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

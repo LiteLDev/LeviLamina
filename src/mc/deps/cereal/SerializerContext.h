@@ -56,6 +56,8 @@ public:
 
     MCAPI ::cereal::LogCheckpoint getLogCheckpoint();
 
+    MCAPI bool hasErrors() const;
+
     MCAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
 
     MCAPI void popContext();
@@ -63,14 +65,6 @@ public:
     MCAPI ::cereal::SerializerContext& pushContext(uint containerIndex);
 
     MCAPI ::cereal::SerializerContext& pushContext(::Bedrock::StaticOptimizedString propertyName);
-
-    MCAPI ~SerializerContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -35,12 +35,13 @@ public:
 public:
     // prevent constructor by default
     AvoidBlockGoalDefinition& operator=(AvoidBlockGoalDefinition const&);
-    AvoidBlockGoalDefinition(AvoidBlockGoalDefinition const&);
     AvoidBlockGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AvoidBlockGoalDefinition(::SharedTypes::v1_21_120::AvoidBlockGoalDefinition const&);
+
     MCAPI ::SharedTypes::v1_21_120::AvoidBlockGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidBlockGoalDefinition&&);
 
@@ -64,11 +65,15 @@ public:
 
     MCAPI static float const& DEFAULT_SPRINT_SPEED_MODIFIER();
 
-    MCAPI static ::std::string_view const& DEFAULT_TARGET_SELECTION_METHOD();
-
     MCAPI static float const& DEFAULT_WALK_SPEED_MODIFIER();
 
     MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_120::AvoidBlockGoalDefinition const&);
     // NOLINTEND
 
 public:

@@ -16,6 +16,7 @@ public:
     struct MobDeathData;
     struct MobItemData;
     struct MobSpawnData;
+    struct nowFunc;
     // clang-format on
 
     // MobTelemetry inner types define
@@ -109,17 +110,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI MobSpawnData(::Social::Events::MobTelemetry::MobSpawnData&&);
-
         MCNAPI ::Social::Events::MobTelemetry::MobSpawnData& operator=(::Social::Events::MobTelemetry::MobSpawnData&&);
 
         MCNAPI ~MobSpawnData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Social::Events::MobTelemetry::MobSpawnData&&);
         // NOLINTEND
 
     public:
@@ -128,6 +121,8 @@ public:
         MCNAPI void $dtor();
         // NOLINTEND
     };
+
+    struct nowFunc {};
 
 public:
     // member variables
@@ -149,6 +144,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI MobTelemetry();
+
+    MCNAPI bool checkHasDataResetClock();
+
+    MCNAPI void onActorSpawned(
+        ::std::string const& nameSpace,
+        ::std::string const& name,
+        bool                 isBaby,
+        ::std::string const& reason,
+        ::std::string const& method,
+        ::std::string const& spawnerNamespace,
+        ::std::string const& spawnerName
+    );
 
     MCNAPI void onMobDied(
         ::std::string const& nameSpace,

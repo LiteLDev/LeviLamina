@@ -24,32 +24,58 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorDefinitionIdentifier();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier&&);
-
-    MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier const&);
+    MCAPI ActorDefinitionIdentifier();
 
     MCAPI explicit ActorDefinitionIdentifier(::std::string const& fullName);
 
     MCAPI explicit ActorDefinitionIdentifier(char const* fullName);
 
+    MCAPI explicit ActorDefinitionIdentifier(::std::string_view fullName);
+
+    MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier&& other);
+
+    MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier const& other);
+
     MCAPI ActorDefinitionIdentifier(::ActorType type, ::std::string initEvent);
 
     MCAPI ActorDefinitionIdentifier(::std::string nameSpace, ::std::string identifier, ::std::string initEvent);
 
+    MCAPI ::ActorType _getLegacyActorType() const;
+
     MCAPI void _initialize();
+
+    MCFOLD ::HashedString const& getCanonicalHash() const;
+
+    MCFOLD ::std::string const& getCanonicalName() const;
+
+    MCFOLD ::std::string const& getFullName() const;
+
+    MCFOLD ::std::string const& getIdentifier() const;
+
+    MCFOLD ::std::string const& getInitEvent() const;
+
+    MCFOLD ::std::string const& getNamespace() const;
+
+    MCAPI void initialize(::std::string const& fullName);
 
     MCAPI void
     initialize(::std::string const& nameSpace, ::std::string const& identifier, ::std::string const& initEvent);
 
-    MCAPI ::ActorDefinitionIdentifier& operator=(::ActorDefinitionIdentifier const&);
+    MCAPI bool isEmpty() const;
+
+    MCAPI bool isVanilla() const;
+
+    MCAPI ::std::strong_ordering operator<=>(::ActorDefinitionIdentifier const& other) const;
+
+    MCAPI ::ActorDefinitionIdentifier& operator=(::ActorDefinitionIdentifier const& other);
 
     MCAPI bool operator==(::ActorDefinitionIdentifier const& other) const;
+
+    MCAPI void setIdentifier(::std::string const& identifier);
+
+    MCAPI void setInitEvent(::std::string const& initEvent);
 
     MCAPI void setter(
         ::std::string const&               str,
@@ -69,13 +95,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionIdentifier&&);
-
-    MCAPI void* $ctor(::ActorDefinitionIdentifier const&);
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::std::string const& fullName);
 
     MCAPI void* $ctor(char const* fullName);
+
+    MCAPI void* $ctor(::std::string_view fullName);
+
+    MCAPI void* $ctor(::ActorDefinitionIdentifier&& other);
+
+    MCAPI void* $ctor(::ActorDefinitionIdentifier const& other);
 
     MCAPI void* $ctor(::ActorType type, ::std::string initEvent);
 

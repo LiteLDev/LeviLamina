@@ -42,6 +42,7 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentRenderPrim& operator=(ScriptWidgetComponentRenderPrim const&);
+    ScriptWidgetComponentRenderPrim(ScriptWidgetComponentRenderPrim const&);
     ScriptWidgetComponentRenderPrim();
 
 public:
@@ -55,8 +56,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentRenderPrim(::Editor::ScriptModule::ScriptWidgetComponentRenderPrim const&);
-
     MCNAPI ScriptWidgetComponentRenderPrim(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,
@@ -109,8 +108,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentRenderPrim const&);
-
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,

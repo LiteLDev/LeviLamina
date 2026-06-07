@@ -33,14 +33,17 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mScreenshotBorderResourcePath;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScreenshotOptions();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ScreenshotOptions();
-
-    MCAPI ScreenshotOptions(::ScreenshotOptions&&);
-
     MCAPI ScreenshotOptions(::ScreenshotOptions const&);
 
     MCAPI ::ScreenshotOptions& operator=(::ScreenshotOptions&&);
@@ -55,10 +58,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ScreenshotOptions&&);
-
     MCAPI void* $ctor(::ScreenshotOptions const&);
 #endif
     // NOLINTEND

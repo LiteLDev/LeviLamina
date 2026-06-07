@@ -30,14 +30,6 @@ public:
     virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
     virtual uint64 numBytesLeft() const /*override*/;
-
-    virtual ~RakDataInput() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

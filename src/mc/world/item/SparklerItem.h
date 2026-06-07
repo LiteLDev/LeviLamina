@@ -18,6 +18,7 @@ class ItemStackBase;
 class Level;
 struct Brightness;
 struct ResolvedItemIconInfo;
+namespace mce { class Color; }
 // clang-format on
 
 class SparklerItem : public ::ChemistryStickItem {
@@ -42,8 +43,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
 
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
@@ -56,8 +57,14 @@ public:
     virtual bool isHandEquipped() const /*override*/;
 
     virtual ::Brightness getLightEmission(int auxValue) const /*override*/;
+    // NOLINTEND
 
-    virtual ~SparklerItem() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::mce::Color getColor(int data);
+#endif
     // NOLINTEND
 
 public:
@@ -69,8 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;

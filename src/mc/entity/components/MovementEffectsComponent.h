@@ -13,25 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::MovementEffect>> mMovementEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementEffectsComponent& operator=(MovementEffectsComponent const&);
-    MovementEffectsComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MovementEffectsComponent(::MovementEffectsComponent const&);
-
-#ifdef LL_PLAT_C
-    MCAPI void setEffect(::MovementEffect movementEffect);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MovementEffectsComponent const&);
-    // NOLINTEND
 };

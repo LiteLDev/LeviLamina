@@ -5,13 +5,32 @@
 // auto generated inclusion list
 #include "mc/world/item/DiggerItem.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ItemTier;
+// clang-format on
+
 class HoeItem : public ::DiggerItem {
+public:
+    // prevent constructor by default
+    HoeItem();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getEnchantSlot() const /*override*/;
+    // NOLINTEND
 
-    virtual ~HoeItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI HoeItem(::std::string const& name, int id, ::ItemTier const& tier);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::ItemTier const& tier);
     // NOLINTEND
 
 public:

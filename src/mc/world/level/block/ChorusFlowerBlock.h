@@ -12,13 +12,16 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Random;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class ChorusFlowerBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    ChorusFlowerBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,20 +34,18 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
 
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~ChorusFlowerBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChorusFlowerBlock(::std::string const& nameId, int id);
+
     MCAPI void _placeDeadFlower(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _placeGrownFlower(::BlockSource& region, ::BlockPos const& pos, int newAge) const;
@@ -67,6 +68,15 @@ public:
         int               maxHorizontalSpread,
         int               depth
     );
+
+    MCAPI static void
+    generatePlant(::BlockSource& region, ::BlockPos const& target, ::Random& random, int maxHorizontalSpread);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -80,13 +90,11 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
     MCFOLD bool $isLavaBlocking() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

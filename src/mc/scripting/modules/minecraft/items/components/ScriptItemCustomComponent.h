@@ -32,12 +32,6 @@ public:
     ScriptItemCustomComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptItemCustomComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemCustomComponent(

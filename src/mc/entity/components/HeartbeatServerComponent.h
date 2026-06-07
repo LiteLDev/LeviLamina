@@ -17,4 +17,16 @@ public:
     ::ll::TypedStorage<8, 512, ::RenderParams> mRenderParams;
 #endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    HeartbeatServerComponent& operator=(HeartbeatServerComponent const&);
+    HeartbeatServerComponent(HeartbeatServerComponent const&);
+    HeartbeatServerComponent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::HeartbeatServerComponent& operator=(::HeartbeatServerComponent&&);
+    // NOLINTEND
 };

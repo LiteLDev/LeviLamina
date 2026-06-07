@@ -30,16 +30,21 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&&);
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
     operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface const&);
+
+    MCAPI ~ScriptCustomCommandParamInterface();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

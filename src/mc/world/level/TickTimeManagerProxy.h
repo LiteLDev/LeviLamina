@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TickTimeManagerProxy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TickTimeManagerProxy() /*override*/ = default;
@@ -33,6 +37,18 @@ public:
     virtual void incrementCurrentTick() /*override*/;
 
     virtual ::Tick getCurrentTick() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit TickTimeManagerProxy(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
     // NOLINTEND
 
 public:

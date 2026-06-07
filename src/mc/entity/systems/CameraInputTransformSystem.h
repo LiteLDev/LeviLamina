@@ -21,18 +21,20 @@ namespace CameraInputTransformSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void _tick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::MoveInputComponent&         moveInputComponent,
-    ::ControlSchemeComponent&     controlSchemeComponent,
-    ::ActorRotationComponent&     actorRotationComponent,
-    ::ActorHeadRotationComponent& actorHeadRotationComponent
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>> moveInputComponent,
+    ::MoveInputComponent&                                            controlSchemeComponent,
+    ::ControlSchemeComponent&                                        actorRotationComponent,
+    ::ActorRotationComponent&                                        actorHeadRotationComponent,
+    ::ActorHeadRotationComponent&
 );
 
 MCAPI ::TickingSystemWithInfo create();
 
+#ifdef LL_PLAT_C
 MCAPI float getWorldYawInDegrees(::Vec2 const& orientation);
 
 MCAPI float getWorldYawInDegrees(::Vec3 const& orientation);
+#endif
 // NOLINTEND
 
 } // namespace CameraInputTransformSystem

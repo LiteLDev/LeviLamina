@@ -44,7 +44,6 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentBase& operator=(ScriptWidgetComponentBase const&);
-    ScriptWidgetComponentBase(ScriptWidgetComponentBase const&);
     ScriptWidgetComponentBase();
 
 public:
@@ -63,6 +62,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidgetComponentBase(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
+
     MCNAPI ScriptWidgetComponentBase(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,
@@ -74,8 +75,6 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _deleteComponent();
-
-    MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> _getWidget() const;
 
     MCNAPI void _setLockToSurface(bool lockToSurface);
 
@@ -95,6 +94,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBase const&);
+
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                      serviceProviders,
         ::mce::UUID const&                                                        componentId,

@@ -25,14 +25,6 @@ public:
     virtual void onJoinCodeGenerated(::EDUDiscovery::JoinCode const&);
 
     virtual void onCredentialsInvalidated();
-
-    virtual ~DiscoveryObserver() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

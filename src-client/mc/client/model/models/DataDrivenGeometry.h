@@ -52,17 +52,39 @@ public:
     // NOLINTBEGIN
     MCAPI DataDrivenGeometry(::DataDrivenModel& owner, ::std::string const& name, ::GeometryPtr sourceGeo);
 
+    MCAPI void clear();
+
+    MCAPI void copyBoneMatricesToActor(
+        ::RenderParams&                      renderParams,
+        ::gsl::span<::BoneOrientation const> boneOrientations,
+        ::RenderController const*            renderControllerId
+    );
+
+    MCAPI void copyBoneMatricesToSkinnedMeshes(
+        ::RenderParams&                      renderParams,
+        ::gsl::span<::BoneOrientation const> boneOrientations,
+        ::RenderController const*            renderControllerId
+    );
+
     MCAPI void copyTransformMatricesToModelParts(::RenderParams& renderParams);
 
-    MCAPI void generateBoneTransformMatrices(
-        ::RenderParams&                renderParams,
-        ::gsl::span<::BoneOrientation> boneOrientations,
-        ::RenderController const*      renderControllerId
-    );
+    MCFOLD ::std::vector<::BoneOrientation> const& getDefaultBoneOrientations() const;
+
+    MCFOLD ::std::vector<::BoneOrientation>& getDefaultBoneOrientations();
+
+    MCFOLD ::std::vector<::ModelPart> const& getModelParts() const;
+
+    MCFOLD ::std::vector<::ModelPart>& getModelParts();
+
+    MCFOLD ::HashedString const& getName() const;
 
     MCAPI ::std::vector<::HashedString> getQueryableBoneOrientations() const;
 
     MCAPI ::SkeletalHierarchyIndex getSkeletalHierarchyIndex() const;
+
+    MCFOLD ::std::vector<::SkinnedMeshGroup>& getSkinnedMeshGroups();
+
+    MCAPI ::GeometryPtr const getSourceGeometry() const;
 
     MCAPI void setupModelPart(
         ::DataDrivenModel&             owner,

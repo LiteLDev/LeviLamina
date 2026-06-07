@@ -7,12 +7,6 @@
 
 class ServerPlayerEventCoordinator : public ::PlayerEventCoordinator {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ServerPlayerEventCoordinator() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

@@ -41,7 +41,17 @@ public:
 
     MCAPI ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId);
 
+#ifdef LL_PLAT_C
+    MCFOLD ::Bedrock::PubSub::
+        Publisher<void(::ActorUniqueID const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>&
+        getPlayerAbilitiesChangedPublisher();
+#endif
+
     MCAPI void sendAllPlayerAbilities(::Player const& playerReference);
+
+    MCAPI void setPacketSender(::PacketSender& packetSender);
+
+    MCAPI void setPlayerAbilities(::ActorUniqueID const& playerId, ::LayeredAbilities const& abilities);
 
     MCAPI ~PlayerAbilitiesManager();
     // NOLINTEND

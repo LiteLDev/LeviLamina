@@ -4,9 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
-#include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/minecraft_renderer/renderer/Mesh.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
@@ -33,14 +31,7 @@ public:
     // HudLocatorBarRenderer inner types define
     struct ActorUniqueIDCompare {};
 
-    struct PlayerData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 12, ::Vec3>       mLocation;
-        ::ll::TypedStorage<4, 16, ::mce::Color> mColor;
-        // NOLINTEND
-    };
+    struct PlayerData {};
 
 public:
     // member variables
@@ -48,7 +39,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NinePatchLayer>>     mBackgroundTexture;
     ::ll::TypedStorage<1, 1, bool>                                    mHasLoadedIconTextures;
     ::ll::TypedStorage<8, 192, ::std::array<::mce::TexturePtr, 6>>    mTextures;
-    ::ll::TypedStorage<8, 3168, ::std::array<::mce::Mesh, 6>>         mMeshes;
+    ::ll::TypedStorage<8, 3312, ::std::array<::mce::Mesh, 6>>         mMeshes;
     ::ll::TypedStorage<4, 8, ::Vec2>                                  mBackgroundSize;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastRenderCall;
     // NOLINTEND
@@ -56,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudLocatorBarRenderer() /*override*/ = default;
+    virtual ~HudLocatorBarRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -69,9 +60,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HudLocatorBarRenderer();
+
+    MCAPI bool _areIconTexturesValid() const;
+
     MCAPI void _loadIconTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI bool _validateIconMeshes(::ScreenContext& screenContext, float barHeight);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

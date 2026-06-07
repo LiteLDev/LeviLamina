@@ -98,14 +98,6 @@ public:
 
     MCFOLD ::EventResult $onItemDefinitionEventTriggered(::ItemStackBase const& item, ::std::string const& event);
 
-    MCFOLD ::EventResult $onEvent(::ItemNotificationEvent const& event);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

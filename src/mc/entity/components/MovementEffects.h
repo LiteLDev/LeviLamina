@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class MovementEffect;
 class MovementEffectPacket;
 class ReplayStateComponent;
@@ -14,6 +15,9 @@ struct RuntimeIDComponent;
 namespace MovementEffects {
 // functions
 // NOLINTBEGIN
+MCAPI ::std::optional<::MovementEffectPacket>
+addToEntity(::EntityContext& entity, ::MovementEffect movementEffect, bool isClientSide);
+
 MCAPI ::std::optional<::MovementEffectPacket> addToEntity(
     ::MovementEffectsComponent& movementEffects,
     ::ReplayStateComponent*     replayState,

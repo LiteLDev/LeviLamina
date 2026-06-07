@@ -28,8 +28,6 @@ public:
     virtual void match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const /*override*/;
 
     virtual uint64 valueCount() const /*override*/;
-
-    virtual ~RemovedStringState() /*override*/ = default;
     // NOLINTEND
 
 public:

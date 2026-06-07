@@ -3,7 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/edu/Role.h"
 #include "mc/options/AppConfigData.h"
+
+// auto generated forward declare list
+// clang-format off
+class IMinecraftEventing;
+struct EDUConfigData;
+// clang-format on
 
 class EduConfigDataWrapper : public ::AppConfigData<::EduConfigDataWrapper> {
 public:
@@ -22,20 +29,25 @@ public:
     EduConfigDataWrapper();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~EduConfigDataWrapper() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~EduConfigDataWrapper() /*override*/;
+#ifdef LL_PLAT_C
+    MCNAPI EduConfigDataWrapper(
+        ::EDUConfigData const& data,
+        ::IMinecraftEventing*  eventing,
+        ::edu::Role            role,
+        ::std::string          oid
+    );
 #endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void*
+    $ctor(::EDUConfigData const& data, ::IMinecraftEventing* eventing, ::edu::Role role, ::std::string oid);
+#endif
     // NOLINTEND
 
 public:

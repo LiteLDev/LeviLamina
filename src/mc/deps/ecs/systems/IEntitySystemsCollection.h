@@ -20,6 +20,10 @@ struct TickingSystemId;
 
 struct IEntitySystemsCollection {
 public:
+    // IEntitySystemsCollection inner types define
+    using SystemIndex = uint;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~IEntitySystemsCollection() = default;
@@ -58,6 +62,16 @@ public:
     virtual bool hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const) const = 0;
 
     virtual ::std::vector<::SystemTiming> gatherSystemTimings() const = 0;
+
+    virtual bool _isValidIndex(uint) const = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool isValidTickingSystemId(::TickingSystemId id) const;
+#endif
     // NOLINTEND
 
 public:

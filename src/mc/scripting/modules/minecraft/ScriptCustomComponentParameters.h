@@ -20,19 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCustomComponentParameters& operator=(ScriptCustomComponentParameters const&);
-    ScriptCustomComponentParameters(ScriptCustomComponentParameters const&);
-    ScriptCustomComponentParameters();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptCustomComponentParameters&
-    operator=(::ScriptModuleMinecraft::ScriptCustomComponentParameters&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

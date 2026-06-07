@@ -18,15 +18,11 @@ public:
 
 public:
     // prevent constructor by default
-    SocialPlayer& operator=(SocialPlayer const&);
-    SocialPlayer(SocialPlayer const&);
     SocialPlayer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SocialPlayer(::OreUI::SocialPlayer&&);
-
     MCAPI explicit SocialPlayer(::OreUI::SocialPlayerData const& data);
 
     MCAPI ::std::string const& getActiveProfileImageUrl() const;
@@ -37,8 +33,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::SocialPlayer&&);
-
     MCAPI void* $ctor(::OreUI::SocialPlayerData const& data);
     // NOLINTEND
 

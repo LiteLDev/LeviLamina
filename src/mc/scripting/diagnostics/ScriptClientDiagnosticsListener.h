@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerNetworkEventCoordinator;
 struct DiagnosticsEvent;
-struct ScriptDiagnosticsPayload;
 // clang-format on
 
 class ScriptClientDiagnosticsListener : public ::ServerNetworkEventListener {
@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk2405d5;
-    ::ll::UntypedStorage<8, 112> mUnkb8ac67;
+    ::ll::UntypedStorage<8, 160> mUnkb8ac67;
     // NOLINTEND
 
 public:
@@ -37,7 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::ScriptDiagnosticsPayload> getAndClearDiagnosticsPayload();
+    MCNAPI explicit ScriptClientDiagnosticsListener(::ServerNetworkEventCoordinator& networkEventCoordinator);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ServerNetworkEventCoordinator& networkEventCoordinator);
     // NOLINTEND
 
 public:

@@ -25,4 +25,22 @@ public:
     JigsawStructureBlockInfo& operator=(JigsawStructureBlockInfo const&);
     JigsawStructureBlockInfo(JigsawStructureBlockInfo const&);
     JigsawStructureBlockInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI JigsawStructureBlockInfo(::JigsawStructureBlockInfo&& rhs);
+
+    MCAPI JigsawStructureBlockInfo(::BlockPos const& pos, ::std::unique_ptr<::CompoundTag> tag, ::Block const& block);
+
+    MCAPI ::CompoundTag* getNonEmptyTag();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::JigsawStructureBlockInfo&& rhs);
+
+    MCAPI void* $ctor(::BlockPos const& pos, ::std::unique_ptr<::CompoundTag> tag, ::Block const& block);
+    // NOLINTEND
 };

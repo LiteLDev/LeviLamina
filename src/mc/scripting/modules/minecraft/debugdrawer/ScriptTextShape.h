@@ -7,7 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ShapeDataPayload;
+class Vec3;
+namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -15,33 +18,17 @@ namespace ScriptModuleDebugUtilities {
 
 class ScriptTextShape : public ::ScriptModuleDebugUtilities::ScriptDebugShape {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mText;
-    // NOLINTEND
-
-public:
     // prevent constructor by default
-    ScriptTextShape(ScriptTextShape const&);
     ScriptTextShape();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
-
-    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
-
-    virtual ~ScriptTextShape() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleDebugUtilities::ScriptTextShape&
-    operator=(::ScriptModuleDebugUtilities::ScriptTextShape const&);
-
-    MCAPI void setText(::std::string text);
+    MCAPI ScriptTextShape(
+        ::Scripting::WeakLifetimeScope const&                                                    scope,
+        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const&          location,
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text
+    );
     // NOLINTEND
 
 public:
@@ -51,19 +38,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
-
-    MCAPI void $applyUpdatedData(::ShapeDataPayload const& existing);
-
-
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                                                    scope,
+        ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const&          location,
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text
+    );
     // NOLINTEND
 
 public:

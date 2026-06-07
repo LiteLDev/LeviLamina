@@ -18,23 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KeyboardInputMapping();
-
-    MCAPI KeyboardInputMapping(::KeyboardInputMapping const&);
-
-    MCAPI ::KeyboardInputMapping& operator=(::KeyboardInputMapping&&);
-
-    MCAPI ::KeyboardInputMapping& operator=(::KeyboardInputMapping const&);
-
     MCAPI ~KeyboardInputMapping();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::KeyboardInputMapping const&);
     // NOLINTEND
 
 public:

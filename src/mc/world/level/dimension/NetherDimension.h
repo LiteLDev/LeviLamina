@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"
 #include "mc/world/level/storage/StorageVersion.h"
@@ -36,7 +35,7 @@ public:
 
     virtual bool isNaturalDimension() const /*override*/;
 
-    virtual bool isValidSpawn(int x, int z) const /*override*/;
+    virtual bool isValidSpawn(int, int) const /*override*/;
 
     virtual bool showSky() const /*override*/;
 
@@ -57,10 +56,8 @@ public:
 
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
-        ::std::unique_ptr<::ChunkSource> storageSource,
-        ::StorageVersion                 levelVersion
-    ) /*override*/;
+    virtual ::std::unique_ptr<::ChunkSource>
+    _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion) /*override*/;
     // NOLINTEND
 
 public:
@@ -84,7 +81,7 @@ public:
 
     MCFOLD bool $isNaturalDimension() const;
 
-    MCFOLD bool $isValidSpawn(int x, int z) const;
+    MCFOLD bool $isValidSpawn(int, int) const;
 
     MCFOLD bool $showSky() const;
 
@@ -106,7 +103,7 @@ public:
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
     MCFOLD ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
+    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion);
 
 
     // NOLINTEND

@@ -15,14 +15,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CameraSplinePacketPayload();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~CameraSplinePacketPayload();
+    MCAPI explicit CameraSplinePacketPayload(::std::vector<::SharedTypes::v1_26_0::CameraSplineDefinition> splines);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::vector<::SharedTypes::v1_26_0::CameraSplineDefinition> splines);
     // NOLINTEND
 };

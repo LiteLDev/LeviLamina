@@ -8,15 +8,30 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class Material;
 // clang-format on
 
 class InfestedDeepslateBlock : public ::RotatedPillarInfestedBlock {
 public:
+    // prevent constructor by default
+    InfestedDeepslateBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const* tryGetUninfested(::Block const& block) const /*override*/;
+    // NOLINTEND
 
-    virtual ~InfestedDeepslateBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI InfestedDeepslateBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

@@ -27,13 +27,20 @@ MCAPI ::std::unique_ptr<::HIDControllerGameCoreDesktop> _createHIDController(
 );
 
 MCAPI void fileNameToSessionID(::std::string& out, ::Core::PathBuffer<::std::string> const& filePath);
+
+MCAPI ::std::string
+formatTime(::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>> const& unitlessTime);
+
+MCAPI ::std::string formatTimeToFourDigits(::std::chrono::seconds duration);
+
+MCAPI ::std::string formatTimeToFourDigits(::std::chrono::nanoseconds duration);
+
+MCAPI void initializeGameCoreCrashProcessing();
 #endif
 
-#ifdef LL_PLAT_S
 MCAPI int strtoint32(char const* str, char** endptr, int base);
-#endif
 
-MCAPI void throw_system_error(::std::errc errc);
+MCAPI uint strtouint32(char const* str, char** endptr, int base);
 // NOLINTEND
 
 } // namespace Bedrock

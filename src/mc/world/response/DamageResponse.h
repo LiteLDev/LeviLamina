@@ -41,14 +41,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
-
-    virtual ~DamageResponse() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void repairOrHurtItem(int const& amount, ::RenderParams& params) const;
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ public:
 
 public:
     // prevent constructor by default
-    StructureDataPayload(StructureDataPayload const&);
+    StructureDataPayload& operator=(StructureDataPayload const&);
     StructureDataPayload();
 
 public:
@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::StructureDataPayload& operator=(::Editor::Network::StructureDataPayload const&);
+    MCNAPI StructureDataPayload(::Editor::Network::StructureDataPayload const&);
 
     MCNAPI void setData(::CompoundTag const& data);
     // NOLINTEND
@@ -45,6 +45,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Network::StructureDataPayload const&);
     // NOLINTEND
 
 public:

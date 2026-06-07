@@ -11,25 +11,27 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
+class Material;
 class Random;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SculkCatalystBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    SculkCatalystBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~SculkCatalystBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SculkCatalystBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
@@ -40,11 +42,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $getVariant(::Block const& block) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

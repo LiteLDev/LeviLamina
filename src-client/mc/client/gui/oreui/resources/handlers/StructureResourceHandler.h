@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 #include "mc/client/gui/oreui/resources/ResourceRequest.h"
 #include "mc/client/gui/oreui/resources/ResourceResponse.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
@@ -16,13 +17,13 @@
 class IClientInstance;
 class ResourcePackManager;
 namespace Editor { class ThumbnailFileBytes; }
-namespace OreUI { class ResourceStreamResponse; }
-namespace OreUI { class TemporaryTextureHolder; }
+namespace Gameface { class ResourceStreamResponse; }
+namespace Gameface { class TemporaryTextureHolder; }
 // clang-format on
 
 namespace OreUI {
 
-class StructureResourceHandler : public ::OreUI::IResourceHandler {
+class StructureResourceHandler : public ::Gameface::IResourceHandler {
 public:
     // StructureResourceHandler inner types declare
     // clang-format off
@@ -42,31 +43,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                                                     mId;
-        ::ll::TypedStorage<8, 136, ::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>> mReqResponse;
-        ::ll::TypedStorage<8, 16, ::WeakRef<::Editor::ThumbnailFileBytes>>                           mThumbnail;
-        ::ll::TypedStorage<4, 4, ::OreUI::StructureResourceHandler::FetchRequestState>               mRequestState;
-        ::ll::TypedStorage<4, 4, ::OreUI::IResourceHandler::Status>                                  mStatus;
+        ::ll::TypedStorage<8, 32, ::std::string>                                                           mId;
+        ::ll::TypedStorage<8, 136, ::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse>> mReqResponse;
+        ::ll::TypedStorage<8, 16, ::WeakRef<::Editor::ThumbnailFileBytes>>                                 mThumbnail;
+        ::ll::TypedStorage<4, 4, ::OreUI::StructureResourceHandler::FetchRequestState> mRequestState;
+        ::ll::TypedStorage<4, 4, ::Gameface::ResourceHandlerStatus>                    mStatus;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ThumbnailRequest& operator=(ThumbnailRequest const&);
-        ThumbnailRequest(ThumbnailRequest const&);
-        ThumbnailRequest();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ThumbnailRequest(::OreUI::StructureResourceHandler::ThumbnailRequest&&);
-
         MCAPI ~ThumbnailRequest();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::StructureResourceHandler::ThumbnailRequest&&);
         // NOLINTEND
 
     public:
@@ -76,14 +63,14 @@ public:
         // NOLINTEND
     };
 
-    using ReqResponsePair = ::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>;
+    using ReqResponsePair = ::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ResourcePackManager const&>     mPackManager;
-    ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&> mTextureHolder;
-    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>>>
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager const&>        mPackManager;
+    ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&> mTextureHolder;
+    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse>>>
                                                                   mStructureRequestsQueue;
     ::ll::TypedStorage<1, 1, bool>                                mStructureRequestsQueuePending;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IClientInstance>> mClient;
@@ -102,28 +89,45 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureResourceHandler() /*override*/ = default;
+    virtual ~StructureResourceHandler() /*override*/;
 
     virtual void update() /*override*/;
 
     virtual void onViewCreate(::IClientInstance& client) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceStreamRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceStreamResponse&) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StructureResourceHandler(
+        ::ResourcePackManager const&        packManager,
+        ::Gameface::TemporaryTextureHolder& textureHolder
+    );
+
     MCAPI void _handleFetchRequests();
 
     MCAPI bool _sendFetchAsync(
-        ::std::string_view                                                      id,
-        ::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse> const& reqResponsePair
+        ::std::string_view                                                            id,
+        ::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse> const& reqResponsePair
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ResourcePackManager const& packManager, ::Gameface::TemporaryTextureHolder& textureHolder);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -133,11 +137,11 @@ public:
 
     MCAPI void $onViewCreate(::IClientInstance& client);
 
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceStreamResponse&);
+    MCFOLD ::Gameface::ResourceHandlerStatus
+    $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
     // NOLINTEND
 
 public:

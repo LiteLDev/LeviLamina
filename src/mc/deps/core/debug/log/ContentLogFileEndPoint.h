@@ -6,6 +6,7 @@
 #include "mc/deps/core/debug/log/ContentLogEndPoint.h"
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
+#include "mc/deps/core/file/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,6 +55,12 @@ public:
         ::Core::Path                fileName,
         ::std::optional<::LogLevel> minLogLevel
     );
+
+#ifdef LL_PLAT_C
+    MCNAPI void deleteAllContentLogs() const;
+
+    MCNAPI ::Core::PathBuffer<::std::string> const& getLogFileName() const;
+#endif
     // NOLINTEND
 
 public:

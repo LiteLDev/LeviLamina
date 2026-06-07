@@ -9,7 +9,7 @@ class PropertyMetadata {
 public:
     // PropertyMetadata inner types define
     enum class ContainedType : schar {
-        None              = -1,
+        None              = 255,
         IntProperty       = 0,
         FloatProperty     = 1,
         BoolProperty      = 2,

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce { class TextureBase; }
+// clang-format on
+
 namespace mce {
 
 class RenderContextStateBase {
@@ -29,6 +34,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RenderContextStateBase();
+
+    MCNAPI void removeIfBound(::mce::TextureBase const& texture);
     // NOLINTEND
 
 public:

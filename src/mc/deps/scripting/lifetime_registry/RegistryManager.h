@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class LifetimeRegistry; }
+namespace Scripting { struct ContextId; }
 // clang-format on
 
 namespace Scripting {
@@ -21,12 +22,21 @@ public:
     // prevent constructor by default
     RegistryManager& operator=(RegistryManager const&);
     RegistryManager(RegistryManager const&);
-    RegistryManager();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RegistryManager();
+
     MCNAPI ::std::unique_ptr<::Scripting::LifetimeRegistry> createLifetimeRegistry();
+
+    MCNAPI ::Scripting::LifetimeRegistry* getRegistryByContextId(::Scripting::ContextId contextId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

@@ -18,18 +18,6 @@ public:
     ChunkToReload& operator=(ChunkToReload const&);
     ChunkToReload(ChunkToReload const&);
     ChunkToReload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ChunkToReload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ChunkViewTrackerManagerHelper

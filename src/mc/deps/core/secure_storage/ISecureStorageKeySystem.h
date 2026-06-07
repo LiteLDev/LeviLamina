@@ -11,28 +11,16 @@ class ISecureStorageKeySystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ISecureStorageKeySystem();
+    virtual ~ISecureStorageKeySystem() = default;
 
-    virtual ::SecureStorageKey getSecureStorageKey(::std::string const& key) = 0;
+    virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) = 0;
 
-    virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

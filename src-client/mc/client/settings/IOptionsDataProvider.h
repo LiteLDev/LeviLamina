@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Settings { struct LocStringData; }
 namespace Settings { struct OptionData; }
 // clang-format on
 
@@ -16,7 +17,7 @@ class IOptionsDataProvider : public ::Settings::IDataProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IOptionsDataProvider() /*override*/;
+    virtual ~IOptionsDataProvider() /*override*/ = default;
 
     virtual ::gsl::span<::Settings::OptionData const> getOptions() const = 0;
 
@@ -24,15 +25,11 @@ public:
 
     virtual void setValue(int value) = 0;
 
-    virtual ::std::optional<::std::string> const& getInfo() const = 0;
+    virtual ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    getInfo() const = 0;
 
     virtual bool flush();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

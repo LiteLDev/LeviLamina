@@ -47,6 +47,8 @@ public:
         ::std::function<void(bool)>                              onModalDismissed,
         ::std::vector<::std::pair<::std::string, ::std::string>> eventProperties
     );
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

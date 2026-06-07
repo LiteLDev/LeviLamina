@@ -22,26 +22,35 @@ public:
     // prevent constructor by default
     FileStream& operator=(FileStream const&);
     FileStream(FileStream const&);
-    FileStream();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FileStream() /*override*/ = default;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FileStream();
+
     MCNAPI FileStream(::Core::PathView filename, int openMode);
 
+#ifdef LL_PLAT_C
+    MCNAPI FileStream(uint64 bufferSize, ::Core::PathView filename, int openMode);
+#endif
+
+    MCNAPI void open(::Core::PathView filename, int om);
+
     MCNAPI void open(::Core::PathView filename, ::Core::FileOpenMode openMode);
+
+    MCNAPI void setLoggingEnabled(bool enabled);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::Core::PathView filename, int openMode);
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(uint64 bufferSize, ::Core::PathView filename, int openMode);
+#endif
     // NOLINTEND
 
 public:

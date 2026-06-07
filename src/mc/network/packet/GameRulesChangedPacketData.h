@@ -17,6 +17,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addRule(::GameRule const& rule);
+
+    MCFOLD ::std::vector<::GameRule> const& getRules() const;
+
     MCAPI void setRules(::std::vector<::GameRule> rules);
 
     MCAPI ~GameRulesChangedPacketData();

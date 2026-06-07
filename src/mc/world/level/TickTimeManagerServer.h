@@ -15,6 +15,7 @@ class ITickTimeManagerProxy;
 class LevelStorage;
 class PacketSender;
 class WorldClockRegistry;
+class WorldClockRegistryServer;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -38,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickTimeManagerServer() /*override*/ = default;
+    virtual ~TickTimeManagerServer() /*override*/;
 
     virtual void update() /*override*/;
 
@@ -61,6 +62,10 @@ public:
 
     MCNAPI void _saveWorldClocks(::LevelStorage& levelStorage) const;
 
+    MCNAPI void _syncTime(int64 currentTick);
+
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> const getWorldClockRegistryServer();
+
     MCNAPI void
     intitializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
@@ -79,6 +84,12 @@ public:
         ::cereal::ReflectionCtx&                             ctx,
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -253,20 +253,12 @@ public:
     ) = 0;
 
     virtual ::std::optional<uint64> _checkFileInitialSize(::Core::PathView path) = 0;
-
-    virtual ~FileSystem() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Core::FileSystem& get();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

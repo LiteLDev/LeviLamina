@@ -26,11 +26,14 @@ public:
 
 public:
     // prevent constructor by default
+    MessagePatchnote& operator=(MessagePatchnote const&);
     MessagePatchnote();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MessagePatchnote(::OreUI::MessagePatchnote const&);
+
     MCAPI MessagePatchnote(
         ::MessagePatchnoteData const&                              item,
         ::std::function<::ImageData(::std::string)>                imageLookup,
@@ -43,6 +46,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::MessagePatchnote const&);
+
     MCAPI void* $ctor(
         ::MessagePatchnoteData const&                              item,
         ::std::function<::ImageData(::std::string)>                imageLookup,

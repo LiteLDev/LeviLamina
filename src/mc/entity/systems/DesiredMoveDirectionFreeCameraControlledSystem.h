@@ -15,12 +15,17 @@ struct LocalMoveVelocityComponent;
 struct MobTravelComponent;
 struct PassengerComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 struct VehicleInputIntentComponent;
 // clang-format on
 
 namespace DesiredMoveDirectionFreeCameraControlledSystem {
 // functions
 // NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createPassengerSystem();
+
+MCAPI ::TickingSystemWithInfo createVehicleSystem();
+
 MCAPI void doControllingPassengerTick(
     ::MobTravelComponent&                  mobTravelComponent,
     ::FreeCameraControlledComponent const& airControlledComponent,

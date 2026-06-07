@@ -45,34 +45,85 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~Trade2ContainerManagerController() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~Trade2ContainerManagerController() /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool isOutputSlot(::std::string const&) const /*override*/;
+#else // LL_PLAT_C
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual int handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
+#else // LL_PLAT_C
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleTakeAll(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleTakeAmount(::SlotData const&, int, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType) /*override*/;
+#else // LL_PLAT_C
     virtual void
     handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::CreateContainerItemScope
+    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+#else // LL_PLAT_C
     virtual ::CreateContainerItemScope
     _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -122,9 +173,15 @@ public:
 
     MCNAPI int getEntityTradeTier() const;
 
+    MCNAPI ::std::vector<int> getNumberOfTradesByTier() const;
+
     MCNAPI ::MerchantRecipe* getSelectedTrade() const;
 
     MCNAPI ::MerchantRecipe* getTrade(int tier, int index) const;
+
+    MCNAPI int getTradeExpForCurrentRequirement(uint currentExp) const;
+
+    MCNAPI int getTradeExpToNextRequirement(uint currentExp) const;
 
     MCNAPI void handleAutoTrade(int tier, int index, ::std::vector<::AutoPlaceResult>&);
 
@@ -151,19 +208,17 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static bool itemMatchesRecipe(::ItemStackBase const& item, ::ItemStackBase const& recipe);
-#endif
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::weak_ptr<::Trade2ContainerManagerModel> pModel);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

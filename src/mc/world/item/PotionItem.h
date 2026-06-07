@@ -21,6 +21,7 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Player;
+class ThrownPotion;
 class Vec3;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
@@ -44,8 +45,8 @@ public:
 
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -58,8 +59,7 @@ public:
 
     virtual bool uniqueAuxValues() const /*override*/;
 
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
@@ -75,8 +75,6 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~PotionItem() /*override*/;
     // NOLINTEND
 
 public:
@@ -86,15 +84,17 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+    MCAPI static void applyEffect(::ThrownPotion* potion, ::ItemStack const& slotItem);
+
+    MCAPI static bool isDestructivePotion(::Potion::PotionVariant potionVariant);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -104,8 +104,7 @@ public:
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -118,8 +117,7 @@ public:
 
     MCFOLD bool $uniqueAuxValues() const;
 
-    MCAPI ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 

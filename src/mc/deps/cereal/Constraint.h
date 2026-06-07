@@ -43,6 +43,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::cereal::ContextArea contextArea() const;
+
+    MCFOLD ::cereal::internal::ConstraintDescription getDescription(::cereal::ContextArea req) const;
+
+    MCFOLD uint64 maxInputLength() const;
+
+    MCFOLD void setContextArea(::cereal::ContextArea area);
+
+    MCFOLD void setMaxInputLength(uint64 value);
+
+    MCAPI void validate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::cereal::Constraint const* $subConstraint(uint64 index) const;

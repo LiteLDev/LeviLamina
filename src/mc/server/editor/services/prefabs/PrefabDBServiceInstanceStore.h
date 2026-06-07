@@ -39,6 +39,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI bool deleteInstance(::mce::UUID const& instanceId);
+
         MCNAPI ~InstanceList();
         // NOLINTEND
 
@@ -66,19 +68,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addInstance(::OwnerPtr<::Editor::Prefabs::PrefabDBPrefabInstance> instance);
-
-    MCNAPI bool deleteInstance(::mce::UUID const& instanceId);
-
-    MCNAPI ::std::pair<::ChunkPos, ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
-    findInstance(::mce::UUID const& instanceId);
-
-    MCNAPI void findInstancesOfTemplate(
-        ::mce::UUID const&                                                   templateId,
-        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
-    );
-
-    MCNAPI void
-    forEachInstance(::std::function<bool(::ChunkPos const&, ::Editor::Prefabs::PrefabDBPrefabInstance&)> func);
 
     MCNAPI ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
     getInstancesInChunk(::ChunkPos const& chunkPos) const;

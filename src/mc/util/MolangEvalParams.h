@@ -37,11 +37,11 @@ public:
     MCAPI ::Actor*
     getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
 
-    MCAPI ::Actor* popActor();
-
     MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
 
     MCAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
+
+    MCAPI void pushReturnValue();
 
     MCAPI void restoreStackState(::MolangEvalStackState&& state);
 

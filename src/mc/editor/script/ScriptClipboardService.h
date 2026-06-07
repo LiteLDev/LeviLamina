@@ -10,6 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
+namespace Editor::Services { class ClipboardServiceProvider; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,6 +34,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptClipboardService(
+        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider> serviceRef,
+        ::Scripting::WeakLifetimeScope const&                         scope
+    );
+
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
     create();
@@ -39,14 +46,21 @@ public:
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
     getPrimaryItem();
-
-    MCNAPI ::Editor::ScriptModule::ScriptClipboardService& operator=(::Editor::ScriptModule::ScriptClipboardService&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider> serviceRef,
+        ::Scripting::WeakLifetimeScope const&                         scope
+    );
     // NOLINTEND
 };
 

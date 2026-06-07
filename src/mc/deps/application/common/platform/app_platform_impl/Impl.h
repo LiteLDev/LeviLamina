@@ -14,7 +14,6 @@
 // clang-format off
 class AppPlatform;
 class BatteryMonitorInterface;
-class SuspendHandler;
 class ThermalMonitorInterface;
 struct IntegrityTokenResult;
 struct ScreenshotOptions;
@@ -22,6 +21,7 @@ namespace AppPlatformImpl { class IDependencies; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class DiskAccessTracker; }
 namespace Core { class LoadTimeProfiler; }
+class SuspendHandler;
 // clang-format on
 
 namespace AppPlatformImpl {
@@ -55,15 +55,15 @@ public:
 
     virtual bool keyboardInputHandledByImGui() /*override*/;
 
-    virtual void updateImGuiMousePosition(float x, float y) /*override*/;
+    virtual void updateImGuiMousePosition(float, float) /*override*/;
 
-    virtual void updateImGuiMouseButton(uchar button, bool isDown) /*override*/;
+    virtual void updateImGuiMouseButton(uchar, bool) /*override*/;
 
-    virtual void updateImGuiMouseScrollBar(float value) /*override*/;
+    virtual void updateImGuiMouseScrollBar(float) /*override*/;
 
-    virtual void imGuiAddInputChar(ushort c) /*override*/;
+    virtual void imGuiAddInputChar(ushort) /*override*/;
 
-    virtual bool updateImGuiKeyboard(uchar param, bool isDown) /*override*/;
+    virtual bool updateImGuiKeyboard(uchar, bool) /*override*/;
 
     virtual void setServiceLocators(::AppPlatform& platform) /*override*/;
 
@@ -126,15 +126,15 @@ public:
 
     MCNAPI bool $keyboardInputHandledByImGui();
 
-    MCNAPI void $updateImGuiMousePosition(float x, float y);
+    MCNAPI void $updateImGuiMousePosition(float, float);
 
-    MCNAPI void $updateImGuiMouseButton(uchar button, bool isDown);
+    MCNAPI void $updateImGuiMouseButton(uchar, bool);
 
-    MCNAPI void $updateImGuiMouseScrollBar(float value);
+    MCNAPI void $updateImGuiMouseScrollBar(float);
 
-    MCNAPI void $imGuiAddInputChar(ushort c);
+    MCNAPI void $imGuiAddInputChar(ushort);
 
-    MCNAPI bool $updateImGuiKeyboard(uchar param, bool isDown);
+    MCNAPI bool $updateImGuiKeyboard(uchar, bool);
 
     MCNAPI void $setServiceLocators(::AppPlatform& platform);
 

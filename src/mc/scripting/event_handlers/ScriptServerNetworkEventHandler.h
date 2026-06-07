@@ -32,8 +32,6 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::IncomingPacketEvent& packetEvent) /*override*/;
 
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::OutgoingPacketEvent& packetEvent) /*override*/;
-
-    virtual ~ScriptServerNetworkEventHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

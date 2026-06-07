@@ -14,16 +14,25 @@ class ActorOwnerComponent;
 class EntitySystems;
 class StrictEntityContext;
 struct AABBShapeComponent;
+struct ActorSetPositionRequestComponent;
 struct BlockCollisionEvaluationQueueComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct LocalSpatialEntityFetcherFactoryComponent;
 struct PlayerComponent;
+struct StateVectorComponent;
 namespace BlockCollisionsSystem { struct BlockCollisionResolutionVectorComponent; }
 // clang-format on
 
 namespace BlockCollisionsSystem {
 // functions
 // NOLINTBEGIN
+MCAPI void _addActorSetPosRequestFromCollisionVector(
+    ::StrictEntityContext const&                                      entity,
+    ::StateVectorComponent const&                                     stateVector,
+    ::BlockCollisionsSystem::BlockCollisionResolutionVectorComponent& collisionResolutionVector,
+    ::EntityModifier<::ActorSetPositionRequestComponent>              mod
+);
+
 MCAPI void _processBlockCollisionMoveRequestsSystem(
     ::OptionalGlobal<::BlockCollisionEvaluationQueueComponent>    queue,
     ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> fetcherFactoryComponent,

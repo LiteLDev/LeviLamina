@@ -19,8 +19,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const /*override*/;
-
-    virtual ~NoRestrictions() /*override*/ = default;
     // NOLINTEND
 
 public:

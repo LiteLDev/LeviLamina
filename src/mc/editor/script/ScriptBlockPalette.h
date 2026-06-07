@@ -32,19 +32,18 @@ public:
 public:
     // prevent constructor by default
     ScriptBlockPalette& operator=(ScriptBlockPalette const&);
+    ScriptBlockPalette(ScriptBlockPalette const&);
     ScriptBlockPalette();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBlockPalette() = default;
+    virtual ~ScriptBlockPalette();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockPalette(::Editor::ScriptModule::ScriptBlockPalette const&);
-
     MCNAPI ScriptBlockPalette(::Scripting::WeakLifetimeScope const& scope, uint64 maxSize);
 
     MCNAPI ::std::optional<::Scripting::ArgumentOutOfBoundsError> _tryGetArgumentOutOfBoundsError(int index) const;
@@ -58,8 +57,6 @@ public:
     getItemListFromScriptItems() const;
 
     MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> removeItemAt(int index);
-
-    MCNAPI void removeItems();
 
     MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setItem(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem> blockPaletteItem,
@@ -76,9 +73,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptBlockPalette const&);
-
     MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, uint64 maxSize);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

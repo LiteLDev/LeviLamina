@@ -12,17 +12,31 @@ class BaseGameVersion;
 
 class CameraBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    CameraBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
+    // NOLINTEND
 
-    virtual ~CameraBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CameraBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
 
     // NOLINTEND

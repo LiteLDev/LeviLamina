@@ -65,11 +65,9 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~DispenserBlockActor() /*override*/ = default;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
@@ -107,7 +105,7 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCFOLD void $startOpen(::Actor& actor);
+    MCAPI void $startOpen(::Actor& actor);
 
     MCFOLD void $stopOpen(::Actor& actor);
 
@@ -123,9 +121,9 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
 
 
     // NOLINTEND

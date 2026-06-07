@@ -17,34 +17,21 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::AABB>> mTransformedAABBs;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     BlockShapeComponentData& operator=(BlockShapeComponentData const&);
     BlockShapeComponentData(BlockShapeComponentData const&);
     BlockShapeComponentData();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::BlockShapeComponentData& operator=(::BlockShapeComponentData&&);
-#endif
-
-    MCAPI ~BlockShapeComponentData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void transformAABBs(::BlockShapeComponentData& data, ::Matrix const& transform);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

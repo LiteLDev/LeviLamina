@@ -31,19 +31,16 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ClientCacheBlobStatusPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ClientCacheBlobStatusPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI bool isEmpty() const;
+
+    MCAPI bool isFull() const;
+#endif
     // NOLINTEND
 
 public:

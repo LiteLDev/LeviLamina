@@ -55,10 +55,10 @@ public:
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
+        ::CircuitSceneGraph&         info,
+        ::CircuitTrackingInfo const& dampening,
+        int&                         bDirectlyPowered,
+        bool&
     ) /*override*/;
 
     virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent) /*override*/;
@@ -81,7 +81,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem&, bool& bPowerFromSelf);
+    MCAPI RedstoneTorchCapacitor();
+
+    MCAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem& bPowerFromSelf, bool&);
+
+    MCAPI void resetBurnOutCount();
+
+    MCAPI void setOn(bool bOn);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -92,7 +104,7 @@ public:
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
 
     MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
@@ -102,7 +114,7 @@ public:
 
     MCAPI int $getStrength() const;
 
-    MCAPI bool $isHalfPulse() const;
+    MCFOLD bool $isHalfPulse() const;
 
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
 

@@ -28,8 +28,6 @@ public:
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~EnchantingInputContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

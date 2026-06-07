@@ -84,16 +84,12 @@ public:
         ::Social::Events::Event const&         event
     );
 
-    MCNAPI bool _needToSendAggregatedEvents() const;
-
     MCNAPI void _recordAggregatedEvent(
         ::Social::Events::Event const&                                              event,
         ::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& eventQueue
     );
 
     MCNAPI void _sendCustomAggregatedEvents(bool forceSend);
-
-    MCNAPI void _sendEvents(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
 
     MCNAPI void _sendNextEvent(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
     // NOLINTEND

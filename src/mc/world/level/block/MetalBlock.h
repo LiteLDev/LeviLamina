@@ -7,9 +7,19 @@
 
 class MetalBlock : public ::BlockType {
 public:
-    // virtual functions
+    // prevent constructor by default
+    MetalBlock();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~MetalBlock() /*override*/ = default;
+    MCAPI MetalBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

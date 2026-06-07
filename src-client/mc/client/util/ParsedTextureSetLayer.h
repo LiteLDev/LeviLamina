@@ -24,12 +24,11 @@ public:
 public:
     // prevent constructor by default
     ParsedTextureSetLayer& operator=(ParsedTextureSetLayer const&);
+    ParsedTextureSetLayer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParsedTextureSetLayer();
-
     MCNAPI ParsedTextureSetLayer(::ParsedTextureSetLayer const&);
 
     MCNAPI ParsedTextureSetLayer(::ParsedTextureSetLayer&&);
@@ -40,8 +39,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::ParsedTextureSetLayer const&);
 
     MCNAPI void* $ctor(::ParsedTextureSetLayer&&);

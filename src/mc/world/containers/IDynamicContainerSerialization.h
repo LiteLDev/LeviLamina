@@ -20,24 +20,12 @@ public:
 
     virtual bool hasContainer(::FullContainerName const& name) const = 0;
 
-    virtual ~IDynamicContainerSerialization();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~IDynamicContainerSerialization() = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

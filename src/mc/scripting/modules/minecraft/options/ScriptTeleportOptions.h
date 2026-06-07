@@ -31,34 +31,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptTeleportOptions& operator=(ScriptTeleportOptions const&);
-    ScriptTeleportOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptTeleportOptions(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
-
-    MCAPI ~ScriptTeleportOptions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

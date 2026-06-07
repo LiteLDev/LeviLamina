@@ -49,6 +49,11 @@ public:
         double                                                       timeDiff
     );
 
+    MCAPI void
+    addToTerrainLayerChunkQueue(int cloudSide, uint64 layerId, ::ChunkLayerRenderObject&& chunkLayerRenderObject);
+
+    MCAPI void resetTerrainTextureList(::std::vector<::mce::ServerTexture>&& terrainTextures);
+
     MCAPI ~ChunkRenderObjectCollection();
     // NOLINTEND
 

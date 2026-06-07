@@ -25,14 +25,20 @@ public:
 
 public:
     // prevent constructor by default
-    AutomaticFeatureRulesData& operator=(AutomaticFeatureRulesData const&);
-    AutomaticFeatureRulesData(AutomaticFeatureRulesData const&);
     AutomaticFeatureRulesData();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI AutomaticFeatureRulesData(::SharedTypes::v1_21_20::AutomaticFeatureRulesData&&);
+
+    MCAPI AutomaticFeatureRulesData(::SharedTypes::v1_21_20::AutomaticFeatureRulesData const&);
+
+    MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRulesData&
+    operator=(::SharedTypes::v1_21_20::AutomaticFeatureRulesData&&);
+
+    MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRulesData&
+    operator=(::SharedTypes::v1_21_20::AutomaticFeatureRulesData const&);
 
     MCAPI ~AutomaticFeatureRulesData();
     // NOLINTEND
@@ -47,6 +53,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_20::AutomaticFeatureRulesData&&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::AutomaticFeatureRulesData const&);
     // NOLINTEND
 
 public:

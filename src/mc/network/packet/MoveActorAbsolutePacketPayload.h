@@ -11,4 +11,20 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData> mMoveData;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveActorAbsolutePacketPayload();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MoveActorAbsolutePacketPayload(::MoveActorAbsoluteData const& data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::MoveActorAbsoluteData const& data);
+    // NOLINTEND
 };

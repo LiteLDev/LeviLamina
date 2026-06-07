@@ -41,8 +41,6 @@ public:
     uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const /*override*/;
 
     virtual ::std::string const& getMinidumpUploadUri() const /*override*/;
-
-    virtual ~SentryUploadManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

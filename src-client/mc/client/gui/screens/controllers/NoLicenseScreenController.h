@@ -30,6 +30,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit NoLicenseScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

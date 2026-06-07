@@ -49,18 +49,15 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPotions& operator=(ScriptPotions const&);
+    ScriptPotions(ScriptPotions const&);
+    ScriptPotions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPotions();
+    MCAPI ::ScriptModuleMinecraft::ScriptPotions& operator=(::ScriptModuleMinecraft::ScriptPotions const&);
 
-    MCAPI ScriptPotions(::ScriptModuleMinecraft::ScriptPotions&&);
-
-    MCAPI ScriptPotions(::ScriptModuleMinecraft::ScriptPotions const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptPotions& operator=(::ScriptModuleMinecraft::ScriptPotions&&);
+    MCAPI ~ScriptPotions();
     // NOLINTEND
 
 public:
@@ -110,13 +107,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotions&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotions const&);
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

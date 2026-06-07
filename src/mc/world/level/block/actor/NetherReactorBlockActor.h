@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
@@ -23,13 +24,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetherReactorBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    // NOLINTEND
 
-    virtual ~NetherReactorBlockActor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit NetherReactorBlockActor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

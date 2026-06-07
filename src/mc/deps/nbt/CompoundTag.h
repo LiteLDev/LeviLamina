@@ -107,6 +107,8 @@ public:
 
     MCAPI void append(::CompoundTag const& tag);
 
+    MCAPI void clear();
+
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
 
     MCAPI bool contains(::std::string_view name) const;
@@ -125,7 +127,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

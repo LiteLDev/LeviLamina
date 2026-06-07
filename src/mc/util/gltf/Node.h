@@ -46,8 +46,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI Node();
 
-    MCNAPI Node(::glTF::Node&&);
-
     MCNAPI Node(::glTF::Node const&);
 
     MCNAPI ::Json::Value serialize() const;
@@ -61,8 +59,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::glTF::Node&&);
 
     MCNAPI void* $ctor(::glTF::Node const&);
 #endif

@@ -13,6 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IClientInstance;
 namespace Parties { class PartySystem; }
 // clang-format on
 
@@ -22,12 +23,13 @@ class PartyCommandsFacet : public ::OreUI::FacetBase<::OreUI::PartyCommandsFacet
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>> mPartySystem;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                       mTaskGroup;
-    ::ll::TypedStorage<1, 1, bool>                                                mIsDirty;
-    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>  mCreatePartyState;
-    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>  mJoinPartyState;
-    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>  mAcceptInviteState;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>>                  mPartySystem;
+    ::ll::TypedStorage<8, 64, ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()>> mGetClientInstance;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                        mTaskGroup;
+    ::ll::TypedStorage<1, 1, bool>                                                                 mIsDirty;
+    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>                   mCreatePartyState;
+    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>                   mJoinPartyState;
+    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>                   mAcceptInviteState;
     // NOLINTEND
 
 public:
@@ -37,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PartyCommandsFacet() /*override*/ = default;
+    virtual ~PartyCommandsFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -45,7 +47,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PartyCommandsFacet(::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem);
+    MCAPI PartyCommandsFacet(
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem>                  partySystem,
+        ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance
+    );
 
     MCAPI void _runCommandAndUpdateState(
         ::Bedrock::Threading::Async<bool>                  task,
@@ -60,7 +65,7 @@ public:
 
     MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getCreatePartyState() const;
 
-    MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
+    MCFOLD ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
 
     MCAPI void ignoreInvite(::std::string const& partyId, ::std::string const& inviterXuid);
 
@@ -88,7 +93,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem);
+    MCAPI void* $ctor(
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem>                  partySystem,
+        ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

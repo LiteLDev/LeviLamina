@@ -80,8 +80,18 @@ public:
     virtual void pushElement(uint64) /*override*/;
 
     virtual void pop() /*override*/;
+    // NOLINTEND
 
-    virtual ~BinarySchemaReader() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BinarySchemaReader(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -95,7 +105,7 @@ public:
 
     MCFOLD ::Bedrock::Result<bool> $asBool();
 
-    MCAPI ::Bedrock::Result<schar> $asInt8();
+    MCFOLD ::Bedrock::Result<schar> $asInt8();
 
     MCFOLD ::Bedrock::Result<uchar> $asUInt8();
 
@@ -103,13 +113,13 @@ public:
 
     MCFOLD ::Bedrock::Result<ushort> $asUInt16();
 
-    MCFOLD ::Bedrock::Result<int> $asInt32();
+    MCAPI ::Bedrock::Result<int> $asInt32();
 
-    MCFOLD ::Bedrock::Result<uint> $asUInt32();
+    MCAPI ::Bedrock::Result<uint> $asUInt32();
 
-    MCFOLD ::Bedrock::Result<int64> $asInt64();
+    MCAPI ::Bedrock::Result<int64> $asInt64();
 
-    MCFOLD ::Bedrock::Result<uint64> $asUInt64();
+    MCAPI ::Bedrock::Result<uint64> $asUInt64();
 
     MCFOLD ::Bedrock::Result<float> $asFloat();
 
@@ -122,7 +132,7 @@ public:
 
     MCFOLD ::std::optional<bool> $additionalDataAsBool();
 
-    MCFOLD ::std::optional<uint> $additionalDataAsUInt32();
+    MCAPI ::std::optional<uint> $additionalDataAsUInt32();
 
     MCFOLD ::std::optional<::std::string> $additionalDataAsString(uint64 maxInputLength);
 

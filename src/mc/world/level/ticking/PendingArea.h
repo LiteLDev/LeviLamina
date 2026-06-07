@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/UUID.h"
 #include "mc/util/Bounds.h"
@@ -12,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class Dimension;
 struct TickingAreaDescription;
 // clang-format on
 
@@ -34,18 +32,28 @@ public:
 
 public:
     // prevent constructor by default
-    PendingArea& operator=(PendingArea const&);
-    PendingArea(PendingArea const&);
     PendingArea();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PendingArea(
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::Bounds const&       bounds,
+        bool                  circle,
+        ::TickingAreaLoadMode loadMode
+    );
+
     MCAPI ::TickingAreaDescription getDescription() const;
 
-    MCAPI ::PendingArea& operator=(::PendingArea&&);
+    MCFOLD bool isScoped() const;
+
+    MCAPI bool isStandalone() const;
 
     MCAPI ::CompoundTag serialize(::DimensionType dimensionId) const;
+
+    MCAPI void setScope(uint64 scope);
 
     MCAPI ~PendingArea();
     // NOLINTEND
@@ -53,9 +61,37 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::PendingArea createEntityTickingArea(
+        ::mce::UUID     uniqueId,
+        ::ActorUniqueID entityId,
+        ::Bounds const& bounds,
+        bool            alwaysActive,
+        float           maxDistToPlayers
+    );
+
+    MCAPI static ::PendingArea createTickingArea(
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::Bounds const&       bounds,
+        bool                  circle,
+        ::TickingAreaLoadMode loadMode
+    );
+
     MCAPI static ::PendingArea load(::std::string const& key, ::CompoundTag const& tag);
 
     MCAPI static bool validTag(::CompoundTag const& tag);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::Bounds const&       bounds,
+        bool                  circle,
+        ::TickingAreaLoadMode loadMode
+    );
     // NOLINTEND
 
 public:

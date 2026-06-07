@@ -67,6 +67,17 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI File_c_windows(
+        ::Core::FileSystem_windows* pTransaction,
+        ::_iobuf*                   pFile,
+        ::Core::PathView            path,
+        ::Core::FileOpenMode        fileOpenMode
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Core::Result _open(
@@ -78,6 +89,19 @@ public:
     );
 
     MCNAPI static ::std::string getExtendedLengthPath(::Core::PathView path);
+
+    MCNAPI static void initialize();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Core::FileSystem_windows* pTransaction,
+        ::_iobuf*                   pFile,
+        ::Core::PathView            path,
+        ::Core::FileOpenMode        fileOpenMode
+    );
     // NOLINTEND
 
 public:

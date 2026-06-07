@@ -11,7 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 class RemappingLayout;
 namespace Settings { class Eventing; }
 namespace Settings::RegistryBuilder { class IBuilderContext; }
@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                        mIndex;
     ::ll::TypedStorage<4, 4, ::InputMode>                                   mInputMode;
     ::ll::TypedStorage<8, 8, ::RemappingLayout&>                            mLayout;
-    ::ll::TypedStorage<8, 8, ::IOptions&>                                   mOptions;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                            mOptions;
     ::ll::TypedStorage<8, 8, ::Settings::Eventing&>                         mEventing;
     ::ll::TypedStorage<8, 8, ::Settings::RegistryBuilder::IBuilderContext&> mContext;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>              mRawInputEventSubscription;
@@ -47,8 +47,6 @@ public:
     virtual bool flush() /*override*/;
 
     virtual bool canModify() const /*override*/;
-
-    virtual ~RebindActionDataProvider() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,9 +59,9 @@ public:
         ::Settings::RegistryBuilder::IBuilderContext& context
     );
 
-    MCAPI void _disableRawInputEventListener();
-
     MCAPI void _rebindInput(int id, ::RawInputType keyType, ::ButtonState buttonState);
+
+    MCAPI void enqueueRawInputRegistration();
     // NOLINTEND
 
 public:

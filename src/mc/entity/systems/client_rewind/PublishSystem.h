@@ -24,14 +24,14 @@ struct ActorDataFlagComponent;
 struct ActorDataHorseFlagComponent;
 struct ActorDataJumpDurationComponent;
 struct ActorDataSeatOffsetComponent;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct ReplayStateTrackerComponent;
 // clang-format on
 
 namespace ClientRewind {
 
 struct PublishSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
-                           ::Filter<::ActorMovementTickNeededComponent>,
+                           ::Filter<::InterpolateMovementNeededComponent>,
                            ::Read<
                                ::ActorDataFlagComponent,
                                ::ActorDataHorseFlagComponent,
@@ -46,7 +46,7 @@ struct PublishSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
 public:
     // PublishSystem inner types define
     using Base = ::IStrictTickingSystem<::StrictExecutionContext<
-        ::Filter<::ActorMovementTickNeededComponent>,
+        ::Filter<::InterpolateMovementNeededComponent>,
         ::Read<
             ::ActorDataFlagComponent,
             ::ActorDataHorseFlagComponent,
@@ -62,9 +62,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Filter<::InterpolateMovementNeededComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent>,
+            ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&
+    ) /*override*/;
+#else // LL_PLAT_C
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<
                 ::ActorDataFlagComponent,
                 ::ActorDataHorseFlagComponent,
@@ -77,8 +94,8 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
+#endif
 
-    virtual ~PublishSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -106,7 +123,7 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void $tick(
         ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<
                 ::ActorDataFlagComponent,
                 ::ActorDataHorseFlagComponent,

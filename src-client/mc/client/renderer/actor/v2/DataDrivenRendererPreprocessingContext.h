@@ -16,16 +16,4 @@ public:
     DataDrivenRendererPreprocessingContext& operator=(DataDrivenRendererPreprocessingContext const&);
     DataDrivenRendererPreprocessingContext(DataDrivenRendererPreprocessingContext const&);
     DataDrivenRendererPreprocessingContext();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DataDrivenRendererPreprocessingContext();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

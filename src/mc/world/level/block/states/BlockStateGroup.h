@@ -9,6 +9,7 @@
 // clang-format off
 class BlockState;
 class BlockStateMeta;
+class BlockType;
 class CustomBlockStateVariant;
 struct BlockStateDefinition;
 namespace Json { class Value; }
@@ -38,6 +39,8 @@ public:
     MCAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
 
     MCAPI void registerExistingBlockState(::BlockState const& state);
+
+    MCAPI void registerToBlock(::BlockType& block);
 
     MCAPI ~BlockStateGroup();
     // NOLINTEND

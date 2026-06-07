@@ -42,8 +42,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-
-    virtual ~RectLayoutFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

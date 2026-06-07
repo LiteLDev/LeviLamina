@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/settings/IOptionsDataProvider.h"
+#include "mc/client/settings/LocStringData.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 
@@ -19,8 +20,12 @@ class SimulationDistanceDataProvider : public ::Settings::IOptionsDataProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::LevelDataWrapper&>                             mLevelData;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                 mInfo;
+    ::ll::TypedStorage<8, 8, ::LevelDataWrapper&> mLevelData;
+    ::ll::TypedStorage<
+        8,
+        80,
+        ::std::optional<::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>>
+                                                                              mInfo;
     ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<int, uint>>        mIndexValueMap;
     ::ll::TypedStorage<8, 24, ::std::vector<::Settings::OptionData>>          mLabels;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mLevelChangedSubscription;
@@ -44,9 +49,9 @@ public:
 
     virtual void setValue(int index) /*override*/;
 
-    virtual ::std::optional<::std::string> const& getInfo() const /*override*/;
-
-    virtual ~SimulationDistanceDataProvider() /*override*/;
+    virtual ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    getInfo() const /*override*/;
     // NOLINTEND
 
 public:
@@ -76,12 +81,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $canModify() const;
@@ -92,7 +91,9 @@ public:
 
     MCAPI void $setValue(int index);
 
-    MCFOLD ::std::optional<::std::string> const& $getInfo() const;
+    MCFOLD ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    $getInfo() const;
     // NOLINTEND
 
 public:

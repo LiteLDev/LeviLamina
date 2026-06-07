@@ -10,8 +10,8 @@
 // clang-format off
 class GuiData;
 class IClientInstance;
+class Matrix;
 class MinecraftUIRenderContext;
-class Mob;
 class UIControl;
 class UICustomRenderer;
 // clang-format on
@@ -35,12 +35,6 @@ public:
         ::ll::TypedStorage<4, 4, float> mYHeadRot;
         ::ll::TypedStorage<4, 4, float> mYHeadRotO;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void popValueFromMob(::Mob const& mob);
-        // NOLINTEND
     };
 
 public:
@@ -50,8 +44,12 @@ public:
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
+    // NOLINTEND
 
-    virtual ~LivePlayerRenderer() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI LivePlayerRenderer();
     // NOLINTEND
 
 public:
@@ -66,6 +64,16 @@ public:
         ::IClientInstance const&                              client,
         ::UIControl const&                                    owner
     );
+
+    MCAPI static void setupCameraMatrixGliding(::Matrix& worldMatrix, float xo, float yo, float ownerScale);
+
+    MCAPI static void setupMatrixRotation(bool isGliding, ::Matrix& worldMatrix, float yMouse);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

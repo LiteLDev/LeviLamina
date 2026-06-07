@@ -26,8 +26,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
-
-    virtual ~SwingEventResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

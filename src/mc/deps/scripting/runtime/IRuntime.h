@@ -85,9 +85,9 @@ public:
     ) const = 0;
 
     virtual ::Scripting::ResultAny getFutureResult(
-        ::Scripting::ContextId                                  contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
-        ::entt::meta_type const&                                expectedResultType
+        ::Scripting::ContextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
+        ::entt::meta_type const&
     ) const = 0;
 
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>

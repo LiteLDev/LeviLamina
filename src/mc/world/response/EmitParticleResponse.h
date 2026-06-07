@@ -39,8 +39,6 @@ public:
                                                root,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
-
-    virtual ~EmitParticleResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -24,20 +24,22 @@ public:
 
 public:
     // prevent constructor by default
-    InvalidArgumentError& operator=(InvalidArgumentError const&);
     InvalidArgumentError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InvalidArgumentError(::Scripting::InvalidArgumentError const&);
-
     MCAPI InvalidArgumentError(::std::string const& argTypeName, int index_);
 
     MCAPI
     InvalidArgumentError(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
 
-    MCAPI ~InvalidArgumentError();
+    MCAPI InvalidArgumentError(
+        ::std::string const&                  funcName,
+        ::std::string const&                  argTypeName,
+        ::Scripting::InvalidArgumentErrorType type_,
+        ::std::optional<int>                  index_
+    );
     // NOLINTEND
 
 public:
@@ -51,17 +53,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::InvalidArgumentError const&);
-
     MCAPI void* $ctor(::std::string const& argTypeName, int index_);
 
     MCAPI void* $ctor(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(
+        ::std::string const&                  funcName,
+        ::std::string const&                  argTypeName,
+        ::Scripting::InvalidArgumentErrorType type_,
+        ::std::optional<int>                  index_
+    );
     // NOLINTEND
 };
 

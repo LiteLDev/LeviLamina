@@ -59,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearBind();
+    MCAPI EncoderImpl();
 
     MCAPI void discard();
 
@@ -120,7 +120,19 @@ public:
         bool                         _preserveState
     );
 
-    MCAPI void updateBindHash();
+    MCAPI ~EncoderImpl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
+
 class InMemoryFile {
 public:
     // member variables
@@ -24,6 +32,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit InMemoryFile(::Core::Path const& fileName);
+
+    MCNAPI ::leveldb::Status append(::leveldb::Slice const& data);
+
     MCNAPI ::leveldb::Status flushToDisk(::leveldb::Env* env);
+
+    MCNAPI ::Core::PathBuffer<::std::string> getFilename() const;
+
+    MCNAPI void rename(::Core::Path const& newFilename);
+
+    MCNAPI ~InMemoryFile();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::Path const& fileName);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

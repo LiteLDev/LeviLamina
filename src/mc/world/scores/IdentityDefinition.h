@@ -31,18 +31,60 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    IdentityDefinition();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI IdentityDefinition(::IdentityDefinition&& o);
+
+    MCAPI IdentityDefinition(::IdentityDefinition const& o);
+
+    MCFOLD ::ActorUniqueID const& getEntityId() const;
+
+    MCFOLD ::std::string const& getFakePlayerName() const;
+
+    MCFOLD ::IdentityDefinition::Type getIdentityType() const;
+
     MCAPI ::std::string const&
     getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver) const;
 
+    MCFOLD ::PlayerScoreboardId const& getPlayerId() const;
+
+    MCFOLD ::ScoreboardId const& getScoreboardId() const;
+
+    MCAPI bool isEntityType() const;
+
+    MCFOLD bool isPlayerType() const;
+
+    MCAPI bool isValid() const;
+
+    MCAPI ::IdentityDefinition& operator=(::IdentityDefinition&& o);
+
+    MCAPI ::IdentityDefinition& operator=(::IdentityDefinition const& o);
+
     MCAPI ~IdentityDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isHiddenFakePlayerNameString(::std::string const& name);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::IdentityDefinition const& Invalid();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IdentityDefinition&& o);
+
+    MCAPI void* $ctor(::IdentityDefinition const& o);
     // NOLINTEND
 
 public:

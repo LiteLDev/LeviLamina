@@ -59,11 +59,12 @@ public:
     // prevent constructor by default
     BaseGamePackSlices& operator=(BaseGamePackSlices const&);
     BaseGamePackSlices(BaseGamePackSlices const&);
-    BaseGamePackSlices();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI BaseGamePackSlices();
+
     MCNAPI void addFromVersions(
         ::std::vector<::BaseGameVersion> const&                               baseGameVersions,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
@@ -75,8 +76,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
         ::ResourcePackStack&                                                  packStack
     ) const;
-
-    MCNAPI ~BaseGamePackSlices();
     // NOLINTEND
 
 public:
@@ -90,8 +89,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

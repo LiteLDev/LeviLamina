@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/BlockDataFetchResult.h"
 #include "mc/world/level/IBlockWorldGenAPI.h"
 #include "mc/world/level/WorldGenContext.h"
@@ -16,7 +15,6 @@ class Block;
 class BlockPos;
 class BlockVolume;
 class BoundingBox;
-class Dimension;
 class Feature;
 class ILevel;
 class LevelData;
@@ -46,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockVolumeTarget() /*override*/;
+    virtual ~BlockVolumeTarget() /*override*/ = default;
 
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
@@ -99,17 +97,35 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI BlockVolumeTarget(
+        ::BlockVolume&           blockVolume,
+        ::ILevel&                level,
+        ::BiomeSource const&     biomeSource,
+        ::DimensionType          dimensionType,
+        ::WorldGenContext const& context
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BlockVolume&           blockVolume,
+        ::ILevel&                level,
+        ::BiomeSource const&     biomeSource,
+        ::DimensionType          dimensionType,
+        ::WorldGenContext const& context
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
+    MCAPI ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
     MCFOLD ::Block const& $getExtraBlock(::BlockPos const&) const;
 

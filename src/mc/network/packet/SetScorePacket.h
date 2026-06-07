@@ -53,6 +53,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::SetScorePacket change(::std::vector<::ScorePacketInfo> info);
+
+    MCAPI static ::SetScorePacket change(::ScoreboardId const& id, ::Objective const& objective);
+
+    MCAPI static ::SetScorePacket remove(::ScoreboardId const& id, ::Objective const& objective);
     // NOLINTEND
 
 public:

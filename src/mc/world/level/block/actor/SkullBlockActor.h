@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -27,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SkullBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -37,11 +42,31 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    // NOLINTEND
 
-    virtual ~SkullBlockActor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SkullBlockActor(::BlockPos const& pos);
+
+#ifdef LL_PLAT_C
+    MCAPI float getAnimationProgress(float a);
+#endif
+
+    MCAPI float getRotation() const;
+
+    MCFOLD ::SkullBlock::SkullType getSkullType() const;
+
+    MCAPI void setRotation(float rot);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -55,7 +80,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

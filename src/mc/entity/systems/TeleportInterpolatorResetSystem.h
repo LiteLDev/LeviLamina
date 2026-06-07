@@ -34,15 +34,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createTeleportInterpolatorResetSystem();
-
-    MCAPI static void tickTeleportInterpolatorResetSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::ServerPlayerComponent>,
-            ::Optional<::MovementInterpolatorComponent>,
-            ::PlayerPositionModeComponent const,
-            ::FallDistanceComponent,
-            ::StateVectorComponent> view
-    );
     // NOLINTEND
 };

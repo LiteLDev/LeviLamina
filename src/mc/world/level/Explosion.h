@@ -57,7 +57,29 @@ public:
 
     MCAPI bool explode(::IRandom& random);
 
-    MCAPI ::Vec3 getEyePos(::Actor& actor) const;
+    MCAPI ::Vec3 getSourcePos(::Actor* source) const;
+
+    MCAPI void overrideInWater(bool inWater);
+
+    MCFOLD void setAllowUnderwater(bool val);
+
+    MCFOLD void setBreaking(bool val);
+
+    MCFOLD void setCanToggleBlocks(bool toggleBlocks);
+
+    MCAPI void setDamageScaling(float damageScaling);
+
+    MCAPI void setExplosionParticleType(::SharedTypes::Legacy::LevelEvent particlesExplosionType);
+
+    MCAPI void setExplosionSound(::SharedTypes::Legacy::LevelSoundEvent soundExplosionType);
+
+    MCFOLD void setFire(bool val);
+
+    MCFOLD void setIgnoreBlockResistance(bool shouldIgnore);
+
+    MCAPI void setKnockbackScaling(float scaling);
+
+    MCAPI void setMaxResistance(float resistance);
 
     MCAPI ~Explosion();
     // NOLINTEND

@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MinecraftUIMeasureStrategy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MinecraftUIMeasureStrategy() /*override*/;
@@ -70,6 +74,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit MinecraftUIMeasureStrategy(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
+
     MCAPI void _addCaretOffsetOnRow(
         uint64&                        caret,
         ::std::string const&           row,
@@ -102,6 +108,12 @@ public:
         ::TextMeasureData const&                                 textData,
         ::CaretMeasureData const&                                caretData
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
     // NOLINTEND
 
 public:

@@ -8,6 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BoundingBox;
+class StructureSettings;
 class Vec3;
 namespace mce { class UUID; }
 // clang-format on
@@ -45,6 +48,12 @@ public:
         TemplateStructureInfo& operator=(TemplateStructureInfo const&);
         TemplateStructureInfo(TemplateStructureInfo const&);
         TemplateStructureInfo();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ::StructureSettings toStructureSettings() const;
+        // NOLINTEND
     };
 
 public:
@@ -61,12 +70,18 @@ public:
     // prevent constructor by default
     PrefabStructurePositionCalculator& operator=(PrefabStructurePositionCalculator const&);
     PrefabStructurePositionCalculator(PrefabStructurePositionCalculator const&);
-    PrefabStructurePositionCalculator();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PrefabStructurePositionCalculator();
+
+    MCNAPI ::BlockPos
+    _getPivotFromNormalizedOrigin(::Vec3 const& structureNormalizedOrigin, ::Vec3 const& structureSize);
+
     MCNAPI void calculate();
+
+    MCNAPI void calculate(::Vec3 const& rootPosition, ::Mirror rootMirror, ::Rotation rootRotation);
 
     MCNAPI void createOrUpdateStructureInfo(
         ::mce::UUID const& id,
@@ -78,6 +93,20 @@ public:
         ::Vec3 const&      structureNormalizedOrigin
     );
 
+#ifdef LL_PLAT_C
+    MCNAPI ::BoundingBox getBoundingBox() const;
+
+    MCNAPI ::Editor::Prefabs::PrefabStructurePositionCalculator::TemplateStructureInfo const&
+    getStructureInfo(::mce::UUID const& id) const;
+#endif
+
+    MCNAPI ::std::vector<::Editor::Prefabs::PrefabStructurePositionCalculator::TemplateStructureInfo> const&
+    getStructureInfoList() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI void removeStructureInfo(::mce::UUID const& id);
+#endif
+
     MCNAPI ~PrefabStructurePositionCalculator();
     // NOLINTEND
 
@@ -85,6 +114,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::Editor::Prefabs::PrefabStructurePositionCalculator::TemplateStructureInfo& EMPTY_STRUCTURE_INFO();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

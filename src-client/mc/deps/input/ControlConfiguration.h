@@ -52,8 +52,6 @@ public:
 
     MCAPI void addSubOption(::std::unique_ptr<::ControlOption> subOption);
 
-    MCAPI void updatePosition(float x, float y);
-
     MCAPI ~ControlConfiguration();
     // NOLINTEND
 

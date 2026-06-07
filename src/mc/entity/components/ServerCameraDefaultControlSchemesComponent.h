@@ -11,22 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string_view, ::ControlScheme::Scheme>> mDefaultSchemes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerCameraDefaultControlSchemesComponent& operator=(ServerCameraDefaultControlSchemesComponent const&);
-    ServerCameraDefaultControlSchemesComponent(ServerCameraDefaultControlSchemesComponent const&);
-    ServerCameraDefaultControlSchemesComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ServerCameraDefaultControlSchemesComponent(::ServerCameraDefaultControlSchemesComponent&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerCameraDefaultControlSchemesComponent&&);
-    // NOLINTEND
 };

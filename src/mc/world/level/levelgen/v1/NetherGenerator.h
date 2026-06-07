@@ -75,18 +75,14 @@ public:
     // NOLINTBEGIN
     virtual ~NetherGenerator() /*override*/;
 
-    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
+    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
     virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
     virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
-    virtual void prepareHeights(
-        ::BlockVolume&        box,
-        ::ChunkPos const&     chunkPos,
-        ::std::vector<short>* ZXheights,
-        bool                  factorInBeardsAndShavers
-    ) /*override*/;
+    virtual void
+    prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights, bool) /*override*/;
 
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
 
@@ -136,18 +132,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
     MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCAPI void $prepareHeights(
-        ::BlockVolume&        box,
-        ::ChunkPos const&     chunkPos,
-        ::std::vector<short>* ZXheights,
-        bool                  factorInBeardsAndShavers
-    );
+    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights, bool);
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 

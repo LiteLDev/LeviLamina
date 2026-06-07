@@ -14,6 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, short> mSignalLevel;
     ::ll::TypedStorage<2, 2, short> mPreviousSignalLevel;
+    ::ll::TypedStorage<1, 1, bool>  mIsFirstUpdate;
     // NOLINTEND
 };
 

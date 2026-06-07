@@ -36,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
-
     MCAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
 
     MCAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
@@ -60,8 +58,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
     // NOLINTEND
 

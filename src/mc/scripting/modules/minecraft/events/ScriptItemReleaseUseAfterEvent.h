@@ -32,22 +32,17 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptItemReleaseUseAfterEvent& operator=(ScriptItemReleaseUseAfterEvent const&);
     ScriptItemReleaseUseAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemReleaseUseAfterEvent(::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent const&);
-
     MCAPI ScriptItemReleaseUseAfterEvent(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
         ::Player const&                                                                                 player,
         ::ItemReleaseUseEvent const&                                                                    itemEvent,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
-
-    MCAPI ~ScriptItemReleaseUseAfterEvent();
     // NOLINTEND
 
 public:
@@ -61,20 +56,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent const&);
-
     MCFOLD void* $ctor(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
         ::Player const&                                                                                 player,
         ::ItemReleaseUseEvent const&                                                                    itemEvent,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

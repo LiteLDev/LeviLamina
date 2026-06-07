@@ -8,9 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorDefinitionGroup;
+class EntityContext;
+class Vec3;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class ChestBoat : public ::Boat {
+public:
+    // prevent constructor by default
+    ChestBoat();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -19,8 +27,28 @@ public:
     virtual void destroy(::Actor* sourceActor) /*override*/;
 
     virtual ::std::string getEntityLocNameString() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ChestBoat() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ChestBoat(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
+    MCAPI void _dropChestContents(::Vec3 const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

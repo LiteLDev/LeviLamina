@@ -24,9 +24,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MultiplayerBroadcastStateInfo& operator=(MultiplayerBroadcastStateInfo const&);
+    MultiplayerBroadcastStateInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MultiplayerBroadcastStateInfo(::Settings::MultiplayerBroadcastStateInfo const&);
+
     MCAPI ~MultiplayerBroadcastStateInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Settings::MultiplayerBroadcastStateInfo const&);
     // NOLINTEND
 
 public:

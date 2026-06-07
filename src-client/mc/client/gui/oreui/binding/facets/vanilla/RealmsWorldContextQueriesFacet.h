@@ -55,11 +55,11 @@ public:
 
     MCFOLD bool getIsClosed() const;
 
-    MCAPI bool getIsExpired() const;
+    MCFOLD bool getIsExpired() const;
 
-    MCAPI bool getIsFull() const;
+    MCFOLD bool getIsFull() const;
 
-    MCAPI int getMaxPlayers() const;
+    MCFOLD int getMaxPlayers() const;
 
     MCFOLD ::std::string const& getRealmId() const;
 
@@ -91,7 +91,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCFOLD bool $update();
     // NOLINTEND
 
 public:

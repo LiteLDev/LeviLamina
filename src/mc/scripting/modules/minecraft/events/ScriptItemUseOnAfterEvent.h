@@ -5,12 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemUseOnEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class Player;
 struct ItemUseOnEvent;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
@@ -32,7 +30,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptItemUseOnAfterEvent(ScriptItemUseOnAfterEvent const&);
     ScriptItemUseOnAfterEvent();
 
 public:
@@ -44,14 +41,6 @@ public:
         ::Player const&                                                                player,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
-
-    MCAPI ::Scripting::Result_deprecated<::BlockPos> getBlockLocation_V010() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
     // NOLINTEND
 
 public:

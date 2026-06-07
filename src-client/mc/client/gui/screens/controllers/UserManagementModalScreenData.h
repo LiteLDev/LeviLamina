@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<4, 4, ::ModalWindowSize> windowSize;
     ::ll::TypedStorage<1, 1, bool>              defaultFocusOnLeftButton;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~UserManagementModalScreenData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

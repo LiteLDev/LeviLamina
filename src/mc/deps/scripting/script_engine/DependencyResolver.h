@@ -38,11 +38,6 @@ public:
         ::std::vector<::Scripting::ModuleDescriptor> const& unsortedDependencies
     ) const;
 
-    MCNAPI bool _isVersionMissing(
-        ::Scripting::IModuleBindingFactory const& moduleFactory,
-        ::Scripting::Version const&               version
-    ) const;
-
     MCNAPI bool _isVersionSupported(
         ::Scripting::IModuleBindingFactory const& moduleFactory,
         ::Scripting::Version const&               version
@@ -55,6 +50,11 @@ public:
         ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> const&
             versionRequestTable
     ) const;
+
+    MCNAPI ::Scripting::ModuleResolveResult resolve(
+        ::Scripting::ModuleDescriptor const&                forModule,
+        ::std::vector<::Scripting::ModuleDescriptor> const& dependencies
+    );
     // NOLINTEND
 };
 

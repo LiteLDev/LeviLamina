@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/cereal_helpers/Keyframes.h"
-
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
@@ -15,8 +12,6 @@ namespace CerealHelpers { struct Member; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 namespace Json { class Value; }
-namespace SharedTypes { struct Color255RGB; }
-namespace SharedTypes { struct Color255RGBA; }
 namespace SharedTypes::v1_21_20 { struct FilterGroupData; }
 namespace SharedTypes::v1_21_20 { struct FilterTestData; }
 namespace cereal { class StrictJsonLoader; }
@@ -51,6 +46,10 @@ MCNAPI ::Core::Result _endLoadFromJsonFile(
 );
 #endif
 
+MCNAPI void bindBoundingBox(::cereal::ReflectionCtx& ctx);
+
+MCNAPI void bindBrightness(::cereal::ReflectionCtx& ctx);
+
 MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindIntRange(::cereal::ReflectionCtx& ctx);
@@ -58,6 +57,13 @@ MCNAPI void bindIntRange(::cereal::ReflectionCtx& ctx);
 MCNAPI void bindMceUUID(::cereal::ReflectionCtx& ctx);
 
 MCNAPI ::std::array<int, 3> blockPosAsArray(::BlockPos const& instance);
+
+MCNAPI void blockPosFromArray(::BlockPos& instance, ::std::array<int, 3> const& arr);
+
+MCNAPI bool checkBoolSchema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
 
 MCNAPI bool checkBrightnessSchema(
     ::rapidjson::
@@ -94,6 +100,16 @@ MCNAPI bool checkFloatSchema(
     ::std::optional<float> const&                                                                                 max
 );
 
+MCNAPI bool checkIdentifierStringSchema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
+
+MCNAPI bool checkIntRangeSchema(
+    ::rapidjson::
+        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+);
+
 MCNAPI bool checkItemDescriptorSchema(
     ::rapidjson::
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
@@ -117,28 +133,11 @@ legacyParseFilterGroupData(::SharedTypes::v1_21_20::FilterGroupData& data, ::Jso
 
 MCNAPI ::std::vector<::std::string>
 legacyParseFilterTestData(::SharedTypes::v1_21_20::FilterTestData& data, ::Json::Value const& json);
-
-#ifdef LL_PLAT_C
-MCNAPI bool
-operator==(::CerealHelpers::Keyframes<float, float> const& __P0, ::CerealHelpers::Keyframes<float, float> const& __P1);
-
-MCNAPI bool operator==(
-    ::CerealHelpers::Keyframes<float, ::SharedTypes::Color255RGB> const& __P0,
-    ::CerealHelpers::Keyframes<float, ::SharedTypes::Color255RGB> const& __P1
-);
-
-MCNAPI bool operator==(
-    ::CerealHelpers::Keyframes<float, ::SharedTypes::Color255RGBA> const& __P0,
-    ::CerealHelpers::Keyframes<float, ::SharedTypes::Color255RGBA> const& __P1
-);
-#endif
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
 MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_MATERIAL_NAME();
-
-MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_NAMESPACE_NAME();
 
 #ifdef LL_PLAT_C
 MCNAPI ::std::add_lvalue_reference_t<char const[]> REGEX_NO_MINECRAFT_NAMESPACE_NAME();

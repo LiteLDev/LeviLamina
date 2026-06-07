@@ -4,7 +4,6 @@
 #include "mc/server/ServerLevel.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -80,9 +79,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ServerCommandOrigin(
+        ::std::string const&     requestId,
+        ::ServerLevel&           level,
+        ::CommandPermissionLevel permission,
+        ::DimensionType          dimensionType
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::ServerCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&     requestId,
+        ::ServerLevel&           level,
+        ::CommandPermissionLevel permission,
+        ::DimensionType          dimensionType
+    );
     // NOLINTEND
 
 public:

@@ -6,6 +6,7 @@
 // clang-format off
 class Attribute;
 class AttributeBuff;
+class AttributeInstanceConstRef;
 class AttributeInstanceDelegate;
 class AttributeInstanceHandle;
 class AttributeModifier;
@@ -69,17 +70,55 @@ public:
 
     MCAPI void addModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
 
+    MCAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier, ::AttributeModificationContext context);
+
+#ifdef LL_PLAT_C
+    MCAPI void clearListenersAndDelegates();
+#endif
+
+    MCFOLD ::Attribute const* getAttribute() const;
+
+    MCAPI float getCurrentValue() const;
+
+    MCAPI float getDefaultValue(int operand) const;
+
+    MCAPI ::AttributeInstanceHandle getHandle() const;
+
+    MCAPI float getMaxValue() const;
+
+    MCAPI float getMinValue() const;
+
     MCAPI ::std::vector<::AttributeModifier> getModifiers() const;
 
-    MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
+    MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
+
+    MCAPI bool hasModifiers() const;
+
+    MCAPI bool hasTemporalBuffs() const;
+
+    MCFOLD bool isValid() const;
 
     MCAPI ::AttributeInstance& operator=(::AttributeInstance const&);
+
+    MCAPI void recalculateModifiers(::AttributeModificationContext context);
+
+    MCAPI void registerListener(::AttributeInstanceConstRef listener);
 
     MCAPI void removeBuff(::AttributeBuff const& buff);
 
     MCAPI void removeModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
 
     MCAPI void removeModifiers(::AttributeModificationContext context);
+
+    MCAPI void resetToDefaultValue(::AttributeModificationContext context);
+
+    MCAPI void setDefaultValue(float defaultValue, int operand, ::AttributeModificationContext context);
+
+    MCAPI void setDefaultValueOnly(float newDefaultValue, ::AttributeModificationContext context);
+
+    MCAPI void setDelegate(::std::shared_ptr<::AttributeInstanceDelegate> delegate);
+
+    MCAPI void setMaxValue(float max, ::AttributeModificationContext context);
 
     MCAPI void setRange(float min, float defaultValue, float max, ::AttributeModificationContext context);
 

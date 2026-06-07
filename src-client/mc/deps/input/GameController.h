@@ -62,14 +62,6 @@ public:
     virtual bool isControllerPairedToClient() const /*override*/;
 
     virtual ::std::optional<::SubClientId> getPairedClientId() const /*override*/;
-
-    virtual ~GameController() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _feedConnectionStateChange(bool newConnectionState);
     // NOLINTEND
 
 public:
@@ -89,7 +81,7 @@ public:
 
     MCFOLD void $unpairControllerFromClient();
 
-    MCAPI bool $isControllerPairedToClient() const;
+    MCFOLD bool $isControllerPairedToClient() const;
 
     MCAPI ::std::optional<::SubClientId> $getPairedClientId() const;
     // NOLINTEND

@@ -58,8 +58,6 @@ public:
     virtual bool parse(::Json::Value const& jsonVal) /*override*/;
 
     virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType type) const /*override*/;
-
-    virtual ~ActorFilterGroup() /*override*/;
     // NOLINTEND
 
 public:
@@ -99,12 +97,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initialize();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

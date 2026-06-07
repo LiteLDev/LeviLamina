@@ -30,8 +30,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void sendRequest(::SentryEnvelope sentryEvent) /*override*/;
+    // NOLINTEND
 
-    virtual ~MinecraftScriptSentryRequestSender() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit MinecraftScriptSentryRequestSender(::std::string sentryEnvelopeApiUri);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string sentryEnvelopeApiUri);
     // NOLINTEND
 
 public:

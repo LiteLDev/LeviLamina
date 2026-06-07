@@ -20,11 +20,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ClayFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // NOLINTEND
 
-    virtual ~ClayFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ClayFeature(int radius);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int radius);
     // NOLINTEND
 
 public:

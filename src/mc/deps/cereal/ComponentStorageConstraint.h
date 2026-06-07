@@ -32,38 +32,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComponentStorageConstraint& operator=(ComponentStorageConstraint const&);
-    ComponentStorageConstraint();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ComponentStorageConstraint() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentStorageConstraint(::cereal::ComponentStorageConstraint const&);
-
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
     MCAPI ::cereal::ComponentStorageConstraint& rejectKeys(::std::initializer_list<::std::string> keys);
 
     MCAPI void validateValue(::cereal::ComponentStorage const& storage, ::cereal::SerializerContext& context) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ComponentStorageConstraint const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

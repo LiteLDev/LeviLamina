@@ -8,7 +8,7 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -19,7 +19,7 @@ class Path;
 struct MobDescriptor;
 // clang-format on
 
-class AvoidMobTypeGoal : public ::Goal {
+class AvoidMobTypeGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -66,13 +66,13 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~AvoidMobTypeGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit AvoidMobTypeGoal(::Mob& mob);
+
     MCAPI bool canFindAvoidPath(::Actor* actor);
 
     MCAPI bool canFindAvoidPos(::Actor& entity);
@@ -81,9 +81,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

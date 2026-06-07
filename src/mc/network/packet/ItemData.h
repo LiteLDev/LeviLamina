@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/nbt/CompoundTag.h"
-#include "mc/world/item/ItemVersion.h"
+#include "mc/world/item/registry/ItemVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,22 +24,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemData(::ItemData&&);
-
-    MCAPI ItemData(::ItemData const& other);
-
-    MCAPI ::ItemData& operator=(::ItemData&&);
-
-    MCAPI ::ItemData& operator=(::ItemData const& other);
-
-    MCAPI bool operator==(::ItemData const&) const;
-
     MCAPI ~ItemData();
     // NOLINTEND
 
@@ -47,14 +33,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::ItemData> fromItemRegistry(::ItemRegistryRef itemRegistry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemData&&);
-
-    MCAPI void* $ctor(::ItemData const& other);
     // NOLINTEND
 
 public:

@@ -19,6 +19,7 @@ struct MovementAbilitiesComponent;
 struct OffsetsComponent;
 struct OnGroundFlagComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 struct VerticalCollisionFlagComponent;
 // clang-format on
 
@@ -44,6 +45,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo create();
+
     MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,

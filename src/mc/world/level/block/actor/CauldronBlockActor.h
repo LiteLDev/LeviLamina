@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CauldronBlockActor() /*override*/ = default;
+    virtual ~CauldronBlockActor() /*override*/;
 
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
@@ -59,7 +59,7 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -83,15 +83,21 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CauldronBlockActor(::BlockPos const& pos);
 
+    MCAPI ::mce::Color getColor() const;
+
     MCAPI ::mce::Color getCustomColor() const;
 
     MCAPI ::mce::Color getMixDyeColor();
 
     MCAPI ::mce::Color getPotionColor() const;
 
+    MCFOLD ::Potion::PotionType getPotionType() const;
+
     MCAPI void mixDyes();
 
     MCAPI void setCustomColor(::mce::Color const& color);
+
+    MCFOLD void setPotionType(::Potion::PotionType type);
     // NOLINTEND
 
 public:
@@ -104,6 +110,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -127,7 +139,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

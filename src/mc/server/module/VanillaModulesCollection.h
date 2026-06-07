@@ -38,8 +38,6 @@ public:
         ::VanillaSystemsRegistration::RegistrationOptions& options,
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     ) /*override*/;
-
-    virtual ~VanillaModulesCollection() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,6 +47,8 @@ public:
         ::WeakRef<::EntityRegistry>                        registry,
         ::VanillaSystemsRegistration::RegistrationOptions& options
     );
+
+    MCNAPI void _setupTypeIds(::VanillaSystemsRegistration::RegistrationOptions& options);
 
     MCNAPI void
     _setupVanillaSystemsEventing(::EntityRegistry& registry, ::Bedrock::NonOwnerPointer<::IMinecraftEventing> eventing);

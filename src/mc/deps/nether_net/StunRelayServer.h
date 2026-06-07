@@ -16,12 +16,12 @@ public:
 public:
     // prevent constructor by default
     StunRelayServer& operator=(StunRelayServer const&);
-    StunRelayServer(StunRelayServer const&);
+    StunRelayServer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StunRelayServer();
+    MCNAPI StunRelayServer(::NetherNet::StunRelayServer const&);
 
     MCNAPI ~StunRelayServer();
     // NOLINTEND
@@ -29,7 +29,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::NetherNet::StunRelayServer const&);
     // NOLINTEND
 
 public:

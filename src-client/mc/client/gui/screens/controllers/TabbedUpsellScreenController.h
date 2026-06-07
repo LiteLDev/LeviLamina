@@ -39,7 +39,7 @@ public:
     MCAPI
     TabbedUpsellScreenController(::std::shared_ptr<::MinecraftScreenModel> model, ::TabbedUpsellScreenDefaultTab tab);
 
-    MCAPI ::std::string _getActiveTab() const;
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

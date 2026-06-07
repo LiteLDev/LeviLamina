@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class MessPublicKeyManager;
 namespace Identity { class IEduAuth; }
 namespace Social { class IEduMultiplayerHeadless; }
 // clang-format on
@@ -38,14 +36,6 @@ public:
     virtual ::Identity::IEduAuth& getEduAuth() const = 0;
 
     virtual ::Social::IEduMultiplayerHeadless& getMultiplayerHeadless() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MessPublicKeyManager> getMessPublicKeyManager() const;
-#endif
     // NOLINTEND
 
 public:

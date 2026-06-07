@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ class Actor;
 class Mob;
 // clang-format on
 
-class MoveTowardsTargetGoal : public ::Goal {
+class MoveTowardsTargetGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,14 +42,22 @@ public:
     virtual void start() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~MoveTowardsTargetGoal() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI explicit MoveTowardsTargetGoal(::Mob& pathMob);
+
+    MCAPI MoveTowardsTargetGoal(::Mob& pathMob, float speedModifier, float within);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& pathMob);
+
+    MCAPI void* $ctor(::Mob& pathMob, float speedModifier, float within);
     // NOLINTEND
 
 public:

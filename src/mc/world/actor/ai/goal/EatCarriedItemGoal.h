@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,13 +11,13 @@ class ItemStack;
 class Mob;
 // clang-format on
 
-class EatCarriedItemGoal : public ::Goal {
+class EatCarriedItemGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
-    ::ll::TypedStorage<8, 8, uint64 const> mStartDelay;
-    ::ll::TypedStorage<8, 8, uint64>       mStartDelayCounter;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, uint64> mStartDelay;
+    ::ll::TypedStorage<8, 8, uint64> mStartDelayCounter;
     // NOLINTEND
 
 public:
@@ -40,14 +40,20 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~EatCarriedItemGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit EatCarriedItemGoal(::Mob& mob);
+
     MCFOLD void _updateHand(::ItemStack const& item);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

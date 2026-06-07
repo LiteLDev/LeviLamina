@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<1, 1, ::ActorHealCause> mCause;
     ::ll::TypedStorage<4, 4, float>            mHealing;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorHealEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -27,14 +27,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
-
-    virtual ~RakDataOutput() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

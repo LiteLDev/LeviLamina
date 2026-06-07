@@ -50,7 +50,11 @@ public:
     );
 
 #ifdef LL_PLAT_C
+    MCAPI void fireFullCobbleStoneEvent();
+
     MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
+
+    MCFOLD ::BlockActorType getBlockActorType() const;
 #endif
     // NOLINTEND
 

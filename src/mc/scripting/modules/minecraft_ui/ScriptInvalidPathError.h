@@ -21,13 +21,16 @@ public:
 public:
     // prevent constructor by default
     ScriptInvalidPathError& operator=(ScriptInvalidPathError const&);
-    ScriptInvalidPathError(ScriptInvalidPathError const&);
     ScriptInvalidPathError();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptInvalidPathError(::ScriptInvalidPathError const&);
+
     MCNAPI ScriptInvalidPathError(::std::string const& path, ::std::string const& message);
+
+    MCNAPI ::ScriptInvalidPathError& operator=(::ScriptInvalidPathError&&);
 
     MCNAPI ~ScriptInvalidPathError();
     // NOLINTEND
@@ -41,6 +44,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptInvalidPathError const&);
+
     MCNAPI void* $ctor(::std::string const& path, ::std::string const& message);
     // NOLINTEND
 

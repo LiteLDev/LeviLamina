@@ -41,15 +41,28 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        BindingInfo& operator=(BindingInfo const&);
+        BindingInfo();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI BindingInfo(::ControlsSettingsScreenController::BindingInfo const&);
+
         MCAPI ~BindingInfo();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::ControlsSettingsScreenController::BindingInfo const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -105,8 +118,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI KeyboardLayoutInfo(::ControlsSettingsScreenController::KeyboardLayoutInfo&&);
-
         MCAPI KeyboardLayoutInfo(
             ::KeyboardType             type,
             ::KeyboardRemappingLayout& layout,
@@ -121,8 +132,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::ControlsSettingsScreenController::KeyboardLayoutInfo&&);
-
         MCAPI void* $ctor(
             ::KeyboardType             type,
             ::KeyboardRemappingLayout& layout,
@@ -187,6 +196,8 @@ public:
         ::ControlsSettingsScreenController::KeyboardLayoutInfo& layout
     ) const;
 
+    MCFOLD bool _commandMacrosAllowed() const;
+
     MCAPI void _generateBindingInfo(
         ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
         ::RemappingLayout&                                              layout,
@@ -217,8 +228,6 @@ public:
     MCAPI ::ui::ViewRequest _handleResetBinding(::UIPropertyBag* bag);
 
     MCAPI void _initKeyboardLayoutInformation(::MainMenuScreenModel const& model);
-
-    MCAPI bool _isInControlCustomization() const;
 
     MCAPI bool
     _mapRawInputToLayout(::RemappingLayout& layout, int keymappingIndex, ::RawInputScreenEventData& rawInputData);

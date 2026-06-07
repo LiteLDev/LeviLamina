@@ -59,8 +59,6 @@ public:
 
     virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view contents) const
         /*override*/;
-
-    virtual ~SessionInfoManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

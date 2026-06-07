@@ -19,6 +19,7 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class BlockPos;
+class BlockType;
 class EnderCrystal;
 class EntityContext;
 class Path;
@@ -106,7 +107,7 @@ public:
 
     MCAPI bool _checkWalls(::AABB bb);
 
-    MCAPI float _getHeadYOffset(float a) const;
+    MCAPI float _getHeadYOffset(float) const;
 
     MCAPI ::ActorHurtResult _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
 
@@ -115,7 +116,7 @@ public:
     MCAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
     MCAPI ::std::unique_ptr<::Path>
-    _reconstructPath(::PathfinderNode& from, ::PathfinderNode& to, ::PathCompletionType completionType);
+    _reconstructPath(::PathfinderNode& to, ::PathfinderNode& completionType, ::PathCompletionType);
 
     MCAPI void dieNaturally();
 
@@ -125,11 +126,57 @@ public:
 
     MCAPI ::std::unique_ptr<::Path> findPath(int startIndex, int endIndex, ::PathfinderNode* finalNode);
 
+    MCAPI bool getDragonKilledPreviously() const;
+
+    MCAPI int getFlameCount() const;
+
+    MCAPI ::BlockPos getHeadPos() const;
+
     MCAPI ::std::vector<float> const getLatencyPos(int step, float a) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::EnderCrystal const* getNearestCrystal() const;
+#endif
+
+    MCAPI int getNumCrystalsAlive();
+
+    MCAPI ::Vec3 getTargetPos() const;
+
+    MCAPI void incrementFlameCount();
 
     MCAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
 
     MCAPI void postAiStep();
+
+    MCAPI void resetFlameCount();
+
+    MCAPI void setDragonKilledCallback(::std::function<void(::EnderDragon&)> onKilled);
+
+    MCAPI void setHasDragonPreviouslyBeenKilled(bool beenKilled);
+
+    MCAPI void setNumCrystalsAlive(int crystalCount);
+
+    MCAPI void setTargetPos(::Vec3 pos);
+
+    MCAPI void setTurnSpeed(float speed);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _isDragonImmuneBlock(::BlockType const& block);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int& GROWL_INTERVAL_MAX();
+
+    MCAPI static int& GROWL_INTERVAL_MIN();
+
+    MCAPI static int& MAX_PATH_RADIUS();
+
+    MCAPI static float& SITTING_ALLOWED_DAMAGE_PERCENTAGE();
     // NOLINTEND
 
 public:
@@ -159,7 +206,7 @@ public:
 
     MCFOLD bool $canBeAffected(uint id) const;
 
-    MCFOLD bool $isImmobile() const;
+    MCAPI bool $isImmobile() const;
 
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 

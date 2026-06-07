@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/script_engine/ScriptValue.h"
 
 // auto generated forward declare list
@@ -29,8 +30,6 @@ public:
 
 public:
     // prevent constructor by default
-    DataBufferAny& operator=(DataBufferAny const&);
-    DataBufferAny(DataBufferAny const&);
     DataBufferAny();
 
 public:
@@ -42,6 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataBufferAny(::Scripting::DataBufferAny const& rhs);
+
     MCNAPI DataBufferAny(
         ::Scripting::IRuntime*                                                  runtime,
         ::Scripting::ContextId                                                  contextId,
@@ -50,12 +51,19 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType> dataBufferHandle
     );
 
+    MCNAPI ::std::optional<::Scripting::TypedObjectHandle<::Scripting::DataBufferHandleType>>
+    getDataBufferHandle() const;
+
     MCNAPI ::Scripting::DataBufferAny& operator=(::Scripting::DataBufferAny&& rhs);
+
+    MCNAPI ::Scripting::DataBufferAny& operator=(::Scripting::DataBufferAny const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Scripting::DataBufferAny const& rhs);
+
     MCNAPI void* $ctor(
         ::Scripting::IRuntime*                                                  runtime,
         ::Scripting::ContextId                                                  contextId,

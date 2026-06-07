@@ -28,13 +28,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual void addHitResult(::HitResult, ::HitResult) /*override*/;
+#else // LL_PLAT_C
     virtual void addHitResult(::HitResult solidHit, ::HitResult liquidHit) /*override*/;
+#endif
 
     virtual void clear() /*override*/;
 
     virtual ::gsl::span<::std::pair<::HitResult, ::HitResult> const> getHits() const /*override*/;
-
-    virtual ~LocalPlayerContainer() /*override*/ = default;
     // NOLINTEND
 
 public:

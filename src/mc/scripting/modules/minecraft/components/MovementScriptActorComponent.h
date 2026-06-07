@@ -9,7 +9,9 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionDescriptor;
-struct Description;
+class WeakEntityRef;
+struct MoveControlDescription;
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -19,8 +21,13 @@ class MovementScriptActorComponent : public ::ScriptModuleMinecraft::ScriptActor
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Description * ActorDefinitionDescriptor::*> mDescriptionMember;
+    ::ll::TypedStorage<8, 8, ::MoveControlDescription const* (*)(::ActorDefinitionDescriptor const&)>
+        mDescriptionGetter;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MovementScriptActorComponent();
 
 public:
     // virtual functions
@@ -31,9 +38,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MovementScriptActorComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id,
+        ::MoveControlDescription const* (*descriptionGetter)(::ActorDefinitionDescriptor const&)
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id,
+        ::MoveControlDescription const* (*descriptionGetter)(::ActorDefinitionDescriptor const&)
+    );
     // NOLINTEND
 
 public:

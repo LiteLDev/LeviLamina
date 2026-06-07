@@ -15,6 +15,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    KeyboardRemappingLayout();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~KeyboardRemappingLayout() /*override*/ = default;
@@ -24,7 +28,7 @@ public:
 
     virtual ::std::string getMappedKeyName(int key) const /*override*/;
 
-    virtual ::std::string getMappedKeyName(int key, bool checkUserConfiguredSwap) const /*override*/;
+    virtual ::std::string getMappedKeyName(int key, bool) const /*override*/;
 
     virtual int getAdjustedKey(int key) const /*override*/;
 
@@ -34,13 +38,27 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit KeyboardRemappingLayout(::KeyboardType keyboardType);
+
+    MCFOLD ::KeyboardType getKeyboardType() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::KeyboardType keyboardType);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setMappingWithRawInput(::std::string const& action, int rawKeyIndex, ::RawInputType rawKeyType);
 
     MCAPI ::std::string $getMappedKeyName(int key) const;
 
-    MCAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
+    MCAPI ::std::string $getMappedKeyName(int key, bool) const;
 
     MCAPI int $getAdjustedKey(int key) const;
 

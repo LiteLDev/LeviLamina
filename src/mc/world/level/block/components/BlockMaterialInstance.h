@@ -55,8 +55,3 @@ public:
     MCFOLD void $dtor();
     // NOLINTEND
 };
-
-// free functions
-// NOLINTBEGIN
-MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
-// NOLINTEND

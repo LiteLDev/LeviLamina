@@ -7,14 +7,17 @@
 #include "mc/deps/core/utility/typeid_t.h"
 #include "mc/deps/ecs/systems/IEntitySystems.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/profiler/PredeclaredAnnotation.h"
 
 // auto generated forward declare list
 // clang-format off
 class EcsEventDispatcher;
+class EntityContext;
 class EntityRegistry;
 class ITickingSystem;
 class PlayerInteractionSystem;
+class StrictEntityContext;
 struct EntitySystemTickingMode;
 struct IEntitySystemsCollection;
 struct SystemCategory;
@@ -55,6 +58,12 @@ public:
 
     using SystemInvokeCallbackSig = void(::TickingSystemId);
 
+    using TotalTickCallbackFunc = ::std::function<void()>;
+
+    using TotalTickCallbackPair = ::std::pair<::std::function<void()>, ::std::function<void()>>;
+
+    using TotalTickCallbackSig = void();
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,6 +72,8 @@ public:
     ::ll::TypedStorage<8, 16, ::OwnerPtr<::EcsEventDispatcher>>                   mDispatcher;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mName;
     ::ll::TypedStorage<1, 1, bool>                                                mEnableTimingCapture;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                            mPreTotalTick;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                            mPostTotalTick;
     ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>           mPreSystemInvoke;
     ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>           mPostSystemInvoke;
     ::ll::TypedStorage<8, 8, ::Bedrock::Profiler::details::PredeclaredAnnotation> mTickingAnnotation;
@@ -94,16 +105,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit EntitySystems(::std::string_view name);
+
     MCAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
+
+    MCAPI void _singleTickCategory(::Bedrock::typeid_t<::SystemCategory> category, ::EntityContext& context);
+
+    MCAPI void _singleTickCategory(
+        ::Bedrock::typeid_t<::SystemCategory> category,
+        ::StrictEntityContext&                entity,
+        ::EntityRegistry&                     registry
+    );
+
+#ifdef LL_PLAT_C
+    MCFOLD ::StackRefResult<::EcsEventDispatcher> getDispatcher();
+#endif
+
+    MCFOLD ::PlayerInteractionSystem& getPlayerInteractionSystem();
 
     MCAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
     getSystemInfo(::Bedrock::typeid_t<::SystemCategory> const& filter) const;
 
+#ifdef LL_PLAT_C
+    MCAPI ::SystemInfo const* getSystemInfoForTickingSystemId(::TickingSystemId id) const;
+
+    MCAPI ::TickingSystemId getTickingSystemIdFromIndex(uint64 index) const;
+#endif
+
     MCAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
-#ifdef LL_PLAT_C
     MCAPI void registerEvents(::EntityRegistry& registry);
-#endif
+
+    MCAPI void registerGameOnlyMovementTickingSystem(::TickingSystemWithInfo&& system);
 
     MCAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
@@ -118,13 +151,22 @@ public:
         ::std::function<void(::TickingSystemId)>&& postInvoke
     );
 
-    MCAPI void tick(::EntityRegistry& registry);
+    MCAPI ::std::pair<::std::function<void()>, ::std::function<void()>>
+    setTotalTickCallbacks(::std::function<void()>&& preTick, ::std::function<void()>&& postTick);
 #endif
+
+    MCAPI void tick(::EntityRegistry& registry);
+
+    MCAPI void tickEditor(::EntityRegistry& registry);
+
+    MCAPI void tickInitialize(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string_view name);
+
     MCAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
     // NOLINTEND
 

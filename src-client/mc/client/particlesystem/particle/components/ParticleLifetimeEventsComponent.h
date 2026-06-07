@@ -52,8 +52,6 @@ public:
         ::std::chrono::nanoseconds const                  lastAge,
         ::std::chrono::nanoseconds                        age
     ) /*override*/;
-
-    virtual ~ParticleLifetimeEventsComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -30,13 +30,6 @@ public:
     ScriptWidgetComponentBoundingBoxStateChangeEventParameters();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxStateChangeEventParameters&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxStateChangeEventParameters&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();

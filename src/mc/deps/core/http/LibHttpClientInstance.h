@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/lib_http_client/HCTraceLevel.h"
 #include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
@@ -25,7 +26,6 @@ public:
     // prevent constructor by default
     LibHttpClientInstance& operator=(LibHttpClientInstance const&);
     LibHttpClientInstance(LibHttpClientInstance const&);
-    LibHttpClientInstance();
 
 public:
     // virtual functions
@@ -34,11 +34,27 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI LibHttpClientInstance();
+
+#ifdef LL_PLAT_S
+    MCNAPI void setLogLevel(::HCTraceLevel level);
+#endif
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Threading::Mutex& sMutex();
 
     MCNAPI static ::std::weak_ptr<::Bedrock::Http::LibHttpClientInstance>& sWeakInstance();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

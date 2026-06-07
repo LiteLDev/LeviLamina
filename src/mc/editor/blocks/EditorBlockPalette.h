@@ -23,26 +23,18 @@ public:
 
 public:
     // prevent constructor by default
+    EditorBlockPalette& operator=(EditorBlockPalette const&);
+    EditorBlockPalette(EditorBlockPalette const&);
     EditorBlockPalette();
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI EditorBlockPalette(::Editor::EditorBlockPalette&&);
-#endif
-
-    MCNAPI EditorBlockPalette(::Editor::EditorBlockPalette const&);
-
     MCNAPI EditorBlockPalette(
         ::HashedString                                                                                           id,
         ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items,
         ::std::optional<::std::string> displayName
     );
-
-    MCNAPI ::Editor::EditorBlockPalette& operator=(::Editor::EditorBlockPalette&&);
-
-    MCNAPI ::Editor::EditorBlockPalette& operator=(::Editor::EditorBlockPalette const&);
 
     MCNAPI ~EditorBlockPalette();
     // NOLINTEND
@@ -53,6 +45,8 @@ public:
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCNAPI static ::Editor::EditorBlockPalette createDefault();
+
+    MCNAPI static bool isValidIndex(int index);
     // NOLINTEND
 
 public:
@@ -66,12 +60,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Editor::EditorBlockPalette&&);
-#endif
-
-    MCNAPI void* $ctor(::Editor::EditorBlockPalette const&);
-
     MCNAPI void* $ctor(
         ::HashedString                                                                                           id,
         ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items,

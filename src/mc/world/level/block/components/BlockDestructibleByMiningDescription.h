@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CerealSchemaUpgradeSet;
 class CompoundTag;
 struct ItemSpecificSpeed;
 namespace cereal { struct ReflectionCtx; }
@@ -36,11 +37,9 @@ public:
 
     virtual bool isNetworkComponent() const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
-
-    virtual ~BlockDestructibleByMiningDescription() /*override*/;
     // NOLINTEND
 
 public:
@@ -53,6 +52,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
@@ -68,12 +69,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
@@ -84,7 +79,7 @@ public:
 
     MCFOLD bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 

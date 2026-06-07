@@ -8,19 +8,20 @@
 // auto generated forward declare list
 // clang-format off
 class ScoreboardEventListener;
+struct ScoreboardId;
 // clang-format on
 
 class ScoreboardEventCoordinator : public ::EventCoordinator<::ScoreboardEventListener> {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~ScoreboardEventCoordinator() /*override*/;
-    // NOLINTEND
+    MCAPI void sendOnObjectiveAdded(::std::string const& objective);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void sendOnObjectiveRemoved(::std::string const& objective);
+
+    MCAPI void sendOnScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
+
+    MCAPI void sendOnScoreboardIdentityRemoved(::ScoreboardId const& id);
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
@@ -19,11 +20,22 @@ struct ElytraFlightTimeTicksComponent;
 struct PlayerActionComponent;
 struct PlayerInputRequestComponent;
 struct ShouldUpdateBoundingBoxRequestComponent;
+struct Tick;
 // clang-format on
 
 namespace StartGlidingActionSystemImpl {
 // functions
 // NOLINTBEGIN
+MCAPI void doStartGlidingAction(
+    ::StrictEntityContext const&                                 context,
+    ::PlayerActionComponent const&                               playerActionComponent,
+    ::ActorDataFlagComponent&                                    actorDataFlagComponent,
+    ::ActorDataDirtyFlagsComponent&                              dirtyFlagsComponent,
+    ::optional_ref<::ElytraFlightTimeTicksComponent>             elytraFlightTimeTicksComponent,
+    ::Tick const&                                                currentTick,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>& mod
+);
+
 MCAPI void doStartGlidingClientAction(
     ::ViewT<
         ::StrictEntityContext,

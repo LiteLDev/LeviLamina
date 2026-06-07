@@ -12,10 +12,10 @@
 class Actor;
 class ActorGarbageCollector;
 class EntityContext;
-class IAddDisplayActorEntityProxy;
-class IDisplayActorManagerProxy;
 class IPlayerDimensionTransferConnector;
 class WeakEntityRef;
+class IAddDisplayActorEntityProxy;
+class IDisplayActorManagerProxy;
 // clang-format on
 
 class DisplayActorManager {
@@ -57,6 +57,8 @@ public:
     MCNAPI void removeAllDisplayActorEntities();
 
     MCNAPI bool removeDisplayActorEntity(::WeakEntityRef weakEntityRef);
+
+    MCNAPI void shutdown();
 
     MCNAPI ~DisplayActorManager();
 #endif

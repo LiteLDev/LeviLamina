@@ -18,7 +18,7 @@ class IPackManifestFactory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPackManifestFactory() /*override*/;
+    virtual ~IPackManifestFactory() /*override*/ = default;
 
     virtual ::std::unique_ptr<::PackManifest> create(
         ::PackAccessStrategy&     accessStrategy,
@@ -26,12 +26,6 @@ public:
         ::PackReport&             report,
         ::SubpackInfoCollection*  subpackInfoStack
     ) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

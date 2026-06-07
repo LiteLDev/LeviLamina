@@ -30,8 +30,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> tryGetExtensions() const /*override*/;
-
-    virtual ~AppExtensionsNonOwner() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -48,6 +46,12 @@ public:
     MCNAPI ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> $tryGetExtensions() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

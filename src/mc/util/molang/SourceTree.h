@@ -2,10 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
+#include "mc/platform/brstd/flat_set.h"
+#include "mc/util/MolangCompileResult.h"
+#include "mc/util/molang/ExpressionNode.h"
+#include "mc/util/molang/ExpressionOp.h"
+
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 struct MolangParseConfig;
 struct MolangScriptArg;
+namespace Bedrock { class StaticOptimizedString; }
 namespace Json { class Value; }
 namespace Molang::details { class ExpressionNode; }
 namespace Molang::details { class IComplexExpression; }
@@ -32,22 +41,48 @@ public:
 public:
     // prevent constructor by default
     SourceTree& operator=(SourceTree const&);
+    SourceTree(SourceTree const&);
     SourceTree();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SourceTree(::Molang::details::SourceTree&&);
-
-    MCNAPI SourceTree(::Molang::details::SourceTree const&);
-
-#ifdef LL_PLAT_S
     MCNAPI SourceTree(::Molang::details::ExpressionNode node, ::MolangParseConfig const& parseConfig);
-#endif
 
     MCNAPI SourceTree(::Json::Value const& value, ::MolangParseConfig const& config);
 
+    MCNAPI ::Bedrock::StaticOptimizedString const& getExpressionString() const;
+
+    MCNAPI ::MolangCompileResult getLastCompileResult() const;
+
+    MCNAPI ::MolangVersion getMolangVersion() const;
+
+    MCNAPI ::ExpressionOp getOp() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Molang::details::ExpressionNode const& getRoot() const;
+#endif
+
     MCNAPI ::std::optional<::MolangScriptArg> getValueIfConstant() const;
+
+#ifdef LL_PLAT_S
+    MCNAPI bool hasVariableAssignments() const;
+
+    MCNAPI bool isInitialized() const;
+
+    MCNAPI bool isValid() const;
+#endif
+
+    MCNAPI bool preserveSource() const;
+
+    MCNAPI void replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>
+    replaceResourceVariables(::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>& resourceTable);
+#endif
+
+    MCNAPI void validateArrayVariables() const;
 
     MCNAPI ~SourceTree();
     // NOLINTEND
@@ -63,13 +98,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Molang::details::SourceTree&&);
-
-    MCNAPI void* $ctor(::Molang::details::SourceTree const&);
-
-#ifdef LL_PLAT_S
     MCNAPI void* $ctor(::Molang::details::ExpressionNode node, ::MolangParseConfig const& parseConfig);
-#endif
 
     MCNAPI void* $ctor(::Json::Value const& value, ::MolangParseConfig const& config);
     // NOLINTEND

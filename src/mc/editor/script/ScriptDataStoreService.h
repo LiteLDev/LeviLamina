@@ -45,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDataStoreService(::Editor::ScriptModule::ScriptDataStoreService&&);
-
     MCNAPI ScriptDataStoreService(
         ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,
@@ -61,7 +59,10 @@ public:
         ::Editor::DataStore::PayloadDescription const&
     );
 
-    MCNAPI ::Editor::ScriptModule::ScriptDataStoreService& operator=(::Editor::ScriptModule::ScriptDataStoreService&&);
+    MCNAPI ::Editor::ScriptModule::ScriptDataStoreService&
+    operator=(::Editor::ScriptModule::ScriptDataStoreService&& other);
+
+    MCNAPI void sendNetworkEvent(::std::string dataTag, ::std::string payload);
 
     MCNAPI void sendNotificationEvent(::std::string const& dataTag, ::std::string const& payload);
 
@@ -77,8 +78,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreService&&);
-
     MCNAPI void* $ctor(
         ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,

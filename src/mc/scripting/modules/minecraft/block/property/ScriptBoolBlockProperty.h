@@ -30,14 +30,10 @@ public:
     ScriptBoolBlockProperty();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBoolBlockProperty() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptBoolBlockProperty(::ScriptModuleMinecraft::ScriptBoolBlockProperty&& rhs);
+
     MCAPI ScriptBoolBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
@@ -48,7 +44,7 @@ public:
     MCAPI ::Scripting::Result_deprecated<bool> getState() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
-    operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
+    operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&& rhs);
 
     MCAPI ::Scripting::Result_deprecated<void> setState(bool state);
     // NOLINTEND
@@ -62,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBoolBlockProperty&& rhs);
+
     MCAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,

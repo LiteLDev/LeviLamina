@@ -23,16 +23,33 @@ public:
     // prevent constructor by default
     BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&);
     BlockEventDispatcherToken(BlockEventDispatcherToken const&);
-    BlockEventDispatcherToken();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockEventDispatcherToken();
+
+    MCAPI BlockEventDispatcherToken(::BlockEventDispatcherToken&& rhs);
+
+    MCAPI ::BlockEventDispatcher* getDispatcher() const;
+
+    MCFOLD int getHandle() const;
+
+    MCAPI bool isValid() const;
+
     MCAPI ::BlockEventDispatcherToken& operator=(::BlockEventDispatcherToken&& rhs);
 
     MCAPI void unregister();
 
     MCAPI ~BlockEventDispatcherToken();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::BlockEventDispatcherToken&& rhs);
     // NOLINTEND
 
 public:

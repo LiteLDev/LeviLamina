@@ -13,7 +13,6 @@ class ActorDefinitionGroup;
 class ActorHurtResult;
 class BlockPos;
 class BlockSource;
-class ChunkPos;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
@@ -63,8 +62,6 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
-
-    virtual ~HangingActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -85,11 +82,17 @@ public:
 
     MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
 
-    MCAPI bool _chunksLoaded3x3(::ChunkPos const& center);
+    MCAPI ::BlockPos _calculateBlockPosFromPosition() const;
 
     MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
 
     MCAPI void doNormalTick();
+
+    MCAPI int getDirection() const;
+
+#ifdef LL_PLAT_S
+    MCAPI void setDirection(int direction);
+#endif
     // NOLINTEND
 
 public:
@@ -101,12 +104,6 @@ public:
         ::EntityContext&                   entityContext,
         int                                wouldSurviveCheckCooldown
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

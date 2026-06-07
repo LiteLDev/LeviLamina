@@ -40,11 +40,27 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LevelChunkBlockActorStorage(::LevelChunkBlockActorStorage::TrackingMode trackingMode);
 
-    MCAPI ::std::_List_const_iterator<::std::_List_val<
+    MCFOLD ::std::_List_const_iterator<::std::_List_val<
         ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>
-    find(::ChunkBlockPos const& pos) const;
+    begin() const;
+
+    MCAPI ::std::pair<
+        ::std::_List_const_iterator<::std::_List_val<
+            ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>,
+        bool>
+    emplace(::ChunkBlockPos pos, ::std::shared_ptr<::BlockActor> blockActor);
+
+    MCFOLD ::std::_List_const_iterator<::std::_List_val<
+        ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>
+    end() const;
+
+    MCAPI uint64 erase(::ChunkBlockPos const& pos);
 
     MCAPI ::LevelChunkBlockActorStorage& operator=(::LevelChunkBlockActorStorage&& other);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::unordered_set<::BlockPos> const& permanentRenderingLocations() const;
+#endif
 
     MCAPI ~LevelChunkBlockActorStorage();
     // NOLINTEND

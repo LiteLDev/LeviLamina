@@ -11,15 +11,13 @@ class PerformanceHandler : public ::cohtml::Profile::IPerformanceHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void WriteLog(char const* message, uint64 length) /*override*/;
-
-    virtual ~PerformanceHandler() /*override*/ = default;
+    virtual void WriteLog(char const*, uint64) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $WriteLog(char const* message, uint64 length);
+    MCFOLD void $WriteLog(char const*, uint64);
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class Mob;
 struct MobDescriptor;
 // clang-format on
 
-class TargetGoal : public ::Goal {
+class TargetGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,27 +62,65 @@ public:
         bool                    mustSee,
         ::MobDescriptor const** outDescriptorMatch
     );
-
-    virtual ~TargetGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TargetGoal(
+        ::Mob& pathMob,
+        bool   mustSee,
+        int    mustSeeForgetTicks,
+        bool   mustReach,
+        float  withinDefault,
+        bool   attackOwner,
+        int    persistTargetTicks
+    );
+
+    MCAPI TargetGoal(
+        ::Mob&                                pathMob,
+        ::std::vector<::MobDescriptor> const& targetTypes,
+        bool                                  mustSee,
+        int                                   mustSeeForgetTicks,
+        bool                                  mustReach,
+        float                                 withinDefault,
+        bool                                  attackOwner,
+        int                                   persistTargetTicks
+    );
+
     MCAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
 
     MCAPI bool _canReach(::Actor& target);
 
+    MCAPI bool _canReachAfterDelay(::Actor& target);
+
     MCAPI bool
     _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
-
-    MCAPI bool _withinRange(::Actor const& target);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::Mob& pathMob,
+        bool   mustSee,
+        int    mustSeeForgetTicks,
+        bool   mustReach,
+        float  withinDefault,
+        bool   attackOwner,
+        int    persistTargetTicks
+    );
+
+    MCAPI void* $ctor(
+        ::Mob&                                pathMob,
+        ::std::vector<::MobDescriptor> const& targetTypes,
+        bool                                  mustSee,
+        int                                   mustSeeForgetTicks,
+        bool                                  mustReach,
+        float                                 withinDefault,
+        bool                                  attackOwner,
+        int                                   persistTargetTicks
+    );
     // NOLINTEND
 
 public:

@@ -40,15 +40,15 @@ MCAPI void tick(
             ::ActorIsBeingDestroyedFlagComponent,
             ::SwitchingVehiclesFlagComponent,
             ::IsBeingTeleportedFlagComponent,
-            ::WasStopRidingServerInitiatedFlagComponent>>,
-    ::StrictEntityContext const&                                           entity,
-    ::PassengerComponent const&                                            passengerComponent,
-    ::StateVectorComponent const&                                          stateVectorComponent,
-    ::EntityModifier<::SendPacketsComponent, ::StopRidingRequestComponent> modifier,
+            ::WasStopRidingServerInitiatedFlagComponent>>                  entity,
+    ::StrictEntityContext const&                                           passengerComponent,
+    ::PassengerComponent const&                                            stateVectorComponent,
+    ::StateVectorComponent const&                                          modifier,
+    ::EntityModifier<::SendPacketsComponent, ::StopRidingRequestComponent> vehicleView,
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>,
-        ::RuntimeIDComponent const> vehicleView
+        ::RuntimeIDComponent const>
 );
 // NOLINTEND
 

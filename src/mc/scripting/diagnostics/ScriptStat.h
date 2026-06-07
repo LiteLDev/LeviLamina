@@ -15,6 +15,8 @@ public:
         Milliseconds  = 1,
         Microseconds  = 2,
         BiasedPercent = 3,
+        String        = 4,
+        Nanoseconds   = 5,
     };
 
 public:
@@ -29,13 +31,12 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptStat(ScriptStat const&);
     ScriptStat();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptStat(::ScriptStat&&);
+    MCNAPI ScriptStat(::ScriptStat const&);
 
     MCNAPI ScriptStat(
         ::std::string                                name,
@@ -57,12 +58,6 @@ public:
 
     MCNAPI ::ScriptStat& operator=(::ScriptStat const&);
 
-    MCNAPI void reserveSize(uint64 size);
-
-    MCNAPI void setChildren(::std::vector<::ScriptStat>&& children);
-
-    MCNAPI void setValues(::std::vector<::std::variant<int64, ::std::string>>&& values);
-
     MCNAPI ~ScriptStat();
     // NOLINTEND
 
@@ -75,7 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptStat&&);
+    MCNAPI void* $ctor(::ScriptStat const&);
 
     MCNAPI void* $ctor(
         ::std::string                                name,
@@ -101,5 +96,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI bool operator==(::ScriptStat const& __P0, ::ScriptStat const& __P1);
+MCNAPI bool operator==(::ScriptStat const&, ::ScriptStat const&);
 // NOLINTEND

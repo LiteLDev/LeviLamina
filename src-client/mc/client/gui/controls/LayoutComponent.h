@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/AnchorPoint.h"
 #include "mc/client/gui/Draggable.h"
+#include "mc/client/gui/LayoutAxisOffsetContainerType.h"
 #include "mc/client/gui/LayoutOffset.h"
 #include "mc/client/gui/PriorityRule.h"
 #include "mc/client/gui/controls/ComponentReceiveActionType.h"
@@ -53,19 +54,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LayoutComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LayoutComponent() /*override*/ = default;
+    virtual ~LayoutComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree& screenEvent,
+        ::ScreenInputContext&,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     ) /*override*/;
 
     virtual void onNotifyChildAdded() /*override*/;
@@ -78,11 +83,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit LayoutComponent(::UIControl& owner);
+
     MCAPI ::std::shared_ptr<::LayoutVariables> _getLayoutVariables();
 
     MCAPI void _initialize(::std::shared_ptr<::LayoutVariables>& layoutVariables, bool initializeInactive);
 
     MCAPI void _initializeVariables();
+
+    MCAPI bool _isVariableIsSupported(::LayoutVariableType type) const;
 
     MCAPI int _recursiveInitialize(
         ::std::shared_ptr<::LayoutVariables>& layoutVariables,
@@ -90,9 +99,47 @@ public:
         bool                                  initializeTemplate
     );
 
+    MCAPI ::ui::AnchorPoint getAnchorFrom() const;
+
+    MCAPI ::ui::AnchorPoint getAnchorTo() const;
+
+    MCFOLD ::ui::Draggable getDraggable() const;
+
+    MCAPI bool getInheritMaxSiblingHeight() const;
+
+    MCAPI bool getInheritMaxSiblingWidth() const;
+
+    MCFOLD ::ui::LayoutOffset const& getMaxSize() const;
+
+    MCFOLD ::ui::LayoutOffset const& getMinSize() const;
+
+    MCFOLD ::ui::LayoutOffset const& getOffset() const;
+
+    MCFOLD ::glm::vec2 const& getOffsetDelta() const;
+
+    MCAPI ::glm::vec2 const getPositionMinusOffsetDelta() const;
+
+    MCFOLD int getPriority() const;
+
+    MCAPI ::ui::PriorityRule getPriorityRule() const;
+
+    MCFOLD ::ui::LayoutOffset const& getSize() const;
+
     MCAPI ::LayoutVariable* getVariable(::LayoutVariableType type);
 
+    MCAPI bool hasMaxSize() const;
+
+    MCAPI bool hasOffsetAxisType(::LayoutVariableType axis, ::ui::LayoutAxisOffsetContainerType checkType) const;
+
+    MCAPI bool hasSizeAxisType(::LayoutVariableType axis, ::ui::LayoutAxisOffsetContainerType checkType) const;
+
     MCAPI void invalidateVariableDependencies(::VariableRef& var, bool forceInvalidation);
+
+    MCAPI bool isActive() const;
+
+    MCAPI bool isDelayingLayout() const;
+
+    MCAPI bool isInitialized() const;
 
     MCAPI void layout(::std::initializer_list<::LayoutVariableType> invalidateVariableTypes, bool forceInvalidation);
 
@@ -100,15 +147,59 @@ public:
 
     MCAPI void reinitialize(::std::initializer_list<::LayoutVariableType> variableTypes);
 
+    MCAPI void removeDeadDependencies();
+
     MCAPI void removeDependencies();
+
+    MCAPI void removeReferencesToMe();
+
+    MCAPI void setAnchorFrom(::ui::AnchorPoint anchorFrom);
+
+    MCAPI void setAnchorTo(::ui::AnchorPoint anchorTo);
+
+    MCAPI void setContained(bool contained);
+
+    MCAPI void setDelayLayout(bool delayLayout);
+
+    MCAPI void setDraggable(::ui::Draggable draggable);
+
+    MCAPI void setFollowsCursor(bool followsCursor);
+
+    MCAPI void setFollowsCursorInsideParent(bool followsCursorInsideParent);
+
+    MCAPI void setInactive();
+
+    MCAPI void setInheritMaxSiblingHeight(bool inheritMaxSiblingHeight);
+
+    MCAPI void setInheritMaxSiblingWidth(bool inheritMaxSiblingWidth);
+
+    MCAPI void setMaxSize(::ui::LayoutOffset const& size);
+
+    MCAPI void setMinSize(::ui::LayoutOffset const& size);
 
     MCAPI void setOffset(::ui::LayoutOffset const& offset);
 
     MCAPI void setOffsetDelta(::glm::vec2 const& offsetDelta, ::UIControl const* const primaryControl);
 
+    MCAPI void setPriority(int priority);
+
+    MCAPI void setPriorityRule(::ui::PriorityRule priorityRule);
+
     MCAPI void setSize(::ui::LayoutOffset const& size);
 
     MCAPI void setVariableOverrideValue(::LayoutVariableType type, float value);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -118,12 +209,8 @@ public:
 
     MCAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
-    );
+    MCAPI ::ComponentReceiveActionType
+    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
 
     MCAPI void $onNotifyChildAdded();
 

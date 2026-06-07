@@ -17,8 +17,10 @@ class IThirdPartyServerRepository;
 class ProgressHandler;
 class ServerLocator;
 class TaskGroup;
+struct ExperienceConnectionData;
 struct NetworkWorldInfo;
 struct PingedCompatibleServer;
+struct PlayerJoinWorldContext;
 namespace Network { struct ServerID; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
@@ -111,7 +113,8 @@ public:
 
     MCAPI bool _validateInternetConnection(::Social::User& user) const;
 
-    MCAPI ::World::JoinServerWorldResult _validateUserInfo(::std::shared_ptr<::Social::User> user) const;
+    MCAPI void
+    joinExperienceWorld(::ExperienceConnectionData const& connectionData, ::PlayerJoinWorldContext const& joinContext);
 
     MCAPI void joinExternalNetworkWorld(
         ::std::string const&                                                            id,

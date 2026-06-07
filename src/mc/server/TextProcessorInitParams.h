@@ -6,11 +6,11 @@ struct TextProcessorInitParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk80e44e;
-    ::ll::UntypedStorage<8, 64> mUnk208261;
-    ::ll::UntypedStorage<8, 64> mUnk5d0ec6;
-    ::ll::UntypedStorage<4, 8>  mUnk4d3f52;
-    ::ll::UntypedStorage<8, 32> mUnkcb05cd;
+    ::ll::UntypedStorage<8, 104> mUnk6c820b;
+    ::ll::UntypedStorage<8, 64>  mUnk208261;
+    ::ll::UntypedStorage<8, 64>  mUnk5d0ec6;
+    ::ll::UntypedStorage<4, 8>   mUnk4d3f52;
+    ::ll::UntypedStorage<8, 32>  mUnkcb05cd;
     // NOLINTEND
 
 public:
@@ -22,15 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TextProcessorInitParams(::TextProcessorInitParams&&);
-
     MCNAPI ~TextProcessorInitParams();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::TextProcessorInitParams&&);
     // NOLINTEND
 
 public:

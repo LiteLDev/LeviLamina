@@ -9,6 +9,7 @@
 // clang-format off
 class Block;
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -25,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FlowerPotBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -36,8 +41,22 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    // NOLINTEND
 
-    virtual ~FlowerPotBlockActor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit FlowerPotBlockActor(::BlockPos const& pos);
+
+    MCFOLD ::Block const* getPlantItem() const;
+
+    MCAPI void setPlantItem(::Block const* plant);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

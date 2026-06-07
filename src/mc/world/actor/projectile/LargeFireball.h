@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/actor/projectile/Fireball.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 class LargeFireball : public ::Fireball {
 public:
     // member variables
@@ -13,9 +20,27 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    LargeFireball();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~LargeFireball() /*override*/ = default;
+    MCAPI LargeFireball(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

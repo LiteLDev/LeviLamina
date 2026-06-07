@@ -58,14 +58,6 @@ public:
     virtual ::Json::Value const& getGlobalVariables() const = 0;
 
     virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry) = 0;
-
-    virtual ~IUIDefRepository() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

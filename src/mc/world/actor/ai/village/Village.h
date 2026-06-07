@@ -24,6 +24,7 @@ class Level;
 class LevelStorage;
 class Mob;
 class POIInstance;
+class Player;
 class Raid;
 class Random;
 class Vec3;
@@ -54,7 +55,23 @@ public:
         // NOLINTEND
     };
 
-    struct StandingModifiers {};
+    struct StandingModifiers {
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static int const& GOLEM_DEATH_PENALTY();
+
+        MCAPI static int const& LARGE_PENALTY();
+
+        MCAPI static int const& LARGE_REWARD();
+
+        MCAPI static int const& MEDIUM_PENALTY();
+
+        MCAPI static int const& SMALL_PENALTY();
+
+        MCAPI static int const& SMALL_REWARD();
+        // NOLINTEND
+    };
 
     using ClaimedPOIList = ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>;
 
@@ -107,15 +124,19 @@ public:
     // NOLINTBEGIN
     MCAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
 
+    MCAPI void _applyHeroOfTheVillageEffect(::ActorUniqueID const& actorID);
+
     MCAPI void _calcPOIDist();
+
+    MCAPI bool _chooseRaidSpawnPosition(uint64 timesCalled, ::Vec3& outSpawnPoint) const;
+
+    MCAPI ::Vec3 _chooseRandomDirectionFromVillage(::Random& random) const;
 
     MCAPI void _claimUnclaimedPOIs();
 
     MCAPI void _clearVillagerPOIs(::ActorUniqueID const& villager);
 
     MCAPI void _createRaid();
-
-    MCAPI void _deleteOldDataIfNeeded(::LevelStorage& levelStorage, ::std::string const& key) const;
 
     MCAPI bool _findAvailablePOI(uint64 index, ::Level& level, ::Random& random, ::ActorUniqueID id);
 
@@ -145,6 +166,8 @@ public:
     MCAPI void _loadVillageDwellers(::CompoundTag const& tag);
 
     MCAPI void _loadVillagePOIs(::CompoundTag const& tag);
+
+    MCAPI void _loadVillagePlayerStanding(::CompoundTag const& tag);
 
     MCAPI void _playSoundFrom(::Vec3 const& soundOrigin, ::SharedTypes::Legacy::LevelSoundEvent sound);
 
@@ -189,17 +212,41 @@ public:
 
     MCAPI void addVillager(::ActorUniqueID const& villagerID);
 
+    MCAPI bool canRemove() const;
+
     MCAPI bool checkNeedMoreVillagers() const;
+
+    MCAPI void clearOwnedPOIs();
 
     MCAPI void debugDraw();
 
     MCAPI ::std::weak_ptr<::POIInstance> fetchOwnedPOI(::ActorUniqueID const& id, ::POIType type);
 
-    MCAPI uint64 getBedPOICount() const;
+    MCAPI void fireSoundTheAlarm();
+
+    MCFOLD ::AABB const& getBounds() const;
+
+    MCAPI ::Vec3 getCenter() const;
+
+    MCAPI ::Actor* getClosestAggressor(::Actor* from);
+
+    MCAPI ::Player* getClosestBadStandingPlayer(::Actor& from);
 
     MCAPI ::std::weak_ptr<::POIInstance> getClosestPOI(::POIType type, ::BlockPos const& position);
 
+    MCAPI uint64 getPOICount() const;
+
+    MCFOLD ::Raid const* getRaid() const;
+
+    MCFOLD ::AABB const& getRaidBounds() const;
+
+    MCFOLD ::Raid* getRaidMutable();
+
+    MCFOLD ::mce::UUID getUniqueID() const;
+
     MCAPI bool hasInvalidRole(::ActorUniqueID const& actorId, ::DwellerRole const& role);
+
+    MCAPI bool hasRaid() const;
 
     MCAPI bool hasSpecificDweller(::DwellerRole role, ::ActorUniqueID const& id) const;
 
@@ -215,7 +262,13 @@ public:
 
     MCAPI void removeVillageSavedData();
 
+    MCAPI void resetDwellerTimer(::DwellerRole role, ::ActorUniqueID const& id);
+
+    MCAPI void resetNoBreedTimer();
+
     MCAPI void rewardAllPlayers(int deltaAmount);
+
+    MCAPI void setSavedDwellerPosition(::DwellerRole role, ::ActorUniqueID const& id, ::BlockPos pos);
 
     MCAPI void tick(::Tick tick, ::BlockSource& region);
 
@@ -223,9 +276,13 @@ public:
 
     MCAPI void triggerRaid();
 
+    MCAPI void trySetVillagerWorkTimestamp(::ActorUniqueID const& id);
+
     MCAPI void unlinkMismatchedJobsites(::Actor const& villager);
 
     MCAPI bool villagerLivesHere(::ActorUniqueID const& villager) const;
+
+    MCAPI bool withinVillageBounds(::Vec3 const& pos, float tolerance) const;
 
     MCAPI ~Village();
     // NOLINTEND
@@ -233,10 +290,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _cleanupUnclaimedPOIStack(::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack);
+
     MCAPI static ::std::shared_ptr<::POIInstance> _findPreferredPOI(
         ::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack,
         ::HashedString const&                          preferredPOI
     );
+
+    MCAPI static bool isValidBedPOI(::Block const& block);
+
+    MCAPI static bool isValidRegisteredPOI(::BlockSource& region, ::Block const& block, ::BlockPos const& position);
 
     MCAPI static bool isVillagePOI(::VillageManager const& villageManager, ::Block const& block);
     // NOLINTEND
@@ -250,17 +313,7 @@ public:
 
     MCAPI static ::std::string const& RAID_EXPIRY_EVENT();
 
-    MCAPI static ::std::string const& STORAGE_KEY_DWELLERS();
-
-    MCAPI static ::std::string const& STORAGE_KEY_PLAYERS();
-
-    MCAPI static ::std::string const& STORAGE_KEY_POI();
-
     MCAPI static ::std::string const& STORAGE_KEY_PREFIX();
-
-    MCAPI static ::std::string const& STORAGE_KEY_RAID();
-
-    MCAPI static ::std::string const& STORAGE_KEY_VILLAGE();
     // NOLINTEND
 
 public:

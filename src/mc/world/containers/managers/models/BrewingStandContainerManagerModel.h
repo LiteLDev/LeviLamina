@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BrewingStandBlockActor;
 class ContainerScreenContext;
+class ItemDescriptor;
 class ItemInstance;
 class ItemStack;
 class Player;
@@ -37,7 +37,7 @@ public:
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
@@ -55,10 +55,16 @@ public:
     // NOLINTBEGIN
     MCAPI BrewingStandContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI ::BrewingStandBlockActor* _getBrewingStandEntity();
-
 #ifdef LL_PLAT_C
     MCAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+
+    MCAPI void firePotionBrewedEvent(::ItemDescriptor const& item, int count);
+
+    MCAPI int getBrewProgress(int max);
+
+    MCAPI int getBubbleProgress(int);
+
+    MCAPI int getFuelProgress(int max);
 
     MCAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
 #endif
@@ -75,7 +81,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 

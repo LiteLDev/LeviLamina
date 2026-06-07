@@ -23,8 +23,6 @@ public:
         uint64                                      centerSubChunkIndex,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList
     ) const /*override*/;
-
-    virtual ~ServerSubChunkLighter() /*override*/ = default;
     // NOLINTEND
 
 public:

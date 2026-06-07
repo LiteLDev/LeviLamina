@@ -14,6 +14,28 @@ namespace Core { class PathView; }
 
 class ResourceLocation {
 public:
+    // ResourceLocation inner types declare
+    // clang-format off
+    struct TextureSetHelpers;
+    // clang-format on
+
+    // ResourceLocation inner types define
+    struct TextureSetHelpers {
+    public:
+        // TextureSetHelpers inner types declare
+        // clang-format off
+        class ResourceHelper;
+        // clang-format on
+
+        // TextureSetHelpers inner types define
+        enum class ColorPipeline : uint {};
+
+        enum class LoadMode : uint {};
+
+        class ResourceHelper {};
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ResourceFileSystem>               mFileSystem;
@@ -23,21 +45,21 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ResourceLocation();
+    ResourceLocation& operator=(ResourceLocation const&);
 
-#else // LL_PLAT_C
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ResourceLocation();
 
-    MCAPI ResourceLocation(::ResourceLocation const&);
-
     MCAPI explicit ResourceLocation(::Core::PathView path);
+
+#ifdef LL_PLAT_C
+    MCAPI ResourceLocation(::ResourceLocation const& rhs);
 #endif
 
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
@@ -46,13 +68,15 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI ::HashedString getHashedPath() const;
+#endif
 
-    MCAPI bool operator<(::ResourceLocation const& rhs) const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& getRelativePath() const;
 
-    MCAPI ::ResourceLocation& operator=(::ResourceLocation const&);
-
+#ifdef LL_PLAT_C
     MCAPI bool operator==(::ResourceLocation const& rhs) const;
 #endif
+
+    MCAPI void setRelativePath(::Core::PathBuffer<::std::string> const& path);
 
     MCAPI ~ResourceLocation();
     // NOLINTEND
@@ -68,12 +92,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::ResourceLocation const&);
-
     MCAPI void* $ctor(::Core::PathView path);
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ResourceLocation const& rhs);
 #endif
 
     MCAPI void* $ctor(::Core::PathView path, ::ResourceFileSystem fileSystem);

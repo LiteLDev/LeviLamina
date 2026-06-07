@@ -13,6 +13,7 @@
 // clang-format off
 class Actor;
 class CompoundTag;
+class DataLoadHelper;
 class ILevel;
 // clang-format on
 
@@ -32,18 +33,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
         ::ll::TypedStorage<8, 16, ::ExpressionNode>                      mCondition;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ConditionalSound();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -87,15 +76,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AngerLevelComponent& operator=(AngerLevelComponent const&);
-    AngerLevelComponent(AngerLevelComponent const&);
-    AngerLevelComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AngerLevelComponent(::AngerLevelComponent&&);
+    MCAPI void _decrementAnger(::Actor* owner, ::ILevel const& level);
 
     MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> _getListeningSoundEvent(::Actor& actor) const;
 
@@ -105,9 +88,13 @@ public:
 
     MCAPI bool canBeNuisance(::Actor* owner, ::Actor* target) const;
 
+    MCAPI int getAngerForAnimations(::Actor& owner) const;
+
     MCAPI ::std::optional<::std::pair<::Actor*, int>> getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
 
-    MCAPI ::AngerLevelComponent& operator=(::AngerLevelComponent&&);
+    MCAPI bool isAngry() const;
+
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI void tick(::Actor* owner, ::ILevel const& level);
 
@@ -119,17 +106,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static float const& DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS();
+
     MCAPI static int const& DEFAULT_ANGRY_BOOST();
 
     MCAPI static int const& DEFAULT_ANGRY_THRESHOLD();
 
     MCAPI static int const& DEFAULT_MAX_ANGER_LEVEL();
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AngerLevelComponent&&);
+    MCAPI static bool const& DEFAULT_SHOULD_REMOVE_TARGET();
     // NOLINTEND
 
 public:

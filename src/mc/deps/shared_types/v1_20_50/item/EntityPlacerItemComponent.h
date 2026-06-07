@@ -24,17 +24,18 @@ public:
 
 public:
     // prevent constructor by default
-    EntityPlacerItemComponent(EntityPlacerItemComponent const&);
+    EntityPlacerItemComponent& operator=(EntityPlacerItemComponent const&);
     EntityPlacerItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent const&);
+
     MCAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent&
     operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_50::EntityPlacerItemComponent&
-    operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent const&);
+    MCAPI bool operator==(::SharedTypes::v1_20_50::EntityPlacerItemComponent const&) const;
 
     MCAPI ~EntityPlacerItemComponent();
     // NOLINTEND
@@ -43,6 +44,18 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::EntityPlacerItemComponent const&);
     // NOLINTEND
 
 public:

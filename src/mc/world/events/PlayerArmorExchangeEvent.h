@@ -25,22 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerArmorExchangeEvent& operator=(PlayerArmorExchangeEvent const&);
-    PlayerArmorExchangeEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerArmorExchangeEvent(::PlayerArmorExchangeEvent const&);
-
     MCAPI ~PlayerArmorExchangeEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerArmorExchangeEvent const&);
     // NOLINTEND
 
 public:

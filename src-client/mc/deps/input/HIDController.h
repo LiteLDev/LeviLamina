@@ -51,7 +51,17 @@ public:
         // NOLINTBEGIN
         MCAPI ::HIDController::GamefaceTextEditContext::StateChange checkForChanges();
 
+        MCAPI ::TextBoxSelection getSelection() const;
+
         MCAPI ::std::string getText() const;
+
+        MCAPI void imeConfirmAndEndComposition();
+
+        MCAPI void imeStartComposition();
+
+        MCFOLD bool isEnabled() const;
+
+        MCAPI void replaceTextRange(::std::string const& text, int from, int to);
 
         MCAPI bool tryEnable(::Bedrock::NonOwnerPointer<::ITextBoxController> textBoxController);
 
@@ -64,6 +74,8 @@ public:
         MCFOLD void $dtor();
         // NOLINTEND
     };
+
+    using GamefaceTextEditContext = ::HIDController::GamefaceTextEditContext;
 
 public:
     // member variables
@@ -123,8 +135,6 @@ public:
     virtual void setCaretPosition(int position);
 
     virtual void setIMEEnabled(bool);
-
-    virtual ~HIDController() /*override*/;
     // NOLINTEND
 
 public:
@@ -134,23 +144,23 @@ public:
 
     MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
 
-    MCAPI void _feedKeyState(int keyCode, int state);
+    MCAPI void deinitialize();
+
+    MCAPI void disableEditContext();
+
+    MCAPI void enableEditContext(::std::string_view newUtf8Text, int maxLength);
 
     MCAPI ::std::string getTextBoxBackend() const;
 
     MCAPI void initialize(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> textBoxController);
+
+    MCAPI void setTextBoxBackend(::std::string_view newText);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::IKeyboardProxy* keyboardProxy);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

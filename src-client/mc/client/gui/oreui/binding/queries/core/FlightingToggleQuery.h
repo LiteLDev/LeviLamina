@@ -27,12 +27,6 @@ public:
     FlightingToggleQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FlightingToggleQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI FlightingToggleQuery(::OreUI::GameDependencies const& game, ::std::string const& tag);

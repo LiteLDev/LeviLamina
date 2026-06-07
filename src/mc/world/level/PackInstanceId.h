@@ -13,28 +13,19 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>   mSubpackName;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PackInstanceId& operator=(PackInstanceId const&);
-    PackInstanceId(PackInstanceId const&);
     PackInstanceId();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    PackInstanceId(PackInstanceId const&);
-    PackInstanceId();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInstanceId(::PackInstanceId&&);
+    MCAPI PackInstanceId(::PackInstanceId const&);
 
-#ifdef LL_PLAT_C
-    MCFOLD ::PackInstanceId& operator=(::PackInstanceId const&);
-#endif
+    MCAPI PackInstanceId(::PackIdVersion const& packId, ::std::string const& subpackName);
+
+    MCAPI bool operator==(::PackInstanceId const& rhs) const;
 
     MCAPI ~PackInstanceId();
     // NOLINTEND
@@ -42,12 +33,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackInstanceId&&);
+    MCFOLD void* $ctor(::PackInstanceId const&);
+
+    MCAPI void* $ctor(::PackIdVersion const& packId, ::std::string const& subpackName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

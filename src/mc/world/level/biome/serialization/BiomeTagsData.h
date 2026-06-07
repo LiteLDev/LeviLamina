@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -20,6 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void write(::BinaryStream& stream) const;
+
     MCAPI ~BiomeTagsData();
     // NOLINTEND
 

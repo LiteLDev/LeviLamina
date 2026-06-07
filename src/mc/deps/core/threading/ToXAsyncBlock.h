@@ -27,29 +27,29 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ToXAsyncBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToXAsyncBlock() /*override*/ = default;
+    virtual ~ToXAsyncBlock() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ToXAsyncBlock(::XTaskQueueObject* queue);
-
     MCAPI ::XAsyncBlock* _getAsyncBlock();
 
     MCAPI void _handleResult(long hr);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::XTaskQueueObject* queue);
+    MCAPI static ::std::shared_ptr<::Bedrock::Threading::AsyncResult::ToXAsyncBlock> create(::XTaskQueueObject* queue);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

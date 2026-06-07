@@ -36,12 +36,20 @@ public:
     // NOLINTBEGIN
     MCAPI
     ScriptExplosionStartedAfterEventIntermediateData(::ExplosionStartedEvent const& eventData, ::Actor const* source);
+
+    MCAPI ~ScriptExplosionStartedAfterEventIntermediateData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ExplosionStartedEvent const& eventData, ::Actor const* source);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

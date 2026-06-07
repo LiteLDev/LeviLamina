@@ -9,8 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Pack;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
+struct TreatmentPackSourceOptions;
 // clang-format on
 
 class TreatmentPackSource : public ::PackSource {
@@ -31,13 +33,46 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~TreatmentPackSource() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~TreatmentPackSource() /*override*/;
+#endif
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
     virtual ::PackType getPackType() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
+#else // LL_PLAT_C
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit TreatmentPackSource(::TreatmentPackSourceOptions options);
+
+    MCNAPI void addPack(::std::shared_ptr<::Pack>&& pack);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::TreatmentPackSourceOptions options);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -25,17 +25,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FilterGroupDataMap(FilterGroupDataMap const&);
-    FilterGroupDataMap();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::FilterGroupDataMap& operator=(::SharedTypes::v1_21_20::FilterGroupDataMap&&);
-
-    MCAPI ::SharedTypes::v1_21_20::FilterGroupDataMap& operator=(::SharedTypes::v1_21_20::FilterGroupDataMap const&);
-
     MCAPI ~FilterGroupDataMap();
     // NOLINTEND
 

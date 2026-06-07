@@ -11,6 +11,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class ChunkPos;
 class IRandom;
 class Random;
 namespace br::worldgen { struct JigsawJunction; }
@@ -51,15 +52,17 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // member functions
     // NOLINTBEGIN
+    MCFOLD ::BoundingBox const& boundingBox() const;
 
+    MCAPI bool isNearChunk(::ChunkPos pos, int distance) const;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

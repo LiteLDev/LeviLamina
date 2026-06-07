@@ -16,13 +16,20 @@ public:
 public:
     // prevent constructor by default
     Item& operator=(Item const&);
-    Item(Item const&);
     Item();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI Item(::CodeBuilder::Item const&);
+
     MCNAPI ~Item();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::CodeBuilder::Item const&);
     // NOLINTEND
 
 public:

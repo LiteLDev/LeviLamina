@@ -20,14 +20,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BiomeReplacement& operator=(BiomeReplacement const&);
+    BiomeReplacement();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BiomeReplacement(::BiomeReplacement const&);
+
     MCAPI ~BiomeReplacement();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BiomeReplacement const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

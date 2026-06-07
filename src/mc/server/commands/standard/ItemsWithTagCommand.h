@@ -22,8 +22,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
-
-    virtual ~ItemsWithTagCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

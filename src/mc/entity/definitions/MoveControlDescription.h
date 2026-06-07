@@ -21,8 +21,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
-
-    virtual ~MoveControlDescription() /*override*/ = default;
     // NOLINTEND
 
 public:

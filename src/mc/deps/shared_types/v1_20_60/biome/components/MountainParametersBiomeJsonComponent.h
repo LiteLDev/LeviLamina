@@ -32,34 +32,6 @@ public:
         ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                      mWestSlopes;
         ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                      mEastSlopes;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SteepMaterial& operator=(SteepMaterial const&);
-        SteepMaterial();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI SteepMaterial(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
-
-        MCAPI ::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&
-        operator=(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&&);
-
-        MCAPI ~SteepMaterial();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct TopSlideSettings {
@@ -83,12 +55,6 @@ public:
         2,
         ::std::optional<::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::TopSlideSettings>>
         mTopSlide;
-    // NOLINTEND
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MountainParametersBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

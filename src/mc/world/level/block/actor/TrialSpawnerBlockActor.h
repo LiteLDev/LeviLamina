@@ -7,13 +7,16 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
 class TrialSpawner;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class TrialSpawnerBlockActor : public ::BlockActor {
@@ -22,6 +25,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TrialSpawner>> mSpawner;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TrialSpawnerBlockActor();
 
 public:
     // virtual functions
@@ -39,6 +46,24 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit TrialSpawnerBlockActor(::BlockPos const& pos);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::TrialSpawner& getSpawner();
+#endif
+
+    MCAPI void setMob(::BlockSource& region, ::ActorDefinitionIdentifier const& identifier, ::Actor* usingActor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

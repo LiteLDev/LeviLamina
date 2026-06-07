@@ -36,8 +36,6 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     ) /*override*/;
-
-    virtual ~SHFiveCrossing() /*override*/ = default;
     // NOLINTEND
 
 public:

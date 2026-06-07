@@ -34,6 +34,7 @@ struct PlayerComponent;
 struct SoundEventPlayerComponent;
 struct SoundEventRequestQueueComponent;
 struct SpawnExperienceOrbRequestQueueComponent;
+struct SpawnOnDeathComponent;
 struct StateVectorComponent;
 struct TickDeathNeededComponent;
 // clang-format on
@@ -82,8 +83,6 @@ public:
             ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~ServerMobTickDeathSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -104,6 +103,7 @@ public:
         ::DeathTickingComponent&                                           deathTicking,
         ::Optional<::ExperienceRewardComponent>                            experienceReward,
         ::Optional<::PlayerComponent>                                      player,
+        ::Optional<::SpawnOnDeathComponent>                                spawnOnDeath,
         ::SpawnExperienceOrbRequestQueueComponent&                         experienceOrbRequestQueue,
         ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& soundRequestQueueView
     );

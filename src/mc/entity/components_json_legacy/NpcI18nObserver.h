@@ -34,8 +34,6 @@ public:
     virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest) /*override*/;
 
     virtual void onLanguagesLoaded() /*override*/;
-
-    virtual ~NpcI18nObserver() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -6,7 +6,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ai/goal/AquaticChargeAttackSettings.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -15,7 +15,7 @@ class Actor;
 class Mob;
 // clang-format on
 
-class AquaticChargeAttackGoal : public ::Goal {
+class AquaticChargeAttackGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -51,20 +51,26 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~AquaticChargeAttackGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 _calculateOvershootPosition(::Actor const& target) const;
+    MCAPI explicit AquaticChargeAttackGoal(::Mob& mob);
 
-    MCAPI void _randomSwimUpdate();
+    MCAPI bool _isCloseEnoughToAttack() const;
+
+    MCAPI void _performKnockbackAttack(::Actor& target);
 
     MCAPI void _resetForNextCharge();
 
     MCAPI void _transitionToCooldown(bool hasAttacked);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

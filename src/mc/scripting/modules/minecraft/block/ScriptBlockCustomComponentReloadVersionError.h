@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 namespace Scripting { struct ErrorBinding; }
 // clang-format on
 
@@ -14,9 +15,13 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptBlockCustomComponentReloadVersionError : public ::Scripting::BaseError {
 public:
+    // prevent constructor by default
+    ScriptBlockCustomComponentReloadVersionError();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentReloadVersionError();
+    MCAPI explicit ScriptBlockCustomComponentReloadVersionError(::HashedString const& componentName);
     // NOLINTEND
 
 public:
@@ -26,9 +31,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::HashedString const& componentName);
     // NOLINTEND
 };
 

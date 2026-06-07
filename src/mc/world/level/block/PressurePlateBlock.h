@@ -10,6 +10,7 @@
 class BlockPos;
 class BlockSource;
 class Experiments;
+class Material;
 // clang-format on
 
 class PressurePlateBlock : public ::BasePressurePlateBlock {
@@ -28,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PressurePlateBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -36,9 +41,29 @@ public:
 
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    // NOLINTEND
 
-    virtual ~PressurePlateBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PressurePlateBlock(
+        ::std::string const&              nameId,
+        int                               id,
+        ::Material const&                 material,
+        ::PressurePlateBlock::Sensitivity sensitivity
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&              nameId,
+        int                               id,
+        ::Material const&                 material,
+        ::PressurePlateBlock::Sensitivity sensitivity
+    );
     // NOLINTEND
 
 public:
@@ -50,7 +75,7 @@ public:
 
     MCAPI int $getRedstoneSignal(int signal) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

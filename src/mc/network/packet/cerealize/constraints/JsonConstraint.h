@@ -14,12 +14,6 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 class JsonConstraint : public ::cereal::ConstraintHandle<::JsonConstraint> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~JsonConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;

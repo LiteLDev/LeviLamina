@@ -31,8 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~LocalPlayerWeatherLightningFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

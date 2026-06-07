@@ -30,8 +30,6 @@ public:
     virtual void onOpen() /*override*/;
 
     virtual void onTerminate() /*override*/;
-
-    virtual ~CreditsScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

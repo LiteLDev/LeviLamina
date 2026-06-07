@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+class Vec3;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifierComponent;
 struct ActorUniqueIDComponent;
@@ -29,6 +30,18 @@ MCNAPI bool tryQueueFromSystem(
     ::SharedTypes::Legacy::LevelSoundEvent      soundEvent,
     ::SharedTypes::Legacy::ActorLocation        location,
     int                                         soundData
+);
+
+MCNAPI bool tryQueueSynchronizedFromSystem(
+    ::SoundEventRequestQueueComponent&          requestQueue,
+    ::ActorDataFlagComponent const&             actorFlags,
+    ::ActorDefinitionIdentifierComponent const& actorIdentifier,
+    ::ActorUniqueIDComponent const&             actorUniqueID,
+    ::DimensionTypeComponent const&             dimensionType,
+    ::SharedTypes::Legacy::LevelSoundEvent      soundEvent,
+    ::Vec3 const&                               location,
+    int                                         soundData,
+    bool                                        isGlobal
 );
 
 MCNAPI bool tryQueueSynchronizedFromSystem(

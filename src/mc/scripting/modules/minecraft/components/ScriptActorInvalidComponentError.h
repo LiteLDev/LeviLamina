@@ -5,19 +5,34 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/BaseError.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ErrorBinding; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorInvalidComponentError : public ::Scripting::BaseError {
 public:
+    // prevent constructor by default
+    ScriptActorInvalidComponentError();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptActorInvalidComponentError();
+    MCAPI explicit ScriptActorInvalidComponentError(::std::string_view entityComponentName);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string_view entityComponentName);
     // NOLINTEND
 };
 

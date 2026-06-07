@@ -9,6 +9,8 @@
 // clang-format off
 namespace ClientBlockPipeline { class Inputs; }
 namespace ClientBlockPipeline { class StepResult; }
+namespace ClientBlockPipeline { struct FaceDirectionFaceAttributes; }
+namespace ClientBlockPipeline { struct FaceNormalAttributes; }
 // clang-format on
 
 namespace ClientBlockPipeline {
@@ -18,8 +20,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FacingDirectionGenerationStep() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _run(
+        ::ClientBlockPipeline::FaceNormalAttributes const&  faceNormals,
+        ::ClientBlockPipeline::FaceDirectionFaceAttributes& faceFacings
+    ) const;
     // NOLINTEND
 
 public:

@@ -25,16 +25,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool
-    shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
+    shouldListen(::BlockSource& region, ::GameEvent const& gameEventContext, ::GameEventContext const&) /*override*/;
 
     virtual void onSignalReceive(
-        ::BlockSource& region,
-        ::BlockPos const&,
-        ::GameEvent const&,
-        ::Actor* source,
+        ::BlockSource&     region,
+        ::BlockPos const&  source,
+        ::GameEvent const& projectileOwner,
+        ::Actor*,
         float,
         uint,
-        ::Actor* projectileOwner
+        ::Actor*
     ) /*override*/;
 
     virtual void onSerializableDataChanged(::BlockSource& region) /*override*/;
@@ -42,23 +42,21 @@ public:
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const /*override*/;
 
     virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
-
-    virtual ~SculkShriekerVibrationConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const& gameEventContext, ::GameEventContext const&);
 
     MCAPI void $onSignalReceive(
-        ::BlockSource& region,
-        ::BlockPos const&,
-        ::GameEvent const&,
-        ::Actor* source,
+        ::BlockSource&     region,
+        ::BlockPos const&  source,
+        ::GameEvent const& projectileOwner,
+        ::Actor*,
         float,
         uint,
-        ::Actor* projectileOwner
+        ::Actor*
     );
 
     MCFOLD void $onSerializableDataChanged(::BlockSource& region);

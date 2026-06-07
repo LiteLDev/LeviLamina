@@ -13,7 +13,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 struct BlockAnimateTickData;
@@ -22,6 +21,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SoulFireBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    SoulFireBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,9 +36,9 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
+    getOutline(::Block const& bufferValue, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const /*override*/;
 
-    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
+    virtual void entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const /*override*/;
 
     virtual bool mayPick() const /*override*/;
 
@@ -47,18 +50,28 @@ public:
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~SoulFireBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SoulFireBlock(::std::string const& nameId, int id);
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isValidSoulFireFuel(::BlockType const& block);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -72,9 +85,9 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
+    $getOutline(::Block const& bufferValue, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const;
 
-    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
+    MCAPI void $entityInside(::BlockSource& entity, ::BlockPos const&, ::Actor&) const;
 
     MCFOLD bool $mayPick() const;
 
@@ -85,8 +98,6 @@ public:
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

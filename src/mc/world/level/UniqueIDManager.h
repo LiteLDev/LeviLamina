@@ -20,6 +20,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::ActorUniqueID getNewUniqueID();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::OwnerPtr<::UniqueIDManager> setupUniqueIDManager(::LevelData& levelData, bool isClientSide);

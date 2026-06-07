@@ -17,8 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent) /*override*/;
-
-    virtual ~KnockbackArmorUpdater() /*override*/ = default;
     // NOLINTEND
 
 public:

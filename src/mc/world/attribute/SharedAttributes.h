@@ -29,6 +29,8 @@ public:
 
     MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
 
+    MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttributeBuff(::TemporalAttributeBuff const& buff);
+
     MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttributeModifier(::AttributeModifier const& modifier);
 
     MCAPI static bool checkIsDeprecated(::std::string& name);
@@ -38,6 +40,8 @@ public:
     MCAPI static ::std::shared_ptr<::AttributeModifier> loadAttributeModifier(::CompoundTag const& tag);
 
     MCAPI static void loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list);
+
+    MCAPI static ::std::unique_ptr<::ListTag> saveAttributes(::BaseAttributeMap const* attributes);
     // NOLINTEND
 
 public:
@@ -45,9 +49,15 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Attribute const& ABSORPTION();
 
+    MCAPI static ::Attribute const& AIR_DRAG_MODIFIER();
+
     MCAPI static ::Attribute const& ATTACK_DAMAGE();
 
+    MCAPI static ::Attribute const& BOUNCINESS();
+
     MCAPI static ::Attribute const& FOLLOW_RANGE();
+
+    MCAPI static ::Attribute const& FRICTION_MODIFIER();
 
     MCAPI static ::Attribute const& HEALTH();
 

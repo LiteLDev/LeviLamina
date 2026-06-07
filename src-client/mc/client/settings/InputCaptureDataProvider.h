@@ -50,8 +50,36 @@ public:
     virtual bool getValue() const /*override*/;
 
     virtual void setValue(bool) /*override*/;
+    // NOLINTEND
 
-    virtual ~InputCaptureDataProvider() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI InputCaptureDataProvider(
+        ::std::string_view                            actionName,
+        ::std::optional<::KeyboardType>               type,
+        ::Settings::RegistryBuilder::IBuilderContext& context,
+        ::std::function<bool(
+            ::Settings::RegistryBuilder::IBuilderContext const&,
+            ::std::string_view,
+            ::std::optional<::KeyboardType>
+        )>                                            callback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string_view                            actionName,
+        ::std::optional<::KeyboardType>               type,
+        ::Settings::RegistryBuilder::IBuilderContext& context,
+        ::std::function<bool(
+            ::Settings::RegistryBuilder::IBuilderContext const&,
+            ::std::string_view,
+            ::std::optional<::KeyboardType>
+        )>                                            callback
+    );
     // NOLINTEND
 
 public:

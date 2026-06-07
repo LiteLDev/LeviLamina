@@ -15,6 +15,7 @@ struct BoatFlagComponent;
 struct FallDistanceComponent;
 struct FallingBlockFlagComponent;
 struct PassengerComponent;
+struct TickingSystemWithInfo;
 struct UpdateWaterStateRequestComponent;
 struct VehicleComponent;
 struct WasInWaterFlagComponent;
@@ -25,6 +26,8 @@ struct InWaterSensingSystem {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createSystem();
+
     MCAPI static void doInWaterSensing(
         ::StrictEntityContext&                        entity,
         ::UpdateWaterStateRequestComponent const&     updateWaterStateRequestComponent,
@@ -32,31 +35,6 @@ public:
         ::Optional<::FallingBlockFlagComponent const> fallingBlockFlagComponent,
         ::Optional<::PassengerComponent const>        passengerComponent,
         ::Optional<::WasInWaterFlagComponent const>   wasInWaterComponent,
-        ::EntityModifier<::WasInWaterFlagComponent, ::WaterSplashEffectRequestComponent>   modifier,
-        ::ViewT<::StrictEntityContext, ::Include<::BoatFlagComponent, ::VehicleComponent>> boatVehicle
-    );
-
-    MCAPI static void singleTickInWaterSensing(
-        ::StrictEntityContext& entity,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::UpdateWaterStateRequestComponent const,
-            ::FallDistanceComponent,
-            ::Optional<::FallingBlockFlagComponent const>,
-            ::Optional<::PassengerComponent const>,
-            ::Optional<::WasInWaterFlagComponent const>>                                   view,
-        ::EntityModifier<::WasInWaterFlagComponent, ::WaterSplashEffectRequestComponent>   modifier,
-        ::ViewT<::StrictEntityContext, ::Include<::BoatFlagComponent, ::VehicleComponent>> boatVehicle
-    );
-
-    MCAPI static void tickInWaterSensing(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::UpdateWaterStateRequestComponent const,
-            ::FallDistanceComponent,
-            ::Optional<::FallingBlockFlagComponent const>,
-            ::Optional<::PassengerComponent const>,
-            ::Optional<::WasInWaterFlagComponent const>>                                   view,
         ::EntityModifier<::WasInWaterFlagComponent, ::WaterSplashEffectRequestComponent>   modifier,
         ::ViewT<::StrictEntityContext, ::Include<::BoatFlagComponent, ::VehicleComponent>> boatVehicle
     );

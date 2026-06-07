@@ -27,20 +27,13 @@ public:
     ::ll::TypedStorage<
         8,
         136,
-        ::OreUI::Detail::
-            CallableImpl<void, ::std::string, ::ProfanityFilterContext, bool, ::std::string, bool, bool, bool>>
+        ::OreUI::Detail::CallableImpl<void, ::std::string, ::ProfanityFilterContext, bool, bool, bool, bool>>
         mRead;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScreenReaderCommandGroup();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScreenReaderCommandGroup() /*override*/ = default;
-    // NOLINTEND
 
 public:
     // member functions
@@ -53,7 +46,6 @@ public:
         ::std::string const&     text,
         ::ProfanityFilterContext context,
         bool                     interruptable,
-        ::std::string const&     id,
         bool                     required,
         bool                     background,
         bool                     playWhenEnabled

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
+
 // auto generated forward declare list
 // clang-format off
 struct ArmorSlotAndDamagePair;
@@ -15,14 +18,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerArmorDamagePacketPayload& operator=(PlayerArmorDamagePacketPayload const&);
-    PlayerArmorDamagePacketPayload(PlayerArmorDamagePacketPayload const&);
-    PlayerArmorDamagePacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PlayerArmorDamagePacketPayload& operator=(::PlayerArmorDamagePacketPayload&&);
+    MCAPI void addArmorDamage(::SharedTypes::Legacy::ArmorSlot armorSlot, short damage);
     // NOLINTEND
 };

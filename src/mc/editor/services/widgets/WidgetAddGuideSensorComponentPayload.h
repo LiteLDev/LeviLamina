@@ -6,21 +6,20 @@
 #include "mc/editor/network/NetworkPayload.h"
 #include "mc/editor/services/widgets/WidgetComponentBasePayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class WidgetAddGuideSensorComponentPayload
 : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetAddGuideSensorComponentPayload>,
   public ::Editor::Network::WidgetComponentBasePayload {
 public:
-    // virtual functions
+    // static functions
     // NOLINTBEGIN
-    virtual ~WidgetAddGuideSensorComponentPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

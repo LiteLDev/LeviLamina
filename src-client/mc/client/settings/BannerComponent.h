@@ -53,6 +53,14 @@ public:
         ::std::optional<::Settings::ConfirmationRequest> confirmationRequest,
         ::std::unique_ptr<::Settings::IDataProvider>     dataProvider
     );
+
+    MCFOLD ::Settings::BannerType getBannerType() const;
+
+    MCFOLD ::std::optional<::Settings::ConfirmationRequest> const& getConfirmationRequest() const;
+
+    MCAPI ::std::optional<::std::string> getCtaText() const;
+
+    MCAPI bool invokeCtaCallback();
     // NOLINTEND
 
 public:

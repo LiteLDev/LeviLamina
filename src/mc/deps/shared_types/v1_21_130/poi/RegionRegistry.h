@@ -17,18 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RegionRegistry& operator=(RegionRegistry const&);
-    RegionRegistry(RegionRegistry const&);
-    RegionRegistry();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_130::Poi::RegionRegistry& operator=(::SharedTypes::v1_21_130::Poi::RegionRegistry&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

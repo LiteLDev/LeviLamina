@@ -6,6 +6,9 @@
 // clang-format off
 namespace Bedrock::Profile { class ScopeStackStorage; }
 namespace Bedrock::Profiler::details { struct DynamicProfLabel; }
+namespace Bedrock::Profiler::details { struct StaticProfLabel; }
+namespace Core::Profile { class ProfileGroup; }
+namespace brstd { struct source_location; }
 // clang-format on
 
 namespace Core::Profile {
@@ -16,6 +19,7 @@ public:
     // clang-format off
     struct AnnotationData;
     struct CounterImplToken;
+    struct LogImplToken;
     struct ScopeImplToken;
     // clang-format on
 
@@ -52,6 +56,21 @@ public:
         CounterImplToken();
     };
 
+    struct LogImplToken {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnkf01960;
+        ::ll::UntypedStorage<8, 32> mUnk8fdb35;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LogImplToken& operator=(LogImplToken const&);
+        LogImplToken(LogImplToken const&);
+        LogImplToken();
+    };
+
     struct ScopeImplToken {
     public:
         // member variables
@@ -75,6 +94,7 @@ public:
     ::ll::UntypedStorage<8, 72>  mUnk25c2cb;
     ::ll::UntypedStorage<8, 120> mUnkb46ddc;
     ::ll::UntypedStorage<8, 64>  mUnk984e29;
+    ::ll::UntypedStorage<8, 40>  mUnk24de07;
     // NOLINTEND
 
 public:
@@ -86,12 +106,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI AnnotationToken(
+        ::Core::Profile::ProfileGroup const&          group,
+        uchar                                         flags,
+        ::Bedrock::Profiler::details::StaticProfLabel label,
+        uint                                          color,
+        ::brstd::source_location const&               location
+    );
+
+#ifdef LL_PLAT_C
+    MCNAPI bool emitCounterValue(int64 value);
+#endif
+
     MCNAPI bool enterScopeInternal(
         ::Bedrock::Profile::ScopeStackStorage&                          scope,
         ::std::optional<::Bedrock::Profiler::details::DynamicProfLabel> dynamicLabel
     );
 
     MCNAPI ~AnnotationToken();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Core::Profile::ProfileGroup const&          group,
+        uchar                                         flags,
+        ::Bedrock::Profiler::details::StaticProfLabel label,
+        uint                                          color,
+        ::brstd::source_location const&               location
+    );
     // NOLINTEND
 
 public:

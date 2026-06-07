@@ -32,9 +32,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Messenger();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Messenger() /*override*/ = default;
+    virtual ~Messenger() /*override*/;
 
     virtual void
     onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const
@@ -71,9 +75,9 @@ public:
     virtual void itemAcquired(
         ::Player const*         player,
         ::ItemDescriptor const& item,
-        int,
-        uint amountAcquired,
-        int  acquisitionMethod
+        int                     amountAcquired,
+        uint                    acquisitionMethod,
+        int
     ) const /*override*/;
 
     virtual void itemCrafted(
@@ -111,12 +115,12 @@ public:
     ) const /*override*/;
 
     virtual void mobKilled(
-        ::Player const* player,
-        ::Actor*        entKiller,
-        ::Mob&          mobKilled,
-        uint            method,
-        ::std::string const&,
-        int traderTier
+        ::Player const*      player,
+        ::Actor*             entKiller,
+        ::Mob&               mobKilled,
+        uint                 method,
+        ::std::string const& traderTier,
+        int
     ) const /*override*/;
 
     virtual void
@@ -165,6 +169,24 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit Messenger(::Bedrock::NonOwnerPointer<::CodeBuilder::IClient> codeBuilderClient);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::CodeBuilder::IClient> codeBuilderClient);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void
@@ -198,9 +220,9 @@ public:
     MCNAPI void $itemAcquired(
         ::Player const*         player,
         ::ItemDescriptor const& item,
-        int,
-        uint amountAcquired,
-        int  acquisitionMethod
+        int                     amountAcquired,
+        uint                    acquisitionMethod,
+        int
     ) const;
 
     MCNAPI void $itemCrafted(
@@ -237,12 +259,12 @@ public:
     ) const;
 
     MCNAPI void $mobKilled(
-        ::Player const* player,
-        ::Actor*        entKiller,
-        ::Mob&          mobKilled,
-        uint            method,
-        ::std::string const&,
-        int traderTier
+        ::Player const*      player,
+        ::Actor*             entKiller,
+        ::Mob&               mobKilled,
+        uint                 method,
+        ::std::string const& traderTier,
+        int
     ) const;
 
     MCNAPI void

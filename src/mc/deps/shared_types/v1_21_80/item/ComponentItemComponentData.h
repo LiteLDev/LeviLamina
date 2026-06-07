@@ -68,8 +68,8 @@ public:
         customComponentsItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_21_10::DamageAbsorptionItemComponent>>
         damageAbsorptionItemComponent;
-    ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::v1_20_50::DamageItemComponent>>  damageItemComponent;
-    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::DiggerItemComponent>> diggerItemComponent;
+    ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::v1_20_50::DamageItemComponent>>   damageItemComponent;
+    ::ll::TypedStorage<8, 136, ::std::optional<::SharedTypes::v1_20_50::DiggerItemComponent>> diggerItemComponent;
     ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::DisplayNameItemComponent>>
         displayNameItemComponent;
     ::ll::TypedStorage<4, 16, ::std::optional<::SharedTypes::v1_20_50::DurabilityItemComponent>>
@@ -122,10 +122,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ComponentItemComponentData();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemComponentData();
-
     MCAPI ComponentItemComponentData(::SharedTypes::v1_21_80::ComponentItemComponentData&&);
 
     MCAPI ComponentItemComponentData(::SharedTypes::v1_21_80::ComponentItemComponentData const&);
@@ -135,6 +137,8 @@ public:
 
     MCFOLD ::SharedTypes::v1_21_80::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_80::ComponentItemComponentData const&);
+
+    MCFOLD bool operator==(::SharedTypes::v1_21_80::ComponentItemComponentData const&) const;
 
     MCAPI ~ComponentItemComponentData();
     // NOLINTEND
@@ -148,8 +152,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCFOLD void* $ctor(::SharedTypes::v1_21_80::ComponentItemComponentData&&);
 
     MCFOLD void* $ctor(::SharedTypes::v1_21_80::ComponentItemComponentData const&);

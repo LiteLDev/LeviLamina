@@ -23,23 +23,12 @@ public:
     // prevent constructor by default
     JsonSchemaNodeBase& operator=(JsonSchemaNodeBase const&);
     JsonSchemaNodeBase(JsonSchemaNodeBase const&);
+    JsonSchemaNodeBase();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~JsonSchemaNodeBase();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI JsonSchemaNodeBase();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

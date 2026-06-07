@@ -7,12 +7,6 @@
 
 class OverworldBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OverworldBrightnessRamp() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

@@ -6,6 +6,11 @@
 #include "mc/world/actor/player/persona/ArmSize.h"
 #include "mc/world/actor/player/persona/BodySize.h"
 
+// auto generated forward declare list
+// clang-format off
+struct PersonaCharacter;
+// clang-format on
+
 namespace persona {
 
 class SizeSectionModel {
@@ -35,6 +40,36 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SizeSectionModel() = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool canEquipPreviewed() const;
+
+    MCFOLD ::persona::ArmSize::Type const& getEquippedArmSize() const;
+
+    MCFOLD ::persona::BodySize::Type const& getEquippedHeight() const;
+
+    MCFOLD ::persona::ArmSize::Type const& getPreviewedArmSize() const;
+
+    MCFOLD ::persona::BodySize::Type const& getPreviewedHeight() const;
+
+    MCAPI bool isActive() const;
+
+    MCAPI bool isArmSizePreviewed(::persona::ArmSize::Type const& armSizeType) const;
+
+    MCAPI bool isHeightPreviewed(::persona::BodySize::Type const& heightOption) const;
+
+    MCAPI void setActiveSection(::persona::SizeSectionModel::Section const& newActiveSection);
+
+    MCAPI void setPreviewedArmSize(::persona::ArmSize::Type const& newPreviewedArmSize);
+
+    MCAPI void setPreviewedHeight(::persona::BodySize::Type const& newPreviewedHeight);
+
+    MCAPI void updateEquippedSizeByActiveSection();
+
+    MCAPI void updateEquippedValuesByCharacter(::PersonaCharacter const& character);
     // NOLINTEND
 
 public:

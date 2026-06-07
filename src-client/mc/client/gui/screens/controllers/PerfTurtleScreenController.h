@@ -31,8 +31,6 @@ public:
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
-
-    virtual ~PerfTurtleScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

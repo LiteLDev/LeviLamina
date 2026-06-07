@@ -5,12 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/PlayerEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class Player;
+struct PlayerClosedContainerEvent;
 struct PlayerDimensionChangeAfterEvent;
 struct PlayerEmoteEvent;
 struct PlayerGameModeChangeEvent;
@@ -21,23 +25,45 @@ struct PlayerInputPermissionCategoryChangeEvent;
 struct PlayerInteractWithBlockAfterEvent;
 struct PlayerInteractWithEntityAfterEvent;
 struct PlayerInventoryItemChangeEvent;
+struct PlayerOpenedContainerEvent;
 struct PlayerRespawnEvent;
 struct PlayerScriptInputEvent;
 struct PlayerSwingStartEvent;
 struct PlayerUseNameTagEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
+namespace ScriptModuleMinecraft { struct ScriptActorContainerAccessAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptBlockContainerAccessAfterEventIntermediateData; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptPlayerEventListener : public ::EventListenerDispatcher<::PlayerEventListener> {
 public:
+    // ScriptPlayerEventListener inner types define
+    using ContainerCloseContext = ::std::variant<
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>,
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>>;
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
     ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
         mScriptEventsHandle;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::ActorUniqueID,
+            ::std::variant<
+                ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>,
+                ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>>>>
+        mContainerCloseContextDataMap;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptPlayerEventListener();
 
 public:
     // virtual functions
@@ -71,7 +97,33 @@ public:
 
     virtual ::EventResult onEvent(::PlayerSwingStartEvent const& e) /*override*/;
 
-    virtual ~ScriptPlayerEventListener() /*override*/ = default;
+    virtual ::EventResult onEvent(::PlayerOpenedContainerEvent const& e) /*override*/;
+
+    virtual ::EventResult onEvent(::PlayerClosedContainerEvent const& e) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPlayerEventListener(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
+
+    MCAPI void flushContainerCloseContext(::Player const& player);
+
+    MCAPI void onPlayerOpenedContainer(::Player const& player, ::BlockPos blockPos);
+
+    MCAPI void onPlayerOpenedContainer(::Player const& player, ::ActorUniqueID entityUniqueId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
     // NOLINTEND
 
 public:
@@ -104,6 +156,10 @@ public:
     MCAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& nameTagEvent);
 
     MCAPI ::EventResult $onEvent(::PlayerSwingStartEvent const& e);
+
+    MCAPI ::EventResult $onEvent(::PlayerOpenedContainerEvent const& e);
+
+    MCAPI ::EventResult $onEvent(::PlayerClosedContainerEvent const& e);
 
 
     // NOLINTEND

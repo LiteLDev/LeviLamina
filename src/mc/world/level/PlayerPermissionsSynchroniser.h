@@ -9,6 +9,7 @@
 // clang-format off
 class PacketSender;
 class PlayerAbilitiesManager;
+struct ActorUniqueID;
 // clang-format on
 
 class PlayerPermissionsSynchroniser {
@@ -20,9 +21,29 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerPermissionsSynchroniser();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PlayerPermissionsSynchroniser(
+        ::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager> playerAbilitiesManager
+    );
+
+#ifdef LL_PLAT_C
+    MCAPI void sendPermissionsRequest(::ActorUniqueID playerId);
+#endif
+
+    MCAPI void setPacketSender(::PacketSender& packetSender);
+
     MCAPI ~PlayerPermissionsSynchroniser();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager> playerAbilitiesManager);
     // NOLINTEND
 
 public:

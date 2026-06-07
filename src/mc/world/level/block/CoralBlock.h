@@ -10,7 +10,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Experiments;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -33,10 +32,6 @@ public:
         /*override*/;
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~CoralBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,8 +56,6 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

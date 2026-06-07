@@ -26,12 +26,15 @@ public:
 
 public:
     // prevent constructor by default
-    LayoutOffset(LayoutOffset const&);
-    LayoutOffset();
+    LayoutOffset& operator=(LayoutOffset const&);
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LayoutOffset();
+
+    MCAPI LayoutOffset(::ui::LayoutOffset const&);
+
     MCAPI explicit LayoutOffset(::glm::vec2 size);
 
     MCAPI explicit LayoutOffset(::Json::Value const& val);
@@ -40,9 +43,7 @@ public:
 
     MCAPI bool operator!=(::ui::LayoutOffset const& other) const;
 
-    MCAPI ::ui::LayoutOffset& operator=(::ui::LayoutOffset&&);
-
-    MCAPI ::ui::LayoutOffset& operator=(::ui::LayoutOffset const&);
+    MCFOLD ::ui::LayoutOffset& operator=(::ui::LayoutOffset&&);
 
     MCAPI ~LayoutOffset();
     // NOLINTEND
@@ -50,6 +51,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ui::LayoutOffset const&);
+
     MCAPI void* $ctor(::glm::vec2 size);
 
     MCAPI void* $ctor(::Json::Value const& val);
@@ -60,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -6,6 +6,12 @@
 #include "mc/network/packet/UpdateSubChunkBlocksChangedInfo.h"
 #include "mc/world/level/BlockPos.h"
 
+// auto generated forward declare list
+// clang-format off
+class SubChunkPos;
+struct UpdateSubChunkNetworkBlockInfo;
+// clang-format on
+
 struct UpdateSubChunkBlocksPacketPayload {
 public:
     // member variables
@@ -16,21 +22,31 @@ public:
 
 public:
     // prevent constructor by default
-    UpdateSubChunkBlocksPacketPayload& operator=(UpdateSubChunkBlocksPacketPayload const&);
-    UpdateSubChunkBlocksPacketPayload(UpdateSubChunkBlocksPacketPayload const&);
     UpdateSubChunkBlocksPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::UpdateSubChunkBlocksPacketPayload& operator=(::UpdateSubChunkBlocksPacketPayload&&);
+    MCAPI UpdateSubChunkBlocksPacketPayload(
+        ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& blocksChanged,
+        ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& extraBlocksChanged
+    );
 
-    MCAPI ~UpdateSubChunkBlocksPacketPayload();
+#ifdef LL_PLAT_C
+    MCFOLD ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& getExtraBlocks() const;
+
+    MCFOLD ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& getStandardBlocks() const;
+#endif
+
+    MCAPI void setSubChunkPosition(::SubChunkPos const& subChunkPos);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& blocksChanged,
+        ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& extraBlocksChanged
+    );
     // NOLINTEND
 };

@@ -17,18 +17,6 @@ public:
     WatchdogTimingScope& operator=(WatchdogTimingScope const&);
     WatchdogTimingScope(WatchdogTimingScope const&);
     WatchdogTimingScope();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~WatchdogTimingScope();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

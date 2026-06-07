@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/LevelListener.h"
@@ -16,7 +15,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ChunkSource;
-class Dimension;
 class IRenderChunkGarbage;
 class Level;
 class LevelChunk;
@@ -79,13 +77,13 @@ public:
     // NOLINTBEGIN
     virtual ~RenderChunkCoordinator() /*override*/;
 
-    virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
+    virtual void onChunkLoaded(::ChunkSource& lc, ::LevelChunk&) /*override*/;
 
     virtual void onSubChunkLoaded(
-        ::ChunkSource&,
-        ::LevelChunk& lc,
-        short         absoluteSubChunkIndex,
-        bool          subChunkVisibilityChanged
+        ::ChunkSource& lc,
+        ::LevelChunk&  absoluteSubChunkIndex,
+        short          subChunkVisibilityChanged,
+        bool
     ) /*override*/;
 
     virtual void onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos) /*override*/;
@@ -114,28 +112,41 @@ public:
 
     MCAPI void _launchVisibilityRebuild(::std::shared_ptr<::RenderChunkShared>& renderChunkShared);
 
-    MCAPI void _notifyListenersForVisibilityChange(::RenderChunkShared& renderChunkShared);
-
     MCAPI void _setAllDirty(bool immediate, bool changesVisibility);
 
     MCAPI void
     _setDirty(::BlockPos const& min, ::BlockPos const& max, bool immediate, bool changesVisibility, bool canInterlock);
 
+    MCAPI void addLevelRendererCameraListener(::LevelRendererCamera* levelRendererCamera);
+
     MCAPI ::std::shared_ptr<::RenderChunkShared> getOrCreateChunkAtPos(::SubChunkPos const& pos);
+
+    MCFOLD ::RenderChunkCoordinatorProxy* getProxy();
 
     MCAPI uint64 getRenderChunkGeometryFaceMetadataMemoryUsed() const;
 
-    MCAPI uint64 getRenderChunkInstancedCount() const;
+    MCAPI void preRenderTick();
 
-    MCAPI uint64 getRenderChunkInstancedDifferentGeoCount() const;
-
-    MCAPI uint64 getRenderChunkInstancedIndexMemoryUsed() const;
-
-    MCAPI uint64 getRenderChunkSharedMemoryUsed() const;
+    MCAPI void rebuildAllRenderChunkGeometry();
 
     MCAPI void relightAllRenderChunkGeometry();
 
+    MCAPI void removeLevelRendererCameraListener(::LevelRendererCamera* levelRendererCamera);
+
     MCAPI void tick();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool shouldSetBlockAsDirty(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Block const&    oldBlock,
+        ::BlockPos&       min,
+        ::BlockPos&       max,
+        bool&             changesVisibility
+    );
     // NOLINTEND
 
 public:
@@ -153,10 +164,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCAPI void $onChunkLoaded(::ChunkSource& lc, ::LevelChunk&);
 
     MCAPI void
-    $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
+    $onSubChunkLoaded(::ChunkSource& lc, ::LevelChunk& absoluteSubChunkIndex, short subChunkVisibilityChanged, bool);
 
     MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 

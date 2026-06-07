@@ -33,8 +33,6 @@ public:
     virtual ::std::optional<bool> isGameRuleEnabled(::GameRuleId const rule) const /*override*/;
 
     virtual ::ChatRestrictionLevel getChatRestrictionLevel() const /*override*/;
-
-    virtual ~SharedData() /*override*/ = default;
     // NOLINTEND
 
 public:

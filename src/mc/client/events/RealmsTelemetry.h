@@ -10,12 +10,15 @@ public:
     // clang-format off
     struct CallCount;
     struct RealmsCallCount;
+    struct nowFunc;
     // clang-format on
 
     // RealmsTelemetry inner types define
     struct CallCount {};
 
     struct RealmsCallCount {};
+
+    struct nowFunc {};
 };
 
 } // namespace Social::Events

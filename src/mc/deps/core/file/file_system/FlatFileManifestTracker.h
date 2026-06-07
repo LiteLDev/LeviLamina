@@ -23,25 +23,28 @@ public:
     // prevent constructor by default
     FlatFileManifestTracker& operator=(FlatFileManifestTracker const&);
     FlatFileManifestTracker(FlatFileManifestTracker const&);
+    FlatFileManifestTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlatFileManifestTracker();
-
     MCNAPI ::std::shared_ptr<::Core::FlatFileManifest const> loadManifest(::Core::PathView manifestPath);
 
     MCNAPI bool manifestExists(::Core::PathView manifestPath) const;
 
     MCNAPI bool tryUnloadManifest(::Core::PathView manifestPath);
 
+    MCNAPI void unloadAllManifests();
+
     MCNAPI void updateManifest(::std::shared_ptr<::Core::FlatFileManifest> manifest, bool keepCached);
+
+    MCNAPI ~FlatFileManifestTracker();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

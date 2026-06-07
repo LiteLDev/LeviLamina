@@ -50,8 +50,6 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_EnderDragonAdditionalRendering() /*override*/;
     // NOLINTEND
 
 public:
@@ -66,12 +64,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockPos;
 class BlockSource;
 class Mob;
@@ -60,26 +61,20 @@ public:
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~DropItemForGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DropItemForGoal(::Mob& mob);
+
+    MCAPI void _checkWhereHaveYouBeenAchievement(::Actor* dropForTarget);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -78,8 +78,6 @@ public:
     ) /*override*/;
 
     virtual void _templateDownloadedCallback(::std::string const& templateId, bool success) /*override*/;
-
-    virtual ~OwnedWorldTemplateManager() /*override*/;
     // NOLINTEND
 
 public:
@@ -99,8 +97,6 @@ public:
         ::IContentAcquisition&                                  contentAquisition
     );
 
-    MCAPI void _finalizeRefresh();
-
     MCAPI void _localWorldUpdateCallback(::std::pair<::std::string, bool> const& updatedTemplateData);
 
     MCAPI ::std::vector<::std::string> _populateListWithLocalTemplates();
@@ -112,12 +108,16 @@ public:
         ::std::function<void(::std::optional<::std::string const>)> callback
     );
 
+    MCFOLD ::std::vector<::World::OwnedWorldTemplateData> const& getOwnedTemplateDataList();
+
     MCAPI void
     importWorldTemplate(::std::function<void(::std::optional<::ImportFailure>, ::std::string const&)> callback);
 
     MCAPI void isTemplateOwned(::std::string const& templateId, ::std::function<void(bool)> callback);
 
     MCAPI void refresh();
+
+    MCFOLD ::Bedrock::PubSub::Subscription subscribeToRefresh(::std::function<void()> func);
     // NOLINTEND
 
 public:
@@ -136,12 +136,6 @@ public:
         ::IToastManager&                                        toastManager,
         ::IContentAcquisition&                                  contentAquisition
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

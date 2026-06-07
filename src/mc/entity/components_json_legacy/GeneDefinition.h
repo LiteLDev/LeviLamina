@@ -22,11 +22,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GeneDefinition& operator=(GeneDefinition const&);
+    GeneDefinition();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GeneDefinition(::GeneDefinition const&);
+
     MCAPI void addGeneticVariant(::GeneticVariant const& geneticVariant);
 
     MCAPI ~GeneDefinition();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::GeneDefinition const&);
     // NOLINTEND
 
 public:

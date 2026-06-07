@@ -59,7 +59,6 @@ class RenderChunkInstanced;
 class RenderChunkShared;
 class ResourcePackManager;
 class ScreenContext;
-class TerrainLayer;
 class WeatherRenderer;
 struct BaseSceneDirectionalLightRenderData;
 struct ChunkRenderObjectCollection;
@@ -71,8 +70,10 @@ struct OccluderFace;
 struct SkyRenderObject;
 struct ViewRenderData;
 struct ViewRenderObject;
+namespace mce { class Color; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
+namespace mce { struct BufferResourceService; }
 // clang-format on
 
 class LevelRendererCamera {
@@ -133,7 +134,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -413,30 +414,17 @@ public:
 
     MCAPI void _addBiomeFogDefinitionToManager(::BlockPos const& pos) const;
 
-    MCAPI void _addToRenderChunkQueue(
-        ::ChunkRenderObjectCollection&           collection,
-        ::TerrainMaterialVariationManager const& terrainVariationMgr,
-        ::TerrainLayer const&                    layer,
-        ::RenderChunkInstanced const&            renderChunkInstanced,
-        uint64                                   chunkIdx,
-        ::BlockPos const&                        chunkPos
-    );
-
     MCAPI void _applyAdjustmentsForAir(
         ::FogDistanceSetting& setting,
         ::ScreenContext&      screenContext,
         float                 skyIntensityOverride
     ) const;
 
-    MCAPI void _applyAdjustmentsForUnderwater(::FogDistanceSetting& setting) const;
-
     MCAPI ::std::shared_ptr<::LevelCullerBase> _createCuller(
         ::LevelCullerType                      type,
         ::std::weak_ptr<::LevelRendererCamera> levelRendererCamera,
         ::LevelBuilder&                        levelBuilder
     );
-
-    MCAPI void _freeSkyProbeTexture();
 
     MCAPI ::FogVolumetricCoefficientSetting
     _getCurrentCoefficientFogSetting(::FogDefinition::CoefficientSettingType settingType) const;
@@ -451,14 +439,6 @@ public:
     _getCurrentHenyeyGreensteinGFogSetting(::FogDefinition::HenyeyGreensteinGSettingType settingType) const;
 
     MCAPI void _initCubemapTextures(::Dimension const& dimension);
-
-    MCAPI void _initSkyProbeTexture(::glm::ivec3 size);
-
-    MCAPI void _notifyOrthographicCameraMoved(
-        ::SubChunkPos const&                                         pos,
-        ::Vec3 const&                                                viewDir,
-        ::GridArea<::std::shared_ptr<::RenderChunkInstanced>> const& viewArea
-    );
 
     MCAPI void _notifyPerspectiveCameraMoved(
         ::SubChunkPos const&                                         pos,
@@ -483,23 +463,53 @@ public:
 
     MCAPI ::LevelRendererCamera::RainState calcRainState(::Vec3 const& rainPos) const;
 
+    MCAPI bool cullerIsVisible(::Vec3 const& point, float radius) const;
+
     MCAPI void determineUnderwaterStatus(::BlockSource& region);
 
     MCAPI ::LevelRendererCamera::RainState doRainUpdate();
 
     MCAPI void doneQueuingChunks();
 
+    MCAPI ::BiomeBlendingMapRenderer& getBiomeBlendingMapRenderer() const;
+
+    MCAPI ::Vec3 const& getCameraPos() const;
+
+    MCAPI ::Vec3 const& getCameraTargetPos() const;
+
     MCAPI ::optional_ref<::TerrainMaterialVariationManager const> getCurrentVariationManager() const;
 
+    MCAPI ::DimensionType getDimensionID() const;
+
+    MCAPI ::mce::Color getFogClearColor();
+
+    MCAPI ::mce::Color const& getFogColor() const;
+
+    MCAPI float getFogEndDistanceForRendering() const;
+
+    MCAPI ::LevelRenderer const& getLevelRenderer() const;
+
     MCAPI ::RenderChunkInstanced* getOrCreateRenderChunkInstancedAt(::SubChunkPos const& rcp);
+
+    MCAPI ::LevelRendererCameraProxy* getProxy();
 
     MCAPI ::RenderChunkInstanced* getRenderChunkInstancedAt(::SubChunkPos const& rcp) const;
 
     MCAPI ::std::shared_ptr<::RenderChunkInstanced> getRenderChunkInstancedAtShared(::SubChunkPos const& rcp) const;
 
+    MCAPI uint64 getRenderChunkInstancedBaseMemoryUsed();
+
     MCAPI uint64 getRenderChunkInstancedCount();
 
-    MCAPI bool isAABBVisible(::AABB const& bb, bool useFastCulling) const;
+    MCAPI uint64 getRenderChunkInstancedDifferentGeoCount();
+
+    MCAPI uint64 getRenderChunkInstancedEstimatedIndexMemoryUsed();
+
+    MCAPI bool isAABBVisible(::AABB const& bb, bool) const;
+
+    MCAPI bool isUnderLava() const;
+
+    MCAPI bool isUnderWater() const;
 
     MCAPI void onViewRadiusChanged(bool resetAll);
 
@@ -525,13 +535,18 @@ public:
 
     MCAPI void renderCameraAimAssistHighlight(::ScreenContext& screenContext);
 
+    MCAPI void renderChunkImmediateChanged(::SubChunkPos const& rcp);
+
     MCAPI void renderChunkOccluders(::BaseActorRenderContext& renderContext) const;
+
+    MCAPI void renderChunkVisibilityChanged(::RenderChunkShared& renderChunkShared, bool visibilityMatrixChanged);
 
     MCAPI void renderEditorCursor(::ScreenContext const& screenContext);
 
     MCAPI void renderEndChaos(
         ::ScreenContext&                             screenContext,
-        ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
+        ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData,
+        ::SkyRenderObject const&                     skyData
     ) const;
 
     MCAPI void renderEntities(::BaseActorRenderContext& renderContext);
@@ -543,7 +558,7 @@ public:
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
     ) const;
 
-    MCAPI void renderPlayerVision(::ScreenContext& screenContext) const;
+    MCAPI void renderPlayerVision(::ScreenContext&) const;
 
     MCAPI void renderSky(
         ::ScreenContext&                             screenContext,
@@ -564,7 +579,17 @@ public:
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
     ) const;
 
-    MCAPI void renderVolumetricFog(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj);
+    MCAPI void renderVolumetricFog(::ScreenContext& screenContext, ::ViewRenderObject const&);
+
+    MCAPI void renderWaterHoles(::BaseActorRenderContext& renderContext) const;
+
+    MCAPI void resetChunkCullingData(::ChunkPos const& cp);
+
+    MCFOLD void setDimension(::Dimension* dimension, bool bValidRegion, bool resetChunks);
+
+    MCAPI void setDirLightShadowRenderChunksPerfCounter(int chunkCount);
+
+    MCAPI void setFrustumCuller(::FrustumCuller const& frustumCuller);
 
     MCAPI bool shouldCullThisFrame(uint64 lastNumRenderChunksVisibleFromCullingPoint);
 
@@ -576,6 +601,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void checkAndReinitIfInvalidCameraAimAssistMesh(
+        ::CameraAimAssistRenderer&                    aimAssistRenderer,
+        ::std::weak_ptr<::mce::BufferResourceService> bufferResourceService
+    );
+
     MCAPI static void
     renderClouds(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, float levelRenderDistance);
 
@@ -583,9 +613,6 @@ public:
 
     MCAPI static void
     renderStars(::ScreenContext& screenContext, ::ViewRenderData const& renderData, ::SkyRenderObject const& skyData);
-
-    MCAPI static bool
-    shouldRenderActor(::Actor const& actor, ::LevelRendererCamera::PlayerStateParams const& playerStateParams);
     // NOLINTEND
 
 public:
@@ -603,7 +630,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addCameraListenerToRenderChunkCoordinator();
+    MCFOLD void $addCameraListenerToRenderChunkCoordinator();
 
     MCAPI void $onAppSuspended();
 

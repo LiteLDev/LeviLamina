@@ -37,8 +37,6 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const /*override*/;
-
-    virtual ~SmithingTemplateItem() /*override*/ = default;
     // NOLINTEND
 
 public:

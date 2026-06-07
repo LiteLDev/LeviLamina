@@ -24,23 +24,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ResolvedComponent& operator=(ResolvedComponent const&);
-        ResolvedComponent(ResolvedComponent const&);
-        ResolvedComponent();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ResolvedComponent(::BiomeJsonDocumentGlueResolvedBiomeData::ResolvedComponent&&);
-
         MCAPI ~ResolvedComponent();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BiomeJsonDocumentGlueResolvedBiomeData::ResolvedComponent&&);
         // NOLINTEND
 
     public:
@@ -55,17 +41,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeJsonDocumentGlueResolvedBiomeData::ResolvedComponent>>
         mResolvedComponents;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BiomeJsonDocumentGlueResolvedBiomeData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

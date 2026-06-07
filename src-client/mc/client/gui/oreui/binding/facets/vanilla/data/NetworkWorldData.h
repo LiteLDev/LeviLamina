@@ -33,16 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NetworkWorldData& operator=(NetworkWorldData const&);
-    NetworkWorldData(NetworkWorldData const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI NetworkWorldData();
-
-    MCAPI NetworkWorldData(::OreUI::NetworkWorldData&&);
 
     MCAPI ~NetworkWorldData();
     // NOLINTEND
@@ -62,8 +55,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::OreUI::NetworkWorldData&&);
     // NOLINTEND
 
 public:

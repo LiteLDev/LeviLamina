@@ -42,6 +42,8 @@ public:
     );
 
     MCAPI void _registerEventHandlers();
+
+    MCAPI void _registerProgressBindings();
     // NOLINTEND
 
 public:

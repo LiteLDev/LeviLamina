@@ -32,8 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChatEvent(::ChatEvent&&);
-
     MCAPI ChatEvent(::ChatEvent const&);
 
     MCAPI ChatEvent(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
@@ -44,8 +42,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ChatEvent&&);
-
     MCAPI void* $ctor(::ChatEvent const&);
 
     MCAPI void* $ctor(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);

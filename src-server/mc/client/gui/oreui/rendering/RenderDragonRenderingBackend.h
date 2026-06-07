@@ -8,7 +8,6 @@ class RenderDragonRenderingBackend {
 public:
     // RenderDragonRenderingBackend inner types declare
     // clang-format off
-    struct TextureData;
     struct VertexBuffer;
     struct GetGamefaceStride;
     struct IndexBuffer;
@@ -16,8 +15,6 @@ public:
     // clang-format on
 
     // RenderDragonRenderingBackend inner types define
-    struct TextureData {};
-
     struct VertexBuffer {
     public:
         // VertexBuffer inner types declare

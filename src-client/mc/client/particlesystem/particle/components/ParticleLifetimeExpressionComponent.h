@@ -43,8 +43,6 @@ public:
 
     virtual void
     setParticleLifetime(::ParticleSystem::CommonParticle& particle, ::RenderParams& renderParams) /*override*/;
-
-    virtual ~ParticleLifetimeExpressionComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

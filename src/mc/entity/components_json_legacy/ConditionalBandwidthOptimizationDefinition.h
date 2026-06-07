@@ -4,6 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/entity/components/ConditionalBandwidthOptimization.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+class ConditionalBandwidthOptimizationComponent;
+class EntityContext;
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
 
 class ConditionalBandwidthOptimizationDefinition {
 public:
@@ -20,7 +28,19 @@ public:
 
     MCAPI void addDefaultBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
 
+    MCAPI void initialize(::EntityContext&, ::ConditionalBandwidthOptimizationComponent& component) const;
+
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<
+            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ConditionalBandwidthOptimizationDefinition>>&
+            root
+    );
     // NOLINTEND
 
 public:

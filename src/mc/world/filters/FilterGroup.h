@@ -37,14 +37,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FilterGroup& operator=(FilterGroup const&);
-    FilterGroup();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FilterGroup() = default;
+    virtual ~FilterGroup();
 
     virtual bool parse(::Json::Value const& jsonVal);
 
@@ -56,8 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilterGroup(::FilterGroup const&);
-
     MCAPI bool _parseFilterInputs(
         ::SharedTypes::v1_21_20::FilterTestData const& filterTestData,
         ::FilterTest::Definition const&                filterDef,
@@ -77,27 +70,31 @@ public:
         ::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData
     );
 
-    MCAPI bool _parseObject(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
-
     MCAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
 
     MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-#ifdef LL_PLAT_S
     MCAPI bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
-#endif
+
+    MCAPI bool empty() const;
 
     MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 
     MCAPI void fillFromData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
+    MCFOLD ::std::vector<::std::shared_ptr<::FilterGroup>> const& getChildren() const;
+
+    MCFOLD ::FilterGroup::CollectionType getCollectionType() const;
+
+    MCFOLD ::std::vector<::std::shared_ptr<::FilterTest>> const& getMembers() const;
+
     MCAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FilterGroup const&);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

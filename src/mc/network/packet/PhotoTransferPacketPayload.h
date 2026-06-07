@@ -27,12 +27,17 @@ public:
 
 public:
     // prevent constructor by default
-    PhotoTransferPacketPayload(PhotoTransferPacketPayload const&);
     PhotoTransferPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PhotoTransferPacketPayload(::PhotoTransferPacketPayload const&);
+
+#ifdef LL_PLAT_C
+    MCAPI explicit PhotoTransferPacketPayload(::std::string const& photoName);
+#endif
+
     MCAPI ::PhotoTransferPacketPayload& operator=(::PhotoTransferPacketPayload&&);
 
     MCAPI ::PhotoTransferPacketPayload& operator=(::PhotoTransferPacketPayload const&);
@@ -45,6 +50,16 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI static bool fromDisk(::Core::Path path, ::PhotoTransferPacket& result);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::PhotoTransferPacketPayload const&);
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string const& photoName);
 #endif
     // NOLINTEND
 

@@ -10,7 +10,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
-#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/Mutex.h"
@@ -45,12 +44,15 @@ class WorldSessionEndPoint;
 struct ConnectionDefinition;
 struct DimensionFactoryAndManager;
 struct NetworkServerConfig;
+struct NetworkSystemToggles;
 struct ServerInstanceArguments;
 struct ServerInstanceInitArguments;
 struct ServerNetworkHandlerDependencies;
+struct TextProcessorInitParams;
 namespace Core { class FileStorageArea; }
 namespace Editor { class IEditorManager; }
 namespace Scripting { class RegistryManager; }
+namespace Scripting { class ScriptEngine; }
 namespace ServerInstanceMessenger { class IMessenger; }
 namespace br::worldgen { class StructureSetRegistry; }
 namespace cereal { struct ReflectionCtx; }
@@ -108,18 +110,6 @@ public:
         CreateServerLevelOps& operator=(CreateServerLevelOps const&);
         CreateServerLevelOps(CreateServerLevelOps const&);
         CreateServerLevelOps();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~CreateServerLevelOps();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct HostMultiplayerOps {
@@ -254,54 +244,89 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ServerInstance(::ServerInstanceArguments&& args);
 
-    MCAPI void _resetServerScriptManager();
+    MCAPI void _initializeTextProcessor(::TextProcessorInitParams textProcessorInitParams);
 
-    MCAPI void _shutdownStorage(::Bedrock::UniqueOwnerPointer<::LevelStorage>& storage);
+    MCAPI void _resetServerScriptManager();
 
     MCAPI void _update();
 
     MCAPI bool _useClientSideChunkGeneration(::LevelData* levelData) const;
 
+#ifdef LL_PLAT_S
     MCAPI void disconnectAllClients(::Connection::DisconnectFailReason reason);
-
-#ifdef LL_PLAT_C
-    MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
 #endif
+
+    MCFOLD bool enableItemStackNetManager() const;
+
+    MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
+
+    MCAPI ::Bedrock::NonOwnerPointer<::CDNConfig> getCDNConfig() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
 
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator> getEventCoordinator();
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::string getLevelId() const;
+#endif
+
+    MCFOLD ::ServerScriptManager* getScriptManager();
+
+#ifdef LL_PLAT_S
+    MCAPI ::Scripting::ScriptEngine* getScriptingEngine();
+#endif
+
+    MCFOLD ::ServerGraphicsSettings const& getServerGraphicsSettings() const;
+
     MCAPI ::ItemRegistryRef getServerItemRegistry() const;
+
+    MCAPI ::Bedrock::NonOwnerPointer<::ServerTextSettings> getServerTextSettings() const;
 
     MCAPI bool initializeServer(::ServerInstanceInitArguments&& args);
 
-#ifdef LL_PLAT_S
-    MCAPI void leaveGameSync();
+#ifdef LL_PLAT_C
+    MCAPI bool isLeaveGameDone() const;
 #endif
 
+    MCFOLD bool isRealmsStoriesEnabled() const;
+
+    MCAPI void leaveGameSync();
+
+#ifdef LL_PLAT_C
     MCAPI void onCriticalScriptError(::Connection::DisconnectFailReason clientReason, char const* logMessage);
+
+    MCAPI void prepForEarlyDestruction();
+#endif
 
     MCAPI void queueForServerThread(::std::function<void()> command);
 
-#ifdef LL_PLAT_S
-    MCAPI void setScriptWatchdogCriticalErrorCallback(::std::function<void(char const*)> criticalErrorCallback);
+#ifdef LL_PLAT_C
+    MCAPI bool requestInGamePause(bool status);
 
-    MCAPI void setUnrecoverableErrorCallback(
-        ::std::function<void(::Connection::DisconnectFailReason, char const*)> unrecoverableErrorCallback
-    );
+    MCAPI void resume();
 #endif
+
+#ifdef LL_PLAT_S
+    MCAPI void setWakeupFrequency(int hertz);
+#endif
+
+    MCAPI void startLeaveGame();
+
+    MCAPI void startServerThread();
 
 #ifdef LL_PLAT_C
-    MCAPI void startLeaveGame();
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void startServerThread();
+    MCAPI void suspend();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>
+    createHostMultiplayerCallback(::ServerInstance::HostMultiplayerOps&& ops);
+
+    MCAPI static ::NetworkSystemToggles createNetworkToggles(::ServerInstance::NetworkToggleOptions const& ops);
+
     MCAPI static ::brstd::move_only_function<
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>
     createServerLevelCallback(::ServerInstance::CreateServerLevelOps&& ops);

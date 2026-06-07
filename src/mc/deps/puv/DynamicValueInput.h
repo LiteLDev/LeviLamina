@@ -31,8 +31,6 @@ public:
     virtual ::SemVersion version() const /*override*/;
 
     virtual ::Puv::Input::Data data() const /*override*/;
-
-    virtual ~DynamicValueInput() /*override*/ = default;
     // NOLINTEND
 
 public:

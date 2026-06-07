@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
 class Block;
 class PerlinNoise;
+class SurfaceBuilderData;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -72,13 +72,23 @@ public:
     // NOLINTBEGIN
     virtual void initBuilder(uint levelSeed) /*override*/;
 
-    virtual void initBiomeSurface(::Biome& biome) const /*override*/;
+    virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
-    virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
+    virtual bool isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const /*override*/;
 
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
+    // NOLINTEND
 
-    virtual ~CappedSurfaceBuilder() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CappedSurfaceBuilder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -86,9 +96,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $initBuilder(uint levelSeed);
 
-    MCAPI void $initBiomeSurface(::Biome& biome) const;
+    MCAPI void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
-    MCAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
 

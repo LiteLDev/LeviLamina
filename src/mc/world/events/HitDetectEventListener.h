@@ -17,9 +17,30 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ::EventResult onContinuousHitResult(::HitResult&) /*override*/;
+#else // LL_PLAT_C
     virtual ::EventResult onContinuousHitResult(::HitResult& hitResult) /*override*/;
+#endif
 
-    virtual ~HitDetectEventListener() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI HitDetectEventListener();
+
+    MCFOLD ::HitResult const& getLatestHitResult() const;
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

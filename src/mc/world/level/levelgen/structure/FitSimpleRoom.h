@@ -16,18 +16,16 @@ class FitSimpleRoom : public ::MonumentRoomFitter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool fits(::RoomDefinition const& definition) const /*override*/;
+    virtual bool fits(::RoomDefinition const&) const /*override*/;
 
     virtual ::std::unique_ptr<::OceanMonumentPiece>
     create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) /*override*/;
-
-    virtual ~FitSimpleRoom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $fits(::RoomDefinition const& definition) const;
+    MCFOLD bool $fits(::RoomDefinition const&) const;
 
     MCAPI ::std::unique_ptr<::OceanMonumentPiece>
     $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);

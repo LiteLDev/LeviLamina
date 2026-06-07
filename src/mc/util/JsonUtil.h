@@ -14,6 +14,8 @@ namespace Core::JsonUtil {
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
 MCNAPI ::Core::Result deserializeFromFile(::Json::Value& json, ::Core::Path const& path);
+
+MCNAPI bool serializeToFile(::Json::Value const& json, ::Core::Path const& path);
 #endif
 // NOLINTEND
 

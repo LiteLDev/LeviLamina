@@ -25,27 +25,6 @@ public:
             ::SharedTypes::v1_21_20::PoolAliases::Random>>>>>
         mGroups;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomGroup& operator=(RandomGroup const&);
-    RandomGroup(RandomGroup const&);
-    RandomGroup();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::PoolAliases::RandomGroup&
-    operator=(::SharedTypes::v1_21_20::PoolAliases::RandomGroup&&);
-
-    MCAPI ~RandomGroup();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_20::PoolAliases

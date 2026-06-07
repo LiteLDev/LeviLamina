@@ -16,18 +16,6 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mEntity;
     ::ll::TypedStorage<4, 4, float const>            mFallDistance;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

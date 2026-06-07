@@ -6,15 +6,13 @@ class LevelDbLogger : public ::leveldb::Logger {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void Logv(char const* format, char* ap) /*override*/;
-
-    virtual ~LevelDbLogger() /*override*/ = default;
+    virtual void Logv(char const*, char*) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $Logv(char const* format, char* ap);
+    MCNAPI void $Logv(char const*, char*);
 
 
     // NOLINTEND

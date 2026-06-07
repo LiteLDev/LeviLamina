@@ -45,17 +45,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _addComponentStringToTTS(
+        ::std::multimap<int, ::std::string>& messageQueue,
+        ::std::function<::std::string(::std::string const&, ::std::optional<::std::vector<::std::string>>)> const&
+            localizationCallback
+    ) const;
+
     MCAPI ::std::string const _convertString(
         ::std::string const& value,
         ::std::function<::std::string(::std::string const&, ::std::optional<::std::vector<::std::string>>)> const&
             localizationCallback
     ) const;
 
+    MCAPI ::std::optional<int> _findIndexWithinGrid(::UIControl& control);
+
     MCAPI int _getControlIndex(::std::shared_ptr<::UIControl> ancestor);
 
     MCAPI ::std::pair<int, int> _getControlIndexAndSectionCount(::std::shared_ptr<::UIControl> ancestor);
 
+    MCAPI int _getMaximumContainerSize(::std::shared_ptr<::UIControl> ancestor);
+
+    MCAPI int getControlIndex();
+
+    MCFOLD bool getInheritTTSSiblings() const;
+
     MCAPI int getSectionCount();
+
+    MCAPI bool getSkipChildren() const;
+
+    MCFOLD bool getTTSMessageInterruptible() const;
+
+    MCFOLD ::std::string getTTSMessageInterruptibleId() const;
 
     MCAPI void populateMessageQueue(
         ::std::multimap<int, ::std::string>& messageQueue,

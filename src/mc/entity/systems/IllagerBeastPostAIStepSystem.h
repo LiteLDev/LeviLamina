@@ -13,6 +13,7 @@ struct IllagerBeastFlagComponent;
 struct InterpolateMovementNeededComponent;
 struct StateVectorComponent;
 struct SubBBsComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class IllagerBeastPostAIStepSystem {
@@ -28,17 +29,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doIllagerBeastPostAIStepSystem(
-        ::StrictEntityContext const&,
-        ::StateVectorComponent const& stateVectorComponent,
-        ::SubBBsComponent&            subBBsComponent
+        ::StrictEntityContext const&  stateVectorComponent,
+        ::StateVectorComponent const& subBBsComponent,
+        ::SubBBsComponent&
     );
 
-    MCAPI static void _tickIllagerBeastPostAIStepSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::IllagerBeastFlagComponent>,
-            ::StateVectorComponent const,
-            ::SubBBsComponent> view
-    );
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

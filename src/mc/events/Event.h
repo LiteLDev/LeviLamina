@@ -3,10 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/brstd/flat_map.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class AppPlatform;
 namespace Json { class Value; }
 namespace Social::Events { class CompoundMeasurement; }
 namespace Social::Events { class Measurement; }
@@ -59,6 +60,14 @@ public:
         int                                                               eventTags
     );
 
+    MCNAPI Event(
+        uint                                                              id,
+        ::std::string const&                                              eventName,
+        ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const&                  appPlatform,
+        int                                                               eventTags
+    );
+
     MCNAPI void _addOrUpdateCompoundMeasurement(
         ::std::string const&                    dynamicColumnName,
         ::Social::Events::CompoundMeasurement&& compoundMeasurement
@@ -72,19 +81,15 @@ public:
 
     MCNAPI void addProperty(::Social::Events::Property const& property, bool isUniqueProperty);
 
-    MCNAPI ::brstd::flat_map<
-        ::std::string,
-        ::std::vector<::Social::Events::Property>,
-        ::std::less<::std::string>,
-        ::std::vector<::std::string>,
-        ::std::vector<::std::vector<::Social::Events::Property>>>
-    getCompoundsAsDynamicProperties() const;
-
     MCNAPI ::std::optional<::std::reference_wrapper<::Social::Events::Property const>>
     getProperty(::std::string const& propertyName) const;
 
 #ifdef LL_PLAT_C
+    MCNAPI uint getUserId() const;
+
     MCNAPI ::Json::Value measurementsAsJsonValue() const;
+
+    MCNAPI bool passesFilter(int tagsToExclude) const;
 
     MCNAPI ::Json::Value propertiesAsJsonValue() const;
 #endif
@@ -105,6 +110,14 @@ public:
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
+        int                                                               eventTags
+    );
+
+    MCNAPI void* $ctor(
+        uint                                                              id,
+        ::std::string const&                                              eventName,
+        ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const&                  appPlatform,
         int                                                               eventTags
     );
     // NOLINTEND

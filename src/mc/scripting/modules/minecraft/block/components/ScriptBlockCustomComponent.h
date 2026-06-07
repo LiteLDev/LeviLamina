@@ -31,12 +31,6 @@ public:
     ScriptBlockCustomComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockCustomComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockCustomComponent(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);

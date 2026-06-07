@@ -16,9 +16,13 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptCustomComponentInvalidRegistryError : public ::Scripting::BaseError {
 public:
+    // prevent constructor by default
+    ScriptCustomComponentInvalidRegistryError();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptCustomComponentInvalidRegistryError();
+    MCAPI explicit ScriptCustomComponentInvalidRegistryError(::std::string const& errorMessage);
     // NOLINTEND
 
 public:
@@ -34,9 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::string const& errorMessage);
     // NOLINTEND
 };
 

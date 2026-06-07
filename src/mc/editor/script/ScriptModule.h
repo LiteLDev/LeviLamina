@@ -8,7 +8,10 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { struct EditorBlockPalette; }
+namespace Editor { struct ProbabilityBlockPaletteItem; }
+namespace Editor { struct SimpleBlockPaletteItem; }
 namespace Editor::ScriptModule { class ScriptBlockPalette; }
+namespace Editor::ScriptModule { class ScriptIBlockPaletteItem; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct InterfaceBinding; }
@@ -32,6 +35,12 @@ MCNAPI ::Scripting::InterfaceBinding bindScriptLocalizationEntry();
 MCNAPI ::Scripting::EnumBinding bindScriptMouseActionCategory();
 
 MCNAPI ::Scripting::EnumBinding bindStructureSourceEnum();
+
+MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptIBlockPaletteItem>
+convertServiceItemToScriptItem(
+    ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& serviceItem,
+    ::Scripting::WeakLifetimeScope const&                                                          scope
+);
 
 MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette>
 convertServicePaletteToScriptPalette(

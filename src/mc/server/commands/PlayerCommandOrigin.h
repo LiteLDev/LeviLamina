@@ -20,6 +20,7 @@ class CompoundTag;
 class Dimension;
 class Level;
 class NetworkIdentifier;
+class Player;
 class Vec2;
 class Vec3;
 struct CommandOriginIdentity;
@@ -81,6 +82,26 @@ public:
     virtual ::CompoundTag serialize() const /*override*/;
 
     virtual bool isValid() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit PlayerCommandOrigin(::Player& origin);
+
+#ifdef LL_PLAT_C
+    MCAPI PlayerCommandOrigin(::ActorUniqueID playerId, ::Level& level);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player& origin);
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ActorUniqueID playerId, ::Level& level);
+#endif
     // NOLINTEND
 
 public:

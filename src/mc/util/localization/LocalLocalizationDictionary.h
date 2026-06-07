@@ -10,6 +10,7 @@
 // clang-format off
 class Localization;
 class PackManifest;
+namespace Core { class Path; }
 // clang-format on
 
 class LocalLocalizationDictionary : public ::ILocalizationDictionary, public ::I18nObserver {
@@ -30,13 +31,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~LocalLocalizationDictionary() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~LocalLocalizationDictionary() /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::std::string getLocString(::std::string const&) const /*override*/;
+#else // LL_PLAT_C
     virtual ::std::string getLocString(::std::string const& locKey) const /*override*/;
+#endif
 
     virtual bool isLocalizationReady() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void onLanguageChanged(::std::string const&, bool) /*override*/;
+#else // LL_PLAT_C
     virtual void onLanguageChanged(::std::string const& locCode, bool) /*override*/;
+#endif
 
     virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const&) /*override*/;
 
@@ -49,10 +62,26 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI explicit LocalLocalizationDictionary(::Core::Path const& locFilePath);
+
     MCNAPI bool _appendLoc(::std::string const& locCode, ::Localization& localizationObjToAppendLoc);
 
     MCNAPI void _initialize();
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::Path const& locFilePath);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Mob;
 class POIInstance;
 // clang-format on
 
@@ -17,6 +18,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, short> mHideAttempts;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    HideGoal();
 
 public:
     // virtual functions
@@ -34,14 +39,20 @@ public:
     virtual ::std::weak_ptr<::POIInstance> _getOwnedPOI(::POIType type) const /*override*/;
 
     virtual uint64 _getRepathTime() const /*override*/;
-
-    virtual ~HideGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit HideGoal(::Mob& mob);
+
     MCAPI void _sendSoundTheAlarmAchievement() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

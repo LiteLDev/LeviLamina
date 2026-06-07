@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    StructureReplaceFromClipboardPayload& operator=(StructureReplaceFromClipboardPayload const&);
     StructureReplaceFromClipboardPayload(StructureReplaceFromClipboardPayload const&);
     StructureReplaceFromClipboardPayload();
 
@@ -29,13 +30,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~StructureReplaceFromClipboardPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::StructureReplaceFromClipboardPayload&
-    operator=(::Editor::Network::StructureReplaceFromClipboardPayload const&);
     // NOLINTEND
 
 public:

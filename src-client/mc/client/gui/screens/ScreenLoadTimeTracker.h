@@ -38,13 +38,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScreenLoadTimeTracker(::IUIEventTelemetry& eventing);
+
     MCAPI ::Bedrock::Threading::Async<void> _queueScreenLoadTimeTrackerTask(
         ::std::shared_ptr<::AbstractScene> newScreen,
         ::std::chrono::nanoseconds         initialDelay,
         ::std::chrono::nanoseconds         updateInterval
     );
 
+    MCAPI void setLocalUserId(uint const& userId);
+
     MCAPI void startLoadTimeTracking(::std::shared_ptr<::AbstractScene> pushedScene);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IUIEventTelemetry& eventing);
     // NOLINTEND
 
 public:

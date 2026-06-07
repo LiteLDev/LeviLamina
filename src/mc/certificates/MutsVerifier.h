@@ -37,9 +37,18 @@ public:
     virtual ~MutsVerifier() /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual void setRequest(::Json::Value&) /*override*/;
+#else // LL_PLAT_C
     virtual void setRequest(::Json::Value& request) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::std::optional<::Json::Value> verify(::Json::Value&&) /*override*/;
+#else // LL_PLAT_C
     virtual ::std::optional<::Json::Value> verify(::Json::Value&& response) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

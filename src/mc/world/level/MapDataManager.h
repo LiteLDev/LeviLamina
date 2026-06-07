@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/legacy/ActorUniqueID.h"
@@ -11,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class Dimension;
 class DimensionManager;
 class IGameplayUserManagerConnector;
 class ILevelStorageManagerConnector;
@@ -85,6 +83,8 @@ public:
     MCAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
 
     MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+
+    MCAPI void setPacketSender(::PacketSender& packetSender);
 
     MCAPI void tick();
     // NOLINTEND

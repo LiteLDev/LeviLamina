@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/input/TextBoxCaretMovement.h"
 #include "mc/deps/input/interface/ITextBoxController.h"
 
 // auto generated forward declare list
@@ -37,9 +36,21 @@ public:
 
     virtual void onKeyboardDismissed(int controllerId) /*override*/;
 
-    virtual ::std::optional<int> calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement) /*override*/;
-
     virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MinecraftTextBoxController(::IMinecraftGame& minecraftGame);
+
+    MCFOLD void onOreUIInitialized(::OreUI::OreUISystem* oreUISystem);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IMinecraftGame& minecraftGame);
     // NOLINTEND
 
 public:
@@ -48,8 +59,6 @@ public:
     MCAPI void $setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange);
 
     MCAPI void $onKeyboardDismissed(int controllerId);
-
-    MCAPI ::std::optional<int> $calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement);
 
     MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
     // NOLINTEND

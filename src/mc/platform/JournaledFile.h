@@ -40,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit JournaledFile(::std::function<::Core::Result(::Core::Path)>&& validationCallback);
+
     MCNAPI void _flushFiles();
 
     MCNAPI ::Core::Result close();
@@ -59,9 +61,17 @@ public:
 
     MCNAPI static ::Core::PathBuffer<::std::string> findReadPath(::Core::Path fileName);
 
+    MCNAPI static bool isOldFile(::Core::Path fileName);
+
     MCNAPI static void populateImportantFiles(::Core::Path fileName, ::std::vector<::std::string>& importantFiles);
 
     MCNAPI static ::Core::Result replaceHeadFileWithBackup(::Core::Path fileName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::function<::Core::Result(::Core::Path)>&& validationCallback);
     // NOLINTEND
 
 public:

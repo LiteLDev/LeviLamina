@@ -54,7 +54,6 @@ public:
 
 public:
     // prevent constructor by default
-    PackManifestDocument& operator=(PackManifestDocument const&);
     PackManifestDocument();
 
 public:
@@ -63,6 +62,12 @@ public:
     MCAPI PackManifestDocument(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&&);
 
     MCAPI PackManifestDocument(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
+
+    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&&);
+
+    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
 
     MCAPI ~PackManifestDocument();
     // NOLINTEND

@@ -11,6 +11,8 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI static ::ResourceFileSystem pathFromString(::std::string_view name);
+
+    MCNAPI static ::std::string_view stringFromPath(::ResourceFileSystem fileSystem);
 #endif
     // NOLINTEND
 };

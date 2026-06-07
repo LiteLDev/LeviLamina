@@ -16,29 +16,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::WeakPtr<::Item const>>> mItemTypes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemQueryOptions& operator=(ItemQueryOptions const&);
-    ItemQueryOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemQueryOptions(::ItemQueryOptions const&);
-
-    MCAPI ~ItemQueryOptions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemQueryOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

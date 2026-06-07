@@ -15,6 +15,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockSource;
 class Dimension;
@@ -22,6 +23,7 @@ class HashedString;
 class ILevelStorageManagerConnector;
 class LevelStorage;
 class POIInstance;
+class Vec3;
 class Village;
 struct POIBlueprint;
 // clang-format on
@@ -49,6 +51,18 @@ public:
         ::ll::TypedStorage<1, 1, bool>                          positionIsWithinVillageBounds;
         ::ll::TypedStorage<4, 4, float>                         distanceToClosestEdgeOfVillage;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~VillageInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
     };
 
     struct DwellerTestVillageInfo : public ::VillageManager::VillageInfo {
@@ -56,18 +70,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::VillageManager::BedAvailabilityState> bedAvailability;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~DwellerTestVillageInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -107,7 +109,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VillageManager() /*override*/ = default;
+    virtual ~VillageManager() /*override*/;
 
     virtual ::std::weak_ptr<::Village>
     fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const /*override*/;
@@ -129,10 +131,9 @@ public:
 
     MCAPI ::std::shared_ptr<::Village> _createOrGetVillage(::mce::UUID const& id, ::BlockPos const& newVillagePos);
 
-    MCAPI ::std::unordered_map<::Village const*, ::VillageManager::BedAvailabilityState>
-    _getVillageWithBedsAvailableMap() const;
-
     MCAPI void _loadPOIBlueprints();
+
+    MCAPI void _processNextUnclusteredPOIQuery();
 
     MCAPI void _removeEligibleVillages();
 
@@ -152,30 +153,53 @@ public:
 
     MCAPI ::std::weak_ptr<::Village> getClosestVillageWithRaid(::BlockPos const& pos);
 
-    MCAPI ::std::weak_ptr<::POIInstance> getPOI(::BlockPos const& position) const;
+    MCAPI ::HashedString const& getPOINameFromBlueprint(::Block const& block) const;
 
-    MCAPI ::HashedString getPOIInitEventFromName(::HashedString const& name) const;
+    MCAPI ::POIType getPOITypeFromBlueprint(::Block const& block) const;
 
     MCAPI bool hasPOI(::BlockPos const& position, ::POIType type) const;
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI void insertPOI(::std::shared_ptr<::POIInstance>&& poi);
+    MCAPI bool isWanderingTraderManagedByScheduler(::Actor const& actor);
 
-    MCAPI bool isValidPOIType(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI void loadAllVillages();
 
-    MCAPI void removePOI(::std::weak_ptr<::POIInstance> poi);
+    MCAPI void submitFindPOIQuery(::ActorUniqueID const& actorID);
 
     MCAPI void tick(::Tick const& tick);
 
+    MCAPI void tickVillages(::Tick const& tick, ::Vec3 const& position, ::BlockSource& region);
+
     MCAPI ::std::shared_ptr<::POIInstance> tryCreatePOI(::BlockPos const& position, ::Block const& block);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool shouldCreateNewVillageUsingPOI(
+        ::std::shared_ptr<::POIInstance> const& poi,
+        ::std::shared_ptr<::Village> const&     nearestExistingVillage
+    );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static int const& MAX_POI_TOLERANCE_DIST();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Dimension& dimension);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

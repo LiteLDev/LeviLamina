@@ -23,8 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
-
-    virtual ~IllagerBeast() /*override*/ = default;
     // NOLINTEND
 
 public:

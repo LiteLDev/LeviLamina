@@ -20,8 +20,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string_view getType() const /*override*/;
-
-    virtual ~Expandable() /*override*/ = default;
     // NOLINTEND
 
 public:

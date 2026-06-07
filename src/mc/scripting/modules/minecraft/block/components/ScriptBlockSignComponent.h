@@ -13,7 +13,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class SignBlockActor;
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -24,18 +23,8 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockSignComponent : public ::ScriptModuleMinecraft::BaseScriptBlockActorComponent {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockSignComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SignBlockActor const* _tryGetSign() const;
-
-    MCFOLD ::SignBlockActor* _tryGetSign();
-
     MCAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRawTextInterface>>
     getRawText(::SignTextSide side) const;
 

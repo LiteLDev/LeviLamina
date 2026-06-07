@@ -12,12 +12,15 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Vec3;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class LanternBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    LanternBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,16 +41,12 @@ public:
 
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~LanternBlock() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void _checkToQueueTick(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI LanternBlock(::std::string const& nameId, int id);
 
     MCAPI bool _couldHang(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -55,9 +54,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -82,8 +81,6 @@ public:
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

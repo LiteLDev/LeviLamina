@@ -26,19 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DamageSensorComponent& operator=(DamageSensorComponent const&);
-    DamageSensorComponent(DamageSensorComponent const&);
-    DamageSensorComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DamageSensorTrigger const* _getVerifiedDamageSensorTrigger(
-        ::Actor&                                       owner,
-        ::SharedTypes::Legacy::ActorDamageCause const& cause,
-        ::VariantParameterList const&                  parameters
-    ) const;
+    MCAPI DamageSensorComponent();
 
     MCAPI ::SharedTypes::Legacy::DealsDamage _recordDamageAndCheckIfDealt(
         ::Actor&                                       owner,
@@ -53,13 +43,23 @@ public:
 
     MCAPI float getAdjustedDamage(::Actor& owner, ::ActorDamageSource const& source, float amount) const;
 
-    MCAPI ::DamageSensorComponent& operator=(::DamageSensorComponent&&);
+    MCFOLD ::SharedTypes::Legacy::ActorDamageCause getCause() const;
+
+    MCFOLD bool isFatal() const;
 
     MCAPI ::SharedTypes::Legacy::DealsDamage recordBlockDamageAndCheckIfDealt(
         ::Actor&                                owner,
         ::SharedTypes::Legacy::ActorDamageCause cause,
         float                                   amount,
         ::BlockPos                              standingOnPos
+    );
+
+    MCAPI ::SharedTypes::Legacy::DealsDamage recordGenericDamageAndCheckIfDealt(
+        ::Actor&                                owner,
+        ::Actor*                                sender,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        float                                   amount,
+        ::VariantParameterList                  parameters
     );
 
     MCAPI ::SharedTypes::Legacy::DealsDamage recordGenericDamageAndCheckIfDealt(
@@ -70,5 +70,18 @@ public:
         ::VariantParameterList     parameters,
         bool                       willTrigger
     );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    _fillParameters(::VariantParameterList& inOutParameters, ::Actor& owner, ::Actor* sender, ::Actor* damager);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

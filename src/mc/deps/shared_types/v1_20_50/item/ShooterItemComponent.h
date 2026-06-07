@@ -29,19 +29,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                   mSearchInventory;
         ::ll::TypedStorage<1, 1, bool>                                   mUseInCreative;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Ammunition& operator=(Ammunition const&);
-        Ammunition(Ammunition const&);
-        Ammunition();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition&
-        operator=(::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition&&);
-        // NOLINTEND
     };
 
 public:
@@ -54,9 +41,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::SharedTypes::v1_20_50::ShooterItemComponent const&) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

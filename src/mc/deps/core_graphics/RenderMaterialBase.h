@@ -7,6 +7,7 @@
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core_graphics/VariationMap.h"
 #include "mc/deps/core_graphics/enums/RenderState.h"
+#include "mc/deps/core_graphics/enums/ShaderType.h"
 #include "mc/deps/core_graphics/helpers/InheritanceType.h"
 
 // auto generated forward declare list
@@ -63,9 +64,18 @@ public:
 
     virtual void appendShaderPathForGfxAPI() = 0;
 
+#ifdef LL_PLAT_S
+    virtual ::std::string buildHeader(::std::set<::std::string> const&);
+#else // LL_PLAT_C
     virtual ::std::string buildHeader(::std::set<::std::string> const& defines);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void parseShader(::Json::Value const&);
+#else // LL_PLAT_C
     virtual void parseShader(::Json::Value const& root);
+#endif
+
     // NOLINTEND
 
 public:
@@ -77,6 +87,19 @@ public:
     MCAPI RenderMaterialBase(::cg::RenderMaterialBase const&);
 
     MCAPI void addDefine(::std::string const& define);
+
+    MCFOLD ::std::set<::std::string> const& getDefines() const;
+
+    MCFOLD ::std::string const& getMaterialIdentifier() const;
+
+    MCFOLD ::std::map<::std::string, ::std::shared_ptr<::cg::RenderMaterialBase>> const&
+    getMaterialVariationMap() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const& getShaderProgramName(::mce::ShaderType shaderType) const;
+
+    MCAPI bool hasDefine(::std::string const& define) const;
+
+    MCAPI bool hasState(::mce::RenderState state) const;
 
     MCAPI void modifyDefines(::cg::RenderFeaturesConfiguration const& features);
 
@@ -93,6 +116,8 @@ public:
     );
 
     MCAPI void parseVersion(::Json::Value const& root);
+
+    MCAPI void removeDefine(::std::string const& define);
 #endif
     // NOLINTEND
 

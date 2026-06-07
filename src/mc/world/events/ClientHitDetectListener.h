@@ -16,13 +16,26 @@ public:
     // NOLINTBEGIN
     virtual ~ClientHitDetectListener() = default;
 
+#ifdef LL_PLAT_S
+    virtual ::EventResult onChangedHitResult(::HitResult&);
+#else // LL_PLAT_C
     virtual ::EventResult onChangedHitResult(::HitResult& hitResult);
+#endif
 
     virtual ::EventResult onContinuousHitResult(::HitResult& hitResult);
 
+#ifdef LL_PLAT_S
+    virtual ::EventResult onChangedPickHitResult(::HitResult&);
+#else // LL_PLAT_C
     virtual ::EventResult onChangedPickHitResult(::HitResult& hitResult);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::EventResult onContinuousPickHitResult(::HitResult&);
+#else // LL_PLAT_C
     virtual ::EventResult onContinuousPickHitResult(::HitResult& hitResult);
+#endif
+
     // NOLINTEND
 
 public:
@@ -31,19 +44,11 @@ public:
 #ifdef LL_PLAT_C
     MCFOLD ::EventResult $onChangedHitResult(::HitResult& hitResult);
 
-    MCFOLD ::EventResult $onContinuousHitResult(::HitResult& hitResult);
-
     MCFOLD ::EventResult $onChangedPickHitResult(::HitResult& hitResult);
 
     MCFOLD ::EventResult $onContinuousPickHitResult(::HitResult& hitResult);
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

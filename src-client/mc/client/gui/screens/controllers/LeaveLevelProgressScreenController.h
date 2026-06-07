@@ -80,11 +80,15 @@ public:
 
     MCAPI bool _exitingErrorScreen() const;
 
+    MCAPI ::std::chrono::milliseconds const _getEduCloudIsDoneInterval() const;
+
+    MCAPI ::std::string const _getErrorCode() const;
+
     MCAPI void _registerControllerCallbacks();
 
-    MCAPI void _registerProgressBindings();
+    MCAPI void _registerEventHandlers();
 
-    MCAPI void _setupProgressScreen(bool loadAssets);
+    MCAPI void _registerProgressBindings();
 
     MCFOLD void _showEduCloudConflictPopup();
     // NOLINTEND

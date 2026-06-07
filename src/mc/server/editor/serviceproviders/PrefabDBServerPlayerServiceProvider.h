@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
@@ -13,7 +12,6 @@
 class BlockPalette;
 class BlockSource;
 class ChunkPos;
-class Dimension;
 class Vec3;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }

@@ -37,9 +37,35 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI AutoCompleteOption(
+        ::std::string const& _visualText,
+        ::std::string const& _desc,
+        ::std::string const& _tabCompleteText,
+        uint                 _matchStart,
+        uint                 _matchLength,
+        uint                 _cmdLineMatchStart,
+        uint                 _cmdLineMatchOffset
+    );
+
     MCAPI ::AutoCompleteOption& operator=(::AutoCompleteOption&&);
 
     MCAPI ~AutoCompleteOption();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::std::string const& _visualText,
+        ::std::string const& _desc,
+        ::std::string const& _tabCompleteText,
+        uint                 _matchStart,
+        uint                 _matchLength,
+        uint                 _cmdLineMatchStart,
+        uint                 _cmdLineMatchOffset
+    );
 #endif
     // NOLINTEND
 

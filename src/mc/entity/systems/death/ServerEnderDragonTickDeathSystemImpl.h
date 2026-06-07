@@ -80,8 +80,6 @@ public:
             ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~ServerEnderDragonTickDeathSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

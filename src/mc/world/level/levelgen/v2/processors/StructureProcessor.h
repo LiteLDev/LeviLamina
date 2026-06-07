@@ -27,11 +27,11 @@ public:
     virtual ~StructureProcessor() = default;
 
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource&,
+        ::IBlockSource& processedBlockInfo,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
@@ -74,11 +74,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource&,
+        ::IBlockSource& processedBlockInfo,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 

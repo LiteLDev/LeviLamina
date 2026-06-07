@@ -63,8 +63,6 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual ::ItemStack _getPickupItem() const /*override*/;
-
-    virtual ~ThrownTrident() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -76,7 +74,17 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI void doNormalTick();
+
+#ifdef LL_PLAT_C
+    MCAPI int getClientSideReturnTridentTickCount() const;
+#endif
+
+    MCFOLD ::ItemStack getPickupItem() const;
+
     MCAPI void returnWithLoyalty(int enchantLevel);
+
+    MCAPI void setTridentItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
@@ -92,9 +100,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCFOLD void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
     MCAPI void $playerTouch(::Player& player);
 

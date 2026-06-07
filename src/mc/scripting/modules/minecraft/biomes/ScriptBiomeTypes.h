@@ -50,6 +50,8 @@ public:
     getAllBiomeTypes(::Scripting::WeakLifetimeScope& scope);
 
     MCAPI ::ScriptModuleMinecraft::ScriptBiomeTypes& operator=(::ScriptModuleMinecraft::ScriptBiomeTypes&&);
+
+    MCAPI ~ScriptBiomeTypes();
     // NOLINTEND
 
 public:
@@ -62,6 +64,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -15,6 +15,7 @@ class StrictEntityContext;
 struct PassengerComponent;
 struct PassengersToPositionComponent;
 struct PositionPassengerRequestComponent;
+struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -45,5 +46,7 @@ public:
         ::OptionalGlobal<::PassengersToPositionComponent>                                         optionalDestination,
         ::EntityModifier<::PositionPassengerRequestComponent>                                     modifier
     );
+
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

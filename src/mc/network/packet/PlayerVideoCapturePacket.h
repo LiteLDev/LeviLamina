@@ -59,8 +59,6 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~PlayerVideoCapturePacket() /*override*/ = default;
     // NOLINTEND
 
 public:

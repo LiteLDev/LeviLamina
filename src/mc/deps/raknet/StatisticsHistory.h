@@ -123,6 +123,12 @@ public:
         TrackedObject();
     };
 
+    using TimeAndValue = ::RakNet::StatisticsHistory::TimeAndValue;
+
+    using TimeAndValueQueue = ::RakNet::StatisticsHistory::TimeAndValueQueue;
+
+    using TrackedObject = ::RakNet::StatisticsHistory::TrackedObject;
+
 public:
     // member variables
     // NOLINTBEGIN

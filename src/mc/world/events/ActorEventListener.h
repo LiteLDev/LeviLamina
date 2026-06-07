@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorEventListener();
+    virtual ~ActorEventListener() = default;
 
     virtual ::EventResult onEvent(::ActorNotificationEvent const& event);
 
@@ -72,16 +72,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ActorNotificationEvent const& event);
-
     MCFOLD ::EventResult $onActorDefinitionEvent(
         ::Actor&                                  actor,
         ::std::string const&                      event,
@@ -123,12 +115,10 @@ public:
 
     MCFOLD ::EventResult $onActorMovementRewindCorrected(::Actor&, uint64, ::ReplayCorrectionResult);
 
+#ifdef LL_PLAT_C
+    MCFOLD ::EventResult $onEvent(::ActorNotificationEvent const& event);
+#endif
 
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

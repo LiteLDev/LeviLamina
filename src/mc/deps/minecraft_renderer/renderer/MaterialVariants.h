@@ -18,13 +18,6 @@ public:
 #endif
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    MaterialVariants(MaterialVariants const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -33,19 +26,9 @@ public:
 
     MCAPI explicit MaterialVariants(::mce::MaterialPtr const& skinningMaterial);
 
-    MCFOLD ::MaterialVariants& operator=(::MaterialVariants&&);
-
-    MCFOLD ::MaterialVariants& operator=(::MaterialVariants const&);
+    MCAPI bool operator==(::MaterialVariants const& rhs) const;
 
     MCAPI ~MaterialVariants();
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::MaterialVariants const& getDefaultErrorValue();
 #endif
     // NOLINTEND
 

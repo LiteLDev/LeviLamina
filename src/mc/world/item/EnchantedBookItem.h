@@ -18,6 +18,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnchantedBookItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getEnchantSlot() const /*override*/;
@@ -25,8 +29,18 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
+    // NOLINTEND
 
-    virtual ~EnchantedBookItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EnchantedBookItem(::std::string const& name, int id, bool isGlint);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, bool isGlint);
     // NOLINTEND
 
 public:

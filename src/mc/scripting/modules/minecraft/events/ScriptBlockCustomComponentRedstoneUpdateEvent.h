@@ -5,10 +5,13 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentRedstoneUpdateEventIntermediateStorage; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -26,12 +29,42 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, short> mSignalLevel;
     ::ll::TypedStorage<2, 2, short> mPreviousSignalLevel;
+    ::ll::TypedStorage<1, 1, bool>  mIsFirstUpdate;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptBlockCustomComponentRedstoneUpdateEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptBlockCustomComponentRedstoneUpdateEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentRedstoneUpdateEventIntermediateStorage const& storage,
+        ::Scripting::WeakLifetimeScope const&                                                            scope
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCFOLD static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
+        void>>
+    tryGetComponentsToExecute(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentRedstoneUpdateEventIntermediateStorage const& eventData
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentRedstoneUpdateEventIntermediateStorage const& storage,
+        ::Scripting::WeakLifetimeScope const&                                                            scope
+    );
     // NOLINTEND
 };
 

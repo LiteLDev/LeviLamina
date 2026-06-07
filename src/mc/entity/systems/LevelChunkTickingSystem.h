@@ -8,11 +8,13 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorOwnerComponent;
 class BlockSource;
 class EntityRegistry;
 class LevelChunk;
 class LoadedChunksComponent;
 struct Tick;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class LevelChunkTickingSystem : public ::ITickingSystem {
@@ -31,8 +33,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~LevelChunkTickingSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -40,6 +40,11 @@ public:
     // NOLINTBEGIN
     MCAPI void
     _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
+
+    MCAPI void _tickLevelChunksAroundActorView(
+        ::ActorOwnerComponent&   actorOwnerComponent,
+        ::LoadedChunksComponent& loadedChunksComponent
+    );
     // NOLINTEND
 
 public:
@@ -53,6 +58,8 @@ public:
         ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksBlockEntitiesToTick,
         ::Tick const&                                   currentTick
     );
+
+    MCAPI static ::TickingSystemWithInfo createPlayerPassengerSystem();
     // NOLINTEND
 
 public:

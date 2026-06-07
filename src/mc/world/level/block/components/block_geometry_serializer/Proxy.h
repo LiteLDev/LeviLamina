@@ -10,7 +10,6 @@
 // clang-format off
 class ExpressionNode;
 struct BlockGeometryDescription;
-namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -30,19 +29,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Proxy();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Proxy();
+    MCAPI Proxy(::BlockGeometrySerializer::Proxy&&);
 
     MCAPI Proxy(::BlockGeometrySerializer::Proxy const&);
 
-    MCAPI ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> getBoneVisibility() const;
-
-    MCAPI ::BlockGeometrySerializer::Proxy& operator=(::BlockGeometrySerializer::Proxy&&);
-
     MCAPI ::BlockGeometrySerializer::Proxy& operator=(::BlockGeometrySerializer::Proxy const&);
-
-    MCAPI void setBoneVisibility(::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>& boneVisibilities);
 
     MCAPI ~Proxy();
     // NOLINTEND
@@ -60,7 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::BlockGeometrySerializer::Proxy&&);
 
     MCAPI void* $ctor(::BlockGeometrySerializer::Proxy const&);
     // NOLINTEND

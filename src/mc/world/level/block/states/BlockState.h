@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,6 +52,12 @@ public:
     virtual void toNBT(::CompoundTag& tag, int val) const = 0;
 
     virtual bool fromNBT(::CompoundTag const& tag, int& outValue) const = 0;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void forEachState(::brstd::function_ref<bool(::BlockState const&)> callback);
     // NOLINTEND
 
 public:

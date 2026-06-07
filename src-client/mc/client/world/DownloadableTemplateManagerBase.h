@@ -58,10 +58,7 @@ public:
         ::IContentAcquisition&                                   contentAquisition
     );
 
-    MCAPI void _notifyDownloadCallbackAndRelease(
-        ::std::string const&                                 templateId,
-        ::std::optional<::World::DownloadWorldTemplateError> error
-    );
+    MCAPI bool canDownloadBeCancelled(::std::string const& templateId) const;
 
     MCAPI void cancelDownload(::std::string const& templateId);
 

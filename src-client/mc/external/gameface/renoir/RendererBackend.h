@@ -83,7 +83,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkd277ca;
+        ::ll::UntypedStorage<1, 0> mUnkd277ca;
         ::ll::UntypedStorage<8, 8> mUnka765fd;
         ::ll::UntypedStorage<4, 4> mUnk27394e;
         // NOLINTEND
@@ -105,12 +105,12 @@ public:
     virtual void BeginCommands() = 0;
 
     virtual void WrapUserRenderTarget(
-        void*                                userObject,
-        ::renoir::Texture2D const&           description,
-        ::renoir::Texture2DObject            object,
-        void*                                depthStencil,
-        ::renoir::DepthStencilTexture const& dsDescription,
-        ::renoir::DepthStencilTextureObject  dsObject
+        void*,
+        ::renoir::Texture2D const&,
+        ::renoir::Texture2DObject,
+        void*,
+        ::renoir::DepthStencilTexture const&,
+        ::renoir::DepthStencilTextureObject
     ) = 0;
 
     virtual void
@@ -245,8 +245,6 @@ public:
 
     MCNAPI void $EndGPUPerformanceTiming(uint);
 
-    MCNAPI bool $ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*);
-
     MCNAPI bool $ReadVertexBuffer(::renoir::VertexBufferObject, void*);
 
     MCNAPI bool $ReadIndexBuffer(::renoir::IndexBufferObject, void*);
@@ -254,12 +252,6 @@ public:
     MCNAPI bool $GetNativeTexture(::renoir::Texture2DObject, void*);
 
     MCNAPI ::renoir::RendererBackend::GPUPerfTimingResult $TryGetLatestGPUPerformanceTiming(uint, float&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

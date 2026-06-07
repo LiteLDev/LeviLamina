@@ -2,29 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Include.h"
-
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
-struct PassengerComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class PassengerFreezeMovementSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void freezeMovement(::StrictEntityContext&, ::StateVectorComponent& stateVector);
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void tickPassengerFreezeMovementSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::PassengerComponent, ::ActorMovementTickNeededComponent>,
-            ::StateVectorComponent> view
-    );
+    MCAPI static void freezeMovement(::StrictEntityContext& stateVector, ::StateVectorComponent&);
     // NOLINTEND
 };

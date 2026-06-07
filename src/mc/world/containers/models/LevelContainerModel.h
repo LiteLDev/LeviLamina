@@ -67,12 +67,20 @@ public:
         ::ContainerEnumName containerName,
         int                 containerSize,
         ::Player&           player,
+        ::ActorUniqueID     entityId,
+        ::ContainerCategory category
+    );
+
+    MCAPI LevelContainerModel(
+        ::ContainerEnumName containerName,
+        int                 containerSize,
+        ::Player&           player,
         ::BlockActorType    type,
         ::BlockPos const&   blockPos,
         ::ContainerCategory category
     );
 
-    MCAPI void _refreshSlot(int modelSlot);
+    MCAPI void _refreshContainer();
 
     MCAPI void containerRemoved();
     // NOLINTEND
@@ -80,13 +88,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Container*
-    getContainerHelper(::Player& player, ::BlockActorType blockActorType, ::BlockPos const& blockPos);
+    MCAPI static ::Container* getContainerHelper(::Player& player, ::ActorUniqueID const& actorUniqueId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ContainerEnumName containerName,
+        int                 containerSize,
+        ::Player&           player,
+        ::ActorUniqueID     entityId,
+        ::ContainerCategory category
+    );
+
     MCAPI void* $ctor(
         ::ContainerEnumName containerName,
         int                 containerSize,

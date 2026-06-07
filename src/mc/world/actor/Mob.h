@@ -33,19 +33,24 @@ class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class HashedString;
-class IOptionsReader;
+class ILevel;
 class ItemStack;
 class ListTag;
+class Player;
 class SaveContext;
 class SynchedActorDataWriter;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct CalculateAttackDamageSettings;
+struct Description;
+struct HurtEffectsSettings;
 struct InterpolationPair;
 struct JumpPreventionResult;
+struct KnockbackParameters;
 struct LegacyGoalDefinition;
 struct VariantParameterList;
 namespace mce { class UUID; }
+class IOptionsReader;
 // clang-format on
 
 class Mob : public ::Actor {
@@ -98,15 +103,7 @@ public:
 
     virtual ~Mob() /*override*/;
 
-    virtual void knockback(
-        ::Actor* source,
-        int      dmg,
-        float    xd,
-        float    zd,
-        float    horizontalPower,
-        float    verticalPower,
-        float    heightCap
-    );
+    virtual void knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
     virtual void kill() /*override*/;
 
@@ -138,7 +135,7 @@ public:
 
     virtual void baseTick() /*override*/;
 
-    virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    virtual void hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 
     virtual void damageCarriedItemOnAttack(::Actor& target, float damageDealtToTarget);
 
@@ -282,6 +279,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Mob(::ILevel& level, ::EntityContext& entityContext);
+
     MCAPI
     Mob(::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
@@ -297,13 +296,32 @@ public:
 
     MCAPI void _initialize(::EntityContext& entityContext, bool isClientSide);
 
+    MCAPI bool _isDoingMaceSmashAttack() const;
+
+    MCAPI bool _isFloorDamaging(::BlockPos const& pos);
+
+    MCAPI void _loadArmor(::ListTag const* listTag);
+
+    MCAPI void _logMobComponentInitializationError(
+        ::std::string const& typeName,
+        ::std::string const& existingName,
+        char const*          descriptionJsonName
+    );
+
     MCAPI void _processSoulSpeed();
 
     MCAPI void _registerMobAttributes();
 
     MCAPI ::std::unique_ptr<::ListTag> _saveArmor(::SaveContext const& saveContext) const;
 
+    MCAPI void _updateSprintingState();
+
     MCAPI void _verifyAttributes();
+
+    MCAPI void
+    addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
+
+    MCFOLD void ate();
 
     MCAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
@@ -311,7 +329,7 @@ public:
 
     MCAPI bool checkForPostHitDamageImmunity(float damageDifference, ::ActorDamageSource const& source);
 
-    MCAPI bool checkTotemDeathProtection(::ActorDamageSource const& killingDamage);
+    MCAPI ::std::optional<float> checkTotemDeathProtection(::ActorDamageSource const& killingDamage);
 
     MCAPI void clearMainHandSlot();
 
@@ -335,13 +353,21 @@ public:
 
     MCAPI int getArmorTypeHash();
 
+#ifdef LL_PLAT_C
     MCAPI float getAttackAnim(float a);
+#endif
 
-    MCAPI int getCaravanSize() const;
+    MCAPI int getBaseSwingDuration() const;
 
-    MCAPI int getCarriedItemKnockbackBonus() const;
+    MCAPI ::BlockPos getBoundOrigin() const;
+
+    MCAPI ::ActorUniqueID getCaravanHead() const;
+
+    MCAPI float getDamageAfterArmorReduction(::ActorDamageSource const& source, float damage) const;
 
     MCAPI float getDamageAfterDamageSensorComponentAdjustments(::ActorDamageSource const& source, float damage);
+
+    MCAPI float getDamageAfterPostHitDamageImmunityReduction(::ActorDamageSource const& source, float damage) const;
 
     MCAPI float getDamageAfterResistanceEffect(::ActorDamageSource const& source, float damage) const;
 
@@ -351,19 +377,41 @@ public:
 
     MCAPI float getExpectedFallDamage(float distance, float multiplier) const;
 
-    MCAPI ::Mob* getFirstCaravanHead();
+    MCAPI int getGlidingTicks() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent getHurtSound(::SharedTypes::Legacy::ActorDamageCause cause) const;
+
+#ifdef LL_PLAT_C
+    MCAPI int getItemIconAnimationFrame(::ItemStack const& item);
+#endif
 
     MCAPI ::ItemStack const& getItemSlot(::SharedTypes::Legacy::EquipmentSlot slot) const;
 
     MCAPI float getJumpEffectAmplifierValue();
 
+    MCAPI float getJumpMultiplier();
+
     MCAPI ::JumpPreventionResult getJumpPrevention();
 
     MCAPI int getModifiedSwingDuration() const;
 
+    MCAPI float getMovementComponentCurrentSpeed() const;
+
+    MCAPI int getNoActionTime() const;
+
+#ifdef LL_PLAT_C
+    MCAPI float getPassengerLockedBodyRot() const;
+
+    MCAPI float getPassengerRotLimit() const;
+#endif
+
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent getSpawnSound() const;
+
+#ifdef LL_PLAT_C
+    MCAPI float getSwimSpeedMultiplier() const;
+#endif
+
+    MCAPI ::ActorUniqueID getTargetCaptain() const;
 
     MCAPI int getToughnessValue() const;
 
@@ -375,31 +423,79 @@ public:
     MCAPI ::InterpolationPair getYBodyRotationsNewOld() const;
 #endif
 
+    MCAPI bool hasBoundOrigin() const;
+
+    MCAPI bool hasCaravanTail() const;
+
     MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
     MCAPI bool isAbleToMove() const;
 
-#ifdef LL_PLAT_C
-    MCAPI bool isGliding() const;
-#endif
+    MCAPI bool isEating() const;
 
-    MCAPI void knockback(::Actor* source, int damage, float xd, float zd, float horizontalPower, float verticalPower);
+    MCAPI bool isGliding() const;
+
+    MCAPI bool isLayingEgg() const;
+
+    MCAPI bool isPregnant() const;
+
+    MCAPI bool isSprinting() const;
+
+    MCAPI bool isTransitioningSitting() const;
+
+    MCAPI void joinCaravan(::Mob* head);
+
+    MCAPI void jumpFromGround();
+
+    MCAPI void leaveCaravan();
+
+    MCAPI void loadMainhand(::ListTag const* listTag);
+
+    MCAPI void loadOffhand(::ListTag const* listTag);
 
     MCAPI void lookAt(::Actor* lookAt, float yMax, float xMax);
+
+    MCAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
     MCAPI void removeSpeedModifier(::mce::UUID const& attributeID);
 
     MCAPI void resetAttributes();
 
+    MCAPI void resetNoActionTime();
+
+    MCAPI ::std::unique_ptr<::ListTag> saveMainhand(::SaveContext const& saveContext) const;
+
     MCAPI ::std::unique_ptr<::ListTag> saveOffhand(::SaveContext const& saveContext) const;
 
+    MCAPI void sendArmorDamageSlot(::SharedTypes::Legacy::ArmorSlot slot);
+
     MCAPI void sendArmorSlot(::SharedTypes::Legacy::ArmorSlot slot);
+
+    MCAPI void setDeathTime(int ticks);
 
     MCAPI void setEatCounter(int value);
 
     MCAPI void setEating(bool value);
 
+    MCAPI void setIsLayingEgg(bool layingEgg);
+
+    MCAPI void setIsPregnant(bool pregnant);
+
     MCAPI void setJumpTicks(int ticks);
+
+    MCAPI void setMovementComponentCurrentSpeed(float movementComponentCurrentSpeed);
+
+    MCAPI void setNaturallySpawned(bool naturallySpawned);
+
+    MCAPI void setSpawnMethod(::MobSpawnMethod method);
+
+    MCAPI void setSpeedModifier(float speed);
+
+    MCAPI void setSurfaceMob(bool isSurfaceMob);
+
+    MCAPI void setTargetCaptain(::ActorUniqueID id);
+
+    MCAPI void setYBodyRotation(float rotation);
 
     MCAPI void setYBodyRotations(float rotation, float oldRotation);
 
@@ -409,7 +505,17 @@ public:
 
     MCAPI void snapToYHeadRot(float yHeadRot);
 
+    MCAPI void stopAI();
+
     MCAPI void tickMobEffectsVisuals();
+
+    MCAPI void tryFrostWalk();
+
+    MCAPI void tryProcessSoulSpeed();
+
+    MCAPI void tryUpdateAI();
+
+    MCAPI void updateAttackAnim();
 
     MCAPI void updateEquipment();
 
@@ -419,12 +525,30 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static char const* _getDescriptionJsonName(::Description const* description);
+
     MCAPI static void setSprinting(::BaseAttributeMap& attributes, ::SynchedActorDataWriter data, bool shouldSprint);
+
+    MCAPI static ::Mob* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& ASCEND_BLOCK_BY_JUMPING_SPEED();
+
+    MCAPI static float const& GLIDING_FALL_RESET_DELTA();
+
+    MCAPI static int const& REMOVE_PASSENGERS_DELAY();
+
+    MCAPI static int const& SPAWN_XP_DELAY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ILevel& level, ::EntityContext& entityContext);
+
     MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
@@ -435,7 +559,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -447,15 +571,7 @@ public:
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $knockback(
-        ::Actor* source,
-        int      dmg,
-        float    xd,
-        float    zd,
-        float    horizontalPower,
-        float    verticalPower,
-        float    heightCap
-    );
+    MCAPI void $knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
     MCAPI void $kill();
 
@@ -487,7 +603,7 @@ public:
 
     MCAPI void $baseTick();
 
-    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 
     MCAPI void $damageCarriedItemOnAttack(::Actor& target, float damageDealtToTarget);
 
@@ -614,7 +730,7 @@ public:
 
     MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCFOLD void $newServerAiStep();
+    MCAPI void $newServerAiStep();
 
     MCAPI void $_doInitialMove();
 

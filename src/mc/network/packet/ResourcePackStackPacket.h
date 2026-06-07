@@ -38,8 +38,6 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~ResourcePackStackPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -54,6 +52,18 @@ public:
         ::Experiments const&            experiments,
         bool                            includeEditorPacks
     );
+
+#ifdef LL_PLAT_C
+    MCFOLD ::BaseGameVersion const& getBaseGameVersion() const;
+
+    MCFOLD ::Experiments const& getExperiments() const;
+
+    MCFOLD ::std::vector<::PackInstanceId> const& getTexturePackIdsAndVersions() const;
+
+    MCFOLD bool includeEditorPacks() const;
+
+    MCFOLD bool isTexturePackRequired() const;
+#endif
     // NOLINTEND
 
 public:
@@ -68,12 +78,6 @@ public:
         ::Experiments const&            experiments,
         bool                            includeEditorPacks
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

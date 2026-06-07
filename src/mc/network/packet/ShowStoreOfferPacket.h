@@ -59,19 +59,26 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ShowStoreOfferPacket() /*override*/;
-#else // LL_PLAT_C
-    virtual ~ShowStoreOfferPacket() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ShowStoreOfferPacket();
+
+#ifdef LL_PLAT_S
+    MCAPI explicit ShowStoreOfferPacket(::ShowStoreOfferPacketPayload payload);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::ShowStoreOfferPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

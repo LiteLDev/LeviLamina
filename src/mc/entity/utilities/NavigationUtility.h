@@ -15,6 +15,8 @@ class Vec3;
 namespace NavigationUtility {
 // functions
 // NOLINTBEGIN
+MCNAPI bool canFlyDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos);
+
 MCNAPI bool
 canMoveDirectly(::Mob& mob, ::Vec3 const& startPos, ::Vec3 const& stopPos, int sx, int sy, int sz, bool isClimbing);
 
@@ -55,16 +57,31 @@ MCNAPI bool closeToDone(::Mob const& mob, float dist);
 
 MCNAPI bool flyCondition(::Mob const& mob, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
 
+MCNAPI float
+getHeightDifference(::BlockSource& region, ::Vec3 const& currentPos, ::Block const& block, ::BlockPos const& blockPos);
+
+MCNAPI ::BlockPos const getMobScale(::Mob const& mob);
+
+MCNAPI int getSurfaceY(::Mob const& mob);
+
 MCNAPI bool invalidPathStartStatus(::Mob const& mob, ::BlockPos& startPosition);
 
 MCNAPI bool
 isDoorBlockingPath(::Mob const& mob, ::Block const& block, ::Path const& path, ::BlockPos const& nodePos, uint64 index);
 
+MCNAPI bool isInLiquid(::Mob const& mob);
+
 MCNAPI bool isInNode(::Mob const& mob, ::BlockPos const& nodePos);
+
+MCNAPI bool isLastNode(uint64 index, ::Path const& path);
+
+MCNAPI bool isStableDestination(::Mob const& mob, ::BlockPos& pos);
 
 MCNAPI bool isStairBlockFacingMob(::Mob const& mob, ::BlockPos const& blockPos);
 
-MCNAPI bool swimCondition(::Mob const&, ::BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
+MCNAPI bool moveCondition(::Mob const& mob, ::Block const& block);
+
+MCNAPI bool swimCondition(::Mob const& region, ::BlockSource& gridPosX, int gridPosY, int gridPosZ, int);
 
 MCNAPI void trimPathFromSun(::Mob const& mob);
 // NOLINTEND

@@ -35,6 +35,8 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> asInlineConfig() const;
 
+    MCAPI bool hasRegistryKey() const;
+
     MCAPI void loadConfig(::CompoundTag const* data);
 
     MCAPI ::TrialSpawnerConfig& operator=(::TrialSpawnerConfig const&);

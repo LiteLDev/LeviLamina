@@ -36,8 +36,6 @@ public:
         ::BiomeTintCache const* biomeTintCache) const /*override*/;
 
     virtual ::mce::Color get(::Block const&) const /*override*/;
-
-    virtual ~FoliageTessellationPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -13,18 +13,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int> mMaxPuddleDepthBelowSeaLevel;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SwampSurfaceSettings();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_100::SurfaceBuilder

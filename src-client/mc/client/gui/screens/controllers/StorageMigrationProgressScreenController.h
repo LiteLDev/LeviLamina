@@ -66,6 +66,8 @@ public:
 
     MCAPI void _handleIntro();
 
+    MCAPI void _handleRestartTransfer();
+
     MCAPI void _handleTransferFinished();
 
     MCAPI void _registerBindings();
@@ -73,8 +75,6 @@ public:
     MCAPI void _registerEventHandlers();
 
     MCAPI void _showModal(::std::string const& modalName);
-
-    MCAPI void _startTransfer();
     // NOLINTEND
 
 public:

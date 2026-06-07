@@ -11,8 +11,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType packType) const /*override*/;
-
-    virtual ~VanillaInPackagePacks() /*override*/ = default;
     // NOLINTEND
 
 public:

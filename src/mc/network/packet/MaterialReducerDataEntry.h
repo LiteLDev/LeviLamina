@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
 class ReadOnlyBinaryStream;
 struct MaterialReducerEntryOutput;
 // clang-format on
@@ -25,6 +26,8 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 #endif
+
+    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~MaterialReducerDataEntry();
     // NOLINTEND

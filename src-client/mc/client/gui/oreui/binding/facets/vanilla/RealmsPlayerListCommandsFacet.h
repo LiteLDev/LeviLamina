@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsPlayerListCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsPlayerListCommandsFacet() /*override*/ = default;
@@ -30,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsPlayerListCommandsFacet(::std::shared_ptr<::Realms::RealmsPlayerList> realmsPlayerList);
+
     MCAPI void populateMembers();
 
     MCAPI void resetState();
@@ -39,6 +45,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsPlayerList> realmsPlayerList);
     // NOLINTEND
 
 public:

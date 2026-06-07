@@ -7,6 +7,7 @@
 #include "mc/deps/core/http/DispatcherProcess.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncResultBase.h"
+#include "mc/deps/core/threading/IAsyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,25 +37,18 @@ public:
         // prevent constructor by default
         AsyncQueueResult& operator=(AsyncQueueResult const&);
         AsyncQueueResult(AsyncQueueResult const&);
+        AsyncQueueResult();
 
     public:
         // virtual functions
         // NOLINTBEGIN
         virtual void _cancel() /*override*/;
-
-        virtual ~AsyncQueueResult() /*override*/ = default;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI AsyncQueueResult();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCNAPI void complete(::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response> const& response);
         // NOLINTEND
 
     public:

@@ -42,8 +42,6 @@ public:
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
 
     virtual int size() const /*override*/;
-
-    virtual ~BannerAddPatternRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:

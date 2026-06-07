@@ -28,12 +28,13 @@ public:
 
 public:
     // prevent constructor by default
-    GameTestReport(GameTestReport const&);
     GameTestReport();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI GameTestReport(::GameTestReport const&);
+
     MCNAPI ::GameTestReport& operator=(::GameTestReport const&);
 
     MCNAPI ::GameTestReport& operator=(::GameTestReport&&);
@@ -45,6 +46,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::GameTestReport const&);
     // NOLINTEND
 
 public:

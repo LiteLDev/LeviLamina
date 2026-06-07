@@ -24,6 +24,16 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ScoreboardId& INVALID();
     // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCFOLD void* $ctor(int64 bytes);
+
+    MCFOLD void* $ctor(::ScoreboardId const& scoreboardId);
+    // NOLINTEND
 };
 
 namespace std {

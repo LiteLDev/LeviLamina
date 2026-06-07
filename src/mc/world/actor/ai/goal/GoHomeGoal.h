@@ -3,67 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class GoHomeGoal : public ::Goal {
-public:
-    // GoHomeGoal inner types declare
-    // clang-format off
-    class GoHomeDefinition;
-    // clang-format on
-
-    // GoHomeGoal inner types define
-    class GoHomeDefinition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                                    mSpeedMultiplier;
-        ::ll::TypedStorage<4, 4, int>                                      mInterval;
-        ::ll::TypedStorage<4, 4, float>                                    mGoalRadius;
-        ::ll::TypedStorage<4, 4, float>                                    mCalculateNewPathRadius;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnHomeTriggers;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnFailedTriggers;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~GoHomeDefinition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoHomeGoal::GoHomeDefinition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
+class GoHomeGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -98,22 +47,24 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~GoHomeGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _hasReachedHome() const;
+    MCAPI explicit GoHomeGoal(::Mob& mob);
 
-    MCAPI void _triggerOnFailedEvents();
+    MCAPI ::BlockPos _getHomePos() const;
+
+    MCAPI bool _hasRequiredComponents() const;
+
+    MCAPI bool _isInHomeDimension() const;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

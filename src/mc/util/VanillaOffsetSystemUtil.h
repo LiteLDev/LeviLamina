@@ -19,30 +19,23 @@ namespace VanillaOffsetSystemUtil {
 // functions
 // NOLINTBEGIN
 MCAPI void _clientTick(
-    ::StrictEntityContext&,
-    ::VanillaOffsetComponent&                         vanillaOffsetComponent,
-    ::OffsetsComponent const&                         offsetComponent,
-    ::ActorDataFlagComponent const&                   actorDataFlag,
-    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
-    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
-    float                                             sneakHeight
+    ::StrictEntityContext&                            vanillaOffsetComponent,
+    ::VanillaOffsetComponent&                         offsetComponent,
+    ::OffsetsComponent const&                         actorDataFlag,
+    ::ActorDataFlagComponent const&                   isSleepingFlag,
+    ::Optional<::PlayerIsSleepingFlagComponent const> isHorizontalFlag,
+    ::Optional<::IsHorizontalPoseFlagComponent const> sneakHeight,
+    float
 );
 
 MCAPI void _serverTick(
-    ::StrictEntityContext&,
-    ::VanillaOffsetComponent&                         vanillaOffsetComponent,
-    ::OffsetsComponent const&                         offsetComponent,
-    ::ActorDataFlagComponent const&                   actorDataFlag,
-    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
-    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
-    float                                             sneakHeight
-);
-
-MCAPI float getCameraOffset(
-    ::ActorDataFlagComponent const&                   actorDataFlag,
-    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
-    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
-    float                                             sneakHeight
+    ::StrictEntityContext&                            vanillaOffsetComponent,
+    ::VanillaOffsetComponent&                         offsetComponent,
+    ::OffsetsComponent const&                         actorDataFlag,
+    ::ActorDataFlagComponent const&                   isSleepingFlag,
+    ::Optional<::PlayerIsSleepingFlagComponent const> isHorizontalFlag,
+    ::Optional<::IsHorizontalPoseFlagComponent const> sneakHeight,
+    float
 );
 // NOLINTEND
 

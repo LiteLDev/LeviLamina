@@ -9,6 +9,8 @@
 // clang-format off
 class Container;
 class ItemContext;
+class WeakEntityRef;
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,13 +19,12 @@ namespace ScriptModuleMinecraft {
 class ScriptPlayerInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptInventoryComponentContainer {
 public:
     // prevent constructor by default
-    ScriptPlayerInventoryComponentContainer(ScriptPlayerInventoryComponentContainer const&);
     ScriptPlayerInventoryComponentContainer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/;
+    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/ = default;
 
     virtual ::Container* _tryGetContainer() const /*override*/;
 
@@ -33,8 +34,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerInventoryComponentContainer&
-    operator=(::ScriptModuleMinecraft::ScriptPlayerInventoryComponentContainer const&);
+    MCAPI ScriptPlayerInventoryComponentContainer(
+        ::WeakEntityRef const&                entityRef,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -44,9 +47,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::WeakEntityRef const& entityRef, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

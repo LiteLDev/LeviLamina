@@ -17,14 +17,24 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool _isValid() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ScriptOnFireComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int getOnFireTicksRemaining() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

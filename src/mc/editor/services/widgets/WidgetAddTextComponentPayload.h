@@ -8,7 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class Color; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -26,13 +29,28 @@ public:
 public:
     // prevent constructor by default
     WidgetAddTextComponentPayload& operator=(WidgetAddTextComponentPayload const&);
-    WidgetAddTextComponentPayload(WidgetAddTextComponentPayload const&);
     WidgetAddTextComponentPayload();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~WidgetAddTextComponentPayload() /*override*/;
+    MCNAPI WidgetAddTextComponentPayload(::Editor::Network::WidgetAddTextComponentPayload const&);
+
+    MCNAPI WidgetAddTextComponentPayload(
+        ::mce::UUID const&   serviceId,
+        ::mce::UUID const&   groupId,
+        ::mce::UUID const&   widgetId,
+        ::mce::UUID const&   componentId,
+        ::std::string const& componentName,
+        ::Vec3 const&        pos,
+        bool                 visible,
+        bool                 lockToSurface,
+        ::std::string const& textString,
+        ::mce::Color const&  color
+    );
+
+    MCNAPI ::Editor::Network::WidgetAddTextComponentPayload&
+    operator=(::Editor::Network::WidgetAddTextComponentPayload&&);
     // NOLINTEND
 
 public:
@@ -42,9 +60,22 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::Network::WidgetAddTextComponentPayload const&);
+
+    MCNAPI void* $ctor(
+        ::mce::UUID const&   serviceId,
+        ::mce::UUID const&   groupId,
+        ::mce::UUID const&   widgetId,
+        ::mce::UUID const&   componentId,
+        ::std::string const& componentName,
+        ::Vec3 const&        pos,
+        bool                 visible,
+        bool                 lockToSurface,
+        ::std::string const& textString,
+        ::mce::Color const&  color
+    );
     // NOLINTEND
 
 public:

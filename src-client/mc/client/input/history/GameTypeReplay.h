@@ -34,8 +34,6 @@ public:
     virtual void advanceLiveFrame(::Actor& actor, ::std::optional<uint64>) /*override*/;
 
     virtual ::std::bitset<2> getCorrectionTypeBitset() const /*override*/;
-
-    virtual ~GameTypeReplay() /*override*/ = default;
     // NOLINTEND
 
 public:

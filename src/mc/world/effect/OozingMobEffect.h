@@ -14,15 +14,13 @@ class OozingMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onActorDied(::Actor& target, int amplifier) const /*override*/;
-
-    virtual ~OozingMobEffect() /*override*/ = default;
+    virtual void onActorDied(::Actor& target, int) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActorDied(::Actor& target, int amplifier) const;
+    MCAPI void $onActorDied(::Actor& target, int) const;
 
 
     // NOLINTEND

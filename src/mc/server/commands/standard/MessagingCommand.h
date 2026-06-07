@@ -23,14 +23,14 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MessagingCommand() /*override*/;
-    // NOLINTEND
+    // prevent constructor by default
+    MessagingCommand();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MessagingCommand(bool requireChatPerms, bool requireTellPerms);
+
     MCAPI bool checkChatPermissions(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
@@ -45,8 +45,14 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(bool requireChatPerms, bool requireTellPerms);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

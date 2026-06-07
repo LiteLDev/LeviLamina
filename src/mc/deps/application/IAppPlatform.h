@@ -16,7 +16,7 @@ class IAppPlatform : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IAppPlatform() /*override*/;
+    virtual ~IAppPlatform() /*override*/ = default;
 
     virtual bool restartRequested() = 0;
 
@@ -40,7 +40,7 @@ public:
 
     virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback) = 0;
 
-    virtual bool isNetworkEnabled(bool onlyWifiAllowed) const = 0;
+    virtual bool isNetworkEnabled(bool) const = 0;
 
     virtual bool isNetworkAvailable() const = 0;
 
@@ -72,12 +72,6 @@ public:
     virtual ::std::string getDeviceId() const = 0;
 #endif
 
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
+class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
@@ -43,8 +44,6 @@ public:
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    virtual ~EnderCrystal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,6 +54,10 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCFOLD void setBeamTarget(::BlockPos const& target);
+
+    MCAPI void setCrystalDamagedCallback(::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)> onDamaged);
     // NOLINTEND
 
 public:

@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput&) const /*override*/;
-
-    virtual ~CloseWebSocketCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

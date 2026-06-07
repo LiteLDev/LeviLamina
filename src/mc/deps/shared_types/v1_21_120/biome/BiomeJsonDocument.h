@@ -33,17 +33,13 @@ public:
 
     public:
         // prevent constructor by default
-        BiomeJsonObject(BiomeJsonObject const&);
+        BiomeJsonObject& operator=(BiomeJsonObject const&);
         BiomeJsonObject();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject&
-        operator=(::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject&&);
-
-        MCFOLD ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject&
-        operator=(::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject const&);
+        MCAPI BiomeJsonObject(::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject const&);
 
         MCAPI ~BiomeJsonObject();
         // NOLINTEND
@@ -61,6 +57,12 @@ public:
         // NOLINTEND
 
     public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject const&);
+        // NOLINTEND
+
+    public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
@@ -72,6 +74,19 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::SharedTypes::v1_21_120::BiomeJsonDocument::BiomeJsonObject> mBiomeJsonObject;
     ::ll::TypedStorage<8, 32, ::std::string>                                                mFormatVersion;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeJsonDocument(BiomeJsonDocument const&);
+    BiomeJsonDocument();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::SharedTypes::v1_21_120::BiomeJsonDocument& operator=(::SharedTypes::v1_21_120::BiomeJsonDocument&&);
+
+    MCFOLD ::SharedTypes::v1_21_120::BiomeJsonDocument& operator=(::SharedTypes::v1_21_120::BiomeJsonDocument const&);
     // NOLINTEND
 
 public:

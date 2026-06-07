@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockActor;
 class ClientInstanceScreenModel;
 // clang-format on
 
@@ -47,6 +48,8 @@ public:
         ::BlockActorType                               type,
         ::ActorUniqueID                                uniqueID
     );
+
+    MCAPI ::BlockActor* _getBaseBlockEntity(::BlockPos const& pos, ::BlockActorType const& type) const;
     // NOLINTEND
 
 public:
@@ -63,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -20,8 +20,6 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
     virtual ::EventResult onLevelAddedPlayer(::Player& player) /*override*/;
-
-    virtual ~WardenSpawnTrackerSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

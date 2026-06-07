@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, uint>                           mFormId;
     ::ll::TypedStorage<1, 1, ::DataDrivenScreenClosedReason> mCloseReason;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerDataDrivenScreenClosedEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

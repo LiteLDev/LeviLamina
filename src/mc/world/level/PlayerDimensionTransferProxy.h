@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
 #include "mc/world/level/IPlayerDimensionTransferProxy.h"
 
@@ -22,7 +21,7 @@ class PlayerDimensionTransferProxy : public ::IPlayerDimensionTransferProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerDimensionTransferProxy() /*override*/ = default;
+    virtual ~PlayerDimensionTransferProxy() /*override*/;
 
     virtual void playerDimensionChangedEvent(
         ::Player&       player,
@@ -66,6 +65,12 @@ public:
     hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const /*override*/;
 
     virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

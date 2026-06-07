@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MobRemovePassengerSystem {};
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct MobRemovePassengerSystem {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createSystem();
+    // NOLINTEND
+};

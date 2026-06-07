@@ -29,8 +29,6 @@ public:
     virtual ::Bedrock::Threading::Async<void> refreshPacks() /*override*/;
 
     virtual ::Bedrock::Threading::Async<void> reloadUserPacks() /*override*/;
-
-    virtual ~RefresherImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

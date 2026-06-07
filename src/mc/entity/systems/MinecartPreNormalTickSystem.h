@@ -36,14 +36,6 @@ public:
         ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
     );
 
-    MCAPI static void _tickMinecartPreNormalTickSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::MinecartFlagComponent>,
-            ::ActorOwnerComponent>                                 view,
-        ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
-    );
-
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

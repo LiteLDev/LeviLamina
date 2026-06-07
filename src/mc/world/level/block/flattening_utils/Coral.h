@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
+struct ItemRegistryComplexAlias;
 namespace FlatteningUtils { struct Instance; }
 // clang-format on
 
@@ -17,11 +17,11 @@ namespace FlatteningUtils::Coral {
 // NOLINTBEGIN
 MCAPI ::FlatteningUtils::Instance get();
 
-MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
-
 MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getColorSplitStates(bool dead);
 
 MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
+
+MCAPI ::ItemRegistryComplexAlias getItemComplexAliasCallback();
 // NOLINTEND
 
 } // namespace FlatteningUtils::Coral

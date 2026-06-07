@@ -63,12 +63,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LibrarySearchBarScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
+    MCAPI void _registerEventHandlers();
+
     MCAPI bool _updateCollection();
 
     MCAPI void openSearch();
-
-    MCAPI void
-    setUpdateSearchResultMethod(::std::function<void(::std::shared_ptr<::LibraryCollection>)> updateSearchResultMethod);
 
     MCAPI void updateSearchString(::std::string searchString);
     // NOLINTEND

@@ -14,11 +14,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static ::persona::ProfileType getProfileTypeFromString(::std::string const& profileTypeStr);
 #endif
-
-#ifdef LL_PLAT_S
-    MCAPI static ::std::string_view
-    getStringFromProfileType(::persona::ProfileType typeToGetStringFor, bool nonLegacyStrDesired);
-#endif
     // NOLINTEND
 };
 

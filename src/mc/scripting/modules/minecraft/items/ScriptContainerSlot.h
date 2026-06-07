@@ -43,12 +43,15 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptContainerSlot& operator=(ScriptContainerSlot const&);
     ScriptContainerSlot();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptContainerSlot(::ScriptModuleMinecraft::ScriptContainerSlot const&);
+
+    MCAPI ScriptContainerSlot(::ItemContext itemContext, ::Scripting::WeakLifetimeScope scope);
 
     MCAPI ScriptContainerSlot(
         ::ItemContext                                                                         itemContext,
@@ -122,10 +125,6 @@ public:
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
     isStackableWith(::ScriptModuleMinecraft::ScriptItemStack const& other) const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptContainerSlot& operator=(::ScriptModuleMinecraft::ScriptContainerSlot&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptContainerSlot& operator=(::ScriptModuleMinecraft::ScriptContainerSlot const&);
 
     MCAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError, ::Scripting::ArgumentOutOfBoundsError>
@@ -201,6 +200,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptContainerSlot const&);
 
+    MCAPI void* $ctor(::ItemContext itemContext, ::Scripting::WeakLifetimeScope scope);
+
     MCAPI void* $ctor(
         ::ItemContext                                                                         itemContext,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper> scriptContainerHandle,
@@ -211,7 +212,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

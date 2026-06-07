@@ -24,13 +24,13 @@ namespace SendLinkPacketOfPassengersSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void sendLinkPacketOfPassengers(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::PassengersChangedFlagComponent>>,
-    ::StrictEntityContext const&              entity,
-    ::ActorUniqueIDComponent const&           vehicleUniqueIDComponent,
-    ::VehicleComponent&                       vehicleComponent,
-    ::Optional<::BoatMovementComponent const> boatMovement,
-    ::EntityModifier<::SendPacketsComponent>  modifier,
-    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent>, ::ActorUniqueIDComponent const> passengersView
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::PassengersChangedFlagComponent>> entity,
+    ::StrictEntityContext const&              vehicleUniqueIDComponent,
+    ::ActorUniqueIDComponent const&           vehicleComponent,
+    ::VehicleComponent&                       boatMovement,
+    ::Optional<::BoatMovementComponent const> modifier,
+    ::EntityModifier<::SendPacketsComponent>  passengersView,
+    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent>, ::ActorUniqueIDComponent const>
 );
 // NOLINTEND
 

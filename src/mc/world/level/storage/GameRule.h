@@ -76,13 +76,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameRule();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameRule(::GameRule&&);
+    MCAPI GameRule();
 
     MCAPI GameRule(::GameRule const&);
 
@@ -94,17 +90,29 @@ public:
         ::GameRule::ValidationError*                                errorOutput
     );
 
-    MCAPI ::GameRule& _setDefaultValue(bool b);
+    MCFOLD bool allowUseInCommand() const;
 
-    MCAPI ::GameRule& _setDefaultValue(int i);
+    MCFOLD bool allowUseInScripting() const;
+
+    MCFOLD bool canBeModifiedByPlayer() const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool getBool() const;
-
-    MCAPI int getInt() const;
+    MCAPI bool compareValue(::std::variant<::cereal::NullType, bool, int, float> const& v) const;
 #endif
 
+    MCAPI bool getBool() const;
+
+    MCAPI float getFloat() const;
+
+    MCAPI int getInt() const;
+
     MCAPI ::std::string getLowercaseName() const;
+
+    MCFOLD ::std::string const& getName() const;
+
+    MCFOLD ::GameRule::Type getType() const;
+
+    MCFOLD ::std::variant<::cereal::NullType, bool, int, float> const& getValue() const;
 
     MCAPI ::GameRule& operator=(::GameRule&&);
 
@@ -112,14 +120,19 @@ public:
 
     MCAPI bool operator==(::GameRule const& other) const;
 
+    MCFOLD bool requiresCheats() const;
+
     MCAPI void resetType(::GameRule::Type type);
 
-    MCAPI ::GameRule& setTagDataNotFoundCallback(::std::function<void(::GameRule&, ::BaseGameVersion const&)> cb);
+    MCAPI bool setBool(bool value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
-    MCAPI ::GameRule& setValidateValueCallback(
-        ::std::function<bool(::std::variant<::cereal::NullType, bool, int, float> const&, ::GameRule::ValidationError*)>
-            cb
-    );
+    MCFOLD void setCanBeModifiedByPlayer(bool value);
+
+    MCAPI bool setFloat(float value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
+
+    MCAPI bool setInt(int value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
+
+    MCAPI ::GameRule& setName(::std::string const& name);
 
     MCAPI ~GameRule();
     // NOLINTEND
@@ -127,7 +140,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameRule&&);
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::GameRule const&);
 

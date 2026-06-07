@@ -31,8 +31,6 @@ public:
         ::ParticleSystem::CommonParticle&                 particle,
         ::RenderParams&                                   renderParams
     ) /*override*/;
-
-    virtual ~ParticleAppearanceLightingComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

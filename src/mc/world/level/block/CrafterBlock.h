@@ -13,6 +13,7 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Container;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -20,6 +21,10 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class CrafterBlock : public ::ActorBlock {
+public:
+    // prevent constructor by default
+    CrafterBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,22 +51,37 @@ public:
 
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
-        /*override*/;
-
-    virtual ~CrafterBlock() /*override*/ = default;
+    virtual bool allowStateMismatchOnPlacement(::Block const&, ::Block const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CrafterBlock(::std::string const& nameId, int id);
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
+
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _removeOneLayerOfItems(::Container& container);
+
+    MCFOLD static int getAttachedFace(int facing);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -93,7 +113,7 @@ public:
 
     MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const&, ::Block const&) const;
 
 
     // NOLINTEND

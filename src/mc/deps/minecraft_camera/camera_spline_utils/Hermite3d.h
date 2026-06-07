@@ -21,22 +21,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::glm::vec3 eval(float t) const /*override*/;
-
-    virtual ::CameraSplineUtils::SplineType getType() const /*override*/;
-
 #ifdef LL_PLAT_S
-    virtual ~Hermite3d() /*override*/ = default;
+    virtual ::glm::vec3 eval(float) const /*override*/;
 #else // LL_PLAT_C
-    virtual ~Hermite3d() /*override*/;
+    virtual ::glm::vec3 eval(float t) const /*override*/;
 #endif
 
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual ::CameraSplineUtils::SplineType getType() const /*override*/;
     // NOLINTEND
 
 public:

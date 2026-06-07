@@ -20,17 +20,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockCustomComponentData(BlockCustomComponentData const&);
-    BlockCustomComponentData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::BlockCustomComponentData& operator=(::BlockCustomComponentData&&);
-
-    MCAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData const&);
-
     MCAPI ~BlockCustomComponentData();
     // NOLINTEND
 

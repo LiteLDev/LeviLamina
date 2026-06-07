@@ -52,19 +52,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SerializedAbilitiesData& operator=(SerializedAbilitiesData const&);
-    SerializedAbilitiesData(SerializedAbilitiesData const&);
-    SerializedAbilitiesData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SerializedAbilitiesData(::SerializedAbilitiesData&&);
+    MCAPI SerializedAbilitiesData();
 
     MCAPI SerializedAbilitiesData(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
 
     MCAPI void fillIn(::LayeredAbilities& layeredAbilities) const;
+
+    MCFOLD ::ActorUniqueID getTargetPlayer() const;
 
     MCAPI ~SerializedAbilitiesData();
     // NOLINTEND
@@ -78,7 +74,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SerializedAbilitiesData&&);
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
     // NOLINTEND

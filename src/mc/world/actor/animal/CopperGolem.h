@@ -5,11 +5,36 @@
 // auto generated inclusion list
 #include "mc/world/actor/Mob.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 class CopperGolem : public ::Mob {
 public:
-    // virtual functions
+    // prevent constructor by default
+    CopperGolem();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~CopperGolem() /*override*/ = default;
+    MCAPI CopperGolem(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

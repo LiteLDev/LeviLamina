@@ -12,6 +12,7 @@
 class HashedString;
 class SemVersion;
 namespace Bedrock::Safety { class RedactableString; }
+namespace SharedTypes::v1_20_50 { struct RecordItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,17 +26,23 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RecordItemComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RecordItemComponent();
+
+    MCAPI explicit RecordItemComponent(::SharedTypes::v1_20_50::RecordItemComponent component);
+
+    MCAPI RecordItemComponent(::SharedTypes::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
+
     MCAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
 
+    MCFOLD int getComparatorSignal() const;
+
+    MCFOLD float getDuration() const;
+
     MCAPI ::std::string getRecordDescription() const;
+
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent getSound() const;
     // NOLINTEND
 
 public:
@@ -48,6 +55,18 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+
+    MCAPI static ::std::string getRecordNameNoPrefix(::SharedTypes::Legacy::LevelSoundEvent sound);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::RecordItemComponent component);
+
+    MCAPI void* $ctor(::SharedTypes::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
     // NOLINTEND
 
 public:

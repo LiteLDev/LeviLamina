@@ -13,16 +13,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, ushort> mRaw;
         bool                             mContainsPositionX     : 1;
         bool                             mContainsPositionY     : 1;
         bool                             mContainsPositionZ     : 1;
         bool                             mContainsRotationX     : 1;
         bool                             mContainsRotationY     : 1;
         bool                             mContainsRotationYHead : 1;
-        bool                             mIsOnGround            : 1;
-        bool                             mTeleported            : 1;
+        bool                             mForceCompletion       : 1;
+        bool                             mForceMove             : 1;
         bool                             mForceMoveLocalEntity  : 1;
+        bool                             mIsOnGround            : 1;
+        ::ll::TypedStorage<2, 2, ushort> mRaw;
         // NOLINTEND
     };
 
@@ -38,5 +39,13 @@ public:
     ::ll::TypedStorage<1, 1, schar>                        mRotY;
     ::ll::TypedStorage<1, 1, schar>                        mRotYHead;
     ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData>     mPreviousData;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ::MoveActorAbsoluteData parseDeltas(::MoveActorAbsoluteData const& previousAbsoluteMoveData) const;
+#endif
     // NOLINTEND
 };

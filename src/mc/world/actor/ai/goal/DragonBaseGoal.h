@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class EnderDragon;
 // clang-format on
 
-class DragonBaseGoal : public ::Goal {
+class DragonBaseGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN

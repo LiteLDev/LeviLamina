@@ -7,11 +7,12 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
+#include "mc/deviceinfo/DeviceMemoryTier.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/util/CallbackToken.h"
 #include "mc/util/HudElement.h"
@@ -21,6 +22,7 @@
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/ActorSwingSource.h"
 #include "mc/world/actor/player/Player.h"
+#include "mc/world/actor/player/PlayerPartyInfo.h"
 #include "mc/world/actor/player/ServerLocatorBar.h"
 #include "mc/world/actor/player/VanillaWaypointManager.h"
 #include "mc/world/inventory/InventoryMenu.h"
@@ -39,11 +41,11 @@ class CompoundTag;
 class Container;
 class ContainerManagerModel;
 class DataLoadHelper;
-class Dimension;
 class EntityContext;
 class IContainerManager;
 class InventoryTransaction;
 class ItemStack;
+class ItemStackNetManagerServer;
 class Level;
 class NetworkIdentifier;
 class Packet;
@@ -54,8 +56,11 @@ class ServerNetworkSystem;
 class TextObjectRoot;
 class Vec3;
 struct INpcDialogueData;
+struct KnockbackParameters;
 struct PlayerAuthenticationInfo;
+struct PlayerMovementSettings;
 struct SyncedClientOptionsComponent;
+struct SyncedClientOptionsUpdate;
 struct VariantParameterList;
 namespace Bedrock::DDUI { class DataStoreSyncServer; }
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
@@ -101,10 +106,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::PlatformType>                          mPlatformType;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mLanguageCode;
     ::ll::TypedStorage<8, 8, ::ServerNetworkSystem&>                  mNetwork;
     ::ll::TypedStorage<8, 64, ::std::function<void(::ServerPlayer&)>> mOnPlayerLoadedCallback;
     ::ll::TypedStorage<8, 112, ::InventoryMenu>                       mInventoryMenu;
     ::ll::TypedStorage<1, 1, ::ContainerID>                           mContainerCounter;
+    ::ll::TypedStorage<8, 16, ::CallbackToken>                        mCloseContainerToken;
     ::ll::TypedStorage<4, 4, uint>                                    mMaxChunkRadius;
     ::ll::TypedStorage<1, 1, bool>                                    mIsInitialPlayerLoadHappening;
     ::ll::TypedStorage<1, 1, bool>                                    mIsTeacher;
@@ -114,11 +121,10 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                    mClientViewRadius;
     ::ll::TypedStorage<4, 4, uint>                                    mClientRequestedRadius;
     ::ll::TypedStorage<1, 1, bool>                                    mIsCompatibleWithClientSideChunkGen;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>         mPartyId;
+    ::ll::TypedStorage<8, 48, ::std::optional<::PlayerPartyInfo>>     mPartyInfo;
     ::ll::TypedStorage<4, 4, int>                                     mRemainingStructureRefreshTicks;
     ::ll::TypedStorage<8, 48, ::HashedString>                         mCurrentStructureFeature;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ServerPlayer::NearbyActor>> mNearbyActors;
-    ::ll::TypedStorage<8, 16, ::CallbackToken>                                                    mCloseContainerToken;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>                          mEditorServerPlayer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::DDUI::DataStoreSyncServer>>             mDataStoreSync;
     ::ll::TypedStorage<1, 1, bool>                                                                mHasQueuedViewMove;
@@ -146,15 +152,8 @@ public:
 
     virtual void normalTick() /*override*/;
 
-    virtual void knockback(
-        ::Actor* source,
-        int      dmg,
-        float    xd,
-        float    zd,
-        float    horizontalPower,
-        float    verticalPower,
-        float    heightCap
-    ) /*override*/;
+    virtual void
+    knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters) /*override*/;
 
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
@@ -164,7 +163,7 @@ public:
 
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
-    virtual bool isValidTarget(::Actor* attacker) const /*override*/;
+    virtual bool isValidTarget(::Actor*) const /*override*/;
 
     virtual bool swing(::ActorSwingSource swingSource) /*override*/;
 
@@ -220,7 +219,7 @@ public:
 
     virtual void openInventory() /*override*/;
 
-    virtual void openBook(int, bool, int, ::BlockActor* lectern) /*override*/;
+    virtual void openBook(int lectern, bool, int, ::BlockActor*) /*override*/;
 
     virtual void openSign(::BlockPos const& position, bool isFrontSide) /*override*/;
 
@@ -236,9 +235,9 @@ public:
         ::IContainerManager& menu,
         ::Container&         container,
         int                  slot,
-        ::ItemStack const&   oldItem,
         ::ItemStack const&   newItem,
-        bool                 isResultSlot
+        ::ItemStack const&   isResultSlot,
+        bool
     ) /*override*/;
 
     virtual void refreshContainer(::IContainerManager& menu) /*override*/;
@@ -289,7 +288,7 @@ public:
 
     virtual uchar getMaxChunkBuildRadius() const /*override*/;
 
-    virtual ::std::optional<::std::string> const getPartyId_UNTRUSTED() const /*override*/;
+    virtual ::std::optional<::PlayerPartyInfo> getPartyInfo_UNTRUSTED() const /*override*/;
 
     virtual int _getSpawnChunkLimit() const;
 
@@ -332,11 +331,17 @@ public:
         ::CrashDumpLogStringID option4
     );
 
+    MCAPI ::ContainerID _nextContainerCounter();
+
     MCAPI void _removeNearbyEntities();
 
     MCAPI void _setContainerManagerModel(::std::shared_ptr<::ContainerManagerModel> menu);
 
     MCAPI void _updateNearbyActors();
+
+    MCAPI void _updateWaitingForTickingAreasPreload();
+
+    MCAPI void addActorToReplicationList(::gsl::not_null<::Actor*> actor, bool autonomous);
 
     MCAPI void createEditorPlayer(::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager);
 
@@ -346,6 +351,26 @@ public:
 
     MCAPI void doInitialSpawn();
 
+    MCAPI ::Bedrock::DDUI::DataStoreSyncServer& getDataStoreSync();
+
+    MCAPI bool getFilterProfanity() const;
+
+    MCAPI ::std::array<::HudVisibility, 13> const& getHudVisibilityState() const;
+
+    MCFOLD ::ItemStackNetManagerServer& getItemStackNetManagerServer();
+
+    MCAPI ::std::string getLanguageCode() const;
+
+    MCAPI int getMaxClientViewDistance() const;
+
+    MCAPI ::DeviceMemoryTier getMemoryTier() const;
+
+    MCAPI ::PlatformType getPlatformType() const;
+
+    MCAPI ::ServerLocatorBar& getServerLocatorBar();
+
+    MCAPI ::std::optional<int> getTextFilteringDebugTimeoutMilliSeconds() const;
+
     MCAPI void handleActorPickRequestOnServer(::Actor& target, bool withData, bool isActorAgentAndEduMode);
 
     MCAPI void handleBlockPickRequestOnServer(::BlockPos const& position, bool withData);
@@ -354,15 +379,37 @@ public:
 
     MCAPI void initiateContainerClose();
 
+    MCAPI bool isCompatibleWithClientSideChunkGen() const;
+
     MCAPI bool isInPickRangeOf(::BlockPos const& pos) const;
 
-    MCAPI ::ContainerID openUnmanagedContainer();
+    MCAPI bool isPendingDisconnect() const;
+
+    MCAPI bool isShowingCredits() const;
+
+    MCAPI ::ContainerID openUnmanagedContainer(
+        ::SharedTypes::Legacy::ContainerType        containerType,
+        ::std::variant<::BlockPos, ::ActorUniqueID> owner
+    );
+
+    MCAPI void postLoad(bool newPlayerCreated);
 
     MCAPI void postReplicationTick(::Tick const& currentTick);
 
     MCAPI void preReplicationTick(::Tick const& currentTick);
 
     MCAPI bool selectItem(::ItemStack const& item);
+
+    MCAPI void sendMobEffectPackets();
+
+    MCAPI void sendPlayerAuthInputReceivedEvent();
+
+    MCAPI void sendPlayerContainerClosedEvent();
+
+    MCAPI void sendPlayerContainerOpenedEvent(
+        ::SharedTypes::Legacy::ContainerType        type,
+        ::std::variant<::BlockPos, ::ActorUniqueID> owner
+    );
 
     MCAPI void setClientChunkRadius(uint requestedRadius, uchar clientMaxChunkRadius);
 
@@ -371,9 +418,29 @@ public:
         ::std::optional<::std::vector<::HudElement>> const& hudElements
     );
 
+    MCAPI void setIsCompatibleWithClientSideChunkGen(bool isCompatible);
+
+    MCAPI void setIsPendingDisconnect(bool isPendingDisconnect);
+
     MCAPI void setIsShowingCredits(bool value);
 
-    MCAPI void setPartyId(::std::optional<::std::string> partyId);
+    MCAPI void setLanguageCode(::std::string const& languageCode);
+
+    MCAPI void setLocalPlayerAsInitialized();
+
+    MCAPI void triggerRespawnFromCompletingTheEnd();
+
+    MCAPI void updateClientOptions(::SyncedClientOptionsUpdate const& changedOptions);
+
+    MCAPI void updatePartyState(::std::optional<::PlayerPartyInfo> partyInfo);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void initializePlayerTickComponents(::EntityContext& entity, ::PlayerMovementSettings const& settings);
+
+    MCAPI static ::ServerPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:
@@ -417,15 +484,7 @@ public:
 
     MCAPI void $normalTick();
 
-    MCAPI void $knockback(
-        ::Actor* source,
-        int      dmg,
-        float    xd,
-        float    zd,
-        float    horizontalPower,
-        float    verticalPower,
-        float    heightCap
-    );
+    MCAPI void $knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
     MCAPI void $die(::ActorDamageSource const& source);
 
@@ -435,7 +494,7 @@ public:
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
-    MCAPI bool $isValidTarget(::Actor* attacker) const;
+    MCAPI bool $isValidTarget(::Actor*) const;
 
     MCAPI bool $swing(::ActorSwingSource swingSource);
 
@@ -489,7 +548,7 @@ public:
 
     MCAPI void $openInventory();
 
-    MCAPI void $openBook(int, bool, int, ::BlockActor* lectern);
+    MCAPI void $openBook(int lectern, bool, int, ::BlockActor*);
 
     MCAPI void $openSign(::BlockPos const& position, bool isFrontSide);
 
@@ -505,9 +564,9 @@ public:
         ::IContainerManager& menu,
         ::Container&         container,
         int                  slot,
-        ::ItemStack const&   oldItem,
         ::ItemStack const&   newItem,
-        bool                 isResultSlot
+        ::ItemStack const&   isResultSlot,
+        bool
     );
 
     MCAPI void $refreshContainer(::IContainerManager& menu);
@@ -558,7 +617,7 @@ public:
 
     MCAPI uchar $getMaxChunkBuildRadius() const;
 
-    MCAPI ::std::optional<::std::string> const $getPartyId_UNTRUSTED() const;
+    MCAPI ::std::optional<::PlayerPartyInfo> $getPartyInfo_UNTRUSTED() const;
 
     MCAPI int $_getSpawnChunkLimit() const;
 

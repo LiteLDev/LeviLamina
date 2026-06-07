@@ -25,6 +25,8 @@ MCNAPI ::std::optional<::MobEffectPacket> createPacket(
     ::MobEffectInstance const&      effect,
     ::EntityContext const&          sourceEntity
 );
+
+MCNAPI bool shouldAlwaysSendToClient(uint mobEffectID);
 // NOLINTEND
 
 } // namespace MobEffectPacketUtils

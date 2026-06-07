@@ -17,9 +17,48 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VersionedActorDamageCause& operator=(VersionedActorDamageCause const&);
+    VersionedActorDamageCause();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI VersionedActorDamageCause(::VersionedActorDamageCause&&);
+
+    MCAPI VersionedActorDamageCause(::VersionedActorDamageCause const&);
+
+    MCAPI VersionedActorDamageCause(
+        ::std::string                           name,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::Scripting::Version                    version,
+        ::std::optional<uchar>                  deprecatedMajorVersion
+    );
+
+    MCFOLD ::SharedTypes::Legacy::ActorDamageCause getCause() const;
+
+    MCAPI ::std::optional<uchar> getDeprecatedMajorVersion() const;
+
+    MCFOLD ::std::string const& getName() const;
+
+    MCAPI ::Scripting::Version getVersion() const;
+
     MCAPI ~VersionedActorDamageCause();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::VersionedActorDamageCause&&);
+
+    MCFOLD void* $ctor(::VersionedActorDamageCause const&);
+
+    MCAPI void* $ctor(
+        ::std::string                           name,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::Scripting::Version                    version,
+        ::std::optional<uchar>                  deprecatedMajorVersion
+    );
     // NOLINTEND
 
 public:

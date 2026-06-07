@@ -41,12 +41,10 @@ public:
     }
 
 public:
-    // prevent constructor by default
-    CommandOutput() = default;
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CommandOutput();
+
     MCAPI CommandOutput(::CommandOutput const& rhs);
 
     MCAPI explicit CommandOutput(::CommandOutputType type);
@@ -57,15 +55,39 @@ public:
         ::CommandOutputMessageType                     type
     );
 
+    MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
+
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
+
+    MCAPI bool empty() const;
 
     MCAPI void error(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params = {});
 
+    MCAPI void forceOutput(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params = {});
+
+    MCFOLD ::CommandPropertyBag const& getData() const;
+
+    MCFOLD ::std::vector<::CommandOutputMessage> const& getMessages() const;
+
+    MCFOLD uint getSuccessCount() const;
+
+    MCAPI bool hasErrorMessage() const;
+
+#ifdef LL_PLAT_S
+    MCFOLD bool hasPlayerText() const;
+#endif
+
     MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);
+
+    MCAPI bool operator==(::CommandOutput const& other) const;
+
+    MCFOLD void setHasPlayerText();
+
+    MCAPI void success();
 
     MCAPI void success(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params = {});
 
-    MCAPI ~CommandOutput();
+    MCAPI bool wantsData() const;
     // NOLINTEND
 
 public:
@@ -79,14 +101,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::CommandOutput const& rhs);
 
     MCAPI void* $ctor(::CommandOutputType type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

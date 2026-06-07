@@ -21,8 +21,6 @@ public:
     virtual bool test(::Block const&, ::IRandom&) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~AlwaysTrue() /*override*/ = default;
     // NOLINTEND
 
 public:

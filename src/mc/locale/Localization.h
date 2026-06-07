@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Localization(::Localization&&);
-
     MCAPI explicit Localization(::std::string const& code);
+
+    MCAPI Localization(::Localization&& rhs);
 
     MCAPI Localization(::Localization const& rhs);
 
@@ -73,6 +73,26 @@ public:
 
     MCAPI bool get(::std::string const& id, ::std::string& out, ::std::vector<::std::string> const& params) const;
 
+#ifdef LL_PLAT_C
+    MCFOLD bool getCommaSeperator() const;
+
+    MCFOLD ::std::string const getDigitGroupSeparator() const;
+#endif
+
+    MCFOLD ::std::string getFullLanguageCode() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::string getIETFLanguageCode() const;
+
+    MCAPI ::std::string getLanguageCode() const;
+
+    MCAPI ::std::string getRegionCode() const;
+
+    MCAPI bool getStringIdExists(::std::string const& key) const;
+
+    MCFOLD bool isLocReady() const;
+#endif
+
     MCAPI void loadFromPack(
         ::std::string const&                keyPrefix,
         ::PackAccessStrategy const&         accessStrategy,
@@ -96,11 +116,17 @@ public:
 
     MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
 
-#ifdef LL_PLAT_C
     MCAPI static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
-#endif
 
     MCAPI static ::std::string getLanguageCode(::std::string const& fullCode);
+
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getRegionCode(::std::string const& fullCode);
+
+    MCAPI static bool isFormattedString(::std::string const& id);
+#endif
+
+    MCAPI static bool isValidLanguageCode(::std::string const& code);
 
     MCAPI static void replaceTokens(::std::string& string, ::std::vector<::std::string> const& params);
     // NOLINTEND
@@ -108,9 +134,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Localization&&);
-
     MCAPI void* $ctor(::std::string const& code);
+
+    MCAPI void* $ctor(::Localization&& rhs);
 
     MCAPI void* $ctor(::Localization const& rhs);
 

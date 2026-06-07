@@ -59,12 +59,21 @@ public:
 
     MCAPI void _runProfanityCheckOnWorlds();
 
+    MCAPI ::nonstd::expected<int, ::World::ExternalServerWorldError>
+    addExternalServerWorld(::std::string const& name, ::std::string const& address, int port);
+
     MCAPI ::std::optional<::World::ExternalServerWorldError>
     editExternalServerWorld(int id, ::std::string const& name, ::std::string const& address, int port);
 
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
-    MCAPI ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
+    MCFOLD ::std::vector<::NetworkWorldInfo> const& getWorlds() const;
+
+    MCFOLD ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
+
+    MCAPI ::std::optional<::World::ExternalServerWorldError> removeExternalServerWorld(int id);
+
+    MCAPI void update(double timestampMs);
 
     MCAPI ~ExternalServerWorldList();
     // NOLINTEND

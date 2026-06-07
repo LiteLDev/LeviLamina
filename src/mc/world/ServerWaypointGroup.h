@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/WaypointGroup.h"
 
@@ -10,6 +11,7 @@
 // clang-format off
 class Player;
 class ServerWaypoint;
+struct ActorUniqueID;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -67,26 +69,27 @@ public:
     virtual bool has(::WaypointGroup::WaypointHandle const& handle) const /*override*/;
 
     virtual bool remove(::WaypointGroup::WaypointHandle const& handle) /*override*/;
-
-    virtual ~ServerWaypointGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerWaypointGroup();
-
     MCAPI ::WaypointGroup::WaypointHandle add(::std::unique_ptr<::ServerWaypoint> waypoint);
 
     MCAPI ::std::map<::WaypointGroup::WaypointHandle, ::ServerWaypointGroup::WaypointChangeRecord> consumeChanges();
 
-    MCAPI void update(::Player const& viewingPlayer);
-    // NOLINTEND
+    MCAPI void forEach(
+        ::std::function<void(::WaypointGroup::WaypointHandle const&, ::gsl::not_null<::ServerWaypoint const*>)> callback
+    ) const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI ::ServerWaypoint* get(::WaypointGroup::WaypointHandle const& handle);
+
+    MCAPI ::std::vector<::WaypointGroup::WaypointHandle> getAllHandlesWithActorID(::ActorUniqueID const& id) const;
+
+    MCFOLD ::Bedrock::PubSub::Connector<void(::std::vector<::WaypointGroup::WaypointHandle> const&)>&
+    getOnInvalidActorRemovedEvent();
+
+    MCAPI void update(::Player const& viewingPlayer);
     // NOLINTEND
 
 public:

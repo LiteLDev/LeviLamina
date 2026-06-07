@@ -2,10 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/script_engine/Generator.h"
+
 // auto generated forward declare list
 // clang-format off
 class IScriptGeneratorStats;
 struct ServerScriptManagerEvents;
+namespace Scripting { struct ContextId; }
 // clang-format on
 
 class ScriptAsyncJobCoordinator {
@@ -33,12 +37,26 @@ public:
 
     MCNAPI void _removeExpiredGenerators(::IScriptGeneratorStats* stats);
 
+    MCNAPI uint addGenerator(::Scripting::Generator<void, void, void>&& generator);
+
+    MCNAPI void clear();
+
     MCNAPI void process(::std::chrono::microseconds timeSlice, ::IScriptGeneratorStats* stats);
+
+    MCNAPI void removeGenerator(::Scripting::ContextId originatingContextId, uint generatorId);
+
+    MCNAPI ~ScriptAsyncJobCoordinator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerScriptManagerEvents& events);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

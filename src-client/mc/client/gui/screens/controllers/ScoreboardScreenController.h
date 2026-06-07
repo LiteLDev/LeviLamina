@@ -12,6 +12,7 @@ class ClientInstanceScreenModel;
 class ResourceLocation;
 class UserDataScreenController;
 struct ActorUniqueID;
+struct PlayerListInfo;
 struct PlayerScore;
 struct ScoreboardCacheData;
 // clang-format on
@@ -47,11 +48,11 @@ public:
         ::std::function<void(::ActorUniqueID const&)>  navigateToPermissions
     );
 
+    MCAPI ::PlayerListInfo _findPlayerListInfoForId(int64 playerId) const;
+
     MCAPI void _generatePlayerLists();
 
     MCAPI ::std::string _getPermissionIcon(::ActorUniqueID playerId) const;
-
-    MCAPI ::ActorUniqueID _getScoredActorID(int index) const;
 
     MCAPI ::ResourceLocation _getScoredPlayerIconInfo(int index) const;
 
@@ -59,11 +60,17 @@ public:
 
     MCAPI void _registerBindings();
 
+    MCAPI void _registerEventHandlers();
+
+    MCAPI void _registerSubControllers();
+
     MCAPI void buildCacheFromDisplayInfo(
         ::std::vector<::ScoreboardCacheData>&                         output,
         ::std::vector<::PlayerScore> const&                           input,
         ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     );
+
+    MCAPI ::std::shared_ptr<::UserDataScreenController> getUserDataScreenController() const;
 
     MCAPI bool isSidebarValid();
     // NOLINTEND

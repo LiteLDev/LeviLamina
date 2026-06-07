@@ -16,7 +16,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
@@ -26,10 +25,12 @@ namespace BlockEvents { class BlockEntityFallOnEvent; }
 
 class EndPortalBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    EndPortalBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual bool addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -48,21 +49,25 @@ public:
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
-
-    virtual ~EndPortalBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EndPortalBlock(::std::string const& nameId, int id);
+
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
     MCAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,

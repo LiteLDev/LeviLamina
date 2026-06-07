@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerLevel;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
 namespace mce { class UUID; }
@@ -26,14 +27,10 @@ public:
     ScriptMinecraftServerUIModuleFactory();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptMinecraftServerUIModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptMinecraftServerUIModuleFactory(::ServerLevel* level);
+
     MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding
@@ -43,7 +40,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& LegacyModuleName();
+
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID const& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ServerLevel* level);
     // NOLINTEND
 
 public:

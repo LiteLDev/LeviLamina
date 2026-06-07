@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_21_90 { struct KineticWeaponItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,16 +27,31 @@ public:
     // prevent constructor by default
     KineticDamageSettings& operator=(KineticDamageSettings const&);
     KineticDamageSettings(KineticDamageSettings const&);
-    KineticDamageSettings();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI KineticDamageSettings();
+
+    MCAPI explicit KineticDamageSettings(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
+    // NOLINTEND
 };
 
 // free functions
 // NOLINTBEGIN
-MCFOLD bool operator==(::KineticDamageSettings const& __P0, ::KineticDamageSettings const& __P1);
+MCFOLD bool operator==(::KineticDamageSettings const&, ::KineticDamageSettings const&);
 // NOLINTEND

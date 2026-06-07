@@ -44,7 +44,7 @@ public:
 
     virtual void terminate() /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const&) /*override*/;
 
     virtual bool screenIsNotFlushable() const /*override*/;
 
@@ -102,7 +102,7 @@ public:
 
     MCAPI void $terminate();
 
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
 
     MCFOLD bool $screenIsNotFlushable() const;
 

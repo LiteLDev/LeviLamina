@@ -20,8 +20,6 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual ::StructurePieceType getType() const /*override*/;
-
-    virtual ~DesertPyramidPiece() /*override*/ = default;
     // NOLINTEND
 
 public:

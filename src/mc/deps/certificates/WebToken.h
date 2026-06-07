@@ -24,27 +24,23 @@ public:
     ::std::string mSignature;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    WebToken() = default;
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
-    WebToken& operator=(WebToken const&);
-    WebToken(WebToken const&);
+    WebToken& operator=(WebToken const&) = default;
+    WebToken() = default;
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI WebToken();
-
     MCAPI WebToken(::WebToken&&);
 #endif
 
+    MCAPI WebToken(::WebToken const&);
+
     MCAPI explicit WebToken(::std::string token);
+
+    MCAPI void _parse(::Json::Value& value, ::std::string const& data);
 
     MCAPI ::std::string _signatureToDER() const;
 
@@ -56,9 +52,7 @@ public:
     MCAPI ::WebToken& operator=(::WebToken&&);
 #endif
 
-#ifdef LL_PLAT_S
     MCAPI ::std::string toString() const;
-#endif
 
     MCAPI bool verifyWithExternalKey(::std::string const& publicKey) const;
 
@@ -84,10 +78,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::WebToken&&);
 #endif
+
+    MCAPI void* $ctor(::WebToken const&);
 
     MCAPI void* $ctor(::std::string token);
     // NOLINTEND

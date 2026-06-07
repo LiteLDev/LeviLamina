@@ -14,11 +14,18 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getSaveRoot() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::Result<void> createDirectory(char const*) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::Result<void> createDirectory(char const* path) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::Result<void> writeFile(char const*, char const*, uint64) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::Result<void> writeFile(char const* path, char const* buffer, uint64 bufferSize) /*override*/;
+#endif
 
-    virtual ~CrashFileApiImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

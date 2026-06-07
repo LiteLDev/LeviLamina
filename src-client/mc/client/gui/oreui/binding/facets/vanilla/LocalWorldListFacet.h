@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class IContentAccessibilityProvider;
+struct LevelSummary;
 struct LocalWorldInfo;
 namespace OreUI { class AllowListPath; }
 namespace OreUI { class IResourceAllowList; }
@@ -37,8 +38,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~LocalWorldListFacet() /*override*/;
     // NOLINTEND
 
 public:
@@ -55,6 +54,8 @@ public:
     MCAPI ::OreUI::LocalWorldData _makeLocalWorld(::LocalWorldInfo const& worldInfo) const;
 
     MCAPI ::std::vector<::OreUI::LocalWorldData> _readLocalWorlds() const;
+
+    MCAPI bool _worldRequiresCloudSync(::LevelSummary const& levelSummary) const;
 
     MCFOLD ::std::vector<::OreUI::LocalWorldData> const& getLocalWorlds() const;
 
@@ -75,12 +76,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> accessibilityProvider
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

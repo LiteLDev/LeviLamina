@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicLoader.h"
 
+// auto generated forward declare list
+// clang-format off
+class Tag;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class NBTLoader : public ::cereal::BasicLoader {
 public:
     // member variables
@@ -19,15 +25,15 @@ public:
     NBTLoader();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~NBTLoader() /*override*/;
+    MCNAPI NBTLoader(::gsl::not_null<::Tag const*> tag, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::gsl::not_null<::Tag const*> tag, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

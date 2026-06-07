@@ -24,8 +24,6 @@ public:
     virtual ::Core::Path getOnDiskScratchPath() const /*override*/;
 
     virtual ::std::unique_ptr<::IPackIOProvider> clone() const /*override*/;
-
-    virtual ~AppPlatformIOProvider() /*override*/ = default;
     // NOLINTEND
 
 public:

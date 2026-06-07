@@ -21,9 +21,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GeneralSettingsScreenControllerProxyCallbacks& operator=(GeneralSettingsScreenControllerProxyCallbacks const&);
+    GeneralSettingsScreenControllerProxyCallbacks();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GeneralSettingsScreenControllerProxyCallbacks(::GeneralSettingsScreenControllerProxyCallbacks const&);
+
     MCAPI ~GeneralSettingsScreenControllerProxyCallbacks();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::GeneralSettingsScreenControllerProxyCallbacks const&);
     // NOLINTEND
 
 public:

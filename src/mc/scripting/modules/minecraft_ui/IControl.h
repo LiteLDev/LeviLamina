@@ -19,28 +19,16 @@ class IControl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IControl();
+    virtual ~IControl() = default;
 
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const = 0;
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

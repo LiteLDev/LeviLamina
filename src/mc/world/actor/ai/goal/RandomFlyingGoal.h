@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Mob;
 class Vec3;
 // clang-format on
 
@@ -18,6 +19,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RandomFlyingGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -25,14 +30,20 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool _setWantedPosition() /*override*/;
-
-    virtual ~RandomFlyingGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RandomFlyingGoal(::Mob& mob, float speed, int xzDist, int yDist, bool canLandOnTrees);
+
     MCAPI ::std::optional<::Vec3> _getTreePos() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, bool canLandOnTrees);
     // NOLINTEND
 
 public:

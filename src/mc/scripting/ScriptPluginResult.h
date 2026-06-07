@@ -149,13 +149,33 @@ public:
 
     MCAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
+    MCFOLD ::std::vector<::ScriptPluginResult::Error> const& getErrors() const;
+
+    MCFOLD ::std::vector<::ScriptPluginResult::Info> const& getInfos() const;
+
+    MCFOLD ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+
+    MCFOLD ::PackIdVersion const& getPackId() const;
+
+    MCFOLD ::std::chrono::microseconds getRunDuration() const;
+
+    MCFOLD ::std::vector<::ScriptPluginResult::Verbose> const& getVerboses() const;
+
+    MCFOLD ::std::vector<::ScriptPluginResult::Warning> const& getWarnings() const;
+
+    MCAPI bool hasErrors() const;
+
     MCAPI void logError(::std::string const& error);
 
     MCAPI void logErrors(::std::vector<::std::string> const& errors);
 
     MCAPI void logInfo(::std::string const& info);
 
+    MCAPI void logVerbose(::std::string const& verbose);
+
     MCAPI void logWarning(::std::string const& warning);
+
+    MCAPI void setRunDuration(::std::chrono::microseconds duration);
 
     MCAPI ~ScriptPluginResult();
     // NOLINTEND

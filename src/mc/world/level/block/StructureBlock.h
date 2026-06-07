@@ -19,6 +19,10 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 
 class StructureBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    StructureBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
@@ -28,13 +32,13 @@ public:
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
-
-    virtual ~StructureBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StructureBlock(::std::string const& nameId, int id);
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -44,6 +48,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _onSetupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

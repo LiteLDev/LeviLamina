@@ -24,16 +24,12 @@ public:
 
 public:
     // prevent constructor by default
-    BlockVoxelShapesCullingComponent& operator=(BlockVoxelShapesCullingComponent const&);
-    BlockVoxelShapesCullingComponent(BlockVoxelShapesCullingComponent const&);
     BlockVoxelShapesCullingComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockVoxelShapesCullingComponent(::HashedString const& occlusionShapeName);
-
-    MCAPI ::BlockVoxelShapesCullingComponent& operator=(::BlockVoxelShapesCullingComponent&&);
     // NOLINTEND
 
 public:

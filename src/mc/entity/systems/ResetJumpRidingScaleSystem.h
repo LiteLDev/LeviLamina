@@ -2,16 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Include.h"
-
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct JumpRidingScaleComponent;
-struct PlayerInputRequestComponent;
 struct TickingSystemWithInfo;
 struct VanillaClientGameplayComponent;
 // clang-format on
@@ -21,19 +15,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doResetJumpRidingScaleSystem(
-        ::StrictEntityContext const&,
-        ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
-        ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
+        ::StrictEntityContext const& jumpRidingScaleComponent,
+        ::JumpRidingScaleComponent&  vanillaClientGameplayComponent,
+        ::VanillaClientGameplayComponent&
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();
-
-    MCAPI static void tick(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,
-            ::JumpRidingScaleComponent,
-            ::VanillaClientGameplayComponent> view
-    );
     // NOLINTEND
 };

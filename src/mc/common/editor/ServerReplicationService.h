@@ -6,9 +6,19 @@
 #include "mc/common/editor/EditorReplicationService.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Editor { class ServiceProviderCollection; }
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Services {
 
 class ServerReplicationService : public ::Editor::Services::EditorReplicationService {
+public:
+    // prevent constructor by default
+    ServerReplicationService();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -28,7 +38,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ServerReplicationService(
+        ::Editor::ServiceProviderCollection& serviceProviders,
+        ::cereal::ReflectionCtx&             reflectionContext
+    );
+
     MCNAPI void _sendClientInitPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::cereal::ReflectionCtx& reflectionContext);
     // NOLINTEND
 
 public:

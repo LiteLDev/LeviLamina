@@ -23,13 +23,14 @@ public:
 
 public:
     // prevent constructor by default
-    LogMessage(LogMessage const&);
     LogMessage();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LogMessage(::Editor::LogMessage&&);
+
+    MCNAPI LogMessage(::Editor::LogMessage const&);
 
 #ifdef LL_PLAT_C
     MCNAPI ::std::string getAreaTagsString() const;
@@ -52,6 +53,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::LogMessage&&);
+
+    MCNAPI void* $ctor(::Editor::LogMessage const&);
     // NOLINTEND
 
 public:

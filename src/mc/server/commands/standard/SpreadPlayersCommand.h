@@ -42,8 +42,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
 
-    virtual ~SpreadPlayersCommand() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SpreadPlayersCommand();
     // NOLINTEND
 
 public:
@@ -56,9 +60,6 @@ public:
         ::std::map<::ChunkPos, ::std::unique_ptr<::CommandArea>>& areas,
         int                                                       commandVersion
     );
-
-    MCAPI static short
-    _getTeleportHeight(::BlockSource& region, int x, ::std::optional<short> maxHeight, int z, int commandVersion);
 
     MCAPI static float _setPlayerPositions(
         ::CommandSelectorResults<::Actor>&                        entities,
@@ -105,6 +106,12 @@ public:
         ::std::map<::ChunkPos, ::std::unique_ptr<::CommandArea>>& areas,
         int                                                       commandVersion
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

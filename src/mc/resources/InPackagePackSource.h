@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct InPackagePackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 // clang-format on
@@ -38,6 +39,18 @@ public:
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
 
     virtual ::PackType getPackType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit InPackagePackSource(::InPackagePackSourceOptions options);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::InPackagePackSourceOptions options);
     // NOLINTEND
 
 public:

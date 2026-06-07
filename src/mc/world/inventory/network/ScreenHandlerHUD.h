@@ -16,8 +16,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
-
-    virtual ~ScreenHandlerHUD() /*override*/ = default;
     // NOLINTEND
 
 public:

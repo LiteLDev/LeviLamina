@@ -22,8 +22,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~OnFireServerSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorFilterGroup;
 class BlockListEventMap;
 // clang-format on
@@ -27,14 +28,17 @@ public:
     // prevent constructor by default
     BlockBreakSensorComponent& operator=(BlockBreakSensorComponent const&);
     BlockBreakSensorComponent(BlockBreakSensorComponent const&);
-    BlockBreakSensorComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockBreakSensorComponent(::BlockBreakSensorComponent&&);
+    MCAPI BlockBreakSensorComponent();
+
+    MCAPI void initialize(::Actor& actor);
 
     MCAPI ::BlockBreakSensorComponent& operator=(::BlockBreakSensorComponent&&);
+
+    MCAPI void updateSensorPos(::Vec3 const& newPos);
 
     MCAPI ~BlockBreakSensorComponent();
     // NOLINTEND
@@ -42,7 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockBreakSensorComponent&&);
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

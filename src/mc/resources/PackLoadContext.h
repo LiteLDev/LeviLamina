@@ -43,6 +43,20 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
+    MCFOLD ::BedrockLoadContext const& getBedrockLoadContext() const;
+
+    MCFOLD ::Experiments const& getExperiments() const;
+
+    MCFOLD ::MinEngineVersion const& getMinEngineVersion() const;
+
+    MCFOLD ::PackType getPackType() const;
+
+    MCFOLD ::PackLoadStorage& getStorage();
+
+    MCFOLD bool isBaseGamePack() const;
+
+    MCAPI void setMinEngineVersion(::MinEngineVersion const& minEngineVersion);
+
     MCAPI ~PackLoadContext();
     // NOLINTEND
 

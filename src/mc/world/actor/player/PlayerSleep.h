@@ -10,7 +10,17 @@ class EntityContext;
 namespace PlayerSleep {
 // functions
 // NOLINTBEGIN
+MCAPI short getSleepCounter(::EntityContext const& provider);
+
 MCAPI void initializePlayer(::EntityContext& provider);
+
+MCAPI bool isSleepingLongEnough(::EntityContext const& provider);
+
+MCAPI void resetSleepCounter(::EntityContext& provider);
+
+MCAPI void setSleepCounter(::EntityContext& provider, short value);
+
+MCAPI void setSleepCounterToMax(::EntityContext& provider);
 // NOLINTEND
 
 } // namespace PlayerSleep

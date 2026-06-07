@@ -86,20 +86,31 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptSystemBeforeEvents& operator=(ScriptSystemBeforeEvents const&);
-    ScriptSystemBeforeEvents(ScriptSystemBeforeEvents const&);
     ScriptSystemBeforeEvents();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystemBeforeEvents(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
+    MCAPI ScriptSystemBeforeEvents(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemBeforeEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSystemBeforeEvents&
-    operator=(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
+    MCAPI void onBeforeModuleShutdown(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptModuleShutdownBeforeEvent> eventData
+    );
+
+    MCAPI void onBeforeModuleStartup(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent> eventData
+    );
+
+    MCAPI void onBeforeWatchdogTerminate(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>
+            beforeWatchdogTerminateEvent
+    );
+
+    MCAPI void
+    registerHandler(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> handle);
 
     MCAPI ~ScriptSystemBeforeEvents();
     // NOLINTEND
@@ -113,7 +124,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
     // NOLINTEND
 
 public:

@@ -19,8 +19,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~BlockInformationFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

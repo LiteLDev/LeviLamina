@@ -21,12 +21,6 @@ namespace ScriptModuleMinecraft {
 class ScriptBlockWaterContainerComponentV010
 : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBlockWaterContainerComponentV010() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);

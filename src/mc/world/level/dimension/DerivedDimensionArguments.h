@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class IClientDimensionExtensions;
 class ILevel;
 class TaskGroup;
+class IClientDimensionExtensions;
 // clang-format on
 
 struct DerivedDimensionArguments {

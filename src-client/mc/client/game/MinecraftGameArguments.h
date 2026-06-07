@@ -26,16 +26,4 @@ public:
     MinecraftGameArguments& operator=(MinecraftGameArguments const&);
     MinecraftGameArguments(MinecraftGameArguments const&);
     MinecraftGameArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~MinecraftGameArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

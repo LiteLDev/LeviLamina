@@ -13,17 +13,25 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ChunkSource;
+class IMinecraftEventing;
 class LevelChunk;
 struct ActorBlockSyncMessage;
 // clang-format on
 
 class ClassroomModeListener : public ::LevelListener {
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ClassroomModeListener();
+
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onEntityAdded(::Actor& entity) /*override*/;
+    virtual void onEntityAdded(::Actor&) /*override*/;
 
-    virtual void onEntityRemoved(::Actor& entity) /*override*/;
+    virtual void onEntityRemoved(::Actor&) /*override*/;
 
     virtual void onBlockChanged(
         ::BlockSource&                 source,
@@ -39,20 +47,34 @@ public:
 
     virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max) /*override*/;
 
-    virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
+    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&) /*override*/;
 
-    virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
+    virtual void onChunkUnloaded(::LevelChunk&) /*override*/;
+    // NOLINTEND
 
-    virtual ~ClassroomModeListener() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI explicit ClassroomModeListener(::IMinecraftEventing& eventing);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::IMinecraftEventing& eventing);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCFOLD void $onEntityAdded(::Actor& entity);
+    MCFOLD void $onEntityAdded(::Actor&);
 
-    MCFOLD void $onEntityRemoved(::Actor& entity);
+    MCFOLD void $onEntityRemoved(::Actor&);
 
     MCFOLD void $onBlockChanged(
         ::BlockSource&                 source,
@@ -68,9 +90,9 @@ public:
 
     MCFOLD void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCFOLD void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCFOLD void $onChunkLoaded(::ChunkSource&, ::LevelChunk&);
 
-    MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
+    MCFOLD void $onChunkUnloaded(::LevelChunk&);
 #endif
 
 

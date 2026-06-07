@@ -26,12 +26,6 @@ public:
     ScriptItemPotionComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptItemPotionComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemPotionComponent(
@@ -56,8 +50,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCAPI static ::std::string const& getTypeName();
     // NOLINTEND
 
 public:

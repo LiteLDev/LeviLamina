@@ -56,8 +56,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FrameWithContext(::Bedrock::CallStack::FrameWithContext&&);
-
         MCAPI
         FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
 
@@ -67,8 +65,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&&);
-
         MCAPI void*
         $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
         // NOLINTEND
@@ -86,32 +82,24 @@ public:
     ::std::vector<::Bedrock::CallStack::FrameWithContext> mFrames;
     // NOLINTEND
 
-    CallStack()                                = default;
-    CallStack(CallStack const&)                = default;
-    CallStack& operator=(CallStack const&)     = default;
-    CallStack(CallStack&&) noexcept            = default;
-    CallStack& operator=(CallStack&&) noexcept = default;
+public:
+    // prevent constructor by default
+    CallStack() = default;
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
 
-    MCAPI ~CallStack();
+    MCAPI explicit CallStack(::std::vector<::Bedrock::CallStack::FrameWithContext>&& frames);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Bedrock::CallStack&&);
-
     MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&& frame);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD void* $ctor(::std::vector<::Bedrock::CallStack::FrameWithContext>&& frames);
     // NOLINTEND
 };
 

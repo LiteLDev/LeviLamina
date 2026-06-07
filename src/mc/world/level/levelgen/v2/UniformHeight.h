@@ -28,14 +28,19 @@ public:
     // NOLINTBEGIN
     virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const
         /*override*/;
-
-    virtual ~UniformHeight() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string toString() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::br::worldgen::UniformHeight
+    of(::br::worldgen::VerticalAnchor min, ::br::worldgen::VerticalAnchor max);
     // NOLINTEND
 
 public:

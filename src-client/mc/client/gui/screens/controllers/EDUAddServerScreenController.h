@@ -41,6 +41,8 @@ public:
         ::std::function<void(::std::string const&)> onAddServer
     );
 
+    MCAPI void _registerBindings();
+
     MCAPI void _registerEventHandlers();
     // NOLINTEND
 

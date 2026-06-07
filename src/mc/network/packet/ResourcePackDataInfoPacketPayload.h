@@ -20,17 +20,43 @@ public:
 
 public:
     // prevent constructor by default
-    ResourcePackDataInfoPacketPayload(ResourcePackDataInfoPacketPayload const&);
+    ResourcePackDataInfoPacketPayload& operator=(ResourcePackDataInfoPacketPayload const&);
     ResourcePackDataInfoPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResourcePackDataInfoPacketPayload(::ResourcePackDataInfoPacketPayload const&);
+
+    MCAPI ResourcePackDataInfoPacketPayload(
+        ::std::string const& name,
+        uint                 chunkSize,
+        int                  nbChunk,
+        uint64               fileSize,
+        ::std::string const& fileHash,
+        bool                 isPremium,
+        ::PackType           packType
+    );
+
     MCAPI ::ResourcePackDataInfoPacketPayload& operator=(::ResourcePackDataInfoPacketPayload&&);
 
-    MCAPI ::ResourcePackDataInfoPacketPayload& operator=(::ResourcePackDataInfoPacketPayload const&);
-
     MCAPI ~ResourcePackDataInfoPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ResourcePackDataInfoPacketPayload const&);
+
+    MCAPI void* $ctor(
+        ::std::string const& name,
+        uint                 chunkSize,
+        int                  nbChunk,
+        uint64               fileSize,
+        ::std::string const& fileHash,
+        bool                 isPremium,
+        ::PackType           packType
+    );
     // NOLINTEND
 
 public:

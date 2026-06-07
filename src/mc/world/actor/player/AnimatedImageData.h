@@ -24,12 +24,13 @@ public:
 
 public:
     // prevent constructor by default
-    AnimatedImageData(AnimatedImageData const&);
     AnimatedImageData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AnimatedImageData(::AnimatedImageData const& rhs);
+
     MCAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
@@ -37,33 +38,23 @@ public:
         float                          frames
     );
 
+    MCFOLD ::SkinImage const& getSkinImage() const;
+
     MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
 
-    MCAPI bool operator==(::AnimatedImageData const&) const;
-
     MCAPI void setSkinImage(::SkinImage const& image);
-
-#ifdef LL_PLAT_C
-    MCAPI ~AnimatedImageData();
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::AnimatedImageData const& rhs);
+
     MCAPI void* $ctor(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
         ::mce::Image const&            animatedImage,
         float                          frames
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };

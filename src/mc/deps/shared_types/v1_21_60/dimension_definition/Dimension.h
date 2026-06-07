@@ -6,6 +6,11 @@
 #include "mc/deps/shared_types/v1_21_60/dimension_definition/Components.h"
 #include "mc/deps/shared_types/v1_21_60/dimension_definition/Description.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_60::DimensionDefinition {
 
 struct Dimension {
@@ -18,17 +23,28 @@ public:
 
 public:
     // prevent constructor by default
-    Dimension(Dimension const&);
+    Dimension& operator=(Dimension const&);
     Dimension();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
-    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Dimension&&);
+    MCAPI Dimension(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
 
-    MCAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
-    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
+    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
+    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Dimension&&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
     // NOLINTEND
 };
 

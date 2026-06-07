@@ -16,6 +16,10 @@ struct PageContent;
 
 class WritableBookItem : public ::Item {
 public:
+    // prevent constructor by default
+    WritableBookItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
@@ -23,8 +27,12 @@ public:
     virtual bool requiresInteract() const /*override*/;
 
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
+    // NOLINTEND
 
-    virtual ~WritableBookItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WritableBookItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -53,9 +61,7 @@ public:
 
     MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
 
-#ifdef LL_PLAT_C
     MCAPI static void replacePage(::ItemStack& book, int index, ::PageContent const& page);
-#endif
 
     MCAPI static void signBook(
         ::ItemStack&                   book,
@@ -67,6 +73,12 @@ public:
     );
 
     MCAPI static void swapPages(::ItemStack& book, int page1, int page2);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockReplaceableDescription : public ::BlockComponentDescription {
@@ -19,14 +20,18 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockReplaceableDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockReplaceableDescription();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -39,12 +44,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

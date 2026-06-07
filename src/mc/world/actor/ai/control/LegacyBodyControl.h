@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void clientTick(::Mob& mob) /*override*/;
-
-    virtual ~LegacyBodyControl() /*override*/ = default;
     // NOLINTEND
 
 public:

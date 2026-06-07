@@ -55,6 +55,8 @@ public:
     );
 
     MCAPI void _checkForTextObjectMessage();
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

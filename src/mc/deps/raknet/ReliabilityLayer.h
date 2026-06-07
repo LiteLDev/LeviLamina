@@ -154,10 +154,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RakNet::InternalPacket* AllocateFromInternalPacketPool();
+    MCAPI ::RakNet::ReliabilityLayer::MessageNumberNode*
+    AddFirstToDatagramHistory(::RakNet::uint24_t messageNumber, ::RakNet::uint24_t timeSent, uint64);
+
+    MCAPI void AddFirstToDatagramHistory(::RakNet::uint24_t timeSent, uint64);
 
     MCAPI ::RakNet::InternalPacket*
     BuildPacketFromSplitPacketList(::RakNet::SplitPacketChannel* splitPacketChannel, uint64 time);
+
+    MCAPI ::RakNet::InternalPacket* BuildPacketFromSplitPacketList(
+        ushort                   splitPacketId,
+        uint64                   time,
+        ::RakNet::RakNetSocket2* s,
+        ::RakNet::SystemAddress& systemAddress,
+        ::RakNet::RakNetRandom*  rnr,
+        ::RakNet::BitStream&     updateBitStream
+    );
 
     MCAPI void ClearPacketsAndDatagrams();
 
@@ -167,8 +179,6 @@ public:
 
     MCAPI void FreeThreadSafeMemory();
 
-    MCAPI uint64 GetNextWeight(int priorityLevel);
-
     MCAPI ::RakNet::RakNetStatistics* GetStatistics(::RakNet::RakNetStatistics* rns);
 
     MCAPI bool HandleSocketReceiveFromConnectedPlayer(
@@ -176,11 +186,11 @@ public:
         uint                                                 length,
         ::RakNet::SystemAddress&                             systemAddress,
         ::DataStructures::List<::RakNet::PluginInterface2*>& messageHandlerList,
-        int                                                  MTUSize,
-        ::RakNet::RakNetSocket2*                             s,
-        ::RakNet::RakNetRandom*                              rnr,
-        uint64                                               timeRead,
-        ::RakNet::BitStream&                                 updateBitStream
+        int                                                  s,
+        ::RakNet::RakNetSocket2*                             rnr,
+        ::RakNet::RakNetRandom*                              timeRead,
+        uint64                                               updateBitStream,
+        ::RakNet::BitStream&
     );
 
     MCAPI void InitializeVariables();
@@ -191,11 +201,7 @@ public:
 
     MCAPI void PushPacket(uint64 time, ::RakNet::InternalPacket* internalPacket, bool isReliable);
 
-    MCAPI void ReleaseToInternalPacketPool(::RakNet::InternalPacket* ip);
-
     MCAPI ReliabilityLayer();
-
-    MCAPI void RemoveFromDatagramHistory(::RakNet::uint24_t index);
 
     MCAPI uint RemovePacketFromResendListAndDeleteOlderReliableSequenced(
         ::RakNet::uint24_t                                   messageNumber,
@@ -213,25 +219,17 @@ public:
         ::PacketReliability reliability,
         uchar               orderingChannel,
         bool                makeDataCopy,
-        int                 MTUSize,
-        uint64              currentTime,
-        uint                receipt
+        int                 currentTime,
+        uint64              receipt,
+        uint
     );
 
     MCAPI void SendACKs(
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
         uint64                   time,
-        ::RakNet::RakNetRandom*  rnr,
-        ::RakNet::BitStream&     updateBitStream
-    );
-
-    MCAPI void SendBitStream(
-        ::RakNet::RakNetSocket2* s,
-        ::RakNet::SystemAddress& systemAddress,
-        ::RakNet::BitStream*     bitStream,
-        ::RakNet::RakNetRandom*  rnr,
-        uint64                   currentTime
+        ::RakNet::RakNetRandom*  updateBitStream,
+        ::RakNet::BitStream&
     );
 
     MCAPI void SplitPacket(::RakNet::InternalPacket* internalPacket);
@@ -239,18 +237,18 @@ public:
     MCAPI void Update(
         ::RakNet::RakNetSocket2*                             s,
         ::RakNet::SystemAddress&                             systemAddress,
-        int                                                  MTUSize,
-        uint64                                               time,
-        uint                                                 bitsPerSecondLimit,
-        ::DataStructures::List<::RakNet::PluginInterface2*>& messageHandlerList,
-        ::RakNet::RakNetRandom*                              rnr,
-        ::RakNet::BitStream&                                 updateBitStream
+        int                                                  time,
+        uint64                                               bitsPerSecondLimit,
+        uint                                                 messageHandlerList,
+        ::DataStructures::List<::RakNet::PluginInterface2*>& rnr,
+        ::RakNet::RakNetRandom*                              updateBitStream,
+        ::RakNet::BitStream&
     );
 
     MCAPI uint WriteToBitStreamFromInternalPacket(
         ::RakNet::BitStream*                  bitStream,
         ::RakNet::InternalPacket const* const internalPacket,
-        uint64                                curTime
+        uint64
     );
 
     MCAPI ~ReliabilityLayer();

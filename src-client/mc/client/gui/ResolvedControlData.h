@@ -20,9 +20,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResolvedControlData& operator=(ResolvedControlData const&);
+    ResolvedControlData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResolvedControlData(::UI::Resources::ResolvedControlData const&);
+
     MCAPI ~ResolvedControlData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UI::Resources::ResolvedControlData const&);
     // NOLINTEND
 
 public:

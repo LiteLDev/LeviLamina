@@ -10,17 +10,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CurrentStructureFeaturePacketPayload(CurrentStructureFeaturePacketPayload const&);
-    CurrentStructureFeaturePacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CurrentStructureFeaturePacketPayload& operator=(::CurrentStructureFeaturePacketPayload&&);
-
-    MCFOLD ::CurrentStructureFeaturePacketPayload& operator=(::CurrentStructureFeaturePacketPayload const&);
-
     MCAPI ~CurrentStructureFeaturePacketPayload();
     // NOLINTEND
 

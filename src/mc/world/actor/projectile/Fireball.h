@@ -48,8 +48,6 @@ public:
     virtual ::ParticleType getTrailParticle();
 
     virtual bool shouldBurn();
-
-    virtual ~Fireball() /*override*/;
     // NOLINTEND
 
 public:
@@ -72,12 +70,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

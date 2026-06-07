@@ -35,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RepositorySourceOptions(::RepositorySourceOptions&&);
-
     MCNAPI ~RepositorySourceOptions();
     // NOLINTEND
 
@@ -44,12 +42,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::RepositorySourceOptions create(::IResourcePackRepository const& repo, ::AppPlatform& platform);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::RepositorySourceOptions&&);
     // NOLINTEND
 
 public:

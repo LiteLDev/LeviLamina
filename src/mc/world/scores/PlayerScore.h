@@ -12,4 +12,14 @@ public:
     ::ll::TypedStorage<8, 16, ::ScoreboardId> mScoreboardId;
     ::ll::TypedStorage<4, 4, int>             mScore;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::ScoreboardId const& getId() const;
+
+    MCNAPI int getScore() const;
+#endif
+    // NOLINTEND
 };

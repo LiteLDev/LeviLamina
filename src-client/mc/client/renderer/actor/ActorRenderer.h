@@ -92,12 +92,12 @@ public:
     virtual ::AABB getRenderBounds(::Actor const& entity) const;
 
     virtual void getLeashOffsets(
-        ::Actor&,
-        float                                 yRot,
-        float                                 yRotPrev,
-        float                                 a,
-        bool                                  legacyOffset,
-        ::Bedrock::small_vector_base<::Vec3>& output
+        ::Actor& yRot,
+        float    yRotPrev,
+        float    a,
+        float    legacyOffset,
+        bool     output,
+        ::Bedrock::small_vector_base<::Vec3>&
     ) const;
 
     virtual void setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
@@ -125,6 +125,13 @@ public:
         bool                                   hasWaterHole
     );
 
+    MCAPI void _getLeashPins(
+        float                                                     actorFrameAlpha,
+        ::BaseActorRenderContext&                                 renderContext,
+        ::Actor&                                                  actor,
+        ::Bedrock::small_vector_base<::ActorRenderer::LeashPins>& output
+    ) const;
+
     MCAPI ::std::vector<::NameTagRenderObject> extractText(
         ::Tessellator&            tessellator,
         ::Actor const&            entity,
@@ -137,9 +144,11 @@ public:
 
     MCAPI ::mce::TexturePtr getAtlasTexture();
 
-    MCAPI void renderGui(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+    MCFOLD ::Model const* getModel() const;
 
-    MCAPI void setBaseRenderBounds(::Vec2 const& dims, ::Vec3 const& offset);
+    MCFOLD ::Model* getModel();
+
+    MCAPI void renderGui(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
     // NOLINTEND
 
 public:
@@ -200,6 +209,8 @@ public:
     );
 
     MCAPI static void resetTextures();
+
+    MCAPI static bool shouldRenderLeash(::Actor& entity, bool ignoreLighting);
     // NOLINTEND
 
 public:
@@ -259,12 +270,12 @@ public:
     MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
 
     MCAPI void $getLeashOffsets(
-        ::Actor&,
-        float                                 yRot,
-        float                                 yRotPrev,
-        float                                 a,
-        bool                                  legacyOffset,
-        ::Bedrock::small_vector_base<::Vec3>& output
+        ::Actor& yRot,
+        float    yRotPrev,
+        float    a,
+        float    legacyOffset,
+        bool     output,
+        ::Bedrock::small_vector_base<::Vec3>&
     ) const;
 
     MCFOLD void $setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;

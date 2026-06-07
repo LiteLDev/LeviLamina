@@ -11,15 +11,9 @@ class IActionDataProvider : public ::Settings::IDataProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IActionDataProvider() /*override*/;
+    virtual ~IActionDataProvider() /*override*/ = default;
 
     virtual bool flush();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

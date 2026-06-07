@@ -19,18 +19,13 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptTransferPlayerIpPortOptions& operator=(ScriptTransferPlayerIpPortOptions const&);
     ScriptTransferPlayerIpPortOptions(ScriptTransferPlayerIpPortOptions const&);
     ScriptTransferPlayerIpPortOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions&
-    operator=(::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions&&);
-
-    MCNAPI ::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions&
-    operator=(::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions const&);
-
     MCNAPI ~ScriptTransferPlayerIpPortOptions();
     // NOLINTEND
 

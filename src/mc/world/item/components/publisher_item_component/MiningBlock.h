@@ -10,7 +10,6 @@
 // clang-format off
 class Actor;
 class Block;
-class HashedString;
 class ItemStack;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
@@ -22,18 +21,6 @@ struct MiningBlock : public ::ItemComponent,
                          void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&),
                          ::Bedrock::PubSub::ThreadModel::SingleThreaded,
                          0> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MiningBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

@@ -42,14 +42,21 @@ public:
 
 public:
     // prevent constructor by default
+    ExpressionNode& operator=(ExpressionNode const&);
     ExpressionNode();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ExpressionNode(::Molang::details::ExpressionNode&&);
+    MCNAPI ExpressionNode(::Molang::details::ExpressionNode&& rhs);
 
-    MCNAPI ExpressionNode(::Molang::details::ExpressionNode const&);
+    MCNAPI ExpressionNode(::Molang::details::ExpressionNode const& rhs);
+
+#ifdef LL_PLAT_C
+    MCNAPI explicit ExpressionNode(float value);
+#endif
+
+    MCNAPI ExpressionNode(::MolangScriptArg value, ::ExpressionOp op);
 
     MCNAPI bool _buildTree(::brstd::bitset<109, uint64> const& usedTokenFlags, ::MolangVersion molangVersion);
 
@@ -63,13 +70,17 @@ public:
 
     MCNAPI bool _readNextToken(char const*& expression, ::MolangParseConfig const& parseConfig);
 
+    MCNAPI bool _tokenize(
+        char const*                   expression,
+        ::brstd::bitset<109, uint64>& usedTokenFlags,
+        ::MolangParseConfig const&    parseConfig
+    );
+
     MCNAPI bool _validate(::MolangVersion version, bool inLoop, int inAssignmentLHSDepth) const;
 
     MCNAPI bool _validateChildrenAreNumerical(::MolangVersion version) const;
 
-#ifdef LL_PLAT_S
     MCNAPI bool areAllChildrenEqual() const;
-#endif
 
     MCNAPI void clear();
 
@@ -79,7 +90,7 @@ public:
 
     MCNAPI bool getTreeString(::std::string& dest, bool sideEffectsReturnZero) const;
 
-    MCNAPI bool hasMadd() const;
+    MCNAPI bool isInitialized() const;
 
     MCNAPI bool isValid() const;
 
@@ -87,9 +98,7 @@ public:
 
     MCNAPI void moveConstantChildToValueIfFloatOrHashType(int firstConstChildIndex);
 
-    MCNAPI ::Molang::details::ExpressionNode& operator=(::Molang::details::ExpressionNode&&);
-
-    MCNAPI ::Molang::details::ExpressionNode& operator=(::Molang::details::ExpressionNode const&);
+    MCNAPI ::Molang::details::ExpressionNode& operator=(::Molang::details::ExpressionNode&& rhs);
 
     MCNAPI ::Molang::details::ExpressionNode& operator=(float value);
 
@@ -111,6 +120,8 @@ public:
     MCNAPI bool processBinaryExpression(::ExpressionOp op);
 
     MCNAPI bool processMathFuncs();
+
+    MCNAPI bool processMemberAccessors();
 
     MCNAPI bool processNegativesAndLogicalNots();
 
@@ -156,12 +167,10 @@ public:
         ::Molang::details::ExpressionNode const& memberAccessorNode
     );
 
-#ifdef LL_PLAT_C
     MCNAPI static ::MolangScriptArg const* _getScriptArgFromMemberAccessedVariable(
         ::MolangEvalParams&                      state,
         ::Molang::details::ExpressionNode const& memberAccessorNode
     );
-#endif
 
     MCNAPI static void _writeScriptArgToMemberAccessedVariable(
         ::MolangEvalParams&                      state,
@@ -169,15 +178,23 @@ public:
         ::MolangScriptArg const&                 value
     );
 
-    MCNAPI static char const* getOpFriendlyName(::ExpressionOp op);
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string& toLowerInPlaceExceptStrings(::std::string& expression);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Molang::details::ExpressionNode&&);
+    MCNAPI void* $ctor(::Molang::details::ExpressionNode&& rhs);
 
-    MCNAPI void* $ctor(::Molang::details::ExpressionNode const&);
+    MCNAPI void* $ctor(::Molang::details::ExpressionNode const& rhs);
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(float value);
+#endif
+
+    MCNAPI void* $ctor(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND
 
 public:

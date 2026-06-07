@@ -22,16 +22,22 @@ public:
     CommandVersion(int from = 0, int to = 0x7FFFFFFF) : mFrom(from), mTo(to) {}
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI bool isCompatible(int version) const;
-#endif
+    MCAPI static ::SemVersion getLatestCompatibleSemVersion(int version);
+
+    MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);
     // NOLINTEND
 
 public:
-    // static functions
+    // static variables
     // NOLINTBEGIN
-    MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);
+    MCAPI static int const& CurrentVersion();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(int from, int to);
     // NOLINTEND
 };

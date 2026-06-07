@@ -35,8 +35,6 @@ public:
     virtual bool test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
-
-    virtual ~StructurePoolBlockPredicateStateMatchRandom() /*override*/ = default;
     // NOLINTEND
 
 public:

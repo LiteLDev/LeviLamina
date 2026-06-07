@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
+#include "mc/client/gui/oreui/interface/ResourceHandlerStatus.h"
 #include "mc/client/gui/oreui/resources/ResourceResponse.h"
 #include "mc/client/social/ProfileImageOptions.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
@@ -12,16 +13,16 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Gameface { class ResourceStreamResponse; }
+namespace Gameface { class TemporaryTextureHolder; }
+namespace Gameface { struct ResourceRequest; }
 namespace OreUI { class ResourceAllowList; }
-namespace OreUI { class ResourceStreamResponse; }
-namespace OreUI { class TemporaryTextureHolder; }
-namespace OreUI { struct ResourceRequest; }
 namespace Social { class IUserManager; }
 // clang-format on
 
 namespace OreUI {
 
-class ProfileImageResourceHandler : public ::OreUI::IResourceHandler {
+class ProfileImageResourceHandler : public ::Gameface::IResourceHandler {
 public:
     // ProfileImageResourceHandler inner types declare
     // clang-format off
@@ -33,7 +34,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::OreUI::ResourceResponse>      response;
+        ::ll::TypedStorage<8, 8, ::Gameface::ResourceResponse>   response;
         ::ll::TypedStorage<8, 32, ::std::string>                 requestUrl;
         ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions> imageOptions;
         ::ll::TypedStorage<1, 1, bool>                           succeeded;
@@ -41,34 +42,47 @@ public:
 
     public:
         // prevent constructor by default
-        FinishedRequest& operator=(FinishedRequest const&);
-        FinishedRequest(FinishedRequest const&);
         FinishedRequest();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::OreUI::ProfileImageResourceHandler::FinishedRequest&
-        operator=(::OreUI::ProfileImageResourceHandler::FinishedRequest&&);
+        MCAPI FinishedRequest(
+            ::Gameface::ResourceResponse         response,
+            ::std::string const&                 requestUrl,
+            ::Social::ProfileImageOptions const& imageOptions,
+            bool                                 succeeded
+        );
 
         MCAPI ~FinishedRequest();
         // NOLINTEND
 
     public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::Gameface::ResourceResponse         response,
+            ::std::string const&                 requestUrl,
+            ::Social::ProfileImageOptions const& imageOptions,
+            bool                                 succeeded
+        );
+        // NOLINTEND
+
+    public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>>>
+    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse>>>
                                                                                                    mRequestQueue;
     ::ll::TypedStorage<8, 616, ::MPMCQueue<::OreUI::ProfileImageResourceHandler::FinishedRequest>> mFinishedRequests;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::OreUI::ResourceAllowList> const>        mResourceAllowList;
-    ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&>                       mTemporaryTextureHolder;
+    ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&>                    mTemporaryTextureHolder;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                          mTaskGroup;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>> mUserManager;
     // NOLINTEND
@@ -84,11 +98,11 @@ public:
     // NOLINTBEGIN
     virtual ~ProfileImageResourceHandler() /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status
-    onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse&) /*override*/;
+    virtual ::Gameface::ResourceHandlerStatus
+    onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
 
     virtual void update() /*override*/;
     // NOLINTEND
@@ -98,15 +112,9 @@ public:
     // NOLINTBEGIN
     MCAPI ProfileImageResourceHandler(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::OreUI::TemporaryTextureHolder&                                 temporaryTextureHolder,
+        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>            userManager
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> PROTOCOL();
     // NOLINTEND
 
 public:
@@ -114,7 +122,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
-        ::OreUI::TemporaryTextureHolder&                                 temporaryTextureHolder,
+        ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>            userManager
     );
     // NOLINTEND
@@ -128,11 +136,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
+    MCAPI ::Gameface::ResourceHandlerStatus
+    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse&);
+    MCFOLD ::Gameface::ResourceHandlerStatus
+    $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
 
     MCAPI void $update();
     // NOLINTEND

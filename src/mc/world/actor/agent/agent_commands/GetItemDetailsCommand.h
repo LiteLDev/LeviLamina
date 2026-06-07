@@ -23,8 +23,6 @@ public:
     virtual bool isDone() /*override*/;
 
     virtual void fireCommandDoneEvent() /*override*/;
-
-    virtual ~GetItemDetailsCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

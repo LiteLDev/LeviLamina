@@ -42,14 +42,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::RakNet::RNS2BindResult
-    BindShared(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
-
-    MCAPI ::RakNet::RNS2BindResult
-    BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
-
-    MCAPI void BlockOnStopRecvPollingThread();
-
-    MCAPI int CreateRecvPollingThread(int threadPriority);
+    BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const*, uint);
 
     MCAPI uint RecvFromLoopInt();
 

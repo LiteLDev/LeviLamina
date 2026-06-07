@@ -56,6 +56,8 @@ public:
     MCNAPI explicit EditorStructureManager(::Editor::ServiceProviderCollection& providers);
 
     MCNAPI bool containsStructure(::std::string const& structureName);
+
+    MCNAPI void flushStructureCache();
     // NOLINTEND
 
 public:

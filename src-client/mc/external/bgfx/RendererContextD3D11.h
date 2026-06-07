@@ -126,7 +126,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RendererContextD3D11() /*override*/ = default;
+    virtual ~RendererContextD3D11() /*override*/;
 
     virtual ::bgfx::RendererType::Enum getRendererType() const /*override*/;
 
@@ -308,8 +308,6 @@ public:
 
     MCAPI void capturePostReset();
 
-    MCAPI void capturePreReset();
-
     MCAPI void clear(::bgfx::Clear const& _clear, float (*const _palette)[4]);
 
     MCAPI void clearQuad(
@@ -321,10 +319,6 @@ public:
 
     MCAPI void commit(::bgfx::UniformBuffer& _uniformBuffer);
 
-    MCAPI void commitShaderConstants();
-
-    MCAPI void commitTextureStage();
-
     MCAPI ::ID3D11ShaderResourceView* getCachedSrv(::bgfx::TextureHandle _handle, uchar _mip, bool _compute);
 
     MCAPI ::ID3D11UnorderedAccessView* getCachedUav(::bgfx::TextureHandle _handle, uchar _mip);
@@ -332,10 +326,6 @@ public:
     MCAPI ::ID3D11SamplerState* getSamplerState(uint _flags, float const* const _rgba);
 
     MCAPI bool init(::bgfx::Init const& _init);
-
-    MCAPI void invalidateCache();
-
-    MCAPI void invalidateCompute();
 
     MCAPI void postReset();
 
@@ -376,6 +366,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

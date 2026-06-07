@@ -16,9 +16,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RouteAction();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RouteAction(::std::string const& route, ::OreUI::RouteHistoryAction action);
+
     MCAPI ~RouteAction();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::std::string const& route, ::OreUI::RouteHistoryAction action);
     // NOLINTEND
 
 public:

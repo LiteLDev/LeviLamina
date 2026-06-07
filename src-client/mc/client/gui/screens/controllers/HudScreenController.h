@@ -22,9 +22,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BossEventPacket;
 class ClientInstanceScreenModel;
-class GamePadRemappingLayout;
 class GameTipScreenController;
 class HudContainerManagerController;
 class Keymapping;
@@ -61,18 +61,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> chatbuttonList;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> ttsButtonList;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ButtonLists();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct Tooltip {
@@ -95,15 +83,13 @@ public:
 
     public:
         // prevent constructor by default
-        Tooltip(Tooltip const&);
+        Tooltip& operator=(Tooltip const&);
         Tooltip();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Tooltip(::HudScreenController::Tooltip&&);
-
-        MCAPI ::HudScreenController::Tooltip& operator=(::HudScreenController::Tooltip const&);
+        MCAPI Tooltip(::HudScreenController::Tooltip const&);
 
         MCAPI ~Tooltip();
         // NOLINTEND
@@ -111,7 +97,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::HudScreenController::Tooltip&&);
+        MCAPI void* $ctor(::HudScreenController::Tooltip const&);
         // NOLINTEND
 
     public:
@@ -169,6 +155,8 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mProfanityToggleSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mOnRouteChangedSubscription;
     ::ll::TypedStorage<1, 1, bool>                                           mShouldShowLocatorBarPrev;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mSubtitlePositionSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                           mSubtitlePositionChanged;
     // NOLINTEND
 
 public:
@@ -253,6 +241,8 @@ public:
     MCAPI void
     _bindTooltipFlyout(uint bindingNameHash, ::std::string const& bindingNameOverride, ::UIPropertyBag& bag) const;
 
+    MCAPI bool _canChatAndEmoteGameTipBeShown() const;
+
     MCAPI void _checkEduDiscoveryReachable();
 
     MCAPI void _fireInitialControlTipsActivationEvent() const;
@@ -295,8 +285,6 @@ public:
 
     MCAPI void _getFloatCustomizableOptionValue(::OptionID optionID);
 
-    MCAPI ::GamePadRemappingLayout const& _getGamepadLayout() const;
-
     MCAPI ::Keymapping const& _getGamepadMapping(::Remapping::ActionEnum action) const;
 
     MCAPI float _getHudAlpha();
@@ -313,13 +301,15 @@ public:
 
     MCAPI void _handleNewPopupItemText();
 
+    MCAPI void _handleNewSubtitleText();
+
     MCAPI void _handleNewTipText();
 
     MCAPI void _handleSlotSelection(int slot, ::ContainerID containerId);
 
     MCAPI void _handleSubtitleMessages();
 
-    MCAPI bool _isHudHidden() const;
+    MCAPI bool _isAutoSaveIconVisible();
 
     MCAPI bool
     _isToolTipsHidden(::HudScreenController::Tooltips tooltipType, ::HudScreenController::Tooltip const* tip) const;
@@ -336,14 +326,22 @@ public:
         ::Vec3 const&                  pos,
         float                          volume,
         ::Vec3 const&                  forward,
-        ::Vec3 const&                  up
+        ::Vec3 const&                  up,
+        bool                           isLocalPlayer
     );
 
     MCAPI void _pushExistingChatMessages();
 
     MCAPI void _pushNewChatMessage(::std::string const& message, float time);
 
-    MCAPI void _pushNewSubtitleMessage(::std::string const& message, float time, ::SoundDirection direction);
+    MCAPI void _pushNewSubtitleMessage(
+        ::std::string const& message,
+        float                timeSec,
+        ::SoundDirection     direction,
+        bool                 isLocalPlayer
+    );
+
+    MCAPI void _recreateSubtitleContainer();
 
     MCAPI void _refreshChatMessages();
 
@@ -355,8 +353,6 @@ public:
 
     MCAPI void _registerTooltips();
 
-    MCAPI bool _shouldShowControlTips() const;
-
     MCAPI bool _shouldShowLocatorBar() const;
 
     MCAPI bool _shouldShowTags() const;
@@ -366,8 +362,6 @@ public:
     MCAPI bool _showPaperDoll() const;
 
     MCAPI bool _showPocketUI() const;
-
-    MCAPI bool _showPopUpItemText() const;
 
     MCAPI bool _showSurvivalUI() const;
 
@@ -395,8 +389,20 @@ public:
     );
 
     MCAPI void setupControlCustomizationCallbacksForOptions(::ControlOptionType controlOptionType);
+    // NOLINTEND
 
-    MCAPI bool shouldChatAndEmoteInfoBeDisplayed() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _shouldShowDefaultUseTooltip(::Block const& block);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ROOT_CONTROL_NAME();
+
+    MCAPI static char const*& ROOT_CONTROL_NAME_INCLUDING_NAMESPACE();
     // NOLINTEND
 
 public:

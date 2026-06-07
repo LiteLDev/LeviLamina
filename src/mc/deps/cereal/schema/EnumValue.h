@@ -35,8 +35,6 @@ public:
 
     MCAPI EnumValue(::cereal::internal::EnumValue const&);
 
-    MCAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue&&);
-
     MCAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue const&);
 
     MCAPI ~EnumValue();

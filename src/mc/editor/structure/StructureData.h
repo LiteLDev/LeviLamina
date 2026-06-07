@@ -15,12 +15,13 @@ public:
 public:
     // prevent constructor by default
     StructureData& operator=(StructureData const&);
-    StructureData(StructureData const&);
     StructureData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI StructureData(::Editor::StructureData const&);
+
     MCNAPI StructureData(::std::string structureNamespace, ::std::string structureName);
 
     MCNAPI ~StructureData();
@@ -29,6 +30,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::StructureData const&);
+
     MCNAPI void* $ctor(::std::string structureNamespace, ::std::string structureName);
     // NOLINTEND
 

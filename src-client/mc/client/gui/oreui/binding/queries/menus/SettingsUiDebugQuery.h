@@ -27,12 +27,6 @@ public:
     SettingsUiDebugQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SettingsUiDebugQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SettingsUiDebugQuery(::OreUI::ClientDependencies const&);

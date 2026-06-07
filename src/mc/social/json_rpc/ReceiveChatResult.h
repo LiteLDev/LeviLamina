@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace JsonRpc {
 
 struct ReceiveChatResult {
@@ -26,7 +31,6 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ReceiveChatResult(ReceiveChatResult const&);
     ReceiveChatResult();
 
 #endif
@@ -34,7 +38,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ReceiveChatResult(::JsonRpc::ReceiveChatResult&&);
+    MCNAPI ReceiveChatResult(::JsonRpc::ReceiveChatResult const&);
 
     MCNAPI ::JsonRpc::ReceiveChatResult& operator=(::JsonRpc::ReceiveChatResult&&);
 
@@ -45,10 +49,18 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::JsonRpc::ReceiveChatResult&&);
+    MCNAPI void* $ctor(::JsonRpc::ReceiveChatResult const&);
 #endif
     // NOLINTEND
 

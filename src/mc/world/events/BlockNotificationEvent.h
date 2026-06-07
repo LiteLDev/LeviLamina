@@ -60,16 +60,4 @@ struct BlockNotificationEvent : public ::EventVariantImpl<
                                     ::BlockTryPlaceByPlayerEvent const,
                                     ::CraftUISetResultNameEvent const,
                                     ::ExplosionStartedEvent const,
-                                    ::BlockTryDestroyByPlayerEvent const> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BlockNotificationEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-};
+                                    ::BlockTryDestroyByPlayerEvent const> {};

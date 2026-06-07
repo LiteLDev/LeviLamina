@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class HashedString;
 class ItemStack;
 class Mob;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
@@ -21,18 +20,6 @@ struct OnHurtActor
 : public ::ItemComponent,
   public ::Bedrock::PubSub::
       Publisher<void(::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OnHurtActor() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

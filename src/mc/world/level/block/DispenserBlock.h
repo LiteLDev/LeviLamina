@@ -23,6 +23,10 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 
 class DispenserBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    DispenserBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -46,17 +50,16 @@ public:
 
     virtual int getTickDelay() const;
 
-    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
-        /*override*/;
+    virtual bool allowStateMismatchOnPlacement(::Block const&, ::Block const&) const /*override*/;
 
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
-
-    virtual ~DispenserBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DispenserBlock(::std::string const& nameId, int id);
+
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void ejectItem(
@@ -73,7 +76,7 @@ public:
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -88,13 +91,19 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $getVariant(::Block const& block) const;
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCFOLD ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -115,7 +124,7 @@ public:
 
     MCFOLD int $getTickDelay() const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const&, ::Block const&) const;
 
     MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 

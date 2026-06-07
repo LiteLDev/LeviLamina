@@ -31,12 +31,6 @@ public:
     TradeCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~TradeCommandGroup() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TradeCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);

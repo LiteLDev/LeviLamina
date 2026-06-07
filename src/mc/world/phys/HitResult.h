@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+struct AABBHitResult;
 // clang-format on
 
 class HitResult {
@@ -40,36 +41,52 @@ public:
     bool            mIndirectHit;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    HitResult& operator=(HitResult const&);
+    HitResult(HitResult const&);
+
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    HitResult(HitResult const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI HitResult();
 
-    MCAPI HitResult(::HitResult const&);
+    MCAPI explicit HitResult(::AABBHitResult const& hit);
+
+    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
+
+    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
 
 #ifdef LL_PLAT_C
     MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
 #endif
 
     MCAPI HitResult(
-        ::Vec3 const& startPos,
-        ::Vec3 const& rayDir,
-        ::Actor&      entity,
-        ::Vec3 const& pos,
-        ::AABB const& entityAABB
+        ::Vec3 const&     startPos,
+        ::Vec3 const&     rayDir,
+        ::BlockPos const& blockPos,
+        uchar             facing,
+        ::Vec3 const&     pos
     );
+
+    MCAPI float distanceToSqr(::Actor const& otherEntity) const;
 
     MCAPI ::Actor* getEntity() const;
 
     MCAPI ::HitResult& operator=(::HitResult&&);
 
-    MCAPI ::HitResult& operator=(::HitResult const&);
-
 #ifdef LL_PLAT_C
-    MCAPI void resetHitEntity();
+    MCAPI ::HitResult& operator=(::HitResult const&);
 #endif
 
-    MCAPI ~HitResult();
+    MCAPI void setIsHitLiquid(bool isHit, ::HitResult const& liquidHit);
     // NOLINTEND
 
 public:
@@ -77,21 +94,17 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::HitResult&&);
+    MCAPI void* $ctor(::AABBHitResult const& hit);
 
-    MCAPI void* $ctor(::HitResult const&);
+    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
+
+    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
 
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
 #endif
 
     MCAPI void*
-    $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::BlockPos const& blockPos, uchar facing, ::Vec3 const& pos);
     // NOLINTEND
 };

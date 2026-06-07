@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/enums/ClientInputLockCategory.h"
+
 struct ClientInputLockCategoryAPIMetadata {
 public:
     // member variables
@@ -16,12 +19,13 @@ public:
 public:
     // prevent constructor by default
     ClientInputLockCategoryAPIMetadata& operator=(ClientInputLockCategoryAPIMetadata const&);
-    ClientInputLockCategoryAPIMetadata(ClientInputLockCategoryAPIMetadata const&);
     ClientInputLockCategoryAPIMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ClientInputLockCategoryAPIMetadata(::ClientInputLockCategoryAPIMetadata const&);
+
     MCNAPI ~ClientInputLockCategoryAPIMetadata();
     // NOLINTEND
 
@@ -31,6 +35,14 @@ public:
     MCNAPI static ::std::array<::ClientInputLockCategoryAPIMetadata, 11> const& getAllMetadata();
 
     MCNAPI static ::std::vector<::std::string> getCommandFacingNames();
+
+    MCNAPI static ::std::optional<::ClientInputLockCategoryAPIMetadata> getMetadata(::ClientInputLockCategory category);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ClientInputLockCategoryAPIMetadata const&);
     // NOLINTEND
 
 public:

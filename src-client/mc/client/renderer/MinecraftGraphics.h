@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class FrameUpdateContext;
 namespace mce { class ImageResourceLoader; }
 namespace mce { class ImmediateBuffer; }
 namespace mce { class QuadIndexBuffer; }
@@ -50,9 +51,20 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MinecraftGraphics(::mce::RenderContext& renderContext);
 
-    MCAPI ::std::shared_ptr<::mce::ImageResourceLoader> getImageResourceLoader() const;
+    MCAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
+
+    MCFOLD ::mce::QuadIndexBuffer& getGlobalQuadBuffer();
+
+    MCFOLD ::std::shared_ptr<::mce::ImageResourceLoader> getImageResourceLoader() const;
+
+    MCFOLD ::mce::ClientResourcePointer<::mce::ImmediateBuffer>& getImmediateBuffer();
+
+    MCFOLD ::MinecraftGameplayGraphicsResources& getMinecraftGameplayGraphicsResources();
 
     MCAPI ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> getPBRTextureDataManager() const;
+
+    MCFOLD void
+    setPBRTextureDataManager(::std::unique_ptr<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager);
     // NOLINTEND
 
 public:

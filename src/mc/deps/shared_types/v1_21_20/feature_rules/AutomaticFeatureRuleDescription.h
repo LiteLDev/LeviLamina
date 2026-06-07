@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_20 {
 
 struct AutomaticFeatureRuleDescription {
@@ -14,19 +19,30 @@ public:
 
 public:
     // prevent constructor by default
-    AutomaticFeatureRuleDescription(AutomaticFeatureRuleDescription const&);
+    AutomaticFeatureRuleDescription& operator=(AutomaticFeatureRuleDescription const&);
     AutomaticFeatureRuleDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AutomaticFeatureRuleDescription(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription const&);
+
     MCFOLD ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&&);
 
-    MCFOLD ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&
-    operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription const&);
-
     MCAPI ~AutomaticFeatureRuleDescription();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription const&);
     // NOLINTEND
 
 public:

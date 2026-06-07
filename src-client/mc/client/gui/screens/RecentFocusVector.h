@@ -25,6 +25,8 @@ public:
     // NOLINTBEGIN
     MCAPI RecentFocusVector(int size, bool includeMagnetControls);
 
+    MCAPI bool _canControlBeFocused(::UIControl& control) const;
+
     MCAPI ::std::shared_ptr<::UIControl>
     _getValidControl(int startIndex, int endIndex, ::std::shared_ptr<::UIControl> lastFocusedControl);
 
@@ -33,6 +35,8 @@ public:
     MCAPI void addRecentFocusControl(::std::weak_ptr<::UIControl> control);
 
     MCAPI ::std::shared_ptr<::UIControl> getLastGoodFocusedControl(::std::shared_ptr<::UIControl> lastFocusedControl);
+
+    MCFOLD void setIncludeMagnetControls(bool include);
 
     MCAPI ~RecentFocusVector();
     // NOLINTEND

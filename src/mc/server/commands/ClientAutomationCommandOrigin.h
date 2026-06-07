@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ClientAutomationCommandOrigin();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ClientAutomationCommandOrigin() /*override*/ = default;
@@ -62,6 +66,18 @@ public:
     virtual ::CompoundTag serialize() const /*override*/;
 
     virtual bool isValid() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ClientAutomationCommandOrigin(::std::string const& requestId);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& requestId);
     // NOLINTEND
 
 public:

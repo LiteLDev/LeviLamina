@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/ProjectRegionAvailabilityMode.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
@@ -10,14 +11,14 @@
 // clang-format off
 class Block;
 class BlockPos;
+class BlockSource;
 class BoundingBox;
-class ChunkPos;
 class ChunkSource;
 class Dimension;
 class LevelChunk;
 struct Bounds;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class RelativeVolumeListBlockVolume; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct ProjectRegionConfig; }
 namespace mce { class UUID; }
 // clang-format on
@@ -78,8 +79,6 @@ public:
                 ::std::optional<::Scripting::Result_deprecated<void>>
             )>                                      callback
         );
-
-        MCNAPI ~BlockOperationAreaRequest();
         // NOLINTEND
 
     public:
@@ -93,18 +92,11 @@ public:
             )>                                      callback
         );
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb505d4;
     ::ll::UntypedStorage<4, 4>  mUnk3aca2e;
     ::ll::UntypedStorage<1, 1>  mUnkefe58d;
     ::ll::UntypedStorage<8, 16> mUnkbab940;
@@ -112,6 +104,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk3ed219;
     ::ll::UntypedStorage<8, 16> mUnk71bc73;
     ::ll::UntypedStorage<8, 8>  mUnkf091ed;
+    ::ll::UntypedStorage<8, 16> mUnkc14a31;
     ::ll::UntypedStorage<4, 48> mUnk9bf443;
     ::ll::UntypedStorage<8, 72> mUnk92e626;
     ::ll::UntypedStorage<8, 24> mUnk1dc8dd;
@@ -132,7 +125,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI
-    ProjectRegion(::Editor::ServiceProviderCollection& serviceProviders, ::Editor::ProjectRegionConfig const& config);
+    ProjectRegion(::Dimension& dimension, ::Editor::ProjectRegionConfig const& config, ::std::optional<uint64> ownerId);
 
     MCNAPI void _destroy();
 
@@ -142,21 +135,33 @@ public:
 
     MCNAPI bool _isBoundsAvailable(::Bounds const& bounds) const;
 
-    MCNAPI bool _isChunkAvailable(::ChunkPos const& chunkPos) const;
-
-    MCNAPI void _moveView();
-
-    MCNAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
+    MCNAPI void _onChunkLoaded(::ChunkSource& levelChunk, ::LevelChunk&, int);
 
     MCNAPI void _processAvailability();
 
     MCNAPI void _processBlockOperationAreas();
 
+    MCNAPI void _processBounds();
+
     MCNAPI void _updateChunksToProcess();
+
+    MCNAPI ::Editor::ProjectRegionAvailabilityMode getAvailabilityMode() const;
+
+    MCNAPI ::BlockSource& getBlockSource();
+
+    MCNAPI ::BoundingBox getBoundingBox() const;
+
+    MCNAPI ::mce::UUID const& getId() const;
 
     MCNAPI bool isAreaAvailable(::BoundingBox const& area);
 
     MCNAPI bool isAvailable() const;
+
+    MCNAPI bool isLocationAvailable(::BlockPos const& loc) const;
+
+    MCNAPI bool isValid() const;
+
+    MCNAPI ::Bedrock::PubSub::Subscription listenForBoundsChange(::std::function<void(::Bounds const&)> func);
 
     MCNAPI ::Scripting::Result_deprecated<::mce::UUID> requestAvailabilityCheck(
         ::std::function<void(::Scripting::Result_deprecated<void>)> callback,
@@ -180,14 +185,22 @@ public:
 
     MCNAPI void tick();
 
+    MCNAPI ::Scripting::Result_deprecated<void> tryDimensionTransfer(::Dimension& newDimension);
+
     MCNAPI ~ProjectRegion();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static bool isValidRegionBounds(::Bounds const& bounds);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void*
-    $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Editor::ProjectRegionConfig const& config);
+    $ctor(::Dimension& dimension, ::Editor::ProjectRegionConfig const& config, ::std::optional<uint64> ownerId);
     // NOLINTEND
 
 public:

@@ -13,6 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseActorRenderContext;
 class CompoundTag;
 class CustomParticle;
 class HashedString;
@@ -25,6 +26,7 @@ class SeasonsRenderer;
 class Vec3;
 struct ParticleLayerRenderObject;
 struct ParticleRenderContext;
+struct ParticleRenderObjectCollection;
 namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on
 
@@ -38,9 +40,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2424, ::std::vector<::std::unique_ptr<::Particle>>[101]> mInactiveParticlesPool;
+    ::ll::TypedStorage<8, 2448, ::std::vector<::std::unique_ptr<::Particle>>[102]> mInactiveParticlesPool;
     ::ll::TypedStorage<8, 8, ::Level&>                                             mLevel;
-    ::ll::TypedStorage<8, 6464, ::std::unordered_map<::ParticleType, ::std::vector<::std::unique_ptr<::Particle>>>[101]>
+    ::ll::TypedStorage<8, 6528, ::std::unordered_map<::ParticleType, ::std::vector<::std::unique_ptr<::Particle>>>[102]>
                                                                                     mActiveParticles;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CustomParticle>>>   customParticles;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Particle>>>         mNewParticles;
@@ -50,8 +52,8 @@ public:
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   opaqueMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   alphaTestMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   blendMat;
-    ::ll::TypedStorage<4, 404, uint[101]>                                           maxParticleCount;
-    ::ll::TypedStorage<4, 404, uint[101]>                                           particleCount;
+    ::ll::TypedStorage<4, 408, uint[102]>                                           maxParticleCount;
+    ::ll::TypedStorage<4, 408, uint[102]>                                           particleCount;
     ::ll::TypedStorage<1, 1, bool>                                                  mTemporaryCameraActive;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ParticleType, ::HashedString>> mNewParticleSystemJsonLookup;
     ::ll::TypedStorage<
@@ -105,6 +107,13 @@ public:
 
     MCAPI void clear();
 
+    MCAPI ::ParticleRenderObjectCollection
+    extract(::ScreenContext& screenContext, ::Vec3 const& cameraPos, ::Vec3 const& viewOff, float minDist) const;
+
+    MCAPI ::ParticleRenderObjectCollection extractEmptyCollection(::ScreenContext& screenContext) const;
+
+    MCAPI ::gsl::final_action<::std::function<void()>> forceTessellationForTemporaryCamera();
+
     MCAPI ::Particle* instance(
         ::ParticleType          type,
         ::Vec3 const&           pos,
@@ -113,6 +122,10 @@ public:
         ::ParticleSystemEngine* particleSystemEngine,
         ::CompoundTag const*    tag
     );
+
+    MCAPI void onDimensionChanged();
+
+    MCAPI void renderCustomParticles(::BaseActorRenderContext& renderContext, ::Vec3 const& viewOff, float minDist);
 
     MCAPI void tick();
     // NOLINTEND

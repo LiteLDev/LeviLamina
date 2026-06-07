@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/threading/Async.h"
@@ -13,9 +14,12 @@
 class Pack;
 class WorldPackHistory;
 class WorldPacksHistoryFile;
+struct PackIdVersion;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 struct WorldHistoryPackSourceOptions;
+namespace Core { class Path; }
+namespace mce { class UUID; }
 // clang-format on
 
 class WorldHistoryPackSource : public ::PackSource {
@@ -37,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldHistoryPackSource() /*override*/ = default;
+    virtual ~WorldHistoryPackSource() /*override*/;
 
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
@@ -60,15 +64,35 @@ public:
 
     MCNAPI bool _readWorldHistoryFile(::WorldPacksHistoryFile& file) const;
 
+    MCNAPI ::Core::PathBuffer<::std::string> const& getPathToWorld() const;
+
 #ifdef LL_PLAT_C
     MCNAPI ::Bedrock::Threading::Async<void> saveHistoryFile();
+
+    MCNAPI void setSourceUUIDForPackHistory(::PackIdVersion const& packId, ::mce::UUID const& sourceUuid);
+
+    MCNAPI ::Bedrock::Threading::Async<void>
+    trackNewPacksIfNotTracked(::std::vector<::WorldPackHistory>&& worldPackHistory);
 #endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Core::PathBuffer<::std::string>
+    generateHistoryFilePath(::Core::Path const& pathToWorld, ::PackType type);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::WorldHistoryPackSourceOptions options);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

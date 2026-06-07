@@ -101,7 +101,7 @@ public:
 
     virtual uint64 members() /*override*/;
 
-    virtual uint64 length(uint64 expectedSize) /*override*/;
+    virtual uint64 length(uint64) /*override*/;
 
     virtual bool pushMember(::std::string_view const name) /*override*/;
 
@@ -110,8 +110,6 @@ public:
     virtual void pushElement(uint64 index) /*override*/;
 
     virtual void pop() /*override*/;
-
-    virtual ~RapidJSONSchemaReader() /*override*/;
     // NOLINTEND
 
 public:
@@ -136,12 +134,6 @@ public:
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -188,7 +180,7 @@ public:
 
     MCFOLD uint64 $members();
 
-    MCFOLD uint64 $length(uint64 expectedSize);
+    MCFOLD uint64 $length(uint64);
 
     MCFOLD bool $pushMember(::std::string_view const name);
 

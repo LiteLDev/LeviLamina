@@ -41,26 +41,22 @@ public:
     virtual bool _allowAsFloat() /*override*/;
 
     virtual bool _allowAsDouble() /*override*/;
-
-    virtual ~StrictJSONCppSchemaReader() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit StrictJSONCppSchemaReader(::std::string const& data);
+
     MCAPI explicit StrictJSONCppSchemaReader(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
-    // NOLINTEND
+    MCAPI void* $ctor(::std::string const& data);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:

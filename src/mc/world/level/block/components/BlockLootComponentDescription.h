@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CerealSchemaUpgradeSet;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,13 +27,15 @@ public:
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    virtual ~BlockLootComponentDescription() /*override*/ = default;
+    virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
@@ -47,6 +50,8 @@ public:
     MCAPI ::std::string const& $getName() const;
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
 
     // NOLINTEND

@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 class KeyboardRemappingLayout;
 namespace Settings { class ActionComponent; }
 namespace Settings { class BannerComponent; }
@@ -34,7 +34,7 @@ MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::GroupInfoComponent,
     ::Settings::BannerComponent>>>
 createAdvancedLayoutGroup(
-    ::IOptions&                                                              options,
+    ::IOptionRegistry&                                                       options,
     ::std::string_view                                                       id,
     ::KeyboardType                                                           type,
     ::Settings::KeyboardAndMouseSettingsDetails::AdvancedLayoutConfig const& config
@@ -65,7 +65,7 @@ MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::TextComponent,
     ::Settings::GroupInfoComponent,
     ::Settings::BannerComponent>>>
-createKeyboardLayoutGroup(::IOptions& options, ::std::string_view id, ::KeyboardType type);
+createKeyboardLayoutGroup(::IOptionRegistry& options, ::std::string_view id, ::KeyboardType type);
 
 MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::BooleanComponent,
@@ -90,7 +90,7 @@ MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::GroupInfoComponent,
     ::Settings::BannerComponent>>>
 createMacroCommandInput(
-    ::IOptions&                      options,
+    ::IOptionRegistry&               options,
     ::std::string_view               id,
     uint64                           keymappingIndex,
     ::KeyboardRemappingLayout const& layout,
@@ -116,7 +116,7 @@ MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::TextComponent,
     ::Settings::GroupInfoComponent,
     ::Settings::BannerComponent>>>
-createResetGeneralSettings(::IOptions& options, ::std::string_view componentId);
+createResetGeneralSettings(::IOptionRegistry& options, ::std::string_view componentId);
 
 MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::BooleanComponent,
@@ -128,7 +128,7 @@ MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::TextComponent,
     ::Settings::GroupInfoComponent,
     ::Settings::BannerComponent>>>
-createResetInputBindings(::IOptions& options, ::std::string_view componentId);
+createResetInputBindings(::IOptionRegistry& options, ::std::string_view componentId);
 
 MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::BooleanComponent,
@@ -140,7 +140,7 @@ MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::TextComponent,
     ::Settings::GroupInfoComponent,
     ::Settings::BannerComponent>>>
-createSmoothRotationSpeed(::IOptions& options, ::std::string_view componentId);
+createSmoothRotationSpeed(::IOptionRegistry& options, ::std::string_view componentId);
 
 MCAPI ::std::vector<uint64> getChordKeysIndex(::KeyboardRemappingLayout const& layout);
 

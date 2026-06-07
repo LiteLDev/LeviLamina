@@ -39,8 +39,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& DEFAULT_DISTANCE_FROM_BOUNDARY();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

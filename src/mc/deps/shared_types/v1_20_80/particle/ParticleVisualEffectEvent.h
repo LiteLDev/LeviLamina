@@ -33,20 +33,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleVisualEffectEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleVisualEffectEvent(::SharedTypes::v1_20_80::ParticleVisualEffectEvent const&);
-
-    MCAPI ::SharedTypes::v1_20_80::ParticleVisualEffectEvent&
-    operator=(::SharedTypes::v1_20_80::ParticleVisualEffectEvent&&);
-
-    MCAPI ::SharedTypes::v1_20_80::ParticleVisualEffectEvent&
-    operator=(::SharedTypes::v1_20_80::ParticleVisualEffectEvent const&);
-
     MCAPI ~ParticleVisualEffectEvent();
     // NOLINTEND
 
@@ -54,12 +42,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleVisualEffectEvent const&);
     // NOLINTEND
 
 public:

@@ -27,12 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptScoreboardIdentity& operator=(ScriptScoreboardIdentity const&);
-    ScriptScoreboardIdentity(ScriptScoreboardIdentity const&);
-    ScriptScoreboardIdentity();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<
@@ -41,14 +35,19 @@ public:
 
     MCAPI ::std::string getName() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptScoreboardIdentity&
-    operator=(::ScriptModuleMinecraft::ScriptScoreboardIdentity&&);
+    MCAPI ~ScriptScoreboardIdentity();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

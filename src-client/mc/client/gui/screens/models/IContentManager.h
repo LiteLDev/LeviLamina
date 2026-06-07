@@ -29,6 +29,8 @@ namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class FilePathManager; }
 namespace Realms { struct Content; }
 namespace Realms { struct RealmId; }
+namespace StorageManager { class ContentItemProvider; }
+namespace StorageManager { class IContentHandler; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -145,6 +147,12 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription
     subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&& onSourcesReloadedAsyncCallback) = 0;
+
+    virtual ::std::shared_ptr<::StorageManager::ContentItemProvider> getStorageContentItemProvider() = 0;
+
+    virtual ::StorageManager::IContentHandler& getStorageContentHandler() = 0;
+
+    virtual ::Bedrock::PubSub::Subscription registerToReloadViews(::std::function<void()> callback) = 0;
     // NOLINTEND
 
 public:

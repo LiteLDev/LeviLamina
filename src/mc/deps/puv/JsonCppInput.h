@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
+namespace Json { class Value; }
 // clang-format on
 
 namespace Puv {
@@ -31,14 +32,18 @@ public:
     virtual ::SemVersion version() const /*override*/;
 
     virtual ::Puv::Input::Data data() const /*override*/;
-
-    virtual ~JsonCppInput() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI explicit JsonCppInput(::Json::Value json);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Json::Value json);
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ class ITickingArea {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITickingArea();
+    virtual ~ITickingArea() = default;
 
     virtual ::mce::UUID const& getId() const = 0;
 
@@ -40,7 +40,7 @@ public:
 
     virtual ::WeakRef<::BlockSource> getBlockSource() = 0;
 
-    virtual ::Bounds const& getBounds() const = 0;
+    virtual ::Bounds const getBoundsCopy() const = 0;
 
     virtual bool isAlwaysActive() const = 0;
 
@@ -95,20 +95,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

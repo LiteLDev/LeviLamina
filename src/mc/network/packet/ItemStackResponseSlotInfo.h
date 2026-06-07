@@ -22,30 +22,4 @@ public:
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mCustomName;
     ::ll::TypedStorage<2, 2, short>                                mDurabilityCorrection;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackResponseSlotInfo& operator=(ItemStackResponseSlotInfo const&);
-    ItemStackResponseSlotInfo(ItemStackResponseSlotInfo const&);
-    ItemStackResponseSlotInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackResponseSlotInfo(::ItemStackResponseSlotInfo&&);
-
-    MCAPI ~ItemStackResponseSlotInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackResponseSlotInfo&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

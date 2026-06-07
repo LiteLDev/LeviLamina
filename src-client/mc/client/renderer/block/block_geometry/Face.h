@@ -19,29 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Face& operator=(Face const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Face();
-
-    MCAPI Face(::BlockGeometry::Face&&);
-
-    MCAPI Face(::BlockGeometry::Face const&);
-
     MCAPI ~Face();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockGeometry::Face&&);
-
-    MCAPI void* $ctor(::BlockGeometry::Face const&);
     // NOLINTEND
 
 public:

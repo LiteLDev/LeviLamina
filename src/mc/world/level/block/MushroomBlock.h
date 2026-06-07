@@ -12,11 +12,15 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
+class Random;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class MushroomBlock : public ::FoliageBlock {
+public:
+    // prevent constructor by default
+    MushroomBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,18 +34,23 @@ public:
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~MushroomBlock() /*override*/ = default;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MushroomBlock(::std::string const& nameId, int id);
+
+    MCAPI bool growTreeRandom(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -56,9 +65,7 @@ public:
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
 
     // NOLINTEND

@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InvalidResourceSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~InvalidResourceSource() /*override*/ = default;
@@ -32,6 +36,20 @@ public:
     virtual void generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content) /*override*/;
 
     virtual void deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI InvalidResourceSource(::IResourcePackRepository& resourceRepository, ::InvalidPacksFilterGroup filter);
+
+    MCAPI bool invalidPacksChanged();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IResourcePackRepository& resourceRepository, ::InvalidPacksFilterGroup filter);
     // NOLINTEND
 
 public:

@@ -82,6 +82,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorDamageSource(::SharedTypes::Legacy::ActorDamageCause cause, ::std::string deathMessageOverride);
+
+    MCFOLD ::SharedTypes::Legacy::ActorDamageCause getCause() const;
+
+    MCFOLD void setCause(::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
@@ -95,8 +99,9 @@ public:
 
     MCAPI static ::std::vector<::VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
-    MCAPI static ::SharedTypes::Legacy::ActorDamageCause
-    getCauseMapVersionCutoffInclusive(::Scripting::Version scriptingVersion);
+    MCAPI static ::Scripting::Version getVersionByCause(::SharedTypes::Legacy::ActorDamageCause cause);
+
+    MCAPI static bool isDamageCausedByMob(::SharedTypes::Legacy::ActorDamageCause cause);
 
     MCAPI static ::SharedTypes::Legacy::ActorDamageCause lookupCause(::std::string const& name);
 
@@ -112,7 +117,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/math/Color.h"
+#include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
@@ -16,12 +17,11 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class HashedString;
 class Vec3;
 struct BlockAnimateTickData;
-struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockRandomTickEvent; }
+struct BlockGraphicsModeChangeContext;
 // clang-format on
 
 class LeavesBlock : public ::BlockType {
@@ -77,14 +77,14 @@ public:
 
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const /*override*/;
 
-    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
+    virtual ::BlockRenderLayer getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const
         /*override*/;
 
     virtual ::HashedString const& getCullingLayer() const /*override*/;
 
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
 
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
@@ -95,28 +95,44 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~LeavesBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LeavesBlock(
+        ::std::string const&                           nameId,
+        int                                            id,
+        ::HashedString const&                          sapling,
+        ::std::optional<::LeavesBlock::ParticleParams> particleParams
+    );
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void runDecay(::BlockSource& region, ::BlockPos const& pos, int range);
+#ifdef LL_PLAT_C
+    MCAPI static bool _isDeepLeavesInducing(::Block const& block, ::BlockProperty const& propertyCheck);
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::LeavesBlock::ParticleParams const& BIOME_TINTED_LEAVES_PARTICLE_PARAMS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&                           nameId,
+        int                                            id,
+        ::HashedString const&                          sapling,
+        ::std::optional<::LeavesBlock::ParticleParams> particleParams
+    );
     // NOLINTEND
 
 public:
@@ -128,13 +144,13 @@ public:
 
     MCAPI bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
 
     MCAPI ::HashedString const& $getCullingLayer() const;
 
     MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
 
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
@@ -149,8 +165,6 @@ public:
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

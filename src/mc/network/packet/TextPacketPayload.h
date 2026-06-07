@@ -9,6 +9,8 @@
 // clang-format off
 class ResolvedTextObject;
 class TextPacket;
+namespace PlayerCapabilities { struct IPlayerData; }
+namespace PlayerCapabilities { struct ISharedController; }
 // clang-format on
 
 struct TextPacketPayload {
@@ -31,8 +33,8 @@ public:
         // NOLINTEND
 
     public:
-        AuthorAndMessage(AuthorAndMessage const&) = default;
-        AuthorAndMessage()                        = default;
+        AuthorAndMessage& operator=(AuthorAndMessage const&) = default;
+        AuthorAndMessage()                                   = default;
         AuthorAndMessage(TextPacketType type, std::string const& author, std::string const& message)
         : mType(type),
           mAuthor(author),
@@ -41,19 +43,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI AuthorAndMessage(::TextPacketPayload::AuthorAndMessage const&);
+
         MCAPI ::TextPacketPayload::AuthorAndMessage& operator=(::TextPacketPayload::AuthorAndMessage&&);
-
-        MCAPI ::TextPacketPayload::AuthorAndMessage& operator=(::TextPacketPayload::AuthorAndMessage const&);
-
-        MCAPI bool operator==(::TextPacketPayload::AuthorAndMessage const& other) const;
-
-        MCAPI ~AuthorAndMessage();
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void* $ctor(::TextPacketPayload::AuthorAndMessage const&);
         // NOLINTEND
     };
 
@@ -67,8 +65,8 @@ public:
         // NOLINTEND
 
     public:
-        MessageAndParams(MessageAndParams const&) = default;
-        MessageAndParams()                        = default;
+        MessageAndParams& operator=(MessageAndParams const&) = default;
+        MessageAndParams()                                   = default;
         MessageAndParams(TextPacketType type, std::string const& message, std::vector<std::string> const& params)
         : mType(type),
           mMessage(message),
@@ -77,19 +75,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::TextPacketPayload::MessageAndParams& operator=(::TextPacketPayload::MessageAndParams&&);
-
-        MCFOLD ::TextPacketPayload::MessageAndParams& operator=(::TextPacketPayload::MessageAndParams const&);
+        MCAPI MessageAndParams(::TextPacketPayload::MessageAndParams const&);
 
         MCAPI bool operator==(::TextPacketPayload::MessageAndParams const& other) const;
-
-        MCAPI ~MessageAndParams();
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCFOLD void* $ctor(::TextPacketPayload::MessageAndParams const&);
         // NOLINTEND
     };
 
@@ -99,27 +93,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, ::TextPacketType> mType;
         ::ll::TypedStorage<8, 32, ::std::string>   mMessage;
-        // NOLINTEND
-
-    public:
-        MessageOnly(MessageOnly const&) = default;
-        MessageOnly()                   = default;
-        MessageOnly(TextPacketType type, std::string const& message) : mType(type), mMessage(message) {}
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD ::TextPacketPayload::MessageOnly& operator=(::TextPacketPayload::MessageOnly&&);
-
-        MCFOLD ::TextPacketPayload::MessageOnly& operator=(::TextPacketPayload::MessageOnly const&);
-
-        MCAPI ~MessageOnly();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -147,15 +120,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextPacketPayload(::TextPacketPayload&&);
-
     MCAPI TextPacketPayload(::TextPacketPayload const&);
 
-#ifdef LL_PLAT_C
     MCAPI ::std::string const& getAuthorOrEmpty() const;
-#endif
 
     MCAPI ::std::string const& getMessage() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<::std::string> const& getParams() const;
+#endif
+
+    MCAPI ::TextPacketType getType() const;
 
     MCAPI ::TextPacketPayload& operator=(::TextPacketPayload&&);
 
@@ -167,6 +142,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool const _shouldHandleTextPacketForPlayer(
+        ::PlayerCapabilities::IPlayerData&             playerData,
+        ::PlayerCapabilities::ISharedController const& sharedController
+    );
+
     MCAPI static ::TextPacket createAnnouncement(
         ::std::string const&           author,
         ::std::string const&           message,
@@ -183,21 +163,64 @@ public:
         ::std::string const&           platformId
     );
 
+    MCAPI static ::TextPacket
+    createJukeboxPopup(::std::string const& message, ::std::vector<::std::string> const& params);
+
+#ifdef LL_PLAT_C
+    MCAPI static ::TextPacket createRaw(::std::string const& raw);
+#endif
+
+    MCAPI static ::TextPacket createRawJsonObjectMessage(::std::string const& rawJson);
+
+    MCAPI static ::TextPacket createSystemMessage(::std::string const& message);
+
     MCAPI static ::TextPacket createTextObjectMessage(
         ::ResolvedTextObject const& resolvedTextObject,
         ::std::string               fromXuid,
         ::std::string               fromPlatformId
     );
 
+    MCAPI static ::TextPacket createTextObjectWhisperMessage(
+        ::std::string const& message,
+        ::std::string const& xuid,
+        ::std::string const& platformId
+    );
+
+    MCAPI static ::TextPacket createTextObjectWhisperMessage(
+        ::ResolvedTextObject const& resolvedTextObject,
+        ::std::string const&        xuid,
+        ::std::string const&        platformId
+    );
+
     MCAPI static ::TextPacket
     createTranslated(::std::string const& message, ::std::vector<::std::string> const& params);
+
+    MCAPI static ::TextPacket createTranslatedAnnouncement(
+        ::std::string const& author,
+        ::std::string const& message,
+        ::std::string const& xuid,
+        ::std::string const& platformId
+    );
+
+    MCAPI static ::TextPacket createTranslatedChat(
+        ::std::string const& author,
+        ::std::string const& message,
+        ::std::string const& xuid,
+        ::std::string const& platformId
+    );
+
+    MCAPI static ::TextPacket createWhisper(
+        ::std::string const&           author,
+        ::std::string const&           message,
+        ::std::optional<::std::string> filteredMessage,
+        ::std::string const&           xuid,
+        ::std::string const&           platformId
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TextPacketPayload&&);
-
     MCAPI void* $ctor(::TextPacketPayload const&);
     // NOLINTEND
 

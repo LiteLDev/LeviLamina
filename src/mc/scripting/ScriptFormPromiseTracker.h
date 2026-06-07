@@ -102,13 +102,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ~ScriptFormPromiseTracker() /*override*/;
+
     virtual ::EventResult onEvent(::PlayerFormResponseEvent const& formResponseEvent) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerFormCloseEvent const& formCloseEvent) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent) /*override*/;
-
-    virtual ~ScriptFormPromiseTracker() /*override*/;
 
     virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
     // NOLINTEND
@@ -126,6 +126,10 @@ public:
 
     MCNAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
 
+    MCNAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
+
+    MCNAPI void rejectAll();
+
     MCNAPI void showDataDrivenScreenToPlayer(
         ::Player const&                              player,
         ::std::string const&                         screenId,
@@ -137,6 +141,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::NetworkIdentifier _getPlayerNetworkId(::Player const& player);
+
     MCNAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
     // NOLINTEND
 

@@ -30,17 +30,23 @@ public:
 
     public:
         // prevent constructor by default
-        Params(Params const&);
+        Params& operator=(Params const&);
         Params();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI Params(::JsonRpc::JsonWebRtcNotification::Params const&);
+
         MCNAPI ::JsonRpc::JsonWebRtcNotification::Params& operator=(::JsonRpc::JsonWebRtcNotification::Params&&);
 
-        MCNAPI ::JsonRpc::JsonWebRtcNotification::Params& operator=(::JsonRpc::JsonWebRtcNotification::Params const&);
-
         MCNAPI ~Params();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::JsonRpc::JsonWebRtcNotification::Params const&);
         // NOLINTEND
 
     public:
@@ -58,13 +64,16 @@ public:
 
 public:
     // prevent constructor by default
-    JsonWebRtcNotification& operator=(JsonWebRtcNotification const&);
     JsonWebRtcNotification(JsonWebRtcNotification const&);
     JsonWebRtcNotification();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI JsonWebRtcNotification(::std::string const& toPlayerId, ::std::string const& innerMessage);
+
+    MCNAPI ::JsonRpc::JsonWebRtcNotification& operator=(::JsonRpc::JsonWebRtcNotification const&);
+
     MCNAPI ~JsonWebRtcNotification();
     // NOLINTEND
 
@@ -72,6 +81,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& toPlayerId, ::std::string const& innerMessage);
     // NOLINTEND
 
 public:

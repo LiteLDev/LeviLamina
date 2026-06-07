@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -12,7 +11,6 @@ class Actor;
 class CompoundTag;
 class Container;
 class DataLoadHelper;
-class Dimension;
 class ILevel;
 class Level;
 class SaveContext;

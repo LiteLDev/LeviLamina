@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct MetaVisitor; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal::internal { struct LoadState; }
@@ -15,7 +16,7 @@ namespace cereal::internal { struct SaveState; }
 
 namespace cereal::internal {
 
-struct GenericCompositeSchema : public ::cereal::internal::DefaultCompositeSchema {
+class GenericCompositeSchema : public ::cereal::internal::DefaultCompositeSchema {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,7 +33,22 @@ public:
         ::cereal::internal::SaveState const& state
     ) const /*override*/;
 
-    virtual ~GenericCompositeSchema() /*override*/ = default;
+    virtual bool doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI int iterate(
+        ::entt::meta_type const& type,
+        ::entt::meta_any&        src,
+        ::entt::meta_any&        dst,
+        ::cereal::MetaVisitor&   visitor
+    ) const;
+
+    MCAPI void members(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+
+    MCAPI bool setters(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
     // NOLINTEND
 
 public:
@@ -50,6 +66,8 @@ public:
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const;
+
+    MCAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
 
 
     // NOLINTEND

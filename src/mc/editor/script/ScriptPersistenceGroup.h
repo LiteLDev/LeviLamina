@@ -16,7 +16,6 @@ namespace Editor::Services { class PersistenceGroup; }
 namespace Editor::Services { class PersistenceItem; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -51,8 +50,6 @@ public:
     MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>
     _createScriptPersistenceGroupItem(::WeakRef<::Editor::Services::PersistenceItem> groupItemRef);
 
-    MCNAPI ::Scripting::Error _getInvalidGroupError() const;
-
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>
     createItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
@@ -76,6 +73,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> listItems() const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> saveToClient();
+
+    MCNAPI ~ScriptPersistenceGroup();
     // NOLINTEND
 
 public:
@@ -92,6 +91,12 @@ public:
         ::Editor::ScriptModule::ScriptPersistenceService* owner,
         ::Scripting::WeakLifetimeScope const&             scope
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

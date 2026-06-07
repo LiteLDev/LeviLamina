@@ -28,20 +28,21 @@ public:
 
 public:
     // prevent constructor by default
-    EmitterLifetimeEventsComponent(EmitterLifetimeEventsComponent const&);
     EmitterLifetimeEventsComponent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-    virtual ~EmitterLifetimeEventsComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
+
+    MCAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
+
     MCAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
     operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
@@ -62,9 +63,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:

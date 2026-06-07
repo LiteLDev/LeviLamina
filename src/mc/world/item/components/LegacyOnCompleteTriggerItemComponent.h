@@ -15,8 +15,7 @@ class HashedString;
 class ItemStack;
 class Level;
 class Player;
-struct LegacyOnCompleteTriggerItemComponentData;
-namespace Bedrock::PubSub { class Subscription; }
+namespace SharedTypes::Legacy { struct OnCompleteTriggerItemComponent; }
 // clang-format on
 
 class LegacyOnCompleteTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -35,21 +34,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~LegacyOnCompleteTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnCompleteTriggerItemComponent(::LegacyOnCompleteTriggerItemComponentData&& componentData);
+    MCAPI explicit LegacyOnCompleteTriggerItemComponent(
+        ::SharedTypes::Legacy::OnCompleteTriggerItemComponent&& componentData
+    );
 
     MCAPI void _onUseTimeDepleted(
-        ::ItemUseMethod& itemUseMethod,
-        ::ItemStack const&,
-        ::ItemStack& item,
-        ::Player&    player,
-        ::Level&     level
+        ::ItemUseMethod&   itemUseMethod,
+        ::ItemStack const& item,
+        ::ItemStack&       player,
+        ::Player&          level,
+        ::Level&
     );
     // NOLINTEND
 
@@ -62,7 +61,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyOnCompleteTriggerItemComponentData&& componentData);
+    MCAPI void* $ctor(::SharedTypes::Legacy::OnCompleteTriggerItemComponent&& componentData);
     // NOLINTEND
 
 public:

@@ -45,14 +45,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~PackStackCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string formatPackInfoOutput(::PackInfo const& packInfo, bool isVerbose);
+
+    MCAPI static ::std::vector<::PackInfo>
+    getPacksForOutput(::std::vector<::PackInfo> const& packInfoList, bool isVerbose, bool excludeVanilla);
 
     MCAPI static void
     outputPackStack(::CommandOutput& output, ::ResourcePackStack const& stack, bool isVerbose, bool excludeVanilla);

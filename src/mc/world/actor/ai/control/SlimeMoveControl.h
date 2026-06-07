@@ -22,14 +22,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
-
-    virtual ~SlimeMoveControl() /*override*/ = default;
     // NOLINTEND
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static int _getJumpDelay(::Mob const& mob);
+    MCAPI SlimeMoveControl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

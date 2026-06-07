@@ -15,12 +15,6 @@ namespace EAS { class ColorModifier; }
 namespace EAS {
 
 class ColorAttribute
-: public ::EAS::EnvironmentAttribute<::mce::Color, ::EAS::ColorModifier, ::EAS::NoConstraint<::mce::Color>> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ColorAttribute() /*override*/ = default;
-    // NOLINTEND
-};
+: public ::EAS::EnvironmentAttribute<::mce::Color, ::EAS::ColorModifier, ::EAS::NoConstraint<::mce::Color>> {};
 
 } // namespace EAS

@@ -21,6 +21,8 @@ MCAPI ::std::unique_ptr<::MolangVariableMap> deserializeVariableMap(::Json::Valu
 
 MCAPI ::Json::Value serializeScriptArg(::MolangScriptArg const& scriptArg);
 
+MCAPI ::Json::Value serializeVariable(::MolangVariable const& variable);
+
 MCAPI ::Json::Value serializeVariableMap(::MolangVariableMap const& variableMap);
 // NOLINTEND
 

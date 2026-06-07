@@ -33,6 +33,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD float getChance() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);

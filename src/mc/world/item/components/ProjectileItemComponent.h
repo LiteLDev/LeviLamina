@@ -14,6 +14,7 @@ class Actor;
 class BlockSource;
 class Container;
 class HashedString;
+class ItemStack;
 class Player;
 class SemVersion;
 class Vec3;
@@ -35,21 +36,16 @@ public:
     ProjectileItemComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ProjectileItemComponent() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
     MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
 
-    MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI ::Actor*
+    createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;
 
-    MCAPI ::Vec3 getShootDir(::Player const& player, float angleOffset) const;
+    MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     MCAPI ::Actor* shootProjectile(
         ::BlockSource& region,
@@ -78,12 +74,6 @@ public:
     MCAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
     MCAPI void* $ctor(::ActorType actorType, float minCriticalPower);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

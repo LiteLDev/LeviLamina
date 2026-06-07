@@ -28,8 +28,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& getPluginSources() const /*override*/;
-
-    virtual ~ScriptPluginPackSourceEnumerator() /*override*/;
     // NOLINTEND
 
 public:
@@ -43,12 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& scriptRoot, ::std::vector<::PackInstance> const& packStack);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

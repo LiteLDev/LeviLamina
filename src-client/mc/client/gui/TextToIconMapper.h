@@ -26,18 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~TextToIconMapper() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TextToIconMapper();
-
-    MCAPI ::std::unordered_map<::std::string, ::std::string>
-    _getTouchIconMap(::NewInteractionModel interactionModel) const;
 
     MCAPI void _init();
 
@@ -71,12 +62,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

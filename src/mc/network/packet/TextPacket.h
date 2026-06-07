@@ -71,8 +71,6 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~TextPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -80,19 +78,15 @@ public:
     // NOLINTBEGIN
     MCAPI TextPacket();
 
-    MCAPI ::TextPacket& operator=(::TextPacket&&);
+    MCAPI explicit TextPacket(::TextPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::TextPacketPayload payload);
     // NOLINTEND
 
 public:

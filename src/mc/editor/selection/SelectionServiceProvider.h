@@ -41,9 +41,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::Editor::Services::SelectionServiceProvider::ManifestEntry&
-        operator=(::Editor::Services::SelectionServiceProvider::ManifestEntry&&);
-
         MCNAPI ~ManifestEntry();
         // NOLINTEND
 
@@ -69,27 +66,8 @@ public:
     public:
         // prevent constructor by default
         ManifestState& operator=(ManifestState const&);
+        ManifestState(ManifestState const&);
         ManifestState();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ManifestState(::Editor::Services::SelectionServiceProvider::ManifestState const&);
-
-        MCNAPI ~ManifestState();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Editor::Services::SelectionServiceProvider::ManifestState const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

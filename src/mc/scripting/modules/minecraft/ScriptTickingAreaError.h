@@ -31,9 +31,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptTickingAreaError();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptTickingAreaError();
+    MCAPI ScriptTickingAreaError(
+        ::std::string const&                                    message,
+        ::ScriptModuleMinecraft::ScriptTickingAreaError::Reason reason
+    );
     // NOLINTEND
 
 public:
@@ -45,9 +52,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::string const& message, ::ScriptModuleMinecraft::ScriptTickingAreaError::Reason reason);
     // NOLINTEND
 };
 

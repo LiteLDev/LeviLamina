@@ -26,11 +26,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkdd4c51;
-        ::ll::UntypedStorage<4, 4>  mUnk43a903;
-        ::ll::UntypedStorage<4, 4>  mUnk1ca0e6;
-        ::ll::UntypedStorage<8, 32> mUnkc298e1;
-        ::ll::UntypedStorage<8, 32> mUnkaeacc9;
+        ::ll::UntypedStorage<4, 4>   mUnkdd4c51;
+        ::ll::UntypedStorage<4, 4>   mUnk43a903;
+        ::ll::UntypedStorage<4, 4>   mUnk1ca0e6;
+        ::ll::UntypedStorage<8, 8>   mUnk6b5656;
+        ::ll::UntypedStorage<8, 8>   mUnkcb3610;
+        ::ll::UntypedStorage<8, 32>  mUnkc298e1;
+        ::ll::UntypedStorage<8, 32>  mUnkaeacc9;
+        ::ll::UntypedStorage<8, 136> mUnkaff333;
         // NOLINTEND
 
     public:
@@ -68,7 +71,7 @@ public:
         ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>,
         ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>,
         ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>
-    ) const = 0;
+    ) = 0;
     // NOLINTEND
 
 public:

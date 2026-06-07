@@ -42,27 +42,29 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                               mNumFullIcons;
     ::ll::TypedStorage<8, 8, uint64>                               mNumHalfIcons;
     ::ll::TypedStorage<8, 192, ::std::array<::mce::TexturePtr, 6>> mHungerTextures;
-    ::ll::TypedStorage<8, 3168, ::std::array<::mce::Mesh, 6>>      mHungerMeshes;
+    ::ll::TypedStorage<8, 3312, ::std::array<::mce::Mesh, 6>>      mHungerMeshes;
     ::ll::TypedStorage<4, 120, ::std::array<::glm::vec3, 10>>      mIconPosition;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudHungerRenderer() /*override*/ = default;
+    virtual ~HudHungerRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
     virtual void
-    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int) /*override*/;
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl&, ::UIScene const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI HudHungerRenderer();
+
+    MCAPI bool _areTexturesValid() const;
 
     MCAPI void _loadHungerTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
@@ -76,13 +78,19 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& owner, ::UIControl&, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
     // NOLINTEND
 
 public:

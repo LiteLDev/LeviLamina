@@ -13,8 +13,8 @@
 class StrictEntityContext;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataJumpDurationComponent;
+struct ActorMovementTickNeededComponent;
 struct ExitFromPassengerFlagComponent;
-struct InterpolateMovementNeededComponent;
 struct JumpTicksComponent;
 struct MobIsJumpingFlagComponent;
 struct MobJumpComponent;
@@ -35,7 +35,7 @@ public:
     MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent>,
+            ::Include<::ActorMovementTickNeededComponent>,
             ::Optional<::VehicleComponent const>,
             ::StateVectorComponent const,
             ::ActorDataDirtyFlagsComponent,

@@ -3,6 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 
-struct OnTargetEscapeDefinition : public ::ActorDefinitionTrigger {};
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
+struct OnTargetEscapeDefinition : public ::ActorDefinitionTrigger {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OnTargetEscapeDefinition>>& root
+    );
+    // NOLINTEND
+};

@@ -10,6 +10,7 @@
 // clang-format off
 class Actor;
 class EntityContext;
+class MobEffectInstance;
 // clang-format on
 
 namespace History {
@@ -23,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MobEffectsReplay();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void advanceFrame(::EntityContext& entity) const /*override*/;
@@ -30,8 +35,18 @@ public:
     virtual void advanceLiveFrame(::Actor& actor, ::std::optional<uint64>) /*override*/;
 
     virtual ::std::bitset<2> getCorrectionTypeBitset() const /*override*/;
+    // NOLINTEND
 
-    virtual ~MobEffectsReplay() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MobEffectsReplay(::MobEffectPacket mobEffectPacket, ::std::vector<::MobEffectInstance> const& liveMobEffects);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::MobEffectPacket mobEffectPacket, ::std::vector<::MobEffectInstance> const& liveMobEffects);
     // NOLINTEND
 
 public:
@@ -41,7 +56,7 @@ public:
 
     MCAPI void $advanceLiveFrame(::Actor& actor, ::std::optional<uint64>);
 
-    MCAPI ::std::bitset<2> $getCorrectionTypeBitset() const;
+    MCFOLD ::std::bitset<2> $getCorrectionTypeBitset() const;
     // NOLINTEND
 
 public:

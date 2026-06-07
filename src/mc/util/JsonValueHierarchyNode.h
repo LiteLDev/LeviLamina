@@ -38,8 +38,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI JsonValueHierarchyNode();
 
-    MCNAPI JsonValueHierarchyNode(::JsonValueHierarchyNode&&);
-
     MCNAPI JsonValueHierarchyNode(::JsonValueHierarchyNode const&);
 
     MCNAPI JsonValueHierarchyNode(
@@ -48,6 +46,8 @@ public:
         ::MinEngineVersion const& minEngineVersion,
         ::std::string const&      sourceFileName
     );
+
+    MCNAPI ::JsonValueHierarchyNode& operator=(::JsonValueHierarchyNode&&);
 
     MCNAPI ~JsonValueHierarchyNode();
 #endif
@@ -58,8 +58,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::JsonValueHierarchyNode&&);
 
     MCNAPI void* $ctor(::JsonValueHierarchyNode const&);
 

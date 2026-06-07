@@ -19,27 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorTextureInfo();
-
-    MCAPI ActorTextureInfo(::ActorTextureInfo&&);
-
-    MCAPI ActorTextureInfo(::ActorTextureInfo const&);
-
-    MCAPI ::ActorTextureInfo& operator=(::ActorTextureInfo const&);
-
-    MCAPI ::ActorTextureInfo& operator=(::ActorTextureInfo&&);
-
     MCAPI ~ActorTextureInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorTextureInfo&&);
-
-    MCAPI void* $ctor(::ActorTextureInfo const&);
     // NOLINTEND
 
 public:

@@ -73,8 +73,18 @@ public:
         ::std::string const& realmId,
         bool                 isOwner
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~Telemetry() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Telemetry(::IClientInstance& clientInstance, ::IMinecraftEventing& eventing);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IClientInstance& clientInstance, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

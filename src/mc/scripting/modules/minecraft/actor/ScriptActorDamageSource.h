@@ -31,15 +31,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorDamageSource& operator=(ScriptActorDamageSource const&);
-    ScriptActorDamageSource();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorDamageSource(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
-
     MCAPI ~ScriptActorDamageSource();
     // NOLINTEND
 
@@ -50,12 +43,6 @@ public:
 
     MCAPI static ::ScriptModuleMinecraft::ScriptActorDamageSource
     create(::ILevel const& level, ::ActorDamageSource const& actorDamageSource, ::Scripting::WeakLifetimeScope& scope);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDamageSource const&);
     // NOLINTEND
 
 public:

@@ -18,11 +18,11 @@ deserializePackStackEntry(::Json::Value const& entry, ::PackInstanceId& output, 
 
 MCAPI void serializePackStackEntry(::PackInstanceId const& packInstanceId, ::Json::Value& output);
 
+MCAPI ::std::string stringifyCapabilities(::std::vector<::std::string> const& capabilities);
+
 MCAPI ::std::string stringifyResourceMetadataGeneratedWith(::ResourceMetadata const& resourceMetadata);
 
-#ifdef LL_PLAT_C
 MCAPI ::PackIdVersion toPackIdAnyVersion(::PackIdVersion const& fromPackIdVersion);
-#endif
 // NOLINTEND
 
 } // namespace ResourceHelper

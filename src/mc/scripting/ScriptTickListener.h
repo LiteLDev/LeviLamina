@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptTickListener() /*override*/ = default;
+    virtual ~ScriptTickListener() /*override*/;
 
     virtual ::EventResult onLevelTickStart(::Level& level) /*override*/;
 
@@ -79,6 +79,12 @@ public:
         ::ScriptDiagnostics&              diagnostics,
         ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

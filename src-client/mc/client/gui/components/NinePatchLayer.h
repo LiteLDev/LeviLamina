@@ -37,6 +37,10 @@ public:
         // NOLINTEND
     };
 
+    using CachedQuad = ::NinePatchLayer::CachedQuad;
+
+    using CachedQuad = ::NinePatchLayer::CachedQuad;
+
 public:
     // member variables
     // NOLINTBEGIN

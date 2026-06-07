@@ -3,12 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/reflection/Privilege.h"
 #include "mc/deps/scripting/script_engine/ScriptValue.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class IObjectInspector; }
+namespace Scripting { class IRuntime; }
 namespace Scripting { class ResultAny; }
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClosureType; }
+namespace Scripting { struct ContextId; }
 // clang-format on
 
 namespace Scripting {
@@ -22,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClosureAny& operator=(ClosureAny const&);
-    ClosureAny();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ClosureAny() /*override*/;
@@ -35,7 +37,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ClosureAny();
+
+    MCNAPI ClosureAny(::Scripting::ClosureAny&& rhs);
+
     MCNAPI ClosureAny(::Scripting::ClosureAny const& rhs);
+
+    MCNAPI ClosureAny(
+        ::Scripting::IRuntime*                                         runtime,
+        ::Scripting::ContextId                                         contextId,
+        ::Scripting::WeakLifetimeScope                                 scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::ClosureType> handle,
+        ::Scripting::IObjectInspector*                                 inspector
+    );
 
     MCNAPI ::Scripting::ResultAny _callGeneric(
         ::entt::meta_any*                       args,
@@ -46,13 +60,31 @@ public:
 
     MCNAPI bool compareTo(::Scripting::ClosureAny const& rhs) const;
 
+    MCNAPI ::std::optional<::Scripting::TypedObjectHandle<::Scripting::ClosureType>> getClosureHandle() const;
+
     MCNAPI ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny&& rhs);
+
+    MCNAPI ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny const& rhs);
+
+    MCNAPI bool valid() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::Scripting::ClosureAny&& rhs);
+
     MCNAPI void* $ctor(::Scripting::ClosureAny const& rhs);
+
+    MCNAPI void* $ctor(
+        ::Scripting::IRuntime*                                         runtime,
+        ::Scripting::ContextId                                         contextId,
+        ::Scripting::WeakLifetimeScope                                 scope,
+        ::Scripting::StrongTypedObjectHandle<::Scripting::ClosureType> handle,
+        ::Scripting::IObjectInspector*                                 inspector
+    );
     // NOLINTEND
 
 public:

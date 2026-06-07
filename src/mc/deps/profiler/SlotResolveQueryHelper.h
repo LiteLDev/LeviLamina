@@ -33,16 +33,28 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI SlotResolveQueryHelper(::std::thread::id thread, ::gsl::span<::std::string_view const> names);
+
+    MCNAPI ::std::thread::id getAssociatedThreadID() const;
+
+    MCNAPI ::gsl::span<::gsl::not_null<::Bedrock::Profile::Whisker::ScopeData const*>> tryResolveAndFetchAll();
+#endif
+
     MCNAPI ~SlotResolveQueryHelper();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::thread::id thread, ::gsl::span<::std::string_view const> names);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };
 

@@ -30,27 +30,23 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Tag& operator=(Tag const&);
+        Tag(Tag const&);
+        Tag();
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Tag();
+        MCAPI Tag(::LevelDataValue::Tag&& tag);
 
-        MCAPI explicit Tag(::CompoundTag&& tag);
-
-        MCAPI ~Tag();
+        MCFOLD ::LevelDataValue::Tag& operator=(::LevelDataValue::Tag&& tag);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
-
-        MCAPI void* $ctor(::CompoundTag&& tag);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCFOLD void* $ctor(::LevelDataValue::Tag&& tag);
         // NOLINTEND
     };
 

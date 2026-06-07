@@ -21,11 +21,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptComponent();
 
     virtual bool _isValid() const = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptComponent(::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+
+    MCFOLD ::std::string const& getTypeId() const;
     // NOLINTEND
 
 public:
@@ -35,9 +47,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

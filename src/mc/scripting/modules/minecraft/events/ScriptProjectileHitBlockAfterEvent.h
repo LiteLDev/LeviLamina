@@ -31,9 +31,6 @@ public:
     MCAPI ScriptProjectileHitBlockAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent const&);
 
     MCAPI ::ScriptModuleMinecraft::ScriptBlockHitInformation getBlockHit() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent&&);
     // NOLINTEND
 
 public:

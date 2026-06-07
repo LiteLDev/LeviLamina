@@ -25,6 +25,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkf06804;
     ::ll::UntypedStorage<1, 1>   mUnk317f91;
     ::ll::UntypedStorage<1, 1>   mUnk30edaa;
+    ::ll::UntypedStorage<1, 2>   mUnke83298;
     // NOLINTEND
 
 #ifdef LL_PLAT_S
@@ -39,15 +40,15 @@ public:
     // NOLINTBEGIN
     MCNAPI PingedCompatibleServer();
 
-    MCNAPI PingedCompatibleServer(::PingedCompatibleServer&&);
-
     MCNAPI PingedCompatibleServer(::PingedCompatibleServer const&);
 
 #ifdef LL_PLAT_C
     MCNAPI ::std::string getId() const;
+#endif
 
     MCNAPI ::PingedCompatibleServer& operator=(::PingedCompatibleServer&&);
 
+#ifdef LL_PLAT_C
     MCNAPI ::PingedCompatibleServer& operator=(::PingedCompatibleServer const&);
 #endif
 
@@ -58,8 +59,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::PingedCompatibleServer&&);
 
     MCNAPI void* $ctor(::PingedCompatibleServer const&);
     // NOLINTEND

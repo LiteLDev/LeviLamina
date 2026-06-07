@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NpcSceneDialogueData();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getDialogueText() const /*override*/;
@@ -42,14 +46,18 @@ public:
     virtual ::Actor* getActor() /*override*/;
 
     virtual ::Actor const* getActor() const /*override*/;
-
-    virtual ~NpcSceneDialogueData() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI NpcSceneDialogueData(::WeakEntityRef npc, ::std::string const& sceneName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WeakEntityRef npc, ::std::string const& sceneName);
     // NOLINTEND
 
 public:

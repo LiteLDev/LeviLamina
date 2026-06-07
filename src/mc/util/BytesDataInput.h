@@ -27,8 +27,6 @@ public:
     virtual ::Bedrock::Result<int64> readLongLongResult() /*override*/;
 
     virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) = 0;
-
-    virtual ~BytesDataInput() /*override*/ = default;
     // NOLINTEND
 
 public:

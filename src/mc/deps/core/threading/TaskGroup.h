@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/SharedAsync.h"
@@ -29,7 +28,6 @@ class Pack;
 class ResourcePack;
 class Scheduler;
 class TaskResult;
-class WatchdogTimer;
 class WorkerPool;
 class WorldPacksHistoryFile;
 struct AsyncJoinAllow;
@@ -49,27 +47,19 @@ namespace Json { class Value; }
 namespace JsonRpc { class JsonRpcError; }
 namespace JsonRpc { class TurnConfigResult; }
 namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
-namespace PackCommand { struct CommandExecutor; }
 namespace PackCommand { struct PackCommandResult; }
 namespace RepositoryLoading { struct PackModifications; }
+namespace Safety { struct TextFilterResult; }
 // clang-format on
 
 class TaskGroup : public ::IBackgroundTaskOwner {
 public:
     // TaskGroup inner types declare
     // clang-format off
-    template<typename... T0> struct TaskTraitsBase;
-    template<typename... T0> struct TaskTraitsImpl;
     template<typename T0> class ThenableBase;
     // clang-format on
 
     // TaskGroup inner types define
-    template <typename... T0>
-    struct TaskTraitsBase {};
-
-    template <typename... T0>
-    struct TaskTraitsImpl {};
-
     template <typename T0>
     class ThenableBase {};
 
@@ -135,21 +125,35 @@ public:
         ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback
     );
 
-    MCAPI ::gsl::not_null<::IBackgroundTaskOwner*> _getBackgroundTaskManager();
-
     MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
 #ifdef LL_PLAT_C
     MCAPI uint64 count() const;
 #endif
 
+    MCAPI void disableOwnerThreadChecks();
+
     MCAPI void flush(::std::function<void()> waitFn);
+
+#ifdef LL_PLAT_C
+    MCAPI uint64 getMaxConcurrency() const;
+#endif
+
+    MCFOLD ::std::string_view getName() const;
+
+    MCAPI ::std::thread::id getOwnerThreadID() const;
+
+    MCAPI ::Scheduler& getScheduler();
 
     MCAPI bool isEmpty() const;
 
 #ifdef LL_PLAT_C
     MCAPI void kick(uint count);
+#endif
 
+    MCAPI void pause();
+
+#ifdef LL_PLAT_C
     MCAPI void resume();
 #endif
 
@@ -160,6 +164,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::IBackgroundTaskOwner* getCurrentTaskGroup();
+
+    MCAPI static ::Bedrock::Threading::Async<void>
+    queueChildSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
 
     MCAPI static ::Bedrock::Threading::Async<void> queueChild_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,

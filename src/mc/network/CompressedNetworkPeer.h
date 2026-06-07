@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompressedNetworkPeer() /*override*/ = default;
+    virtual ~CompressedNetworkPeer() /*override*/;
 
     virtual void sendPacket(
         ::std::string const&       data,
@@ -46,12 +46,20 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit CompressedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
+
+    MCNAPI void setCompressionEnabled(bool val, ::NetworkSettingOptions options);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -8,11 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
 class BlockPos;
 class BlockVolume;
 class MesaSurfaceBuilderNoises;
 class Random;
+class SurfaceBuilderData;
 struct MesaSurfaceBlocks;
 struct SurfaceMaterialBlocks;
 // clang-format on
@@ -32,13 +32,11 @@ public:
     // NOLINTBEGIN
     virtual void initBuilder(uint levelSeed) /*override*/;
 
-    virtual void initBiomeSurface(::Biome& biome) const /*override*/;
+    virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
-    virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
+    virtual bool isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const /*override*/;
 
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
-
-    virtual ~MesaSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -66,9 +64,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $initBuilder(uint levelSeed);
 
-    MCFOLD void $initBiomeSurface(::Biome& biome) const;
+    MCFOLD void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
-    MCFOLD bool $isBestBuilder(::Biome const& biome) const;
+    MCFOLD bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
 

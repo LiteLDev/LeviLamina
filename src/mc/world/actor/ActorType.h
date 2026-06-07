@@ -162,4 +162,5 @@ enum class ActorType : int {
     ZombieNautilus             = 74646,
     Parched                    = 1117079,
     CamelHusk                  = 70552,
+    SulfurCube                 = 2969,
 };

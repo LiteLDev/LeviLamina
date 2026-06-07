@@ -19,28 +19,30 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorItemCooldownsComponent& operator=(ActorItemCooldownsComponent const&);
-    ActorItemCooldownsComponent(ActorItemCooldownsComponent const&);
-    ActorItemCooldownsComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorItemCooldownsComponent(::ActorItemCooldownsComponent&&);
-
     MCAPI int getItemCooldownLeft(::HashedString const& category) const;
+
+    MCAPI int getItemCooldownLeft(uint64 categoryHash) const;
 
 #ifdef LL_PLAT_C
     MCAPI float getItemCooldownProgress(::HashedString const& category) const;
 #endif
 
+    MCAPI int getMaxItemCooldownLeft() const;
+
+    MCAPI bool isItemOnCooldown(::HashedString const& category) const;
+
     MCAPI ::std::string startItemCooldown(::HashedString const& category, int tickDuration);
+
+    MCAPI void tickCooldowns();
+
+    MCAPI ~ActorItemCooldownsComponent();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorItemCooldownsComponent&&);
+    MCAPI void $dtor();
     // NOLINTEND
 };

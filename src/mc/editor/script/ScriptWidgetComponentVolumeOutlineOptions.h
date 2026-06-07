@@ -34,6 +34,8 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptWidgetComponentVolumeOutlineOptions& operator=(ScriptWidgetComponentVolumeOutlineOptions const&);
+    ScriptWidgetComponentVolumeOutlineOptions(ScriptWidgetComponentVolumeOutlineOptions const&);
     ScriptWidgetComponentVolumeOutlineOptions();
 
 public:
@@ -41,24 +43,6 @@ public:
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void>
     validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
-
-    virtual ~ScriptWidgetComponentVolumeOutlineOptions() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI
-    ScriptWidgetComponentVolumeOutlineOptions(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
-
-    MCNAPI
-    ScriptWidgetComponentVolumeOutlineOptions(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
     // NOLINTEND
 
 public:
@@ -85,20 +69,6 @@ public:
     MCNAPI static ::Vec3 const& DEFAULT_OFFSET();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
-
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

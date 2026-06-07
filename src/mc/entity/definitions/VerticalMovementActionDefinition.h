@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct VerticalMovementActionComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -22,6 +24,14 @@ public:
     VerticalMovementActionDefinition& operator=(VerticalMovementActionDefinition const&);
     VerticalMovementActionDefinition(VerticalMovementActionDefinition const&);
     VerticalMovementActionDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void initialize(::EntityContext& entity, ::VerticalMovementActionComponent& component) const;
+
+    MCAPI void uninitialize(::EntityContext& entity) const;
+    // NOLINTEND
 
 public:
     // static functions

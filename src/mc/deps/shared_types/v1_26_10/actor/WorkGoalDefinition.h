@@ -28,15 +28,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorkGoalDefinition(WorkGoalDefinition const&);
-    WorkGoalDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_26_10::WorkGoalDefinition& operator=(::SharedTypes::v1_26_10::WorkGoalDefinition const&);
-
     MCAPI ~WorkGoalDefinition();
     // NOLINTEND
 

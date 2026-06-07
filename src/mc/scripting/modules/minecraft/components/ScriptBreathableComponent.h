@@ -20,12 +20,6 @@ namespace ScriptModuleMinecraft {
 class ScriptBreathableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::BreathableComponent, ::BreathableDefinition> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptBreathableComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<short> getAirSupply() const;
@@ -34,27 +28,13 @@ public:
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getBreatheBlocks() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
-
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
-
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
-
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
-
     MCAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> getGeneratesBubbles() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getInhaleTime() const;
-
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getNonBreatheBlocks() const;
-
-    MCAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
-
-    MCAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
 
     MCAPI ::Scripting::Result_deprecated<void> setAirSupply(short value) const;
     // NOLINTEND
@@ -63,6 +43,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

@@ -64,16 +64,36 @@ public:
     // prevent constructor by default
     ScriptPackSettingsCache& operator=(ScriptPackSettingsCache const&);
     ScriptPackSettingsCache(ScriptPackSettingsCache const&);
-    ScriptPackSettingsCache();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptPackSettingsCache();
+
+    MCNAPI explicit ScriptPackSettingsCache(::std::vector<::PackInstance> const& stack);
+
     MCNAPI void _initFromPackStack(::std::vector<::PackInstance> const& stack);
+
+    MCNAPI ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> const*
+    getPackSettingsNameValueMap(::mce::UUID packId) const;
 
     MCNAPI ::Bedrock::PubSub::Subscription registerObserver(
         ::mce::UUID                                                                                    packId,
         ::std::function<void(::std::string const&, ::std::variant<float, bool, ::std::string> const&)> callback
     );
+
+    MCNAPI void updatePackSetting(
+        ::mce::UUID                                       packId,
+        ::std::string const&                              name,
+        ::std::variant<float, bool, ::std::string> const& value
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::std::vector<::PackInstance> const& stack);
     // NOLINTEND
 };

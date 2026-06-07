@@ -21,9 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~UseModifiersItemComponentLegacyFactoryData() /*override*/ = default;
+    MCAPI UseModifiersItemComponentLegacyFactoryData();
     // NOLINTEND
 
 public:
@@ -36,6 +36,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

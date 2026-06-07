@@ -27,8 +27,6 @@ public:
 
     virtual void
     registerIsEnabledChangedCallback(::Bedrock::PubSub::Subscription&, ::std::function<void(bool)>) /*override*/;
-
-    virtual ~Feature() /*override*/ = default;
     // NOLINTEND
 
 public:

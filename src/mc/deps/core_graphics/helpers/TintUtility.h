@@ -19,11 +19,7 @@ public:
 
     MCAPI static ::mce::Color _lchToRgb(::mce::Color lch);
 
-    MCAPI static ::mce::Color _rgbToHsl(::mce::Color rgb);
-
     MCAPI static ::mce::Color _rgbToLch(::mce::Color rgb);
-
-    MCAPI static ::mce::Color _rgbToXyz(::mce::Color rgb);
 
     MCAPI static ::mce::Color applyTintToPixel(
         ::mce::Color   underPixel,

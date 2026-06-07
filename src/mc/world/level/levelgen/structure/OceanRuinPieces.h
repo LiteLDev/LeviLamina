@@ -65,10 +65,8 @@ public:
             ::BlockPos const&    position,
             ::BlockSource&       region,
             ::Random&            random,
-            ::BoundingBox const& chunkBB
+            ::BoundingBox const&
         ) /*override*/;
-
-        virtual ~OceanRuinPiece() /*override*/;
         // NOLINTEND
 
     public:
@@ -85,6 +83,8 @@ public:
         );
 
         MCAPI int _getHeight(::BlockPos& pos, ::BlockSource& region, ::BlockPos const& corner);
+
+        MCAPI void _loadTemplate();
 
         MCAPI ::Block const* getChestReplacer(::OceanTempCategory type, ::std::string const& location);
         // NOLINTEND
@@ -104,12 +104,6 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::StructurePieceType $getType() const;
@@ -121,7 +115,7 @@ public:
             ::BlockPos const&    position,
             ::BlockSource&       region,
             ::Random&            random,
-            ::BoundingBox const& chunkBB
+            ::BoundingBox const&
         );
 
 

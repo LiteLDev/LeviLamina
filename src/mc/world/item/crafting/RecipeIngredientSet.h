@@ -19,11 +19,25 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI RecipeIngredientSet();
+
     MCAPI void add(::ItemStackBase const& item);
 
     MCAPI void add(::std::vector<::ItemStack> const& list);
 
+    MCFOLD bool empty() const;
+
+    MCAPI bool operator!=(::RecipeIngredientSet const& lhs) const;
+
     MCAPI ~RecipeIngredientSet();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor();
 #endif
     // NOLINTEND
 

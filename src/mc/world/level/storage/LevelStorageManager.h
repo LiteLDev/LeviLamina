@@ -100,15 +100,25 @@ public:
         ::IMinecraftEventing&                         eventing
     );
 
-    MCAPI void _onNewDimensionCreated(::Dimension& dimension);
+    MCFOLD void _onNewDimensionCreated(::Dimension& dimension);
 
     MCAPI void _savePlayer(::Player& player);
 
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> getLevelStorage();
 
+    MCFOLD ::SavedDataStorage& getSavedDataStorage();
+
     MCAPI void initializeWithDimensionManager(::IDimensionManagerConnector& dimensionManagerConnector);
 
     MCAPI void initializeWithPlayerDeathManager(::IPlayerDeathManagerConnector& playerDeathManagerConnector);
+
+    MCAPI void onAppSuspend();
+
+    MCAPI void onLevelTearingDown();
+
+    MCAPI void onStartLeaveGame();
+
+    MCAPI ::std::shared_ptr<void*> requestTimedStorageDeferment();
 
     MCAPI void save(::std::chrono::steady_clock::time_point currentTime);
 
@@ -117,6 +127,8 @@ public:
     MCAPI void saveLevelData();
 
     MCAPI void trySaveGameData(::std::chrono::steady_clock::time_point currentTime);
+
+    MCAPI void tryStartGameDataSaveTimerIfNotSet(::std::chrono::steady_clock::time_point currentTime);
     // NOLINTEND
 
 public:
@@ -141,7 +153,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveLevelDataConnector();
 
@@ -149,7 +161,7 @@ public:
 
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnStartLeaveGameConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
 
 
     // NOLINTEND

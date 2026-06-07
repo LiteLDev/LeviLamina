@@ -25,8 +25,6 @@ public:
     virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
-
-    virtual ~HaveItemNode() /*override*/ = default;
     // NOLINTEND
 
 public:

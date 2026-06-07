@@ -69,8 +69,6 @@ public:
 
     virtual ::Core::Result
     _copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath) /*override*/;
-
-    virtual ~FileSystem_windows() /*override*/ = default;
     // NOLINTEND
 
 public:

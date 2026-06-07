@@ -41,10 +41,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureMetadata();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureMetadata();
-
     MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v0::StructureMetadata&&);
 
     MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v0::StructureMetadata const&);
@@ -76,8 +78,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v0::StructureMetadata&&);
 
     MCNAPI void* $ctor(::Editor::Structures::PUVLoader::v0::StructureMetadata const&);

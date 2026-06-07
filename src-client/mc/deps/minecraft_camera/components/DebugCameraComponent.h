@@ -22,6 +22,18 @@ public:
     ::ll::TypedStorage<4, 4, ::MinecraftCamera::DebugCameraComponent::InputMode> mInputMode;
     ::ll::TypedStorage<1, 1, bool>                                               mDebugDrawGameCamera;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~DebugCameraComponent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

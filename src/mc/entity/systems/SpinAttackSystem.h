@@ -7,13 +7,14 @@
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Include.h"
-#include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
 class EntitySystems;
 class StrictEntityContext;
+class Vec2;
+class Vec3;
 struct AABBShapeComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
@@ -29,6 +30,7 @@ struct FallDistanceComponent;
 struct HorizontalCollisionFlagComponent;
 struct LocalSpatialEntityFetcherFactoryComponent;
 struct MobFlagComponent;
+struct MovedOnSpawnComponent;
 struct MovementAttributesComponent;
 struct OnGroundFlagComponent;
 struct PlayerActionComponent;
@@ -60,63 +62,63 @@ MCAPI void _removeSpinAttack(
     ::EntityModifier<::RiptideTridentSpinAttackComponent, ::SpinAttackResultsComponent> modifier
 );
 
-MCAPI void _tickDamageNearbyMobs(
-    ::entt::type_list<::Include<::PlayerComponent>>,
-    ::ActorEquipmentComponent const&                      actorEquipment,
-    ::SpinAttackResultsComponent const&                   spinAttackResult,
-    ::ActorOwnerComponent&                                actorComponent,
-    ::ViewT<::StrictEntityContext, ::ActorOwnerComponent> actorView
-);
-
-MCAPI void _tickPostDamageNearbyMobs(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+MCAPI void _stopSpinAttack(
     ::StrictEntityContext const&                                entity,
     ::ActorDataFlagComponent&                                   actorData,
     ::ActorDataDirtyFlagsComponent&                             actorDataDirtyFlags,
     ::DamageNearbyMobsComponent&                                damageNearbyMobs,
-    ::FallDistanceComponent&                                    fallDistance,
     ::PlayerActionComponent&                                    playerAction,
-    ::StateVectorComponent&                                     svc,
-    ::Optional<::OnGroundFlagComponent const>                   isOnGround,
-    ::Optional<::HorizontalCollisionFlagComponent const>        hasHorizontalCollision,
-    ::Optional<::SpinAttackResultsComponent const>              spinAttackResult,
     ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
 );
 
+MCAPI void _tickDamageNearbyMobs(
+    ::entt::type_list<::Include<::PlayerComponent>> actorEquipment,
+    ::ActorEquipmentComponent const&                spinAttackResult,
+    ::SpinAttackResultsComponent const&             actorComponent,
+    ::ActorOwnerComponent&                          actorView,
+    ::ViewT<::StrictEntityContext, ::ActorOwnerComponent>
+);
+
+MCAPI void _tickPostDamageNearbyMobs(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>> entity,
+    ::StrictEntityContext const&                                     actorData,
+    ::ActorDataFlagComponent&                                        actorDataDirtyFlags,
+    ::ActorDataDirtyFlagsComponent&                                  damageNearbyMobs,
+    ::DamageNearbyMobsComponent&                                     fallDistance,
+    ::FallDistanceComponent&                                         playerAction,
+    ::PlayerActionComponent&                                         svc,
+    ::StateVectorComponent&                                          isOnGround,
+    ::Optional<::OnGroundFlagComponent const>                        hasHorizontalCollision,
+    ::Optional<::HorizontalCollisionFlagComponent const>             spinAttackResult,
+    ::Optional<::SpinAttackResultsComponent const>                   modifier,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>
+);
+
 MCAPI void _tickSpinAttackAction(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                      entity,
-    ::ActorRotationComponent const&                   actorRotation,
-    ::RiptideTridentSpinAttackComponent const&        riptideSpinAttack,
-    ::ActorDataFlagComponent&                         actorData,
-    ::ActorDataDirtyFlagsComponent&                   dirtyFlags,
-    ::DamageNearbyMobsComponent&                      damageNearbyMobs,
-    ::StateVectorComponent&                           svc,
-    ::Optional<::OnGroundFlagComponent const>         isOnGround,
-    ::Optional<::WasInWaterFlagComponent const>       wasInWater,
-    ::Optional<::ActorHeadInWaterFlagComponent const> isHeadInWater,
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>> entity,
+    ::StrictEntityContext const&                                     actorRotation,
+    ::ActorRotationComponent const&                                  riptideSpinAttack,
+    ::RiptideTridentSpinAttackComponent const&                       actorData,
+    ::ActorDataFlagComponent&                                        dirtyFlags,
+    ::ActorDataDirtyFlagsComponent&                                  damageNearbyMobs,
+    ::DamageNearbyMobsComponent&                                     svc,
+    ::StateVectorComponent&                                          isOnGround,
+    ::Optional<::OnGroundFlagComponent const>                        wasInWater,
+    ::Optional<::WasInWaterFlagComponent const>                      isHeadInWater,
+    ::Optional<::ActorHeadInWaterFlagComponent const>                actorView,
     ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>&
-        actorView,
+        mobView,
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::MobFlagComponent>,
         ::MovementAttributesComponent const,
-        ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>>&                                 mobView,
-    ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const>&  playerView,
-    ::EntityModifier<::RiptideTridentSpinAttackComponent, ::ShouldUpdateBoundingBoxRequestComponent> modifier
+        ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>,
+        ::Optional<::MovedOnSpawnComponent const>>&                                                 playerView,
+    ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const>& modifier,
+    ::EntityModifier<::RiptideTridentSpinAttackComponent, ::ShouldUpdateBoundingBoxRequestComponent>
 );
 
-MCAPI void _tickSpinAttackNearbyMobs(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::DamageNearbyMobsComponent>,
-        ::AABBShapeComponent const,
-        ::ActorDataFlagComponent const,
-        ::DimensionTypeComponent const>                           view,
-    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> factory,
-    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>> mobView,
-    ::EntityModifier<::SpinAttackResultsComponent>                modifier
-);
+MCAPI ::Vec3 calculateImpulse(::Vec2 const& rotation, int riptideEnchantLevel, bool isOnGround, bool isOnlyBodyInWater);
 
 MCAPI void createSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND

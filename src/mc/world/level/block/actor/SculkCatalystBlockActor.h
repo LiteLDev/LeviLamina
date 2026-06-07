@@ -57,8 +57,6 @@ public:
     virtual uint getRange() const /*override*/;
 
     virtual ::GameEventListener::DeliveryMode getDeliveryMode() const /*override*/;
-
-    virtual ~SculkCatalystBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -67,6 +65,14 @@ public:
     MCAPI explicit SculkCatalystBlockActor(::BlockPos const& pos);
 
     MCAPI void _tryConsumeOnDeathExperience(::Level& level, ::Actor& actor);
+
+    MCFOLD ::SculkSpreader& getSculkSpreader();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _trySendItSpreadsEventPacket(::Actor& actor);
     // NOLINTEND
 
 public:

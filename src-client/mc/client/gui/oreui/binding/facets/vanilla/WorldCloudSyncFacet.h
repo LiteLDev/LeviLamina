@@ -41,6 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit WorldCloudSyncFacet(::World::IWorldCloudSyncer& worldCloudSyncer);
+
     MCAPI void clearSyncWorldTaskState();
 
     MCFOLD ::std::optional<::World::WorldCloudSyncResult> const& getSyncWorldResult() const;
@@ -54,6 +56,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::World::IWorldCloudSyncer& worldCloudSyncer);
     // NOLINTEND
 
 public:

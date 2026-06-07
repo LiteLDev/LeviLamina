@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/codebuilder/EncryptionCipherMode.h"
 #include "mc/codebuilder/IRequestHandler.h"
 #include "mc/deps/code_builder/platform/WebviewObserver.h"
 #include "mc/websockets/CloseStatusCode.h"
@@ -20,6 +21,8 @@ namespace CodeBuilder { struct CommandMessage; }
 namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct EncryptionRequest; }
 namespace CodeBuilder { struct ErrorMessage; }
+namespace CodeBuilder { struct EventMessage; }
+namespace Automation { class AutomationObserver; }
 // clang-format on
 
 namespace Automation {
@@ -68,7 +71,7 @@ public:
     virtual void
     chatSubscribe(::std::string const& requestId, ::CodeBuilder::ChatSubscription&& subscription) /*override*/;
 
-    virtual void chatUnsubscribe(::std::string const&, ::std::string const& subscriptionId) /*override*/;
+    virtual void chatUnsubscribe(::std::string const& subscriptionId, ::std::string const&) /*override*/;
 
     virtual void chatUnsubscribeAll(::std::string const&) /*override*/;
 
@@ -96,7 +99,7 @@ public:
 
     virtual void unsubscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const& message) /*override*/;
+    virtual void error(::std::string const& message, ::CodeBuilder::ErrorMessage const&) /*override*/;
 
     virtual bool tutorialCached(::std::string const& tutorialPath) /*override*/;
     // NOLINTEND
@@ -110,17 +113,22 @@ public:
 
     MCNAPI void _errorEncryptionRequired(::std::string const& requestId);
 
+    MCNAPI void _forEachSubscription(
+        ::CodeBuilder::ChatMessage const&                  message,
+        ::std::function<void(::std::string const&)> const& handler
+    ) const;
+
     MCNAPI void _handleIncomingMessage(::RakWebSocketDataFrame const& frame);
 
     MCNAPI void _handleMessage(::CodeBuilder::ChatMessage const& message);
 
-    MCNAPI void _handleOnClose(::CloseStatusCode code, ::std::string const& reason);
+    MCNAPI void _handleMessage(::CodeBuilder::EventMessage const& message);
 
-    MCNAPI void _handleOnConnected(::std::string const& activeSubProtocol);
+    MCNAPI void _handleOnClose(::CloseStatusCode code, ::std::string const&);
+
+    MCNAPI void _handleOnConnected(::std::string const&);
 
     MCNAPI void _send(::std::string const& messageBody);
-
-    MCNAPI void _sendUnencrypted(::std::string const& messageBody);
 
     MCNAPI bool _tryHandleMessage(::CodeBuilder::AgentMessage const& message);
 
@@ -128,16 +136,36 @@ public:
 
     MCNAPI bool _tryHandleMessage(::CodeBuilder::ErrorMessage const& message);
 
+#ifdef LL_PLAT_C
+    MCNAPI void addObserver(::Automation::AutomationObserver& observer);
+#endif
+
     MCNAPI ::WSConnectionResult connect(::std::string const& serverUri);
 
     MCNAPI ::WSConnectionResult
     connect(::std::string const& serverUri, ::std::vector<::std::string> const& subProtocols);
 
-#ifdef LL_PLAT_S
-    MCNAPI bool isSubscribedtoEvent(::std::string const& eventName);
-#endif
+    MCNAPI bool dhKeyExchange(
+        ::std::string const&                requestId,
+        ::std::string const&                publicKey,
+        ::std::string const&                salt,
+        ::CodeBuilder::EncryptionCipherMode cipherMode,
+        ::std::string&
+    );
+
+    MCNAPI void disconnect();
+
+    MCNAPI bool isConnecting();
+
+    MCNAPI bool isReady();
 
     MCNAPI void receive(::std::string const& payload);
+
+#ifdef LL_PLAT_C
+    MCNAPI void setLocalConnectionHandler(::std::function<void(::std::string const&)> sendHandler);
+#endif
+
+    MCNAPI void tick(float dt);
     // NOLINTEND
 
 public:
@@ -163,7 +191,7 @@ public:
 
     MCNAPI void $chatSubscribe(::std::string const& requestId, ::CodeBuilder::ChatSubscription&& subscription);
 
-    MCNAPI void $chatUnsubscribe(::std::string const&, ::std::string const& subscriptionId);
+    MCNAPI void $chatUnsubscribe(::std::string const& subscriptionId, ::std::string const&);
 
     MCNAPI void $chatUnsubscribeAll(::std::string const&);
 
@@ -190,7 +218,7 @@ public:
 
     MCNAPI void $unsubscribe(::std::string const& requestId, ::std::string const& eventId);
 
-    MCNAPI void $error(::std::string const&, ::CodeBuilder::ErrorMessage const& message);
+    MCNAPI void $error(::std::string const& message, ::CodeBuilder::ErrorMessage const&);
 
     MCNAPI bool $tutorialCached(::std::string const& tutorialPath);
 

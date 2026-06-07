@@ -32,6 +32,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TimerActorFlagBaseGoalDefinition(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
+
+    MCAPI ::SharedTypes::TimerActorFlagBaseGoalDefinition& operator=(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
+
     MCAPI ::SharedTypes::TimerActorFlagBaseGoalDefinition&
     operator=(::SharedTypes::TimerActorFlagBaseGoalDefinition const&);
 
@@ -42,6 +46,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
     // NOLINTEND
 
 public:

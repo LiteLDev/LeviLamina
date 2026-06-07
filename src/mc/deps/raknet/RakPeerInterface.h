@@ -33,7 +33,7 @@ class RakPeerInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RakPeerInterface();
+    virtual ~RakPeerInterface() = default;
 
     virtual void InitializeConfiguration(::std::unique_ptr<::RakNet::ShadowBanList> banList) = 0;
 
@@ -44,7 +44,7 @@ public:
         int                         threadPriority
     ) = 0;
 
-    virtual bool InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey) = 0;
+    virtual bool InitializeSecurity(char const*, char const*, bool) = 0;
 
     virtual void DisableSecurity() = 0;
 
@@ -216,8 +216,7 @@ public:
 
     virtual ::RakNet::SystemAddress GetSystemAddressFromGuid(::RakNet::RakNetGUID const input) const = 0;
 
-    virtual bool
-    GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const input, char* client_public_key) const = 0;
+    virtual bool GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const, char*) const = 0;
 
     virtual void SetTimeoutTime(uint timeMS, ::RakNet::SystemAddress const target) = 0;
 
@@ -278,7 +277,7 @@ public:
 
     virtual void SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*)) = 0;
 
-    virtual void ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance) = 0;
+    virtual void ApplyNetworkSimulator(float, ushort, ushort) = 0;
 
     virtual void SetPerConnectionOutgoingBandwidthLimit(uint maxBitsPerSecond) = 0;
 
@@ -311,25 +310,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 Get64BitUniqueRandomNumber();
-    // NOLINTEND
+    MCFOLD static void DestroyInstance(::RakNet::RakPeerInterface* i);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static uint64 Get64BitUniqueRandomNumber();
+
+    MCAPI static ::RakNet::RakPeerInterface* GetInstance();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

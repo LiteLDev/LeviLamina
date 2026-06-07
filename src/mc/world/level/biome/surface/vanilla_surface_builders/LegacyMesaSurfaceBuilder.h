@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
 class PerlinSimplexNoise;
 class Random;
+class SurfaceBuilderData;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -30,25 +30,19 @@ public:
     // NOLINTBEGIN
     virtual void initBuilder(uint levelSeed) /*override*/;
 
-    virtual void initBiomeSurface(::Biome& biome) const /*override*/;
+    virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
-    virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
+    virtual bool isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const /*override*/;
 
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
-
-    virtual ~LegacyMesaSurfaceBuilder() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void generateBands(::Random& random);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI ::BlockColor getBand(int worldX, int y, int worldZ, ::PerlinSimplexNoise const& noiseBuf) const;
     // NOLINTEND
 
 public:
@@ -56,9 +50,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $initBuilder(uint levelSeed);
 
-    MCFOLD void $initBiomeSurface(::Biome& biome) const;
+    MCFOLD void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
-    MCFOLD bool $isBestBuilder(::Biome const& biome) const;
+    MCFOLD bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
 

@@ -49,4 +49,16 @@ public:
     ScriptBindingReleaseList& operator=(ScriptBindingReleaseList const&);
     ScriptBindingReleaseList(ScriptBindingReleaseList const&);
     ScriptBindingReleaseList();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ScriptBindingReleaseList(::std::vector<::ScriptBindingReleaseList::ReleaseDetails> releaseList);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::vector<::ScriptBindingReleaseList::ReleaseDetails> releaseList);
+    // NOLINTEND
 };

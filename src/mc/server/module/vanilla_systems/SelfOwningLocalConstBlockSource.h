@@ -32,8 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::IConstBlockSource const* updateBlockSourceForEntity(::StrictEntityContext const& entity) /*override*/;
-
-    virtual ~SelfOwningLocalConstBlockSource() /*override*/ = default;
     // NOLINTEND
 
 public:

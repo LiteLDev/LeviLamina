@@ -26,9 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~SHFillerCorridor() /*override*/ = default;
+    virtual bool postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -36,11 +34,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BoundingBox findPieceBox(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&,
-        int footX,
-        int footY,
-        int footZ,
-        int direction
+        ::Random&                                           footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int
     );
     // NOLINTEND
 
@@ -49,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
 
     // NOLINTEND

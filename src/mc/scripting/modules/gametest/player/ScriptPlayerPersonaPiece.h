@@ -25,12 +25,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerPersonaPiece(ScriptPlayerPersonaPiece const&);
     ScriptPlayerPersonaPiece();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptPlayerPersonaPiece(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
+
     MCAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
     operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece&&);
 
@@ -44,6 +45,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
     // NOLINTEND
 
 public:

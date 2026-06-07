@@ -64,6 +64,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
+
+    MCAPI MinecartBlockCommandOrigin(
+        ::Level&               level,
+        ::DimensionType        dimensionType,
+        ::std::string const&   name,
+        ::BlockPos const&      pos,
+        ::ActorUniqueID const& minecartId
+    );
     // NOLINTEND
 
 public:
@@ -76,6 +84,14 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
+
+    MCAPI void* $ctor(
+        ::Level&               level,
+        ::DimensionType        dimensionType,
+        ::std::string const&   name,
+        ::BlockPos const&      pos,
+        ::ActorUniqueID const& minecartId
+    );
     // NOLINTEND
 
 public:

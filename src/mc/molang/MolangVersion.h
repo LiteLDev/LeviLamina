@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class MolangVersion : short {
-    Invalid                                = -1,
+    Invalid                                = 65535,
     BeforeVersioning                       = 0,
     Initial                                = 1,
     FixedItemRemainingUseDurationQuery     = 2,

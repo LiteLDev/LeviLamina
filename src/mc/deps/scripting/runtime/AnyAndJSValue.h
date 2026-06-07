@@ -20,18 +20,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::optional<::JSValue>> jsValue;
     ::ll::TypedStorage<8, 8, ::JSContext*>                ctx;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~AnyAndJSValue();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Scripting

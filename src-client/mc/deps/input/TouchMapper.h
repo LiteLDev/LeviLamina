@@ -30,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TouchMapper();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TouchMapper() /*override*/;
@@ -43,10 +47,8 @@ public:
 
     virtual void clearMapping(int controllerId) /*override*/;
 
-    virtual bool tick(
-        ::InputEventQueue&                                              eventQueue,
-        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map
-    ) /*override*/;
+    virtual bool
+    tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&) /*override*/;
 
     virtual void clearInputDeviceQueue() /*override*/;
 
@@ -57,6 +59,18 @@ public:
     virtual void setWindowSize(int width, int height) /*override*/;
 
     virtual void changeControllerId(int oldId, int newId) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit TouchMapper(::std::function<::std::vector<::RectangleArea>()> areaFunc);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::function<::std::vector<::RectangleArea>()> areaFunc);
     // NOLINTEND
 
 public:
@@ -77,16 +91,15 @@ public:
 
     MCAPI void $clearMapping(int controllerId);
 
-    MCAPI bool
-    $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map);
+    MCAPI bool $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&);
 
     MCAPI void $clearInputDeviceQueue();
 
     MCFOLD ::InputMode $getInputMode() const;
 
-    MCFOLD void $render(::InputRenderContext& context) const;
+    MCAPI void $render(::InputRenderContext& context) const;
 
-    MCFOLD void $setWindowSize(int width, int height);
+    MCAPI void $setWindowSize(int width, int height);
 
     MCAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND

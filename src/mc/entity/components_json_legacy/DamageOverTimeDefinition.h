@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class DamageOverTimeComponent;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -16,6 +18,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>   mDamagePerHurt;
     ::ll::TypedStorage<4, 4, float> mTimeBetweenHurt;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void initialize(::EntityContext&, ::DamageOverTimeComponent& component) const;
     // NOLINTEND
 
 public:

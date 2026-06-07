@@ -27,7 +27,7 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    JsonValueHierarchy& operator=(JsonValueHierarchy const&);
+    JsonValueHierarchy(JsonValueHierarchy const&);
     JsonValueHierarchy();
 
 #endif
@@ -35,8 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI JsonValueHierarchy(::JsonValueHierarchy const&);
-
     MCNAPI ::Json::Value const& get(::std::string const& name) const;
 
     MCNAPI ::Json::Value const& get(::std::string const& name, ::SemVersion const& requiredMinimumFormatVersion) const;
@@ -45,9 +43,15 @@ public:
 
     MCNAPI ::SemVersion const& getFormatVersion() const;
 
+    MCNAPI ::std::vector<::JsonValueHierarchyNode> const& getHierarchy() const;
+
     MCNAPI ::std::vector<::JsonValueHierarchyNode> getMemberArray(::std::string const& name) const;
 
     MCNAPI ::MinEngineVersion const& getMinEngineVersion() const;
+
+    MCNAPI bool isMember(::std::string const& name) const;
+
+    MCNAPI ::JsonValueHierarchy& operator=(::JsonValueHierarchy const& rhs);
 
     MCNAPI ::Json::Value const& operator[](::std::string const& name) const;
 
@@ -61,14 +65,6 @@ public:
     );
 
     MCNAPI ~JsonValueHierarchy();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::JsonValueHierarchy const&);
 #endif
     // NOLINTEND
 

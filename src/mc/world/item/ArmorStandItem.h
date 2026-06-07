@@ -17,26 +17,36 @@ class Vec3;
 
 class ArmorStandItem : public ::Item {
 public:
+    // prevent constructor by default
+    ArmorStandItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~ArmorStandItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ArmorStandItem(::std::string const& name, short id);
+
     MCAPI bool _shouldRemove(::BlockSource& region, ::BlockPos pos) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, short id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
 
     // NOLINTEND

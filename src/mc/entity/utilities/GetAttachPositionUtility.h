@@ -11,10 +11,12 @@
 class StrictEntityContext;
 class Vec3;
 struct AABBShapeComponent;
+struct ActorHeadRotationComponent;
 struct ActorRotationComponent;
 struct GetAttachPositionViews;
 struct OffsetsComponent;
 struct PassengerRenderingRidingOffsetComponent;
+struct StateVectorComponent;
 struct VanillaOffsetComponent;
 // clang-format on
 
@@ -40,7 +42,25 @@ MCAPI ::std::optional<::Vec3> getAttachPosition(
     ::Vec3 const&                        interpolatedPosition
 );
 
+MCAPI ::Vec3 getNonPassengerAttachPos(
+    ::StateVectorComponent const&                      stateVector,
+    ::optional_ref<::ActorHeadRotationComponent const> headRotation,
+    ::AABBShapeComponent const&                        aabbShape,
+    ::ActorRotationComponent const&                    actorRotation,
+    ::OffsetsComponent const&                          offsets,
+    ::optional_ref<::VanillaOffsetComponent const>     vanillaOffset,
+    ::SharedTypes::Legacy::ActorLocation               location,
+    float                                              alpha
+);
+
 MCAPI ::Vec3 getPassengerAttachPos(
+    ::StrictEntityContext const&         entity,
+    ::GetAttachPositionViews const&      views,
+    ::SharedTypes::Legacy::ActorLocation location,
+    float                                alpha
+);
+
+MCAPI ::std::optional<::Vec3> tryGetPassengerAttachPos(
     ::StrictEntityContext const&         entity,
     ::GetAttachPositionViews const&      views,
     ::SharedTypes::Legacy::ActorLocation location,

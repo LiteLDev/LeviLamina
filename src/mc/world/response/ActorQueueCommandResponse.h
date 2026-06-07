@@ -31,8 +31,6 @@ public:
     ) const /*override*/;
 
     virtual ::CommandOriginSystem _getCommandOriginSystem() const /*override*/;
-
-    virtual ~ActorQueueCommandResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

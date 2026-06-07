@@ -42,16 +42,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::AudioEmitterComponent::SoundEvent>> mNewEventsToPlay;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AudioEmitterComponent& operator=(AudioEmitterComponent const&);
-    AudioEmitterComponent(AudioEmitterComponent const&);
-    AudioEmitterComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::AudioEmitterComponent& operator=(::AudioEmitterComponent&&);
-    // NOLINTEND
 };

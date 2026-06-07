@@ -8,16 +8,16 @@ class PlayerStatisticsFacet {
 public:
     // PlayerStatisticsFacet inner types declare
     // clang-format off
-    struct Statistic;
     struct FacetPlayerStatisticData;
+    struct Statistic;
     // clang-format on
 
     // PlayerStatisticsFacet inner types define
     enum class StatisticIcon : int {};
 
-    struct Statistic {};
-
     struct FacetPlayerStatisticData {};
+
+    struct Statistic {};
 };
 
 } // namespace OreUI

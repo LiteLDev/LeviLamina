@@ -11,6 +11,7 @@
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class LogMessage; }
+namespace Editor { class ServiceProviderCollection; }
 // clang-format on
 
 namespace Editor::Services {
@@ -39,6 +40,20 @@ public:
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit LoggingService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _dispatchLogMessageEvent(::Editor::LogMessage const& message);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

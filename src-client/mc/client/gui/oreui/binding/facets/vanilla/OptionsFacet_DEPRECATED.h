@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Options;
+class OptionRegistry;
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
@@ -18,15 +18,19 @@ class OptionsFacet_DEPRECATED : public ::OreUI::FacetBase<::OreUI::OptionsFacet_
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Options>>                   mOptions;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OptionRegistry>>            mOptions;
     ::ll::TypedStorage<1, 1, bool>                                            mIsDirty;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mOptionSubscriptions;
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OptionsFacet_DEPRECATED();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OptionsFacet_DEPRECATED() /*override*/;
+    virtual ~OptionsFacet_DEPRECATED() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -34,6 +38,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit OptionsFacet_DEPRECATED(::std::shared_ptr<::OptionRegistry> options);
+
     MCAPI void _registerOptionObserver(::OptionID optionId);
 
     MCAPI int getDefaultRenderDistance() const;
@@ -70,9 +76,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::shared_ptr<::OptionRegistry> options);
     // NOLINTEND
 
 public:

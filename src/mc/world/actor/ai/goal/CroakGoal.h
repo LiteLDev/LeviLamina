@@ -6,17 +6,18 @@
 #include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class CroakGoal : public ::Goal {
+class CroakGoal : public ::BaseGoal {
 public:
     // CroakGoal inner types declare
     // clang-format off
@@ -34,9 +35,11 @@ public:
         // NOLINTEND
 
     public:
-        // virtual functions
+        // member functions
         // NOLINTBEGIN
-        virtual ~Definition() /*override*/ = default;
+        MCAPI Definition();
+
+        MCAPI void initialize(::EntityContext& entity, ::CroakGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -46,6 +49,12 @@ public:
             ::std::string const&                                                                                  name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CroakGoal::Definition>>& root
         );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -82,8 +91,18 @@ public:
     virtual void stop() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~CroakGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit CroakGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

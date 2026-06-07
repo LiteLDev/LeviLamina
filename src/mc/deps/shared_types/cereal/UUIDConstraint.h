@@ -8,7 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace SharedTypes {
@@ -21,15 +23,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~UUIDConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
+
+    MCAPI void validateValue(::mce::UUID const& uuid, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:

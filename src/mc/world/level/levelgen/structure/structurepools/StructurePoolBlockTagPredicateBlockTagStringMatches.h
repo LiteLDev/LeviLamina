@@ -34,8 +34,6 @@ public:
     virtual bool test(::Block const& block, ::CompoundTag const& tag) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches() /*override*/ = default;
     // NOLINTEND
 
 public:

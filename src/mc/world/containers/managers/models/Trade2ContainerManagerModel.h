@@ -11,6 +11,8 @@
 class Actor;
 class ContainerScreenContext;
 class ItemStack;
+class MerchantRecipe;
+class MerchantRecipeList;
 class Player;
 struct ActorUniqueID;
 // clang-format on
@@ -59,20 +61,46 @@ public:
     // NOLINTBEGIN
     MCAPI Trade2ContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
 
+#ifdef LL_PLAT_C
+    MCAPI ::MerchantRecipeList* getAllTrades() const;
+
+    MCAPI int getCurrentTradeExp() const;
+
+    MCFOLD ::std::string getDisplayName();
+
+    MCAPI ::std::string getDisplayNameTag() const;
+
     MCFOLD ::Actor* getEntity() const;
 
-#ifdef LL_PLAT_C
+    MCAPI ::ItemStack const& getEntityCarriedItem() const;
+
     MCAPI int getEntityMaxTradeTier() const;
 
     MCAPI int getEntityTradeTier() const;
 
     MCAPI ::std::vector<int> getNumberOfTradesByTier() const;
 
+    MCAPI ::ItemStack const& getPlayerCarriedItem() const;
+
+    MCAPI ::MerchantRecipe* getSelectedTrade() const;
+
+    MCFOLD int getSelectedTradeIndex() const;
+
+    MCAPI ::MerchantRecipe* getTrade(int tier, int index) const;
+
     MCAPI int getTradeExpForCurrentRequirement(uint currentExp) const;
 
     MCAPI int getTradeExpToNextRequirement(uint currentExp) const;
 
+    MCAPI int getTradeIndex(int tier, int index) const;
+
+    MCAPI bool hasAvailableTradeWithSecondItem() const;
+
+    MCAPI bool isSelectedTrade(int tier, int index) const;
+
     MCAPI void setSelectedTrade(int index);
+
+    MCAPI void setSelectedTrade(int tier, int index);
 #endif
     // NOLINTEND
 

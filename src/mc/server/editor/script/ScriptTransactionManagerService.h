@@ -13,8 +13,10 @@
 // clang-format off
 class Vec3;
 namespace Editor::ScriptModule { class ScriptUserDefinedTransactionHandlerId; }
+namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
@@ -46,18 +48,6 @@ public:
         ModuleHandlerItem& operator=(ModuleHandlerItem const&);
         ModuleHandlerItem(ModuleHandlerItem const&);
         ModuleHandlerItem();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ModuleHandlerItem();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -77,7 +67,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptTransactionManagerService(::Editor::ScriptModule::ScriptTransactionManagerService&&);
+    MCNAPI ScriptTransactionManagerService(
+        ::Editor::Services::TransactionManagerServiceProvider* transactionManagerServiceProvider,
+        ::Scripting::WeakLifetimeScope const&                  scope
+    );
 
     MCNAPI ::Scripting::Error _getInvalidTransactionServiceError() const;
 
@@ -104,9 +97,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> isBusy();
 
     MCNAPI ::Scripting::Result_deprecated<bool> openTransaction(::std::string const& name);
-
-    MCNAPI ::Editor::ScriptModule::ScriptTransactionManagerService&
-    operator=(::Editor::ScriptModule::ScriptTransactionManagerService&&);
 
     MCNAPI ::Scripting::Result_deprecated<void> redo();
 
@@ -141,7 +131,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptTransactionManagerService&&);
+    MCNAPI void* $ctor(
+        ::Editor::Services::TransactionManagerServiceProvider* transactionManagerServiceProvider,
+        ::Scripting::WeakLifetimeScope const&                  scope
+    );
     // NOLINTEND
 };
 

@@ -6,6 +6,7 @@
 #include "mc/common/editor/PersistenceGroupType.h"
 #include "mc/common/editor/PersistenceScope.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -21,6 +22,7 @@ namespace Editor::Network { class PersistenceResponseGroupPayload; }
 namespace Editor::Network { class SavePersistenceGroupPayload; }
 namespace Editor::Services { class PersistenceGroup; }
 namespace Editor::Services { struct PersistenceGroupManifest; }
+namespace Editor::Services { struct PersistenceGroupMetadata; }
 // clang-format on
 
 namespace Editor::Services {
@@ -117,6 +119,15 @@ public:
         ::Editor::Services::PersistenceScope scope,
         ::std::optional<int>                 version
     );
+
+    MCNAPI ::std::optional<::Editor::Services::PersistenceGroupMetadata> _getGroupMetaData(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
+
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    _getManifestFilePath(::Editor::Services::PersistenceScope scope);
 
     MCNAPI int _getMaxVersion(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope);
 

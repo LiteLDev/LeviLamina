@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -13,7 +14,7 @@
 class GenericEntitlementChangeListener;
 class IEntitlementManager;
 class ILevelListCache;
-class Options;
+class OptionRegistry;
 class TrialManager;
 struct LevelSummary;
 // clang-format on
@@ -26,7 +27,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ILevelListCache&>                                     mLevelListCache;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>>  mEntitlementManager;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Options>>                          mOptions;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OptionRegistry>>                   mOptions;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mStorageOptionSubscription;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GenericEntitlementChangeListener>> mEntitlementChangeListener;
     ::ll::TypedStorage<1, 1, bool>                                                   mOtherStorageContainsWorlds;
@@ -66,17 +67,27 @@ public:
     // NOLINTBEGIN
     MCAPI LocalWorldList(
         ::ILevelListCache&                                   levelListCache,
-        ::std::shared_ptr<::Options>                         options,
+        ::std::shared_ptr<::OptionRegistry>                  options,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
         bool                                                 isEditorMode
     );
 
     MCAPI void _checkIfOtherStorageContainsWorlds();
 
-    MCAPI ::std::vector<::LevelSummary>
-    _getLocalWorlds(::ILevelListCache& levelListCache, ::TrialManager const& trial, bool isEditorMode);
+    MCAPI void
+    _filterWorlds(::std::vector<::LevelSummary>& worlds, ::TrialManager const& trialManager, bool isEditorMode);
+
+    MCFOLD bool const getOtherStorageContainsWorlds() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const getWorldDirectoryPath() const;
+
+    MCFOLD ::std::vector<::LevelSummary> const& getWorlds() const;
+
+    MCFOLD bool isDirty() const;
 
     MCFOLD void onEntitlementRefresh();
+
+    MCAPI void update(::TrialManager const& trialManager);
     // NOLINTEND
 
 public:
@@ -84,7 +95,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::ILevelListCache&                                   levelListCache,
-        ::std::shared_ptr<::Options>                         options,
+        ::std::shared_ptr<::OptionRegistry>                  options,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
         bool                                                 isEditorMode
     );

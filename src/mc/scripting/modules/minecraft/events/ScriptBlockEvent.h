@@ -7,8 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class Dimension;
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -25,15 +28,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptBlockEvent& operator=(ScriptBlockEvent const&);
     ScriptBlockEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockEvent(::ScriptModuleMinecraft::ScriptBlockEvent const&);
-
-    MCAPI ~ScriptBlockEvent();
+    MCAPI
+    ScriptBlockEvent(::Dimension& dimension, ::BlockPos const& location, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -45,13 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::Dimension& dimension, ::BlockPos const& location, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

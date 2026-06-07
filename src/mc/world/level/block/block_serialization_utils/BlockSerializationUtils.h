@@ -4,18 +4,33 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/block_serialization_utils/NBTState.h"
+#include "mc/world/level/block/block_serialization_utils/NbtToBlockCache.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class CompoundTag;
+class IUnknownBlockTypeRegistry;
 namespace BlockSerializationUtils { struct NbtToBlockCache; }
 // clang-format on
 
 namespace BlockSerializationUtils {
 // functions
 // NOLINTBEGIN
+MCAPI void clearBlockReplaceDataMap();
+
+MCAPI void clearNBTToBlockCache();
+
+MCAPI ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*> findInCache(
+    ::BlockSerializationUtils::NbtToBlockCache&            cache,
+    ::BlockSerializationUtils::NbtToBlockCache::Key const& key
+);
+
+MCAPI ::Block const&
+getBlockFromNBT(::CompoundTag const& tag, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
+
 MCAPI void initBlockReplaceDataMap();
 
 MCAPI ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*>

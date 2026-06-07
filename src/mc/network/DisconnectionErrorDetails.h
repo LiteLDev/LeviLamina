@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/connection/DisconnectionStage.h"
+
 struct DisconnectionErrorDetails {
 public:
     // member variables
@@ -33,17 +36,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI DisconnectionErrorDetails(::DisconnectionErrorDetails&&);
-
     MCNAPI ~DisconnectionErrorDetails();
 #endif
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::DisconnectionErrorDetails&&);
+    MCNAPI static ::std::string getNameForDisconnectionStage(::Connection::DisconnectionStage event);
 #endif
     // NOLINTEND
 

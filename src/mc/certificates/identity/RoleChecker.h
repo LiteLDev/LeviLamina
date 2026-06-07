@@ -17,16 +17,31 @@ public:
     // prevent constructor by default
     RoleChecker& operator=(RoleChecker const&);
     RoleChecker(RoleChecker const&);
-    RoleChecker();
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCNAPI RoleChecker();
+
     MCNAPI void checkRole(
         ::std::string const&                                                           jsonCredentials,
         ::std::function<void(::edu::Role, ::std::string const&, ::std::string const&)> callback
     );
-#endif
+
+    MCNAPI bool lookupInProgress() const;
+
+    MCNAPI ~RoleChecker();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

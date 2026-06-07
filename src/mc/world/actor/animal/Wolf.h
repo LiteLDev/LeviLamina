@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/animal/Animal.h"
 
@@ -11,10 +12,13 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class ActorDefinitionGroup;
 class ActorHurtResult;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
 class Mob;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Wolf : public ::Animal {
@@ -30,13 +34,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Wolf();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void newServerAiStep() /*override*/;
 
     virtual bool load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual void onBorn(::Actor&, ::Actor& parentRight) /*override*/;
+    virtual void onBorn(::Actor& parentRight, ::Actor&) /*override*/;
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
@@ -50,26 +58,47 @@ public:
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    virtual ~Wolf() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _avoidSnowBury();
+    MCAPI Wolf(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
-#ifdef LL_PLAT_S
-    MCAPI bool _isShakeAnimationOngoing() const;
-#endif
+    MCAPI void _avoidSnowBury();
 
     MCAPI void _updateTintColor();
 
-#ifdef LL_PLAT_S
-    MCAPI bool isInterested() const;
-#endif
+    MCAPI float getHeadRollAngle(float a);
+
+    MCAPI float getShakeAnim() const;
+
+    MCAPI float getTailAngle();
+
+    MCAPI bool isShaking() const;
 
     MCAPI void postNormalTick();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>
+    getCustomHurtSound(::Mob const& mob, ::SharedTypes::Legacy::ActorDamageCause cause);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -79,11 +108,11 @@ public:
 
     MCAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $onBorn(::Actor&, ::Actor& parentRight);
+    MCAPI void $onBorn(::Actor& parentRight, ::Actor&);
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCFOLD void $setSitting(bool value);
+    MCAPI void $setSitting(bool value);
 
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 

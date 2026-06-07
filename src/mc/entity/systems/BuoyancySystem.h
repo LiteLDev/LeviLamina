@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
@@ -15,9 +16,15 @@ class EntitySystems;
 class IConstBlockSource;
 class StrictEntityContext;
 struct ActorDataFlagComponent;
+struct ActorMovementTickNeededComponent;
 struct BaseGameVersionComponent;
 struct BuoyancyFloatRequestComponent;
 struct CanAlwaysAutoStepFlagComponent;
+struct DimensionTypeComponent;
+struct LocalConstBlockSourceFactoryComponent;
+struct RandomComponent;
+struct RandomReferenceComponent;
+struct ShouldBeSimulatedComponent;
 struct StateVectorComponent;
 // clang-format on
 
@@ -42,6 +49,15 @@ MCAPI void checkAndAddFloatRequest(
     ::IConstBlockSource const&                         region
 );
 
+MCAPI void increaseBuoyancyTimerSystem(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::ShouldBeSimulatedComponent>>
+                                      randomReferenceComponent,
+    ::RandomReferenceComponent const& stateVectorComponent,
+    ::StateVectorComponent const&     buoyancyComponent,
+    ::BuoyancyComponent&              randomView,
+    ::ViewT<::StrictEntityContext, ::RandomComponent> const&
+);
+
 MCAPI void registerSystems(::EntitySystems& systemRegistry);
 
 MCAPI void tickBuoyancyFloatSystem(
@@ -53,6 +69,17 @@ MCAPI void tickBuoyancyFloatSystem(
         ::ActorDataFlagComponent>                      view,
     ::EntityModifier<::CanAlwaysAutoStepFlagComponent> mod,
     ::OptionalGlobal<::BaseGameVersionComponent const> baseGameVersion
+);
+
+MCAPI void tickCheckAndAddFloatRequestSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::ShouldBeSimulatedComponent>,
+        ::StateVectorComponent const,
+        ::BuoyancyComponent>                                        view,
+    ::EntityModifier<::BuoyancyFloatRequestComponent>               mod,
+    ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const>  dimensionView,
+    ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent const> factoryComponent
 );
 // NOLINTEND
 

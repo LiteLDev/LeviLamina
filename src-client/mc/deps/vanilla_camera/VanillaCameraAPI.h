@@ -9,8 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class EntityContext;
 class IClientInstance;
+class Mob;
 // clang-format on
 
 class VanillaCameraAPI : public ::IVanillaCameraAPI {
@@ -47,8 +49,22 @@ public:
     virtual ::SharedTypes::v1_21_100::PlayerViewMode getPlayerViewPerspectiveOption() const /*override*/;
 
     virtual ::std::optional<bool> isPlayerSleeping() const /*override*/;
+    // NOLINTEND
 
-    virtual ~VanillaCameraAPI() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit VanillaCameraAPI(::IClientInstance& client);
+
+    MCFOLD ::Actor* _getActor(::WeakRef<::EntityContext> actorRef) const;
+
+    MCAPI ::Mob* _getMob(::WeakRef<::EntityContext> actorRef) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IClientInstance& client);
     // NOLINTEND
 
 public:

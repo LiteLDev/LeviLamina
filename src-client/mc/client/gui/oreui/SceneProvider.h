@@ -45,6 +45,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SceneProvider(
+        ::std::unique_ptr<::OreUI::FacetRegistryFactory>        facetRegistryFactory,
+        ::std::unique_ptr<::OreUI::Detail::ViewContextFactory>  contextFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
+        ::OreUI::Library&                                       uiLibrary,
+        ::ui::ScreenTechStackSelector const&                    screenTechStackSelector
+    );
+
     MCAPI ::OreUI::ViewId _createView(
         ::std::string const&           url,
         ::OreUI::FacetRegistryLocation location,
@@ -62,6 +70,26 @@ public:
     MCAPI void preCacheGameplayViews();
 
     MCAPI void preCacheOutOfGameViews();
+
+    MCAPI ~SceneProvider();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::OreUI::FacetRegistryFactory>        facetRegistryFactory,
+        ::std::unique_ptr<::OreUI::Detail::ViewContextFactory>  contextFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
+        ::OreUI::Library&                                       uiLibrary,
+        ::ui::ScreenTechStackSelector const&                    screenTechStackSelector
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

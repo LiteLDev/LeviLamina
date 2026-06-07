@@ -59,7 +59,9 @@ public:
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
 
-    MCAPI void _refreshSlot(int modelSlot);
+    MCFOLD ::StorageItemComponent const* getStorageItemComponent() const;
+
+    MCAPI ::StorageWeightLimitItemComponent const* getStorageWeightLimitComponent() const;
     // NOLINTEND
 
 public:

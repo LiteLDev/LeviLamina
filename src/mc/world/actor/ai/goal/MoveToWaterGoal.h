@@ -7,12 +7,6 @@
 
 class MoveToWaterGoal : public ::MoveToLiquidGoal {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~MoveToWaterGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

@@ -24,22 +24,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    virtual ~HugeMushroomFeature() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HugeMushroomFeature();
+
+    MCAPI explicit HugeMushroomFeature(int forcedType);
+
     MCAPI bool _canSurvive(::Block const& belowBlock) const;
 
     MCAPI bool placeFixed(::BlockSource& region, ::BlockPos const& pos, int mushroomType, int height) const;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(int forcedType);
     // NOLINTEND
 
 public:

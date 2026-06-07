@@ -32,22 +32,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BrainDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BrainDefinition(::SharedTypes::v1_21_130::Brain::BrainDefinition&&);
-
-    MCAPI BrainDefinition(::SharedTypes::v1_21_130::Brain::BrainDefinition const&);
-
-    MCAPI ::SharedTypes::v1_21_130::Brain::BrainDefinition&
-    operator=(::SharedTypes::v1_21_130::Brain::BrainDefinition&&);
-
-    MCAPI ::SharedTypes::v1_21_130::Brain::BrainDefinition&
-    operator=(::SharedTypes::v1_21_130::Brain::BrainDefinition const&);
-
     MCAPI ~BrainDefinition();
     // NOLINTEND
 
@@ -61,14 +47,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_130::Brain::BrainDefinition&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_130::Brain::BrainDefinition const&);
     // NOLINTEND
 
 public:

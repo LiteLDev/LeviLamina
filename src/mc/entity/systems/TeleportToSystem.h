@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
 // auto generated forward declare list
@@ -18,11 +17,6 @@ namespace TeleportToSystem {
 // functions
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createSystem();
-
-MCAPI void processAllTeleportToRequestsSystem(
-    ::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::TeleportToRequestComponent const> view,
-    ::EntityModifier<::TeleportToRequestComponent>                                            modifier
-);
 
 MCAPI void teleportTo(
     ::StrictEntityContext&                         entityContext,

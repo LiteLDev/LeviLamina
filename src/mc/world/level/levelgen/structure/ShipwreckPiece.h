@@ -22,8 +22,6 @@ public:
     virtual ::StructurePieceType getType() const /*override*/;
 
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~ShipwreckPiece() /*override*/ = default;
     // NOLINTEND
 
 public:

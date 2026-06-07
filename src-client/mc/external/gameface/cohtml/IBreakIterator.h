@@ -8,7 +8,7 @@ class IBreakIterator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBreakIterator();
+    virtual ~IBreakIterator() = default;
 
     virtual void Destroy() = 0;
 
@@ -31,12 +31,6 @@ public:
     virtual void SetText(char const*, uint);
 
     virtual void SetTextRef(char const* utfBuffer) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

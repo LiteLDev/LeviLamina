@@ -44,8 +44,6 @@ public:
         virtual void removeCustomAreaBinding(::std::string const&) /*override*/;
 
         virtual ::std::vector<uint> getCustomAreaBindingNames() const /*override*/;
-
-        virtual ~NullBindingFactory() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -90,8 +88,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BindingFactory const& getBindingFactory(int controllerId) const /*override*/;
-
-    virtual ~MinecraftBindingFactoryMap() /*override*/ = default;
     // NOLINTEND
 
 public:

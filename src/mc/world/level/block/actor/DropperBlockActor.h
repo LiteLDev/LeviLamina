@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Container;
@@ -17,21 +18,27 @@ class Vec3;
 
 class DropperBlockActor : public ::DispenserBlockActor {
 public:
+    // prevent constructor by default
+    DropperBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string getName() const /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~DropperBlockActor() /*override*/ = default;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DropperBlockActor(::BlockPos pos);
+
     MCAPI bool _tryPushToComposter(::BlockSource& region, int facingDirection);
+
+    MCAPI ::Container* getAttachedContainer(::BlockSource& region);
 
     MCAPI bool pushOutItems(::BlockSource& region);
     // NOLINTEND
@@ -42,7 +49,16 @@ public:
     MCAPI static bool
     _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
 
+    MCAPI static bool
+    addItemsToContainerAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int face);
+
     MCAPI static ::Container* getContainerAt(::BlockSource& region, ::Vec3 const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos pos);
     // NOLINTEND
 
 public:
@@ -50,9 +66,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $getName() const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
 
 
     // NOLINTEND

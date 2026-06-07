@@ -27,17 +27,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptDynamicPropertiesDefinition& operator=(ScriptDynamicPropertiesDefinition const&);
-    ScriptDynamicPropertiesDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
-
-    MCAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
-
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineBoolean(::std::string const& identifier, ::std::optional<bool> defaultValue);
@@ -54,22 +45,13 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineVector3(::std::string const& identifier, ::std::optional<::Vec3> defaultValue);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&
-    operator=(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
+    MCFOLD ::DynamicPropertiesDefinition const& getDefinition() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
     // NOLINTEND
 };
 

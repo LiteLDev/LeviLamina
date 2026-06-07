@@ -47,7 +47,6 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnkaa6d31;
         ::ll::UntypedStorage<1, 1>  mUnk713eeb;
         ::ll::UntypedStorage<1, 1>  mUnkeb9391;
-        ::ll::UntypedStorage<1, 1>  mUnkc8e22e;
         ::ll::UntypedStorage<1, 1>  mUnk556953;
         ::ll::UntypedStorage<1, 1>  mUnke9b26e;
         ::ll::UntypedStorage<1, 1>  mUnk2a2090;
@@ -106,8 +105,6 @@ public:
     virtual bool isPlayScreenAllowed() const /*override*/;
 
     virtual bool areEmotesSupported() const /*override*/;
-
-    virtual bool canUseAzureNotebooks() const /*override*/;
 
     virtual ::AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const /*override*/;
 

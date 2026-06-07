@@ -53,7 +53,7 @@ public:
         ::std::vector<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents> const& templatePoolsData,
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>                           structureManager,
         ::JigsawStructureRegistry&                                                           registry,
-        ::FeatureRegistry const&                                                             features
+        ::FeatureRegistry&                                                                   features
     );
 
     MCAPI static ::br::worldgen::JigsawStructure processJigsawDefinition(
@@ -73,7 +73,7 @@ public:
         ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const& templatePool,
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>            structureManager,
         ::JigsawStructureRegistry&                                            registry,
-        ::FeatureRegistry const&                                              features
+        ::FeatureRegistry&                                                    features
     );
     // NOLINTEND
 };

@@ -8,8 +8,8 @@ union SignatureValue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb308f4;
     ::ll::UntypedStorage<1, 4> mUnk5f3ace;
+    ::ll::UntypedStorage<4, 4> mUnkb308f4;
     // NOLINTEND
 };
 } // namespace Crypto

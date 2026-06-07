@@ -38,6 +38,8 @@ public:
         ::std::optional<::std::string> const& sourceThemeId
     );
 
+    MCNAPI bool canThemeBeModified(::std::string const& id) const;
+
     MCNAPI ::Scripting::Result_deprecated<void> deleteTheme(::std::string const& id);
 
     MCNAPI ::std::string const getCurrentTheme() const;
@@ -48,6 +50,8 @@ public:
     MCNAPI ::std::vector<::std::string> getThemeIdList() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getThemeName(::std::string const& id) const;
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptRGBA resolveColorKey(::Editor::Settings::ThemeSettingsColorKey key) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> setCurrentTheme(::std::string const& id);
 

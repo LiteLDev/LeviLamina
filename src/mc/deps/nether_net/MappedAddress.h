@@ -19,18 +19,6 @@ public:
     MappedAddress& operator=(MappedAddress const&);
     MappedAddress(MappedAddress const&);
     MappedAddress();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~MappedAddress();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace NetherNet

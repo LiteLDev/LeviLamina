@@ -28,22 +28,12 @@ public:
 
     MCNAPI void initializeLevelChunkMetaData(::LevelChunkMetaData& metaData, bool use3DBiomeMaps) const;
 
-    MCNAPI void setUninitializedDataForMetaData(::LevelChunkMetaData& metaData, bool use1_18Initialization) const;
-
     MCNAPI void updateLevelChunkMetaDataForSaving(::LevelChunkMetaData& metaData) const;
-
-    MCNAPI ~LevelChunkMetaDataBaseGameVersionWrapper();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::BaseGameVersion const& baseGameVersion);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

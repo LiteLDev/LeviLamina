@@ -17,9 +17,18 @@ struct ActorDefinitionIdentifier;
 
 class Camel : public ::Animal {
 public:
+    // Camel inner types define
+    enum class SittingState : uchar {
+        StandingAdult = 0,
+        SittingAdult  = 1,
+        StandingBaby  = 2,
+        SittingBaby   = 3,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                             mWasSitting;
+    ::ll::TypedStorage<1, 1, ::Camel::SittingState>            mLastSittingState;
     ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mDashCooldown;
     ::ll::TypedStorage<1, 1, bool>                             mWasInCooldown;
     // NOLINTEND
@@ -38,8 +47,6 @@ public:
     virtual ::Vec3 getInterpolatedRidingOffset(float, int const) const /*override*/;
 
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
-
-    virtual ~Camel() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,6 +59,8 @@ public:
     );
 
     MCAPI void _monitorSitting();
+
+    MCAPI ::std::optional<::ExpiringTick> getDashCooldown() const;
     // NOLINTEND
 
 public:

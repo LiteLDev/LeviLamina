@@ -36,6 +36,16 @@ public:
 
     MCAPI void deserialize(::Json::Value const& pool, bool usingUpcomingCreatorFeaturesExperiment);
 
+    MCFOLD ::RandomValueBounds const& getBonusRolls() const;
+
+    MCFOLD ::std::vector<::std::unique_ptr<::LootItemCondition>> const& getConditions() const;
+
+    MCFOLD ::std::vector<::std::unique_ptr<::LootPoolEntry>> const& getEntries() const;
+
+    MCFOLD ::RandomValueBounds const& getRolls() const;
+
+    MCFOLD ::LootPoolTiers const* getTiers() const;
+
     MCAPI ~LootPool();
     // NOLINTEND
 

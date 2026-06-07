@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 namespace Bedrock::Memory {
 
 class IVirtualAllocator {
@@ -46,27 +43,6 @@ public:
         ReservationInfo(ReservationInfo const&);
         ReservationInfo();
     };
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ::Bedrock::Result<::Bedrock::Memory::IVirtualAllocator::ReservationInfo>
-    reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64) = 0;
-
-    virtual ::Bedrock::Result<void> commit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64, int) = 0;
-
-    virtual ::Bedrock::Result<void> decommit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) = 0;
-
-    virtual ::Bedrock::Result<void> release(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) = 0;
-
-    virtual ::Bedrock::Memory::IVirtualAllocator::Flags getDefaultFlags() = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Memory

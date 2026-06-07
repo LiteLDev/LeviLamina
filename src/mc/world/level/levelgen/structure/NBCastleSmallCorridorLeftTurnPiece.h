@@ -33,8 +33,6 @@ public:
     ) /*override*/;
 
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~NBCastleSmallCorridorLeftTurnPiece() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mIsFlatWorld;
     ::ll::TypedStorage<1, 1, bool>                                              mIsClientSideGenerationEnabled;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ChunkRecyclerTelemetryOutput();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -3,74 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/FloatRange.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class MoveAroundTargetGoal : public ::Goal {
-public:
-    // MoveAroundTargetGoal inner types declare
-    // clang-format off
-    class Definition;
-    // clang-format on
-
-    // MoveAroundTargetGoal inner types define
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-        ::ll::TypedStorage<4, 4, float>               mSpeed;
-        ::ll::TypedStorage<4, 4, float>               mSpreadDegrees;
-        ::ll::TypedStorage<4, 8, ::FloatRange>        mDestinationRange;
-        ::ll::TypedStorage<4, 4, float>               mHeightDifferenceLimit;
-        ::ll::TypedStorage<4, 4, int>                 mHorizontalSearchDistance;
-        ::ll::TypedStorage<4, 4, int>                 mVerticalSearchDistance;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveAroundTargetGoal::Definition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
+class MoveAroundTargetGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
-    ::ll::TypedStorage<1, 1, bool>                mReachedTarget;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-    ::ll::TypedStorage<4, 4, float>               mSpeed;
-    ::ll::TypedStorage<4, 4, float>               mSpreadDegrees;
-    ::ll::TypedStorage<4, 8, ::FloatRange>        mDestinationRange;
-    ::ll::TypedStorage<4, 4, float>               mHeightDifferenceLimit;
-    ::ll::TypedStorage<4, 4, int>                 mHorizontalSearchDistance;
-    ::ll::TypedStorage<4, 4, int>                 mVerticalSearchDistance;
+    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
+    ::ll::TypedStorage<1, 1, bool>                      mReachedTarget;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>       mFilters;
+    ::ll::TypedStorage<4, 4, float>                     mSpeed;
+    ::ll::TypedStorage<4, 4, float>                     mSpreadDegrees;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mDestinationRange;
+    ::ll::TypedStorage<4, 4, float>                     mHeightDifferenceLimit;
+    ::ll::TypedStorage<4, 4, int>                       mHorizontalSearchDistance;
+    ::ll::TypedStorage<4, 4, int>                       mVerticalSearchDistance;
     // NOLINTEND
 
 public:
@@ -93,8 +47,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~MoveAroundTargetGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MoveAroundTargetGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

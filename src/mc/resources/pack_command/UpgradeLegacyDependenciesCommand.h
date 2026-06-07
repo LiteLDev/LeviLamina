@@ -24,20 +24,12 @@ public:
     // NOLINTBEGIN
     MCNAPI
     UpgradeLegacyDependenciesCommand(::std::shared_ptr<::Pack> pack, ::std::vector<::PackIdVersion> newDependencies);
-
-    MCNAPI ~UpgradeLegacyDependenciesCommand();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::shared_ptr<::Pack> pack, ::std::vector<::PackIdVersion> newDependencies);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

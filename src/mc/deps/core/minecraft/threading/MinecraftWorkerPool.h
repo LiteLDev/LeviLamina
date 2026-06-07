@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class WorkerPool;
+struct AllWorkerConfigurations;
 // clang-format on
 
 class MinecraftWorkerPool {
@@ -21,17 +22,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI static void configureMainThread();
+#ifdef LL_PLAT_C
+    MCNAPI static void configureGamefaceThread();
 #endif
+
+    MCNAPI static void configureMainThread();
+
+    MCNAPI static void configureServerThread();
 
     MCNAPI static void createSingletons();
 
     MCNAPI static void destroySingletons();
 
-#ifdef LL_PLAT_S
-    MCNAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
+#ifdef LL_PLAT_C
+    MCNAPI static ::WorkerPool& getASYNCOrDISKWorkerPoolForLoading();
 #endif
+
+    MCNAPI static ::std::optional<::AllWorkerConfigurations> const getAllWorkerConfigurations();
+
+#ifdef LL_PLAT_C
+    MCNAPI static uint64 getAudioThreadMask();
+#endif
+
+    MCNAPI static void initializeDefaults();
+
+    MCNAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
     // NOLINTEND
 
 public:
@@ -52,8 +67,6 @@ public:
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB_COMPACTION();
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& NETWORK();
-
-    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& PYTHONRUNTIME();
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING();
 

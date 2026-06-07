@@ -69,7 +69,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorInputStateFacet() /*override*/ = default;
+    virtual ~EditorInputStateFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -85,7 +85,7 @@ public:
         ::std::optional<int> const& processingState
     );
 
-    MCAPI void _handleViewportFocusChange(bool);
+    MCFOLD void _handleViewportFocusChange(bool);
 
     MCFOLD ::std::unordered_map<
         ::HashedString,
@@ -111,7 +111,7 @@ public:
 
     MCAPI void setCursorReleased(bool shouldRelease);
 
-    MCFOLD void setViewportFocus(bool isFocused);
+    MCAPI void setViewportFocus(bool isFocused);
     // NOLINTEND
 
 public:
@@ -124,6 +124,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

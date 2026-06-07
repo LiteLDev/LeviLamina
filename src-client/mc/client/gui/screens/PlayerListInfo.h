@@ -29,12 +29,11 @@ public:
 public:
     // prevent constructor by default
     PlayerListInfo& operator=(PlayerListInfo const&);
+    PlayerListInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerListInfo();
-
     MCAPI PlayerListInfo(::PlayerListInfo&&);
 
     MCAPI PlayerListInfo(::PlayerListInfo const&);
@@ -47,8 +46,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::PlayerListInfo&&);
 
     MCAPI void* $ctor(::PlayerListInfo const&);

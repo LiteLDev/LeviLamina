@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
@@ -25,8 +26,32 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EntitySystemsManager();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EntitySystemsManager(
+        bool                                                       isClientSide,
+        ::SubClientId                                              subClientId,
+        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
+        ::gsl::not_null<::StackRefResult<::PauseManager>> const&   pauseManager
+    );
+
+    MCFOLD ::EntitySystems& getEntitySystems();
+
     MCAPI void tickEntitySystems();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        bool                                                       isClientSide,
+        ::SubClientId                                              subClientId,
+        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
+        ::gsl::not_null<::StackRefResult<::PauseManager>> const&   pauseManager
+    );
     // NOLINTEND
 };

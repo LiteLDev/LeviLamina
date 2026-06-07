@@ -17,23 +17,21 @@ public:
 
 public:
     // prevent constructor by default
-    Direct(Direct const&);
+    Direct& operator=(Direct const&);
     Direct();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::PoolAliases::Direct& operator=(::SharedTypes::v1_21_20::PoolAliases::Direct&&);
+    MCAPI Direct(::SharedTypes::v1_21_20::PoolAliases::Direct const&);
 
-    MCFOLD ::SharedTypes::v1_21_20::PoolAliases::Direct& operator=(::SharedTypes::v1_21_20::PoolAliases::Direct const&);
-
-    MCAPI ~Direct();
+    MCFOLD ::SharedTypes::v1_21_20::PoolAliases::Direct& operator=(::SharedTypes::v1_21_20::PoolAliases::Direct&&);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD void* $ctor(::SharedTypes::v1_21_20::PoolAliases::Direct const&);
     // NOLINTEND
 };
 

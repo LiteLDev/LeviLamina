@@ -29,17 +29,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ImageRecord& operator=(ImageRecord const&);
-        ImageRecord(ImageRecord const&);
-        ImageRecord();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::EduLessonCompleteScreenController::ImageRecord&
-        operator=(::EduLessonCompleteScreenController::ImageRecord&&);
-
         MCAPI ~ImageRecord();
         // NOLINTEND
 
@@ -79,7 +70,11 @@ public:
 
     MCAPI ::ui::ViewRequest _handleImagesExport();
 
+    MCAPI void _registerBindings();
+
     MCAPI void _registerEventHandlers();
+
+    MCAPI void _registerSubControllers();
     // NOLINTEND
 
 public:

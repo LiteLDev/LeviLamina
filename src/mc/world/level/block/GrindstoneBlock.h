@@ -13,13 +13,16 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class GrindstoneBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    GrindstoneBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,18 +40,22 @@ public:
     virtual bool isInteractiveBlock() const /*override*/;
 
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~GrindstoneBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GrindstoneBlock(::std::string const& nameId, int id);
+
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -71,8 +78,6 @@ public:
     MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

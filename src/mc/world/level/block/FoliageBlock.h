@@ -13,14 +13,18 @@ class AABB;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class Material;
 class Vec3;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class FoliageBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    FoliageBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,8 +42,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
@@ -51,13 +53,13 @@ public:
         ushort            newGrowth,
         int               updateFlags
     ) const;
-
-    virtual ~FoliageBlock() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FoliageBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCAPI bool growCrops(::BlockSource& region, ::BlockPos const& pos, ::FertilizerType fType) const;
     // NOLINTEND
 
@@ -70,9 +72,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -80,7 +82,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -91,9 +93,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 

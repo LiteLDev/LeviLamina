@@ -22,9 +22,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptEntityRaycastHit();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptEntityRaycastHit();
+    MCAPI ScriptEntityRaycastHit(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& actor,
+        float                                                                             distance
+    );
     // NOLINTEND
 
 public:
@@ -34,9 +41,10 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void*
+    $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& actor, float distance);
     // NOLINTEND
 };
 

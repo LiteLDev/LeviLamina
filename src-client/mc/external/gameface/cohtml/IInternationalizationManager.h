@@ -21,21 +21,7 @@ public:
     // clang-format on
 
     // IInternationalizationManager inner types define
-    struct TextDirectionResult {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~TextDirectionResult() = default;
-
-        virtual void AddSubsection(uint, uint, ::cohtml::i18n::TextDirection) = 0;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-
-        // NOLINTEND
-    };
+    struct TextDirectionResult {};
 
 public:
     // virtual functions

@@ -8,7 +8,7 @@ struct ConditionVariableShim {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnke6ff9f;
+    ::ll::UntypedStorage<1, 0>  mUnke6ff9f;
     ::ll::UntypedStorage<8, 64> mUnk60372a;
     // NOLINTEND
 

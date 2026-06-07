@@ -15,7 +15,9 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class RaidBossComponent;
 class ReadOnlyBinaryStream;
+struct BossComponent;
 // clang-format on
 
 class BossEventPacket : public ::Packet {
@@ -45,14 +47,34 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~BossEventPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI BossEventPacket();
+
+    MCAPI BossEventPacket(::BossEventUpdateType type, ::RaidBossComponent& component);
+
+    MCAPI BossEventPacket(::BossEventUpdateType type, ::ActorUniqueID bossID, ::BossComponent& component);
+
+#ifdef LL_PLAT_C
+    MCAPI BossEventPacket(::BossEventUpdateType type, ::ActorUniqueID bossID, ::ActorUniqueID playerID);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::BossEventUpdateType type, ::RaidBossComponent& component);
+
+    MCAPI void* $ctor(::BossEventUpdateType type, ::ActorUniqueID bossID, ::BossComponent& component);
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::BossEventUpdateType type, ::ActorUniqueID bossID, ::ActorUniqueID playerID);
+#endif
     // NOLINTEND
 
 public:

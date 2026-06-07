@@ -17,19 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DocumentDescription(DocumentDescription const&);
-    DocumentDescription();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_130::DataDrivenUI::DocumentDescription&
-    operator=(::SharedTypes::v1_21_130::DataDrivenUI::DocumentDescription&&);
-
-    MCFOLD ::SharedTypes::v1_21_130::DataDrivenUI::DocumentDescription&
-    operator=(::SharedTypes::v1_21_130::DataDrivenUI::DocumentDescription const&);
-
     MCAPI ~DocumentDescription();
     // NOLINTEND
 

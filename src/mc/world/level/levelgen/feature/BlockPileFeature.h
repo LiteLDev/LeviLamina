@@ -32,8 +32,18 @@ public:
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     virtual ::Block const& getBlockToPlace(::Random& random) const;
+    // NOLINTEND
 
-    virtual ~BlockPileFeature() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BlockPileFeature(::Block const& block);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block);
     // NOLINTEND
 
 public:

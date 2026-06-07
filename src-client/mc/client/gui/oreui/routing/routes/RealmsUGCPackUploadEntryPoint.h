@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
+#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -26,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsUGCPackUploadEntryPoint();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool shouldAddToConfiguration() const /*override*/;
@@ -35,8 +40,14 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~RealmsUGCPackUploadEntryPoint() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit RealmsUGCPackUploadEntryPoint(
+        ::std::function<::Bedrock::NotNullNonOwnerPtr<::Realms::IRealmsUGCPackUploader>()>&& getRealmsUGCPackUploader
+    );
     // NOLINTEND
 
 public:
@@ -50,11 +61,21 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
 
+    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
+
     MCAPI static ::std::add_lvalue_reference_t<char const[]> REALM_ID();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SLOT_INDEX();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::function<::Bedrock::NotNullNonOwnerPtr<::Realms::IRealmsUGCPackUploader>()>&& getRealmsUGCPackUploader
+    );
     // NOLINTEND
 
 public:

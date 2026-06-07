@@ -90,8 +90,12 @@ public:
     virtual void pushElement(uint64 index) = 0;
 
     virtual void pop() = 0;
+    // NOLINTEND
 
-    virtual ~SchemaReader() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::cereal::SchemaReader::ScopedPop scopedPop();
     // NOLINTEND
 
 public:

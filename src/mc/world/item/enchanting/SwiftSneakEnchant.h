@@ -18,8 +18,6 @@ public:
     virtual bool isTreasureOnly() const /*override*/;
 
     virtual bool isDiscoverable() const /*override*/;
-
-    virtual ~SwiftSneakEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ public:
 
 public:
     // prevent constructor by default
-    RequestUploadWorldPayload(RequestUploadWorldPayload const&);
+    RequestUploadWorldPayload& operator=(RequestUploadWorldPayload const&);
     RequestUploadWorldPayload();
 
 public:
@@ -36,13 +36,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::RequestUploadWorldPayload& operator=(::Editor::Network::RequestUploadWorldPayload const&);
+    MCNAPI RequestUploadWorldPayload(::Editor::Network::RequestUploadWorldPayload const&);
+
+    MCNAPI RequestUploadWorldPayload(::std::string const& worldId, int slotId, ::std::string const& levelId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Network::RequestUploadWorldPayload const&);
+
+    MCNAPI void* $ctor(::std::string const& worldId, int slotId, ::std::string const& levelId);
     // NOLINTEND
 
 public:

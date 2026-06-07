@@ -33,15 +33,7 @@ public:
         ::Random&                                           random
     ) /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~MineshaftCrossing() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _placeSupportPillar(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y0, int z, int y1);
+    virtual bool postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -55,7 +47,7 @@ public:
         ::Random&                                           random
     );
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
 
     // NOLINTEND

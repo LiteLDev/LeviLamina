@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/loot_tables/ScriptLootPoolEntry.h"
 
 // auto generated forward declare list
 // clang-format off
 class LootPoolEntry;
 class LootTableEntry;
-namespace ScriptModuleMinecraft { class ScriptLootTable; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -33,14 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootPoolEntry const& _getEntry() const /*override*/;
-
-    virtual ~ScriptLootTableEntry() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootTable> const getTable() const;
     // NOLINTEND
 
 public:

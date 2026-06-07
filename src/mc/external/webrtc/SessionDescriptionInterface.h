@@ -23,9 +23,9 @@ public:
 
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const;
 
-    virtual ::cricket::SessionDescription* description() = 0;
-
     virtual ::cricket::SessionDescription const* description() const = 0;
+
+    virtual ::cricket::SessionDescription* description() = 0;
 
     virtual ::std::string session_id() const = 0;
 

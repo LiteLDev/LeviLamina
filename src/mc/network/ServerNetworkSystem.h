@@ -39,12 +39,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerNetworkSystem() /*override*/;
+    virtual ~ServerNetworkSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ServerNetworkSystem(
+        ::brstd::function_ref<::NetworkSystem::Dependencies()>          dependencies,
+        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()> stats
+    );
+
     MCAPI ServerNetworkSystem(
         ::Scheduler&                                                 receiveThread,
         ::std::vector<::std::string> const&                          overrideBroadcastAddresses,
@@ -104,6 +109,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
+        ::brstd::function_ref<::NetworkSystem::Dependencies()>          dependencies,
+        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()> stats
+    );
+
+    MCAPI void* $ctor(
         ::Scheduler&                                                 receiveThread,
         ::std::vector<::std::string> const&                          overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                                networkToggles,
@@ -118,12 +128,6 @@ public:
         ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
         ::std::unique_ptr<::IPacketSerializationController>          packetController
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -15,19 +15,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Storage();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Storage(uint64 size);
+    MCAPI ~Storage();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 size);
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

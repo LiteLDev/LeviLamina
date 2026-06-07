@@ -13,24 +13,4 @@ public:
     ::ll::TypedStorage<4, 4, float>               mChance;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilter;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DrinkPotionData();
-
-    MCAPI ~DrinkPotionData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

@@ -13,6 +13,7 @@ class ChemistryTableBlockActor;
 class ContainerScreenContext;
 class ItemStack;
 class ItemStackRequestAction;
+class ItemStackRequestActionHandler;
 // clang-format on
 
 class ScreenHandlerLabTable : public ::ScreenHandlerBase {
@@ -45,7 +46,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScreenHandlerLabTable(
+        ::ContainerScreenContext const&  screenContext,
+        ::ItemStackRequestActionHandler& craftRequestHandler
+    );
+
     MCNAPI ::ItemStackNetResult _handleLabTableCombine(::ItemStackRequestActionDataless<9> const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& craftRequestHandler);
     // NOLINTEND
 
 public:

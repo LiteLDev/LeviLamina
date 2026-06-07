@@ -9,12 +9,6 @@ class CodeScreenControllerProxy : public ::ScreenControllerProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CodeScreenControllerProxy() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~CodeScreenControllerProxy() /*override*/ = default;
     // NOLINTEND
 };

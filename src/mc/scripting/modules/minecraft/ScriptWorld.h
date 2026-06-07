@@ -7,6 +7,7 @@
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/scripting/modules/minecraft/ScriptTimeOfDay.h"
 
 // auto generated forward declare list
@@ -16,12 +17,11 @@ class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistRegistry; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
-namespace ScriptModuleMinecraft { class ScriptGameRules; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace ScriptModuleMinecraft { class ScriptLootTableManager; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptPlayerIterator; }
-namespace ScriptModuleMinecraft { class ScriptScoreboard; }
+namespace ScriptModuleMinecraft { class ScriptPrimitiveManager; }
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace ScriptModuleMinecraft { class ScriptTickingAreaManager; }
 namespace ScriptModuleMinecraft { class ScriptV010Events; }
@@ -41,6 +41,7 @@ namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
 namespace Scripting { struct PropertyOutOfBoundsError; }
+namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -69,6 +70,8 @@ public:
         mLootTableManager;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTickingAreaManager>>
         mTickingAreaManager;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPrimitiveManager>>
+        mPrimitiveShapesManager;
     // NOLINTEND
 
 public:
@@ -87,7 +90,8 @@ public:
         ::gsl::not_null<::ServerLevel*>                      level,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
         ::Scripting::DependencyLocator&                      locator,
-        ::Scripting::ContextConfig const&                    config
+        ::Scripting::ContextConfig const&                    config,
+        ::Scripting::Version                                 serverModuleVersion
     );
 
     MCAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playOrQueueMusic(
@@ -115,6 +119,8 @@ public:
 
     MCAPI void broadcastClientMessage(::std::string const& id, ::std::string const& value);
 
+    MCAPI void clearDynamicProperties(::Scripting::ContextConfig const& contextConfig);
+
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldAfterEvents> getAfterEvents() const;
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistRegistry> getAimAssist() const;
@@ -136,14 +142,14 @@ public:
 
     MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::Scripting::ContextConfig const& contextConfig) const;
 
+    MCAPI int getDynamicPropertyTotalByteCount(::Scripting::ContextConfig const& contextConfig) const;
+
     MCAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>>
     getDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
 
     MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getEntity(::std::string const& id) const;
-
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRules> getGameRules();
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootTableManager>
     getLootTableManager() const;
@@ -161,19 +167,7 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerIterator>>
     getPlayers_V010(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard> getScoreboard();
-
-    MCAPI ::std::string const getSeed() const;
-
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager>
-    getStructureManager() const;
-
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTickingAreaManager>
-    getTickingAreaManager() const;
-
-    MCFOLD ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> getWorldV010Events() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptWorld& operator=(::ScriptModuleMinecraft::ScriptWorld&&);
+    MCAPI void handleVanillaNamespace(::std::string const& orginalString, ::std::string& usedName) const;
 
     MCAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError>
     playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
@@ -213,8 +207,12 @@ public:
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& var
     );
 
+    MCAPI void setAbsoluteTime(int absoluteTime);
+
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error>
     setDefaultSpawnLocation(::Vec3 const& spawnPosition);
+
+    MCAPI void setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
     MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setDynamicProperties(
         ::Scripting::ContextConfig const& contextConfig,
@@ -257,7 +255,8 @@ public:
         ::gsl::not_null<::ServerLevel*>                      level,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
         ::Scripting::DependencyLocator&                      locator,
-        ::Scripting::ContextConfig const&                    config
+        ::Scripting::ContextConfig const&                    config,
+        ::Scripting::Version                                 serverModuleVersion
     );
     // NOLINTEND
 

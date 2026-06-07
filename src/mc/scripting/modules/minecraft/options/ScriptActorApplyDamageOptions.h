@@ -27,19 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptActorApplyDamageOptions();
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageOptions const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI EducationMetadata();
 
-    MCNAPI EducationMetadata(::EducationMetadata const&);
+    MCNAPI EducationMetadata(::EducationMetadata const& other);
 
     MCNAPI ~EducationMetadata();
     // NOLINTEND
@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::EducationMetadata const&);
+    MCNAPI void* $ctor(::EducationMetadata const& other);
     // NOLINTEND
 
 public:

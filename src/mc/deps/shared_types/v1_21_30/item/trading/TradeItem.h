@@ -46,7 +46,7 @@ public:
 
 public:
     // prevent constructor by default
-    TradeItem(TradeItem const&);
+    TradeItem& operator=(TradeItem const&);
     TradeItem();
 
 public:
@@ -54,9 +54,9 @@ public:
     // NOLINTBEGIN
     MCAPI TradeItem(::SharedTypes::v1_21_30::TradeItem&&);
 
-    MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
+    MCAPI TradeItem(::SharedTypes::v1_21_30::TradeItem const&);
 
-    MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem const&);
+    MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
 
     MCAPI ~TradeItem();
     // NOLINTEND
@@ -79,6 +79,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem&&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem const&);
     // NOLINTEND
 
 public:

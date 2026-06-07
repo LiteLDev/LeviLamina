@@ -33,12 +33,6 @@ public:
     ScriptWidgetComponentRenderPrimType_Pyramid();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrimType_Pyramid() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Pyramid const& other) const;

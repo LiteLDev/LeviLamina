@@ -33,8 +33,6 @@ public:
 
     virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const
         /*override*/;
-
-    virtual ~RandomGroupPoolAliasBinding() /*override*/ = default;
     // NOLINTEND
 
 public:

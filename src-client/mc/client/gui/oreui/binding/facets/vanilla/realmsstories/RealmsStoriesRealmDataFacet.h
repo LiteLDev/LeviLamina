@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsStoriesRealmDataFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsStoriesRealmDataFacet() /*override*/ = default;
@@ -30,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsStoriesRealmDataFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+
     MCAPI bool getIsFetchingRealm() const;
 
     MCAPI bool getIsHardcoreRealm() const;
@@ -49,6 +55,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
     // NOLINTEND
 
 public:

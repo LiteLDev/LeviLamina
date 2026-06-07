@@ -16,6 +16,18 @@ public:
     CommandCooldown& operator=(CommandCooldown const&);
     CommandCooldown(CommandCooldown const&);
     CommandCooldown();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit CommandCooldown(float delay);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(float delay);
+    // NOLINTEND
 };
 
 } // namespace AgentComponents

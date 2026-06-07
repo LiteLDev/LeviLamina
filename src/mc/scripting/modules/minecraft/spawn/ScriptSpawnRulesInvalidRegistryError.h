@@ -19,8 +19,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptSpawnRulesInvalidRegistryError();
-
-    MCAPI ~ScriptSpawnRulesInvalidRegistryError();
     // NOLINTEND
 
 public:
@@ -36,12 +34,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

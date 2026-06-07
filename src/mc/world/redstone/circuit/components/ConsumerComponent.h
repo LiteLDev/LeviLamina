@@ -37,10 +37,10 @@ public:
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
+        ::CircuitSceneGraph&         info,
+        ::CircuitTrackingInfo const& dampening,
+        int&                         bDirectlyPowered,
+        bool&
     ) /*override*/;
 
     virtual bool canConsumerPower() const /*override*/;
@@ -50,8 +50,6 @@ public:
     virtual bool needsUpdate() /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
-
-    virtual ~ConsumerComponent() /*override*/;
     // NOLINTEND
 
 public:
@@ -67,12 +65,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
@@ -80,7 +72,7 @@ public:
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
 
     MCFOLD bool $canConsumerPower() const;
 

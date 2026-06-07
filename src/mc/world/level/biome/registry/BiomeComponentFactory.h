@@ -75,6 +75,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BiomeComponentFactory();
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::function<void(
+        ::BiomeDefinitionData const&,
+        ::Biome&,
+        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>&,
+        ::BlockPalette const&,
+        ::BiomeRegistry const&,
+        ::FeatureRegistry&,
+        ::BiomeStringList const&
+    )> const& getApplyDataToBiomeFunc() const;
+#endif
+
+    MCFOLD ::BiomeJsonDocumentGlue& getBiomeJsonDocumentGlue();
+
+    MCFOLD ::std::function<void(
+        ::Biome const&,
+        ::BiomeDefinitionData&,
+        bool,
+        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const&,
+        ::FeatureRegistry const&,
+        ::BiomeStringList&
+    )> const&
+    getSerializeBiomeToDataFunc() const;
+
     MCAPI void registerBiomeDefinitionSerializers(
         ::std::function<void(
             ::Biome const&,
@@ -94,5 +120,11 @@ public:
             ::BiomeStringList const&
         )> applyFromData
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

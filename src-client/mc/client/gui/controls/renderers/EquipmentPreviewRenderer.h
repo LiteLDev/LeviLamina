@@ -43,13 +43,13 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ItemProperties();
-
-    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ItemProperties();
+
         MCAPI explicit ItemProperties(::UIPropertyBag const& propertyBag);
+
+        MCAPI bool operator==(::EquipmentPreviewRenderer::ItemProperties const& rhs) const;
 
         MCAPI ~ItemProperties();
         // NOLINTEND
@@ -57,6 +57,8 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCAPI void* $ctor();
+
         MCAPI void* $ctor(::UIPropertyBag const& propertyBag);
         // NOLINTEND
 
@@ -101,6 +103,8 @@ public:
     MCAPI explicit EquipmentPreviewRenderer(::Vec2 const& rotation);
 
     MCAPI ::Actor* _getOrCreateDisplayArmorStand(::MultiPlayerLevel& level, ::BlockSource& region);
+
+    MCAPI void _removeDisplayArmorStand();
     // NOLINTEND
 
 public:

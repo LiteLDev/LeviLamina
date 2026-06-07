@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorJigsawStructureLoader() /*override*/;
+    virtual ~EditorJigsawStructureLoader() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -46,12 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

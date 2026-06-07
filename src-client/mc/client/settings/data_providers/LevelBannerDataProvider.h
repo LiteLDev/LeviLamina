@@ -35,8 +35,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canModify() const /*override*/;
-
-    virtual ~LevelBannerDataProvider() /*override*/ = default;
     // NOLINTEND
 
 public:

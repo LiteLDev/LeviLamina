@@ -95,6 +95,10 @@ public:
     MCAPI void _pushScreen(::ContainerScreenContext screenContext);
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
+
+    MCFOLD bool isClientSide() const;
+
+    MCAPI bool isScreenOpen() const;
     // NOLINTEND
 
 public:
@@ -133,7 +137,7 @@ public:
 
     MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
 
-    MCFOLD void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCAPI void $onContainerScreenClose();
 

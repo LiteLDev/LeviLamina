@@ -51,8 +51,6 @@ public:
         ::Scripting::Result_deprecated<::Editor::ProjectRegionManagerChunkProcessingState> const& state
     );
 
-    MCNAPI ::Scripting::Result_deprecated<bool> isProcessingChunks() const;
-
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::Promise<::Editor::ProjectRegionManagerChunkProcessingState, ::Scripting::Error>>
     pruneRegion(
@@ -69,6 +67,8 @@ public:
         bool                                                                     areBoundsExcluded,
         ::Scripting::ScriptObjectFactory&                                        factory
     );
+
+    MCNAPI ~ScriptProjectRegionManagerService();
     // NOLINTEND
 
 public:
@@ -83,6 +83,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

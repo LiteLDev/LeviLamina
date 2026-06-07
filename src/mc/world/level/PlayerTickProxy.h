@@ -31,8 +31,6 @@ public:
     virtual void processDimensionPlayerReplication(::Dimension& dimension) /*override*/;
 
     virtual void postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick) /*override*/;
-
-    virtual ~PlayerTickProxy() /*override*/ = default;
     // NOLINTEND
 
 public:

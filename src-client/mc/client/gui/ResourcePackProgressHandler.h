@@ -53,9 +53,9 @@ public:
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -100,9 +100,9 @@ public:
 
     MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
     MCFOLD float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 

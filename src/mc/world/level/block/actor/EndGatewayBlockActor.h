@@ -48,14 +48,28 @@ public:
 
     virtual void triggerEvent(int b0, int b1) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
-
-    virtual ~EndGatewayBlockActor() /*override*/ = default;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI float getCooldownPercentage() const;
+#endif
+
+    MCAPI int getParticleAmount(::BlockSource& region, ::BlockPos const& pos) const;
+
+#ifdef LL_PLAT_C
+    MCAPI float getSpawnPercentage() const;
+
+    MCAPI bool isCoolingDown() const;
+
+    MCAPI bool isSpawning() const;
+#endif
+
+    MCAPI void setExitPosition(::BlockPos const& exitPosition);
+
     MCAPI void teleportEntity(::Actor& entity);
     // NOLINTEND
 
@@ -67,6 +81,9 @@ public:
     MCAPI static bool _isSafeToTeleport(::BlockSource const& region, ::BlockPos const& pos);
 
     MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
+
+    MCAPI static ::BlockPos
+    findTallestBlock(::BlockSource& region, ::BlockPos const& around, int dist, bool allowBedrock);
 
     MCAPI static ::BlockPos findValidSpawnAround(
         ::BlockSource&    region,
@@ -92,7 +109,7 @@ public:
 
     MCAPI void $triggerEvent(int b0, int b1);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
 
     // NOLINTEND

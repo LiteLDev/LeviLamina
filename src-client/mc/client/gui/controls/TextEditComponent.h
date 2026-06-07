@@ -16,6 +16,7 @@ class RectangleArea;
 class ScreenInputContext;
 class UIAnimationController;
 class UIControl;
+class UIPropertyBag;
 class VisualTree;
 struct ScreenEvent;
 // clang-format on
@@ -50,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextEditComponent() /*override*/ = default;
+    virtual ~TextEditComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -59,10 +60,10 @@ public:
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree& screenEvent,
+        ::ScreenInputContext&,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     ) /*override*/;
 
     virtual void onVisibilityChanged(bool visible) /*override*/;
@@ -79,11 +80,31 @@ public:
 
     MCAPI void _hidePlaceHolderControl();
 
+    MCAPI void _removeHoverTextColor();
+
+    MCAPI void _setHoverTextColor();
+
     MCAPI void _showPlaceHolderControl();
 
     MCAPI bool _textFitsInControl(::std::string const& text) const;
 
+    MCAPI bool canBeDeselected() const;
+
     MCAPI void deselectControl();
+
+    MCAPI bool getAlwaysListening() const;
+
+    MCAPI float getCaretHeightOffset() const;
+
+    MCAPI int getCollectionIndex() const;
+
+    MCAPI bool getEnabledNewline() const;
+
+    MCAPI ::FontHandle getFontHandle() const;
+
+    MCAPI ::UIPropertyBag* getLabelPropertyBag() const;
+
+    MCFOLD int getMaxLength() const;
 
     MCAPI ::RectangleArea getMinTextArea() const;
 
@@ -91,23 +112,41 @@ public:
 
     MCAPI ::RectangleArea getTextArea() const;
 
+    MCAPI uint getTextEditComponentId() const;
+
+    MCAPI void handleFocusGained();
+
+    MCAPI void handleFocusLost();
+
     MCAPI void handleFocusSet(bool focused);
 
     MCAPI ::TextCharEventResult handleTextCharEvent(::VisualTree& visualTree, ::std::string const& inputUtf8);
+
+    MCAPI bool isNumbersOnly() const;
 
     MCAPI void registerPropertyChangedNotifications();
 
     MCAPI void selectControl();
 
+    MCAPI void setCanBeDeselected(bool deselected);
+
     MCAPI void setText(::std::string const& text);
 
     MCAPI bool trySetText(::std::string text);
+
+    MCAPI void updateCaretBlink(float dt);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -119,12 +158,8 @@ public:
 
     MCAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
-    );
+    MCAPI ::ComponentReceiveActionType
+    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
 
     MCAPI void $onVisibilityChanged(bool visible);
 

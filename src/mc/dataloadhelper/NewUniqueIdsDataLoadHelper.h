@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NewUniqueIdsDataLoadHelper();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Vec3 loadPosition(::Vec3 const& position) /*override*/;
@@ -66,14 +70,18 @@ public:
     virtual bool shouldResetTime() /*override*/;
 
     virtual ::DataLoadHelperType getType() const /*override*/;
-
-    virtual ~NewUniqueIdsDataLoadHelper() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI explicit NewUniqueIdsDataLoadHelper(::ILevel& level);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ILevel& level);
     // NOLINTEND
 
 public:

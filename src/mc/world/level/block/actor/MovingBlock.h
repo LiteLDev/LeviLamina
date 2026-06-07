@@ -13,76 +13,79 @@ class AABB;
 class Block;
 class BlockActor;
 class BlockPos;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-struct UpdateEntityAfterFallOnInterface;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
 class MovingBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    MovingBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
+        ::Block const&             region,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          bufferAABB,
+        ::AABB&
     ) const /*override*/;
 
     virtual bool pushesUpFallingBlocks() const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::Block const&             region,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
-        /*override*/;
+    virtual float getBounciness(::IConstBlockSource const& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool isMovingBlock() const /*override*/;
-
-    virtual ~MovingBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MovingBlock(::std::string const& nameId, int id);
+
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
     MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
+        ::Block const&             region,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          bufferAABB,
+        ::AABB&
     ) const;
 
     MCFOLD bool $pushesUpFallingBlocks() const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::Block const&             region,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
+    MCAPI float $getBounciness(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
     MCFOLD bool $isMovingBlock() const;
 

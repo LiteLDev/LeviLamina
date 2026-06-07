@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/StoreNavigationOrigin.h"
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
@@ -14,11 +15,13 @@
 // clang-format off
 class AsyncTracker;
 class DlcUIWrapper;
+class IStoreCatalogItem;
 class MainMenuScreenModel;
 struct LevelSummary;
 struct LocalWorldInfo;
 struct TextEditScreenEventData;
 namespace Realms { struct World; }
+namespace mce { class UUID; }
 // clang-format on
 
 class MainMenuScreenController : public ::MinecraftScreenController {
@@ -55,7 +58,14 @@ public:
 
     MCAPI ::std::string _checkTextEditEventForProfanityAndOpenWarning(::TextEditScreenEventData const& textEditEvent);
 
+    MCFOLD void _displayFileStorageLocationWarningModal();
+
     MCAPI void _displayWorldConversionErrorModalDialog();
+
+    MCAPI void _navigateToPurchaseOfferScreen(::mce::UUID const& uuid, ::StoreNavigationOrigin origin);
+
+    MCAPI void
+    _navigateToPurchaseOfferScreen(::IStoreCatalogItem& item, ::StoreNavigationOrigin origin, bool allowSeeMoreBy);
 
     MCAPI ::ui::ViewRequest _startLocalWorldSubRoutine(
         ::LocalWorldInfo const&                        world,
@@ -65,8 +75,7 @@ public:
 
     MCAPI bool _tryCopyWorld(::LevelSummary const& levelSummary);
 
-    MCAPI void
-    _verifySkinApprovedBeforeJoin(::std::string const& serverType, ::std::function<void()> const& joinCallback);
+    MCAPI void _verifySkinApprovedBeforeJoin(::std::function<void()> const& joinCallback);
 
     MCAPI ::ui::ViewRequest attemptUserSignIn(::std::function<void()> adHocCallback);
 
@@ -101,7 +110,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

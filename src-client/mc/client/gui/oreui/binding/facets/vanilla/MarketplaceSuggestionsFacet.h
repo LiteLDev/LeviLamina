@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~MarketplaceSuggestionsFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

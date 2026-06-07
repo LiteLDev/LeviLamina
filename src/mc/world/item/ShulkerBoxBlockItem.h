@@ -27,8 +27,6 @@ public:
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const /*override*/;
 
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
-
-    virtual ~ShulkerBoxBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -20,27 +20,29 @@ public:
     ::ll::TypedStorage<4, 4, ::LayoutRuleTermType> mType;
     union {
         ::ll::TypedStorage<4, 16, float> mConstant;
+        struct {
+            ::ll::TypedStorage<4, 4, float>        mFactor;
+            ::ll::TypedStorage<8, 8, ::UIControl*> mParent;
+        } mFactorAndParent;
+        struct {
+            ::ll::TypedStorage<1, 1, ::ui::OrientationType> mRescalingType;
+            ::ll::TypedStorage<4, 4, int>                   mCollectionIndex;
+        } mRescalingAndIndex;
+        struct {
+            ::ll::TypedStorage<1, 1, ::ui::OrientationType> mRescalingType;
+            ::ll::TypedStorage<1, 1, ::LayoutVariableType>  mDimensionType;
+        } mRescalingAndDimension;
     } mData;
     ::ll::TypedStorage<8, 24, ::std::vector<::VariableRef>> mDependentVariables;
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LayoutRuleTerm();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayoutRuleTerm(::VariableRef const& dependentVariable, float factor, ::LayoutRuleTermType type);
-
     MCAPI float compute(::UIControl& control, ::LayoutVariableType sizeType) const;
 
-    MCAPI ::std::string toString(::UIControl& control) const;
-    // NOLINTEND
+    MCAPI void removeDependsOnMeEntries();
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::VariableRef const& dependentVariable, float factor, ::LayoutRuleTermType type);
+    MCAPI ::std::string toString(::UIControl& control) const;
     // NOLINTEND
 };

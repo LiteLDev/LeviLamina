@@ -65,20 +65,12 @@ public:
     MCAPI LevelChunkDataRegistry();
 
     MCAPI ::br::LevelChunkDataRegistry& operator=(::br::LevelChunkDataRegistry&& other);
-
-    MCAPI ~LevelChunkDataRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

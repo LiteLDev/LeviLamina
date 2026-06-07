@@ -34,8 +34,6 @@ public:
         ::std::string const&                     gameTestName_,
         ::std::string const&                     methodName_
     );
-
-    MCNAPI ~GameTestCompletedError();
     // NOLINTEND
 
 public:
@@ -52,12 +50,6 @@ public:
         ::std::string const&                     gameTestName_,
         ::std::string const&                     methodName_
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

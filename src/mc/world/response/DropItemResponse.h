@@ -25,7 +25,6 @@ public:
     // prevent constructor by default
     DropItemResponse& operator=(DropItemResponse const&);
     DropItemResponse(DropItemResponse const&);
-    DropItemResponse();
 
 public:
     // virtual functions
@@ -39,14 +38,24 @@ public:
                                                root,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~DropItemResponse() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI DropItemResponse();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& NameID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

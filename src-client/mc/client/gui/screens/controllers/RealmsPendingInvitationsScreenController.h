@@ -49,8 +49,6 @@ public:
     MCAPI
     RealmsPendingInvitationsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, bool hasPendingInvites);
 
-    MCAPI void _checkAllInvitesHandled(int triggeringInvite);
-
     MCAPI void _fetchPendingInvites();
 
     MCAPI ::ui::ViewRequest _handleInvitationAccept(::UIPropertyBag* bag);

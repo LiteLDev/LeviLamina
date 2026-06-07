@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct SentryEnvelopePayloadStacktraceFrame {
 public:
     // member variables
@@ -13,16 +18,21 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadStacktraceFrame& operator=(SentryEnvelopePayloadStacktraceFrame const&);
     SentryEnvelopePayloadStacktraceFrame(SentryEnvelopePayloadStacktraceFrame const&);
     SentryEnvelopePayloadStacktraceFrame();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SentryEnvelopePayloadStacktraceFrame& operator=(::SentryEnvelopePayloadStacktraceFrame&&);
+    MCNAPI ::SentryEnvelopePayloadStacktraceFrame& operator=(::SentryEnvelopePayloadStacktraceFrame const&);
 
     MCNAPI ~SentryEnvelopePayloadStacktraceFrame();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -34,6 +44,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI bool
-operator==(::SentryEnvelopePayloadStacktraceFrame const& __P0, ::SentryEnvelopePayloadStacktraceFrame const& __P1);
+MCNAPI bool operator==(::SentryEnvelopePayloadStacktraceFrame const&, ::SentryEnvelopePayloadStacktraceFrame const&);
 // NOLINTEND

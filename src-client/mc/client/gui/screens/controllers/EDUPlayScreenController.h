@@ -53,6 +53,8 @@ public:
     MCAPI EDUPlayScreenController(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
 
     MCAPI void _registerEventHandlers();
+
+    MCAPI void _registerSubControllers();
     // NOLINTEND
 
 public:

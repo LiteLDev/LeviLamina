@@ -21,8 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptUnloadedChunksError(uint64 unloadedChunks, uint64 totalChunks);
-
-    MCAPI ~ScriptUnloadedChunksError();
     // NOLINTEND
 
 public:
@@ -35,12 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(uint64 unloadedChunks, uint64 totalChunks);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

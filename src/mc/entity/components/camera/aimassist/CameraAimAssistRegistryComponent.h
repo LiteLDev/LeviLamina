@@ -31,43 +31,37 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    CameraAimAssistRegistryComponent& operator=(CameraAimAssistRegistryComponent const&);
+    CameraAimAssistRegistryComponent(CameraAimAssistRegistryComponent const&);
+    CameraAimAssistRegistryComponent();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::std::unordered_map<::HashedString, ::CameraAimAssist::PriorityCategory> const&
+    getPriorityCategories() const;
+
 #ifdef LL_PLAT_C
-    MCAPI CameraAimAssistRegistryComponent();
+    MCAPI ::CameraAimAssist::PriorityCategory const& getPriorityCategory(::HashedString const& id) const;
 #endif
 
-    MCAPI CameraAimAssistRegistryComponent(::CameraAimAssistRegistryComponent&&);
+    MCAPI ::CameraAimAssist::PriorityPreset const& getPriorityPreset(::HashedString const& id) const;
 
 #ifdef LL_PLAT_C
-    MCAPI CameraAimAssistRegistryComponent(::CameraAimAssistRegistryComponent const&);
-
     MCAPI bool hasPriorityPreset(::HashedString const& id) const;
+
+    MCAPI void loadRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
 #endif
 
     MCAPI ::CameraAimAssistRegistryComponent& operator=(::CameraAimAssistRegistryComponent&&);
 
+#ifdef LL_PLAT_C
+    MCAPI ::CameraAimAssistRegistryComponent& operator=(::CameraAimAssistRegistryComponent const&);
+#endif
+
     MCAPI void updateRegistryFromPacket(::CameraAimAssistPresetsPacket const& aimAssistPresetsPacket);
 
     MCAPI ~CameraAimAssistRegistryComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
-
-    MCAPI void* $ctor(::CameraAimAssistRegistryComponent&&);
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::CameraAimAssistRegistryComponent const&);
-#endif
     // NOLINTEND
 
 public:

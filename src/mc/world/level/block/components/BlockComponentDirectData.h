@@ -66,5 +66,63 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _finalizeInit(::Block const& block);
+
+#ifdef LL_PLAT_C
+    MCFOLD bool _useNewTessellationInternal() const;
+#endif
+
+    MCFOLD ::BlockCollisionBoxComponent const* blockCollisionBoxComponent() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::BlockGeometryComponent const* blockGeometryComponent() const;
+#endif
+
+    MCFOLD ::BlockRedstoneComponent const* blockRedstoneComponent() const;
+
+    MCFOLD ::BlockSelectionBoxComponent const* blockSelectionBoxComponent() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::BlockTransformationComponent const* blockTransformationComponent() const;
+#endif
+
+    MCFOLD ::BlockDestructibleByMiningComponent const* destructibleByMiningComponent() const;
+
+    MCAPI void finalize(::Block const& block, ::BlockComponentDirectData::LayerBitMask layersToFinalize);
+
+    MCAPI int getBurnOdds() const;
+
+    MCFOLD float getDestroySpeed() const;
+
+    MCAPI float getExplosionResistance() const;
+
+    MCAPI int getFlameOdds() const;
+
+    MCFOLD float getFriction() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::VoxelShapes::RegistryHandle getOcclusionFaceShapeHandle(uchar face) const;
+
+    MCAPI ::VoxelShapes::RegistryHandle getOcclusionShapeHandle() const;
+#endif
+
+    MCAPI ::SharedTypes::v1_26_0::DetectionRule getWaterDetectionRule() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool isFinalized(::BlockComponentDirectData::LayerBitMask layers) const;
+#endif
+
+    MCFOLD bool isFullBlockGeometry() const;
+
+    MCAPI ::LavaFlammable isLavaFlammable() const;
+
+    MCFOLD bool isOpaqueFullBlock() const;
+
+    MCAPI ::Brightness light() const;
+
+    MCAPI ::Brightness lightEmission() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD void setUseNewTessellation(bool enabled);
+#endif
     // NOLINTEND
 };

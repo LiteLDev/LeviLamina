@@ -34,8 +34,6 @@ public:
     virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
     virtual void setInitialState(::ParticleSystem::CommonParticle& particle, ::RenderParams& renderParams) /*override*/;
-
-    virtual ~ParticleInitialSpinComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

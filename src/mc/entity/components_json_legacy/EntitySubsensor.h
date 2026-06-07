@@ -29,8 +29,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EntitySubsensor& operator=(EntitySubsensor const&);
+    EntitySubsensor();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EntitySubsensor(::EntitySubsensor const&);
+
     MCAPI void senseEntities(
         ::Actor&                                      actor,
         ::gsl::span<::gsl::not_null<::Actor*>> const& nearbyActors,
@@ -41,6 +48,12 @@ public:
     );
 
     MCAPI ~EntitySubsensor();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::EntitySubsensor const&);
     // NOLINTEND
 
 public:

@@ -102,7 +102,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DropdownScreenController() /*override*/ = default;
+    virtual ~DropdownScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
@@ -110,6 +110,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DropdownScreenController();
+
+    MCAPI void setOffset(int offset);
+
     MCAPI void setUpCallbacksForCollectionDropdownOption(
         ::std::string const&                            collectionName,
         int const&                                      collectionSize,
@@ -135,6 +139,18 @@ public:
     );
 
     MCAPI void updateDropdownCollectionSize(int const& collectionSize);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

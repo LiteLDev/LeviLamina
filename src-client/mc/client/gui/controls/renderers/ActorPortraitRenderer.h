@@ -64,13 +64,13 @@ public:
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
-
-    virtual ~ActorPortraitRenderer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorPortraitRenderer();
+
     MCAPI void _prependTransform(
         ::Matrix&                            mat,
         ::glm::vec2 const&                   ownerPos,
@@ -80,6 +80,12 @@ public:
         ::ActorPortraitRenderer::Args const& args,
         ::Mob const&                         mob
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

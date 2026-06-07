@@ -33,8 +33,6 @@ public:
     virtual bool tick(::UIControl& ownerControl, float const deltaTime) /*override*/;
 
     virtual void _reset(::UIControl& ownerControl) /*override*/;
-
-    virtual ~UIAnimAlpha() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -10,11 +10,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct SocialPlayer; }
 namespace Parties { class IPartyProvider; }
-namespace Parties { class Party; }
 namespace Parties { class PartyTravelManager; }
 namespace Social { class ProfileSystem; }
 namespace Social { struct PlayerProfile; }
@@ -44,7 +43,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager>>  mPartyTravelManager;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mUserAtDestinationSubscription;
     ::ll::TypedStorage<8, 8, ::World::WorldPlayerListTracker&> mWorldPlayerListTracker;
-    ::ll::TypedStorage<8, 8, ::IOptions&>                      mOptions;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>               mOptions;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLanguageSubscription;
     // NOLINTEND
 
@@ -70,11 +69,9 @@ public:
         ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager>         partyTravelManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
         ::std::shared_ptr<::Social::ProfileSystem>                        profileSystem,
-        ::IOptions&                                                       options,
+        ::IOptionRegistry&                                                options,
         ::World::WorldPlayerListTracker&                                  worldPlayerListTracker
     );
-
-    MCAPI ::std::shared_ptr<::Parties::Party> _getParty() const;
 
     MCAPI void _updateInviteeProfiles();
 
@@ -121,7 +118,7 @@ public:
         ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager>         partyTravelManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
         ::std::shared_ptr<::Social::ProfileSystem>                        profileSystem,
-        ::IOptions&                                                       options,
+        ::IOptionRegistry&                                                options,
         ::World::WorldPlayerListTracker&                                  worldPlayerListTracker
     );
     // NOLINTEND
@@ -135,7 +132,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCFOLD bool $update();
     // NOLINTEND
 
 public:

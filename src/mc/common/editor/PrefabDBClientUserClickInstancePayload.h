@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class PrefabDBClientUserClickInstancePayload
@@ -27,9 +32,9 @@ public:
     PrefabDBClientUserClickInstancePayload();
 
 public:
-    // virtual functions
+    // static functions
     // NOLINTBEGIN
-    virtual ~PrefabDBClientUserClickInstancePayload() /*override*/ = default;
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

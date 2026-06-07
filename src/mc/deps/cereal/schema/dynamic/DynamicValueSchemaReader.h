@@ -97,7 +97,7 @@ public:
 
     virtual uint64 members() /*override*/;
 
-    virtual uint64 length(uint64 expectedSize) /*override*/;
+    virtual uint64 length(uint64) /*override*/;
 
     virtual bool pushMember(::std::string_view const name) /*override*/;
 
@@ -106,8 +106,6 @@ public:
     virtual void pushElement(uint64 index) /*override*/;
 
     virtual void pop() /*override*/;
-
-    virtual ~DynamicValueSchemaReader() /*override*/;
     // NOLINTEND
 
 public:
@@ -120,12 +118,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::reference_wrapper<::cereal::DynamicValue const> ref);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -172,7 +164,7 @@ public:
 
     MCAPI uint64 $members();
 
-    MCAPI uint64 $length(uint64 expectedSize);
+    MCAPI uint64 $length(uint64);
 
     MCAPI bool $pushMember(::std::string_view const name);
 

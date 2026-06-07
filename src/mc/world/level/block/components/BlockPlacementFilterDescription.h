@@ -25,15 +25,15 @@ public:
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
 
+    virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual bool isNetworkComponent() const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
-
-    virtual ~BlockPlacementFilterDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,11 +53,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
 
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
     MCFOLD bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 

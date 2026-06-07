@@ -7,11 +7,6 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/world/level/GameType.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ContentSource;
-// clang-format on
-
 struct WorldContentItem : public ::ContentItem {
 public:
     // member variables
@@ -24,25 +19,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldContentItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldContentItem() /*override*/ = default;
+    virtual ~WorldContentItem() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI explicit WorldContentItem(::ContentSource* src);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentSource* src);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

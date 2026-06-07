@@ -61,6 +61,10 @@ public:
 
     MCAPI ::std::optional<::OreUI::DevServer> _parseMessage(::OreUI::DevServerListener::Message const& message);
 
+    MCAPI void _removeOldDevServers();
+
+    MCAPI void update();
+
     MCAPI ~DevServerListener();
     // NOLINTEND
 

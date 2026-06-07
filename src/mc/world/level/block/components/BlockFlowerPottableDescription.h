@@ -8,9 +8,18 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CompoundTag;
+class SemVersion;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockFlowerPottableDescription : public ::NetworkedBlockComponentDescription<::BlockFlowerPottableDescription> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mUsePreR26U2FlowerPotOffset;
+    // NOLINTEND
+
 public:
     // prevent constructor by default
     BlockFlowerPottableDescription();
@@ -24,13 +33,23 @@ public:
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
-    virtual ~BlockFlowerPottableDescription() /*override*/;
+    virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
+
+    virtual ::CompoundTag buildUnboundDataNetworkTag() const /*override*/;
+
+    virtual void initializeUnboundDataFromNetwork(::CompoundTag const& tag) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockFlowerPottableDescription(bool hardcoded);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -46,12 +65,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
@@ -59,6 +72,12 @@ public:
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+
+    MCAPI ::CompoundTag $buildUnboundDataNetworkTag() const;
+
+    MCAPI void $initializeUnboundDataFromNetwork(::CompoundTag const& tag);
 
 
     // NOLINTEND

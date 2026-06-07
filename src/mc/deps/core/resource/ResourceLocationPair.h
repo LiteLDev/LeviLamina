@@ -2,47 +2,43 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ResourceLocation;
-struct PackIdVersion;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/resource/PackIdVersion.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
 
 class ResourceLocationPair {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk264a6d;
-    ::ll::UntypedStorage<8, 48> mUnk2ae1ce;
-    ::ll::UntypedStorage<4, 4>  mUnk9d3d38;
+    ::ll::TypedStorage<8, 56, ::ResourceLocation> mResourceLocation;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion>    mPackId;
+    ::ll::TypedStorage<4, 4, int>                 mPackPosition;
     // NOLINTEND
 
 #ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ResourceLocationPair& operator=(ResourceLocationPair const&);
-    ResourceLocationPair(ResourceLocationPair const&);
-    ResourceLocationPair();
-
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ResourceLocationPair(ResourceLocationPair const&);
+    ResourceLocationPair& operator=(ResourceLocationPair const&);
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ResourceLocationPair();
+    MCAPI ResourceLocationPair();
 
-    MCNAPI ResourceLocationPair(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+    MCAPI ResourceLocationPair(::ResourceLocationPair&&);
 
-    MCNAPI ::ResourceLocationPair& operator=(::ResourceLocationPair&&);
+    MCAPI ResourceLocationPair(::ResourceLocationPair const&);
 
-    MCNAPI ::ResourceLocationPair& operator=(::ResourceLocationPair const&);
+    MCAPI ResourceLocationPair(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
 
-    MCNAPI ~ResourceLocationPair();
+    MCAPI bool operator<(::ResourceLocationPair const& rhs) const;
+
+    MCAPI bool operator==(::ResourceLocationPair const& rhs) const;
+
+    MCAPI ~ResourceLocationPair();
 #endif
     // NOLINTEND
 
@@ -50,9 +46,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+    MCAPI void* $ctor(::ResourceLocationPair&&);
+
+    MCAPI void* $ctor(::ResourceLocationPair const&);
+
+    MCAPI void* $ctor(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
 #endif
     // NOLINTEND
 
@@ -60,7 +60,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };

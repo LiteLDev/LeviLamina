@@ -14,15 +14,18 @@ public:
 
 public:
     // prevent constructor by default
-    MobEvent& operator=(MobEvent const&);
     MobEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MobEvent(::MobEvent const&);
-
     MCNAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
+
+    MCNAPI ::std::string const& getLocalizableName() const;
+
+    MCNAPI ::std::string const& getName() const;
+
+    MCNAPI bool isEnabled() const;
 
     MCNAPI ~MobEvent();
     // NOLINTEND
@@ -30,8 +33,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MobEvent const&);
-
     MCNAPI void* $ctor(::std::string name, ::std::string localizableName, bool val);
     // NOLINTEND
 

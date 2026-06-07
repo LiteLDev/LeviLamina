@@ -6,6 +6,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 #include "mc/util/FloatRange.h"
 #include "mc/util/IntRange.h"
 #include "mc/util/TargetSelectionMethod.h"
@@ -15,12 +16,11 @@
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/village/POIType.h"
 #include "mc/world/item/ItemDescriptor.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
+class BaseGoal;
 class BlockDescriptor;
-class Goal;
 class Mob;
 struct ConstDeserializeDataParams;
 struct DrinkPotionData;
@@ -103,23 +103,23 @@ public:
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnEat;
     ::ll::TypedStorage<4, 4, int>                                    mDelayBeforeEating;
     struct {
-        ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mTargetBlocks;
-        ::ll::TypedStorage<8, 24, ::std::vector<::MaterialType>>   mTargetMaterialsAboveBlock;
-        ::ll::TypedStorage<1, 1, bool>                             mAllowLayingFromBelow;
-        ::ll::TypedStorage<1, 1, bool>                             mUseDefaultAnimation;
-        ::ll::TypedStorage<4, 4, float>                            mLaySeconds;
-        ::ll::TypedStorage<8, 16, ::ItemDescriptor>                mEggType;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnLayEvent;
-        ::ll::TypedStorage<8, 32, ::std::string>                   mLayEggSound;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>                      mTargetBlocks;
+        ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_20::MaterialType>> mTargetMaterialsAboveBlock;
+        ::ll::TypedStorage<1, 1, bool>                                                  mAllowLayingFromBelow;
+        ::ll::TypedStorage<1, 1, bool>                                                  mUseDefaultAnimation;
+        ::ll::TypedStorage<4, 4, float>                                                 mLaySeconds;
+        ::ll::TypedStorage<8, 16, ::ItemDescriptor>                                     mEggType;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                            mOnLayEvent;
+        ::ll::TypedStorage<8, 32, ::std::string>                                        mLayEggSound;
     } mLayEggGoalData;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnWorkArrivalEvent;
-    ::ll::TypedStorage<4, 4, float>                      mTargetDist;
-    ::ll::TypedStorage<4, 4, float>                      mSpeedModifier;
-    ::ll::TypedStorage<4, 4, ::MaterialType>             mMaterialType;
-    ::ll::TypedStorage<4, 4, int>                        mSearchRange;
-    ::ll::TypedStorage<4, 4, int>                        mSearchHeight;
-    ::ll::TypedStorage<4, 4, int>                        mSearchCount;
-    ::ll::TypedStorage<4, 4, float>                      mGoalRadius;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>            mOnWorkArrivalEvent;
+    ::ll::TypedStorage<4, 4, float>                                 mTargetDist;
+    ::ll::TypedStorage<4, 4, float>                                 mSpeedModifier;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::MaterialType> mMaterialType;
+    ::ll::TypedStorage<4, 4, int>                                   mSearchRange;
+    ::ll::TypedStorage<4, 4, int>                                   mSearchHeight;
+    ::ll::TypedStorage<4, 4, int>                                   mSearchCount;
+    ::ll::TypedStorage<4, 4, float>                                 mGoalRadius;
     struct {
         ::ll::TypedStorage<4, 4, float>                                    speedModifier;
         ::ll::TypedStorage<4, 4, int>                                      tickInterval;
@@ -206,6 +206,9 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mCanWorkInRain;
     ::ll::TypedStorage<4, 4, int>                                                     mWorkInRainTolerance;
     ::ll::TypedStorage<4, 4, float>                                                   mFollowDistance;
+    ::ll::TypedStorage<1, 1, bool>                                                    mAlwaysLookForLeader;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                                     mLeaderFilters;
+    ::ll::TypedStorage<4, 4, int>                                                     mSearchCooldown;
     ::ll::TypedStorage<4, 4, float>                                                   mBlockDistance;
     ::ll::TypedStorage<8, 24, ::std::vector<::SendEventData>>                         mSendEventData;
     ::ll::TypedStorage<4, 4, int>                                                     mStartDelay;
@@ -255,6 +258,8 @@ public:
     ::ll::TypedStorage<4, 4, int>                              mTimeoutAfterBeingAttacked;
     ::ll::TypedStorage<1, 1, bool>                             mCanPickupToHandOrEquipment;
     ::ll::TypedStorage<1, 1, bool>                             mPickupSameItemsAsInHand;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mPickupItemsOnStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mPickupItemsOnEndEvent;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mExcludedItemsList;
     ::ll::TypedStorage<1, 1, bool>                             mSlimeSetPersistent;
     ::ll::TypedStorage<8, 32, ::std::string>                   mAdmireItemSound;
@@ -294,19 +299,22 @@ public:
     MCAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause>
     _getPanicGoalDamageSources(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCAPI static ::TargetSelectionMethod _getTargetSelectionMethodFromString(::std::string const& methodStr);
-
-    MCAPI static ::std::unique_ptr<::Goal> createGoal(::Mob& mob, ::LegacyGoalDefinition const& def);
+    MCAPI static ::std::unique_ptr<::BaseGoal> createGoal(::Mob& mob, ::LegacyGoalDefinition const& def);
 
     MCAPI static bool goalExists(::std::string const& name);
+
+    MCFOLD static void init();
+
+    MCAPI static void shutdown();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::
-        unordered_map<::std::string, ::std::function<::std::unique_ptr<::Goal>(::Mob&, ::LegacyGoalDefinition const&)>>&
-        mGoalMap();
+    MCAPI static ::std::unordered_map<
+        ::std::string,
+        ::std::function<::std::unique_ptr<::BaseGoal>(::Mob&, ::LegacyGoalDefinition const&)>>&
+    mGoalMap();
     // NOLINTEND
 
 public:

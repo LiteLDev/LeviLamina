@@ -17,18 +17,6 @@ public:
     DeferredResourceTransactions& operator=(DeferredResourceTransactions const&);
     DeferredResourceTransactions(DeferredResourceTransactions const&);
     DeferredResourceTransactions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DeferredResourceTransactions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace mcr

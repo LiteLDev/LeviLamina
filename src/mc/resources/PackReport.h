@@ -7,6 +7,7 @@
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/resources/PackErrorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,12 +40,44 @@ public:
     MCNAPI PackReport(::PackReport const&);
 
 #ifdef LL_PLAT_C
+    MCNAPI void clear();
+#endif
+
+    MCNAPI ::std::vector<::std::shared_ptr<::PackError>> const& getErrors() const;
+
+#ifdef LL_PLAT_S
+    MCNAPI ::ResourceLocation const& getLocation() const;
+#endif
+
+#ifdef LL_PLAT_C
+    MCNAPI int const getNumErrors() const;
+
+    MCNAPI int const getNumWarnings() const;
+#endif
+
+    MCNAPI ::PackType getPackType() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::std::shared_ptr<::PackError>> const& getWarnings() const;
+#endif
+
+    MCNAPI bool hasErrors() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI bool hasErrors(::PackErrorType packErrorType);
+
+    MCNAPI bool hasWarnings() const;
+
     MCNAPI void merge(::PackReport&& other);
 #endif
 
     MCNAPI ::PackReport& operator=(::PackReport&&);
 
     MCNAPI ::PackReport& operator=(::PackReport const&);
+
+#ifdef LL_PLAT_C
+    MCNAPI bool wasUpgraded() const;
+#endif
 
     MCNAPI ~PackReport();
     // NOLINTEND

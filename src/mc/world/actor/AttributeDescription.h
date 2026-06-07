@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/actor/Description.h"
 
-struct AttributeDescription : public ::Description {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~AttributeDescription() /*override*/ = default;
-    // NOLINTEND
-};
+struct AttributeDescription : public ::Description {};

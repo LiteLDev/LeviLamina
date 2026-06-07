@@ -10,6 +10,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_21_60 { struct StorageWeightModifierItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,9 +22,17 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    StorageWeightModifierItemComponent();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~StorageWeightModifierItemComponent() /*override*/ = default;
+    MCAPI explicit StorageWeightModifierItemComponent(
+        ::SharedTypes::v1_21_60::StorageWeightModifierItemComponent const& component
+    );
+
+    MCFOLD int getWeightInStorageItem() const;
     // NOLINTEND
 
 public:
@@ -36,6 +45,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_60::StorageWeightModifierItemComponent const& component);
     // NOLINTEND
 
 public:

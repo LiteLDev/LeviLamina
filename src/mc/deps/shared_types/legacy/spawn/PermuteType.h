@@ -15,27 +15,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                          mMinGuaranteed;
     ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<1>> mEntityType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PermuteType(PermuteType const&);
-    PermuteType();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::Legacy::Spawn::PermuteType& operator=(::SharedTypes::Legacy::Spawn::PermuteType&&);
-
-    MCFOLD ::SharedTypes::Legacy::Spawn::PermuteType& operator=(::SharedTypes::Legacy::Spawn::PermuteType const&);
-
-    MCAPI ~PermuteType();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::Legacy::Spawn

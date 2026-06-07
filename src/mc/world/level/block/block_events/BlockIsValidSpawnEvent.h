@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockPos;
 class BlockSource;
 namespace br::spawn { struct EntityType; }
 // clang-format on
@@ -36,14 +37,26 @@ public:
     virtual ::Block const& getBlock() const /*override*/;
 
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-
-    virtual ~BlockIsValidSpawnEvent() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI BlockIsValidSpawnEvent(
+        ::BlockSource&                 region,
+        ::Block const&                 state,
+        ::BlockPos                     pos,
+        ::br::spawn::EntityType const& entityType
+    );
+
+    MCFOLD ::br::spawn::EntityType const& entityType() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::BlockSource& region, ::Block const& state, ::BlockPos pos, ::br::spawn::EntityType const& entityType);
     // NOLINTEND
 
 public:

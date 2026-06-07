@@ -14,16 +14,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangOffsetPlaceholder& operator=(MolangOffsetPlaceholder const&);
-    MolangOffsetPlaceholder(MolangOffsetPlaceholder const&);
-    MolangOffsetPlaceholder();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::MolangOffsetPlaceholder& operator=(::MolangOffsetPlaceholder&&);
-
 #ifdef LL_PLAT_C
     MCAPI ~MolangOffsetPlaceholder();
 #endif

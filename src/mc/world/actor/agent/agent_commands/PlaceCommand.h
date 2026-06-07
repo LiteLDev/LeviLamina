@@ -24,8 +24,6 @@ public:
     virtual void execute() /*override*/;
 
     virtual bool isDone() /*override*/;
-
-    virtual ~PlaceCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

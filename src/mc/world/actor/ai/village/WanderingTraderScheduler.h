@@ -37,21 +37,9 @@ public:
 
     MCAPI bool _canWanderingTraderBeMoved() const;
 
-    MCAPI bool _doesWanderingTraderExist() const;
-
     MCAPI ::std::optional<::BlockPos> _findValidSpawnPosUnder(::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCAPI ::BlockPos _getRandomHeightmapPosAroundOrigin(
-        ::BlockSource const& region,
-        ::BlockPos const&    origin,
-        int                  distFromOrigin,
-        bool                 exactDist
-    );
-
     MCAPI ::Actor* _getRandomPlayerInOverworld() const;
-
-    MCAPI ::std::optional<::BlockPos>
-    _getRandomWildernessPosAroundSpecifiedPos(::BlockPos const& position, ::BlockSource& region);
 
     MCAPI ::std::optional<::BlockPos>
     _getSpawnPosFromNearestVillageToPlayerPos(::BlockPos const& playerPos, ::BlockSource& region);

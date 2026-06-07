@@ -31,20 +31,54 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual void setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)>) /*override*/;
+#else // LL_PLAT_C
     virtual void
     setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)> messageSender) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool shouldProcessMessage(::std::string const&, ::std::string const&) /*override*/;
+#else // LL_PLAT_C
     virtual bool shouldProcessMessage(::std::string const& _namespace, ::std::string const& func) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool
+    onMessageReceived(::std::string const&, ::std::string const&, ::std::optional<::Json::Value>) /*override*/;
+#else // LL_PLAT_C
     virtual bool onMessageReceived(
-        ::std::string const&           _namespace,
-        ::std::string const&           func,
-        ::std::optional<::Json::Value> arguments
+        ::std::string const& func,
+        ::std::string const& arguments,
+        ::std::optional<::Json::Value>
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void onLoadingBegin(::std::function<void(::std::string)>) /*override*/;
+#else // LL_PLAT_C
     virtual void onLoadingBegin(::std::function<void(::std::string)> handler) /*override*/;
+#endif
 
-    virtual ~TelemetryExtension() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit TelemetryExtension(
+        ::std::function<void(::Webview::TelemetryCommonProperties&, ::std::string, ::std::string)> log
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::function<void(::Webview::TelemetryCommonProperties&, ::std::string, ::std::string)> log);
+#endif
     // NOLINTEND
 
 public:
@@ -55,11 +89,8 @@ public:
 
     MCNAPI bool $shouldProcessMessage(::std::string const& _namespace, ::std::string const& func);
 
-    MCNAPI bool $onMessageReceived(
-        ::std::string const&           _namespace,
-        ::std::string const&           func,
-        ::std::optional<::Json::Value> arguments
-    );
+    MCNAPI bool
+    $onMessageReceived(::std::string const& func, ::std::string const& arguments, ::std::optional<::Json::Value>);
 
     MCNAPI void $onLoadingBegin(::std::function<void(::std::string)> handler);
 #endif

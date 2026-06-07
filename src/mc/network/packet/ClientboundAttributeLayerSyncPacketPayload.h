@@ -22,24 +22,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        104,
+        72,
         ::std::variant<
             ::AttributeLayerSyncPacketData::UpdateAttributeLayersData,
             ::AttributeLayerSyncPacketData::UpdateAttributeLayerSettingsData,
             ::AttributeLayerSyncPacketData::UpdateEnvironmentAttributesData,
             ::AttributeLayerSyncPacketData::RemoveEnvironmentAttributesData>>
         mData;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ClientboundAttributeLayerSyncPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

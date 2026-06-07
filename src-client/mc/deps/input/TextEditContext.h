@@ -49,9 +49,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _feedDelete(::std::string_view text) const;
+
     MCAPI void _feedDiff(::std::string_view oldText, ::std::string_view newText) const;
 
     MCAPI void _feedInsert(::std::string_view text) const;
+
+    MCAPI void _onBackspace();
 
     MCAPI void _onCopy();
 
@@ -59,7 +63,7 @@ public:
 
     MCAPI void _replaceSelection(::std::string_view replacementUtf8Text);
 
-    MCAPI void enable(::std::string_view newUtf8Text, int maxLength);
+    MCAPI void _setText(::std::string_view newUtf8Text);
 
     MCAPI void feedAction(::TextEditContext::TextEditAction action);
 
@@ -67,9 +71,13 @@ public:
 
     MCAPI void feedText(::std::string_view utf8Text);
 
+    MCAPI ::TextRange getSelection() const;
+
+    MCFOLD ::std::string const getText() const;
+
     MCAPI void setCaretLocation(int location);
 
-    MCAPI void setText(::std::string_view newUtf8Text);
+    MCAPI void setSelection(::TextRange range);
 
     MCAPI ~TextEditContext();
     // NOLINTEND

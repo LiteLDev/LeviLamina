@@ -38,11 +38,6 @@ public:
 
     virtual void
     syncWorld(::World::WorldID const&, ::std::function<void(::World::WorldCloudSyncResult)> const&) /*override*/;
-
-    virtual void syncWorldManifest(
-        ::World::WorldID const&,
-        ::std::function<void(::World::WorldCloudSyncResult)> const&
-    ) /*override*/;
     // NOLINTEND
 
 public:

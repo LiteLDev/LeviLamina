@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class PersistenceResponseGroupPayload
@@ -19,26 +24,32 @@ public:
 
 public:
     // prevent constructor by default
-    PersistenceResponseGroupPayload(PersistenceResponseGroupPayload const&);
+    PersistenceResponseGroupPayload& operator=(PersistenceResponseGroupPayload const&);
     PersistenceResponseGroupPayload();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~PersistenceResponseGroupPayload() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PersistenceResponseGroupPayload(::Editor::Network::PersistenceResponseGroupPayload const&);
+
+    MCNAPI explicit PersistenceResponseGroupPayload(::std::string requestId);
+
     MCNAPI ::Editor::Network::PersistenceResponseGroupPayload&
-    operator=(::Editor::Network::PersistenceResponseGroupPayload const&);
+    operator=(::Editor::Network::PersistenceResponseGroupPayload&&);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Network::PersistenceResponseGroupPayload const&);
+
+    MCNAPI void* $ctor(::std::string requestId);
     // NOLINTEND
 
 public:

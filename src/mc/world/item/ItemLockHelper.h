@@ -19,6 +19,8 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _parseItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
 
+    MCAPI static bool addKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
+
 #ifdef LL_PLAT_C
     MCAPI static void
     appendItemLockHoverText(::Bedrock::Safety::RedactableString& formattedHoverText, ::ItemStackBase const& item);
@@ -26,16 +28,24 @@ public:
     MCAPI static void
     appendItemLockPopupNoticeText(::std::string& formattedPopupNoticeText, ::ItemStackBase const& item);
 
+    MCAPI static bool canDropItem(::Actor const& actor, ::ItemStackBase const& item);
+#endif
+
     MCAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
+
+#ifdef LL_PLAT_C
+    MCAPI static bool canPlayerDropItem(::ItemStackBase const& item);
 #endif
 
     MCAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
 
     MCAPI static bool isItemLocked(::ItemStackBase const& item);
 
-    MCAPI static bool removeItemLockMode(::ItemStackBase& item);
+    MCAPI static bool isItemLockedInSlot(::ItemStackBase const& item);
 
-    MCAPI static bool removeKeepOnDeath(::ItemStackBase& item);
+    MCAPI static void setItemLockMode(::ItemStackBase& item, ::ItemLockMode lockMode);
+
+    MCAPI static void setKeepOnDeath(::ItemStackBase& item, bool value);
 
     MCAPI static bool shouldKeepOnDeath(::ItemStackBase const& item);
 

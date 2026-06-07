@@ -46,6 +46,8 @@ public:
         bool                                               validatePaths
     );
 
+    MCNAPI void _mergeDuplicateEntries(uint64 duplicateEntryIndex, ::Core::FlatFileManifestInfo& newManifestInfoEntry);
+
     MCNAPI ::Bedrock::Result<void> _readHeaderFromStream(::ReadOnlyBinaryStream& manifestFileStream);
 
     MCNAPI void createFromVectorWithValidation(
@@ -57,10 +59,22 @@ public:
     MCNAPI ::Core::FlatFileManifestInfo const*
     findFileOrDirectoryEntry(::Core::PathView filePath, bool skipDeleted) const;
 
+    MCNAPI ::Core::FlatFileManifestInfo const& getByIndex(uint64 index) const;
+
+    MCNAPI uint64 getEntriesCount() const;
+
     MCNAPI ::Bedrock::Result<void>
     readFromStream(::std::string const& manifestFileStr, ::Core::PathView manifestPath, bool validatePaths);
 
     MCNAPI void writeToStream(::BinaryStream& manifestFileStream) const;
+
+    MCNAPI ~FlatFileManifest();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

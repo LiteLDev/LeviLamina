@@ -16,8 +16,6 @@ public:
     virtual int getMaxLevel() const /*override*/;
 
     virtual bool isCompatibleWith(::Enchant::Type type) const /*override*/;
-
-    virtual ~TridentRiptideEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

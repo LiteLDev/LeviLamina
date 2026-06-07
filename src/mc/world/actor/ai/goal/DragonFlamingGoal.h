@@ -4,15 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Color.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
 // clang-format off
 class EnderDragon;
+class Mob;
 // clang-format on
 
-class DragonFlamingGoal : public ::Goal {
+class DragonFlamingGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,8 +49,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~DragonFlamingGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit DragonFlamingGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

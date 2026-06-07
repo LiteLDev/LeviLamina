@@ -17,6 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void foreachScreen(::std::function<bool(::ItemStackNetManagerScreen&)> callback);
+    MCNAPI ::ItemStackNetManagerScreen* push(::std::unique_ptr<::ItemStackNetManagerScreen> screen);
     // NOLINTEND
 };

@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptAimAssistPreset& operator=(ScriptAimAssistPreset const&);
-    ScriptAimAssistPreset(ScriptAimAssistPreset const&);
-    ScriptAimAssistPreset();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const* _getPresetDefinition() const;
@@ -52,8 +46,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, ::std::string>> getItemSettings() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getLiquidTargetingItems() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptAimAssistPreset& operator=(::ScriptModuleMinecraft::ScriptAimAssistPreset&&);
     // NOLINTEND
 
 public:

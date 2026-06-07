@@ -5,14 +5,15 @@
 // auto generated inclusion list
 #include "mc/diagnostics/LogAreaID.h"
 #include "mc/platform/diagnostics/bedrock_log/LogCategory.h"
+#include "mc/platform/diagnostics/bedrock_log/LogChannel.h"
 #include "mc/platform/diagnostics/bedrock_log/LogRule.h"
 
 // auto generated forward declare list
 // clang-format off
-class LogSettingsUpdater;
 namespace Bedrock { class ScopeExit; }
 namespace BedrockLog { class LogAreaFilter; }
 namespace Core { class Path; }
+class LogSettingsUpdater;
 // clang-format on
 
 namespace BedrockLog {
@@ -25,9 +26,7 @@ _constructAreaFilterFromString(::std::string const& filterString, ::BedrockLog::
 
 MCAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
 
-#ifdef LL_PLAT_C
 MCAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
-#endif
 
 MCAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
 
@@ -39,7 +38,11 @@ MCAPI ::std::string _messageIdString(int _messageId);
 
 MCAPI ::std::string _processIdString();
 
+MCAPI ::std::string _threadIdString();
+
 MCAPI void closeAndResetAllLogs();
+
+MCAPI void closeAndResetLog(::BedrockLog::LogCategory category);
 
 MCAPI void createLog(
     ::Core::Path const&       _path,
@@ -53,8 +56,14 @@ MCAPI void createLog(
 );
 
 #ifdef LL_PLAT_C
-MCAPI ::Bedrock::ScopeExit initialize();
+MCAPI void dumpLogSettingsToLog();
 #endif
+
+MCAPI void flushAllLogs();
+
+MCAPI ::Bedrock::ScopeExit initialize();
+
+MCAPI void initializeLogExtensions();
 
 MCAPI void log_va(
     ::BedrockLog::LogCategory _category,
@@ -70,6 +79,8 @@ MCAPI void log_va(
 
 MCAPI int rakDebugLog(char const*, ...);
 
+MCAPI void update();
+
 #ifdef LL_PLAT_S
 MCAPI void updateLogFilter(
     ::std::unique_ptr<::LogSettingsUpdater> options,
@@ -78,12 +89,18 @@ MCAPI void updateLogFilter(
     ::std::string&                          result,
     bool                                    toggle
 );
-#endif
-// NOLINTEND
 
-// static variables
-// NOLINTBEGIN
-MCAPI ::std::bitset<3> const& sGlobalChannel();
+MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
+#endif
+
+#ifdef LL_PLAT_C
+MCAPI void updateLogSetting(
+    ::BedrockLog::LogCategory _category,
+    ::BedrockLog::LogChannel  _channel,
+    ::std::string const&      setting,
+    bool                      newValue
+);
+#endif
 // NOLINTEND
 
 } // namespace BedrockLog

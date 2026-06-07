@@ -57,7 +57,7 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    virtual bool canLaunchUri(::std::string const& uri) /*override*/;
+    virtual bool canLaunchUri(::std::string const&) /*override*/;
 
     virtual void launchUri(::std::string const& uri) /*override*/;
 
@@ -81,7 +81,7 @@ public:
 
     virtual int getDisplayHeight() /*override*/;
 
-    virtual void setScreenSize(int width, int height) /*override*/;
+    virtual void setScreenSize(int, int) /*override*/;
 
     virtual void setWindowSize(int width, int height) /*override*/;
 
@@ -89,11 +89,11 @@ public:
 
     virtual ::std::string getTextBoxBackend() const /*override*/;
 
-    virtual void setTextBoxBackend(::std::string const& newText) /*override*/;
+    virtual void setTextBoxBackend(::std::string const&) /*override*/;
 
     virtual int getCaretPosition() const /*override*/;
 
-    virtual void setCaretPosition(int position) /*override*/;
+    virtual void setCaretPosition(int) /*override*/;
 
     virtual bool hasBuyButtonWhenInvalidLicense() /*override*/;
 
@@ -109,9 +109,9 @@ public:
 
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
 
-    virtual ::SecureStorageKey getSecureStorageKey(::std::string const& key) /*override*/;
+    virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) /*override*/;
 
-    virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) /*override*/;
+    virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) /*override*/;
 
     virtual ::std::string getPlatformString() const /*override*/;
 
@@ -131,7 +131,7 @@ public:
 
     virtual bool isWebviewSupported() const /*override*/;
 
-    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const /*override*/;
+    virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&&) const /*override*/;
 
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
@@ -162,6 +162,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void setupWorkingDirectory();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
@@ -189,7 +195,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCFOLD bool $canLaunchUri(::std::string const& uri);
+    MCFOLD bool $canLaunchUri(::std::string const&);
 
     MCAPI void $launchUri(::std::string const& uri);
 
@@ -213,7 +219,7 @@ public:
 
     MCAPI int $getDisplayHeight();
 
-    MCFOLD void $setScreenSize(int width, int height);
+    MCFOLD void $setScreenSize(int, int);
 
     MCAPI void $setWindowSize(int width, int height);
 
@@ -221,11 +227,11 @@ public:
 
     MCFOLD ::std::string $getTextBoxBackend() const;
 
-    MCFOLD void $setTextBoxBackend(::std::string const& newText);
+    MCFOLD void $setTextBoxBackend(::std::string const&);
 
     MCFOLD int $getCaretPosition() const;
 
-    MCFOLD void $setCaretPosition(int position);
+    MCFOLD void $setCaretPosition(int);
 
     MCFOLD bool $hasBuyButtonWhenInvalidLicense();
 
@@ -241,9 +247,9 @@ public:
 
     MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
-    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const& key);
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
-    MCFOLD void $setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value);
+    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
 
     MCAPI ::std::string $getPlatformString() const;
 
@@ -263,7 +269,7 @@ public:
 
     MCAPI bool $isWebviewSupported() const;
 
-    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&& args) const;
+    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&&) const;
 
     MCAPI bool $getPlatformTTSEnabled() const;
 

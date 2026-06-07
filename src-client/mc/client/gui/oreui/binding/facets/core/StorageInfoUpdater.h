@@ -27,8 +27,6 @@ public:
     virtual void addStateListener(::Core::StorageAreaStateListener* listener) /*override*/;
 
     virtual void removeStateListener(::Core::StorageAreaStateListener* listener) /*override*/;
-
-    virtual ~StorageInfoUpdater() /*override*/ = default;
     // NOLINTEND
 
 public:

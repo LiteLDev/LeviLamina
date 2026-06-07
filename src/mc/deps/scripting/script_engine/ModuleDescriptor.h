@@ -17,19 +17,25 @@ public:
 
 public:
     // prevent constructor by default
-    ModuleDescriptor(ModuleDescriptor const&);
+    ModuleDescriptor& operator=(ModuleDescriptor const&);
     ModuleDescriptor();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor&&);
+    MCNAPI ModuleDescriptor(::Scripting::ModuleDescriptor const&);
 
-    MCNAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor const&);
+    MCNAPI ::Scripting::ModuleDescriptor& operator=(::Scripting::ModuleDescriptor&&);
 
     MCNAPI ::std::string toString() const;
 
     MCNAPI ~ModuleDescriptor();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Scripting::ModuleDescriptor const&);
     // NOLINTEND
 
 public:

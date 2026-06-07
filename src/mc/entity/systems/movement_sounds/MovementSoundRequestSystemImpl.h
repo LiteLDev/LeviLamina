@@ -94,8 +94,6 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-
-    virtual ~MovementSoundRequestSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

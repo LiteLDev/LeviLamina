@@ -20,21 +20,7 @@ public:
         // clang-format on
 
         // FallBackFormats inner types define
-        struct FallBackFormat {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 8> mUnkcbb1ad;
-            ::ll::UntypedStorage<8, 8> mUnk5a95e3;
-            ::ll::UntypedStorage<4, 4> mUnk9a6b49;
-            // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            FallBackFormat& operator=(FallBackFormat const&);
-            FallBackFormat(FallBackFormat const&);
-            FallBackFormat();
-        };
+        struct FallBackFormat {};
 
     public:
         // member variables

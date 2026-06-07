@@ -31,10 +31,10 @@ public:
     );
 
     MCAPI static void _tickEntitySensorComponent(
-        ::StrictEntityContext&,
-        ::ActorOwnerComponent&        actorOwnerComponent,
-        ::EntitySensorComponent&      entitySensorComponent,
-        ::CurrentTickComponent const& currentTickComponent
+        ::StrictEntityContext&   actorOwnerComponent,
+        ::ActorOwnerComponent&   entitySensorComponent,
+        ::EntitySensorComponent& currentTickComponent,
+        ::CurrentTickComponent const&
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

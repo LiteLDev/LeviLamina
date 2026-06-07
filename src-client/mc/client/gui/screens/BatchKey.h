@@ -27,11 +27,16 @@ public:
 
 public:
     // prevent constructor by default
+    BatchKey& operator=(BatchKey const&);
     BatchKey();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BatchKey(::BatchKey&& rha);
+
+    MCAPI BatchKey(::BatchKey const& rha);
+
     MCAPI BatchKey(int depth, float alpha, ::BatchClippingState const& clippingState);
 
     MCAPI BatchKey(
@@ -43,12 +48,18 @@ public:
         ::UIMaterialType            materialType
     );
 
+    MCAPI bool operator==(::BatchKey const& rhs) const;
+
     MCAPI ~BatchKey();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::BatchKey&& rha);
+
+    MCAPI void* $ctor(::BatchKey const& rha);
+
     MCAPI void* $ctor(int depth, float alpha, ::BatchClippingState const& clippingState);
 
     MCAPI void* $ctor(

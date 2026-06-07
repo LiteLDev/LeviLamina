@@ -9,7 +9,7 @@ class NetEaseBlockComponentStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::BlockComponentStorage> mStorage;
+    ::ll::TypedStorage<8, 96, ::BlockComponentStorage> mStorage;
     // NOLINTEND
 
 public:

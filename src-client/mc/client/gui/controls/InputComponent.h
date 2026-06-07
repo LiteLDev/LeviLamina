@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/controls/ButtonHandleResult.h"
+#include "mc/client/gui/controls/ButtonMappingInputModeCondition.h"
+#include "mc/client/gui/controls/ButtonMappingType.h"
 #include "mc/client/gui/controls/UIComponent.h"
 #include "mc/client/gui/screens/ScreenEventScope.h"
 #include "mc/deps/input/InputMode.h"
@@ -73,6 +75,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InputComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~InputComponent() /*override*/;
@@ -81,12 +87,14 @@ public:
 
     virtual void reset() /*override*/;
 
-    virtual void onVisibilityChanged(bool visible) /*override*/;
+    virtual void onVisibilityChanged(bool) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit InputComponent(::UIControl& owner);
+
     MCAPI ::InputComponent::PressType
     _detectDoubleClick(uint buttonId, ::ButtonState state, ::glm::vec2 const& pointerPosition, bool isTTSTouchEnabled);
 
@@ -110,13 +118,64 @@ public:
         bool                     alreadyHandled
     );
 
-    MCAPI bool _shouldHandlePressedMapping(
+    MCAPI bool _shouldHandleControllerDirection(::DirectionId deltaPosition, ::glm::vec2 const&);
+
+    MCAPI bool _shouldHandleMapping(
         ::ScreenButtonMapping const& buttonMapping,
+        ::InputComponent::PressType  interpretAsPressType,
         uint                         buttonId,
         ::ButtonState                state,
         ::glm::vec2 const&           pointerPosition,
         ::InputMode                  inputMode
     );
+
+    MCAPI bool _shouldHandlePressedMapping(
+        ::ScreenButtonMapping const& buttonMapping,
+        uint                         state,
+        ::ButtonState                pointerPosition,
+        ::glm::vec2 const&           inputMode,
+        ::InputMode
+    );
+
+    MCAPI void addButtonMapping(
+        uint                              fromButtonId,
+        uint                              toButtonId,
+        ::ButtonMappingType               mappingType,
+        ::ScreenEventScope                scope,
+        bool                              buttonUpRightOfFirstRefusal,
+        bool                              handleSelect,
+        bool                              handleDeselect,
+        bool                              alternateInputScope,
+        bool                              consumeEvent,
+        ::ButtonMappingInputModeCondition inputModeCondition,
+        bool                              ignoreInputScope
+    );
+
+    MCAPI void addHoverButtonMapping(uint toButtonId, ::ScreenEventScope scope);
+
+    MCAPI void addRemappingMapping(::ScreenEventScope scope);
+
+    MCAPI bool canHandleDeselect(uint buttonId);
+
+    MCFOLD void cleanUpAllButtonStates();
+
+    MCAPI void cleanUpButtonState(
+        uint               buttonId,
+        ::ButtonState      state,
+        ::glm::vec2 const& pointerPosition,
+        ::InputMode,
+        bool isTTSTouchEnabled
+    );
+
+    MCFOLD bool getAlwaysListensToInput() const;
+
+    MCAPI bool getGamepadDeflectionMode() const;
+
+    MCFOLD bool getInlineModal() const;
+
+    MCFOLD bool getModal() const;
+
+    MCFOLD bool getPreventsTouchControls() const;
 
     MCAPI ::ButtonHandleResult handleButtonEvent(
         ::VisualTree&            visualTree,
@@ -146,6 +205,13 @@ public:
         bool                     alreadyHandled
     );
 
+    MCAPI void handleInputModeChange(
+        ::VisualTree&            mVisualTree,
+        ::UIAnimationController& animationController,
+        ::ScreenInputContext&    context,
+        ::InputMode              newInputMode
+    );
+
     MCAPI bool handlePointerLocation(
         ::VisualTree&            visualTree,
         ::UIAnimationController& animationController,
@@ -156,6 +222,32 @@ public:
     );
 
     MCAPI bool isWithinClipRegion(::glm::vec2 const& pointerPosition) const;
+
+    MCAPI void setAlwaysHandleControllerDirection(bool enabled);
+
+    MCAPI void setAlwaysHandlePointer(bool enabled);
+
+    MCFOLD void setAlwaysListensToInput(bool enabled);
+
+    MCFOLD void setConsumeHoverEvents(bool consumeHoverEvents);
+
+    MCAPI void setGamepadDeflectionMode(bool enabled);
+
+    MCAPI void setHoverEnabled(bool hoverEnabled);
+
+    MCAPI void setIgnoreHoverChange(bool ignoreHoverChange);
+
+    MCAPI void setInlineModal(bool inlineModal);
+
+    MCAPI void setModal(bool modal);
+
+    MCAPI void setPreventsTouchControls(bool enabled);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
@@ -169,9 +261,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCFOLD void $reset();
 
-    MCAPI void $onVisibilityChanged(bool visible);
+    MCAPI void $onVisibilityChanged(bool);
     // NOLINTEND
 
 public:

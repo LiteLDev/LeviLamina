@@ -40,14 +40,9 @@ public:
 
 public:
     // prevent constructor by default
+    InternalPacket& operator=(InternalPacket const&);
     InternalPacket(InternalPacket const&);
     InternalPacket();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::RakNet::InternalPacket& operator=(::RakNet::InternalPacket const&);
-    // NOLINTEND
 };
 
 } // namespace RakNet

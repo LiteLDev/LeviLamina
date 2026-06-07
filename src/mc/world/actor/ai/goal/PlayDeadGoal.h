@@ -6,14 +6,14 @@
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/util/IntRange.h"
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 // clang-format on
 
-class PlayDeadGoal : public ::Goal {
+class PlayDeadGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,8 +49,18 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~PlayDeadGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit PlayDeadGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

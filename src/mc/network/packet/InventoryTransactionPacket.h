@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/InventoryPacket.h"
+#include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
@@ -16,12 +16,10 @@ class BlockPalette;
 class ComplexInventoryTransaction;
 class ReadOnlyBinaryStream;
 class ServerPlayer;
-struct ActorRotationComponent;
 struct ItemStackLegacyRequestIdTag;
-struct MoveInputComponent;
 // clang-format on
 
-class InventoryTransactionPacket : public ::InventoryPacket {
+class InventoryTransactionPacket : public ::Packet {
 public:
     // InventoryTransactionPacket inner types define
     using LegacySetSlot = ::std::pair<::ContainerEnumName, ::std::vector<uchar>>;
@@ -37,6 +35,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InventoryTransactionPacket& operator=(InventoryTransactionPacket const&);
+    InventoryTransactionPacket(InventoryTransactionPacket const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~InventoryTransactionPacket() /*override*/;
@@ -47,15 +50,31 @@ public:
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    virtual void handle(
-        ::ServerPlayer&             player,
-        ::BlockPalette&             blockPalette,
-        ::MoveInputComponent const& moveInput,
-        ::ActorRotationComponent&   actorRotation,
-        bool                        isAimAssist
-    ) const /*override*/;
-
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI InventoryTransactionPacket();
+
+    MCAPI InventoryTransactionPacket(::InventoryTransactionPacket&&);
+
+    MCAPI InventoryTransactionPacket(::std::unique_ptr<::ComplexInventoryTransaction> transaction, bool isClientSide);
+
+    MCAPI void handle(::ServerPlayer& player, ::BlockPalette& blockPalette) const;
+
+    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::InventoryTransactionPacket&&);
+
+    MCAPI void* $ctor(::std::unique_ptr<::ComplexInventoryTransaction> transaction, bool isClientSide);
     // NOLINTEND
 
 public:
@@ -72,14 +91,6 @@ public:
     MCAPI ::std::string_view $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
-
-    MCAPI void $handle(
-        ::ServerPlayer&             player,
-        ::BlockPalette&             blockPalette,
-        ::MoveInputComponent const& moveInput,
-        ::ActorRotationComponent&   actorRotation,
-        bool                        isAimAssist
-    ) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 

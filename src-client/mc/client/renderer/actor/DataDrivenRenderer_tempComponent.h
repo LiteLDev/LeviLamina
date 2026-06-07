@@ -11,8 +11,6 @@ class AABB;
 class Actor;
 class ActorRenderData;
 class BaseActorRenderContext;
-class BoneOrientation;
-class HashedString;
 class RenderParams;
 // clang-format on
 
@@ -43,13 +41,6 @@ public:
     virtual ::AABB getRenderBounds(::Actor const& entity) const;
 
     virtual ::V2TempComponentRequirements getV2Requirements() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::BoneOrientation const&
-    findBoneOrientation(::std::vector<::BoneOrientation> const& boneOrientations, ::HashedString const& boneName);
     // NOLINTEND
 
 public:

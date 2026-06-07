@@ -22,10 +22,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ThemePalette();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ThemePalette();
-
     MCNAPI ThemePalette(::Editor::Settings::ThemePalette const&);
 
     MCNAPI ::Editor::Settings::ThemePalette& operator=(::Editor::Settings::ThemePalette&&);
@@ -50,8 +52,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Editor::Settings::ThemePalette const&);
     // NOLINTEND
 

@@ -20,10 +20,14 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector> const> mNetherNetConnector;
     ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>                              mPeerId;
     ::ll::TypedStorage<8, 8, uint64 const>                                               mSessionId;
-    ::ll::TypedStorage<8, 56, ::NetworkPeer::NetworkStatus>                              mNetherNetNetworkStatus;
+    ::ll::TypedStorage<1, 1, bool const>                                                 mIsLan;
+    ::ll::TypedStorage<8, 72, ::NetworkPeer::NetworkStatus>                              mNetherNetNetworkStatus;
     ::ll::TypedStorage<4, 4, uint>                                                       mNumNetworkStatusUpdates;
-    ::ll::TypedStorage<8, 32, ::std::string>                                             mPartialData;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WebRTCNetworkPeer();
 
 public:
     // virtual functions
@@ -41,10 +45,40 @@ public:
 
     virtual bool isEncrypted() const /*override*/;
 
+    virtual bool isLan() const /*override*/;
+
     virtual ::NetworkPeer::DataStatus _receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI WebRTCNetworkPeer(
+        ::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector,
+        ::NetherNet::NetworkID const&                      peerId,
+        uint64                                             sessionId,
+        bool                                               isLan
+    );
+
+    MCNAPI void _updateConnectionStatus();
+
+    MCNAPI ::NetherNet::NetworkID const& getPeerId() const;
+
+    MCNAPI uint64 getSessionId() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector,
+        ::NetherNet::NetworkID const&                      peerId,
+        uint64                                             sessionId,
+        bool                                               isLan
+    );
     // NOLINTEND
 
 public:
@@ -65,6 +99,8 @@ public:
     MCNAPI bool $isLocal() const;
 
     MCNAPI bool $isEncrypted() const;
+
+    MCNAPI bool $isLan() const;
 
     MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
         ::std::string&                                                    outData,

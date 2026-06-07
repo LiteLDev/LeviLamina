@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -17,6 +18,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::BiomeTemperatureCategory> mTemperature;
     ::ll::TypedStorage<4, 4, uint>                       mWeight;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:

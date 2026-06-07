@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/settings/IOptionsDataProvider.h"
+#include "mc/client/settings/LocStringData.h"
 #include "mc/client/settings/data_providers/MultiplayerBroadcastStateInfo.h"
 
 // auto generated forward declare list
@@ -21,7 +22,11 @@ public:
     ::ll::TypedStorage<8, 8, ::Settings::RegistryBuilder::IBuilderContext&> mContext;
     ::ll::TypedStorage<8, 128, ::Settings::MultiplayerBroadcastStateInfo>   mStateInfo;
     ::ll::TypedStorage<8, 24, ::std::vector<::Settings::OptionData>>        mDropdownOptions;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>               mInfo;
+    ::ll::TypedStorage<
+        8,
+        80,
+        ::std::optional<::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>>>
+        mInfo;
     // NOLINTEND
 
 public:
@@ -39,11 +44,11 @@ public:
 
     virtual void setValue(int) /*override*/;
 
-    virtual ::std::optional<::std::string> const& getInfo() const /*override*/;
+    virtual ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    getInfo() const /*override*/;
 
     virtual bool canModify() const /*override*/;
-
-    virtual ~MultiplayerBroadcastDataProvider() /*override*/;
     // NOLINTEND
 
 public:
@@ -63,12 +68,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
@@ -77,7 +76,9 @@ public:
 
     MCFOLD void $setValue(int);
 
-    MCFOLD ::std::optional<::std::string> const& $getInfo() const;
+    MCFOLD ::std::optional<
+        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
+    $getInfo() const;
 
     MCFOLD bool $canModify() const;
     // NOLINTEND

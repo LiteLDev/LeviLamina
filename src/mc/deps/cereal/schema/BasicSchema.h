@@ -14,6 +14,7 @@
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { struct DescriptionConfig; }
+namespace cereal { struct MetaVisitor; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
@@ -45,18 +46,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::entt::meta_any>                                   mArg;
         ::ll::TypedStorage<8, 8, ::gsl::not_null<::cereal::SerializerContext const*>> mContext;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~DynamicSetterArg();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -102,23 +91,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        MemberDescriptor& operator=(MemberDescriptor const&);
-        MemberDescriptor(MemberDescriptor const&);
-        MemberDescriptor();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI MemberDescriptor(::cereal::internal::BasicSchema::MemberDescriptor&&);
-
         MCAPI ~MemberDescriptor();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::cereal::internal::BasicSchema::MemberDescriptor&&);
         // NOLINTEND
 
     public:
@@ -132,6 +107,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::string_view>                                  mPrefix;
         ::ll::TypedStorage<8, 40, ::std::basic_regex<char, ::std::regex_traits<char>>> mRegex;
         ::ll::TypedStorage<4, 4, uint>                                                 mMemberId;
         // NOLINTEND
@@ -208,6 +184,10 @@ public:
 
     virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
 
+    virtual bool doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+
+    virtual ::cereal::internal::BasicSchema const& doUnwrap(::entt::meta_any& elem, bool fillIfEmpty) const;
+
     virtual void doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
@@ -228,17 +208,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::cereal::SchemaDescription
+    description(::cereal::internal::ReflectionContext const& ctx, ::cereal::DescriptionConfig config) const;
+
     MCAPI void load(
         ::cereal::SchemaReader&              value,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
     ) const;
+
+    MCAPI bool
+    map(::cereal::internal::BasicSchema const& schema,
+        ::entt::meta_any&                      src,
+        ::entt::meta_any&                      dst,
+        ::cereal::MetaVisitor&                 visitor) const;
+
+    MCAPI void
+    save(::cereal::SchemaWriter& value, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const;
+
+    MCAPI ::cereal::internal::BasicSchema const& unwrap(::entt::meta_any& elem, bool fillIfEmpty) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool forwardDoMap(
+        ::cereal::internal::BasicSchema const& schema,
+        ::entt::meta_any&                      src,
+        ::entt::meta_any&                      dst,
+        ::cereal::MetaVisitor&                 visitor
+    );
+
     MCAPI static ::cereal::internal::BasicSchema const& lookup(::entt::meta_ctx const& ctx, ::entt::type_info info);
     // NOLINTEND
 
@@ -248,6 +249,10 @@ public:
     MCFOLD bool $isGreedy(::entt::meta_ctx const& ctx) const;
 
     MCFOLD ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
+
+    MCFOLD bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+
+    MCFOLD ::cereal::internal::BasicSchema const& $doUnwrap(::entt::meta_any& elem, bool fillIfEmpty) const;
 
 
     // NOLINTEND

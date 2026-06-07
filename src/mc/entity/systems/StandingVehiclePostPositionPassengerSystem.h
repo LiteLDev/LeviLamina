@@ -12,10 +12,10 @@ class StrictEntityContext;
 struct ActorSetPositionRequestComponent;
 struct HorseFlagComponent;
 struct PassengerComponent;
-struct PositionPassengerRequestComponent;
 struct RenderPositionComponent;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
+struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -24,47 +24,18 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _impl(
-        ::StrictEntityContext&,
-        ::PassengerComponent const&         passengerComponent,
-        ::ActorSetPositionRequestComponent& setPositionRequest,
+        ::StrictEntityContext&              passengerComponent,
+        ::PassengerComponent const&         setPositionRequest,
+        ::ActorSetPositionRequestComponent& horseView,
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::HorseFlagComponent>,
             ::StandAnimationComponent const,
             ::RenderRotationComponent const,
             ::Include<::VehicleComponent>,
-            ::RenderPositionComponent const> horseView
+            ::RenderPositionComponent const>
     );
 
-    MCAPI static void _tick(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::PositionPassengerRequestComponent>,
-            ::PassengerComponent const,
-            ::ActorSetPositionRequestComponent> view,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::HorseFlagComponent>,
-            ::StandAnimationComponent const,
-            ::RenderRotationComponent const,
-            ::Include<::VehicleComponent>,
-            ::RenderPositionComponent const> horseView
-    );
-
-    MCAPI static void _tickSingleEntity(
-        ::StrictEntityContext const& entityContext,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::PositionPassengerRequestComponent>,
-            ::PassengerComponent const,
-            ::ActorSetPositionRequestComponent> view,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::HorseFlagComponent>,
-            ::StandAnimationComponent const,
-            ::RenderRotationComponent const,
-            ::Include<::VehicleComponent>,
-            ::RenderPositionComponent const> horseView
-    );
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

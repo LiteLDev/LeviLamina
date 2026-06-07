@@ -21,8 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit UnsupportedAPIError(::std::string const& msg);
-
-    MCAPI ~UnsupportedAPIError();
     // NOLINTEND
 
 public:
@@ -35,12 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& msg);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

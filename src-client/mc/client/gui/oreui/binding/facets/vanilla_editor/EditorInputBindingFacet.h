@@ -114,7 +114,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorInputBindingFacet() /*override*/ = default;
+    virtual ~EditorInputBindingFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -137,7 +137,7 @@ public:
             ::Editor::Input::EditorMouseBindingUnregistered> const& evt
     );
 
-    MCAPI void _handleTutorialStageChangeEvent(::HashedString const&, ::HashedString const&, bool isTutorialStarted);
+    MCAPI void _handleTutorialStageChangeEvent(::HashedString const& isTutorialStarted, ::HashedString const&, bool);
 
     MCAPI void _refreshBindings();
 
@@ -175,6 +175,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

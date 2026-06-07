@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrushableBlockActor() /*override*/ = default;
+    virtual ~BrushableBlockActor() /*override*/;
 
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
@@ -103,6 +103,10 @@ public:
     MCAPI ::BrushableBlockActor::BrushingState brush(::BlockSource& region, ::BlockPos const& pos, uchar face);
 
 #ifdef LL_PLAT_C
+    MCFOLD int getBrushCount() const;
+
+    MCAPI uchar getBrushDirection() const;
+
     MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
 #endif
 
@@ -113,12 +117,20 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
+
+    MCAPI static ::BrushableBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::HashedString const& name, ::BlockPos const& pos, ::BrushableBlockActor::Placement placement);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

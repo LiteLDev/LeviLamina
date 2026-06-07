@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +11,7 @@ class Mob;
 class Path;
 // clang-format on
 
-class MoveThroughVillageGoal : public ::Goal {
+class MoveThroughVillageGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,8 +38,6 @@ public:
     virtual void stop() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~MoveThroughVillageGoal() /*override*/ = default;
     // NOLINTEND
 
 public:

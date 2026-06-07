@@ -60,14 +60,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~ClientboundDataDrivenUICloseScreenPacket() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI ClientboundDataDrivenUICloseScreenPacket();
+
+    MCAPI explicit ClientboundDataDrivenUICloseScreenPacket(::ClientboundDataDrivenUICloseScreenPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ClientboundDataDrivenUICloseScreenPacketPayload payload);
     // NOLINTEND
 
 public:

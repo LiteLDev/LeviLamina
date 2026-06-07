@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
+class BlockPos;
 class BoundingBox;
-class Dimension;
 class Vec3;
+class WeakEntityRef;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class GameTestSequence; }
 namespace gametest { class IGameTestHelperProvider; }
@@ -35,7 +36,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk5e0720;
     ::ll::UntypedStorage<8, 24>  mUnk6d9112;
     ::ll::UntypedStorage<8, 8>   mUnkf2a8a9;
-    ::ll::UntypedStorage<8, 248> mUnkfdc9e5;
+    ::ll::UntypedStorage<8, 288> mUnkfdc9e5;
     ::ll::UntypedStorage<4, 4>   mUnk7a1201;
     ::ll::UntypedStorage<4, 4>   mUnk7f9ce6;
     ::ll::UntypedStorage<4, 4>   mUnkc50f09;
@@ -102,7 +103,9 @@ public:
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
     );
 
-    MCNAPI void _cleanup();
+    MCNAPI void addListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
+
+    MCNAPI void addSimulatedPlayer(::WeakEntityRef simulatedPlayer);
 
     MCNAPI ::gametest::GameTestSequence& createSequence();
 
@@ -110,9 +113,53 @@ public:
 
     MCNAPI void finish(bool canRetry);
 
+    MCNAPI int getAttempts() const;
+
+    MCNAPI ::std::optional<::gametest::GameTestError> const& getError() const;
+
+    MCNAPI int getMaxAttempts() const;
+
+    MCNAPI int getRequiredSuccesses() const;
+
+#ifdef LL_PLAT_S
+    MCNAPI ::Rotation getRotation() const;
+#endif
+
+    MCNAPI ::BlockPos getStructureBlockPos() const;
+
+    MCNAPI int getSuccesses() const;
+
+    MCNAPI ::std::string const& getTestName() const;
+
+    MCNAPI int getTick() const;
+
+#ifdef LL_PLAT_S
+    MCNAPI bool hasRetryAttempts() const;
+#endif
+
+    MCNAPI bool isFlaky() const;
+
+    MCNAPI bool isRequired() const;
+
     MCNAPI void removeListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
 
+    MCNAPI void runCallbacksOnFinish();
+
+    MCNAPI void setMaxRunCount(int repeatCount);
+
+    MCNAPI void setRotation(::Rotation rotation);
+
+    MCNAPI void setRunAtTickTime(int tickTime, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
+
+    MCNAPI void setRunOnFinish(::std::function<::std::optional<::gametest::GameTestError>()> fn);
+
+    MCNAPI void setStopOnFailure(bool stopOnFailure);
+
+    MCNAPI void setStructureBlockPos(::BlockPos const& structureBlockPos);
+
     MCNAPI void startExecution();
+
+    MCNAPI void startTest();
 
     MCNAPI void succeed();
 

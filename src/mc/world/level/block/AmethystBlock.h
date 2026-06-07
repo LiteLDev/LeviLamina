@@ -10,17 +10,32 @@
 class Actor;
 class BlockPos;
 class BlockSource;
+class Material;
 // clang-format on
 
 class AmethystBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    AmethystBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
     virtual bool isSilentWhenJumpingOff() const /*override*/;
+    // NOLINTEND
 
-    virtual ~AmethystBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AmethystBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

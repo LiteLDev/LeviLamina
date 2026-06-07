@@ -19,11 +19,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI bool readValue(char const* key, ::std::string& result) const;
+#ifdef LL_PLAT_C
+    MCNAPI RegistryKey(::RegistryKey&& key);
 #endif
 
+#ifdef LL_PLAT_S
+    MCNAPI explicit operator bool() const;
+#endif
+
+    MCNAPI bool readValue(char const* key, ::std::string& result) const;
+
+    MCNAPI bool readValue(char const* name, ulong& result) const;
+
     MCNAPI ~RegistryKey();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::RegistryKey create(::HKEY__* base, char const* path, ulong desiredAccess);
+#endif
+
+    MCNAPI static ::RegistryKey open(::HKEY__* base, char const* path, ulong desiredAccess);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::RegistryKey&& key);
+#endif
     // NOLINTEND
 
 public:

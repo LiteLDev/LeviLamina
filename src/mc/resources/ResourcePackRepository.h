@@ -10,6 +10,7 @@
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/resources/IContentSourceRepository.h"
 #include "mc/resources/IResourcePackRepository.h"
 #include "mc/resources/repository_loading/IRepositoryLoader.h"
@@ -74,8 +75,6 @@ public:
         virtual void applyTaskResults(::RepositoryLoading::AllRefreshTaskData&& taskData) /*override*/;
 
         virtual ::std::shared_ptr<::RepositoryPacks const> getPacks() const /*override*/;
-
-        virtual ~RepositoryLoaderImpl() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -172,10 +171,6 @@ public:
     virtual ::std::shared_ptr<::ResourcePack> getVanillaPack() const /*override*/;
 
     virtual bool setServicePacks(::std::vector<::PackIdVersion> servicePackIds) /*override*/;
-
-    virtual bool hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const /*override*/;
-
-    virtual ::std::vector<::PackIdVersion> const& getServicePacks() const /*override*/;
 
     virtual void addServicePacksToStack(::ResourcePackStack& stack) const /*override*/;
 
@@ -274,15 +269,32 @@ public:
         bool                                                                  initAsync,
         ::std::unique_ptr<::IRepositoryFactory>                               factory
     );
+
+    MCAPI void _removePacksIf(::brstd::function_ref<bool(::ResourcePack const&)> callback);
+
+#ifdef LL_PLAT_C
+    MCAPI void cancelInitialization();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI static ::Core::PathBuffer<::std::string> getBehaviorPacksPath(::Core::FilePathManager const& paths);
+
+    MCAPI static ::Core::PathBuffer<::std::string> getCustomSkinDirectoryPath(::Core::FilePathManager const& paths);
+
     MCAPI static ::Core::PathBuffer<::std::string>
     getDevelopmentBehaviorPacksPath(::Core::FilePathManager const& paths);
-#endif
+
+    MCAPI static ::Core::PathBuffer<::std::string>
+    getDevelopmentResourcePacksPath(::Core::FilePathManager const& paths);
+
+    MCAPI static ::Core::PathBuffer<::std::string> getDevelopmentSkinPacksPath(::Core::FilePathManager const& paths);
+
+    MCAPI static ::Core::PathBuffer<::std::string> getResourcePacksPath(::Core::FilePathManager const& paths);
+
+    MCAPI static ::Core::PathBuffer<::std::string> getSkinPacksPath(::Core::FilePathManager const& paths);
     // NOLINTEND
 
 public:
@@ -342,10 +354,6 @@ public:
     MCAPI ::std::shared_ptr<::ResourcePack> $getVanillaPack() const;
 
     MCAPI bool $setServicePacks(::std::vector<::PackIdVersion> servicePackIds);
-
-    MCAPI bool $hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const;
-
-    MCAPI ::std::vector<::PackIdVersion> const& $getServicePacks() const;
 
     MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
 

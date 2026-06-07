@@ -12,9 +12,11 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { class ScriptPersistenceGroup; }
+namespace Editor::Services { class EditorPersistenceServiceProvider; }
 namespace Editor::Services { class PersistenceGroup; }
 namespace Editor::Services { struct PersistenceGroupCreationOptions; }
 namespace Editor::Services { struct PersistenceQueryGroupOptions; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EnumBinding; }
@@ -42,7 +44,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPersistenceService(::Editor::ScriptModule::ScriptPersistenceService&&);
+    MCNAPI ScriptPersistenceService(
+        ::Editor::Services::EditorPersistenceServiceProvider* persistenceService,
+        ::Scripting::WeakLifetimeScope const&                 scope
+    );
 
     MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroup>
     _createScriptPersistenceGroup(::WeakRef<::Editor::Services::PersistenceGroup> groupRef);
@@ -82,9 +87,6 @@ public:
         ::Editor::Services::PersistenceGroupCreationOptions options
     );
 
-    MCNAPI ::Editor::ScriptModule::ScriptPersistenceService&
-    operator=(::Editor::ScriptModule::ScriptPersistenceService&&);
-
     MCNAPI ::Scripting::Result_deprecated<void> requestClientGroup(
         ::std::string const&                                                              namespacedName,
         ::Editor::Services::PersistenceGroupCreationOptions                               options,
@@ -93,6 +95,8 @@ public:
     );
 
     MCNAPI bool saveGroupToClient(::mce::UUID uuid);
+
+    MCNAPI ~ScriptPersistenceService();
     // NOLINTEND
 
 public:
@@ -112,7 +116,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptPersistenceService&&);
+    MCNAPI void* $ctor(
+        ::Editor::Services::EditorPersistenceServiceProvider* persistenceService,
+        ::Scripting::WeakLifetimeScope const&                 scope
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

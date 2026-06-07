@@ -38,8 +38,6 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&             documentOriginalVersion
     ) const /*override*/;
-
-    virtual ~CerealSchemaDeprecate() /*override*/ = default;
     // NOLINTEND
 
 public:

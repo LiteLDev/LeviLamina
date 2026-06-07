@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/clock/WorldClockRegistry.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class LevelStorage;
+class NetworkIdentifier;
 class PacketSender;
+class TimeMarker;
 class WorldClock;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -38,7 +42,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -57,7 +61,7 @@ public:
     // NOLINTBEGIN
     virtual ~WorldClockRegistryServer() /*override*/;
 
-    virtual void tick(::PacketSender& packetSender) /*override*/;
+    virtual void tick(::PacketSender&) /*override*/;
     // NOLINTEND
 
 public:
@@ -67,7 +71,32 @@ public:
 
     MCAPI bool loadData(::LevelStorage const& levelStorage);
 
+    MCAPI ::Bedrock::NonOwnerPointer<::WorldClock> const
+    registerClock(::HashedString const& name, ::std::initializer_list<::TimeMarker> timeMarkers);
+
     MCAPI void saveData(::LevelStorage& levelStorage) const;
+
+    MCFOLD void sendInitializationToClient(
+        ::NetworkIdentifier const& source,
+        ::SubClientId              subClientId,
+        ::PacketSender&            packetSender
+    ) const;
+
+    MCFOLD void syncClocksWithClients(::PacketSender& packetSender) const;
+
+    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock> const tryGetClock(uint64 clockId);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static uint const& MAX_CLOCKS_CAPACITY();
     // NOLINTEND
 
 public:
@@ -85,7 +114,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::PacketSender& packetSender);
+    MCAPI void $tick(::PacketSender&);
 
 
     // NOLINTEND

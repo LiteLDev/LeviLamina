@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, ::ScriptingInputButton>      mButton;
     ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mNewState;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerScriptInputEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

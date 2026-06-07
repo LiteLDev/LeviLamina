@@ -10,7 +10,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
+class Material;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -18,6 +18,10 @@ namespace mce { class Color; }
 // clang-format on
 
 class FallingBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    FallingBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,16 +42,12 @@ public:
 
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
-    virtual ~FallingBlock() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _scheduleCheck(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, int delay) const;
+    MCAPI FallingBlock(::std::string const& nameId, int id, ::Material const& material);
 
     MCAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
 
@@ -56,12 +56,14 @@ public:
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+
+    MCAPI void triggerFallCheck(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -80,8 +82,12 @@ public:
     MCAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

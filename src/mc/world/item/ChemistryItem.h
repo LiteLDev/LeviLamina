@@ -15,20 +15,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
-
-    virtual ~ChemistryItem() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void validate(::ItemStackBase& stack);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

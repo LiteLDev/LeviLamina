@@ -44,19 +44,37 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk797435;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Texture& operator=(Texture const&);
     Texture(Texture const&);
     Texture();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Texture& operator=(Texture const&);
+    Texture(Texture const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI Texture();
+
     MCNAPI ::Json::Value serialize() const;
 
     MCNAPI ~Texture();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 

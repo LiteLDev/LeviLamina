@@ -33,8 +33,6 @@ public:
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
 
     virtual ::Json::Value _serializeValue() const /*override*/;
-
-    virtual ~SimpleTagIDFilterTest() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,5 +45,11 @@ public:
     MCNAPI ::Json::Value $_serializeValue() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

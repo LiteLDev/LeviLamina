@@ -23,17 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SwimUpForBreathGoalDefinition& operator=(SwimUpForBreathGoalDefinition const&);
-    SwimUpForBreathGoalDefinition(SwimUpForBreathGoalDefinition const&);
-    SwimUpForBreathGoalDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_110::SwimUpForBreathGoalDefinition&
-    operator=(::SharedTypes::v1_21_110::SwimUpForBreathGoalDefinition&&);
-
     MCAPI ~SwimUpForBreathGoalDefinition();
     // NOLINTEND
 
@@ -46,8 +37,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DEFAULT_MATERIAL_TYPE_NAME();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

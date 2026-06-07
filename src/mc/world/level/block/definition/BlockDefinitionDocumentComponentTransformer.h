@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 struct BlockComponentGroupDescription;
-namespace SharedTypes::v1_26_10::BlockDefinition { struct BlockComponents; }
+namespace SharedTypes::v1_26_20::BlockDefinition { struct BlockComponents; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -16,7 +16,7 @@ public:
     MCAPI static void transform(
         ::cereal::ReflectionCtx const&                                   ctx,
         ::std::string const&                                             name,
-        ::SharedTypes::v1_26_10::BlockDefinition::BlockComponents const& blockComponents,
+        ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents const& blockComponents,
         ::BlockComponentGroupDescription&                                blockComponentGroupDescription
     );
     // NOLINTEND

@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptLootItemFunction(ScriptLootItemFunction const&);
-    ScriptLootItemFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptLootItemFunction() = 0;
@@ -46,9 +41,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>
     getConditions();
-
-    MCAPI ::ScriptModuleMinecraft::ScriptLootItemFunction&
-    operator=(::ScriptModuleMinecraft::ScriptLootItemFunction const&);
     // NOLINTEND
 
 public:

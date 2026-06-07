@@ -24,8 +24,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptPropertyRegistry();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptPropertyRegistry(::ServerLevel& level);
+
     MCAPI ::Scripting::Result_deprecated<void> registerEntityTypeDynamicProperties(
         ::Scripting::WeakLifetimeScope                                          scope,
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&       dynamicPropertiesDefinition,
@@ -41,6 +47,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ServerLevel& level);
     // NOLINTEND
 };
 

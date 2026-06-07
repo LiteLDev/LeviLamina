@@ -34,7 +34,7 @@ public:
 
     virtual bool write(bool value) /*override*/;
 
-    virtual bool write(schar) /*override*/;
+    virtual bool write(schar value) /*override*/;
 
     virtual bool write(uchar value) /*override*/;
 
@@ -73,8 +73,6 @@ public:
     virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) /*override*/;
 
     virtual void close() /*override*/;
-
-    virtual ~BinarySchemaWriter() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -84,7 +82,7 @@ public:
 
     MCFOLD bool $write(bool value);
 
-    MCFOLD bool $write(schar);
+    MCFOLD bool $write(schar value);
 
     MCFOLD bool $write(uchar value);
 
@@ -92,13 +90,13 @@ public:
 
     MCFOLD bool $write(ushort value);
 
-    MCFOLD bool $write(int value);
+    MCAPI bool $write(int value);
 
-    MCFOLD bool $write(uint value);
+    MCAPI bool $write(uint value);
 
-    MCFOLD bool $write(int64 value);
+    MCAPI bool $write(int64 value);
 
-    MCFOLD bool $write(uint64 value);
+    MCAPI bool $write(uint64 value);
 
     MCFOLD bool $write(float value);
 
@@ -110,7 +108,7 @@ public:
 
     MCFOLD void $writeAdditionalData(bool value);
 
-    MCFOLD void $writeAdditionalData(uint value);
+    MCAPI void $writeAdditionalData(uint value);
 
     MCFOLD void $writeAdditionalData(::std::string_view const value);
 
@@ -120,7 +118,7 @@ public:
 
     MCFOLD ::cereal::SchemaRWType $openObject();
 
-    MCFOLD ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
+    MCAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
     MCFOLD void $close();
 

@@ -107,8 +107,6 @@ public:
 
     MCAPI void _generateMultiPartHelper();
 
-    MCAPI void _resumeUpload();
-
     MCAPI void _uploadChunk(::FileChunkInfo const& chunk);
 
     MCAPI void _uploadStream();
@@ -116,8 +114,22 @@ public:
     MCAPI void addCallbackQueue(::std::function<void()> callback);
 
 #ifdef LL_PLAT_C
-    MCAPI void setFailed(::UploadError reason);
+    MCAPI bool canCancelUpload() const;
+
+    MCAPI void cancelUpload();
+
+    MCFOLD ::UploadError const& getError() const;
+
+    MCAPI uint64 getFileSize() const;
+
+    MCFOLD ::UploadState getUploadState() const;
 #endif
+
+    MCAPI void setFailed(::UploadError reason);
+
+    MCAPI void setUseStream(bool stream);
+
+    MCAPI void uploadChunk(int chunkID);
 
     MCAPI void uploadFile(
         ::std::string const& uploadId,

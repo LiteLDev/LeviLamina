@@ -41,6 +41,12 @@ public:
         ::ll::TypedStorage<4, 4, float>        mRotationKeyFrameTime;
         ::ll::TypedStorage<4, 4, ::EasingType> mRotationKeyFramesEasingFunc;
         // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
     };
 
 public:
@@ -59,18 +65,19 @@ public:
 
 public:
     // prevent constructor by default
-    SplineInstruction(SplineInstruction const&);
     SplineInstruction();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SplineInstruction(::CameraInstructionOptions::SplineInstruction const&);
+
     MCAPI ::CameraInstructionOptions::SplineInstruction& operator=(::CameraInstructionOptions::SplineInstruction&&);
 
     MCAPI ::CameraInstructionOptions::SplineInstruction&
     operator=(::CameraInstructionOptions::SplineInstruction const&);
 
-    MCAPI bool operator==(::CameraInstructionOptions::SplineInstruction const&) const;
+    MCAPI bool operator==(::CameraInstructionOptions::SplineInstruction const& other) const;
 
     MCAPI ~SplineInstruction();
     // NOLINTEND
@@ -79,6 +86,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CameraInstructionOptions::SplineInstruction const&);
     // NOLINTEND
 
 public:

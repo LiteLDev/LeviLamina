@@ -25,6 +25,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsPlusEndedScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

@@ -23,8 +23,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::Command const* getCommand() const;
+
+    MCFOLD void setCommand(::std::unique_ptr<::Command> command);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,6 +13,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class FrameUpdateContext;
+class IClientInstance;
 class ResourcePackManager;
 namespace mce { class TextureGroup; }
 namespace mce { struct TextureResourceService; }
@@ -72,10 +74,37 @@ public:
 
     MCAPI void _updateIsVanillaCubemap();
 
+    MCAPI bool arePanoramaTexturesLoadedInGroup(::std::shared_ptr<::mce::TextureGroup> textures) const;
+
+    MCAPI void ensurePanoramaTexturesLoadedInGroup(::std::shared_ptr<::mce::TextureGroup> textures) const;
+
+    MCAPI void frameUpdate(::IClientInstance& clientInstance, ::FrameUpdateContext& frameUpdateContext);
+
+    MCAPI ::mce::ClientTexture getCubemapTexture() const;
+
+    MCAPI ::mce::Color const& getFadeInColor() const;
+
+    MCFOLD ::mce::TexturePtr const& getOverlayTexture() const;
+
+    MCAPI ::gsl::span<::mce::TexturePtr const, 6> getPanoramaImages() const;
+
+    MCAPI bool isPanoramaLoaded() const;
+
+    MCFOLD bool isVanillaCubemap() const;
+
     MCAPI void loadAssets(
         ::mce::TextureResourceService&         textureResourceService,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
     );
+
+    MCAPI void primaryClientLoadAssets(
+        ::mce::TextureResourceService&         textureResourceService,
+        ::std::shared_ptr<::mce::TextureGroup> textureGroup
+    );
+
+    MCAPI void primaryClientUnloadAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCAPI void setFadeInColor(::mce::Color const& color);
 
     MCAPI void unloadAssets(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 

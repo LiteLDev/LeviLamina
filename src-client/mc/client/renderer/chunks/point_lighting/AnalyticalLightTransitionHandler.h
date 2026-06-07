@@ -37,8 +37,6 @@ public:
     virtual void advance(::BlockPos const&, ::PointLighting::AnalyticLightResources&, float) /*override*/;
 
     virtual void finalize(::BlockPos const&, ::PointLighting::AnalyticLightResources&) /*override*/;
-
-    virtual ~AnalyticalLightTransitionHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

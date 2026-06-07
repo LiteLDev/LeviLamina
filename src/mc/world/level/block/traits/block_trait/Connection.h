@@ -79,6 +79,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1> getEnabledConnectionStates() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -95,13 +101,13 @@ public:
         ::NeighborBlockDirections  directionsToCheck
     );
 
-    MCAPI static ::std::string const& getName();
+    MCFOLD static ::std::string const& getName();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -113,7 +119,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
-    MCAPI ::std::string const& $_getName() const;
+    MCFOLD ::std::string const& $_getName() const;
 
 
     // NOLINTEND

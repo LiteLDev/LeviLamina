@@ -43,7 +43,7 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                   mLastChunkUpdatePos;
     ::ll::TypedStorage<4, 12, ::Vec3>                   mLastPos;
     ::ll::TypedStorage<4, 4, uint>                      mLastRadius;
-    ::ll::TypedStorage<8, 504, ::ChunkViewSource>       mChunkSource;
+    ::ll::TypedStorage<8, 432, ::ChunkViewSource>       mChunkSource;
     ::ll::TypedStorage<8, 16, ::WeakRef<::BlockSource>> mBlockSource;
     ::ll::TypedStorage<8, 32, ::TickingAreaView>        mView;
     // NOLINTEND
@@ -63,7 +63,7 @@ public:
 
     virtual ::ActorUniqueID const& getEntityId() const /*override*/;
 
-    virtual ::Bounds const& getBounds() const /*override*/;
+    virtual ::Bounds const getBoundsCopy() const /*override*/;
 
     virtual bool isEntityOwned() const /*override*/;
 
@@ -124,6 +124,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TickingArea(::Dimension& dimension, ::mce::UUID uniqueId, ::Bounds const& bounds, ::ActorUniqueID entityId);
+
+    MCAPI TickingArea(
+        ::Dimension&    dimension,
+        ::mce::UUID     uniqueId,
+        ::Bounds const& bounds,
+        ::ActorUniqueID entityId,
+        float           maxDistToPlayers
+    );
+
+    MCAPI TickingArea(
+        ::Dimension&          dimension,
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::Bounds const&       bounds,
+        bool                  isCircle,
+        ::TickingAreaLoadMode loadMode
+    );
+
     MCAPI TickingArea(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -139,11 +158,32 @@ public:
     MCAPI void _center(::LevelStorage& levelStorage);
 
     MCAPI void _save(::LevelStorage& levelStorage);
+
+    MCAPI void addScope(::std::optional<uint64> scope);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension, ::mce::UUID uniqueId, ::Bounds const& bounds, ::ActorUniqueID entityId);
+
+    MCAPI void* $ctor(
+        ::Dimension&    dimension,
+        ::mce::UUID     uniqueId,
+        ::Bounds const& bounds,
+        ::ActorUniqueID entityId,
+        float           maxDistToPlayers
+    );
+
+    MCAPI void* $ctor(
+        ::Dimension&          dimension,
+        ::mce::UUID           uniqueId,
+        ::std::string const&  name,
+        ::Bounds const&       bounds,
+        bool                  isCircle,
+        ::TickingAreaLoadMode loadMode
+    );
+
     MCAPI void* $ctor(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
@@ -172,7 +212,7 @@ public:
 
     MCFOLD ::ActorUniqueID const& $getEntityId() const;
 
-    MCAPI ::Bounds const& $getBounds() const;
+    MCAPI ::Bounds const $getBoundsCopy() const;
 
     MCAPI bool $isEntityOwned() const;
 
@@ -206,9 +246,9 @@ public:
 
     MCAPI ::Actor* $findOwner(uchar& pendingChunks);
 
-    MCAPI bool $entityHasBeenFound() const;
+    MCFOLD bool $entityHasBeenFound() const;
 
-    MCAPI void $setEntityFound();
+    MCFOLD void $setEntityFound();
 
     MCAPI bool $isRemoved();
 

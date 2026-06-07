@@ -17,7 +17,6 @@ public:
     // prevent constructor by default
     ScriptDebuggerWatchdog& operator=(ScriptDebuggerWatchdog const&);
     ScriptDebuggerWatchdog(ScriptDebuggerWatchdog const&);
-    ScriptDebuggerWatchdog();
 
 public:
     // virtual functions
@@ -29,6 +28,22 @@ public:
     virtual void startListenTimeout(::std::chrono::seconds duration) /*override*/;
 
     virtual bool listenTimeoutExpired() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptDebuggerWatchdog();
+
+#ifdef LL_PLAT_C
+    MCNAPI void startLeaveGame();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

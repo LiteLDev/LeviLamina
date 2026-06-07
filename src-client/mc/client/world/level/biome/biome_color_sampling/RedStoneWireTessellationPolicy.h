@@ -24,8 +24,6 @@ public:
         /*override*/;
 
     virtual ::mce::Color get(::Block const& block) const /*override*/;
-
-    virtual ~RedStoneWireTessellationPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:

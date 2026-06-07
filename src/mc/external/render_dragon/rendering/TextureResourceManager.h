@@ -12,16 +12,7 @@ public:
     // clang-format on
 
     // TextureResourceManager inner types define
-    class Impl {
-    public:
-        // Impl inner types declare
-        // clang-format off
-        struct PendingTask;
-        // clang-format on
-
-        // Impl inner types define
-        struct PendingTask {};
-    };
+    class Impl {};
 };
 
 } // namespace dragon::rendering

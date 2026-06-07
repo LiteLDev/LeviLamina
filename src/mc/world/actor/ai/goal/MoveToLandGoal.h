@@ -24,8 +24,6 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual void _moveToBlock() /*override*/;
-
-    virtual ~MoveToLandGoal() /*override*/ = default;
     // NOLINTEND
 
 public:

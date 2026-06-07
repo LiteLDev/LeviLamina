@@ -68,8 +68,6 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
         ::Dimension const&                   dimension
     ) /*override*/;
-
-    virtual ~ShipwreckFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

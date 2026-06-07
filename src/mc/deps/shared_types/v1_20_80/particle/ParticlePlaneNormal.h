@@ -21,10 +21,33 @@ public:
     ::ll::TypedStorage<8, 144, ::std::array<::SharedTypes::Legacy::ExpressionNode, 3>>  mNormalExpr;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ParticlePlaneNormal();
+
+#endif
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit ParticlePlaneNormal(::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprArray);
+#endif
+    // NOLINTEND
+
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprArray);
+#endif
     // NOLINTEND
 };
 

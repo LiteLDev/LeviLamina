@@ -50,23 +50,6 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                                                           mBlendStartEulerAngles;
     ::ll::TypedStorage<4, 12, ::MinecraftCamera::CameraBlendStateComponent::SnapShotEaseValues> mSnapShotEaseValues;
     // NOLINTEND
-
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    CameraBlendStateComponent& operator=(CameraBlendStateComponent const&);
-    CameraBlendStateComponent(CameraBlendStateComponent const&);
-    CameraBlendStateComponent();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::MinecraftCamera::CameraBlendStateComponent& operator=(::MinecraftCamera::CameraBlendStateComponent&&);
-#endif
-    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

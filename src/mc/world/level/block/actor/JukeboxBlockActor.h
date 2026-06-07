@@ -49,7 +49,7 @@ public:
 
     virtual int getMaxStackSize() const /*override*/;
 
-    virtual bool canPushInItem(int, int, ::ItemStack const& item) const /*override*/;
+    virtual bool canPushInItem(int item, int, ::ItemStack const&) const /*override*/;
 
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
@@ -69,15 +69,13 @@ public:
 
     virtual void serverInitItemStackIds(
         int containerSlot,
-        int,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+        int onNetIdChanged,
+        ::std::function<void(int, ::ItemStack const&)>
     ) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~JukeboxBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -88,6 +86,16 @@ public:
     MCAPI void _onChanged(::BlockSource& region, ::SharedTypes::Legacy::LevelSoundEvent sound);
 
     MCAPI void _spawnMusicParticles(::Level& level, float recordDuration);
+
+    MCAPI void ejectRecord(::BlockSource& region);
+
+    MCFOLD ::ItemStack const& getRecord() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool hasRecord() const;
+#endif
+
+    MCAPI bool isRecordPlaying() const;
 
     MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 
@@ -115,11 +123,11 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
+    MCAPI bool $canPushInItem(int item, int, ::ItemStack const&) const;
 
     MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCAPI ::ItemStack const& $getItem(int) const;
+    MCFOLD ::ItemStack const& $getItem(int) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
@@ -134,7 +142,7 @@ public:
     MCAPI void $onChanged(::BlockSource& region);
 
     MCAPI void
-    $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    $serverInitItemStackIds(int containerSlot, int onNetIdChanged, ::std::function<void(int, ::ItemStack const&)>);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 

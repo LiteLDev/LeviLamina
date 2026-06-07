@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/volume/VolumeEntityManager.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
-class Dimension;
 class EntityContext;
 class NetworkIdentifier;
 class PacketSender;
@@ -41,12 +39,6 @@ public:
     VolumeEntityManagerServer();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~VolumeEntityManagerServer() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _sendVolumeToClient(
@@ -58,5 +50,11 @@ public:
 
     MCNAPI ::std::vector<::WeakRef<::EntityContext>>
     getAllVolumesOverlappingChunkPosition(::ChunkPos const& pos, ::DimensionType chunkDimension) const;
+
+    MCNAPI void sendAllVolumesToClient(
+        ::UserEntityIdentifierComponent const& userIdentifier,
+        ::NetworkIdentifier const&             source,
+        ::PacketSender&                        packetSender
+    ) const;
     // NOLINTEND
 };

@@ -23,8 +23,6 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ScriptDebuggerSettings& operator=(ScriptDebuggerSettings const&);
-    ScriptDebuggerSettings(ScriptDebuggerSettings const&);
     ScriptDebuggerSettings();
 
 #endif
@@ -42,11 +40,15 @@ public:
         ::std::optional<uint>          port,
         ::std::optional<::std::string> passcode
     );
-
-    MCNAPI ::ScriptDebuggerSettings& operator=(::ScriptDebuggerSettings&&);
 #endif
 
     MCNAPI ~ScriptDebuggerSettings();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ushort const& DEFAULT_DEBUGGER_PORT();
     // NOLINTEND
 
 public:

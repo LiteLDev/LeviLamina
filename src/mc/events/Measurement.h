@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace Social::Events {
 
 class Measurement {
@@ -39,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Json::Value getValue() const;
-
     MCNAPI void updateMeasurement(::Social::Events::Measurement const& newMeasure);
 
     MCNAPI ~Measurement();

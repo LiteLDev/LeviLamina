@@ -22,19 +22,23 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource&,
-        ::BlockPos targetPosition,
+        ::IBlockSource& processedBlockInfo,
+        ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+    // NOLINTEND
 
-    virtual ~JigsawReplacement() /*override*/ = default;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bootstrap();
     // NOLINTEND
 
 public:
@@ -47,11 +51,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource&,
-        ::BlockPos targetPosition,
+        ::IBlockSource& processedBlockInfo,
+        ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 

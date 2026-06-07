@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class Mob;
 struct MobDescriptor;
 // clang-format on
 
-class FollowCaravanGoal : public ::Goal {
+class FollowCaravanGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,16 +45,23 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~FollowCaravanGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    FollowCaravanGoal(::Mob& mob, float speed, int caravanLimit, ::std::vector<::MobDescriptor> const& targetTypes);
+
     MCAPI bool checkCaravanType(::Mob* currentMob);
 
     MCAPI bool firstIsLeashed(::Mob* currentMob, int counter);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob, float speed, int caravanLimit, ::std::vector<::MobDescriptor> const& targetTypes);
     // NOLINTEND
 
 public:

@@ -25,8 +25,6 @@ public:
     ) /*override*/;
 
     virtual void dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) /*override*/;
-
-    virtual ~LevelBlockDestroyerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -63,11 +63,15 @@ public:
 
     MCAPI void _init();
 
+    MCAPI bool _updatePlayerList();
+
     MCAPI ::std::vector<::PlayerListEntry const*> getLobbyPlayerList();
 
     MCAPI void refresh();
 
     MCFOLD ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
+
+    MCAPI void update(double timestampMs);
     // NOLINTEND
 
 public:

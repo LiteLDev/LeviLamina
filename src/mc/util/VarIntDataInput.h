@@ -48,14 +48,18 @@ public:
     virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
     virtual uint64 numBytesLeft() const /*override*/;
-
-    virtual ~VarIntDataInput() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI explicit VarIntDataInput(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

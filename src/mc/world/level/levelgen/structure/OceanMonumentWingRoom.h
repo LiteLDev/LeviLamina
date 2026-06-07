@@ -26,11 +26,9 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+    virtual bool postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
 
-    virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~OceanMonumentWingRoom() /*override*/ = default;
+    virtual void postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -38,9 +36,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
-    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
 
     // NOLINTEND

@@ -25,6 +25,7 @@ public:
             ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>> mSunMesh;
             ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>> mMoonMesh;
             ::ll::TypedStorage<8, 32, ::mce::TexturePtr>              mEndSkyTex;
+            ::ll::TypedStorage<8, 32, ::mce::TexturePtr>              mEndFlashTex;
             ::ll::TypedStorage<8, 32, ::mce::TexturePtr>              mSunTex;
             ::ll::TypedStorage<8, 32, ::mce::TexturePtr>              mMoonTex;
             ::ll::TypedStorage<8, 40, ::std::vector<::mce::TexturePtr, ::LinearAllocator<::mce::TexturePtr>>>

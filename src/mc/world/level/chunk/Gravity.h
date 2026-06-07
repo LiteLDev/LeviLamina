@@ -31,18 +31,16 @@ public:
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
         ::IBlockSource& region,
-        ::BlockPos,
-        ::BlockPos,
-        ::br::worldgen::StructureBlockInfo const& originalBlockInfo,
-        ::br::worldgen::StructureBlockInfo&&      processedBlockInfo,
+        ::BlockPos      originalBlockInfo,
+        ::BlockPos      processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo const&,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~Gravity() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,10 +54,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource& region,
-        ::BlockPos,
-        ::BlockPos,
-        ::br::worldgen::StructureBlockInfo const& originalBlockInfo,
-        ::br::worldgen::StructureBlockInfo&&      processedBlockInfo,
+        ::BlockPos      originalBlockInfo,
+        ::BlockPos      processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo const&,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 

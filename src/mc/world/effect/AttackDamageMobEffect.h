@@ -15,14 +15,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const /*override*/;
-
-    virtual ~AttackDamageMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static float getDamageAfterDamageBoost(float initialDamage, int count);
+
+    MCAPI static float getDamageAfterWeakness(float initialDamage, int count);
     // NOLINTEND
 
 public:

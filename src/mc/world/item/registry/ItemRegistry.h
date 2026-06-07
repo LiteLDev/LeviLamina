@@ -5,20 +5,22 @@
 // auto generated inclusion list
 #include "mc/common/SharedPtr.h"
 #include "mc/common/WeakPtr.h"
-#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/json/Value.h"
+#include "mc/deps/resource_processing/util/MinecraftDocumentInput.h"
 #include "mc/util/BaseGameVersion.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemTag.h"
+#include "mc/world/item/registry/ItemRegistryRef.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorInfoRegistry;
+class Block;
 class BlockDefinitionGroup;
+class BlockType;
 class CreativeItemRegistry;
 class Experiments;
 class IContainerRegistryAccess;
@@ -30,14 +32,14 @@ class LevelData;
 class LinkedAssetValidator;
 class PackLoadContext;
 class ResourcePackManager;
+class SemVersion;
 struct ItemData;
-struct ItemIconInfoFactory;
+struct ItemIconInfo;
 struct ItemParseContext;
 struct ItemRegistryComplexAlias;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Core { class Path; }
-namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -49,6 +51,7 @@ public:
     struct ItemHashAlias;
     struct LoadedItemAsset;
     struct ItemLoadResult;
+    struct ParsedName;
     // clang-format on
 
     // ItemRegistry inner types define
@@ -80,27 +83,22 @@ public:
         ::ll::TypedStorage<8, 8, uint64>             aliasName;
         ::ll::TypedStorage<8, 32, ::BaseGameVersion> sinceVersion;
         // NOLINTEND
+    };
 
+    struct LoadedItemAsset {
     public:
-        // prevent constructor by default
-        ItemHashAlias& operator=(ItemHashAlias const&);
-        ItemHashAlias(ItemHashAlias const&);
-        ItemHashAlias();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 272, ::Bedrock::Resources::MinecraftDocumentInput> mDocumentInput;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PackLoadContext>>          mPackLoadContext;
+        ::ll::TypedStorage<8, 32, ::std::string>                                 mLoadedPackName;
+        ::ll::TypedStorage<1, 1, bool>                                           mIsComponentBased;
+        // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ItemHashAlias(uint64 nameHash, ::BaseGameVersion const& version);
-
-        MCAPI ::ItemRegistry::ItemHashAlias& operator=(::ItemRegistry::ItemHashAlias&&);
-
-        MCAPI ~ItemHashAlias();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(uint64 nameHash, ::BaseGameVersion const& version);
+        MCAPI ~LoadedItemAsset();
         // NOLINTEND
 
     public:
@@ -110,49 +108,12 @@ public:
         // NOLINTEND
     };
 
-    struct LoadedItemAsset {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::Json::Value>                        mUpgradedJsonRoot;
-        ::ll::TypedStorage<8, 24, ::SemVersion>                         mDocumentVersion;
-        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PackLoadContext>> mPackLoadContext;
-        ::ll::TypedStorage<8, 32, ::std::string>                        mLoadedPackName;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LoadedItemAsset& operator=(LoadedItemAsset const&);
-        LoadedItemAsset(LoadedItemAsset const&);
-        LoadedItemAsset();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI LoadedItemAsset(::ItemRegistry::LoadedItemAsset&&);
-
-        MCAPI ~LoadedItemAsset();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ItemRegistry::LoadedItemAsset&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-    };
-
     struct ItemLoadResult {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 96, ::std::optional<::ItemRegistry::LoadedItemAsset>> mLoadedItemAsset;
-        ::ll::TypedStorage<8, 32, ::std::string>                                    mError;
+        ::ll::TypedStorage<8, 336, ::std::optional<::ItemRegistry::LoadedItemAsset>> mLoadedItemAsset;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mError;
         // NOLINTEND
 
     public:
@@ -168,6 +129,29 @@ public:
         // NOLINTEND
     };
 
+    struct ParsedName {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::string_view> mItemIdentifier;
+        ::ll::TypedStorage<8, 32, ::std::string>      mParsedNamespace;
+        ::ll::TypedStorage<8, 32, ::std::string>      mParsedName;
+        ::ll::TypedStorage<4, 4, int>                 mAux;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ParsedName();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
     using CreativeItemsServerInitCallbackSignature = void(
         ::ItemRegistryRef,
         ::BlockDefinitionGroup const&,
@@ -179,8 +163,6 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const,
         ::IMinecraftEventing&
     );
-
-    using ItemRegistryMap = ::std::vector<::SharedPtr<::Item>>;
 
 public:
     // member variables
@@ -229,10 +211,18 @@ public:
         ::IMinecraftEventing&                                 eventing
     );
 
-    MCAPI ::PuvLoadData::LoadResultWithTiming
-    _loadItemDefinition(::ItemRegistry::LoadedItemAsset const& loadedItemAsset, ::ItemParseContext& parseContext);
+    MCAPI bool _shouldIgnoreEduItem(::std::string_view itemName);
 
-    MCAPI void addItemToTagMap(::Item const& item);
+    MCAPI ::WeakPtr<::Item> _tryCreateItem(
+        ::ItemRegistry::ParsedName const& parsedName,
+        ::SemVersion const&               documentVersion,
+        ::PackLoadContext const&          packLoadContext,
+        bool                              componentBasedItem,
+        ::ItemParseContext&               parseContext
+    );
+
+    MCAPI ::ItemRegistryRef::LoadedItem
+    _tryRegisterAndInitItem(::ItemRegistry::LoadedItemAsset const& loadedItemAsset, ::ItemParseContext& parseContext);
 
     MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
 
@@ -249,11 +239,11 @@ public:
     MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasSplitNames(::HashedString const& oldName) const;
 
+    MCFOLD ::WeakPtr<::Item> getItem(::HashedString const& id);
+
     MCAPI ::WeakPtr<::Item> getItem(short id);
 
     MCAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
-
-    MCAPI ::HashedString getNameFromLegacyID(short id);
 
 #ifdef LL_PLAT_C
     MCAPI void initClient(
@@ -265,7 +255,7 @@ public:
     MCAPI void initClientData(
         ::ResourcePackManager& resourcePackManager,
         ::Experiments const&   experiments,
-        ::ItemIconInfoFactory  iconFactory
+        ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
     );
 #endif
 
@@ -296,11 +286,19 @@ public:
         ::IMinecraftEventing&                              eventing
     );
 
+    MCAPI bool isComplexAlias(::HashedString const& oldName) const;
+
+    MCAPI ::WeakPtr<::Item> lookupByName(::HashedString const& inString) const;
+
     MCAPI ::WeakPtr<::Item> lookupByName(int& inOutItemAux, ::std::string_view inString) const;
+
+    MCAPI ::WeakPtr<::Item> lookupByName(int& outItemId, int& inOutItemAux, ::std::string_view inString) const;
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
+
+    MCFOLD ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
 
 #ifdef LL_PLAT_C
     MCAPI void matchServerItemIds(::std::vector<::ItemData> const& serverItemData);
@@ -330,11 +328,15 @@ public:
 
     MCAPI void registerValidatorIdentifier(::std::string const& str);
 
-    MCAPI void setCheckForItemWorldCompatibility(bool value);
+    MCAPI uint64 remapToFullLegacyNameByHash(uint64 newHash);
+
+    MCAPI uint64 remapToLegacyNameByHash(uint64 newHash);
 
 #ifdef LL_PLAT_C
     MCAPI void setItemId(::HashedString const& itemName, short itemId, bool isComponentBased);
 #endif
+
+    MCAPI void shutdown();
 
     MCAPI void unregisterItem(::HashedString const& itemName);
 
@@ -354,12 +356,22 @@ public:
     );
 
     MCAPI static ::ItemRegistry::ItemLoadResult _tryLoadItemAsset(
-        ::std::string                        jsonData,
+        ::std::string_view                   jsonData,
         ::std::shared_ptr<::PackLoadContext> packLoadContext,
         ::Core::Path const&                  filenameWithExtension,
         ::cereal::ReflectionCtx const&       ctx,
         ::std::string const&                 packName
     );
+
+    MCAPI static ::ItemRegistry::ParsedName _tryParseItemName(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& itemData
+    );
+
+    MCAPI static short getBlockItemId(::Block const& block);
+
+    MCAPI static short getBlockItemId(::BlockType const& block);
     // NOLINTEND
 
 public:

@@ -34,10 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetActorDataPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SetActorDataPacket() /*override*/;
@@ -54,6 +50,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SetActorDataPacket();
+
     MCAPI SetActorDataPacket(
         ::ActorRuntimeID                 id,
         ::SynchedActorDataEntityWrapper& entityData,
@@ -61,11 +59,21 @@ public:
         uint64                           tick,
         bool                             packAll
     );
+
+#ifdef LL_PLAT_C
+    MCAPI uint64 const getCurrentTick() const;
+
+    MCFOLD ::PropertySyncData const& getSynchedProperties() const;
+
+    MCFOLD ::std::vector<::std::unique_ptr<::DataItem>> const& getUnpackedData() const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(
         ::ActorRuntimeID                 id,
         ::SynchedActorDataEntityWrapper& entityData,

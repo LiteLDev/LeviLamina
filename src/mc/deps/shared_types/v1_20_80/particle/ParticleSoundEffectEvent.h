@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleSoundEffectEvent {
@@ -12,18 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleSoundEffectEvent(ParticleSoundEffectEvent const&);
-    ParticleSoundEffectEvent();
-
-public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_20_80::ParticleSoundEffectEvent&
-    operator=(::SharedTypes::v1_20_80::ParticleSoundEffectEvent&&);
-
-    MCFOLD ::SharedTypes::v1_20_80::ParticleSoundEffectEvent&
-    operator=(::SharedTypes::v1_20_80::ParticleSoundEffectEvent const&);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

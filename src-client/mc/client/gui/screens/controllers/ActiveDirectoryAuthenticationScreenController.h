@@ -70,17 +70,17 @@ public:
 
     MCAPI void _announceModalDialog() const;
 
+    MCAPI bool _checkAndFulfillPurchase();
+
     MCAPI void _closeModalDialog(bool doPostAction);
 
-    MCFOLD void _closeProgressDialog();
+    MCAPI void _dialogPurchaseFailed();
 
     MCAPI bool _fulfillPriorPurchase(::std::weak_ptr<::Purchase> purchase);
 
     MCAPI void _handleAuthenticationPendingPresentation();
 
     MCAPI void _handlePopupButton(::ADPopupButtonAction const& action);
-
-    MCAPI void _handlePurchaseFailure();
 
     MCAPI void _openModalDialog(::std::string const& dialogId);
 

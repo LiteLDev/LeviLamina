@@ -17,8 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void dispatch(::BlockEvents::BlockPlaceEvent& eventData) const /*override*/;
-
-    virtual ~BlockPlaceEventExecutor() /*override*/ = default;
     // NOLINTEND
 
 public:

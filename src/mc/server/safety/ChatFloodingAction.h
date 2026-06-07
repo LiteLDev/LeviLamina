@@ -5,8 +5,8 @@
 namespace Safety {
 
 enum class ChatFloodingAction : int {
-    None     = -1,
-    Squeltch = 0,
+    None     = 4294967295,
+    Suppress = 0,
     Kick     = 1,
 };
 

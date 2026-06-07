@@ -10,9 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class PolygonQuad;
-class Tessellator;
 class TextureOffset;
 class VertexPT;
 // clang-format on
@@ -52,15 +50,11 @@ public:
 
 public:
     // prevent constructor by default
-    Cube& operator=(Cube const&);
-    Cube(Cube const&);
     Cube();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Cube(::Cube&&);
-
     MCAPI Cube(
         ::Vec3 const&                              point,
         ::Vec3 const&                              extents,
@@ -81,10 +75,6 @@ public:
         ::mce::Color const&    color
     );
 
-    MCAPI void compile(::Tessellator& t) const;
-
-    MCAPI void expandAABB(::AABB& aabb) const;
-
     MCAPI void
     setQuad(uchar facing, float u0, float v0, float u1, float v1, ::VertexPT* vertices, ::QuadUVRotation uvRotation);
 
@@ -94,8 +84,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Cube&&);
-
     MCAPI void* $ctor(
         ::Vec3 const&                              point,
         ::Vec3 const&                              extents,
@@ -120,6 +108,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

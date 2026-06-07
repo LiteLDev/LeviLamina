@@ -17,6 +17,7 @@ class ILevel;
 class ItemStack;
 class ItemStackBase;
 class SaveContext;
+namespace mce { class Color; }
 // clang-format on
 
 class BannerBlockActor : public ::BlockActor {
@@ -37,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onPlace(::BlockSource& region) /*override*/;
+    virtual void onPlace(::BlockSource&) /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -48,8 +49,6 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~BannerBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -57,15 +56,29 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BannerBlockActor(::BlockPos const& pos);
 
+#ifdef LL_PLAT_C
+    MCFOLD ::BannerBlockType getBannerType() const;
+
+    MCAPI ::mce::Color getBaseColor() const;
+#endif
+
+    MCFOLD uchar getBaseColorInt() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::mce::Color getColor(int index) const;
+
+    MCAPI uchar getPattern(int index) const;
+
+    MCAPI int getPatternCount() const;
+#endif
+
     MCAPI void setItemValues(::ItemStackBase const& instance);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
-#endif
 
     MCAPI static int getBaseColor(::ItemStack const& item);
 
@@ -97,6 +110,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static int const& MAX_PATTERNS();
+
     MCAPI static ::std::string const& TAG_BASE_COLOR();
 
     MCAPI static ::std::string const& TAG_COLOR();
@@ -115,15 +130,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPlace(::BlockSource& region);
+    MCAPI void $onPlace(::BlockSource&);
 
     MCAPI void $tick(::BlockSource& region);
 

@@ -20,14 +20,32 @@ public:
 
 public:
     // prevent constructor by default
+    GraphicsOverrideParameterPacketPayload(GraphicsOverrideParameterPacketPayload const&);
     GraphicsOverrideParameterPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GraphicsOverrideParameterPacketPayload(::GraphicsOverrideParameterPacketPayload const&);
+    MCAPI
+    GraphicsOverrideParameterPacketPayload(::GraphicsOverrideParameterType inParamId, ::std::string const& biomeId);
 
-    MCAPI ::GraphicsOverrideParameterPacketPayload& operator=(::GraphicsOverrideParameterPacketPayload&&);
+    MCAPI GraphicsOverrideParameterPacketPayload(
+        ::GraphicsOverrideParameterType paramId,
+        float                           floatValue,
+        ::std::string const&            biomeId
+    );
+
+    MCAPI GraphicsOverrideParameterPacketPayload(
+        ::GraphicsOverrideParameterType       paramId,
+        ::std::unordered_map<float, ::Vec3>&& keyframes,
+        ::std::string const&                  biomeId
+    );
+
+    MCAPI GraphicsOverrideParameterPacketPayload(
+        ::GraphicsOverrideParameterType paramId,
+        ::Vec3 const&                   value,
+        ::std::string const&            biomeId
+    );
 
     MCAPI ::GraphicsOverrideParameterPacketPayload& operator=(::GraphicsOverrideParameterPacketPayload const&);
 
@@ -37,7 +55,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GraphicsOverrideParameterPacketPayload const&);
+    MCAPI void* $ctor(::GraphicsOverrideParameterType inParamId, ::std::string const& biomeId);
+
+    MCAPI void* $ctor(::GraphicsOverrideParameterType paramId, float floatValue, ::std::string const& biomeId);
+
+    MCAPI void* $ctor(
+        ::GraphicsOverrideParameterType       paramId,
+        ::std::unordered_map<float, ::Vec3>&& keyframes,
+        ::std::string const&                  biomeId
+    );
+
+    MCAPI void* $ctor(::GraphicsOverrideParameterType paramId, ::Vec3 const& value, ::std::string const& biomeId);
     // NOLINTEND
 
 public:

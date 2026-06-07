@@ -32,12 +32,6 @@ public:
     SettingsQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SettingsQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SettingsQuery(::OreUI::ClientDependencies const& client);

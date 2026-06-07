@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AcaciaTreeTrunk() /*override*/ = default;
+    virtual ~AcaciaTreeTrunk() /*override*/;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
@@ -61,6 +61,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AcaciaTreeTrunk();
+
     MCAPI void _placeLeaningBranches(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
@@ -81,6 +83,18 @@ public:
         ::RenderParams&                 renderParams,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

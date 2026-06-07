@@ -9,13 +9,14 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Mob;
 // clang-format on
 
 class HarvestFarmBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // HarvestFarmBlockGoal inner types define
     enum class Task : int {
-        None = -1,
+        None = 4294967295,
         Reap = 0,
         Sow  = 1,
     };
@@ -29,6 +30,10 @@ public:
     ::ll::TypedStorage<4, 4, int>                          mInventorySeedsIndex;
     ::ll::TypedStorage<4, 4, ::HarvestFarmBlockGoal::Task> mCurrentTask;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    HarvestFarmBlockGoal();
 
 public:
     // virtual functions
@@ -46,14 +51,24 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
-
-    virtual ~HarvestFarmBlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit HarvestFarmBlockGoal(::Mob& mob);
+
+    MCAPI int findInventorySlotForFarmSeeds();
+
+    MCAPI bool tryHarvestCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
+
     MCAPI bool trySowCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
+#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -39,13 +40,13 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
-
-    virtual ~CreateNewWorld() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CreateNewWorld(::ui::ScreenTechStackSelector const& screenTechStackSelector);
+
     MCAPI bool _isOreUICreateNewWorldEnabled() const;
     // NOLINTEND
 
@@ -66,9 +67,17 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
 
+    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
+
     MCAPI static ::std::add_lvalue_reference_t<char const[]> LEGACY_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ui::ScreenTechStackSelector const& screenTechStackSelector);
     // NOLINTEND
 
 public:

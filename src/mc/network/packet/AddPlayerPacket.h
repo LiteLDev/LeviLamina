@@ -20,7 +20,9 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class BlockPalette;
 class DataItem;
+class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
@@ -71,6 +73,12 @@ public:
     MCAPI AddPlayerPacket();
 
     MCAPI explicit AddPlayerPacket(::Player& p);
+
+#ifdef LL_PLAT_C
+    MCAPI ::ItemStack getCarriedItem(::BlockPalette& blockPalette, bool isClientSide) const;
+
+    MCFOLD ::PropertySyncData const& getSynchedProperties() const;
+#endif
     // NOLINTEND
 
 public:

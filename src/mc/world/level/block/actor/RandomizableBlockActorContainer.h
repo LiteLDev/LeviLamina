@@ -3,17 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/Container.h"
+#include "mc/world/level/block/actor/BlockActorRendererId.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainerBase.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockPos;
 class BlockSource;
 class Vec3;
 // clang-format on
 
 class RandomizableBlockActorContainer : public ::RandomizableBlockActorContainerBase, public ::Container {
+public:
+    // prevent constructor by default
+    RandomizableBlockActorContainer();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,6 +41,28 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RandomizableBlockActorContainer(
+        ::BlockActorType  blockEntityType,
+        ::BlockPos const& pos,
+        ::SharedTypes::Legacy::ContainerType,
+        ::BlockActorRendererId rendererId
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BlockActorType  blockEntityType,
+        ::BlockPos const& pos,
+        ::SharedTypes::Legacy::ContainerType,
+        ::BlockActorRendererId rendererId
+    );
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -41,9 +71,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setContainerChanged(int slot);
+    MCFOLD void $setContainerChanged(int slot);
 
-    MCFOLD void $startOpen(::Actor& actor);
+    MCAPI void $startOpen(::Actor& actor);
 
     MCFOLD void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
@@ -51,7 +81,7 @@ public:
 
     MCFOLD void $onRemoved(::BlockSource& region);
 
-    MCAPI void $initializeContainerContents(::BlockSource& region);
+    MCFOLD void $initializeContainerContents(::BlockSource& region);
 
 
     // NOLINTEND

@@ -23,16 +23,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EmitterShapePointComponent& operator=(EmitterShapePointComponent const&);
+    EmitterShapePointComponent(EmitterShapePointComponent const&);
+    EmitterShapePointComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
+    // NOLINTEND
 
-#ifdef LL_PLAT_S
-    virtual ~EmitterShapePointComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~EmitterShapePointComponent() /*override*/;
-#endif
-
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EmitterShapePointComponent(::SharedTypes::v1_20_80::EmitterShapePointComponent&&);
     // NOLINTEND
 
 public:
@@ -48,9 +53,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapePointComponent&&);
     // NOLINTEND
 
 public:

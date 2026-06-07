@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/EnumSet.h"
-#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/legacy/facing/Name.h"
+#include "mc/world/Direction.h"
+#include "mc/world/level/block/components/IBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,12 +14,11 @@ class Block;
 class BlockPos;
 class BlockSource;
 class BlockTransformationComponent;
-namespace BlockEvents { class BlockEventManager; }
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockStateChangeEvent; }
 // clang-format on
 
-struct BlockRedstoneProducerComponent {
+struct BlockRedstoneProducerComponent : public ::IBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,21 +29,16 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerUp;
     ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerDown;
     ::ll::TypedStorage<1, 1, bool>                                  mSetSignalStrengthOnRedstoneComponentSetup;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnPlaceEventSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnStateChangeEvenSubscription;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onPlace(::BlockEvents::BlockPlaceEvent const& ev) const;
+    MCAPI void finalize(::BlockTransformationComponent const* transformationComponent);
 
-    MCAPI void _onStateChange(::BlockEvents::BlockStateChangeEvent const& ev) const;
+    MCAPI void onEvent(::BlockEvents::BlockPlaceEvent const& ev) const;
 
-    MCAPI void finalize(
-        ::BlockEvents::BlockEventManager&     eventManager,
-        ::BlockTransformationComponent const* transformationComponent
-    );
+    MCAPI void onEvent(::BlockEvents::BlockStateChangeEvent const& ev) const;
     // NOLINTEND
 
 public:
@@ -54,5 +49,9 @@ public:
     MCAPI static void setRedstoneSignal(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void setupRedstoneComponent(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
+
+#ifdef LL_PLAT_C
+    MCAPI static bool const shouldConnectToRedstone(::Block const& block, ::Direction::Type direction);
+#endif
     // NOLINTEND
 };

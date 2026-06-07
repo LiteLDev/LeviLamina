@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { struct EditorBlockPalette; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,20 +23,20 @@ public:
 
 public:
     // prevent constructor by default
+    BlockPaletteChangedPayload& operator=(BlockPaletteChangedPayload const&);
     BlockPaletteChangedPayload(BlockPaletteChangedPayload const&);
     BlockPaletteChangedPayload();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockPaletteChangedPayload() /*override*/;
+    virtual ~BlockPaletteChangedPayload() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::BlockPaletteChangedPayload&
-    operator=(::Editor::Network::BlockPaletteChangedPayload const&);
+    MCNAPI explicit BlockPaletteChangedPayload(::Editor::EditorBlockPalette const& palette);
     // NOLINTEND
 
 public:
@@ -45,9 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::EditorBlockPalette const& palette);
     // NOLINTEND
 
 public:

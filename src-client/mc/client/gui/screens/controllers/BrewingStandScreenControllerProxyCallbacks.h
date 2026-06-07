@@ -12,12 +12,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BrewingStandScreenControllerProxyCallbacks();
+    MCAPI BrewingStandScreenControllerProxyCallbacks();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

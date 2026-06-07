@@ -4,6 +4,6 @@
 
 namespace GameInput::v2 {
 
-enum class GameInputDeviceStatus : uint {};
+enum class GameInputDeviceStatus : int {};
 
 }

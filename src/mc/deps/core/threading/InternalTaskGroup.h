@@ -36,9 +36,7 @@ public:
 
     virtual void processCoroutines() /*override*/;
 
-    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*> task) /*override*/;
-
-    virtual ~InternalTaskGroup() /*override*/ = default;
+    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*>) /*override*/;
     // NOLINTEND
 
 public:
@@ -58,7 +56,7 @@ public:
 
     MCNAPI void $processCoroutines();
 
-    MCNAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
+    MCNAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*>);
 
 
     // NOLINTEND

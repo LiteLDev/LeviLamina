@@ -19,8 +19,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SnapshotFilenameAndLength(::std::string filename, uint64 filesize);
+
 #ifdef LL_PLAT_S
     MCNAPI ::std::string toString();
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string filename, uint64 filesize);
     // NOLINTEND
 };

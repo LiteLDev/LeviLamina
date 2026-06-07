@@ -32,16 +32,12 @@ public:
     virtual ::Json::Value asJsonValue() const /*override*/;
 
     virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
-
-    virtual ~TextObjectSelector() /*override*/ = default;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& RAW_TEXT_SELECTOR_KEY();
-
-    MCNAPI static ::std::string const& RAW_TEXT_SELECTOR_STAR();
     // NOLINTEND
 
 public:

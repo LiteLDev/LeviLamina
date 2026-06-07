@@ -41,7 +41,15 @@ public:
         // NOLINTEND
     };
 
-    class PacketTraceQueue : public ::brstd::simple_circular_queue<::PacketTraceNetworkPeer::PacketTraceInfo, 3> {};
+    class PacketTraceQueue : public ::brstd::simple_circular_queue<::PacketTraceNetworkPeer::PacketTraceInfo, 3> {
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI ::Json::Value toJson() const;
+#endif
+        // NOLINTEND
+    };
 
 public:
     // member variables
@@ -69,8 +77,6 @@ public:
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) /*override*/;
-
-    virtual ~PacketTraceNetworkPeer() /*override*/ = default;
     // NOLINTEND
 
 public:

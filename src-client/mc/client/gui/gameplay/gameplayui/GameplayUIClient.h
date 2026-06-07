@@ -15,9 +15,8 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-class IOptions;
+class IOptionRegistry;
 class ISceneStack;
-class ItemStackBase;
 class LocalPlayer;
 struct ActorUniqueID;
 struct GameConnectionConnector;
@@ -35,9 +34,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::GameplayUI::GameplayUIContext&>                    mContext;
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>                                    mRouter;
-    ::ll::TypedStorage<8, 8, ::IOptions&>                                         mOptions;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&>                                  mOptions;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const>> mSceneStack;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mConnectedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mClientSideCloseSubscription;
     // NOLINTEND
 
 public:
@@ -49,8 +49,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::PlayerNotificationEvent const& event) /*override*/;
-
     virtual ::EventResult onPlayerCreated(
         ::LocalPlayer&         player,
         ::persona::ProfileType personaSlot,
@@ -59,35 +57,43 @@ public:
         ::NetworkType          networkType
     ) /*override*/;
 
+    virtual ::EventResult onEvent(::PlayerNotificationEvent const& event) /*override*/;
+
     virtual ::EventResult onLocalPlayerDeath(::IClientInstance& client, ::LocalPlayer& player) /*override*/;
 
     virtual ::EventResult onLocalPlayerRespawn(::IClientInstance& client, ::LocalPlayer& player) /*override*/;
 
-    virtual ::EventResult onLocalPlayerOpenInventory(::IClientInstance&, ::LocalPlayer& localPlayer) /*override*/;
+    virtual ::EventResult onLocalPlayerOpenInventory(::IClientInstance& localPlayer, ::LocalPlayer&) /*override*/;
 
     virtual ::EventResult
-    onLocalPlayerOpenTrading(::IClientInstance&, ::LocalPlayer&, ::ActorUniqueID const& uniqueID, bool) /*override*/;
-
-    virtual ::EventResult
-    onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& dstContainerName) /*override*/;
+    onLocalPlayerOpenTrading(::IClientInstance& uniqueID, ::LocalPlayer&, ::ActorUniqueID const&, bool) /*override*/;
 
     virtual ::EventResult onShowDataDrivenScreen(
-        ::LocalPlayer&,
-        ::std::string const&  screenId,
-        uint                  formId,
-        ::std::optional<uint> dataInstanceId
+        ::LocalPlayer&       screenId,
+        ::std::string const& formId,
+        uint                 dataInstanceId,
+        ::std::optional<uint>
     ) /*override*/;
 
-    virtual ::EventResult onCloseDataDrivenScreen(::LocalPlayer&, uint formId) /*override*/;
+    virtual ::EventResult onCloseDataDrivenScreen(::LocalPlayer& formId, uint) /*override*/;
 
     virtual ::EventResult onCloseAllDataDrivenScreens(::LocalPlayer&) /*override*/;
-
-    virtual ~GameplayUIClient() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GameplayUIClient(
+        ::GameplayUI::GameplayUIContext&                   context,
+        ::OreUI::Router&                                   router,
+        ::IOptionRegistry&                                 options,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> sceneStack
+    );
+
+    MCAPI void onDataDrivenScreenClientSideClose();
+
+    MCAPI void onJoinWorld(::IClientInstance& client);
+
     MCAPI void onLeaveWorld();
 
     MCAPI void setupGameServerConnectionListener(::GameConnectionConnector const& gameConnectionConnector);
@@ -96,10 +102,19 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::GameplayUI::GameplayUIContext&                   context,
+        ::OreUI::Router&                                   router,
+        ::IOptionRegistry&                                 options,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> sceneStack
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
-
     MCAPI ::EventResult $onPlayerCreated(
         ::LocalPlayer&         player,
         ::persona::ProfileType personaSlot,
@@ -108,26 +123,25 @@ public:
         ::NetworkType          networkType
     );
 
+    MCAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
+
     MCAPI ::EventResult $onLocalPlayerDeath(::IClientInstance& client, ::LocalPlayer& player);
 
     MCAPI ::EventResult $onLocalPlayerRespawn(::IClientInstance& client, ::LocalPlayer& player);
 
-    MCAPI ::EventResult $onLocalPlayerOpenInventory(::IClientInstance&, ::LocalPlayer& localPlayer);
+    MCAPI ::EventResult $onLocalPlayerOpenInventory(::IClientInstance& localPlayer, ::LocalPlayer&);
 
     MCAPI ::EventResult
-    $onLocalPlayerOpenTrading(::IClientInstance&, ::LocalPlayer&, ::ActorUniqueID const& uniqueID, bool);
-
-    MCAPI ::EventResult
-    $onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& dstContainerName);
+    $onLocalPlayerOpenTrading(::IClientInstance& uniqueID, ::LocalPlayer&, ::ActorUniqueID const&, bool);
 
     MCAPI ::EventResult $onShowDataDrivenScreen(
-        ::LocalPlayer&,
-        ::std::string const&  screenId,
-        uint                  formId,
-        ::std::optional<uint> dataInstanceId
+        ::LocalPlayer&       screenId,
+        ::std::string const& formId,
+        uint                 dataInstanceId,
+        ::std::optional<uint>
     );
 
-    MCAPI ::EventResult $onCloseDataDrivenScreen(::LocalPlayer&, uint formId);
+    MCAPI ::EventResult $onCloseDataDrivenScreen(::LocalPlayer& formId, uint);
 
     MCAPI ::EventResult $onCloseAllDataDrivenScreens(::LocalPlayer&);
     // NOLINTEND

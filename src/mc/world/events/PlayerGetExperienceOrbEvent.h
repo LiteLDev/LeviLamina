@@ -17,16 +17,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
     ::ll::TypedStorage<4, 4, int>                         mExperienceValue;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerGetExperienceOrbEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

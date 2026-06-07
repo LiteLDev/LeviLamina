@@ -17,15 +17,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ElementBox& operator=(ElementBox const&);
+    ElementBox();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ElementBox();
+    MCAPI ElementBox(::BlockGeometry::ElementBox const&);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::BlockGeometry::ElementBox const&);
     // NOLINTEND
 };
 

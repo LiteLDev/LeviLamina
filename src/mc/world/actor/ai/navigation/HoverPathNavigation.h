@@ -25,7 +25,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description) /*override*/;
+    virtual void initializeInternal(::Mob& mob, ::NavigationDescription const* description) /*override*/;
 
     virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
@@ -42,24 +42,22 @@ public:
     virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
 
     virtual void updatePath(::NavigationComponent& parent, ::Mob& mob) /*override*/;
-
-    virtual ~HoverPathNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription* description);
+    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription const* description);
 
     MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
     MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
+    MCFOLD ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
     MCFOLD ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCFOLD void $stop(::NavigationComponent& parent, ::Mob& mob);
+    MCAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
 
     MCAPI bool $canUpdatePath(::Mob const& mob) const;
 

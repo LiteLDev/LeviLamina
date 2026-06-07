@@ -31,9 +31,18 @@ public:
     // NOLINTBEGIN
     virtual ~ChestContainerManagerController() /*override*/ = default;
 
+#ifdef LL_PLAT_S
+    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void _onItemAcquired(::ItemInstance const& itemInstance, ::SlotData const& srcSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void _onItemPlaced(::ItemInstance const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void _onItemPlaced(::ItemInstance const& itemInstance, ::SlotData const& dstSlot) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

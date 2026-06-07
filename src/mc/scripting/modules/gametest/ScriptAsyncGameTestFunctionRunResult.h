@@ -21,14 +21,37 @@ public:
     ::ll::TypedStorage<8, 72, ::Scripting::Result_deprecated<::Scripting::Future<void>>> mResult;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ScriptAsyncGameTestFunctionRunResult();
+
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isComplete() const /*override*/;
 
     virtual ::std::optional<::gametest::GameTestError> getError() /*override*/;
+    // NOLINTEND
 
-    virtual ~ScriptAsyncGameTestFunctionRunResult() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI explicit ScriptAsyncGameTestFunctionRunResult(
+        ::Scripting::Result_deprecated<::Scripting::Future<void>> future
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::Scripting::Result_deprecated<::Scripting::Future<void>> future);
+#endif
     // NOLINTEND
 
 public:

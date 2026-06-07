@@ -31,8 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~IconItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -40,7 +38,23 @@ public:
     // NOLINTBEGIN
     MCAPI explicit IconItemComponent(::SharedTypes::v1_21_80::IconItemComponent component);
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::string const& getBundleOpenBackTexture() const;
+
+    MCAPI ::std::string const& getBundleOpenFrontTexture() const;
+#endif
+
     MCAPI ::std::string const& getDefaultTexture() const;
+
+    MCAPI ::std::string const& getDyedTexture() const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::string const& getIconTrimPath() const;
+
+    MCFOLD ::std::unordered_map<::std::string, ::SharedTypes::Reference<11>> const& getTextures() const;
+#endif
+
+    MCAPI void setOwnerIcon() const;
 
     MCAPI void setTexturePath(::std::string const& texturePath);
     // NOLINTEND

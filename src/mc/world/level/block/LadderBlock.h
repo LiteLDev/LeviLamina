@@ -12,12 +12,15 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Vec3;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class LadderBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    LadderBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,16 +40,20 @@ public:
         /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~LadderBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LadderBlock(::std::string const& nameId, int id);
+
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -71,8 +78,6 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCFOLD bool $isLavaBlocking() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

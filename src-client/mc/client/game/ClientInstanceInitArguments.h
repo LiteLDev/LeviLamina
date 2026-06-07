@@ -18,16 +18,4 @@ public:
     ClientInstanceInitArguments& operator=(ClientInstanceInitArguments const&);
     ClientInstanceInitArguments(ClientInstanceInitArguments const&);
     ClientInstanceInitArguments();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ClientInstanceInitArguments();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

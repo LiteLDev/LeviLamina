@@ -13,6 +13,8 @@ MCNAPI auto getEasingFunction(::EasingType easingType) -> float (*)(float, float
 #ifdef LL_PLAT_C
 MCNAPI ::EasingType getEasingTypeFromString(::std::string const& easingName);
 #endif
+
+MCNAPI ::std::string_view getStringFromEasingType(::EasingType easingType);
 // NOLINTEND
 
 } // namespace Easing

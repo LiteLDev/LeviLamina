@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class IRandom;
-class XoroshiroRandom;
 namespace Crypto::Hash { class md5; }
 // clang-format on
 
@@ -27,34 +26,12 @@ public:
     virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const& blockPos) const /*override*/;
 
     virtual ::std::unique_ptr<::IRandom> forString(::std::string const& s) const /*override*/;
-
-    virtual ~XoroshiroPositionalRandomFactory() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::XoroshiroRandom forBlockPosImpl(::BlockPos const& blockPos) const;
-
-    MCNAPI ::XoroshiroRandom forStringImpl(::std::string const& s) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::XoroshiroRandom forBlockPosImplNoSeed(::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::Crypto::Hash::md5& mThreadLocalDigest();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

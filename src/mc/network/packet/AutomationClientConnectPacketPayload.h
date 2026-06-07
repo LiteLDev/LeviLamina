@@ -13,17 +13,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AutomationClientConnectPacketPayload(AutomationClientConnectPacketPayload const&);
-    AutomationClientConnectPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::AutomationClientConnectPacketPayload& operator=(::AutomationClientConnectPacketPayload&&);
-
-    MCFOLD ::AutomationClientConnectPacketPayload& operator=(::AutomationClientConnectPacketPayload const&);
-
     MCAPI ~AutomationClientConnectPacketPayload();
     // NOLINTEND
 

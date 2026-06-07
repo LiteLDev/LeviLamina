@@ -16,10 +16,4 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                          mTotalSize;
     ::ll::TypedStorage<8, 8, ::std::forward_list<::MemBlock>> mBlocks;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void addBlock(uint64 bytes);
-    // NOLINTEND
 };

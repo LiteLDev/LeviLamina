@@ -100,10 +100,16 @@ public:
     MCNAPI void
     addBreadcrumb(::SentryBreadcrumbLevel level, ::std::string message, ::std::optional<::std::string> category);
 
+    MCNAPI void addCustomTag(::std::string key, ::std::string value);
+
+    MCNAPI void onException(::Scripting::BaseError const& error);
+
     MCNAPI void onManuallyCapturedException(
         ::Scripting::BaseError const&                                          error,
         ::std::optional<::ScriptModuleDiagnostics::ScriptSentryCaptureContext> context
     );
+
+    MCNAPI void onUnhandledPromiseRejection(::Scripting::BaseError const& error);
 
     MCNAPI ~ScriptSentrySession();
     // NOLINTEND

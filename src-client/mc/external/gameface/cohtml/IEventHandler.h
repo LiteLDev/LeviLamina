@@ -13,7 +13,7 @@ class IEventHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEventHandler();
+    virtual ~IEventHandler() = default;
 
     virtual void Invoke(::cohtml::ArgumentsBinder* binder) = 0;
 
@@ -23,21 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

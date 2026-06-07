@@ -8,7 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
 class IConstBlockSource;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Blaze : public ::Monster {
@@ -24,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Blaze();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
@@ -37,14 +44,28 @@ public:
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     virtual void normalTick() /*override*/;
-
-    virtual ~Blaze() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Blaze(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void preTravel();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

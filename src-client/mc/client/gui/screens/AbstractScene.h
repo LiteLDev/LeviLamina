@@ -74,13 +74,13 @@ public:
 
     virtual void frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext) = 0;
 
-    virtual void preRenderUpdate(::ScreenContext& screenContext) = 0;
+    virtual void preRenderUpdate(::ScreenContext&) = 0;
 
     virtual void prepareFrame(::ScreenContext& screenContext) = 0;
 
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) = 0;
 
-    virtual void postRenderUpdate(::ScreenContext& screenContext) = 0;
+    virtual void postRenderUpdate(::ScreenContext&) = 0;
 
     virtual void handleInputModeChanged(::InputMode inputMode) = 0;
 
@@ -98,8 +98,6 @@ public:
     virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) = 0;
 
     virtual void handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact) = 0;
-
-    virtual void handleCaretLocation(int caretLocation, ::FocusImpact focusImpact) = 0;
 
     virtual void handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) = 0;
 
@@ -169,7 +167,7 @@ public:
 
     virtual int getScreenVersion() const = 0;
 
-    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents) = 0;
+    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&) = 0;
 
     virtual bool getShouldSendEvents() = 0;
 
@@ -225,20 +223,22 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD void _setSceneId(uint sceneId);
+
+    MCFOLD uint getSceneId() const;
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

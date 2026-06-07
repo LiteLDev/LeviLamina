@@ -63,14 +63,14 @@ public:
 
     MCNAPI bool _removeThumbnailFile(::mce::UUID id, ::std::optional<uint> hash);
 
+    MCNAPI void _saveThumbnail(::std::string_view filename, ::Editor::ThumbnailFileBytes const& data);
+
     MCNAPI void _scanFileCache();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& CACHE_FOLDER();
-
     MCNAPI static ::std::string_view const& SERVICE_NAME();
     // NOLINTEND
 

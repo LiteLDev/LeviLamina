@@ -75,14 +75,20 @@ public:
     LLNDAPI operator class AABB() const;
 
 public:
+    // prevent constructor by default
+    BoundingBox();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BoundingBox(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
+
     MCAPI void applyTransformation(::BlockPos const& pivot, ::Rotation rotationXZ, bool mirrorX, bool mirrorZ);
     // NOLINTEND
 
 public:
-    // static functions
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::BoundingBox> intersect(::BoundingBox const& lhs, ::BoundingBox const& rhs);
+    MCAPI void* $ctor(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
     // NOLINTEND
 };

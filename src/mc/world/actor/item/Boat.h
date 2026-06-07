@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/shared_types/legacy/Side.h"
 #include "mc/input/NewInteractionModel.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
@@ -35,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
@@ -57,8 +58,6 @@ public:
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
-
-    virtual ~Boat() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,10 +70,16 @@ public:
     );
 
 #ifdef LL_PLAT_C
+    MCAPI float getBubbleAngle(float a) const;
+
     MCAPI ::std::string getExitText(bool isPocket) const;
+
+    MCAPI float getRowingTime(::SharedTypes::Side side, float alpha) const;
 #endif
 
-    MCFOLD uchar getWoodID() const;
+    MCAPI uchar getWoodID() const;
+
+    MCAPI void postNormalTick();
     // NOLINTEND
 
 public:
@@ -90,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
@@ -100,9 +105,7 @@ public:
 
     MCFOLD float $getShadowRadius() const;
 
-#ifdef LL_PLAT_S
     MCAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
-#endif
 
     MCAPI bool $canAddPassenger(::Actor& passenger) const;
 

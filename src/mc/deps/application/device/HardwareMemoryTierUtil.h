@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HardwareMemoryTier getHardwareMemoryTier() const = 0;
-
-    virtual ~HardwareMemoryTierUtil() /*override*/ = default;
     // NOLINTEND
 
 public:

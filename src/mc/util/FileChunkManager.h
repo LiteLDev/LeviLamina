@@ -28,13 +28,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FileChunkManager();
+
     MCNAPI void _generateChunkInfo();
+
+#ifdef LL_PLAT_C
+    MCNAPI bool canWriteChunk() const;
+
+    MCNAPI ::FileChunk dequeueChunk();
+
+    MCNAPI int getAndIncrementNextChunk();
+#endif
+
+    MCNAPI ::FileChunkInfo getChunkInfo(int chunkID) const;
+
+    MCNAPI ::std::vector<::FileChunkInfo> const& getChunks() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI uint64 getDownloadedBytes() const;
+
+    MCNAPI float getProgress() const;
+#endif
+
+    MCNAPI int getTotalNumberOfChunks();
+
+#ifdef LL_PLAT_C
+    MCNAPI void queueReceivedChunk(::FileChunk&& chunk);
+
+    MCNAPI bool requestedAllChunks() const;
+
+    MCNAPI void reset();
+#endif
 
     MCNAPI void reset(uint64 totalSize, uint chunkSize);
 
 #ifdef LL_PLAT_C
+    MCNAPI bool writtenAllChunks() const;
+
     MCNAPI ~FileChunkManager();
 #endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

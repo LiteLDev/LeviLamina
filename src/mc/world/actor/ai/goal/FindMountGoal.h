@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ class Mob;
 class Path;
 // clang-format on
 
-class FindMountGoal : public ::Goal {
+class FindMountGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FindMountGoal() /*override*/;
+    virtual ~FindMountGoal() /*override*/ = default;
 
     virtual bool canUse() /*override*/;
 
@@ -58,13 +58,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FindMountGoal(::Mob& mob);
+
     MCAPI bool isInMountRange();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

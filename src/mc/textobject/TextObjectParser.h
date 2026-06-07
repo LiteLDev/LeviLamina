@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandRegistry.h"
+
 // auto generated forward declare list
 // clang-format off
+class CommandOrigin;
+class Scoreboard;
 class TextObjectRoot;
 namespace Json { class Value; }
 // clang-format on
@@ -58,6 +63,23 @@ public:
         ServerData& operator=(ServerData const&);
         ServerData(ServerData const&);
         ServerData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ServerData(
+            ::CommandRegistry::Parser& parser,
+            ::CommandOrigin const&     commandOrigin,
+            ::Scoreboard const&        scoreboard
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void*
+        $ctor(::CommandRegistry::Parser& parser, ::CommandOrigin const& commandOrigin, ::Scoreboard const& scoreboard);
+        // NOLINTEND
     };
 
 public:
@@ -100,6 +122,13 @@ public:
 
     MCNAPI static bool
     textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
+
+    MCNAPI static bool textObjectFromJsonServer(
+        ::Json::Value const&                   root,
+        ::TextObjectRoot&                      parsedObject,
+        ::TextObjectParser::ServerData         serverData,
+        ::TextObjectParser::ErrorLocalization& errorLocalization
+    );
 
     MCNAPI static bool textObjectFromJsonString(
         ::std::string const& jsonAsString,

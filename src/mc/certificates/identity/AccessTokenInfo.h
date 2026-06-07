@@ -22,8 +22,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI AccessTokenInfo(::std::string _email, int64 _expiration);
 
-    MCNAPI ::AccessTokenInfo& operator=(::AccessTokenInfo&&);
-
     MCNAPI ~AccessTokenInfo();
 #endif
     // NOLINTEND

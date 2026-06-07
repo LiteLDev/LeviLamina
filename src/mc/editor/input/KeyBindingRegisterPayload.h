@@ -28,6 +28,7 @@ public:
 
 public:
     // prevent constructor by default
+    KeyBindingRegisterPayload& operator=(KeyBindingRegisterPayload const&);
     KeyBindingRegisterPayload();
 
 public:
@@ -47,8 +48,6 @@ public:
         ::Editor::Input::KeyBinding const&  binding,
         ::Editor::Input::BindingInfo const& info
     );
-
-    MCNAPI ::Editor::Network::KeyBindingRegisterPayload& operator=(::Editor::Network::KeyBindingRegisterPayload const&);
     // NOLINTEND
 
 public:

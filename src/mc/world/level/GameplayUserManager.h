@@ -71,9 +71,7 @@ public:
 
     MCNAPI void _addTrackedMapPlayers(::MapItemSavedData& mapItemSavedData);
 
-#ifdef LL_PLAT_S
     MCNAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
-#endif
 
     MCNAPI int _getNewPlayerId() const;
 
@@ -87,13 +85,13 @@ public:
 
     MCNAPI void cleanupRemovedGameplayUsers();
 
-    MCNAPI void clearAllGameplayUserEntities();
-
     MCNAPI void forEachActiveGameplayUser(::std::function<bool(::EntityContext&)> callback) const;
 
     MCNAPI void forEachActivePlayer(::std::function<bool(::Player&)> callback) const;
 
-    MCNAPI void forEachActivePlayerIncludeRemoved(::std::function<bool(::Player&)> callback) const;
+    MCNAPI ::std::vector<::WeakEntityRef> const& getActiveGameplayUsers() const;
+
+    MCNAPI ::std::vector<::OwnerPtr<::EntityContext>> const& getGameplayUserEntities() const;
 
     MCNAPI bool isGameplayUserSuspended(::WeakEntityRef weakEntityUser) const;
 
@@ -106,6 +104,8 @@ public:
     MCNAPI void registerMapDataManagerListener(::IServerMapDataManagerConnector& serverMapDataManagerConnector);
 
     MCNAPI void startLeaveGame();
+
+    MCNAPI void tickSuspensions();
     // NOLINTEND
 
 public:

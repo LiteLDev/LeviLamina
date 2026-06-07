@@ -28,12 +28,6 @@ public:
     DataTransferServiceDeferredExperimentEnabledPayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataTransferServiceDeferredExperimentEnabledPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

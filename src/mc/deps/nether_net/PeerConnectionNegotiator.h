@@ -56,8 +56,6 @@ public:
         virtual void OnSuccess(::webrtc::SessionDescriptionInterface* description) /*override*/;
 
         virtual void OnFailure(::webrtc::RTCError error) /*override*/;
-
-        virtual ~CreateSessionObserver() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -95,8 +93,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError result) /*override*/;
-
-        virtual ~SetLocalDescriptionObserver() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -132,8 +128,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError result) /*override*/;
-
-        virtual ~SetRemoteDescriptionObserver() /*override*/ = default;
         // NOLINTEND
 
     public:

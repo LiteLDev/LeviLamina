@@ -81,7 +81,7 @@ public:
 
     MCAPI uint64 getCount() const;
 
-    MCAPI ::OreUI::ScreenshotGalleryFacetError const getDeleteScreenshotsError() const;
+    MCFOLD ::OreUI::ScreenshotGalleryFacetError const getDeleteScreenshotsError() const;
 
     MCFOLD ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
 
@@ -95,7 +95,7 @@ public:
 
     MCFOLD bool const getIsModifyShowcaseGalleryInProgress() const;
 
-    MCAPI ::OreUI::ScreenshotGalleryFacetError const getLoadGalleryError() const;
+    MCFOLD ::OreUI::ScreenshotGalleryFacetError const getLoadGalleryError() const;
 
     MCFOLD uint64 getMaxScreenshots() const;
 

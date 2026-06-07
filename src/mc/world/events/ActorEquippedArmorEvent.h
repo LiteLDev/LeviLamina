@@ -17,22 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorEquippedArmorEvent& operator=(ActorEquippedArmorEvent const&);
-    ActorEquippedArmorEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorEquippedArmorEvent(::ActorEquippedArmorEvent const&);
-
     MCAPI ~ActorEquippedArmorEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorEquippedArmorEvent const&);
     // NOLINTEND
 
 public:

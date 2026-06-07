@@ -15,16 +15,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerRegistryCleanupPacketPayload& operator=(ContainerRegistryCleanupPacketPayload const&);
-    ContainerRegistryCleanupPacketPayload(ContainerRegistryCleanupPacketPayload const&);
-    ContainerRegistryCleanupPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ContainerRegistryCleanupPacketPayload& operator=(::ContainerRegistryCleanupPacketPayload&&);
-
     MCAPI ~ContainerRegistryCleanupPacketPayload();
     // NOLINTEND
 

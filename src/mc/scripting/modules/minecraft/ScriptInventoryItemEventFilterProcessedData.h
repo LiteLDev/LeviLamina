@@ -22,16 +22,20 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptInventoryItemEventFilterProcessedData& operator=(ScriptInventoryItemEventFilterProcessedData const&);
+    ScriptInventoryItemEventFilterProcessedData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInventoryItemEventFilterProcessedData();
-
     MCAPI ScriptInventoryItemEventFilterProcessedData(
         ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&
     );
+
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&&);
+
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&);
 
     MCAPI ~ScriptInventoryItemEventFilterProcessedData();
     // NOLINTEND
@@ -39,8 +43,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&);
     // NOLINTEND
 

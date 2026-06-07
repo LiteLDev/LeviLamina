@@ -43,14 +43,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~PermissionCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void list(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI void list(::CommandOrigin const& output, ::CommandOutput&) const;
 
     MCAPI void reload(::CommandOrigin const& origin, ::CommandOutput& output) const;
 

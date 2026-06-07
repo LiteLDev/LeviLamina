@@ -16,24 +16,13 @@ public:
 public:
     // prevent constructor by default
     ScriptGenerator& operator=(ScriptGenerator const&);
+    ScriptGenerator(ScriptGenerator const&);
     ScriptGenerator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptGenerator(::ScriptGenerator&&);
-
-    MCNAPI ScriptGenerator(::ScriptGenerator const&);
-
     MCNAPI ~ScriptGenerator();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptGenerator&&);
-
-    MCNAPI void* $ctor(::ScriptGenerator const&);
     // NOLINTEND
 
 public:

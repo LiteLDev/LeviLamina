@@ -31,6 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI TransactionFrameSourceTarget(::Core::PathView source, ::Core::PathView target);
+
     MCNAPI ~TransactionFrameSourceTarget();
     // NOLINTEND
 
@@ -43,6 +45,12 @@ public:
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction,
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> differentStorageAreaFunction
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::PathView source, ::Core::PathView target);
     // NOLINTEND
 
 public:

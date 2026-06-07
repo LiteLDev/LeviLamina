@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_60::DimensionDefinition {
 
 struct Generation {
@@ -12,18 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Generation(Generation const&);
-    Generation();
-
-public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Generation&
-    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Generation&&);
-
-    MCFOLD ::SharedTypes::v1_21_60::DimensionDefinition::Generation&
-    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Generation const&);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -26,19 +26,25 @@ public:
     // NOLINTBEGIN
     virtual ~SetItemCountFunction() /*override*/ = default;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::RandomValueBounds const getCount() const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

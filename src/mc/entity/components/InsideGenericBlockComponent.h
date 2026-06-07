@@ -21,16 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InsideGenericBlockComponent& operator=(InsideGenericBlockComponent const&);
-    InsideGenericBlockComponent(InsideGenericBlockComponent const&);
-    InsideGenericBlockComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
-
 #ifdef LL_PLAT_C
     MCAPI ~InsideGenericBlockComponent();
 #endif

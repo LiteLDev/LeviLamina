@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SocialButtonScreenController() /*override*/ = default;
+    virtual ~SocialButtonScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -57,6 +57,12 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

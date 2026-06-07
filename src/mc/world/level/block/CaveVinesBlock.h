@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/block/BlockType.h"
+#include "mc/world/level/block/CaveVinesVariant.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,10 +16,11 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
+class ItemStack;
+class Player;
 namespace BlockEvents { class ActorInternalEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -32,6 +34,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool const> mHasBerries;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CaveVinesBlock();
 
 public:
     // virtual functions
@@ -55,31 +61,39 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
         /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     virtual bool
     hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~CaveVinesBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CaveVinesBlock(::std::string const& nameId, int id, ::CaveVinesVariant variant);
+
+    MCAPI int _getAgeForPlacement(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool _isCaveVinesHead(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI bool _pickBerries(::BlockSource& region, ::BlockPos const& pos, ::Actor& sourceEntity) const;
+
+    MCAPI bool _shearCaveVine(
+        ::Player&         player,
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    vineBlock,
+        ::ItemStack&      shears
+    ) const;
 
     MCAPI void _updateBlockBasedOnNeighborBelow(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -100,8 +114,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _shouldGrow(::BlockSource& region, ::BlockPos const& pos, float randomNumber);
+
     MCAPI static void
     tryGrow(::BlockSource& region, ::BlockPos const& pos, float randomNumberForGrowing, float randomNumberForBerries);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::CaveVinesVariant variant);
     // NOLINTEND
 
 public:
@@ -125,19 +147,16 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

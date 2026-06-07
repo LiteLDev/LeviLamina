@@ -17,7 +17,9 @@ namespace Editor::ScriptModule { class ScriptTransferServiceCreateSettingRespons
 namespace Editor::ScriptModule { class ScriptTransferServiceDataResponse; }
 namespace Editor::ScriptModule { class ScriptTransferServiceRequestDataOptions; }
 namespace Editor::ScriptModule { class ScriptTransferServiceSendDataOptions; }
+namespace Editor::Services { class ServerDataTransferServiceProvider; }
 namespace Scripting { class ScriptObjectFactory; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -42,6 +44,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptDataTransferService(
+        ::Editor::Services::ServerDataTransferServiceProvider* transferService,
+        ::Scripting::WeakLifetimeScope const&                  scope
+    );
+
     MCNAPI ::Scripting::Result_deprecated<void> _changeBiomeMapping(
         ::std::string const& biomeIdentifier,
         ::std::string const& collectionName,
@@ -101,6 +108,15 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Editor::Services::ServerDataTransferServiceProvider* transferService,
+        ::Scripting::WeakLifetimeScope const&                  scope
+    );
     // NOLINTEND
 };
 

@@ -14,12 +14,6 @@ namespace SharedTypes::v1_26_0 {
 
 struct TimerActorFlag1GoalDefinition : public ::SharedTypes::TimerActorFlagBaseGoalDefinition {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~TimerActorFlag1GoalDefinition();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -29,12 +23,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

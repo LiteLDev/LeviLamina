@@ -7,6 +7,11 @@
 #include "mc/molang/MolangVersion.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 class MinEngineVersion {
 public:
     // member variables
@@ -16,35 +21,28 @@ public:
     ::ll::TypedStorage<2, 2, ::MolangVersion>     mMolangVersion;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    MinEngineVersion& operator=(MinEngineVersion const&);
-    MinEngineVersion(MinEngineVersion const&);
-    MinEngineVersion();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    MinEngineVersion();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MinEngineVersion();
+
+    MCAPI explicit MinEngineVersion(::SemVersion const& version);
+
+    MCAPI ::std::string asString() const;
+
+    MCAPI ::Json::Value createJsonValue() const;
+
+    MCFOLD ::CurrentCmdVersion getCommandVersion() const;
+
+    MCAPI ::MolangVersion getMolangVersion() const;
+
 #ifdef LL_PLAT_C
-    MCAPI MinEngineVersion(::MinEngineVersion const&);
+    MCAPI ::SemVersion getSemVersion() const;
 #endif
 
-    MCAPI ::MinEngineVersion& operator=(::MinEngineVersion&&);
-
-#ifdef LL_PLAT_C
-    MCAPI ::MinEngineVersion& operator=(::MinEngineVersion const&);
-#endif
+    MCFOLD bool isValid() const;
 
     MCAPI bool operator==(::MinEngineVersion const& rhs) const;
-
-    MCAPI ~MinEngineVersion();
     // NOLINTEND
 
 public:
@@ -56,14 +54,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::MinEngineVersion const&);
-#endif
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::SemVersion const& version);
     // NOLINTEND
 };

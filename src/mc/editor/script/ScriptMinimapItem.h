@@ -40,10 +40,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA>
     getPlayerColor(::std::string const& playerId) const;
 
-    MCNAPI bool isActive() const;
-
-    MCNAPI ::Editor::ScriptModule::ScriptMinimapItem& operator=(::Editor::ScriptModule::ScriptMinimapItem&&);
-
     MCNAPI ::Scripting::Result_deprecated<void> removeMarker(::Editor::Services::MinimapMarkerType markerType) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> setActive(bool active) const;

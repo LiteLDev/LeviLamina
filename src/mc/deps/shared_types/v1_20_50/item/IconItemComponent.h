@@ -20,22 +20,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IconItemComponent(IconItemComponent const&);
-    IconItemComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_20_50::IconItemComponent& operator=(::SharedTypes::v1_20_50::IconItemComponent&&);
-
-    MCFOLD ::SharedTypes::v1_20_50::IconItemComponent& operator=(::SharedTypes::v1_20_50::IconItemComponent const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

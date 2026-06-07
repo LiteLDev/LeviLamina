@@ -29,12 +29,15 @@ public:
 
 public:
     // prevent constructor by default
+    TextureData& operator=(TextureData const&);
     TextureData();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI TextureData(::TextureData const&);
+
+    MCNAPI TextureData(::TextureData&&);
 
     MCNAPI TextureData(
         ::ResourceLocation const& location,
@@ -45,16 +48,14 @@ public:
         bool                      multiChannelTint,
         ::cg::TextureSetLayerType textureSetLayerType
     );
-
-    MCNAPI ::TextureData& operator=(::TextureData const&);
-
-    MCNAPI ~TextureData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::TextureData const&);
+
+    MCNAPI void* $ctor(::TextureData&&);
 
     MCNAPI void* $ctor(
         ::ResourceLocation const& location,
@@ -65,11 +66,5 @@ public:
         bool                      multiChannelTint,
         ::cg::TextureSetLayerType textureSetLayerType
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

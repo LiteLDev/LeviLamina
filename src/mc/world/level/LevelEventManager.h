@@ -18,6 +18,7 @@ class PacketSender;
 class UserEntityIdentifierComponent;
 class Vec3;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace mce { class Color; }
 // clang-format on
 
 class LevelEventManager : public ::ILevelEventManagerCoordinator {
@@ -82,6 +83,8 @@ public:
 
     MCAPI void
     broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+
+    MCAPI void potionSplash(::Vec3 const& pos, ::mce::Color const& color, bool instantaneousEffect);
     // NOLINTEND
 
 public:

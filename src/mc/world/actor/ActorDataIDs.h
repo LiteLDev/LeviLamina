@@ -142,5 +142,7 @@ enum class ActorDataIDs : uchar {
     AimAssistPriorityPresetId        = 136,
     AimAssistPriorityCategoryId      = 137,
     AimAssistPriorityActorId         = 138,
-    Count                            = 139,
+    Reserved139                      = 139,
+    NameplateRenderDistanceMax       = 140,
+    Count                            = 141,
 };

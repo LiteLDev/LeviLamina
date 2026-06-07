@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActivationUri;
+class CommandOrigin;
 class IMinecraftApp;
 namespace Automation { class AutomationSession; }
 namespace CodeBuilder { class GameContext; }
@@ -19,6 +19,7 @@ namespace CodeBuilder { struct CommandMessage; }
 namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct ErrorMessage; }
 namespace CodeBuilder { struct EventMessage; }
+class ActivationUri;
 // clang-format on
 
 namespace Automation {
@@ -77,9 +78,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit AutomationClient(::IMinecraftApp& minecraft);
-#endif
 
     MCNAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
@@ -87,25 +86,39 @@ public:
 
     MCNAPI bool _tryAddCommand(::CodeBuilder::CommandRequest&& commandRequest);
 
-#ifdef LL_PLAT_C
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> createSession();
-#endif
 
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
 
     MCNAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
 
+    MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getSessionForCommand(::CommandOrigin const& origin);
+
 #ifdef LL_PLAT_C
     MCNAPI bool isReady();
+#endif
+
+    MCNAPI bool isReadyForInGameCommands();
+
+#ifdef LL_PLAT_C
+    MCNAPI bool isWebsocketsEnabled() const;
+#endif
+
+    MCNAPI void setRequireEncryption(bool isEncryptionRequired);
+
+#ifdef LL_PLAT_S
+    MCNAPI void setServerRetryTime(float retryTime);
+#endif
+
+#ifdef LL_PLAT_C
+    MCNAPI void setWebsocketsEnabled(bool enabled);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::IMinecraftApp& minecraft);
-#endif
     // NOLINTEND
 
 public:

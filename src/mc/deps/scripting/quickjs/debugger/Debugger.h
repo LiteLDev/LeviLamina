@@ -10,6 +10,8 @@
 struct JSContext;
 struct JSRuntime;
 struct JSValue;
+namespace Scripting { class IBreakpointValidator; }
+namespace Scripting { class IDebuggerTransport; }
 // clang-format on
 
 namespace Scripting::QuickJS {
@@ -35,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Debugger() /*override*/ = default;
+    virtual ~Debugger() /*override*/;
 
     virtual bool attach(
         bool                                      performHandshake,
@@ -51,6 +53,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI Debugger(
+        ::Scripting::IDebuggerTransport&               transport,
+        ::JSRuntime*                                   rt,
+        ::std::function<void()>                        resumeNotificationCb,
+        ::std::function<::std::vector<::JSContext*>()> collectContextsCb,
+        ::Scripting::IBreakpointValidator&             validator
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static uint ContextToId(::JSContext* ctx, void*);
@@ -63,7 +77,7 @@ public:
 
     MCNAPI static char const* ToTypeName(::JSContext* ctx, ::JSValue val);
 
-    MCNAPI static void TransportClose(::JSRuntime* rt, void* udata);
+    MCNAPI static void TransportClose(::JSRuntime* udata, void*);
 
     MCNAPI static uint64 TransportPeek(void* udata);
 
@@ -72,6 +86,24 @@ public:
     MCNAPI static uint64 TransportWrite(void* udata, char const* buffer, uint64 length);
 
     MCNAPI static int ValidatePath(void* udata, char const* path);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Scripting::IDebuggerTransport&               transport,
+        ::JSRuntime*                                   rt,
+        ::std::function<void()>                        resumeNotificationCb,
+        ::std::function<::std::vector<::JSContext*>()> collectContextsCb,
+        ::Scripting::IBreakpointValidator&             validator
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

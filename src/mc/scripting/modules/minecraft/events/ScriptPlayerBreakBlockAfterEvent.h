@@ -12,6 +12,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -42,17 +43,23 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerBreakBlockAfterEvent& operator=(ScriptPlayerBreakBlockAfterEvent const&);
     ScriptPlayerBreakBlockAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
-
     MCAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
 
-    MCAPI ~ScriptPlayerBreakBlockAfterEvent();
+    MCAPI ScriptPlayerBreakBlockAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                               scope
+    );
+
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
     // NOLINTEND
 
 public:
@@ -64,15 +71,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                               scope
+    );
     // NOLINTEND
 };
 

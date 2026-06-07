@@ -54,11 +54,11 @@ public:
 
     virtual void removeSlot(int slot, int count) = 0;
 
-    virtual bool isSlotDirty(int slot);
+    virtual bool isSlotDirty(int);
 
-    virtual bool isResultSlot(int slot);
+    virtual bool isResultSlot(int);
 
-    virtual void containerContentChanged(int slot) /*override*/;
+    virtual void containerContentChanged(int) /*override*/;
 
     virtual void serverInitItemStackIds() = 0;
 
@@ -68,7 +68,7 @@ public:
 
     virtual ::ItemStack const& getSlot(int slot) const = 0;
 
-    virtual void setData(int id, int value) /*override*/;
+    virtual void setData(int, int) /*override*/;
 
     virtual ::ContainerID getContainerId() const /*override*/;
 
@@ -93,8 +93,6 @@ public:
     MCAPI BaseContainerMenu(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
 
     MCAPI void _markAndSweep();
-
-    MCAPI void _saveLastSlots(::Container* container);
     // NOLINTEND
 
 public:
@@ -112,13 +110,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isSlotDirty(int slot);
+    MCFOLD bool $isSlotDirty(int);
 
-    MCFOLD bool $isResultSlot(int slot);
+    MCFOLD bool $isResultSlot(int);
 
-    MCFOLD void $containerContentChanged(int slot);
+    MCFOLD void $containerContentChanged(int);
 
-    MCFOLD void $setData(int id, int value);
+    MCFOLD void $setData(int, int);
 
     MCFOLD ::ContainerID $getContainerId() const;
 

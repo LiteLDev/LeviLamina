@@ -19,14 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD bool operator==(::SharedTypes::v1_21_100::PackSettingsDefinition::Document const& other) const;
-
-    MCAPI ~Document();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -38,12 +30,6 @@ public:
     MCAPI static ::std::string_view const& NAME();
 
     MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

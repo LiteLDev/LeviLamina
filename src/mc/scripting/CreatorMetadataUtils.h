@@ -16,8 +16,10 @@ class ItemRegistryRef;
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Scripting { class ScriptEngine; }
+namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleBindingBundle; }
+namespace Scripting { struct PropertyBinding; }
 namespace Scripting { struct SupportedBindingModule; }
 namespace Scripting { struct Version; }
 // clang-format on
@@ -29,6 +31,10 @@ namespace CreatorMetadataUtils {
 MCAPI void _addCommonEngineMetadata(::Json::Value& root, char const* type);
 
 MCAPI void _addCommonVanillaMetadata(::Json::Value& jsonRoot, char const* type);
+
+MCAPI void _addOptionalPrivilegeName(::Json::Value& root, ::Scripting::FunctionBinding function);
+
+MCAPI void _addOptionalPrivilegeName(::Json::Value& root, ::Scripting::PropertyBinding property);
 
 MCAPI void _addPrivilegeToArray(::Json::Value& arr, ::Scripting::Privilege privilege);
 
@@ -81,15 +87,52 @@ MCAPI ::std::unordered_map<::std::string, ::std::string> _getPropertyToEntityNam
 
 MCAPI ::std::optional<::Scripting::Privilege> _tryGetPrivilegeTypeOfClosureTemplateType(::entt::meta_type const& type);
 
+MCAPI void generateBiomeDocumentation(::Core::Path const& docsFolder, ::BiomeRegistry const& biomes);
+
+MCAPI void generateBlocksDocumentation(::Core::Path const& docsFolder);
+
+MCAPI void generateCameraPresetDocumentation(::Core::Path const& docsFolder, ::CameraPresets const& presets);
+
 MCAPI void generateCommandsDocumentation(::CommandRegistry& commandRegistry, ::Core::Path const& docsFolder);
 
 MCAPI void generateCooldownCategoriesDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
 
+MCAPI void generateCreatorScriptingMetadata(
+    ::Scripting::ScriptEngine&                                                       scriptEngine,
+    ::Core::Path const&                                                              scriptModuleFolder,
+    ::Core::Path const&                                                              vanillaDataFolder,
+    ::Core::Path const&                                                              engineDataFolder,
+    ::Core::Path const&                                                              schemaDataFolder,
+    ::ItemRegistryRef                                                                itemRegistry,
+    ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList,
+    ::CameraPresets const&                                                           presets,
+    ::BiomeRegistry const&                                                           biomes
+);
+
+MCAPI void generateDimensionsDocumentation(::Core::Path const& docsFolder);
+
+MCAPI void generateEffectsDocumentation(::Core::Path const& docsFolder);
+
+MCAPI void generateEnchantmentsDocumentation(::Core::Path const& docsFolder);
+
+MCAPI void generateEntitiesDocumentation(
+    ::Core::Path const&                                                              docsFolder,
+    ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList
+);
+
 MCAPI void generateItemsDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
+
+MCAPI void generateMolangQueriesDocumentation(::Core::Path const& docsFolder);
+
+MCAPI void generatePotionDeliveryTypesDocumentation(::Core::Path const& docsFolder);
+
+MCAPI void generatePotionEffectsDocumentation(::Core::Path const& docsFolder);
 
 MCAPI void generateSchemaDataDocumentation(::Core::Path const& schemaDataFolder);
 
 MCAPI void generateScriptingDocumentation(::Scripting::ScriptEngine& scriptEngine, ::Core::Path const& docsFolder);
+
+MCAPI void generateStructureFeatureDocumentation(::Core::Path const& docsFolder);
 
 MCAPI void generateVanillaDataDocumentation(
     ::Core::Path const&                                                              docsFolder,
@@ -108,10 +151,10 @@ MCAPI ::std::initializer_list<::AllExperiments> getRequiredExperimentsForMetadat
 MCAPI ::std::string scriptingVersionToString(::Scripting::Version const& version);
 
 MCAPI bool validateVariantResolution(
-    ::Scripting::ModuleBinding const&       moduleToBind,
-    ::entt::meta_type const&                variantType,
-    ::Scripting::ModuleBindingBundle const& loadedModules,
-    ::std::string const&                    bindingName
+    ::Scripting::ModuleBinding const& variantType,
+    ::entt::meta_type const&          loadedModules,
+    ::Scripting::ModuleBindingBundle const&,
+    ::std::string const&
 );
 
 MCAPI bool writeJsonMetadataToFile(::Json::Value const& json, ::Core::Path const& filepath);

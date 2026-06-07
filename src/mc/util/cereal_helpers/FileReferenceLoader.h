@@ -30,11 +30,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI explicit FileReferenceLoader(::Core::Path const& path);
+
     MCNAPI ::Core::Result _getFileDataFileSystem(::Core::Path const& path, ::std::string& outFileData);
 
     MCNAPI ::Core::Result _getFileDataResourcePack(::Core::Path const& path, ::std::string& outFileData);
-
-    MCNAPI ::std::vector<::std::string> getErrors();
 
     MCNAPI ::Core::Result getFileData(::Core::Path const& path, ::std::string& outFileData);
 
@@ -42,15 +42,17 @@ public:
 
     MCNAPI bool isAllowedToUsePath(::Core::Path const& path);
 
-    MCNAPI ~FileReferenceLoader();
+    MCNAPI void pushError(::std::string&& message);
+
+    MCNAPI void pushError(::std::string const& message);
 #endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Core::Path const& path);
 #endif
     // NOLINTEND
 };

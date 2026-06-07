@@ -23,8 +23,6 @@ public:
     virtual void execute() /*override*/;
 
     virtual bool isDone() /*override*/;
-
-    virtual ~CollectCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -32,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $execute();
 
-    MCAPI bool $isDone();
+    MCFOLD bool $isDone();
 
 
     // NOLINTEND

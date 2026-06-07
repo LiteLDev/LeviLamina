@@ -22,25 +22,4 @@ public:
     ::ll::TypedStorage<4, 4, ::PositionTrackingId>                                     mId;
     ::ll::TypedStorage<8, 24, ::CompoundTag>                                           mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PositionTrackingDBServerBroadcastPacketPayload& operator=(PositionTrackingDBServerBroadcastPacketPayload const&);
-    PositionTrackingDBServerBroadcastPacketPayload(PositionTrackingDBServerBroadcastPacketPayload const&);
-    PositionTrackingDBServerBroadcastPacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::PositionTrackingDBServerBroadcastPacketPayload&
-    operator=(::PositionTrackingDBServerBroadcastPacketPayload&&);
-
-    MCAPI ~PositionTrackingDBServerBroadcastPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

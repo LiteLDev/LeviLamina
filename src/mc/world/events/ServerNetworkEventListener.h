@@ -20,19 +20,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ServerNetworkEventListener();
+    virtual ~ServerNetworkEventListener() = default;
 
     virtual ::EventResult onEvent(::ServerNetworkGameplayNotificationEvent const& event);
 
     virtual ::EventResult onMessage(::MessageEvent const& messageEvent);
 
     virtual ::EventResult onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -45,11 +39,5 @@ public:
     MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -13,6 +13,7 @@ namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentLevelOutOfBoundsEr
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentType; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentTypeNotCompatibleError; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentUnknownIdError; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -30,6 +31,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptItemEnchantmentInstance();
+
+    MCAPI ScriptItemEnchantmentInstance(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
+
+    MCAPI ScriptItemEnchantmentInstance(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance&& rhs);
+
+    MCAPI ScriptItemEnchantmentInstance(::Scripting::WeakLifetimeScope& scope, ::EnchantmentInstance const& inst);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentInstance&
+    operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance&& rhs);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentInstance&
+    operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& rhs);
+
     MCAPI ::std::variant<
         ::EnchantmentInstance,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError,
@@ -47,9 +62,21 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance&& rhs);
+
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope& scope, ::EnchantmentInstance const& inst);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

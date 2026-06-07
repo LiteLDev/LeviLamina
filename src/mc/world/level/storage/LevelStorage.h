@@ -18,6 +18,7 @@ class LevelData;
 class LevelStorageObserver;
 class LevelStorageWriteBatch;
 class Player;
+struct PlayerStorageIds;
 struct SnapshotFilenameAndLength;
 namespace Core { struct LevelStorageResult; }
 // clang-format on
@@ -45,7 +46,7 @@ public:
     virtual ::std::unique_ptr<::CompoundTag>
     getCompoundTag(::std::string const& key, ::DBHelpers::Category category) = 0;
 
-    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category category) const = 0;
+    virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const = 0;
 
     virtual void forEachKeyWithPrefix(
         ::std::string_view                                                   prefix,
@@ -117,9 +118,15 @@ public:
     MCAPI ::std::unique_ptr<::LevelStorageWriteBatch> createWriteBatch();
 #endif
 
+    MCAPI ::std::string getServerId(::PlayerStorageIds const& playerId);
+
     MCAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
 
     MCAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
+
+    MCAPI ::std::unique_ptr<::CompoundTag> loadLocalPlayerData();
+
+    MCAPI ::std::unique_ptr<::CompoundTag> loadPlayerDataFromTag(::std::string_view saveTag);
 
     MCAPI ::std::unique_ptr<::CompoundTag> loadServerPlayerData(::Player const& client, bool isXboxLive);
 
@@ -140,28 +147,16 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $loadedSuccessfully() const;
-
     MCAPI bool $clonePlayerData(::std::string_view fromKey, ::std::string_view toKey);
-
-    MCFOLD bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
-
-    MCFOLD void $freeCaches();
 
     MCFOLD void $corruptLevel();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

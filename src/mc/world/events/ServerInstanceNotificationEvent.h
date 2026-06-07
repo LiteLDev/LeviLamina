@@ -14,16 +14,4 @@ struct ServerInstanceRequestResourceReload;
 // clang-format on
 
 struct ServerInstanceNotificationEvent
-: public ::EventVariantImpl<::ServerInstanceLeaveGameDoneEvent const, ::ServerInstanceRequestResourceReload const> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ServerInstanceNotificationEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-};
+: public ::EventVariantImpl<::ServerInstanceLeaveGameDoneEvent const, ::ServerInstanceRequestResourceReload const> {};

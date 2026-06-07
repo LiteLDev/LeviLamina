@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Pack;
+struct CompositePackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 // clang-format on
@@ -21,9 +22,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CompositePackSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CompositePackSource() /*override*/ = default;
+    virtual ~CompositePackSource() /*override*/;
 
     virtual void
     forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback) /*override*/;
@@ -31,6 +36,32 @@ public:
     virtual void _buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources) /*override*/;
 
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit CompositePackSource(::CompositePackSourceOptions options);
+
+    MCFOLD void addPackSource(::PackSource* packSource);
+
+    MCFOLD void clear();
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<::PackSource*> getPackSources();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CompositePackSourceOptions options);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

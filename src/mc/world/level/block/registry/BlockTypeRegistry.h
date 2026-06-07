@@ -8,6 +8,7 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/Owner.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/util/BaseGameVersion.h"
@@ -74,17 +75,38 @@ public:
     public:
         // prevent constructor by default
         BlockComplexAliasContent& operator=(BlockComplexAliasContent const&);
-        BlockComplexAliasContent(BlockComplexAliasContent const&);
         BlockComplexAliasContent();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::Block const* operator()(int data) const;
+        MCAPI BlockComplexAliasContent(::BlockTypeRegistry::BlockComplexAliasContent const&);
+
+        MCAPI BlockComplexAliasContent(
+            ::std::function<::Block const*(int)> callback,
+            ::BaseGameVersion const&             minRequiredVersion,
+            ::SemVersion const&                  blocksJsonFormatVersion,
+            int                                  startVariant
+        );
+
+        MCFOLD ::BaseGameVersion const& getRequiredBaseGameVersion() const;
 
         MCAPI ::BlockTypeRegistry::BlockComplexAliasContent& operator=(::BlockTypeRegistry::BlockComplexAliasContent&&);
 
         MCAPI ~BlockComplexAliasContent();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::BlockTypeRegistry::BlockComplexAliasContent const&);
+
+        MCAPI void* $ctor(
+            ::std::function<::Block const*(int)> callback,
+            ::BaseGameVersion const&             minRequiredVersion,
+            ::SemVersion const&                  blocksJsonFormatVersion,
+            int                                  startVariant
+        );
         // NOLINTEND
 
     public:
@@ -125,11 +147,7 @@ public:
         // NOLINTBEGIN
         MCAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockType);
 
-        MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, ::Block const* block);
-
         MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
-
-        MCAPI ~LookupByNameImplReturnType();
         // NOLINTEND
 
     public:
@@ -137,15 +155,7 @@ public:
         // NOLINTBEGIN
         MCAPI void* $ctor(::Block const* block, bool resolveBlockType);
 
-        MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, ::Block const* block);
-
         MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -159,6 +169,7 @@ public:
 
     using BlockComplexAliasPostSplitBlockNamesList =
         ::std::vector<::std::vector<::std::reference_wrapper<::HashedString const>>>;
+
     using BlockComplexAliasPostSplitBlockNamesLookupMap = ::entt::dense_map<uint64, uint64>;
 
     using BlockLookupMap = ::std::map<::HashedString, ::SharedPtr<::BlockType>>;
@@ -218,12 +229,18 @@ public:
     MCFOLD void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
 #endif
 
+    MCAPI void forEachBlockMutable(::brstd::function_ref<bool(::Block&)> callback);
+
     MCFOLD void forEachBlockType(::brstd::function_ref<bool(::BlockType const&)> callback) const;
 
     MCAPI ::HashedString const& getBlockNameFromNameHash(uint64 hash) const;
 
     MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasPostSplitBlockNames(::HashedString const& oldName) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::HashedString const* getComplexAliasPreSplitBlockName(::HashedString const& postSplitName) const;
+#endif
 
     MCAPI ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound = false) const;
 
@@ -235,11 +252,21 @@ public:
 
     MCAPI void initHardCodedBlockComponents(::Experiments const& experiments);
 
+    MCAPI void initRWLock();
+
     MCAPI bool isComplexAliasBlock(::HashedString const& blockName) const;
 
 #ifdef LL_PLAT_C
     MCAPI bool isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
 #endif
+
+    MCAPI ::Block const* lookupByName(::HashedString const& name, int data, bool logNotFound = false) const;
+
+    MCAPI ::Block const* lookupByName(
+        ::HashedString const&                                                  name,
+        ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states,
+        bool                                                                   logNotFound = false
+    ) const;
 
     MCAPI ::WeakPtr<::BlockType> lookupByName(::HashedString const& name, bool logNotFound = false) const;
 
@@ -274,6 +301,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::BlockTypeRegistry& get();
+
+    MCAPI static ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry> getNonOwner();
     // NOLINTEND
 
 public:

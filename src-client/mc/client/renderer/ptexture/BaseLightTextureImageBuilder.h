@@ -7,7 +7,7 @@
 class BaseLightData;
 class Dimension;
 class IClientInstance;
-class IOptions;
+class IOptionRegistry;
 class Player;
 namespace mce { struct Image; }
 // clang-format on
@@ -48,10 +48,26 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BaseLightTextureImageBuilder();
+
+    MCAPI bool refreshData(::IClientInstance* client, ::BaseLightData& lightData);
+
+    MCFOLD void setDimension(::Dimension* d);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _updateDarknessLightData(::BaseLightData& baseLightData, ::Player const& player, ::IOptions const& options);
+    _updateDarknessLightData(::BaseLightData& baseLightData, ::Player const& player, ::IOptionRegistry const& options);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -82,15 +82,33 @@ public:
         ::EntityContext&                   entityContext
     );
 
+#ifdef LL_PLAT_C
+    MCAPI float getAttackAnimationScale(float a);
+#endif
+
+    MCAPI int getAttackDuration();
+
     MCAPI ::Vec3 getMoveEyeVector();
 
+#ifdef LL_PLAT_C
+    MCAPI ::Actor* getTargetEntity() const;
+#endif
+
     MCAPI bool isElder() const;
+
+    MCFOLD bool isElderGhost() const;
 
     MCAPI void preAiStep();
 
     MCAPI void registerLoopingSounds();
 
+    MCAPI void setAttackTime(int time);
+
     MCAPI void setElder(bool value);
+
+#ifdef LL_PLAT_C
+    MCAPI void setElderGhost();
+#endif
     // NOLINTEND
 
 public:

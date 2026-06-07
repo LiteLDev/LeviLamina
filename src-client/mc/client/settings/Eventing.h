@@ -23,6 +23,20 @@ public:
     Eventing& operator=(Eventing const&);
     Eventing(Eventing const&);
     Eventing();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Eventing(::IMinecraftEventing& eventing, ::IClientInstance& client);
+
+    MCAPI void fireEventSetValidForAchievements(bool currentlyValidForAchievements);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::IMinecraftEventing& eventing, ::IClientInstance& client);
+    // NOLINTEND
 };
 
 } // namespace Settings

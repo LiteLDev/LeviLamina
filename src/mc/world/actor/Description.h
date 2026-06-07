@@ -22,9 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Description* parseDescription(::ActorDocumentDataParams actorDocumentDataParams);
+    MCAPI bool parseDescription(::ActorDocumentDataParams actorDocumentDataParams);
 
-    MCAPI ::Description* parseDescription(::DeserializeDataParams deserializeDataParams);
+    MCAPI bool parseDescription(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
 
 public:
@@ -33,11 +33,5 @@ public:
     MCAPI void $deserializeData(::DeserializeDataParams nonConstDeserializeDataParams);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -45,8 +45,6 @@ public:
     virtual ::I18n& getI18n() /*override*/;
 
     virtual bool& getUseSuspendHandler() /*override*/;
-
-    virtual ~GlobalDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:

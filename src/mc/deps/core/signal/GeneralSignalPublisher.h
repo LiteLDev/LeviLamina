@@ -31,12 +31,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual void send(void const*) /*override*/;
+#else // LL_PLAT_C
     virtual void send(void const* data) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
+    getConnectOp(::std::function<void(void const*)>&&) /*override*/;
+#else // LL_PLAT_C
     virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
     getConnectOp(::std::function<void(void const*)>&& handler) /*override*/;
+#endif
 
-    virtual ~GeneralSignalPublisher() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 class BaseGameVersion {
 public:
     // BaseGameVersion inner types declare
@@ -23,32 +28,52 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BaseGameVersion();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BaseGameVersion();
+
+    MCAPI explicit BaseGameVersion(::BaseGameVersion::any_version_constructor);
+
     MCAPI BaseGameVersion(::BaseGameVersion const& rhs);
 
     MCAPI BaseGameVersion(ushort major, uint minor, uint patch);
 
     MCAPI ::std::string asString() const;
 
+    MCFOLD ushort getMajor() const;
+
+    MCAPI ushort getMinor() const;
+
+    MCFOLD ushort getPatch() const;
+
+    MCFOLD bool isAnyVersion() const;
+
     MCAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
+
+    MCFOLD bool isNeverCompatible() const;
+
+    MCAPI bool isValid() const;
+
+    MCAPI bool operator!=(::BaseGameVersion const& rhs) const;
+
+    MCAPI bool operator<(::BaseGameVersion const& rhs) const;
 
     MCAPI bool operator<=(::BaseGameVersion const& rhs) const;
 
     MCAPI ::BaseGameVersion& operator=(::BaseGameVersion const&);
 
-    MCAPI bool operator>=(::BaseGameVersion const& rhs) const;
+    MCAPI bool operator==(::BaseGameVersion const& rhs) const;
 
-    MCAPI ~BaseGameVersion();
+    MCAPI bool operator>(::BaseGameVersion const& rhs) const;
+
+    MCAPI bool operator>=(::BaseGameVersion const& rhs) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::SemVersion::MatchType fromJsonArray(::Json::Value const& jsonArray, ::BaseGameVersion& output);
+
     MCAPI static ::SemVersion::MatchType fromString(::std::string const& source, ::BaseGameVersion& output);
     // NOLINTEND
 
@@ -65,14 +90,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::BaseGameVersion const& rhs);
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::BaseGameVersion::any_version_constructor);
+
+    MCAPI void* $ctor(::BaseGameVersion const& rhs);
 
     MCAPI void* $ctor(ushort major, uint minor, uint patch);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

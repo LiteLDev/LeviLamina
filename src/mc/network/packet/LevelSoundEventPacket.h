@@ -24,9 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    LevelSoundEventPacket() = default;
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -62,14 +59,12 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~LevelSoundEventPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelSoundEventPacket(::LevelSoundEventPacket&&);
+    MCAPI LevelSoundEventPacket();
 
     MCAPI explicit LevelSoundEventPacket(::LevelSoundEventPacketPayload payload);
     // NOLINTEND
@@ -77,15 +72,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelSoundEventPacket&&);
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::LevelSoundEventPacketPayload payload);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

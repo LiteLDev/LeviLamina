@@ -31,8 +31,6 @@ public:
     virtual ::Scripting::Result_deprecated<void> resetToMaxValue() const /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> resetToDefaultValue() const /*override*/;
-
-    virtual ~ScriptHealthComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,6 +43,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

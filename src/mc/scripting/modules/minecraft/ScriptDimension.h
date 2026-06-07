@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
@@ -62,7 +61,6 @@ namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
 namespace Scripting { struct JSON; }
-namespace Scripting { struct NumberRange; }
 namespace Scripting { struct PropertyOutOfBoundsError; }
 namespace Scripting { struct UnsupportedAPIError; }
 // clang-format on
@@ -107,6 +105,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptDimension& operator=(ScriptDimension const&);
+    ScriptDimension();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptDimension() = default;
@@ -115,6 +118,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptDimension(::ScriptModuleMinecraft::ScriptDimension const& rhs);
+
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
@@ -245,6 +250,10 @@ public:
         bool                                                                                        allowUnloadedChunks
     ) const;
 
+    MCFOLD ::Dimension& getDimension() const;
+
+    MCAPI ::DimensionType getDimensionId() const;
+
     MCAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>,
         ::ScriptModuleMinecraft::ScriptCommandError,
@@ -289,15 +298,9 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getGeneratedStructures(::Vec3 const& location) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::NumberRange> getHeightRange() const;
-
-    MCAPI ::std::string getId() const;
-
     MCAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getLightLevel(::Vec3 const& location) const;
-
-    MCAPI ::std::string getLocalizationKey() const;
 
     MCAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>,
@@ -322,6 +325,10 @@ public:
     ) const;
 
     MCAPI bool isChunkLoaded(::Vec3 const& location) const;
+
+    MCAPI bool isEmpty_V010(::BlockPos const& position) const;
+
+    MCAPI ::ScriptModuleMinecraft::ScriptDimension& operator=(::ScriptModuleMinecraft::ScriptDimension&& rhs);
 
     MCAPI ::Scripting::Result<
         bool,
@@ -437,6 +444,12 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap> molangVariables
     );
 
+    MCAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    spawnXp(::Vec3 const& pos, int amount) const;
+
     MCAPI void stopAllSounds();
 
     MCAPI void stopSound(::std::string const& soundID);
@@ -450,7 +463,16 @@ public:
     MCAPI static ::Scripting::EnumBinding bindScriptWeatherType();
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
+    getOrCreateHandle(::Dimension& dimension, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
     getOrCreateHandle(::DimensionType id, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDimension const& rhs);
     // NOLINTEND
 
 public:

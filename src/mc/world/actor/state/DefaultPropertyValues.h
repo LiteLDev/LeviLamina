@@ -26,4 +26,18 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<bool, ::ExpressionNode>>>   mBoolValueOrExpressions;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<uint64, ::ExpressionNode>>> mEnumIndexValueOrExpressions;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void reserve(uint64 intCapacity, uint64 floatCapacity, uint64 boolCapacity, uint64 enumIndexCapacity);
+
+    MCAPI ~DefaultPropertyValues();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

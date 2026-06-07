@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI {
+namespace Gameface {
 
 class TemporaryTextureHolder {};
 
-} // namespace OreUI
+} // namespace Gameface

@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ContainerValidationResult tryActivate() /*override*/;
-
-    virtual ~ContainerScreenValidationActivate() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~AgentDetectCommandSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

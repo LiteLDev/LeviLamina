@@ -23,11 +23,11 @@ public:
     MCAPI static void setupStandaloneServer(
         ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft,
         ::IMinecraftApp&                                  app,
-        ::Level&                                          level,
-        ::LevelStorage&,
-        ::DedicatedServer& dedicatedServer,
-        ::AllowListFile&   allowListFile,
-        ::ScriptSettings*  scriptSettings
+        ::Level&                                          dedicatedServer,
+        ::LevelStorage&                                   allowListFile,
+        ::DedicatedServer&                                scriptSettings,
+        ::AllowListFile&,
+        ::ScriptSettings*
     );
     // NOLINTEND
 

@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace LoadResultHelpers { struct ContentLogOptions; }
+namespace Puv { class LoadResultAny; }
 namespace Puv { class Logger; }
 // clang-format on
 
@@ -19,6 +20,9 @@ MCNAPI ::std::string buildLogMessage(
     ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> const& context,
     ::std::string                                                                                   message
 );
+
+MCNAPI bool
+validate(::Puv::LoadResultAny const& result, ::LogArea logArea, ::LoadResultHelpers::ContentLogOptions options);
 
 MCNAPI void
 writeToContentLog(::Puv::Logger const& logger, ::LogArea logArea, ::LoadResultHelpers::ContentLogOptions options);

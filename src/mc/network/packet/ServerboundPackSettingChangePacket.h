@@ -23,13 +23,6 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ServerboundPackSettingChangePacket();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,21 +59,12 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ServerboundPackSettingChangePacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ServerboundPackSettingChangePacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ServerboundPackSettingChangePacket();
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI explicit ServerboundPackSettingChangePacket(::ServerboundPackSettingChangePacketPayload payload);
@@ -90,19 +74,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void* $ctor();
-#endif
 
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::ServerboundPackSettingChangePacketPayload payload);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -7,6 +7,8 @@
 #include "mc/deps/profiler/CounterDisplayFormat.h"
 #include "mc/deps/profiler/FileExtension.h"
 #include "mc/deps/profiler/LegacyCounterFlags.h"
+#include "mc/deps/profiler/ThreadFrameType.h"
+#include "mc/platform/brstd/basic_cstring_view.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,6 +18,7 @@ namespace Bedrock::Profiler::details { struct StaticProfLabel; }
 namespace Core::Profile { class CPUProfileToken; }
 namespace Core::Profile { class CounterToken; }
 namespace Core::Profile { class GPUProfileToken; }
+namespace Core::Profile { class LogMessageToken; }
 namespace brstd { struct source_location; }
 // clang-format on
 
@@ -31,21 +34,27 @@ public:
 
     virtual void shutdownProfile();
 
-    virtual void profileFlip();
+    virtual void onFrameTransition(uchar previousFrameType);
 
     virtual uint getMaxTokens() const;
 
-    virtual void onThreadCreate(char const*);
+    virtual void onThreadCreate(
+        ::brstd::basic_cstring_view<char, ::std::char_traits<char>> name,
+        ::Core::Profile::ThreadFrameType                            frameType
+    );
 
     virtual void onThreadDestroy();
 
     virtual void onMainThreadCreate();
 
+    virtual void onMainThreadDestroy();
+
     virtual void onHeapAllocation(void const*, uint64, ::Memory::MemoryCategory, char const*);
 
     virtual void onHeapFree(void const*, uint64, ::Memory::MemoryCategory, char const*);
 
-    virtual void enterCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
+    virtual void
+    enterCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
 
     virtual void enterCPUProfileDynamic(
         ::Bedrock::Profile::ScopeStackStorage&  scope,
@@ -53,7 +62,8 @@ public:
         ::Bedrock::Profiler::details::DynamicProfLabel
     );
 
-    virtual void leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
+    virtual void
+    leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
 
     virtual uchar createGPUContext(char const*, int64, float, bool, bool);
 
@@ -69,6 +79,11 @@ public:
     virtual void counterAdd(::Core::Profile::CounterToken const&, int64);
 
     virtual void counterSet(::Core::Profile::CounterToken const&, int64);
+
+    virtual void emitLogMessage(::Core::Profile::LogMessageToken const&);
+
+    virtual void
+    emitLogMessageDynamic(::Core::Profile::LogMessageToken const&, ::Bedrock::Profiler::details::DynamicProfLabel);
 
     virtual void beginCapture(char const*);
 
@@ -129,6 +144,21 @@ public:
         ::Core::Profile::LegacyCounterFlags
     );
 
+    virtual void generateLogMessageTokenStatic(
+        ::Core::Profile::LogMessageToken&,
+        char const*,
+        ::Bedrock::Profiler::details::StaticProfLabel,
+        uint,
+        ::brstd::source_location const&
+    );
+
+    virtual void generateLogMessageTokenDynamic(
+        ::Core::Profile::LogMessageToken&,
+        char const*,
+        uint,
+        ::brstd::source_location const&
+    );
+
     virtual int64 getProfilerTimestamp();
 
     virtual void dumpFile(char const*, ::Core::Profile::FileExtension);
@@ -141,21 +171,27 @@ public:
 
     MCNAPI void $shutdownProfile();
 
-    MCNAPI void $profileFlip();
+    MCNAPI void $onFrameTransition(uchar previousFrameType);
 
     MCNAPI uint $getMaxTokens() const;
 
-    MCNAPI void $onThreadCreate(char const*);
+    MCNAPI void $onThreadCreate(
+        ::brstd::basic_cstring_view<char, ::std::char_traits<char>> name,
+        ::Core::Profile::ThreadFrameType                            frameType
+    );
 
     MCNAPI void $onThreadDestroy();
 
     MCNAPI void $onMainThreadCreate();
 
+    MCNAPI void $onMainThreadDestroy();
+
     MCNAPI void $onHeapAllocation(void const*, uint64, ::Memory::MemoryCategory, char const*);
 
     MCNAPI void $onHeapFree(void const*, uint64, ::Memory::MemoryCategory, char const*);
 
-    MCNAPI void $enterCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
+    MCNAPI void
+    $enterCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
 
     MCNAPI void $enterCPUProfileDynamic(
         ::Bedrock::Profile::ScopeStackStorage&  scope,
@@ -163,7 +199,8 @@ public:
         ::Bedrock::Profiler::details::DynamicProfLabel
     );
 
-    MCNAPI void $leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
+    MCNAPI void
+    $leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
 
     MCNAPI uchar $createGPUContext(char const*, int64, float, bool, bool);
 
@@ -179,6 +216,11 @@ public:
     MCNAPI void $counterAdd(::Core::Profile::CounterToken const&, int64);
 
     MCNAPI void $counterSet(::Core::Profile::CounterToken const&, int64);
+
+    MCNAPI void $emitLogMessage(::Core::Profile::LogMessageToken const&);
+
+    MCNAPI void
+    $emitLogMessageDynamic(::Core::Profile::LogMessageToken const&, ::Bedrock::Profiler::details::DynamicProfLabel);
 
     MCNAPI void $beginCapture(char const*);
 
@@ -237,6 +279,21 @@ public:
         ::Core::Profile::CounterDisplayFormat,
         int64,
         ::Core::Profile::LegacyCounterFlags
+    );
+
+    MCNAPI void $generateLogMessageTokenStatic(
+        ::Core::Profile::LogMessageToken&,
+        char const*,
+        ::Bedrock::Profiler::details::StaticProfLabel,
+        uint,
+        ::brstd::source_location const&
+    );
+
+    MCNAPI void $generateLogMessageTokenDynamic(
+        ::Core::Profile::LogMessageToken&,
+        char const*,
+        uint,
+        ::brstd::source_location const&
     );
 
     MCNAPI int64 $getProfilerTimestamp();

@@ -4,12 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
+// clang-format on
 
 class MinEngineVersionConstraint : public ::cereal::ConstraintHandle<::MinEngineVersionConstraint> {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~MinEngineVersionConstraint() /*override*/ = default;
+    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
+
+    MCAPI void validateValue(::std::string const& value, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:

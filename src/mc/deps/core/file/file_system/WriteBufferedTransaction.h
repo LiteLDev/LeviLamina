@@ -108,8 +108,6 @@ public:
     virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) /*override*/;
 
     virtual ::Core::Result _endTransaction() /*override*/;
-
-    virtual ~WriteBufferedTransaction() /*override*/ = default;
     // NOLINTEND
 
 public:

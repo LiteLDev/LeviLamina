@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    TextureAtlasItem& operator=(TextureAtlasItem const&);
     TextureAtlasItem();
 
 public:
@@ -25,7 +26,9 @@ public:
     // NOLINTBEGIN
     MCAPI TextureAtlasItem(::TextureAtlasItem const&);
 
-    MCAPI ::TextureAtlasItem& operator=(::TextureAtlasItem const&);
+    MCAPI TextureAtlasItem(::std::string const& name, uint64 count);
+
+    MCAPI ::TextureAtlasItem& operator=(::TextureAtlasItem&&);
 
     MCAPI ~TextureAtlasItem();
     // NOLINTEND
@@ -34,6 +37,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::TextureAtlasItem const&);
+
+    MCAPI void* $ctor(::std::string const& name, uint64 count);
     // NOLINTEND
 
 public:

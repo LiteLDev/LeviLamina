@@ -14,9 +14,13 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptInvalidPotionDeliveryTypeError : public ::Scripting::BaseError {
 public:
+    // prevent constructor by default
+    ScriptInvalidPotionDeliveryTypeError();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptInvalidPotionDeliveryTypeError();
+    MCAPI explicit ScriptInvalidPotionDeliveryTypeError(::std::string const& invalidDeliveryName);
     // NOLINTEND
 
 public:
@@ -26,9 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::string const& invalidDeliveryName);
     // NOLINTEND
 };
 

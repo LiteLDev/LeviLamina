@@ -16,12 +16,6 @@ namespace SharedTypes::v1_21_80 {
 class BiomeReplacementConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::v1_21_80::BiomeReplacementConstraint> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BiomeReplacementConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void validateValue(

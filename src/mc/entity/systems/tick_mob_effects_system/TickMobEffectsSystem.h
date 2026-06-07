@@ -26,10 +26,10 @@ MCAPI void _removeMobEffects(
 );
 
 MCAPI void _tickMobEffects(
-    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
-    ::StrictEntityContext const&                                               entity,
-    ::MobEffectsComponent&                                                     mobEffectsComponent,
-    ::EntityModifier<::TickMobEffectsSystem::RemoveMobEffectsRequestComponent> mod
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>> entity,
+    ::StrictEntityContext const&                                       mobEffectsComponent,
+    ::MobEffectsComponent&                                             mod,
+    ::EntityModifier<::TickMobEffectsSystem::RemoveMobEffectsRequestComponent>
 );
 
 MCAPI void registerSystems(::EntitySystems& systemRegistry);

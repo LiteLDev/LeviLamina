@@ -14,17 +14,27 @@ public:
 
 public:
     // prevent constructor by default
-    EditorRegistryFile(EditorRegistryFile const&);
+    EditorRegistryFile& operator=(EditorRegistryFile const&);
     EditorRegistryFile();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI EditorRegistryFile(::Editor::Services::EditorRegistryFile const&);
+
+    MCNAPI EditorRegistryFile(::std::string const& fileName, ::std::string const& fileJson);
+
     MCNAPI ::Editor::Services::EditorRegistryFile& operator=(::Editor::Services::EditorRegistryFile&&);
 
-    MCNAPI ::Editor::Services::EditorRegistryFile& operator=(::Editor::Services::EditorRegistryFile const&);
-
     MCNAPI ~EditorRegistryFile();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Services::EditorRegistryFile const&);
+
+    MCNAPI void* $ctor(::std::string const& fileName, ::std::string const& fileJson);
     // NOLINTEND
 
 public:

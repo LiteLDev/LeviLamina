@@ -39,14 +39,6 @@ public:
     MCNAPI void registerParser(::std::unique_ptr<::Puv::ParserBase> parser);
 
     MCNAPI void registerUpgrader(::std::unique_ptr<::Puv::UpgraderBase> upgrader);
-
-    MCNAPI ~LoaderBase();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

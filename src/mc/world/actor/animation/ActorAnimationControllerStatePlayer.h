@@ -51,8 +51,7 @@ public:
 
     virtual void bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&) /*override*/;
 
-    virtual void
-    bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap) /*override*/;
+    virtual void bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&) /*override*/;
 
     virtual bool hasAnimationFinished() const /*override*/;
 
@@ -63,8 +62,6 @@ public:
     virtual ::HashedString const& getRawName() const /*override*/;
 
     virtual void visit(::AnimationVisitor&& dispatcher) /*override*/;
-
-    virtual ~ActorAnimationControllerStatePlayer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -86,6 +83,12 @@ public:
         ::ActorSkeletalAnimationPtr animation
     );
 #endif
+
+    MCAPI bool allAnimationsFinished() const;
+
+    MCAPI bool anyAnimationsFinished() const;
+
+    MCFOLD float getStateTime() const;
     // NOLINTEND
 
 public:
@@ -115,7 +118,7 @@ public:
 
     MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
 
-    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
+    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
 
     MCFOLD bool $hasAnimationFinished() const;
 

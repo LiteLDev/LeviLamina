@@ -19,6 +19,18 @@ public:
     // ComponentNetRelevancyRegistry inner types define
     struct NetSerializationCallbacks {
     public:
+        // NetSerializationCallbacks inner types declare
+        // clang-format off
+        struct isClientSideComponentCB;
+        struct isServerSideComponentCB;
+        // clang-format on
+
+        // NetSerializationCallbacks inner types define
+        struct isClientSideComponentCB {};
+
+        struct isServerSideComponentCB {};
+
+    public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnkd3f8f6;
@@ -36,19 +48,9 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI NetSerializationCallbacks(::ComponentNetRelevancyRegistry::NetSerializationCallbacks&&);
-
         MCNAPI ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& setNeverClientSide();
 
         MCNAPI ~NetSerializationCallbacks();
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void* $ctor(::ComponentNetRelevancyRegistry::NetSerializationCallbacks&&);
 #endif
         // NOLINTEND
 

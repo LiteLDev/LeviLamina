@@ -19,33 +19,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeConsolidatedFeaturesData& operator=(BiomeConsolidatedFeaturesData const&);
-    BiomeConsolidatedFeaturesData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BiomeConsolidatedFeaturesData(::BiomeConsolidatedFeaturesData const&);
-
-    MCAPI ~BiomeConsolidatedFeaturesData();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeConsolidatedFeaturesData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeConsolidatedFeaturesData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

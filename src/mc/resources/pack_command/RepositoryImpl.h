@@ -33,8 +33,6 @@ public:
     fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>& packs) /*override*/;
 
     virtual void removePacks(::std::vector<::gsl::not_null<::Pack const*>> const& packs) /*override*/;
-
-    virtual ~RepositoryImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -32,8 +32,6 @@ public:
 
     virtual bool
     moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed) /*override*/;
-
-    virtual ~FloatNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:

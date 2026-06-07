@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPlayerListQueriesFacet() /*override*/ = default;
+    virtual ~RealmsPlayerListQueriesFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -41,8 +41,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmsPlayerListQueriesFacet(::std::shared_ptr<::Realms::RealmsPlayerList> realmsPlayerList);
-
-    MCAPI void _updateState(::Realms::PlayerListState state, ::std::vector<::Realms::PlayerInfo> const& players);
 
     MCFOLD ::std::vector<::Realms::PlayerInfo> const& getPlayers() const;
 
@@ -59,6 +57,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsPlayerList> realmsPlayerList);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

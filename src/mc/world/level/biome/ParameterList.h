@@ -20,14 +20,12 @@ public:
 
 public:
     // prevent constructor by default
-    ParameterList& operator=(ParameterList const&);
-    ParameterList(ParameterList const&);
     ParameterList();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParameterList(::ParameterList&&);
+    MCAPI explicit ParameterList(::std::vector<::BiomeNoiseTarget> const& targets);
 
     MCAPI ~ParameterList();
     // NOLINTEND
@@ -35,7 +33,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ParameterList&&);
+    MCAPI void* $ctor(::std::vector<::BiomeNoiseTarget> const& targets);
     // NOLINTEND
 
 public:

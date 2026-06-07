@@ -8,8 +8,10 @@ struct FoundFiles {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1bb279;
+    ::ll::UntypedStorage<8, 72> mUnk35f12b;
+    ::ll::UntypedStorage<8, 64> mUnkfab8a5;
     ::ll::UntypedStorage<8, 8>  mUnk9caf3b;
+    ::ll::UntypedStorage<8, 8>  mUnk2b41f2;
     // NOLINTEND
 
 public:

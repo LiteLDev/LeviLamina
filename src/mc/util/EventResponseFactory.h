@@ -39,6 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>> const&
+    getSchema() const;
+
     MCNAPI void initSchema(::std::string const& schemaName, ::SemVersion const& version);
     // NOLINTEND
 

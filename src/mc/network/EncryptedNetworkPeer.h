@@ -38,11 +38,8 @@ public:
     // NOLINTBEGIN
     virtual ~EncryptedNetworkPeer() /*override*/;
 
-    virtual void sendPacket(
-        ::std::string const&       data,
-        ::NetworkPeer::Reliability reliability,
-        ::Compressibility          compressible
-    ) /*override*/;
+    virtual void
+    sendPacket(::std::string const& data, ::NetworkPeer::Reliability compressible, ::Compressibility) /*override*/;
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
@@ -77,8 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
+    MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability compressible, ::Compressibility);
 
     MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 

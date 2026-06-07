@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     virtual ~MaterialReducerOutputContainerController() /*override*/ = default;
 
-    virtual bool isItemAllowed(::ItemStackBase const& item) const /*override*/;
+    virtual bool isItemAllowed(::ItemStackBase const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -38,6 +38,8 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI explicit MaterialReducerOutputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+
+    MCNAPI void setItemAllowed(bool isItemAllowed);
 #endif
     // NOLINTEND
 
@@ -53,7 +55,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $isItemAllowed(::ItemStackBase const& item) const;
+    MCNAPI bool $isItemAllowed(::ItemStackBase const&) const;
 #endif
 
 

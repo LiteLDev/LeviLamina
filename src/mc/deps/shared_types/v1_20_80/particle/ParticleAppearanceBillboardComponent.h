@@ -28,28 +28,24 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleAppearanceBillboardComponent& operator=(ParticleAppearanceBillboardComponent const&);
-    ParticleAppearanceBillboardComponent(ParticleAppearanceBillboardComponent const&);
     ParticleAppearanceBillboardComponent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ParticleAppearanceBillboardComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ParticleAppearanceBillboardComponent() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
+
     MCAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
     operator=(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
+
+    MCAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
+    operator=(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
     // NOLINTEND
 
 public:
@@ -65,9 +61,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
     // NOLINTEND
 
 public:

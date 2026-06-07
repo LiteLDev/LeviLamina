@@ -46,22 +46,48 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~MaterialReducerContainerManagerController() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~MaterialReducerContainerManagerController() /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool isOutputSlot(::std::string const&) const /*override*/;
+#else // LL_PLAT_C
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
+#endif
 
     virtual void closeContainers() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual int handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool handleSwap(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual bool handleSwap(::SlotData const& slotA, ::SlotData const& slotB) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -92,6 +118,10 @@ public:
 
     MCNAPI void _updateResult(::ItemStack const& input);
 
+    MCNAPI bool canInputAddToCursor();
+
+    MCNAPI bool isRedemptionInProgress();
+
     MCNAPI bool isStillValid(float pickRange);
 #endif
     // NOLINTEND
@@ -102,6 +132,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::weak_ptr<::MaterialReducerContainerManagerModel> containerManagerModel);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

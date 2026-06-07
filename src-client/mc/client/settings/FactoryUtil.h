@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 class Option;
 namespace Settings { class ActionComponent; }
 namespace Settings { class BannerComponent; }
@@ -37,7 +37,7 @@ MCAPI void addBoolean(
         ::Settings::BannerComponent>>>&                                  parent,
     ::std::string_view                                                   id,
     ::OptionID                                                           optionId,
-    ::IOptions&                                                          options,
+    ::IOptionRegistry&                                                   options,
     ::std::optional<::std::unique_ptr<::Settings::IBooleanDataProvider>> dataProvider
 );
 
@@ -55,7 +55,7 @@ MCAPI void addInputBoolean(
     ::std::string_view                  id,
     ::OptionID                          optionId,
     ::InputMode                         inputMode,
-    ::IOptions&                         options
+    ::IOptionRegistry&                  options
 );
 
 MCAPI void addInputFloatComponent(
@@ -72,7 +72,7 @@ MCAPI void addInputFloatComponent(
     ::std::string_view                  id,
     ::OptionID                          optionId,
     ::InputMode                         inputMode,
-    ::IOptions&                         options,
+    ::IOptionRegistry&                  options,
     float                               scale,
     ::std::optional<::std::string>      optFormat
 );
@@ -90,7 +90,7 @@ MCAPI void addOption(
         ::Settings::BannerComponent>>>& parent,
     ::std::string_view                  id,
     ::OptionID                          optionId,
-    ::IOptions&                         options
+    ::IOptionRegistry&                  options
 );
 
 MCAPI ::std::variant<
@@ -127,7 +127,23 @@ addSetting(
     ::std::string_view                   details
 );
 
+MCAPI ::std::string getOptionName(::Option const& option);
+
 MCAPI ::std::optional<::std::string> getOptionalDescription(::Option const& option);
+
+MCAPI bool isDuplicate(
+    ::gsl::span<::std::unique_ptr<::std::variant<
+        ::Settings::BooleanComponent,
+        ::Settings::NumberComponent<int>,
+        ::Settings::NumberComponent<float>,
+        ::Settings::OptionComponent,
+        ::Settings::StringComponent,
+        ::Settings::ActionComponent,
+        ::Settings::TextComponent,
+        ::Settings::GroupInfoComponent,
+        ::Settings::BannerComponent>>> parent,
+    ::std::string_view                 id
+);
 // NOLINTEND
 
 } // namespace Settings::FactoryUtil

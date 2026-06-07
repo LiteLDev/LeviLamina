@@ -22,12 +22,15 @@ MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void doTick(::ActorOwnerComponent& actorOwnerComponent);
 
-MCAPI void tick(
+#ifdef LL_PLAT_C
+MCAPI void singleTick(
+    ::StrictEntityContext const& localPlayer,
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>,
         ::ActorOwnerComponent> localPlayerStopRidingView
 );
+#endif
 // NOLINTEND
 
 } // namespace StopRidingLocalPlayerCameraForceCutSystem

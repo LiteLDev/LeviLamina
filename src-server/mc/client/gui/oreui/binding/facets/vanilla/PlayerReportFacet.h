@@ -10,12 +10,15 @@ public:
     // clang-format off
     struct ChatMessageData;
     struct DropdownOption;
+    struct ChatSelection;
     // clang-format on
 
     // PlayerReportFacet inner types define
     struct ChatMessageData {};
 
     struct DropdownOption {};
+
+    struct ChatSelection {};
 };
 
 } // namespace OreUI

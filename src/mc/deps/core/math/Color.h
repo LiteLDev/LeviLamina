@@ -276,14 +276,18 @@ public:
 
 #endif
 
+    MCAPI int toABGR() const;
+
     MCAPI ::std::string toHexString() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::glm::vec4 toVec4() const;
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::mce::Color fromARGB(int col);
-
 #ifdef LL_PLAT_C
     MCAPI static ::mce::Color fromHSB(float hue, float saturation, float brightness);
 #endif
@@ -329,16 +333,6 @@ public:
     MCAPI static ::mce::Color const& WHITE();
 
     MCAPI static ::mce::Color const& YELLOW();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::glm::vec3 const& color, float a_);
-#endif
-
-    MCFOLD void* $ctor(float r_, float g_, float b_, float a_);
     // NOLINTEND
 };
 

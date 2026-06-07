@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/world/WorldJoinedRecord.h"
 #include "mc/client/world/WorldJoinedRecordType.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkJoinedRecord();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::World::WorldJoinedRecordType getWorldJoinedRecordType() const /*override*/;
@@ -29,8 +34,25 @@ public:
     virtual bool operator==(::World::WorldJoinedRecord const& other) const /*override*/;
 
     virtual void serializeExtended(::Json::Value& outJsonValue) const /*override*/;
+    // NOLINTEND
 
-    virtual ~NetworkJoinedRecord() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI NetworkJoinedRecord(
+        ::std::string const& name,
+        ::GameType           gameType,
+        ::std::string const& address,
+        int                  port,
+        bool                 isEditorWorld
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::string const& name, ::GameType gameType, ::std::string const& address, int port, bool isEditorWorld);
     // NOLINTEND
 
 public:

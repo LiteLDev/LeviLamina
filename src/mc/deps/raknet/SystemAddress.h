@@ -13,11 +13,16 @@ public:
         ::ll::UntypedStorage<4, 128> addr6;
         ::ll::UntypedStorage<2, 128> addr4;
     } address;
-    ::ll::TypedStorage<2, 2, ushort> debugPort;
-    ::ll::TypedStorage<2, 2, ushort> systemIndex;
+    ushort debugPort;
+    ushort systemIndex;
     // NOLINTEND
 
     LLNDAPI bool operator==(SystemAddress const& other) const;
+
+public:
+    // prevent constructor by default
+    SystemAddress(SystemAddress const&);
+
 
 public:
     // member functions
@@ -30,15 +35,29 @@ public:
 
     MCAPI ::std::string GetIPString() const;
 
+    MCAPI uchar GetIPVersion() const;
+
+    MCAPI ushort GetPort() const;
+
+#ifdef LL_PLAT_S
+    MCFOLD ushort GetPortNetworkOrder() const;
+#endif
+
+    MCAPI bool IsLinkLocalAddress() const;
+
+    MCAPI bool IsLoopback() const;
+
+    MCAPI void SetPortHostOrder(ushort s);
+
     MCAPI SystemAddress();
 
-    MCAPI void ToString(bool writePort, char* dest, char portDelineator) const;
-    // NOLINTEND
+    MCAPI ::std::string ToString(char portDelineator) const;
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ulong ToInteger(::RakNet::SystemAddress const& sa);
+    MCAPI void ToString(bool writePort, char* dest, char portDelineator) const;
+
+    MCAPI bool operator!=(::RakNet::SystemAddress const& right) const;
+
+    MCAPI ::RakNet::SystemAddress& operator=(::RakNet::SystemAddress const& input);
     // NOLINTEND
 
 public:

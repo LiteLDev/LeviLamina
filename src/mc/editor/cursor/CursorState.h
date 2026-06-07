@@ -31,21 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::Editor::Cursor::CursorState const& rhs) const;
+    MCNAPI void sanitizeState();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static int const& MAX_FIXED_DISTANCE();
-
-    MCNAPI static int const& MIN_FIXED_DISTANCE();
     // NOLINTEND
 };
 

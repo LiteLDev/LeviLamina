@@ -28,8 +28,6 @@ public:
     virtual bool canTell(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
     virtual bool canOpenChat(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
-
-    virtual ~SharedController() /*override*/ = default;
     // NOLINTEND
 
 public:

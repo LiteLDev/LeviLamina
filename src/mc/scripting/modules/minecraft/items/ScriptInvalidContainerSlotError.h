@@ -17,8 +17,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptInvalidContainerSlotError();
-
-    MCAPI ~ScriptInvalidContainerSlotError();
     // NOLINTEND
 
 public:
@@ -31,12 +29,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

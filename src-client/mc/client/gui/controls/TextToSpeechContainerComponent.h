@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
     MCFOLD void $reset();
     // NOLINTEND

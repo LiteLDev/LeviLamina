@@ -39,8 +39,6 @@ public:
     // NOLINTBEGIN
     MCAPI JSONSchema();
 
-    MCAPI JSONSchema(::cereal::ext::JSONSchema&&);
-
     MCAPI JSONSchema(::cereal::ext::JSONSchema const&);
 
     MCAPI void makeAndNormalizeDefs(
@@ -58,20 +56,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
 
     MCAPI static ::cereal::ext::JSONSchema
     fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);
+
+#ifdef LL_PLAT_C
+    MCAPI static ::cereal::ext::JSONSchema
+    fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, ::entt::type_info const& type);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::cereal::ext::JSONSchema&&);
 
     MCAPI void* $ctor(::cereal::ext::JSONSchema const&);
     // NOLINTEND

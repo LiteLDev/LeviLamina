@@ -37,6 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScatterFeature();
+
     MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData
     _createCoordinateRangeDataFromExpression(::SharedTypes::Legacy::ExpressionNode const& expressionNode);
 
@@ -91,6 +93,12 @@ public:
     );
 
     MCAPI void addScatterParams(::ScatterParams const& scatterParams);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

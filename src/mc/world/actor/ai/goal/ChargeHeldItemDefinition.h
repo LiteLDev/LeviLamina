@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChargeHeldItemGoal;
+class EntityContext;
 class ItemDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -24,9 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~ChargeHeldItemDefinition() /*override*/ = default;
+    MCAPI void initialize(::EntityContext& entity, ::ChargeHeldItemGoal& goal) const;
     // NOLINTEND
 
 public:

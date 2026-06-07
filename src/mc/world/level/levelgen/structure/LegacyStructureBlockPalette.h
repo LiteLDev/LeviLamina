@@ -17,8 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const& getBlock(int id);
-
     MCAPI ~LegacyStructureBlockPalette();
     // NOLINTEND
 

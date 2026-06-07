@@ -48,9 +48,23 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MinecraftGameplayGraphicsResources(::mce::RenderContext& renderContext);
 
+    MCAPI void cleanImageCachesForActiveResourcePackChange();
+
+    MCAPI void deviceLost();
+
+    MCAPI void flushResourceService();
+
     MCAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
 
     MCAPI ::mcr::DeferredResourceTransactions getDeferredResourceTransactions();
+
+    MCAPI void resume();
+
+    MCAPI bool servicesAreEnabled() const;
+
+    MCAPI void suspend();
+
+    MCAPI void tickUpdate();
 
     MCAPI ~MinecraftGameplayGraphicsResources();
     // NOLINTEND

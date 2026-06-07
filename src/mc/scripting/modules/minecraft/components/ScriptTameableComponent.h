@@ -11,8 +11,10 @@
 // clang-format off
 class TameableComponent;
 class TameableDefinition;
+class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -21,15 +23,17 @@ namespace ScriptModuleMinecraft {
 class ScriptTameableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::TameableComponent, ::TameableDefinition> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptTameableComponent() /*override*/ = default;
-    // NOLINTEND
+    // prevent constructor by default
+    ScriptTameableComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<float> getProbability() const;
+    MCAPI ScriptTameableComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    );
 
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
@@ -54,6 +58,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
     // NOLINTEND
 
 public:

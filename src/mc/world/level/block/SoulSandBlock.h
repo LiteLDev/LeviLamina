@@ -13,7 +13,6 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -23,17 +22,21 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class SoulSandBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    SoulSandBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
@@ -43,15 +46,13 @@ public:
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~SoulSandBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SoulSandBlock(::std::string const& nameId, int id);
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
@@ -68,16 +69,22 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
+        ::Block const& pos,
         ::IConstBlockSource const&,
-        ::BlockPos const& pos,
+        ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
@@ -87,8 +94,6 @@ public:
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

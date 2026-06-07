@@ -61,7 +61,14 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ActiveModelImageTracker(::MinecoinCatalogModel::ActiveModelImageTracker&&);
+        MCAPI ActiveModelImageTracker(
+            ::std::string const&           activeModelProductId,
+            ::CommonImage const&           image,
+            ::ImageMetaListDocument const& imageListDoc
+        );
+
+        MCAPI ::MinecoinCatalogModel::ActiveModelImageTracker&
+        operator=(::MinecoinCatalogModel::ActiveModelImageTracker&&);
 
         MCAPI ~ActiveModelImageTracker();
         // NOLINTEND
@@ -69,7 +76,11 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::MinecoinCatalogModel::ActiveModelImageTracker&&);
+        MCAPI void* $ctor(
+            ::std::string const&           activeModelProductId,
+            ::CommonImage const&           image,
+            ::ImageMetaListDocument const& imageListDoc
+        );
         // NOLINTEND
 
     public:
@@ -95,7 +106,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecoinCatalogModel() /*override*/ = default;
+    virtual ~MinecoinCatalogModel() /*override*/;
 
     virtual ::OfferCatalogStatus update() /*override*/;
 
@@ -116,7 +127,14 @@ public:
 
     MCAPI void _fetchKeyArtForActiveOfferModel(::MinecoinCatalogModel::ActiveModelImageTracker& modelFetchImageInfo);
 
+    MCAPI void _fetctKeyArtForActiveOfferModels();
+
+    MCAPI ::MinecoinCatalogModel::ActiveModelImageTracker*
+    _findActiveModelImageTrackerByProductId(::std::string const& activeModelProductId);
+
     MCAPI void _handleOfferSearchResults(::std::weak_ptr<bool> weakExistence, ::MinecoinSearchResults const& results);
+
+    MCAPI void _monitorActiveModelImageTrackers();
 
     MCAPI void _onFetchKeyArtForActiveOfferModelFinished(
         ::std::weak_ptr<bool>   weakExistence,
@@ -127,11 +145,6 @@ public:
 
     MCAPI void
     _onTreatmentTagsReceived(::std::weak_ptr<bool> weakExistence, ::std::vector<::std::string> const& treatments);
-
-    MCAPI void _updateActiveOfferModelImageTrackerStatus(
-        ::std::string const&                                        activeModelProcuctId,
-        ::MinecoinCatalogModel::ActiveModelImageTracker::FetchState newFetchState
-    );
     // NOLINTEND
 
 public:
@@ -143,6 +156,12 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>           dateManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -10,11 +10,19 @@ class EntityContext;
 namespace ActorMovement {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
+MCAPI bool getHasTeleported(::EntityContext const& entity);
+
 MCAPI float getPredictedWalkDist(::EntityContext const& entity, float alpha);
-#endif
+
+MCAPI void initializeActor(::EntityContext& entity);
+
+MCAPI bool isImmobile(::EntityContext const& entity);
 
 MCAPI void setHasTeleported(::EntityContext& entity, bool newValue);
+
+MCAPI void setIsImmobile(::EntityContext& entity, bool newValue);
+
+MCFOLD void setIsJumping(::EntityContext& entity, bool newValue);
 // NOLINTEND
 
 } // namespace ActorMovement

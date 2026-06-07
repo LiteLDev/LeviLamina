@@ -32,11 +32,9 @@ public:
     // NOLINTBEGIN
     virtual void preRender(::ScreenContext& screenContext) /*override*/;
 
-    virtual void postRender(::ScreenContext& screenContext) /*override*/;
+    virtual void postRender(::ScreenContext&) /*override*/;
 
     virtual void setupStage(::ScreenContext& screenContext, bool const clearBuffer);
-
-    virtual ~RenderStageWithFrameBufferObject() /*override*/;
     // NOLINTEND
 
 public:
@@ -52,17 +50,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $preRender(::ScreenContext& screenContext);
 
-    MCNAPI void $postRender(::ScreenContext& screenContext);
+    MCNAPI void $postRender(::ScreenContext&);
 
     MCNAPI void $setupStage(::ScreenContext& screenContext, bool const clearBuffer);
     // NOLINTEND

@@ -33,21 +33,30 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~TextureSetImageContainer() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI void _removeLayer(::cg::TextureSetLayerType const& layerType);
+
+    MCAPI void
+    addCompressedImage(::cg::TextureSetLayerType const& layerType, ::cg::CompressedImageBuffer&& imageBuffer);
+
     MCAPI void addImage(::cg::TextureSetLayerType const& layerType, ::cg::ImageBuffer imageBuffer);
 
     MCAPI void
     addImage(::cg::TextureSetLayerType const& layerType, ::std::shared_ptr<::cg::ImageResource> imageResource);
 
     MCAPI ::cg::ImageDescription getImageDescription(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
+
+    MCAPI uint64 getStorageSize(::cg::TextureSetLayerType const& layerType) const;
+
+    MCAPI bool hasImage(::cg::TextureSetLayerType const& layerType) const;
+
+    MCAPI ::std::shared_ptr<::cg::ImageResource> releaseImageResource(::cg::TextureSetLayerType const& layerType);
+
+    MCAPI ::cg::CompressedImageBuffer const* tryGetCompressedImage(::cg::TextureSetLayerType const& layerType) const;
+
+    MCAPI ::cg::ImageBuffer const* tryGetImage(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
 #endif
     // NOLINTEND
 

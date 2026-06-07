@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace Editor { class ServiceProviderCollection; }
 // clang-format on
 
@@ -53,9 +54,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit PlayerStateControllerService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI ::Player* _getPlayer() const;
+
     MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 
     MCNAPI void _syncFlyingNoClip(::Editor::ServiceProviderCollection&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

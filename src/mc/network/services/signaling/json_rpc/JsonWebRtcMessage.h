@@ -31,17 +31,24 @@ public:
 
     public:
         // prevent constructor by default
-        Params(Params const&);
         Params();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI Params(::JsonRpc::JsonWebRtcMessage::Params const&);
+
         MCNAPI ::JsonRpc::JsonWebRtcMessage::Params& operator=(::JsonRpc::JsonWebRtcMessage::Params&&);
 
         MCNAPI ::JsonRpc::JsonWebRtcMessage::Params& operator=(::JsonRpc::JsonWebRtcMessage::Params const&);
 
         MCNAPI ~Params();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::JsonRpc::JsonWebRtcMessage::Params const&);
         // NOLINTEND
 
     public:
@@ -67,8 +74,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI JsonWebRtcMessage(::std::string const& toPlayerId, ::std::string const& innerMessage);
-
-    MCNAPI ~JsonWebRtcMessage();
     // NOLINTEND
 
 public:
@@ -81,12 +86,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& toPlayerId, ::std::string const& innerMessage);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

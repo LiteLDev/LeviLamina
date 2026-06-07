@@ -27,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool operator!=(::npc::CommandAction const& rhs) const;
+
     MCAPI ~CommandAction();
     // NOLINTEND
 

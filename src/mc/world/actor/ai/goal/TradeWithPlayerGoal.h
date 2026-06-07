@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
 // clang-format on
 
-class TradeWithPlayerGoal : public ::Goal {
+class TradeWithPlayerGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -36,8 +36,18 @@ public:
     virtual void start() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~TradeWithPlayerGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit TradeWithPlayerGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -13,13 +13,13 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ClientInstanceScreenModel;
 class Player;
 class UIPropertyBag;
 struct ActorUniqueID;
 struct INpcDialogueData;
 struct NpcGUIOffset;
+struct TextEditScreenEventData;
 namespace Json { class Value; }
 // clang-format on
 
@@ -63,23 +63,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        NpcActionEditData& operator=(NpcActionEditData const&);
-        NpcActionEditData(NpcActionEditData const&);
-        NpcActionEditData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI NpcActionEditData(::NpcInteractScreenController::NpcActionEditData&&);
-
         MCAPI ~NpcActionEditData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::NpcInteractScreenController::NpcActionEditData&&);
         // NOLINTEND
 
     public:
@@ -133,7 +119,7 @@ public:
 
     virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData) /*override*/;
 
-    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions) /*override*/;
+    virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID npcId, bool) /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
     // NOLINTEND
@@ -149,19 +135,23 @@ public:
 
     MCAPI void _addNewDeferredButtonTexts(uint64 actionIndex);
 
-    MCAPI ::Actor* _getActor() const;
-
     MCAPI ::std::string _getDialogText() const;
+
+    MCFOLD ::std::string _getText(::TextEditScreenEventData& textEditEvent);
 
     MCAPI void _handleTextChanged(::NpcInteractScreenController::NpcTextEdit edit, int index);
 
     MCAPI bool _isAddActionAllowed();
+
+    MCAPI bool _isCommandEditAllowed();
 
     MCAPI ::ui::ViewRequest _leaveFrom(::NpcInteractScreenController::Section fromSection);
 
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
+
+    MCAPI void _saveEditsToServer();
     // NOLINTEND
 
 public:
@@ -199,7 +189,7 @@ public:
 
     MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData);
 
-    MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
+    MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool);
 
     MCAPI bool $_isStillValid() const;
     // NOLINTEND

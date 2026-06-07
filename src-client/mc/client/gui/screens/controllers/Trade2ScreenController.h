@@ -16,6 +16,7 @@
 class ClientInstanceScreenModel;
 class ItemStackBase;
 class Trade2ContainerManagerController;
+class UIPropertyBag;
 struct ActorUniqueID;
 // clang-format on
 
@@ -49,8 +50,14 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        TradeItemCollections();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI explicit TradeItemCollections(::UIPropertyBag const& bag);
+
         MCAPI int getTierIndex() const;
 
         MCAPI int getTradeIndex() const;
@@ -62,14 +69,12 @@ public:
         MCAPI bool hasTradeItem2Collection() const;
 
         MCAPI bool hasValidTradeToggleCollections() const;
-
-        MCAPI ~TradeItemCollections();
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void* $ctor(::UIPropertyBag const& bag);
         // NOLINTEND
     };
 
@@ -96,7 +101,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Trade2ScreenController() /*override*/ = default;
+    virtual ~Trade2ScreenController() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -136,6 +141,8 @@ public:
 
     MCAPI void _changeLeftTab(int dir);
 
+    MCAPI int _getBaseItemCountForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
+
     MCAPI ::ItemInstance const& _getItemForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
 
     MCAPI ::std::string _getTradeErrorDetails(::ItemStackBase const& item, bool itemA) const;
@@ -154,23 +161,15 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& SELL_ITEM_COLLECTION();
-
-    MCAPI static ::std::string_view const& TIER_COLLECTION();
-
-    MCAPI static ::std::string_view const& TRADE_COLLECTION();
-
-    MCAPI static ::std::string_view const& TRADE_ITEM_1_COLLECTION();
-
-    MCAPI static ::std::string_view const& TRADE_ITEM_2_COLLECTION();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> pModel, ::ActorUniqueID uniqueID);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -184,7 +183,7 @@ public:
 
     MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
 
-    MCFOLD bool $_getGestureControlEnabled() const;
+    MCAPI bool $_getGestureControlEnabled() const;
 
     MCAPI void $_registerCoalesceOrder();
 

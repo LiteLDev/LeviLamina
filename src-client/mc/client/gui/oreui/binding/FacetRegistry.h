@@ -33,9 +33,26 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        FacetPrototype& operator=(FacetPrototype const&);
+        FacetPrototype();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI FacetPrototype(::OreUI::FacetRegistry::FacetPrototype&&);
+
+        MCAPI FacetPrototype(::OreUI::FacetRegistry::FacetPrototype const&);
+
         MCAPI ~FacetPrototype();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::OreUI::FacetRegistry::FacetPrototype&&);
+
+        MCFOLD void* $ctor(::OreUI::FacetRegistry::FacetPrototype const&);
         // NOLINTEND
 
     public:
@@ -56,15 +73,23 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        FacetEntry& operator=(FacetEntry const&);
+        FacetEntry(FacetEntry const&);
+        FacetEntry();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ::OreUI::FacetRegistry::FacetEntry& operator=(::OreUI::FacetRegistry::FacetEntry&&);
+
         MCAPI ~FacetEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -75,6 +100,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                          mUpdatingFacets;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FacetRegistry::FacetEntry>>     mFacets;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::FacetRegistry::FacetPrototype>> mFacetPrototypes;
+    ::ll::TypedStorage<1, 1, bool>                                                   mIsActivationDisabled;
     // NOLINTEND
 
 public:
@@ -100,6 +126,8 @@ public:
     virtual void clearAllFacets() /*override*/;
 
     virtual void suspendAllFacets() /*override*/;
+
+    virtual void disableFacetActivation() /*override*/;
 
     virtual void bind(::OreUI::FacetBinder& binder) /*override*/;
 
@@ -134,6 +162,8 @@ public:
     MCAPI void $clearAllFacets();
 
     MCAPI void $suspendAllFacets();
+
+    MCAPI void $disableFacetActivation();
 
     MCAPI void $bind(::OreUI::FacetBinder& binder);
 

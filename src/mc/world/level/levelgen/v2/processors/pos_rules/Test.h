@@ -36,37 +36,28 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Test& operator=(Test const&);
-    Test();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool test(::BlockPos inTemplatePos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const
         /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~Test() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Test(::br::worldgen::processors::PosRules::Test const&);
+    MCAPI Test();
+
+    MCAPI explicit Test(::br::worldgen::processors::PosRules::AxisAlignedLinear match);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::PosRules::Test const&);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::br::worldgen::processors::PosRules::AxisAlignedLinear match);
     // NOLINTEND
 
 public:

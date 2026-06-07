@@ -110,7 +110,7 @@ public:
 
     MCNAPI void OnNetworkDiscoveryComplete();
 
-    MCNAPI void OnPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const& packet);
+    MCNAPI void OnPacket(::rtc::AsyncPacketSocket* packet, ::rtc::ReceivedPacket const&);
 
     MCNAPI void SendLanBroadcastRequest(::std::unique_ptr<::rtc::AsyncPacketSocket>& socket, ::NetherNet::NetworkID id);
 

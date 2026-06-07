@@ -98,7 +98,7 @@ class IContentKeyProvider;
 class IGameConnectionListener;
 class IMinecraftEventing;
 class IMinecraftGame;
-class IOptions;
+class IOptionRegistry;
 class IResourcePackRepository;
 class ISceneStack;
 class ITTSEventManager;
@@ -109,7 +109,6 @@ class ItemRenderer;
 class KeyboardManager;
 class LatencyGraphDisplay;
 class LegacyClientNetworkHandler;
-class LegacyMultiplayerToken;
 class Level;
 class LevelRenderer;
 class LevelRendererCameraProxy;
@@ -124,9 +123,10 @@ class MobEffectsLayout;
 class MultiPlayerLevel;
 class MusicManager;
 class Option;
-class Options;
+class OptionRegistry;
 class PackManifestFactory;
 class PacketSender;
+class PersonaClient;
 class PersonaRepository;
 class PixelCalc;
 class Player;
@@ -139,8 +139,8 @@ class SceneFactory;
 class ScreenContext;
 class ScreenLoadTimeTracker;
 class ShaderColor;
+class Skin;
 class SkinRepository;
-class SkinRepositoryClientInterface;
 class SoundEngine;
 class StoreCatalogItem;
 class StoreCatalogRepository;
@@ -166,6 +166,7 @@ struct PlayerJoinWorldContext;
 struct PlayerJoinWorldTelemetryInfo;
 struct RawGameServerToken;
 struct ScreenshotOptions;
+struct ServerSupportedAuthenticationTypes;
 struct SplitScreenInfo;
 namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
@@ -205,6 +206,8 @@ public:
     // clang-format off
     struct ClientRenderResources;
     struct ClientDestroyBlockState;
+    struct mBehaviorCommandStatusCallback;
+    struct mCreditsCallback;
     // clang-format on
 
     // ClientInstance inner types define
@@ -214,18 +217,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::mce::Texture*>    mUITexture;
         ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mUICursorTexture;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ClientRenderResources();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -260,6 +251,10 @@ public:
         MCNAPI void $dtor();
         // NOLINTEND
     };
+
+    struct mBehaviorCommandStatusCallback {};
+
+    struct mCreditsCallback {};
 
 public:
     // member variables
@@ -329,7 +324,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk5da2d9;
     ::ll::UntypedStorage<1, 1>   mUnkfa0970;
     ::ll::UntypedStorage<8, 8>   mUnk291bf9;
-    ::ll::UntypedStorage<8, 8>   mUnk42ba34;
+    ::ll::UntypedStorage<8, 8>   mUnkaebffe;
     ::ll::UntypedStorage<8, 8>   mUnkc613e5;
     ::ll::UntypedStorage<8, 8>   mUnkf955c2;
     ::ll::UntypedStorage<1, 1>   mUnk563a7c;
@@ -344,7 +339,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk3430d4;
     ::ll::UntypedStorage<1, 1>   mUnk9f2b54;
     ::ll::UntypedStorage<1, 1>   mUnk962bb4;
-    ::ll::UntypedStorage<8, 480> mUnkcc66f1;
+    ::ll::UntypedStorage<8, 528> mUnkcc66f1;
     ::ll::UntypedStorage<1, 1>   mUnke203b0;
     ::ll::UntypedStorage<1, 1>   mUnk1ef4d7;
     ::ll::UntypedStorage<1, 1>   mUnk29fbcb;
@@ -392,7 +387,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnkdc75f9;
     ::ll::UntypedStorage<8, 80>  mUnk3892fa;
     ::ll::UntypedStorage<8, 16>  mUnka5c62e;
-    ::ll::UntypedStorage<8, 16>  mUnk7dafcc;
+    ::ll::UntypedStorage<8, 16>  mUnkd93a4c;
     ::ll::UntypedStorage<8, 8>   mUnkdfdcca;
     ::ll::UntypedStorage<8, 24>  mUnk7433ce;
     ::ll::UntypedStorage<8, 8>   mUnk4efc95;
@@ -482,8 +477,11 @@ public:
         ::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo
     ) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult>
-    setupClientGame(bool joiningLocalServer, ::std::unique_ptr<::GameModuleClient> gameModuleClient) /*override*/;
+    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult> setupClientGame(
+        bool                                  joiningLocalServer,
+        ::ServerSupportedAuthenticationTypes  supportedAuth,
+        ::std::unique_ptr<::GameModuleClient> gameModuleClient
+    ) /*override*/;
 
     virtual ::BlockSource* getRegion() /*override*/;
 
@@ -633,7 +631,7 @@ public:
 
     virtual ::MarketplaceServicesManager& getMarketplaceServicesManager() const /*override*/;
 
-    virtual ::SkinRepositoryClientInterface& getSkinRepositoryClientInterface() const /*override*/;
+    virtual ::PersonaClient& getPersonaClient() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> getStoreCatalogRepository() /*override*/;
 
@@ -681,7 +679,7 @@ public:
 
     virtual void navigateToDressingRoomOfferScreen(::std::string const& offerId) /*override*/;
 
-    virtual bool navigateToProfileScreen(::std::string const&, bool const preventProgressScreen) /*override*/;
+    virtual bool navigateToProfileScreen(::std::string const& preventProgressScreen, bool const) /*override*/;
 
     virtual void navigateToServersScreen(bool const calledFromHyperlink) /*override*/;
 
@@ -782,13 +780,13 @@ public:
 
     virtual bool isMultiPlayerClient() const /*override*/;
 
-    virtual ::IOptions& getOptions() /*override*/;
+    virtual ::IOptionRegistry& getOptions() /*override*/;
 
-    virtual ::IOptions const& getOptions() const /*override*/;
+    virtual ::IOptionRegistry const& getOptions() const /*override*/;
 
-    virtual ::std::shared_ptr<::Options> getOptionsPtr() /*override*/;
+    virtual ::std::shared_ptr<::OptionRegistry> getOptionsPtr() /*override*/;
 
-    virtual ::std::shared_ptr<::Options const> const getOptionsPtr() const /*override*/;
+    virtual ::std::shared_ptr<::OptionRegistry const> const getOptionsPtr() const /*override*/;
 
     virtual ::std::shared_ptr<::Social::User> const& getUser() const /*override*/;
 
@@ -865,7 +863,7 @@ public:
 
     virtual void setGuiScaleOffset(int guiScale) /*override*/;
 
-    virtual void renderImGui(::ScreenContext& screenContext, bool drawMenuBar) /*override*/;
+    virtual void renderImGui(::ScreenContext&, bool) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getGuiData() /*override*/;
 
@@ -970,7 +968,6 @@ public:
     virtual ::Vec2 getSafeZoneScale() const /*override*/;
 
     virtual void verifySkinApproval(
-        ::std::string const&                        serverType,
         ::std::function<void(::std::string)> const& notApprovedCallback,
         ::std::function<void()> const&              approvedCallback
     ) const /*override*/;
@@ -1364,18 +1361,14 @@ public:
 
     MCAPI ::DisconnectionErrorDetails _createDisconnectionErrorDetails(::Connection::DisconnectionStage paramStage);
 
-    MCAPI ::std::unique_ptr<::LegacyClientNetworkHandler> _createNetworkHandler(
-        ::PlayerAuthenticationType authType,
-        ::LegacyMultiplayerToken&& token,
-        ::RawGameServerToken&&     newToken
-    );
+    MCAPI ::std::unique_ptr<::LegacyClientNetworkHandler>
+    _createNetworkHandler(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
 
-    MCAPI void _createSkinRepositoryClientInterface();
+    MCAPI void _createPersonaClient();
+
+    MCAPI void _fetchItemAndNavigateToPurchaseScreen(::std::string const& productId);
 
     MCAPI void _finishDestroyingGame();
-
-    MCAPI ::Bedrock::Threading::Async<::std::pair<::LegacyMultiplayerToken, ::RawGameServerToken>>
-    _getGlobalTokens(::PlayerAuthentication& playerAuthToUse);
 
     MCAPI bool _getIsConnectedToApplicationLayer() const;
 
@@ -1421,6 +1414,8 @@ public:
 
     MCAPI void _requestLeaveGameImpl(bool switchScreen, bool sync);
 
+    MCAPI bool _shouldSkipBannedSkinCheck(::Skin const& currentSkin) const;
+
     MCAPI void _startDestroyingGame();
 
     MCAPI void _startExternalNetworkWorld(
@@ -1432,12 +1427,6 @@ public:
     MCAPI void _startLeaveGame();
 
     MCAPI void _startWorldPrimaryClient(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
-
-    MCAPI void _startWorldSubClient(
-        ::PlayerAuthenticationType authType,
-        ::LegacyMultiplayerToken&& token,
-        ::RawGameServerToken&&     newToken
-    );
 
     MCAPI void
     _tickBuildAction(::HitResult const& solidHitResult_, ::HitResult const& liquidHitResult_, bool advanceTime);
@@ -1544,8 +1533,11 @@ public:
         ::std::optional<::PlayerJoinWorldTelemetryInfo> primaryClientJoinWorldInfo
     );
 
-    MCAPI ::Bedrock::Threading::Async<::ClientGameSetupResult>
-    $setupClientGame(bool joiningLocalServer, ::std::unique_ptr<::GameModuleClient> gameModuleClient);
+    MCAPI ::Bedrock::Threading::Async<::ClientGameSetupResult> $setupClientGame(
+        bool                                  joiningLocalServer,
+        ::ServerSupportedAuthenticationTypes  supportedAuth,
+        ::std::unique_ptr<::GameModuleClient> gameModuleClient
+    );
 
     MCAPI ::BlockSource* $getRegion();
 
@@ -1597,7 +1589,7 @@ public:
 
     MCAPI bool $isInDeathScreen() const;
 
-    MCAPI bool $isKeyboardEnabled() const;
+    MCFOLD bool $isKeyboardEnabled() const;
 
     MCAPI bool $hasCommands() const;
 
@@ -1609,7 +1601,7 @@ public:
 
     MCAPI bool $isGamePlayTipsEnabled() const;
 
-    MCAPI bool $isPlatformNX() const;
+    MCFOLD bool $isPlatformNX() const;
 
     MCAPI bool $isLocalSplitscreenWith(::ActorUniqueID const& id) const;
 
@@ -1693,7 +1685,7 @@ public:
 
     MCAPI ::MarketplaceServicesManager& $getMarketplaceServicesManager() const;
 
-    MCAPI ::SkinRepositoryClientInterface& $getSkinRepositoryClientInterface() const;
+    MCAPI ::PersonaClient& $getPersonaClient() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalogRepository();
 
@@ -1739,7 +1731,7 @@ public:
 
     MCAPI void $navigateToDressingRoomOfferScreen(::std::string const& offerId);
 
-    MCAPI bool $navigateToProfileScreen(::std::string const&, bool const preventProgressScreen);
+    MCAPI bool $navigateToProfileScreen(::std::string const& preventProgressScreen, bool const);
 
     MCAPI void $navigateToServersScreen(bool const calledFromHyperlink);
 
@@ -1772,7 +1764,7 @@ public:
         ::OwnerPtr<::EntityContext>                                          userEntity
     );
 
-    MCAPI ::PlayerAuthentication& $getPlayerAuthentication();
+    MCFOLD ::PlayerAuthentication& $getPlayerAuthentication();
 
     MCAPI void $createPlayerAuthentication();
 
@@ -1840,13 +1832,13 @@ public:
 
     MCAPI bool $isMultiPlayerClient() const;
 
-    MCFOLD ::IOptions& $getOptions();
+    MCFOLD ::IOptionRegistry& $getOptions();
 
-    MCFOLD ::IOptions const& $getOptions() const;
+    MCFOLD ::IOptionRegistry const& $getOptions() const;
 
-    MCAPI ::std::shared_ptr<::Options> $getOptionsPtr();
+    MCAPI ::std::shared_ptr<::OptionRegistry> $getOptionsPtr();
 
-    MCAPI ::std::shared_ptr<::Options const> const $getOptionsPtr() const;
+    MCAPI ::std::shared_ptr<::OptionRegistry const> const $getOptionsPtr() const;
 
     MCAPI ::std::shared_ptr<::Social::User> const& $getUser() const;
 
@@ -1878,7 +1870,7 @@ public:
 
     MCAPI void $setupLevelRendering(::MultiPlayerLevel& level, ::WeakEntityRef cameraTargetEntity);
 
-    MCAPI ::mce::ViewportInfo const& $getViewportInfo() const;
+    MCFOLD ::mce::ViewportInfo const& $getViewportInfo() const;
 
     MCAPI void $setViewportInfo(::mce::ViewportInfo const& viewportInfo);
 
@@ -1886,11 +1878,11 @@ public:
 
     MCAPI void $updateChunkRadius();
 
-    MCAPI void $setUITexture(::mce::Texture* tex);
+    MCFOLD void $setUITexture(::mce::Texture* tex);
 
-    MCAPI ::mce::Texture* $getUITexture();
+    MCFOLD ::mce::Texture* $getUITexture();
 
-    MCAPI void $setLevelTexture(::mce::Texture* tex);
+    MCFOLD void $setLevelTexture(::mce::Texture* tex);
 
     MCAPI ::mce::Texture* $getLevelTexture();
 
@@ -1898,7 +1890,7 @@ public:
 
     MCAPI ::mce::TexturePtr $getUICursorTexture() const;
 
-    MCAPI ::mce::Camera& $getCamera();
+    MCFOLD ::mce::Camera& $getCamera();
 
     MCAPI ::ShaderColor& $getShaderColor();
 
@@ -1922,13 +1914,13 @@ public:
 
     MCAPI void $setGuiScaleOffset(int guiScale);
 
-    MCFOLD void $renderImGui(::ScreenContext& screenContext, bool drawMenuBar);
+    MCFOLD void $renderImGui(::ScreenContext&, bool);
 
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getGuiData();
 
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::GuiData const> $getGuiData() const;
 
-    MCFOLD ::GuidedFlowManager& $getGuidedFlowManager();
+    MCAPI ::GuidedFlowManager& $getGuidedFlowManager();
 
     MCAPI ::PixelCalc const& $getDpadScale() const;
 
@@ -1951,7 +1943,7 @@ public:
 
     MCFOLD ::SceneFactory& $getSceneFactory() const;
 
-    MCFOLD ::OreUI::SceneProvider& $getSceneProvider() const;
+    MCAPI ::OreUI::SceneProvider& $getSceneProvider() const;
 
     MCAPI ::ui::ScreenTechStackSelector& $getScreenTechStackSelector();
 
@@ -2026,7 +2018,6 @@ public:
     MCAPI ::Vec2 $getSafeZoneScale() const;
 
     MCAPI void $verifySkinApproval(
-        ::std::string const&                        serverType,
         ::std::function<void(::std::string)> const& notApprovedCallback,
         ::std::function<void()> const&              approvedCallback
     ) const;
@@ -2107,7 +2098,7 @@ public:
 
     MCAPI void $setClientInputHandler(::std::unique_ptr<::ClientInputHandler> pClientInputHandler);
 
-    MCAPI ::ClientInputHandler* $getInput() const;
+    MCFOLD ::ClientInputHandler* $getInput() const;
 
     MCAPI int $getControllerId() const;
 
@@ -2269,7 +2260,7 @@ public:
 
     MCAPI ::HudIconActorRenderer* $getHudIconActorRenderer();
 
-    MCFOLD ::std::deque<::std::string>& $getSentMessageHistory();
+    MCAPI ::std::deque<::std::string>& $getSentMessageHistory();
 
     MCAPI ::std::deque<::std::string>& $getDevConsoleMessageHistory();
 
@@ -2326,7 +2317,7 @@ public:
 
     MCAPI ::GameModuleClient* $getGameModule();
 
-    MCFOLD ::ClientHitDetectCoordinator& $getHitEventCoordinator();
+    MCAPI ::ClientHitDetectCoordinator& $getHitEventCoordinator();
 
     MCAPI void $sendClientEnteredLevel();
 
@@ -2336,9 +2327,9 @@ public:
 
     MCFOLD ::ClientInstanceState $getClientInstanceState() const;
 
-    MCAPI ::LatencyGraphDisplay* $getLatencyGraphDisplay() const;
+    MCFOLD ::LatencyGraphDisplay* $getLatencyGraphDisplay() const;
 
-    MCAPI ::PlayerCapabilities::IClientController const& $getClientCapabilities() const;
+    MCFOLD ::PlayerCapabilities::IClientController const& $getClientCapabilities() const;
 
     MCAPI ::cg::math::Rect<float> $calculateViewPortModifiers(
         ::SubClientId const          clientId,

@@ -43,7 +43,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 24, ::OreUI::GamepadState::JoystickState[2]> mJoystickStates;
-    ::ll::TypedStorage<1, 32, ::std::array<bool, 32>>                  mCurrentButtonPressedStates;
+    ::ll::TypedStorage<1, 36, ::std::array<bool, 36>>                  mCurrentButtonPressedStates;
     ::ll::TypedStorage<1, 1, bool>                                     mIsMovingDiagonally;
     // NOLINTEND
 

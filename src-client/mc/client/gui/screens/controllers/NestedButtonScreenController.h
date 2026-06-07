@@ -39,8 +39,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ui::ViewRequest handleEvent(::ScreenEvent& screenEvent) /*override*/;
-
-    virtual ~NestedButtonScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

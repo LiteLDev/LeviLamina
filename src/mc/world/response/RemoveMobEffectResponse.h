@@ -39,8 +39,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
-
-    virtual ~RemoveMobEffectResponse() /*override*/ = default;
     // NOLINTEND
 
 public:

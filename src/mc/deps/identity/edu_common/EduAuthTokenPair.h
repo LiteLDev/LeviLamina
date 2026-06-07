@@ -21,19 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI EduAuthTokenPair(::Identity::EduAuthTokenPair&&);
-#endif
-
     MCNAPI ~EduAuthTokenPair();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Identity::EduAuthTokenPair&&);
-#endif
     // NOLINTEND
 
 public:

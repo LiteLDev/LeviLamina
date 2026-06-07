@@ -22,13 +22,6 @@ public:
     ::ll::TypedStorage<1, 1, ::ResourcePackResponse>     mResponse;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ResourcePackClientResponsePacket();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,35 +32,34 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ResourcePackClientResponsePacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ResourcePackClientResponsePacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResourcePackClientResponsePacket();
+
 #ifdef LL_PLAT_C
     MCAPI explicit ResourcePackClientResponsePacket(::ResourcePackResponse response);
+#endif
+
+    MCFOLD ::std::set<::std::string> const& getDownloadingPacks() const;
+
+    MCAPI bool isResponse(::ResourcePackResponse haveThis) const;
+
+#ifdef LL_PLAT_C
+    MCAPI void setDownloadingPacks(::std::set<::std::string>& packs);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::ResourcePackResponse response);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

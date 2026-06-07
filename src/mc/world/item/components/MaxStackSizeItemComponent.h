@@ -11,6 +11,7 @@
 class ComponentItem;
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct MaxStackSizeItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,11 +23,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MaxStackSizeItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~MaxStackSizeItemComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MaxStackSizeItemComponent(::SharedTypes::v1_20_50::MaxStackSizeItemComponent component);
+
+    MCFOLD uchar getMaxStackSize() const;
     // NOLINTEND
 
 public:
@@ -39,6 +50,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::MaxStackSizeItemComponent component);
     // NOLINTEND
 
 public:

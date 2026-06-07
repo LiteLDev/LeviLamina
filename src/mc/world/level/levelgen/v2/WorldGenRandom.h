@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldGenRandom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int nextInt() /*override*/;
@@ -60,18 +56,20 @@ public:
     virtual int64 seed64() const /*override*/;
 
     virtual ::Seed128Bit seed128() const /*override*/;
-
-    virtual ~WorldGenRandom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldGenRandom();
+
     MCAPI WorldGenRandom(::br::worldgen::WorldGenRandom const& other);
 
     MCAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
 
     MCAPI ::br::worldgen::WorldGenRandom& operator=(::br::worldgen::WorldGenRandom const& other);
+
+    MCAPI ::br::worldgen::WorldGenRandom& setDecorationSeed(int64 seed, int chunkX, int chunkZ);
 
     MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
     // NOLINTEND
@@ -82,11 +80,15 @@ public:
     MCAPI static ::br::worldgen::WorldGenRandom create(int64 seed);
 
     MCAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
+
+    MCAPI static ::br::worldgen::WorldGenRandom createSlimeChunk(int x, int z, int64 seed, int64 salt);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::br::worldgen::WorldGenRandom const& other);
     // NOLINTEND
 

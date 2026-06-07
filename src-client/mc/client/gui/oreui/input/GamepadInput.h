@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/oreui/input/GamepadStick.h"
+
 namespace OreUI {
 
 struct GamepadInput {
@@ -36,9 +39,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int const>   stickId;
-        ::ll::TypedStorage<4, 4, float const> x;
-        ::ll::TypedStorage<4, 4, float const> y;
+        ::ll::TypedStorage<1, 1, ::OreUI::GamepadStick const> stickId;
+        ::ll::TypedStorage<4, 4, float const>                 x;
+        ::ll::TypedStorage<4, 4, float const>                 y;
         // NOLINTEND
     };
 
@@ -59,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

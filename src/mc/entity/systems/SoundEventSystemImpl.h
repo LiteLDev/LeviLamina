@@ -88,8 +88,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~SoundEventSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

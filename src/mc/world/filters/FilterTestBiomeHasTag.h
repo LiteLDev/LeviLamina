@@ -20,14 +20,6 @@ public:
     virtual void finalizeParsedValue(::IWorldRegistriesProvider& registries) /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
-
-    virtual ~FilterTestBiomeHasTag() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

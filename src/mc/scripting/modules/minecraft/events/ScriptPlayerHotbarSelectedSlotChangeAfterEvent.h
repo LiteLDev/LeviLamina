@@ -7,10 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Player;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,52 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPlayerHotbarSelectedSlotChangeAfterEvent& operator=(ScriptPlayerHotbarSelectedSlotChangeAfterEvent const&);
-    ScriptPlayerHotbarSelectedSlotChangeAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPlayerHotbarSelectedSlotChangeAfterEvent(
-        ::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeAfterEvent const&
-    );
-
-    MCAPI ScriptPlayerHotbarSelectedSlotChangeAfterEvent(
-        ::Player const& player,
-        int             previousSlotSelected,
-        int             newSlotSelected,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
-        ::Scripting::WeakLifetimeScope const&                                                           scope
-    );
-
-    MCAPI ~ScriptPlayerHotbarSelectedSlotChangeAfterEvent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::Player const& player,
-        int             previousSlotSelected,
-        int             newSlotSelected,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
-        ::Scripting::WeakLifetimeScope const&                                                           scope
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

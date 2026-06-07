@@ -40,6 +40,8 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI explicit HudContainerManagerController(::std::weak_ptr<::HudContainerManagerModel> containerManagerModel);
 
+    MCNAPI void broadcastContainerChanges();
+
     MCNAPI void refreshHotbar();
 #endif
     // NOLINTEND

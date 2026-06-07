@@ -53,8 +53,6 @@ public:
 
     virtual ::ActorHurtResult
     _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    virtual ~Shulker() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,13 +66,7 @@ public:
 
     MCAPI void _calculateBB();
 
-    MCAPI bool _canOpenLidAt(::BlockPos position, uchar direction) const;
-
-    MCAPI bool _getAttached() const;
-
     MCAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
-
-    MCAPI bool _isValidAttach(::BlockPos attachPos, uchar direction);
 
     MCAPI void _peekAmountTick();
 
@@ -95,6 +87,9 @@ public:
     MCAPI static void applyShulkerBounds(::ShulkerBounds const& bounds, ::EntityContext& shulker);
 
     MCAPI static ::ShulkerBounds computeShulkerBounds(::ShulkerBoundsInput const& input);
+
+    MCAPI static void
+    postSetPosSetShulkerAttachPosAndPeekAmount(::SynchedActorDataWriter data, ::BlockPos const& newAttachPos);
 
     MCAPI static void setShulkerAttachPos(::SynchedActorDataWriter data, ::BlockPos const& pos);
     // NOLINTEND

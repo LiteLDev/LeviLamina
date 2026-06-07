@@ -41,14 +41,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptEventCommandMessageAfterEvent& operator=(ScriptEventCommandMessageAfterEvent const&);
     ScriptEventCommandMessageAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
-
     MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
     MCAPI ScriptEventCommandMessageAfterEvent(
@@ -59,6 +56,9 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
     MCAPI ~ScriptEventCommandMessageAfterEvent();
     // NOLINTEND
@@ -72,8 +72,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
     MCAPI void* $ctor(

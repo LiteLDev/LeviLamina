@@ -54,9 +54,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DeleteStorageAreaContentProgressHandler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DeleteStorageAreaContentProgressHandler() /*override*/;
+    virtual ~DeleteStorageAreaContentProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -78,10 +82,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _evaluateLoadTime(
-        ::std::chrono::seconds const&                            loadTimeToEvaluate,
-        ::DeleteStorageAreaContentProgressHandler::StateBitField stateToAdd
+    MCAPI DeleteStorageAreaContentProgressHandler(
+        ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
+        ::std::function<void()> const&&                             onCompleteCallback
     );
+
+    MCAPI DeleteStorageAreaContentProgressHandler(
+        ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
+        ::std::function<void()> const&&                             onCompleteCallback,
+        ::std::string&&                                             deleteStorageContentTitle
+    );
+
+    MCAPI void _checkUserStorageList();
 
     MCAPI void _onComplete(::MinecraftScreenModel& minecraftScreenModel);
 
@@ -92,9 +104,18 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
+        ::std::function<void()> const&&                             onCompleteCallback
+    );
+
+    MCAPI void* $ctor(
+        ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
+        ::std::function<void()> const&&                             onCompleteCallback,
+        ::std::string&&                                             deleteStorageContentTitle
+    );
     // NOLINTEND
 
 public:

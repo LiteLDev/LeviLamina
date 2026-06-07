@@ -21,8 +21,6 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~PaleMossCarpetBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:

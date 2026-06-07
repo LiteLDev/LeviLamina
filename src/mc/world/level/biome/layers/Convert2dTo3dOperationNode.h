@@ -27,8 +27,6 @@ public:
 
     virtual ::OperationNodeDetails::TransferData<::Biome*>
     _allocateAndFill(uint64, ::BlockPos const&, ::BlockPos const&) const /*override*/;
-
-    virtual ~Convert2dTo3dOperationNode() /*override*/ = default;
     // NOLINTEND
 
 public:

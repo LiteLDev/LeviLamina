@@ -14,4 +14,12 @@ public:
     ::NetworkIdentifier id;
     ::SubClientId       subClientId;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator<(::NetworkIdentifierWithSubId const& other) const;
+
+    MCAPI bool operator==(::NetworkIdentifierWithSubId const& other) const;
+    // NOLINTEND
 };

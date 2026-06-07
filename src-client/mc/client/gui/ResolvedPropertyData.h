@@ -13,9 +13,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResolvedPropertyData& operator=(ResolvedPropertyData const&);
+    ResolvedPropertyData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResolvedPropertyData(::UI::Resources::ResolvedPropertyData const&);
+
     MCAPI ~ResolvedPropertyData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::UI::Resources::ResolvedPropertyData const&);
     // NOLINTEND
 
 public:

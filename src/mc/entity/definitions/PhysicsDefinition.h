@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+struct PhysicsComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -24,6 +26,12 @@ public:
     PhysicsDefinition& operator=(PhysicsDefinition const&);
     PhysicsDefinition(PhysicsDefinition const&);
     PhysicsDefinition();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void initialize(::EntityContext& entity, ::PhysicsComponent&) const;
+    // NOLINTEND
 
 public:
     // static functions

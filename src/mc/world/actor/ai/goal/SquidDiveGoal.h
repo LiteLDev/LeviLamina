@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Squid;
 // clang-format on
 
-class SquidDiveGoal : public ::Goal {
+class SquidDiveGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,16 +37,14 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~SquidDiveGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCFOLD bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
     MCAPI void $start();
 

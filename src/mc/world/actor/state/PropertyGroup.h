@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyGroup();
+    MCAPI void _addBoolProperty(::std::string const& name, bool clientSync, ::ExpressionNode&& defaultExpression);
 
     MCAPI void _addBoolProperty(::std::string const& name, bool clientSync, bool defaultValue);
 
@@ -81,8 +81,6 @@ public:
     MCAPI void
     _addPropertyMetadata(::std::string const& name, bool clientSync, ::PropertyMetadata::ContainedType propertyType);
 
-    MCAPI ::std::string const& _getFriendlyJsonTypeString(::PropertyMetadata::ContainedType type);
-
     MCAPI bool _loadPropertyFromJson(
         ::std::string const& name,
         ::Json::Value const& propertyNode,
@@ -91,8 +89,6 @@ public:
     );
 
     MCAPI void _reserveSpaceForTypes(::std::vector<uint64> const& typeCounts);
-
-    MCAPI bool _validateDataType(::Json::Value const& value, ::PropertyMetadata::ContainedType type);
 
     MCAPI bool getDefaultBoolValue(uint64 boolArrayIndex, ::RenderParams& renderParams) const;
 
@@ -108,6 +104,12 @@ public:
 
     MCAPI ::ListTag getNetworkSyncPropertyDescriptionsAsListTag() const;
 
+    MCAPI ::PropertyMetadata const* getPropertyMetadata(uint64 propertyNameHash) const;
+
+    MCAPI ::PropertyMetadata const* getPropertyMetadataByString(::std::string const& propertyName) const;
+
+    MCAPI bool hasAnyClientSyncProperties() const;
+
     MCAPI ~PropertyGroup();
     // NOLINTEND
 
@@ -115,6 +117,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::PropertyMetadata::ContainedType _getJsonPropertyType(::Json::Value const& typeNode);
+
+    MCAPI static bool
+    _tryGetClientSync(::std::string const& propertyName, ::Json::Value const& propertyNode, bool& clientSyncOut);
 
     MCAPI static bool isValidEnumEntry(::std::string const& entryValue);
 
@@ -127,9 +132,13 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI static uint64 const& MAX_ENUM_SIZE();
+
+    MCAPI static uint64 const& MAX_ENUM_VALUE_SIZE();
+
+    MCAPI static uint64 const& MAX_PROPERTIES_COUNT();
     // NOLINTEND
 
 public:

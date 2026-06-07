@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::cereal::Constraint const* subConstraint(uint64 index) const /*override*/;
-
-    virtual ~SequenceContainerConstraint() /*override*/;
     // NOLINTEND
 
 public:
@@ -38,13 +36,15 @@ public:
     // NOLINTBEGIN
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
 
-    MCAPI void validateValue(::entt::meta_sequence_container cont, ::cereal::SerializerContext& context) const;
-    // NOLINTEND
+    MCFOLD ::cereal::SequenceContainerConstraint& maxSize(uint64 size);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD ::cereal::SequenceContainerConstraint& minSize(uint64 size);
+
+    MCAPI ::cereal::SequenceContainerConstraint& noDuplicates();
+
+    MCAPI ::cereal::SequenceContainerConstraint& size(uint64 size);
+
+    MCAPI void validateValue(::entt::meta_sequence_container cont, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:

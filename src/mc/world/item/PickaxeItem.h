@@ -9,9 +9,14 @@
 // clang-format off
 class ItemStackBase;
 class RenderParams;
+struct ItemTier;
 // clang-format on
 
 class PickaxeItem : public ::DiggerItem {
+public:
+    // prevent constructor by default
+    PickaxeItem();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -19,8 +24,18 @@ public:
 
     virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~PickaxeItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PickaxeItem(::std::string const& name, int id, ::ItemTier const& tier);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::ItemTier const& tier);
     // NOLINTEND
 
 public:

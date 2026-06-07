@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Level;
+struct ScriptCommandMessageEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -31,6 +32,18 @@ public:
     operator=(ScriptEventCommandMessageAfterEventIntermediateData const&);
     ScriptEventCommandMessageAfterEventIntermediateData(ScriptEventCommandMessageAfterEventIntermediateData const&);
     ScriptEventCommandMessageAfterEventIntermediateData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit ScriptEventCommandMessageAfterEventIntermediateData(::ScriptCommandMessageEvent const& event);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptCommandMessageEvent const& event);
+    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

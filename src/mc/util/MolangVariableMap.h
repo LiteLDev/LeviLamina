@@ -12,6 +12,7 @@
 class HashedString;
 class MolangVariable;
 struct MolangScriptArg;
+struct MolangVariableSettings;
 // clang-format on
 
 class MolangVariableMap {
@@ -52,11 +53,14 @@ public:
     // NOLINTBEGIN
     MCAPI MolangVariableMap();
 
-#ifdef LL_PLAT_C
-    MCAPI MolangVariableMap(::MolangVariableMap&&);
+    MCAPI MolangVariableMap(::MolangVariableMap&& rhs);
 
     MCAPI MolangVariableMap(::MolangVariableMap const& rhs);
-#endif
+
+    MCAPI ::MolangVariable* _getMolangVariable(
+        ::MolangVariableIndex                        molangVariableIndex,
+        ::MolangVariableMap::MissingVariableHandling errorHandling
+    ) const;
 
     MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
@@ -64,7 +68,12 @@ public:
 
     MCAPI ::MolangScriptArg const& getMolangVariable(uint64 variableNameHash, char const*) const;
 
-    MCAPI ::MolangVariableMap& operator=(::MolangVariableMap&&);
+#ifdef LL_PLAT_C
+    MCAPI ::MolangScriptArg const&
+    getOrAddMolangVariable(::HashedString const& variableName, bool allowSpecialCharacters);
+#endif
+
+    MCAPI ::MolangVariableMap& operator=(::MolangVariableMap&& rhs);
 
     MCAPI ::MolangVariableMap& operator=(::MolangVariableMap const& rhs);
 
@@ -81,6 +90,19 @@ public:
     MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
 
 #ifdef LL_PLAT_C
+    MCAPI void setMolangVariable(
+        uint64                   variableNameHash,
+        char const*              variableName,
+        ::MolangScriptArg const& value,
+        bool                     allowSpecialCharacters
+    );
+#endif
+
+    MCAPI void setMolangVariableSettings(::MolangVariableSettings const& settings);
+
+#ifdef LL_PLAT_C
+    MCAPI ::MolangScriptArg const* tryGetMolangVariable(uint64 variableNameHash) const;
+
     MCAPI void updatePublicVariables();
 #endif
 
@@ -92,11 +114,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::MolangVariableMap&&);
+    MCAPI void* $ctor(::MolangVariableMap&& rhs);
 
     MCAPI void* $ctor(::MolangVariableMap const& rhs);
-#endif
     // NOLINTEND
 
 public:

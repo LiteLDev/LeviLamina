@@ -7,12 +7,6 @@
 
 namespace cereal {
 
-class INILoader : public ::cereal::BasicLoader {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~INILoader() /*override*/ = default;
-    // NOLINTEND
-};
+class INILoader : public ::cereal::BasicLoader {};
 
 } // namespace cereal

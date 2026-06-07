@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CerealSchemaUpgradeSet;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockDestructibleByExplosionDescription : public ::BlockComponentDescription {
@@ -29,14 +31,20 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockDestructibleByExplosionDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockDestructibleByExplosionDescription(float explosionResistance);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
@@ -49,12 +57,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(float explosionResistance);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

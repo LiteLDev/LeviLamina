@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ConsoleChunkBlender();
-
     MCNAPI void _blendChunkEnd4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
+
+    MCNAPI void _blendChunkNether(::LevelChunk& generatedChunk, ::LevelChunk& lc);
 
     MCNAPI void _blendChunkNether4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
 
@@ -60,8 +60,6 @@ public:
         int                                    z,
         ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
     );
-
-    MCNAPI ::ChunkLocalHeight _findHighestStoneOrBedrockHeight(::LevelChunk& lc, int x, int z);
 
     MCNAPI ::ChunkLocalHeight _findTopMostWaterHeight(
         ::LevelChunk&                                   lc,
@@ -84,12 +82,6 @@ public:
     );
 
     MCNAPI ~ConsoleChunkBlender();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

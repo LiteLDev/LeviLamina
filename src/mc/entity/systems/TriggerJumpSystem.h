@@ -49,5 +49,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createCleanupSystem();
+
+    MCAPI static ::TickingSystemWithInfo createTriggerJumpSystem();
     // NOLINTEND
 };

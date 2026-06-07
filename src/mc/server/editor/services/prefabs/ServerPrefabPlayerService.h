@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
@@ -13,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
-class Dimension;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class PrefabDBClientInitializedPayload; }
@@ -36,7 +34,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkd20dca;
     ::ll::UntypedStorage<4, 4>  mUnk281e56;
     ::ll::UntypedStorage<4, 12> mUnke74db6;
-    ::ll::UntypedStorage<4, 4>  mUnk1cf793;
+    ::ll::UntypedStorage<4, 4>  mUnk19f0ef;
     ::ll::UntypedStorage<1, 1>  mUnk67704d;
     ::ll::UntypedStorage<8, 64> mUnkc4c47a;
     ::ll::UntypedStorage<8, 16> mUnk14247b;
@@ -106,7 +104,7 @@ public:
 
     MCNAPI void _handlePrefabDBInstanceChange(::Editor::Prefabs::PrefabDBInstanceChangeEvent const& event);
 
-    MCNAPI void _handlePrefabDBTemplateChange(::Editor::Prefabs::PrefabDBTemplateChangeEvent const& event);
+    MCNAPI void _handlePrefabDBTemplateChange(::Editor::Prefabs::PrefabDBTemplateChangeEvent const&);
 
     MCNAPI void _processPendingEvents();
     // NOLINTEND

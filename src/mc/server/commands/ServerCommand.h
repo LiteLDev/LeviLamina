@@ -21,14 +21,10 @@ class TextFilteringProcessor;
 
 class ServerCommand : public ::Command {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ServerCommand() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool isTextProcessorEnabled() const;
+
     MCAPI bool tryToFilterTextWithRemoteFilter(
         ::CommandOrigin const&              origin,
         ::CommandOutput&                    output,
@@ -61,11 +57,5 @@ public:
     MCAPI static ::Minecraft*& mGame();
 
     MCAPI static ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>& mTextFilteringProcessor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI {
+namespace Gameface {
 
 class ResourceStreamResponse {};
 
-} // namespace OreUI
+} // namespace Gameface

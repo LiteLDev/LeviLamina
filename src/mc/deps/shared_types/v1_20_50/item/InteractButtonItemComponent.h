@@ -18,24 +18,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InteractButtonItemComponent(InteractButtonItemComponent const&);
-    InteractButtonItemComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_20_50::InteractButtonItemComponent&
-    operator=(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
-
-    MCFOLD ::SharedTypes::v1_20_50::InteractButtonItemComponent&
-    operator=(::SharedTypes::v1_20_50::InteractButtonItemComponent const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

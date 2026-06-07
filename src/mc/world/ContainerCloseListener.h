@@ -13,24 +13,12 @@ public:
     // NOLINTBEGIN
     virtual void containerClosed(::Actor& actor) = 0;
 
-    virtual ~ContainerCloseListener();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~ContainerCloseListener() = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/position_trackingdb/OperationBase.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on

@@ -19,9 +19,26 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Member& operator=(Member const&);
+    Member();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Member(::cereal::internal::Member&&);
+
+    MCAPI Member(::cereal::internal::Member const&);
+
     MCAPI ~Member();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::cereal::internal::Member&&);
+
+    MCAPI void* $ctor(::cereal::internal::Member const&);
     // NOLINTEND
 
 public:

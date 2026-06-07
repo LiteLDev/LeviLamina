@@ -41,8 +41,6 @@ public:
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     ) /*override*/;
-
-    virtual ~SliderBoxComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -27,9 +27,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI explicit Audio(::std::function<void(::Editor::Settings::AudioProps const&)> callback);
+
+    MCNAPI bool getAreSoundsMuted() const;
+
+    MCNAPI bool getIsMusicMuted() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Editor::Settings::AudioProps const& getProperties() const;
 #endif
+
+    MCNAPI void setAreSoundsMuted(bool newIsMuted);
+
+    MCNAPI void setIsMusicMuted(bool newIsMuted);
+
+    MCNAPI void updateSettings(::Editor::Settings::AudioProps const& props, bool notifyUpdate);
+
+    MCNAPI ~Audio();
     // NOLINTEND
 
 public:
@@ -41,9 +55,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::std::function<void(::Editor::Settings::AudioProps const&)> callback);
-#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

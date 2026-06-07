@@ -12,11 +12,25 @@ struct BlockAnimateTickData;
 
 class CryingObsidianBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    CryingObsidianBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
+    // NOLINTEND
 
-    virtual ~CryingObsidianBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CryingObsidianBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

@@ -55,14 +55,12 @@ public:
         ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
         ::ClientBlockPipeline::BlockVolumeArea const&             area,
         ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const*,
-        ::ClientBlockPipeline::CustomGeometryBlock const&,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const*  relativePos,
+        ::ClientBlockPipeline::CustomGeometryBlock const&         blockPosTransform,
         ::ClientBlockPipeline::BlockLookupData const&,
-        ::BlockPos const& relativePos,
-        ::Matrix const&   blockPosTransform
+        ::BlockPos const&,
+        ::Matrix const&
     ) const /*override*/;
-
-    virtual ~DefaultPlusEmbeddedSchematicsMapper() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -101,11 +99,11 @@ public:
         ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
         ::ClientBlockPipeline::BlockVolumeArea const&             area,
         ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const*,
-        ::ClientBlockPipeline::CustomGeometryBlock const&,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const*  relativePos,
+        ::ClientBlockPipeline::CustomGeometryBlock const&         blockPosTransform,
         ::ClientBlockPipeline::BlockLookupData const&,
-        ::BlockPos const& relativePos,
-        ::Matrix const&   blockPosTransform
+        ::BlockPos const&,
+        ::Matrix const&
     ) const;
     // NOLINTEND
 

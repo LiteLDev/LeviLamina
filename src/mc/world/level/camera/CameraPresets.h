@@ -34,9 +34,24 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        CameraList& operator=(CameraList const&);
+        CameraList();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI CameraList(::CameraPresets::CameraList const&);
+
+        MCNAPI ::CameraPresets::CameraList& operator=(::CameraPresets::CameraList&&);
+
         MCNAPI ~CameraList();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::CameraPresets::CameraList const&);
         // NOLINTEND
 
     public:
@@ -81,9 +96,17 @@ public:
 
     MCNAPI void _storeCameraList(::CameraPresets::CameraList&& list);
 
+    MCNAPI void _storeCameraPreset(::SharedTypes::v1_21_90::CameraPreset&& preset);
+
     MCNAPI ::std::vector<::std::string> buildCameraPresetList() const;
 
+    MCNAPI ::SharedTypes::v1_21_90::CameraPreset const* getCameraPreset(uint64 presetIndex) const;
+
     MCNAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;
+
+    MCNAPI ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& getPresets() const;
+
+    MCNAPI bool isEmpty() const;
 
     MCNAPI void loadPresets(
         ::ResourcePackManager&                             resourcePackManager,
@@ -93,6 +116,8 @@ public:
     );
 
     MCNAPI ::CameraPresets& operator=(::CameraPresets&&);
+
+    MCNAPI ~CameraPresets();
     // NOLINTEND
 
 public:
@@ -103,5 +128,11 @@ public:
     MCNAPI static bool isAllowedEaseTarget(::std::string const& easeTarget);
 
     MCNAPI static bool isVanillaCamera(::std::string const& cameraName);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

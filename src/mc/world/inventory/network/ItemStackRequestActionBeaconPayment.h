@@ -26,8 +26,26 @@ public:
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
-    virtual ~ItemStackRequestActionBeaconPayment() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ItemStackRequestActionBeaconPayment();
+
+#ifdef LL_PLAT_C
+    MCNAPI ItemStackRequestActionBeaconPayment(int primaryEffectId, int secondaryEffectId);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(int primaryEffectId, int secondaryEffectId);
+#endif
     // NOLINTEND
 
 public:

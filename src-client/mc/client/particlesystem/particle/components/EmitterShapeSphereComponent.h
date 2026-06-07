@@ -46,14 +46,18 @@ public:
     ) /*override*/;
 
     virtual void applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams);
-
-    virtual ~EmitterShapeSphereComponent() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI EmitterShapeSphereComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

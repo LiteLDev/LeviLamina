@@ -4,20 +4,6 @@
 
 namespace RakNet {
 
-struct NatPunchthroughDebugInterface {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~NatPunchthroughDebugInterface() = default;
-
-    virtual void OnClientMessage(char const*) = 0;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-};
+struct NatPunchthroughDebugInterface {};
 
 } // namespace RakNet

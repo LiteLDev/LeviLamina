@@ -31,8 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::LootItemFunction const& _getFunction() const /*override*/;
-
-    virtual ~ScriptEnchantRandomEquipmentFunction() /*override*/ = default;
     // NOLINTEND
 
 public:

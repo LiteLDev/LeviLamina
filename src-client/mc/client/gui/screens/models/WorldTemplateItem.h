@@ -18,7 +18,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldTemplateItem() /*override*/ = default;
+    virtual ~WorldTemplateItem() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

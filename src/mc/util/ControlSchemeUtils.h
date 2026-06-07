@@ -37,6 +37,17 @@ MCNAPI ::ControlScheme::Scheme getDefaultControlScheme(
     ::std::vector<::ControlScheme::Scheme> const&               allowedControlSchemes
 );
 
+MCNAPI ::std::string_view getRootInheritedCamera(
+    ::std::string_view                                          cameraName,
+    ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presets
+);
+
+MCNAPI bool isSchemeAllowedByCamera(::std::string_view cameraName, ::ControlScheme::Scheme scheme);
+
+#ifdef LL_PLAT_C
+MCNAPI bool isUnlockedRelativeStrafe(::gsl::not_null<::ControlSchemeComponent*> component);
+#endif
+
 MCNAPI void populateControlSchemeServerComponents(
     ::ServerCameraAllowedControlSchemesComponent&               allowedSchemesComponent,
     ::ServerCameraDefaultControlSchemesComponent&               defaultSchemesComponent,
@@ -51,13 +62,13 @@ MCNAPI ::ControlScheme::Scheme resolveControlSchemeOnCameraSetCommand(
     ::Player&                       player
 );
 
-#ifdef LL_PLAT_C
 MCNAPI void sendControlSchemeToClient(
     ::ControlScheme::Scheme                scheme,
     ::PacketSender&                        sender,
     ::UserEntityIdentifierComponent const* userIdentifier
 );
-#endif
+
+MCNAPI void setBaseGameVersion(::BaseGameVersion const& version);
 
 MCNAPI bool setControlScheme(
     ::Player&                                           player,
@@ -65,8 +76,6 @@ MCNAPI bool setControlScheme(
     ::ServerCameraAllowedControlSchemesComponent const* allowedSchemesComponent,
     ::std::string const&                                preset
 );
-
-MCNAPI bool shouldSupportNewChanges();
 // NOLINTEND
 
 // static variables

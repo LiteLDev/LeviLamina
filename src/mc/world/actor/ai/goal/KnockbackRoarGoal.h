@@ -6,16 +6,18 @@
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
-#include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class Mob;
+class SemVersion;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class KnockbackRoarGoal : public ::Goal {
+class KnockbackRoarGoal : public ::BaseGoal {
 public:
     // KnockbackRoarGoal inner types declare
     // clang-format off
@@ -42,9 +44,9 @@ public:
         // NOLINTEND
 
     public:
-        // virtual functions
+        // member functions
         // NOLINTBEGIN
-        virtual ~KnockbackRoarDefinition() /*override*/;
+        MCAPI void initialize(::EntityContext& entity, ::KnockbackRoarGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -56,12 +58,8 @@ public:
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::KnockbackRoarGoal::KnockbackRoarDefinition>>&
                 root
         );
-        // NOLINTEND
 
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI static ::SemVersion getStrictParsingVersion();
         // NOLINTEND
 
     public:
@@ -111,8 +109,18 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
 
-    virtual ~KnockbackRoarGoal() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit KnockbackRoarGoal(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

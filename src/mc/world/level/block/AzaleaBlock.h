@@ -21,6 +21,10 @@ class Random;
 
 class AzaleaBlock : public ::FoliageBlock {
 public:
+    // prevent constructor by default
+    AzaleaBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB getCollisionShape(
@@ -34,22 +38,27 @@ public:
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual ~AzaleaBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AzaleaBlock(::std::string const& nameId, int id);
+
     MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -65,7 +74,7 @@ public:
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
     MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 

@@ -16,6 +16,7 @@
 class ResourceLoadManager;
 class ResourcePackManager;
 struct PackIdVersion;
+namespace mce { class MaterialPtr; }
 namespace mce { class RenderMaterialInfo; }
 namespace mce { class ShaderGroup; }
 // clang-format on
@@ -46,8 +47,6 @@ public:
     virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) /*override*/;
 
     virtual void clearMaterial(::HashedString const& name) /*override*/;
-
-    virtual ~RenderMaterialGroup() /*override*/;
     // NOLINTEND
 
 public:
@@ -58,7 +57,10 @@ public:
     MCAPI bool
     _loadList(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup, ::ResourcePackManager& resourcePackManager);
 
-    MCAPI void clear();
+    MCAPI ::mce::MaterialPtr getMaterial(::HashedString const& name);
+
+    MCFOLD ::std::unordered_map<::HashedString, ::std::shared_ptr<::mce::RenderMaterialInfo>> const&
+    getMaterialMap() const;
 
     MCAPI bool loadList(
         ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>       shaderGroup,
@@ -69,6 +71,14 @@ public:
     );
 
     MCAPI void reset();
+
+    MCAPI void setShaderGroup(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const& shaderGroup);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void resetAll();
     // NOLINTEND
 
 public:
@@ -83,12 +93,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

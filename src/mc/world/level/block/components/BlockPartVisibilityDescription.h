@@ -10,8 +10,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
-
-    virtual ~BlockPartVisibilityDescription() /*override*/ = default;
     // NOLINTEND
 
 public:

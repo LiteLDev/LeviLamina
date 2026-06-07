@@ -36,20 +36,12 @@ public:
 
     MCAPI ::Scripting::ConstantFactory&
     bindComponentId(::std::string const& componentName, ::std::string const& componentId);
-
-    MCAPI ~ScriptComponentTypeEnumBuilder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptComponentType componentType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

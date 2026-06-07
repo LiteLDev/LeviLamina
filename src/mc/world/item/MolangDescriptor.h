@@ -45,8 +45,6 @@ public:
     virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
     virtual uint64 getHash() const /*override*/;
-
-    virtual ~MolangDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:

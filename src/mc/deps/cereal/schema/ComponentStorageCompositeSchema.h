@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct DescriptionConfig; }
+namespace cereal { struct MetaVisitor; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
@@ -35,7 +36,7 @@ public:
         ::cereal::internal::LoadState const& state
     ) const /*override*/;
 
-    virtual ~ComponentStorageCompositeSchema() /*override*/ = default;
+    virtual bool doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const /*override*/;
     // NOLINTEND
 
 public:
@@ -77,6 +78,8 @@ public:
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
     ) const;
+
+    MCAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
 
 
     // NOLINTEND

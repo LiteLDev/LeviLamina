@@ -9,6 +9,8 @@
 // clang-format off
 class BlockPos;
 class IRandom;
+class JigsawStructureRegistry;
+struct StructureTemplateRegistrationContext;
 // clang-format on
 
 class PoolAliasBinding {
@@ -29,6 +31,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ::std::string_view getOrDefault(::std::string_view alias, ::std::string_view defaultValue) const;
+
         MCAPI ~PoolAliasLookup();
         // NOLINTEND
 
@@ -66,6 +70,13 @@ public:
         ::std::vector<::Core::SimpleWeightedEntry<::std::vector<::std::shared_ptr<::PoolAliasBinding>>>>&& targets
     );
 
+    MCAPI static void registerTargetsAsPools(
+        ::JigsawStructureRegistry&                                  registry,
+        ::StructureTemplateRegistrationContext&                     context,
+        ::std::string_view                                          fallback,
+        ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliasBindings
+    );
+
     MCAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
         ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliases,
         ::BlockPos const&                                           structureStartPosition,
@@ -77,11 +88,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

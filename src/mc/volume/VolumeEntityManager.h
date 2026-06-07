@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ComponentNetRelevancyRegistry;
 class DefinitionInstanceGroup;
 class EntityContext;
 class EntityRegistry;
@@ -22,7 +21,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk4d91e3;
     ::ll::UntypedStorage<8, 8>  mUnk401f77;
-    ::ll::UntypedStorage<8, 64> mUnke02dd6;
+    ::ll::UntypedStorage<8, 64> mUnk75b10e;
     ::ll::UntypedStorage<8, 64> mUnk2b84c0;
     // NOLINTEND
 
@@ -50,15 +49,6 @@ public:
     MCNAPI VolumeEntityManager(::StackRefResult<::EntityRegistry> registry, ::cereal::ReflectionCtx& ctx);
 
     MCNAPI ::OwnerPtr<::EntityContext> _createVolumeEntity(::DefinitionInstanceGroup const& definitionGroup);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static void
-    registerComponentNetRelevancy(::ComponentNetRelevancyRegistry& registry, ::cereal::ReflectionCtx const& ctx);
 #endif
     // NOLINTEND
 

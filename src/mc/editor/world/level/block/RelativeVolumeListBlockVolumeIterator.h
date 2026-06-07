@@ -53,6 +53,8 @@ public:
         ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> endVolumeIterator,
         bool                                                                                         begin
     );
+
+    MCNAPI bool operator!=(::Editor::RelativeVolumeListBlockVolumeIterator const& rhs) const;
     // NOLINTEND
 
 public:

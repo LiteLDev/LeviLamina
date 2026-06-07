@@ -4,12 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/block/PortalAxis.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
+class Actor;
+class CompoundTag;
+class DataLoadHelper;
 // clang-format on
 
 struct DimensionTransitionComponent {
@@ -20,6 +21,14 @@ public:
     ::ll::TypedStorage<4, 4, ::DimensionType>          mPortalEntranceDimension;
     ::ll::TypedStorage<4, 4, ::PortalAxis>             mPortalEntranceAxis;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mExisitingTargetPosition;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:

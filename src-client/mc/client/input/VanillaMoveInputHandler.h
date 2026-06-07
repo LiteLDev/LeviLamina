@@ -15,15 +15,13 @@ class VanillaMoveInputHandler : public ::ClientMoveInputHandler {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void registerInputHandlers(::InputHandler& inputHandler, ::IClientInstance const& client) /*override*/;
-
-    virtual ~VanillaMoveInputHandler() /*override*/ = default;
+    virtual void registerInputHandlers(::InputHandler& inputHandler, ::IClientInstance const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerInputHandlers(::InputHandler& inputHandler, ::IClientInstance const& client);
+    MCAPI void $registerInputHandlers(::InputHandler& inputHandler, ::IClientInstance const&);
     // NOLINTEND
 
 public:

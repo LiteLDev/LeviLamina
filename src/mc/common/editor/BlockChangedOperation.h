@@ -14,6 +14,7 @@ class CompoundTag;
 class Level;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Transactions { struct BlockChangeIntentData; }
+namespace Editor::Transactions { struct BlockChangedOperationData; }
 // clang-format on
 
 namespace Editor::Transactions {
@@ -46,6 +47,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BlockChangedOperation(::std::vector<::Editor::Transactions::BlockChangedOperationData>&& blocks);
+
     MCNAPI ::Scripting::Result_deprecated<void>
     _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo) const;
 
@@ -72,6 +75,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& DEFAULT_OPERATION_NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::vector<::Editor::Transactions::BlockChangedOperationData>&& blocks);
     // NOLINTEND
 
 public:

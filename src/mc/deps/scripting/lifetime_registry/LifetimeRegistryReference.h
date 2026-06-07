@@ -16,26 +16,7 @@ public:
     // prevent constructor by default
     LifetimeRegistryReference& operator=(LifetimeRegistryReference const&);
     LifetimeRegistryReference(LifetimeRegistryReference const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI LifetimeRegistryReference();
-
-    MCNAPI ~LifetimeRegistryReference();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
+    LifetimeRegistryReference();
 };
 
 } // namespace Scripting

@@ -30,50 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPlayerDimensionChangeAfterEvent& operator=(ScriptPlayerDimensionChangeAfterEvent const&);
-    ScriptPlayerDimensionChangeAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPlayerDimensionChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
-
-    MCAPI ScriptPlayerDimensionChangeAfterEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    playerHandle,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> fromDimension,
-        ::Vec3                                                                         fromLocation,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> toDimension,
-        ::Vec3                                                                         toLocation
-    );
-
-    MCAPI ~ScriptPlayerDimensionChangeAfterEvent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
-
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    playerHandle,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> fromDimension,
-        ::Vec3                                                                         fromLocation,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> toDimension,
-        ::Vec3                                                                         toLocation
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -55,8 +55,7 @@ public:
         // NOLINTBEGIN
         virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-        virtual void
-        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+        virtual void postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
 
         virtual void addHardcodedSpawnAreas(::LevelChunk& chunk) const /*override*/;
 
@@ -67,8 +66,6 @@ public:
             ::Random&            random,
             ::BoundingBox const& chunkBB
         ) /*override*/;
-
-        virtual ~PillagerOutpostPiece() /*override*/;
         // NOLINTEND
 
     public:
@@ -90,6 +87,8 @@ public:
             ::BlockSource&                     region,
             ::std::vector<::BlockPos> const&   entityPositions
         );
+
+        MCAPI void _loadTemplate();
         // NOLINTEND
 
     public:
@@ -107,17 +106,11 @@ public:
         // NOLINTEND
 
     public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
 
         MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
@@ -157,6 +150,17 @@ public:
         ::Rotation const&                                   rotation,
         ::BlockPos const&                                   parentPos,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Dimension&                                        dimension
+    );
+
+    MCAPI static ::std::vector<::BlockPos> _getPiecePositions(::Random& random);
+
+    MCAPI static void addPieces(
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
+        ::BlockPos const&                                   position,
+        ::Rotation const&                                   rotation,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
         ::Dimension&                                        dimension
     );
     // NOLINTEND

@@ -3,16 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/ticking/ITickingAreaView.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
+class ChunkBuildOrderPolicyBase;
 class ChunkPos;
 class ChunkSource;
 class ChunkViewSource;
-class Dimension;
 class Level;
 class LevelChunk;
 class Random;
@@ -48,7 +47,7 @@ public:
 
     virtual ::DimensionType getDimensionId() const /*override*/;
 
-    virtual ::Bounds const& getBounds() const /*override*/;
+    virtual ::Bounds const getBoundsCopy() const /*override*/;
 
     virtual bool isCircle() const /*override*/;
 
@@ -77,6 +76,8 @@ public:
         ::ChunkPos const&              cp,
         ::LevelChunkTicking::Registry* registry
     );
+
+    MCAPI void unregisterChunkBuildOrderPolicy(::ChunkBuildOrderPolicyBase& chunkBuildOrderPolicy);
     // NOLINTEND
 
 public:
@@ -102,11 +103,11 @@ public:
 
     MCAPI ::DimensionType $getDimensionId() const;
 
-    MCAPI ::Bounds const& $getBounds() const;
+    MCAPI ::Bounds const $getBoundsCopy() const;
 
     MCAPI bool $isCircle() const;
 
-    MCAPI bool $isDoneLoading() const;
+    MCFOLD bool $isDoneLoading() const;
 
     MCAPI bool $checkInitialLoadDone(::Tick currentLevelTick);
 

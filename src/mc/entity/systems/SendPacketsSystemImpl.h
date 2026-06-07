@@ -24,16 +24,6 @@ MCAPI void sendPacketsSystem(
     ::SendPacketsComponent&                           sendPacketsComponent
 );
 
-MCAPI void singleTick(
-    ::StrictEntityContext& entity,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::ActorOwnerComponent const,
-        ::Optional<::UserEntityIdentifierComponent const>,
-        ::SendPacketsComponent>              view,
-    ::EntityModifier<::SendPacketsComponent> modifier
-);
-
 MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,

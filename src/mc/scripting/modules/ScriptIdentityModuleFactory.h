@@ -12,12 +12,6 @@ namespace mce { class UUID; }
 
 class ScriptIdentityModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptIdentityModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::mce::UUID const& ModuleUUID();

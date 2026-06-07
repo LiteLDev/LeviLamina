@@ -52,6 +52,8 @@ public:
 
     virtual void suspendAllFacets() = 0;
 
+    virtual void disableFacetActivation() = 0;
+
     virtual void bind(::OreUI::FacetBinder& binder) = 0;
 
     virtual ::std::vector<::std::string> const& update(::OreUI::FacetBinder& binder) = 0;

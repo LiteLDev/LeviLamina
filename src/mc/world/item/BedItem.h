@@ -36,8 +36,6 @@ public:
     virtual bool
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const
         /*override*/;
-
-    virtual ~BedItem() /*override*/ = default;
     // NOLINTEND
 
 public:

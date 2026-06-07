@@ -8,8 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class BlockPos;
+class EntityContext;
 class Player;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Strider : public ::Animal {
@@ -53,13 +56,35 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Strider();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     virtual void normalTick() /*override*/;
+    // NOLINTEND
 
-    virtual ~Strider() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Strider(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

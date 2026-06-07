@@ -27,13 +27,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WebViewRenderer() /*override*/ = default;
+    virtual ~WebViewRenderer() /*override*/;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& scene, ::UIScene const&) /*override*/;
 
-    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
+    virtual void render(::MinecraftUIRenderContext& client, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
 
     virtual void onVisibilityChanged(bool visible) /*override*/;
     // NOLINTEND
@@ -41,8 +41,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WebViewRenderer();
+
     MCAPI ::std::shared_ptr<::WebviewInterface>
     _getWebview(::IClientInstance& client, ::WebviewInterfaceType interfaceType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -50,9 +64,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& scene, ::UIScene const&);
 
-    MCAPI void $render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& client, ::IClientInstance& owner, ::UIControl&, int);
 
     MCAPI void $onVisibilityChanged(bool visible);
     // NOLINTEND

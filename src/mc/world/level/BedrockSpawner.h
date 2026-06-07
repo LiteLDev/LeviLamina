@@ -24,7 +24,6 @@ class Level;
 class LevelChunkVolumeData;
 class Mob;
 class MobSpawnRules;
-class MobSpawnerData;
 class Random;
 class ResourcePackManager;
 class SpawnConditions;
@@ -63,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BedrockSpawner() /*override*/ = default;
+    virtual ~BedrockSpawner() /*override*/;
 
     virtual void initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries) /*override*/;
 
@@ -116,8 +115,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int
-    _handlePopulationCap(::MobSpawnerData const* mobType, ::SpawnConditions const& conditions, int inSpawnCount);
+    MCAPI BedrockSpawner(::Level& level, ::IMinecraftEventing& eventing);
+
+    MCAPI void
+    _permuteId(::ActorDefinitionIdentifier& actualId, ::MobSpawnRules const& spawnRules, ::Random& random) const;
 
     MCAPI void _postProcessSpawnMobs(
         ::BlockSource&                                                      region,
@@ -142,8 +143,6 @@ public:
     );
 
     MCAPI void _updateBaseTypeCount(::BlockSource& region, ::ChunkPos const& center);
-
-    MCAPI void _updateGroupPersistence(::MobSpawnRules const& spawnRules, ::std::vector<::Mob*> const& spawnGroup);
     // NOLINTEND
 
 public:
@@ -156,6 +155,18 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_set<::ChunkPos> const& SPAWN_RING_OFFSETS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Level& level, ::IMinecraftEventing& eventing);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

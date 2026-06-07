@@ -33,8 +33,6 @@ public:
     virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
 
     virtual void applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams) /*override*/;
-
-    virtual ~EmitterShapeDiscComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

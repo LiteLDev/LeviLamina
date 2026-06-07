@@ -47,13 +47,11 @@ public:
     // NOLINTBEGIN
     MCNAPI int _flushoutput();
 
-    MCNAPI void open(::Core::File&& file, ::Core::FileOpenMode fileOpenMode);
-    // NOLINTEND
+    MCNAPI void close();
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static uint64 const& DEFAULT_BUFFER_SIZE();
+    MCNAPI bool isOpen() const;
+
+    MCNAPI void open(::Core::File&& file, ::Core::FileOpenMode fileOpenMode);
     // NOLINTEND
 
 public:

@@ -14,7 +14,12 @@ namespace cereal { class DynamicValue; }
 namespace Bedrock::DDUI::PathUtility {
 // functions
 // NOLINTBEGIN
+MCAPI ::std::optional<::std::variant<double, bool, ::std::string>>
+convertToPrimitive(::cereal::DynamicValue const& obj);
+
+#ifdef LL_PLAT_C
 MCAPI char const* getTypeString(::cereal::DynamicValue::Type const& type);
+#endif
 
 MCAPI ::nonstd::
     expected<::std::vector<::std::variant<::std::string, uint>>, ::Bedrock::DDUI::PathUtility::PathQueryError>

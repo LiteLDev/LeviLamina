@@ -4,16 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BlockSource;
 class Mob;
 // clang-format on
 
-class MoveToRandomBlockGoal : public ::Goal {
+class MoveToRandomBlockGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,14 +46,6 @@ public:
     virtual void start() /*override*/;
 
     virtual void tick() /*override*/;
-
-    virtual ~MoveToRandomBlockGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _isValidDestinationBlock(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

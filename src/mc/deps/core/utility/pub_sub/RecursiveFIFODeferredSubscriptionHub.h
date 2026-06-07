@@ -35,8 +35,6 @@ public:
 
     virtual void
     _runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry) /*override*/;
-
-    virtual ~RecursiveFIFODeferredSubscriptionHub() /*override*/ = default;
     // NOLINTEND
 
 public:

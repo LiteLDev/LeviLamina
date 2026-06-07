@@ -7,20 +7,19 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/util/TargetSelectionMethod.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class BlockSource;
 class ItemDescriptor;
 class Mob;
 class Path;
 // clang-format on
 
-class AvoidBlockGoal : public ::Goal {
+class AvoidBlockGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,22 +61,20 @@ public:
     virtual void start() /*override*/;
 
     virtual void stop() /*override*/;
-
-    virtual ~AvoidBlockGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _findRandomTargetBlock(::BlockSource& region, ::BlockPos const& mobPos);
+    MCAPI explicit AvoidBlockGoal(::Mob& mob);
 
     MCAPI bool _findTargetBlock();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

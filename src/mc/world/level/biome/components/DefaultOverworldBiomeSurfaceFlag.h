@@ -7,12 +7,6 @@
 
 struct DefaultOverworldBiomeSurfaceFlag : public ::BiomeComponentBase {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DefaultOverworldBiomeSurfaceFlag() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

@@ -21,8 +21,8 @@ class IToastListener;
 class Option;
 class PushNotificationMessage;
 class RecipeToastDataViewer;
-class RectangleArea;
 class ResourcePackManager;
+struct ToastIconData;
 namespace Json { class Value; }
 // clang-format on
 
@@ -41,8 +41,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ToastChannel, ::IToastListener*>>> mListeners;
     ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::IToastEventListener*>>>        mEventListeners;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RecipeToastDataViewer>>                     mIconsViewer;
-    ::ll::TypedStorage<8, 64, ::std::function<::RectangleArea()>>                            mAreaBinding;
-    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                                       mActiveBinding;
     ::ll::TypedStorage<1, 1, bool>                                                           mToastClicked;
     ::ll::TypedStorage<1, 1, bool>                                                           mToastsEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                           mRefreshPendingInvites;
@@ -105,8 +103,6 @@ public:
 
     MCAPI void _reportClick();
 
-    MCAPI void _sendRemoveToast();
-
     MCAPI void _sendShowToast(bool animateIn);
 
     MCAPI void _sendTTS(bool useIndication, ::std::string const& message) const;
@@ -117,11 +113,43 @@ public:
 
     MCAPI float getCurrentToastDisplaySeconds() const;
 
+    MCAPI float getCurrentToastRemainingDuration() const;
+
+    MCAPI float getCurrentToastTotalDuration() const;
+
+    MCAPI ::ToastIconData getIconData();
+
+    MCFOLD ::RecipeToastDataViewer const* getIconViewer() const;
+
+    MCAPI ::std::string getRecipeTranslationText();
+
+    MCAPI bool getRefreshPendingInvites() const;
+
+    MCAPI ::ToastMessageType getToastMessageType() const;
+
     MCAPI ::ui::ViewRequest handleToastButton();
+
+    MCAPI bool hasActiveToast() const;
+
+    MCAPI bool isToastAllowed(::ToastMessageType messageType) const;
 
     MCAPI void pushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCAPI void setCurrentToastsDuration(float timeInSec);
+    MCAPI void registerEventListener(::gsl::not_null<::IToastEventListener*> eventListener);
+
+    MCAPI void registerListener(::IToastListener* listener, ::ToastChannel channel);
+
+    MCAPI void setRefreshPendingInvites(bool flag);
+
+    MCAPI void setToastsEnabled(bool toastsEnabled);
+
+    MCAPI void toastAnimatedInEvent();
+
+    MCAPI void toastAnimatedOutEvent();
+
+    MCAPI void unregisterEventListener(::gsl::not_null<::IToastEventListener*> eventListener);
+
+    MCAPI void unregisterListener(::IToastListener*);
 
     MCAPI void update();
     // NOLINTEND

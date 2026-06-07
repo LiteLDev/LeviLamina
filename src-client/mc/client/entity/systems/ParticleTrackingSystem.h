@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/ecs/systems/ITickingSystem.h"
 
 // auto generated forward declare list
@@ -12,6 +13,7 @@ class ClientParticleTerminationComponent;
 class ClientParticleTrackingComponent;
 class EntityContext;
 class EntityRegistry;
+class IClientInstance;
 class ParticleSystemEngine;
 struct ActorComponent;
 // clang-format on
@@ -33,27 +35,37 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
+    // NOLINTEND
 
-    virtual ~ParticleTrackingSystem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit ParticleTrackingSystem(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void _tickClientParticleComponent(
-        ::EntityContext& entity,
-        ::ActorComponent const&,
-        ::ClientParticleInitializationComponent& clientParticleComponent,
-        ::ParticleSystemEngine&                  particleSystemEngine
+        ::EntityContext&                         entity,
+        ::ActorComponent const&                  clientParticleComponent,
+        ::ClientParticleInitializationComponent& particleSystemEngine,
+        ::ParticleSystemEngine&
     );
 
     MCNAPI static void tickClientParticleTrackingComponent(
-        ::EntityContext& entity,
-        ::ActorComponent const&,
-        ::ClientParticleTrackingComponent&    clientParticleTrackingComponent,
-        ::ClientParticleTerminationComponent& clientParticleTerminationComponent,
-        ::ParticleSystemEngine&               particleSystemEngine
+        ::EntityContext&                      entity,
+        ::ActorComponent const&               clientParticleTrackingComponent,
+        ::ClientParticleTrackingComponent&    clientParticleTerminationComponent,
+        ::ClientParticleTerminationComponent& particleSystemEngine,
+        ::ParticleSystemEngine&
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
     // NOLINTEND
 
 public:

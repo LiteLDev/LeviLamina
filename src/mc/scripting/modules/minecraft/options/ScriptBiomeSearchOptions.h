@@ -23,6 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Vec3 getBoundingSize() const;
+
     MCAPI ::Scripting::Result_deprecated<void> validate() const;
     // NOLINTEND
 

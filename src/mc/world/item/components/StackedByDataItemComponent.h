@@ -11,6 +11,7 @@
 class ComponentItem;
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct StackedByDataItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,11 +23,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StackedByDataItemComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
+    // NOLINTEND
 
-    virtual ~StackedByDataItemComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit StackedByDataItemComponent(::SharedTypes::v1_20_50::StackedByDataItemComponent component);
     // NOLINTEND
 
 public:
@@ -39,6 +48,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::StackedByDataItemComponent component);
     // NOLINTEND
 
 public:

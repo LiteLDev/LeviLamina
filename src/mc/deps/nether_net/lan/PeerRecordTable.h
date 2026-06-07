@@ -63,7 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PeerRecordTable() /*override*/ = default;
+    virtual ~PeerRecordTable() /*override*/;
     // NOLINTEND
 
 public:
@@ -74,6 +74,12 @@ public:
         ::rtc::SocketAddress const&             address,
         ::std::chrono::steady_clock::time_point timeOfDiscovery
     );
+
+    MCNAPI bool Contains(::NetherNet::NetworkID networkID);
+
+    MCNAPI bool Find(::NetherNet::NetworkID networkID, ::rtc::SocketAddress* pOut);
+
+    MCNAPI explicit PeerRecordTable(::NetherNet::ContextProxy const& ctx);
     // NOLINTEND
 
 public:
@@ -84,6 +90,18 @@ public:
         ::NetherNet::Utils::ThreadSafe<
             ::std::map<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>::View const& exclusiveTable
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -11,6 +11,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,6 +22,11 @@ public:
     ::ll::TypedStorage<8, 264, ::BlockGeometryDescription>          mGeometryDescription;
     ::ll::TypedStorage<8, 144, ::BlockMaterialInstancesDescription> mMaterialInstanceDescription;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockItemVisualDescription(BlockItemVisualDescription const&);
+    BlockItemVisualDescription();
 
 public:
     // virtual functions
@@ -37,13 +43,41 @@ public:
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
-    virtual ~BlockItemVisualDescription() /*override*/ = default;
+    virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BlockItemVisualDescription(
+        ::BlockGeometryDescription const&          geometryDescription,
+        ::BlockMaterialInstancesDescription const& materialInstanceDescription
+    );
+
+    MCFOLD ::BlockItemVisualDescription& operator=(::BlockItemVisualDescription&&);
+
+    MCFOLD ::BlockItemVisualDescription& operator=(::BlockItemVisualDescription const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::BlockGeometryDescription const&          geometryDescription,
+        ::BlockMaterialInstancesDescription const& materialInstanceDescription
+    );
     // NOLINTEND
 
 public:
@@ -60,6 +94,8 @@ public:
     MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+
+    MCFOLD void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
 
     // NOLINTEND

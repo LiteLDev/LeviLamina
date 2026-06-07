@@ -24,26 +24,7 @@ public:
         // prevent constructor by default
         TimeAndValue2& operator=(TimeAndValue2 const&);
         TimeAndValue2(TimeAndValue2 const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI TimeAndValue2();
-
-        MCAPI ~TimeAndValue2();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
+        TimeAndValue2();
     };
 
 public:
@@ -58,27 +39,12 @@ public:
     // prevent constructor by default
     BPSTracker& operator=(BPSTracker const&);
     BPSTracker(BPSTracker const&);
+    BPSTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BPSTracker();
-
     MCAPI void Push1(uint64 time, uint64 value1);
-
-    MCAPI ~BPSTracker();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

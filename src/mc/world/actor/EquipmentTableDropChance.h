@@ -14,8 +14,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EquipmentTableDropChance();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EquipmentTableDropChance(::SharedTypes::Legacy::SlotWithDropChance slot, float dropChance);
+
     MCAPI void setSlotFromEquipmentSlotName(::std::string const& equipmentSlotName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::Legacy::SlotWithDropChance slot, float dropChance);
     // NOLINTEND
 };

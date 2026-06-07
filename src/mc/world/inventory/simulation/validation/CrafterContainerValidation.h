@@ -24,10 +24,7 @@ public:
         bool
     ) const /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
-        /*override*/;
-
-    virtual ~CrafterContainerValidation() /*override*/ = default;
+    virtual int getContainerSize(::ContainerScreenContext const& container, ::Container const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -41,7 +38,7 @@ public:
         bool
     ) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& container, ::Container const&) const;
 
 
     // NOLINTEND

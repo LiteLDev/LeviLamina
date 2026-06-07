@@ -7,8 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ClientboundTextureShiftPacket;
 namespace TextureShift { struct CollectionState; }
 namespace TextureShift { struct ShiftResource; }
+namespace mce { struct TextureShiftBuffer; }
 // clang-format on
 
 class TextureShiftManager {
@@ -25,12 +27,29 @@ public:
     // prevent constructor by default
     TextureShiftManager& operator=(TextureShiftManager const&);
     TextureShiftManager(TextureShiftManager const&);
-    TextureShiftManager();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI TextureShiftManager();
+
+    MCNAPI ::std::vector<::mce::TextureShiftBuffer> const& getShiftBuffer() const;
+
+    MCNAPI void handleTextureShiftPacket(::ClientboundTextureShiftPacket const& packet);
+
+    MCNAPI bool isInitialized() const;
+
+    MCNAPI void onTextureAtlasUpdated();
+
+    MCNAPI bool processShiftBufferUpdates();
+
+    MCNAPI void reset();
+
     MCNAPI void tickUpdate(float currentTime, uint64 ticksPassed);
+
+    MCNAPI ::std::optional<uint64> tryGetBufferIndex(::std::string const& textureName) const;
+
+    MCNAPI ~TextureShiftManager();
     // NOLINTEND
 
 public:
@@ -45,5 +64,17 @@ public:
             ::std::vector<::std::string>,
             ::std::vector<::TextureShift::ShiftResource>> const& shiftMaterials
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

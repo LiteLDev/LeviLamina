@@ -7,9 +7,15 @@
 
 class BlastFurnaceContainerScreenValidator : public ::FurnaceContainerScreenValidator {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~BlastFurnaceContainerScreenValidator() /*override*/ = default;
+    MCAPI BlastFurnaceContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

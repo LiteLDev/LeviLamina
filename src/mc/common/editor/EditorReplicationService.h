@@ -13,6 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+namespace Editor { class IReplicatedBaseEventData; }
 namespace Editor { class IReplicatedContainerBase; }
 namespace Editor { class IReplicatedObjectBase; }
 namespace Editor { class ServiceProviderCollection; }
@@ -89,6 +90,8 @@ public:
     _addOrReplaceObject(::HashedString const& id, uint typeHash, ::std::string_view newData);
 
     MCNAPI ::Editor::IReplicatedContainerBase* _getContainerPointerById(::HashedString const& id) const;
+
+    MCNAPI ::Editor::IReplicatedBaseEventData* _getEventDataPointerById(::HashedString const& id) const;
 
     MCNAPI void _handleEditorReplicationContainerAddObjectPayload(
         ::Editor::Network::EditorReplicationContainerAddObjectPayload const& payload

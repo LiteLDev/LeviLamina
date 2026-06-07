@@ -25,6 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void load(::CompoundTag const& data);
+#endif
+
     MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
     // NOLINTEND
 };

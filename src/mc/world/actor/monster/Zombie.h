@@ -42,8 +42,6 @@ public:
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     virtual int getArmorValue() const /*override*/;
-
-    virtual ~Zombie() /*override*/;
     // NOLINTEND
 
 public:
@@ -74,12 +72,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

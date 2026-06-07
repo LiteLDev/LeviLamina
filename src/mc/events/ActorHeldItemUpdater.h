@@ -17,8 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ActorCarriedItemChangedEvent const& actorCarriedItemChangedEvent) /*override*/;
-
-    virtual ~ActorHeldItemUpdater() /*override*/ = default;
     // NOLINTEND
 
 public:

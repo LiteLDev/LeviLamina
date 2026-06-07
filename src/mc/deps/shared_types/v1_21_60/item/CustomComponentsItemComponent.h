@@ -30,9 +30,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ComponentData& operator=(ComponentData const&);
+        ComponentData();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ComponentData(::SharedTypes::v1_21_60::CustomComponentsItemComponent::ComponentData const&);
+
         MCAPI ~ComponentData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent::ComponentData const&);
         // NOLINTEND
 
     public:
@@ -51,19 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CustomComponentsItemComponent& operator=(CustomComponentsItemComponent const&);
-    CustomComponentsItemComponent(CustomComponentsItemComponent const&);
-    CustomComponentsItemComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::CustomComponentsItemComponent&
-    operator=(::SharedTypes::v1_21_60::CustomComponentsItemComponent&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -72,6 +72,12 @@ public:
         ::std::optional<::SharedTypes::v1_20_80::CustomComponentsItemComponent>& oldComp,
         ::std::optional<::SharedTypes::v1_21_60::CustomComponentsItemComponent>& newComp
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

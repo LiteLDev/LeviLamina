@@ -40,7 +40,7 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
-    EduDedicatedServerDetails(EduDedicatedServerDetails const&);
+    EduDedicatedServerDetails& operator=(EduDedicatedServerDetails const&);
     EduDedicatedServerDetails();
 
 #endif
@@ -48,15 +48,23 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI EduDedicatedServerDetails(::Social::EduDedicatedServerDetails const&);
+
     MCNAPI ::Bedrock::Result<void> fromJsonValue(::Json::Value const& details);
 
     MCNAPI ::Social::EduDedicatedServerDetails& operator=(::Social::EduDedicatedServerDetails&&);
 
-    MCNAPI ::Social::EduDedicatedServerDetails& operator=(::Social::EduDedicatedServerDetails const&);
-
     MCNAPI ::Json::Value toJsonValue() const;
 
     MCNAPI ~EduDedicatedServerDetails();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Social::EduDedicatedServerDetails const&);
 #endif
     // NOLINTEND
 

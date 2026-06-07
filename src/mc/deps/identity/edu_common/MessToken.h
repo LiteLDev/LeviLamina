@@ -21,12 +21,15 @@ public:
 public:
     // prevent constructor by default
     MessToken& operator=(MessToken const&);
-    MessToken(MessToken const&);
     MessToken();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI MessToken(::MessToken const&);
+
+    MCNAPI bool isExpired() const;
+
     MCNAPI ::MessToken& operator=(::MessToken&&);
 
     MCNAPI ::std::string toString() const;
@@ -42,6 +45,12 @@ public:
 
     MCNAPI static ::std::optional<::std::pair<::Json::Value, ::MessToken>>
     unpackChainIfTrusted(::WebToken const& selfSignedToken, ::std::vector<::std::string> const& messPublicKeys);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::MessToken const&);
     // NOLINTEND
 
 public:

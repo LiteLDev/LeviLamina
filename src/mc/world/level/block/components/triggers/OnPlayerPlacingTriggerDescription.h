@@ -20,11 +20,9 @@ public:
 
     virtual bool isNetworkComponent() const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
-
-    virtual ~OnPlayerPlacingTriggerDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -40,7 +38,7 @@ public:
 
     MCFOLD bool $isNetworkComponent() const;
 
-    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
     MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 

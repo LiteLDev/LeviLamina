@@ -31,8 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
-
-    virtual ~HugeFungusFeature() /*override*/;
     // NOLINTEND
 
 public:
@@ -45,12 +43,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(bool isBlue);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

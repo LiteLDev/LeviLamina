@@ -24,40 +24,23 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkd187cb;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     WorldPacksHistoryFile& operator=(WorldPacksHistoryFile const&);
     WorldPacksHistoryFile(WorldPacksHistoryFile const&);
-    WorldPacksHistoryFile();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    WorldPacksHistoryFile& operator=(WorldPacksHistoryFile const&);
-    WorldPacksHistoryFile();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI WorldPacksHistoryFile(::WorldPacksHistoryFile const&);
+    MCNAPI WorldPacksHistoryFile();
 
-    MCNAPI ::WorldPackHistory const& addPack(::WorldPackHistory const& newWorldPackHistory);
-#endif
+    MCNAPI ::std::vector<::WorldPackHistory> const& getPacks() const;
 
     MCNAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(::Json::Value const& value);
 
-#ifdef LL_PLAT_C
-    MCNAPI ::WorldPacksHistoryFile& operator=(::WorldPacksHistoryFile&&);
-#endif
-
     MCNAPI void removePack(::PackIdVersion const& packId);
 
-#ifdef LL_PLAT_C
     MCNAPI ::Json::Value toJsonValue() const;
-#endif
 
     MCNAPI ~WorldPacksHistoryFile();
     // NOLINTEND
@@ -65,9 +48,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::WorldPacksHistoryFile const&);
-#endif
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

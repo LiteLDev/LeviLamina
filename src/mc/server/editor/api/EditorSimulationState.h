@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isPaused() const;
-
     MCNAPI ::Scripting::Result_deprecated<void> setPaused(bool isPaused);
     // NOLINTEND
 

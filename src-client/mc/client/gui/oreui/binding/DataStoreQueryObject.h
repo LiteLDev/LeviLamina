@@ -29,12 +29,6 @@ public:
     DataStoreQueryObject();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataStoreQueryObject() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI DataStoreQueryObject(
@@ -45,11 +39,11 @@ public:
     );
 
     MCAPI DataStoreQueryObject(
-        ::OreUI::GameDependencies const&,
-        ::OreUI::ClientDependencies const& client,
-        ::std::string                      dataStoreName,
+        ::OreUI::GameDependencies const&   client,
+        ::OreUI::ClientDependencies const& dataStoreName,
         ::std::string                      propertyName,
-        ::std::string                      path
+        ::std::string                      path,
+        ::std::string
     );
     // NOLINTEND
 
@@ -64,11 +58,11 @@ public:
     );
 
     MCAPI void* $ctor(
-        ::OreUI::GameDependencies const&,
-        ::OreUI::ClientDependencies const& client,
-        ::std::string                      dataStoreName,
+        ::OreUI::GameDependencies const&   client,
+        ::OreUI::ClientDependencies const& dataStoreName,
         ::std::string                      propertyName,
-        ::std::string                      path
+        ::std::string                      path,
+        ::std::string
     );
     // NOLINTEND
 

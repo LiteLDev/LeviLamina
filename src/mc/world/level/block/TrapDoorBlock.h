@@ -36,7 +36,7 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
 
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
@@ -52,15 +52,13 @@ public:
 
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     virtual void _useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
-
-    virtual ~TrapDoorBlock() /*override*/;
     // NOLINTEND
 
 public:
@@ -71,6 +69,8 @@ public:
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void setOpen(::BlockSource& region, ::BlockPos const& pos, bool shouldOpen) const;
 
     MCAPI void toggleOpen(::BlockSource& region, ::Actor* user, ::BlockPos const& pos) const;
 
@@ -98,18 +98,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
@@ -127,7 +121,7 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 

@@ -81,8 +81,6 @@ public:
     virtual void pushElement(uint64) /*override*/;
 
     virtual void pop() /*override*/;
-
-    virtual ~INISchemaReader() /*override*/ = default;
     // NOLINTEND
 
 public:

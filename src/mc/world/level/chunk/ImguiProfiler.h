@@ -58,30 +58,15 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            Record& operator=(Record const&);
-            Record();
-
-        public:
             // member functions
             // NOLINTBEGIN
-            MCAPI Record(::ImguiProfiler::RecordGroup::Record const&);
-
-            MCAPI ::ImguiProfiler::RecordGroup::Record& operator=(::ImguiProfiler::RecordGroup::Record&&);
-
             MCAPI ~Record();
-            // NOLINTEND
-
-        public:
-            // constructor thunks
-            // NOLINTBEGIN
-            MCAPI void* $ctor(::ImguiProfiler::RecordGroup::Record const&);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -98,13 +83,12 @@ public:
         public:
             // prevent constructor by default
             FullStackRecord& operator=(FullStackRecord const&);
-            FullStackRecord(FullStackRecord const&);
             FullStackRecord();
 
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord&&);
+            MCAPI FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord const&);
 
             MCAPI ::ImguiProfiler::RecordGroup::FullStackRecord&
             operator=(::ImguiProfiler::RecordGroup::FullStackRecord&&);
@@ -115,7 +99,7 @@ public:
         public:
             // constructor thunks
             // NOLINTBEGIN
-            MCAPI void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord&&);
+            MCAPI void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord const&);
             // NOLINTEND
 
         public:
@@ -173,7 +157,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Timer() = default;
+        virtual ~Timer();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -191,28 +181,21 @@ public:
         // NOLINTEND
 
     public:
-        // virtual functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        virtual ~ManualTimer() /*override*/ = default;
-#else // LL_PLAT_C
-        virtual ~ManualTimer() /*override*/;
-#endif
-
-        // NOLINTEND
+        // prevent constructor by default
+        ManualTimer();
 
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
+        MCAPI ManualTimer(char const* group, char const* name, bool isClient);
+
         MCAPI void mark();
-#endif
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void* $ctor(char const* group, char const* name, bool isClient);
         // NOLINTEND
 
     public:
@@ -224,9 +207,25 @@ public:
 
     class ScopedTimer : public ::ImguiProfiler::Timer {
     public:
+        // prevent constructor by default
+        ScopedTimer();
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ~ScopedTimer() /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ScopedTimer(char const* group, char const* name, bool isClient);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(char const* group, char const* name, bool isClient);
         // NOLINTEND
 
     public:
@@ -252,16 +251,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImguiProfiler() /*override*/ = default;
+    virtual ~ImguiProfiler() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ImguiProfiler();
+
     MCAPI ::TimeAccumulator
     getTimeAccumulator(::std::string const& group, ::std::string const& name, bool isClientSide);
 
+    MCAPI void reset();
+
     MCAPI void update();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void addRecord(::ImguiProfiler::Record&& record);
     // NOLINTEND
 
 public:
@@ -272,6 +281,18 @@ public:
     MCAPI static int& sProduceRecords();
 
     MCAPI static ::Bedrock::Threading::Mutex& sRecordMutex();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

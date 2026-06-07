@@ -20,11 +20,10 @@ namespace PendingRemovePassengersSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void pendingRemovePassengers(
-    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::VehicleComponent>>,
-    ::StrictEntityContext const&        vehicle,
-    ::PendingRemovePassengersComponent& pendingPassengersToRemoveComponent,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::VehicleComponent>> vehicle,
+    ::StrictEntityContext const&        pendingPassengersToRemoveComponent,
+    ::PendingRemovePassengersComponent& modifier,
     ::EntityModifier<::ExitFromPassengerFlagComponent, ::PendingRemovePassengersComponent, ::RemovePassengersComponent>
-        modifier
 );
 // NOLINTEND
 

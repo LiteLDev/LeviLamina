@@ -11,7 +11,11 @@
 // clang-format off
 class ActorOwnerComponent;
 class ActorTickNeededComponent;
+class AddActorPacket;
+class MotionPredictionHintsPacket;
+class MoveActorAbsoluteData;
 class PredictedMovementComponent;
+class SetActorMotionPacket;
 class StrictEntityContext;
 struct ActorHeadRotationComponent;
 struct ActorRotationComponent;
@@ -60,9 +64,26 @@ MCAPI void _tickSystem(
 
 #ifdef LL_PLAT_C
 MCAPI void _updateRuntimeData(::PredictedMovementComponent& component);
+
+MCAPI void
+addPredictionMotionData(::MotionPredictionHintsPacket const& packet, ::PredictedMovementComponent* component);
+
+MCAPI void addPredictionMoveData(
+    ::MoveActorAbsoluteData const&                 packet,
+    ::PredictedMovementComponent&                  component,
+    ::std::chrono::steady_clock::time_point const& receiveTimepoint
+);
 #endif
 
 MCAPI ::TickingSystemWithInfo createSystem();
+
+#ifdef LL_PLAT_C
+MCAPI void suspendPredictedMovementComponent(::PredictedMovementComponent* component);
+
+MCAPI bool tryAddPredictionMotionData(::SetActorMotionPacket const& packet, ::PredictedMovementComponent* component);
+
+MCAPI bool tryAddPredictionMoveData(::AddActorPacket const& packet, ::PredictedMovementComponent* component);
+#endif
 // NOLINTEND
 
 } // namespace PredictedMovementSystem

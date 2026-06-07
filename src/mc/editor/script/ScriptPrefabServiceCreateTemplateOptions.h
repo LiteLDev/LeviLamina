@@ -26,13 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPrefabServiceCreateTemplateOptions(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions&&);
-
     MCNAPI
     ScriptPrefabServiceCreateTemplateOptions(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions&
-    operator=(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions&&);
 
     MCNAPI ::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions&
     operator=(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions const&);
@@ -49,8 +44,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions&&);
-
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions const&);
     // NOLINTEND
 

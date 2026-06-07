@@ -30,9 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    virtual ~SpringFeature() /*override*/ = default;
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -44,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const;
 
 
     // NOLINTEND

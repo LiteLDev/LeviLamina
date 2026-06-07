@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class PlayerActionType : int {
-    Unknown                         = -1,
+    Unknown                         = 4294967295,
     StartDestroyBlock               = 0,
     AbortDestroyBlock               = 1,
     StopDestroyBlock                = 2,

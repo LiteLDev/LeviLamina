@@ -25,31 +25,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptContiguousSelectionProperties& operator=(ScriptContiguousSelectionProperties const&);
     ScriptContiguousSelectionProperties(ScriptContiguousSelectionProperties const&);
     ScriptContiguousSelectionProperties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptContiguousSelectionProperties&
-    operator=(::Editor::ScriptModule::ScriptContiguousSelectionProperties&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptContiguousSelectionProperties&
-    operator=(::Editor::ScriptModule::ScriptContiguousSelectionProperties const&);
-
-    MCNAPI ~ScriptContiguousSelectionProperties();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -23,16 +23,11 @@ public:
 
 public:
     // prevent constructor by default
-    PropertyOutOfBoundsError& operator=(PropertyOutOfBoundsError const&);
     PropertyOutOfBoundsError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError&&);
-
-    MCAPI PropertyOutOfBoundsError(::Scripting::PropertyOutOfBoundsError const&);
-
     MCAPI PropertyOutOfBoundsError(
         ::std::string const&    propertyName,
         ::std::optional<double> minValue_,
@@ -45,10 +40,6 @@ public:
         ::std::optional<double> minValue_,
         ::std::optional<double> maxValue_
     );
-
-    MCAPI ::Scripting::PropertyOutOfBoundsError& operator=(::Scripting::PropertyOutOfBoundsError&&);
-
-    MCAPI ~PropertyOutOfBoundsError();
     // NOLINTEND
 
 public:
@@ -60,10 +51,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::PropertyOutOfBoundsError&&);
-
-    MCAPI void* $ctor(::Scripting::PropertyOutOfBoundsError const&);
-
     MCAPI void*
     $ctor(::std::string const& propertyName, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
 
@@ -73,12 +60,6 @@ public:
         ::std::optional<double> minValue_,
         ::std::optional<double> maxValue_
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

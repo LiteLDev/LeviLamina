@@ -19,8 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TextureAtlasResourceCallbacks& operator=(::TextureAtlasResourceCallbacks&&);
-
     MCNAPI ~TextureAtlasResourceCallbacks();
     // NOLINTEND
 

@@ -26,7 +26,7 @@ class IEditorManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEditorManager() /*override*/;
+    virtual ~IEditorManager() /*override*/ = default;
 
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
 
@@ -51,12 +51,6 @@ public:
     scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) = 0;
 
     virtual void tryClearPlaytestRoundtripInfo() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

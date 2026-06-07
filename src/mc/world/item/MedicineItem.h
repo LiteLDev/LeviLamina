@@ -20,10 +20,14 @@ struct ResolvedItemIconInfo;
 
 class MedicineItem : public ::ChemistryItem {
 public:
+    // prevent constructor by default
+    MedicineItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
@@ -35,8 +39,12 @@ public:
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
+    // NOLINTEND
 
-    virtual ~MedicineItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI MedicineItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -48,10 +56,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 

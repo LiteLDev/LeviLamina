@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IEditorPlayer.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
@@ -16,7 +15,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class Player;
 class PlayerEventCoordinator;
 struct PlayerDimensionChangeAfterEvent;
@@ -48,7 +46,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb995b8;
     ::ll::UntypedStorage<8, 48> mUnk6374b5;
-    ::ll::UntypedStorage<8, 48> mUnkc284f0;
+    ::ll::UntypedStorage<8, 48> mUnk3329f0;
     ::ll::UntypedStorage<8, 24> mUnk6b14f6;
     ::ll::UntypedStorage<4, 4>  mUnk2b7012;
     ::ll::UntypedStorage<8, 8>  mUnk10bddf;
@@ -63,8 +61,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& evt) /*override*/;
-
     virtual ~EditorPlayerCommon() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
@@ -87,6 +83,8 @@ public:
 
     virtual ::EventResult onPlayerTick(::Player& player) /*override*/;
 
+    virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& evt) /*override*/;
+
     virtual void _onTick() /*override*/;
     // NOLINTEND
 
@@ -94,6 +92,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI EditorPlayerCommon(::Player& player, ::gsl::not_null<::Editor::EditorInitParams*> initParams);
+
+    MCNAPI ::Editor::EditorPlayerCommon::InitializationState _getInitializationState() const;
+
+    MCNAPI void _setInitializationState(::Editor::EditorPlayerCommon::InitializationState value);
     // NOLINTEND
 
 public:
@@ -111,8 +113,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeAfterEvent const& evt);
-
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
@@ -130,6 +130,8 @@ public:
     MCNAPI ::Player* $getPlayer() const;
 
     MCNAPI ::EventResult $onPlayerTick(::Player& player);
+
+    MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeAfterEvent const& evt);
 
     MCNAPI void $_onTick();
 

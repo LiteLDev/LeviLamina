@@ -28,19 +28,27 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>   mName;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptItemEnchantmentType& operator=(ScriptItemEnchantmentType const&);
     ScriptItemEnchantmentType(ScriptItemEnchantmentType const&);
-    ScriptItemEnchantmentType();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::string getName() const;
+#ifdef LL_PLAT_S
+    MCAPI ScriptItemEnchantmentType();
 
     MCAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType&
-    operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentType&&);
+    operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentType&& rhs);
+
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptItemEnchantmentType const& other) const;
+
+    MCAPI ~ScriptItemEnchantmentType();
+#endif
     // NOLINTEND
 
 public:
@@ -56,6 +64,22 @@ public:
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor();
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

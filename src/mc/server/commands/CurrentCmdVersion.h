@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class CurrentCmdVersion : int {
-    Invalid                                      = -1,
+    Invalid                                      = 4294967295,
     Initial                                      = 1,
     TpRotationClamping                           = 2,
     NewBedrockCmdSystem                          = 3,
@@ -53,6 +53,7 @@ enum class CurrentCmdVersion : int {
     PostBlockFlattening                                                               = 43,
     TestForBlockCommandDoesNotIgnoreBlockState                                        = 44,
     CloneExtraBlockFilterFix                                                          = 45,
-    Count                                                                             = 46,
-    Latest                                                                            = 45,
+    FillCommandUnfillableErrorOutput                                                  = 46,
+    Count                                                                             = 47,
+    Latest                                                                            = 46,
 };

@@ -25,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Scripting::GlobalBinding& operator=(::Scripting::GlobalBinding&&);
+
     MCNAPI ~GlobalBinding();
     // NOLINTEND
 

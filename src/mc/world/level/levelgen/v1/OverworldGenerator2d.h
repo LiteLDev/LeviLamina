@@ -71,19 +71,17 @@ public:
         /*override*/;
 
     virtual void _prepareHeights(
-        ::BlockVolume&                                                  box,
-        ::ChunkPos const&                                               chunkPos,
-        ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
-        ::Aquifer*                                                      aquiferPtr,
-        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
-        bool                                                            factorInBeardsAndShavers,
-        ::std::vector<short>*                                           ZXheights
+        ::BlockVolume&                box,
+        ::ChunkPos const&             chunkPos,
+        ::ChunkLocalNoiseCache const& factorInBeardsAndShavers,
+        ::Aquifer*                    ZXheights,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&&,
+        bool,
+        ::std::vector<short>*
     ) /*override*/;
 
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const
         /*override*/;
-
-    virtual ~OverworldGenerator2d() /*override*/;
     // NOLINTEND
 
 public:
@@ -102,12 +100,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::BiomeSource const& $getBiomeSource() const;
@@ -119,21 +111,21 @@ public:
     MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
     $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 
-    MCFOLD ::PerlinSimplexNoise const& $getSurfaceNoise();
+    MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 
-    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
+    MCFOLD ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
     MCFOLD void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
     MCAPI void $_prepareHeights(
-        ::BlockVolume&                                                  box,
-        ::ChunkPos const&                                               chunkPos,
-        ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
-        ::Aquifer*                                                      aquiferPtr,
-        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
-        bool                                                            factorInBeardsAndShavers,
-        ::std::vector<short>*                                           ZXheights
+        ::BlockVolume&                box,
+        ::ChunkPos const&             chunkPos,
+        ::ChunkLocalNoiseCache const& factorInBeardsAndShavers,
+        ::Aquifer*                    ZXheights,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&&,
+        bool,
+        ::std::vector<short>*
     );
 
     MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;

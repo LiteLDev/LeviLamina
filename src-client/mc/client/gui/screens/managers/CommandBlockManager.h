@@ -10,7 +10,6 @@
 // clang-format off
 class BaseCommandBlock;
 class BlockPos;
-class CommandBlockActor;
 class CommandOrigin;
 class Player;
 struct ActorUniqueID;
@@ -68,7 +67,7 @@ public:
     // NOLINTBEGIN
     MCAPI CommandBlockManager(::Player& player, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
 
-    MCAPI ::CommandBlockActor* _getCommandBlockEntity();
+    MCAPI void _loadFromEntity();
     // NOLINTEND
 
 public:
@@ -92,9 +91,9 @@ public:
 
     MCAPI ::CommandBlockMode $getCommandBlockTypeMode() const;
 
-    MCAPI bool $isConditionalMode() const;
+    MCFOLD bool $isConditionalMode() const;
 
-    MCAPI bool $isRedstoneMode() const;
+    MCFOLD bool $isRedstoneMode() const;
 
     MCAPI bool $getLastPerformedConditionalMode();
 

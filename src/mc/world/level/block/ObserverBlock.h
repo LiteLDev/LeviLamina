@@ -12,13 +12,16 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class PulseCapacitor;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class ObserverBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    ObserverBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,21 +46,20 @@ public:
 
     virtual bool isSignalSource() const /*override*/;
 
-    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
-        /*override*/;
+    virtual bool allowStateMismatchOnPlacement(::Block const&, ::Block const&) const /*override*/;
 
     virtual ::Block const& getRenderBlock() const /*override*/;
 
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ObserverBlock(::std::string const& nameId, int id);
+
     MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
 
     MCAPI void _startSignal(::BlockSource& region, ::BlockPos const& pos) const;
@@ -68,6 +70,12 @@ public:
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -90,15 +98,13 @@ public:
 
     MCFOLD bool $isSignalSource() const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const&, ::Block const&) const;
 
     MCAPI ::Block const& $getRenderBlock() const;
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
     MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

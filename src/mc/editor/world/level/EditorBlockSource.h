@@ -12,6 +12,9 @@ class AABB;
 class Actor;
 class BlockPos;
 class BlockSourceListener;
+class ChunkSource;
+class Dimension;
+class Level;
 struct Bounds;
 // clang-format on
 
@@ -52,6 +55,22 @@ public:
     virtual bool hasChunksAt(::BlockPos const& pos, int r, bool ignoreClientChunk) const /*override*/;
 
     virtual bool hasChunksAt(::AABB const& bb, bool ignoreClientChunk) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI EditorBlockSource(::Level& level, ::Dimension& dimension, ::ChunkSource& chunkSource, ::AABB const& bounds);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Level& level, ::Dimension& dimension, ::ChunkSource& chunkSource, ::AABB const& bounds);
+#endif
     // NOLINTEND
 
 public:

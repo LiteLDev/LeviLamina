@@ -21,6 +21,8 @@ struct ActorHealEvent;
 struct ActorHealthChangedEvent;
 struct ActorHurtEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
+namespace ScriptModuleMinecraft { class ScriptV010Events; }
+namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -71,8 +73,23 @@ public:
     virtual ::EventResult onEvent(::ActorDroppedItemEvent const& eventData) /*override*/;
 
     virtual ::EventResult onEvent(::ActorAcquiredItemEvent const& eventData) /*override*/;
+    // NOLINTEND
 
-    virtual ~ScriptActorGlobalEventListener() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD void registerListener(
+        ::Scripting::WeakLifetimeScope const&                                     scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> handle
+    );
+
+    MCFOLD void registerListener(
+        ::Scripting::WeakLifetimeScope const&                                           scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldAfterEvents> handle
+    );
+
+    MCFOLD void
+    unregisterListener(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle);
     // NOLINTEND
 
 public:

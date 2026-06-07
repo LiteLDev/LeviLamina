@@ -12,11 +12,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ::std::optional<int> getValue() const;
 
-    MCAPI bool operator<(int rhs) const;
+    MCFOLD int getValueForSerialization() const;
+
+    MCFOLD bool isInfinite() const;
+
+    MCAPI bool operator!=(int rhs) const;
+
+    MCAPI ::EffectDuration operator*(float rhs) const;
+
+    MCAPI ::EffectDuration operator+(::EffectDuration const& rhs) const;
+
+    MCAPI ::EffectDuration& operator+=(::EffectDuration const& rhs);
+
+#ifdef LL_PLAT_C
+    MCAPI ::EffectDuration& operator-=(int rhs);
 #endif
+
+    MCAPI ::EffectDuration operator/(float rhs) const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool operator<(::EffectDuration const& rhs) const;
+#endif
+
+    MCAPI bool operator<(int rhs) const;
+
+    MCAPI bool operator<=(::EffectDuration const& rhs) const;
+
+    MCAPI bool operator<=(int rhs) const;
+
+    MCAPI bool operator>(int rhs) const;
+
+    MCAPI bool operator>=(::EffectDuration const& rhs) const;
+
+    MCAPI void scaleAndRoundUp(float multiplier);
+
+    MCAPI bool tickDown();
 
     MCAPI ::std::string toString() const;
     // NOLINTEND

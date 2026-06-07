@@ -19,6 +19,13 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContainerManagerController>> mContainerManagerController;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContainerTransferClient();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -26,8 +33,29 @@ public:
 
     virtual ::std::unique_ptr<::ContainerTransferScope> preTransfer() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void postTransfer(::ContainerTransferScope*, ::ContainerScreenActionResult const&) /*override*/;
+#else // LL_PLAT_C
     virtual void
     postTransfer(::ContainerTransferScope* transferScope, ::ContainerScreenActionResult const& result) /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit ContainerTransferClient(::std::weak_ptr<::ContainerManagerController> containerManagerController);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::ContainerManagerController> containerManagerController);
+#endif
     // NOLINTEND
 
 public:

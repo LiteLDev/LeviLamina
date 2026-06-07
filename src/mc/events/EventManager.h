@@ -52,14 +52,17 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EventManager(::Social::Events::EventManagerArguments&& args);
 
+#ifdef LL_PLAT_C
+    MCNAPI void SendDelayedEventActions(uint primaryUserId);
+#endif
+
     MCNAPI void UpdateDnAPlatString();
 
     MCNAPI ::std::string _buildDnAPlatformString();
 
+#ifdef LL_PLAT_C
     MCNAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
-
-    MCNAPI ::std::unordered_map<::std::string, ::Social::Events::Property>
-    buildCommonProperties(uint userId, ::std::vector<::std::string> const& exclude) const;
+#endif
 
     MCNAPI void buildCommonProperties(
         ::std::unordered_map<::std::string, ::Social::Events::Property>& props,
@@ -67,17 +70,29 @@ public:
         ::std::vector<::std::string> const&                              exclude
     ) const;
 
-#ifdef LL_PLAT_C
     MCNAPI ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
-#endif
 
     MCNAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI uint getNextSequenceNumber();
+#endif
 
     MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
 
     MCNAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;
 
+#ifdef LL_PLAT_C
+    MCNAPI bool isEventRecordingEnabled() const;
+#endif
+
+    MCNAPI void recordDelayedEventAction(::std::string const& action);
+
     MCNAPI void recordEvent(::Social::Events::Event& event);
+
+#ifdef LL_PLAT_C
+    MCNAPI void removeCommonProperty(::std::string const& name);
+#endif
 
     MCNAPI void removePlayerCommonProperty(uint userId, ::std::string const& name);
 

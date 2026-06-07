@@ -39,18 +39,6 @@ public:
         ::ll::TypedStorage<8, 176, ::BlockDescriptor> blockDescriptor;
         ::ll::TypedStorage<4, 8, ::IntRange>          count;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~DecorationBlockDescriptor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct DirectionMask {

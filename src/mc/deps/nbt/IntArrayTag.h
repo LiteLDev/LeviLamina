@@ -34,8 +34,12 @@ public:
     virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
     virtual uint64 hash() const /*override*/;
+    // NOLINTEND
 
-    virtual ~IntArrayTag() /*override*/ = default;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

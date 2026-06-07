@@ -18,19 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCatmullRomSpline& operator=(ScriptCatmullRomSpline const&);
-    ScriptCatmullRomSpline(ScriptCatmullRomSpline const&);
-    ScriptCatmullRomSpline();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptCatmullRomSpline&
-    operator=(::ScriptModuleMinecraft::ScriptCatmullRomSpline&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

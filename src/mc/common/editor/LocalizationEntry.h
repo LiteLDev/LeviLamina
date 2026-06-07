@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor {
 
 struct LocalizationEntry {
@@ -14,17 +19,31 @@ public:
 
 public:
     // prevent constructor by default
-    LocalizationEntry(LocalizationEntry const&);
+    LocalizationEntry& operator=(LocalizationEntry const&);
     LocalizationEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI LocalizationEntry(::Editor::LocalizationEntry const&);
+
     MCNAPI ::Editor::LocalizationEntry& operator=(::Editor::LocalizationEntry&&);
 
-    MCNAPI ::Editor::LocalizationEntry& operator=(::Editor::LocalizationEntry const&);
+    MCNAPI bool operator==(::Editor::LocalizationEntry const& rhs) const;
 
     MCNAPI ~LocalizationEntry();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::LocalizationEntry const&);
     // NOLINTEND
 
 public:

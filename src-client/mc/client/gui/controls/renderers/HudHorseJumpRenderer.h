@@ -35,18 +35,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HudHorseJumpRenderer() /*override*/;
+    virtual ~HudHorseJumpRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(
-        ::MinecraftUIRenderContext& renderContext,
-        ::IClientInstance&          client,
-        ::UIControl&                owner,
-        int                         pass
-    ) /*override*/;
+    virtual void
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl&, ::UIScene const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -71,20 +67,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void
-    $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
     // NOLINTEND
 
 public:

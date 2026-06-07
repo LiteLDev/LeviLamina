@@ -24,14 +24,6 @@ public:
     virtual void deserializeData(::DeserializeDataParams nonConstDeserializeDataParams) /*override*/;
 
     virtual char const* getJsonName() const /*override*/;
-
-    virtual ~AnimationScriptsDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

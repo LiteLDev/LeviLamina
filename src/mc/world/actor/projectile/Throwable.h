@@ -10,8 +10,10 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
 class Mob;
 class Player;
 class Vec3;
@@ -28,6 +30,10 @@ public:
     ::ll::TypedStorage<4, 4, int>             mShakeTime;
     ::ll::TypedStorage<4, 4, int>             mLife;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Throwable();
 
 public:
     // virtual functions
@@ -48,13 +54,17 @@ public:
     virtual float getThrowUpAngleOffset();
 
     virtual float getGravity();
-
-    virtual ~Throwable() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Throwable(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+
     MCAPI void shoot(::Mob& shooter);
 
     MCAPI void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
@@ -67,9 +77,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:

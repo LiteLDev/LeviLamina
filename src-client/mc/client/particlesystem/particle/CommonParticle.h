@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BrightnessPair.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/math/Vec4.h"
+#include "mc/world/level/block/BrightnessPair.h"
 
 namespace ParticleSystem {
 

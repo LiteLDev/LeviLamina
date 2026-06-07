@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct GameTestReport;
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { struct GameTestError; }
 // clang-format on
@@ -37,19 +36,11 @@ public:
     virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
-
-    virtual ~DedicatedServerGameTestRunnerListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DedicatedServerGameTestRunnerListener(
-        ::GameTestReport&                    report,
-        ::std::unordered_set<::std::string>& failedGameTests,
-        ::std::unordered_set<::std::string>& passedGameTests
-    );
-
     MCNAPI void _addTestResult(
         ::std::string const&                       testName,
         ::std::string const&                       result,
@@ -58,13 +49,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::GameTestReport&                    report,
-        ::std::unordered_set<::std::string>& failedGameTests,
-        ::std::unordered_set<::std::string>& passedGameTests
-    );
+    MCNAPI static ::std::string _getTestNameWithRotation(::gametest::BaseGameTestInstance& testInstance);
     // NOLINTEND
 
 public:

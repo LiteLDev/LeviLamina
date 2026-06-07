@@ -90,8 +90,6 @@ public:
     // NOLINTBEGIN
     MCAPI RenderParams();
 
-    MCAPI RenderParams(::RenderParams&&);
-
     MCAPI RenderParams(::RenderParams const&);
 
     MCAPI ::Actor* getActorTarget(::SharedTypes::Legacy::FilterSubject subject) const;
@@ -107,19 +105,23 @@ public:
         bool                                 isDitheringEnabled
     );
 
-    MCAPI ::RenderParams& operator=(::RenderParams&&);
-
     MCAPI ::RenderParams& operator=(::RenderParams const&);
 
+    MCAPI float& operator[](uint64 i);
+
     MCAPI ~RenderParams();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::RenderParams& getRenderParams(::Actor& actor);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::RenderParams&&);
 
     MCAPI void* $ctor(::RenderParams const&);
     // NOLINTEND

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/facets/vanilla/RealmJoinFailureData.h"
 #include "mc/client/world/JoinRealmWorldResult.h"
 #include "mc/client/world/JoinServerWorldResult.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -32,6 +33,7 @@ public:
     ::ll::TypedStorage<8, 8, ::IEntitlementManager&>                               mEntitlementManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlatformMultiplayerRestrictions>> mPlatformMultiplayerRestrictions;
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool()>>                 mIsUsingUnifiedJoinRealmFlow;
+    ::ll::TypedStorage<8, 80, ::std::optional<::OreUI::RealmJoinFailureData>>      mRealmJoinFailureData;
     ::ll::TypedStorage<1, 1, bool>                                                 mIsDirty;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::NetworkWorldJoinerSharedData>> mSharedData;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mRealmsWorldJoinerJoinRealmWorldResultSubscription;
@@ -46,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkWorldJoinerFacet() /*override*/ = default;
+    virtual ~NetworkWorldJoinerFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -87,6 +89,8 @@ public:
 
     MCAPI ::OreUI::FacetTaskState const getJoinLANServerTaskState();
 
+    MCAPI ::std::optional<::OreUI::RealmJoinFailureData> const& getJoinRealmFailureData();
+
     MCAPI ::std::optional<::World::JoinRealmWorldResult> const& getJoinRealmResult() const;
 
     MCAPI ::OreUI::FacetTaskState getJoinRealmTaskState() const;
@@ -123,6 +127,12 @@ public:
         ::std::unique_ptr<::PlatformMultiplayerRestrictions> platformMultiplayerRestrictions,
         ::brstd::move_only_function<bool()>                  isUsingUnifiedJoinRealmFlow
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -39,6 +39,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit NetworkIdentifier(::sockaddr_in6 const& address);
+
+    MCAPI explicit NetworkIdentifier(::sockaddr_in const& address);
+
+    MCAPI explicit NetworkIdentifier(::RakNet::RakNetGUID const& guid);
+
+    MCAPI explicit NetworkIdentifier(::NetherNet::NetworkID const& nethernetId);
+
     MCAPI bool equalsTypeData(::NetworkIdentifier const& other) const;
 
     MCAPI ::std::string getAddress() const;
@@ -47,17 +55,33 @@ public:
 
     MCAPI uint64 getHash() const;
 
+#ifdef LL_PLAT_C
+    MCAPI ::std::string getNetherNetIDAsString() const;
+
+    MCFOLD ::NetherNet::NetworkID const& getNetherNetId() const;
+#endif
+
     MCAPI ::std::string getNetherNetOrRakNetIDAsString() const;
+
+    MCFOLD ::RakNet::RakNetGUID const& getRakNetGUID() const;
+
+    MCFOLD ::sockaddr_in const& getSocketAddress() const;
+
+    MCFOLD ::sockaddr_in6 const& getSocketAddress6() const;
+
+    MCFOLD ::NetworkIdentifier::Type getType() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool isType(::NetworkIdentifier::Type type) const;
+#endif
 
     MCAPI bool isUnassigned() const;
 
-    MCAPI bool operator<(::NetworkIdentifier const& other) const;
-
-    MCFOLD ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
-
 #ifdef LL_PLAT_C
-    MCFOLD ::NetworkIdentifier& operator=(::NetworkIdentifier const&);
+    MCAPI bool operator!=(::NetworkIdentifier const& other) const;
 #endif
+
+    MCAPI bool operator==(::NetworkIdentifier const& other) const;
 
     MCAPI ::std::string toString() const;
     // NOLINTEND
@@ -65,6 +89,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string calculateCorrelationId(::NetherNet::NetworkID const& netherNetId);
+#endif
+
     MCAPI static ::std::string calculateCorrelationId(::RakNet::RakNetGUID const& rakId);
     // NOLINTEND
 
@@ -72,6 +100,20 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::NetworkIdentifier& INVALID_ID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::sockaddr_in6 const& address);
+
+    MCAPI void* $ctor(::sockaddr_in const& address);
+
+    MCAPI void* $ctor(::RakNet::RakNetGUID const& guid);
+
+    MCAPI void* $ctor(::NetherNet::NetworkID const& nethernetId);
     // NOLINTEND
 };
 

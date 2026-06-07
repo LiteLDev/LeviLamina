@@ -46,12 +46,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorSelectorArgs();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSelectorArgs();
-
-    MCAPI ActorSelectorArgs(::ActorSelectorArgs&&);
-
     MCAPI ActorSelectorArgs(::ActorSelectorArgs const&);
 
     MCAPI ::ActorSelectorArgs& operator=(::ActorSelectorArgs&&);
@@ -62,22 +62,8 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::pair<int, int> const& DEFAULT_LEVEL();
-
-    MCAPI static ::std::pair<float, float> const& DEFAULT_X_ROTATION();
-
-    MCAPI static ::std::pair<float, float> const& DEFAULT_Y_ROTATION();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorSelectorArgs&&);
-
     MCAPI void* $ctor(::ActorSelectorArgs const&);
     // NOLINTEND
 

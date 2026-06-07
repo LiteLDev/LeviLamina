@@ -7,7 +7,7 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/util/FloatRange.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/Tick.h"
 
@@ -18,7 +18,7 @@ class Mob;
 class ShareableComponent;
 // clang-format on
 
-class AdmireItemGoal : public ::Goal {
+class AdmireItemGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -26,8 +26,8 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
     ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
     ::ll::TypedStorage<8, 8, ::Tick>                                 mNextSoundEventTick;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>       mOnStartEvent;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>       mOnStopEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnStopEvent;
     ::ll::TypedStorage<8, 152, ::ItemStack>                          mItemStackPicked;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>                       mItemOwner;
     // NOLINTEND
@@ -52,20 +52,12 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~AdmireItemGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AdmireItemGoal(
-        ::Mob&                                 mob,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::FloatRange                           soundIntervalRange,
-        ::ActorDefinitionTrigger const&        onAdmireItemStart,
-        ::ActorDefinitionTrigger const&        onAdmireItemStop
-    );
+    MCAPI explicit AdmireItemGoal(::Mob& mob);
 
     MCAPI void _removeItemFromOffhandSlot() const;
 
@@ -76,19 +68,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 mob,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::FloatRange                           soundIntervalRange,
-        ::ActorDefinitionTrigger const&        onAdmireItemStart,
-        ::ActorDefinitionTrigger const&        onAdmireItemStop
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

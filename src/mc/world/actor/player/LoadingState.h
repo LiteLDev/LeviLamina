@@ -4,7 +4,6 @@
 
 enum class LoadingState : int {
     // bitfield representation
-    TimeCancellable               = -2147483648,
     None                          = 0,
     BuildingTerrain               = 1 << 1,
     SwitchingDimension            = 1 << 2,
@@ -28,4 +27,5 @@ enum class LoadingState : int {
     WaitingErrorPrompt            = 1 << 28,
     Error                         = 1 << 29,
     Cancellable                   = 1 << 30,
+    TimeCancellable               = 1 << 31,
 };

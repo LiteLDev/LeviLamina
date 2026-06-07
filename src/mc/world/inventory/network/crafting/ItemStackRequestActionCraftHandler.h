@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,6 +14,7 @@ class ItemInstance;
 class ItemStackRequestActionConsume;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING;
+class ItemStackRequestActionCreate;
 class ItemStackRequestActionHandler;
 class Player;
 class SimpleSparseContainer;
@@ -40,12 +42,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ItemStackRequestActionCraftHandler() = default;
+    virtual ~ItemStackRequestActionCraftHandler();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ItemStackRequestActionCraftHandler(::ItemStackRequestActionHandler& actionHandler, ::Player& player);
+
+    MCNAPI ::ItemStackNetResult _beginCraftRequest();
+
     MCNAPI ::std::unique_ptr<::ContainerValidationCraftInputs>
     _createCraftInputs(::ItemStackRequestActionCraftBase const& requestAction);
 
@@ -57,6 +63,8 @@ public:
 
     MCNAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
 
+    MCNAPI void endRequestBatch();
+
     MCNAPI ::ItemStackNetResult handleConsume(::ItemStackRequestActionConsume const& requestAction);
 
     MCNAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
@@ -64,7 +72,27 @@ public:
     MCNAPI ::ItemStackNetResult
     handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
 
+    MCNAPI ::ItemStackNetResult handleCreate(::ItemStackRequestActionCreate const& requestAction);
+
+    MCNAPI bool isCraftRequest() const;
+
     MCNAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+
+    MCNAPI void postRequest(bool wasSuccess);
+
+    MCNAPI ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ItemStackRequestActionHandler& actionHandler, ::Player& player);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

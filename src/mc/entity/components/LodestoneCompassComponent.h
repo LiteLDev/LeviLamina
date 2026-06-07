@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/PositionTrackingId.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class CompassSpriteCalculator;
-class Dimension;
 class Level;
 class LodestoneCompassComponentCalculator;
 class PositionTrackingId;
@@ -38,23 +36,44 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LodestoneCompassComponent& operator=(LodestoneCompassComponent const&);
-    LodestoneCompassComponent(LodestoneCompassComponent const&);
-    LodestoneCompassComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LodestoneCompassComponent(::LodestoneCompassComponent&&);
+    MCAPI ::LodestoneCompassComponentCalculator*
+    _createCalculator(::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId);
 
-    MCAPI ::LodestoneCompassComponentCalculator* _findCalculator(
+    MCAPI int getAnimationFrame(
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
-        bool                                                                             createIfNotFound
+        ::BlockPos const&                                                                lookFromPosition,
+        ::DimensionType const&                                                           lookFromDimension
+    );
+
+    MCFOLD void initialize(::PositionTrackingId const& trackingHandle);
+
+    MCAPI void setTrackOnlyInSameDimension(
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
+        bool                                                                             trackOnlyInSameDimension
     );
 
 #ifdef LL_PLAT_C
     MCAPI bool tick(::Level& level);
+#endif
+
+    MCAPI ~LodestoneCompassComponent();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int getSpinningAnimationFrame();
+
+    MCAPI static ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>
+    makeCalculatorId(::ActorUniqueID const& id);
+
+#ifdef LL_PLAT_C
+    MCAPI static ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>
+    makeCalculatorId(::BlockPos const& pos, ::DimensionType const& dimension);
+
+    MCAPI static void tickSpinningCalculator();
 #endif
     // NOLINTEND
 
@@ -65,8 +84,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LodestoneCompassComponent&&);
+    MCFOLD void $dtor();
     // NOLINTEND
 };

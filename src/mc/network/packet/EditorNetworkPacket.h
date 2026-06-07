@@ -25,10 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EditorNetworkPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -64,26 +60,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~EditorNetworkPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EditorNetworkPacket();
+
     MCAPI explicit EditorNetworkPacket(::EditorNetworkPacketVariantPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EditorNetworkPacketVariantPayload payload);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::EditorNetworkPacketVariantPayload payload);
     // NOLINTEND
 
 public:

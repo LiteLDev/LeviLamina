@@ -27,12 +27,6 @@ public:
     ScriptPassengerOfActorCondition();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::string getEntityType() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();

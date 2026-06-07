@@ -10,6 +10,10 @@ class EntityContext;
 namespace ActorLifecycle {
 // functions
 // NOLINTBEGIN
+MCAPI void clearIsFirstTick(::EntityContext& entity);
+
+MCAPI void initializeActor(::EntityContext& entity);
+
 MCAPI bool isFirstTick(::EntityContext const& entity);
 // NOLINTEND
 

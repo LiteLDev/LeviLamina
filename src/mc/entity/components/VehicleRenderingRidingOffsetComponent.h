@@ -16,13 +16,17 @@ public:
 
 public:
     // prevent constructor by default
-    VehicleRenderingRidingOffsetComponent& operator=(VehicleRenderingRidingOffsetComponent const&);
-    VehicleRenderingRidingOffsetComponent(VehicleRenderingRidingOffsetComponent const&);
     VehicleRenderingRidingOffsetComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::VehicleRenderingRidingOffsetComponent& operator=(::VehicleRenderingRidingOffsetComponent&&);
+    MCAPI explicit VehicleRenderingRidingOffsetComponent(::std::vector<::RenderingRidingOffsetInfo> const& offsetsInfo);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::RenderingRidingOffsetInfo> const& offsetsInfo);
     // NOLINTEND
 };

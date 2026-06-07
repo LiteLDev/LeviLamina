@@ -18,13 +18,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _recomputeHash() const;
-
-    MCAPI ~LevelChunkMetaData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

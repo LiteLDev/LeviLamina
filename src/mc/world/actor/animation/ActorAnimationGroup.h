@@ -43,17 +43,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI ActorAnimationGroup();
-#endif
 
     MCAPI ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
     _buildAnimationFileSchema_v1_8(bool isPersonaPack);
 
-#ifdef LL_PLAT_C
     MCAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
-#endif
 
     MCAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
 
@@ -80,9 +76,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor();
-#endif
     // NOLINTEND
 
 public:

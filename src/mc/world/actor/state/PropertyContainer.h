@@ -38,11 +38,16 @@ public:
         ::RenderParams&                                           renderParams
     );
 
+    MCAPI void _addDataToCompoundTag(::CompoundTag& compoundTag, ::PropertyMetadata const& propertyMetadata) const;
+
     MCAPI bool _readValueFromTag(::PropertyMetadata const& propertyMetadata, ::Tag const& tag);
 
     MCAPI void addEntryToSyncData(::PropertyMetadata const& propMetadata, ::PropertySyncData& syncData) const;
 
     MCAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
+
+    MCAPI ::std::optional<::std::variant<int, float, bool, ::std::string>>
+    getValueVariant(uint64 propertyNameHash) const;
 
     MCAPI void readLoadedProperties(::CompoundTag const& loadedPropertyTag);
 

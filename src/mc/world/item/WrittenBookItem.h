@@ -14,6 +14,7 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Player;
+struct ActorUniqueID;
 struct PageContent;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
@@ -24,6 +25,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mShouldFilterText;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WrittenBookItem();
 
 public:
     // virtual functions
@@ -48,23 +53,33 @@ public:
 
     virtual bool hasCustomHoverName(::ItemStackBase const& stack) const /*override*/;
 
-    virtual bool inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const /*override*/;
+    virtual bool inventoryTick(::ItemStack& level, ::Level& owner, ::Actor&, int, bool) const /*override*/;
 
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
+    // NOLINTEND
 
-    virtual ~WrittenBookItem() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WrittenBookItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool canBeCopied(::CompoundTag const* tag);
+
     MCAPI static ::std::string const& getAuthor(::ItemStackBase const& book);
 
 #ifdef LL_PLAT_C
+    MCFOLD static ::ActorUniqueID getBookId(::ItemStack const& book);
+
     MCAPI static ::std::optional<::std::string> getFilteredAuthor(::ItemStack const& book);
 
     MCAPI static ::std::optional<::std::string> getFilteredTitle(::ItemStack const& book);
 #endif
+
+    MCAPI static int getGeneration(::CompoundTag const* tag);
 
     MCAPI static ::PageContent getPage(::ItemStackBase const& book, int index);
 
@@ -86,6 +101,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static int const& MAX_PAGES();
+
+    MCAPI static int const& MAX_PAGE_LENGTH();
+
+    MCAPI static int const& MAX_TITLE_LENGTH();
+
     MCAPI static ::std::string_view const& TAG_AUTHOR();
 
     MCAPI static ::std::string_view const& TAG_FILTERED_AUTHOR();
@@ -110,6 +131,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
@@ -131,7 +158,7 @@ public:
 
     MCAPI bool $hasCustomHoverName(::ItemStackBase const& stack) const;
 
-    MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
+    MCAPI bool $inventoryTick(::ItemStack& level, ::Level& owner, ::Actor&, int, bool) const;
 
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 

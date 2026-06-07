@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/actor/ActorRenderer.h"
-#include "mc/client/renderer/actor/V2TempComponentRequirements.h"
 #include "mc/deps/core/container/small_vector_base.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
@@ -18,6 +17,7 @@ class ActorRenderData;
 class ActorResourceDefinition;
 class BaseActorRenderContext;
 class BlockTessellator;
+class DataDrivenModel;
 class DataDrivenRenderer_tempComponent;
 class Model;
 class RenderParams;
@@ -46,11 +46,11 @@ public:
     // NOLINTBEGIN
     virtual void getLeashOffsets(
         ::Actor& actor,
+        float    legacyOffset,
+        float    output,
         float,
-        float,
-        float,
-        bool                                  legacyOffset,
-        ::Bedrock::small_vector_base<::Vec3>& output
+        bool,
+        ::Bedrock::small_vector_base<::Vec3>&
     ) const /*override*/;
 
     virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) /*override*/;
@@ -67,8 +67,6 @@ public:
     virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
 
     virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
-
-    virtual ~DataDrivenRenderer() /*override*/;
     // NOLINTEND
 
 public:
@@ -101,6 +99,8 @@ public:
 
     MCAPI void addMushroomCowAdditionalRendering(::BlockTessellator& commonBlockRenderer);
 
+    MCAPI void addPandaAdditionalRendering();
+
     MCAPI void addSnowGolemAdditionalRendering(::BlockTessellator* blockTesselator);
 
     MCAPI void addVexAdditionalRendering();
@@ -117,7 +117,9 @@ public:
 
     MCAPI bool attachablesEnabled() const;
 
-    MCAPI ::V2TempComponentRequirements getV2TempComponentRequirement() const;
+    MCAPI ::DataDrivenModel& getModel();
+
+    MCAPI ::std::shared_ptr<::DataDrivenModel> getModelShared();
 
     MCAPI bool isAttachable() const;
 
@@ -144,21 +146,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $getLeashOffsets(
         ::Actor& actor,
+        float    legacyOffset,
+        float    output,
         float,
-        float,
-        float,
-        bool                                  legacyOffset,
-        ::Bedrock::small_vector_base<::Vec3>& output
+        bool,
+        ::Bedrock::small_vector_base<::Vec3>&
     ) const;
 
     MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);

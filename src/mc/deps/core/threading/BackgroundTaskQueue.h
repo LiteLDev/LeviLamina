@@ -39,7 +39,11 @@ public:
 
     MCNAPI void flush();
 
+    MCNAPI uint64 getApproximateTaskCount() const;
+
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
+
+    MCNAPI void resortPriorityQueue();
 
     MCNAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
 

@@ -19,14 +19,6 @@ public:
     virtual void onXboxUserBlocked(::std::string const& xuid) = 0;
 
     virtual void onXboxUserUnblocked(::std::string const& xuid) = 0;
-
-    virtual ~XboxLiveUserObserver() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

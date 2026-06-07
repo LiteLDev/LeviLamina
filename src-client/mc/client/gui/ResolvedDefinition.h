@@ -22,9 +22,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResolvedDefinition& operator=(ResolvedDefinition const&);
+    ResolvedDefinition();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResolvedDefinition(::UI::Resources::ResolvedDefinition const&);
+
     MCAPI ~ResolvedDefinition();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UI::Resources::ResolvedDefinition const&);
     // NOLINTEND
 
 public:

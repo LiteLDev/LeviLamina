@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/events/gameevents/game_event_config/GameEventCategory.h"
 #include "mc/world/events/gameevents/game_event_config/GameEventType.h"
 
 class GameEvent {
@@ -11,5 +12,13 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::GameEventConfig::GameEventType const> mType;
     ::ll::TypedStorage<1, 1, uchar const>                            mCategories;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::GameEventConfig::GameEventType const getType() const;
+
+    MCAPI bool isCategory(::GameEventConfig::GameEventCategory category) const;
     // NOLINTEND
 };

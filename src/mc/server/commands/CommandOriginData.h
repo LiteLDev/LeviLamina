@@ -17,15 +17,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandOriginData();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CommandOriginData();
+
     MCAPI CommandOriginData(::CommandOriginData const& other);
 
     MCAPI ::CommandOriginData& operator=(::CommandOriginData const& rhs);
+
+    MCAPI bool operator==(::CommandOriginData const& other) const;
 
     MCAPI ~CommandOriginData();
     // NOLINTEND
@@ -33,6 +33,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::CommandOriginData const& other);
     // NOLINTEND
 

@@ -27,18 +27,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
-
-    virtual void load(::std::string const& valueString) /*override*/;
-
-    virtual void load(::std::map<::std::string, ::std::string>& propertyMap) /*override*/;
-
 #ifdef LL_PLAT_S
-    virtual ~InputModeBoolOption() /*override*/ = default;
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
 #else // LL_PLAT_C
-    virtual ~InputModeBoolOption() /*override*/;
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
 #endif
 
+    virtual void load(::std::string const&) /*override*/;
+
+    virtual void load(::std::map<::std::string, ::std::string>& propertyMap) /*override*/;
     // NOLINTEND
 
 public:
@@ -67,6 +64,8 @@ public:
 
     MCAPI void
     _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
+
+    MCAPI bool getValue(::InputMode inputmode) const;
 
     MCAPI void set(::InputMode inputmode, bool value, bool saveOptionChange);
 #endif
@@ -99,18 +98,12 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCFOLD void $load(::std::string const& valueString);
+    MCFOLD void $load(::std::string const&);
 
     MCAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
 #endif

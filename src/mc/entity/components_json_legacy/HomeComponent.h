@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/entity/components_json_legacy/RestrictionType.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -15,7 +14,6 @@ class BlockSource;
 class BlockType;
 class CompoundTag;
 class DataLoadHelper;
-class Dimension;
 // clang-format on
 
 class HomeComponent {
@@ -33,18 +31,40 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HomeComponent& operator=(HomeComponent const&);
-    HomeComponent(HomeComponent const&);
-    HomeComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HomeComponent();
+
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+
+    MCFOLD ::BlockPos getHomePos() const;
+
+    MCFOLD int getRestrictionRadius() const;
+
+    MCFOLD int getRestrictionRadiusSqr() const;
+
+    MCFOLD bool hasAnyRestriction() const;
+
+    MCFOLD bool hasSpecificRestriction(::RestrictionType restrictionType) const;
+
     MCAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
 
-    MCAPI ::HomeComponent& operator=(::HomeComponent&&);
+    MCAPI bool hasValidHomePos() const;
+
+    MCAPI bool isInHomeDimension(::Actor const& owner) const;
+
+    MCAPI bool isWithinRestriction(::BlockPos const& pos) const;
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+
+    MCAPI void setHome(::BlockPos const& pos, ::DimensionType const& id);
+
+    MCAPI void tick(::Actor& owner);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

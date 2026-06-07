@@ -6,6 +6,11 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 struct MovementInterpolatorComponent {
 public:
     // member variables
@@ -16,6 +21,32 @@ public:
     ::ll::TypedStorage<4, 4, int>     mPositionSteps;
     ::ll::TypedStorage<4, 4, int>     mRotationSteps;
     ::ll::TypedStorage<4, 4, int>     mHeadYawSteps;
+    ::ll::TypedStorage<1, 1, bool>    mMustBeCompleted;
     ::ll::TypedStorage<1, 1, bool>    mPlayerControlServerVehicle;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool canStartLerpTo(bool mustBeCompleted) const;
+
+    MCAPI bool isActive() const;
+
+    MCAPI void lerpTo(::Vec3 const& pos, ::Vec2 const& rot, int steps);
+
+    MCAPI void lerpToRotation(::Vec2 const& rot, int steps);
+
+    MCAPI void reset();
+
+    MCAPI void setHeadYawLerpTarget(float headYaw, int steps);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static void
+    startLerpTo(::EntityContext& entity, ::Vec3 const& pos, ::Vec2 const& rot, int steps, bool mustBeCompleted);
+#endif
     // NOLINTEND
 };

@@ -6,6 +6,7 @@
 #include "mc/client/gui/SettingsModalType.h"
 #include "mc/client/gui/SettingsTabIndex.h"
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
+#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -53,8 +54,6 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
-
-    virtual ~Settings() /*override*/;
     // NOLINTEND
 
 public:
@@ -80,6 +79,8 @@ public:
         bool                                                skipLegacyProgress
     ) const;
 
+    MCAPI bool _routeValid() const;
+
     MCAPI bool _tryToPushRealmsManageTab(
         ::std::string const&                                path,
         ::SceneFactory&                                     sceneFactory,
@@ -93,6 +94,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::optional<::std::string> composeRoute(::SettingsTabIndex tabIndex);
 
+    MCAPI static ::std::string defaultRoute();
+
     MCAPI static ::std::optional<::std::string>
     getRouteFromTabAndModal(::SettingsTabIndex tabIndex, ::SettingsModalType modalType);
 
@@ -102,7 +105,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
+    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> OREUI_ROUTE();
 
@@ -121,12 +124,6 @@ public:
         ::std::weak_ptr<::RealmsAPI>          realms,
         ::ui::ScreenTechStackSelector&        screenTechStackSelector
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

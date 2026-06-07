@@ -28,6 +28,8 @@ MCAPI ::GameEvent const& blockOpen();
 
 MCAPI ::GameEvent const& blockPlace();
 
+MCAPI ::GameEvent const& bounce();
+
 MCAPI ::GameEvent const& containerClose();
 
 MCAPI ::GameEvent const& containerOpen();

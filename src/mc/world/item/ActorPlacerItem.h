@@ -35,6 +35,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorPlacerItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tearDown() /*override*/;
@@ -61,13 +65,13 @@ public:
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~ActorPlacerItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorPlacerItem(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
+
     MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
     MCAPI ::Actor* _spawnActorAt(
@@ -85,6 +89,8 @@ public:
     MCAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::brstd::function_ref<void(::Item const&)> callback);
 
+    MCAPI static ::std::string getCustomSpawnEggName(int runtimeId);
+
 #ifdef LL_PLAT_C
     MCAPI static void initializeIcons(::std::unordered_map<::HashedString, ::ResolvedItemIconInfo> icons);
 #endif
@@ -100,6 +106,12 @@ public:
     MCAPI static ::std::unordered_map<uint, ::std::string>& mCustomSpawnEggs();
 
     MCAPI static ::std::unordered_map<::HashedString, ::ResolvedItemIconInfo>& mEggTextureInfoMap();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
     // NOLINTEND
 
 public:

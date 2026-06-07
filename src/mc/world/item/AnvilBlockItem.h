@@ -10,8 +10,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
-
-    virtual ~AnvilBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:

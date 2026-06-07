@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmRegionSettingsCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmRegionSettingsCommandsFacet() /*override*/ = default;
@@ -30,6 +34,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmRegionSettingsCommandsFacet(
+        ::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings
+    );
+
     MCAPI void fetchRegions();
 
     MCAPI void resetLowPingWarning();
@@ -47,6 +55,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings);
     // NOLINTEND
 
 public:

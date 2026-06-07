@@ -34,8 +34,6 @@ public:
     virtual float getModelScale() const;
 
     virtual float getShadowRadius() const /*override*/;
-
-    virtual ~Spider() /*override*/ = default;
     // NOLINTEND
 
 public:

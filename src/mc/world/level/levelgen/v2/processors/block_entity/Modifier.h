@@ -36,41 +36,32 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Modifier& operator=(Modifier const&);
-    Modifier();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const
         /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~Modifier() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier&&);
+    MCAPI Modifier();
 
-    MCAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier const&);
+    MCAPI explicit Modifier(::br::worldgen::processors::BlockEntity::Passthrough);
+
+    MCAPI explicit Modifier(::br::worldgen::processors::BlockEntity::AppendLoot match);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier&&);
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier const&);
-    // NOLINTEND
+    MCFOLD void* $ctor(::br::worldgen::processors::BlockEntity::Passthrough);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::AppendLoot match);
     // NOLINTEND
 
 public:

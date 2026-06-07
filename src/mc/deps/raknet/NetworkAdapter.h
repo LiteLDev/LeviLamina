@@ -18,7 +18,20 @@ public:
     // prevent constructor by default
     NetworkAdapter& operator=(NetworkAdapter const&);
     NetworkAdapter(NetworkAdapter const&);
-    NetworkAdapter();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI uint GetNumberOfAddresses();
+
+    MCAPI NetworkAdapter();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 };
 
 } // namespace RakNet

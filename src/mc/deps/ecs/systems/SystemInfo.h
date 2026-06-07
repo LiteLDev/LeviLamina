@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/ecs/systems/Dependencies.h"
 
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/Dependencies.h"
@@ -20,6 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::std::string                                                  mName;
+    uchar                                                          mDisplayCategoryIndex;
     ::Dependencies                                                 mDependencies;
     ::ll::TypedStorage<8, 8, ::std::vector<::ComponentInfo> (*)()> mGenerateDetailedInfo;
     // NOLINTEND
@@ -27,13 +27,12 @@ public:
 public:
     // prevent constructor by default
     SystemInfo& operator=(SystemInfo const&);
-    SystemInfo(SystemInfo const&);
     SystemInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SystemInfo(::SystemInfo&&);
+    MCAPI SystemInfo(::SystemInfo const&);
 
     MCAPI ~SystemInfo();
     // NOLINTEND
@@ -41,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SystemInfo&&);
+    MCAPI void* $ctor(::SystemInfo const&);
     // NOLINTEND
 
 public:

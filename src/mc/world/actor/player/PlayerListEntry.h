@@ -34,30 +34,22 @@ public:
     ::ll::TypedStorage<1, 1, bool>                 mIsSubClient;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PlayerListEntry& operator=(PlayerListEntry const&);
-    PlayerListEntry(PlayerListEntry const&);
-    PlayerListEntry();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    PlayerListEntry& operator=(PlayerListEntry const&);
-    PlayerListEntry();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI PlayerListEntry(::PlayerListEntry const&);
-#endif
+    MCAPI PlayerListEntry();
 
-    MCAPI PlayerListEntry(::PlayerListEntry&&);
+    MCAPI PlayerListEntry(::PlayerListEntry const&);
 
     MCAPI explicit PlayerListEntry(::Player const& player);
+
+    MCAPI explicit PlayerListEntry(::mce::UUID uuid);
+
+    MCAPI ::PlayerListEntry clone() const;
 
 #ifdef LL_PLAT_C
     MCAPI ::PlayerListEntry cloneExceptSkin() const;
@@ -71,19 +63,21 @@ public:
 
     MCAPI void write(::BinaryStream& stream) const;
 
+    MCAPI void writeRemove(::BinaryStream& stream) const;
+
     MCAPI ~PlayerListEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::PlayerListEntry const&);
-#endif
+    MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::PlayerListEntry&&);
+    MCAPI void* $ctor(::PlayerListEntry const&);
 
     MCAPI void* $ctor(::Player const& player);
+
+    MCAPI void* $ctor(::mce::UUID uuid);
     // NOLINTEND
 
 public:

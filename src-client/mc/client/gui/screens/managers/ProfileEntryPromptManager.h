@@ -29,9 +29,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ProfileEntryPromptManager(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> controller);
 
-    MCAPI void closeCurrentModal(bool openNextModal);
+    MCAPI void _registerEventHandlers(::MinecraftScreenController& controller);
 
-    MCAPI bool tryOpenCurrentModal();
+    MCAPI void closeCurrentModal(bool openNextModal);
 
     MCAPI ~ProfileEntryPromptManager();
     // NOLINTEND

@@ -7,8 +7,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void Logv(char const* format, char* ap) /*override*/;
-
-    virtual ~NullLogger() /*override*/ = default;
     // NOLINTEND
 
 public:

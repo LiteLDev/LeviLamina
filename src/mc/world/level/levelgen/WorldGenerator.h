@@ -126,6 +126,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit WorldGenerator(::Dimension& dimension);
+
     MCAPI
     WorldGenerator(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
 
@@ -133,9 +135,11 @@ public:
 
     MCAPI ::std::vector<short> computeChunkHeightMap(::ChunkPos const& pos);
 
+    MCFOLD ::StructureFeatureRegistry& getStructureFeatureRegistry() const;
+
     MCAPI void postProcessStructureFeatures(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
 
-    MCAPI void postProcessStructures(::BlockSource& region, ::Random&, int chunkX, int chunkZ);
+    MCAPI void postProcessStructures(::BlockSource& region, ::Random& chunkX, int chunkZ, int);
 
     MCAPI void preProcessStructures(::Dimension& dimension, ::ChunkPos const& cp, ::BiomeSource const& biomeSource);
 
@@ -146,12 +150,22 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
     );
 
+    MCAPI void tick();
+
     MCAPI void waitForStructures();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static uint64 const& TICKING_QUEUE_PASS_LIMIT();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension);
+
     MCAPI void* $ctor(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
     // NOLINTEND
 

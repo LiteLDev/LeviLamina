@@ -57,21 +57,21 @@ public:
 
     virtual ::cricket::MediaType type() const = 0;
 
-    virtual ::cricket::AudioContentDescription* as_audio();
-
     virtual ::cricket::AudioContentDescription const* as_audio() const;
 
-    virtual ::cricket::VideoContentDescription* as_video();
+    virtual ::cricket::AudioContentDescription* as_audio();
 
     virtual ::cricket::VideoContentDescription const* as_video() const;
 
-    virtual ::cricket::SctpDataContentDescription* as_sctp();
+    virtual ::cricket::VideoContentDescription* as_video();
 
     virtual ::cricket::SctpDataContentDescription const* as_sctp() const;
 
-    virtual ::cricket::UnsupportedContentDescription* as_unsupported();
+    virtual ::cricket::SctpDataContentDescription* as_sctp();
 
     virtual ::cricket::UnsupportedContentDescription const* as_unsupported() const;
+
+    virtual ::cricket::UnsupportedContentDescription* as_unsupported();
 
     virtual void set_protocol(::std::string_view protocol);
 
@@ -110,21 +110,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cricket::AudioContentDescription* $as_audio();
-
     MCNAPI ::cricket::AudioContentDescription const* $as_audio() const;
 
-    MCNAPI ::cricket::VideoContentDescription* $as_video();
+    MCNAPI ::cricket::AudioContentDescription* $as_audio();
 
     MCNAPI ::cricket::VideoContentDescription const* $as_video() const;
 
-    MCNAPI ::cricket::SctpDataContentDescription* $as_sctp();
+    MCNAPI ::cricket::VideoContentDescription* $as_video();
 
     MCNAPI ::cricket::SctpDataContentDescription const* $as_sctp() const;
 
-    MCNAPI ::cricket::UnsupportedContentDescription* $as_unsupported();
+    MCNAPI ::cricket::SctpDataContentDescription* $as_sctp();
 
     MCNAPI ::cricket::UnsupportedContentDescription const* $as_unsupported() const;
+
+    MCNAPI ::cricket::UnsupportedContentDescription* $as_unsupported();
 
     MCNAPI void $set_protocol(::std::string_view protocol);
 

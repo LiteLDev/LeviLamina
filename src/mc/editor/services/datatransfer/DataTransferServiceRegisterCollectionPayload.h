@@ -25,23 +25,24 @@ public:
 
 public:
     // prevent constructor by default
-    DataTransferServiceRegisterCollectionPayload(DataTransferServiceRegisterCollectionPayload const&);
     DataTransferServiceRegisterCollectionPayload();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~DataTransferServiceRegisterCollectionPayload() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DataTransferServiceRegisterCollectionPayload() /*override*/;
-#endif
-
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataTransferServiceRegisterCollectionPayload(
+        ::Editor::Network::DataTransferServiceRegisterCollectionPayload const&
+    );
+
+#ifdef LL_PLAT_C
+    MCNAPI DataTransferServiceRegisterCollectionPayload(
+        ::std::string const& collectionUniqueIdentifier,
+        ::std::string const& collectionNameStringId,
+        ::std::string const& jsonSchema,
+        bool                 hasPerBiomeConfig
+    );
+#endif
+
     MCNAPI ::Editor::Network::DataTransferServiceRegisterCollectionPayload&
     operator=(::Editor::Network::DataTransferServiceRegisterCollectionPayload&&);
 
@@ -56,9 +57,18 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Editor::Network::DataTransferServiceRegisterCollectionPayload const&);
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::std::string const& collectionUniqueIdentifier,
+        ::std::string const& collectionNameStringId,
+        ::std::string const& jsonSchema,
+        bool                 hasPerBiomeConfig
+    );
+#endif
     // NOLINTEND
 
 public:

@@ -18,8 +18,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool _isValid() const /*override*/;
-
-    virtual ~ScriptTypeFamilyComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -34,6 +32,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

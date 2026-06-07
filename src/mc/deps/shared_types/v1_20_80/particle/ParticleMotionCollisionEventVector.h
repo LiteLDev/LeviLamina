@@ -18,25 +18,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~ParticleMotionCollisionEventVector();
-#endif
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
+    MCAPI static void fromSingleEvent(
+        ::SharedTypes::v1_20_80::ParticleMotionCollisionEventVector& instance,
+        ::SharedTypes::v1_20_80::ParticleMotionCollisionEvent const& event
+    );
     // NOLINTEND
 };
 

@@ -22,6 +22,10 @@ struct BlockAnimateTickData;
 
 class EndGatewayBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    EndGatewayBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool addCollisionShapes(
@@ -41,8 +45,18 @@ public:
 
     virtual ::std::shared_ptr<::BlockActor> newBlockEntity(::BlockPos const& pos, ::Block const& block) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~EndGatewayBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EndGatewayBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

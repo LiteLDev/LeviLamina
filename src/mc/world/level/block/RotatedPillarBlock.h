@@ -12,10 +12,15 @@ class Block;
 class BlockActor;
 class BlockPos;
 class ItemInstance;
+class Material;
 class Vec3;
 // clang-format on
 
 class RotatedPillarBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    RotatedPillarBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -26,8 +31,18 @@ public:
         /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
+    // NOLINTEND
 
-    virtual ~RotatedPillarBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RotatedPillarBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

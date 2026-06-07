@@ -18,18 +18,6 @@ public:
     ::ll::TypedStorage<1, 1, uchar const>                    mFace;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3> const> mHit;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

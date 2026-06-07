@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+struct FullContainerName;
+// clang-format on
+
 struct ExpectedSlotConsume {
 public:
     // member variables
@@ -16,4 +22,22 @@ public:
     ExpectedSlotConsume& operator=(ExpectedSlotConsume const&);
     ExpectedSlotConsume(ExpectedSlotConsume const&);
     ExpectedSlotConsume();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ExpectedSlotConsume(
+        ::FullContainerName const& openContainerNetId,
+        uchar                      slot,
+        ::ItemStack const&         item,
+        uchar                      amountOverride
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::FullContainerName const& openContainerNetId, uchar slot, ::ItemStack const& item, uchar amountOverride);
+    // NOLINTEND
 };

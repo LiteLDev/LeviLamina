@@ -19,9 +19,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CappedSurfaceSettings();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CappedSurfaceSettings();
+    MCAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
 
     MCAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
 
@@ -37,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
     // NOLINTEND

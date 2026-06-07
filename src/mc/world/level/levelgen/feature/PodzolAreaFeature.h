@@ -17,8 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
-
-    virtual ~PodzolAreaFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -21,15 +21,18 @@ class IMinecraftGame;
 class InputDeviceMapper;
 class InputEventQueue;
 class InputMappingFactoryMap;
+class InputRenderContext;
 struct ButtonEventData;
 struct ClearPointerLocationWithIdEventData;
 struct ControlOptionEventData;
 struct ControllerIDtoClientMap;
+struct DirectionEventData;
 struct InputMapping;
 struct NumberOfEnabledControlOptionsEventData;
 struct OverlappingControlsEventData;
 struct PointerLocationEventData;
 struct PointerLocationWithIdEventData;
+struct TextCharEventData;
 struct TouchPadTouchEventData;
 // clang-format on
 
@@ -57,24 +60,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        InputHandlerState& operator=(InputHandlerState const&);
-        InputHandlerState(InputHandlerState const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI InputHandlerState();
-
-        MCAPI ::InputHandler::InputHandlerState& operator=(::InputHandler::InputHandlerState&&);
-
         MCAPI ~InputHandlerState();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -89,8 +77,6 @@ public:
     using ButtonPressHandler = ::std::function<void(::FocusImpact, ::IClientInstance&)>;
 
     using TextCharHandler = ::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)>;
-
-    using CaretLocationHandler = ::std::function<void(int, ::FocusImpact, ::IClientInstance&)>;
 
     using PointerLocationHandler =
         ::std::function<void(::PointerLocationEventData const&, ::FocusImpact, ::IClientInstance&)>;
@@ -138,8 +124,6 @@ public:
 
     using TextCharHandlers =
         ::std::vector<::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)>>;
-
-    using CaretLocationHandlers = ::std::vector<::std::function<void(int, ::FocusImpact, ::IClientInstance&)>>;
 
     using PointerLocationHandlers =
         ::std::vector<::std::function<void(::PointerLocationEventData const&, ::FocusImpact, ::IClientInstance&)>>;
@@ -194,8 +178,6 @@ public:
         24,
         ::std::vector<::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)>>>
         mTextCharHandlers;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(int, ::FocusImpact, ::IClientInstance&)>>>
-        mCaretLocationHandlers;
     ::ll::TypedStorage<
         8,
         24,
@@ -280,20 +262,51 @@ public:
         int                      controllerId
     );
 
+    MCAPI void _handleDirectionEvent(
+        ::DirectionEventData const& direction,
+        ::FocusImpact               focusImpact,
+        ::IClientInstance&          client,
+        bool                        suspendedDirectionalInput
+    );
+
     MCAPI void
     _handleMappingChange(::InputMapping const* newMapping, ::InputMapping const* oldMapping, int controllerId);
 
+    MCAPI void _handlePointerLocationEvent(
+        ::PointerLocationEventData const& pointerLocation,
+        ::FocusImpact                     focusImpact,
+        ::IClientInstance&                client,
+        int                               controllerId
+    );
+
+    MCAPI void
+    _handleTextCharEvent(::TextCharEventData const& textChar, ::FocusImpact focusImpact, ::IClientInstance& client);
+
     MCAPI void changeControllerId(int oldId, int newId);
 
+    MCAPI void clearInputDeviceQueues();
+
+    MCAPI void clearInputDeviceQueuesForFrame();
+
     MCAPI void clearInputMapping(int controllerId);
+
+    MCAPI void clearInvalidDownKeys(int controllerId);
 
     MCAPI ::std::string const& getCurrentInputMapping(int controllerId) const;
 
     MCAPI ::InputMode getCurrentInputMode(int controllerId) const;
 
+    MCAPI void initNewControllerIdOwner(int controllerId, ::InputMode initialInputMode);
+
     MCAPI void popInputMapping(int controllerId);
 
     MCAPI void pushInputMapping(::std::string const& mappingName, int controllerId);
+
+    MCAPI void refreshInputMapping(int controllerId);
+
+    MCAPI void registerAddClientHandler(::std::function<void(::IMinecraftGame*, int, bool)> handler);
+
+    MCFOLD void registerAnyInputHandler(::std::function<void(::IClientInstance&)> handler);
 
     MCAPI void registerButtonDownHandler(
         ::std::string                                            buttonName,
@@ -307,7 +320,7 @@ public:
         bool                                                     suspendable
     );
 
-    MCAPI void registerCaretLocationHandler(::std::function<void(int, ::FocusImpact, ::IClientInstance&)> handler);
+    MCAPI void registerChangeUserHandler(::std::function<void(::IMinecraftGame*, int, bool)> handler);
 
     MCAPI void registerClearPointerLocationWithIdHandler(
         ::std::function<void(::ClearPointerLocationWithIdEventData const&, ::IClientInstance&)> handler
@@ -318,10 +331,15 @@ public:
     MCAPI void
     registerControlOptionHandler(::std::function<void(::ControlOptionEventData const&, ::IClientInstance&)> handler);
 
+    MCAPI void
+    registerControllerConnectionStateChangeHandler(::std::function<void(::IClientInstance&, bool, int)> handler);
+
     MCAPI void registerDirectionHandler(
         ::DirectionId                                                          directionId,
         ::std::function<void(float, float, ::FocusImpact, ::IClientInstance&)> handler
     );
+
+    MCAPI void registerInputDeviceMapper(::std::unique_ptr<::InputDeviceMapper> mapper);
 
     MCAPI void registerInputModeHandler(::std::function<void(::InputMode, ::IClientInstance&)> handler);
 
@@ -343,6 +361,10 @@ public:
 
     MCAPI void registerPotentialOverlappingControlsHandler(::std::function<void(::IClientInstance&)> handler);
 
+    MCAPI void registerRawInputHandler(
+        ::std::function<void(int, ::RawInputType, ::ButtonState, bool, ::IClientInstance&)> handler
+    );
+
     MCAPI void
     registerTextCharHandler(::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)> handler);
 
@@ -351,6 +373,18 @@ public:
     );
 
     MCAPI void releaseButtonsAndSticks(::std::string const& currentMappingName, int controllerId);
+
+    MCAPI void render(::InputRenderContext& renderContext) const;
+
+    MCAPI void setDisableInput(bool disable, int controllerId);
+
+    MCAPI void setInputBindingMode(::InputBindingMode mode, int controllerId);
+
+    MCAPI void setSuspendDirectionalInput(bool suspendDirectionalInput, int controllerId);
+
+    MCAPI void setSuspendInput(bool suspendInput, int controllerId);
+
+    MCAPI void setWindowSize(int width, int height);
 
     MCAPI void tick(
         ::IMinecraftGame*                                               mcGame,

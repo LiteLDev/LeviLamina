@@ -4,6 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
+// clang-format on
 
 namespace cereal {
 
@@ -15,15 +22,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~EnumConstraint() /*override*/;
-    // NOLINTEND
+    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void validateValue(int64 value, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:

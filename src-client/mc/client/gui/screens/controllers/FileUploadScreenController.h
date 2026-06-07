@@ -65,6 +65,8 @@ public:
         ::std::function<void(::UploadState, ::Realms::World)> callback
     );
 
+    MCAPI bool _canCancelUpload() const;
+
     MCAPI void _displayPostUploadErrorPopup();
 
     MCAPI void _displayUploadErrorPopup(::UploadError uploadError);

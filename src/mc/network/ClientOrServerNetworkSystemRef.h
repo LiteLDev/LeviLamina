@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/ClientNetworkSystem.h"
-#include "mc/network/ServerNetworkSystem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,16 +19,4 @@ public:
     using ClientRefT = ::std::reference_wrapper<::ClientNetworkSystem>;
 
     using ServerRefT = ::std::reference_wrapper<::ServerNetworkSystem>;
-
-public:
-    using ClientRefT = std::reference_wrapper<ClientNetworkSystem>;
-    using ServerRefT = std::reference_wrapper<ServerNetworkSystem>;
-
-    ClientNetworkSystem& toClientNetworkSystem() { return std::get<ClientRefT>(*this).get(); }
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ServerNetworkSystem& toServerNetworkSystem();
-    // NOLINTEND
 };

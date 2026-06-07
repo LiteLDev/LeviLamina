@@ -16,11 +16,9 @@ class LootItemIsBabyCondition : public ::LootItemCondition {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
+    virtual bool applies(::Random& context, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
-
-    virtual ~LootItemIsBabyCondition() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -32,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $applies(::Random&, ::LootTableContext& context);
+    MCNAPI bool $applies(::Random& context, ::LootTableContext&);
 
     MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
 

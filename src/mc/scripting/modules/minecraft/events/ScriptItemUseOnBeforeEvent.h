@@ -24,24 +24,16 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptItemUseOnBeforeEvent& operator=(ScriptItemUseOnBeforeEvent const&);
     ScriptItemUseOnBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseOnBeforeEvent(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
-
-    MCAPI ScriptItemUseOnBeforeEvent(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);
-
     MCAPI ScriptItemUseOnBeforeEvent(
         ::ItemUseOnEvent const&               itemEvent,
         ::Player const&                       player,
         ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
     // NOLINTEND
 
 public:
@@ -55,10 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);
-
     MCAPI void*
     $ctor(::ItemUseOnEvent const& itemEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND

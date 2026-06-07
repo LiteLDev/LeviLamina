@@ -43,8 +43,6 @@ public:
         /*override*/;
 
     virtual int size() const /*override*/;
-
-    virtual ~ShieldRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:

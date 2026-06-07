@@ -7,9 +7,15 @@
 
 class SmithingTableContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~SmithingTableContainerScreenValidator() /*override*/ = default;
+    MCAPI SmithingTableContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -14,18 +14,6 @@ public:
     ::ll::TypedStorage<8, 128, ::World::PackCollection> resourcePack;
     ::ll::TypedStorage<8, 128, ::World::PackCollection> behaviorPack;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~WorldPacksData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace World

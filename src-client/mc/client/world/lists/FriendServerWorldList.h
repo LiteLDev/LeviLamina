@@ -54,7 +54,19 @@ public:
 
     MCAPI ::std::optional<::Network::ServerID> getServerIdByUserId(::std::string const& userId) const;
 
+    MCAPI ::NetworkWorldInfo const* getWorld(::Network::ServerID const& serverId) const;
+
+    MCFOLD ::std::unordered_map<::Network::ServerID, ::NetworkWorldInfo> const& getWorlds() const;
+
+    MCAPI void onTrialModeChanged(bool trial);
+
     MCAPI ::Bedrock::PubSub::Subscription subscribeToBuildGameList();
+
+    MCAPI void update();
+
+    MCAPI void userControlledUpdateGameList();
+
+    MCAPI ~FriendServerWorldList();
     // NOLINTEND
 
 public:
@@ -66,6 +78,12 @@ public:
         ::std::function<bool(::Realms::RealmId)> isRealmJoinable,
         ::std::function<bool()>                  isEditorModeEnabled
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

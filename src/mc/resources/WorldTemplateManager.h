@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/resources/interface/IWorldTemplateManager.h"
 
 // auto generated forward declare list
@@ -93,13 +94,36 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void addKnownPackFromImport(::Pack const& pack);
 
+    MCNAPI void deleteWorldTemplate(::PackIdVersion const& packIdentity);
+
+    MCNAPI ::WorldTemplateInfo const* findWorldTemplateAtIndex(int index);
+
+    MCNAPI ::std::vector<::PackIdVersion> const& getLocalPremiumPackIds() const;
+
+    MCNAPI ::Core::PathBuffer<::std::string> getWorldTemplatesPath() const;
+
+    MCNAPI bool isWorldTemplateInstalled(::mce::UUID const& uuid) const;
+
     MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack const>>>
     loadPacksForTemplate(::WorldTemplateInfo const& info);
+
+    MCNAPI void onStorageDirectoryChanged();
+
+    MCNAPI void setSortMethod(
+        ::std::function<bool(
+            ::std::unique_ptr<::WorldTemplateInfo const> const&,
+            ::std::unique_ptr<::WorldTemplateInfo const> const&
+        )> sort
+    );
 
     MCNAPI void setWorldIconAllowListPath(::WorldTemplateInfo const& info, ::std::string path);
 #endif
 
     MCNAPI void sortWorldTemplates();
+
+#ifdef LL_PLAT_C
+    MCNAPI void update();
+#endif
     // NOLINTEND
 
 public:

@@ -38,8 +38,6 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~MineshaftCorridor() /*override*/ = default;
     // NOLINTEND
 
 public:

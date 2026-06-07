@@ -15,19 +15,24 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TimeMarker& operator=(TimeMarker const&);
-    TimeMarker();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TimeMarker(::TimeMarker const&);
+#ifdef LL_PLAT_C
+    MCAPI ::std::string const& getName() const;
+#endif
+
+    MCAPI ~TimeMarker();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static variables
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TimeMarker const&);
+    MCAPI static uint const& MAX_NAME_LENGTH();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

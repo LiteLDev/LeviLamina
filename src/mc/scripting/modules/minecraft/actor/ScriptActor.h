@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
@@ -16,13 +17,13 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class EntityContext;
 class MobEffect;
 class Scoreboard;
 class ServerLevel;
 class Vec2;
 class Vec3;
 class VecXZ;
-struct DynamicPropertyDefinition;
 struct ScoreboardId;
 namespace ScriptModuleMinecraft { class ScriptAABB; }
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
@@ -141,6 +142,12 @@ public:
 
     virtual ::Scripting::Result_deprecated<void> setSneaking_010(::Actor& self, bool isSneaking);
 
+    virtual ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getNameplateDepthTested(::Actor const& self) const;
+
+    virtual ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setNameplateDepthTested(::Actor& self, bool isNameplateDepthTested);
+
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         remove(::Actor& self);
@@ -153,8 +160,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActor(::ScriptModuleMinecraft::ScriptActor&&);
-
     MCAPI ScriptActor(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI
@@ -168,9 +173,6 @@ public:
         float                                                                     amount,
         ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& options
     );
-
-    MCAPI ::DynamicPropertyDefinition const*
-    _getDynamicPropertyDefinition(::Actor& self, ::std::string const& key) const;
 
     MCAPI ::MobEffect const* _getEffectHelper(
         ::std::variant<
@@ -321,13 +323,14 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents
     );
 
-    MCAPI ::Scripting::Result<
+    MCFOLD ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::EngineError>
     getDimension(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+    MCFOLD ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
     getDimension_010(::Actor const& self) const;
 
     MCAPI ::Scripting::Result<
@@ -389,9 +392,11 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getHeadLocation_010(::Actor const& self) const;
 
-    MCAPI ::std::string getId() const;
+    MCFOLD ::std::string getId() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getId_010(::Actor const& self) const;
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptActorLifetimeState getLifetimeState() const;
 
     MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getLocalizationKey(::Actor const& self) const;
@@ -400,6 +405,9 @@ public:
     getLocation(::Actor const& self) const;
 
     MCFOLD ::Scripting::Result_deprecated<::Vec3> getLocation_010(::Actor const& self) const;
+
+    MCAPI ::Scripting::Result<float, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getNameplateRenderDistance(::Actor const& self) const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<::std::variant<float, bool, ::std::string>>,
@@ -415,10 +423,10 @@ public:
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>>
     getScoreboardIdentity();
 
-    MCAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCFOLD ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getTags(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTags_010(::Actor const& self) const;
+    MCFOLD ::Scripting::Result_deprecated<::std::vector<::std::string>> getTags_010(::Actor const& self) const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>,
@@ -441,6 +449,8 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
     getViewVector_010(::Actor const& self) const;
+
+    MCAPI ::WeakRef<::EntityContext> getWeakEntity() const;
 
     MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     hasTag(::Actor const& self, ::std::string const& tag) const;
@@ -561,6 +571,11 @@ public:
         ::std::variant<double, float, bool, ::std::string, ::Vec3>& value
     );
 
+    MCAPI void setLoaded();
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setNameplateRenderDistance(::Actor& self, float renderDistanceMax);
+
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setOnFire(::Actor& self, int seconds, bool useEffects);
 
@@ -574,6 +589,8 @@ public:
         ::std::string const&                              identifier,
         ::std::variant<float, bool, ::std::string> const& value
     );
+
+    MCAPI void setRemoved();
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setRotation(::Actor& self, ::Vec2 rotation);
@@ -631,6 +648,9 @@ public:
     MCAPI static ::Scripting::ClassBinding
     bind(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents);
 
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
+    getHandle(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
+
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);
 
@@ -643,8 +663,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActor&&);
-
     MCAPI void* $ctor(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI void*
@@ -667,10 +685,10 @@ public:
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
-    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCFOLD ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $getNameTag(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> $getNameTag_010(::Actor const& self) const;
+    MCFOLD ::Scripting::Result_deprecated<::std::string> $getNameTag_010(::Actor const& self) const;
 
     MCFOLD ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $setNameTag(::Actor& self, ::std::string const& nameTag);
@@ -686,6 +704,12 @@ public:
     $setSneaking(::Actor& self, bool isSneaking);
 
     MCFOLD ::Scripting::Result_deprecated<void> $setSneaking_010(::Actor& self, bool isSneaking);
+
+    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    $getNameplateDepthTested(::Actor const& self) const;
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    $setNameplateDepthTested(::Actor& self, bool isNameplateDepthTested);
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $remove(::Actor& self);

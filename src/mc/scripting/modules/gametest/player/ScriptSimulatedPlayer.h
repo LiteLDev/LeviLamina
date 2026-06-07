@@ -14,6 +14,7 @@
 // clang-format off
 class Actor;
 class BlockPos;
+class Player;
 class SimulatedPlayer;
 class Vec2;
 class Vec3;
@@ -22,18 +23,23 @@ namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace ScriptModuleGameTest { struct ScriptPlayerSkinData; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
 namespace Scripting { struct UnsupportedAPIError; }
-namespace gametest { class BaseGameTestHelper; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
 namespace ScriptModuleGameTest {
 
 class ScriptSimulatedPlayer : public ::ScriptModuleMinecraft::ScriptPlayer {
+public:
+    // prevent constructor by default
+    ScriptSimulatedPlayer();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -42,13 +48,18 @@ public:
         remove(::Actor& self) /*override*/;
 
     virtual bool isValid() const /*override*/;
-
-    virtual ~ScriptSimulatedPlayer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptSimulatedPlayer(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI ScriptSimulatedPlayer(
+        ::ScriptModuleMinecraft::ScriptActorData const& playerData,
+        ::Scripting::WeakLifetimeScope const&           scope
+    );
+
     MCAPI ::Scripting::Result_deprecated<bool> attack(::SimulatedPlayer& self);
 
     MCAPI ::Scripting::Result_deprecated<bool>
@@ -204,7 +215,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::gametest::BaseGameTestHelper const* _getHelper(::SimulatedPlayer const& player);
+    MCAPI static float _getTestRotationAngle(::SimulatedPlayer const& player);
+
+    MCAPI static ::Vec3 _getWorldDirection(::SimulatedPlayer const& player, ::Vec3 const& relativeDirection);
 
     MCAPI static ::std::optional<::gametest::GameTestError>
     _toWorld(::SimulatedPlayer& player, ::BlockPos* blockPos, uchar* face, ::Vec3* pos);
@@ -215,6 +228,18 @@ public:
     );
 
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSimulatedPlayer>
+    getHandle(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI void*
+    $ctor(::ScriptModuleMinecraft::ScriptActorData const& playerData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

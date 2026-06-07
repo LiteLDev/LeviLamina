@@ -2,14 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Include.h"
-
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct LocalMoveVelocityComponent;
 struct MobRotationComponent;
 struct MobTravelComponent;
@@ -18,20 +13,11 @@ struct MobTravelComponent;
 namespace MobTravelIntentSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickSystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
-        ::LocalMoveVelocityComponent,
-        ::MobRotationComponent,
-        ::MobTravelComponent> view
-);
-
 MCAPI void updatedMoveVelocity(
-    ::StrictEntityContext const&,
-    ::LocalMoveVelocityComponent& localMoveVelocityComponent,
-    ::MobRotationComponent&       mobRotationComponent,
-    ::MobTravelComponent&         mobTravelComponent
+    ::StrictEntityContext const&  localMoveVelocityComponent,
+    ::LocalMoveVelocityComponent& mobRotationComponent,
+    ::MobRotationComponent&       mobTravelComponent,
+    ::MobTravelComponent&
 );
 // NOLINTEND
 

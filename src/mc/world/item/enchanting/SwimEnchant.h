@@ -16,8 +16,6 @@ public:
     virtual int getMaxLevel() const /*override*/;
 
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
-
-    virtual ~SwimEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

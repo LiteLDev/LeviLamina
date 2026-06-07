@@ -17,17 +17,31 @@ public:
 
 public:
     // prevent constructor by default
-    ExperimentStorage(ExperimentStorage const&);
+    ExperimentStorage& operator=(ExperimentStorage const&);
     ExperimentStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ExperimentStorage(::ExperimentStorage const&);
+
+    MCNAPI bool isAnyToggleEnabled() const;
+
     MCNAPI ::ExperimentStorage& operator=(::ExperimentStorage&&);
 
-    MCNAPI ::ExperimentStorage& operator=(::ExperimentStorage const&);
+#ifdef LL_PLAT_C
+    MCNAPI bool sameActiveExperimentsAreEnabled(::ExperimentStorage const& other) const;
+
+    MCNAPI bool wereAnyExperimentsEverToggled() const;
+#endif
 
     MCNAPI ~ExperimentStorage();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ExperimentStorage const&);
     // NOLINTEND
 
 public:

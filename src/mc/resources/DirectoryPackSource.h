@@ -6,6 +6,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackSource.h"
 
@@ -55,15 +56,23 @@ public:
     MCAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
 
 #ifdef LL_PLAT_C
-    MCAPI void addPack(::std::shared_ptr<::Pack>&& pack);
+    MCFOLD void addPack(::std::shared_ptr<::Pack>&& pack);
+
+    MCAPI ::Bedrock::Threading::Async<void> addPacks(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& packs);
 #endif
 
     MCAPI void deleteAllPacksAndReset();
+
+#ifdef LL_PLAT_C
+    MCAPI bool isCopyable() const;
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void checkAndRemoveIncompletePacks(::Core::Path const& path);
+
     MCAPI static void checkAndRemoveIncompletePacks(
         ::Core::Path const&      path,
         ::IPackIOProvider const& io,

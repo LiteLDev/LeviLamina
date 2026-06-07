@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CherryTreeTrunk() /*override*/ = default;
+    virtual ~CherryTreeTrunk() /*override*/;
 
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
@@ -67,6 +67,12 @@ public:
         int                             offsetFromOrigin,
         bool                            middleContinuesUpwards
     ) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

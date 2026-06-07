@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Level;
+class PositionTrackingDBServerBroadcastPacket;
 class PositionTrackingId;
 namespace PositionTrackingDB { class CacheManager; }
 namespace PositionTrackingDB { class TrackingRecord; }
@@ -32,8 +33,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PositionTrackingDBClient(::Level& level);
+
     MCAPI ::PositionTrackingDB::ResultCode
     findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
+
+#ifdef LL_PLAT_C
+    MCAPI void onReceivePacket(::PositionTrackingDBServerBroadcastPacket const& packet);
+#endif
+
+    MCAPI ~PositionTrackingDBClient();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Level& level);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

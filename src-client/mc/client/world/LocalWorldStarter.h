@@ -39,6 +39,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LocalWorldStarter(
+        ::IGameServerStartup&          gameServerStartup,
+        ::ILevelListCache&             levelListCache,
+        ::World::IWorldStorageHandler& worldStorageHandler
+    );
+
     MCAPI void backupThenStartLocalWorld(
         ::World::WorldID const& worldID,
         ::std::function<
@@ -47,6 +53,16 @@ public:
     );
 
     MCAPI ::World::StartLocalWorldResult startLocalWorld(::World::WorldID const& worldID);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::IGameServerStartup&          gameServerStartup,
+        ::ILevelListCache&             levelListCache,
+        ::World::IWorldStorageHandler& worldStorageHandler
+    );
     // NOLINTEND
 };
 

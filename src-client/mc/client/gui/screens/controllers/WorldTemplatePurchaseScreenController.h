@@ -37,8 +37,6 @@ public:
     virtual ::ui::DirtyFlag tick() /*override*/;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
-
-    virtual ~WorldTemplatePurchaseScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:

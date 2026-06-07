@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+struct MovementAttributeEntry;
 namespace mce::framebuilder { struct PerCascadeParameters; }
 // clang-format on
 
@@ -16,19 +18,25 @@ namespace brstd {
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
 MCNAPI bool operator==(
-    ::brstd::static_vector<::mce::framebuilder::PerCascadeParameters, 8> const& lhs,
-    ::brstd::static_vector<::mce::framebuilder::PerCascadeParameters, 8> const& rhs
-);
-
-MCNAPI void swap(
-    ::brstd::
-        associative_adapter<int, ::std::string, ::std::less<int>, ::std::vector<int>, ::std::vector<::std::string>>::
-            zip_iterator::reference lhs,
-    ::brstd::
-        associative_adapter<int, ::std::string, ::std::less<int>, ::std::vector<int>, ::std::vector<::std::string>>::
-            zip_iterator::reference rhs
+    ::brstd::static_vector<::brstd::static_vector<::mce::framebuilder::PerCascadeParameters, 8>, 4> const& lhs,
+    ::brstd::static_vector<::brstd::static_vector<::mce::framebuilder::PerCascadeParameters, 8>, 4> const& rhs
 );
 #endif
+
+MCNAPI void swap(
+    ::brstd::associative_adapter<
+        ::HashedString,
+        ::MovementAttributeEntry,
+        ::std::less<::HashedString>,
+        ::std::vector<::HashedString>,
+        ::std::vector<::MovementAttributeEntry>>::zip_iterator::reference lhs,
+    ::brstd::associative_adapter<
+        ::HashedString,
+        ::MovementAttributeEntry,
+        ::std::less<::HashedString>,
+        ::std::vector<::HashedString>,
+        ::std::vector<::MovementAttributeEntry>>::zip_iterator::reference rhs
+);
 // NOLINTEND
 
 } // namespace brstd

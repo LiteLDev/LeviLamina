@@ -87,6 +87,15 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string const
+    getPushSlotPredictionResultName(::SparseContainerClient::PushSlotPredictionResult result);
+#endif
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const&

@@ -24,8 +24,6 @@ public:
     // NOLINTBEGIN
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     send(::Bedrock::Http::Request&& request) /*override*/;
-
-    virtual ~HttpDiagnostics() /*override*/ = default;
     // NOLINTEND
 
 public:

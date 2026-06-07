@@ -10,6 +10,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_21_90 { struct SwingDurationItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,9 +22,15 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    SwingDurationItemComponent();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~SwingDurationItemComponent() /*override*/ = default;
+    MCAPI explicit SwingDurationItemComponent(::SharedTypes::v1_21_90::SwingDurationItemComponent component);
+
+    MCAPI uint getValueInTicks() const;
     // NOLINTEND
 
 public:
@@ -36,6 +43,12 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_90::SwingDurationItemComponent component);
     // NOLINTEND
 
 public:

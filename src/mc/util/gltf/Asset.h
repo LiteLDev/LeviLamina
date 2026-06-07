@@ -30,6 +30,14 @@ public:
         Profile& operator=(Profile const&);
         Profile(Profile const&);
         Profile();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ::Json::Value serialize() const;
+#endif
+        // NOLINTEND
     };
 
 public:
@@ -52,18 +60,27 @@ public:
 public:
     // prevent constructor by default
     Asset(Asset const&);
-    Asset();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI Asset();
+
     MCNAPI ::glTF::Asset& operator=(::glTF::Asset const&);
 
     MCNAPI ::Json::Value serialize() const;
 
     MCNAPI ~Asset();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 

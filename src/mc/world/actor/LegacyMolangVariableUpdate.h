@@ -23,6 +23,8 @@ MCAPI void initializeCat(::EntityContext& entityContext);
 
 MCAPI void initializeChicken(::EntityContext& entityContext);
 
+MCAPI void initializeEnderDragon(::EntityContext& entityContext);
+
 MCAPI void initializeFish(::EntityContext& entityContext);
 
 MCAPI void initializeGhast(::EntityContext& entityContext);
@@ -34,6 +36,8 @@ MCAPI void initializeHorse(::EntityContext& entityContext);
 MCAPI void initializeIronGolem(::EntityContext& entityContext);
 
 MCAPI void initializeLlama(::EntityContext& entityContext);
+
+MCAPI void initializeMob(::EntityContext& entityContext);
 
 MCAPI void initializeOcelot(::EntityContext& entityContext);
 

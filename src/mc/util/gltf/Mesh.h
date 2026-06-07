@@ -39,25 +39,35 @@ public:
         ::ll::UntypedStorage<4, 4>  mUnkb58e9b;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         Primitive& operator=(Primitive const&);
         Primitive(Primitive const&);
         Primitive();
 
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        Primitive& operator=(Primitive const&);
+        Primitive(Primitive const&);
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI ~Primitive();
+        MCNAPI Primitive();
+
+        MCNAPI ::Json::Value serialize() const;
 #endif
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI void $dtor();
+        MCNAPI void* $ctor();
 #endif
         // NOLINTEND
     };
@@ -71,19 +81,40 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk2df7fb;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Mesh& operator=(Mesh const&);
     Mesh(Mesh const&);
     Mesh();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Mesh& operator=(Mesh const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI Mesh();
+
+    MCNAPI Mesh(::glTF::Mesh const&);
+
     MCNAPI ::Json::Value serialize() const;
 
     MCNAPI ~Mesh();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::glTF::Mesh const&);
 #endif
     // NOLINTEND
 

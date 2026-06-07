@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/attribute/AttributeBuff.h"
+#include "mc/world/attribute/AttributeBuffType.h"
 #include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
@@ -23,7 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    TemporalAttributeBuff& operator=(TemporalAttributeBuff const&);
     TemporalAttributeBuff();
 
 public:
@@ -45,13 +45,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TemporalAttributeBuff(::TemporalAttributeBuff const&);
+    MCAPI TemporalAttributeBuff(
+        float                amount,
+        ::EffectDuration     duration,
+        ::AttributeBuffType  type,
+        bool                 serialize,
+        ::std::string const& name
+    );
+
+    MCFOLD float getBaseAmount() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TemporalAttributeBuff const&);
+    MCAPI void*
+    $ctor(float amount, ::EffectDuration duration, ::AttributeBuffType type, bool serialize, ::std::string const& name);
     // NOLINTEND
 
 public:

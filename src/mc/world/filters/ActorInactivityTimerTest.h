@@ -17,8 +17,6 @@ public:
     virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
-
-    virtual ~ActorInactivityTimerTest() /*override*/ = default;
     // NOLINTEND
 
 public:

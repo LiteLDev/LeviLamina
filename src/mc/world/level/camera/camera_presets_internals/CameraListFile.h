@@ -20,12 +20,15 @@ public:
 public:
     // prevent constructor by default
     CameraListFile& operator=(CameraListFile const&);
-    CameraListFile(CameraListFile const&);
     CameraListFile();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI CameraListFile(::CameraPresetsInternals::CameraListFile const&);
+
+    MCNAPI ::CameraPresetsInternals::CameraListFile& operator=(::CameraPresetsInternals::CameraListFile&&);
+
     MCNAPI ~CameraListFile();
     // NOLINTEND
 
@@ -33,6 +36,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::CameraPresetsInternals::CameraListFile const&);
     // NOLINTEND
 
 public:

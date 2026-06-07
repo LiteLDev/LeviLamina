@@ -19,19 +19,33 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Trade1Ingredient2ContainerValidation();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
-        int const,
-        ::ItemStackBase const& item,
+        int const                       item,
+        ::ItemStackBase const&,
         int const,
         bool
     ) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
+    // NOLINTEND
 
-    virtual ~Trade1Ingredient2ContainerValidation() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit Trade1Ingredient2ContainerValidation(bool isServerSide);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool isServerSide);
     // NOLINTEND
 
 public:
@@ -39,13 +53,13 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
-        int const,
-        ::ItemStackBase const& item,
+        int const                       item,
+        ::ItemStackBase const&,
         int const,
         bool
     ) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
 
     // NOLINTEND

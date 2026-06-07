@@ -34,6 +34,10 @@ public:
         ::IMinecraftGame&                                                minecraftGame,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
     );
+
+    MCFOLD ::std::shared_ptr<::SuggestedContentOffersProvider> getSuggestedContentOffersProvider();
+
+    MCFOLD ::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> getWorldSettingsProvider();
     // NOLINTEND
 
 public:

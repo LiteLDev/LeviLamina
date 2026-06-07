@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +11,7 @@ class EnderDragon;
 class Path;
 // clang-format on
 
-class DragonLandingGoal : public ::Goal {
+class DragonLandingGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,14 +40,22 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~DragonLandingGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DragonLandingGoal(::EnderDragon& mob);
+
     MCAPI void findNewTarget();
+
+    MCAPI void navigateToNextPathNode();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::EnderDragon& mob);
     // NOLINTEND
 
 public:

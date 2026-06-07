@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/storage/AllExperiments.h"
+#include "mc/world/level/storage/ExperimentCategory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,13 +29,56 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ExperimentalFeatureToggle& operator=(ExperimentalFeatureToggle const&);
+    ExperimentalFeatureToggle();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ExperimentalFeatureToggle(::OreUI::ExperimentalFeatureToggle&&);
+
+    MCAPI ExperimentalFeatureToggle(::OreUI::ExperimentalFeatureToggle const&);
+
+    MCAPI ExperimentalFeatureToggle(
+        ::LevelDataWrapper&  levelData,
+        ::std::string const& fourCc,
+        ::AllExperiments     experiment,
+        ::std::string const& title,
+        ::std::string const& description,
+        ::ExperimentCategory category
+    );
+
     MCAPI bool getIsEnabled() const;
 
-    MCFOLD bool getIsTogglePermanentlyDisabled();
+    MCAPI bool getIsTogglePermanentlyDisabled();
 
     MCAPI void setIsEnabled(bool newValue);
+
+    MCAPI ~ExperimentalFeatureToggle();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::OreUI::ExperimentalFeatureToggle&&);
+
+    MCFOLD void* $ctor(::OreUI::ExperimentalFeatureToggle const&);
+
+    MCAPI void* $ctor(
+        ::LevelDataWrapper&  levelData,
+        ::std::string const& fourCc,
+        ::AllExperiments     experiment,
+        ::std::string const& title,
+        ::std::string const& description,
+        ::ExperimentCategory category
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

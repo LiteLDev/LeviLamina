@@ -24,6 +24,7 @@ public:
 
 public:
     // prevent constructor by default
+    AsyncJoinRegistrar& operator=(AsyncJoinRegistrar const&);
     AsyncJoinRegistrar(AsyncJoinRegistrar const&);
     AsyncJoinRegistrar();
 
@@ -48,8 +49,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AsyncJoinRegistrar(::Minecraft& minecraft);
-
-    MCNAPI ::AsyncJoinRegistrar& operator=(::AsyncJoinRegistrar const&);
     // NOLINTEND
 
 public:

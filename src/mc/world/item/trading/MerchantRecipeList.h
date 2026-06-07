@@ -2,12 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/inventory/network/TypedServerNetId.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
 class ItemInstance;
 class MerchantRecipe;
 class SaveContext;
+struct RecipeNetIdTag;
 // clang-format on
 
 class MerchantRecipeList {
@@ -40,7 +44,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isRequiredItem(::ItemInstance const& offer, ::ItemInstance const& requiredItem);
+    MCAPI MerchantRecipeList();
+
+    MCAPI void assignNetIds();
+
+    MCAPI ::MerchantRecipe const* getRecipeByNetId(::RecipeNetId const& netId) const;
+
+    MCAPI ::std::optional<uint64> getRecipeIndexByNetId(::RecipeNetId const& netId) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

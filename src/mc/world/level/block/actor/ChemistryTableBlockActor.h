@@ -65,9 +65,9 @@ public:
 
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -86,9 +86,15 @@ public:
     MCAPI ::std::unique_ptr<::LabTableReaction>
     _createReaction(::Random& random, ::std::vector<::ItemStack> const& consumedInput);
 
-    MCAPI void _popPendingReactionOutput(::BlockSource& region);
+    MCAPI ::HashedString const& _getType(::BlockSource& region);
 
-    MCAPI ::HashedString const& _updateType(::BlockSource& region);
+#ifdef LL_PLAT_C
+    MCAPI void clientLabTablePacket(::LabTablePacket const& packet, ::BlockSource& region);
+
+    MCAPI bool isReactionInProgress();
+#endif
+
+    MCAPI bool isSameType(::HashedString const& type) const;
 
     MCAPI void playerOpenLabTable(::Player& player);
 
@@ -132,9 +138,9 @@ public:
 
     MCAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
 
     MCAPI void $tick(::BlockSource& region);
 

@@ -4,6 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core_graphics/enums/PrimitiveMode.h"
+#include "mc/deps/renderer/VertexField.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { struct MeshDataVertexFieldCounts; }
+// clang-format on
 
 namespace mce {
 
@@ -25,13 +31,13 @@ public:
     ::ll::TypedStorage<8, 72, ::std::vector<::glm::vec2>[3]> mTextureUVs;
     ::ll::TypedStorage<8, 24, ::std::vector<ushort>>         mPBRTextureIndices;
     ::ll::TypedStorage<8, 24, ::std::vector<uint>>           mMERS;
+    ::ll::TypedStorage<8, 24, ::std::vector<uchar>>          mGeoType;
     ::ll::TypedStorage<1, 14, ::std::array<bool, 14>>        mFieldEnabled;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     MeshData& operator=(MeshData const&);
-    MeshData(MeshData const&);
 
 public:
     // member functions
@@ -40,13 +46,21 @@ public:
 
     MCAPI MeshData(::mce::MeshData&&);
 
+    MCAPI MeshData(::mce::MeshData const&);
+
     MCAPI void clear();
 
-    MCAPI ::mce::MeshData clone() const;
+    MCAPI void enableField(::mce::VertexField field);
 
     MCAPI void freeMemory();
 
+    MCAPI ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
+
+    MCAPI bool hasField(::mce::VertexField field) const;
+
     MCAPI ::mce::MeshData& operator=(::mce::MeshData&&);
+
+    MCAPI uint64 size() const;
 
     MCAPI ~MeshData();
     // NOLINTEND
@@ -57,6 +71,8 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::mce::MeshData&&);
+
+    MCAPI void* $ctor(::mce::MeshData const&);
     // NOLINTEND
 
 public:

@@ -6,8 +6,8 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/shared_types/item/EnchantSlot.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
-#include "mc/world/item/enchanting/Enchant.h"
 #include "mc/world/item/enchanting/ItemEnchants.h"
 
 // auto generated forward declare list
@@ -34,6 +34,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptItemEnchantmentComponent& operator=(ScriptItemEnchantmentComponent const&);
     ScriptItemEnchantmentComponent();
 
 public:
@@ -45,6 +46,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptItemEnchantmentComponent(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+
     MCAPI ScriptItemEnchantmentComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
@@ -85,7 +88,7 @@ public:
     MCAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance>>
     getEnchantments(::Scripting::WeakLifetimeScope& scope) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::Enchant::Slot>> getSlots() const;
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::SharedTypes::EnchantSlot>> getSlots() const;
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError> hasEnchantment(
         ::std::variant<
@@ -112,6 +115,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+
     MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope

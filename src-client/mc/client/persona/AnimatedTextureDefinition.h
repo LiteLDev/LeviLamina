@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/persona/AnimatedTextureType.h"
+
 struct AnimatedTextureDefinition {
 public:
     // member variables
@@ -24,12 +27,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~AnimatedTextureDefinition();
+    MCNAPI AnimatedTextureDefinition(
+        ::persona::AnimatedTextureType type,
+        ::std::string const&           geoID,
+        ::std::string const&           textureID
+    );
+
+    MCNAPI float getFrames() const;
+
+    MCNAPI ::AnimatedTextureDefinition& operator=(::AnimatedTextureDefinition&&);
+
+    MCNAPI void setFrames(float frames);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::persona::AnimatedTextureType type, ::std::string const& geoID, ::std::string const& textureID);
     // NOLINTEND
 };

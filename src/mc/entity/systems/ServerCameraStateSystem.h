@@ -13,6 +13,7 @@ struct ServerActiveCameraComponent;
 struct ServerCameraInstructionComponent;
 struct ServerCameraStatesComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace ServerCameraStateSystem {
@@ -31,6 +32,8 @@ MCAPI void _tick(
         ::ServerCameraStatesComponent const,
         ::ServerCameraInstructionComponent> cameraInstructionView
 );
+
+MCAPI ::TickingSystemWithInfo create();
 // NOLINTEND
 
 } // namespace ServerCameraStateSystem

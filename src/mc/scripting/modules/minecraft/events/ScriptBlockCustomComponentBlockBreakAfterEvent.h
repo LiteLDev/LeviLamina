@@ -6,11 +6,13 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentAfterEvent.h"
+#include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -42,16 +44,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptBlockCustomComponentBlockBreakAfterEvent& operator=(ScriptBlockCustomComponentBlockBreakAfterEvent const&);
     ScriptBlockCustomComponentBlockBreakAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentBlockBreakAfterEvent(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent&&
-    );
-
     MCAPI ScriptBlockCustomComponentBlockBreakAfterEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent const&
     );
@@ -61,32 +58,35 @@ public:
         ::Scripting::WeakLifetimeScope const&                                                             scope
     );
 
-    MCAPI ~ScriptBlockCustomComponentBlockBreakAfterEvent();
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent&&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+
+    MCFOLD static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
+        void>>
+    tryGetComponentsToExecute(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage const& eventData
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEvent const&);
 
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                             scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -12,11 +12,25 @@ class Actor;
 
 class RedstoneBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    RedstoneBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canSpawnOn(::Actor*) const /*override*/;
+    // NOLINTEND
 
-    virtual ~RedstoneBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RedstoneBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

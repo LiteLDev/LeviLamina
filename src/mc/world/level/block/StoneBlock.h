@@ -18,6 +18,10 @@ namespace mce { class Color; }
 
 class StoneBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    StoneBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
@@ -30,14 +34,24 @@ public:
         /*override*/;
 
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
+    // NOLINTEND
 
-    virtual ~StoneBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StoneBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 

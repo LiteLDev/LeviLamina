@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ContainerRegistry() /*override*/ = default;
+    virtual ~ContainerRegistry() /*override*/;
 
     virtual ::std::unique_ptr<::ListTag>
     serializeContainerContent(::FullContainerName const& name, ::SaveContext const& saveContext) /*override*/;
@@ -91,6 +91,8 @@ public:
 
     MCAPI void _serverCleanUp(::std::function<void(::Packet&)> broadcastPacketFunction);
 
+    MCAPI int _tick(::std::function<void(::Packet&)> broadcastPacketFunction, int ticksSinceLastCleanup);
+
     MCAPI void tick(::std::function<void(::Packet&)> broadcastPacketFunction);
     // NOLINTEND
 
@@ -107,6 +109,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(bool isClientSide);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -41,8 +41,6 @@ public:
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~Capped() /*override*/;
     // NOLINTEND
 
 public:
@@ -50,12 +48,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::br::worldgen::processors::Capped
     from(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

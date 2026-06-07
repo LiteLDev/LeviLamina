@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/platform/UUID.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_100::PackSettingsDefinition {
 
 struct Settings {
@@ -17,20 +22,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Settings& operator=(Settings const&);
-    Settings(Settings const&);
-    Settings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&
-    operator=(::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&&);
-
 #ifdef LL_PLAT_C
     MCAPI ~Settings();
 #endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

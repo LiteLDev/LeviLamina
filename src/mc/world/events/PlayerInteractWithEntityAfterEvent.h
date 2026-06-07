@@ -22,22 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerInteractWithEntityAfterEvent& operator=(PlayerInteractWithEntityAfterEvent const&);
-    PlayerInteractWithEntityAfterEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerInteractWithEntityAfterEvent(::PlayerInteractWithEntityAfterEvent const&);
-
     MCAPI ~PlayerInteractWithEntityAfterEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::PlayerInteractWithEntityAfterEvent const&);
     // NOLINTEND
 
 public:

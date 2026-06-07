@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockComponentDescription();
+    virtual ~BlockComponentDescription() = default;
 
     virtual ::std::string const& getName() const;
 
@@ -52,12 +52,6 @@ public:
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -13,6 +13,7 @@ public:
     ::std::string mCommitId;
     ::std::string mBranchId;
     ::std::string mFlavor;
+    ::std::string mMergeBaseSha;
     // NOLINTEND
 
 public:

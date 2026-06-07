@@ -17,6 +17,7 @@ class IAdvancedGraphicsOptions : public ::IAdvancedGraphicsHardwareOptions {
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     virtual void unregisterResourcePackListener() = 0;
 
     virtual bool areRayTracingResourcesAvailable() const = 0;
@@ -43,9 +44,6 @@ public:
 
     virtual void setCanSwitchGraphicsModeInGame(bool canRuntimeSwitch) = 0;
 
-#ifdef LL_PLAT_S
-    virtual ~IAdvancedGraphicsOptions() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ::GraphicsMode getDefaultGraphicsMode() const = 0;
 
     virtual ::dragon::rendering::LightingModels toggleLightingModel() = 0;
@@ -55,8 +53,6 @@ public:
     virtual void setGraphicsMode(::GraphicsMode const graphicsMode) = 0;
 
     virtual bool isPrevAdvancedGraphicsMode() const = 0;
-
-    virtual ~IAdvancedGraphicsOptions() /*override*/;
 #endif
 
     // NOLINTEND
@@ -77,12 +73,6 @@ public:
     MCNAPI static ::std::string_view const& PBR_TAG();
 
     MCNAPI static ::std::string_view const& RAY_TRACING_TAG();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockTypes();
+    MCAPI void _generateAllBlockHandles(::Scripting::WeakLifetimeScope& scope);
 
     MCAPI void _registerBlockType(
         ::std::string                                                                  blockName,
@@ -57,6 +57,8 @@ public:
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
+
+    MCAPI ~ScriptBlockTypes();
     // NOLINTEND
 
 public:
@@ -68,9 +70,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

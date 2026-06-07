@@ -25,6 +25,8 @@ public:
 
 public:
     // prevent constructor by default
+    EditorReplicationContainerDeleteObjectPayload& operator=(EditorReplicationContainerDeleteObjectPayload const&);
+    EditorReplicationContainerDeleteObjectPayload(EditorReplicationContainerDeleteObjectPayload const&);
     EditorReplicationContainerDeleteObjectPayload();
 
 public:
@@ -34,26 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EditorReplicationContainerDeleteObjectPayload(
-        ::Editor::Network::EditorReplicationContainerDeleteObjectPayload const&
-    );
-
-    MCNAPI ::Editor::Network::EditorReplicationContainerDeleteObjectPayload&
-    operator=(::Editor::Network::EditorReplicationContainerDeleteObjectPayload const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::EditorReplicationContainerDeleteObjectPayload const&);
     // NOLINTEND
 
 public:

@@ -18,7 +18,11 @@ public:
 
     virtual ::std::string getContentKey(::ContentIdentity const& contentIdentity) const = 0;
 
+#ifdef LL_PLAT_S
+    virtual ::std::string getAlternateContentKey(::ContentIdentity const&) const;
+#else // LL_PLAT_C
     virtual ::std::string getAlternateContentKey(::ContentIdentity const& contentIdentity) const;
+#endif
 
     virtual bool requireEncryptedReads() const;
 
@@ -30,7 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $getAlternateContentKey(::ContentIdentity const& contentIdentity) const;
+    MCNAPI ::std::string $getAlternateContentKey(::ContentIdentity const&) const;
 
     MCNAPI bool $requireEncryptedReads() const;
 

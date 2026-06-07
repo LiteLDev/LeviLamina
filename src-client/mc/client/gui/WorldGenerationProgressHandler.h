@@ -20,13 +20,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldGenerationProgressHandler();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~WorldGenerationProgressHandler() /*override*/ = default;
 
-    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void tick(::MinecraftScreenModel&) /*override*/;
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -42,11 +46,23 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WorldGenerationProgressHandler(bool localServer, ::std::function<void()> const& startCallback);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool localServer, ::std::function<void()> const& startCallback);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCAPI void $onStart(::MinecraftScreenModel&);
 
-    MCFOLD void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCFOLD void $tick(::MinecraftScreenModel&);
 
     MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 

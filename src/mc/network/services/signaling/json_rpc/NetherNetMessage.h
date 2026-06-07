@@ -30,17 +30,23 @@ public:
 
     public:
         // prevent constructor by default
-        Params(Params const&);
+        Params& operator=(Params const&);
         Params();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI Params(::JsonRpc::NetherNetMessage::Params const&);
+
         MCNAPI ::JsonRpc::NetherNetMessage::Params& operator=(::JsonRpc::NetherNetMessage::Params&&);
 
-        MCNAPI ::JsonRpc::NetherNetMessage::Params& operator=(::JsonRpc::NetherNetMessage::Params const&);
-
         MCNAPI ~Params();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::JsonRpc::NetherNetMessage::Params const&);
         // NOLINTEND
 
     public:
@@ -58,7 +64,6 @@ public:
 
 public:
     // prevent constructor by default
-    NetherNetMessage& operator=(NetherNetMessage const&);
     NetherNetMessage(NetherNetMessage const&);
     NetherNetMessage();
 
@@ -66,6 +71,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI NetherNetMessage(::std::string netherNetId, ::std::string message);
+
+    MCNAPI ::JsonRpc::NetherNetMessage& operator=(::JsonRpc::NetherNetMessage const&);
 
     MCNAPI ~NetherNetMessage();
     // NOLINTEND

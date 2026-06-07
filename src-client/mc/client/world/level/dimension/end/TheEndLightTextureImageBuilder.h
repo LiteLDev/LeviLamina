@@ -23,8 +23,6 @@ public:
         float                  ambientBoost,
         bool                   clampToMinimum
     ) /*override*/;
-
-    virtual ~TheEndLightTextureImageBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -22,8 +22,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
-
-    virtual ~Breeze() /*override*/ = default;
     // NOLINTEND
 
 public:

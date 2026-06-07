@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerLevel;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
 namespace mce { class UUID; }
@@ -26,14 +27,10 @@ public:
     ScriptServerGraphicsModuleFactory();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptServerGraphicsModuleFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptServerGraphicsModuleFactory(::ServerLevel* serverLevel);
+
     MCNAPI void _addVersions();
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
@@ -46,7 +43,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID& ModuleUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ServerLevel* serverLevel);
     // NOLINTEND
 
 public:

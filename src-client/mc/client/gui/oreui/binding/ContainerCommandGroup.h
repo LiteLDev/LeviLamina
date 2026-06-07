@@ -62,12 +62,6 @@ public:
     ContainerCommandGroup();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ContainerCommandGroup() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ContainerCommandGroup(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
@@ -169,12 +163,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

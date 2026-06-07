@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace SharedTypes::v1_20_80 { struct ParticleSoundEffectEvent; }
 // clang-format on
 
 namespace ParticleSystem {
@@ -28,8 +27,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ParticleSoundEffectEvent(::Json::Value const& eventData);
-
-    MCAPI void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleSoundEffectEvent& data);
     // NOLINTEND
 
 public:

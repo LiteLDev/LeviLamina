@@ -26,17 +26,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetArmorTrimFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SetArmorTrimFunction() /*override*/ = default;
+    virtual ~SetArmorTrimFunction() /*override*/;
 
-    virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& context, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& item, ::Random& context, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
@@ -44,13 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetArmorTrimFunction(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::HashedString const&                                  material,
-        ::HashedString const&                                  pattern
-    );
-
     MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
+
+    MCAPI ::std::string const& getMaterial() const;
+
+    MCAPI ::std::string const& getPattern() const;
     // NOLINTEND
 
 public:
@@ -61,21 +55,17 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::HashedString const&                                  material,
-        ::HashedString const&                                  pattern
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random& context, ::LootTableContext&);
 
-    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& context, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

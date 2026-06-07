@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~Trade2Ingredient2ContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:

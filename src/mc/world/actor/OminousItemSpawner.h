@@ -40,8 +40,6 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual void baseTick() /*override*/;
-
-    virtual ~OminousItemSpawner() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,6 +56,10 @@ public:
     MCAPI ::ItemStack const& _getItem();
 
     MCAPI void _onTimePassed();
+
+    MCAPI void _removeDisplayEntity();
+
+    MCAPI void _serverTick();
 
     MCAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
 

@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorSoundIdentifier;
+class ServerSoundHandle;
 class Vec3;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
@@ -25,7 +26,8 @@ public:
         void(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
     getOnLevelSoundEventConnector() = 0;
 
-    virtual ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
+    virtual ::Bedrock::PubSub::Connector<
+        void(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>)>&
     getOnLevelSoundEventWithVolumeAndPitchConnector() = 0;
 
     virtual ::Bedrock::PubSub::Connector<void(::std::string const&)>& getOnStopLevelSoundEventConnector() = 0;

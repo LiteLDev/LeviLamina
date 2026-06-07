@@ -70,30 +70,6 @@ public:
         ::ll::TypedStorage<4, 72, ::WeatherRenderObject::RuntimeValues> t;
         ::ll::TypedStorage<1, 1, bool>                                  resetMotion;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RenderRuntimeSettings& operator=(RenderRuntimeSettings const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI RenderRuntimeSettings();
-
-        MCAPI RenderRuntimeSettings(::WeatherRenderObject::RenderRuntimeSettings&&);
-
-        MCAPI RenderRuntimeSettings(::WeatherRenderObject::RenderRuntimeSettings const&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-
-        MCFOLD void* $ctor(::WeatherRenderObject::RenderRuntimeSettings&&);
-
-        MCFOLD void* $ctor(::WeatherRenderObject::RenderRuntimeSettings const&);
-        // NOLINTEND
     };
 
     struct WeatherParameters {

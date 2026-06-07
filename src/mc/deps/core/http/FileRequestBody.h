@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/http/IRequestBody.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class Path; }
+// clang-format on
+
 namespace Bedrock::Http {
 
 class FileRequestBody : public ::Bedrock::Http::Internal::IRequestBody {
@@ -25,7 +30,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar>) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar> destination) /*override*/;
+#endif
 
     virtual uint64 getSize() /*override*/;
 
@@ -34,27 +43,34 @@ public:
     virtual ::std::string const& getLoggableSource() const /*override*/;
 
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~FileRequestBody() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~FileRequestBody() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI explicit FileRequestBody(::Core::Path filename);
+
+    MCNAPI void _closeIfEof();
+
     MCNAPI bool _lazyOpenFileHandle();
 #endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::shared_ptr<::Bedrock::Http::FileRequestBody> create(::Core::Path filename);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::Path filename);
+#endif
     // NOLINTEND
 
 public:

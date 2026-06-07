@@ -25,8 +25,26 @@ public:
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
-    virtual ~ItemStackRequestActionCraftLoom() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ItemStackRequestActionCraftLoom();
+
+#ifdef LL_PLAT_C
+    MCNAPI ItemStackRequestActionCraftLoom(::std::string const& patternNameId, uchar numCrafts);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string const& patternNameId, uchar numCrafts);
+#endif
     // NOLINTEND
 
 public:

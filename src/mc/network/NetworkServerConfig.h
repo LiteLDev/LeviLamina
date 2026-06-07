@@ -12,6 +12,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                serverType;
     ::ll::TypedStorage<1, 1, bool>                          requireTrustedAuthentication;
+    ::ll::TypedStorage<1, 1, bool>                          requireNonce;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> extraTrustedKeys;
     ::ll::TypedStorage<1, 1, ::NetworkPermissions>          networkPermissions;
     ::ll::TypedStorage<1, 1, bool>                          allowSubclientLogin;
@@ -20,14 +21,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkServerConfig& operator=(NetworkServerConfig const&);
+    NetworkServerConfig();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NetworkServerConfig(::NetworkServerConfig const&);
+
     MCAPI ~NetworkServerConfig();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::NetworkServerConfig const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

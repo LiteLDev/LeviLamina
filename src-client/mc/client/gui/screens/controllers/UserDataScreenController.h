@@ -12,6 +12,7 @@
 // clang-format off
 class ClientInstanceScreenModel;
 class PlayerListEntry;
+struct ActorUniqueID;
 struct PlayerListInfo;
 namespace mce { class UUID; }
 // clang-format on
@@ -53,9 +54,19 @@ public:
 
     MCAPI void _registerBindings();
 
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _requestPlayerProfileImages(::std::vector<::std::string> const& xuids);
 
+    MCAPI void _requestThirdPartyPics(::std::vector<::std::pair<::mce::UUID, ::std::string>> const& uuids);
+
     MCAPI void _updatePlayerList();
+
+    MCAPI ::PlayerListInfo getLocalPlayer() const;
+
+    MCAPI ::PlayerListInfo getPlayerByAUID(::ActorUniqueID auid) const;
+
+    MCAPI ::std::vector<::PlayerListInfo> const& getPlayerList();
     // NOLINTEND
 
 public:

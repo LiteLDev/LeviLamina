@@ -31,12 +31,6 @@ public:
         ClientHandshake& operator=(ClientHandshake const&);
         ClientHandshake(ClientHandshake const&);
         ClientHandshake();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~ClientHandshake() /*override*/ = default;
-        // NOLINTEND
     };
 
 public:

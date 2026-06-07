@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ConditionalBandwidthOptimizationDefinition;
 // clang-format on
 
 class ConditionalBandwidthOptimizationComponent {
@@ -35,6 +36,8 @@ public:
 
     MCAPI ::ConditionalBandwidthOptimization getCurrentOptimizationValues(::Actor& owner);
 
+    MCAPI void initFromDefinition(::Actor& actor, ::ConditionalBandwidthOptimizationDefinition const& def);
+
     MCAPI ::ConditionalBandwidthOptimizationComponent& operator=(::ConditionalBandwidthOptimizationComponent&&);
 
     MCAPI ~ConditionalBandwidthOptimizationComponent();
@@ -51,6 +54,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

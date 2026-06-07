@@ -31,13 +31,13 @@ MCAPI void makePassengerStopRiding(
 );
 
 MCAPI void tickServerPlayerStopRidingPacket(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                      entity,
-    ::ServerPlayerInteractComponent const&            stopRidingRequest,
-    ::Optional<::PassengerComponent const>            isPassenger,
-    ::Optional<::ServerPlayerMovementComponent>       serverPlayerMovementComponent,
-    ::ActorOwnerComponent&                            actorOwnerComponent,
-    ::EntityModifier<::ServerPlayerInteractComponent> modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>> entity,
+    ::StrictEntityContext const&                                     stopRidingRequest,
+    ::ServerPlayerInteractComponent const&                           isPassenger,
+    ::Optional<::PassengerComponent const>                           serverPlayerMovementComponent,
+    ::Optional<::ServerPlayerMovementComponent>                      actorOwnerComponent,
+    ::ActorOwnerComponent&                                           modifier,
+    ::EntityModifier<::ServerPlayerInteractComponent>
 );
 // NOLINTEND
 

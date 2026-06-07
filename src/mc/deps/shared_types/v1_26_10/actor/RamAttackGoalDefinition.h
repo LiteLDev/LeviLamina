@@ -33,17 +33,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RamAttackGoalDefinition& operator=(RamAttackGoalDefinition const&);
-    RamAttackGoalDefinition(RamAttackGoalDefinition const&);
-    RamAttackGoalDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_26_10::RamAttackGoalDefinition&
-    operator=(::SharedTypes::v1_26_10::RamAttackGoalDefinition&&);
-
     MCAPI ~RamAttackGoalDefinition();
     // NOLINTEND
 

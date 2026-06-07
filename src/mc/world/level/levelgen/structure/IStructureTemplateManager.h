@@ -17,7 +17,7 @@ class IStructureTemplateManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IStructureTemplateManager() /*override*/;
+    virtual ~IStructureTemplateManager() /*override*/ = default;
 
     virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>
     getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement) = 0;
@@ -29,12 +29,6 @@ public:
     virtual ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const& structureName) = 0;
 
     virtual bool readStructure(::StructureTemplate& structureTemplate) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

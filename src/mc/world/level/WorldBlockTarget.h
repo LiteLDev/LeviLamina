@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldBlockTarget() /*override*/;
+    virtual ~WorldBlockTarget() /*override*/ = default;
 
     virtual bool canGetChunk() const /*override*/;
 
@@ -91,7 +91,7 @@ public:
 
     virtual bool isInBounds(::Pos const& pos) const /*override*/;
 
-    virtual short getLocalWaterLevel(::BlockPos const& pos) const /*override*/;
+    virtual short getLocalWaterLevel(::BlockPos const&) const /*override*/;
 
     virtual ::LevelData const& getLevelData() const /*override*/;
 
@@ -101,9 +101,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI WorldBlockTarget(::BlockSource& region, ::WorldGenContext const& context);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockSource& region, ::WorldGenContext const& context);
     // NOLINTEND
 
 public:
@@ -113,11 +119,11 @@ public:
 
     MCAPI ::LevelChunk* $getChunk(::ChunkPos const& pos);
 
-    MCFOLD ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
     MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+    MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
     MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
@@ -154,7 +160,7 @@ public:
 
     MCAPI bool $isInBounds(::Pos const& pos) const;
 
-    MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
+    MCAPI short $getLocalWaterLevel(::BlockPos const&) const;
 
     MCAPI ::LevelData const& $getLevelData() const;
 

@@ -22,8 +22,6 @@ public:
     virtual void dataSentTo(::NetworkIdentifier const& target, ::std::string_view data) = 0;
 
     virtual void dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data) = 0;
-
-    virtual ~IPacketObserver() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -33,8 +33,6 @@ public:
         ::RenderParams&                                   renderParams,
         ::Vec3 const&                                     spawnDirection
     ) /*override*/;
-
-    virtual ~ParticleAppearanceBillboardBaseComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,6 +52,12 @@ public:
         ::RenderParams&                                   renderParams,
         ::Vec3 const&                                     spawnDirection
     );
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

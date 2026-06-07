@@ -9,9 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Dimension;
-struct TargetBlockHitEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -33,18 +31,6 @@ public:
     ScriptTargetBlockHitAfterEventIntermediateData& operator=(ScriptTargetBlockHitAfterEventIntermediateData const&);
     ScriptTargetBlockHitAfterEventIntermediateData(ScriptTargetBlockHitAfterEventIntermediateData const&);
     ScriptTargetBlockHitAfterEventIntermediateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptTargetBlockHitAfterEventIntermediateData(::TargetBlockHitEvent const& eventData, ::Actor const* source);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::TargetBlockHitEvent const& eventData, ::Actor const* source);
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

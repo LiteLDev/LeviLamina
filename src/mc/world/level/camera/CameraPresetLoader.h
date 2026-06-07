@@ -39,8 +39,6 @@ public:
 
     MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_90::CameraPresetFile>
     load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
-
-    MCNAPI ~CameraPresetLoader();
     // NOLINTEND
 
 public:
@@ -51,11 +49,5 @@ public:
         ::cereal::ReflectionCtx const&                     ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

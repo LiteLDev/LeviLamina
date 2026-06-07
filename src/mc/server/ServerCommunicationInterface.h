@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ChunkLoadTelemetryData;
 struct NetworkAddress;
 namespace Json { class Value; }
 // clang-format on
@@ -36,7 +37,13 @@ public:
         ::std::string const& xuid
     );
 
+    MCNAPI void sendChunkLoadTelemtryData(::ChunkLoadTelemetryData const& data);
+
     MCNAPI void sendServerStarted();
+
+    MCNAPI void sendServerTickTime(::std::chrono::nanoseconds timepoint);
+
+    MCNAPI ~ServerCommunicationInterface();
 #endif
     // NOLINTEND
 
@@ -45,6 +52,14 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
     MCNAPI static ::std::unique_ptr<::ServerCommunicationInterface> create(::NetworkAddress const& address);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

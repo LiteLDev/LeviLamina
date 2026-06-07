@@ -20,12 +20,26 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptBlockCustomComponentsFinalizer();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScriptBlockCustomComponentsFinalizer(
+        ::StackRefResult<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry>&& registry
+    );
+
     MCAPI void
     finalizeBlock(::BlockType& block, ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>>& customComps);
 
     MCAPI ~ScriptBlockCustomComponentsFinalizer();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::StackRefResult<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry>&& registry);
     // NOLINTEND
 
 public:

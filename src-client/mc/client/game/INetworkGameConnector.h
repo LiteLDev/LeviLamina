@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ClientNetworkSystem;
 class IClientInstance;
 class RealmsAPI;
 struct ExperienceConnectionData;
@@ -70,6 +71,8 @@ public:
         ::IMinecraftEventing::RealmConnectionFlow telemetryEventingConnectionFlow,
         ::PlayerJoinWorldContext                  context
     ) = 0;
+
+    virtual ::ClientNetworkSystem& getClientNetworkSystem() = 0;
     // NOLINTEND
 
 public:

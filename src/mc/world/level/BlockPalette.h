@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
@@ -14,6 +15,7 @@ class IUnknownBlockTypeRegistry;
 class Level;
 struct BlockID;
 struct NewBlockID;
+struct NibblePair;
 // clang-format on
 
 class BlockPalette {
@@ -61,11 +63,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BlockPalette(::BlockPalette::ConstructorToken);
+
     MCAPI explicit BlockPalette(::Level& level);
+
+    MCAPI void cacheBlockComponentData();
 
     MCAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const getUnknownBlockTypeRegistry() const;
+
+    MCAPI void initFromBlockDefinitions();
 
     MCAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
 
@@ -76,11 +84,20 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Block const& convertLegacyBlock(::BlockID id, ushort data);
+
+    MCAPI static bool convertLegacyBlocks(
+        ::buffer_span_mut<::Block const*> dst,
+        ::buffer_span<::BlockID>          blockIDs,
+        ::buffer_span<::NibblePair>       data,
+        uint64                            volume
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPalette::ConstructorToken);
+
     MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 

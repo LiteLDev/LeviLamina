@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -33,6 +34,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnchantingTableBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
@@ -46,8 +51,18 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    // NOLINTEND
 
-    virtual ~EnchantingTableBlockActor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit EnchantingTableBlockActor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

@@ -35,19 +35,26 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~StructureBlockUpdatePacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~StructureBlockUpdatePacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI StructureBlockUpdatePacket();
+
+#ifdef LL_PLAT_C
+    MCAPI StructureBlockUpdatePacket(::BlockPos blockPos, ::StructureEditorData const& data, bool trigger);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::BlockPos blockPos, ::StructureEditorData const& data, bool trigger);
+#endif
     // NOLINTEND
 
 public:

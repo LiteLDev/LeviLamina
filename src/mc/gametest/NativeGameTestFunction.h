@@ -34,8 +34,6 @@ public:
 
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
     run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext&) const /*override*/;
-
-    virtual ~NativeGameTestFunction() /*override*/ = default;
     // NOLINTEND
 
 public:

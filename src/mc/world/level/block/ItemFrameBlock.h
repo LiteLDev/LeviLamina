@@ -15,11 +15,11 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
 class ItemInstance;
+class MapItemSavedData;
 class Player;
 class Vec3;
 struct ResourceDropsContext;
@@ -29,6 +29,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class ItemFrameBlock : public ::ActorBlock {
+public:
+    // prevent constructor by default
+    ItemFrameBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -49,7 +53,7 @@ public:
 
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
+    virtual ::ItemInstance asItemInstance(::Block const& blockActor, ::BlockActor const*) const /*override*/;
 
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
@@ -74,25 +78,35 @@ public:
 
     virtual ::HashedString getSpawnedItemName() const;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual void
-    spawnAfterBreak(::BlockSource& region, ::Block const&, ::BlockPos const& pos, ::ResourceDropsContext const&) const
+    spawnAfterBreak(::BlockSource& region, ::Block const& pos, ::BlockPos const&, ::ResourceDropsContext const&) const
         /*override*/;
-
-    virtual ~ItemFrameBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemFrameBlock(::std::string const& nameId, int id);
+
+    MCAPI int _addMapCollection(
+        ::std::vector<::MapItemSavedData*>& detectionGrid,
+        ::BlockPos const&                   centerPos,
+        ::BlockSource&                      region
+    ) const;
+
     MCAPI void _checkAchievements(::Player& player, ::BlockPos const& currentPos) const;
 
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -119,7 +133,7 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const& blockActor, ::BlockActor const*) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -135,16 +149,14 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD bool $isLavaBlocking() const;
 
     MCAPI ::HashedString $getSpawnedItemName() const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
     MCAPI void
-    $spawnAfterBreak(::BlockSource& region, ::Block const&, ::BlockPos const& pos, ::ResourceDropsContext const&) const;
+    $spawnAfterBreak(::BlockSource& region, ::Block const& pos, ::BlockPos const&, ::ResourceDropsContext const&) const;
 
 
     // NOLINTEND

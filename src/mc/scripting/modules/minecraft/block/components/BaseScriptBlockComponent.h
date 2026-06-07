@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponent.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -11,7 +10,6 @@
 // clang-format off
 class Block;
 class BlockSource;
-namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -29,27 +27,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BaseScriptBlockComponent() /*override*/;
+    virtual ~BaseScriptBlockComponent() /*override*/ = default;
 
     virtual bool _isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> getBlock() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

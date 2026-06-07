@@ -40,6 +40,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DeleteAccountScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
 
+    MCAPI void _registerBindings();
+
     MCAPI void _registerEventHandlers();
     // NOLINTEND
 

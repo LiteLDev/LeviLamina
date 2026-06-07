@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace ServerConfiguration {
 
 struct ClientStoreEntryPointConfiguration {
@@ -14,19 +19,30 @@ public:
 
 public:
     // prevent constructor by default
-    ClientStoreEntryPointConfiguration(ClientStoreEntryPointConfiguration const&);
+    ClientStoreEntryPointConfiguration& operator=(ClientStoreEntryPointConfiguration const&);
     ClientStoreEntryPointConfiguration();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ClientStoreEntryPointConfiguration(::ServerConfiguration::ClientStoreEntryPointConfiguration const&);
+
     MCNAPI ::ServerConfiguration::ClientStoreEntryPointConfiguration&
     operator=(::ServerConfiguration::ClientStoreEntryPointConfiguration&&);
 
-    MCNAPI ::ServerConfiguration::ClientStoreEntryPointConfiguration&
-    operator=(::ServerConfiguration::ClientStoreEntryPointConfiguration const&);
-
     MCNAPI ~ClientStoreEntryPointConfiguration();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ServerConfiguration::ClientStoreEntryPointConfiguration const&);
     // NOLINTEND
 
 public:

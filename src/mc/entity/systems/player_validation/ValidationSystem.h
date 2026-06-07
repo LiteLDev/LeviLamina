@@ -61,8 +61,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~ValidationSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

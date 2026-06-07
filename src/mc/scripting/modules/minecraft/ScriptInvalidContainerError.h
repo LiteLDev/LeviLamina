@@ -21,8 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptInvalidContainerError(::std::string_view functionName);
-
-    MCAPI ~ScriptInvalidContainerError();
     // NOLINTEND
 
 public:
@@ -35,12 +33,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string_view functionName);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

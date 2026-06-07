@@ -70,6 +70,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>           dateManager
     );
+
+    MCAPI void _sortOfferModelListByCoinCount(::std::vector<::PlatformOfferModel>& modelListToSort);
     // NOLINTEND
 
 public:

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Util::Url { struct ComponentsView; }
+// clang-format on
+
 namespace Util::Url {
 
 struct Components {
@@ -24,7 +29,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit Components(::Util::Url::ComponentsView const& other);
+#endif
+
+    MCNAPI Components(
+        ::std::string const& scheme,
+        ::std::string const& authority,
+        ::std::string const& path,
+        ::std::string const& query,
+        ::std::string const& fragment
+    );
+
     MCNAPI ~Components();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Util::Url::ComponentsView const& other);
+#endif
+
+    MCNAPI void* $ctor(
+        ::std::string const& scheme,
+        ::std::string const& authority,
+        ::std::string const& path,
+        ::std::string const& query,
+        ::std::string const& fragment
+    );
     // NOLINTEND
 
 public:

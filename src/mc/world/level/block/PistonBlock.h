@@ -15,7 +15,6 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class IConstBlockSource;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -35,6 +34,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::PistonBlock::Type> mType;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PistonBlock();
 
 public:
     // virtual functions
@@ -65,18 +68,16 @@ public:
 
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
 
     virtual bool pushesUpFallingBlocks() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~PistonBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PistonBlock(::std::string const& nameId, int id, ::PistonBlock::Type isSticky);
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -86,6 +87,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<::BlockPos const[]> ARM_DIRECTION_OFFSETS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::PistonBlock::Type isSticky);
     // NOLINTEND
 
 public:
@@ -118,11 +125,9 @@ public:
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
 
     MCFOLD bool $pushesUpFallingBlocks() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

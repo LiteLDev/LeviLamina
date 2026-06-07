@@ -14,10 +14,15 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class HitResult;
+class Material;
 class Vec3;
 // clang-format on
 
 class ClientRequestPlaceholderBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    ClientRequestPlaceholderBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,8 +35,18 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~ClientRequestPlaceholderBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ClientRequestPlaceholderBlock(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

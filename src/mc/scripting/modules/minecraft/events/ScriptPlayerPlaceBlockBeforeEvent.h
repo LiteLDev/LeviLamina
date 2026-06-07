@@ -36,16 +36,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerPlaceBlockBeforeEvent& operator=(ScriptPlayerPlaceBlockBeforeEvent const&);
     ScriptPlayerPlaceBlockBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerPlaceBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
-
-    MCAPI ScriptPlayerPlaceBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
-
     MCAPI ScriptPlayerPlaceBlockBeforeEvent(
         ::Player const&                       player,
         ::Dimension&                          dimension,
@@ -55,8 +50,6 @@ public:
         ::Block const&                        permutationToPlace,
         ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCAPI ~ScriptPlayerPlaceBlockBeforeEvent();
     // NOLINTEND
 
 public:
@@ -68,10 +61,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
-
     MCAPI void* $ctor(
         ::Player const&                       player,
         ::Dimension&                          dimension,
@@ -81,12 +70,6 @@ public:
         ::Block const&                        permutationToPlace,
         ::Scripting::WeakLifetimeScope const& scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -7,7 +7,6 @@
 class EntityContext;
 class EntityRegistry;
 class StrictEntityContext;
-struct AttributesComponent;
 struct ExternalDataSnapshotComponent;
 namespace MovementDataExtractionUtility { struct Extractors; }
 // clang-format on
@@ -17,8 +16,6 @@ namespace MovementDataExtractionUtility {
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
 MCNAPI ::MovementDataExtractionUtility::Extractors _buildInitialRewindExtractors();
-
-MCNAPI ::AttributesComponent copyComponent(::AttributesComponent const& attributes);
 #endif
 
 MCNAPI void extractExternalData(::ExternalDataSnapshotComponent& component, ::EntityRegistry& context);
@@ -31,6 +28,14 @@ MCNAPI void extractPackedSnapshot(
     ::StrictEntityContext const& target,
     bool                         removeWhenMissing
 );
+
+MCNAPI ::MovementDataExtractionUtility::Extractors const& getOrCreateInitialRewindExtractors();
+
+MCNAPI ::MovementDataExtractionUtility::Extractors const& getOrCreateSnapshotExtractors();
+
+MCNAPI ::gsl::not_null<
+    void (*)(::EntityRegistry&, ::EntityRegistry&, ::StrictEntityContext const&, ::StrictEntityContext const&, bool)>
+getSnapshotUnpacker();
 
 MCNAPI void tryStoreImmutableDataSnapshotOnEntity(::EntityContext& liveEntity);
 

@@ -23,6 +23,7 @@ class IMarketplacePackDownloader;
 class MutableContentItemCollection;
 struct ContentItem;
 struct ContentSource;
+struct PackContentItem;
 struct PackContentItemListPosition;
 struct PackIdVersion;
 struct PackSettingsInfo;
@@ -94,11 +95,12 @@ public:
     virtual ::std::optional<::PackSettingsInfo>
     getPackSettingsForPackIdVersion(::std::string const& packIdVersion) /*override*/;
 
+    virtual ::std::shared_ptr<::PackContentItem const>
+    getPackItemForPackIdVersion(::std::string_view packIdVersion) /*override*/;
+
     virtual ::Bedrock::PubSub::Subscription subscribeToMarketplacePackDownloadStatus(
         ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
     ) /*override*/;
-
-    virtual ~WorldPackCollectionManagerImpl() /*override*/;
     // NOLINTEND
 
 public:
@@ -122,13 +124,25 @@ public:
     MCAPI ::std::shared_ptr<::ContentItemCollection>
     _getMarketplacePassContentItemCollection(::ContentType contentType) const;
 
+    MCAPI void _handlePackDownloadStatusChange(::IMarketplacePackDownloader::MarketplacePackDownloadStatus newStatus);
+
     MCAPI ::std::optional<::World::PackActionError> _handlePackMoveContinue();
+
+    MCAPI void _handleUpdatedPackSettings(::PackSettingsInfo const& updatedPackSettingsInfo);
 
     MCAPI ::std::optional<::World::PackActionError> _movePackContent(
         ::std::string const& packIdVersion,
         ::ContentType        packType,
         ::World::PackAction  packAction,
         bool                 ignoreWarnings
+    );
+
+    MCAPI void _persistPendingWarnings(
+        ::World::PackActionError packActionError,
+        ::std::string const&     packIdVersion,
+        ::std::string const&     packName,
+        ::ContentType            packType,
+        ::World::PackAction      packAction
     );
 
     MCAPI void _populateDependencies(::std::vector<::std::shared_ptr<::ContentItem>>& sourceItems);
@@ -155,15 +169,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick();
+    MCAPI void $tick();
 
     MCAPI void $setContentSource(::std::unique_ptr<::ContentSource>&& contentSource);
 
@@ -191,6 +199,8 @@ public:
     $subscribeToPendingPackActionPublisher(::std::function<void(::std::optional<::World::PendingPackAction>)> callback);
 
     MCAPI ::std::optional<::PackSettingsInfo> $getPackSettingsForPackIdVersion(::std::string const& packIdVersion);
+
+    MCAPI ::std::shared_ptr<::PackContentItem const> $getPackItemForPackIdVersion(::std::string_view packIdVersion);
 
     MCAPI ::Bedrock::PubSub::Subscription $subscribeToMarketplacePackDownloadStatus(
         ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange

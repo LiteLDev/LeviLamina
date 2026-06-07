@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/identity/PermissionDenyReason.h"
+
 namespace Social {
 
 struct PermissionCheckResult {
@@ -16,6 +19,14 @@ public:
     PermissionCheckResult& operator=(PermissionCheckResult const&);
     PermissionCheckResult(PermissionCheckResult const&);
     PermissionCheckResult();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::Social::PermissionDenyReason> makeDenyReasonList() const;
+#endif
+    // NOLINTEND
 };
 
 } // namespace Social

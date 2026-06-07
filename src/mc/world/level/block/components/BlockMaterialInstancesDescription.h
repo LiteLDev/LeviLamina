@@ -15,6 +15,7 @@ class BlockComponentStorage;
 class CompoundTag;
 class Experiments;
 class SemVersion;
+class SemVersionConstant;
 struct BlockMaterialInstance;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
@@ -58,6 +59,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockMaterialInstancesDescription(BlockMaterialInstancesDescription const&);
+    BlockMaterialInstancesDescription();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -68,22 +74,16 @@ public:
 
     virtual bool isNetworkComponent() const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
-
-    virtual ~BlockMaterialInstancesDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockMaterialInstancesDescription();
-
-    MCAPI BlockMaterialInstancesDescription(::BlockMaterialInstancesDescription const&);
-
     MCAPI BlockMaterialInstancesDescription(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
@@ -96,7 +96,7 @@ public:
         bool                 dithering
     );
 
-    MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
+    MCAPI bool const isRenderLayerOpaque() const;
 
     MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
     // NOLINTEND
@@ -113,16 +113,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static uint64 const& MATERIALS_LIMIT();
+
     MCAPI static ::std::string const& NameID();
+
+    MCAPI static ::SemVersionConstant const& VARIATIONS_TEXTURE_SUPPORT_MIN_VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockMaterialInstancesDescription const&);
-
     MCAPI void* $ctor(
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
@@ -137,12 +137,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
@@ -153,7 +147,7 @@ public:
 
     MCFOLD bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 

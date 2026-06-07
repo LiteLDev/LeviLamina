@@ -34,8 +34,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ModelPartLocator(::ModelPartLocator const&);
-
     MCAPI ModelPartLocator(
         ::std::string const& name,
         ::std::string const& boneName,
@@ -45,9 +43,9 @@ public:
 
     MCAPI bool compare(::ModelPartLocator const& rhs, bool compareSkeletalHierarchyIndexAndBoneMapping) const;
 
-    MCAPI ::ModelPartLocator& operator=(::ModelPartLocator const&);
+    MCFOLD ::Matrix const& getWorldAbsoluteTransform() const;
 
-    MCAPI ~ModelPartLocator();
+    MCAPI void setWorldAbsoluteTransform(::Matrix const& transform);
 #endif
     // NOLINTEND
 
@@ -55,22 +53,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ModelPartLocator const&);
-
     MCAPI void* $ctor(
         ::std::string const& name,
         ::std::string const& boneName,
         ::Vec3 const&        localOffset,
         bool                 ignoreInheritedScale
     );
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 };

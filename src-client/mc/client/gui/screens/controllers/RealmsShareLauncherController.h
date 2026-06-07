@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ui::DirtyFlag tick() /*override*/;
-
-    virtual ~RealmsShareLauncherController() /*override*/ = default;
     // NOLINTEND
 
 public:

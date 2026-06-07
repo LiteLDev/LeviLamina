@@ -13,13 +13,14 @@ class BaseActorRenderContext;
 class IClientInstance;
 class Level;
 class LevelRenderer;
-class Options;
+class OptionRegistry;
 class Player;
 class ScreenContext;
 class Vec3;
 class WeakEntityRef;
 struct LevelRenderPreRenderUpdateParameters;
 struct ShadowCascadeState;
+struct ShadowRenderingParameters;
 namespace mce::framebuilder { struct ShadowParameters; }
 // clang-format on
 
@@ -79,8 +80,6 @@ public:
     virtual void addCameraListenerToRenderChunkCoordinator() /*override*/;
 
     virtual void updateLevelCullerType(::LevelCullerType const newLevelCullerType) /*override*/;
-
-    virtual ~LevelRendererShadowCamera() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -88,7 +87,7 @@ public:
     // NOLINTBEGIN
     MCNAPI LevelRendererShadowCamera(
         ::IClientInstance& clientInstance,
-        ::std::shared_ptr<::Options>,
+        ::std::shared_ptr<::OptionRegistry>,
         ::Level&         level,
         ::LevelRenderer& levelRenderer,
         ::WeakEntityRef
@@ -102,11 +101,11 @@ public:
         float                                               aspect,
         float                                               fov,
         float                                               zNear,
-        float                                               zFar,
         float                                               zRange,
-        ::glm::vec3 const&                                  playerPosition,
-        ::gsl::span<::ShadowRenderingParameters::ShadowMap> resultCascades,
-        ::ShadowCascadeState&                               shadowCascadeState
+        float                                               playerPosition,
+        ::glm::vec3 const&                                  resultCascades,
+        ::gsl::span<::ShadowRenderingParameters::ShadowMap> shadowCascadeState,
+        ::ShadowCascadeState&
     );
 
     MCNAPI void _calculatePlayerShadowMap(
@@ -120,7 +119,7 @@ public:
         ::ShadowRenderingParameters::ShadowMap const&       largestCascade
     );
 
-    MCNAPI void removeCameraListenerToRenderChunkCoordinator();
+    MCNAPI ::ShadowRenderingParameters const& getRenderingParameters() const;
 
     MCNAPI void setupCamera(
         ::glm::vec3 const&                              direction,
@@ -152,7 +151,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         ::IClientInstance& clientInstance,
-        ::std::shared_ptr<::Options>,
+        ::std::shared_ptr<::OptionRegistry>,
         ::Level&         level,
         ::LevelRenderer& levelRenderer,
         ::WeakEntityRef

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class LogMessage; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,12 +24,17 @@ public:
     // prevent constructor by default
     LogMessageListPayload& operator=(LogMessageListPayload const&);
     LogMessageListPayload(LogMessageListPayload const&);
-    LogMessageListPayload();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~LogMessageListPayload() /*override*/;
+    MCNAPI LogMessageListPayload();
+
+    MCNAPI explicit LogMessageListPayload(::std::vector<::Editor::LogMessage> const& message);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::Editor::LogMessage> const& getMessageList() const;
+#endif
     // NOLINTEND
 
 public:
@@ -38,9 +44,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::std::vector<::Editor::LogMessage> const& message);
     // NOLINTEND
 
 public:

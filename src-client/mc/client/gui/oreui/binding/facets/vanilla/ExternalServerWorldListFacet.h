@@ -37,8 +37,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~ExternalServerWorldListFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

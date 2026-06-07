@@ -29,13 +29,22 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
+    // NOLINTEND
 
-#ifdef LL_PLAT_S
-    virtual ~EmitterShapeBoxComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~EmitterShapeBoxComponent() /*override*/;
-#endif
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EmitterShapeBoxComponent();
 
+    MCAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
+
+    MCAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
+
+    MCAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
+    operator=(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
+
+    MCAPI ::SharedTypes::v1_20_80::EmitterShapeBoxComponent&
+    operator=(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
     // NOLINTEND
 
 public:
@@ -51,9 +60,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent const&);
     // NOLINTEND
 
 public:

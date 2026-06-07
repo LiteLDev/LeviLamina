@@ -22,13 +22,27 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SessionInfo(SessionInfo const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI SessionInfo();
+
+    MCNAPI SessionInfo(::Bedrock::SessionInfo const&);
+
+    MCNAPI ::std::string const& getBranchId() const;
+
+    MCNAPI ::std::string const& getBuildId() const;
+
+    MCNAPI ::std::string const& getCommitId() const;
+
+    MCNAPI int64 getCrashTimestamp() const;
+
+    MCNAPI ::std::optional<uint> const& getErrorCode() const;
+
+    MCNAPI ::std::string const& getErrorMessage() const;
+
+    MCNAPI ::std::string const& getSessionId() const;
+
+    MCNAPI ::std::map<::std::string, ::std::string>& getTags();
 
     MCNAPI ::Bedrock::SessionInfo& operator=(::Bedrock::SessionInfo&&);
 
@@ -43,6 +57,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::Bedrock::SessionInfo const&);
     // NOLINTEND
 
 public:

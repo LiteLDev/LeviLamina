@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_130/actor/brain/MemoryIdentifierDefinition.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_130::Brain {
 
 struct InternalAccessMapDefinition {
@@ -16,16 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InternalAccessMapDefinition& operator=(InternalAccessMapDefinition const&);
-    InternalAccessMapDefinition(InternalAccessMapDefinition const&);
-    InternalAccessMapDefinition();
-
-public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_130::Brain::InternalAccessMapDefinition&
-    operator=(::SharedTypes::v1_21_130::Brain::InternalAccessMapDefinition&&);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

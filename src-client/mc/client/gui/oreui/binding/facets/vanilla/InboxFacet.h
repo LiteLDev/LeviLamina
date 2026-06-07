@@ -135,23 +135,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        FacetInboxCategoryData& operator=(FacetInboxCategoryData const&);
-        FacetInboxCategoryData(FacetInboxCategoryData const&);
-        FacetInboxCategoryData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FacetInboxCategoryData(::OreUI::InboxFacet::FacetInboxCategoryData&&);
-
         MCAPI ~FacetInboxCategoryData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::OreUI::InboxFacet::FacetInboxCategoryData&&);
         // NOLINTEND
 
     public:

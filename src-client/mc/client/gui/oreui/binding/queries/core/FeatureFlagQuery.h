@@ -27,12 +27,6 @@ public:
     FeatureFlagQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FeatureFlagQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI FeatureFlagQuery(

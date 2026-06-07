@@ -25,7 +25,6 @@ public:
     // prevent constructor by default
     RenderStage& operator=(RenderStage const&);
     RenderStage(RenderStage const&);
-    RenderStage();
 
 public:
     // virtual functions
@@ -50,6 +49,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI RenderStage();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
@@ -66,9 +77,17 @@ public:
 
     MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
+    MCNAPI void $postRender(::ScreenContext& screenContext);
+
     MCNAPI bool $shouldSkip() const;
 
     MCNAPI bool $shouldRender() const;
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

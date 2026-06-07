@@ -28,24 +28,14 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentGizmoOptions& operator=(ScriptWidgetComponentGizmoOptions const&);
+    ScriptWidgetComponentGizmoOptions(ScriptWidgetComponentGizmoOptions const&);
     ScriptWidgetComponentGizmoOptions();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void>
-    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
-
-    virtual ~ScriptWidgetComponentGizmoOptions() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentGizmoOptions(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions&&);
+    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -55,22 +45,10 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void>
-    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const;
 
 
     // NOLINTEND

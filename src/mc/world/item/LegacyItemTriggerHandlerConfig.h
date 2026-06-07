@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/container/small_vector_base.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -11,6 +14,7 @@ class DefinitionTrigger;
 class EventResponse;
 class ItemStackBase;
 class RenderParams;
+struct ActorDefinitionEventStackEntry;
 struct VariantParameterList;
 // clang-format on
 
@@ -30,7 +34,7 @@ public:
         ::std::function<void(
             ::Actor&,
             ::ActorDefinitionTrigger const&,
-            ::std::vector<::std::pair<::std::string const, ::std::string const>>&,
+            ::Bedrock::small_vector_base<::ActorDefinitionEventStackEntry>&,
             ::VariantParameterList const&
         )>>
                                                                                               mActorTriggerHandler;
@@ -40,11 +44,12 @@ public:
 public:
     // prevent constructor by default
     LegacyItemTriggerHandlerConfig& operator=(LegacyItemTriggerHandlerConfig const&);
-    LegacyItemTriggerHandlerConfig();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LegacyItemTriggerHandlerConfig();
+
     MCAPI LegacyItemTriggerHandlerConfig(::LegacyItemTriggerHandlerConfig const&);
 
     MCAPI ~LegacyItemTriggerHandlerConfig();
@@ -53,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCFOLD void* $ctor(::LegacyItemTriggerHandlerConfig const&);
     // NOLINTEND
 

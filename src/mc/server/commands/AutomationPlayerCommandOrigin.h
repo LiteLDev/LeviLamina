@@ -11,8 +11,7 @@
 // clang-format off
 class CommandOrigin;
 class CompoundTag;
-class Level;
-struct ActorUniqueID;
+class Player;
 struct CommandOriginData;
 // clang-format on
 
@@ -53,23 +52,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AutomationPlayerCommandOrigin(
-        ::ActorUniqueID            playerId,
-        ::Level&                   level,
-        ::std::string const&       requestId,
-        ::NetworkIdentifier const& sourceId
-    );
+    MCAPI AutomationPlayerCommandOrigin(::std::string const& requestId, ::Player& origin);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorUniqueID            playerId,
-        ::Level&                   level,
-        ::std::string const&       requestId,
-        ::NetworkIdentifier const& sourceId
-    );
+    MCAPI void* $ctor(::std::string const& requestId, ::Player& origin);
     // NOLINTEND
 
 public:

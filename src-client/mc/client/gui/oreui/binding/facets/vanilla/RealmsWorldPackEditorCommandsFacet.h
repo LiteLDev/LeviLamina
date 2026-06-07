@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsWorldPackEditorCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsWorldPackEditorCommandsFacet() /*override*/ = default;
@@ -32,6 +36,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsWorldPackEditorCommandsFacet(
+        ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor
+    );
+
     MCAPI void activatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) const;
 
     MCAPI void changePackPriority(
@@ -62,6 +70,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor);
     // NOLINTEND
 
 public:

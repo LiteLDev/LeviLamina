@@ -60,8 +60,6 @@ public:
     virtual bool resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const&) /*override*/;
 
     virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& biomeJsonComponent) const /*override*/;
-
-    virtual ~SurfaceMaterialAdjustmentsBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:

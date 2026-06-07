@@ -34,4 +34,22 @@ public:
     ::ll::TypedStorage<4, 4, float>   mLength;
     ::ll::TypedStorage<4, 4, float>   mOriginalNodeDist;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RopeParams();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI RopeParams(::Vec3 const& startPin, ::Vec3 const& endPin, float length);
+
+    MCNAPI void leadInit();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Vec3 const& startPin, ::Vec3 const& endPin, float length);
+    // NOLINTEND
 };

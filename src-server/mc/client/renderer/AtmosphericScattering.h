@@ -6,30 +6,24 @@ class AtmosphericScattering {
 public:
     // AtmosphericScattering inner types declare
     // clang-format off
-    struct AtmosphericScatteringConfigSettings;
+    struct AtmosphericScatteringDescription;
+    struct HorizonBlendKeyFrames;
+    struct AtmosphericScatteringSettingsV0;
+    struct AtmosphericScatteringSettingsV1;
+    struct AtmosphericScatteringConfigSettingsV0;
+    struct AtmosphericScatteringConfigSettingsV1;
     // clang-format on
 
     // AtmosphericScattering inner types define
-    struct AtmosphericScatteringConfigSettings {
-    public:
-        // AtmosphericScatteringConfigSettings inner types declare
-        // clang-format off
-        struct AtmosphericScatteringSettings;
-        // clang-format on
+    struct AtmosphericScatteringDescription {};
 
-        // AtmosphericScatteringConfigSettings inner types define
-        struct AtmosphericScatteringSettings {
-        public:
-            // AtmosphericScatteringSettings inner types declare
-            // clang-format off
-            struct AtmosphericScatteringDescription;
-            struct HorizonBlendKeyFrames;
-            // clang-format on
+    struct HorizonBlendKeyFrames {};
 
-            // AtmosphericScatteringSettings inner types define
-            struct AtmosphericScatteringDescription {};
+    struct AtmosphericScatteringSettingsV0 {};
 
-            struct HorizonBlendKeyFrames {};
-        };
-    };
+    struct AtmosphericScatteringSettingsV1 {};
+
+    struct AtmosphericScatteringConfigSettingsV0 {};
+
+    struct AtmosphericScatteringConfigSettingsV1 {};
 };

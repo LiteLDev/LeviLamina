@@ -17,10 +17,10 @@ namespace PlayerPassengerSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void tick(
-    ::entt::type_list<::Include<::ServerPlayerComponent>>,
-    ::ActorTickNeededComponent&                  actorTickNeeded,
-    ::PassengerComponent const&                  passenger,
-    ::EntityModifier<::ActorTickNeededComponent> modifier
+    ::entt::type_list<::Include<::ServerPlayerComponent>> actorTickNeeded,
+    ::ActorTickNeededComponent&                           passenger,
+    ::PassengerComponent const&                           modifier,
+    ::EntityModifier<::ActorTickNeededComponent>
 );
 // NOLINTEND
 

@@ -77,9 +77,6 @@ public:
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormData>
     button2V010(::std::string const& text);
 
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptMessageFormData&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptMessageFormData&&);
-
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponse>,
         ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>>

@@ -12,6 +12,8 @@ class ScreenInputContext;
 class UIAnimationController;
 class UIControl;
 class VisualTree;
+struct ButtonScreenEventData;
+struct ControllerDirectionEventData;
 struct HoverScreenEventData;
 struct ScreenEvent;
 // clang-format on
@@ -62,8 +64,8 @@ public:
     virtual ::ComponentReceiveActionType receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::UIAnimationController& screenEvent,
+        ::ScreenEvent const&
     ) /*override*/;
 
     virtual ::std::string const& getTextToSpeechComponentValue() const /*override*/;
@@ -74,18 +76,58 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ToggleComponent(::UIControl& owner);
 
+    MCAPI void _handleButtonEvent(
+        ::VisualTree&                  visualTree,
+        ::ScreenInputContext&          context,
+        ::ButtonScreenEventData const& buttonData
+    );
+
+    MCAPI void _handleControllerDirectionEvent(
+        ::VisualTree&                         visualTree,
+        ::ScreenInputContext&                 context,
+        ::ControllerDirectionEventData const& controllerData
+    );
+
     MCAPI void
     _handleHoverEvent(::VisualTree& visualTree, ::ScreenInputContext& context, ::HoverScreenEventData const& hoverData);
 
     MCAPI void _setChecked(::ScreenInputContext& context, bool checked, bool toggledByButtonClick);
 
-    MCAPI void _toggleOff(::VisualTree& visualTree, ::ScreenInputContext& context, bool toggledByButtonClick);
-
-    MCAPI void _toggleOn(::VisualTree& visualTree, ::ScreenInputContext& context, bool toggledByButtonClick);
+    MCFOLD void _setVisible(::std::weak_ptr<::UIControl>& control, bool visible);
 
     MCAPI void _updateControlVisibility();
 
     MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
+
+    MCFOLD ::std::weak_ptr<::UIControl> getCheckedHoverStateControl() const;
+
+    MCAPI ::std::weak_ptr<::UIControl> getCheckedLockedHoverStateControl() const;
+
+    MCAPI ::std::weak_ptr<::UIControl> getCheckedLockedStateControl() const;
+
+    MCFOLD ::std::weak_ptr<::UIControl> getCheckedStateControl() const;
+
+    MCAPI bool getEnableDirectionalToggling() const;
+
+    MCAPI int getGroupIndex() const;
+
+    MCFOLD uint const& getToggleGroup() const;
+
+    MCFOLD ::std::weak_ptr<::UIControl> getUncheckedHoverStateControl() const;
+
+    MCAPI ::std::weak_ptr<::UIControl> getUncheckedLockedHoverStateControl() const;
+
+    MCAPI ::std::weak_ptr<::UIControl> getUncheckedLockedStateControl() const;
+
+    MCFOLD ::std::weak_ptr<::UIControl> getUncheckedStateControl() const;
+
+    MCAPI bool isChecked() const;
+
+    MCAPI bool isRadioToggleGroup() const;
+
+    MCAPI void resetDefaultState();
+
+    MCAPI void resetHoverState();
 
     MCAPI void setChecked(bool checked);
 
@@ -116,8 +158,8 @@ public:
     MCAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::UIAnimationController& screenEvent,
+        ::ScreenEvent const&
     );
 
     MCAPI ::std::string const& $getTextToSpeechComponentValue() const;

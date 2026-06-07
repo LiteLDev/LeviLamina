@@ -12,6 +12,7 @@
 #include "mc/client/services/download/DlcCheckResult.h"
 #include "mc/client/world/IWorldStorageHandler.h"
 #include "mc/client/world/StartLocalWorldResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/GameType.h"
 
@@ -25,6 +26,7 @@ namespace World { class IWorldResourcePackHandler; }
 namespace World { class LocalWorldStarter; }
 namespace World { class OwnedWorldTemplateManager; }
 namespace World { struct PackDetails; }
+namespace World { struct WorldID; }
 // clang-format on
 
 namespace OreUI {
@@ -99,9 +101,15 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager> ownedWorldTemplateManager
     );
 
+    MCAPI void _backupThenStartLocalWorld_DEPRECATED(::std::string const& worldId);
+
     MCAPI ::DlcCheckResult _checkDLCsToStartLocalWorld(::std::string const& worldIdStr);
 
+    MCAPI ::ProgressContentType _getContentTypeForWorld(::World::WorldID worldID) const;
+
     MCAPI void _pushLoadingScreen(::ProgressContentType contentType, ::GameType gametype);
+
+    MCAPI ::Bedrock::Threading::Async<::World::StartLocalWorldResult> _validateDlc(::std::string const& worldIdStr);
 
     MCAPI void clearStartLocalWorldResult();
 

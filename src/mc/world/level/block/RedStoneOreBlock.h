@@ -12,7 +12,6 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class EntityContext;
-class Experiments;
 class ItemInstance;
 class Player;
 struct BlockAnimateTickData;
@@ -26,6 +25,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mLit;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RedStoneOreBlock();
 
 public:
     // virtual functions
@@ -43,20 +46,24 @@ public:
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
     virtual void _unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~RedStoneOreBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RedStoneOreBlock(::std::string const& nameId, int id, bool lit);
+
     MCAPI void _poofParticles(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
     // NOLINTEND
 
 public:
@@ -75,8 +82,6 @@ public:
     MCAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $_unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

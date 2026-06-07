@@ -30,8 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptDataDrivenScreenRejectError(::DataDrivenScreenRejectReason reason);
-
-    MCNAPI ~ScriptDataDrivenScreenRejectError();
     // NOLINTEND
 
 public:
@@ -44,12 +42,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::DataDrivenScreenRejectReason reason);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

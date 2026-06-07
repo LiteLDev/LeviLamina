@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerSocialManagerFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~PlayerSocialManagerFacet() /*override*/ = default;
@@ -32,6 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PlayerSocialManagerFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+
     MCAPI void addFriend(::std::string xuid, ::IMinecraftEventing::AddedFriendLocation addedLocation);
 
     MCAPI void block(::std::string xuid);
@@ -55,6 +61,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
     // NOLINTEND
 
 public:

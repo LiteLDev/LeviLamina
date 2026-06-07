@@ -42,14 +42,6 @@ public:
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) = 0;
 
     virtual void setDisableLanSignaling(bool disableLanSignaling) = 0;
-
-    virtual ~RemoteConnector() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

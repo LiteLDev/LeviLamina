@@ -20,6 +20,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::string const& getName() const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::ObjectiveRenderType getRenderType() const;
+#endif
+
+    MCNAPI bool isReadOnly() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::ObjectiveCriteria> deserialize(::CompoundTag const& dataTag);

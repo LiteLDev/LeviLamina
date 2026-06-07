@@ -16,18 +16,6 @@ public:
     MoveReplaceBatch& operator=(MoveReplaceBatch const&);
     MoveReplaceBatch(MoveReplaceBatch const&);
     MoveReplaceBatch();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~MoveReplaceBatch();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PackCommand

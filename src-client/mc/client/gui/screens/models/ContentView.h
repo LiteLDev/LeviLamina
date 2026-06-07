@@ -40,6 +40,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI uint64 countIf(::std::function<bool(::std::shared_ptr<::ContentItem> const&)> predicate) const;
+
+    MCFOLD ::std::shared_ptr<::ContentItem const> getItem(uint index) const;
+
+    MCFOLD ::std::shared_ptr<::ContentItem> getItem(uint index);
+
+    MCAPI ::std::shared_ptr<::ContentItem> getItem(::std::function<bool(::ContentItem const&)> predicate) const;
+
+    MCAPI uint getNumberOfItems() const;
+
+    MCAPI uint64 getTotalSize() const;
+
+    MCFOLD void onReload(::std::function<void()> callback);
+
     MCAPI void reload();
 
     MCAPI void setSortFunc(

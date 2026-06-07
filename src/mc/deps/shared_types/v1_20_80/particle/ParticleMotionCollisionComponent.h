@@ -31,13 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ParticleMotionCollisionComponent() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ParticleMotionCollisionComponent() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -50,12 +43,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

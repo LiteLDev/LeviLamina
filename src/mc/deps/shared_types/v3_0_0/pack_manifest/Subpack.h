@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
 
 struct Subpack {
@@ -15,17 +20,28 @@ public:
 
 public:
     // prevent constructor by default
-    Subpack(Subpack const&);
+    Subpack& operator=(Subpack const&);
     Subpack();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&&);
+    MCAPI Subpack(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack const&);
 
     MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack const&);
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack const&);
     // NOLINTEND
 };
 

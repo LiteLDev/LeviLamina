@@ -11,11 +11,12 @@
 #include "mc/world/inventory/network/ContainerScreenContext.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
 #include "mc/world/inventory/simulation/ContainerScreenTransferBehaviour.h"
+#include "mc/world/inventory/simulation/ContainerValidationCaller.h"
 
 // auto generated forward declare list
 // clang-format off
+class Container;
 class ContainerScreenActionScope;
-class ContainerScreenTemporaryActionScope;
 class ContainerScreenValidation;
 class IContainerTransfer;
 class ItemInstance;
@@ -24,6 +25,7 @@ struct ContainerScreenActionResult;
 struct ContainerSimulationSplitStack;
 struct ContainerValidationResult;
 struct ContainerValidationSlotData;
+struct FullContainerName;
 struct ItemTransferAmount;
 // clang-format on
 
@@ -41,6 +43,13 @@ public:
         mAutoPlaceOrderMap;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContainerScreenSimulation();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,54 +59,121 @@ public:
     virtual ~ContainerScreenSimulation() /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryPlaceOne(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     tryPlaceOne(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryPlaceAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult tryPlaceAmount(
         ::ContainerValidationSlotData const& srcSlot,
         int                                  amount,
         ::ContainerValidationSlotData const& dstSlot
     );
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryPlaceAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     tryPlaceAll(::ContainerValidationSlotData const& srcSlot, ::ContainerValidationSlotData const& dstSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult tryTakeAmount(
         ::ContainerValidationSlotData const& dstSlot,
         int                                  amount,
         ::ContainerValidationSlotData const& srcSlot
     );
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     tryTakeAll(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     tryTakeHalf(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    trySwap(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     trySwap(::ContainerValidationSlotData const& slotA, ::ContainerValidationSlotData const& slotB);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryAddToStack(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&, ::ItemTakeType);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult tryAddToStack(
         ::ContainerValidationSlotData const& dstSlot,
         ::ContainerValidationSlotData const& srcSlot,
         ::ItemTakeType                       type
     );
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult tryCoalesce(::ContainerValidationSlotData const&, ::ContainerEnumName);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     tryCoalesce(::ContainerValidationSlotData const& dstSlot, ::ContainerEnumName coalesceContainerEnum);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryAutoPlace(::ContainerValidationSlotData const&, ::ItemTransferAmount, ::ContainerScreenAutoplaceBehaviour);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult tryAutoPlace(
         ::ContainerValidationSlotData const& srcSlot,
         ::ItemTransferAmount                 amount,
         ::ContainerScreenAutoplaceBehaviour  autoplaceBehaviour
     );
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult trySplitSingle(
+        ::ContainerValidationSlotData const&,
+        ::ContainerValidationSlotData const&,
+        ::std::vector<::ContainerSimulationSplitStack>&
+    );
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult trySplitSingle(
         ::ContainerValidationSlotData const&            srcSlot,
         ::ContainerValidationSlotData const&            dstSlot,
         ::std::vector<::ContainerSimulationSplitStack>& containerSplitItemStackItems
     );
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult trySplitMultiple(
+        ::ContainerValidationSlotData const&,
+        int,
+        ::ItemInstance const&,
+        ::ContainerValidationSlotData const&,
+        ::std::vector<::ContainerSimulationSplitStack>&,
+        int&
+    );
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult trySplitMultiple(
         ::ContainerValidationSlotData const&            srcSlot,
         int                                             progressiveTake,
@@ -106,17 +182,35 @@ public:
         ::std::vector<::ContainerSimulationSplitStack>& containerSplitItemStackItems,
         int&                                            splitItemRemainder
     );
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult
+    tryDrop(::ContainerValidationSlotData const&, ::ItemTransferAmount const, bool);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     tryDrop(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount, bool randomly);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult tryDestroy(::ContainerValidationSlotData const&, ::ItemTransferAmount const);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     tryDestroy(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult tryConsume(::ContainerValidationSlotData const&, ::ItemTransferAmount const);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult
     tryConsume(::ContainerValidationSlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ContainerScreenActionResult tryConsumeExpected(::ContainerValidationSlotData const&);
+#else // LL_PLAT_C
     virtual ::ContainerScreenActionResult tryConsumeExpected(::ContainerValidationSlotData const& srcSlot);
+#endif
 
     virtual void _registerCoalesceOrder();
 
@@ -127,7 +221,12 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::ContainerScreenTemporaryActionScope _createTemporaryScope();
+    MCNAPI ContainerScreenSimulation(
+        ::ContainerScreenContext const&                                           screenContext,
+        ::ContainerValidationCaller                                               caller,
+        ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
+        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
+    );
 
     MCNAPI void _leaveActionScope(::ContainerScreenActionResult& result);
 
@@ -148,6 +247,19 @@ public:
     MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
 
     MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::ContainerScreenContext const&                                           screenContext,
+        ::ContainerValidationCaller                                               caller,
+        ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
+        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
+    );
 #endif
     // NOLINTEND
 

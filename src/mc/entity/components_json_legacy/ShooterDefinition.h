@@ -9,6 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class ShooterComponent;
 struct ShooterProjectileData;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -28,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShooterDefinition();
-
     MCAPI void addSoundByName(::std::string const& name);
+
+    MCAPI void initialize(::EntityContext&, ::ShooterComponent& component) const;
 
     MCAPI void setActorDefByName(::std::string const& name);
     // NOLINTEND
@@ -40,11 +42,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ShooterDefinition>>& root);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

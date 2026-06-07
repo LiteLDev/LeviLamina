@@ -31,7 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockPatternMatcher(::BlockSource& region, ::BlockPatternData const& data);
+
     MCAPI ::BuildMatch match(::BlockPos const& pos) const;
+
+    MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex) const;
 
     MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up) const;
 
@@ -47,5 +51,11 @@ public:
     // static functions
     // NOLINTBEGIN
     MCFOLD static void noopCallback(::Block const&, ::BlockPos const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::BlockSource& region, ::BlockPatternData const& data);
     // NOLINTEND
 };

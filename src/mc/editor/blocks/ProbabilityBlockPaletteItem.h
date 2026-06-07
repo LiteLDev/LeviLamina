@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor {
 
 struct ProbabilityBlockPaletteItem {
@@ -14,18 +19,25 @@ public:
 
 public:
     // prevent constructor by default
-    ProbabilityBlockPaletteItem& operator=(ProbabilityBlockPaletteItem const&);
     ProbabilityBlockPaletteItem(ProbabilityBlockPaletteItem const&);
     ProbabilityBlockPaletteItem();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ProbabilityBlockPaletteItem& operator=(::Editor::ProbabilityBlockPaletteItem&&);
+    MCNAPI ::Editor::ProbabilityBlockPaletteItem& operator=(::Editor::ProbabilityBlockPaletteItem const&);
 
+#ifdef LL_PLAT_C
     MCNAPI bool operator==(::Editor::ProbabilityBlockPaletteItem const& other) const;
+#endif
 
     MCNAPI ~ProbabilityBlockPaletteItem();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

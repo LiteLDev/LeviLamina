@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor {
@@ -26,9 +26,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::HashedString _getBlock() const;
-
-    MCNAPI ::Editor::SimpleBlockPaletteItem& operator=(::Editor::SimpleBlockPaletteItem&&);
+#ifdef LL_PLAT_C
+    MCNAPI bool operator==(::Editor::SimpleBlockPaletteItem const& other) const;
+#endif
 
     MCNAPI ~SimpleBlockPaletteItem();
     // NOLINTEND
@@ -36,7 +36,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Editor::SimpleBlockPaletteItem createDefault();
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

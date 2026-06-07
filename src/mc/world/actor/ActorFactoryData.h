@@ -30,24 +30,4 @@ public:
     ::ll::TypedStorage<4, 4, float>                mWalkAnimSpeed;
     ::ll::TypedStorage<1, 1, bool>                 mIsAlias;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorFactoryData();
-
-    MCAPI ~ActorFactoryData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

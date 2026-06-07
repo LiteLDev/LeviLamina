@@ -14,30 +14,27 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk467273;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     AuthToken& operator=(AuthToken const&);
-    AuthToken(AuthToken const&);
     AuthToken();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    AuthToken(AuthToken const&);
-    AuthToken();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI AuthToken(::Identity::AuthToken const&);
+
 #ifdef LL_PLAT_C
     MCNAPI ::Identity::AuthToken& operator=(::Identity::AuthToken&&);
-
-    MCNAPI ::Identity::AuthToken& operator=(::Identity::AuthToken const&);
 #endif
 
     MCNAPI ~AuthToken();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Identity::AuthToken const&);
     // NOLINTEND
 
 public:

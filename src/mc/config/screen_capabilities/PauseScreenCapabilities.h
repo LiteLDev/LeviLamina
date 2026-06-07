@@ -27,13 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PauseScreenCapabilities() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~PauseScreenCapabilities() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -71,8 +71,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
-
-    virtual ~EduShareLinkScreenController() /*override*/;
     // NOLINTEND
 
 public:
@@ -102,6 +100,10 @@ public:
 
     MCAPI void _registerAddResourcesHandlers();
 
+    MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _registerShareDialogHandlers(::std::string const& copyUri);
 
     MCAPI void _registerShareTeamsHandlers();
@@ -122,12 +124,6 @@ public:
         ::LibraryItem const&                     item,
         ::std::optional<::EduSharedUriResource>  resource
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

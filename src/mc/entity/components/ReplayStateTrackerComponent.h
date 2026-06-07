@@ -9,6 +9,6 @@ struct ReplayStateTrackerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::ReplayStateTrackerDiff> mDiff;
+    ::ll::TypedStorage<8, 104, ::ReplayStateTrackerDiff> mDiff;
     // NOLINTEND
 };

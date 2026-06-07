@@ -15,12 +15,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class ArmorItemComponent : public ::NetworkedItemComponent<::ArmorItemComponent> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ArmorItemComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(

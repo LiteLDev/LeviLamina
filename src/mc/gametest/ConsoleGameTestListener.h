@@ -19,8 +19,6 @@ public:
     virtual void onTestPassed(::gametest::BaseGameTestInstance& test) /*override*/;
 
     virtual void onTestFailed(::gametest::BaseGameTestInstance& test) /*override*/;
-
-    virtual ~ConsoleGameTestListener() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -29,12 +29,6 @@ public:
     BuildInfoQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BuildInfoQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BuildInfoQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);

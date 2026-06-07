@@ -26,6 +26,18 @@ public:
         ::ll::TypedStorage<4, 4, float> mGreen;
         ::ll::TypedStorage<4, 4, float> mBlue;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool operator==(::CameraInstructionOptions::FadeInstruction::ColorOption const& other) const;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        // NOLINTEND
     };
 
     struct TimeOption {
@@ -35,6 +47,18 @@ public:
         ::ll::TypedStorage<4, 4, float> mFadeInTime;
         ::ll::TypedStorage<4, 4, float> mHoldTime;
         ::ll::TypedStorage<4, 4, float> mFadeOutTime;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCFOLD bool operator==(::CameraInstructionOptions::FadeInstruction::TimeOption const& other) const;
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 

@@ -29,8 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
-
     MCNAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
@@ -53,8 +51,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
-
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
     // NOLINTEND
 

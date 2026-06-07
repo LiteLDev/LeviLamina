@@ -21,15 +21,18 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptTransferServiceDataResponse& operator=(ScriptTransferServiceDataResponse const&);
-    ScriptTransferServiceDataResponse(ScriptTransferServiceDataResponse const&);
     ScriptTransferServiceDataResponse();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptTransferServiceDataResponse(::Editor::ScriptModule::ScriptTransferServiceDataResponse const&);
+
     MCNAPI ::Editor::ScriptModule::ScriptTransferServiceDataResponse&
     operator=(::Editor::ScriptModule::ScriptTransferServiceDataResponse&&);
+
+    MCNAPI ::Editor::ScriptModule::ScriptTransferServiceDataResponse&
+    operator=(::Editor::ScriptModule::ScriptTransferServiceDataResponse const&);
 
     MCNAPI ~ScriptTransferServiceDataResponse();
     // NOLINTEND
@@ -38,6 +41,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptTransferServiceDataResponse const&);
     // NOLINTEND
 
 public:

@@ -12,7 +12,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class IRandom;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
@@ -31,47 +30,52 @@ public:
     struct WarpedNyliumBlockVegetationProbabilities {};
 
 public:
+    // prevent constructor by default
+    NyliumBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+    virtual bool canBeFertilized(::BlockSource& aboveBlock, ::BlockPos const&, ::Block const&) const /*override*/;
+
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
         /*override*/;
-
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
-        /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~NyliumBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NyliumBlock(::std::string const& nameId, int id);
+
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
+    MCAPI static bool _isGrowthBlockingHalfSlabBlock(::Block const& block);
+
+    MCAPI static bool _isGrowthBlockingStairBlock(::Block const& block);
 
     MCAPI static ::Block const& crimsonBlockProvider(::IRandom& random);
 
-    MCAPI static ::Block const& netherSproutBlockProvider(::IRandom& random);
+    MCAPI static ::Block const& netherSproutBlockProvider(::IRandom&);
 
     MCAPI static ::Block const& warpedBlockProvider(::IRandom& random);
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& aboveBlock, ::BlockPos const&, ::Block const&) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
 
 
     // NOLINTEND

@@ -29,7 +29,7 @@ public:
 
     virtual ::std::unique_ptr<::MainGameCore::WndProc> _createWndProcInstance() = 0;
 
-    virtual void _prepareForWindowCreation() = 0;
+    virtual void _prepareForWindowCreation(::Bedrock::ActivationArguments const&) = 0;
 
     virtual ::tagWNDCLASSEXW _createWindowClass(::HINSTANCE__* hInstance) = 0;
 
@@ -38,6 +38,20 @@ public:
     virtual void _postWindowCreationSetup(::HWND__* hwnd) = 0;
 
     virtual ::gsl::not_null<::Bedrock::ApplicationInitHandler*> _getAppInitHandler() = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WinMain();
+
+    MCAPI int64 wndProc(::HWND__* hwnd, uint uMsg, uint64 wParam, int64 lParam);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

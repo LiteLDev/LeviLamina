@@ -29,13 +29,12 @@ public:
 
 public:
     // prevent constructor by default
-    PackDetails(PackDetails const&);
     PackDetails();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackDetails(::World::PackDetails&&);
+    MCAPI PackDetails(::World::PackDetails const&);
 
     MCAPI ::World::PackDetails& operator=(::World::PackDetails const&);
 
@@ -45,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::PackDetails&&);
+    MCAPI void* $ctor(::World::PackDetails const&);
     // NOLINTEND
 
 public:

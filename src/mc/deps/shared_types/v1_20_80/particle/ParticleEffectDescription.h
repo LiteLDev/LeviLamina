@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleEffectDescription& operator=(ParticleEffectDescription const&);
     ParticleEffectDescription();
 
 public:
@@ -31,9 +32,6 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::ParticleEffectDescription&
     operator=(::SharedTypes::v1_20_80::ParticleEffectDescription&&);
-
-    MCAPI ::SharedTypes::v1_20_80::ParticleEffectDescription&
-    operator=(::SharedTypes::v1_20_80::ParticleEffectDescription const&);
 
     MCAPI ~ParticleEffectDescription();
     // NOLINTEND

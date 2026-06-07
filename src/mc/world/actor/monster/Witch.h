@@ -34,8 +34,6 @@ public:
     virtual ::Vec3 getFiringPos() const /*override*/;
 
     virtual float getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const /*override*/;
-
-    virtual ~Witch() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -46,6 +44,8 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void preAiStep();
     // NOLINTEND
 
 public:

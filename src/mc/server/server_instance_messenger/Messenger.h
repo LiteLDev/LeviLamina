@@ -44,8 +44,6 @@ public:
     virtual ::ServerInstanceMessenger::IMessageProducer& getProducer() /*override*/;
 
     virtual ::ServerInstanceMessenger::IMessageConsumer& getConsumer() /*override*/;
-
-    virtual ~Messenger() /*override*/ = default;
     // NOLINTEND
 
 public:

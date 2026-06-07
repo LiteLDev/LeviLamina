@@ -39,8 +39,12 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
-    virtual ~CraftingDataPacket() /*override*/;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CraftingDataPacket();
     // NOLINTEND
 
 public:
@@ -51,9 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

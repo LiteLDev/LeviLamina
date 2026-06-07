@@ -28,9 +28,9 @@ public:
     // NOLINTBEGIN
     virtual ~SocketDispatcher() /*override*/ = default;
 
-    virtual bool Create(int type);
-
     virtual bool Create(int family, int type) /*override*/;
+
+    virtual bool Create(int type);
 
     virtual void* GetWSAEvent() /*override*/;
 
@@ -54,9 +54,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $Create(int type);
-
     MCNAPI bool $Create(int family, int type);
+
+    MCNAPI bool $Create(int type);
 
     MCNAPI void* $GetWSAEvent();
 

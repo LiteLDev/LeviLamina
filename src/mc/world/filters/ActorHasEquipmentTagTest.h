@@ -17,15 +17,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getName() const /*override*/;
 
-    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
-
-    virtual ~ActorHasEquipmentTagTest() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual bool setup(::FilterTest::Definition const& inputs, ::FilterInputs const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -33,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getName() const;
 
-    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+    MCNAPI bool $setup(::FilterTest::Definition const& inputs, ::FilterInputs const&);
 
 
     // NOLINTEND

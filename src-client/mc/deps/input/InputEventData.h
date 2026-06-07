@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/input/AddClientData.h"
 #include "mc/deps/input/ButtonEventData.h"
-#include "mc/deps/input/CaretLocationData.h"
 #include "mc/deps/input/ChangeUserData.h"
 #include "mc/deps/input/ClearPointerLocationWithIdEventData.h"
 #include "mc/deps/input/ConnectionStateData.h"
@@ -28,7 +27,6 @@ public:
     ::ll::TypedStorage<4, 44, ::ButtonEventData>                        button;
     ::ll::TypedStorage<4, 44, ::PointerLocationEventData>               pointerLocation;
     ::ll::TypedStorage<1, 44, ::TextCharEventData>                      textChar;
-    ::ll::TypedStorage<4, 44, ::CaretLocationData>                      caretLocation;
     ::ll::TypedStorage<4, 44, ::DirectionEventData>                     direction;
     ::ll::TypedStorage<4, 44, ::TurnEventData>                          turn;
     ::ll::TypedStorage<4, 44, ::VectorEventData>                        vector;

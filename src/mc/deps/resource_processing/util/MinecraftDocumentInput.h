@@ -36,22 +36,6 @@ public:
         Binary& operator=(Binary const&);
         Binary(Binary const&);
         Binary();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~Binary();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
     struct NoPayloadCheck {};
@@ -80,46 +64,63 @@ public:
     virtual ::Puv::Input::Data data() const /*override*/;
 
     virtual ::Puv::Logger const& getErrors() const /*override*/;
-
-    virtual ~MinecraftDocumentInput() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI MinecraftDocumentInput(::Bedrock::Resources::MinecraftDocumentInput&&);
+
     MCNAPI MinecraftDocumentInput(
-        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
-        ::SemVersion const& minModernVersion,
-        ::std::string       data
+        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck minModernVersion,
+        ::SemVersion const&                                          data,
+        ::std::string
     );
 
     MCNAPI
     MinecraftDocumentInput(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
 
+    MCNAPI MinecraftDocumentInput(
+        ::std::string_view payloadKey,
+        ::SemVersion       minModernVersion,
+        ::SemVersion       formatVersion,
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator> payload
+    );
+
     MCNAPI void init(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
 
-    MCNAPI void
-    initAsBinary(::std::string_view payloadKey, ::std::string data, ::Bedrock::Resources::BinaryHeader const& header);
+    MCNAPI void initAsBinary(::std::string_view data, ::std::string header, ::Bedrock::Resources::BinaryHeader const&);
 
-    MCNAPI void initAsJson(::std::string_view payloadKey, ::std::string data);
+    MCNAPI void initAsJson(::std::string_view data, ::std::string);
+
+    MCNAPI ::std::string const& payloadMemberName() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Bedrock::Resources::MinecraftDocumentInput&&);
+
     MCNAPI void* $ctor(
-        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
-        ::SemVersion const& minModernVersion,
-        ::std::string       data
+        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck minModernVersion,
+        ::SemVersion const&                                          data,
+        ::std::string
     );
 
     MCNAPI void* $ctor(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(
+        ::std::string_view payloadKey,
+        ::SemVersion       minModernVersion,
+        ::SemVersion       formatVersion,
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator> payload
+    );
     // NOLINTEND
 
 public:

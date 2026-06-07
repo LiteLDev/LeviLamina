@@ -33,7 +33,7 @@ public:
 
     virtual void OnLogMessage(::std::string const& msg, ::rtc::LoggingSeverity severity, char const* tag);
 
-    virtual void OnLogMessage(::std::string const& msg, ::rtc::LoggingSeverity);
+    virtual void OnLogMessage(::std::string const&, ::rtc::LoggingSeverity);
 
     virtual void OnLogMessage(::std::string const&) = 0;
 
@@ -51,8 +51,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $OnLogMessage(::std::string const& msg, ::rtc::LoggingSeverity severity, char const* tag);
 
-    MCNAPI void $OnLogMessage(::std::string const& msg, ::rtc::LoggingSeverity);
-
     MCNAPI void $OnLogMessage(::std::string_view msg, ::rtc::LoggingSeverity severity, char const* tag);
 
     MCNAPI void $OnLogMessage(::std::string_view msg, ::rtc::LoggingSeverity);
@@ -62,12 +60,6 @@ public:
     MCNAPI void $OnLogMessage(::rtc::LogLineRef const& log_line);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

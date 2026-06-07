@@ -26,20 +26,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FlipBook();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlipBook(::SharedTypes::v1_20_80::FlipBook&&);
-
-    MCAPI FlipBook(::SharedTypes::v1_20_80::FlipBook const&);
-
-    MCAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook&&);
-
-    MCAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook const&);
-
     MCAPI ~FlipBook();
     // NOLINTEND
 
@@ -47,14 +35,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook const&);
     // NOLINTEND
 
 public:

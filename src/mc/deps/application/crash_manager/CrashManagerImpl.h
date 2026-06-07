@@ -135,31 +135,57 @@ public:
     virtual ~CrashManagerImpl() /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual void initialize(::Bedrock::CrashManagerConfig const&) /*override*/;
+#else // LL_PLAT_C
     virtual void initialize(::Bedrock::CrashManagerConfig const& config) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void
+        setCrashProcessorForFileType(::std::string_view, ::std::shared_ptr<::Bedrock::CrashFileProcessor>) /*override*/;
+#else // LL_PLAT_C
     virtual void setCrashProcessorForFileType(
         ::std::string_view                               fileExtension,
         ::std::shared_ptr<::Bedrock::CrashFileProcessor> processor
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*>) /*override*/;
+#else // LL_PLAT_C
     virtual void
     setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*> processor) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void
+    processCrashes(::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>, ::Scheduler&, bool) /*override*/;
+#else // LL_PLAT_C
     virtual void processCrashes(
         ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> workerPool,
         ::Scheduler&                                            scheduler,
         bool                                                    isNetworkAvailable
     ) /*override*/;
+#endif
 
     virtual void notifyCrashed() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void notifySystemError(uint, ::std::string const&) /*override*/;
+#else // LL_PLAT_C
     virtual void notifySystemError(uint errorCode, ::std::string const& errorMessage) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void recordCrashedSession(::std::string_view, ::std::string_view, int64) /*override*/;
+#else // LL_PLAT_C
     virtual void recordCrashedSession(
         ::std::string_view sessionId,
         ::std::string_view serializedSession,
         int64              crashTime
     ) /*override*/;
+#endif
 
     virtual void stopProcessingCrashes() /*override*/;
 

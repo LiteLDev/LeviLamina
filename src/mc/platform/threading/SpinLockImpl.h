@@ -15,10 +15,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SpinLockImpl();
+
     MCAPI void lock();
 
-#ifdef LL_PLAT_C
+    MCAPI bool try_lock();
+
     MCAPI void unlock();
-#endif
+
+    MCAPI ~SpinLockImpl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

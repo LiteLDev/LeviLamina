@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class BucketFillType : short {
-    Unknown      = -1,
+    Unknown      = 65535,
     Empty        = 0,
     Milk         = 1,
     Fish         = 2,
@@ -15,4 +15,5 @@ enum class BucketFillType : short {
     PowderSnow   = 11,
     Axolotl      = 12,
     Tadpole      = 13,
+    SulfurCube   = 14,
 };

@@ -3,9 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/CameraAimAssistPacketPayload.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/camera/aimassist/camera_aim_assist/TargetMode.h"
+#include "mc/world/level/camera/aimassist/camera_aim_assist_system_util/AimAssistCacheFrustumSystemWorkSlice.h"
+#include "mc/world/level/camera/aimassist/camera_aim_assist_system_util/AimAssistCachePositionDataSystemWorkSlice.h"
+#include "mc/world/level/camera/aimassist/camera_aim_assist_system_util/AimAssistCaptureBlockPosSystemWorkSlice.h"
+#include "mc/world/level/camera/aimassist/camera_aim_assist_system_util/AimAssistCaptureEntityTargetSystemsWorkSlice.h"
+#include "mc/world/level/camera/aimassist/camera_aim_assist_system_util/AimAssistCreateResultSystemWorkSlice.h"
+#include "mc/world/level/camera/aimassist/camera_aim_assist_system_util/AimAssistUpdateCategorySystemWorkSlice.h"
 #include "mc/world/level/camera/controlscheme/Scheme.h"
 
 // auto generated forward declare list
@@ -20,6 +25,9 @@ class Player;
 class ServerPlayer;
 class Vec2;
 class Vec3;
+struct CameraActivationEvent;
+struct CameraAimAssistCachedFrustumComponent;
+struct CameraAimAssistTickComponent;
 namespace CameraAimAssistErrorType { struct MissingDependencies; }
 namespace CameraAimAssistErrorType { struct UnknownCategoryId; }
 namespace CameraAimAssistErrorType { struct UnknownPresetId; }
@@ -47,6 +55,15 @@ MCNAPI ::CameraAimAssistSystemUtil::BlockHitDetectResult blockHitDetect(
 MCNAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
 
 #ifdef LL_PLAT_C
+MCNAPI void clearAimAssistFromClient(::Player& player, bool allowAimAssist);
+
+MCNAPI float computePercentageFromPriority(int priority);
+
+MCNAPI ::std::function<bool(::Block const&)> createAcceptedBlockCallback(bool targetingLiquidBlock);
+
+MCNAPI ::CameraAimAssistCachedFrustumComponent
+createAimAssistFrustum(::Vec3 const& start, ::Vec3 const& viewDirection, ::Vec2 const& viewAngle, float distance);
+
 MCNAPI ::Frustum createFrustumForCachedFrustumComponent(
     ::Vec3 const& start,
     ::Vec3 const& direction,
@@ -58,19 +75,38 @@ MCNAPI ::Frustum createFrustumForCachedFrustumComponent(
 );
 
 MCNAPI ::CameraAimAssistSystemUtil::BlockHitDetectResult firstBlockHitDetect(
-    ::IConstBlockSource const& region,
-    ::BlockPos const&          currentBlockPos,
-    ::Vec3 const&              start,
-    ::Vec3 const&              end,
-    ::Vec3 const&,
-    ::std::function<bool(::Block const&)> const&     isAcceptedBlock,
-    ::std::function<bool(::BlockType const&)> const& isBlockExcluded,
-    ::std::function<int(::BlockType const&)> const&  getBlockPriority
+    ::IConstBlockSource const&                       region,
+    ::BlockPos const&                                currentBlockPos,
+    ::Vec3 const&                                    start,
+    ::Vec3 const&                                    end,
+    ::Vec3 const&                                    isAcceptedBlock,
+    ::std::function<bool(::Block const&)> const&     isBlockExcluded,
+    ::std::function<bool(::BlockType const&)> const& getBlockPriority,
+    ::std::function<int(::BlockType const&)> const&
 );
-#endif
 
-MCNAPI ::std::optional<::CameraAimAssistPacketPayload::TargetMode>
-getPacketTargetMode(::CameraAimAssist::TargetMode targetMode);
+MCNAPI ::CameraAimAssistSystemUtil::AimAssistCacheFrustumSystemWorkSlice
+getCurrentWorkSliceForCacheFrustumSystem(::CameraAimAssistTickComponent const& tickComponent);
+
+MCNAPI ::CameraAimAssistSystemUtil::AimAssistCachePositionDataSystemWorkSlice
+getCurrentWorkSliceForCachePositionDataSystem(::CameraAimAssistTickComponent const& tickComponent);
+
+MCNAPI ::CameraAimAssistSystemUtil::AimAssistCaptureBlockPosSystemWorkSlice
+getCurrentWorkSliceForCaptureBlockPosSystem(::CameraAimAssistTickComponent const& tickComponent);
+
+MCNAPI ::CameraAimAssistSystemUtil::AimAssistCaptureEntityTargetSystemsWorkSlice
+getCurrentWorkSliceForCaptureEntityTargetSystems(::CameraAimAssistTickComponent const& tickComponent);
+
+MCNAPI ::CameraAimAssistSystemUtil::AimAssistCreateResultSystemWorkSlice
+getCurrentWorkSliceForCreateResultSystem(::CameraAimAssistTickComponent const& tickComponent);
+
+MCNAPI ::CameraAimAssistSystemUtil::AimAssistUpdateCategorySystemWorkSlice
+getCurrentWorkSliceForUpdateCategorySystem(::CameraAimAssistTickComponent const& tickComponent);
+
+MCNAPI bool isAimAssistSettingsValid(::Vec2 const& frustumAngle, float frustumDistance);
+
+MCNAPI bool isAimAssistSupportedCameraType(::CameraActivationEvent const& activationEvent);
+#endif
 
 MCNAPI ::Bedrock::Result<
     void,

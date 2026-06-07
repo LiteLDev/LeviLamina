@@ -20,33 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WatchdogEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WatchdogEvent(
-        ::Scripting::WatchdogEventType eventType,
-        ::Scripting::ContextId         contextId,
-        ::std::string                  phaseName,
-        ::std::chrono::milliseconds    timeMs,
-        uint64                         memoryUsageMB
-    );
-
     MCAPI ~WatchdogEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::WatchdogEventType eventType,
-        ::Scripting::ContextId         contextId,
-        ::std::string                  phaseName,
-        ::std::chrono::milliseconds    timeMs,
-        uint64                         memoryUsageMB
-    );
     // NOLINTEND
 
 public:

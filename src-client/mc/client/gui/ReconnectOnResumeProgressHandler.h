@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        608,
+        672,
         ::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
@@ -32,6 +32,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mSuspendTime;
     ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::steady_clock::time_point>> mResumeTime;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ReconnectOnResumeProgressHandler();
 
 public:
     // virtual functions
@@ -58,7 +62,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ReconnectOnResumeProgressHandler(
+        ::std::variant<
+            ::GameConnectionInfoEx,
+            ::Social::MultiplayerGameInfo,
+            ::ExperienceConnectionData,
+            ::Realms::RealmId> cookie
+    );
+
     MCAPI void doTick(::IMinecraftScreenModel& minecraftScreenModel);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::variant<
+            ::GameConnectionInfoEx,
+            ::Social::MultiplayerGameInfo,
+            ::ExperienceConnectionData,
+            ::Realms::RealmId> cookie
+    );
     // NOLINTEND
 
 public:

@@ -14,8 +14,6 @@ public:
     virtual int getMaxCost(int level) const /*override*/;
 
     virtual bool isTreasureOnly() const /*override*/;
-
-    virtual ~CurseVanishingEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

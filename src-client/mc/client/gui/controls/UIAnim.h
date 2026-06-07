@@ -78,8 +78,6 @@ public:
     MCAPI bool _hasPlayEventId(uint playEventId, ::std::set<void const*>& otherAnimations) const;
 
     MCAPI void destroy();
-
-    MCAPI void setNextAnim(::std::shared_ptr<::UIAnim> next);
     // NOLINTEND
 
 public:

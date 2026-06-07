@@ -58,8 +58,6 @@ public:
     virtual bool shouldResetTime() /*override*/;
 
     virtual ::DataLoadHelperType getType() const /*override*/;
-
-    virtual ~DefaultDataLoadHelper() /*override*/ = default;
     // NOLINTEND
 
 public:

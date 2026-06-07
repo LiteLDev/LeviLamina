@@ -17,7 +17,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TlsSlot();
+
+    MCAPI void* getValue() const;
+
+    MCAPI void setValue(void* value);
+
     MCAPI ~TlsSlot();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -27,14 +27,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    _doEyeOfEnderPreNormalTickSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
-
-    MCAPI static void _tickEyeOfEnderPreNormalTickSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::EyeOfEnderFlagComponent>,
-            ::ActorOwnerComponent> view
-    );
+    _doEyeOfEnderPreNormalTickSystem(::StrictEntityContext const& actorOwnerComponent, ::ActorOwnerComponent&);
 
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND

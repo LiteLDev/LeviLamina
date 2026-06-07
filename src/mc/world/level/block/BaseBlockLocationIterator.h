@@ -34,7 +34,7 @@ public:
 
     virtual bool operator==(::BaseBlockLocationIterator const&) const;
 
-    virtual bool operator!=(::BaseBlockLocationIterator const&) const;
+    virtual bool operator!=(::BaseBlockLocationIterator const& rhs) const;
 
     virtual ::BaseBlockLocationIterator& operator++();
 
@@ -46,12 +46,40 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BaseBlockLocationIterator();
+
+    MCAPI BaseBlockLocationIterator(::BlockPos const& min, ::BlockPos const& max, bool begin);
+
+    MCFOLD bool done() const;
+
+    MCFOLD ::BlockPos operator*() const;
+
+    MCAPI void reset();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::BlockPos const& min, ::BlockPos const& max, bool begin);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_begin();
 
-    MCFOLD void $_end();
+    MCAPI void $_end();
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

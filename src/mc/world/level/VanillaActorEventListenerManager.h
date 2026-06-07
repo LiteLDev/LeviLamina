@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorEventCoordinator;
 class ActorHeldItemUpdater;
 class KnockbackArmorUpdater;
 class NetheriteArmorEquippedListener;
@@ -17,5 +18,27 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::NetheriteArmorEquippedListener>>>
         mNetheriteArmorEquippedListener;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ActorHeldItemUpdater>>> mActorHeldItemUpdater;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI VanillaActorEventListenerManager();
+
+    MCNAPI void registerWithActorEventCoordinator(::ActorEventCoordinator& actorEventCoordinator);
+
+    MCNAPI ~VanillaActorEventListenerManager();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

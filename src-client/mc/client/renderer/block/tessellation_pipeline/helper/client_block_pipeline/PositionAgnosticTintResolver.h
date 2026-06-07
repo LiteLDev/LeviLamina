@@ -22,14 +22,6 @@ public:
     // NOLINTBEGIN
     virtual ::mce::Color
     _get(::Block const& block, ::BlockPos const&, ::TintMethod tintMethod, ::BiomeTintCache*) /*override*/;
-
-    virtual ~PositionAgnosticTintResolver() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

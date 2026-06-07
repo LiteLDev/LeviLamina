@@ -4,31 +4,31 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ClientInstanceScreenModel.h"
-#include "mc/client/gui/screens/models/MinecraftScreenModel.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Realms { struct RealmId; }
+// clang-format on
 
 class PauseScreenModel : public ::ClientInstanceScreenModel {
 public:
-    // prevent constructor by default
-    PauseScreenModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PauseScreenModel() /*override*/ = default;
+    virtual ~PauseScreenModel() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PauseScreenModel(::MinecraftScreenModel::Context context);
+    MCAPI void fireClubsOpenFeedScreenEvent(::Realms::RealmId realmId, ::std::string const& clubId, int unreadPosts);
 
     MCAPI void fireFriendsDrawerOpenedEvent();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenModel::Context context);
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

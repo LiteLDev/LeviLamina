@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorBlockPalette; }
 namespace Editor { struct EditorBlockPaletteEventActivePaletteChanged; }
@@ -71,28 +72,16 @@ public:
 
     public:
         // prevent constructor by default
-        BlockPaletteItem& operator=(BlockPaletteItem const&);
+        BlockPaletteItem(BlockPaletteItem const&);
+        BlockPaletteItem();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI BlockPaletteItem();
-
-        MCAPI BlockPaletteItem(::OreUI::EditorBlockPaletteFacet::BlockPaletteItem&&);
-
-        MCAPI BlockPaletteItem(::OreUI::EditorBlockPaletteFacet::BlockPaletteItem const&);
+        MCAPI ::OreUI::EditorBlockPaletteFacet::BlockPaletteItem&
+        operator=(::OreUI::EditorBlockPaletteFacet::BlockPaletteItem const&);
 
         MCAPI ~BlockPaletteItem();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-
-        MCAPI void* $ctor(::OreUI::EditorBlockPaletteFacet::BlockPaletteItem&&);
-
-        MCAPI void* $ctor(::OreUI::EditorBlockPaletteFacet::BlockPaletteItem const&);
         // NOLINTEND
 
     public:
@@ -113,17 +102,23 @@ public:
 
     public:
         // prevent constructor by default
-        BlockPalette& operator=(BlockPalette const&);
-        BlockPalette(BlockPalette const&);
         BlockPalette();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI BlockPalette(::OreUI::EditorBlockPaletteFacet::BlockPalette const&);
+
         MCAPI ::OreUI::EditorBlockPaletteFacet::BlockPalette&
-        operator=(::OreUI::EditorBlockPaletteFacet::BlockPalette&&);
+        operator=(::OreUI::EditorBlockPaletteFacet::BlockPalette const&);
 
         MCAPI ~BlockPalette();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::OreUI::EditorBlockPaletteFacet::BlockPalette const&);
         // NOLINTEND
 
     public:
@@ -150,7 +145,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorBlockPaletteFacet() /*override*/ = default;
+    virtual ~EditorBlockPaletteFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -159,8 +154,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorBlockPaletteFacet(::Editor::ServiceProviderCollection* services);
-
-    MCAPI ::OreUI::EditorBlockPaletteFacet::BlockPalette* _getPaletteFromList(::HashedString const& paletteId);
 
     MCAPI void _handleBlockPaletteEvent(
         ::std::variant<
@@ -173,9 +166,11 @@ public:
 
     MCAPI void _handlePaletteActivePaletteChanged(::Editor::EditorBlockPaletteEventActivePaletteChanged const& evt);
 
+    MCAPI void _handlePaletteChanged(::Editor::EditorBlockPaletteEventPaletteUpdated const& evt);
+
     MCAPI void _handlePaletteItemUpdate(::Editor::EditorBlockPaletteEventItemUpdated const& evt);
 
-    MCAPI void _updatePaletteInList(::OreUI::EditorBlockPaletteFacet::BlockPalette palette);
+    MCAPI void _handlePaletteRemoved(::Editor::EditorBlockPaletteEventPaletteRemoved const& evt);
 
     MCAPI void addOrReplaceBlockPalette(::OreUI::EditorBlockPaletteFacet::BlockPalette const& newData);
 
@@ -201,6 +196,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::string _getNamespaceCorrectedName(::Block const* block);
+
     MCAPI static ::Editor::EditorBlockPalette
     convertFromFacetPalette(::OreUI::EditorBlockPaletteFacet::BlockPalette const& facetPalette);
 
@@ -209,6 +206,10 @@ public:
 
     MCAPI static ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
     getPaletteItemAsVariant(::OreUI::EditorBlockPaletteFacet::BlockPaletteItem const& facetItem);
+
+    MCAPI static ::OreUI::EditorBlockPaletteFacet::BlockPaletteItem getPaletteItemFromVariant(
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& variantItem
+    );
     // NOLINTEND
 
 public:
@@ -221,6 +222,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

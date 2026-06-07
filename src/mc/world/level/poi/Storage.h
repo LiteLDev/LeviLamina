@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ReflectionCtx.h"
+#include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/levelgen/v2/WorldGenContext.h"
 #include "mc/world/level/poi/FileStorage.h"
 #include "mc/world/level/poi/RegionId.h"
@@ -24,6 +25,7 @@ public:
     ::ll::TypedStorage<8, 72, ::entt::dense_map<::Poi::RegionId, ::std::unique_ptr<::Poi::Region>>> mRegions;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::Poi::RegionId>>                                mDirtyRegions;
     ::ll::TypedStorage<2, 6, ::br::worldgen::WorldGenContext>                                       mWorldContext;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                          mRegionMutex;
     ::ll::TypedStorage<8, 64, ::Poi::StorageInfo>                                                   mInfo;
     ::ll::TypedStorage<8, 128, ::cereal::ReflectionCtx>                                             mCtx;
     ::ll::TypedStorage<8, 64, ::Poi::FileStorage>                                                   mBackingStorage;

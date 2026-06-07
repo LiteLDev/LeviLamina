@@ -92,15 +92,19 @@ public:
 
     MCAPI void addTypeFilter(::InvertableFilter<::std::string> const& filter);
 
-    MCAPI bool compareName(::std::string const& name) const;
-
     MCAPI bool compile(::CommandOrigin const& origin, ::std::string& error);
 
     MCAPI bool filter(::CommandOrigin const& origin, ::Actor& actor) const;
 
+    MCAPI ::std::string getName() const;
+
+    MCFOLD uint64 getResultCount() const;
+
+    MCAPI bool hasName() const;
+
     MCAPI bool isExpansionAllowed(::CommandOrigin const& origin) const;
 
-    MCAPI bool isInDimension(::CommandOrigin const& origin, ::Actor& entity) const;
+    MCFOLD bool isExplicitIdSelector() const;
 
     MCAPI bool matchFamily(::Actor const& entity) const;
 
@@ -112,16 +116,26 @@ public:
 
     MCAPI ::std::shared_ptr<::std::vector<::Actor*>> newResults(::CommandOrigin const& origin) const;
 
-#ifdef LL_PLAT_C
+    MCAPI void setExplicitIdSelector(::std::string const& playerName);
+
+    MCAPI void setIncludeDeadPlayers(bool includeDead);
+
+    MCAPI void setType(::CommandSelectionType type);
+
+    MCFOLD void setVersion(int version);
+
     MCAPI ~CommandSelectorBase();
-#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Vec3 const getFeetPos(int version, ::Actor const& entity);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void $dtor();
-#endif
     // NOLINTEND
 };

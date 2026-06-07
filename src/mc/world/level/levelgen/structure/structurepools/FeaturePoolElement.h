@@ -6,15 +6,19 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"
+#include "mc/world/level/levelgen/v2/LiquidSettings.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
 class BoundingBox;
+class FeatureRegistry;
 class IFeature;
+class IRandom;
 class IStructureTemplateManager;
 class JigsawBlockInfo;
 class LegacyStructureSettings;
@@ -53,27 +57,47 @@ public:
         ::BlockPos                                                                      refPos
     ) const /*override*/;
 
+    virtual bool place(
+        ::BlockSource&                    region,
+        ::BlockPos                        position,
+        ::BlockPos                        sectionOrigin,
+        ::BoundingBox                     chunkBB,
+        ::Rotation                        rotation,
+        ::IRandom&                        random,
+        ::br::worldgen::JigsawReplacement jigsaw,
+        ::br::worldgen::LiquidSettings    liquidSettings
+    ) const /*override*/;
+
+    virtual void placeActors(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::Random& random) const
+        /*override*/;
+
+    virtual void
+    placeEntities(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::BoundingBox overlapBB) const
+        /*override*/;
+
     virtual ::StructurePoolElementType type() const /*override*/;
 
     virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> createMetadata() const /*override*/;
-
-    virtual ~FeaturePoolElement() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI FeaturePoolElement(
+        ::FeatureRegistry&                                         featureRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
-        ::WeakRef<::IFeature>                                      feature
+        ::std::string const&                                       name
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::WeakRef<::IFeature> feature);
+    MCAPI void* $ctor(
+        ::FeatureRegistry&                                         featureRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
+        ::std::string const&                                       name
+    );
     // NOLINTEND
 
 public:
@@ -93,6 +117,22 @@ public:
         ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>& entitiesToPlace,
         ::BlockPos                                                                      refPos
     ) const;
+
+    MCAPI bool $place(
+        ::BlockSource&                    region,
+        ::BlockPos                        position,
+        ::BlockPos                        sectionOrigin,
+        ::BoundingBox                     chunkBB,
+        ::Rotation                        rotation,
+        ::IRandom&                        random,
+        ::br::worldgen::JigsawReplacement jigsaw,
+        ::br::worldgen::LiquidSettings    liquidSettings
+    ) const;
+
+    MCFOLD void $placeActors(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::Random& random) const;
+
+    MCFOLD void
+    $placeEntities(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::BoundingBox overlapBB) const;
 
     MCFOLD ::StructurePoolElementType $type() const;
 

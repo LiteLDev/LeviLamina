@@ -19,10 +19,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MesaSurfaceSettings();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MesaSurfaceSettings();
-
     MCAPI MesaSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
 
     MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&
@@ -30,22 +32,12 @@ public:
 
     MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
-
-    MCAPI ~MesaSurfaceSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

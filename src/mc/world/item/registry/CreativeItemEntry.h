@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CreativeGroupInfo;
 class CreativeItemRegistry;
 struct CreativeItemNetIdTag;
 // clang-format on
@@ -29,17 +30,6 @@ public:
     CreativeItemEntry();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~CreativeItemEntry() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CreativeItemEntry() /*override*/;
-#endif
-
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CreativeItemEntry(
@@ -48,6 +38,16 @@ public:
         ::ItemInstance const&      item,
         uint                       index
     );
+
+    MCFOLD ::CreativeItemNetId const& getCreativeNetId() const;
+
+    MCAPI ::CreativeGroupInfo* getGroup() const;
+
+    MCFOLD uint getGroupIndex() const;
+
+    MCFOLD uint getIndex() const;
+
+    MCFOLD ::ItemInstance const& getItemInstance() const;
     // NOLINTEND
 
 public:
@@ -59,12 +59,6 @@ public:
         ::ItemInstance const&      item,
         uint                       index
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

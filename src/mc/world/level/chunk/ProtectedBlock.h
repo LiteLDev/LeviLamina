@@ -30,30 +30,24 @@ public:
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
         ::IBlockSource& region,
-        ::BlockPos,
+        ::BlockPos      processedBlockInfo,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~ProtectedBlock() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::ProtectedBlock from(::HashedString cannotReplace);
-    // NOLINTEND
+    MCAPI static ::br::worldgen::processors::ProtectedBlock from(::std::string_view cannotReplace);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static ::br::worldgen::processors::ProtectedBlock from(::HashedString cannotReplace);
     // NOLINTEND
 
 public:
@@ -61,10 +55,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource& region,
-        ::BlockPos,
+        ::BlockPos      processedBlockInfo,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 

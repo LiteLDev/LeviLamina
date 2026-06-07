@@ -9,6 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class AreaAttackComponent;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -27,6 +29,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void initialize(::EntityContext& entity, ::AreaAttackComponent& component) const;
+
     MCAPI void setDamageCause(::std::string const& cause);
     // NOLINTEND
 

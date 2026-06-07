@@ -5,15 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/util/FloatRange.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
 class Mob;
+class Random;
 // clang-format on
 
-class FloatWanderGoal : public ::Goal {
+class FloatWanderGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,14 +49,31 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~FloatWanderGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FloatWanderGoal(
+        ::Mob&       mob,
+        float        targetXZDist,
+        float        targetYDist,
+        float        yOffset,
+        float        surfaceXZDist,
+        float        surfaceYDist,
+        bool         mustReach,
+        bool         randomReselect,
+        bool         additionalCollisionBuffer,
+        bool         navigateAroundSurface,
+        bool         useHomePositionRestriction,
+        bool         allowNavigatingThroughLiquids,
+        ::FloatRange floatDurationRange,
+        bool         hasMoveControlFlag
+    );
+
     MCAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
+
+    MCAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
 
     MCAPI ::Vec3 const _getSuitableTargetPosition();
 
@@ -65,6 +83,27 @@ public:
         int            distanceToBlocksY,
         int            distanceToBlocksXZ
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob&       mob,
+        float        targetXZDist,
+        float        targetYDist,
+        float        yOffset,
+        float        surfaceXZDist,
+        float        surfaceYDist,
+        bool         mustReach,
+        bool         randomReselect,
+        bool         additionalCollisionBuffer,
+        bool         navigateAroundSurface,
+        bool         useHomePositionRestriction,
+        bool         allowNavigatingThroughLiquids,
+        ::FloatRange floatDurationRange,
+        bool         hasMoveControlFlag
+    );
     // NOLINTEND
 
 public:

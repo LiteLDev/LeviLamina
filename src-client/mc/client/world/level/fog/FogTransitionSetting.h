@@ -17,6 +17,13 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::FogTransitionSetting
+    convertToFixedDistance(::FogTransitionSetting const& setting, float renderDistance);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FogTransitionSetting const& ZERO_SETTING();

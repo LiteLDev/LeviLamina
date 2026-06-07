@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/inventory/simulation/ContainerScreenActionResultData.h"
+
 // auto generated forward declare list
 // clang-format off
 struct ContainerScreenActionResultData;
@@ -22,18 +25,18 @@ public:
 public:
     // prevent constructor by default
     ContainerScreenActionResult& operator=(ContainerScreenActionResult const&);
-    ContainerScreenActionResult();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI ContainerScreenActionResult();
+
     MCNAPI ContainerScreenActionResult(::ContainerScreenActionResult const&);
 
-    MCNAPI explicit ContainerScreenActionResult(::ContainerValidationResult const& validationResult);
-
-    MCNAPI ::ContainerScreenActionResult& operator=(::ContainerScreenActionResult&&);
+    MCNAPI ::std::shared_ptr<::ContainerScreenActionResultData const>
+    tryGetResultData(::ContainerScreenActionResultData::Type type) const;
 
     MCNAPI ~ContainerScreenActionResult();
 #endif
@@ -43,9 +46,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::ContainerScreenActionResult const&);
+    MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ContainerValidationResult const& validationResult);
+    MCNAPI void* $ctor(::ContainerScreenActionResult const&);
 #endif
     // NOLINTEND
 

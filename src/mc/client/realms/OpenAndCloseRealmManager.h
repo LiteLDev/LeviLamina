@@ -12,6 +12,8 @@ public:
     // clang-format on
 
     // OpenAndCloseRealmManager inner types define
+    enum class RequestQueueStatus : int {};
+
     enum class RequestStatus : int {};
 
     struct Request {};

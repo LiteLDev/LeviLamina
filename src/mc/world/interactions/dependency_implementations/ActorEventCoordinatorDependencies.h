@@ -32,8 +32,6 @@ public:
     // NOLINTBEGIN
     virtual void
     sendActorUseItemEvent(::EntityContext& actor, ::ItemStack& item, ::ItemUseMethod useMethod) /*override*/;
-
-    virtual ~ActorEventCoordinatorDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:

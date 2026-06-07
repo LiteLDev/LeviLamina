@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Mob;
 class Path;
 // clang-format on
 
@@ -29,6 +30,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DragonStrafePlayerGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -42,18 +47,24 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~DragonStrafePlayerGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit DragonStrafePlayerGoal(::Mob& mob);
+
     MCAPI void findNewTarget();
 
     MCAPI void navigateToNextPathNode();
 
     MCAPI void setTarget(::Actor* target);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -15,6 +15,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::std::optional<::EducationLevelSettings> const& getEducationLevelSettings() const;
+
     MCAPI void setEducationLevelSettings(::EducationLevelSettings settings);
     // NOLINTEND
 };

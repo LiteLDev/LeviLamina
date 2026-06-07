@@ -51,7 +51,7 @@ public:
         canDestroyInCreativeItemComponent;
     ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_20_50::CooldownItemComponent>> cooldownItemComponent;
     ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::v1_20_50::DamageItemComponent>>    damageItemComponent;
-    ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::DiggerItemComponent>>   diggerItemComponent;
+    ::ll::TypedStorage<8, 136, ::std::optional<::SharedTypes::v1_20_50::DiggerItemComponent>>  diggerItemComponent;
     ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_20_50::DisplayNameItemComponent>>
         displayNameItemComponent;
     ::ll::TypedStorage<4, 16, ::std::optional<::SharedTypes::v1_20_50::DurabilityItemComponent>>
@@ -110,6 +110,8 @@ public:
 
     MCAPI ::SharedTypes::v1_20_50::ComponentItemComponentData&
     operator=(::SharedTypes::v1_20_50::ComponentItemComponentData const&);
+
+    MCAPI bool operator==(::SharedTypes::v1_20_50::ComponentItemComponentData const&) const;
 
     MCAPI ~ComponentItemComponentData();
     // NOLINTEND

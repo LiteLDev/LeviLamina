@@ -77,6 +77,8 @@ public:
 
     MCAPI void _handleToggleLinkInfinite(bool optionValue);
 
+    MCAPI void _registerBindings();
+
     MCAPI void _registerControllerCallbacks();
 
     MCAPI void _registerEventHandlers();

@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -29,15 +29,15 @@ public:
 
     MCNAPI ReplicatedObjectInfo(::Editor::Network::ReplicatedObjectInfo const& other);
 
-    MCNAPI ReplicatedObjectInfo(::HashedString id, uint typeHash, ::std::string&& data);
-
-    MCNAPI void operator=(::Editor::Network::ReplicatedObjectInfo&& other);
-
     MCNAPI void operator=(::Editor::Network::ReplicatedObjectInfo const& other);
 
-    MCNAPI bool operator==(::Editor::Network::ReplicatedObjectInfo const& other) const;
-
     MCNAPI ~ReplicatedObjectInfo();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -46,8 +46,6 @@ public:
     MCNAPI void* $ctor(::Editor::Network::ReplicatedObjectInfo&& other);
 
     MCNAPI void* $ctor(::Editor::Network::ReplicatedObjectInfo const& other);
-
-    MCNAPI void* $ctor(::HashedString id, uint typeHash, ::std::string&& data);
     // NOLINTEND
 
 public:

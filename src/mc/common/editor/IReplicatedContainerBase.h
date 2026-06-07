@@ -24,8 +24,6 @@ public:
     virtual void handleEditorReplicationContainerDeleteObjectPayload(
         ::Editor::Network::EditorReplicationContainerDeleteObjectPayload const&
     ) = 0;
-
-    virtual ~IReplicatedContainerBase() /*override*/ = default;
     // NOLINTEND
 
 public:

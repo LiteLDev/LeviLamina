@@ -36,6 +36,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ReadOnlyBinaryStream(::std::string&& buffer);
+
+    MCAPI bool canReadBool() const;
+
     MCAPI ::Bedrock::Result<void> ensureReadCompleted() const;
 
     MCAPI ::Bedrock::Result<bool> getBool();
@@ -49,6 +53,8 @@ public:
     MCAPI ::Bedrock::Result<void> getRawBytes(::buffer_span_mut<uchar> outBuffer, uint64 length);
 
     MCAPI ::Bedrock::Result<int> getSignedBigEndianInt();
+
+    MCAPI ::Bedrock::Result<schar> getSignedByte();
 
     MCAPI ::Bedrock::Result<int> getSignedInt();
 
@@ -75,20 +81,22 @@ public:
     MCAPI ::Bedrock::Result<int> getVarInt();
 
     MCAPI ::Bedrock::Result<int64> getVarInt64();
+
+    MCFOLD bool hasOverflowed() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string&& buffer);
+
     MCAPI void* $ctor(::std::string_view buffer, bool copyBuffer);
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

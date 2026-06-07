@@ -13,12 +13,17 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
+class HashedString;
+class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class ChemistryTableBlock : public ::ActorBlock {
+public:
+    // prevent constructor by default
+    ChemistryTableBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,16 +44,27 @@ public:
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
     virtual bool isInteractiveBlock() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~ChemistryTableBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ChemistryTableBlock(::std::string const& nameId, int id);
+
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool
+    isUIValidForPlayer(::BlockPos const& pos, ::Player& player, float pickRange, ::HashedString const& expectedType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -70,8 +86,6 @@ public:
     MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
     MCFOLD bool $isInteractiveBlock() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

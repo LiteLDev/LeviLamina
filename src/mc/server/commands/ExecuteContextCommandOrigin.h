@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/CommandOrigin.h"
@@ -77,14 +76,60 @@ public:
     virtual ::Level* getLevel() const /*override*/;
 
     virtual ::Dimension* getDimension() const /*override*/;
+    // NOLINTEND
 
-    virtual ~ExecuteContextCommandOrigin() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ExecuteContextCommandOrigin(
+        ::ActorUniqueID                      executionEntity,
+        ::Vec3 const&                        position,
+        ::std::optional<::Vec2> const&       rotation,
+        ::ActorUniqueID                      rotationActor,
+        ::ActorUniqueID                      positionActor,
+        ::SharedTypes::Legacy::ActorLocation anchor,
+        ::DimensionType                      dimensionType,
+        ::Level&                             level,
+        int                                  version
+    );
+
+    MCAPI ::Actor const* getPositionEntity();
+
+    MCAPI void setDimension(::Dimension const& dimension);
+
+    MCAPI void setDimension(::DimensionType const& dimensionType);
+
+    MCAPI void setExecutionEntity(::Actor const& entity);
+
+    MCAPI void setPosition(::Vec3 const& position);
+
+    MCAPI void setPositionEntity(::Actor const& entity);
+
+    MCAPI void setRotation(::Vec2 const& rotation);
+
+    MCAPI void setRotationEntity(::Actor const& entity);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::ExecuteContextCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorUniqueID                      executionEntity,
+        ::Vec3 const&                        position,
+        ::std::optional<::Vec2> const&       rotation,
+        ::ActorUniqueID                      rotationActor,
+        ::ActorUniqueID                      positionActor,
+        ::SharedTypes::Legacy::ActorLocation anchor,
+        ::DimensionType                      dimensionType,
+        ::Level&                             level,
+        int                                  version
+    );
     // NOLINTEND
 
 public:

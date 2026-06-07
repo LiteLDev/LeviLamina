@@ -26,11 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptModalFormDataToggleOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions&&);
-
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions&&);
-
     MCNAPI ~ScriptModalFormDataToggleOptions();
     // NOLINTEND
 
@@ -38,12 +33,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormDataToggleOptions&&);
     // NOLINTEND
 
 public:

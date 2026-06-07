@@ -33,8 +33,6 @@ public:
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event) /*override*/;
-
-    virtual ~ScriptPlayerGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,18 +43,6 @@ public:
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     );
-
-    MCAPI bool _handleMutablePlayerGameplayEvent(
-        ::MutablePlayerGameplayEvent<::CoordinatorResult>&                                event,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
-
-    MCAPI bool _handlePlayerDisconnectEvent(
-        ::PlayerDisconnectEvent const&                                                    playerDisconnectEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
 
     MCAPI bool _handlePlayerGameModeChangeEvent(
         ::PlayerGameModeChangeEvent&                                                      playerGameModeChangeEvent,

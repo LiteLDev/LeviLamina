@@ -14,8 +14,10 @@
 // clang-format off
 class BlockSource;
 class Container;
+class ItemStackBase;
 class Mob;
 class Vec3;
+struct ItemTag;
 // clang-format on
 
 class ItemContext {
@@ -34,24 +36,19 @@ public:
 
 public:
     // prevent constructor by default
-    ItemContext& operator=(ItemContext const&);
     ItemContext(ItemContext const&);
     ItemContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemContext(::ItemContext&&);
+    MCAPI ItemContext(::WeakEntityRef const& entityRef, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
-#ifdef LL_PLAT_S
     MCAPI ItemContext(::WeakEntityRef const& entityRef, int slot);
-#endif
 
-    MCAPI ::ItemStack const& _getItem() const;
+    MCAPI ItemContext(::ItemStack const& item, int slot);
 
-    MCAPI void _setItem(::ItemStack const& item);
-
-    MCAPI ::Container* _tryGetChestContainer() const;
+    MCAPI ItemContext(::BlockSource& region, ::BlockPos const& containerPos, int slot);
 
     MCAPI ::Container* _tryGetContainerFromEntity() const;
 
@@ -59,11 +56,52 @@ public:
 
     MCAPI bool clearAllDynamicProperties(::std::string const& collection);
 
+    MCAPI ::std::optional<int> getAmount() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> getCanDestroy() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> getCanPlaceOn() const;
+
+    MCAPI ::Container const* getContainer() const;
+
+    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
+    getDynamicProperty(::std::string const& collection, ::std::string const& key) const;
+
     MCAPI ::std::optional<::std::vector<::std::string>> getDynamicPropertyIds(::std::string const& collection) const;
+
+    MCAPI ::std::optional<uint64> getDynamicPropertyTotalByteCount(::std::string const& collection) const;
+
+    MCAPI ::std::optional<::std::string> getId() const;
+
+    MCAPI ::std::optional<::ItemStack> getItem() const;
+
+    MCAPI ::std::optional<bool> getKeepOnDeath() const;
+
+    MCAPI ::std::optional<::ItemLockMode> getLockMode() const;
 
     MCAPI ::std::optional<::std::vector<::std::string>> getLore() const;
 
+    MCAPI ::std::optional<int> getMaxAmount() const;
+
+    MCAPI ::std::optional<::std::string> getNameTag() const;
+
+    MCAPI int getSlot() const;
+
+    MCAPI ::std::optional<::std::vector<::ItemTag>> getTags() const;
+
+    MCAPI ::std::optional<bool> hasItem() const;
+
+    MCAPI ::std::optional<bool> hasTag(::ItemTag const& tag) const;
+
+    MCAPI ::std::optional<bool> isStackable() const;
+
+    MCAPI ::std::optional<bool> isStackableWith(::ItemStackBase const& other) const;
+
     MCAPI bool isValid() const;
+
+    MCAPI ::ItemContext& operator=(::ItemContext&&);
+
+    MCAPI ::ItemContext& operator=(::ItemContext const&);
 
     MCAPI bool setAmount(int amount);
 
@@ -76,6 +114,8 @@ public:
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
+
+    MCAPI bool setItem(::ItemStack const& stack);
 
     MCAPI bool setKeepOnDeath(bool value);
 
@@ -94,6 +134,8 @@ public:
     MCAPI static bool
     _trySetEquippedSlot(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
 
+    MCAPI static ::ItemContext createPlayerEnderInventoryContext(::WeakEntityRef const& entityRef, int slot);
+
     MCAPI static bool
     setEquipment(::ItemStack const& item, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::Mob& mob);
     // NOLINTEND
@@ -101,11 +143,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemContext&&);
+    MCAPI void* $ctor(::WeakEntityRef const& entityRef, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
-#ifdef LL_PLAT_S
     MCAPI void* $ctor(::WeakEntityRef const& entityRef, int slot);
-#endif
+
+    MCAPI void* $ctor(::ItemStack const& item, int slot);
+
+    MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& containerPos, int slot);
     // NOLINTEND
 
 public:

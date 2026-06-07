@@ -24,28 +24,18 @@ public:
     UpdateVersionScreenController();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~UpdateVersionScreenController() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI
     UpdateVersionScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::UpdateVersionScreenContext context);
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::UpdateVersionScreenContext context);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

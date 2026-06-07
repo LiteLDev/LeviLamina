@@ -17,14 +17,14 @@ struct ViewState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32768, ::bgfx::Matrix4[2][256]> m_viewTmp;
-    ::ll::TypedStorage<8, 32768, ::bgfx::Matrix4[2][256]> m_viewProj;
+    ::ll::TypedStorage<4, 32768, ::bgfx::Matrix4[2][256]> m_viewTmp;
+    ::ll::TypedStorage<4, 32768, ::bgfx::Matrix4[2][256]> m_viewProj;
     ::ll::TypedStorage<8, 16, ::bgfx::Matrix4* [2]>       m_view;
     ::ll::TypedStorage<2, 8, ::bgfx::Rect>                m_rect;
-    ::ll::TypedStorage<8, 64, ::bgfx::Matrix4>            m_invView;
-    ::ll::TypedStorage<8, 64, ::bgfx::Matrix4>            m_invProj;
-    ::ll::TypedStorage<8, 64, ::bgfx::Matrix4>            m_invViewProj;
-    ::ll::TypedStorage<8, 32768, ::bgfx::Matrix4[2][256]> m_prevViewProj;
+    ::ll::TypedStorage<4, 64, ::bgfx::Matrix4>            m_invView;
+    ::ll::TypedStorage<4, 64, ::bgfx::Matrix4>            m_invProj;
+    ::ll::TypedStorage<4, 64, ::bgfx::Matrix4>            m_invViewProj;
+    ::ll::TypedStorage<4, 32768, ::bgfx::Matrix4[2][256]> m_prevViewProj;
     ::ll::TypedStorage<4, 4, float>                       m_alphaRef;
     ::ll::TypedStorage<4, 4096, float[256][4]>            m_prevWorldPosOffset;
     ::ll::TypedStorage<2, 2, ushort>                      m_invViewCached;

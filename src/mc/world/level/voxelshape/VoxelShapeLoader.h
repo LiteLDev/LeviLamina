@@ -15,6 +15,7 @@ class IMinecraftEventing;
 class ResourcePackManager;
 namespace SharedTypes::v1_21_110 { struct VoxelShapeDocument; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class VoxelShapeLoader {
@@ -34,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit VoxelShapeLoader(::cereal::ReflectionCtx& ctx);
+
     MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_110::VoxelShapeDocument> _loadVoxelShape(
         ::std::string const&               filenameWithExtension,
         ::std::string&&                    fileData,
@@ -58,6 +61,12 @@ public:
         ::SharedTypes::v1_21_110::VoxelShapeDocument const& doc,
         ::std::vector<::AABB>&                              resultAABBs
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -70,23 +70,12 @@ public:
     // prevent constructor by default
     PlatformRuntimeInfo& operator=(PlatformRuntimeInfo const&);
     PlatformRuntimeInfo(PlatformRuntimeInfo const&);
+    PlatformRuntimeInfo();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~PlatformRuntimeInfo();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PlatformRuntimeInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

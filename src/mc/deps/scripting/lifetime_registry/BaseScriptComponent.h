@@ -24,28 +24,6 @@ public:
     BaseScriptComponent& operator=(BaseScriptComponent const&);
     BaseScriptComponent(BaseScriptComponent const&);
     BaseScriptComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI BaseScriptComponent(::Scripting::internal::BaseScriptComponent&&);
-
-    MCNAPI ::Scripting::internal::BaseScriptComponent& operator=(::Scripting::internal::BaseScriptComponent&&);
-
-    MCNAPI ~BaseScriptComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::internal::BaseScriptComponent&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Scripting::internal

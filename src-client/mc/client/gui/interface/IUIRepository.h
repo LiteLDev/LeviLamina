@@ -32,14 +32,6 @@ public:
 
     virtual ::UITextureInfo*
     getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload, bool loadIfNeeded) = 0;
-
-    virtual ~IUIRepository() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

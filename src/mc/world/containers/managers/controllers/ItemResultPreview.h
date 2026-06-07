@@ -15,20 +15,4 @@ public:
     ItemResultPreview& operator=(ItemResultPreview const&);
     ItemResultPreview(ItemResultPreview const&);
     ItemResultPreview();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~ItemResultPreview();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };

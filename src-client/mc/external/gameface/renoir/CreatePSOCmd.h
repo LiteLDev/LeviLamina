@@ -8,8 +8,8 @@ struct CreatePSOCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 148> mUnkc8f9ea;
-    ::ll::UntypedStorage<4, 4>   mUnk7b4074;
+    ::ll::UntypedStorage<1, 0> mUnkc8f9ea;
+    ::ll::UntypedStorage<1, 0> mUnk7b4074;
     // NOLINTEND
 
 public:

@@ -12,6 +12,8 @@ class Vec3;
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
 namespace Editor::ScriptModule { class ScriptEditorStructure; }
 namespace Editor::ScriptModule { class ScriptEditorStructureSearchOptions; }
+namespace Editor::Services { class ServerStructureServiceProvider; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -34,6 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptEditorStructureManager(
+        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> structureService,
+        ::Scripting::WeakLifetimeScope&                                     scope
+    );
+
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptEditorStructure>>
     createEmptyStructure(::std::string const& structureName, ::Vec3 const& size);
@@ -59,6 +66,15 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> structureService,
+        ::Scripting::WeakLifetimeScope&                                     scope
+    );
     // NOLINTEND
 };
 

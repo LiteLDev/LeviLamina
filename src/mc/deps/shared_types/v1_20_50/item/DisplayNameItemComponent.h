@@ -17,32 +17,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DisplayNameItemComponent(DisplayNameItemComponent const&);
-    DisplayNameItemComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_20_50::DisplayNameItemComponent&
-    operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent&&);
-
-    MCFOLD ::SharedTypes::v1_20_50::DisplayNameItemComponent&
-    operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent const&);
-
-    MCAPI ~DisplayNameItemComponent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static variables
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

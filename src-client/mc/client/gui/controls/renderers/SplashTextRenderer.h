@@ -30,19 +30,25 @@ public:
 
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
-
-    virtual ~SplashTextRenderer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SplashTextRenderer();
+
     MCAPI void _renderSplashText(
         ::std::string const& splashText,
         ::ScreenContext&     screenContext,
         ::IClientInstance&   client,
         ::UIControl&         owner
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

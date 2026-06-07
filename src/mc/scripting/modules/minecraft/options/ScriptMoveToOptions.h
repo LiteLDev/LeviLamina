@@ -23,6 +23,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool getFaceTarget() const;
+
+    MCFOLD float getSpeed() const;
+
     MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND
 

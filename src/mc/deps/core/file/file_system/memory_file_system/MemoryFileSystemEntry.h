@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Result; }
-// clang-format on
-
 namespace Core {
 
 class MemoryFileSystemEntry {
@@ -17,6 +12,8 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk47bbac;
     ::ll::UntypedStorage<8, 8>  mUnk41bf05;
     ::ll::UntypedStorage<8, 8>  mUnk6df038;
+    ::ll::UntypedStorage<8, 64> mUnk905541;
+    ::ll::UntypedStorage<8, 8>  mUnka2d20b;
     ::ll::UntypedStorage<8, 32> mUnk132bae;
     // NOLINTEND
 
@@ -31,7 +28,7 @@ public:
     // NOLINTBEGIN
     virtual ~MemoryFileSystemEntry() = default;
 
-    virtual ::Core::Result canRemove() = 0;
+    virtual bool canRemove() const = 0;
 
     virtual uint64 getSize() const = 0;
     // NOLINTEND

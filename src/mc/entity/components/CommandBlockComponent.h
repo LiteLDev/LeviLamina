@@ -24,15 +24,19 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandBlockComponent& operator=(CommandBlockComponent const&);
-    CommandBlockComponent(CommandBlockComponent const&);
-    CommandBlockComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlockComponent(::CommandBlockComponent&&);
+    MCAPI CommandBlockComponent();
+
+    MCAPI void addAdditionalSaveData(::CompoundTag& entityTag) const;
+
+    MCAPI int decrementTickCount();
+
+    MCFOLD ::BaseCommandBlock& getBaseCommandBlock();
+
+    MCFOLD int getCurrentTickCount() const;
+
+    MCFOLD bool getTicking() const;
 
     MCAPI void initFromDefinition(::Actor& owner);
 
@@ -47,12 +51,22 @@ public:
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
 
+    MCAPI void resetCurrentTick();
+
+    MCAPI void setLastOutput(::Actor& owner, ::std::string const& lastOutput);
+
+#ifdef LL_PLAT_C
+    MCAPI void setName(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
+#endif
+
+    MCAPI void setTicking(bool ticking);
+
     MCAPI void setTrackOutput(::Actor& owner, bool trackOutput);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandBlockComponent&&);
+    MCAPI void* $ctor();
     // NOLINTEND
 };

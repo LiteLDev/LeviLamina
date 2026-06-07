@@ -35,12 +35,11 @@ public:
 public:
     // prevent constructor by default
     ClassBinding& operator=(ClassBinding const&);
+    ClassBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ClassBinding();
-
     MCNAPI ClassBinding(::Scripting::ClassBinding&&);
 
     MCNAPI ClassBinding(::Scripting::ClassBinding const&);
@@ -58,14 +57,14 @@ public:
         ::Scripting::RuntimeConditions                  missingRuntimeConditions_
     );
 
+    MCNAPI ::Scripting::ClassBinding& operator=(::Scripting::ClassBinding&&);
+
     MCNAPI ~ClassBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Scripting::ClassBinding&&);
 
     MCNAPI void* $ctor(::Scripting::ClassBinding const&);

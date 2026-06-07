@@ -62,14 +62,6 @@ public:
     virtual void evaluateCurve(::RenderParams& renderParams) /*override*/;
 
     virtual ::ParticleSystem::ParticleCurveType getCurveType() const /*override*/;
-
-    virtual ~ParticleCurveBezierChain() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

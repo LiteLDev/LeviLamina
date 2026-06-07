@@ -12,7 +12,6 @@
 // clang-format off
 class BlockPos;
 namespace Editor::Cursor { struct CursorState; }
-namespace Editor::Network { class PayloadServiceProvider; }
 // clang-format on
 
 namespace Editor::Cursor {
@@ -40,22 +39,6 @@ public:
     virtual void setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
     virtual ::Scripting::Result_deprecated<::BlockPos> moveCursor(::glm::ivec3 const& offset) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI explicit ServerCursor(::Editor::Network::PayloadServiceProvider& payloadService);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void* $ctor(::Editor::Network::PayloadServiceProvider& payloadService);
-#endif
     // NOLINTEND
 
 public:

@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TemplateStructurePiece();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
@@ -39,20 +43,26 @@ public:
         ::Random&            random,
         ::BoundingBox const& chunkBB
     ) = 0;
-
-    virtual ~TemplateStructurePiece() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TemplateStructurePiece(int depth);
+
     MCAPI void _setBoundingBoxFromTemplate();
+
+    MCAPI void _setup(
+        ::LegacyStructureTemplate&       structTemplate,
+        ::LegacyStructureSettings const& settings,
+        ::BlockPos const&                templatePosition
+    );
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(int depth);
     // NOLINTEND
 
 public:

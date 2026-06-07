@@ -69,6 +69,8 @@ public:
 
     MCAPI void _registerBindings();
 
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _registerSmithingTable2UIBindings();
 
     MCAPI void _registerStateMachine();

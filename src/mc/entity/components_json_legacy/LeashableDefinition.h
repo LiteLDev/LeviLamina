@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class LeashableComponent;
 struct LeashablePreset;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -27,6 +29,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void initialize(::EntityContext& entity, ::LeashableComponent& component) const;
+
+    MCAPI void uninitialize(::EntityContext& entity, ::LeashableComponent&) const;
+
     MCAPI ~LeashableDefinition();
     // NOLINTEND
 

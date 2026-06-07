@@ -30,12 +30,6 @@ public:
     WidgetChangeRenderPrimComponentPayload();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~WidgetChangeRenderPrimComponentPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

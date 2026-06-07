@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/scripting/modules/minecraft/components/NavigationScriptActorComponent.h"
+#include "mc/scripting/modules/minecraft/components/DerivedNavigationScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,15 +12,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptNavigationHoverComponent : public ::ScriptModuleMinecraft::NavigationScriptActorComponent {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual bool _isValid() const /*override*/;
-
-    virtual ~ScriptNavigationHoverComponent() /*override*/ = default;
-    // NOLINTEND
-
+class ScriptNavigationHoverComponent : public ::ScriptModuleMinecraft::DerivedNavigationScriptActorComponent<800> {
 public:
     // static functions
     // NOLINTBEGIN
@@ -28,11 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // static variables
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
-
-
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

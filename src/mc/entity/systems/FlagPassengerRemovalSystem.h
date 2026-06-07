@@ -29,6 +29,8 @@ namespace FlagPassengerRemovalSystem {
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createVehicleExitedSystem();
 
+MCAPI ::TickingSystemWithInfo createVehicleSwitchedOrDestroyedSystem();
+
 MCAPI void exitingPassengerRemoval(
     ::StrictEntityContext const&                                vehicleEntity,
     ::VehicleComponent const&                                   vehicleComponent,
@@ -61,45 +63,9 @@ MCAPI void singleExitingPassengerRemoval(
     ::EntityModifier<::RemovePassengersComponent, ::PendingRemovePassengersComponent> modifier
 );
 
-MCAPI void singleTickExitingPassengerRemoval(
+MCAPI void singleImmediatePassengerRemoval(
     ::StrictEntityContext const& passengerEntity,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::StopRidingRequestComponent>,
-        ::Exclude<::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent>,
-        ::PassengerComponent const,
-        ::ActorUniqueIDComponent const> passengerView,
-    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>>
-                                                                                      serverAuthOnlyVehicleView,
-    ::EntityModifier<::RemovePassengersComponent, ::PendingRemovePassengersComponent> modifier
-);
-
-MCAPI void singleTickPassengerRemovalFromSwitchedOrDestroyedVehicle(
-    ::StrictEntityContext const&                                                                        passengerEntity,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent>, ::PassengerComponent const> view,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
-        destroyedVehiclePassengers,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>
-                                                  switchingVehiclePassengers,
-    ::EntityModifier<::RemovePassengersComponent> modifier
-);
-
-MCAPI void tickExitingPassengerRemoval(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::VehicleComponent const,
-        ::Optional<::DoesServerAuthOnlyDismountFlagComponent const>> view,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::StopRidingRequestComponent>,
-        ::Exclude<::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent>,
-        ::PassengerComponent const,
-        ::ActorUniqueIDComponent const>                                               exitingPassengers,
-    ::EntityModifier<::RemovePassengersComponent, ::PendingRemovePassengersComponent> modifier
-);
-
-MCAPI void tickPassengerRemovalFromSwitchedOrDestroyedVehicle(
-    ::ViewT<::StrictEntityContext, ::VehicleComponent const> view,
+    ::PassengerComponent const&  passengerComponent,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
         destroyedVehiclePassengers,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>

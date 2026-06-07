@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
@@ -44,10 +44,7 @@ public:
 
     virtual void remove() /*override*/;
 
-    virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    virtual ~TripodCamera() /*override*/ = default;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
     // NOLINTEND
 
 public:
@@ -58,6 +55,12 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI int getCountdown() const;
+
+    MCAPI bool interactWithPlayer(::Player& player);
+
+    MCAPI bool isActivated() const;
 
     MCAPI void startTakingPicture(::Player& player);
     // NOLINTEND
@@ -75,7 +78,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
     MCFOLD float $getShadowRadius() const;
 
@@ -85,7 +88,7 @@ public:
 
     MCAPI void $remove();
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, bool, bool);
 
 
     // NOLINTEND

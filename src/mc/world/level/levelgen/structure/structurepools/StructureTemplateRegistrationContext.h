@@ -42,24 +42,13 @@ public:
 public:
     // prevent constructor by default
     StructureTemplateRegistrationContext& operator=(StructureTemplateRegistrationContext const&);
+    StructureTemplateRegistrationContext(StructureTemplateRegistrationContext const&);
     StructureTemplateRegistrationContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext&&);
-
-    MCAPI StructureTemplateRegistrationContext(::StructureTemplateRegistrationContext const&);
-
     MCAPI ~StructureTemplateRegistrationContext();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplateRegistrationContext&&);
-
-    MCAPI void* $ctor(::StructureTemplateRegistrationContext const&);
     // NOLINTEND
 
 public:

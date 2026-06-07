@@ -27,17 +27,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription* description) /*override*/;
+    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription const* description) /*override*/;
 
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
+    // NOLINTEND
 
-    virtual ~GlideMoveControl() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI GlideMoveControl();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
+    MCAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription const* description);
 
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 

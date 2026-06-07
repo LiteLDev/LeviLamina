@@ -25,20 +25,14 @@ public:
     // NOLINTBEGIN
     virtual ::EventResult
     onScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score) /*override*/;
-
-    virtual ~PlayerScoreboardEventListener() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SubscribedObjectives& getPlayerSubscriptions(::ScoreboardId const& id, ::Player const& player);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void removePlayerSubscriptions(::ScoreboardId const& id);
     // NOLINTEND
 
 public:

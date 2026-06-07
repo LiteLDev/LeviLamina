@@ -28,6 +28,7 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
+    ServicePack& operator=(ServicePack const&);
     ServicePack();
 
 #endif
@@ -38,10 +39,6 @@ public:
     MCNAPI ServicePack(::ServicePack const&);
 
     MCNAPI ServicePack(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
-
-    MCNAPI ::ServicePack& operator=(::ServicePack const&);
-
-    MCNAPI ~ServicePack();
 #endif
     // NOLINTEND
 
@@ -52,14 +49,6 @@ public:
     MCNAPI void* $ctor(::ServicePack const&);
 
     MCNAPI void* $ctor(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

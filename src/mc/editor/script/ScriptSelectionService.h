@@ -31,13 +31,12 @@ public:
 public:
     // prevent constructor by default
     ScriptSelectionService& operator=(ScriptSelectionService const&);
+    ScriptSelectionService(ScriptSelectionService const&);
     ScriptSelectionService();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptSelectionService(::Editor::ScriptModule::ScriptSelectionService const&);
-
     MCNAPI
     ScriptSelectionService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
 
@@ -54,8 +53,6 @@ public:
         ::std::string const&              fromBlockIdentifier,
         ::std::string const&              toBlockIdentifier
     );
-
-    MCNAPI ~ScriptSelectionService();
     // NOLINTEND
 
 public:
@@ -67,15 +64,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptSelectionService const&);
-
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

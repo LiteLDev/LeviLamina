@@ -2,20 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
-
 namespace SculkConsts {
 // static variables
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
-MCAPI ::Vec3 const& CHARGE_PARTICLE_INWARDS_EXTRUSION();
-
-MCAPI ::Vec3 const& CHARGE_PARTICLE_OUTWARDS_EXTRUSION();
-#endif
-
 MCAPI ::std::string const& CHARGE_TAG();
 
 MCAPI ::std::string const& CURSORS_TAG();

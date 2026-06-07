@@ -13,4 +13,20 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::Actor*>> mActors;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MolangActorArrayPtr();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit MolangActorArrayPtr(::std::vector<::Actor*> actors);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::std::vector<::Actor*> actors);
+    // NOLINTEND
 };

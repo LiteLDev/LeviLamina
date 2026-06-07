@@ -26,18 +26,6 @@ public:
         ::ll::TypedStorage<8, 8, ::Json::Value const*>        mValue;
         ::ll::TypedStorage<8, 16, ::Json::ValueConstIterator> mIt;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~State();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -95,7 +83,7 @@ public:
 
     virtual uint64 members() /*override*/;
 
-    virtual uint64 length(uint64 expectedSize) /*override*/;
+    virtual uint64 length(uint64) /*override*/;
 
     virtual bool pushMember(::std::string_view const name) /*override*/;
 
@@ -126,26 +114,22 @@ public:
     virtual bool _allowAsFloat() = 0;
 
     virtual bool _allowAsDouble() = 0;
-
-    virtual ~JSONCppSchemaReaderBase() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit JSONCppSchemaReaderBase(::std::string const& data);
+
+    MCAPI explicit JSONCppSchemaReaderBase(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& data);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:
@@ -192,7 +176,7 @@ public:
 
     MCFOLD uint64 $members();
 
-    MCFOLD uint64 $length(uint64 expectedSize);
+    MCFOLD uint64 $length(uint64);
 
     MCAPI bool $pushMember(::std::string_view const name);
 

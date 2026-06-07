@@ -14,26 +14,30 @@ class BaseGameVersion;
 class Block;
 class BlockActor;
 class BlockPos;
-class Experiments;
+class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
+class Level;
+class Material;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
 class PowderSnowBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    PowderSnowBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual bool causesFreezeEffect() const /*override*/;
@@ -43,13 +47,13 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
-
-    virtual ~PowderSnowBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PowderSnowBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCFOLD void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
@@ -57,20 +61,28 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canWalkOnTop(::GetCollisionShapeInterface const& actor);
+
+    MCAPI static void clearFire(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
+
+    MCAPI static void spawnPowderSnowParticles(::Level& level, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const&, ::BaseGameVersion const) const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const&             block,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          entity,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCFOLD bool $causesFreezeEffect() const;

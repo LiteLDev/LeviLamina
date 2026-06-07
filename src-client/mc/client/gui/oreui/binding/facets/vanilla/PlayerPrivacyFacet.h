@@ -46,6 +46,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerPrivacyFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~PlayerPrivacyFacet() /*override*/;
@@ -56,6 +60,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PlayerPrivacyFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+
     MCAPI ::Bedrock::Result<void> _load(::std::string const& id);
 
     MCAPI ::OreUI::PlayerPrivacyFacet::PrivacyData const& getData();
@@ -69,6 +75,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
     // NOLINTEND
 
 public:

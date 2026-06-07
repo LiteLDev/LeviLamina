@@ -6,6 +6,7 @@
 // clang-format off
 class Tessellator;
 class Vec3;
+namespace cg { class ImageBuffer; }
 // clang-format on
 
 class TextureTessellator {
@@ -30,18 +31,11 @@ public:
     // prevent constructor by default
     TextureTessellator& operator=(TextureTessellator const&);
     TextureTessellator(TextureTessellator const&);
-    TextureTessellator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addAdjacencytoTEXCOORD4(
-        ::Tessellator&                                      tessellator,
-        ::TextureTessellator::TessellationParameters const& parameters,
-        ::std::array<bool, 8> const&                        adjacency,
-        bool                                                isVertexOnNegXSide,
-        bool                                                isVertexOnNegZSide
-    );
+    MCNAPI TextureTessellator();
 
     MCNAPI void _addLighting(
         ::Tessellator&     tessellator,
@@ -50,6 +44,12 @@ public:
         ::glm::vec4 const& mers,
         bool               deferredEnabled,
         bool               cloudLighting
+    );
+
+    MCNAPI void tessellate(
+        ::Tessellator&                                      tessellator,
+        ::cg::ImageBuffer const&                            imageBuffer,
+        ::TextureTessellator::TessellationParameters const& parameters
     );
 
     MCNAPI void tessellate(
@@ -68,5 +68,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static void
     validateImageTesselationForCreatorFeedback(ushort width, ushort height, ::std::string const& objectName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

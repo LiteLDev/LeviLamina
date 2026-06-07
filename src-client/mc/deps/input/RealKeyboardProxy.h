@@ -10,18 +10,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void feedText(::std::string const& text) /*override*/;
-
-    virtual void feedCaretLocation(int caretPos) /*override*/;
-
-    virtual ~RealKeyboardProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $feedText(::std::string const& text);
-
-    MCAPI void $feedCaretLocation(int caretPos);
     // NOLINTEND
 
 public:

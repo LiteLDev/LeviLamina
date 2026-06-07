@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 
 // auto generated forward declare list
@@ -21,11 +20,6 @@ MCAPI void tickEntity(
     ::RemoveFromLeashedEntitiesRequestComponent const& removeFromLeashedEntitiesRequestComponent,
     ::LeashedEntitiesComponent&                        leashedEntitiesComponent,
     ::EntityModifier<::LeashedEntitiesComponent>&      leashedEntitiesComponentModifier
-);
-
-MCAPI void tickView(
-    ::ViewT<::StrictEntityContext, ::RemoveFromLeashedEntitiesRequestComponent const, ::LeashedEntitiesComponent> view,
-    ::EntityModifier<::LeashedEntitiesComponent> leashedEntitiesComponentModifier
 );
 // NOLINTEND
 

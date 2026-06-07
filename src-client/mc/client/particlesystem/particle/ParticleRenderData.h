@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/BrightnessPair.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Matrix.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/math/Vec4.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/world/level/block/BrightnessPair.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -77,9 +77,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ParticleRenderData();
+
+    MCAPI ushort addMaterial(::mce::MaterialPtr const& materialPtr);
+
     MCAPI ushort addTexture(::PBRTexturePtrs const& texturePtr, ::std::optional<::MERSUniformData> const& mersUniform);
 
+    MCAPI void reset();
+
     MCAPI ~ParticleRenderData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

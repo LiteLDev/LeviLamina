@@ -35,8 +35,6 @@ public:
 
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
     makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType) /*override*/;
-
-    virtual ~ObjectFactory() /*override*/ = default;
     // NOLINTEND
 
 public:

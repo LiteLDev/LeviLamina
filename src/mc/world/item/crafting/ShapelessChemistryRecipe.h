@@ -20,25 +20,12 @@ public:
 
     virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
         /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~ShapelessChemistryRecipe() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ShapelessChemistryRecipe() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& ID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -46,8 +46,6 @@ public:
     // NOLINTBEGIN
     virtual void
     render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
-
-    virtual ~ChestRenderer() /*override*/;
     // NOLINTEND
 
 public:
@@ -75,12 +73,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

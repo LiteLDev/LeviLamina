@@ -14,9 +14,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnchantingScreenControllerProxy();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EnchantingScreenControllerProxy() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit EnchantingScreenControllerProxy(::EnchantingScreenControllerProxyCallbacks& callbacks);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::EnchantingScreenControllerProxyCallbacks& callbacks);
     // NOLINTEND
 
 public:

@@ -64,8 +64,6 @@ public:
         virtual void init() /*override*/;
 
         virtual bool tick() /*override*/;
-
-        virtual ~OneshotStage() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -95,8 +93,6 @@ public:
         virtual void init() /*override*/;
 
         virtual bool tick() /*override*/;
-
-        virtual ~PollingStage() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -125,8 +121,6 @@ public:
         virtual void init() /*override*/;
 
         virtual bool tick() /*override*/;
-
-        virtual ~SleepStage() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -156,8 +150,6 @@ public:
         virtual void init() /*override*/;
 
         virtual bool tick() /*override*/;
-
-        virtual ~WaitForCallbackStage() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -186,8 +178,6 @@ public:
         virtual void init() /*override*/;
 
         virtual bool tick() /*override*/;
-
-        virtual ~WaitForSignalStage() /*override*/ = default;
         // NOLINTEND
 
     public:

@@ -19,8 +19,6 @@ public:
         /*override*/;
 
     virtual bool shouldGeneratePlayerIndex() const /*override*/;
-
-    virtual ~ServerGameplayUserManagerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:

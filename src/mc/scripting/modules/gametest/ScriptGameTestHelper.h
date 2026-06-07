@@ -247,6 +247,9 @@ public:
     );
 
     MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
+    setFluidContainer(::Vec3 const& position, int type);
+
+    MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
     setFluidContainer(::Vec3 const& position, ::ScriptModuleMinecraft::ScriptFluidType type);
 
     MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
@@ -346,12 +349,24 @@ public:
 
     MCAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
     worldPosition(::Vec3 const& relativePos) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ~ScriptGameTestHelper();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

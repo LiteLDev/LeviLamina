@@ -15,16 +15,13 @@ class InfestedMobEffect : public ::MobEffect {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const
-        /*override*/;
-
-    virtual ~InfestedMobEffect() /*override*/ = default;
+    virtual void onActorHurt(::Actor& target, int, ::ActorDamageSource const&, float) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
+    MCAPI void $onActorHurt(::Actor& target, int, ::ActorDamageSource const&, float) const;
 
 
     // NOLINTEND

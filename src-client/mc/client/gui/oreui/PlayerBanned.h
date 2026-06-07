@@ -15,17 +15,7 @@ MCAPI ::std::string composeRoute(::Social::UserBanDetails const& ban);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> BAN_REASON();
-
-MCAPI ::std::add_lvalue_reference_t<char const[]> BAN_TYPE();
-
-MCAPI ::std::add_lvalue_reference_t<char const[]> IS_HOURS();
-
-MCAPI ::std::add_lvalue_reference_t<char const[]> IS_PERMANENT();
-
 MCAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
-
-MCAPI ::std::add_lvalue_reference_t<char const[]> TIME_REMAINING();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::PlayerBanned

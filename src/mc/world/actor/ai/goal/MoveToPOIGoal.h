@@ -41,7 +41,7 @@ public:
 
     virtual void stop() /*override*/;
 
-    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+    virtual bool isValidTarget(::BlockSource&, ::BlockPos const&) /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
@@ -50,14 +50,12 @@ public:
     virtual ::Vec3 _getTargetPosition() const /*override*/;
 
     virtual ::std::weak_ptr<::POIInstance> _getOwnedPOI(::POIType type) const;
-
-    virtual ~MoveToPOIGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToPOIGoal(::Mob& mob, float speedModifier, ::POIType poiType, float coolddownTimeout);
+    MCAPI MoveToPOIGoal(::Mob& mob, ::POIType poiType);
 
     MCAPI bool _canReachPOI(::Vec3 const& pos, float radiusSqr, bool usingBoundingBox);
 
@@ -69,13 +67,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedModifier, ::POIType poiType, float coolddownTimeout);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::Mob& mob, ::POIType poiType);
     // NOLINTEND
 
 public:
@@ -87,7 +79,7 @@ public:
 
     MCAPI void $stop();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI bool $isValidTarget(::BlockSource&, ::BlockPos const&);
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
 

@@ -39,20 +39,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RenderMetadata(::dragon::RenderMetadata const&);
-
-    MCAPI ~RenderMetadata();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::dragon::RenderMetadata const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

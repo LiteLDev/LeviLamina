@@ -12,10 +12,9 @@
 class PackLoadContext;
 class SemVersion;
 struct ComponentItemDataAll_Latest;
-struct ComponentItemData_Legacy;
 struct ComponentItemData_v1_26_0;
-struct LegacyEventItemComponentData;
 namespace Json { class Value; }
+namespace SharedTypes::Legacy { struct ComponentItemData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -29,7 +28,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
     ::ll::TypedStorage<8, 280, ::CerealComponentItemDataLoader>                             mLoader;
-    ::ll::TypedStorage<8, 8, ::PackLoadContext&>                                            mPackLoadContext;
+    ::ll::TypedStorage<8, 8, ::PackLoadContext const&>                                      mPackLoadContext;
     ::ll::TypedStorage<1, 1, bool>                                                          mIsServer;
     ::ll::TypedStorage<8, 64, ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)>> mValidatorFn;
     // NOLINTEND
@@ -45,7 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI ComponentItemDataLoader(
         ::SemVersion const&                                                      documentVersion,
-        ::PackLoadContext&                                                       packLoadContext,
+        ::PackLoadContext const&                                                 packLoadContext,
         bool                                                                     isServer,
         ::cereal::ReflectionCtx const&                                           ctx,
         ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn
@@ -53,9 +52,7 @@ public:
 
     MCAPI ::Puv::LoadResult<::ComponentItemData_v1_26_0> _parseCereal(::Json::Value const& input) const;
 
-    MCAPI ::std::optional<::LegacyEventItemComponentData> _parseEvents(::Json::Value const& input) const;
-
-    MCAPI ::std::pair<::ComponentItemData_Legacy, bool> _parseLegacyComponents(::Json::Value input) const;
+    MCAPI ::std::pair<::SharedTypes::Legacy::ComponentItemData, bool> _parseLegacyComponents(::Json::Value input) const;
 
     MCAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest> load(::Json::Value const& input) const;
 
@@ -63,11 +60,21 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool validateResult(
+        ::Puv::LoadResult<::ComponentItemDataAll_Latest> const& result,
+        ::std::string const&                                    itemFullName,
+        ::SemVersion const&                                     documentVersion
+    );
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::SemVersion const&                                                      documentVersion,
-        ::PackLoadContext&                                                       packLoadContext,
+        ::PackLoadContext const&                                                 packLoadContext,
         bool                                                                     isServer,
         ::cereal::ReflectionCtx const&                                           ctx,
         ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn

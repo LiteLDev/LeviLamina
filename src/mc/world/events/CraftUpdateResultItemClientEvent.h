@@ -19,29 +19,11 @@ public:
     ::ll::TypedStorage<8, 128, ::ItemInstance const>      mItem;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    CraftUpdateResultItemClientEvent& operator=(CraftUpdateResultItemClientEvent const&);
-    CraftUpdateResultItemClientEvent();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CraftUpdateResultItemClientEvent(::CraftUpdateResultItemClientEvent const&);
-
     MCAPI ~CraftUpdateResultItemClientEvent();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::CraftUpdateResultItemClientEvent const&);
 #endif
     // NOLINTEND
 

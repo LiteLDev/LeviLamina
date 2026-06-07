@@ -65,14 +65,6 @@ public:
 
     MCAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCFOLD void setEntityOffset(::std::optional<::std::array<float, 3>> opt);
-
-    MCFOLD void setHorizontalRotationLimit(::std::optional<::std::array<float, 2>> opt);
-
-    MCFOLD void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
-
-    MCFOLD void setViewOffset(::std::optional<::std::array<float, 2>> opt);
-
     MCAPI ~CameraPreset();
     // NOLINTEND
 

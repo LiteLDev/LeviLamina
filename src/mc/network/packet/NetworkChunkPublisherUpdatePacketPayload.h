@@ -20,16 +20,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NetworkChunkPublisherUpdatePacketPayload& operator=(NetworkChunkPublisherUpdatePacketPayload const&);
-    NetworkChunkPublisherUpdatePacketPayload(NetworkChunkPublisherUpdatePacketPayload const&);
-    NetworkChunkPublisherUpdatePacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NetworkChunkPublisherUpdatePacketPayload& operator=(::NetworkChunkPublisherUpdatePacketPayload&&);
-
     MCAPI ~NetworkChunkPublisherUpdatePacketPayload();
     // NOLINTEND
 

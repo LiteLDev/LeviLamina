@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListener.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -56,8 +57,6 @@ public:
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
-
-    virtual ~SculkShriekerBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,7 +74,15 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
 
+    MCAPI static ::SculkShriekerBlockActor* tryGet(::BlockSource& region, ::BlockPos blockPos);
+
     MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::BlockActorType const& TypeId();
     // NOLINTEND
 
 public:

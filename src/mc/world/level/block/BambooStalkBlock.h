@@ -5,8 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/LeafSize.h"
-#include "mc/world/level/block/StalkThickness.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,15 +13,18 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Vec3;
-struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
+struct BlockGraphicsModeChangeContext;
 // clang-format on
 
 class BambooStalkBlock : public ::BlockType {
+public:
+    // prevent constructor by default
+    BambooStalkBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,14 +37,12 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const
         /*override*/;
 
-    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
+    virtual bool mayConsumeFertilizer(::BlockSource&) const /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
 
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
@@ -54,28 +53,34 @@ public:
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~BambooStalkBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BambooStalkBlock(::std::string const& nameId, int id);
+
     MCAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::LeafSize _getLeafSize(::Block const& block) const;
-
-    MCAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
-#endif
+    MCAPI void _placeBamboo(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int getMaxHeight(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -93,12 +98,11 @@ public:
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor*, ::FertilizerType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource&) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 
@@ -109,8 +113,6 @@ public:
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

@@ -30,19 +30,19 @@ MCAPI ::TickingSystemWithInfo createPassengerSystem();
 MCAPI ::TickingSystemWithInfo createVehicleSystem();
 
 MCAPI void tickPassengerJumpTriggerSystem(
-    ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
-    ::StrictEntityContext const&      context,
-    ::MoveInputComponent const&       moveInputComponent,
-    ::PassengerComponent const&       passengerComponent,
-    ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
-    ::VanillaClientGameplayComponent& state,
+    ::entt::type_list<::Include<::PlayerInputRequestComponent>> context,
+    ::StrictEntityContext const&                                moveInputComponent,
+    ::MoveInputComponent const&                                 passengerComponent,
+    ::PassengerComponent const&                                 jumpRidingScaleComponent,
+    ::JumpRidingScaleComponent&                                 state,
+    ::VanillaClientGameplayComponent&                           vehicleView,
     ::ViewT<
         ::StrictEntityContext,
         ::VehicleComponent const,
         ::ActorDataFlagComponent const,
         ::VehicleInputIntentComponent,
         ::Optional<::OnGroundFlagComponent const>,
-        ::Optional<::PassengerComponent const>> const& vehicleView
+        ::Optional<::PassengerComponent const>> const&
 );
 // NOLINTEND
 

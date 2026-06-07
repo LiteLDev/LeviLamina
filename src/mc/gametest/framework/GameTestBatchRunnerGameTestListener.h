@@ -35,8 +35,6 @@ public:
     virtual void onTestFailed(::gametest::BaseGameTestInstance&) /*override*/;
 
     virtual void onTestRetryFinished(::gametest::BaseGameTestInstance&) /*override*/;
-
-    virtual ~GameTestBatchRunnerGameTestListener() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -31,17 +31,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MobDescriptor(MobDescriptor const&);
-    MobDescriptor();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor&&);
-
-    MCAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor const&);
-
     MCAPI ~MobDescriptor();
     // NOLINTEND
 

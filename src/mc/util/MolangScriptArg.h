@@ -28,6 +28,8 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+struct MolangActorPtr;
+struct MolangItemStackBasePtr;
 // clang-format on
 
 struct MolangScriptArg {
@@ -76,34 +78,40 @@ public:
 
 public:
     // prevent constructor by default
-    MolangScriptArg();
+    MolangScriptArg& operator=(MolangScriptArg const&);
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MolangScriptArg();
+
+    MCAPI MolangScriptArg(::MolangScriptArg&& other);
+
     MCAPI MolangScriptArg(::MolangScriptArg const& other);
 
     MCAPI MolangScriptArg(float value);
 
-    MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
+    MCAPI void _setPOD(float value);
 
-#ifdef LL_PLAT_S
-    MCAPI ::HashedString const& getName() const;
+#ifdef LL_PLAT_C
+    MCAPI void _setPOD(::MolangActorPtr value);
 #endif
+
+    MCAPI void _setPOD(::MolangItemStackBasePtr value);
+
+    MCAPI void _setPOD(uint64 value);
+
+    MCAPI ::HashedString const& getName() const;
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
-    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const& other);
-
     MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
-
-#ifdef LL_PLAT_C
-    MCAPI ::MolangScriptArg& operator=(::MolangOffsetPlaceholder&& value);
-#endif
 
     MCAPI bool operator==(::MolangScriptArg const& rhs) const;
 
     MCAPI void reportGetFailure() const;
+
+    MCFOLD void setType(::MolangScriptArgType type);
 
     MCAPI ~MolangScriptArg();
     // NOLINTEND
@@ -129,6 +137,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::MolangScriptArg&& other);
+
     MCAPI void* $ctor(::MolangScriptArg const& other);
 
     MCAPI void* $ctor(float value);
@@ -137,6 +149,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

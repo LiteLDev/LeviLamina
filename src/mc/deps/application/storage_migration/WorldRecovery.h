@@ -34,17 +34,35 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnk3d5990;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         RecoveryResult& operator=(RecoveryResult const&);
         RecoveryResult(RecoveryResult const&);
         RecoveryResult();
 
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        RecoveryResult& operator=(RecoveryResult const&);
+        RecoveryResult();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
+        MCNAPI RecoveryResult(::Bedrock::WorldRecovery::RecoveryResult const&);
+
         MCNAPI ~RecoveryResult();
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(::Bedrock::WorldRecovery::RecoveryResult const&);
 #endif
         // NOLINTEND
 
@@ -106,8 +124,6 @@ public:
         ) = 0;
 
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const = 0;
-
-    virtual ~WorldRecovery() /*override*/ = default;
     // NOLINTEND
 
 public:

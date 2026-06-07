@@ -20,6 +20,7 @@ struct HasLightweightFamilyFlagComponent;
 struct LavaTravelFlagComponent;
 struct MobTravelComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class LavaMoveSystem {
@@ -37,4 +38,10 @@ public:
         ::StateVectorComponent,
         ::Optional<::CanStandOnSnowFlagComponent const>,
         ::Optional<::HasLightweightFamilyFlagComponent const>>;
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::TickingSystemWithInfo createLavaMoveSystem();
+    // NOLINTEND
 };

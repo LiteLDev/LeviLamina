@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/network/realms/FailureReason.h"
+#include "mc/client/realms/PlayerRoleActions.h"
 #include "mc/client/world/JoinRealmWorldResult.h"
 #include "mc/client/world/JoinServerWorldResult.h"
 #include "mc/client/world/RealmWorldJoiner.h"
@@ -23,12 +24,15 @@ class IThirdPartyServerRepository;
 class ProgressHandler;
 class RealmsAPI;
 class ServerLocator;
+struct ExperienceConnectionData;
 struct IGameServerShutdown;
+struct PlayerJoinWorldContext;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Network { struct ServerID; }
 namespace OreUI { class Router; }
 namespace Parties { class IPartyProvider; }
 namespace Realms { struct RealmId; }
+namespace Realms { struct World; }
 namespace Social { class IUserManager; }
 namespace World { class ExternalServerWorldList; }
 namespace World { class FriendServerWorldList; }
@@ -44,7 +48,7 @@ class NetworkWorldJoiner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 472, ::World::RealmWorldJoiner>  mRealmWorldJoiner;
+    ::ll::TypedStorage<8, 528, ::World::RealmWorldJoiner>  mRealmWorldJoiner;
     ::ll::TypedStorage<8, 192, ::World::ServerWorldJoiner> mServerWorldJoiner;
     ::ll::TypedStorage<8, 8, ::World::ServerURLResolver>   mServerURLResolver;
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>             mRouter;
@@ -78,8 +82,17 @@ public:
         ::ui::ProgressScreenNavigation                                           progressScreenNavigation,
         ::OreUI::Router&                                                         router,
         ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider,
-        ::std::function<bool(::Realms::RealmId)>                                 isRealmJoinable
+        ::std::function<bool(::Realms::World, ::Realms::PlayerRoleActions)>      canUserDoRealmRoleAction
     );
+
+    MCAPI void cancelJoinRealmWorld();
+
+    MCFOLD ::std::string const getRealmErrorData();
+
+    MCAPI ::std::vector<::std::string> const getRealmXuidErrors();
+
+    MCAPI void
+    joinExperienceWorld(::ExperienceConnectionData const& connectionData, ::PlayerJoinWorldContext const& joinContext);
 
     MCAPI void joinExternalNetworkWorld(
         ::std::string const&                                                            id,
@@ -111,6 +124,8 @@ public:
         )>  onRealmJoined
     );
 
+    MCAPI void joinRealmWorldV2(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
+
     MCAPI void
     joinRealmWorldWithRoute(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
 
@@ -123,6 +138,12 @@ public:
     MCAPI ::Bedrock::PubSub::Subscription subscribeToJoinRealmWorldResultPublisher(
         ::std::function<void(::World::JoinRealmWorldResult)> onJoinRealmWorldResult
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> REALM_JOIN_ROUTE();
     // NOLINTEND
 
 public:
@@ -147,7 +168,7 @@ public:
         ::ui::ProgressScreenNavigation                                           progressScreenNavigation,
         ::OreUI::Router&                                                         router,
         ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider,
-        ::std::function<bool(::Realms::RealmId)>                                 isRealmJoinable
+        ::std::function<bool(::Realms::World, ::Realms::PlayerRoleActions)>      canUserDoRealmRoleAction
     );
     // NOLINTEND
 };

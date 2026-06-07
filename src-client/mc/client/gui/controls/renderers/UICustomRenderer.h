@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UICustomRenderer() = default;
+    virtual ~UICustomRenderer();
 
     virtual void preRenderSetup(::UIRenderContext& renderContext);
 
@@ -60,6 +60,32 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI UICustomRenderer();
+
+    MCAPI void setPropagatedAlpha(float a);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static float getZOffset(int zOrder);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $preRenderSetup(::UIRenderContext& renderContext);
@@ -82,7 +108,7 @@ public:
 
     MCFOLD void $collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
 
-    MCFOLD ::UIItemRenderInfo $getItemRenderInfo() const;
+    MCAPI ::UIItemRenderInfo $getItemRenderInfo() const;
     // NOLINTEND
 
 public:

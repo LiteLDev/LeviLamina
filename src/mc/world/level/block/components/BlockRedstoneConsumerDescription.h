@@ -9,6 +9,7 @@
 // clang-format off
 class BlockComponentStorage;
 struct BlockRedstoneConsumerConstructionOptions;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class BlockRedstoneConsumerDescription : public ::BlockComponentDescription {
@@ -35,14 +36,18 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockRedstoneConsumerDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockRedstoneConsumerDescription(::BlockRedstoneConsumerConstructionOptions constructionOptions);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -55,12 +60,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockRedstoneConsumerConstructionOptions constructionOptions);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

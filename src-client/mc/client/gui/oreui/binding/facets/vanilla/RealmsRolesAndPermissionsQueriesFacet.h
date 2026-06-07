@@ -51,6 +51,8 @@ public:
         ::std::shared_ptr<::Realms::RealmsRolesAndPermissions> rolesAndPermissions
     );
 
+    MCAPI void _updateState();
+
     MCFOLD ::std::vector<::Realms::PlayerRoleWithActionsList> const& getCurrentUserRolesAndActionsForAllRealms() const;
 
     MCFOLD ::std::vector<::Realms::PlayerRoleActions> const& getSelectedUserActions() const;

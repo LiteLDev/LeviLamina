@@ -6,6 +6,7 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/server/commands/CommandSelectorResults.h"
 #include "mc/world/actor/selectors/ActorSelectorType.h"
 
 // auto generated forward declare list
@@ -13,6 +14,7 @@
 class Actor;
 class Dimension;
 class Level;
+class Player;
 struct ActorSelectorArgs;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorIterator; }
@@ -40,6 +42,16 @@ public:
             ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
             ::Dimension*                                                             dimension
         );
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorIterator>
+    createActorIterator(::CommandSelectorResults<::Actor>&& actors, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerIterator>
+    createPlayerIterator(
+        ::CommandSelectorResults<::Player>&&  actors,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::Dimension const*                    dimension
+    );
 
     MCAPI static ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>,

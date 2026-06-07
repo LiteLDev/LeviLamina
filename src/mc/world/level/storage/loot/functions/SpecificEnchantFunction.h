@@ -11,7 +11,6 @@
 // clang-format off
 class ItemInstance;
 class ItemStack;
-class ItemStackBase;
 class LootItemCondition;
 class LootTableContext;
 class Random;
@@ -48,11 +47,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SpecificEnchantFunction() /*override*/ = default;
+    virtual ~SpecificEnchantFunction() /*override*/;
 
-    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
 
-    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
+    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&) /*override*/;
 
     virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
@@ -65,7 +64,7 @@ public:
         ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& enchantments
     );
 
-    MCAPI void _applyInner(::ItemStackBase& item, ::Random& random, ::LootTableContext&, bool allowNonVanilla);
+    MCFOLD ::std::vector<::SpecificEnchantFunction::EnchantInfo> const& getEnchantments() const;
     // NOLINTEND
 
 public:
@@ -85,11 +84,17 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&);
 
     MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 

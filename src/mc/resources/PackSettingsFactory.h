@@ -119,6 +119,9 @@ public:
 
     MCAPI ::PackSettings* _getWorldPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
+    MCAPI ::std::map<::std::string, ::std::variant<float, bool, ::std::string>>*
+    _getWorldUserOverrides(::std::string const& worldId, ::mce::UUID packId);
+
     MCAPI ::std::unique_ptr<::SharedTypes::v1_21_100::PackSettingsDefinition::Document>
     _loadUserOverridesFromFile(::Core::Path const& path) const;
 
@@ -137,6 +140,8 @@ public:
 #endif
 
     MCAPI ::PackSettings* getPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
+
+    MCAPI bool loadGlobalUserOverrides();
 
     MCAPI bool loadPerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
 

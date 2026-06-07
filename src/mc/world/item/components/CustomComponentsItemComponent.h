@@ -8,7 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class SemVersion;
 struct ItemCustomComponentData;
+namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace SharedTypes::v1_21_60 { struct CustomComponentsItemComponent; }
 // clang-format on
 
@@ -24,23 +26,23 @@ public:
     CustomComponentsItemComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CustomComponentsItemComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CustomComponentsItemComponent(
         ::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component
     );
+
+    MCAPI void finalize(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache);
+
+    MCFOLD ::std::vector<::ItemCustomComponentData> const& getComponents() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::HashedString const& getIdentifier();
+
+    MCFOLD static ::SemVersion getV2ReleaseVersion();
     // NOLINTEND
 
 public:

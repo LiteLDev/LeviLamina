@@ -34,8 +34,18 @@ public:
     virtual void initializeActor(::Actor& actor) /*override*/;
 
     virtual void reloadActor(::Actor& actor) /*override*/;
+    // NOLINTEND
 
-    virtual ~AddActorEntityProxy() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit AddActorEntityProxy(::Dimension& dimension);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Dimension& dimension);
     // NOLINTEND
 
 public:

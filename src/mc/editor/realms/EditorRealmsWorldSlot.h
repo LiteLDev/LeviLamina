@@ -14,16 +14,13 @@ public:
 
 public:
     // prevent constructor by default
+    EditorRealmsWorldSlot& operator=(EditorRealmsWorldSlot const&);
     EditorRealmsWorldSlot(EditorRealmsWorldSlot const&);
     EditorRealmsWorldSlot();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Services::EditorRealmsWorldSlot& operator=(::Editor::Services::EditorRealmsWorldSlot&&);
-
-    MCNAPI ::Editor::Services::EditorRealmsWorldSlot& operator=(::Editor::Services::EditorRealmsWorldSlot const&);
-
 #ifdef LL_PLAT_C
     MCNAPI ~EditorRealmsWorldSlot();
 #endif

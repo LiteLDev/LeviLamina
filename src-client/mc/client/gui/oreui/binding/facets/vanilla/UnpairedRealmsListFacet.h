@@ -32,8 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~UnpairedRealmsListFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

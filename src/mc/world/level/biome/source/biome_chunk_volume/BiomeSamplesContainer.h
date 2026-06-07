@@ -22,15 +22,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BiomeSamplesContainer();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BiomeSamplesContainer();
+    MCAPI BiomeSamplesContainer(::BlockPos chunkMin, short chunkHeight);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::BlockPos chunkMin, short chunkHeight);
     // NOLINTEND
 };
 

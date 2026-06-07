@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 #include "mc/world/actor/spawn_category/Type.h"
 #include "mc/world/level/SpawnBlockRequirements.h"
 #include "mc/world/level/chunk/LevelChunk.h"
-#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,10 +16,13 @@ class Biome;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
+class Experiments;
+class IMinecraftEventing;
 class IRandom;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
+class Level;
 class LevelChunk;
 class LevelChunkVolumeData;
 class Mob;
@@ -134,11 +137,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool findNextSpawnBlockUnder(
-        ::BlockSource const&            region,
-        ::BlockPos&                     pos,
-        ::std::optional<::MaterialType> materialToSpawnIn,
-        ::SpawnBlockRequirements        spawnBlockRequirements
+        ::BlockSource const&                                   region,
+        ::BlockPos&                                            pos,
+        ::std::optional<::SharedTypes::v1_26_20::MaterialType> materialToSpawnIn,
+        ::SpawnBlockRequirements                               spawnBlockRequirements
     );
+
+    MCAPI static ::std::unique_ptr<::Spawner>
+    from(::Level& level, ::Experiments const& experiments, ::IMinecraftEventing& eventing);
 
     MCAPI static bool isSpawnPositionOk(
         ::MobSpawnRules const& rules,
@@ -151,7 +157,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -192,11 +198,5 @@ public:
     MCFOLD void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

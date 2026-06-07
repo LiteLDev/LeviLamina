@@ -4,22 +4,38 @@
 
 // auto generated inclusion list
 #include "mc/resources/PackError.h"
+#include "mc/resources/PackParseErrorType.h"
 
 class PackLoadError : public ::PackError {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PackLoadError();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unordered_map<int, ::std::string> const& getLocErrorMessageMap() const /*override*/;
 
     virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
-
-    virtual ~PackLoadError() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI PackLoadError(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
+#endif
     // NOLINTEND
 
 public:

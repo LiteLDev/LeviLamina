@@ -19,13 +19,24 @@ class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Mob;
+class Random;
 class Vec3;
 struct ActorUniqueID;
+struct EnchantResult;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 namespace EnchantUtils {
 // functions
 // NOLINTBEGIN
+MCAPI void appendEnchantToFormattedText(
+    ::Enchant::Type                      type,
+    ::std::string_view                   enchantName,
+    ::Bedrock::Safety::RedactableString& formattedEnchantmentText
+);
+
+MCAPI bool applyEnchant(::ItemStackBase& out, ::EnchantmentInstance const& enchant, bool allowNonVanilla);
+
 MCAPI bool applyEnchant(::ItemStackBase& out, ::Enchant::Type type, int level, bool allowNonVanilla);
 
 MCAPI int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
@@ -33,10 +44,17 @@ MCAPI int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, boo
 MCAPI float
 calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const& target, float armorFraction);
 
+MCAPI ::EnchantResult
+canEnchant(::ItemStackBase const& item, ::EnchantmentInstance const& enchant, bool allowNonVanilla);
+
+MCAPI ::EnchantResult canEnchant(::ItemStackBase const& item, ::Enchant::Type type, int level, bool allowNonVanilla);
+
 MCAPI int
 combineEnchantedItems(::ItemStack const& first, ::ItemStack const& second, ::ItemStack& out, bool bookEnchant);
 
 MCAPI void doPostHurtEffects(::Mob& victim, ::Mob& attacker);
+
+MCAPI void doPostItemHurtActorEffects(::Actor& victim, ::Actor& attacker, ::ItemEnchants const& preHurtEnchantments);
 
 MCAPI void doPostPiercingAttackEffects(::Actor& attacker);
 
@@ -59,6 +77,10 @@ MCAPI int getEnchantLevel(::Enchant::Type enchantType, ::ItemStackBase const& st
 
 MCAPI ::std::string getEnchantNameAndLevel(::Enchant::Type id, int level);
 
+#ifdef LL_PLAT_C
+MCAPI ::std::string getEnchantStringId(::Enchant::Type id);
+#endif
+
 MCAPI ::std::vector<::Vec3> getEnchantingTablePositions(::BlockSource& source, ::Vec3 const& pos);
 
 MCAPI ::Enchant::Type getEnchantmentId(::HashedString const& stringId);
@@ -71,7 +93,23 @@ MCAPI ::ItemStack const& getRandomDamagedItemWithMending(::Mob const& equipped);
 
 MCAPI ::ItemStack const& getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
 
+MCAPI ::std::string getRandomName();
+
+MCAPI int getTotalProtectionLevels(::Enchant::Type type, ::Mob const& target);
+
+MCAPI int getTradeableRandomEnchantIndex(::Random& random);
+
+MCAPI bool hasCurse(::ItemStackBase const& item);
+
 MCAPI bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
+
+MCAPI bool isCurse(::Enchant::Type enchantType);
+
+MCFOLD void randomlyEnchant(::ItemInstance& out, int cost, int valueBuff, bool treasure);
+
+MCFOLD void randomlyEnchant(::ItemStack& out, int cost, int valueBuff, bool treasure);
+
+MCAPI void removeEnchants(::ItemStack& out);
 
 MCAPI ::ItemEnchants selectEnchantments(::Item const* item, int enchantCost, int valueBuff, bool treasure);
 // NOLINTEND

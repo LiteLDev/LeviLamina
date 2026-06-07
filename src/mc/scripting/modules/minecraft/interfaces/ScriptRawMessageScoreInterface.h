@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptRawMessageScoreInterface& operator=(ScriptRawMessageScoreInterface const&);
     ScriptRawMessageScoreInterface(ScriptRawMessageScoreInterface const&);
     ScriptRawMessageScoreInterface();
 
@@ -27,9 +26,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
-    operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
 
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
+    MCFOLD bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
 
     MCAPI ~ScriptRawMessageScoreInterface();
     // NOLINTEND

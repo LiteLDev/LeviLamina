@@ -52,11 +52,11 @@ public:
 
     virtual bool handlesPendingWrites() const /*override*/;
 
-    virtual void informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack) /*override*/;
+    virtual void informPendingWriteSize(uint64, bool const) /*override*/;
 
     virtual uint64 estimatePendingWriteDiskSize(uint64 rawFileSize) const /*override*/;
 
-    virtual void informStorageAreaCopy(uint64 storageAreaSize) /*override*/;
+    virtual void informStorageAreaCopy(uint64) /*override*/;
 
     virtual ::Core::Result setSaveDataIcon(::Core::PathView) /*override*/;
 
@@ -66,7 +66,7 @@ public:
 
     virtual void enableFlushToDisk(bool) /*override*/;
 
-    virtual bool checkCorrupt(bool handleCorruption) /*override*/;
+    virtual bool checkCorrupt(bool) /*override*/;
 
     virtual void _onTeardown() /*override*/;
     // NOLINTEND

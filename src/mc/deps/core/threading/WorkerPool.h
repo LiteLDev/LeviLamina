@@ -6,14 +6,15 @@
 #include "mc/deps/core/container/MovePriorityQueue.h"
 #include "mc/deps/core/threading/BackgroundTaskBase.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/profiler/ThreadFrameType.h"
 #include "mc/platform/brstd/flat_set.h"
 
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
 class Scheduler;
+struct WorkerPoolConfig;
 namespace Bedrock::Threading { class Mutex; }
-namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
 class WorkerPool : public ::Bedrock::EnableNonOwnerReferences {
@@ -50,16 +51,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorkerPool(::std::string name, ::Scheduler& owner);
+    MCNAPI WorkerPool(::std::string_view name, ::Scheduler& owner);
 
-    MCNAPI WorkerPool(
-        ::std::string                                 name,
-        uint64                                        threadCount,
-        ::Bedrock::Threading::OSThreadPriority const& priority,
-        ::std::optional<uint64>                       coreAffinityMask,
-        bool                                          suppressWorkerProfiling,
-        ::std::optional<int>                          idealCore
-    );
+    MCNAPI
+    WorkerPool(::std::string_view name, ::Core::Profile::ThreadFrameType frameType, ::WorkerPoolConfig const& config);
 
     MCNAPI bool _checkPendingWork();
 
@@ -68,6 +63,8 @@ public:
 #endif
 
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
+
+    MCNAPI uint64 size() const;
 
     MCNAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
     // NOLINTEND
@@ -92,16 +89,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, ::Scheduler& owner);
+    MCNAPI void* $ctor(::std::string_view name, ::Scheduler& owner);
 
-    MCNAPI void* $ctor(
-        ::std::string                                 name,
-        uint64                                        threadCount,
-        ::Bedrock::Threading::OSThreadPriority const& priority,
-        ::std::optional<uint64>                       coreAffinityMask,
-        bool                                          suppressWorkerProfiling,
-        ::std::optional<int>                          idealCore
-    );
+    MCNAPI void*
+    $ctor(::std::string_view name, ::Core::Profile::ThreadFrameType frameType, ::WorkerPoolConfig const& config);
     // NOLINTEND
 
 public:

@@ -48,26 +48,25 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Test& operator=(Test const&);
-    Test();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-
-    virtual ~Test() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Test(::br::worldgen::processors::BlockRules::Test&&);
+    MCAPI Test();
 
-    MCAPI Test(::br::worldgen::processors::BlockRules::Test const&);
+    MCAPI explicit Test(::br::worldgen::processors::BlockRules::BlockMatch match);
+
+    MCAPI explicit Test(::br::worldgen::processors::BlockRules::BlockStateMatch match);
+
+    MCAPI explicit Test(::br::worldgen::processors::BlockRules::RandomBlockMatch match);
+
+    MCAPI explicit Test(::br::worldgen::processors::BlockRules::RandomBlockStateMatch match);
 
     MCAPI explicit Test(::br::worldgen::processors::BlockRules::TagMatch match);
     // NOLINTEND
@@ -75,17 +74,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::Test&&);
+    MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::Test const&);
+    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::BlockMatch match);
+
+    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::BlockStateMatch match);
+
+    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::RandomBlockMatch match);
+
+    MCAPI void* $ctor(::br::worldgen::processors::BlockRules::RandomBlockStateMatch match);
 
     MCAPI void* $ctor(::br::worldgen::processors::BlockRules::TagMatch match);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

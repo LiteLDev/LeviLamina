@@ -44,11 +44,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BlockChangedPendingOperation(::std::vector<::Editor::Transactions::BlockChangeIntentData>&& blocks);
+
     MCNAPI void _processBlockChangeIntent(
         ::BlockSource const&                                              region,
         ::Editor::Transactions::BlockChangeIntentData&                    blockIntentData,
         ::std::vector<::Editor::Transactions::BlockChangedOperationData>& changedBlocks
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::vector<::Editor::Transactions::BlockChangeIntentData>&& blocks);
     // NOLINTEND
 
 public:

@@ -85,18 +85,6 @@ public:
         PayloadFactory& operator=(PayloadFactory const&);
         PayloadFactory(PayloadFactory const&);
         PayloadFactory();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PayloadFactory();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PayloadPublisher {
@@ -178,6 +166,10 @@ public:
 
     virtual bool isCollectingMetrics() const /*override*/;
 
+    virtual void clearMetrics() /*override*/;
+
+    virtual void setCollectingMetrics(bool collecting) /*override*/;
+
     virtual ::std::vector<::std::pair<::std::string, ::Editor::Network::PayloadMetrics>> collectMetricsReport() const
         /*override*/;
 
@@ -237,8 +229,6 @@ public:
         char const*                                                              payloadName,
         ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
     );
-
-    MCNAPI ::Editor::Network::PayloadService::PayloadInfo* _findPayloadInfo(char const* payloadName);
 
     MCNAPI ::std::shared_ptr<::Editor::Network::INetworkPayload>
     _load(::std::string_view payloadName, ::std::string_view payloadRawData);
@@ -309,6 +299,10 @@ public:
     MCNAPI void $onReceivePayload(::EditorNetworkPacket const& packet);
 
     MCNAPI bool $isCollectingMetrics() const;
+
+    MCNAPI void $clearMetrics();
+
+    MCNAPI void $setCollectingMetrics(bool collecting);
 
     MCNAPI ::std::vector<::std::pair<::std::string, ::Editor::Network::PayloadMetrics>> $collectMetricsReport() const;
 

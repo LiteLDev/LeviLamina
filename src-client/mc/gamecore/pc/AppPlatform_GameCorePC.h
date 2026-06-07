@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AppPlatform_GameCorePC() /*override*/ = default;
+    virtual ~AppPlatform_GameCorePC() /*override*/;
 
     virtual void showKeyboard(
         ::std::string const& currentText,
@@ -61,9 +61,9 @@ public:
     virtual void hideKeyboard() /*override*/;
 
     virtual void updateTextEditBoxPosition(
-        ::RectangleArea const& controlPosition,
         ::RectangleArea const& selectionPosition,
-        float const            guiScale
+        ::RectangleArea const& guiScale,
+        float const
     ) /*override*/;
 
     virtual float getKeyboardHeight() const /*override*/;
@@ -118,7 +118,7 @@ public:
 
     virtual void share() const /*override*/;
 
-    virtual void shareFile(::Core::Path const& path, ::std::function<void(bool)> onCompletionCallback) /*override*/;
+    virtual void shareFile(::Core::Path const& path, ::std::function<void(bool)>) /*override*/;
 
     virtual void pickImage(::std::shared_ptr<::ImagePickingCallback> callback) /*override*/;
 
@@ -191,6 +191,8 @@ public:
         int                                            screenHeight,
         ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
     );
+
+    MCAPI void _initializeDataTransferManager();
     // NOLINTEND
 
 public:
@@ -204,6 +206,12 @@ public:
         int                                            screenHeight,
         ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -223,11 +231,8 @@ public:
 
     MCAPI void $hideKeyboard();
 
-    MCAPI void $updateTextEditBoxPosition(
-        ::RectangleArea const& controlPosition,
-        ::RectangleArea const& selectionPosition,
-        float const            guiScale
-    );
+    MCAPI void
+    $updateTextEditBoxPosition(::RectangleArea const& selectionPosition, ::RectangleArea const& guiScale, float const);
 
     MCAPI float $getKeyboardHeight() const;
 
@@ -281,7 +286,7 @@ public:
 
     MCAPI void $share() const;
 
-    MCAPI void $shareFile(::Core::Path const& path, ::std::function<void(bool)> onCompletionCallback);
+    MCAPI void $shareFile(::Core::Path const& path, ::std::function<void(bool)>);
 
     MCAPI void $pickImage(::std::shared_ptr<::ImagePickingCallback> callback);
 

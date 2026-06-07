@@ -31,12 +31,6 @@ public:
     ScriptWidgetComponentRenderPrimType_Ellipsoid();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrimType_Ellipsoid() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Ellipsoid const& other) const;

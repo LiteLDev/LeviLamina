@@ -14,6 +14,7 @@ class ResourceLocation;
 class UIComponent;
 class UIControl;
 class UICustomRenderer;
+class UIRenderContext;
 class UIScene;
 struct ScreenEvent;
 struct UIItemRenderInfo;
@@ -28,9 +29,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CustomRenderComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomRenderComponent() /*override*/ = default;
+    virtual ~CustomRenderComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
@@ -60,9 +65,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CustomRenderComponent(::UIControl& owner);
+
+    MCFOLD void preRenderSetup(::UIRenderContext& context);
+
+    MCAPI void render(::UIRenderContext& context, int pass);
+
+    MCAPI void renderCustom(::UIRenderContext& context, ::IClientInstance& client, int pass);
+
     MCFOLD void setRenderer(::std::shared_ptr<::UICustomRenderer> renderer);
 
+    MCAPI bool update(::UIRenderContext& context);
+
     MCAPI bool updateCustom(::IClientInstance& client, ::UIScene const& scene);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCFOLD static int getInvalidCustomId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UIControl& owner);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

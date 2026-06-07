@@ -26,7 +26,7 @@ public:
     };
 
     enum class ImmersiveReaderStatusCodes : schar {
-        StatusError   = -1,
+        StatusError   = 255,
         LaunchFailure = 0,
         RetryFailure  = 1,
         Launched      = 2,
@@ -75,17 +75,19 @@ public:
     MCAPI
     ImmersiveReaderScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::std::string readerText);
 
+    MCAPI ::std::string const& _getErrorText();
+
     MCAPI void _handleTokenResponse(::Bedrock::Http::Response& response);
 
     MCAPI void _launchReader();
 
     MCAPI void _registerBindings();
 
+    MCAPI void _registerEventHandlers();
+
     MCAPI void _requestToken();
 
     MCAPI bool _tokenNeedsRefresh();
-
-    MCAPI void _triggerError(::ImmersiveReaderScreenController::ImmersiveReaderErrorType errorType);
     // NOLINTEND
 
 public:

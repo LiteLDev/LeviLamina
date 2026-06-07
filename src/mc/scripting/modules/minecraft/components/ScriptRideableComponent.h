@@ -11,8 +11,10 @@
 // clang-format off
 class RideableComponent;
 class RideableDefinition;
+class WeakEntityRef;
 struct SeatDescription;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -21,14 +23,18 @@ namespace ScriptModuleMinecraft {
 class ScriptRideableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::RideableComponent, ::RideableDefinition> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptRideableComponent() /*override*/ = default;
-    // NOLINTEND
+    // prevent constructor by default
+    ScriptRideableComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptRideableComponent(
+        ::WeakEntityRef const&                entity,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  id
+    );
+
     MCAPI ::Scripting::Result_deprecated<bool>
     addPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
 
@@ -37,25 +43,17 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<void> ejectPassengers() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getControllingSeat() const;
-
     MCAPI ::Scripting::Result_deprecated<bool> getCrouchingSkipInteract() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getFamilyTypes() const;
-
-    MCAPI ::Scripting::Result_deprecated<::std::string> getInteractText() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> getPassengerCanInteract() const;
 
     MCAPI ::Scripting::Result_deprecated<float> getPassengerMaxWidth() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getPullInEntities() const;
-
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getRiders() const;
-
-    MCAPI ::Scripting::Result_deprecated<int> getSeatCount() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::vector<::SeatDescription>> getSeats() const;
     // NOLINTEND
@@ -64,6 +62,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
     // NOLINTEND
 
 public:

@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ItemStack;
 class Level;
 class Player;
@@ -23,18 +22,6 @@ struct UseTimeDepleted : public ::ItemComponent,
                              void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&),
                              ::Bedrock::PubSub::ThreadModel::SingleThreaded,
                              0> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~UseTimeDepleted() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

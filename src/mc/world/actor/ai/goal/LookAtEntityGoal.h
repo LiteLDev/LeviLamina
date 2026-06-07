@@ -7,12 +7,6 @@
 
 class LookAtEntityGoal : public ::LookAtActorGoal {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~LookAtEntityGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

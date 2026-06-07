@@ -4,6 +4,12 @@
 
 namespace RakNet {
 
-class RakThread {};
+class RakThread {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static int Create(uint (*start_address)(void*), void* arglist, int priority);
+    // NOLINTEND
+};
 
 } // namespace RakNet

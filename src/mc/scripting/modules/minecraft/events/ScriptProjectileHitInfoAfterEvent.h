@@ -33,16 +33,11 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptProjectileHitInfoAfterEvent& operator=(ScriptProjectileHitInfoAfterEvent const&);
     ScriptProjectileHitInfoAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProjectileHitInfoAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
-
-    MCAPI ScriptProjectileHitInfoAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
-
     MCAPI ScriptProjectileHitInfoAfterEvent(
         ::ProjectileHitEvent const&           projectileHitEvent,
         ::Scripting::WeakLifetimeScope const& scope
@@ -54,10 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent&&);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitInfoAfterEvent const&);
-
     MCAPI void* $ctor(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 

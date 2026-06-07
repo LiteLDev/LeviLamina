@@ -8,7 +8,7 @@ struct SetPipelineStateCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdbfb60;
+    ::ll::UntypedStorage<1, 0> mUnkdbfb60;
     // NOLINTEND
 
 public:

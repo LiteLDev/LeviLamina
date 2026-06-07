@@ -16,12 +16,6 @@ namespace SharedTypes::Legacy::BlockDescriptorSerializer {
 class BlockDescriptorProxyConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxyConstraint> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~BlockDescriptorProxyConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void validateValue(

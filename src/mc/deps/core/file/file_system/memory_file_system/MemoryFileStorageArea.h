@@ -19,6 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk39293d;
+    ::ll::UntypedStorage<8, 64> mUnkb0fa7e;
     // NOLINTEND
 
 public:
@@ -31,8 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
-
-    virtual ~MemoryFileStorageArea() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -34,6 +34,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptItemEventListener();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ItemUsedOnEvent const& itemEvent) /*override*/;
@@ -51,8 +55,24 @@ public:
     virtual ::EventResult onEvent(::ItemReleaseUseEvent const& itemEvent) /*override*/;
 
     virtual ::EventResult onEvent(::ItemStopUseEvent const& itemEvent) /*override*/;
+    // NOLINTEND
 
-    virtual ~ScriptItemEventListener() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptItemEventListener(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope const&                                            scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
     // NOLINTEND
 
 public:

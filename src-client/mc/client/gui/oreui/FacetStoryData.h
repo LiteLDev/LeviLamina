@@ -40,12 +40,13 @@ public:
 public:
     // prevent constructor by default
     FacetStoryData& operator=(FacetStoryData const&);
-    FacetStoryData(FacetStoryData const&);
     FacetStoryData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FacetStoryData(::OreUI::RealmsStories::FacetStoryData const&);
+
     MCAPI FacetStoryData(::OreUI::RealmsStories::FacetStoryData&&);
 
     MCAPI FacetStoryData(
@@ -112,6 +113,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::RealmsStories::FacetStoryData const&);
+
     MCAPI void* $ctor(::OreUI::RealmsStories::FacetStoryData&&);
 
     MCAPI void* $ctor(

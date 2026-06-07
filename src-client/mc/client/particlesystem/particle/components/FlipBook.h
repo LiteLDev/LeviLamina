@@ -29,8 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeFromData(::SharedTypes::v1_20_80::FlipBook& data);
-
     MCAPI void upgradeToSharedTypes(::SharedTypes::v1_20_80::FlipBook& data);
     // NOLINTEND
 };

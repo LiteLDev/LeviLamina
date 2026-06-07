@@ -11,9 +11,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class IScriptDedicatedServerUtils;
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
+class IScriptDedicatedServerUtils;
 // clang-format on
 
 struct ScriptSettings {

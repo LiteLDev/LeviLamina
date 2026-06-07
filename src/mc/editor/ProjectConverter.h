@@ -27,21 +27,7 @@ public:
     // clang-format on
 
     // ProjectConverter inner types define
-    struct ExportConversionData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkd2cc4b;
-        ::ll::UntypedStorage<8, 8>  mUnk407f1d;
-        ::ll::UntypedStorage<8, 16> mUnkd2600a;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ExportConversionData& operator=(ExportConversionData const&);
-        ExportConversionData(ExportConversionData const&);
-        ExportConversionData();
-    };
+    struct ExportConversionData {};
 
 public:
     // member variables
@@ -102,6 +88,8 @@ public:
     ) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> _getLevelFolder(::std::string const& levelId) const;
+
+    MCNAPI ::std::string _getLevelIdFromFolderPath(::Core::PathBuffer<::std::string> const& levelFolder) const;
     // NOLINTEND
 
 public:

@@ -7,22 +7,6 @@
 
 namespace Bedrock::Threading {
 
-class Mutex : public ::Bedrock::Threading::ZeroInit, public ::std::mutex {
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI Mutex();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
-    // NOLINTEND
-};
+class Mutex : public ::Bedrock::Threading::ZeroInit, public ::std::mutex {};
 
 } // namespace Bedrock::Threading

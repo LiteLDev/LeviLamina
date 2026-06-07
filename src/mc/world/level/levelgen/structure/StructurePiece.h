@@ -3,15 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/Direction.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockPos;
 class BlockSelector;
 class BlockSource;
 class LevelChunk;
+class PieceWeight;
 class Random;
 // clang-format on
 
@@ -76,7 +79,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::BlockPos _getWorldPos(int x, int y, int z);
+
     MCAPI void addTerrainAdjustmentToken(::std::shared_ptr<bool> token);
+
+    MCAPI void
+    generateAirBox(::BlockSource& region, ::BoundingBox const& chunkBB, int x0, int y0, int z0, int x1, int y1, int z1);
 
     MCAPI void generateBox(
         ::BlockSource&         region,
@@ -109,11 +117,43 @@ public:
         bool                 excludeSky
     );
 
+    MCAPI void generateUpperHalfSphere(
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB,
+        int                  x0,
+        int                  y0,
+        int                  z0,
+        int                  x1,
+        int                  y1,
+        int                  z1,
+        ::Block const&       fillBlock,
+        bool                 skipAir
+    );
+
     MCAPI ::Block const& getBlock(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+
+    MCFOLD ::Direction::Type getOrientation() const;
 
     MCAPI ushort getOrientationData(::Block const* block, ushort data);
 
+    MCAPI int getWorldY(int y);
+
     MCAPI bool isAboveGround(int x0, int y1, int z, ::BlockSource& region);
+
+    MCAPI bool isAir(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+
+    MCAPI bool isReplaceableBlock(::Block const& block);
+
+    MCAPI void maybeGenerateBlock(
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB,
+        ::Random&            random,
+        float                probability,
+        int                  x,
+        int                  y,
+        int                  z,
+        ::Block const&       block
+    );
 
     MCAPI void maybeGenerateBlockIfNotFloating(
         ::BlockSource&       region,
@@ -128,9 +168,18 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::StructurePiece*
+    findCollisionPiece(::std::vector<::std::unique_ptr<::StructurePiece>> const& pieces, ::BoundingBox const& box);
+
+    MCAPI static int getTotalWeight(::std::vector<::PieceWeight> const& pieceWeights);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

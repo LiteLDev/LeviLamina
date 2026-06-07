@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/resources/OffscreenCaptureData.h"
+
 struct UIMeshOffscreenCaptureDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdcf7f7;
-    ::ll::UntypedStorage<2, 4>  mUnkec6ca8;
+    ::ll::TypedStorage<8, 32, ::OffscreenCaptureData> mCaptureData;
+    ::ll::TypedStorage<2, 4, ::glm::vec<2, ushort>>   mRenderResolution;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UIMeshOffscreenCaptureDescription& operator=(UIMeshOffscreenCaptureDescription const&);
-    UIMeshOffscreenCaptureDescription(UIMeshOffscreenCaptureDescription const&);
-    UIMeshOffscreenCaptureDescription();
 };

@@ -12,7 +12,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Player;
 namespace BlockEvents { class ActorEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -20,6 +19,10 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CreakingHeartBlock : public ::ActorBlockBase<::RotatedPillarBlock> {
+public:
+    // prevent constructor by default
+    CreakingHeartBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,22 +40,28 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~CreakingHeartBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CreakingHeartBlock(::std::string const& nameId, int id);
+
     MCFOLD void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI bool isInPaleOakPillar(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI void onEvent(::BlockEvents::ActorEvent& event) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -70,9 +79,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar) const;
 
 
     // NOLINTEND

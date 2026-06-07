@@ -13,7 +13,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class IConstBlockSource;
 class ItemInstance;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -39,18 +38,14 @@ public:
         /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+    getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const
         /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual ~CoralFanHang() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -64,6 +59,12 @@ public:
     );
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool hasSupport(::Block const& supportingBlock, uchar face);
     // NOLINTEND
 
 public:
@@ -85,11 +86,9 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    $getOutline(::Block const& block, ::IConstBlockSource const& pos, ::BlockPos const& bufferValue, ::AABB&) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
     MCAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 

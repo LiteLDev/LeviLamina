@@ -57,8 +57,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    IntellisenseHandler();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit IntellisenseHandler(bool isDevConsole);
+
+    MCAPI void _clearMessages();
+
     MCAPI ::std::unique_ptr<::AutoCompleteInformation> _getAutoCompleteOptions(
         ::CommandOrigin const& origin,
         ::std::string const&   _cmdLine,
@@ -77,7 +85,12 @@ public:
         uint                         cursorPositionUnsafe
     );
 
-    MCAPI bool _isPlayerMention(::std::string const& in) const;
+    MCAPI void _handlePlayerIntellisense(
+        ::ClientInstanceScreenModel& screenModel,
+        ::CommandOrigin const&       origin,
+        ::std::string const&         currentMessage,
+        uint                         cursorPositionUnsafe
+    );
 
     MCAPI void _updateAutoCompleteMessages(
         ::AutoCompleteInformation const& autocompleteInfo,
@@ -89,7 +102,19 @@ public:
 
     MCAPI void _updateIntellisenseMessages(::CommandSyntaxInformation const& intellisenseInfo);
 
+    MCFOLD int getAutoCompleteGridSize() const;
+
+    MCAPI int getAutoCompleteItemId(int index);
+
+    MCFOLD ::std::vector<::IntellisenseHandler::AutoCompleteMessage> const& getAutoCompleteMessages() const;
+
     MCAPI ::std::string getAutoCompleteText(int index);
+
+    MCFOLD ::std::vector<::std::string> const& getIntellisenseMessages() const;
+
+    MCFOLD int getLastTabCompleteIndex() const;
+
+    MCFOLD bool getNeedsLayoutUpdate() const;
 
     MCAPI void handleClickComplete(
         ::std::weak_ptr<::ClientInstanceScreenModel> minecraftScreenModel,
@@ -111,12 +136,26 @@ public:
         bool                                         isSlashRequired
     );
 
+    MCAPI bool isAutoCompleteSuggestion(int gridIndex) const;
+
+    MCAPI void resetTabCompleteProgress();
+
+    MCFOLD void setAutoCompleteGridSize(int val);
+
+    MCFOLD void setNeedsLayoutUpdate(bool val);
+
     MCAPI void updateIntellisense(
         ::std::weak_ptr<::ClientInstanceScreenModel> minecraftScreenModel,
         ::std::string const&                         currentMessage
     );
 
     MCAPI ~IntellisenseHandler();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(bool isDevConsole);
     // NOLINTEND
 
 public:

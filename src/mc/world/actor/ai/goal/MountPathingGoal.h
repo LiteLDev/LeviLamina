@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class Actor;
 class Mob;
 // clang-format on
 
-class MountPathingGoal : public ::Goal {
+class MountPathingGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,8 +44,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~MountPathingGoal() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -7,7 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+struct ActorAddEffectEvent;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -25,17 +28,18 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptActorAddEffectBeforeEvent& operator=(ScriptActorAddEffectBeforeEvent const&);
-    ScriptActorAddEffectBeforeEvent(ScriptActorAddEffectBeforeEvent const&);
     ScriptActorAddEffectBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&
-    operator=(::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&&);
+    MCAPI ScriptActorAddEffectBeforeEvent(
+        ::ActorAddEffectEvent&                actorEffectAddedEvent,
+        ::Actor const&                        actor,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
-    MCAPI ~ScriptActorAddEffectBeforeEvent();
+    MCAPI void copyTo(::ActorAddEffectEvent& addEffectEvent);
     // NOLINTEND
 
 public:
@@ -45,9 +49,13 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(
+        ::ActorAddEffectEvent&                actorEffectAddedEvent,
+        ::Actor const&                        actor,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 };
 

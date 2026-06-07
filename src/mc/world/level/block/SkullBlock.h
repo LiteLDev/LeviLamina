@@ -24,7 +24,7 @@ class SkullBlock : public ::ActorBlock {
 public:
     // SkullBlock inner types define
     enum class SkullType : int {
-        Unset    = -1,
+        Unset    = 4294967295,
         Skeleton = 0,
         Wither   = 1,
         Zombie   = 2,
@@ -34,6 +34,10 @@ public:
         Piglin   = 6,
         Count    = 7,
     };
+
+public:
+    // prevent constructor by default
+    SkullBlock();
 
 public:
     // virtual functions
@@ -49,13 +53,13 @@ public:
         /*override*/;
 
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual ~SkullBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SkullBlock(::std::string const& nameId, int id);
+
     MCAPI bool checkMobSpawn(::Level& level, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -65,6 +69,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Block const& getFlattenedBlock(::Block const& block, ::BlockActor const& actor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

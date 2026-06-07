@@ -21,9 +21,11 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~BundleInteractionItemComponent() /*override*/ = default;
+#ifdef LL_PLAT_C
+    MCFOLD int getNumViewableSlots() const;
+#endif
     // NOLINTEND
 
 public:
@@ -35,7 +37,9 @@ public:
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
+#ifdef LL_PLAT_C
     MCAPI static ::HashedString const& getIdentifier();
+#endif
     // NOLINTEND
 
 public:

@@ -11,8 +11,8 @@ namespace Editor::Prefabs::PrefabDBTemplateLoader::v1 {
 // functions
 // NOLINTBEGIN
 MCNAPI bool operator==(
-    ::Editor::Prefabs::PrefabDBTemplateLoader::v1::StructureRef const& __P0,
-    ::Editor::Prefabs::PrefabDBTemplateLoader::v1::StructureRef const& __P1
+    ::Editor::Prefabs::PrefabDBTemplateLoader::v1::StructureRef const&,
+    ::Editor::Prefabs::PrefabDBTemplateLoader::v1::StructureRef const&
 );
 // NOLINTEND
 

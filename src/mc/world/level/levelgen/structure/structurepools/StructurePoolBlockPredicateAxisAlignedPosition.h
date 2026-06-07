@@ -26,23 +26,43 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructurePoolBlockPredicateAxisAlignedPosition();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
+    virtual bool test(::Block const&, ::IRandom&) const /*override*/;
 
     virtual bool test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const /*override*/;
 
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
+    // NOLINTEND
 
-    virtual ~StructurePoolBlockPredicateAxisAlignedPosition() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(
+        float minChance,
+        float maxChance,
+        int   mMinDistance,
+        int   mMaxDistance,
+        uchar axis
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(float minChance, float maxChance, int mMinDistance, int mMaxDistance, uchar axis);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $test(::Block const& block, ::IRandom& random) const;
+    MCFOLD bool $test(::Block const&, ::IRandom&) const;
 
     MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const;
 

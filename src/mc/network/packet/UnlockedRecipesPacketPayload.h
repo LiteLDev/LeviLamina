@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, ::UnlockedRecipesPacketPayload::PacketType> mPacketType;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>              mUnlockedRecipes;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~UnlockedRecipesPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -51,8 +51,6 @@ public:
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     ) /*override*/;
-
-    virtual ~DataDrivenRenderer_tempComponent_VexAdditionalRendering() /*override*/ = default;
     // NOLINTEND
 
 public:

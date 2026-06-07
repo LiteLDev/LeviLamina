@@ -81,6 +81,12 @@ public:
 
     MCAPI void
     registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
+
+    MCAPI void setShouldSendSleepMessage(bool shouldSend);
+
+    MCAPI bool shouldSendSleepMessage() const;
+
+    MCAPI void tickCheckToWakeUpPlayers();
     // NOLINTEND
 
 public:

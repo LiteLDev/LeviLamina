@@ -21,6 +21,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>             mIsRemoteFire;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    NpcComponentDialogueData();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -45,8 +52,22 @@ public:
     virtual ::Actor const* getActor() const /*override*/;
 
     virtual bool isRemoteFire() /*override*/;
+    // NOLINTEND
 
-    virtual ~NpcComponentDialogueData() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI NpcComponentDialogueData(::WeakEntityRef npc, bool isRemoteFire);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::WeakEntityRef npc, bool isRemoteFire);
+#endif
     // NOLINTEND
 
 public:

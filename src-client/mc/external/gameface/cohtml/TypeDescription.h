@@ -22,18 +22,6 @@ public:
     TypeDescription& operator=(TypeDescription const&);
     TypeDescription(TypeDescription const&);
     TypeDescription();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~TypeDescription();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace cohtml

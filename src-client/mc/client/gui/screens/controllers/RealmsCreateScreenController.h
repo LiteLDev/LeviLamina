@@ -93,13 +93,15 @@ public:
 
     MCAPI void _checkUnfulfilledPurchase();
 
-    MCFOLD void _closePurchaseInProgress();
-
     MCAPI void _errorDialogCreateRealmFail();
 
     MCAPI void _errorDialogFailedConditions();
 
     MCAPI void _errorDialogInvalidName(::std::string realmName, bool genericError);
+
+    MCAPI void _errorDialogPaymentServiceDown();
+
+    MCAPI void _errorDialogPurchaseFailed();
 
     MCAPI void _fulfillPriorRealmPurchase(::std::weak_ptr<::Purchase> purchase);
 

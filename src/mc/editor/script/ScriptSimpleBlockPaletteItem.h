@@ -13,6 +13,7 @@ namespace Editor { struct ProbabilityBlockPaletteItem; }
 namespace Editor { struct SimpleBlockPaletteItem; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -34,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptSimpleBlockPaletteItem() /*override*/;
+    virtual ~ScriptSimpleBlockPaletteItem() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> setBlock(
         ::std::variant<
@@ -51,15 +52,24 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptSimpleBlockPaletteItem(
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::optional<::std::string> const& displayName
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::std::optional<::std::string> const& displayName);
     // NOLINTEND
 
 public:

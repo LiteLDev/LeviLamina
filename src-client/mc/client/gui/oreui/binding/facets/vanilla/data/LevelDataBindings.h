@@ -84,12 +84,13 @@ public:
 
     public:
         // prevent constructor by default
-        Advanced(Advanced const&);
         Advanced();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI Advanced(::OreUI::LevelDataBindings::Advanced const&);
+
         MCAPI ::std::optional<::std::string> const& getFlatWorldPreset();
 
         MCAPI ::GeneratorType getGeneratorType() const;
@@ -182,6 +183,12 @@ public:
         // NOLINTEND
 
     public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::OreUI::LevelDataBindings::Advanced const&);
+        // NOLINTEND
+
+    public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
@@ -220,11 +227,11 @@ public:
 
         MCAPI int getPlatformPlayerAccess() const;
 
-        MCAPI bool getPlatformPlayerAccessEnabled() const;
+        MCFOLD bool getPlatformPlayerAccessEnabled() const;
 
-        MCAPI bool getPlatformPlayerAccessSupported() const;
+        MCFOLD bool getPlatformPlayerAccessSupported() const;
 
-        MCAPI bool getPlatformPlayerFriendsOfFriendsAccessSupported() const;
+        MCFOLD bool getPlatformPlayerFriendsOfFriendsAccessSupported() const;
 
         MCAPI bool getPlatformPlayerInviteAccessSupported() const;
 
@@ -376,6 +383,10 @@ public:
 
     MCAPI LevelDataBindings(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
 
+    MCFOLD bool getHasBehaviourPacksForAchievements() const;
+
+    MCAPI ::std::string getInitialTemplateLoadID() const;
+
     MCAPI bool getWorldTemplateOptionLocked();
 
     MCAPI bool isAchievementsDisabled() const;
@@ -384,11 +395,17 @@ public:
 
     MCAPI bool isUsingTemplate() const;
 
+    MCAPI bool operator!=(::OreUI::LevelDataBindings const& rhs) const;
+
     MCAPI ::OreUI::LevelDataBindings& operator=(::OreUI::LevelDataBindings const& rhs);
 
     MCAPI bool operator==(::OreUI::LevelDataBindings const& rhs) const;
 
     MCAPI void reset(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
+
+    MCAPI bool setHasBehaviourPacksForAchievements(bool hasBehaviourPacks);
+
+    MCFOLD void setInitialTemplateLoadID(::std::string const& templateId);
 
     MCAPI void setWorldTemplateOptionLocked(bool worldTemplateOptionLocked);
 

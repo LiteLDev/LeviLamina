@@ -17,7 +17,7 @@ class ParticleInitialComponentBase : public ::ParticleSystem::EffectComponentBas
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleInitialComponentBase() /*override*/;
+    virtual ~ParticleInitialComponentBase() /*override*/ = default;
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
@@ -26,12 +26,6 @@ public:
     virtual void update(::RenderParams& renderParams);
 
     virtual void renderPreparation(::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

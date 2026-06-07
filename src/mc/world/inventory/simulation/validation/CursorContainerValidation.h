@@ -17,9 +17,7 @@ public:
     // NOLINTBEGIN
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
-    virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
-
-    virtual ~CursorContainerValidation() /*override*/ = default;
+    virtual int getContainerOffset(::ContainerScreenContext const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -27,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const&) const;
 
 
     // NOLINTEND

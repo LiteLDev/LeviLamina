@@ -65,7 +65,7 @@ public:
 
     MCFOLD ::std::vector<::World::PackDetails> const& getUnownedTexturePacks() const;
 
-    MCAPI bool isRealmsPlusSubscriptionActive();
+    MCFOLD bool isRealmsPlusSubscriptionActive();
 
     MCAPI bool isRealmsPlusSupported() const;
 

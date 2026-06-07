@@ -25,8 +25,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-
-    virtual ~SetWorldSpawnCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

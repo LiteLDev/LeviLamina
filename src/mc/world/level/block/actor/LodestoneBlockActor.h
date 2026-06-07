@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -24,6 +25,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LodestoneBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
@@ -34,11 +39,21 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    // NOLINTEND
 
-    virtual ~LodestoneBlockActor() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit LodestoneBlockActor(::BlockPos const& pos);
+
+    MCFOLD ::PositionTrackingId const& getTrackingHandle() const;
+
+    MCAPI bool hasTrackingHandle() const;
+
+    MCAPI bool setTrackingHandle(::PositionTrackingId const& h);
     // NOLINTEND
 
 public:
@@ -48,9 +63,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
     MCAPI void $onRemoved(::BlockSource& region);
 
@@ -58,7 +79,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

@@ -16,7 +16,7 @@ class RemoveOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RemoveOnHitSubcomponent() /*override*/ = default;
+    virtual ~RemoveOnHitSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value&) /*override*/;
 
@@ -25,6 +25,24 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     virtual char const* getName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RemoveOnHitSubcomponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

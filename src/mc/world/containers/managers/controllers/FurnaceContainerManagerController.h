@@ -46,23 +46,52 @@ public:
     virtual ~FurnaceContainerManagerController() /*override*/;
 #endif
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void handlePlaceAmount(::SlotData const&, int, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void handlePlaceAmount(::SlotData const& srcSlot, int amount, ::SlotData const& dstSlot) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual bool isOutputSlot(::std::string const&) const /*override*/;
+#else // LL_PLAT_C
     virtual bool isOutputSlot(::std::string const& collectionName) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
+#else // LL_PLAT_C
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
+#else // LL_PLAT_C
     virtual void _onItemAcquired(::ItemInstance const& itemInstance, ::SlotData const& srcSlot) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI explicit FurnaceContainerManagerController(
+        ::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel
+    );
+
     MCNAPI FurnaceContainerManagerController(
         ::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel,
         ::HashedString const&                           recipeTag
@@ -75,13 +104,25 @@ public:
     MCNAPI void
     evacuateContainerToInventory(::ContainerController* container, ::std::vector<::AutoPlaceItem> const& autoPlace);
 
+    MCNAPI void evacuateResultToInventory(::std::vector<::AutoPlaceItem> const& autoPlace);
+
     MCNAPI int getBackgroundStyle(::std::string const& containerName, int collectionIndex) const;
 
     MCNAPI int getBurnProgress(int max);
 
     MCNAPI ::std::string const& getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
 
+    MCNAPI ::ItemInstance const& getGhostItem(::std::string const& collectionName, int) const;
+
     MCNAPI int getLitProgress(int max);
+
+    MCNAPI int getNumBlocksRecipes() const;
+
+    MCNAPI int getNumFoodRecipes() const;
+
+    MCNAPI int getNumItemsRecipes() const;
+
+    MCNAPI ::std::string const& getOutputName() const;
 
     MCNAPI ::ItemInstance const& getRecipeItem(::std::string const& collectionName, int collectionIndex) const;
 
@@ -98,6 +139,8 @@ public:
 
     MCNAPI bool isExpandableItemFiltered(::std::string const& collectionName, int collectionIndex) const;
 
+    MCNAPI bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
+
     MCNAPI bool isRecipeContainer(::std::string const& containerName) const;
 
     MCNAPI bool isRecipeIngredient(
@@ -108,6 +151,8 @@ public:
 
     MCNAPI bool isTakeableContainer(::std::string const& containerName) const;
 
+    MCNAPI void setIsFiltering(bool filtering);
+
     MCNAPI void setSearchString(::std::string const& searchString);
 #endif
     // NOLINTEND
@@ -116,6 +161,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel);
+
     MCNAPI void*
     $ctor(::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel, ::HashedString const& recipeTag);
 #endif

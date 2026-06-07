@@ -16,6 +16,7 @@ class PackSourceReport;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 struct WorldTemplatePackSourceOptions;
+namespace mce { class UUID; }
 // clang-format on
 
 class WorldTemplatePackSource : public ::DirectoryPackSource {
@@ -53,6 +54,10 @@ public:
         ::Core::PathBuffer<::std::string> const&                          worldTemplatePath,
         ::std::string const&                                              subDir
     );
+
+#ifdef LL_PLAT_C
+    MCNAPI ::mce::UUID const& getWorldTemplateId() const;
+#endif
     // NOLINTEND
 
 public:

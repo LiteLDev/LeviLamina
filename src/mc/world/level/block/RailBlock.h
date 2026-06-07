@@ -12,11 +12,25 @@ class Block;
 
 class RailBlock : public ::BaseRailBlock {
 public:
+    // prevent constructor by default
+    RailBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
+    // NOLINTEND
 
-    virtual ~RailBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RailBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

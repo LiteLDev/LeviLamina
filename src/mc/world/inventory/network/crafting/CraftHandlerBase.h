@@ -5,20 +5,17 @@
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/ItemStackRequestActionType.h"
-#include "mc/world/inventory/network/TypedServerNetId.h"
 
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftHandler;
-class Recipe;
 class Recipes;
 struct AllowedAnywhereConsume;
 struct ExpectedAnywhereConsume;
 struct ExpectedSlotConsume;
 struct FullContainerName;
-struct RecipeNetIdTag;
 // clang-format on
 
 class CraftHandlerBase {
@@ -43,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CraftHandlerBase() = default;
+    virtual ~CraftHandlerBase();
 
     virtual ::ItemStackNetResult handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
@@ -65,12 +62,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::tuple<::ItemStackNetResult, ::Recipe const*> _getRecipeFromNetId(::RecipeNetId const& recipeNetId);
-
     MCAPI ::ItemStackNetResult
     handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
 
     MCAPI void postRequest(bool wasSuccess);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

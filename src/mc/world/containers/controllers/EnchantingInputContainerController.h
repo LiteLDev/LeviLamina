@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ContainerModel;
-class ItemDescriptor;
 class ItemStackBase;
 class Recipes;
 // clang-format on
@@ -26,7 +25,12 @@ public:
     // NOLINTBEGIN
     virtual ~EnchantingInputContainerController() /*override*/ = default;
 
-    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const /*override*/;
+#ifdef LL_PLAT_S
+    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const /*override*/;
+#else // LL_PLAT_C
+    virtual bool isItemFiltered(::Recipes const& item, ::ItemStackBase const&) const /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -34,8 +38,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI explicit EnchantingInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
-
-    MCNAPI bool _isEnchantingInputItem(::ItemDescriptor const& item) const;
 #endif
     // NOLINTEND
 
@@ -51,7 +53,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+    MCNAPI bool $isItemFiltered(::Recipes const& item, ::ItemStackBase const&) const;
 #endif
 
 

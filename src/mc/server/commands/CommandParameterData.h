@@ -35,7 +35,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::Bedrock::typeid_t<::CommandRegistry>               mTypeIndex;
-    ParseFunction                                        mParse;
+    ::CommandRegistry::ParamParseRule const*             mParseRule;
+    ParseFunction                                        mParseOverride;
     ::std::string                                        mName;
     char const*                                          mEnumNameOrPostfix;
     CommandRegistry::Symbol                              mEnumOrPostfixSymbol;

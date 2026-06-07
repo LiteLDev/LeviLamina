@@ -14,11 +14,25 @@ class BlockSource;
 
 class ConduitBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    ConduitBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const /*override*/;
+    // NOLINTEND
 
-    virtual ~ConduitBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ConduitBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

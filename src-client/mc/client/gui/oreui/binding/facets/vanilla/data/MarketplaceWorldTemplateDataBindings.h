@@ -30,14 +30,13 @@ public:
 public:
     // prevent constructor by default
     MarketplaceWorldTemplateDataBindings& operator=(MarketplaceWorldTemplateDataBindings const&);
-    MarketplaceWorldTemplateDataBindings(MarketplaceWorldTemplateDataBindings const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI MarketplaceWorldTemplateDataBindings();
 
-    MCAPI MarketplaceWorldTemplateDataBindings(::OreUI::MarketplaceWorldTemplateDataBindings&&);
+    MCAPI MarketplaceWorldTemplateDataBindings(::OreUI::MarketplaceWorldTemplateDataBindings const&);
 
     MCFOLD ::std::string const& getCreator() const;
 
@@ -55,11 +54,16 @@ public:
 
     MCFOLD ::OreUI::RatingDataBindings const& getRatingDataBinding() const;
 
-    MCAPI ::StoreCatalogCategory const& getStoreCatalogCategory() const;
+    MCFOLD ::StoreCatalogCategory const& getStoreCatalogCategory() const;
 
     MCFOLD ::OreUI::AllowListPath const& getThumbnailPath() const;
 
     MCAPI bool isOfferInSubscription(::Bedrock::NotNullNonOwnerPtr<::DateManager> const& dateManager) const;
+
+    MCAPI bool isSubscriptionExpired(
+        ::std::vector<::std::shared_ptr<::SDL::ScreenLayoutQuery>> const& upsellLayoutList,
+        ::Bedrock::NotNullNonOwnerPtr<::DateManager> const&               dateManager
+    ) const;
 
     MCAPI ~MarketplaceWorldTemplateDataBindings();
     // NOLINTEND
@@ -80,7 +84,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::OreUI::MarketplaceWorldTemplateDataBindings&&);
+    MCAPI void* $ctor(::OreUI::MarketplaceWorldTemplateDataBindings const&);
     // NOLINTEND
 
 public:

@@ -13,6 +13,10 @@ class ItemStackResponsePacket;
 namespace ItemTransactionLogger {
 // functions
 // NOLINTBEGIN
+MCNAPI void initializeLogger(bool enable);
+
+MCNAPI void log(::std::string const& message);
+
 MCNAPI void log(::InventoryAction const& action, ::std::string const& message);
 
 MCNAPI void log(::ItemStack const& item, ::std::string const& message);

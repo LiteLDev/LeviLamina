@@ -52,6 +52,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptActorEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
 
+    MCAPI bool isInvalidated(::ActorUniqueID const& actorId);
+
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
 

@@ -20,11 +20,19 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EndPodiumFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
+    virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random&) const /*override*/;
+    // NOLINTEND
 
-    virtual ~EndPodiumFeature() /*override*/;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit EndPodiumFeature(bool active);
     // NOLINTEND
 
 public:
@@ -34,15 +42,15 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(bool active);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random&) const;
 
 
     // NOLINTEND

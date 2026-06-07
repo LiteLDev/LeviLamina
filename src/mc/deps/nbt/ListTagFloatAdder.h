@@ -18,13 +18,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ListTagFloatAdder& operator()(float f);
-
-    MCNAPI ~ListTagFloatAdder();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

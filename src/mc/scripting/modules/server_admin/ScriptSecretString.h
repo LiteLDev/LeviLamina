@@ -21,16 +21,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptSecretString(ScriptSecretString const&);
+    ScriptSecretString& operator=(ScriptSecretString const&);
     ScriptSecretString();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString& operator=(::ScriptModuleServerAdmin::ScriptSecretString&&);
-
-    MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString&
-    operator=(::ScriptModuleServerAdmin::ScriptSecretString const&);
+    MCNAPI ScriptSecretString(::ScriptModuleServerAdmin::ScriptSecretString const&);
 
     MCNAPI ~ScriptSecretString();
     // NOLINTEND
@@ -39,6 +36,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleServerAdmin::ScriptSecretString const&);
     // NOLINTEND
 
 public:

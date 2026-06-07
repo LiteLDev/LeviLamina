@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ContentIdentity;
-class ContentTierIncompatibleReason;
 class ContentTierInfo;
 class IResourcePackRepository;
 class LoadedResourceData;
@@ -35,10 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourcePackStack();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ResourcePackStack();
@@ -58,6 +53,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResourcePackStack();
+
 #ifdef LL_PLAT_C
     MCAPI ResourcePackStack(
         ::std::vector<::PackInstance> const&                                  packs,
@@ -79,7 +76,7 @@ public:
         bool                                                                  isDependent);
 
 #ifdef LL_PLAT_C
-    MCAPI ::ContentTierIncompatibleReason canSupportPacks(::ContentTierInfo const& contentInfoTier) const;
+    MCAPI void ensureSupportedSubpacks(::ContentTierInfo const& contentInfoTier);
 #endif
 
     MCAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::PackType type) const;
@@ -95,21 +92,23 @@ public:
     MCAPI ::std::vector<::PackInstanceId> getStackAsIdentities() const;
 #endif
 
-    MCAPI bool hasCapabilityInStack(::std::string_view capability) const;
-
     MCAPI bool hasPlatformLockedContent() const;
 
 #ifdef LL_PLAT_C
+    MCAPI bool hasRestrictedContent() const;
+
     MCAPI bool isOnStack(::PackIdVersion const& packIdentity) const;
 #endif
 
-    MCAPI void removeDuplicates();
+    MCAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& callback) const;
 
-    MCAPI bool removeIf(::std::function<bool(::PackInstance const&)> const& callback);
+    MCAPI void removeDuplicates();
 
     MCAPI void removeInvalidPacks();
 
 #ifdef LL_PLAT_C
+    MCAPI void removeUnsupportedPacks(::ContentTierInfo const& contentInfoTier);
+
     MCAPI void serialize(::std::ostream& fileStream) const;
 
     MCAPI bool supportsVibrantVisuals() const;
@@ -138,12 +137,16 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         ::std::optional<::std::string>                                        levelId
     );
+
+    MCAPI static ::std::vector<::PackInstanceId> deserialize(::std::istream& fileStream);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::std::vector<::PackInstance> const&                                  packs,

@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/cereal/ContextArea.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -17,11 +14,11 @@ namespace cereal { struct SchemaDescription; }
 namespace cereal {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string_view areaToString(::cereal::ContextArea area);
+MCNAPI ::std::string const* documentation(::entt::meta_data const& data);
 
 MCNAPI ::std::string const* documentation(::entt::meta_type const& type);
 
-MCNAPI ::std::string const* documentation(::entt::meta_type const& type, uint member);
+MCNAPI uint enttHash(::std::string_view str);
 
 MCNAPI ::std::string_view getName(::entt::meta_type const& type);
 
@@ -45,11 +42,11 @@ MCNAPI ::std::vector<::cereal::SchemaDescription>
 getSchemaDescriptions(::cereal::ReflectionCtx const& ctx, ::cereal::DescriptionConfig config);
 #endif
 
-MCNAPI bool isOptional(::entt::meta_type const& type);
-
-MCNAPI bool isVariant(::entt::meta_type const& type);
-
 MCNAPI bool operator==(::cereal::DynamicValue const& lhs, ::cereal::DynamicValue const& rhs);
+
+#ifdef LL_PLAT_S
+MCNAPI ::entt::meta_type resolve(::cereal::ReflectionCtx const& ctx, uint id);
+#endif
 
 MCNAPI ::entt::meta_type resolve(::cereal::ReflectionCtx const& ctx, ::entt::type_info const& info);
 
@@ -60,10 +57,6 @@ MCNAPI ::std::optional<::std::string> toJsonString(::std::optional<::cereal::Dyn
 #endif
 
 MCNAPI ::Json::Value toJsonValue(::cereal::DynamicValue const& value);
-
-MCNAPI ::entt::meta_any tryFillVariant(::entt::meta_any& var, ::entt::meta_any value);
-
-MCNAPI ::std::vector<::entt::meta_func> typeLevelSetters(::entt::meta_type const& type);
 // NOLINTEND
 
 } // namespace cereal

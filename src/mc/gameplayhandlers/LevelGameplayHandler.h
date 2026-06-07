@@ -19,7 +19,7 @@ public:
     virtual ::HandlerResult handleEvent(::LevelGameplayEvent<void> const&) = 0;
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::MutableLevelGameplayEvent<::CoordinatorResult>&) = 0;
+    handleEvent(::MutableLevelGameplayEvent<::CoordinatorResult>& event) = 0;
     // NOLINTEND
 
 public:

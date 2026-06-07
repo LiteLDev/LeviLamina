@@ -12,10 +12,8 @@
 class HashedString;
 class RenderParams;
 struct MolangScriptArg;
-namespace Bedrock { class StaticOptimizedString; }
 namespace Json { class Value; }
 namespace Molang::details { class ExpressionNode; }
-namespace Molang::details { class Program; }
 namespace Molang::details { class SourceTree; }
 // clang-format on
 
@@ -71,36 +69,6 @@ public:
     virtual ::std::optional<::MolangScriptArg> getValueIfConstant() const /*override*/;
 
     virtual ::Molang::details::SourceTree* getSource() /*override*/;
-
-    virtual ~CompiledExpressionWithoutContentScope() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI CompiledExpressionWithoutContentScope(
-        ::Molang::details::Program       instructions,
-        ::Bedrock::StaticOptimizedString expressionString,
-        ::MolangVersion                  version,
-        bool                             hasVariableAssignments
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Molang::details::Program       instructions,
-        ::Bedrock::StaticOptimizedString expressionString,
-        ::MolangVersion                  version,
-        bool                             hasVariableAssignments
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

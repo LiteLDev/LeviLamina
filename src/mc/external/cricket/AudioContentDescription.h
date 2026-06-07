@@ -16,9 +16,9 @@ public:
 
     virtual ::cricket::MediaType type() const /*override*/;
 
-    virtual ::cricket::AudioContentDescription* as_audio() /*override*/;
-
     virtual ::cricket::AudioContentDescription const* as_audio() const /*override*/;
+
+    virtual ::cricket::AudioContentDescription* as_audio() /*override*/;
 
     virtual ::cricket::AudioContentDescription* CloneInternal() const /*override*/;
 
@@ -32,9 +32,9 @@ public:
 
     MCNAPI ::cricket::MediaType $type() const;
 
-    MCNAPI ::cricket::AudioContentDescription* $as_audio();
-
     MCNAPI ::cricket::AudioContentDescription const* $as_audio() const;
+
+    MCNAPI ::cricket::AudioContentDescription* $as_audio();
 
     MCNAPI ::cricket::AudioContentDescription* $CloneInternal() const;
 

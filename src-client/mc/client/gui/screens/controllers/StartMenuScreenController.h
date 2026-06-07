@@ -19,11 +19,11 @@
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/network/ExperiencePromotion.h"
 
 // auto generated forward declare list
 // clang-format off
 class ButtonArtSurface;
-class GatheringConfig;
 class IEntitlementManager;
 class MainMenuScreenModel;
 class SocialButtonScreenController;
@@ -51,8 +51,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual void onUserRemoved(::std::shared_ptr<::Social::User> const& user) /*override*/;
-
-        virtual ~SignOutObserver() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -96,17 +94,17 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                            mStoreButtonHovered;
     ::ll::TypedStorage<1, 1, bool>                                                            mPlayButtonHovered;
     ::ll::TypedStorage<4, 4, int>                                                             mUnreadInvites;
-    ::ll::TypedStorage<1, 1, bool>                                        mInitialInboxAnimationPlayed;
-    ::ll::TypedStorage<1, 1, bool>                                        mShowingNewPlayerFlowButtons;
-    ::ll::TypedStorage<1, 1, bool>                                        mNeedToPlayMainButtonsShowAnimation;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GatheringConfig const>> mActiveGathering;
-    ::ll::TypedStorage<1, 1, bool>                                        mOwnsRealmsSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                        mRealmsFetched;
-    ::ll::TypedStorage<4, 4, ::Realms::GenericStatus>                     mRealmsStatus;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mPendingInviteCountSubscriber;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mPrimaryUserSignInSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mTrialModeUpdateSubscription;
-    ::ll::TypedStorage<1, 1, bool>                                        mIsTrialModeEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                     mInitialInboxAnimationPlayed;
+    ::ll::TypedStorage<1, 1, bool>                                     mShowingNewPlayerFlowButtons;
+    ::ll::TypedStorage<1, 1, bool>                                     mNeedToPlayMainButtonsShowAnimation;
+    ::ll::TypedStorage<8, 248, ::std::optional<::ExperiencePromotion>> mActivePromotion;
+    ::ll::TypedStorage<1, 1, bool>                                     mOwnsRealmsSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                     mRealmsFetched;
+    ::ll::TypedStorage<4, 4, ::Realms::GenericStatus>                  mRealmsStatus;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mPendingInviteCountSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mPrimaryUserSignInSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mTrialModeUpdateSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                     mIsTrialModeEnabled;
     // NOLINTEND
 
 public:
@@ -163,23 +161,21 @@ public:
 
     MCAPI void _createProxy();
 
-    MCFOLD void _displayOpenExternalBrowserDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCFOLD void _displayBetaFeedbackDialog(::std::function<void(::ModalScreenButtonId)> callback);
+
+    MCAPI void _displayOpenExternalBrowserDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void _fetchRealms();
 
     MCAPI void _fetchUserOrientedContent(bool signInFailed);
 
-    MCAPI bool _hasAnimatedGatheringBadge() const;
-
-    MCAPI bool _hasValidGathering() const;
-
     MCAPI bool _isNxAdHocEnabled() const;
+
+    MCAPI bool _isProfileButtonAEnabled() const;
 
     MCAPI bool _isProfileButtonBEnabled() const;
 
     MCAPI bool _isSignInVisible();
-
-    MCAPI bool _isUserSigningIn() const;
 
     MCAPI ::ui::ViewRequest _navigateToProfileScreen();
 
@@ -197,19 +193,25 @@ public:
 
     MCAPI void _registerStoreButtonArtBindings();
 
+    MCAPI void _showDeviceSunsettingIfNeeded();
+
     MCAPI void _tryImportPacks();
 
     MCAPI void _updateButtonArt();
 
-    MCAPI void _updateGatherings();
-
     MCAPI void _updateProfileImage();
+
+    MCAPI void _updatePromotion();
 
     MCAPI void _updateUnreadMessageCount();
 
     MCAPI void resetInboxAnimation();
 
     MCAPI void startInboxAnimation();
+
+    MCAPI void startMainMenuShowButtonsAnimation();
+
+    MCAPI void startNewPlayerHideButtonsAnimation();
     // NOLINTEND
 
 public:

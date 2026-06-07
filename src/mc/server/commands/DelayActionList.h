@@ -26,17 +26,7 @@ public:
     // clang-format on
 
     // DelayActionList inner types define
-    class DelayRequestQueue : public ::MovePriorityQueue<::DelayRequest, ::std::greater<::DelayRequest>> {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI int removeRequestWithAction(
-            ::DimensionDataSerializer          dimensionDataSerializer,
-            ::LevelStorage&                    levelStorage,
-            ::gsl::not_null<::IRequestAction*> actionToRemove
-        );
-        // NOLINTEND
-    };
+    class DelayRequestQueue : public ::MovePriorityQueue<::DelayRequest, ::std::greater<::DelayRequest>> {};
 
 public:
     // member variables
@@ -54,6 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DelayActionList();
+
     MCAPI void _loadRequest(
         ::Dimension&                  dimension,
         ::std::string const&          key,
@@ -81,7 +73,25 @@ public:
     MCAPI void
     _saveRequest(::DelayRequest& request, ::std::string const& dimensionPrefix, ::LevelStorage& levelStorage);
 
+    MCAPI int clearRequestWithAction(::LevelStorage& levelStorage, ::gsl::not_null<::IRequestAction*> actionToRemove);
+
+    MCAPI void
+    loadRequests(::Dimension& dimension, ::LevelStorage& storage, ::ICommandOriginLoader& loader, uint64 currentTick);
+
+    MCAPI ::QueueRequestResult queueRequestOrExecuteAction(
+        ::DelayRequest request,
+        ::Dimension&   dimension,
+        uint64         currentTick,
+        bool           allowDuplicates
+    );
+
     MCAPI void tick(::ServerLevel& level, ::Dimension& dimension, uint64 currentTick);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

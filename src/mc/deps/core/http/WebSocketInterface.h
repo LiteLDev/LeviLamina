@@ -37,8 +37,7 @@ public:
         ::gsl::not_null<::XAsyncBlock*>
     ) = 0;
 
-    virtual HRESULT
-    disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status) = 0;
+    virtual HRESULT disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::HCWebSocketCloseStatus) = 0;
     // NOLINTEND
 
 public:

@@ -20,12 +20,6 @@ namespace ScriptModuleMinecraft {
 class ScriptMountTamingComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::MountTamingComponent, ::MountTameableDefinition> {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptMountTamingComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
@@ -48,6 +42,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

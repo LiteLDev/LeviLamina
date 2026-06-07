@@ -50,6 +50,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                               mRefreshScreen;
     ::ll::TypedStorage<1, 1, bool>                                               mIsTrialModeEnabled;
     ::ll::TypedStorage<1, 1, bool>                                               mOverlaySocialDrawerOnce;
+    ::ll::TypedStorage<1, 1, bool>                                               mOldUnreadMessagesStatus;
     // NOLINTEND
 
 public:
@@ -89,6 +90,8 @@ public:
 
     MCAPI void _getUnreadCount(::Realms::World const& world);
 
+    MCAPI bool _isBigScreen();
+
     MCAPI bool _isInviteButtonEnabled() const;
 
     MCAPI bool _isInviteButtonVisible() const;
@@ -99,17 +102,17 @@ public:
 
     MCAPI bool _isProfileButtonBEnabled() const;
 
-    MCAPI bool _isScreenshotButtonVisible() const;
-
     MCAPI void _navigateToInviteScreen();
 
     MCAPI void _navigateToPermissions(::ActorUniqueID const& id);
 
     MCAPI ::ui::ViewRequest _navigateToProfileOrSkinsScreen();
 
+    MCAPI bool _needToUpdateSocialButton();
+
     MCAPI void _onPlayerListEntryRemoved(
-        ::PlayerListEntry const&,
-        ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& list
+        ::PlayerListEntry const& list,
+        ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&
     );
 
     MCAPI void _pauseToggleOptionCallback(::Option const& pauseFeatureToggle);
@@ -124,11 +127,11 @@ public:
 
     MCAPI void _registerSubControllers();
 
-    MCAPI void _setScreenPauseIntent(bool intent);
-
     MCAPI bool _showRealmsButtons() const;
 
     MCAPI void _updateProfileImage();
+
+    MCAPI bool _useMovedInviteButton() const;
     // NOLINTEND
 
 public:

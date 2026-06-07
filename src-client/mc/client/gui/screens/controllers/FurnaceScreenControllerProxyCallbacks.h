@@ -20,11 +20,12 @@ public:
 public:
     // prevent constructor by default
     FurnaceScreenControllerProxyCallbacks& operator=(FurnaceScreenControllerProxyCallbacks const&);
-    FurnaceScreenControllerProxyCallbacks();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FurnaceScreenControllerProxyCallbacks();
+
     MCAPI FurnaceScreenControllerProxyCallbacks(::FurnaceScreenControllerProxyCallbacks const&);
 
     MCAPI ~FurnaceScreenControllerProxyCallbacks();
@@ -33,7 +34,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FurnaceScreenControllerProxyCallbacks const&);
+    MCAPI void* $ctor();
+
+    MCFOLD void* $ctor(::FurnaceScreenControllerProxyCallbacks const&);
     // NOLINTEND
 
 public:

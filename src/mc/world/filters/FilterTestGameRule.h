@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
+    virtual bool setup(::FilterTest::Definition const& inputs, ::FilterInputs const&) /*override*/;
 
     virtual bool evaluate(::FilterContext const& context) const /*override*/;
 
@@ -38,20 +38,12 @@ public:
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
 
     virtual ::Json::Value _serializeValue() const /*override*/;
-
-    virtual ~FilterTestGameRule() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+    MCNAPI bool $setup(::FilterTest::Definition const& inputs, ::FilterInputs const&);
 
     MCNAPI bool $evaluate(::FilterContext const& context) const;
 

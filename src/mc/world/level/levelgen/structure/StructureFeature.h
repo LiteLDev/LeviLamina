@@ -10,12 +10,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class Biome;
 class BiomeSource;
 class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Dimension;
 class IPreliminarySurfaceProvider;
+class LevelChunk;
 class Random;
 class StructureStart;
 struct BiomeIdType;
@@ -100,6 +102,14 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
+    MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
+
+    MCAPI ::BlockPos chunkStartAtSurfaceLevel(
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::ChunkPos                           pos,
+        int                                  defaultYLevel
+    );
+
     MCAPI void createBlueprints(
         ::Dimension&                         dimension,
         ::ChunkPos const&                    cp,
@@ -113,7 +123,7 @@ public:
 
     MCAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
-    MCAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
+    MCAPI bool postProcess(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
 
     MCAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
     // NOLINTEND
@@ -137,6 +147,12 @@ public:
         bool                                   mustBeInNewChunks
     );
 
+    MCAPI static ::std::pair<::BlockPos const, ::Biome const*> getBiomeForFeatureGeneration(
+        ::BiomeSource const&                 biomeSource,
+        ::ChunkPos const&                    chunkPos,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
+
     MCAPI static ::ChunkPos getChunkPosInSpace(
         ::ChunkPos const& cp,
         ::Random&         random,
@@ -146,6 +162,8 @@ public:
         int               salt,
         bool              tiltedSpacing
     );
+
+    MCAPI static void setRandomSeedFor(::Random& result, int x, int z, int salt, uint levelSeed);
     // NOLINTEND
 
 public:

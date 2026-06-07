@@ -78,8 +78,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EnchantmentInstance _getRandomEnchantInstance(::Random& random) const;
-
     MCAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
     // NOLINTEND
 

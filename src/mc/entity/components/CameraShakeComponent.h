@@ -9,6 +9,7 @@
 // clang-format off
 class Random;
 class SimplexNoise;
+class Vec3;
 struct CameraShakeEvent;
 // clang-format on
 
@@ -41,11 +42,43 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCFOLD float getDecayRate() const;
+
+    MCAPI double getLastUpdateTime() const;
+
+    MCFOLD float getNoiseTime() const;
+
+    MCFOLD ::std::vector<::CameraShakeEvent>& getShakeEventQueue();
+
+    MCFOLD float getShakeIntensity() const;
+
+    MCFOLD ::CameraShakeType getShakeType() const;
+
+    MCAPI ::Vec3 getShakeVector(float noiseMultiplier, float frequency, float amplitude) const;
+
     MCAPI void initialize(::Random& random);
 
     MCAPI ::CameraShakeComponent& operator=(::CameraShakeComponent&&);
 
     MCAPI bool queueShakeEvent(float intensity, float duration);
+
+    MCAPI void setLastUpdateTime(double newSeconds);
+
+    MCFOLD void setNoiseTime(float noiseTime);
+
+    MCFOLD void setShakeIntensity(float intensity);
+
+    MCFOLD void setShakeType(::CameraShakeType shakeType);
+
+    MCAPI bool shouldShake() const;
+
+    MCAPI void updateShakeNoise(::Random& random);
 #endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static float getMaxIntensity();
     // NOLINTEND
 };

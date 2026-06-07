@@ -34,6 +34,24 @@ public:
         ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mCount;
         ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mMemorySum;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI AtomicMemoryAccumulator();
+
+#ifdef LL_PLAT_C
+        MCAPI void addMemory(uint64 memoryUsage);
+#endif
+
+        MCAPI uint64 getMemoryAverage() const;
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor();
+        // NOLINTEND
     };
 
     struct PaletteData {
@@ -108,9 +126,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChunkPerformanceData() /*override*/ = default;
+    virtual ~ChunkPerformanceData() /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
+#else // LL_PLAT_C
     virtual void visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)> visitor);
+#endif
 
     virtual void resetAll();
     // NOLINTEND
@@ -120,7 +142,7 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkPerformanceData();
 
-    MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
+    MCAPI void _onChunkLoaded(::ChunkSource& levelChunk, ::LevelChunk&, int);
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
     // NOLINTEND
@@ -132,9 +154,15 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)> visitor);
+    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
 
     MCAPI void $resetAll();
 

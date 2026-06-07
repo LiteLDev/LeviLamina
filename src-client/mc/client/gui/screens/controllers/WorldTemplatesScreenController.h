@@ -76,6 +76,8 @@ public:
 
     MCAPI void _fetchDownloadedWorldTemplates();
 
+    MCAPI ::ResourceLocation _getInvalidResource(int slot) const;
+
     MCAPI ::ui::ViewRequest _handleGenerateRandomRealmClicked();
 
     MCAPI ::ui::ViewRequest _handleInvalidPackClicked(::UIPropertyBag* bag);

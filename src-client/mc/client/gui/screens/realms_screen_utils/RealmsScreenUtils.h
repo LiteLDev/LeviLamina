@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
+class IEntitlement;
 class IEntitlementManager;
 class MainMenuScreenModel;
 struct RealmsWorldInfo;
@@ -23,12 +24,17 @@ namespace RealmsScreenUtils { struct RealmsWorldLoadingDetailsGroup; }
 namespace RealmsScreenUtils {
 // functions
 // NOLINTBEGIN
+MCAPI ::std::optional<::std::string_view> getManageSubscriptionsLinkForStore(::std::string_view store);
+
 MCAPI ::Realms::SubscriptionInfo getRealmSubscriptionFromWorld(
     ::Realms::World const&                                                            realmsWorld,
     ::std::weak_ptr<::std::vector<::RealmsScreenUtils::RealmsWorldLoadingDetails>>    worldList,
     ::Bedrock::NotNullNonOwnerPtr<::Realms::SubscriptionService> const&               subscriptionService,
     ::std::function<void(::RealmsScreenUtils::RealmsSubscriptionsLoadingState, bool)> callback
 );
+
+MCAPI ::IEntitlement const&
+getRealmsPlusEntitlement(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> const& entitlementManager);
 
 MCAPI bool isRealmsPlusSubscriptionActive(
     ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> const& entitlementManager,

@@ -30,7 +30,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI int getErrorValue() const;
+
     MCNAPI ::std::string getEventErrorMessage() const;
+
+    MCNAPI ::PackErrorType getPackErrorType() const;
 #endif
     // NOLINTEND
 

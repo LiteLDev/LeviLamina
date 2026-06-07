@@ -14,9 +14,13 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptInvalidPotionEffectTypeError : public ::Scripting::BaseError {
 public:
+    // prevent constructor by default
+    ScriptInvalidPotionEffectTypeError();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptInvalidPotionEffectTypeError();
+    MCAPI explicit ScriptInvalidPotionEffectTypeError(::std::string const& invalidEffectName);
     // NOLINTEND
 
 public:
@@ -26,9 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::std::string const& invalidEffectName);
     // NOLINTEND
 };
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/item/components/ItemComponent.h"
 
@@ -33,9 +34,13 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~LegacyTriggerItemComponent() /*override*/ = default;
+    MCAPI void
+    _dispatch(bool& result, ::ItemStackBase& item, ::DefinitionTrigger const& trigger, ::RenderParams& params);
+
+    MCFOLD ::Bedrock::PubSub::Connector<void(bool&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&)>&
+    onTrigger();
     // NOLINTEND
 
 public:

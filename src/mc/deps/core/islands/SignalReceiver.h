@@ -36,22 +36,6 @@ public:
         ConnectionRecord& operator=(ConnectionRecord const&);
         ConnectionRecord(ConnectionRecord const&);
         ConnectionRecord();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~ConnectionRecord();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -66,11 +50,12 @@ public:
     // prevent constructor by default
     SignalReceiver& operator=(SignalReceiver const&);
     SignalReceiver(SignalReceiver const&);
-    SignalReceiver();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SignalReceiver();
+
 #ifdef LL_PLAT_C
     MCNAPI bool _connectSignal(
         ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)> const&
@@ -78,7 +63,23 @@ public:
         ::Bedrock::Detail::SignalPublisher* signalID,
         int                                 priority
     );
+
+    MCNAPI bool handleNextSignal();
 #endif
+
+    MCNAPI ~SignalReceiver();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

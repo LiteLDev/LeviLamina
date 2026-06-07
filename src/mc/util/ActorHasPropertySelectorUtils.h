@@ -20,11 +20,34 @@ namespace ScriptModuleMinecraft { struct ValueParams; }
 namespace ActorHasPropertySelectorUtils {
 // functions
 // NOLINTBEGIN
+MCNAPI bool checkBoolProperty(
+    ::PropertyComponent const&                                         property,
+    ::HashedString const&                                              propertyName,
+    ::std::variant<::CommandRationalRange, bool, ::std::string> const& value,
+    bool                                                               inverted
+);
+
 MCNAPI bool checkIntProperty(
     ::PropertyComponent const& property,
     ::HashedString const&      propertyName,
     ::CommandRationalRange&    rationalRange,
     bool                       inverted
+);
+
+MCNAPI bool checkIntToBoolConversionNoInversion(bool boolValue, ::CommandRationalRange& rationalRange);
+
+MCNAPI bool checkRationalCommandRange(
+    ::PropertyComponent const&                                         property,
+    ::HashedString const&                                              propertyName,
+    ::std::variant<::CommandRationalRange, bool, ::std::string> const& value,
+    bool                                                               inverted
+);
+
+MCNAPI bool checkStringProperty(
+    ::PropertyComponent const&                                         property,
+    ::HashedString const&                                              propertyName,
+    ::std::variant<::CommandRationalRange, bool, ::std::string> const& value,
+    bool                                                               inverted
 );
 
 MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string> parseComparison(

@@ -31,8 +31,6 @@ public:
 
     MCNAPI ScriptLogProperties(::Editor::ScriptModule::ScriptLogProperties const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptLogProperties& operator=(::Editor::ScriptModule::ScriptLogProperties&&);
-
     MCNAPI ::Editor::ScriptModule::ScriptLogProperties& operator=(::Editor::ScriptModule::ScriptLogProperties const&);
 
     MCNAPI ~ScriptLogProperties();

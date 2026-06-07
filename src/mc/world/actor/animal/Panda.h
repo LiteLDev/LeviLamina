@@ -34,8 +34,6 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
-
-    virtual ~Panda() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,11 +45,15 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI float getLieOnBackAmount(float a) const;
+
     MCAPI float getSitAmount(float a) const;
 
     MCAPI void postNormalTick();
 
     MCAPI void updateLaying();
+
+    MCAPI void updateRollAmount();
 
     MCAPI void updateSitting();
     // NOLINTEND

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::ReplicatedAssociativeContainerUtil {
 
 struct SerializableKeyList {
@@ -14,19 +19,28 @@ public:
 
 public:
     // prevent constructor by default
-    SerializableKeyList(SerializableKeyList const&);
+    SerializableKeyList& operator=(SerializableKeyList const&);
     SerializableKeyList();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SerializableKeyList(::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyList const&);
+
     MCNAPI ::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyList&
     operator=(::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyList&&);
+    // NOLINTEND
 
-    MCNAPI ::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyList&
-    operator=(::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyList const&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 
-    MCNAPI bool operator==(::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyList const&) const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ReplicatedAssociativeContainerUtil::SerializableKeyList const&);
     // NOLINTEND
 };
 

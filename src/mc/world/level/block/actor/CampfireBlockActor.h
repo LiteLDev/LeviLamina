@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -28,11 +29,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CampfireBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& tag, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -43,18 +48,28 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~CampfireBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CampfireBlockActor(::BlockPos const& pos);
+
     MCAPI void _finishCooking(::BlockSource& region, int slot);
 
     MCAPI void dropAllItems(::BlockSource& region);
 
     MCAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
+
+    MCAPI ::ItemInstance const& getCookingItem(int slot);
+
+    MCAPI bool setItem(::BlockSource&, ::ItemInstance const& item);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -62,7 +77,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& tag, ::CompoundTag const&, ::DataLoadHelper&);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

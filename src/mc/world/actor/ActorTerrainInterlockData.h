@@ -18,10 +18,4 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>      mCreationTime;
     ::ll::TypedStorage<1, 1, bool>                                         mHasBeenDelayedDeleted;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setCreationTime();
-    // NOLINTEND
 };

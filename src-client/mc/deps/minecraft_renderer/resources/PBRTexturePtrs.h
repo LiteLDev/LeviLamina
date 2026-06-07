@@ -26,20 +26,13 @@ public:
 public:
     // prevent constructor by default
     PBRTexturePtrs& operator=(PBRTexturePtrs const&);
+    PBRTexturePtrs(PBRTexturePtrs const&);
     PBRTexturePtrs();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PBRTexturePtrs(::PBRTexturePtrs const&);
-
     MCNAPI ~PBRTexturePtrs();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::PBRTexturePtrs const&);
     // NOLINTEND
 
 public:

@@ -82,6 +82,8 @@ public:
 
     MCAPI int _addResource(::ItemStack const& item);
 
+    MCAPI void _doDrop(::ItemStack& item, bool randomly);
+
     MCAPI int _getFreeSlot() const;
 
     MCAPI int _getSlotWithRemainingSpace(::ItemStack const& newItem) const;
@@ -90,7 +92,11 @@ public:
 
     MCAPI void _release(int slot);
 
+    MCFOLD int getHotbarSize() const;
+
     MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
+
+    MCAPI bool hasResource(int type);
 
     MCAPI bool removeResource(int type);
     // NOLINTEND

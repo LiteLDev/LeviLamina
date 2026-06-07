@@ -24,8 +24,6 @@ public:
     virtual void* _realloc(::gsl::not_null<void*>, uint64) /*override*/;
 
     virtual void* _alignedRealloc(::gsl::not_null<void*>, uint64, uint64) /*override*/;
-
-    virtual ~DefaultAllocator() /*override*/ = default;
     // NOLINTEND
 
 public:

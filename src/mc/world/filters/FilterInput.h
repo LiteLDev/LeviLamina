@@ -20,19 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit FilterInput(int i);
-
-    MCNAPI ::FilterInput& operator=(::FilterInput&&);
-
     MCNAPI ::FilterInput& operator=(::FilterInput const&);
 
     MCNAPI ~FilterInput();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(int i);
     // NOLINTEND
 
 public:

@@ -11,7 +11,7 @@ class BindingFactory {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BindingFactory();
+    virtual ~BindingFactory() = default;
 
     virtual ::std::function<bool()> getBooleanBinding(uint name) const = 0;
 
@@ -35,20 +35,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

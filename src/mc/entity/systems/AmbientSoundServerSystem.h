@@ -17,8 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~AmbientSoundServerSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

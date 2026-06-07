@@ -7,9 +7,15 @@
 
 class MaterialReducerContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~MaterialReducerContainerScreenValidator() /*override*/ = default;
+    MCAPI MaterialReducerContainerScreenValidator();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

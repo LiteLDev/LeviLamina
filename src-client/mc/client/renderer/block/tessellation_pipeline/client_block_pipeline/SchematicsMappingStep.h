@@ -24,8 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-
-    virtual ~SchematicsMappingStep() /*override*/ = default;
     // NOLINTEND
 
 public:

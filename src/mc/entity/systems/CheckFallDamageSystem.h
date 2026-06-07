@@ -11,6 +11,8 @@ namespace CheckFallDamageSystem {
 // functions
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createSystem();
+
+MCAPI ::TickingSystemWithInfo createVehicleResetFallDistanceSystem();
 // NOLINTEND
 
 } // namespace CheckFallDamageSystem

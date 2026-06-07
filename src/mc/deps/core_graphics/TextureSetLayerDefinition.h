@@ -23,29 +23,47 @@ public:
     ::ll::TypedStorage<1, 1, ::cg::TextureSetLayerType>                                              mLayerType;
     // NOLINTEND
 
-public:
-    // virtual functions
-    // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    virtual ~TextureSetLayerDefinition() /*override*/ = default;
 #else // LL_PLAT_C
-    virtual ~TextureSetLayerDefinition() /*override*/;
+public:
+    // prevent constructor by default
+    TextureSetLayerDefinition();
+
 #endif
-
-    // NOLINTEND
-
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI TextureSetLayerDefinition(
+        ::cg::TextureSetLayerType const&                                            type,
+        ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var
+    );
+
+    MCAPI void _setValue(::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var);
+
+    MCFOLD ::cg::TextureSetLayerType const& getLayerType() const;
+
     MCAPI ::std::optional<::std::string> hasValidationError() const;
+
+    MCAPI bool isColor() const;
+
+    MCAPI bool isColorChannel() const;
+
+    MCAPI bool isResourceLocation() const;
+
+    MCAPI bool isUniform() const;
 #endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::cg::TextureSetLayerType const&                                            type,
+        ::std::variant<::ResourceLocationPair, ::ColorChannel, ::mce::Color> const& var
+    );
+#endif
     // NOLINTEND
 
 public:

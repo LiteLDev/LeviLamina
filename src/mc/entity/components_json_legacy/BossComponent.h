@@ -36,27 +36,31 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BossComponent& operator=(BossComponent const&);
-    BossComponent(BossComponent const&);
-    BossComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BossComponent(::BossComponent&&);
+    MCAPI BossComponent();
 
     MCAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
+
+    MCAPI void addPlayerToParty(::mce::UUID id, int damage);
 
     MCAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
 
     MCAPI void handleRegisterPlayers(::Actor& owner);
 
-    MCAPI ::BossComponent& operator=(::BossComponent&&);
-
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
+    MCAPI void registerPlayer(::Actor& owner, ::Player* player);
+
+    MCAPI void resendBossEventData(::Actor& owner, ::Player* player);
+
     MCAPI void sendDeathTelemetry(::Actor& owner);
+
+    MCAPI void setColor(::Actor& owner, ::BossBarColor color);
+
+    MCAPI void setHealthBarVisible(::Actor& owner, bool visible);
+
+    MCAPI void setHealthPercent(::Actor& owner, float percent);
 
     MCAPI void setName(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
 
@@ -70,12 +74,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BossComponent&&);
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

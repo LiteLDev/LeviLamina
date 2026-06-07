@@ -24,6 +24,12 @@ public:
     AttachmentProperties& operator=(AttachmentProperties const&);
     AttachmentProperties(AttachmentProperties const&);
     AttachmentProperties();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Cursor::AttachmentProperties const& rhs) const;
+    // NOLINTEND
 };
 
 } // namespace Editor::Cursor

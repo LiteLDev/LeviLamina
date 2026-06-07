@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/biome/TerrainShaper.h"
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
@@ -59,14 +58,9 @@ public:
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> jaggedNoise
     );
 
-    MCAPI ::ChunkLocalNoiseCache::CacheEntry
-    _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos) const;
-
-    MCAPI ::std::pair<float, float> computeErosionAndDepth(::BlockPos position) const;
-
-    MCAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
-
     MCAPI ::TargetPoint sample(::BlockPos position) const;
+
+    MCAPI ::TargetPoint sample(int blockY, ::ChunkLocalNoiseCache::CacheEntry const& cachedNoises) const;
 
     MCAPI ~OverworldNoises3d();
     // NOLINTEND

@@ -4,20 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/deps/vanilla_components/ActorDataComponentBase.h"
+#include "mc/platform/brstd/bitset.h"
 #include "mc/world/actor/ActorFlags.h"
 
-struct ActorDataFlagComponent : public ::ActorDataComponentBase<::std::bitset<127>> {
+struct ActorDataFlagComponent : public ::ActorDataComponentBase<::brstd::bitset<130, uint64>> {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getStatusFlag(::ActorFlags flag) const;
+    MCFOLD uint64 getFlags(int id) const;
+
+    MCFOLD bool getStatusFlag(::ActorFlags flag) const;
+
+    MCAPI ::std::optional<::brstd::bitset<130, uint64>> setFlags(uint64 flags, int id);
     // NOLINTEND
 
 public:
-    // static variables
+    // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::bitset<127> const& ALL_HIGHER_ONES();
+    MCFOLD static uint64 getFlags(::brstd::bitset<130, uint64> const& bitset, int id);
 
-    MCAPI static ::std::bitset<127> const& ALL_LOWER_ONES();
+    MCAPI static ::std::optional<::brstd::bitset<130, uint64>>
+    setFlags(::brstd::bitset<130, uint64>& bitset, uint64 flags, int id);
     // NOLINTEND
 };

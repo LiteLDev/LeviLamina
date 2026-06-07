@@ -73,6 +73,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit MinecraftServiceKeyManager(::std::unique_ptr<::IMinecraftServiceKeySource> keySource);
+
     MCNAPI MinecraftServiceKeyManager(
         ::std::unique_ptr<::IMinecraftServiceKeySource>                                                     keySource,
         ::std::function<int64()>                                                                            timeFn,
@@ -90,6 +92,8 @@ public:
     );
 #endif
 
+    MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> _fastFetch(bool highPriority);
+
     MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> _fullFetch(bool highPriority);
 
     MCNAPI bool _saveMetadata(::std::optional<::MinecraftServiceKeysMetadata> const& metadata);
@@ -100,9 +104,21 @@ public:
     MCNAPI ::brstd::future<bool> blockingInit();
 #endif
 
+    MCNAPI ::std::string const& getIssuer() const;
+
     MCNAPI ::std::string getKeyFromKeyId(::std::string const& kid) const;
 
     MCNAPI ::MinecraftServiceKeyInfo getKeyInfo() const;
+
+    MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> getKeysIfWeDontAlreadyHaveThem();
+
+    MCNAPI int64 getRoughTimeCorrectionSeconds() const;
+
+    MCNAPI bool hasRetrievedTrustedKeys() const;
+
+    MCNAPI void init();
+
+    MCNAPI bool onTick();
 
     MCNAPI void setHostKey(::std::string const& hostKey);
     // NOLINTEND
@@ -110,6 +126,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::unique_ptr<::IMinecraftServiceKeySource> keySource);
+
     MCNAPI void* $ctor(
         ::std::unique_ptr<::IMinecraftServiceKeySource>                                                     keySource,
         ::std::function<int64()>                                                                            timeFn,

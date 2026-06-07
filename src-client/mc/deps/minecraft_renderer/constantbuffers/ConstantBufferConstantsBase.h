@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConstantBufferConstantsBase() = default;
+    virtual ~ConstantBufferConstantsBase();
 
     virtual void init() = 0;
     // NOLINTEND
@@ -30,7 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ConstantBufferConstantsBase();
+
     MCAPI ::std::vector<uchar, ::mce::AlignmentHelper::AlignmentAllocator<uchar, 16>> const& getBuffer() const;
+
+    MCAPI void setFromBytes(
+        ::std::vector<uchar, ::mce::AlignmentHelper::AlignmentAllocator<uchar, 16>> const& constantBufferMemoryContainer
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

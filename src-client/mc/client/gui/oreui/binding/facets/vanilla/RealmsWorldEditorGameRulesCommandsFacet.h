@@ -21,6 +21,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RealmsWorldEditorGameRulesCommandsFacet();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RealmsWorldEditorGameRulesCommandsFacet() /*override*/ = default;
@@ -31,6 +35,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RealmsWorldEditorGameRulesCommandsFacet(
+        ::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor
+    );
+
     MCAPI void setFireSpreads(bool shouldFireSpread);
 
     MCAPI void setImmediateRespawn(bool shouldImmediateRespawn);
@@ -62,6 +70,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor);
     // NOLINTEND
 
 public:

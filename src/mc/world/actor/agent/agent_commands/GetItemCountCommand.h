@@ -22,8 +22,6 @@ public:
     virtual bool isDone() /*override*/;
 
     virtual void fireCommandDoneEvent() /*override*/;
-
-    virtual ~GetItemCountCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

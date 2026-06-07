@@ -37,6 +37,13 @@ public:
         mFunction;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    NativeFunctionPayload();
+
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,11 +53,51 @@ public:
     virtual ~NativeFunctionPayload() /*override*/ = default;
 #endif
 
+#ifdef LL_PLAT_S
     virtual ::Scripting::ResultAny runOn(
         ::Scripting::ContextId      contextId,
         ::Scripting::NativeRuntime& runtime,
         ::std::optional<::Scripting::Privilege>
     ) /*override*/;
+#else // LL_PLAT_C
+    virtual ::Scripting::ResultAny
+    runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>) /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI explicit NativeFunctionPayload(
+        ::std::function<::Scripting::ResultAny(
+            ::Scripting::NativeRuntime&,
+            ::Scripting::ContextId,
+            ::Scripting::WeakLifetimeScope,
+            ::Scripting::ModuleBindingBundle const&,
+            ::Scripting::IDependencyLoader*,
+            ::Scripting::IPrinter*
+        )> func
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(
+        ::std::function<::Scripting::ResultAny(
+            ::Scripting::NativeRuntime&,
+            ::Scripting::ContextId,
+            ::Scripting::WeakLifetimeScope,
+            ::Scripting::ModuleBindingBundle const&,
+            ::Scripting::IDependencyLoader*,
+            ::Scripting::IPrinter*
+        )> func
+    );
+#endif
     // NOLINTEND
 
 public:

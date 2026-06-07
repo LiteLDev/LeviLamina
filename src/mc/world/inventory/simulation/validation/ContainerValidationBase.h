@@ -21,13 +21,8 @@ public:
         int const                       slot
     ) const;
 
-    virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const;
+    virtual bool
+    isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const;
 
     virtual int getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
@@ -55,13 +50,8 @@ public:
         int const                       slot
     ) const;
 
-    MCFOLD bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const;
+    MCFOLD bool
+    $isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const&, int const, bool) const;
 
     MCAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 

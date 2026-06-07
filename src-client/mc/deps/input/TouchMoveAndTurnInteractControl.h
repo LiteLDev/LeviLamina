@@ -89,8 +89,6 @@ public:
 
     MCAPI void _setPreviousActionPointer(int processedPointerId);
 
-    MCAPI bool _shouldUpdateActivePointer(int processedPointerId) const;
-
     MCAPI void _tickAltTurn(
         ::InputEventQueue&     eventQueue,
         ::TouchPointResults&   touchPointResults,
@@ -134,18 +132,6 @@ public:
         int                    yAxisInversionFactor,
         ::RectangleArea const& turnArea,
         float                  maxMovementZone
-    );
-
-    MCAPI bool calculateTouchDelta(
-        float  x,
-        float  y,
-        float  x0,
-        float  y0,
-        float& dx,
-        float& dy,
-        float  deadZone,
-        float  maximumMovementZone,
-        bool   autoSprint
     );
 
     MCAPI void calibrateMoveDelta(float& dx, float& dy);

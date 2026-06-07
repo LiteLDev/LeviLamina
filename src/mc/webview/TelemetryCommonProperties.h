@@ -13,17 +13,25 @@ public:
     ::ll::UntypedStorage<8, 40> mUnk80d437;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     TelemetryCommonProperties& operator=(TelemetryCommonProperties const&);
     TelemetryCommonProperties(TelemetryCommonProperties const&);
     TelemetryCommonProperties();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    TelemetryCommonProperties& operator=(TelemetryCommonProperties const&);
+    TelemetryCommonProperties();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI TelemetryCommonProperties(::Webview::TelemetryCommonProperties&&);
+    MCNAPI TelemetryCommonProperties(::Webview::TelemetryCommonProperties const&);
 
     MCNAPI ::Webview::TelemetryCommonProperties& operator=(::Webview::TelemetryCommonProperties&&);
 
@@ -35,7 +43,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::Webview::TelemetryCommonProperties&&);
+    MCNAPI void* $ctor(::Webview::TelemetryCommonProperties const&);
 #endif
     // NOLINTEND
 

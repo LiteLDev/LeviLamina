@@ -17,15 +17,17 @@ class BlockSource;
 class BlockType;
 class CompoundTag;
 class Container;
-class HashedString;
 class InteractionResult;
 class ItemDescriptor;
 class ItemInstance;
 class ItemStack;
+class ItemStackBase;
 class Level;
+class Material;
 class Player;
 class Vec3;
 struct Brightness;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class BucketItem : public ::Item {
@@ -34,6 +36,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::BucketFillType> mFillType;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BucketItem();
 
 public:
     // virtual functions
@@ -60,7 +66,7 @@ public:
 
     virtual bool isLiquidClipItem() const /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& userData, ::CompoundTag const*) const /*override*/;
 
     virtual bool validFishInteraction(int) const /*override*/;
 
@@ -70,16 +76,27 @@ public:
 
     virtual bool isDestructive(int auxValue) const /*override*/;
 
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
+
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~BucketItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BucketItem(::std::string const& name, int id, ::BucketFillType type);
+
+    MCAPI void _broadcastBucketEmptySound(::BlockSource& region, ::Actor& entity, ::BlockPos const& pos) const;
+
+    MCAPI void _broadcastBucketFillSound(::BlockSource& region, ::Actor& entity, ::Material const& material) const;
+
     MCAPI bool _canEmptyBucketIntoBlock(
         ::BlockSource&    region,
         ::BlockPos const& pos,
@@ -97,7 +114,7 @@ public:
         uchar              face
     ) const;
 
-    MCAPI bool _supportsEntityType(::ActorType const& entityType, ::HashedString& bucketType) const;
+    MCAPI void _replaceWithEmptyBucket(::ItemStack& instance, ::Actor& entity) const;
 
     MCAPI bool _takeLiquid(::ItemStack& item, ::Actor& entity, ::BlockPos const& pos) const;
 
@@ -116,9 +133,21 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string getSchoolName(int color, int color2, int variant, int markVariant);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::pair<::BucketFillType, ::ActorType>> const& mFillTypeToEntityType();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::BucketFillType type);
     // NOLINTEND
 
 public:
@@ -132,7 +161,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
+    MCAPI void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
@@ -144,7 +173,7 @@ public:
 
     MCAPI bool $isLiquidClipItem() const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& userData, ::CompoundTag const*) const;
 
     MCAPI bool $validFishInteraction(int) const;
 
@@ -153,6 +182,13 @@ public:
     MCFOLD bool $isValidAuxValue(int auxValue) const;
 
     MCAPI bool $isDestructive(int auxValue) const;
+
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;

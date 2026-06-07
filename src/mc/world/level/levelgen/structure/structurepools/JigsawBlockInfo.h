@@ -20,30 +20,4 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const*>       mFinalBlock;
     ::ll::TypedStorage<8, 144, ::JigsawEditorData> mEditorData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawBlockInfo& operator=(JigsawBlockInfo const&);
-    JigsawBlockInfo(JigsawBlockInfo const&);
-    JigsawBlockInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI JigsawBlockInfo(::JigsawBlockInfo&&);
-
-    MCAPI ~JigsawBlockInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::JigsawBlockInfo&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

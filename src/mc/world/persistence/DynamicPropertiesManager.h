@@ -7,6 +7,7 @@
 class DynamicProperties;
 class ILevelStorageManagerConnector;
 class LevelStorage;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class DynamicPropertiesManager {
@@ -29,15 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit DynamicPropertiesManager(::cereal::ReflectionCtx const& ctx);
+
+    MCNAPI void addBytesSaved(::DynamicProperties const& properties);
+
     MCNAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
+
+    MCNAPI uint64 getTotalBytesSaved() const;
 
     MCNAPI void readFromLevelStorage(::LevelStorage& levelStorage);
 
     MCNAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
+    MCNAPI void tick();
+
     MCNAPI void writeToLevelStorage(::LevelStorage& levelStorage);
 
     MCNAPI ~DynamicPropertiesManager();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:

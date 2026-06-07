@@ -12,6 +12,7 @@
 // clang-format off
 class BiomeTintCache;
 class Block;
+class ChunkViewSource;
 namespace mce { class Color; }
 // clang-format on
 
@@ -26,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PositionDependentTintResolver();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::mce::Color _get(
@@ -34,8 +39,18 @@ public:
         ::TintMethod      tintMethod,
         ::BiomeTintCache* biomeTintCache
     ) /*override*/;
+    // NOLINTEND
 
-    virtual ~PositionDependentTintResolver() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PositionDependentTintResolver(::ChunkViewSource& viewSource, ::BlockPos minPos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ChunkViewSource& viewSource, ::BlockPos minPos);
     // NOLINTEND
 
 public:

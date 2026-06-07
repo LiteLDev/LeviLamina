@@ -10,17 +10,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShowProfilePacketPayload(ShowProfilePacketPayload const&);
-    ShowProfilePacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ShowProfilePacketPayload& operator=(::ShowProfilePacketPayload&&);
-
-    MCFOLD ::ShowProfilePacketPayload& operator=(::ShowProfilePacketPayload const&);
-
     MCAPI ~ShowProfilePacketPayload();
     // NOLINTEND
 

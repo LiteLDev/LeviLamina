@@ -44,14 +44,24 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
+    // NOLINTEND
 
-    virtual ~FillCommand() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FillCommand();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

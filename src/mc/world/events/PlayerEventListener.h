@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/events/NetworkType.h"
 #include "mc/network/packet/PlayerActionType.h"
@@ -15,7 +14,6 @@
 class Actor;
 class Block;
 class BlockPos;
-class Dimension;
 class EntityContext;
 class ItemDescriptor;
 class ItemEnchants;
@@ -53,7 +51,11 @@ public:
 
     virtual ::EventResult onPlayerSaved(::Player& player);
 
+#ifdef LL_PLAT_S
+    virtual ::EventResult onPlayerInput(::EntityContext&);
+#else // LL_PLAT_C
     virtual ::EventResult onPlayerInput(::EntityContext& entity);
+#endif
 
     virtual ::EventResult onPlayerAuthInputReceived(::Player&);
 
@@ -61,7 +63,11 @@ public:
 
     virtual ::EventResult onPlayerTurn(::Player& player, ::Vec2& turnDelta);
 
+#ifdef LL_PLAT_S
+    virtual ::EventResult onCameraSetPlayerRot(::Player&, ::Vec2 const&);
+#else // LL_PLAT_C
     virtual ::EventResult onCameraSetPlayerRot(::Player& player, ::Vec2 const& rotation);
+#endif
 
     virtual ::EventResult onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
 
@@ -141,11 +147,8 @@ public:
 
     virtual ::EventResult onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
-    virtual ::EventResult onPlayerKineticDamageDealt(
-        ::Player&                           player,
-        ::ActorUniqueID const&              target,
-        ::DealKineticDamageComponent const& dealKinematicDamageComponent
-    );
+    virtual ::EventResult
+    onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
 
     virtual ::EventResult onEvent(::PlayerNotificationEvent const& event);
 
@@ -172,7 +175,7 @@ public:
 
     MCFOLD ::EventResult $onPlayerSaved(::Player& player);
 
-    MCFOLD ::EventResult $onPlayerInput(::EntityContext& entity);
+    MCFOLD ::EventResult $onPlayerInput(::EntityContext&);
 
     MCFOLD ::EventResult $onPlayerAuthInputReceived(::Player&);
 
@@ -180,7 +183,7 @@ public:
 
     MCFOLD ::EventResult $onPlayerTurn(::Player& player, ::Vec2& turnDelta);
 
-    MCFOLD ::EventResult $onCameraSetPlayerRot(::Player& player, ::Vec2 const& rotation);
+    MCFOLD ::EventResult $onCameraSetPlayerRot(::Player&, ::Vec2 const&);
 
     MCFOLD ::EventResult $onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
 
@@ -260,11 +263,8 @@ public:
 
     MCFOLD ::EventResult $onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
-    MCFOLD ::EventResult $onPlayerKineticDamageDealt(
-        ::Player&                           player,
-        ::ActorUniqueID const&              target,
-        ::DealKineticDamageComponent const& dealKinematicDamageComponent
-    );
+    MCFOLD ::EventResult
+    $onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
 
     MCFOLD ::EventResult $onShowDataDrivenScreen(::LocalPlayer&, ::std::string const&, uint, ::std::optional<uint>);
 

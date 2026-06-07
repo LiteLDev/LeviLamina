@@ -11,7 +11,6 @@ class IClientInstance;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
-class UIPropertyBag;
 class UIResolvedDef;
 // clang-format on
 
@@ -44,15 +43,13 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
+    virtual void render(::MinecraftUIRenderContext& client, ::IClientInstance& owner, ::UIControl&, int) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PanoramaRenderer(::UIResolvedDef const& def);
-
-    MCAPI void _setCanScrollProperties(::UIPropertyBag& bag, float maxUVx) const;
     // NOLINTEND
 
 public:
@@ -64,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -72,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& client, ::IClientInstance& owner, ::UIControl&, int);
     // NOLINTEND
 
 public:

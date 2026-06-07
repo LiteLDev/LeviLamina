@@ -25,8 +25,6 @@ public:
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
 
     virtual ::Bedrock::Http::ResponseBodyType getType() const /*override*/;
-
-    virtual ~IgnoredResponseBody() /*override*/ = default;
     // NOLINTEND
 
 public:

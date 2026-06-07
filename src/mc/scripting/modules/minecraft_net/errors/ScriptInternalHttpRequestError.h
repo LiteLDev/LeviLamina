@@ -29,8 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ScriptInternalHttpRequestError(::std::error_code const& error);
-
-    MCNAPI ::std::string getMessage() const;
     // NOLINTEND
 
 public:

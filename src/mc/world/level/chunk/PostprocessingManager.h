@@ -34,7 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PostprocessingManager();
+
     MCAPI ::std::optional<::std::vector<::PostprocessingManager::LockedChunk>>
     tryLock(::ChunkPos const& center, ::ChunkSource& neighborhood, ::std::optional<::ChunkState> minimumChunkState);
+
+    MCAPI ~PostprocessingManager();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

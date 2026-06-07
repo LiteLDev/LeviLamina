@@ -26,26 +26,15 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        StringRepresentation(StringRepresentation const&);
-        StringRepresentation();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
-        operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation&&);
-
-        MCFOLD ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
-        operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation const&);
-
-        MCAPI ~StringRepresentation();
+        MCAPI StringRepresentation();
         // NOLINTEND
 
     public:
-        // destructor thunk
+        // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -58,20 +47,14 @@ public:
 
 public:
     // prevent constructor by default
-    ExpressionNode& operator=(ExpressionNode const&);
+    ExpressionNode();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExpressionNode();
-
-    MCAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode&&);
-
-    MCAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode const&);
+    MCAPI explicit ExpressionNode(float f);
 
     MCAPI ExpressionNode(::std::string string, short molangVersion);
-
-    MCAPI ::SharedTypes::Legacy::ExpressionNode& operator=(::SharedTypes::Legacy::ExpressionNode&&);
 
     MCAPI ~ExpressionNode();
     // NOLINTEND
@@ -85,11 +68,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode&&);
-
-    MCAPI void* $ctor(::SharedTypes::Legacy::ExpressionNode const&);
+    MCAPI void* $ctor(float f);
 
     MCAPI void* $ctor(::std::string string, short molangVersion);
     // NOLINTEND

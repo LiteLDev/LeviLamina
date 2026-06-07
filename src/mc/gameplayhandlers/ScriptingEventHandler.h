@@ -24,8 +24,6 @@ public:
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ScriptingGameplayEvent<::CoordinatorResult> const&) = 0;
-
-    virtual ~ScriptingEventHandler() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -25,21 +25,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FaceDimmingStep();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-
-    virtual ~FaceDimmingStep() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FaceDimmingStep(::ClientBlockPipeline::DimensionDimmingScalars const& dimmingScalars);
+
     MCAPI void _run(
         ::ClientBlockPipeline::FaceNormalAttributes const&   faceNormals,
         ::ClientBlockPipeline::FaceDimmingAttributes&        faceDimming,
         ::ClientBlockPipeline::MaterialFaceAttributes const& materials
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ClientBlockPipeline::DimensionDimmingScalars const& dimmingScalars);
     // NOLINTEND
 
 public:

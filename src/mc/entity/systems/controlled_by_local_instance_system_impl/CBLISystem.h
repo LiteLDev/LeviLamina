@@ -217,8 +217,6 @@ public:
             ::EntityFactoryT<>>& strictContext,
         ::StrictEntityContext&   entity
     ) /*override*/;
-
-    virtual ~CBLISystem() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -40,8 +40,6 @@ public:
     virtual ::ItemDescriptor::InternalType getType() const /*override*/;
 
     virtual uint64 getHash() const /*override*/;
-
-    virtual ~InternalItemDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +58,7 @@ public:
 
     MCAPI ::std::string $getFullName() const;
 
-    MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
+    MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
 
     MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 

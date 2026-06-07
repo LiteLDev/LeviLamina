@@ -13,4 +13,20 @@ public:
     ::ll::TypedStorage<1, 1, bool>          mShouldSelectSlot;
     ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayerHotbarPacketPayload();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlayerHotbarPacketPayload(uint selectedSlot, ::ContainerID containerID, bool shouldSelectSlot);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint selectedSlot, ::ContainerID containerID, bool shouldSelectSlot);
+    // NOLINTEND
 };

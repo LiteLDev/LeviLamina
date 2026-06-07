@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 
 // auto generated forward declare list
@@ -57,8 +56,6 @@ public:
     MCAPI void _removeServer();
 
     MCAPI void _saveFormDataThen(::std::function<void()> callback);
-
-    MCAPI ::ui::ViewRequest _validateFormData();
     // NOLINTEND
 
 public:

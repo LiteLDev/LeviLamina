@@ -25,21 +25,29 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DoorItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-
-    virtual ~DoorItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _place(::BlockSource& region, ::BlockPos pos, ::Block const& block) const;
+    MCAPI DoorItem(::std::string const& name, int id, ::DoorBlock::DoorType type);
 
-    MCAPI ::Block const* getDoorBlock() const;
+    MCAPI bool _place(::BlockSource& region, ::BlockPos pos, ::Block const& block) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::DoorBlock::DoorType type);
     // NOLINTEND
 
 public:

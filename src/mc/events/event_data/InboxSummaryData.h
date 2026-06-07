@@ -4,40 +4,6 @@
 
 namespace Social::Events {
 
-struct InboxSummaryData {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk78ad8e;
-    ::ll::UntypedStorage<8, 16> mUnk5434f6;
-    ::ll::UntypedStorage<8, 8>  mUnk861a0d;
-    ::ll::UntypedStorage<8, 8>  mUnk56b48d;
-    ::ll::UntypedStorage<1, 1>  mUnkffded2;
-    ::ll::UntypedStorage<1, 1>  mUnkf4e4d7;
-    ::ll::UntypedStorage<1, 1>  mUnk5b2a59;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InboxSummaryData& operator=(InboxSummaryData const&);
-    InboxSummaryData(InboxSummaryData const&);
-    InboxSummaryData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~InboxSummaryData();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
-};
+struct InboxSummaryData {};
 
 } // namespace Social::Events

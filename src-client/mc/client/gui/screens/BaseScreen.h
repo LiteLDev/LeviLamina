@@ -85,13 +85,13 @@ public:
 
     virtual void applyInput(float a) /*override*/;
 
-    virtual void preRenderUpdate(::ScreenContext& screenContext) /*override*/;
+    virtual void preRenderUpdate(::ScreenContext&) /*override*/;
 
     virtual void prepareFrame(::ScreenContext& screenContext) /*override*/;
 
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) = 0;
 
-    virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
+    virtual void postRenderUpdate(::ScreenContext&) /*override*/;
 
     virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
@@ -112,8 +112,6 @@ public:
     virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) /*override*/;
 
     virtual void handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact) /*override*/;
-
-    virtual void handleCaretLocation(int caretLocation, ::FocusImpact focusImpact) /*override*/;
 
     virtual void
     handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) /*override*/;
@@ -179,7 +177,7 @@ public:
 
     virtual int getScreenVersion() const /*override*/;
 
-    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents) /*override*/;
+    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&) /*override*/;
 
     virtual bool getShouldSendEvents() /*override*/;
 
@@ -237,6 +235,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BaseScreen();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void drawRectangleArea(
@@ -254,6 +258,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -262,7 +272,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setupForRendering(::ScreenContext& screenContext);
+    MCFOLD void $setupForRendering(::ScreenContext& screenContext);
 
     MCAPI void $cleanupForRendering(::ScreenContext& screenContext);
 
@@ -298,11 +308,11 @@ public:
 
     MCFOLD void $applyInput(float a);
 
-    MCFOLD void $preRenderUpdate(::ScreenContext& screenContext);
+    MCFOLD void $preRenderUpdate(::ScreenContext&);
 
     MCFOLD void $prepareFrame(::ScreenContext& screenContext);
 
-    MCFOLD void $postRenderUpdate(::ScreenContext& screenContext);
+    MCFOLD void $postRenderUpdate(::ScreenContext&);
 
     MCFOLD void $handleInputModeChanged(::InputMode inputMode);
 
@@ -320,8 +330,6 @@ public:
     MCFOLD void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 
     MCFOLD void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
-
-    MCFOLD void $handleCaretLocation(int caretLocation, ::FocusImpact focusImpact);
 
     MCFOLD void $handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
 
@@ -385,7 +393,7 @@ public:
 
     MCFOLD int $getScreenVersion() const;
 
-    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents);
+    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&);
 
     MCFOLD bool $getShouldSendEvents();
 

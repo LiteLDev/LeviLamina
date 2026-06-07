@@ -30,29 +30,21 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HudDashRenderer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual void render(
-        ::MinecraftUIRenderContext& renderContext,
-        ::IClientInstance&          client,
-        ::UIControl&                owner,
-        int                         pass
-    ) /*override*/;
+    virtual void
+    render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
-
-    virtual ~HudDashRenderer() /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl&, ::UIScene const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HudDashRenderer();
+
     MCAPI explicit HudDashRenderer(::UIResolvedDef const& def);
 
     MCAPI void _loadDashTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
@@ -68,13 +60,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& def);
-    // NOLINTEND
+    MCAPI void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
@@ -82,10 +70,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void
-    $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
     // NOLINTEND
 
 public:

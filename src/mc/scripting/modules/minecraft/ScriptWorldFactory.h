@@ -12,6 +12,7 @@ namespace ScriptModuleMinecraft { class ScriptWorld; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -27,7 +28,8 @@ public:
         ::Scripting::WeakLifetimeScope&   scope,
         ::ServerLevel&                    level,
         ::Scripting::DependencyLocator&   locator,
-        ::Scripting::ContextConfig const& config
+        ::Scripting::ContextConfig const& config,
+        ::Scripting::Version              serverModuleVersion
     );
     // NOLINTEND
 };

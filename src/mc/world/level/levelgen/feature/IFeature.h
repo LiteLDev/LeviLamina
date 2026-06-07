@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockDescriptor;
 class IBlockWorldGenAPI;
 class Random;
@@ -61,16 +62,29 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool isAllowedToPlaceFeature(::IFeature const& feature) const;
+
+    MCFOLD bool isInternal() const;
+
+    MCAPI bool operator==(::IFeature const& other) const;
+
+    MCAPI bool
+    setBlockSafe(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int updateFlags) const;
+
+    MCAPI bool setBlockSafeSimple(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block) const;
+
+    MCFOLD void setCanUseInternalFeature(bool canUseInternalFeature);
+
+    MCFOLD void setIsInternal(bool isInternal);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool
     isExposedTo(::IBlockWorldGenAPI const& target, ::BlockPos const& candidatePos, ::BlockDescriptor const& exposedTo);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DEFAULT_NOT_SUPPORTED_PASS();
     // NOLINTEND
 
 public:
@@ -87,11 +101,5 @@ public:
     MCFOLD void $upgradeFormat(::SemVersion const&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

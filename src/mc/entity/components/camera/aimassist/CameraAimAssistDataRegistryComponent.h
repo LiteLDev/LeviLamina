@@ -17,6 +17,7 @@ class CameraAimAssistRegistryComponent;
 class EntityContext;
 class IMinecraftEventing;
 class LinkedAssetValidator;
+class NetworkIdentifier;
 class PackInstance;
 class PacketSender;
 class ResourcePackManager;
@@ -54,14 +55,10 @@ public:
     CameraAimAssistDataRegistryComponent();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~CameraAimAssistDataRegistryComponent() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CameraAimAssistDataRegistryComponent(::IMinecraftEventing& eventing);
+
     MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _categoriesPackForEachCallback(
         ::EntityContext& levelEntity,
         ::Puv::Loader<
@@ -98,6 +95,8 @@ public:
         ::Core::Path const&                                             filenameWithExtension
     );
 
+    MCAPI void _reset();
+
     MCAPI bool _validatePresetCategorySetting(::std::string const& categoryId) const;
 
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&
@@ -105,6 +104,12 @@ public:
 
     MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&
     addPreset(::EntityContext& levelEntity, ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&& preset);
+
+    MCFOLD ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> const&
+    getCategories() const;
+
+    MCFOLD ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition> const&
+    getPresets() const;
 
     MCAPI void loadJsonFilesForServer(
         ::EntityContext&                                   levelEntity,
@@ -124,11 +129,23 @@ public:
 
     MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const* tryGetPreset(::HashedString const& id) const;
 
+    MCAPI void updateServerAndSendRegistryToClient(
+        ::PacketSender&                     packetSender,
+        ::CameraAimAssistRegistryComponent& aimAssistRegistry,
+        ::NetworkIdentifier const&          source
+    );
+
     MCAPI void updateServerAndSynchronizeWithClients(
         ::CameraAimAssistDataRegistryDirtyComponent const& registryDirtyComponent,
         ::CameraAimAssistRegistryComponent&                aimAssistRegistry,
         ::PacketSender&                                    packetSender
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

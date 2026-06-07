@@ -12,8 +12,10 @@
 // clang-format off
 class BinaryStream;
 class BlockPalette;
+class EntityContext;
 class Player;
 class ReadOnlyBinaryStream;
+struct DepenetrationComponent;
 // clang-format on
 
 class ComplexInventoryTransaction {
@@ -37,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ComplexInventoryTransaction();
+    virtual ~ComplexInventoryTransaction() = default;
 
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
@@ -53,8 +55,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _setDepenetrationOverride(::DepenetrationComponent& depenetration);
+
+    MCAPI static void _setDepenetrationOverride(::EntityContext& entity);
+
+    MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction> fromType(::ComplexInventoryTransaction::Type type);
+
     MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
     fromType(::ComplexInventoryTransaction::Type type, ::InventoryTransaction const& transaction);
+
+    MCAPI static ::std::string const getTransactionTypeName(::ComplexInventoryTransaction::Type type);
     // NOLINTEND
 
 public:
@@ -62,12 +72,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BidirectionalUnorderedMap<::ComplexInventoryTransaction::Type, ::std::string> const&
     transactionTypeMap();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

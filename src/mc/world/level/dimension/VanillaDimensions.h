@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/platform/Result.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class DimensionConversionData;
 class Vec3;
 // clang-format on
@@ -31,7 +29,13 @@ public:
 
     MCAPI static ::Bedrock::Result<::DimensionType> fromSerializedInt(::Bedrock::Result<int>&& i);
 
+    MCFOLD static ::DimensionType fromSerializedInt(int i);
+
     MCAPI static ::DimensionType fromString(::std::string const& name);
+
+    MCAPI static int toSerializedInt(::DimensionType const& type);
+
+    MCAPI static ::std::string const toString(::DimensionType const& type);
     // NOLINTEND
 
 public:

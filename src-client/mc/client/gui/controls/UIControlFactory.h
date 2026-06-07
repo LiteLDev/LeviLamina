@@ -60,11 +60,13 @@ public:
 
     MCAPI ::UIAnim* _addAnimToComponent(::std::string_view name, ::UIControl& ownerControl);
 
+    MCAPI ::UIAnim* _addAnimToComponent(::std::string_view name, ::UIResolvedDef& def, ::UIControl& ownerControl);
+
     MCAPI ::std::shared_ptr<::UIControl> _createControlTree(
-        ::UIControlFactoryContext const&,
-        ::UIControl const&        templateControl,
-        ::UIControl*              parent,
-        ::ui::ChildInsertPosition childInsertPosition
+        ::UIControlFactoryContext const& templateControl,
+        ::UIControl const&               parent,
+        ::UIControl*                     childInsertPosition,
+        ::ui::ChildInsertPosition
     );
 
     MCAPI ::std::shared_ptr<::UIControl> _createControlTree(
@@ -92,8 +94,6 @@ public:
         ::ControlScreenAction&           controlScreenAction
     );
 
-    MCAPI void _createCustom(::UIControl& control, ::UIResolvedDef const& def);
-
     MCAPI ::std::shared_ptr<::UIControl> _createFromResolvedDef(
         ::UIControlFactoryContext const& context,
         ::UIResolvedDef const&           resolvedDef,
@@ -105,9 +105,11 @@ public:
 
     MCAPI void _createGradientRenderer(::CustomRenderComponent& customRenderComponent, ::UIResolvedDef const& def);
 
+    MCAPI void _createScrollTrack(::UIControl& control, ::UIResolvedDef const& def);
+
     MCAPI ::FontHandle _getFontFromFontType(::std::string const& fontType) const;
 
-    MCAPI ::std::pair<::FontHandle, ::FontHandle> _getFontsFromFontType(::std::string const& fontType) const;
+    MCAPI void _populateAnchoredOffsetComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI void _populateAnimations(::UIResolvedDef const& def, ::UIControl& control);
 
@@ -118,6 +120,8 @@ public:
     MCAPI void _populateCollectionItemComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI void _populateControl(::UIResolvedDef const& def, ::UIControl& control);
+
+    MCAPI void _populateCustomFrameUpdateComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI void _populateCustomRenderComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
@@ -161,6 +165,8 @@ public:
 
     MCAPI void _populateScrollViewComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
+    MCAPI void _populateScrollbarBoxComponent(::UIResolvedDef const& ownerControl, ::UIControl&);
+
     MCAPI void _populateSelectionWheelComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI void _populateSliderBoxComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
@@ -196,7 +202,31 @@ public:
     _postCreate(::UIControlFactoryContext const& context, ::UIControl& control, ::UIResolvedDef const& controlDef);
 
     MCAPI ::ui::TileDirection const
-    _resolveTileDirection(::UIResolvedDef const& ownerDef, ::UIControl&, ::std::string const& propertyName);
+    _resolveTileDirection(::UIResolvedDef const& ownerDef, ::UIControl& propertyName, ::std::string const&);
+
+    MCAPI void _setName(::UIControl& control, ::UIResolvedDef const& def, ::std::string const& defaultName);
+
+    MCAPI ::std::shared_ptr<::UIControl> createControlTree(
+        ::UIControl const&        templateControl,
+        ::UIControl*              parent,
+        ::ui::ChildInsertPosition childInsertPosition
+    );
+
+    MCAPI ::std::shared_ptr<::UIControl> createControlTree(
+        ::std::string_view        name,
+        ::ControlScreenAction&    controlScreenAction,
+        ::UIControl*              parent,
+        ::ui::ChildInsertPosition childInsertPosition,
+        ::Json::Value*            additionalVars,
+        bool                      isTemplateControl
+    );
+
+    MCAPI ::std::shared_ptr<::UIControl>
+    createControlTreeRootOnly(::std::string_view name, ::ControlScreenAction& controlScreenAction);
+
+    MCAPI ::std::shared_ptr<::UIControl> getInitSelectedControl() const;
+
+    MCAPI void setGlobalVars(::Json::Value const& globalVars);
 
     MCAPI ~UIControlFactory();
     // NOLINTEND

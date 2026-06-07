@@ -29,12 +29,6 @@ public:
     SettingsGroupQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SettingsGroupQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SettingsGroupQuery(::OreUI::ClientDependencies const& client, ::std::string const& groupId);

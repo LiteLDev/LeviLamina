@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class DeferredSubscriptionHub; }
+namespace Bedrock::PubSub { class SubscriptionContext; }
 // clang-format on
 
 namespace Bedrock::PubSub::DeferralPolicy {
@@ -25,19 +26,6 @@ public:
     // HubPolicy inner types define
     template <typename T0>
     class SubscriptionBodyImpl {};
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static void _enqueue(
-        ::Bedrock::PubSub::DeferredSubscriptionHub& hub,
-        ::std::function<void()>                     fn,
-        ::Bedrock::PubSub::ConnectPosition          at,
-        ::std::optional<int>                        group
-    );
-#endif
-    // NOLINTEND
 };
 
 } // namespace Bedrock::PubSub::DeferralPolicy

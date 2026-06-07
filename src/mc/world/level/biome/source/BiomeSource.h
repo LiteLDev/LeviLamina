@@ -12,6 +12,7 @@
 class Biome;
 class BiomeArea;
 class BlockPos;
+class BlockPosIterator;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class LevelChunk;
@@ -52,6 +53,20 @@ public:
     virtual ::BiomeSourceType const getType() const = 0;
 
     virtual ::Biome const* _getBiome(::GetBiomeOptions const& getBiomeOptions) const = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::Biome const* getBiome(::BlockPos const& blockPos) const;
+
+    MCFOLD ::Biome const* getBiome(::GetBiomeOptions const& getBiomeOptions) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::BlockPosIterator getAreaIterator(::BoundingBox const& areaBounds, uint scale);
     // NOLINTEND
 
 public:

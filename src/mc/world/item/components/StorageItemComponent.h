@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
+class DynamicContainerTracker;
 class FillingContainer;
 class HashedString;
 class IContainerRegistryAccess;
@@ -23,6 +24,7 @@ class Player;
 class SaveContext;
 class SemVersion;
 struct FullContainerName;
+namespace SharedTypes::v1_21_60 { struct StorageItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -59,17 +61,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
-
-    virtual ~StorageItemComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit StorageItemComponent(::SharedTypes::v1_21_60::StorageItemComponent const& component);
+
+    MCAPI ::std::shared_ptr<::DynamicContainerTracker>
+    createDynamicContainerTracker(::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
+
+    MCFOLD bool getAllowNestedStorageItem() const;
+
+    MCFOLD ::std::vector<::ItemDescriptor> const& getAllowedItems() const;
+
     MCAPI ::std::shared_ptr<::FillingContainer>
     getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
 
-    MCAPI ::std::optional<int> getDynamicContainerWeight(::FullContainerName id) const;
+    MCFOLD ::std::vector<::ItemDescriptor> const& getBannedItems() const;
+
+    MCFOLD int getNumSlot() const;
 
     MCAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
 
@@ -98,9 +109,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::SharedTypes::v1_21_60::StorageItemComponent const& component);
     // NOLINTEND
 
 public:

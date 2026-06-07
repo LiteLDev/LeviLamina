@@ -38,8 +38,6 @@ public:
         ::RenderParams&                                   renderParams,
         ::std::chrono::nanoseconds const&                 dt
     ) /*override*/;
-
-    virtual ~EmitterRateSteadyComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

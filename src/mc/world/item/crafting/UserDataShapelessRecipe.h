@@ -23,19 +23,10 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     UserDataShapelessRecipe();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    UserDataShapelessRecipe& operator=(UserDataShapelessRecipe const&);
-    UserDataShapelessRecipe(UserDataShapelessRecipe const&);
-    UserDataShapelessRecipe();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,17 +34,11 @@ public:
         /*override*/;
 
     virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const /*override*/;
-
-    virtual ~UserDataShapelessRecipe() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI UserDataShapelessRecipe(::UserDataShapelessRecipe&&);
-#endif
-
     MCAPI explicit UserDataShapelessRecipe(::Recipe::ConstructionContext&& context);
 
     MCAPI bool _itemShouldKeepUserData(::ItemStack const& item) const;
@@ -68,17 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::UserDataShapelessRecipe&&);
-#endif
-
     MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

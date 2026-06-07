@@ -26,6 +26,10 @@ public:
     // NOLINTBEGIN
     MCAPI void clearItemInUse(::EntityContext& owner);
 
+    MCFOLD ::ItemStack const& getItemInUse() const;
+
+    MCAPI int getUsedDuration(::EntityContext const& owner) const;
+
     MCAPI void releaseUsing(::Player& player);
 
     MCAPI void

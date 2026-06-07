@@ -4,6 +4,14 @@
 
 namespace Util {
 
-struct CaseInsensitiveCompare {};
+struct CaseInsensitiveCompare {
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI bool operator()(::std::string_view a, ::std::string_view b) const;
+#endif
+    // NOLINTEND
+};
 
 } // namespace Util

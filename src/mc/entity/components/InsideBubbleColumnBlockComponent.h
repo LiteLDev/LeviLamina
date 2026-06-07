@@ -56,16 +56,4 @@ public:
             ::InsideBubbleColumnBlockComponent::InsideColumnData>>>
         mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InsideBubbleColumnBlockComponent& operator=(InsideBubbleColumnBlockComponent const&);
-    InsideBubbleColumnBlockComponent(InsideBubbleColumnBlockComponent const&);
-    InsideBubbleColumnBlockComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::InsideBubbleColumnBlockComponent& operator=(::InsideBubbleColumnBlockComponent&&);
-    // NOLINTEND
 };

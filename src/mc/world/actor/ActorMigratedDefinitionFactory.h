@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/puv/ComponentStorageLoadDataRefVariant.h"
+#include "mc/deps/puv/LoadResultBetaVariant.h"
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
 #include "mc/resources/JsonBetaState.h"
 
@@ -19,6 +21,10 @@ struct DeserializeDataSettings;
 struct LegacyGoalDefinition;
 namespace JsonComponentGlueUtils { struct ActorLoaderTraits; }
 namespace JsonComponentGlueUtils { struct CustomUpgradeData; }
+namespace Puv { class Input; }
+namespace SharedTypes::Beta { struct ActorDefinitions; }
+namespace SharedTypes::Beta { struct ActorDocument; }
+namespace SharedTypes::Legacy { struct ActorDocument; }
 namespace SharedTypes::Legacy { struct ActorDocumentCorrected; }
 namespace SharedTypes::v1_21_100 { struct ActorDocument; }
 namespace SharedTypes::v1_21_110 { struct ActorDocument; }
@@ -26,8 +32,9 @@ namespace SharedTypes::v1_21_120 { struct ActorDocument; }
 namespace SharedTypes::v1_21_130 { struct ActorDocument; }
 namespace SharedTypes::v1_21_90 { struct ActorDocument; }
 namespace SharedTypes::v1_26_0 { struct ActorDocument; }
-namespace SharedTypes::v1_26_10 { struct ActorDefinitions; }
 namespace SharedTypes::v1_26_10 { struct ActorDocument; }
+namespace SharedTypes::v1_26_20 { struct ActorDefinitions; }
+namespace SharedTypes::v1_26_20 { struct ActorDocument; }
 namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -40,14 +47,20 @@ public:
         BetaFeaturesNotEnabled = 1,
     };
 
-    using FillDefinitionCb = ::std::function<
-        ::ActorMigratedDefinitionFactory::
-            InitResult(::ActorDefinitionDescriptor&, ::SharedTypes::v1_26_10::ActorDefinitions&, ::JsonBetaState)>;
+    using FillDefinitionCb = ::std::function<::ActorMigratedDefinitionFactory::InitResult(
+        ::ActorDefinitionDescriptor&,
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions>,
+        ::JsonBetaState
+    )>;
 
     using FillDescriptionCb = ::ActorMigratedDefinitionFactory::InitResult (*)(
         ::ActorDefinition&,
         ::ActorDefinitionDescriptor&,
-        ::SharedTypes::v1_26_10::ActorDefinitions&
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions>
     );
 
     using LoaderPtr =
@@ -69,19 +82,25 @@ public:
         ::std::vector<::ActorMigratedDefinitionFactory::InitResult (*)(
             ::ActorDefinition&,
             ::ActorDefinitionDescriptor&,
-            ::SharedTypes::v1_26_10::ActorDefinitions&
+            ::ComponentStorageLoadDataRefVariant<
+                ::SharedTypes::v1_26_20::ActorDefinitions,
+                ::SharedTypes::Beta::ActorDefinitions>
         )>>
         mFillActorDescriptionCbs;
     ::ll::TypedStorage<
         8,
         24,
-        ::std::vector<::std::function<
-            ::ActorMigratedDefinitionFactory::
-                InitResult(::ActorDefinitionDescriptor&, ::SharedTypes::v1_26_10::ActorDefinitions&, ::JsonBetaState)>>>
+        ::std::vector<::std::function<::ActorMigratedDefinitionFactory::InitResult(
+            ::ActorDefinitionDescriptor&,
+            ::ComponentStorageLoadDataRefVariant<
+                ::SharedTypes::v1_26_20::ActorDefinitions,
+                ::SharedTypes::Beta::ActorDefinitions>,
+            ::JsonBetaState
+        )>>>
         mFillActorDefinitionCbs;
     ::ll::TypedStorage<
         8,
-        168,
+        216,
         ::std::tuple<
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::Legacy::ActorDocumentCorrected,
@@ -110,6 +129,14 @@ public:
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::v1_26_0::ActorDocument,
                                    ::SharedTypes::v1_26_10::ActorDocument,
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::v1_26_10::ActorDocument,
+                                   ::SharedTypes::v1_26_20::ActorDocument,
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::v1_26_20::ActorDocument,
+                                   ::SharedTypes::Beta::ActorDocument,
                                    ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>>>
                                                                         mLegacyUpgradeCallbacks;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::SemVersion>> mVersionedDefinitions;
@@ -129,9 +156,30 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorMigratedDefinitionFactory(::Experiments const& experiments);
 
-    MCAPI void _initialize(::Experiments const& experiments);
+    MCAPI void _bindActorDocumentTypes();
+
+    MCAPI void _initialize(::Experiments const&);
 
     MCAPI ::IJsonDefinitionSerializer* _tryGetDefinitionSerializer(::std::string_view name) const;
+
+    MCAPI void applyLegacyUpgradeCallbacks_v1_21_89(
+        ::Puv::CerealUpgrader<
+            ::SharedTypes::Legacy::ActorDocument,
+            ::SharedTypes::Legacy::ActorDocumentCorrected,
+            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
+    ) const;
+
+    MCAPI ::ActorMigratedDefinitionFactory::InitResult fillActorDefinition(
+        ::ActorDefinition&           def,
+        ::ActorDefinitionDescriptor& desc,
+        ::ComponentStorageLoadDataRefVariant<
+            ::SharedTypes::v1_26_20::ActorDefinitions,
+            ::SharedTypes::Beta::ActorDefinitions> components,
+        ::JsonBetaState                            canUseBeta
+    ) const;
+
+    MCAPI ::Puv::LoadResultBetaVariant<::SharedTypes::v1_26_20::ActorDocument, ::SharedTypes::Beta::ActorDocument>
+    loadDocument(::Puv::Input const& input, ::SemVersion const& version, ::Experiments const& experiments) const;
 
     MCAPI void resetLoader();
 

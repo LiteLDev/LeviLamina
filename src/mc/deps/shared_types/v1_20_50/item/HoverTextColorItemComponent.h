@@ -17,19 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HoverTextColorItemComponent(HoverTextColorItemComponent const&);
-    HoverTextColorItemComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
-    operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
-
-    MCFOLD ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
-    operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent const&);
-
     MCAPI ~HoverTextColorItemComponent();
     // NOLINTEND
 
@@ -37,6 +26,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:

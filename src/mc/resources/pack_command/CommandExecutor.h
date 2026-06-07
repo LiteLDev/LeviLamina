@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace PackCommand { struct MoveReplaceBatch; }
+namespace PackCommand { struct RemoveBatch; }
+namespace PackCommand { struct UpgradeLegacyDependenciesBatch; }
 // clang-format on
 
 namespace PackCommand {
@@ -28,13 +30,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void operator()(::PackCommand::MoveReplaceBatch& commands);
 
-    MCNAPI ~CommandExecutor();
-    // NOLINTEND
+    MCNAPI void operator()(::PackCommand::RemoveBatch& commands);
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void operator()(::PackCommand::UpgradeLegacyDependenciesBatch& commands);
     // NOLINTEND
 };
 

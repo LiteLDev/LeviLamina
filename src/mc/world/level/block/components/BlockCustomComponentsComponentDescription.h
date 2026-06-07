@@ -8,7 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+class CerealSchemaUpgradeSet;
 class CompoundTag;
+class SemVersion;
 struct BlockCustomComponentData;
 namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
@@ -16,12 +18,33 @@ namespace cereal { struct ReflectionCtx; }
 
 class BlockCustomComponentsComponentDescription : public ::BlockComponentDescription {
 public:
+    // BlockCustomComponentsComponentDescription inner types declare
+    // clang-format off
+    struct ComponentOverrides;
+    // clang-format on
+
+    // BlockCustomComponentsComponentDescription inner types define
+    struct ComponentOverrides {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> overridePlayerInteract;
+        ::ll::TypedStorage<1, 1, bool> overridePlayerPlacing;
+        // NOLINTEND
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockCustomComponentData>> mCustomComponentData;
-    ::ll::TypedStorage<1, 1, bool>                                       mIsCustomComponentsV1;
-    ::ll::TypedStorage<1, 1, bool>                                       mHasPlayerInteractEvent;
-    ::ll::TypedStorage<1, 1, bool>                                       mHasPlayerPlacingEvent;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::std::string, ::BlockCustomComponentsComponentDescription::ComponentOverrides>>
+                                   mComponentOverrides;
+    ::ll::TypedStorage<1, 1, bool> mIsCustomComponentsV1;
+    ::ll::TypedStorage<1, 1, bool> mHasPlayerInteractEvent;
+    ::ll::TypedStorage<1, 1, bool> mHasPlayerPlacingEvent;
     // NOLINTEND
 
 public:
@@ -33,11 +56,9 @@ public:
 
     virtual bool isNetworkComponent() const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
-
-    virtual ~BlockCustomComponentsComponentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,6 +76,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCFOLD static ::SemVersion getV2ReleaseVersion();
+
+    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
@@ -72,7 +97,7 @@ public:
 
     MCFOLD bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 

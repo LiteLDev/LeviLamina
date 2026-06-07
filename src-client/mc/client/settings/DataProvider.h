@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IOptionRegistry;
 namespace Settings { class IBooleanDataProvider; }
 namespace Settings { class IOptionsDataProvider; }
 namespace Settings { class IStringDataProvider; }
@@ -19,22 +19,22 @@ namespace Settings::DataProvider {
 // functions
 // NOLINTBEGIN
 MCAPI ::std::optional<::std::unique_ptr<::Settings::IBooleanDataProvider>>
-createBooleanDataProvider(::OptionID optionId, ::IOptions& options);
+createBooleanDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 
 MCAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<int>>>
-createFixedNumberDataProvider(::OptionID optionId, ::IOptions& options);
+createFixedNumberDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 
 MCAPI ::std::optional<::std::unique_ptr<::Settings::IBooleanDataProvider>>
-createInputBooleanDataProvider(::OptionID optionId, ::InputMode inputMode, ::IOptions& options);
+createInputBooleanDataProvider(::OptionID optionId, ::InputMode inputMode, ::IOptionRegistry& options);
 
 MCAPI ::std::optional<::std::unique_ptr<::Settings::INumberDataProvider<float>>>
-createInputFloatDataProvider(::OptionID optionId, ::InputMode inputMode, ::IOptions& options);
+createInputFloatDataProvider(::OptionID optionId, ::InputMode inputMode, ::IOptionRegistry& options);
 
 MCAPI ::std::optional<::std::unique_ptr<::Settings::IOptionsDataProvider>>
-createOptionsDataProvider(::OptionID optionId, ::IOptions& options);
+createOptionsDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 
 MCAPI ::std::optional<::std::unique_ptr<::Settings::IStringDataProvider>>
-createStringDataProvider(::OptionID optionId, ::IOptions& options);
+createStringDataProvider(::OptionID optionId, ::IOptionRegistry& options);
 // NOLINTEND
 
 } // namespace Settings::DataProvider

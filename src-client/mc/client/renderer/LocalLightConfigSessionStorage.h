@@ -19,12 +19,6 @@ public:
     LocalLightConfigSessionStorage();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~LocalLightConfigSessionStorage() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

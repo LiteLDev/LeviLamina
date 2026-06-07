@@ -104,7 +104,7 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position) /*override*/;
+    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const&) /*override*/;
 
     virtual void onMove() /*override*/;
 
@@ -116,16 +116,16 @@ public:
 
     virtual void fixupOnLoad(::LevelChunk& lc) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
-
-    virtual ~FurnaceBlockActor() /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FurnaceBlockActor(::BlockPos const& pos);
+
     MCAPI FurnaceBlockActor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
@@ -147,6 +147,40 @@ public:
 
     MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
 
+#ifdef LL_PLAT_C
+    MCAPI int getBurnProgress(int max);
+
+    MCFOLD ::ItemInstance const& getLastFuelItem() const;
+#endif
+
+    MCFOLD int getLitDuration() const;
+
+#ifdef LL_PLAT_C
+    MCAPI int getLitProgress(int max);
+#endif
+
+    MCFOLD int getLitTime() const;
+
+    MCAPI int getStoredXP() const;
+
+    MCFOLD int getTickCount() const;
+
+    MCAPI bool isEmptiedByHopper(::BlockSource& region);
+
+    MCAPI void onFurnaceBlockRemoved(::BlockSource& region);
+
+    MCFOLD void setLitDuration(int value);
+
+    MCFOLD void setLitTime(int value);
+
+    MCAPI void setOpenByLocalPlayer(bool open);
+
+    MCAPI void setStoredXP(int value);
+
+    MCFOLD void setTickCount(int value);
+
+    MCAPI void storeXPRewardForRemovingWithHopper(::ItemStackBase const& item, int numItemsSmelted);
+
     MCAPI int withdrawStoredXPReward();
     // NOLINTEND
 
@@ -163,9 +197,7 @@ public:
 
     MCAPI static int getXPRewardFromSmeltingItems(::ItemStackBase const& item, int numItemsSmelted);
 
-#ifdef LL_PLAT_C
     MCAPI static bool isItemAllowedInFuelSlot(int slot, ::ItemStackBase const& item, int amount);
-#endif
     // NOLINTEND
 
 public:
@@ -173,11 +205,13 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& BURN_DURATION_KEY();
 
+    MCAPI static int const& BURN_INTERVAL();
+
     MCAPI static ::std::string const& BURN_TIME_KEY();
 
     MCAPI static ::std::string const& COOK_TIME_KEY();
 
-    MCAPI static ::std::string const& CUSTOM_NAME_KEY();
+    MCAPI static float const& DEFAULT_SMELTING_TIME();
 
     MCAPI static ::std::string const& FILTERED_CUSTOM_NAME_KEY();
 
@@ -195,6 +229,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+
     MCAPI void* $ctor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
@@ -205,12 +241,6 @@ public:
         ::Block const&                         unlitFurnace,
         ::Block const&                         litFurnace
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -248,7 +278,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
+    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const&);
 
     MCFOLD void $onMove();
 
@@ -260,9 +290,9 @@ public:
 
     MCAPI void $fixupOnLoad(::LevelChunk& lc);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
 
 
     // NOLINTEND

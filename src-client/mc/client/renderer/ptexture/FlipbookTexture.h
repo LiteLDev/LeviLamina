@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class FrameUpdateContext;
 class MinecraftGraphics;
 class ScreenContext;
 struct FlipbookTextureDescription;
@@ -27,7 +28,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk662201;
     ::ll::UntypedStorage<8, 16>  mUnk31f342;
     ::ll::UntypedStorage<8, 8>   mUnk5e4cdc;
-    ::ll::UntypedStorage<8, 528> mUnk3657f7;
+    ::ll::UntypedStorage<8, 552> mUnk3657f7;
     ::ll::UntypedStorage<8, 56>  mUnk350955;
     ::ll::UntypedStorage<4, 4>   mUnkdd2ba5;
     ::ll::UntypedStorage<4, 4>   mUnkaf5df3;
@@ -61,9 +62,17 @@ public:
     MCNAPI ::mce::framebuilder::BlitFlipbookSingleTextureDescription
     createDescription(::ScreenContext& screenContext, ::mce::ViewportInfo const& viewportInfo) const;
 
+    MCNAPI void frameUpdate(::FrameUpdateContext&);
+
+    MCNAPI bool const isValid() const;
+
     MCNAPI void load();
 
     MCNAPI void render(::ScreenContext& screenContext, ::mce::TexturePtr const&, ::mce::ViewportInfo const&) const;
+
+    MCNAPI void tick();
+
+    MCNAPI void unload();
 
     MCNAPI ~FlipbookTexture();
     // NOLINTEND

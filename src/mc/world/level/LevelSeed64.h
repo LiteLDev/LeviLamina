@@ -16,9 +16,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD ::std::string toUiString() const;
-#endif
+    MCFOLD uint to32BitRandomSeed() const;
+
+    MCAPI ::std::string toUiString() const;
     // NOLINTEND
 
 public:

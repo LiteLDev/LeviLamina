@@ -15,9 +15,11 @@
 // clang-format off
 class ScriptDeferredFlushTracker;
 class ServerLevel;
+namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace ScriptModuleMinecraft { class ScriptSystemLevelEventListener; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -39,8 +41,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual void onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
-
-        virtual ~ScriptSystemAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -107,10 +107,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystemAfterEvents(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
+    MCAPI ScriptSystemAfterEvents(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptAfterEventList const& getSignalList() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents&
     operator=(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
@@ -128,6 +132,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
+    MCAPI static void generateOrderDocumentationForVersion(
+        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
+        ::Json::Value&                       eventOrderArray
+    );
+
     MCAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::ScriptModuleMinecraft::ScriptSystemAfterEvents> const&
     getMetadata();
@@ -136,7 +145,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
     // NOLINTEND
 
 public:

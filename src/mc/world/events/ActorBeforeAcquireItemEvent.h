@@ -27,16 +27,4 @@ public:
     ActorBeforeAcquireItemEvent& operator=(ActorBeforeAcquireItemEvent const&);
     ActorBeforeAcquireItemEvent(ActorBeforeAcquireItemEvent const&);
     ActorBeforeAcquireItemEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorBeforeAcquireItemEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

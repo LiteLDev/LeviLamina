@@ -60,8 +60,6 @@ public:
     virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) = 0;
 
     virtual void close() = 0;
-
-    virtual ~SchemaWriter() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -60,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystem(::ScriptModuleMinecraft::ScriptSystem&&);
-
     MCAPI ScriptSystem(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& eventListeners,
@@ -76,8 +74,7 @@ public:
 
     MCAPI void clearRun(uint runId);
 
-    MCFOLD ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents>
-    getSystemAfterEvents();
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents> getSystemAfterEvents();
 
     MCFOLD ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents>
     getSystemBeforeEvents();
@@ -106,8 +103,6 @@ public:
 
     MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
     waitTicksV1(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
-
-    MCAPI ~ScriptSystem();
     // NOLINTEND
 
 public:
@@ -119,19 +114,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystem&&);
-
     MCAPI void* $ctor(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& eventListeners,
         ::gsl::not_null<::ServerLevel*>                      level
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

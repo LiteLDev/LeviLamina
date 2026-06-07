@@ -7,14 +7,14 @@
 
 struct MolangMaterialVariable : public ::MolangHashStringVariable<::MolangMaterialVariable> {
 public:
-    // prevent constructor by default
-    MolangMaterialVariable& operator=(MolangMaterialVariable const&);
-    MolangMaterialVariable(MolangMaterialVariable const&);
-    MolangMaterialVariable();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::MolangMaterialVariable& operator=(::MolangMaterialVariable&&);
+    MCAPI MolangMaterialVariable();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

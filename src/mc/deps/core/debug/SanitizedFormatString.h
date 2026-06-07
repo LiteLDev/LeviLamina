@@ -22,7 +22,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit SanitizedFormatString(char const* originalString);
+
     MCNAPI void _sanitize();
+
+    MCNAPI char const* getOriginalWithoutFlag() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(char const* originalString);
     // NOLINTEND
 };
 

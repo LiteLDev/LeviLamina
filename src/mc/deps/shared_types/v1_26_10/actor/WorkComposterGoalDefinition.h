@@ -26,23 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorkComposterGoalDefinition& operator=(WorkComposterGoalDefinition const&);
-    WorkComposterGoalDefinition(WorkComposterGoalDefinition const&);
-    WorkComposterGoalDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorkComposterGoalDefinition(::SharedTypes::v1_26_10::WorkComposterGoalDefinition&&);
-
-    MCAPI ::SharedTypes::v1_26_10::WorkComposterGoalDefinition&
-    operator=(::SharedTypes::v1_26_10::WorkComposterGoalDefinition&&);
-
-    MCAPI ~WorkComposterGoalDefinition();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -52,18 +35,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::WorkComposterGoalDefinition&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

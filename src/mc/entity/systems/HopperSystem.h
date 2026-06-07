@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~HopperSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

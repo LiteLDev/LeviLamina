@@ -31,19 +31,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        SoundAddition(SoundAddition const&);
-        SoundAddition();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent::SoundAddition&
-        operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent::SoundAddition&&);
-
-        MCFOLD ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent::SoundAddition&
-        operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent::SoundAddition const&);
-
         MCAPI ~SoundAddition();
         // NOLINTEND
 
@@ -72,32 +61,20 @@ public:
     ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<20>> mUnderwaterMood;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    AmbientSoundsClientBiomeJsonComponent(AmbientSoundsClientBiomeJsonComponent const&);
-    AmbientSoundsClientBiomeJsonComponent();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AmbientSoundsClientBiomeJsonComponent();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
-
-    virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
-#endif
 
     MCAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
@@ -121,15 +98,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -18,16 +18,13 @@ public:
 
 public:
     // prevent constructor by default
+    FileReference& operator=(FileReference const&);
     FileReference(FileReference const&);
     FileReference();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CerealHelpers::FileReference& operator=(::CerealHelpers::FileReference&&);
-
-    MCNAPI ::CerealHelpers::FileReference& operator=(::CerealHelpers::FileReference const&);
-
     MCNAPI ~FileReference();
     // NOLINTEND
 

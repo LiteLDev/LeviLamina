@@ -28,10 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
-    operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&&);
-
-    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
+    MCFOLD ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
     operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier const&);
 
     MCAPI ~CraftingCatalogGroupIdentifier();

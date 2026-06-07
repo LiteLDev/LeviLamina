@@ -78,6 +78,13 @@ public:
         bool                                      includeRandomNumbersInNormalField
     );
 
+    MCAPI void renderParticles(
+        ::ScreenContext&            screenContext,
+        ::Vec3 const&               cameraTargetPos,
+        ::Vec3 const&               cameraPos,
+        ::ParticleRenderData const& particleRenderData
+    );
+
     MCAPI ~ParticleRenderer();
     // NOLINTEND
 

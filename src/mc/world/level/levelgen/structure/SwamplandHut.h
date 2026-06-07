@@ -30,9 +30,7 @@ public:
 
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-    virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~SwamplandHut() /*override*/ = default;
+    virtual void postProcessMobsAt(::BlockSource& region, ::Random&, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -51,7 +49,7 @@ public:
 
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random&, ::BoundingBox const&);
 
 
     // NOLINTEND

@@ -41,12 +41,9 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    virtual float getFurnaceXPmultiplier(::ItemStackBase const& instance) const /*override*/;
-
-    virtual ~CoalItem() /*override*/ = default;
+    virtual float getFurnaceXPmultiplier(::ItemStackBase const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -69,10 +66,9 @@ public:
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
+    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const&) const;
 
 
     // NOLINTEND

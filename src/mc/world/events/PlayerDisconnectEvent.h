@@ -11,16 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerDisconnectEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ClientBlockPipeline { class Instance; }
 namespace ClientBlockPipeline { class Step; }
 // clang-format on
 
@@ -31,9 +32,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        BakedStep& operator=(BakedStep const&);
+        BakedStep();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI BakedStep(::ClientBlockPipeline::Description::BakedStep const&);
+
         MCAPI ~BakedStep();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::ClientBlockPipeline::Description::BakedStep const&);
         // NOLINTEND
 
     public:
@@ -55,12 +69,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Description();
+
+    MCAPI explicit Description(::SubChunkPos const& pos);
+
     MCAPI ::ClientBlockPipeline::Status _checkForCycles(uint64 stepId) const;
 
     MCAPI ::ClientBlockPipeline::Status addDependency(
         ::std::shared_ptr<::ClientBlockPipeline::Step const> step,
         ::std::shared_ptr<::ClientBlockPipeline::Step const> dependency
     );
+
+    MCAPI ::std::unique_ptr<::ClientBlockPipeline::Instance> makeInstance() const;
+
+    MCAPI ~Description();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SubChunkPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

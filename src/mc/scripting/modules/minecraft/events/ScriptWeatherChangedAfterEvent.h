@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -27,15 +28,15 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptWeatherChangedAfterEvent& operator=(ScriptWeatherChangedAfterEvent const&);
-    ScriptWeatherChangedAfterEvent(ScriptWeatherChangedAfterEvent const&);
     ScriptWeatherChangedAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&&);
+    MCAPI ScriptWeatherChangedAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 
 public:
@@ -44,6 +45,15 @@ public:
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::ClassBinding bindV010();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&
+    );
     // NOLINTEND
 };
 

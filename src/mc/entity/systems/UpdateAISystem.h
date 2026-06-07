@@ -10,22 +10,22 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct InterpolateMovementNeededComponent;
+struct ActorMovementTickNeededComponent;
 struct MobFlagComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
-class UpdateAISystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tick(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
-            ::ActorOwnerComponent> view
-    );
+namespace UpdateAISystem {
+// functions
+// NOLINTBEGIN
+MCAPI void _tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+        ::ActorOwnerComponent> view
+);
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
-};
+MCAPI ::TickingSystemWithInfo createSystem();
+// NOLINTEND
+
+} // namespace UpdateAISystem

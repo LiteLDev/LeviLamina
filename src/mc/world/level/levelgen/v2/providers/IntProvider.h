@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IntProvider& operator=(IntProvider const&);
-    IntProvider(IntProvider const&);
-    IntProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int sample(::IRandom& random) const /*override*/;
@@ -33,20 +27,6 @@ public:
     virtual int maxValue() const /*override*/;
 
     virtual int minValue() const /*override*/;
-
-    virtual ~IntProvider() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::IntProvider& operator=(::IntProvider&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

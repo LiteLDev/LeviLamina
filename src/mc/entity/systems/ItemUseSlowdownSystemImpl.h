@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct InterpolateMovementNeededComponent;
+struct ActorMovementTickNeededComponent;
 struct ItemInUseComponent;
 struct ItemUseSlowdownModifierComponent;
 struct PassengerComponent;
@@ -22,11 +22,11 @@ namespace ItemUseSlowdownSystemImpl {
 // NOLINTBEGIN
 MCAPI void doItemUseSlowdownSystem(
     ::entt::type_list<
-        ::Include<::InterpolateMovementNeededComponent, ::PlayerInputRequestComponent>,
-        ::Exclude<::PassengerComponent>>,
-    ::StrictEntityContext const&                         entity,
-    ::ItemInUseComponent const&                          itemInUse,
-    ::EntityModifier<::ItemUseSlowdownModifierComponent> entityModifier
+        ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,
+        ::Exclude<::PassengerComponent>> entity,
+    ::StrictEntityContext const&         itemInUse,
+    ::ItemInUseComponent const&          entityModifier,
+    ::EntityModifier<::ItemUseSlowdownModifierComponent>
 );
 // NOLINTEND
 

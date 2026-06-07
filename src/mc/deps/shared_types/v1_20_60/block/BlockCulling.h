@@ -30,19 +30,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Description(Description const&);
-        Description();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Description&
-        operator=(::SharedTypes::v1_20_60::BlockCulling::Description&&);
-
-        MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Description&
-        operator=(::SharedTypes::v1_20_60::BlockCulling::Description const&);
-
         MCAPI ~Description();
         // NOLINTEND
 
@@ -69,21 +58,6 @@ public:
             ::ll::TypedStorage<4, 8, ::std::optional<int>>                   mCubeIndex;
             ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::Facing>> mFace;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            GeometryPart(GeometryPart const&);
-            GeometryPart();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
-            operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&&);
-
-            MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
-            operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart const&);
-            // NOLINTEND
         };
 
     public:
@@ -91,20 +65,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 48, ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart> mGeometryPart;
         ::ll::TypedStorage<2, 2, ::SharedTypes::Facing>                                      mDirectionToCheckAgainst;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Rule(Rule const&);
-        Rule();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule& operator=(::SharedTypes::v1_20_60::BlockCulling::Rule&&);
-
-        MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule&
-        operator=(::SharedTypes::v1_20_60::BlockCulling::Rule const&);
         // NOLINTEND
     };
 

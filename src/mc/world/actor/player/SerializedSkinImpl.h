@@ -84,15 +84,30 @@ public:
         bool                      overridesPlayerAppearance
     );
 
-    MCAPI bool operator==(::SerializedSkinImpl const&) const;
+    MCAPI bool isValid() const;
+
+    MCAPI bool operator==(::SerializedSkinImpl const& rhs) const;
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void setArmSizeFromString(::std::string const& armSizeStr);
-
     MCAPI void setCapeId(::std::string const& capeId);
 
+#ifdef LL_PLAT_C
+    MCAPI void setCapeImageData(::mce::Image const* image);
+#endif
+
     MCAPI void setId(::std::string const& id);
+
+#ifdef LL_PLAT_C
+    MCAPI void setImageData(::mce::Image const* image);
+#endif
+
+    MCAPI void setPersonaAppearanceData(
+        ::persona::ArmSize::Type const&                                   armSizeType,
+        ::mce::Color const&                                               skinColor,
+        ::std::vector<::SerializedPersonaPieceHandle>                     personaPieces,
+        ::std::unordered_map<::persona::PieceType, ::TintMapColor> const& pieceTintColors
+    );
 
     MCAPI void updateGeometryName();
 

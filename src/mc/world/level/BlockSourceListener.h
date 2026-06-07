@@ -19,7 +19,7 @@ class BlockSourceListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockSourceListener();
+    virtual ~BlockSourceListener() = default;
 
     virtual void onSourceCreated(::BlockSource& source);
 
@@ -46,12 +46,6 @@ public:
     virtual void onEntityChanged(::BlockSource& source, ::Actor& entity);
 
     virtual void onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

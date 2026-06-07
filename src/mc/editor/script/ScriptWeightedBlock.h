@@ -24,21 +24,9 @@ public:
     ScriptWeightedBlock();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptWeightedBlock();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

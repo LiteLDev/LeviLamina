@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/file_system/memory_file_system/MemoryFileSystemEntry.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Result; }
-// clang-format on
-
 namespace Core {
 
 class MemoryFileSystemEntryDir : public ::Core::MemoryFileSystemEntry {
@@ -52,9 +47,7 @@ public:
     // NOLINTBEGIN
     virtual uint64 getSize() const /*override*/;
 
-    virtual ::Core::Result canRemove() /*override*/;
-
-    virtual ~MemoryFileSystemEntryDir() /*override*/ = default;
+    virtual bool canRemove() const /*override*/;
     // NOLINTEND
 
 public:

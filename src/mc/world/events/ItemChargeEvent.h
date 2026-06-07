@@ -16,27 +16,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemChargeEvent& operator=(ItemChargeEvent const&);
-    ItemChargeEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemChargeEvent(::ItemChargeEvent&&);
-
-    MCAPI ItemChargeEvent(::ItemChargeEvent const&);
-
-    MCAPI ItemChargeEvent(::ItemInstance const& inst, ::WeakEntityRef actor, int useDuration);
+    MCAPI ~ItemChargeEvent();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemChargeEvent&&);
-
-    MCAPI void* $ctor(::ItemChargeEvent const&);
-
-    MCAPI void* $ctor(::ItemInstance const& inst, ::WeakEntityRef actor, int useDuration);
+    MCFOLD void $dtor();
     // NOLINTEND
 };

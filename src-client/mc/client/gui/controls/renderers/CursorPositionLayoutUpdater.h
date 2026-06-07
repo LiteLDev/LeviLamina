@@ -24,8 +24,6 @@ public:
     virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
 
     virtual void render(::MinecraftUIRenderContext&, ::IClientInstance&, ::UIControl&, int) /*override*/;
-
-    virtual ~CursorPositionLayoutUpdater() /*override*/ = default;
     // NOLINTEND
 
 public:

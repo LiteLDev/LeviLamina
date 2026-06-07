@@ -51,12 +51,6 @@ public:
     FileIndexLru& operator=(FileIndexLru const&);
     FileIndexLru(FileIndexLru const&);
     FileIndexLru();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~FileIndexLru() /*override*/ = default;
-    // NOLINTEND
 };
 
 } // namespace Core

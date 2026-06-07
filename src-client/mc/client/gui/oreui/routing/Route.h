@@ -17,6 +17,32 @@ public:
     ::ll::TypedStorage<4, 4, ::OreUI::RouteMode>         mode;
     ::ll::TypedStorage<4, 4, ::OreUI::RoutePrerequisite> prerequisite;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Route();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Route(
+        ::std::string const&       fileName,
+        ::std::string const&       route,
+        ::OreUI::RouteMode         mode,
+        ::OreUI::RoutePrerequisite prerequisite
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::string const&       fileName,
+        ::std::string const&       route,
+        ::OreUI::RouteMode         mode,
+        ::OreUI::RoutePrerequisite prerequisite
+    );
+    // NOLINTEND
 };
 
 } // namespace OreUI

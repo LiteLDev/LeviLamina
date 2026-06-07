@@ -45,16 +45,4 @@ struct ItemNotificationEvent : public ::EventVariantImpl<
                                    ::ItemStartUseEvent const,
                                    ::ItemCompleteUseEvent const,
                                    ::ItemReleaseUseEvent const,
-                                   ::ItemStopUseEvent const> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ItemNotificationEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-};
+                                   ::ItemStopUseEvent const> {};

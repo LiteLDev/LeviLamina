@@ -9,9 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+struct BedrockTextureData;
 struct MERSUniformData;
 namespace mce { class TexturePtr; }
-struct BedrockTextureData;
 namespace mce { struct ClientTexture; }
 // clang-format on
 
@@ -37,23 +37,14 @@ public:
 #endif
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    MolangClientTextureSet& operator=(MolangClientTextureSet const&);
-    MolangClientTextureSet(MolangClientTextureSet const&);
-    MolangClientTextureSet();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    MolangClientTextureSet();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI MolangClientTextureSet();
+
+    MCAPI explicit MolangClientTextureSet(::HashedString const& name);
+
     MCAPI MolangClientTextureSet(::MolangClientTextureSet const& rhs);
 
     MCAPI MolangClientTextureSet(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
@@ -90,14 +81,20 @@ public:
         ::std::optional<::MERSUniformData> const& uniformData
     );
 
-    MCAPI ::std::unique_ptr<::MolangClientTextureSet::ExtraPBRData> _clonePBRData() const;
+    MCAPI ::mce::ClientTexture const& getClientMERSTexture() const;
+
+    MCAPI ::MERSTextureMode getClientMERSTextureMode() const;
+
+    MCAPI ::mce::ClientTexture const& getClientNormalTexture() const;
+
+    MCAPI ::NormalTextureMode getClientNormalTextureMode() const;
 
     MCAPI ::mce::ClientTexture const& getClientTexture() const;
-#endif
+
+    MCAPI ::std::optional<::MERSUniformData> getMERSUniforms() const;
 
     MCAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet&& rhs);
 
-#ifdef LL_PLAT_C
     MCAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet const& rhs);
 
     MCAPI ~MolangClientTextureSet();
@@ -105,17 +102,13 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::MolangClientTextureSet const& getDefaultErrorValue();
-#endif
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::HashedString const& name);
+
     MCAPI void* $ctor(::MolangClientTextureSet const& rhs);
 
     MCAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);

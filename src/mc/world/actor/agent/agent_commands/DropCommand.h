@@ -23,8 +23,6 @@ public:
     virtual void execute() /*override*/;
 
     virtual bool isDone() /*override*/;
-
-    virtual ~DropCommand() /*override*/ = default;
     // NOLINTEND
 
 public:

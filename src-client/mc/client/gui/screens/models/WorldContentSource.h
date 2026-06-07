@@ -28,13 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldContentSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldContentSource() /*override*/ = default;
+    virtual ~WorldContentSource() /*override*/;
 
     virtual void load() /*override*/;
 
@@ -46,21 +42,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI WorldContentSource(
-        ::ILevelListCache&                                               levelListCache,
-        ::brstd::move_only_function<bool(::LevelSummary const&) const>&& canAccess
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ILevelListCache&                                               levelListCache,
-        ::brstd::move_only_function<bool(::LevelSummary const&) const>&& canAccess
-    );
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

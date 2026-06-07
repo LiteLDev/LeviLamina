@@ -31,8 +31,18 @@ public:
 
     MCNAPI bool deleteFile(::Core::Path const& fileName);
 
+    MCNAPI bool findFile(::Core::Path const& fileName, ::std::shared_ptr<::InMemoryFile>& outFile);
+
     MCNAPI void flushToDisk();
 
     MCNAPI void populateFileList(::std::vector<::std::string>& fileList);
+
+    MCNAPI ~InMemoryFileStorage();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

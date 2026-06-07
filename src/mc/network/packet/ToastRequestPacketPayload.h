@@ -12,17 +12,23 @@ public:
 
 public:
     // prevent constructor by default
-    ToastRequestPacketPayload(ToastRequestPacketPayload const&);
+    ToastRequestPacketPayload& operator=(ToastRequestPacketPayload const&);
     ToastRequestPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ToastRequestPacketPayload(::ToastRequestPacketPayload const&);
+
     MCFOLD ::ToastRequestPacketPayload& operator=(::ToastRequestPacketPayload&&);
 
-    MCFOLD ::ToastRequestPacketPayload& operator=(::ToastRequestPacketPayload const&);
-
     MCAPI ~ToastRequestPacketPayload();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ToastRequestPacketPayload const&);
     // NOLINTEND
 
 public:

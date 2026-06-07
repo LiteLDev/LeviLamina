@@ -50,6 +50,8 @@ public:
         ::std::function<void(::Social::EduDedicatedServerDetails const&, ::std::string const&)> onConfirmPasscode
     );
 
+    MCAPI void _registerBindings();
+
     MCAPI void _registerEventHandlers();
     // NOLINTEND
 

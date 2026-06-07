@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ISynchedActorDataAdapter const* getSyncInfo(ushort actorDataId);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 

@@ -20,13 +20,20 @@ public:
 public:
     // prevent constructor by default
     FlipbookTextureDescription& operator=(FlipbookTextureDescription const&);
-    FlipbookTextureDescription(FlipbookTextureDescription const&);
     FlipbookTextureDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FlipbookTextureDescription(::FlipbookTextureDescription const&);
+
     MCNAPI ~FlipbookTextureDescription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::FlipbookTextureDescription const&);
     // NOLINTEND
 
 public:

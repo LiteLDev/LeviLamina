@@ -48,6 +48,7 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentClipboard& operator=(ScriptWidgetComponentClipboard const&);
+    ScriptWidgetComponentClipboard(ScriptWidgetComponentClipboard const&);
     ScriptWidgetComponentClipboard();
 
 public:
@@ -61,8 +62,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentClipboard(::Editor::ScriptModule::ScriptWidgetComponentClipboard const&);
-
     MCNAPI ScriptWidgetComponentClipboard(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,
@@ -75,6 +74,8 @@ public:
                                                                                        optClipboardOrStructure,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions> options
     );
+
+    MCNAPI ::mce::UUID _getClipboardOrStructureId();
 
     MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _scriptGetClipboardOffset() const;
@@ -109,8 +110,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentClipboard const&);
-
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                     serviceProviders,
         ::mce::UUID const&                                                       componentId,

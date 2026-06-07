@@ -16,16 +16,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AddRiderComponent& operator=(AddRiderComponent const&);
-    AddRiderComponent(AddRiderComponent const&);
-    AddRiderComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AddRiderComponent& operator=(::AddRiderComponent&&);
-
     MCAPI void reloadComponent(::Actor& owner);
     // NOLINTEND
 };

@@ -7,11 +7,6 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class PathPart; }
-// clang-format on
-
 namespace Core {
 
 class Path : public ::Core::PathBuffer<::std::string> {

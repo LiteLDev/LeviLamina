@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
+class NameableComponent;
 struct NameAction;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -25,9 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NameableDefinition();
+
     MCAPI void addNameAction(::NameAction const& nameAction);
 
-    MCAPI ~NameableDefinition();
+    MCAPI void initialize(::EntityContext& entity, ::NameableComponent& component) const;
     // NOLINTEND
 
 public:
@@ -39,8 +43,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

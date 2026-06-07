@@ -80,6 +80,16 @@ public:
             ::std::function<void()>                     mainThreadCallback,
             uint                                        taskPriority
         );
+
+#ifdef LL_PLAT_C
+        MCNAPI ::Bedrock::Threading::Async<void>
+        queueAsync(::brstd::move_only_function<::TaskResult()> callback, uint taskPriority);
+
+        MCNAPI ::Bedrock::Threading::Async<void>
+        queueSync(::brstd::move_only_function<::TaskResult()> callback, uint taskPriority);
+
+        MCNAPI ~ResourceLoadTaskGroup();
+#endif
         // NOLINTEND
 
     public:
@@ -96,6 +106,14 @@ public:
         );
 #endif
         // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
+        // NOLINTEND
     };
 
 public:
@@ -109,12 +127,20 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk8953d0;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ResourceLoadManager& operator=(ResourceLoadManager const&);
     ResourceLoadManager(ResourceLoadManager const&);
     ResourceLoadManager();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ResourceLoadManager& operator=(ResourceLoadManager const&);
+    ResourceLoadManager(ResourceLoadManager const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -130,18 +156,19 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void _cancel();
+    MCNAPI ResourceLoadManager();
 
     MCNAPI void _initializeResourceLoadTaskGroups();
-#endif
 
-    MCNAPI void
-    _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
+    MCNAPI bool areDependenciesLoaded(::ResourceLoadType resourceLoadType) const;
 
-#ifdef LL_PLAT_C
+    MCNAPI void hardCancel();
+
     MCNAPI bool isComplete() const;
 
     MCNAPI bool isComplete(::ResourceLoadType resourceLoadType) const;
+
+    MCNAPI bool isSuspended();
 
     MCNAPI void printRunningTasks();
 #endif
@@ -172,6 +199,12 @@ public:
         ::ResourceLoadType                                    resourceLoadType,
         ::std::vector<::ResourceLoadType>                     dependencies
     );
+
+    MCNAPI void setAppSuspended(bool suspended);
+
+    MCNAPI void setCannotBeCanceled();
+
+    MCNAPI bool softCancel();
 #endif
 
     MCNAPI bool softCancel(::ResourceLoadType resourceLoadType);
@@ -191,16 +224,19 @@ public:
         ::std::function<void()>&&                     mainThreadCallback
     );
 
-    MCNAPI static ::brstd::move_only_function<::TaskResult()> _wrapTaskCallback(
-        ::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup,
-        ::brstd::move_only_function<::TaskResult()>&& threadedCallback
-    );
-
     MCNAPI static void queueChild(
         ::brstd::move_only_function<::TaskResult()> threadedCallback,
         ::std::function<void()>                     mainThreadCallback,
         uint                                        taskPriority
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

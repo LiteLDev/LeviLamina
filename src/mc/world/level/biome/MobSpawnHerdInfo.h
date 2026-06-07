@@ -16,12 +16,16 @@ public:
 
 public:
     // prevent constructor by default
-    MobSpawnHerdInfo(MobSpawnHerdInfo const&);
+    MobSpawnHerdInfo& operator=(MobSpawnHerdInfo const&);
     MobSpawnHerdInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MobSpawnHerdInfo(::MobSpawnHerdInfo const&);
+
+    MCAPI MobSpawnHerdInfo(uint min, uint max, ::std::string const& herdEvent, uint herdEventSkipCount);
+
     MCAPI MobSpawnHerdInfo(
         uint                 min,
         uint                 max,
@@ -31,14 +35,16 @@ public:
         uint                 herdEventSkipCount
     );
 
-    MCFOLD ::MobSpawnHerdInfo& operator=(::MobSpawnHerdInfo const&);
-
     MCAPI ~MobSpawnHerdInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor(::MobSpawnHerdInfo const&);
+
+    MCAPI void* $ctor(uint min, uint max, ::std::string const& herdEvent, uint herdEventSkipCount);
+
     MCAPI void* $ctor(
         uint                 min,
         uint                 max,

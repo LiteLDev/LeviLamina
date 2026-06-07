@@ -29,8 +29,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void dropHangingActor(::StrictEntityContext const& entity) /*override*/;
-
-    virtual ~ActorAdapter() /*override*/ = default;
     // NOLINTEND
 
 public:

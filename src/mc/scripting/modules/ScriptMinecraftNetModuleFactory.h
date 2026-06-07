@@ -11,6 +11,7 @@
 class Scheduler;
 class ScriptPackConfigurationManager;
 class ServerLevel;
+namespace ScriptModuleMinecraftNet { class ScriptNativeWebSocketFactory; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
@@ -24,6 +25,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk7f2275;
     ::ll::UntypedStorage<8, 24> mUnkc9f7d9;
     ::ll::UntypedStorage<8, 8>  mUnk4fb1f9;
+    ::ll::UntypedStorage<8, 16> mUnk167a04;
     // NOLINTEND
 
 public:
@@ -33,18 +35,13 @@ public:
     ScriptMinecraftNetModuleFactory();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptMinecraftNetModuleFactory() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptMinecraftNetModuleFactory(
-        ::Bedrock::NonOwnerPointer<::Scheduler>                      serverScheduler,
-        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
-        ::ServerLevel*                                               level
+        ::Bedrock::NonOwnerPointer<::Scheduler>                                     serverScheduler,
+        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager>                packConfigManager,
+        ::ServerLevel*                                                              level,
+        ::std::shared_ptr<::ScriptModuleMinecraftNet::ScriptNativeWebSocketFactory> webSocketFactory
     );
 
     MCNAPI void _addVersions();
@@ -60,6 +57,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static char const*& ModuleName();
+
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 
@@ -67,16 +66,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::Bedrock::NonOwnerPointer<::Scheduler>                      serverScheduler,
-        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
-        ::ServerLevel*                                               level
+        ::Bedrock::NonOwnerPointer<::Scheduler>                                     serverScheduler,
+        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager>                packConfigManager,
+        ::ServerLevel*                                                              level,
+        ::std::shared_ptr<::ScriptModuleMinecraftNet::ScriptNativeWebSocketFactory> webSocketFactory
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

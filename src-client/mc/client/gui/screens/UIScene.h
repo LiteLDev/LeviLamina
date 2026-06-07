@@ -29,6 +29,7 @@ class ScreenContext;
 class ScreenController;
 class ScreenView;
 class TaskGroup;
+class UIControl;
 class UIControlFactory;
 class UIMeasureStrategy;
 class VisualTree;
@@ -126,7 +127,7 @@ public:
         ::FocusImpact                     focusImpact
     ) /*override*/;
 
-    virtual void handlePointerPressed(bool pressed) /*override*/;
+    virtual void handlePointerPressed(bool) /*override*/;
 
     virtual void handleLicenseChanged() /*override*/;
 
@@ -144,9 +145,9 @@ public:
 
     virtual void frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext) /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const&) /*override*/;
 
-    virtual void applyInput(float a) /*override*/;
+    virtual void applyInput(float) /*override*/;
 
     virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
@@ -156,8 +157,6 @@ public:
     virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) /*override*/;
 
     virtual void handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact) /*override*/;
-
-    virtual void handleCaretLocation(int caretLocation, ::FocusImpact focusImpact) /*override*/;
 
     virtual void
     handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) /*override*/;
@@ -233,7 +232,13 @@ public:
         ::std::weak_ptr<::ITTSEventManager>                     ttsEventManager
     );
 
+    MCAPI ::ScreenController& getController();
+
+    MCAPI ::std::shared_ptr<::UIControl> getFocusedControl() const;
+
     MCAPI void setInitializedCallback(::std::function<void()> initializedCallback);
+
+    MCAPI bool wasDirectionalButtonPressed() const;
     // NOLINTEND
 
 public:
@@ -324,7 +329,7 @@ public:
 
     MCAPI bool $handlePointerLocation(::PointerLocationEventData const& pointerLocationData, ::FocusImpact focusImpact);
 
-    MCFOLD void $handlePointerPressed(bool pressed);
+    MCFOLD void $handlePointerPressed(bool);
 
     MCAPI void $handleLicenseChanged();
 
@@ -342,9 +347,9 @@ public:
 
     MCAPI void $frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext);
 
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
 
-    MCAPI void $applyInput(float a);
+    MCAPI void $applyInput(float);
 
     MCAPI void $handleInputModeChanged(::InputMode inputMode);
 
@@ -353,8 +358,6 @@ public:
     MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 
     MCAPI void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
-
-    MCFOLD void $handleCaretLocation(int caretLocation, ::FocusImpact focusImpact);
 
     MCAPI void $handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
 

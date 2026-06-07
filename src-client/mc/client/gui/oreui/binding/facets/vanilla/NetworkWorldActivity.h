@@ -18,9 +18,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkWorldActivity& operator=(NetworkWorldActivity const&);
+    NetworkWorldActivity();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NetworkWorldActivity(::OreUI::NetworkWorldActivity const&);
+
     MCAPI ~NetworkWorldActivity();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::OreUI::NetworkWorldActivity const&);
     // NOLINTEND
 
 public:

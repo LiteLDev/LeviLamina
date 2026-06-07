@@ -37,6 +37,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit WorldSettings(::Minecraft& serverData);
 
+    MCFOLD ::LevelDataWrapper& getLevelData();
+
     MCAPI ::Bedrock::PubSub::Subscription
     registerLevelChangedListener(::std::function<void(::LevelDataWrapper&)> callback);
 

@@ -24,14 +24,11 @@ public:
 
 public:
     // prevent constructor by default
-    ArgumentOutOfBoundsError& operator=(ArgumentOutOfBoundsError const&);
     ArgumentOutOfBoundsError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
-
     MCAPI ArgumentOutOfBoundsError(
         ::std::string const&    propertyName,
         int                     index_,
@@ -39,8 +36,6 @@ public:
         ::std::optional<double> minValue_,
         ::std::optional<double> maxValue_
     );
-
-    MCAPI ~ArgumentOutOfBoundsError();
     // NOLINTEND
 
 public:
@@ -52,8 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
-
     MCAPI void* $ctor(
         ::std::string const&    propertyName,
         int                     index_,
@@ -61,12 +54,6 @@ public:
         ::std::optional<double> minValue_,
         ::std::optional<double> maxValue_
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

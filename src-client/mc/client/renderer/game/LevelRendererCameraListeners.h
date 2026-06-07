@@ -28,7 +28,7 @@ public:
 
     virtual void onDimensionChanged(::Player& player) /*override*/;
 
-    virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk& lc) /*override*/;
+    virtual void onChunkReloaded(::ChunkSource& lc, ::LevelChunk&) /*override*/;
 
     virtual void updateLevelCullerType(::LevelCullerType const newLevelCullerType) /*override*/;
     // NOLINTEND
@@ -46,7 +46,7 @@ public:
 
     MCNAPI void $onDimensionChanged(::Player& player);
 
-    MCNAPI void $onChunkReloaded(::ChunkSource&, ::LevelChunk& lc);
+    MCNAPI void $onChunkReloaded(::ChunkSource& lc, ::LevelChunk&);
 
     MCNAPI void $updateLevelCullerType(::LevelCullerType const newLevelCullerType);
     // NOLINTEND

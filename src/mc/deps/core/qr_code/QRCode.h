@@ -23,6 +23,10 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI explicit QRCode(::std::string const& targetString);
 
+    MCNAPI bool getModule(int x, int y) const;
+
+    MCNAPI int getSize() const;
+
     MCNAPI ~QRCode();
 #endif
     // NOLINTEND

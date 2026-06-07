@@ -9,6 +9,7 @@
 // clang-format off
 namespace Bedrock { struct DeviceIDPlatformEnvironment; }
 namespace Bedrock { struct DeviceIdContext; }
+namespace Bedrock { struct DeviceIdEnvironment; }
 // clang-format on
 
 namespace Bedrock {
@@ -34,7 +35,7 @@ public:
     // NOLINTBEGIN
     virtual void initialize() /*override*/;
 
-    virtual void updateDeviceId(bool const isAnonymous) /*override*/;
+    virtual void updateDeviceId(bool const) /*override*/;
 
     virtual ::std::string const& getDeviceId() const /*override*/;
 
@@ -45,14 +46,18 @@ public:
     virtual bool isDeviceIdValid() const /*override*/;
 
     virtual void _initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const& environment) = 0;
-
-    virtual ~DeviceIdManager_Common() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI explicit DeviceIdManager_Common(::Bedrock::DeviceIdEnvironment&& environment);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Bedrock::DeviceIdEnvironment&& environment);
     // NOLINTEND
 
 public:
@@ -60,7 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $initialize();
 
-    MCNAPI void $updateDeviceId(bool const isAnonymous);
+    MCNAPI void $updateDeviceId(bool const);
 
     MCNAPI ::std::string const& $getDeviceId() const;
 

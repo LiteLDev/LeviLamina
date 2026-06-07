@@ -11,6 +11,7 @@
 // clang-format off
 class Actor;
 class MingleComponent;
+class Mob;
 struct ActorUniqueID;
 // clang-format on
 
@@ -30,6 +31,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MingleGoal();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -43,16 +48,28 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-
-    virtual ~MingleGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit MingleGoal(::Mob& actor);
+
     MCAPI void _findNewPartner(::ActorUniqueID previousPartnerId);
 
-    MCAPI ::MingleComponent& _getMingleComponent() const;
+    MCAPI bool _isSuitablePartner(::Actor& partner, ::ActorUniqueID previousPartnerId);
+
+    MCAPI void _lookAt(::Actor* partner);
+
+    MCAPI void _partnerWith(::Actor& target);
+
+    MCAPI void _tickMingling(::MingleComponent& mingleComponent);
+
+    MCAPI void _tickPartneredActive(::MingleComponent& mingleComponent);
+
+    MCAPI void _tickPartneredPassive(::MingleComponent& mingleComponent);
+
+    MCAPI void _tickUnavailable(::MingleComponent& mingleComponent);
 
     MCAPI bool _tryPathToPartner(::Actor& partner);
 
@@ -64,9 +81,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::MingleComponent* _tryGetMingleComponent(::Actor& actor);
+    MCAPI void* $ctor(::Mob& actor);
     // NOLINTEND
 
 public:

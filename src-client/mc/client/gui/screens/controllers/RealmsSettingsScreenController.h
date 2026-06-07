@@ -28,6 +28,7 @@ class Pack;
 class PlatformMultiplayerRestrictions;
 class RealmsAllowListScreenController;
 class ResourcePacksScreenController;
+class UIPropertyBag;
 struct GameRuleId;
 struct PackContentItem;
 struct PackManagerContentSource;
@@ -57,7 +58,7 @@ public:
     };
 
     enum class SaveType : int {
-        Unknown   = -1,
+        Unknown   = 4294967295,
         Manual    = 0,
         Automatic = 1,
     };
@@ -100,7 +101,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI RealmsVersionState();
+
         MCAPI ~RealmsVersionState();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -119,9 +128,23 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        DelayedStandardModalScreenData& operator=(DelayedStandardModalScreenData const&);
+        DelayedStandardModalScreenData(DelayedStandardModalScreenData const&);
+        DelayedStandardModalScreenData();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI DelayedStandardModalScreenData(::RealmsSettingsScreenController::DelayedStandardModalScreenData&&);
+
         MCAPI ~DelayedStandardModalScreenData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::RealmsSettingsScreenController::DelayedStandardModalScreenData&&);
         // NOLINTEND
 
     public:
@@ -251,7 +274,11 @@ public:
 
     MCAPI void _applyPacks(::std::function<void()> packsApplyCallback);
 
+    MCAPI bool _canChangeCheatGameRules() const;
+
     MCAPI bool _checkMultiplayerPrivileges();
+
+    MCAPI void _clearRealmsContentSelected();
 
     MCAPI void _confirmCloseRealm();
 
@@ -265,6 +292,8 @@ public:
     MCAPI ::std::unique_ptr<::Pack> _createUnknownPack(::Realms::Content const& content, ::PackType packType);
 
     MCAPI void _deleteBackup();
+
+    MCAPI void _displayDelayedStandardModalPopups();
 
     MCAPI void _displayFreeUpSpacePopup();
 
@@ -319,17 +348,25 @@ public:
 
     MCAPI ::std::string _getMaxPlayerLabelText();
 
+    MCAPI ::std::string _getPageLabel() const;
+
     MCAPI void _getPreferredRegions();
+
+    MCAPI ::std::string _getRealmsVersionBranchName(int slot);
+
+    MCAPI ::std::string _getRealmsVersionReferenceId(int slot);
+
+    MCAPI ::std::string _getSubscriptionAddendumLabelText() const;
 
     MCAPI ::std::string _getSubscriptionOriginMismatchLabelText();
 
     MCAPI void _goToManageSubscriptionLink();
 
-    MCAPI bool _hasClubInfoChanged() const;
+    MCAPI void _handleRealmBranchButtonClick(::UIPropertyBag& bag);
+
+    MCAPI void _handleRealmInviteLinkButtonClick(::UIPropertyBag& bag);
 
     MCAPI bool _hasGameRulesChanged();
-
-    MCAPI bool _hasSettingsChangePermission() const;
 
     MCAPI bool _hasSlotInfoChanged();
 
@@ -369,21 +406,15 @@ public:
 
     MCAPI void _saveRealmWorldBackup();
 
-    MCAPI void _saveSettings(bool showRealmsLoadingLevelProgressHandler, ::std::function<void(bool)> actionAfterSave);
+    MCAPI void _saveSettings(bool actionAfterSave, ::std::function<void(bool)>);
 
     MCAPI void _saveSettingsAndExitScreen();
 
     MCAPI void _setAllowCheatsWithConfirmation(bool value);
 
-    MCAPI void _setFocusToLastIdBeforeModalOpen();
-
     MCAPI void _setGameModeWithConfirmation(int value);
 
-    MCAPI void _setGameRule(int value, ::GameRuleId gameRuleId);
-
     MCAPI void _setIsHardcore(bool isHardcore);
-
-    MCAPI void _setRandomTickSpeedString(::std::string const& value);
 
     MCAPI void _setRealmsContentSelected();
 
@@ -414,7 +445,9 @@ public:
 
     MCAPI void _uploadWorld();
 
-    MCAPI void showGeneralErrorPopupAndExitScreenAfterDismissed();
+    MCAPI void activateInitialPack();
+
+    MCAPI ::Realms::World const& getWorld() const;
     // NOLINTEND
 
 public:
@@ -433,6 +466,9 @@ public:
 
     MCAPI static ::std::string
     _getTimeAsFormattedStringForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
+
+    MCAPI static ::std::string
+    _getWorldNameForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
     // NOLINTEND
 
 public:

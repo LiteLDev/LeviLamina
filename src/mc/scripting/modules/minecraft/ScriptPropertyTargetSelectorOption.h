@@ -54,12 +54,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPropertyTargetSelectorOption(ScriptPropertyTargetSelectorOption const&);
     ScriptPropertyTargetSelectorOption();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptPropertyTargetSelectorOption(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
+
     MCAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&&);
 
@@ -71,6 +72,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
     // NOLINTEND
 };
 

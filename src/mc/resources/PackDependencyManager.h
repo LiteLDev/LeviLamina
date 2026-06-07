@@ -21,10 +21,12 @@ MCNAPI ::std::vector<::PackIdVersion> getMissingDependencyIdentities(
     ::std::vector<::PackIdVersion> const&                                                   dependencyIdentities
 );
 
-#ifdef LL_PLAT_C
 MCNAPI bool hasMissingDependencies(::RepositoryPacks const& source, ::PackManifest const& manifest);
 
 MCNAPI bool isNativeModule(::mce::UUID const& uuid);
+
+#ifdef LL_PLAT_C
+MCNAPI bool packIsDependedUpon(::PackManifest const& depended, ::PackManifest const& depender);
 #endif
 // NOLINTEND
 

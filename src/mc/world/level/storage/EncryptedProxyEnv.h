@@ -38,8 +38,6 @@ public:
     virtual ::leveldb::Status RemoveFile(::std::string const& f) /*override*/;
 
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
-
-    virtual ~EncryptedProxyEnv() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class ItemDescriptor;
+class StorageItemComponent;
+class StorageWeightLimitItemComponent;
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -21,11 +23,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptContainerRules& operator=(ScriptContainerRules const&);
+    ScriptContainerRules(ScriptContainerRules const&);
+    ScriptContainerRules();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::string> _getAllowedItems() const;
+    MCAPI ScriptContainerRules(
+        ::StorageItemComponent const&            storageItemComponent,
+        ::StorageWeightLimitItemComponent const* storageWeightLimitItemComponent
+    );
 
-    MCAPI ::std::vector<::std::string> _getBannedItems() const;
+    MCAPI void _setAllowedItems(::std::vector<::std::string> const& allowedItems);
+
+    MCAPI void _setBannedItems(::std::vector<::std::string> const& bannedItems);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptContainerRules& operator=(::ScriptModuleMinecraft::ScriptContainerRules&&);
 
     MCAPI ~ScriptContainerRules();
     // NOLINTEND
@@ -37,9 +52,18 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::StorageItemComponent const&            storageItemComponent,
+        ::StorageWeightLimitItemComponent const* storageWeightLimitItemComponent
+    );
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

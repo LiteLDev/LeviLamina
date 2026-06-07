@@ -24,16 +24,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PoweredBlockComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
+        ::CircuitSceneGraph&         info,
+        ::CircuitTrackingInfo const& dampening,
+        int&                         bDirectlyPowered,
+        bool&
     ) /*override*/;
 
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
@@ -45,8 +49,18 @@ public:
     virtual int getStrength() const /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
+    // NOLINTEND
 
-    virtual ~PoweredBlockComponent() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit PoweredBlockComponent(uchar connections);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uchar connections);
     // NOLINTEND
 
 public:
@@ -55,7 +69,7 @@ public:
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
 
     MCFOLD bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 

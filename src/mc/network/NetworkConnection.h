@@ -96,15 +96,17 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI NetworkConnection(
-        ::NetworkIdentifier const&                     id,
-        ::std::shared_ptr<::NetworkPeer>               peer,
-        bool                                           isSafeAndFast,
-        ::Bedrock::NonOwnerPointer<::IPacketObserver>  packetObserver,
-        ::Scheduler&                                   mainThread,
-        bool                                           isRawRecordingEnabled,
-        ::NetworkSettingOptions const&                 settings,
-        ::std::shared_ptr<::IPacketSecurityController> packetSecurityController
+        ::NetworkIdentifier const&                    id,
+        ::std::shared_ptr<::NetworkPeer>              peer,
+        bool                                          isSafeAndFast,
+        ::Bedrock::NonOwnerPointer<::IPacketObserver> packetObserver,
+        ::Scheduler&                                  mainThread,
+        bool                                          settings,
+        ::NetworkSettingOptions const&                packetSecurityController,
+        ::std::shared_ptr<::IPacketSecurityController>
     );
+
+    MCAPI ::gsl::not_null<::std::shared_ptr<::IPacketSecurityController>> getPacketSecurityController();
 
     MCAPI ::NetworkPeer::DataStatus receivePacket(
         ::std::string&                                                    receiveBuffer,
@@ -122,14 +124,14 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::NetworkIdentifier const&                     id,
-        ::std::shared_ptr<::NetworkPeer>               peer,
-        bool                                           isSafeAndFast,
-        ::Bedrock::NonOwnerPointer<::IPacketObserver>  packetObserver,
-        ::Scheduler&                                   mainThread,
-        bool                                           isRawRecordingEnabled,
-        ::NetworkSettingOptions const&                 settings,
-        ::std::shared_ptr<::IPacketSecurityController> packetSecurityController
+        ::NetworkIdentifier const&                    id,
+        ::std::shared_ptr<::NetworkPeer>              peer,
+        bool                                          isSafeAndFast,
+        ::Bedrock::NonOwnerPointer<::IPacketObserver> packetObserver,
+        ::Scheduler&                                  mainThread,
+        bool                                          settings,
+        ::NetworkSettingOptions const&                packetSecurityController,
+        ::std::shared_ptr<::IPacketSecurityController>
     );
     // NOLINTEND
 

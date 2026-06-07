@@ -33,25 +33,48 @@ MCNAPI ::std::string extractAuthorityAndPathFromUrl(::std::string const& url);
 
 MCNAPI ::std::optional<::std::string> getExtension(::std::string const& url);
 
-MCNAPI ::std::vector<::std::pair<::std::string_view, ::std::string_view>> getQueryParameters(::std::string_view url);
+MCNAPI ::std::optional<::std::string_view> getQueryParameterValue(
+    ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& params,
+    ::std::string_view                                                        key
+);
 
-MCNAPI bool isValidAbsoluteUrl(::std::string const& url);
+MCNAPI ::std::vector<::std::pair<::std::string_view, ::std::string_view>> getQueryParameters(::std::string_view url);
 #endif
 
+MCNAPI bool isValidAbsoluteUrl(::std::string const& url);
+
 MCNAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
+
+#ifdef LL_PLAT_C
+MCNAPI bool isValidIPAndPort(::std::string const& ipAddress, int port);
+#endif
+
+MCNAPI bool isValidIPv4(::std::string_view ipAddrStr);
+
+MCNAPI bool isValidIPv6(::std::string_view ipAddrStr);
 
 MCNAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);
 
 #ifdef LL_PLAT_C
 MCNAPI ::std::string setQueryParameter(::std::string_view url, ::std::string_view key, ::std::string_view value);
 
+MCNAPI ::std::vector<::std::string_view> splitPathIntoSegments(::std::string_view path);
+
 MCNAPI bool startsWithMatchingFullPathSegments(::std::string_view route, ::std::string_view start);
 
 MCNAPI ::std::string stripProtocol(::std::string const& url);
 
+MCNAPI ::std::string stripQueryParameters(::std::string const& url);
+
+MCNAPI ::std::optional<::std::string> urlDecode(::std::string const& value, bool replacePlusWithSpace);
+
 MCNAPI ::std::optional<::std::string> urlDecode(::std::string_view value, bool replacePlusWithSpace);
+#endif
 
 MCNAPI ::std::string urlEncode(::std::string const& value);
+
+#ifdef LL_PLAT_C
+MCNAPI ::std::string urlEncode(::std::string_view value);
 #endif
 
 MCNAPI ::std::string urlEncode(::std::string_view value, ::std::function<bool(uchar)> isAlphaNum);
@@ -61,8 +84,6 @@ MCNAPI ::Util::ResourceUri::ValidationResult validateAbsoluteUrl(::std::string c
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::vector<::std::pair<::std::string, ::std::string>> const& EMPTY_QUERY_PARAMETERS();
-
 MCNAPI ::Util::Url::Components const& EMPTY_URL();
 // NOLINTEND
 

@@ -6,6 +6,8 @@ namespace OreUI::EntryPoints::ProfileCard {
 // functions
 // NOLINTBEGIN
 MCAPI ::std::string composeRoute(::std::string const& xuid, ::std::string const& platformId);
+
+MCAPI ::std::string composeRouteForCurrentUser();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::ProfileCard

@@ -60,10 +60,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Contents();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Contents();
-
     MCAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
 
     MCAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
@@ -92,8 +94,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);

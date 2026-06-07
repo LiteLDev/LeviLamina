@@ -50,6 +50,14 @@ public:
         ::LevelEventCoordinator&     levelEventCoordinator
     );
 
+    MCFOLD ::ScriptModuleMinecraft::ScriptActorGlobalEventListener& getActorEventListener();
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptBlockGlobalEventListener& getBlockEventListener();
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptLevelGlobalEventListener& getLevelEventListener();
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptScriptingGlobalEventListener& getScriptingEventListener();
+
     MCAPI ~ScriptGlobalEventListeners();
     // NOLINTEND
 

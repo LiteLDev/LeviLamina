@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class AttributeInstance;
+class AttributeInstanceConstRef;
 class Player;
 struct AttributeModificationContext;
 // clang-format on
@@ -23,19 +24,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HungerAttributeDelegate();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context) /*override*/;
 
     virtual void notify(int64 type, ::AttributeModificationContext& context) /*override*/;
-
-    virtual ~HungerAttributeDelegate() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canPlayerBeAffectedByHunger() const;
+    MCAPI HungerAttributeDelegate(::AttributeInstanceConstRef attribute, ::Player* player);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AttributeInstanceConstRef attribute, ::Player* player);
     // NOLINTEND
 
 public:

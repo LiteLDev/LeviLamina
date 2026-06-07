@@ -62,7 +62,6 @@ struct StateVectorComponent;
 struct StopRidingRequestComponent;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
-namespace VehicleUtils { struct VehicleDirections; }
 // clang-format on
 
 struct ExitVehicleSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
@@ -148,45 +147,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void singleTick(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::StopRidingRequestComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent,
-                ::EjectedByActivatorRailFlagComponent,
-                ::PostTickPositionDeltaComponent>,
-            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
-            ::AddRemove<::ActorSetPositionRequestComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext,
-        ::StrictEntityContext&   entityContext
-    ) /*override*/;
-
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
@@ -225,7 +185,44 @@ public:
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
 
-    virtual ~ExitVehicleSystemImpl() /*override*/ = default;
+    virtual void singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::StopRidingRequestComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::EjectedByActivatorRailFlagComponent,
+                ::PostTickPositionDeltaComponent>,
+            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+            ::AddRemove<::ActorSetPositionRequestComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -329,16 +326,6 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCAPI static auto getExitStrategy(
-        ::BaseGameVersion const&                                       version,
-        ::Optional<::EjectedByActivatorRailFlagComponent const> const& ejectedByActivatorRail,
-        ::Optional<::ExitFromPassengerFlagComponent const> const&      exitFromPassenger
-    )
-        -> ::std::optional<::Vec3> (*)(
-            ::VehicleUtils::VehicleDirections const&,
-            ::std::function<bool(::Vec3 const&, ::Vec3 const&)>
-        );
-
     MCAPI static bool tryPlaceAt(
         ::Vec3 const&                                      groundPos,
         ::AABB const&                                      aabbEntity,
@@ -350,6 +337,44 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::StopRidingRequestComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::EjectedByActivatorRailFlagComponent,
+                ::PostTickPositionDeltaComponent>,
+            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+            ::AddRemove<::ActorSetPositionRequestComponent>,
+            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
+
     MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
@@ -387,44 +412,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
-    );
-
-    MCAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::StopRidingRequestComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent,
-                ::EjectedByActivatorRailFlagComponent,
-                ::PostTickPositionDeltaComponent>,
-            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
-            ::AddRemove<::ActorSetPositionRequestComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
     );
 
 

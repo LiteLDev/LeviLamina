@@ -21,31 +21,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IconItemComponentLegacyFactoryData(IconItemComponentLegacyFactoryData const&);
-    IconItemComponentLegacyFactoryData();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~IconItemComponentLegacyFactoryData() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData&&);
-
-    MCFOLD ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>
     );
     // NOLINTEND
 

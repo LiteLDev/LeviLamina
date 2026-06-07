@@ -10,6 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace GameplayUI { class DataDrivenScreenAPI; }
+namespace OreUI { class ClientDependencies; }
+namespace OreUI { class GameDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -27,15 +29,11 @@ public:
     DataDrivenUIInstanceIdQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DataDrivenUIInstanceIdQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DataDrivenUIInstanceIdQuery(::GameplayUI::DataDrivenScreenAPI* dataDrivenScreenAPI);
+
+    MCAPI DataDrivenUIInstanceIdQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
@@ -48,6 +46,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::GameplayUI::DataDrivenScreenAPI* dataDrivenScreenAPI);
+
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:

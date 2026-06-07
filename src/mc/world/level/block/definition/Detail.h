@@ -13,6 +13,8 @@ namespace BlockDefinitionCrossComponentValidation::Detail {
 // NOLINTBEGIN
 MCAPI void constrainRandomOffsetToCollisionBox(::BlockComponentGroupDescription const& blockComponentGroupDescription);
 
+MCAPI bool validateFlowerPottable(::BlockComponentGroupDescription const& description);
+
 MCAPI bool validateGeometryAndMaterialComponents(
     ::BlockComponentGroupDescription const& description,
     ::SemVersion const&                     originalJsonVersion
@@ -20,6 +22,12 @@ MCAPI bool validateGeometryAndMaterialComponents(
 
 MCAPI bool
 validateNoRandomOffsetComponentIfFullCubeGeo(::BlockComponentGroupDescription const& blockComponentGroupDescription);
+
+MCAPI bool validateNoRedstoneConsumerComponentIfRedstoneProducer(
+    ::BlockComponentGroupDescription const& blockComponentGroupDescription
+);
+
+MCAPI bool validateNoSnowLoggableIfCollision(::BlockComponentGroupDescription const& blockComponentGroupDescription);
 // NOLINTEND
 
 } // namespace BlockDefinitionCrossComponentValidation::Detail

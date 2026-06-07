@@ -36,11 +36,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScreenModelProvider(
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          clientInstance,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
+    );
+
     MCAPI ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel();
 
     MCAPI ::std::shared_ptr<::PlayScreenModel> getPlayScreenModel();
 
     MCAPI ~ScreenModelProvider();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          clientInstance,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions
+    );
     // NOLINTEND
 
 public:

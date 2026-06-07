@@ -38,8 +38,6 @@ public:
     virtual void _write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
-    virtual ~ItemStackRequestActionTransferBase() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,6 +53,12 @@ public:
         bool                              isAmountSerialized
     );
 #endif
+
+    MCNAPI uchar getAmount() const;
+
+    MCNAPI ::ItemStackRequestSlotInfo const& getDst() const;
+
+    MCNAPI ::ItemStackRequestSlotInfo const& getSrc() const;
     // NOLINTEND
 
 public:

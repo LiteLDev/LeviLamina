@@ -18,19 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TypeRecord(TypeRecord const&);
-    TypeRecord();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_130::Poi::TypeRecord& operator=(::SharedTypes::v1_21_130::Poi::TypeRecord&&);
-
-    MCFOLD ::SharedTypes::v1_21_130::Poi::TypeRecord& operator=(::SharedTypes::v1_21_130::Poi::TypeRecord const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

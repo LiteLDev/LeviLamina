@@ -32,14 +32,15 @@ namespace CollidableMobNotifierSystem {
 MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void tickNotifier(
-    ::StrictEntityContext const&,
-    ::AABBShapeComponent const&     aabbShapeComponent,
-    ::DimensionTypeComponent const& dimensionComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>> mobView,
-    ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> fallingBlockView,
-    ::EntityModifier<::CollidableMobNearFlagComponent>                     mod,
-    ::LocalSpatialEntityFetcherFactoryComponent&                           spatialEntityFetcherFactory,
-    ::LocalSpatialEntityFetcher&                                           spatialEntityFetcher
+    ::StrictEntityContext const&    aabbShapeComponent,
+    ::AABBShapeComponent const&     dimensionComponent,
+    ::DimensionTypeComponent const& mobView,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::Exclude<::ActorIsFirstTickFlagComponent>>
+                                                                           fallingBlockView,
+    ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> mod,
+    ::EntityModifier<::CollidableMobNearFlagComponent>                     spatialEntityFetcherFactory,
+    ::LocalSpatialEntityFetcherFactoryComponent&                           spatialEntityFetcher,
+    ::LocalSpatialEntityFetcher&
 );
 
 MCAPI void tickSystem(

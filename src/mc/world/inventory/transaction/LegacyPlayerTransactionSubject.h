@@ -30,8 +30,6 @@ public:
     virtual bool isServerAuthBlockBreakingEnabled() const /*override*/;
 
     virtual bool destroyBlock(::BlockPos const& pos, uchar face) /*override*/;
-
-    virtual ~LegacyPlayerTransactionSubject() /*override*/ = default;
     // NOLINTEND
 
 public:

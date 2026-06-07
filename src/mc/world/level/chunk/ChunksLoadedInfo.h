@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkSource;
+class ChunkViewSource;
 class Dimension;
 class ITickingAreaView;
 class Player;
@@ -25,6 +26,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::ChunkViewSource> getChunkViewSource() const;
+
+    MCFOLD ::ChunksLoadedStatus getChunksLoadedStatus() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(
@@ -34,6 +43,17 @@ public:
         bool               isCircleArea,
         ::Tick             currentLevelTick,
         bool               allowNonTickingPlayerAndTickingAreaChunks
+    );
+
+    MCAPI static ::ChunksLoadedInfo calculateChunksLoadedInfo(
+        ::Dimension const& dimension,
+        ::ChunkSource&     source,
+        ::Bounds const&    bounds,
+        bool               isCircleArea,
+        ::Tick             currentLevelTick,
+        bool               allowUnloadedChunks,
+        bool               allowNonTickingPlayerAndTickingAreaChunks,
+        bool               allowPlayerChunks
     );
     // NOLINTEND
 };

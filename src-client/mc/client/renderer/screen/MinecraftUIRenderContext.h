@@ -97,7 +97,7 @@ public:
         ::ll::TypedStorage<4, 4, uint>                              mNumInstances;
         ::ll::TypedStorage<4, 4, int>                               mKeepAlive;
         ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>               mMaterial;
-        ::ll::TypedStorage<8, 528, ::mce::Mesh>                     mMesh;
+        ::ll::TypedStorage<8, 552, ::mce::Mesh>                     mMesh;
         // NOLINTEND
 
     public:
@@ -113,6 +113,8 @@ public:
             ::HashedString const&            materialNameHash,
             uint                             numInstances
         );
+
+        MCAPI ~PersistentMeshItem();
         // NOLINTEND
 
     public:
@@ -124,6 +126,12 @@ public:
             ::HashedString const&            materialNameHash,
             uint                             numInstances
         );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -286,6 +294,8 @@ public:
 
     MCAPI void
     _splitTextItemText(::MinecraftUIRenderContext::TextItem const& textItem, ::std::vector<::std::string>& lines) const;
+
+    MCFOLD ::ScreenContext& getScreenContext();
     // NOLINTEND
 
 public:
@@ -307,7 +317,7 @@ public:
 
     MCFOLD float $getTextAlpha() const;
 
-    MCAPI void $setTextAlpha(float alpha);
+    MCFOLD void $setTextAlpha(float alpha);
 
     MCAPI void $drawDebugText(
         ::RectangleArea const&    rect,

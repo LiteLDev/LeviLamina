@@ -26,18 +26,13 @@ public:
 
 public:
     // prevent constructor by default
+    CoordinateRangeData& operator=(CoordinateRangeData const&);
     CoordinateRangeData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData&&);
-
     MCAPI CoordinateRangeData(::SharedTypes::v1_21_10::CoordinateRangeData const&);
-
-    MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData&&);
-
-    MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData& operator=(::SharedTypes::v1_21_10::CoordinateRangeData const&);
 
     MCAPI ~CoordinateRangeData();
     // NOLINTEND
@@ -46,13 +41,16 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void fromExpression(
+        ::SharedTypes::v1_21_10::CoordinateRangeData& instance,
+        ::SharedTypes::Legacy::ExpressionNode const&  expression
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_21_10::CoordinateRangeData const&);
     // NOLINTEND
 

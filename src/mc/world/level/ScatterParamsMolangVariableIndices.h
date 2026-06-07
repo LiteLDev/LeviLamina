@@ -18,6 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize();
+    MCAPI ScatterParamsMolangVariableIndices();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -14,22 +14,35 @@ class Block;
 
 struct SurfaceBuilderBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
+    // SurfaceBuilderBiomeComponentGlue inner types define
+    enum class BuilderType : uchar {
+        Surface    = 0,
+        Subsurface = 1,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                            mSeaFloorDepth;
-    ::ll::TypedStorage<8, 8, ::Block const*>                 mSeaFloorMaterialBlock;
-    ::ll::TypedStorage<8, 8, ::Block const*>                 mFoundationMaterialBlock;
-    ::ll::TypedStorage<8, 8, ::Block const*>                 mMidMaterialBlock;
-    ::ll::TypedStorage<8, 8, ::Block const*>                 mTopMaterialBlock;
-    ::ll::TypedStorage<8, 8, ::Block const*>                 mSeaMaterialBlock;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mFloorMaterialBlocks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mCeilingMaterialBlocks;
-    ::ll::TypedStorage<8, 8, ::Block const*>                 mBeachMaterialBlock;
-    ::ll::TypedStorage<4, 4, int>                            mMaxPuddleDepthBelowSeaLevel;
-    ::ll::TypedStorage<8, 8, ::Block const*>                 mClayMaterialBlock;
-    ::ll::TypedStorage<8, 8, ::Block const*>                 mHardClayMaterialBlock;
-    ::ll::TypedStorage<1, 1, bool>                           mBrycePillars;
-    ::ll::TypedStorage<1, 1, bool>                           mHasForest;
+    ::ll::TypedStorage<4, 4, int>                                             mSeaFloorDepth;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                  mSeaFloorMaterialBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                  mFoundationMaterialBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                  mMidMaterialBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                  mTopMaterialBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                  mSeaMaterialBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                  mFloorMaterialBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                  mCeilingMaterialBlocks;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                  mBeachMaterialBlock;
+    ::ll::TypedStorage<4, 4, int>                                             mMaxPuddleDepthBelowSeaLevel;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                  mClayMaterialBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                  mHardClayMaterialBlock;
+    ::ll::TypedStorage<1, 1, bool>                                            mBrycePillars;
+    ::ll::TypedStorage<1, 1, bool>                                            mHasForest;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                  mNonReplaceableBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                  mGradientBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<float>>                           mAmplitudes;
+    ::ll::TypedStorage<4, 4, int>                                             mFirstOctave;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mNoiseSeedString;
+    ::ll::TypedStorage<1, 1, ::SurfaceBuilderBiomeComponentGlue::BuilderType> mBuilderType;
     // NOLINTEND
 
 public:
@@ -38,14 +51,6 @@ public:
     virtual bool resolveAndValidate(::entt::meta_any const& component, ::BiomeRegistry const&) /*override*/;
 
     virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& component) const /*override*/;
-
-    virtual ~SurfaceBuilderBiomeComponentGlue() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void makeAndSetSurfaceMaterialAttributes(::Biome& biome) const;
     // NOLINTEND
 
 public:

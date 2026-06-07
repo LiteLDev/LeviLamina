@@ -7,7 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Level;
+namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleServerAdmin {
@@ -32,6 +35,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptAdminBeforeEvents(
+        ::Level*                        level,
+        ::Scripting::WeakLifetimeScope& scope,
+        ::Scripting::DependencyLocator& locator
+    );
+
+    MCNAPI void registerListeners();
+
     MCNAPI ~ScriptAdminBeforeEvents();
     // NOLINTEND
 
@@ -39,6 +50,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Level* level, ::Scripting::WeakLifetimeScope& scope, ::Scripting::DependencyLocator& locator);
     // NOLINTEND
 
 public:

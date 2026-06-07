@@ -47,8 +47,18 @@ public:
     virtual bool isRiding() const /*override*/;
 
     virtual bool hasPassenger() const /*override*/;
+    // NOLINTEND
 
-    virtual ~GetCollisionShapeActorProxy() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit GetCollisionShapeActorProxy(::Actor const& actor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor const& actor);
     // NOLINTEND
 
 public:

@@ -18,20 +18,12 @@ public:
     ::ll::TypedStorage<8, 16, ::std::set<::std::string>> mForbiddenFilenames;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ZipFileRestrictions& operator=(ZipFileRestrictions const&);
-    ZipFileRestrictions();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ZipFileRestrictions(::Core::ZipUtils::ZipFileRestrictions const&);
-#endif
+    MCAPI ZipFileRestrictions();
+
+    MCAPI void addRestrictedExtensions(::std::vector<::std::string> const& extensions);
 
     MCAPI bool allowFile(::Core::PathView file) const;
 
@@ -43,9 +35,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Core::ZipUtils::ZipFileRestrictions const&);
-#endif
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

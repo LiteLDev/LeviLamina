@@ -14,8 +14,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorBlockRenderer;
 class ActorRenderDispatcher;
+class BlockActor;
 class BlockActorRenderDispatcher;
 class DataDrivenRenderer;
 class FontHandle;
@@ -23,14 +25,20 @@ class HashedString;
 class HudIconActorRenderer;
 class IClientInstance;
 class IMinecraftGame;
+class IOptionRegistry;
 class ItemInHandRenderer;
 class ItemRenderer;
+class LightTexture;
+class MatrixStack;
 class ParticleSystemEngine;
 class ScreenContext;
 class SortedMeshDrawList;
+class Tessellator;
+class Vec2;
 struct DataDrivenRendererContinuousData;
 struct ProcessedDataDrivenRenderers;
 namespace LightPropagation { class LightVolumeManager; }
+namespace mce { class TextureGroup; }
 // clang-format on
 
 class BaseActorRenderContext {
@@ -101,11 +109,111 @@ public:
         ::IMinecraftGame&  minecraftGame
     );
 
+    MCAPI float getActorDitheringMaxDistance() const;
+
+    MCFOLD ::BlockActorRenderDispatcher& getBlockEntityRenderDispatcher();
+
+    MCAPI ::Actor* getCameraActor();
+
+    MCAPI ::Vec3 const& getCameraPosition() const;
+
+    MCAPI ::Vec2 getCameraRotation(float a) const;
+
+    MCFOLD ::Vec3 const& getCameraTargetPosition() const;
+
+    MCFOLD ::IClientInstance const& getClient() const;
+
+    MCFOLD ::IClientInstance& getClient();
+
     MCAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
+
+    MCFOLD ::ActorBlockRenderer& getEntityBlockRenderer();
+
+    MCFOLD ::std::shared_ptr<::ActorRenderDispatcher> getEntityRenderDispatcher();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontHandle();
 
+    MCAPI float getFrameAlpha(::Actor const& actor) const;
+
+    MCAPI float getFrameAlpha(::Actor const* actor) const;
+
+    MCAPI float getFrameAlpha(::BlockActor const& blockActor) const;
+
+    MCFOLD ::HudIconActorRenderer& getHudIconActorRenderer();
+
+    MCFOLD ::ItemInHandRenderer& getItemInHandRenderer();
+
+    MCFOLD ::ItemRenderer& getItemRenderer();
+
+    MCAPI ::LightTexture* getLightTexture() const;
+
+    MCAPI ::std::weak_ptr<::LightPropagation::LightVolumeManager> getLightVolumeManager() const;
+
+    MCAPI ::IOptionRegistry& getOptions();
+
+    MCFOLD ::ParticleSystemEngine* getParticleSystemEngine();
+
+    MCAPI ::MatrixStack& getProjectionMatrix();
+
+    MCAPI ::std::optional<int64> getRenderUniqueIdOverride() const;
+
+    MCFOLD ::ScreenContext& getScreenContext() const;
+
+    MCAPI ::Tessellator& getTessellator();
+
+    MCAPI ::std::shared_ptr<::mce::TextureGroup> getTextureGroup();
+
+    MCFOLD ::DataDrivenRendererContinuousData* getV2ContinuousData();
+
+    MCFOLD ::ProcessedDataDrivenRenderers const* getV2ProcessedDataDrivenRenderers() const;
+
+    MCFOLD bool getV2ShouldRenderActorsWithAttachables() const;
+
+    MCAPI ::MatrixStack& getViewMatrix();
+
+    MCAPI ::MatrixStack& getWorldMatrix();
+
     MCAPI bool isDeferredUpscaling() const;
+
+    MCAPI bool isForceLightingOn() const;
+
+    MCAPI bool isIgnoringLighting() const;
+
+    MCAPI bool isLightingOff() const;
+
+    MCAPI bool isRenderingOnMap() const;
+
+    MCAPI bool isSimple();
+
+    MCAPI ::BaseActorRenderContext overrideScreenContext(::ScreenContext& screenContext) const;
+
+    MCAPI void setActorDitheringMaxDistance(float maxDitheringDistance);
+
+    MCAPI void setCameraPosition(::Vec3 const& value);
+
+    MCFOLD void setCameraTargetPosition(::Vec3 const& value);
+
+    MCAPI void setForceLightingOn(bool state);
+
+    MCAPI void setIgnoreLighting(bool state);
+
+    MCAPI void setIsOnScreen(bool);
+
+    MCAPI void setRenderUniqueIdOverride(int64 uniqueId);
+
+    MCFOLD void setRenderUniqueIdOverride(::std::optional<int64> uniqueId);
+
+    MCAPI void setRenderingOnMap(bool state);
+
+    MCAPI void setUpdateBonesAndEffects(bool shouldUpdateBonesAndEffects);
+
+    MCAPI void setUpdateEffects(bool shouldUpdateEffects);
+
+    MCAPI void setWorldClipRegion(::AABB const& region);
+
+    MCAPI bool shouldUpdateBonesAndEffects() const;
+
+    MCAPI bool shouldUpdateEffects() const;
     // NOLINTEND
 
 public:

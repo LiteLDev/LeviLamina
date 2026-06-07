@@ -33,18 +33,6 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                     mTargetCenterOffset;
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mTargetEntity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraTargetComponent& operator=(CameraTargetComponent const&);
-    CameraTargetComponent(CameraTargetComponent const&);
-    CameraTargetComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::MinecraftCamera::CameraTargetComponent& operator=(::MinecraftCamera::CameraTargetComponent&&);
-    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

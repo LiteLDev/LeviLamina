@@ -17,5 +17,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create(bool isCatchup);
+
+    MCAPI static ::TickingSystemWithInfo createAddMovementTickNeededForCatchupSystem();
     // NOLINTEND
 };

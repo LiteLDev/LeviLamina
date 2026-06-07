@@ -25,6 +25,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit MarketplacePassWelcomeScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

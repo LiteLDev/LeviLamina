@@ -39,12 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IScriptBlockProperty(
-        ::std::string                                                                         name,
-        ::BlockState const&                                                                   blockState,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
-
     MCAPI ::ScriptModuleMinecraft::IScriptBlockProperty& operator=(::ScriptModuleMinecraft::IScriptBlockProperty&&);
     // NOLINTEND
 
@@ -52,16 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string                                                                         name,
-        ::BlockState const&                                                                   blockState,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
     // NOLINTEND
 
 public:

@@ -21,9 +21,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PendingPackAction& operator=(PendingPackAction const&);
+    PendingPackAction();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PendingPackAction(::World::PendingPackAction const&);
+
+    MCAPI ::World::PendingPackAction& operator=(::World::PendingPackAction&&);
+
     MCAPI ~PendingPackAction();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::World::PendingPackAction const&);
     // NOLINTEND
 
 public:

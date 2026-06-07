@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/input/TouchEventResult.h"
+#include "mc/deps/input/TouchState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,5 +20,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::TouchPoint, ::TouchEventResult>>> _touchEventResults;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addPointer(int id, ::TouchState state, float x, float y, bool captured, bool startedInactive);
+
+    MCFOLD void clearPointers();
     // NOLINTEND
 };

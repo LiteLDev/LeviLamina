@@ -15,7 +15,6 @@ class AABB;
 class Block;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 struct ActorBlockSyncMessage;
@@ -28,6 +27,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::HashedString const> mNextLightLevel;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LightBlock();
 
 public:
     // virtual functions
@@ -69,16 +72,20 @@ public:
         ::BlockPos const&  pos,
         ::BlockType const& newBlock
     ) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~LightBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LightBlock(::std::string const& nameId, int id, ::HashedString const& nextLightLevel);
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& nextLightLevel);
     // NOLINTEND
 
 public:
@@ -102,7 +109,7 @@ public:
 
     MCAPI bool $isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -121,8 +128,6 @@ public:
         ::BlockPos const&  pos,
         ::BlockType const& newBlock
     ) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

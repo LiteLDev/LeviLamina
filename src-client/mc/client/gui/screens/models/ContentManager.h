@@ -11,6 +11,7 @@
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/level/LevelListCacheObserver.h"
 
 // auto generated forward declare list
@@ -44,11 +45,14 @@ struct ContentSource;
 struct InvalidPacksFilterGroup;
 struct RealmPackManagerContentSource;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace ContentManagerUtils { class SourcesAsyncReloader; }
 namespace Core { class FilePathManager; }
 namespace Realms { class RealmsServicePackSource; }
 namespace Realms { struct Content; }
 namespace Realms { struct RealmId; }
+namespace StorageManager { class ContentItemProvider; }
+namespace StorageManager { class IContentHandler; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -77,7 +81,13 @@ public:
     ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                     mMutex;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IContentManagerFactory>>             mFactory;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::ContentManagerUtils::SourcesAsyncReloader>>>
-        mReloadSourcesAsync;
+                                                                                    mReloadSourcesAsync;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>> mEntitlementManager;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+                                                                                      mReloadViewsPublisher;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::StorageManager::ContentItemProvider>> mWeakStorageContentItemProvider;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::StorageManager::IContentHandler>>>
+        mStorageContentHandler;
     // NOLINTEND
 
 public:
@@ -201,6 +211,12 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription
     subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&& onSourcesReloadedAsyncCallback) /*override*/;
+
+    virtual ::std::shared_ptr<::StorageManager::ContentItemProvider> getStorageContentItemProvider() /*override*/;
+
+    virtual ::StorageManager::IContentHandler& getStorageContentHandler() /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription registerToReloadViews(::std::function<void()> callback) /*override*/;
     // NOLINTEND
 
 public:
@@ -208,9 +224,11 @@ public:
     // NOLINTBEGIN
     MCAPI ContentManager(
         ::std::unique_ptr<::IContentManagerFactory>            factory,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>   entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager> worldTemplateManager,
         ::IPackManifestFactory&                                packManifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> filePathManager
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> filePathManager,
+        ::std::unique_ptr<::StorageManager::IContentHandler>   storageContentHandler
     );
 
     MCAPI ContentManager(
@@ -224,16 +242,13 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> const&    storeCatalog,
         ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const&     contentCatalogService,
         ::ClientPackSourceFactory&                                        packSourceFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&     filePathManager
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&     filePathManager,
+        ::std::unique_ptr<::StorageManager::IContentHandler>              storageContentHandler
     );
-
-    MCAPI ::ContentSource* _addContentSource(::std::unique_ptr<::ContentSource> source);
 
     MCAPI void _asyncInitWork();
 
-    MCAPI ::IContentCatalogPackSource& _createContentCatalogPackSource(bool enabled);
-
-    MCAPI void _initCallback();
+    MCAPI void _dispatchReloadViewPublisher();
 
     MCAPI ::ContentSource* _loadResourceContent(::ContentType type, ::ContentFlags flags);
 
@@ -246,6 +261,8 @@ public:
         ::PackType                                                  packType,
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     );
+
+    MCAPI void initExistanceTracking(::std::weak_ptr<::ContentManager> self);
     // NOLINTEND
 
 public:
@@ -266,9 +283,11 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::std::unique_ptr<::IContentManagerFactory>            factory,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>   entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager> worldTemplateManager,
         ::IPackManifestFactory&                                packManifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> filePathManager
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> filePathManager,
+        ::std::unique_ptr<::StorageManager::IContentHandler>   storageContentHandler
     );
 
     MCAPI void* $ctor(
@@ -282,7 +301,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> const&    storeCatalog,
         ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const&     contentCatalogService,
         ::ClientPackSourceFactory&                                        packSourceFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&     filePathManager
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&     filePathManager,
+        ::std::unique_ptr<::StorageManager::IContentHandler>              storageContentHandler
     );
     // NOLINTEND
 
@@ -394,6 +414,12 @@ public:
 
     MCAPI ::Bedrock::PubSub::Subscription
     $subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&& onSourcesReloadedAsyncCallback);
+
+    MCAPI ::std::shared_ptr<::StorageManager::ContentItemProvider> $getStorageContentItemProvider();
+
+    MCFOLD ::StorageManager::IContentHandler& $getStorageContentHandler();
+
+    MCAPI ::Bedrock::PubSub::Subscription $registerToReloadViews(::std::function<void()> callback);
     // NOLINTEND
 
 public:

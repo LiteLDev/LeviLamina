@@ -17,10 +17,7 @@ public:
     // NOLINTBEGIN
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
-        /*override*/;
-
-    virtual ~CraftingInputContainerValidation() /*override*/ = default;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -28,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const&) const;
 
 
     // NOLINTEND

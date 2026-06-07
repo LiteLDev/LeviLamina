@@ -20,20 +20,17 @@ public:
 public:
     // prevent constructor by default
     AmbientSoundServerComponent& operator=(AmbientSoundServerComponent const&);
-    AmbientSoundServerComponent(AmbientSoundServerComponent const&);
     AmbientSoundServerComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AmbientSoundServerComponent& operator=(::AmbientSoundServerComponent&&);
-
-    MCAPI ~AmbientSoundServerComponent();
+    MCAPI AmbientSoundServerComponent(::AmbientSoundServerComponent const&);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::AmbientSoundServerComponent const&);
     // NOLINTEND
 };

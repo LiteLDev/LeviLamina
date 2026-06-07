@@ -39,14 +39,14 @@ public:
     virtual void setStopPower(bool bPower) /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
-
-    virtual ~ProducerComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ProducerComponent();
+
+    MCFOLD void allowAttachments(bool bAttached);
     // NOLINTEND
 
 public:

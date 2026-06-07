@@ -23,10 +23,12 @@ struct BiomeDecorationFeature;
 namespace FeatureHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::gsl::not_null<::Block const*> makeCompareBlock(::Block const& block);
+MCAPI bool isEmptyBlock(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
 MCAPI ::RenderParams
 makeFeatureRenderParams(::BlockSource& source, ::BlockPos const& pos, ::MolangVariableMap& molangVariables);
+
+MCAPI bool passesAllowList(::Block const& block, ::std::vector<::BlockDescriptor> const& allowList);
 
 MCAPI bool passesAllowList(
     ::IBlockWorldGenAPI const&              target,

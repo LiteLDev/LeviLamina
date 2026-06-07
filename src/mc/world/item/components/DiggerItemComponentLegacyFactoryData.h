@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/DefinitionTrigger.h"
+#include "mc/deps/shared_types/legacy/DefinitionTrigger.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -18,39 +18,9 @@ struct DiggerItemComponentLegacyFactoryData : public ::IItemComponentLegacyFacto
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                  mUseEfficiency;
-    ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockTypeInfo>> mDestroySpeeds;
-    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>                  mOnDigDefault;
-    // NOLINTEND
-
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    DiggerItemComponentLegacyFactoryData& operator=(DiggerItemComponentLegacyFactoryData const&);
-    DiggerItemComponentLegacyFactoryData();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    DiggerItemComponentLegacyFactoryData();
-
-#endif
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DiggerItemComponentLegacyFactoryData() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DiggerItemComponentLegacyFactoryData(::DiggerItemComponentLegacyFactoryData const&);
-
-    MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData&&);
-
-#ifdef LL_PLAT_C
-    MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData const&);
-#endif
+    ::ll::TypedStorage<1, 1, bool>                                      mUseEfficiency;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockTypeInfo>>     mDestroySpeeds;
+    ::ll::TypedStorage<8, 88, ::SharedTypes::Legacy::DefinitionTrigger> mOnDigDefault;
     // NOLINTEND
 
 public:
@@ -61,18 +31,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DiggerItemComponentLegacyFactoryData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

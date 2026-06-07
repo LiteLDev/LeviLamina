@@ -6,14 +6,17 @@ namespace Social {
 
 enum class PermissionDenyReason : uint {
     // bitfield representation
-    None                   = 0,
-    MinecraftBan           = 1u << 0,
-    XboxLive               = 1u << 1,
-    XboxLiveParental       = 1u << 2,
-    XboxLiveBan            = 1u << 3,
-    PlatformPlayStation    = 1u << 4,
-    PlatformNintendoSwitch = 1u << 5,
-    Unknown                = 1u << 6,
+    None                      = 0,
+    MinecraftBan              = 1u << 0,
+    XboxLive                  = 1u << 1,
+    XboxLiveParental          = 1u << 2,
+    XboxLiveBan               = 1u << 3,
+    PlatformPlayStation       = 1u << 4,
+    PlatformNintendoSwitch    = 1u << 5,
+    Unknown                   = 1u << 6,
+    PlatformPlayStationPlus   = 1u << 7,
+    PlatformNintendoSwitchNso = 1u << 8,
+    PlatformXboxGamepass      = 1u << 9,
 };
 
 }

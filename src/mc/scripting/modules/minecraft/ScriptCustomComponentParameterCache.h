@@ -38,18 +38,6 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters>>
             mCachedParameters;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~CachedHandle();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct ParameterCache {
@@ -112,12 +100,20 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle
     registerParameterPayload(::cereal::DynamicValue const& payload);
+
+    MCAPI ~ScriptCustomComponentParameterCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ServerScriptManagerEvents& events);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

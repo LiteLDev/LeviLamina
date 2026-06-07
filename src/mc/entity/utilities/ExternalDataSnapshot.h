@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 struct AdventureSettings;
+struct ExternalDataSnapshotComponent;
 // clang-format on
 
 struct ExternalDataSnapshot : public ::ExternalDataInterface {
@@ -44,6 +45,22 @@ public:
     virtual ::GameType getDefaultGameType() const /*override*/;
 
     virtual float getSmoothRotationSpeed() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit ExternalDataSnapshot(::ExternalDataSnapshotComponent const& component);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ExternalDataSnapshotComponent const& component);
+#endif
     // NOLINTEND
 
 public:

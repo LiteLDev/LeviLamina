@@ -40,6 +40,8 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::ActiveDirectoryModalArgs                args
     );
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

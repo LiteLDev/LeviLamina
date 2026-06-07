@@ -34,8 +34,6 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     ) /*override*/;
-
-    virtual ~SHStraight() /*override*/ = default;
     // NOLINTEND
 
 public:

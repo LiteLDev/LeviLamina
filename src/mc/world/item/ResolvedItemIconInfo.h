@@ -21,24 +21,24 @@ public:
     ::ll::TypedStorage<2, 2, ushort>             mTexSizeH;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ResolvedItemIconInfo& operator=(ResolvedItemIconInfo const&);
-    ResolvedItemIconInfo(ResolvedItemIconInfo const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ResolvedItemIconInfo();
 
+    MCAPI ResolvedItemIconInfo(uint legacyID, int frame);
+
     MCAPI ResolvedItemIconInfo(::std::string const& name, int frame, ::ItemIconInfoType type);
 
-#ifdef LL_PLAT_C
-    MCAPI ::ResolvedItemIconInfo& operator=(::ResolvedItemIconInfo&&);
-#endif
+    MCAPI ResolvedItemIconInfo(
+        ::std::string const& name,
+        float                u0,
+        float                u1,
+        float                v0,
+        float                v1,
+        ushort               texSizeW,
+        ushort               texSizeH
+    );
 
     MCAPI ~ResolvedItemIconInfo();
     // NOLINTEND
@@ -48,7 +48,12 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
+    MCAPI void* $ctor(uint legacyID, int frame);
+
     MCAPI void* $ctor(::std::string const& name, int frame, ::ItemIconInfoType type);
+
+    MCAPI void*
+    $ctor(::std::string const& name, float u0, float u1, float v0, float v1, ushort texSizeW, ushort texSizeH);
     // NOLINTEND
 
 public:

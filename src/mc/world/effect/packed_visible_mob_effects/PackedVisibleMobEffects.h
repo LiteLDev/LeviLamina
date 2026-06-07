@@ -7,12 +7,15 @@
 
 // auto generated forward declare list
 // clang-format off
+class MobEffectInstance;
 namespace PackedVisibleMobEffects { struct VisibleMobEffect; }
 // clang-format on
 
 namespace PackedVisibleMobEffects {
 // functions
 // NOLINTBEGIN
+MCNAPI int64 packVisibleEffects(::std::vector<::MobEffectInstance> const& mobEffects);
+
 MCNAPI ::Bedrock::small_vector<::PackedVisibleMobEffects::VisibleMobEffect, 8>
 unpackVisibleEffects(int64 packedVisibleMobEffects);
 // NOLINTEND

@@ -22,13 +22,14 @@ public:
 public:
     // prevent constructor by default
     GameTestBatch& operator=(GameTestBatch const&);
-    GameTestBatch(GameTestBatch const&);
     GameTestBatch();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI GameTestBatch(::gametest::GameTestBatch&&);
+
+    MCNAPI GameTestBatch(::gametest::GameTestBatch const&);
 
     MCNAPI GameTestBatch(
         ::std::string                                                      name,
@@ -44,6 +45,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::gametest::GameTestBatch&&);
+
+    MCNAPI void* $ctor(::gametest::GameTestBatch const&);
 
     MCNAPI void* $ctor(
         ::std::string                                                      name,

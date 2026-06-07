@@ -10,6 +10,7 @@
 struct WorldTemplateData;
 struct WorldTemplateInfo;
 struct WorldTemplateMutableInfo;
+namespace mce { class UUID; }
 // clang-format on
 
 class WorldTemplateCollection {
@@ -24,24 +25,25 @@ public:
     // prevent constructor by default
     WorldTemplateCollection& operator=(WorldTemplateCollection const&);
     WorldTemplateCollection(WorldTemplateCollection const&);
+    WorldTemplateCollection();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorldTemplateCollection();
+    MCNAPI void clear();
 
     MCNAPI void erase(uint64 index);
 
-    MCNAPI ::WorldTemplateInfo const& getOrInvalid(uint64 index) const;
-
-    MCNAPI ::WorldTemplateCollection& operator=(::WorldTemplateCollection&&);
-
     MCNAPI void push_back(::WorldTemplateData&& data, ::WorldTemplateMutableInfo&& mutableInfo);
+
+    MCNAPI ::WorldTemplateInfo const* tryFindInstalledWorldByTemplateId(::gsl::span<::mce::UUID const> ids) const;
+
+    MCNAPI ~WorldTemplateCollection();
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

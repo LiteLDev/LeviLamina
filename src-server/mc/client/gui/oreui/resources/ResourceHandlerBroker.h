@@ -2,17 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI {
+namespace Gameface {
 
-class ResourceHandlerBroker {
-public:
-    // ResourceHandlerBroker inner types declare
-    // clang-format off
-    struct ResourceHandlerData;
-    // clang-format on
+class ResourceHandlerBroker {};
 
-    // ResourceHandlerBroker inner types define
-    struct ResourceHandlerData {};
-};
-
-} // namespace OreUI
+} // namespace Gameface

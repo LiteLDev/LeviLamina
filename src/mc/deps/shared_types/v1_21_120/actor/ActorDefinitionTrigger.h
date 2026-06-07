@@ -24,19 +24,13 @@ public:
 
 public:
     // prevent constructor by default
-    ActorDefinitionTrigger(ActorDefinitionTrigger const&);
+    ActorDefinitionTrigger& operator=(ActorDefinitionTrigger const&);
     ActorDefinitionTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionTrigger(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
-
-    MCAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger&
-    operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
-
-    MCAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger&
-    operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger const&);
+    MCAPI ActorDefinitionTrigger(::SharedTypes::v1_21_120::ActorDefinitionTrigger const&);
 
     MCAPI ~ActorDefinitionTrigger();
     // NOLINTEND
@@ -50,13 +44,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_120::ActorDefinitionTrigger const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

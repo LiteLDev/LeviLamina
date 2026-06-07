@@ -8,10 +8,4 @@ public:
     // NOLINTBEGIN
     virtual ~Control() = default;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

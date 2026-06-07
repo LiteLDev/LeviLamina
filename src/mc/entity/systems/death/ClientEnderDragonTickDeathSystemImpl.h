@@ -62,8 +62,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~ClientEnderDragonTickDeathSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

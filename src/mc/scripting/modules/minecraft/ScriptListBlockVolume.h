@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
+class BlockPos;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -19,18 +20,12 @@ namespace ScriptModuleMinecraft {
 
 class ScriptListBlockVolume : public ::ScriptModuleMinecraft::ScriptBlockVolumeBase {
 public:
-    // prevent constructor by default
-    ScriptListBlockVolume& operator=(ScriptListBlockVolume const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() /*override*/;
-
-    virtual ~ScriptListBlockVolume() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -38,11 +33,9 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptListBlockVolume();
 
+    MCAPI explicit ScriptListBlockVolume(::std::vector<::BlockPos> const& locations);
+
     MCAPI explicit ScriptListBlockVolume(::std::vector<::Vec3> const& locations);
-
-    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
-
-    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
 
     MCAPI void add(::std::vector<::Vec3> const& locations);
 
@@ -60,11 +53,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::std::vector<::BlockPos> const& locations);
+
     MCAPI void* $ctor(::std::vector<::Vec3> const& locations);
-
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
-
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
     // NOLINTEND
 
 public:

@@ -31,13 +31,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~AddTimeMarkerData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI bool operator==(::SyncWorldClocksPacketPayload::AddTimeMarkerData const& rhs) const;
         // NOLINTEND
     };
 
@@ -46,18 +40,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::WorldClockData>> mClockData;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~InitializeRegistryData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -68,27 +50,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64>                 mClockId;
         ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mTimeMarkerIds;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RemoveTimeMarkerData& operator=(RemoveTimeMarkerData const&);
-        RemoveTimeMarkerData(RemoveTimeMarkerData const&);
-        RemoveTimeMarkerData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD ::SyncWorldClocksPacketPayload::RemoveTimeMarkerData&
-        operator=(::SyncWorldClocksPacketPayload::RemoveTimeMarkerData&&);
-
-        MCAPI ~RemoveTimeMarkerData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct SyncStateData {
@@ -96,27 +57,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::SyncWorldClockStateData>> mClockData;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SyncStateData& operator=(SyncStateData const&);
-        SyncStateData(SyncStateData const&);
-        SyncStateData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD ::SyncWorldClocksPacketPayload::SyncStateData&
-        operator=(::SyncWorldClocksPacketPayload::SyncStateData&&);
-
-        MCAPI ~SyncStateData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 

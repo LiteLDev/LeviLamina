@@ -25,10 +25,13 @@ struct DimensionTypeComponent;
 struct IsDeadFlagComponent;
 struct OffsetsComponent;
 struct OverlayAlphaComponent;
+struct ParticleEventRequestQueueComponent;
 struct PlayerComponent;
+struct RandomComponent;
 struct ShieldFlickerComponent;
 struct SoundEventRequestQueueComponent;
 struct SpawnExperienceOrbRequestQueueComponent;
+struct SpawnOnDeathComponent;
 struct StateVectorComponent;
 struct SwellComponent;
 struct SynchedActorDataComponent;
@@ -38,6 +41,15 @@ struct WingFlapDataComponent;
 namespace MobDeathUtility {
 // functions
 // NOLINTBEGIN
+MCNAPI void clientEnderDragonTickDeath(
+    ::EnderDragonDeathWrapper&                                       dragonDeath,
+    ::DeathTickingComponent const&                                   deathTicking,
+    ::StateVectorComponent&                                          stateVector,
+    ::WingFlapDataComponent&                                         wingFlapData,
+    ::OptionalComponentWrapper<::RandomComponent>                    random,
+    ::OptionalComponentWrapper<::ParticleEventRequestQueueComponent> particleRequestQueue
+);
+
 MCNAPI void clientMobTickDeath(
     ::MobDeathWrapper&                                            mobDeath,
     ::StrictEntityContext const&                                  entity,
@@ -52,6 +64,14 @@ MCNAPI void clientMobTickDeath(
     ::DeathTickingComponent&                                      deathTicking,
     ::Optional<::PlayerComponent>                                 player,
     ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueue
+);
+
+MCNAPI void clientWitherBossTickDeath(
+    ::DeathTickingComponent const& deathTicking,
+    ::OverlayAlphaComponent&       overlayAlpha,
+    ::ShieldFlickerComponent&      shieldFlicker,
+    ::SwellComponent&              swell,
+    ::SynchedActorDataComponent&   synchedActorData
 );
 
 MCNAPI void serverEnderDragonTickDeath(
@@ -84,6 +104,7 @@ MCNAPI void serverMobTickDeath(
     ::SpawnExperienceOrbRequestQueueComponent&                    experienceOrbRequestQueue,
     ::Optional<::ExperienceRewardComponent>                       experienceReward,
     ::Optional<::PlayerComponent>                                 player,
+    ::Optional<::SpawnOnDeathComponent>                           spawnOnDeath,
     ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueue
 );
 
@@ -97,17 +118,36 @@ MCNAPI void serverTickWitherDie(
     ::EntityModifier<::IsDeadFlagComponent>&      modifier
 );
 
-MCNAPI void toggleWitherAerialAttack(
-    ::DeathTickingComponent const& deathTicking,
-    ::ShieldFlickerComponent&      shieldFlicker,
-    ::SynchedActorDataComponent&   synchedActorData
+MCNAPI void serverWitherBossTickDeath(
+    ::WitherBossDeathWrapper&                                     witherWrapper,
+    ::StrictEntityContext const&                                  entity,
+    ::ActorDataFlagComponent const&                               actorFlags,
+    ::ActorDefinitionIdentifierComponent const&                   actorIdentifier,
+    ::ActorUniqueIDComponent const&                               actorUniqueID,
+    ::DeathTickingComponent const&                                deathTicking,
+    ::DimensionTypeComponent const&                               dimensionType,
+    ::StateVectorComponent const&                                 stateVector,
+    ::OverlayAlphaComponent&                                      overlayAlpha,
+    ::ShieldFlickerComponent&                                     shieldFlicker,
+    ::SpawnExperienceOrbRequestQueueComponent&                    experienceOrbRequestQueue,
+    ::SwellComponent&                                             swell,
+    ::SynchedActorDataComponent&                                  synchedActorData,
+    ::Optional<::ExperienceRewardComponent const>                 experienceReward,
+    ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueue,
+    ::EntityModifier<::IsDeadFlagComponent>&                      modifier
 );
 
-MCNAPI void updateWitherMolangRelatedData(
-    ::DeathTickingComponent const& deathTicking,
-    ::OverlayAlphaComponent&       overlayAlpha,
-    ::SwellComponent&              swell,
-    ::SynchedActorDataComponent&   synchedActorData
+MCNAPI void tickDragonExplosionParticles(
+    ::StateVectorComponent const&                                    stateVector,
+    ::OptionalComponentWrapper<::RandomComponent>                    random,
+    ::OptionalComponentWrapper<::ParticleEventRequestQueueComponent> particleRequestQueue
+);
+
+MCNAPI void tickExplosionParticles(
+    ::DeathTickingComponent const&                                   deathTicking,
+    ::StateVectorComponent const&                                    stateVector,
+    ::OptionalComponentWrapper<::RandomComponent>                    random,
+    ::OptionalComponentWrapper<::ParticleEventRequestQueueComponent> particleRequestQueue
 );
 // NOLINTEND
 

@@ -22,14 +22,6 @@ public:
     virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
     virtual uint64 numBytesLeft() const /*override*/;
-
-    virtual ~StringByteInput() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

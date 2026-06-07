@@ -117,8 +117,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-
-    virtual ~FoodExhaustionSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:

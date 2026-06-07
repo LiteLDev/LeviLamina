@@ -13,7 +13,6 @@ class LibraryCollection;
 class PackManifest;
 class PlayScreenModel;
 class UIPropertyBag;
-namespace EDUScreenHelpers { class TemplateWrapper; }
 // clang-format on
 
 class EDUWorldTemplatesScreenController : public ::MainMenuScreenController {
@@ -48,8 +47,6 @@ public:
     MCAPI explicit EDUWorldTemplatesScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
     MCAPI void _createOrDeleteTemplate(::UIPropertyBag& bag, ::EDUScreenHelpers::InstanceType instanceType);
-
-    MCAPI ::EDUScreenHelpers::TemplateWrapper _getTemplateInfo(::UIPropertyBag& bag) const;
 
     MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
 

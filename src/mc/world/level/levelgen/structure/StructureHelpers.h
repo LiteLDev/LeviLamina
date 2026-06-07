@@ -61,6 +61,14 @@ public:
         ::BoundingBox const& chunkBB
     );
 
+    MCAPI static int getDirectionRotation(int structureOrientation, ushort inOrientation);
+
+    MCAPI static int getDoorRotation(int structureOrientation, ushort inOrientation);
+
+    MCAPI static int getFacingDirectionRotation(int structureOrientation, ushort inOrientation);
+
     MCAPI static int getTorchRotation(int structureOrientation, ushort torchOrientation);
+
+    MCAPI static int getWeirdoDirectionRotation(int structureOrientation, ushort inOrientation);
     // NOLINTEND
 };

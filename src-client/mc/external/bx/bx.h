@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/bx/Units.h"
+#include "mc/external/bx/units/Enum.h"
 
 // auto generated forward declare list
 // clang-format off

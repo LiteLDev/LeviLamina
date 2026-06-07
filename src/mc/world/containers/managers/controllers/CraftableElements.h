@@ -13,12 +13,20 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk34efbf;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CraftableElements& operator=(CraftableElements const&);
     CraftableElements(CraftableElements const&);
     CraftableElements();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CraftableElements& operator=(CraftableElements const&);
+    CraftableElements(CraftableElements const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,21 +38,31 @@ public:
 
     virtual void registerElements();
 
+#ifdef LL_PLAT_S
+    virtual void _registerElement(int, int, ::ElementType);
+#else // LL_PLAT_C
     virtual void _registerElement(int electrons, int neutrons, ::ElementType result);
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void _registerElementRange(
-        int                       electrons,
-        int                       neutronStart,
-        int                       neutronEnd,
-        ::std::vector<int> const& additionalNeutrons,
-        int                       defaultNeutron,
-        ::ElementType             result
-    );
+    MCNAPI CraftableElements();
+
+    MCNAPI ::ElementType getElement(int protons, int electrons, int neutrons);
+
+    MCNAPI bool particlesFromElement(::ElementType element, int& protons, int& electrons, int& neutrons);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 

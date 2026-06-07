@@ -27,13 +27,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>         mTest_OnlyUsedDeterministically;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    Random();
-
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -54,20 +47,14 @@ public:
     virtual double nextGaussianDouble() /*override*/;
 
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
-
-    virtual ~Random() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI Random();
-#endif
-
-    MCAPI Random(uint seed, bool onlyUsedDeterministically);
-
     MCAPI uint _genRandInt32();
+
+    MCAPI uint _genUniformRandomInt();
 
     MCAPI float nextGaussian();
     // NOLINTEND
@@ -75,19 +62,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::random_device& mRandomDevice();
-
     MCAPI static ::Core::Random& mThreadLocalRandom();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
-
-    MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
     // NOLINTEND
 
 public:

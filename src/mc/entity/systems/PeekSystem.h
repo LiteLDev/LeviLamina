@@ -15,8 +15,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
-
-    virtual ~PeekSystem() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -18,29 +18,6 @@ public:
         ::ll::TypedStorage<4, 4, uint>           mFrameRate;
         ::ll::TypedStorage<8, 32, ::std::string> mFilePrefix;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        StartVideoCapture(StartVideoCapture const&);
-        StartVideoCapture();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD ::PlayerVideoCapturePacketPayload::StartVideoCapture&
-        operator=(::PlayerVideoCapturePacketPayload::StartVideoCapture&&);
-
-        MCFOLD ::PlayerVideoCapturePacketPayload::StartVideoCapture&
-        operator=(::PlayerVideoCapturePacketPayload::StartVideoCapture const&);
-
-        MCAPI ~StartVideoCapture();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct StopVideoCapture {};
@@ -55,21 +32,5 @@ public:
             ::PlayerVideoCapturePacketPayload::StartVideoCapture,
             ::PlayerVideoCapturePacketPayload::StopVideoCapture>>
         mParams;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ~PlayerVideoCapturePacketPayload();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCFOLD void $dtor();
-#endif
     // NOLINTEND
 };

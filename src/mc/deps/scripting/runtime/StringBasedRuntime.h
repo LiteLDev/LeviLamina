@@ -30,8 +30,6 @@ public:
         ::std::string const&                    scriptData,
         ::std::optional<::Scripting::Privilege> privilege
     ) = 0;
-
-    virtual ~StringBasedRuntime() /*override*/ = default;
     // NOLINTEND
 
 public:

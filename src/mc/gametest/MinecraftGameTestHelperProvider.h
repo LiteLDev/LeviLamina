@@ -19,8 +19,6 @@ public:
     createGameTestHelper(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     virtual ::std::unique_ptr<::gametest::IGameTestHelperProvider> clone() /*override*/;
-
-    virtual ~MinecraftGameTestHelperProvider() /*override*/ = default;
     // NOLINTEND
 
 public:

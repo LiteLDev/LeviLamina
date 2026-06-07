@@ -67,7 +67,13 @@ public:
         ::ActorUniqueID                                uniqueId
     );
 
+    MCAPI ::std::string _getLastPerformedCommandBlockConditionalModeString() const;
+
+    MCAPI ::std::string _getLastPerformedCommandBlockRedstoneModeString() const;
+
     MCAPI ::std::string _getLastPerformedCommandBlockTypeModeString() const;
+
+    MCAPI ::std::string _getOutputText() const;
 
     MCAPI int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent) const;
 

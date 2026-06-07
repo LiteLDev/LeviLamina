@@ -22,4 +22,12 @@ public:
     EntityWaypointVisibilityRules& operator=(EntityWaypointVisibilityRules const&);
     EntityWaypointVisibilityRules(EntityWaypointVisibilityRules const&);
     EntityWaypointVisibilityRules();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void set(::EntityWaypointVisibilityRules::Flag f, bool value);
+
+    MCNAPI bool test(::EntityWaypointVisibilityRules::Flag f) const;
+    // NOLINTEND
 };

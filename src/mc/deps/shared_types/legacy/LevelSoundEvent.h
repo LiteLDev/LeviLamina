@@ -565,7 +565,9 @@ enum class LevelSoundEvent : uint {
     NetheriteSpearUse                  = 596,
     PauseGrowth                        = 597,
     ResetGrowth                        = 598,
-    Undefined                          = 599,
+    PushedByPlayer                     = 599,
+    Bounce                             = 600,
+    Undefined                          = 601,
 };
 
 }

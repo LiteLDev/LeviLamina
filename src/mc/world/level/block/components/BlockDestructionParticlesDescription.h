@@ -26,10 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockDestructionParticlesDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -37,13 +33,13 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-
-    virtual ~BlockDestructionParticlesDescription() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockDestructionParticlesDescription();
+
     MCAPI explicit BlockDestructionParticlesDescription(uchar particleNumber);
 
     MCAPI BlockDestructionParticlesDescription(::std::string texture, ::TintMethod tintMethod, uchar particleNumber);
@@ -64,6 +60,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static uchar const& DEFAULT_NON_CUBE_PARTICLE_COUNT();
+
+    MCAPI static uchar const& DEFAULT_PARTICLE_COUNT();
+
     MCAPI static ::std::string const& NameID();
 
     MCAPI static ::std::string const& ParticleCountID();
@@ -82,15 +82,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(uchar particleNumber);
 
     MCAPI void* $ctor(::std::string texture, ::TintMethod tintMethod, uchar particleNumber);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -98,9 +94,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
 
     // NOLINTEND

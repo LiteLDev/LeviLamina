@@ -10,9 +10,12 @@
 // auto generated forward declare list
 // clang-format off
 class FileArchiver;
+class IContentTierManager;
 class MinecraftCommands;
 class MinecraftServiceKeyManager;
+class ResourcePackManager;
 class ServerNetworkHandler;
+namespace Core { class FilePathManager; }
 // clang-format on
 
 struct MinecraftArguments {
@@ -113,15 +116,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ServerNetworkHandlerFactoryArguments(::MinecraftArguments::ServerNetworkHandlerFactoryArguments&&);
-
         MCNAPI ~ServerNetworkHandlerFactoryArguments();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::MinecraftArguments::ServerNetworkHandlerFactoryArguments&&);
         // NOLINTEND
 
     public:
@@ -163,7 +158,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::brstd::move_only_function<
+        ::std::unique_ptr<::ServerNetworkHandler>(::MinecraftArguments::CreateServerNetworkHandlerArgs&&)>
+    createServerNetworkHandlerFactory(::MinecraftArguments::ServerNetworkHandlerFactoryArguments&& args);
+
     MCNAPI ~MinecraftArguments();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::brstd::move_only_function<
+        ::std::unique_ptr<::MinecraftCommands>(::MinecraftArguments::CreateMinecraftCommandsArgs&&) const>
+    createMinecraftCommandsFactory(::MinecraftArguments::MinecraftCommandsFactoryArguments&& factoryArgs);
+
+    MCNAPI static ::std::unique_ptr<::ResourcePackManager> createResourcePackManager(
+        ::Core::FilePathManager const& filePathManager,
+        ::IContentTierManager const&   contentTierManager
+    );
     // NOLINTEND
 
 public:

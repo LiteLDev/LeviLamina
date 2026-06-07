@@ -12,20 +12,7 @@ public:
     // clang-format on
 
     // IAsyncResourceRequest inner types define
-    struct FallbackURLsData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk41089b;
-        ::ll::UntypedStorage<4, 4> mUnk3f48d9;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FallbackURLsData& operator=(FallbackURLsData const&);
-        FallbackURLsData(FallbackURLsData const&);
-        FallbackURLsData();
-    };
+    struct FallbackURLsData {};
 
 public:
     // virtual functions

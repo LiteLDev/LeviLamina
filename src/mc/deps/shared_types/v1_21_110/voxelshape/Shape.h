@@ -15,18 +15,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_110::Box>> mBoxes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Shape& operator=(Shape const&);
-    Shape(Shape const&);
-    Shape();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_110::Shape& operator=(::SharedTypes::v1_21_110::Shape&&);
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_110

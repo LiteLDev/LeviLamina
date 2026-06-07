@@ -60,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockPermutation(::ScriptModuleMinecraft::ScriptBlockPermutation&&);
-
     MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
     _createPropertyV010(::std::string const& propertyName);
@@ -77,10 +75,10 @@ public:
 
     MCAPI ::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>> getAllStates() const;
 
+    MCFOLD ::Block const& getBlock() const;
+
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     getItemStack(int amount) const;
-
-    MCAPI ::std::string getLocalizationKey() const;
 
     MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
@@ -104,7 +102,10 @@ public:
         ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> properties
     ) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockPermutation& operator=(::ScriptModuleMinecraft::ScriptBlockPermutation&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptBlockPermutation&
+    operator=(::ScriptModuleMinecraft::ScriptBlockPermutation&& rhs);
+
+    MCFOLD void setBlock(::Block const& block);
 
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
@@ -113,6 +114,8 @@ public:
         ::std::string const&                            name,
         ::std::variant<int, ::std::string, bool> const& value
     ) const;
+
+    MCAPI ~ScriptBlockPermutation();
     // NOLINTEND
 
 public:
@@ -135,9 +138,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockPermutation&&);
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

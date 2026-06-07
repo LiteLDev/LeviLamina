@@ -3,24 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/input/GamefaceImeComposer.h"
 #include "mc/client/gui/oreui/input/InputSource.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/external/gameface/cohtml/ControlType.h"
 
 // auto generated forward declare list
 // clang-format off
-class IOptions;
+class IGameController;
+class IOptionRegistry;
 class KeyboardAction;
 class KeyboardManager;
 class MouseAction;
+class RectangleArea;
 struct ControllerIDtoClientMap;
 struct TextBoxStateChange;
 namespace OreUI { class GamepadInputHandler; }
 namespace OreUI { class TextInputHandler; }
 namespace OreUI { class TouchInputHandler; }
-namespace OreUI { struct TextInputResult; }
 namespace cohtml { class View; }
 // clang-format on
 
@@ -52,7 +53,6 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mIsFullKeyboardSubscription;
     ::ll::TypedStorage<1, 1, bool>                                                      mInvertMouse;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mInvertMouseSubscription;
-    ::ll::TypedStorage<8, 48, ::std::optional<::OreUI::GamefaceImeComposer>>            mImeComposer;
     // NOLINTEND
 
 public:
@@ -73,22 +73,30 @@ public:
         ::cohtml::View&                                          view,
         ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> controllerIdToClientMap,
         bool                                                     isPrimaryClient,
-        ::IOptions&                                              options
+        ::IOptionRegistry&                                       options
     );
 
-    MCAPI void _onImeCompositionChanged(::std::string const& composition);
+    MCAPI void deactivateTextInput();
+
+    MCAPI ::std::optional<::RectangleArea> getTextInputCaretArea();
+
+    MCAPI ::std::optional<::RectangleArea> getTextInputControlArea();
 
     MCAPI void handleInput(::OreUI::InputSource inputSource, ::MouseAction const& mouseAction);
 
     MCAPI void handleKeyboardInput(::OreUI::InputSource inputSource, ::KeyboardAction const& keyboardAction);
 
-    MCAPI void handleNativeTextInput(::OreUI::InputSource inputSource, ::std::string_view text);
+    MCAPI bool isTextInputActive() const;
 
-    MCAPI void imeStartComposition(::OreUI::InputSource inputSource);
+    MCAPI void onCaretRectChanged(int x, int y, uint width, uint height);
 
-    MCAPI void sendTextChangedEvent(::OreUI::TextInputResult inputResult);
+    MCAPI void onTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
+
+    MCAPI void setCaretLocation(int location);
 
     MCAPI void setTextBoxState(::OreUI::InputSource inputSource, ::TextBoxStateChange const& stateChange);
+
+    MCAPI bool shouldHandleGamepad(::std::shared_ptr<::IGameController> gamePad);
 
     MCAPI ~ViewInputHandler();
     // NOLINTEND
@@ -105,7 +113,7 @@ public:
         ::cohtml::View&                                          view,
         ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> controllerIdToClientMap,
         bool                                                     isPrimaryClient,
-        ::IOptions&                                              options
+        ::IOptionRegistry&                                       options
     );
     // NOLINTEND
 

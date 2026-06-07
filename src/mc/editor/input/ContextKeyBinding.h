@@ -43,9 +43,36 @@ public:
 
     MCNAPI ContextKeyBinding(
         ::Editor::Input::KeyBinding const&                                                                  binding,
+        ::std::function<void(::Editor::Input::KeyBinding const&, ::Editor::Input::KeyBinding const&, bool)> modifiedFn
+    );
+
+    MCNAPI ContextKeyBinding(
+        ::Editor::Input::KeyBinding const&                                                                  binding,
         ::Editor::Input::BindingInfo const&                                                                 info,
         ::std::function<void(::Editor::Input::KeyBinding const&, ::Editor::Input::KeyBinding const&, bool)> modifiedFn
     );
+
+    MCNAPI bool canRebind() const;
+
+    MCNAPI ::std::optional<::std::string> getActionId() const;
+
+    MCNAPI ::Editor::Input::KeyBinding const& getActiveBinding() const;
+
+    MCNAPI ::Editor::Input::KeyBinding const& getDefaultBinding() const;
+
+    MCNAPI ::std::optional<::std::string> getLabel() const;
+
+    MCNAPI ::std::optional<int> const& getProcessingState() const;
+
+    MCNAPI ::std::optional<::std::string> getTooltip() const;
+
+    MCNAPI bool isModified() const;
+
+    MCNAPI bool modifyBinding(::Editor::Input::KeyBinding const& newBinding, bool notifyChange);
+
+    MCNAPI bool resetBinding(bool notifyChange);
+
+    MCNAPI bool setProcessingState(::std::optional<int> newState);
 
     MCNAPI ~ContextKeyBinding();
 #endif
@@ -56,6 +83,11 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Editor::Input::ContextKeyBinding const&);
+
+    MCNAPI void* $ctor(
+        ::Editor::Input::KeyBinding const&                                                                  binding,
+        ::std::function<void(::Editor::Input::KeyBinding const&, ::Editor::Input::KeyBinding const&, bool)> modifiedFn
+    );
 
     MCNAPI void* $ctor(
         ::Editor::Input::KeyBinding const&                                                                  binding,

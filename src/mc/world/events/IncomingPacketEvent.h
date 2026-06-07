@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, ::MinecraftPacketIds>        mPacketId;
     ::ll::TypedStorage<8, 8, uint64>                      mPacketSize;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~IncomingPacketEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

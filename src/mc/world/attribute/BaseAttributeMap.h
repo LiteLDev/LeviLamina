@@ -9,10 +9,13 @@
 // clang-format off
 class Attribute;
 class AttributeInstance;
+class AttributeInstanceConstRef;
 class AttributeInstanceHandle;
 class AttributeInstanceRef;
+class HashedString;
 struct AttributeData;
 struct AttributeModificationContext;
+struct MutableAttributeWithContext;
 // clang-format on
 
 class BaseAttributeMap {
@@ -39,23 +42,96 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BaseAttributeMap& operator=(BaseAttributeMap const&);
+    BaseAttributeMap();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BaseAttributeMap(::BaseAttributeMap const&);
+
+    MCFOLD ::AttributeInstanceRef UnsafePromoteRawRefToAccessRef(::AttributeInstance& rawRef) const;
+
     MCAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
 
 #ifdef LL_PLAT_C
     MCFOLD void _onAttributeModifiedDisabled(::AttributeInstance const&);
 #endif
 
-    MCAPI ::AttributeInstanceRef getMutableInstance(uint idValue);
+    MCFOLD ::brstd::associative_adapter<
+        uint,
+        ::AttributeInstance,
+        ::std::less<uint>,
+        ::std::vector<uint>,
+        ::std::vector<::AttributeInstance>>::
+        iterator_impl<
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<uint>>>,
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::AttributeInstance>>>,
+            ::std::pair<uint const&, ::AttributeInstance const&>> begin() const;
+
+    MCFOLD ::brstd::associative_adapter<
+        uint,
+        ::AttributeInstance,
+        ::std::less<uint>,
+        ::std::vector<uint>,
+        ::std::vector<::AttributeInstance>>::
+        iterator_impl<
+            ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<uint>>>,
+            ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::AttributeInstance>>>,
+            ::std::pair<uint const&, ::AttributeInstance&>>
+        begin();
+
+    MCFOLD void clearDirtyAttributes();
+
+    MCFOLD ::AttributeModificationContext createModificationContext();
+
+#ifdef LL_PLAT_C
+    MCAPI void disableAttributeDirtying();
+#endif
+
+    MCFOLD ::brstd::associative_adapter<
+        uint,
+        ::AttributeInstance,
+        ::std::less<uint>,
+        ::std::vector<uint>,
+        ::std::vector<::AttributeInstance>>::
+        iterator_impl<
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<uint>>>,
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::AttributeInstance>>>,
+            ::std::pair<uint const&, ::AttributeInstance const&>> end() const;
+
+    MCFOLD ::brstd::associative_adapter<
+        uint,
+        ::AttributeInstance,
+        ::std::less<uint>,
+        ::std::vector<uint>,
+        ::std::vector<::AttributeInstance>>::
+        iterator_impl<
+            ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<uint>>>,
+            ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::AttributeInstance>>>,
+            ::std::pair<uint const&, ::AttributeInstance&>>
+        end();
+
+    MCFOLD ::std::vector<::AttributeInstanceHandle> const& getDirtyAttributes() const;
+
+    MCAPI ::AttributeInstanceConstRef getInstance(::Attribute const& attribute) const;
+
+    MCAPI ::AttributeInstanceConstRef getInstance(uint idValue) const;
+
+    MCAPI ::AttributeInstanceRef getMutableInstance(::Attribute const& attribute);
+
+    MCAPI ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
+
+    MCAPI ::MutableAttributeWithContext getMutableInstanceWithContext(::Attribute const& attribute);
 
     MCAPI ::std::vector<::AttributeInstanceHandle> getSyncableAttributes() const;
 
+    MCAPI void onAttributeModified(::AttributeInstanceConstRef attributeInstance);
+
     MCAPI ::AttributeInstanceRef registerAttribute(::Attribute const& baseAttribute);
 
-#ifdef LL_PLAT_C
     MCAPI void updateOrCreateAttribute(::AttributeData const& attributeData);
-#endif
     // NOLINTEND
 
 public:
@@ -71,8 +147,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_ATTRIBUTES();
-
     MCAPI static ::std::string const& DIFF_ATTRIBUTES_SIZE();
 
     MCAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES();
@@ -82,5 +156,11 @@ public:
     MCAPI static ::std::string const& DIFF_NO_ATTRIBUTES();
 
     MCAPI static ::AttributeInstance& mInvalidInstance();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BaseAttributeMap const&);
     // NOLINTEND
 };

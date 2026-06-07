@@ -53,7 +53,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DeathScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
-    MCAPI void _beginRespawnRequest();
+    MCAPI void _registerBindings();
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:

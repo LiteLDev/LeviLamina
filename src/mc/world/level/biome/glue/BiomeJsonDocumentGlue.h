@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/v1_26_0/biome/BiomeJsonDocument.h"
-
 // auto generated forward declare list
 // clang-format off
-class BiomeRegistry;
+class Biome;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct IBiomeComponentGlue;
 // clang-format on
@@ -21,11 +18,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BiomeJsonDocumentGlueResolvedBiomeData> getResolvedBiomeData(
-        ::SharedTypes::v1_26_0::BiomeJsonDocument::BiomeJsonObject const& biomeJsonDocument,
-        ::BiomeRegistry const&                                            biomeRegistry
-    ) const;
+    MCAPI static void applyToBiome(::Biome& biome, ::BiomeJsonDocumentGlueResolvedBiomeData const& resolvedBiomeData);
     // NOLINTEND
 };

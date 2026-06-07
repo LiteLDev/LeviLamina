@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Network { struct DataTransferServiceRequestDataOptions; }
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -30,9 +32,14 @@ public:
     DataTransferServiceRequestDataPayload();
 
 public:
-    // virtual functions
+    // member functions
     // NOLINTBEGIN
-    virtual ~DataTransferServiceRequestDataPayload() /*override*/;
+    MCNAPI DataTransferServiceRequestDataPayload(
+        ::mce::UUID const&                                              requestId,
+        ::std::string const&                                            collectionName,
+        bool                                                            useSnapshot,
+        ::Editor::Network::DataTransferServiceRequestDataOptions const& options
+    );
     // NOLINTEND
 
 public:
@@ -42,9 +49,14 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(
+        ::mce::UUID const&                                              requestId,
+        ::std::string const&                                            collectionName,
+        bool                                                            useSnapshot,
+        ::Editor::Network::DataTransferServiceRequestDataOptions const& options
+    );
     // NOLINTEND
 
 public:

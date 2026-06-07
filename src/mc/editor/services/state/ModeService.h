@@ -57,6 +57,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ModeService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _dispatchModeChangedEvent(::Editor::Mode from, ::Editor::Mode to);
+
+    MCNAPI void _setCurrentMode(::Editor::Mode mode);
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AtlasItemManager;
 struct TextureUVCoordinateSet;
 namespace ClientBlockPipeline { struct TextureUVs; }
 // clang-format on
@@ -51,15 +52,20 @@ public:
     Material();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~Material() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Material(::std::vector<::TextureUVCoordinateSet> const& uvSets, ::BlockRenderLayer terrainLayer);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::TextureUVCoordinateSet getUvSetForTexture(
+        ::AtlasItemManager const& atlasItemManager,
+        ::std::string const&      textureName,
+        uint64                    atlasIndex,
+        uint64                    variantIndex
+    );
     // NOLINTEND
 
 public:
@@ -72,12 +78,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::vector<::TextureUVCoordinateSet> const& uvSets, ::BlockRenderLayer terrainLayer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

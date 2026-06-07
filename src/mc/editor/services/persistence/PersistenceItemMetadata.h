@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Services {
 
 struct PersistenceItemMetadata {
@@ -13,17 +18,28 @@ public:
 
 public:
     // prevent constructor by default
+    PersistenceItemMetadata& operator=(PersistenceItemMetadata const&);
     PersistenceItemMetadata(PersistenceItemMetadata const&);
     PersistenceItemMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Services::PersistenceItemMetadata& operator=(::Editor::Services::PersistenceItemMetadata&&);
-
-    MCNAPI ::Editor::Services::PersistenceItemMetadata& operator=(::Editor::Services::PersistenceItemMetadata const&);
+    MCNAPI explicit PersistenceItemMetadata(::std::string const& jsonValue);
 
     MCNAPI ~PersistenceItemMetadata();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string const& jsonValue);
     // NOLINTEND
 
 public:

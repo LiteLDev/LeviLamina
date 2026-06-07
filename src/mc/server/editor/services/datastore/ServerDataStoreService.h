@@ -39,8 +39,8 @@ public:
         bool
     ) /*override*/;
 
-    virtual ::Json::Value
-    _getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const /*override*/;
+    virtual ::Json::Value _getPayload(::HashedString const&, ::Editor::DataStore::PayloadDescription const&) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -70,8 +70,7 @@ public:
         bool
     );
 
-    MCNAPI ::Json::Value
-    $_getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const;
+    MCNAPI ::Json::Value $_getPayload(::HashedString const&, ::Editor::DataStore::PayloadDescription const&) const;
 
 
     // NOLINTEND

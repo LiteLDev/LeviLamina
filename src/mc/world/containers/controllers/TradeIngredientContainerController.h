@@ -29,9 +29,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual bool isItemAllowed(::ItemStackBase const&) const /*override*/;
+#else // LL_PLAT_C
     virtual bool isItemAllowed(::ItemStackBase const& item) const /*override*/;
+#endif
 
-    virtual ~TradeIngredientContainerController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -39,8 +42,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI explicit TradeIngredientContainerController(::std::shared_ptr<::ContainerModel> containerModel);
-
-    MCNAPI void setTradeItem(::ItemStack const& item);
 #endif
     // NOLINTEND
 

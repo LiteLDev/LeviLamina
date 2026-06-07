@@ -103,23 +103,12 @@ public:
         ::IConstBlockSource const&                           constBlockSource
     );
 
-    MCAPI static void _tickCalculateRailMovementSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::RailMovementComponent const,
-            ::SnapOnRailComponent,
-            ::StateVectorComponent,
-            ::Optional<::VehicleComponent const>> view,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::PlayerComponent>,
-            ::ActorRotationComponent const,
-            ::LocalMoveVelocityComponent const>  playerView,
-        ::EntityModifier<::MoveRequestComponent> mod
-    );
-
     MCAPI static ::TickingSystemWithInfo createCleanupSystem();
 
     MCAPI static ::TickingSystemWithInfo createPostRailMovementPositionSystem();
+
+    MCAPI static ::TickingSystemWithInfo createPreRailMovementPositionSystem();
+
+    MCAPI static ::TickingSystemWithInfo createRailMovementSystem();
     // NOLINTEND
 };

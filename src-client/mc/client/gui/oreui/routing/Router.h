@@ -46,27 +46,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        DeferredChangeNotification();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DeferredChangeNotification(
-            ::std::optional<::OreUI::RouterLocation> const& oldLocation,
-            ::std::optional<::OreUI::RouterLocation> const& currentLocation
-        );
-
         MCAPI ~DeferredChangeNotification();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::std::optional<::OreUI::RouterLocation> const& oldLocation,
-            ::std::optional<::OreUI::RouterLocation> const& currentLocation
-        );
         // NOLINTEND
 
     public:
@@ -122,8 +104,8 @@ public:
 
     MCAPI void _handleSceneStackPop(
         ::std::shared_ptr<::AbstractScene> const& newTopScreen,
-        bool,
-        ::std::optional<::OreUI::RouteAction> const& routeAction
+        bool                                      routeAction,
+        ::std::optional<::OreUI::RouteAction> const&
     );
 
     MCAPI void _handleSceneStackPush(
@@ -144,7 +126,7 @@ public:
 
     MCAPI bool _shouldPopCurrentScreenOnReplacingWithIncompatibleRoute() const;
 
-    MCFOLD ::Bedrock::PubSub::Subscription addObserver(
+    MCAPI ::Bedrock::PubSub::Subscription addObserver(
         ::std::function<void(
             ::std::optional<::OreUI::RouterLocation> const&,
             ::std::optional<::OreUI::RouterLocation> const&,
@@ -152,11 +134,23 @@ public:
         )> const& callback
     );
 
+    MCAPI bool areRoutesCompatible(::std::string const& routeA, ::std::string const& routeB) const;
+
     MCAPI ::std::optional<::OreUI::RouterLocation> getCurrentLocation() const;
+
+    MCAPI ::std::vector<::std::string> getFullHistory() const;
+
+    MCFOLD ::std::vector<::OreUI::RouterLocation> const& getFullRouterLocationHistory() const;
+
+    MCFOLD uint64 getHistoryLength() const;
 
     MCAPI void goBack();
 
     MCAPI bool isCurrentRoute(::std::string_view route) const;
+
+    MCAPI bool pushRoute(::std::string const& route);
+
+    MCAPI bool pushRouteWithFlux(::std::string const& route);
 
     MCAPI bool replaceRoute(::std::string const& route);
 

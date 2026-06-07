@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace EAS { struct AttributeLayerData; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace AttributeLayerSyncPacketData {
@@ -17,15 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI ~UpdateAttributeLayersData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static void bind(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

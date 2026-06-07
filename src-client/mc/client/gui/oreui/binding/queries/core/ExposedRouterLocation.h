@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace OreUI { class RouterLocation; }
 namespace OreUI::Detail { class IPropertyObject; }
 // clang-format on
 
@@ -31,12 +32,6 @@ public:
     ExposedRouterLocation();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ExposedRouterLocation() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ExposedRouterLocation(
@@ -45,6 +40,8 @@ public:
         ::std::string const&              query,
         ::std::string const&              fragment
     );
+
+    MCAPI void update(::OreUI::RouterLocation const& location);
     // NOLINTEND
 
 public:
@@ -56,12 +53,6 @@ public:
         ::std::string const&              query,
         ::std::string const&              fragment
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

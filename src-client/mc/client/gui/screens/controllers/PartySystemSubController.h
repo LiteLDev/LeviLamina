@@ -16,6 +16,7 @@ class ToastManager;
 class ToastMessage;
 namespace Parties { class PartySystem; }
 namespace Parties { struct PartyDestinationGathering; }
+namespace Parties { struct PartyDestinationMenus; }
 namespace Parties { struct PartyDestinationRealm; }
 namespace Parties { struct PartyDestinationXblP2P; }
 namespace Parties { struct PartyEventAcceptInviteFailed; }
@@ -44,6 +45,7 @@ public:
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                          mTaskGroup;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> mPartySystem;
     ::ll::TypedStorage<8, 8, ::ToastManager&>                                        mToastManager;
+    ::ll::TypedStorage<4, 4, ::std::chrono::minutes>                                 mServerSlotReservationTime;
     // NOLINTEND
 
 public:
@@ -70,33 +72,13 @@ public:
         ::ToastManager&                                       toastManager
     );
 
+    MCAPI void _handleTravelToastDeclined();
+
     MCAPI void _onDestinationChange(::Parties::PartyDestinationGathering destGathering);
 
     MCAPI void _onDestinationChange(::Parties::PartyDestinationRealm destRealm);
 
     MCAPI void _onDestinationChange(::Parties::PartyDestinationXblP2P destXbl);
-
-    MCAPI void _onEvent(::Parties::PartyEventCreateFailed const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventJoinFailed const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventJoinedParty const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventJoinablePartyExpired const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventInviteExpired const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventAcceptInviteFailed const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventLeaveFailed const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventLeftParty const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventSetLeaderFailed const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventSendInviteFailed const&);
-
-    MCAPI void _onEvent(::Parties::PartyEventRemoveMemberFailed const&);
 
     MCAPI void _onEvent(::Parties::PartyEventMemberLeft const& event);
 
@@ -104,9 +86,38 @@ public:
 
     MCAPI void _onEvent(::Parties::PartyEventMemberJoined const& event);
 
+    MCAPI void _onPartyEvent(
+        ::std::variant<
+            ::Parties::PartyEventMemberJoined,
+            ::Parties::PartyEventMemberLeft,
+            ::Parties::PartyEventJoinedParty,
+            ::Parties::PartyEventLeftParty,
+            ::Parties::PartyEventLeaderChanged,
+            ::Parties::PartyEventLeaveFailed,
+            ::Parties::PartyEventJoinFailed,
+            ::Parties::PartyEventInviteExpired,
+            ::Parties::PartyEventJoinablePartyExpired,
+            ::Parties::PartyEventAcceptInviteFailed,
+            ::Parties::PartyEventCreateFailed,
+            ::Parties::PartyEventSendInviteFailed,
+            ::Parties::PartyEventRemoveMemberFailed,
+            ::Parties::PartyEventSetLeaderFailed> event
+    );
+
+    MCAPI void _onPendingDestination(
+        ::std::variant<
+            ::Parties::PartyDestinationXblP2P,
+            ::Parties::PartyDestinationMenus,
+            ::Parties::PartyDestinationRealm,
+            ::Parties::PartyDestinationGathering> destination
+    );
+
     MCAPI void _showInviteToast(::std::string inviterXuid);
 
-    MCAPI void _showTravelToast(::std::string toastTitle, bool showWorldIcon);
+    MCAPI void _showSnackbar(::std::string locStringKey, ::std::string localizationString);
+
+    MCAPI void
+    _showTravelToast(::std::string const& toastTitle, ::std::string const& toastSubtitle, bool showWorldIcon);
     // NOLINTEND
 
 public:

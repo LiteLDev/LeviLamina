@@ -40,35 +40,39 @@ public:
     MCNAPI void clear();
 
     MCNAPI ::CerealDocumentUpgrader::ParseAndUpgradeResult parseJsonAndUpgrade(
-        ::std::string const& json,
-        ::SemVersion&        outDocumentVersion,
+        ::SemVersion& outDocumentVersion,
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>&                   document,
-        ::Core::Path const&                               resourceName,
-        bool                                              allowMissingVersionAsZero,
-        bool                                              betaApis,
-        ::std::optional<::SemVersion> const&              minVersion,
-        ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
+            ::rapidjson::CrtAllocator>&      document,
+        ::std::string const&                 json,
+        ::Core::Path const&                  resourceName,
+        bool                                 allowMissingVersionAsZero,
+        bool                                 betaApis,
+        ::std::optional<::SemVersion> const& minVersion
     ) const;
 
-    MCNAPI void registerUpgrade(::std::shared_ptr<::CerealSchemaUpgrade> upgrade);
-
-    MCNAPI bool upgradeJson(
+    MCNAPI bool parseUpgradeAndStringifyJsonString(
         ::std::string& json,
         ::SemVersion&  outDocumentVersion,
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>&                   document,
-        ::Core::Path const&                               resourceName,
-        ::std::optional<::SemVersion> const&              minVersion,
-        bool                                              betaApis,
-        ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
+            ::rapidjson::CrtAllocator>&      document,
+        ::Core::Path const&                  resourceName,
+        bool                                 betaApis,
+        ::std::optional<::SemVersion> const& minVersion
     ) const;
 
-    MCNAPI ~CerealDocumentUpgrader();
+    MCNAPI void registerUpgrade(::std::shared_ptr<::CerealSchemaUpgrade> upgrade);
+
+    MCNAPI ::CerealDocumentUpgrader::ParseAndUpgradeResult upgradeJsonDocument(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>& document,
+        ::SemVersion const&             documentVersion
+    ) const;
     // NOLINTEND
 
 public:
@@ -80,17 +84,31 @@ public:
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator> const& document
     );
+
+    MCNAPI static ::std::pair<
+        ::SemVersion,
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>>
+    parseDocument(::std::string_view json, bool allowMissingVersionAsZero, bool logRapidjsonErrors);
+
+    MCNAPI static ::rapidjson::GenericStringBuffer<::rapidjson::UTF8<char>, ::rapidjson::CrtAllocator> stringify(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document
+    );
+
+    MCNAPI static bool validateParsedVersion(
+        ::SemVersion const&                  documentVersion,
+        ::std::optional<::SemVersion> const& minVersion,
+        bool                                 betaApis
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SemVersion terminus);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

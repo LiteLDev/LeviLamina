@@ -31,12 +31,6 @@ public:
         ServerHandshake& operator=(ServerHandshake const&);
         ServerHandshake(ServerHandshake const&);
         ServerHandshake();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~ServerHandshake() /*override*/ = default;
-        // NOLINTEND
     };
 
 public:

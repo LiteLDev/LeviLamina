@@ -12,6 +12,8 @@ namespace personaDefault::skinRepository {
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
 MCNAPI ::mce::UUID const& getCustomSkinPackUUID();
+
+MCNAPI ::mce::UUID const& getVanillaSkinPackUUID();
 #endif
 // NOLINTEND
 
@@ -19,7 +21,9 @@ MCNAPI ::mce::UUID const& getCustomSkinPackUUID();
 // NOLINTBEGIN
 MCNAPI ::mce::UUID const& PERSONA_SKIN_PACK_UUID();
 
-MCNAPI ::mce::UUID const& VANILLA_SKIN_PACK_UUID();
+#ifdef LL_PLAT_C
+MCNAPI ::std::string const& PERSONA_SKIN_TYPE();
+#endif
 // NOLINTEND
 
 } // namespace personaDefault::skinRepository

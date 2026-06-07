@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 24, ::SemVersion>                                           mFormatVersion;
     ::ll::TypedStorage<8, 32, ::MinEngineVersion>                                     mMinEngineVersion;
     ::ll::TypedStorage<8, 24, ::SemVersion>                                           mOriginalJsonVersion;
-    ::ll::TypedStorage<8, 192, ::BlockDescription>                                    mDescription;
+    ::ll::TypedStorage<8, 224, ::BlockDescription>                                    mDescription;
     ::ll::TypedStorage<8, 112, ::BlockComponentGroupDescription>                      mBaseComponents;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockPermutationDescription>>           mPermutationDescriptions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;

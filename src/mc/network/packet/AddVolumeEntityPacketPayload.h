@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/ecs/EntityNetId.h"
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/resources/MinEngineVersion.h"
@@ -11,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class EntityContext;
 // clang-format on
 
@@ -30,12 +28,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AddVolumeEntityPacketPayload();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddVolumeEntityPacketPayload();
-
-    MCAPI AddVolumeEntityPacketPayload(::AddVolumeEntityPacketPayload&&);
-
     MCAPI AddVolumeEntityPacketPayload(::AddVolumeEntityPacketPayload const& other);
 
     MCAPI AddVolumeEntityPacketPayload(
@@ -44,7 +42,7 @@ public:
         ::MinEngineVersion const& minEngineVersion
     );
 
-    MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload&&);
+    MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload&& other);
 
     MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload const& other);
 
@@ -54,10 +52,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::AddVolumeEntityPacketPayload&&);
-
     MCAPI void* $ctor(::AddVolumeEntityPacketPayload const& other);
 
     MCAPI void*

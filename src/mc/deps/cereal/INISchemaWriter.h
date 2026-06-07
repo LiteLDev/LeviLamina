@@ -69,8 +69,6 @@ public:
     virtual ::cereal::SchemaRWType openArray(bool, uint64) /*override*/;
 
     virtual void close() /*override*/;
-
-    virtual ~INISchemaWriter() /*override*/ = default;
     // NOLINTEND
 
 public:

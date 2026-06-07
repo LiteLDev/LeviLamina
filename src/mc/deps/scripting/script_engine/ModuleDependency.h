@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct Version; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -23,15 +25,29 @@ public:
 public:
     // prevent constructor by default
     ModuleDependency& operator=(ModuleDependency const&);
-    ModuleDependency(ModuleDependency const&);
     ModuleDependency();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ModuleDependency(::Scripting::ModuleDependency const&);
+
     MCNAPI explicit ModuleDependency(::Scripting::ModuleDescriptor descriptor);
 
+    MCNAPI ModuleDependency(::std::string _name, ::mce::UUID _uuid, ::std::vector<::Scripting::Version> _versions);
+
+    MCNAPI ModuleDependency(
+        ::std::string                       _name,
+        ::mce::UUID                         _uuid,
+        ::std::vector<::Scripting::Version> _versions,
+        bool                                _isPeer
+    );
+
     MCNAPI ::std::optional<::Scripting::ModuleDescriptor> getDescriptor() const;
+
+    MCNAPI bool operator==(::Scripting::ModuleDependency const& other) const;
+
+    MCNAPI bool satisfiedBy(::Scripting::ModuleDescriptor const& d) const;
 
     MCNAPI ::std::string toString() const;
 
@@ -41,7 +57,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Scripting::ModuleDependency const&);
+
     MCNAPI void* $ctor(::Scripting::ModuleDescriptor descriptor);
+
+    MCNAPI void* $ctor(::std::string _name, ::mce::UUID _uuid, ::std::vector<::Scripting::Version> _versions);
+
+    MCNAPI void*
+    $ctor(::std::string _name, ::mce::UUID _uuid, ::std::vector<::Scripting::Version> _versions, bool _isPeer);
     // NOLINTEND
 
 public:

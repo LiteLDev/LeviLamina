@@ -10,6 +10,7 @@
 class AbstractTextureAccessor;
 class ResourceLocation;
 class TintMapColor;
+namespace cg { struct ImageDescription; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -39,7 +40,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TextureAtlasTile(::TextureAtlasTile&& rhs);
+    MCNAPI TextureAtlasTile(
+        ::mce::Color              overlay,
+        bool                      quad,
+        ::ResourceLocation const& location,
+        ::ResourceLocation        tintMapLocation,
+        ::mce::Color const&       tint,
+        ::TintMapColor const&     multiChannelTintBaseColor,
+        ::TintMapColor const&     multiChannelTintColor,
+        bool                      multiChannelTint,
+        ::cg::TextureSetLayerType textureSetLayerType
+    );
+
+    MCNAPI void _calculateTileDimensions(
+        ::AbstractTextureAccessor const&         textureAccessor,
+        ::ResourceLocation const&                resourceLocation,
+        ::std::optional<::cg::ImageDescription>& optImageDescription,
+        ::cg::TextureSetLayerType                textureSetLayerType
+    );
 
     MCNAPI void calculateTileDimensions(::AbstractTextureAccessor const& textureAccessor, uint maxDimension);
 
@@ -57,13 +75,25 @@ public:
         ::cg::TextureSetLayerType inTextureSetLayerType
     );
 
+    MCNAPI ::TextureAtlasTile& operator=(::TextureAtlasTile&& rhs);
+
     MCNAPI ~TextureAtlasTile();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::TextureAtlasTile&& rhs);
+    MCNAPI void* $ctor(
+        ::mce::Color              overlay,
+        bool                      quad,
+        ::ResourceLocation const& location,
+        ::ResourceLocation        tintMapLocation,
+        ::mce::Color const&       tint,
+        ::TintMapColor const&     multiChannelTintBaseColor,
+        ::TintMapColor const&     multiChannelTintColor,
+        bool                      multiChannelTint,
+        ::cg::TextureSetLayerType textureSetLayerType
+    );
     // NOLINTEND
 
 public:

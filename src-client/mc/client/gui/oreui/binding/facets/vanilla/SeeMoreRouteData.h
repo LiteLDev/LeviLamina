@@ -13,8 +13,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SeeMoreRouteData& operator=(SeeMoreRouteData const&);
+    SeeMoreRouteData(SeeMoreRouteData const&);
+    SeeMoreRouteData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::OreUI::SeeMoreRouteData& operator=(::OreUI::SeeMoreRouteData&&);
+
     MCAPI ~SeeMoreRouteData();
     // NOLINTEND
 

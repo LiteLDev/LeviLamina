@@ -4,6 +4,10 @@
 
 namespace OreUI::EntryPoints {
 
-class ManifestValidation {};
+class ManifestValidation {
+public:
+    // ManifestValidation inner types define
+    enum class ScreenType : uchar {};
+};
 
 } // namespace OreUI::EntryPoints

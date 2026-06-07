@@ -29,7 +29,6 @@ public:
     ::ll::TypedStorage<4, 4, ::SkinBanCheckProgressHandler::State>    mState;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mInitTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                  mTimeoutTime;
-    ::ll::TypedStorage<8, 32, ::std::string const>                    mServerType;
     // NOLINTEND
 
 public:
@@ -50,14 +49,22 @@ public:
     virtual ::std::string getTitleText() const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
-
-    virtual ~SkinBanCheckProgressHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SkinBanCheckProgressHandler();
+
+    MCAPI bool _shouldSkipCheck(::MinecraftScreenModel& minecraftScreenModel) const;
+
     MCAPI void _verifySkin(::MinecraftScreenModel& minecraftScreenModel);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

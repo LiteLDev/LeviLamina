@@ -23,6 +23,7 @@ public:
 
 public:
     // prevent constructor by default
+    PlanterItemComponent& operator=(PlanterItemComponent const&);
     PlanterItemComponent(PlanterItemComponent const&);
     PlanterItemComponent();
 
@@ -31,9 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_20_50::PlanterItemComponent& operator=(::SharedTypes::v1_20_50::PlanterItemComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_50::PlanterItemComponent&
-    operator=(::SharedTypes::v1_20_50::PlanterItemComponent const&);
-
     MCAPI ~PlanterItemComponent();
     // NOLINTEND
 
@@ -41,6 +39,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:

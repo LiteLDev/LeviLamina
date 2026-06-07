@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
 namespace ScriptModuleMinecraft { class ScriptItemFilterError; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -30,34 +31,22 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::std::variant<::ItemQueryOptions, bool>>> mProcessedItemQueryOptions;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptItemFilter& operator=(ScriptItemFilter const&);
-    ScriptItemFilter(ScriptItemFilter const&);
     ScriptItemFilter();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ScriptItemFilter();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemFilter(::ScriptModuleMinecraft::ScriptItemFilter&&);
-
-#ifdef LL_PLAT_C
     MCAPI ScriptItemFilter(::ScriptModuleMinecraft::ScriptItemFilter const&);
-#endif
 
     MCAPI ::nonstd::expected<::ItemQueryOptions, ::std::vector<::ScriptModuleMinecraft::ScriptItemFilterError>>
     getItemQueryOptions(::Scripting::WeakLifetimeScope const& scope) const;
 
-#ifdef LL_PLAT_C
-    MCAPI ::ScriptModuleMinecraft::ScriptItemFilter& operator=(::ScriptModuleMinecraft::ScriptItemFilter const&);
-#endif
+    MCAPI bool operator()(::ItemStack const& item) const;
+
+    MCAPI ::ScriptModuleMinecraft::ScriptItemFilter& operator=(::ScriptModuleMinecraft::ScriptItemFilter&&);
 
     MCAPI void processItemQueryOptions(::Scripting::WeakLifetimeScope const& scope);
 
@@ -73,11 +62,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter&&);
-
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter const&);
-#endif
     // NOLINTEND
 
 public:

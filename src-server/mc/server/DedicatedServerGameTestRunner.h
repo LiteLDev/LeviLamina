@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-
 // auto generated forward declare list
 // clang-format off
-class Dimension;
 class Level;
 class MinecraftGameTest;
 class ServerInstance;
@@ -49,7 +45,7 @@ public:
         ::Level&             level
     );
 
-    MCNAPI ::Dimension* _ensureDimension(::DimensionType dimensionType);
+    MCNAPI void _finalizeReport();
 
     MCNAPI void _initializeReport();
 

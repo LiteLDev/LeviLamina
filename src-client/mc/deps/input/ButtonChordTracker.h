@@ -64,17 +64,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI TrackerMappingAndState(::ButtonChordTracker::TrackerMappingAndState&&);
+        MCAPI void clear();
 
         MCAPI ::ButtonChordTracker::TrackerMappingAndState& operator=(::ButtonChordTracker::TrackerMappingAndState&&);
 
         MCAPI ~TrackerMappingAndState();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ButtonChordTracker::TrackerMappingAndState&&);
         // NOLINTEND
 
     public:
@@ -115,10 +109,18 @@ public:
 
     MCAPI void _raiseLongestChordSequences(::ButtonChordTracker::TrackerMappingAndState& trackerData, int controllerId);
 
-    MCAPI void changeControllerId(int oldId, int newId);
+    MCAPI void clearMapping(int controllerId);
 
     MCAPI void setMapping(::std::vector<::ChordButtonMapping> const& inputMapping, int controllerId);
 
     MCAPI ::ChordTrackingResult trackButtonEvent(uint buttonId, ::ButtonState state, int controllerId);
+
+    MCAPI ~ButtonChordTracker();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

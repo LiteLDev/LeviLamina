@@ -8,27 +8,35 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class StrictEntityContext;
+class Vec3;
 struct AABBShapeComponent;
 struct AutoStepRequestFlagComponent;
 struct HasAutoSteppedComponent;
 struct MaxAutoStepComponent;
 struct MoveRequestComponent;
 struct SubBBsComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace AutoStepSystem {
 // functions
 // NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createSystem();
+
 MCAPI void doAutoStepSystemImpl(
-    ::entt::type_list<::Include<::AutoStepRequestFlagComponent>>,
-    ::StrictEntityContext const&                entity,
-    ::MaxAutoStepComponent const&               maxAutoStepComponent,
-    ::MoveRequestComponent&                     moveRequestComponent,
-    ::AABBShapeComponent&                       aabbShapeComponent,
-    ::SubBBsComponent&                          subBBsComponent,
-    ::EntityModifier<::HasAutoSteppedComponent> mod
+    ::entt::type_list<::Include<::AutoStepRequestFlagComponent>> entity,
+    ::StrictEntityContext const&                                 maxAutoStepComponent,
+    ::MaxAutoStepComponent const&                                moveRequestComponent,
+    ::MoveRequestComponent&                                      aabbShapeComponent,
+    ::AABBShapeComponent&                                        subBBsComponent,
+    ::SubBBsComponent&                                           mod,
+    ::EntityModifier<::HasAutoSteppedComponent>
 );
+
+MCAPI ::AABB
+getMaxCollisionVolume(::Vec3 const& preMoveSpeed, ::MaxAutoStepComponent const& step, ::AABB const& preMoveShape);
 // NOLINTEND
 
 } // namespace AutoStepSystem

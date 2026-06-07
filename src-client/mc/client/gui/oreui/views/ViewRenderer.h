@@ -55,13 +55,19 @@ public:
 
     MCAPI void _createGamefaceTexture(::ScreenContext& screenContext);
 
-    MCAPI void _resolve(::ScreenContext& screenContext, ::std::optional<::RectangleArea> const& caretArea);
+    MCAPI void _destroyGamefaceTexture();
 
-    MCAPI void freeRenderingResources();
+    MCAPI void _resolve(
+        ::ScreenContext& screenContext,
+        ::std::optional<::RectangleArea> const&,
+        ::std::optional<::RectangleArea> const&
+    );
 
-    MCAPI void render(::ScreenContext& screenContext, ::std::optional<::RectangleArea> const& caretArea);
-
-    MCAPI void resize(uint width, uint height);
+    MCAPI void render(
+        ::ScreenContext&                        screenContext,
+        ::std::optional<::RectangleArea> const& caretArea,
+        ::std::optional<::RectangleArea> const& textInputControlArea
+    );
 
     MCAPI ~ViewRenderer();
     // NOLINTEND

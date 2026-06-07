@@ -40,7 +40,11 @@ struct TickingSystemWithInfo;
 namespace SolidMobSystem {
 // functions
 // NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createClearNearbyMobsSystem();
+
 MCAPI ::TickingSystemWithInfo createRewindShapeRefreshSystem();
+
+MCAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
 
 MCAPI void flagNearbyMobsForServerMovementCatchup(
     ::StrictEntityContext const&                   player,

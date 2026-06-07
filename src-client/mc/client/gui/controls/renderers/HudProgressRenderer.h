@@ -37,8 +37,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HudProgressRenderer();
+
     MCAPI bool
-    _renderProgressIndicator(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, int, int, float a);
+    _renderProgressIndicator(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, int a, int, float);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

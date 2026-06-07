@@ -31,8 +31,6 @@ public:
     MCAPI ScriptCommandError(::std::string message, ::ScriptModuleMinecraft::ScriptCommandError::ErrorType type);
 
     MCAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);
-
-    MCAPI ~ScriptCommandError();
     // NOLINTEND
 
 public:
@@ -47,12 +45,6 @@ public:
     MCAPI void* $ctor(::std::string message, ::ScriptModuleMinecraft::ScriptCommandError::ErrorType type);
 
     MCAPI void* $ctor(::std::string messages, ::MCRESULT const& result);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

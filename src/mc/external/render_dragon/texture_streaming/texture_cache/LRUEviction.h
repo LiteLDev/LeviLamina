@@ -12,52 +12,7 @@ public:
     // clang-format on
 
     // LRUEviction inner types define
-    struct ImageLRUData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk2ee4d9;
-        ::ll::UntypedStorage<4, 4> mUnk7b1067;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ImageLRUData& operator=(ImageLRUData const&);
-        ImageLRUData(ImageLRUData const&);
-        ImageLRUData();
-    };
-
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk91b22e;
-    ::ll::UntypedStorage<4, 4>  mUnk66f7e5;
-    ::ll::UntypedStorage<8, 24> mUnk6a9614;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LRUEviction& operator=(LRUEviction const&);
-    LRUEviction(LRUEviction const&);
-    LRUEviction();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void updateResource(uint64 const& key);
-
-    MCNAPI ~LRUEviction();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
+    struct ImageLRUData {};
 };
 
 } // namespace dragon::texturestreaming

@@ -25,20 +25,11 @@ public:
     ::ll::UntypedStorage<8, 136> mUnkd613a3;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PersistentWebSocket& operator=(PersistentWebSocket const&);
     PersistentWebSocket(PersistentWebSocket const&);
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    PersistentWebSocket& operator=(PersistentWebSocket const&);
-    PersistentWebSocket(PersistentWebSocket const&);
-    PersistentWebSocket();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -62,15 +53,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI PersistentWebSocket();
-#endif
 
     MCNAPI void _connectWithRetry(
-        ::std::string const&                     uri,
-        ::Bedrock::Http::HeaderCollection const& headers,
-        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>,
-        ::Bedrock::Http::RetryPolicy&& retry
+        ::std::string const&                                               uri,
+        ::Bedrock::Http::HeaderCollection const&                           headers,
+        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> retry,
+        ::Bedrock::Http::RetryPolicy&&
     );
 
     MCNAPI void _onCloseMaybeReconnect(uint status, bool shouldReconnect);
@@ -85,6 +74,8 @@ public:
         ::Bedrock::Http::RetryPolicy&&                                     retry
     );
 
+    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>> connect();
+
     MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
     connectWithRetry(::Bedrock::Http::RetryPolicy&& retry);
 
@@ -94,9 +85,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI void* $ctor();
-#endif
     // NOLINTEND
 
 public:

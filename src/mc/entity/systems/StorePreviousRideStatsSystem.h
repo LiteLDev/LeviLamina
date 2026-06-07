@@ -30,17 +30,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _storePreviousRideStats(
-        ::StrictEntityContext const&,
-        ::StateVectorComponent const&     stateVectorComponent,
-        ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
-    );
-
-    MCAPI static void _tickStorePreviousRideStatsSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::LocalPlayerComponent, ::PassengerComponent>,
-            ::StateVectorComponent const,
-            ::VanillaClientGameplayComponent> view
+        ::StrictEntityContext const&  stateVectorComponent,
+        ::StateVectorComponent const& vanillaClientGameplayComponent,
+        ::VanillaClientGameplayComponent&
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

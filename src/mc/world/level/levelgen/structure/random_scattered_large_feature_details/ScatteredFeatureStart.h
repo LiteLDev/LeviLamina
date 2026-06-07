@@ -39,8 +39,6 @@ public:
     virtual int getMaxYSpawnOffset() const /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
-
-    virtual ~ScatteredFeatureStart() /*override*/ = default;
     // NOLINTEND
 
 public:

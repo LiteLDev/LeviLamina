@@ -40,6 +40,8 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void doCheck();
+
+    MCAPI bool setState(::Bedrock::Threading::Details::ConditionalState newState);
 #endif
     // NOLINTEND
 

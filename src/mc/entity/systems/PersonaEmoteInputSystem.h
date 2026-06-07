@@ -37,16 +37,6 @@ public:
         ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
     );
 
-    MCAPI static void _tickPersonaEmoteInputSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ShouldStopEmotingRequestComponent>,
-            ::EventingDispatcherComponent const,
-            ::EmotePlayedTelemetryDataComponent const>                                             view,
-        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>                            requestQueueView,
-        ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
-    );
-
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

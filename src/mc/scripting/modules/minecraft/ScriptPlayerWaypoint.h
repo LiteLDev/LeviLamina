@@ -37,8 +37,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::ServerWaypoint> createWaypoint() const /*override*/;
-
-    virtual ~ScriptPlayerWaypoint() /*override*/ = default;
     // NOLINTEND
 
 public:

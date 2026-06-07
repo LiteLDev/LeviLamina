@@ -21,23 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PostOperation& operator=(PostOperation const&);
-    PostOperation(PostOperation const&);
-    PostOperation();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PostOperation(::PostOperation&&);
-
     MCAPI ~PostOperation();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PostOperation&&);
     // NOLINTEND
 
 public:

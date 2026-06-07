@@ -6,7 +6,9 @@
 // clang-format off
 class IRandom;
 class ImprovedNoise;
+class Vec2;
 class Vec3;
+struct YBlendingBugSettings;
 // clang-format on
 
 class PerlinNoise {
@@ -20,17 +22,18 @@ public:
 
 public:
     // prevent constructor by default
-    PerlinNoise& operator=(PerlinNoise const&);
     PerlinNoise();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PerlinNoise(::PerlinNoise const&);
-
     MCAPI PerlinNoise(::IRandom& random, int levels);
 
     MCAPI PerlinNoise(uint seed, int levels);
+
+    MCAPI PerlinNoise(::IRandom& random, ::YBlendingBugSettings yBlendingSettings, int levels);
+
+    MCAPI void fillRegion(float* buffer, ::Vec2 const& pos, int xSize, int zSize, ::Vec2 const& scale) const;
 
     MCAPI void fillRegion(
         float*        buffer,
@@ -44,6 +47,8 @@ public:
         int           zStep
     ) const;
 
+    MCAPI float getValue(::Vec3 const& pos) const;
+
     MCAPI float getValueNormalized(::Vec3 const& pos) const;
 
     MCAPI ~PerlinNoise();
@@ -52,16 +57,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PerlinNoise const&);
-
     MCAPI void* $ctor(::IRandom& random, int levels);
 
     MCAPI void* $ctor(uint seed, int levels);
+
+    MCAPI void* $ctor(::IRandom& random, ::YBlendingBugSettings yBlendingSettings, int levels);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

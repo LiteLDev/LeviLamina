@@ -22,24 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HasPropertyFilter(HasPropertyFilter const&);
-    HasPropertyFilter();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HasPropertyFilter(::HasPropertyFilter&&);
-
-    MCAPI ::HasPropertyFilter& operator=(::HasPropertyFilter const&);
-
     MCAPI ~HasPropertyFilter();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HasPropertyFilter&&);
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
         ::TextureSetHelpers::TextureSetDefinitionLoader::ColorPipeline const& colorPipeline
     );
 
-    MCNAPI static bool _postValidation(::ResourceLocationPair const&, ::Json::Value const& root);
+    MCNAPI static bool _postValidation(::ResourceLocationPair const& root, ::Json::Value const&);
 
     MCNAPI static ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::cg::TextureSetDefinition>>

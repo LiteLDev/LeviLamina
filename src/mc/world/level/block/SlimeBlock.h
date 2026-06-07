@@ -9,47 +9,48 @@
 // clang-format off
 class BlockPos;
 class EntityContext;
-class Experiments;
-struct UpdateEntityAfterFallOnInterface;
+class IConstBlockSource;
+class Material;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
 class SlimeBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    SlimeBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
-
-    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
-        /*override*/;
-
-    virtual bool isBounceBlock() const /*override*/;
+    virtual void onStandOn(::EntityContext& entity, ::BlockPos const&) const /*override*/;
 
     virtual int getExtraRenderLayers() const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~SlimeBlock() /*override*/ = default;
+    virtual float getBounciness(::IConstBlockSource const&, ::BlockPos const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SlimeBlock(::std::string const& nameId, int id, ::Material const& material);
+
     MCFOLD void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
-
-    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
-
-    MCFOLD bool $isBounceBlock() const;
+    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const&) const;
 
     MCFOLD int $getExtraRenderLayers() const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD float $getBounciness(::IConstBlockSource const&, ::BlockPos const&) const;
 
 
     // NOLINTEND

@@ -6,7 +6,6 @@
 #include "mc/common/SubClientId.h"
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -32,6 +31,8 @@
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/ILevel.h"
 #include "mc/world/level/IWorldRegistriesProvider.h"
+#include "mc/world/level/pathfinder/CanJumpIntoNode.h"
+#include "mc/world/level/pathfinder/NodeType.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
@@ -109,8 +110,10 @@ class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class IEntityRegistryOwner;
+class ILevelChunkEventManagerConnector;
 class ILevelRandom;
 class IMinecraftEventing;
+class IPlayerDimensionTransferConnector;
 class IRandom;
 class ISubChunkLighter;
 class IUnknownBlockTypeRegistry;
@@ -186,6 +189,7 @@ class ServerNetworkEventCoordinator;
 class ServerParticleManager;
 class ServerPlayerEventCoordinator;
 class ServerPlayerSleepManager;
+class ServerSoundHandle;
 class SoundPlayerInterface;
 class Spawner;
 class StartGamePacket;
@@ -193,7 +197,6 @@ class StrictEntityContext;
 class StructureManager;
 class StructureSpawnRegistry;
 class SubChunkPacket;
-class SubChunkRequestManager;
 class SurfaceBuilderRegistry;
 class TagCacheManager;
 class TaskGroup;
@@ -242,6 +245,7 @@ class BaseLightTextureImageBuilder;
 class CameraRegistry;
 class Particle;
 class SubChunkManager;
+class SubChunkRequestManager;
 class TrustedSkinHelper;
 // clang-format on
 
@@ -444,11 +448,13 @@ public:
 
     virtual bool isLeaveGameDone() /*override*/;
 
+    virtual bool isDimensionTypeActive(::DimensionType dimensionType) const /*override*/;
+
     virtual ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType) /*override*/;
 
     virtual ::WeakRef<::Dimension> getDimension(::DimensionType id) const /*override*/;
 
-    virtual ::DimensionType getLastOrDefaultSpawnDimensionId(::DimensionType lastDimensionId) const /*override*/;
+    virtual ::DimensionType resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const /*override*/;
 
     virtual void forEachDimension(::std::function<bool(::Dimension&)> callback) /*override*/;
 
@@ -533,9 +539,17 @@ public:
 
     virtual void addUser(::OwnerPtr<::EntityContext> userEntity) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::Actor* addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) /*override*/;
+#else // LL_PLAT_C
     virtual ::Actor* addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void removeDisplayEntity(::WeakEntityRef) /*override*/;
+#else // LL_PLAT_C
     virtual void removeDisplayEntity(::WeakEntityRef entity) /*override*/;
+#endif
 
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() /*override*/;
 
@@ -848,7 +862,13 @@ public:
         float const                            pitch
     ) /*override*/;
 
-    virtual void playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) /*override*/;
+    virtual void playSound(
+        ::std::string const&                 name,
+        ::Vec3 const&                        pos,
+        float                                volume,
+        float                                pitch,
+        ::std::optional<::ServerSoundHandle> serverSoundHandle
+    ) /*override*/;
 
     virtual void playSound(
         ::IConstBlockSource const&             region,
@@ -933,7 +953,8 @@ public:
         ::Vec3 const&                          pos,
         ::Block const&                         block,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     ) /*override*/;
 
     virtual void broadcastSoundEvent(
@@ -942,7 +963,8 @@ public:
         ::Vec3 const&                          pos,
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     ) /*override*/;
 
     virtual void broadcastSoundEvent(
@@ -951,10 +973,16 @@ public:
         ::Vec3 const&                          pos,
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     ) /*override*/;
 
-    virtual void broadcastActorEvent(::Actor& actor, ::ActorEvent eventId, int data) const /*override*/;
+    virtual void broadcastActorEvent(
+        ::Actor&                       actor,
+        ::ActorEvent                   eventId,
+        int                            data,
+        ::std::optional<::Vec3> const& fireAtPosition
+    ) const /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> getActorEventBroadcaster() const /*override*/;
 
@@ -1164,13 +1192,13 @@ public:
     virtual ::TradeTables* getTradeTables() /*override*/;
 
     virtual void decrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+        ::std::string const&,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
     virtual void incrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
+        ::std::string const&,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
     ) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
@@ -1432,6 +1460,20 @@ public:
 
     MCAPI ::Bedrock::UniqueOwnerPointer<::PhotoManager> _createPhotoManager();
 
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> _getActorGarbageCollector();
+#endif
+
+    MCAPI ::GameplayUserManager& _getGameplayUserManager();
+
+    MCAPI ::ILevelChunkEventManagerConnector& _getLevelChunkEventManagerConnector();
+
+    MCFOLD ::LevelStorageManager* _getLevelStorageManager();
+
+    MCAPI ::IPlayerDimensionTransferConnector& _getPlayerDimensionTransferConnector();
+
+    MCAPI ::PlayerListManager& _getPlayerListManager();
+
     MCAPI void _initializeActorManager();
 
     MCAPI void _initializeBiomeManager();
@@ -1442,20 +1484,9 @@ public:
 
     MCAPI void _initializeLevelChunkEventManager();
 
-    MCAPI void _initializeLevelChunkSaveManager();
-
     MCAPI void _initializeLevelEventManager();
 
-    MCAPI void _initializeLevelStorageManager();
-
     MCAPI void _initializeParticleProvider();
-
-    MCAPI void _onAddBiomeTintedParticleEffect(
-        ::HashedString const&         effect,
-        ::BlockPos const&             pos,
-        ::Block const&                block,
-        ::std::optional<::mce::Color> overrideColor
-    );
 
     MCAPI void _onAddBreakingItemParticleEffect(
         ::Vec3 const&                     pos,
@@ -1509,22 +1540,53 @@ public:
 
     MCAPI void _onSendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
 
-    MCAPI void _setIsTearingDown();
-
     MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addEntityWithError(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+
+    MCAPI bool canChangeDimension(::Actor& actor, ::DimensionType toId);
 
     MCAPI void earlyShutdownMainthread();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorManager> getActorManager();
 
+    MCAPI ::AutonomousActorManager const& getAutonomousActorManager() const;
+
+    MCAPI ::LinkedAssetValidator& getLinkedAssetValidator();
+
+    MCAPI ::NpcDialogueStorage* getNpcDialogueStorage();
+
 #ifdef LL_PLAT_C
     MCAPI ::NpcEventCoordinator& getNpcEventCoordinator();
 #endif
 
+    MCAPI ::ParticleProvider& getParticleProvider();
+
+#ifdef LL_PLAT_C
+    MCFOLD ::PhotoItemSavedDataCollection& getPhotoItemSavedDataCollection();
+#endif
+
     MCAPI ::ServerLevelEventCoordinator& getServerLevelEventCoordinator();
 
+    MCAPI double getTickDeltaTime() const;
+
+    MCAPI ::NodeType isFree(
+        ::NavigationComponent& navigation,
+        ::Actor&               entity,
+        ::BlockPos const&      lastPathPos,
+        ::BlockPos const&      testPos,
+        ::BlockPos const&      size,
+        ::CanJumpIntoNode      jumpIntoNode
+    );
+
     MCAPI void loadShapeRegistry(::Experiments const& experiments);
+
+#ifdef LL_PLAT_C
+    MCAPI void setMolangPackSettingsCache(::std::shared_ptr<::MolangPackSettingsCache> molangPackSettingsCache);
+#endif
+
+    MCAPI void setPerformanceTelemetryPeriodicCallback(::std::function<void()> callback);
+
+    MCAPI void transferActorToOwnedEntityLimbo(::Player const& player, ::Actor& actor);
     // NOLINTEND
 
 public:
@@ -1541,6 +1603,18 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager,
         ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> actorFactory
     );
+
+#ifdef LL_PLAT_C
+    MCAPI static ::LevelSeed64 createLevelSeed64();
+#endif
+
+    MCAPI static uint createRandomSeed();
+
+    MCAPI static ::std::string createUniqueLevelID(int modifier);
+
+    MCAPI static bool isUsableLevel(::ILevel const& level);
+
+    MCAPI static ::LevelSeed64 parseLevelSeed64(::std::string const& seedString);
     // NOLINTEND
 
 public:
@@ -1572,11 +1646,13 @@ public:
 
     MCAPI bool $isLeaveGameDone();
 
+    MCAPI bool $isDimensionTypeActive(::DimensionType dimensionType) const;
+
     MCAPI ::WeakRef<::Dimension> $getOrCreateDimension(::DimensionType dimensionType);
 
     MCAPI ::WeakRef<::Dimension> $getDimension(::DimensionType id) const;
 
-    MCAPI ::DimensionType $getLastOrDefaultSpawnDimensionId(::DimensionType lastDimensionId) const;
+    MCAPI ::DimensionType $resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const;
 
     MCFOLD void $forEachDimension(::std::function<bool(::Dimension&)> callback);
 
@@ -1624,7 +1700,7 @@ public:
 
     MCFOLD ::AutomationBehaviorTreeGroup& $getAutomationBehaviorTreeGroup() const;
 
-    MCAPI ::BehaviorFactory& $getBehaviorFactory() const;
+    MCFOLD ::BehaviorFactory& $getBehaviorFactory() const;
 
     MCAPI ::SharedTypes::Legacy::Difficulty $getDifficulty() const;
 
@@ -1655,9 +1731,9 @@ public:
 
     MCAPI void $addUser(::OwnerPtr<::EntityContext> userEntity);
 
-    MCAPI ::Actor* $addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+    MCAPI ::Actor* $addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>);
 
-    MCFOLD void $removeDisplayEntity(::WeakEntityRef entity);
+    MCFOLD void $removeDisplayEntity(::WeakEntityRef);
 
     MCFOLD ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
 
@@ -1952,7 +2028,13 @@ public:
     MCAPI void
     $playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float const volume, float const pitch);
 
-    MCAPI void $playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
+    MCAPI void $playSound(
+        ::std::string const&                 name,
+        ::Vec3 const&                        pos,
+        float                                volume,
+        float                                pitch,
+        ::std::optional<::ServerSoundHandle> serverSoundHandle
+    );
 
     MCAPI void $playSound(
         ::IConstBlockSource const&             region,
@@ -2033,7 +2115,8 @@ public:
         ::Vec3 const&                          pos,
         ::Block const&                         block,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     );
 
     MCAPI void $broadcastSoundEvent(
@@ -2042,7 +2125,8 @@ public:
         ::Vec3 const&                          pos,
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     );
 
     MCAPI void $broadcastSoundEvent(
@@ -2051,10 +2135,16 @@ public:
         ::Vec3 const&                          pos,
         int                                    data,
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
-        bool                                   isGlobal
+        bool                                   isGlobal,
+        ::std::optional<::Vec3> const&         fireAtPosition
     );
 
-    MCAPI void $broadcastActorEvent(::Actor& actor, ::ActorEvent eventId, int data) const;
+    MCAPI void $broadcastActorEvent(
+        ::Actor&                       actor,
+        ::ActorEvent                   eventId,
+        int                            data,
+        ::std::optional<::Vec3> const& fireAtPosition
+    ) const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> $getActorEventBroadcaster() const;
 
@@ -2258,15 +2348,11 @@ public:
 
     MCFOLD ::TradeTables* $getTradeTables();
 
-    MCFOLD void $decrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
-    );
+    MCFOLD void
+    $decrementTagCache(::std::string const&, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
 
-    MCFOLD void $incrementTagCache(
-        ::std::string const&                                                      tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
-    );
+    MCFOLD void
+    $incrementTagCache(::std::string const&, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
 
     MCFOLD ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
 
@@ -2342,7 +2428,7 @@ public:
 
     MCAPI bool $isClientSideGenerationEnabled();
 
-    MCAPI bool $blockNetworkIdsAreHashes();
+    MCFOLD bool $blockNetworkIdsAreHashes();
 
     MCAPI ::ItemRegistryRef $getItemRegistry() const;
 
@@ -2388,7 +2474,7 @@ public:
 
     MCAPI ::std::vector<::Actor*> $getRuntimeActorList() const;
 
-    MCFOLD ::PacketSender* $getPacketSender() const;
+    MCAPI ::PacketSender* $getPacketSender() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> $getNetEventCallback() const;
 
@@ -2432,7 +2518,7 @@ public:
 
     MCAPI ::PermissionsHandler const& $getDefaultPermissions() const;
 
-    MCFOLD bool $getTearingDown() const;
+    MCAPI bool $getTearingDown() const;
 
     MCAPI void $takePicture(
         ::cg::ImageBuffer&                                              outImage,

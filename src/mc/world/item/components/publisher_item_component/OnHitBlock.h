@@ -10,7 +10,6 @@
 // clang-format off
 class Block;
 class BlockPos;
-class HashedString;
 class ItemStack;
 class Mob;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
@@ -23,18 +22,6 @@ struct OnHitBlock : public ::ItemComponent,
                         void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&),
                         ::Bedrock::PubSub::ThreadModel::SingleThreaded,
                         0> {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~OnHitBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

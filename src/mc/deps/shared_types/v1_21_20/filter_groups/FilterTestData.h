@@ -26,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    FilterTestData& operator=(FilterTestData const&);
     FilterTestData();
 
 public:
@@ -36,8 +37,6 @@ public:
     MCAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData const&);
 
     MCAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData&&);
-
-    MCAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData const&);
 
     MCAPI ~FilterTestData();
     // NOLINTEND

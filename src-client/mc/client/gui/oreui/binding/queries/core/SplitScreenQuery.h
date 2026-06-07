@@ -33,12 +33,6 @@ public:
     SplitScreenQuery();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~SplitScreenQuery() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SplitScreenQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);

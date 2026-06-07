@@ -40,20 +40,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                  mCullAgainstFullAndOpaque;
         ::ll::TypedStorage<2, 2, ::SharedTypes::Facing> mDirectionToCheckAgainst;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Rule(Rule const&);
-        Rule();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::SharedTypes::v1_21_80::BlockCulling::Rule& operator=(::SharedTypes::v1_21_80::BlockCulling::Rule&&);
-
-        MCAPI ::SharedTypes::v1_21_80::BlockCulling::Rule&
-        operator=(::SharedTypes::v1_21_80::BlockCulling::Rule const&);
-        // NOLINTEND
     };
 
 public:

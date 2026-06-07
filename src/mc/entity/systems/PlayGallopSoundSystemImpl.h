@@ -30,20 +30,20 @@ namespace PlayGallopSoundSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void tick(
-    ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::HorseFlagComponent>>,
-    ::StrictEntityContext const&                                       entity,
-    ::ActorDataFlagComponent const&                                    actorFlags,
-    ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
-    ::ActorUniqueIDComponent const&                                    actorUniqueID,
-    ::DimensionTypeComponent const&                                    dimensionType,
-    ::ActorDataHorseTypeComponent const&                               actorDataHorseTypeComponent,
-    ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlockComponent,
-    ::RandomReferenceComponent const&                                  randomReferenceComponent,
-    ::SoundEventPlayerComponent const&                                 soundEventPlayerComponent,
-    ::GallopSoundCounterComponent&                                     gallopSoundCounterComponent,
-    ::Optional<::VehicleComponent const>                               vehicleComponent,
-    ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView,
-    ::ViewT<::StrictEntityContext, ::RandomComponent>&                 randomView
+    ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::HorseFlagComponent>> entity,
+    ::StrictEntityContext const&                                                       actorFlags,
+    ::ActorDataFlagComponent const&                                                    actorIdentifier,
+    ::ActorDefinitionIdentifierComponent const&                                        actorUniqueID,
+    ::ActorUniqueIDComponent const&                                                    dimensionType,
+    ::DimensionTypeComponent const&                                                    actorDataHorseTypeComponent,
+    ::ActorDataHorseTypeComponent const&                               currentlyStandingOnBlockComponent,
+    ::CurrentlyStandingOnBlockComponent const&                         randomReferenceComponent,
+    ::RandomReferenceComponent const&                                  soundEventPlayerComponent,
+    ::SoundEventPlayerComponent const&                                 gallopSoundCounterComponent,
+    ::GallopSoundCounterComponent&                                     vehicleComponent,
+    ::Optional<::VehicleComponent const>                               requestQueueView,
+    ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& randomView,
+    ::ViewT<::StrictEntityContext, ::RandomComponent>&
 );
 // NOLINTEND
 

@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/SpawnBiomeType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
+class BiomeComponentFactory;
 class BiomeRegistry;
-class Dimension;
 class Experiments;
 class IWorldRegistriesProvider;
 class SurfaceBuilderRegistry;
@@ -23,13 +22,9 @@ class VanillaBiomes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addBiomeDimensionAttributeComponentHelper(
-        ::BiomeRegistry& registry,
-        ::BiomeIdType    id,
-        ::DimensionType  dimensionType
-    );
-
     MCAPI static void initBiomeComponentGlue(::BiomeJsonDocumentGlue& biomeJsonDocumentGlue);
+
+    MCAPI static void initBiomeComponents(::BiomeComponentFactory& factory);
 
     MCAPI static void initBiomeDimensionComponent(::BiomeRegistry& registry);
 
@@ -37,16 +32,16 @@ public:
         ::BiomeRegistry&         registry,
         ::SpawnSettings const&   spawnSettings,
         ::BaseGameVersion const& baseGameVersion,
-        ::Experiments const&
+        ::Experiments const&     experiments
     );
 
     MCAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);
 
-#ifdef LL_PLAT_C
     MCAPI static void initSurfaceBuilders(::SurfaceBuilderRegistry& registry, ::BaseGameVersion const& baseGameVersion);
-#endif
 
     MCAPI static void initVanillaBiomeTypeComponent(::BiomeRegistry& registry);
+
+    MCAPI static void shutdownBiomes();
     // NOLINTEND
 
 public:

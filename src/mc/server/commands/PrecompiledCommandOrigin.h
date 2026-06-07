@@ -55,7 +55,7 @@ public:
 
     virtual bool hasTellPerms() const /*override*/;
 
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex) const /*override*/;
 
     virtual bool isWorldBuilder() const /*override*/;
 
@@ -97,7 +97,7 @@ public:
 
     MCFOLD bool $hasTellPerms() const;
 
-    MCFOLD bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+    MCFOLD bool $canUseAbility(::AbilitiesIndex) const;
 
     MCFOLD bool $isWorldBuilder() const;
 

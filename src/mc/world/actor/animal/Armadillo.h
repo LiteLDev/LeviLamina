@@ -23,8 +23,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual float getShadowRadius() const /*override*/;
-
-    virtual ~Armadillo() /*override*/ = default;
     // NOLINTEND
 
 public:

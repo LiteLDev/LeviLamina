@@ -12,8 +12,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~PlayerBannedFacet() /*override*/ = default;
     // NOLINTEND
 
 public:

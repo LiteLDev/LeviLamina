@@ -18,8 +18,6 @@ public:
     virtual bool isCompatibleWith(::Enchant::Type type) const /*override*/;
 
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
-
-    virtual ~CrossbowEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:

@@ -25,8 +25,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
-
-    virtual ~CompactionListenerEnv() /*override*/ = default;
     // NOLINTEND
 
 public:

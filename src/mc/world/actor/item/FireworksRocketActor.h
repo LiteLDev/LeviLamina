@@ -47,8 +47,6 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
-
-    virtual ~FireworksRocketActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -64,6 +62,8 @@ public:
 
     MCAPI void dealExplosionDamage();
 
+    MCAPI int getLifeTime() const;
+
     MCAPI void init(
         ::Level& level,
         ::Vec3 const&,
@@ -75,12 +75,18 @@ public:
 
     MCAPI void initTagData(::Random& random);
 
+    MCAPI bool isAttachedToEntity() const;
+
     MCAPI void postNormalTick();
+
+    MCFOLD void setDispensed(bool dispensed);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void defineData(::SynchedActorDataEntityWrapper& data);
+
     MCAPI static void initData(
         ::SynchedActorDataEntityWrapper& data,
         ::CompoundTag const&             rocketUserData,

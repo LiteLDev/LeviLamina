@@ -7,12 +7,6 @@
 
 class VanillaAppConfigs : public ::AppConfigs {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~VanillaAppConfigs() /*override*/ = default;
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();

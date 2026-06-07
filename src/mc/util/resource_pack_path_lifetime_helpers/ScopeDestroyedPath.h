@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/threading/BasicLockbox.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 namespace ResourcePackPathLifetimeHelpers {
 
 class ScopeDestroyedPath {
@@ -21,7 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScopeDestroyedPath(
+        ::Core::PathBuffer<::std::string> const& path,
+        ::std::shared_ptr<::Bedrock::Threading::BasicLockbox<
+            ::std::unordered_map<::std::string, ::std::weak_ptr<::ResourcePackPathLifetimeHelpers::ScopeDestroyedPath>>,
+            ::Bedrock::Threading::Mutex>>        cacheContainer
+    );
+
     MCNAPI ~ScopeDestroyedPath();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Core::PathBuffer<::std::string> const& path,
+        ::std::shared_ptr<::Bedrock::Threading::BasicLockbox<
+            ::std::unordered_map<::std::string, ::std::weak_ptr<::ResourcePackPathLifetimeHelpers::ScopeDestroyedPath>>,
+            ::Bedrock::Threading::Mutex>>        cacheContainer
+    );
     // NOLINTEND
 
 public:

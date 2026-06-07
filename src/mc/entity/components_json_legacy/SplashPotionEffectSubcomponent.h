@@ -27,11 +27,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SplashPotionEffectSubcomponent() /*override*/ = default;
+    virtual ~SplashPotionEffectSubcomponent() /*override*/;
 
     virtual void readfromJSON(::Json::Value& component) /*override*/;
 
-    virtual void writetoJSON(::Json::Value&) const /*override*/;
+    virtual void writetoJSON(::Json::Value& component) const /*override*/;
 
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
@@ -41,18 +41,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SplashPotionEffectSubcomponent();
+
     MCAPI void applyMobEffects(
-        ::MobEffectInstance const&     effectInst,
-        ::std::vector<::Actor*> const& actors,
-        ::Actor&                       projectile,
-        ::std::shared_ptr<::Potion const> const&,
-        float                    splashRange,
-        float                    collisionMargin,
-        ::MobEffect*             effect,
-        ::HitResult&             res,
-        int                      aux,
-        ::BaseGameVersion const& currVer
+        ::MobEffectInstance const&               effectInst,
+        ::std::vector<::Actor*> const&           actors,
+        ::Actor&                                 projectile,
+        ::std::shared_ptr<::Potion const> const& splashRange,
+        float                                    collisionMargin,
+        float                                    effect,
+        ::MobEffect*                             res,
+        ::HitResult&                             aux,
+        int                                      currVer,
+        ::BaseGameVersion const&
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -60,8 +74,18 @@ public:
     // NOLINTBEGIN
     MCAPI void $readfromJSON(::Json::Value& component);
 
+    MCAPI void $writetoJSON(::Json::Value& component) const;
+
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
+    MCFOLD char const* $getName() const;
 
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct GameTestResult {
 public:
     // member variables
@@ -16,12 +21,13 @@ public:
 
 public:
     // prevent constructor by default
-    GameTestResult(GameTestResult const&);
     GameTestResult();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI GameTestResult(::GameTestResult const&);
+
     MCNAPI ::GameTestResult& operator=(::GameTestResult&&);
 
     MCNAPI ::GameTestResult& operator=(::GameTestResult const&);
@@ -29,6 +35,18 @@ public:
     MCNAPI bool operator==(::GameTestResult const& rhs) const;
 
     MCNAPI ~GameTestResult();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::GameTestResult const&);
     // NOLINTEND
 
 public:

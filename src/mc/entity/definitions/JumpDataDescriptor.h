@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class JumpData;
+// clang-format on
+
 struct JumpDataDescriptor {
 public:
     // member variables
@@ -17,4 +22,10 @@ public:
     JumpDataDescriptor& operator=(JumpDataDescriptor const&);
     JumpDataDescriptor(JumpDataDescriptor const&);
     JumpDataDescriptor();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void initialize(::JumpData& jumpData) const;
+    // NOLINTEND
 };

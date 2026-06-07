@@ -41,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
-
     MCAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
     MCAPI ScriptPlayerBreakBlockBeforeEvent(
@@ -52,8 +50,6 @@ public:
         ::ItemStackBase const&                item,
         ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCAPI ~ScriptPlayerBreakBlockBeforeEvent();
     // NOLINTEND
 
 public:
@@ -65,8 +61,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
     MCAPI void* $ctor(
@@ -76,12 +70,6 @@ public:
         ::ItemStackBase const&                item,
         ::Scripting::WeakLifetimeScope const& scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

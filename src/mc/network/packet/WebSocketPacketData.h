@@ -19,16 +19,19 @@ public:
 
 public:
     // prevent constructor by default
-    WebSocketPacketData(WebSocketPacketData const&);
     WebSocketPacketData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::WebSocketPacketData& operator=(::WebSocketPacketData&&);
-
-    MCFOLD ::WebSocketPacketData& operator=(::WebSocketPacketData const&);
+    MCAPI explicit WebSocketPacketData(::std::string const& ip);
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::std::string const& ip);
     // NOLINTEND
 };

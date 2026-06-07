@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setColorChoice(int const& colorChoice);
+    MCFOLD void setColorChoice(int const& colorChoice);
     // NOLINTEND
 
 public:

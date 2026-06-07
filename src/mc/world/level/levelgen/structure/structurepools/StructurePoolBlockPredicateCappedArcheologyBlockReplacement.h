@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/actor/BrushableBlockActor.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolBlockPredicateCappedRandomBlockReplacement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolBlockPredicateType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
+class HashedString;
 class IRandom;
 // clang-format on
 
@@ -19,6 +21,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string const> mLootTable;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StructurePoolBlockPredicateCappedArcheologyBlockReplacement();
 
 public:
     // virtual functions
@@ -32,8 +38,26 @@ public:
     virtual bool operator==(::StructurePoolBlockPredicateCappedArcheologyBlockReplacement const& other) const;
 
     virtual bool operator!=(::StructurePoolBlockPredicateCappedArcheologyBlockReplacement const& other) const;
+    // NOLINTEND
 
-    virtual ~StructurePoolBlockPredicateCappedArcheologyBlockReplacement() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StructurePoolBlockPredicateCappedArcheologyBlockReplacement(
+        ::std::map<::HashedString, ::HashedString> const& blockMappings,
+        uint                                              maximumAmount,
+        ::BrushableBlockActor::Placement                  placement
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::map<::HashedString, ::HashedString> const& blockMappings,
+        uint                                              maximumAmount,
+        ::BrushableBlockActor::Placement                  placement
+    );
     // NOLINTEND
 
 public:

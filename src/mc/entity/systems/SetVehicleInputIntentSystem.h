@@ -17,6 +17,7 @@ struct MobFlagComponent;
 struct PassengerComponent;
 struct PlayerComponent;
 struct ShouldBeSimulatedComponent;
+struct TickingSystemWithInfo;
 struct VehicleComponent;
 struct VehicleInputIntentComponent;
 // clang-format on
@@ -24,15 +25,17 @@ struct VehicleInputIntentComponent;
 namespace SetVehicleInputIntentSystem {
 // functions
 // NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createSystem();
+
 MCAPI void doSetVehicleInputIntent(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                                                               context,
-    ::VehicleComponent const&                                                                  vehicle,
-    ::ActorDataFlagComponent const&                                                            actorDataFlag,
-    ::ActorDataControllingSeatIndexComponent const&                                            controllingSeatIndex,
-    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent, ::MobFlagComponent>> const& passengerView,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ShouldBeSimulatedComponent> const& playerView,
-    ::EntityModifier<::VehicleInputIntentComponent>                                                   modifier
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>                           context,
+    ::StrictEntityContext const&                                                               vehicle,
+    ::VehicleComponent const&                                                                  actorDataFlag,
+    ::ActorDataFlagComponent const&                                                            controllingSeatIndex,
+    ::ActorDataControllingSeatIndexComponent const&                                            passengerView,
+    ::ViewT<::StrictEntityContext, ::Include<::PassengerComponent, ::MobFlagComponent>> const& playerView,
+    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ShouldBeSimulatedComponent> const& modifier,
+    ::EntityModifier<::VehicleInputIntentComponent>
 );
 // NOLINTEND
 

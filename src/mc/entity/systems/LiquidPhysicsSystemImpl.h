@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/material/MaterialType.h"
+#include "mc/deps/shared_types/v1_26_20/block/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,9 +18,7 @@ public:
     MCAPI static bool _hasAdjacentFlowingBlock(
         ::std::vector<::LiquidBlockEntry> const& liquidBlocks,
         ::IConstBlockSource const&               region,
-        ::MaterialType                           liquidType
+        ::SharedTypes::v1_26_20::MaterialType    liquidType
     );
-
-    MCAPI static bool _hasFlowingBlock(::std::vector<::LiquidBlockEntry> const& liquidBlocks);
     // NOLINTEND
 };

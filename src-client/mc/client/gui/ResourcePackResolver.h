@@ -78,6 +78,8 @@ public:
         ::std::vector<::UI::Resources::ResolvedDefinition> const& definitions
     ) const;
 
+    MCAPI bool isDirty();
+
     MCAPI ::std::vector<::UI::Resources::ResolvedDefinition>
     resolveDefinitions(::std::vector<::UI::Resources::DefinitionPropertyNames> const& definitionsToResolve);
     // NOLINTEND
@@ -101,7 +103,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
+    MCFOLD void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 
 public:

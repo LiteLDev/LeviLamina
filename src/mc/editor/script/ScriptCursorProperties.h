@@ -26,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptCursorProperties& operator=(ScriptCursorProperties const&);
     ScriptCursorProperties(ScriptCursorProperties const&);
     ScriptCursorProperties();
 
@@ -34,12 +35,9 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptCursorProperties(::Editor::Cursor::CursorState const& stateToCopy);
 
-    MCNAPI ::Editor::ScriptModule::ScriptCursorProperties& operator=(::Editor::ScriptModule::ScriptCursorProperties&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptCursorProperties&
-    operator=(::Editor::ScriptModule::ScriptCursorProperties const&);
-
-    MCNAPI ~ScriptCursorProperties();
+#ifdef LL_PLAT_C
+    MCNAPI ::Editor::Cursor::CursorState toCursorState(::Editor::Cursor::CursorState& outState) const;
+#endif
     // NOLINTEND
 
 public:
@@ -56,12 +54,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Cursor::CursorState const& stateToCopy);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

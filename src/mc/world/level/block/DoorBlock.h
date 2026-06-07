@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -72,10 +71,10 @@ public:
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
     virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
+        ::Block const&             region,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          bufferAABB,
+        ::AABB&
     ) const /*override*/;
 
     virtual ::AABB getCollisionShape(
@@ -126,8 +125,6 @@ public:
     virtual void _useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
-
-    virtual ~DoorBlock() /*override*/;
     // NOLINTEND
 
 public:
@@ -135,11 +132,18 @@ public:
     // NOLINTBEGIN
     MCAPI DoorBlock(::std::string const& nameId, int id, ::Material const& material, ::DoorBlock::DoorType type);
 
-    MCAPI bool _hasSupport(::BlockPos const& pos, uchar face, ::BlockSupportType, ::BlockSource& region) const;
-
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI ::Direction::Type getBlockedDirection(::IConstBlockSource const& region, ::BlockPos const& pos) const;
+
+    MCAPI ::Direction::Type getDir(::IConstBlockSource const& region, ::BlockPos const& pos) const;
+
+    MCAPI void
+    getDoorPosition(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& lowerPos, ::BlockPos& upperPos) const;
+
+    MCAPI float getDoorThickness() const;
+
+    MCAPI bool hasRightHinge(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI bool isToggled(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
@@ -157,6 +161,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _isDoorComplete(::BlockSource const& region, ::BlockPos const& pos);
+
     MCAPI static bool
     _isDoorToggled(::IConstBlockSource const& region, ::BlockType const& blockType, ::BlockPos const& pos);
 
@@ -169,18 +175,14 @@ public:
         ::Block const*&            outLowerBlock,
         ::Block const*&            outUpperBlock
     );
+
+    MCAPI static uchar getDoorFacing(int facing);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, ::DoorBlock::DoorType type);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -191,10 +193,10 @@ public:
     MCFOLD ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
+        ::Block const&             region,
+        ::IConstBlockSource const& pos,
+        ::BlockPos const&          bufferAABB,
+        ::AABB&
     ) const;
 
     MCAPI ::AABB $getCollisionShape(

@@ -19,6 +19,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MinecraftGameShimComponent();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MinecraftGameShimComponent() = default;
@@ -30,6 +34,18 @@ public:
     virtual void quit(::std::string const& src, ::std::string const& reason);
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit MinecraftGameShimComponent(::gsl::not_null<::IMinecraftGame*> game);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::gsl::not_null<::IMinecraftGame*> game);
     // NOLINTEND
 
 public:

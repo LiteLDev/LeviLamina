@@ -14,8 +14,6 @@ public:
     virtual uint64 _getMinCurveNodesAllowed() /*override*/;
 
     virtual uint64 _getMaxCurveNodesAllowed() /*override*/;
-
-    virtual ~ParticleCurveLinear() /*override*/ = default;
     // NOLINTEND
 
 public:

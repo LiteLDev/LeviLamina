@@ -17,8 +17,6 @@ public:
     // NOLINTBEGIN
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
-
-    virtual ~SaplingBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:

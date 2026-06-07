@@ -14,16 +14,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ToastIconData& operator=(ToastIconData const&);
-    ToastIconData(ToastIconData const&);
-    ToastIconData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ToastIconData& operator=(::ToastIconData&&);
-
     MCAPI ~ToastIconData();
     // NOLINTEND
 

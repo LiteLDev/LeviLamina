@@ -16,16 +16,13 @@ public:
 
 public:
     // prevent constructor by default
+    SerializableCells& operator=(SerializableCells const&);
     SerializableCells(SerializableCells const&);
     SerializableCells();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::VoxelShapes::SerializableCells& operator=(::VoxelShapes::SerializableCells&&);
-
-    MCNAPI ::VoxelShapes::SerializableCells& operator=(::VoxelShapes::SerializableCells const&);
-
     MCNAPI ~SerializableCells();
     // NOLINTEND
 

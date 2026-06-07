@@ -18,7 +18,6 @@ class Actor;
 class BlockActor;
 class BlockActorDataPacket;
 class BlockSource;
-class ChestBlock;
 class CompoundTag;
 class Container;
 class ContainerContentChangeListener;
@@ -51,6 +50,12 @@ public:
         ChestCloser& operator=(ChestCloser const&);
         ChestCloser(ChestCloser const&);
         ChestCloser();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void close();
+        // NOLINTEND
     };
 
 public:
@@ -129,7 +134,7 @@ public:
 
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position) /*override*/;
+    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&) /*override*/;
 
     virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
@@ -163,7 +168,7 @@ public:
 
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
@@ -198,8 +203,6 @@ public:
 
     MCAPI void _tryToPairWith(::BlockSource& region, ::BlockPos const& position);
 
-    MCAPI void _unpair();
-
     MCAPI void _validatePairedChest(::BlockSource& region);
 
     MCAPI bool canOpen(::BlockSource& region) const;
@@ -210,13 +213,39 @@ public:
 
     MCAPI ::std::weak_ptr<::ChestBlockActor::ChestCloser> getChestCloser(::Actor& closingActor);
 
+#ifdef LL_PLAT_C
+    MCAPI bool getIsGlobalChest();
+#endif
+
+    MCAPI ::ChestBlockActor& getMainChest();
+
+#ifdef LL_PLAT_C
+    MCAPI float getModelOffsetX() const;
+
+    MCAPI float getOldOpenness() const;
+#endif
+
+    MCAPI int getOpenCount() const;
+
+    MCAPI float getOpenness() const;
+
+    MCFOLD ::BlockPos const& getPairedChestPosition() const;
+
+    MCAPI bool isFindable() const;
+
+    MCAPI bool isLargeChest() const;
+
+    MCAPI bool isMainSubchest() const;
+
+    MCAPI void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
+
     MCAPI void pairWithLeadChest(::ChestBlockActor* leadChest, ::BlockSource& region);
 
     MCAPI void playCloseSound(::BlockSource& region);
 
     MCAPI void playOpenSound(::BlockSource& region);
 
-    MCAPI ::ChestBlock const* tryGetChestBlock(::BlockSource const& region) const;
+    MCAPI void setFindable(bool isFindable);
 
     MCAPI void unpair(::BlockSource& region);
     // NOLINTEND
@@ -224,10 +253,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI static ::std::unique_ptr<::ChestBlockActor>
     createChestBlockEntity(::std::optional<::ChestType> const& chestType, ::BlockPos const& pos);
-#endif
     // NOLINTEND
 
 public:
@@ -290,7 +317,7 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCFOLD void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
+    MCFOLD void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
     MCAPI ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 
@@ -324,7 +351,7 @@ public:
 
     MCAPI void $initializeContainerContents(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

@@ -14,6 +14,7 @@
 // clang-format off
 class SemVersion;
 struct FogDistanceSetting;
+struct FogTransitionSetting;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -73,9 +74,50 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FogDefinition();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FogDefinition(
+        ::HashedString                                           identifier,
+        ::std::optional<::FogSetting>                            distanceAir,
+        ::std::optional<::FogSetting>                            distanceWeather,
+        ::std::optional<::FogSetting>                            distanceWater,
+        ::std::optional<::FogSetting>                            distanceLava,
+        ::std::optional<::FogSetting>                            distanceLavaResistance,
+        ::std::optional<::FogSetting>                            distancePowderSnow,
+        ::std::optional<::FogVolumetricDensitySetting>           densityAir,
+        ::std::optional<::FogVolumetricDensitySetting>           densityWeather,
+        ::std::optional<::FogVolumetricDensitySetting>           densityWater,
+        ::std::optional<::FogVolumetricDensitySetting>           densityLava,
+        ::std::optional<::FogVolumetricDensitySetting>           densityLavaResistance,
+        ::std::optional<::FogVolumetricCoefficientSetting>       coefficientAir,
+        ::std::optional<::FogVolumetricCoefficientSetting>       coefficientWater,
+        ::std::optional<::FogVolumetricCoefficientSetting>       coefficientCloud,
+        ::std::optional<::FogVolumetricHenyeyGreensteinGSetting> henyeyGreensteinGAir,
+        ::std::optional<::FogVolumetricHenyeyGreensteinGSetting> henyeyGreensteinGWater
+    );
+
+    MCAPI ::std::optional<::FogVolumetricCoefficientSetting>
+    getCoefficientSettingByType(::FogDefinition::CoefficientSettingType settingType) const;
+
+    MCAPI ::std::optional<::FogVolumetricDensitySetting>
+    getDensitySettingByType(::FogDefinition::DensitySettingType settingType) const;
+
+    MCAPI ::std::optional<::FogDistanceSetting>
+    getDistanceSettingByType(::FogDefinition::DistanceSettingType settingType) const;
+
+    MCAPI ::std::optional<::FogVolumetricHenyeyGreensteinGSetting>
+    getHenyeyGreensteinGSettingByType(::FogDefinition::HenyeyGreensteinGSettingType settingType) const;
+
     MCAPI ::std::string getNamespace() const;
+
+    MCAPI ::std::optional<::FogTransitionSetting>
+    getTransitionSettingByType(::FogDefinition::DistanceSettingType settingType) const;
+
+    MCAPI ~FogDefinition();
     // NOLINTEND
 
 public:
@@ -83,6 +125,15 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FogDefinition>>
     _buildFogDefinitionSchema_common(::SemVersion version);
+
+    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FogDefinition>>
+    buildFogDefinitionSchema_v1_16_100();
+
+    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FogDefinition>>
+    buildFogDefinitionSchema_v1_21_0();
+
+    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FogDefinition>>
+    buildFogDefinitionSchema_v1_21_90();
     // NOLINTEND
 
 public:
@@ -135,5 +186,35 @@ public:
     MCAPI static ::FogVolumetricDensitySetting const& DEFERRED_DEFAULT_VOLUME_DENSITY_WATER_SETTING();
 
     MCAPI static ::FogVolumetricDensitySetting const& DEFERRED_DEFAULT_VOLUME_DENSITY_WEATHER_SETTING();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::HashedString                                           identifier,
+        ::std::optional<::FogSetting>                            distanceAir,
+        ::std::optional<::FogSetting>                            distanceWeather,
+        ::std::optional<::FogSetting>                            distanceWater,
+        ::std::optional<::FogSetting>                            distanceLava,
+        ::std::optional<::FogSetting>                            distanceLavaResistance,
+        ::std::optional<::FogSetting>                            distancePowderSnow,
+        ::std::optional<::FogVolumetricDensitySetting>           densityAir,
+        ::std::optional<::FogVolumetricDensitySetting>           densityWeather,
+        ::std::optional<::FogVolumetricDensitySetting>           densityWater,
+        ::std::optional<::FogVolumetricDensitySetting>           densityLava,
+        ::std::optional<::FogVolumetricDensitySetting>           densityLavaResistance,
+        ::std::optional<::FogVolumetricCoefficientSetting>       coefficientAir,
+        ::std::optional<::FogVolumetricCoefficientSetting>       coefficientWater,
+        ::std::optional<::FogVolumetricCoefficientSetting>       coefficientCloud,
+        ::std::optional<::FogVolumetricHenyeyGreensteinGSetting> henyeyGreensteinGAir,
+        ::std::optional<::FogVolumetricHenyeyGreensteinGSetting> henyeyGreensteinGWater
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

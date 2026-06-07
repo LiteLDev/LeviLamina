@@ -18,23 +18,38 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelChunk>> mLevelChunk;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ChunkSingleViewSource();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& pos) /*override*/;
-
 #ifdef LL_PLAT_S
-    virtual ~ChunkSingleViewSource() /*override*/ = default;
+    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const&) /*override*/;
 #else // LL_PLAT_C
-    virtual ~ChunkSingleViewSource() /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& pos) /*override*/;
 #endif
 
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI explicit ChunkSingleViewSource(::std::shared_ptr<::LevelChunk> lc);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::shared_ptr<::LevelChunk> lc);
+#endif
     // NOLINTEND
 
 public:

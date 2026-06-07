@@ -67,14 +67,18 @@ public:
     virtual ::StructurePieceType getType() const /*override*/;
 
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-    virtual ~RuinedPortalPiece() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RuinedPortalPiece(int west, int north, ::BiomeRegistry& registry, ::Biome const& biome, short surfaceHeight);
+
     MCAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos pos);
+
+    MCAPI void _addNetherrackDripColumnsBelowPortal(::Random& random, ::BlockSource& region);
+
+    MCAPI bool _hasAtLeastOneCornerUnderWater(::BlockSource& region);
 
     MCAPI void _maybeReplaceBlock(
         ::Random&                           random,
@@ -91,7 +95,42 @@ public:
         ::PortalEnvironmentModifiers const& modifiers
     );
 
+    MCAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos pos);
+
+    MCAPI void
+    _maybeReplaceIronBars(::BlockSource& region, ::BlockPos pos, ::PortalEnvironmentModifiers const& modifiers);
+
+    MCAPI void _maybeReplaceLava(
+        ::Random&                           random,
+        ::BlockSource&                      region,
+        ::BlockPos                          pos,
+        ::PortalEnvironmentModifiers const& modifiers
+    );
+
+    MCAPI void _maybeReplaceNetherrack(
+        ::Random&                           random,
+        ::BlockSource&                      region,
+        ::BlockPos                          pos,
+        ::PortalEnvironmentModifiers const& modifiers
+    );
+
+    MCAPI void _maybeReplaceObsidian(::Random& random, ::BlockSource& region, ::BlockPos pos);
+
+    MCAPI void _maybeReplaceSlab(
+        ::Random&                           random,
+        ::BlockSource&                      region,
+        ::BlockPos                          pos,
+        ::PortalEnvironmentModifiers const& modifiers
+    );
+
     MCAPI void _maybeReplaceStairs(
+        ::Random&                           random,
+        ::BlockSource&                      region,
+        ::BlockPos                          pos,
+        ::PortalEnvironmentModifiers const& modifiers
+    );
+
+    MCAPI void _maybeReplaceWall(
         ::Random&                           random,
         ::BlockSource&                      region,
         ::BlockPos                          pos,
@@ -106,14 +145,22 @@ public:
 
     MCAPI void
     _spreadNetherrack(::Random& random, ::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
+
+    MCAPI bool _threeCornersOnSolidGround(::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& _getRandomFacingStairs(::Random& random, ::Block const& stairBlock);
+    MCAPI static bool _isLava(::BlockSource& region, ::BlockPos pos);
 
     MCAPI static bool _willLavaFlowIn(::BlockSource& region, ::BlockPos pos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(int west, int north, ::BiomeRegistry& registry, ::Biome const& biome, short surfaceHeight);
     // NOLINTEND
 
 public:

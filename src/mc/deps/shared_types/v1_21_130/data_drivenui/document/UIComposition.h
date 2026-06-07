@@ -26,12 +26,13 @@ public:
 
 public:
     // prevent constructor by default
-    UIComposition(UIComposition const&);
     UIComposition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UIComposition(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
+
     MCAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition&
     operator=(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
 
@@ -50,6 +51,12 @@ public:
     MCAPI static ::std::string_view const& UI_COMPOSITION_PAYLOAD_KEY();
 
     MCAPI static ::SemVersionConstant const& VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
     // NOLINTEND
 
 public:

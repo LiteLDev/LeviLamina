@@ -28,8 +28,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent) /*override*/;
-
-    virtual ~VanillaBlockInteractionsUIListener() /*override*/ = default;
     // NOLINTEND
 
 public:

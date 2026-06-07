@@ -20,6 +20,14 @@ public:
     // NOLINTBEGIN
     virtual ~SerializationTraitsSupport() = default;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::cereal::SerializationTraits serializationTraits() const;
+
+    MCFOLD void serializationTraitsOverride(::cereal::SerializationTraits traits);
+    // NOLINTEND
 };
 
 } // namespace cereal

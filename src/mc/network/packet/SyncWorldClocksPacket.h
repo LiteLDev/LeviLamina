@@ -59,20 +59,22 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-    virtual ~SyncWorldClocksPacket() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI SyncWorldClocksPacket();
+
+    MCAPI explicit SyncWorldClocksPacket(::SyncWorldClocksPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SyncWorldClocksPacketPayload payload);
     // NOLINTEND
 
 public:

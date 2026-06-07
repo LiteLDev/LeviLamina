@@ -18,17 +18,6 @@ struct TextureResourceService
 : public ::mce::CheckedResourceService<
       ::std::
           variant<::std::monostate, ::mce::Texture, ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>> {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~TextureResourceService();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace mce

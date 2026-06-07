@@ -36,6 +36,15 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::optional<int>
+    tryGetCost(::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>> const& commitObjects);
+#endif
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $append(::ContainerValidationCommitObject* other);

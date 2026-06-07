@@ -31,13 +31,10 @@ public:
     ::ll::TypedStorage<8, 120, ::std::vector<::std::pair<::Biome const*, uint>>[5]> mDeepOceanBiomes;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     OceanMixerOperationNode();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -45,19 +42,16 @@ public:
         ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
         ::Pos2d const&                                                       origin,
         ::Pos2d const&                                                       size,
-        int                                                                  pw,
-        ::OperationGraphResult<::BiomeTemperatureCategory>                   oceanData
+        int                                                                  oceanData,
+        ::OperationGraphResult<::BiomeTemperatureCategory>
     ) const /*override*/;
 
     virtual ::std::tuple<::Pos2d, ::Pos2d> _getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const /*override*/;
-
-    virtual ~OceanMixerOperationNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI OceanMixerOperationNode(
         uint                                                                     seedMixup,
         ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>&             biomeLayer,
@@ -66,13 +60,11 @@ public:
         ::Biome const&                                                           genericShallowOcean,
         ::Biome const&                                                           genericDeepOcean
     );
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         uint                                                                     seedMixup,
         ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>&             biomeLayer,
@@ -81,7 +73,6 @@ public:
         ::Biome const&                                                           genericShallowOcean,
         ::Biome const&                                                           genericDeepOcean
     );
-#endif
     // NOLINTEND
 
 public:
@@ -91,8 +82,8 @@ public:
         ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
         ::Pos2d const&                                                       origin,
         ::Pos2d const&                                                       size,
-        int                                                                  pw,
-        ::OperationGraphResult<::BiomeTemperatureCategory>                   oceanData
+        int                                                                  oceanData,
+        ::OperationGraphResult<::BiomeTemperatureCategory>
     ) const;
 
     MCFOLD ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;

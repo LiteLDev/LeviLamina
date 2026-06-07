@@ -16,6 +16,7 @@ namespace ClientBlockPipeline { class StepResult; }
 namespace ClientBlockPipeline { class UvTransform; }
 namespace ClientBlockPipeline { struct FaceNormalAttributes; }
 namespace ClientBlockPipeline { struct ImageUvFaceAttributes; }
+namespace ClientBlockPipeline { struct MaterialFaceAttributes; }
 namespace ClientBlockPipeline { struct PositionVertexAttributes; }
 namespace ClientBlockPipeline { struct QuadIndicesFaceAttributes; }
 // clang-format on
@@ -35,29 +36,23 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MaterialOverrideStep();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-
-    virtual ~MaterialOverrideStep() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MaterialOverrideStep(
-        ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const> materialOverride,
-        ::ClientBlockPipeline::UvGenerationType                           uvGenerationType
-    );
-
     MCAPI void _projectUvsFromBasis(
         ::std::array<::Vec3, 4> const&      positions,
         ::Vec3 const&                       faceNormal,
         ::ClientBlockPipeline::UvTransform& generatedUvs
+    ) const;
+
+    MCAPI void _runMaterialOverride(
+        ::ClientBlockPipeline::MaterialFaceAttributes const& faceMaterials,
+        ::ClientBlockPipeline::MaterialFaceAttributes&       overridenFaceMaterials
     ) const;
 
     MCAPI void _runUvGeneration(
@@ -66,15 +61,6 @@ public:
         ::ClientBlockPipeline::FaceNormalAttributes const&      faceNormals,
         ::ClientBlockPipeline::ImageUvFaceAttributes&           overridenFaceImageUvs
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const> materialOverride,
-        ::ClientBlockPipeline::UvGenerationType                           uvGenerationType
-    );
     // NOLINTEND
 
 public:

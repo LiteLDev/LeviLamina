@@ -72,17 +72,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIAnimationComponent() /*override*/ = default;
+    virtual ~UIAnimationComponent() /*override*/;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree&         animationController,
+        ::ScreenInputContext& screenEvent,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     ) /*override*/;
     // NOLINTEND
 
@@ -98,18 +98,34 @@ public:
 
     MCAPI ::ui::AnimationStatus _animationTick(::mce::TimeStep const& timeStep);
 
-    MCAPI ::std::shared_ptr<::UIAnim> _createAnimation(::UIResolvedDef& def, ::UIControlFactory& factory);
+    MCAPI ::std::shared_ptr<::UIAnim> _createAnimation(::UIResolvedDef& def, ::UIControlFactory&);
 
-    MCAPI void _queueAnimScreenEvent(::UIAnim* anim, ::AnimEvent animEvent);
+    MCAPI ::std::shared_ptr<::UIAnim> _createAnimation(::std::string const& name, ::UIControlFactory& factory);
+
+    MCAPI void _resetAnimations();
 
     MCAPI ::AnimationTickResult
     _tickUIAnim(::UIAnim* anim, ::std::vector<::UIAnimationComponent::NewAnimation>& newAnimsToAdd, float deltaTime);
 
     MCAPI ::UIAnim* addAnimation(::std::string const& name, ::UIResolvedDef& def, ::UIControlFactory& factory);
 
+    MCAPI void collectScreenEvents(::AnimEvent animEvent, ::std::vector<::ScreenEvent>& screenEvents);
+
     MCAPI void handleScreenEvent(::UIAnimationController& animationController, ::ScreenEvent const& screenEvent);
 
+    MCAPI bool hasAnimationWithEndEventId(uint id) const;
+
     MCAPI bool hasAnimationWithPlayAndEndEventIds(uint playEventId, uint endEventId) const;
+
+    MCAPI bool isEventListener() const;
+
+    MCAPI void updateProperties();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -120,10 +136,10 @@ public:
     MCAPI void $reset();
 
     MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&            visualTree,
-        ::ScreenInputContext&    context,
-        ::UIAnimationController& animationController,
-        ::ScreenEvent const&     screenEvent
+        ::VisualTree&         animationController,
+        ::ScreenInputContext& screenEvent,
+        ::UIAnimationController&,
+        ::ScreenEvent const&
     );
     // NOLINTEND
 

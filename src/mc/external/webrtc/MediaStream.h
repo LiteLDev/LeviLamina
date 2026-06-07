@@ -35,13 +35,13 @@ public:
     // NOLINTBEGIN
     virtual ::std::string id() const /*override*/;
 
-    virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track) /*override*/;
-
     virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track) /*override*/;
 
-    virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track) /*override*/;
+    virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track) /*override*/;
 
     virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track) /*override*/;
+
+    virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track) /*override*/;
 
     virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
     FindAudioTrack(::std::string const& track_id) /*override*/;
@@ -67,13 +67,13 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string $id() const;
 
-    MCNAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
-
     MCNAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track);
 
-    MCNAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
+    MCNAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
 
     MCNAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track);
+
+    MCNAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> $FindAudioTrack(::std::string const& track_id);
 

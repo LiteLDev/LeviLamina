@@ -26,8 +26,6 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     virtual ::std::string_view getStructureName() const /*override*/;
-
-    virtual ~OceanMonumentStart() /*override*/ = default;
     // NOLINTEND
 
 public:

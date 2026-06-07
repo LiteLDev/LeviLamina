@@ -23,33 +23,20 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptWidgetComponentEntityOptions& operator=(ScriptWidgetComponentEntityOptions const&);
     ScriptWidgetComponentEntityOptions(ScriptWidgetComponentEntityOptions const&);
     ScriptWidgetComponentEntityOptions();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentEntityOptions() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

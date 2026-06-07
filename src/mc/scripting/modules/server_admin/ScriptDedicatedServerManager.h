@@ -3,13 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleServerAdmin { class ScriptAllowList; }
-namespace ScriptModuleServerAdmin { class ScriptLevelStorage; }
+class Level;
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EngineError; }
+class IScriptDedicatedServerUtils;
 // clang-format on
 
 namespace ScriptModuleServerAdmin {
@@ -19,6 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkcbaf6b;
+    ::ll::UntypedStorage<8, 8>  mUnk7267ad;
     ::ll::UntypedStorage<8, 32> mUnk50de5e;
     ::ll::UntypedStorage<8, 32> mUnk878b2b;
     // NOLINTEND
@@ -26,18 +29,23 @@ public:
 public:
     // prevent constructor by default
     ScriptDedicatedServerManager& operator=(ScriptDedicatedServerManager const&);
+    ScriptDedicatedServerManager(ScriptDedicatedServerManager const&);
     ScriptDedicatedServerManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDedicatedServerManager(::ScriptModuleServerAdmin::ScriptDedicatedServerManager const&);
+    MCNAPI ScriptDedicatedServerManager(
+        ::Scripting::WeakLifetimeScope& scope,
+        ::IScriptDedicatedServerUtils&  serverUtils,
+        ::Level&                        level
+    );
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAllowList> allowList();
+    MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> reloadCDNConfig();
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptLevelStorage> levelStorage();
+    MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> reloadPermissionsFile();
 
-    MCNAPI ~ScriptDedicatedServerManager();
+    MCNAPI ::Scripting::Result<void, ::Scripting::EngineError> reloadScriptConfig();
     // NOLINTEND
 
 public:
@@ -49,13 +57,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleServerAdmin::ScriptDedicatedServerManager const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI void*
+    $ctor(::Scripting::WeakLifetimeScope& scope, ::IScriptDedicatedServerUtils& serverUtils, ::Level& level);
     // NOLINTEND
 };
 

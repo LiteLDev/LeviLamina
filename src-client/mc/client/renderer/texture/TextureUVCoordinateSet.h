@@ -46,6 +46,8 @@ public:
 
     MCAPI ::TextureUVCoordinateSet getFlippedVertically() const;
 
+    MCAPI float offsetHeight(float percent, float startHeight) const;
+
     MCAPI float offsetHeightPixel(float pixels, float startHeight) const;
 
     MCAPI float offsetWidthPixel(float pixels, float startWidth) const;
@@ -56,7 +58,7 @@ public:
 
     MCAPI bool operator==(::TextureUVCoordinateSet const& other) const;
 
-    MCAPI ushort pixelWidth() const;
+    MCAPI void setTextureFrom(::TextureUVCoordinateSet const& source, float u0, float u1, float v0, float v1);
 
     MCAPI ::TextureUVCoordinateSet subTexture(float u0ffset, float v0ffset, int sizeW, int sizeH) const;
 

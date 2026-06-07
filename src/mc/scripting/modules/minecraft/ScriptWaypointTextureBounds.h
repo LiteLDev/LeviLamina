@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptCustomTexture; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
@@ -19,14 +20,22 @@ struct ScriptWaypointTextureBounds {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::ServerWaypoint::Texture> mTexture;
+    ::ll::TypedStorage<8, 56, ::ServerWaypoint::Texture>                                    mTexture;
+    ::ll::TypedStorage<4, 8, ::std::optional<::VanillaWaypointManagerConstants::ImageType>> mImageType;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<::VanillaWaypointManagerConstants::ImageType, ::Scripting::EngineError>
+    MCAPI ::Scripting::Result<
+        ::std::variant<::VanillaWaypointManagerConstants::ImageType, ::ScriptModuleMinecraft::ScriptCustomTexture>,
+        ::Scripting::EngineError>
     getTexture() const;
+
+    MCAPI void setTexture(
+        ::std::variant<::VanillaWaypointManagerConstants::ImageType, ::ScriptModuleMinecraft::ScriptCustomTexture>&
+            textureInfo
+    );
     // NOLINTEND
 
 public:

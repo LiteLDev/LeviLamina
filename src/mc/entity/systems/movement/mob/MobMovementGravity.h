@@ -17,16 +17,16 @@ class Vec2;
 class Vec3;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
-struct AirTravelFlagComponent;
 struct ApplyGravityComponent;
-struct AutoClimbTravelFlagComponent;
-struct GroundTravelFlagComponent;
-struct LavaTravelFlagComponent;
+struct BounceGravityCorrectionComponent;
+struct FallDistanceComponent;
 struct LevitateTravelFlagComponent;
 struct MobEffectsComponent;
 struct PhysicsComponent;
+struct PlayerComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
+struct WaterTravelFlagComponent;
 // clang-format on
 
 namespace MobMovementGravity {
@@ -36,36 +36,30 @@ MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& fu
 
 MCAPI bool isCenterTopAndBottomNotInAir(::Vec3 const& pos, ::IConstBlockSource const& region, ::Vec2 const& aabbDim);
 
-MCFOLD void tickAirGravity(
-    ::entt::type_list<
-        ::Include<::AirTravelFlagComponent>,
-        ::Exclude<::AutoClimbTravelFlagComponent, ::LevitateTravelFlagComponent>>,
+MCAPI bool shouldApplyLiquidGravity(
+    ::NavigationComponent const*    navigationComponent,
+    ::PhysicsComponent const*       physicsComponent,
+    ::ActorDataFlagComponent const& actorData,
+    ::Vec3 const&                   pos,
+    ::IConstBlockSource const&      region,
+    ::Vec2 const&                   aabbDim
+);
+
+MCAPI void tickApplyGravityWithBounceCorrection(
     ::StrictEntityContext const&              context,
-    ::ActorDataFlagComponent const&           synchedActorData,
-    ::MobEffectsComponent const&              mobEffects,
-    ::StateVectorComponent const&             stateVector,
+    ::ApplyGravityComponent const&            applyGravity,
+    ::BounceGravityCorrectionComponent const& bounceGravityCorrection,
+    ::StateVectorComponent&                   stateVector,
+    ::FallDistanceComponent&                  fallDistance,
     ::EntityModifier<::ApplyGravityComponent> modifier
 );
 
-#ifdef LL_PLAT_S
 MCAPI void tickDefaultGravity(
     ::StrictEntityContext const&               context,
     ::ActorDataFlagComponent const&            synchedActorData,
     ::MobEffectsComponent const&               mobEffects,
     ::StateVectorComponent const&              stateVector,
     ::EntityModifier<::ApplyGravityComponent>& modifier
-);
-#endif
-
-MCFOLD void tickGroundGravity(
-    ::entt::type_list<
-        ::Include<::GroundTravelFlagComponent>,
-        ::Exclude<::AutoClimbTravelFlagComponent, ::LevitateTravelFlagComponent>>,
-    ::StrictEntityContext const&              context,
-    ::ActorDataFlagComponent const&           synchedActorData,
-    ::MobEffectsComponent const&              mobEffects,
-    ::StateVectorComponent const&             stateVector,
-    ::EntityModifier<::ApplyGravityComponent> modifier
 );
 
 MCAPI void tickLavaGravity(
@@ -79,20 +73,6 @@ MCAPI void tickLavaGravity(
     ::IConstBlockSource const&                region
 );
 
-#ifdef LL_PLAT_C
-MCAPI void tickLavaWalkGravity(
-    ::entt::type_list<
-        ::Include<::LavaTravelFlagComponent>,
-        ::Exclude<::AutoClimbTravelFlagComponent, ::LevitateTravelFlagComponent>>,
-    ::StrictEntityContext const&              context,
-    ::NavigationComponent const&              navigation,
-    ::ActorDataFlagComponent const&           synchedActorData,
-    ::MobEffectsComponent const&              mobEffects,
-    ::StateVectorComponent const&             stateVector,
-    ::EntityModifier<::ApplyGravityComponent> modifier
-);
-#endif
-
 MCAPI void tickMobWaterGravity(
     ::StrictEntityContext const&              context,
     ::Optional<::NavigationComponent const>   navigation,
@@ -102,6 +82,15 @@ MCAPI void tickMobWaterGravity(
     ::StateVectorComponent const&             stateVector,
     ::EntityModifier<::ApplyGravityComponent> modifier,
     ::IConstBlockSource const&                region
+);
+
+MCAPI void tickPlayerWaterGravity(
+    ::entt::type_list<
+        ::Include<::WaterTravelFlagComponent, ::PlayerComponent>,
+        ::Exclude<::LevitateTravelFlagComponent>> context,
+    ::StrictEntityContext const&                  synchedActorData,
+    ::ActorDataFlagComponent const&               modifier,
+    ::EntityModifier<::ApplyGravityComponent>
 );
 // NOLINTEND
 

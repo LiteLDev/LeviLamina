@@ -34,6 +34,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::br::worldgen::StructureBlockInfo
     from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState);
+
+    MCAPI static ::br::worldgen::StructureBlockInfo
+    from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState, ::std::unique_ptr<::CompoundTag>&& nbt);
     // NOLINTEND
 
 public:

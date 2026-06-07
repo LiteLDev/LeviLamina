@@ -19,6 +19,10 @@ class ItemInstance;
 
 class TorchflowerCropBlock : public ::CropBlock {
 public:
+    // prevent constructor by default
+    TorchflowerCropBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
@@ -43,8 +47,18 @@ public:
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
+    // NOLINTEND
 
-    virtual ~TorchflowerCropBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TorchflowerCropBlock(::std::string const& nameId, int id);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

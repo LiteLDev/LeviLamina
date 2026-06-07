@@ -18,25 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MouseInputMapping();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MouseInputMapping(::MouseInputMapping const&);
-
-    MCAPI ::MouseInputMapping& operator=(::MouseInputMapping const&);
-
-    MCAPI ::MouseInputMapping& operator=(::MouseInputMapping&&);
-
     MCAPI ~MouseInputMapping();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MouseInputMapping const&);
     // NOLINTEND
 
 public:

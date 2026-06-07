@@ -20,27 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EntitlementCheck();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid(::ContentIdentity const& identity) const /*override*/;
-
-    virtual ~EntitlementCheck() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit EntitlementCheck(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager);
     // NOLINTEND
 
 public:

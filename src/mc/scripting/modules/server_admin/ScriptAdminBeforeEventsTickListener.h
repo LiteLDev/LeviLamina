@@ -30,8 +30,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onRunSystemTick(::ScriptDeferredFlushTracker&) /*override*/;
-
-    virtual ~ScriptAdminBeforeEventsTickListener() /*override*/ = default;
     // NOLINTEND
 
 public:

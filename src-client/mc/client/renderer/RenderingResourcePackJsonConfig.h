@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class IMinecraftEventing;
 class LinkedAssetValidator;
 class ResourcePackManager;
 namespace Puv { class LoadResultAny; }
@@ -45,19 +46,33 @@ public:
     ) = 0;
 
     virtual void _setDefaultIdentifierImpl(::HashedString const& defaultIdentifier) = 0;
-
-    virtual ~RenderingResourcePackJsonConfig() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI explicit RenderingResourcePackJsonConfig(::IMinecraftEventing& eventing);
+
+    MCNAPI ::HashedString const& getDefaultIdentifer() const;
+
+    MCNAPI void setDefaultIdentifier(::HashedString const& defaultIdentifier);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

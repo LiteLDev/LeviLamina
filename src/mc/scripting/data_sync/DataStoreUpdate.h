@@ -18,13 +18,12 @@ public:
 
 public:
     // prevent constructor by default
-    DataStoreUpdate(DataStoreUpdate const&);
     DataStoreUpdate();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataStoreUpdate(::Bedrock::DDUI::DataStoreUpdate&&);
+    MCAPI DataStoreUpdate(::Bedrock::DDUI::DataStoreUpdate const&);
 
     MCAPI ::Bedrock::DDUI::DataStoreUpdate& operator=(::Bedrock::DDUI::DataStoreUpdate&&);
 
@@ -38,7 +37,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::DDUI::DataStoreUpdate&&);
+    MCAPI void* $ctor(::Bedrock::DDUI::DataStoreUpdate const&);
     // NOLINTEND
 
 public:

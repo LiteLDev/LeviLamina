@@ -14,18 +14,12 @@ class FileSizePresetManager {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileSizePresetManager();
+    virtual ~FileSizePresetManager() = default;
 
     virtual ::std::unique_ptr<::Core::FileSizePresetToken>
     presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize) = 0;
 
     virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView filePath) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

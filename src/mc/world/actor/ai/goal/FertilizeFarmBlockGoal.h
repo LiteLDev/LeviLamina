@@ -10,6 +10,7 @@
 class BlockPos;
 class BlockSource;
 class Item;
+class Mob;
 // clang-format on
 
 class FertilizeFarmBlockGoal : public ::BaseMoveToBlockGoal {
@@ -22,6 +23,10 @@ public:
     ::ll::TypedStorage<4, 4, int>    mInventoryFertilizerIndex;
     ::ll::TypedStorage<4, 4, int>    mTimesFertilized;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FertilizeFarmBlockGoal();
 
 public:
     // virtual functions
@@ -39,16 +44,22 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
-
-    virtual ~FertilizeFarmBlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit FertilizeFarmBlockGoal(::Mob& mob);
+
     MCAPI int findInventorySlotForItem(::std::function<bool(::Item const&)> itemCallback) const;
 
     MCAPI bool tryFertilizeCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

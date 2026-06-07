@@ -29,15 +29,12 @@ public:
 public:
     // prevent constructor by default
     SentryEnvelopePayloadExceptionMechanism& operator=(SentryEnvelopePayloadExceptionMechanism const&);
+    SentryEnvelopePayloadExceptionMechanism(SentryEnvelopePayloadExceptionMechanism const&);
     SentryEnvelopePayloadExceptionMechanism();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SentryEnvelopePayloadExceptionMechanism(::SentryEnvelopePayloadExceptionMechanism const&);
-
-    MCNAPI ::SentryEnvelopePayloadExceptionMechanism& operator=(::SentryEnvelopePayloadExceptionMechanism&&);
-
     MCNAPI ~SentryEnvelopePayloadExceptionMechanism();
     // NOLINTEND
 
@@ -45,12 +42,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SentryEnvelopePayloadExceptionMechanism const&);
     // NOLINTEND
 
 public:

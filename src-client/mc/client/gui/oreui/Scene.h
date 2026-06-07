@@ -9,6 +9,7 @@
 #include "mc/client/gui/oreui/interface/IScene.h"
 #include "mc/client/gui/oreui/interface/RouteMode.h"
 #include "mc/client/gui/oreui/interface/ViewId.h"
+#include "mc/client/gui/oreui/routing/RouterAction.h"
 #include "mc/client/gui/screens/AbstractScene.h"
 #include "mc/client/renderer/screen/EyeRenderingModeBit.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -127,8 +128,6 @@ public:
     virtual void handleDirection(::DirectionId, float, float, ::FocusImpact) /*override*/;
 
     virtual void handleTextChar(::std::string const&, ::FocusImpact) /*override*/;
-
-    virtual void handleCaretLocation(int, ::FocusImpact) /*override*/;
 
     virtual void handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact) /*override*/;
 
@@ -278,6 +277,14 @@ public:
         ::std::optional<::OreUI::RouterLocation> const& previousLocation,
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
+
+    MCAPI void onRouteChanged(
+        ::std::optional<::OreUI::RouterLocation> const& previousLocation,
+        ::std::optional<::OreUI::RouterLocation> const& currentLocation,
+        ::OreUI::RouterAction
+    );
+
+    MCAPI void setScreenSetupCleanup(::std::unique_ptr<::AbstractScreenSetupCleanupStrategy> strategy);
     // NOLINTEND
 
 public:
@@ -358,8 +365,6 @@ public:
 
     MCFOLD void $handleTextChar(::std::string const&, ::FocusImpact);
 
-    MCFOLD void $handleCaretLocation(int, ::FocusImpact);
-
     MCFOLD void $handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact);
 
     MCFOLD void $setTextboxText(::std::string const&, ::TextboxTextUpdateReason);
@@ -410,13 +415,13 @@ public:
 
     MCFOLD ::ui::SceneType $getSceneType() const;
 
-    MCFOLD ::std::string $getScreenName() const;
+    MCAPI ::std::string $getScreenName() const;
 
     MCAPI bool $equalsScreenName(::std::string_view comparison) const;
 
     MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
 
-    MCFOLD ::std::string $getRawScreenName() const;
+    MCAPI ::std::string $getRawScreenName() const;
 
     MCFOLD ::std::string $getRoute() const;
 

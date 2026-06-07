@@ -25,15 +25,22 @@ public:
 
 public:
     // prevent constructor by default
-    TouchTapOrHoldGlyphButtonBinding(TouchTapOrHoldGlyphButtonBinding const&);
     TouchTapOrHoldGlyphButtonBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TouchTapOrHoldGlyphButtonBinding(::TouchTapOrHoldGlyphButtonBinding const&);
+
     MCAPI ::TouchTapOrHoldGlyphButtonBinding& operator=(::TouchTapOrHoldGlyphButtonBinding const&);
 
     MCAPI ~TouchTapOrHoldGlyphButtonBinding();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::TouchTapOrHoldGlyphButtonBinding const&);
     // NOLINTEND
 
 public:

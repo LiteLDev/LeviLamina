@@ -3,19 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptBookError; }
 namespace ScriptModuleMinecraft { struct ScriptBookPageContentError; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidItemStackError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -30,10 +27,6 @@ public:
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>>;
 
 public:
-    // prevent constructor by default
-    ScriptBookItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptBookItemComponent() /*override*/ = default;
@@ -42,11 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBookItemComponent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
-
     MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
     _getAuthor() const;
 
@@ -126,15 +114,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
     // NOLINTEND
 
 public:

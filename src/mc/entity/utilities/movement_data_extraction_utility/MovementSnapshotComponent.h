@@ -8,16 +8,16 @@ struct MovementSnapshotComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk1935ec;
+    ::ll::UntypedStorage<8, 16>  mUnkf998bb;
     ::ll::UntypedStorage<1, 1>   mUnk909d69;
     ::ll::UntypedStorage<1, 1>   mUnkfba5b6;
+    ::ll::UntypedStorage<1, 2>   mUnkf9bfaf;
     ::ll::UntypedStorage<4, 4>   mUnkaddc03;
     ::ll::UntypedStorage<4, 4>   mUnka7cd33;
     ::ll::UntypedStorage<4, 4>   mUnk7f3a7d;
     ::ll::UntypedStorage<4, 4>   mUnkc8b53c;
     ::ll::UntypedStorage<4, 4>   mUnk9b55e4;
     ::ll::UntypedStorage<4, 4>   mUnkdcf52d;
-    ::ll::UntypedStorage<4, 4>   mUnkbc2d7f;
     ::ll::UntypedStorage<4, 4>   mUnk655015;
     ::ll::UntypedStorage<4, 4>   mUnk470ef4;
     ::ll::UntypedStorage<4, 4>   mUnk7a5b2e;
@@ -55,7 +55,7 @@ public:
     ::ll::UntypedStorage<4, 12>  mUnkd70513;
     ::ll::UntypedStorage<4, 16>  mUnk1fee59;
     ::ll::UntypedStorage<8, 16>  mUnk5bcd09;
-    ::ll::UntypedStorage<8, 16>  mUnk3bf9dc;
+    ::ll::UntypedStorage<8, 24>  mUnk3bf9dc;
     ::ll::UntypedStorage<8, 24>  mUnkff91d9;
     ::ll::UntypedStorage<8, 24>  mUnk6587d6;
     ::ll::UntypedStorage<8, 24>  mUnk5bd1cb;
@@ -68,7 +68,7 @@ public:
     ::ll::UntypedStorage<4, 40>  mUnkba7c80;
     ::ll::UntypedStorage<4, 20>  mUnk618eb6;
     ::ll::UntypedStorage<8, 48>  mUnk4e5dd6;
-    ::ll::UntypedStorage<4, 48>  mUnkccce64;
+    ::ll::UntypedStorage<4, 72>  mUnkccce64;
     ::ll::UntypedStorage<8, 80>  mUnk97019d;
     ::ll::UntypedStorage<8, 56>  mUnkcc34f4;
     ::ll::UntypedStorage<8, 56>  mUnkee5855;

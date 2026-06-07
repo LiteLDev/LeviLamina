@@ -7,10 +7,10 @@
 struct TickingSystemWithInfo;
 // clang-format on
 
-struct StoreAbilitiesForPlayerInputSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
-};
+namespace StoreAbilitiesForPlayerInputSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createSystem();
+// NOLINTEND
+
+} // namespace StoreAbilitiesForPlayerInputSystem

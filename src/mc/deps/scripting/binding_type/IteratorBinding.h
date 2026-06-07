@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/binding_type/TaggedBinding.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting::Reflection { class IFunction; }
-// clang-format on
-
 namespace Scripting {
 
 struct IteratorBinding : public ::Scripting::TaggedBinding {
@@ -36,22 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~IteratorBinding();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI IteratorBinding(
-        ::std::string                                         iteratorClassName,
-        ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string iteratorClassName, ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback);
     // NOLINTEND
 
 public:

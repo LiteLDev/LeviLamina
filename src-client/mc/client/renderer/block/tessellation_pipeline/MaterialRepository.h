@@ -30,7 +30,8 @@ public:
         ::BlockMaterialInstancesComponent& materialInstance,
         ::AtlasItemManager const&          atlasItemManager,
         ::TextureShiftManager const&       textureShiftManager,
-        ::Experiments const&               experiments
+        ::Experiments const&               experiments,
+        bool                               fromBlockItemVisualComponent
     );
     // NOLINTEND
 

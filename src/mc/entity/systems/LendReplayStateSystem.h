@@ -34,12 +34,13 @@ MCAPI void _addReplayStateIfNoLongerRidingClientPredictedVehicle(
 );
 
 MCAPI void _cleanupLingeringReplayStateComponentsSystem(
-    ::entt::
-        type_list<::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>, ::Exclude<::PlayerComponent>>,
-    ::StrictEntityContext const&                                                entity,
-    ::Optional<::VehicleInputIntentComponent const>                             vehicleInputIntent,
-    ::ViewT<::StrictEntityContext, ::ReplayStateComponent>                      passengerView,
-    ::EntityModifier<::ReplayStateComponent, ::ReplayStateLenderFlagComponent>& mod
+    ::entt::type_list<
+        ::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>,
+        ::Exclude<::PlayerComponent>>                      entity,
+    ::StrictEntityContext const&                           vehicleInputIntent,
+    ::Optional<::VehicleInputIntentComponent const>        passengerView,
+    ::ViewT<::StrictEntityContext, ::ReplayStateComponent> mod,
+    ::EntityModifier<::ReplayStateComponent, ::ReplayStateLenderFlagComponent>&
 );
 
 MCAPI void _createAndAddReplayStateComponent(

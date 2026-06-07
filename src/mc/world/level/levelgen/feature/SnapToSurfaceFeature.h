@@ -31,6 +31,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedSurfaceBlocks;
     ::ll::TypedStorage<1, 1, bool>                              mAllowAirPlacement;
     ::ll::TypedStorage<1, 1, bool>                              mAllowUnderwaterPlacement;
+    ::ll::TypedStorage<1, 1, bool>                              mEmbedInSurface;
     // NOLINTEND
 
 public:
@@ -44,11 +45,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SnapToSurfaceFeature();
+
     MCAPI ::std::optional<::BlockPos> _findSnapPos(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::SnapToSurfaceFeature::Surface targetSurface
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -35,8 +35,18 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // NOLINTEND
 
-    virtual ~TrimDataPacket() /*override*/;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TrimDataPacket();
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::vector<::TrimMaterial> const& getTrimMaterials() const;
+
+    MCFOLD ::std::vector<::TrimPattern> const& getTrimPatterns() const;
+#endif
     // NOLINTEND
 
 public:
@@ -47,9 +57,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -26,13 +26,13 @@ public:
 
 public:
     // prevent constructor by default
-    InsideBlockEventMap& operator=(InsideBlockEventMap const&);
+    InsideBlockEventMap(InsideBlockEventMap const&);
     InsideBlockEventMap();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InsideBlockEventMap(::InsideBlockEventMap const&);
+    MCAPI InsideBlockEventMap(::InsideBlockEventMap&&);
 
     MCAPI InsideBlockEventMap(
         ::Block const&                  block,
@@ -43,13 +43,35 @@ public:
         ::ActorDefinitionTrigger const& exitedEvent
     );
 
+    MCAPI ::gsl::not_null<::Block const*> getBlock() const;
+
+    MCFOLD ::ActorDefinitionTrigger const& getEnteredEvent() const;
+
+    MCFOLD ::ActorDefinitionTrigger const& getExitedEvent() const;
+
+    MCAPI bool isActorCurrentlyInside() const;
+
+    MCAPI bool isIgnoringStates() const;
+
+    MCFOLD bool isWatchingIfActorEnters() const;
+
+    MCFOLD bool isWatchingIfActorExits() const;
+
+    MCAPI ::InsideBlockEventMap& operator=(::InsideBlockEventMap const&);
+
+    MCAPI void setCurrentlyInside(bool isInside);
+
+    MCAPI void setWasInside(bool wasInside);
+
+    MCAPI bool wasActorInsideLastTick() const;
+
     MCAPI ~InsideBlockEventMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::InsideBlockEventMap const&);
+    MCAPI void* $ctor(::InsideBlockEventMap&&);
 
     MCAPI void* $ctor(
         ::Block const&                  block,

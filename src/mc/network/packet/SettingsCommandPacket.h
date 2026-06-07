@@ -23,13 +23,6 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    SettingsCommandPacket();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,18 +59,13 @@ public:
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
-#ifdef LL_PLAT_S
-    virtual ~SettingsCommandPacket() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~SettingsCommandPacket() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SettingsCommandPacket();
+
 #ifdef LL_PLAT_C
     MCAPI explicit SettingsCommandPacket(::SettingsCommandPacketPayload payload);
 #endif
@@ -86,15 +74,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::SettingsCommandPacketPayload payload);
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

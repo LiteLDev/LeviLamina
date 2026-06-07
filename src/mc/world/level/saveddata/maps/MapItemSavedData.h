@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/BlockPos.h"
@@ -12,10 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Actor;
 class BlockSource;
 class CompoundTag;
-class Dimension;
 class ItemStack;
 class Level;
 class LevelStorage;
@@ -23,7 +22,6 @@ class MapDecoration;
 class MapItemTrackedActor;
 class Packet;
 class Player;
-class Random;
 class SpinLockImpl;
 class Vec3;
 struct ClientTerrainPixel;
@@ -134,12 +132,15 @@ public:
         ::MapItemTrackedActor::UniqueId const& uniqueId
     ) const;
 
-    MCAPI schar _calculateRotation(
-        float                                  yRot,
+    MCAPI ::MapItemSavedData::MapDecorationTypeAndRotation _calculatePlayerDecorationTypeAndRotation(
         ::MapDecoration::Type                  type,
-        ::MapItemTrackedActor::UniqueId const& uniqueId,
-        ::Random&                              rng
+        float                                  yRot,
+        int                                    xDeltaFromCenter,
+        int                                    yDeltaFromCenter,
+        ::MapItemTrackedActor::UniqueId const& uniqueId
     ) const;
+
+    MCAPI void _clampOriginWithinLimitedWorld(::BlockPos& origin, ::Vec3 const& worldCenter, int scaledMapSize) const;
 
     MCAPI void _deserializeData(::CompoundTag const& tag);
 
@@ -148,13 +149,6 @@ public:
     MCAPI void _removeDecoration(::MapItemTrackedActor::UniqueId const& id);
 
     MCAPI void _removeTrackedMapEntity(::MapItemTrackedActor::UniqueId const& key);
-
-#ifdef LL_PLAT_C
-    MCAPI bool _replaceExistingDecoration(
-        ::MapItemTrackedActor::UniqueId const&    id,
-        ::std::shared_ptr<::MapDecoration> const& newDecoration
-    );
-#endif
 
     MCAPI bool
     _updateTrackedEntityDecoration(::BlockSource& region, ::std::shared_ptr<::MapItemTrackedActor> trackedActor);
@@ -171,12 +165,38 @@ public:
         ::MapDecoration::Type& type
     );
 
+#ifdef LL_PLAT_C
+    MCAPI void
+    addDecoration(::MapItemTrackedActor::UniqueId const& id, ::std::shared_ptr<::MapDecoration> const& newDecoration);
+#endif
+
     MCAPI ::std::shared_ptr<::MapItemTrackedActor>
     addTrackedMapEntity(::Actor& entity, ::MapDecoration::Type decorationType);
 
+    MCAPI ::std::shared_ptr<::MapItemTrackedActor>
+    addTrackedMapEntity(::BlockPos const& position, ::BlockSource& region, ::MapDecoration::Type decorationType);
+
+    MCFOLD bool areClientPixelsDirty() const;
+
     MCAPI void checkNeedsResampling();
 
+    MCAPI void copyMapData(::MapItemSavedData const& map);
+
+    MCAPI void deserialize(::CompoundTag const& tag);
+
+    MCAPI void enableUnlimitedTracking();
+
+    MCFOLD ::std::vector<::ClientTerrainPixel>& getClientPixels();
+
+    MCAPI ::SpinLockImpl* getClientSamplingLock();
+
     MCAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
+
+    MCFOLD ::ActorUniqueID getMapId() const;
+
+    MCFOLD ::ActorUniqueID getParentMapId() const;
+
+    MCAPI ::buffer_span<uint> getPixels() const;
 
     MCAPI ::std::shared_ptr<::MapItemTrackedActor> getTrackedMapEntity(::Actor& entity);
 
@@ -184,16 +204,46 @@ public:
 
     MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
 
+    MCAPI bool hasParentMap() const;
+
+    MCAPI bool isAdjacent(::MapItemSavedData const& other, int dir) const;
+
+    MCAPI bool isChunkAllEmpty(::MapItemSavedData::ChunkBounds bb) const;
+
+    MCAPI bool isFullyExplored() const;
+
+    MCAPI bool isLocked() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD bool isPixelDataDirty() const;
+#endif
+
+    MCAPI bool needsResampling() const;
+
+    MCAPI void removeTrackedMapEntity(::BlockPos const& position);
+
 #ifdef LL_PLAT_C
     MCAPI void replaceDecorations(
         ::std::vector<::std::shared_ptr<::MapDecoration>>     decorations,
         ::std::vector<::MapItemTrackedActor::UniqueId> const& uniqueIds
     );
+
+    MCAPI void replacePixels(::buffer_span<uint> mapPixels, uint startX, uint startY, uint width, uint height);
 #endif
 
     MCAPI void save(::LevelStorage& storage);
 
     MCAPI void serialize(::CompoundTag& tag) const;
+
+    MCFOLD void setClientPixelsDirty(bool isDirty);
+
+#ifdef LL_PLAT_C
+    MCFOLD void setDimensionId(::DimensionType dimension);
+#endif
+
+    MCAPI void setDirtyForSaveAndPixelData();
+
+    MCAPI void setLocked();
 
     MCAPI void setMapSection(::buffer_span<uint> src, ::MapItemSavedData::ChunkBounds bb);
 
@@ -206,14 +256,32 @@ public:
         ::BlockPos const& worldCenter
     );
 
+    MCAPI bool setPixel(uint color, uint x, uint y);
+
+#ifdef LL_PLAT_C
+    MCAPI void setPixelDataClean();
+#endif
+
+    MCAPI void setScale(int mapScale);
+
+    MCAPI void setScaleAndParentMapId(int mapScale, ::ActorUniqueID parentMapId);
+
     MCAPI void tickByBlock(::BlockPos const& pos, ::BlockSource& region);
 
     MCAPI void tickCarriedBy(::Actor& player, ::CompoundTag const* item);
+
+    MCAPI void trySave(::LevelStorage& storage);
+
+    MCAPI ~MapItemSavedData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::AABB getMapWorldBounds(::BlockPos const& mapOrigin, int blocksPerTexel, int offset);
+#endif
+
     MCAPI static ::std::string getSerializationKey(::ActorUniqueID id);
     // NOLINTEND
 
@@ -221,5 +289,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorUniqueID mapId, bool isDLCworld);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

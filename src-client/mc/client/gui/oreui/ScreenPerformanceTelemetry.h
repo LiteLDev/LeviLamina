@@ -21,6 +21,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::optional<::OreUI::DataTracker> completeProfilingScope();
+
+    MCAPI void onEventfulNavigation();
+
+    MCAPI void onFirstContentfulPaint(double currentTimeS);
+
+    MCAPI void onFirstMeaningfulPaint(double currentTimeS);
+
+    MCAPI void onSuspend();
+
+    MCAPI void onUneventfulNavigation();
+
     MCAPI void startProfilingScope(
         ::std::string const& telemetryIdPreviousScreen,
         ::std::string const& telemetryIdNewScreen,

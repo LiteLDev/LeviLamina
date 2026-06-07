@@ -61,6 +61,12 @@ public:
 
     virtual ::mce::Color getPlayerColor(::ActorUniqueID playerId) = 0;
 
+    virtual ::Scripting::Result_deprecated<void>
+    setVanillaBiomeColorMap(::std::unordered_map<::std::string, ::mce::Color> const& colorMap) = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+    updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color) = 0;
+
     virtual ::std::string generateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition) = 0;
 
     virtual ::std::vector<::Editor::Network::PlayerMarkerInfo> getPlayerMarkers(::mce::UUID const& minimapId) = 0;

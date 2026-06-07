@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class AttributeInstanceHandle;
 class BaseAttributeMap;
 class BinaryStream;
@@ -26,10 +27,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::AttributeData>> mAttributeData;
     ::ll::TypedStorage<8, 8, ::PlayerInputTick>               mTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateAttributesPacket();
 
 public:
     // virtual functions
@@ -48,17 +45,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UpdateAttributesPacket();
+
+    MCAPI UpdateAttributesPacket(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
+
     MCAPI UpdateAttributesPacket(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,
         ::std::vector<::AttributeInstanceHandle> const& dirtyData,
         ::PlayerInputTick                               tick
     );
+
+#ifdef LL_PLAT_C
+    MCFOLD ::std::vector<::AttributeData> const& getAttributeData() const;
+
+    MCFOLD ::ActorRuntimeID getRuntimeId() const;
+
+    MCAPI uint64 getTick() const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
+
     MCAPI void* $ctor(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,

@@ -11,6 +11,7 @@
 // clang-format off
 class Block;
 class BlockActor;
+class ChunkViewSource;
 namespace ClientBlockPipeline { struct BlockVolumeArea; }
 namespace ClientBlockPipeline::WorldView { struct LocalInfo; }
 // clang-format on
@@ -42,17 +43,29 @@ public:
 
     virtual ::Block const& getBlock(::BlockPos const& relativePos) const /*override*/;
 
+    virtual ::Block const& getExtraBlock(::BlockPos const& relativePos) const /*override*/;
+
     virtual ::BlockActor const* getBlockActor(::BlockPos const& relativePos) const /*override*/;
 
     virtual void offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea& localArea) const /*override*/;
 
-    virtual ::BlockPos getRelativeMin(::BlockPos const& worldMin) const /*override*/;
+    virtual ::BlockPos getRelativeMin(::BlockPos const&) const /*override*/;
 
-    virtual ::BlockPos getRelativeMax(::BlockPos const& worldMin) const /*override*/;
+    virtual ::BlockPos getRelativeMax(::BlockPos const&) const /*override*/;
 
     virtual bool isInBounds(::BlockPos const& relativePos, ::BlockPos const&) const /*override*/;
+    // NOLINTEND
 
-    virtual ~AABB() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI AABB(::ChunkViewSource& viewSource, ::BlockPos aabbWorldMin, ::BlockPos aabbWorldMax);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ChunkViewSource& viewSource, ::BlockPos aabbWorldMin, ::BlockPos aabbWorldMax);
     // NOLINTEND
 
 public:
@@ -62,13 +75,15 @@ public:
 
     MCAPI ::Block const& $getBlock(::BlockPos const& relativePos) const;
 
+    MCAPI ::Block const& $getExtraBlock(::BlockPos const& relativePos) const;
+
     MCAPI ::BlockActor const* $getBlockActor(::BlockPos const& relativePos) const;
 
     MCAPI void $offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea& localArea) const;
 
-    MCAPI ::BlockPos $getRelativeMin(::BlockPos const& worldMin) const;
+    MCAPI ::BlockPos $getRelativeMin(::BlockPos const&) const;
 
-    MCAPI ::BlockPos $getRelativeMax(::BlockPos const& worldMin) const;
+    MCAPI ::BlockPos $getRelativeMax(::BlockPos const&) const;
 
     MCAPI bool $isInBounds(::BlockPos const& relativePos, ::BlockPos const&) const;
     // NOLINTEND

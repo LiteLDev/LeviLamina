@@ -9,6 +9,7 @@
 // clang-format off
 class Block;
 class BlockSource;
+class Vec3;
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { struct GameTestError; }
 // clang-format on
@@ -33,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ~MinecraftReportGameListener() /*override*/ = default;
 
-    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&) /*override*/;
 
     virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
@@ -49,6 +50,8 @@ public:
 
     MCNAPI void _say(::std::string const& chatColor, ::std::string const& text);
 
+    MCNAPI void _showRedBox(::std::string const& text, ::Vec3 const& position);
+
     MCNAPI void _spawnBeacon(::Block const& glassType);
 
     MCNAPI void _spawnLectern(::std::string const& text);
@@ -59,7 +62,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
 
     MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 

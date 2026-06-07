@@ -11,6 +11,7 @@
 // clang-format off
 class BoundingBox;
 class Vec3;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptBlockMaskList; }
 namespace Editor::ScriptModule { class ScriptContiguousSelectionProperties; }
 namespace Editor::ScriptModule { class ScriptQuickExtrudeProperties; }
@@ -20,6 +21,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptListBlockVolume; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
@@ -45,6 +47,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptBlockUtilityService(
+        ::Editor::ServiceProviderCollection&  serviceProviders,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+
     MCNAPI ::Scripting::Result_deprecated<void> _fillVolume(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
@@ -71,6 +78,8 @@ public:
     _getContiguousSelection(
         ::std::optional<::Editor::ScriptModule::ScriptContiguousSelectionProperties>& scriptContiguousProperties
     );
+
+    MCNAPI ::BoundingBox _getDimensionLocationBoundingBox() const;
 
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>>
@@ -109,6 +118,8 @@ public:
         bool                                                                ignoreNoCollision,
         ::std::optional<::Editor::ScriptModule::ScriptBlockMaskList> const& optionalScriptBlockMask
     ) const;
+
+    MCNAPI ~ScriptBlockUtilityService();
     // NOLINTEND
 
 public:
@@ -117,6 +128,19 @@ public:
     MCNAPI static ::Scripting::EnumBinding bindContiguousSelectionTypeEnums();
 
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

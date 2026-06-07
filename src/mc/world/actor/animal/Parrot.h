@@ -39,8 +39,6 @@ public:
     virtual float getShadowRadius() const /*override*/;
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
-
-    virtual ~Parrot() /*override*/ = default;
     // NOLINTEND
 
 public:

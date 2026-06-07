@@ -4,10 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Exclude.h"
-#include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,14 +17,10 @@ struct ActorHeadInWaterFlagComponent;
 struct CanStandOnSnowFlagComponent;
 struct HasLightweightFamilyFlagComponent;
 struct ImmuneToLavaDragComponent;
-struct InterpolateMovementNeededComponent;
 struct JumpFromGroundRequestComponent;
 struct MobEffectsComponent;
-struct MobFlagComponent;
-struct MobIsJumpingFlagComponent;
 struct MobJumpComponent;
 struct OnGroundFlagComponent;
-struct PassengerComponent;
 struct PlayerComponent;
 struct SquidFlagComponent;
 struct StateVectorComponent;
@@ -42,7 +35,19 @@ namespace MobJumpSystem {
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createCleanupSystem();
 
+MCAPI ::TickingSystemWithInfo createDecrementNoJumpDelaySystem();
+
+MCAPI ::TickingSystemWithInfo createMobJumpSystem();
+
+MCAPI ::TickingSystemWithInfo createResetNoJumpDelaySystem();
+
 MCAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
+
+MCAPI void doJumpFromGround(
+    ::StrictEntityContext const&                       context,
+    ::MobJumpComponent&                                mobJumpComponent,
+    ::EntityModifier<::JumpFromGroundRequestComponent> mod
+);
 
 MCAPI void doMobJumpSystem(
     ::StrictEntityContext const&                          context,
@@ -66,7 +71,7 @@ MCAPI void doMobJumpSystem(
     ::IConstBlockSource const&                            region
 );
 
-MCAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
+MCAPI void doResetNoJumpDelaySystem(::StrictEntityContext const& mobJumpComponent, ::MobJumpComponent&);
 
 MCAPI void doSwimmerSwimUp(
     ::Optional<::JumpControlComponent const> const& jumpControl,
@@ -86,20 +91,15 @@ MCAPI bool shouldAscendLadder(
     ::IConstBlockSource const&                                   region
 );
 
-MCAPI void tickDecrementNoJumpDelaySystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
-        ::MobJumpComponent> view
+MCAPI bool shouldDoLavaSwimUp(
+    ::Optional<::ImmuneToLavaDragComponent const> const& isImmuneToLavaDrag,
+    ::AABBShapeComponent const&                          aabbShape,
+    ::SubBBsComponent const&                             subBBs,
+    ::IConstBlockSource const&                           region
 );
 
-MCAPI void tickResetNoJumpDelaySystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
-        ::Exclude<::MobIsJumpingFlagComponent, ::PassengerComponent>,
-        ::MobJumpComponent> view
-);
+MCAPI bool
+shouldJumpFromGround(::Optional<::OnGroundFlagComponent const> const& onGround, ::MobJumpComponent const& mobJump);
 // NOLINTEND
 
 } // namespace MobJumpSystem

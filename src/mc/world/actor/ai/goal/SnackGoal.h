@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/TempEPtr.h"
-#include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,7 @@ class Mob;
 class Path;
 // clang-format on
 
-class SnackGoal : public ::Goal {
+class SnackGoal : public ::BaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,11 +58,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    SnackGoal(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
+
     MCAPI bool _hasSnackableItems();
 
-    MCAPI bool _isSnackableItem(::ItemStack const& item) const;
-
     MCFOLD void _updateHand(::ItemStack const& item);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
     // NOLINTEND
 
 public:

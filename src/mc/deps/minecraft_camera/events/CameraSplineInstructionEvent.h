@@ -11,20 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 112, ::CameraInstructionOptions::SplineInstruction> mCameraSplineInstruction;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~CameraSplineInstructionEvent();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
 };

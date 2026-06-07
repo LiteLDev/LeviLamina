@@ -14,8 +14,31 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FogVolumetricCoefficientSetting();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FogVolumetricCoefficientSetting(::mce::Color const& scattering, ::mce::Color const& absorption);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::FogVolumetricCoefficientSetting
+    lerp(::FogVolumetricCoefficientSetting const& src, ::FogVolumetricCoefficientSetting const& dst, float alpha);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FogVolumetricCoefficientSetting const& ZERO_SETTING();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::mce::Color const& scattering, ::mce::Color const& absorption);
     // NOLINTEND
 };

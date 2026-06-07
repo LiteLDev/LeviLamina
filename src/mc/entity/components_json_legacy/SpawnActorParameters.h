@@ -28,12 +28,11 @@ public:
 public:
     // prevent constructor by default
     SpawnActorParameters& operator=(SpawnActorParameters const&);
+    SpawnActorParameters();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnActorParameters();
-
     MCAPI SpawnActorParameters(::SpawnActorParameters&&);
 
     MCAPI SpawnActorParameters(::SpawnActorParameters const&);
@@ -50,14 +49,14 @@ public:
 
     MCAPI void setSpawnTimeMin(int const& value);
 
+    MCAPI bool spawnsItemStack() const;
+
     MCAPI ~SpawnActorParameters();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SpawnActorParameters&&);
 
     MCAPI void* $ctor(::SpawnActorParameters const&);

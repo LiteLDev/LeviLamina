@@ -22,16 +22,4 @@ public:
     bool                                 mUsesEntityFactory;
     ::std::array<::std::vector<uint>, 6> mAccessGroups;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~Dependencies();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

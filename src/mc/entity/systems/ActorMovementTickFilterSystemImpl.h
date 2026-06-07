@@ -28,6 +28,8 @@ MCAPI void designateSimulatedEntities(
     ::ViewT<::StrictEntityContext, ::Include<::ShouldBeSimulatedComponent>>       shouldBeSimulated,
     ::EntityModifier<::InterpolateMovementNeededComponent>                        modifier
 );
+
+MCAPI bool shouldUseLegacyBehavior();
 // NOLINTEND
 
 } // namespace ActorMovementTickFilterSystemImpl

@@ -42,8 +42,6 @@ public:
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::RenderParams&                                   renderParams
     ) /*override*/;
-
-    virtual ~EmitterRateManualComponent() /*override*/ = default;
     // NOLINTEND
 
 public:

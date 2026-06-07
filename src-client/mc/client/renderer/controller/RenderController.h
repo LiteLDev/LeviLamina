@@ -11,6 +11,7 @@
 class DataDrivenGeometry;
 class DataDrivenModel;
 class ExpressionNode;
+class HashedString;
 class RenderParams;
 class Vec4;
 namespace Json { class Value; }
@@ -44,11 +45,12 @@ public:
 public:
     // prevent constructor by default
     RenderController& operator=(RenderController const&);
-    RenderController();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI RenderController();
+
     MCNAPI RenderController(::RenderController const&);
 
     MCNAPI explicit RenderController(::std::string const& name);
@@ -62,11 +64,17 @@ public:
 
     MCNAPI ::std::vector<::std::shared_ptr<::DataDrivenGeometry const>> getDataDrivenGeometries() const;
 
+    MCNAPI bool getFilterLighting() const;
+
     MCNAPI ::std::shared_ptr<::DataDrivenGeometry> getGeometry(::RenderParams& renderParams) const;
 
     MCNAPI ::mce::Color getHurtColor(::RenderParams& renderParams) const;
 
+    MCNAPI bool getIgnoreLighting() const;
+
     MCNAPI float getLightColorMultiplier(::RenderParams& renderParams, float const& defaultValue) const;
+
+    MCNAPI ::HashedString const& getName() const;
 
     MCNAPI ::mce::Color getOnFireColor(::RenderParams& renderParams) const;
 
@@ -75,6 +83,8 @@ public:
     MCNAPI ::mce::Color getTintColor(::RenderParams& renderParams) const;
 
     MCNAPI ::Vec4 getUVAnim(::RenderParams& renderParams, ::Vec4 const& defaultUVAnim) const;
+
+    MCNAPI bool init(::DataDrivenModel& model);
 
     MCNAPI bool parse(::Json::Value const& root, ::MolangVersion molangVersion);
 
@@ -115,6 +125,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::RenderController const&);
 
     MCNAPI void* $ctor(::std::string const& name);

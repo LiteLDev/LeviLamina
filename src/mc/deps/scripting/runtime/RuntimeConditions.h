@@ -18,33 +18,38 @@ public:
 
 public:
     // prevent constructor by default
-    RuntimeConditions& operator=(RuntimeConditions const&);
     RuntimeConditions();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RuntimeConditions(::Scripting::RuntimeConditions&& rhs);
+
     MCAPI RuntimeConditions(::Scripting::RuntimeConditions const& rhs);
 
     MCAPI explicit RuntimeConditions(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
 
+    MCFOLD bool empty() const;
+
+#ifdef LL_PLAT_S
+    MCFOLD ::std::vector<::Scripting::RuntimeCondition> const& get() const;
+#endif
+
     MCAPI ::Scripting::RuntimeConditions getMissing(::Scripting::RuntimeConditions const& runtimeConditions);
 
-    MCAPI ~RuntimeConditions();
+    MCAPI ::Scripting::RuntimeConditions& operator=(::Scripting::RuntimeConditions const& rhs);
+
+    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Scripting::RuntimeConditions&& rhs);
+
     MCAPI void* $ctor(::Scripting::RuntimeConditions const& rhs);
 
-    MCAPI void* $ctor(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD void* $ctor(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
     // NOLINTEND
 };
 

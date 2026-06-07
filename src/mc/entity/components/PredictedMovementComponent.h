@@ -81,11 +81,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_S
         virtual ~HistoryItem() = default;
-#else // LL_PLAT_C
-        virtual ~HistoryItem();
-#endif
 
         virtual bool isValidStartItem() const = 0;
 
@@ -102,12 +98,6 @@ public:
         virtual float getYHeadRot() const = 0;
 
         virtual bool isOnGround() const = 0;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -299,6 +289,20 @@ public:
             ::std::chrono::steady_clock::time_point const& receiveTimepoint
         );
 
+        MCFOLD ::std::deque<::std::shared_ptr<::PredictedMovementComponent::HistoryItem const>> const&
+        getHistory() const;
+
+#ifdef LL_PLAT_C
+        MCFOLD uint64 getHistorySize() const;
+
+        MCAPI ::std::tuple<
+            ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const>,
+            ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const>>
+        getLastTwoHistoryItems() const;
+#endif
+
+        MCAPI void pruneHistory(uint beforeSequenceId);
+
         MCAPI ::std::string toString();
         // NOLINTEND
     };
@@ -340,8 +344,6 @@ public:
         virtual float getYHeadRot() const /*override*/;
 
         virtual bool isOnGround() const /*override*/;
-
-        virtual ~MotionHistoryItem() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -382,17 +384,17 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI bool $isValidStartItem() const;
+        MCFOLD bool $isValidStartItem() const;
 
         MCAPI bool $isAddedActorItem() const;
 
-        MCAPI bool $isMotionHintItem() const;
+        MCFOLD bool $isMotionHintItem() const;
 
         MCFOLD ::Vec3 const& $getPos() const;
 
         MCFOLD ::Vec2 const& $getRot() const;
 
-        MCAPI float $getYHeadRot() const;
+        MCFOLD float $getYHeadRot() const;
 
         MCFOLD bool $isOnGround() const;
 #endif
@@ -440,8 +442,6 @@ public:
         virtual float getYHeadRot() const /*override*/;
 
         virtual bool isOnGround() const /*override*/;
-
-        virtual ~MoveHistoryItem() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -457,7 +457,7 @@ public:
 
         MCAPI ::Vec2 const& $getRot() const;
 
-        MCAPI float $getYHeadRot() const;
+        MCFOLD float $getYHeadRot() const;
 
         MCFOLD bool $isOnGround() const;
 
@@ -470,6 +470,12 @@ public:
         MCNAPI static void** $vftable();
         // NOLINTEND
     };
+
+    using HistoryItem = ::PredictedMovementComponent::HistoryItem;
+
+    using MotionHistoryItem = ::PredictedMovementComponent::MotionHistoryItem;
+
+    using MoveHistoryItem = ::PredictedMovementComponent::MoveHistoryItem;
 
     using PredictionEventsListenerFunction = ::std::function<void(::MovePredictionType)>;
 
@@ -492,9 +498,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PredictedMovementComponent();
+
     MCAPI void _debugLog(
         ::PredictedMovementSystemParams&                       params,
         ::PredictedMovementComponent::PredictionDbgData const& debugData
+    ) const;
+
+    MCAPI void _debugLog(
+        ::PredictedMovementSystemParams&                       params,
+        ::MovePredictionType                                   type,
+        ::PredictedMovementComponent::PredictionDbgWindowData& debugWindowData
     ) const;
 
     MCAPI bool _tryInterpolate(
@@ -506,11 +520,31 @@ public:
 
     MCAPI void
     tickNextPosition(::PredictedMovementSystemParams& params, ::std::chrono::steady_clock::time_point const& timepoint);
+
+    MCAPI ~PredictedMovementComponent();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool isPredictedMovementEnabled(::PredictedMovementComponent const* component);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>& mGlobalRuntimePredictionData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

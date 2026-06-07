@@ -4,7 +4,7 @@
 
 namespace CerealHelpers {
 
-template <typename T0, typename T1, typename T2>
+template <typename T0, typename T1, typename T2, typename T3>
 class KeyFrameConstraint {};
 
 } // namespace CerealHelpers

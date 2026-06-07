@@ -10,15 +10,30 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+struct CopperBlockSet;
 // clang-format on
 
 class CopperLightningRodBlock : public ::CopperBlock<::LightningRodBlock> {
 public:
+    // prevent constructor by default
+    CopperLightningRodBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    // NOLINTEND
 
-    virtual ~CopperLightningRodBlock() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CopperLightningRodBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
     // NOLINTEND
 
 public:

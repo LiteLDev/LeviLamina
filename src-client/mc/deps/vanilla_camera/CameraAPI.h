@@ -76,14 +76,20 @@ public:
     virtual bool isInWall(::Vec3 const& pos) const /*override*/;
 
     virtual bool isAlive(::WeakRef<::EntityContext> const actorRef) const /*override*/;
-
-    virtual ~CameraAPI() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor const* _getActor(::WeakRef<::EntityContext> actorRef) const;
+    MCAPI explicit CameraAPI(::IClientInstance& client);
+
+    MCFOLD ::Actor const* _getActor(::WeakRef<::EntityContext> actorRef) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::IClientInstance& client);
     // NOLINTEND
 
 public:

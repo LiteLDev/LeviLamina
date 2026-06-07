@@ -68,29 +68,64 @@ public:
         virtual ~ResourceHelper();
 #endif
 
+#ifdef LL_PLAT_S
+        virtual ::ResourceLocation getBackCompatResourceLocation(::ResourceLocation const&) const;
+#else // LL_PLAT_C
         virtual ::ResourceLocation getBackCompatResourceLocation(::ResourceLocation const& resourceLocation) const;
+#endif
 
+#ifdef LL_PLAT_S
+        virtual ::std::optional<uint> getPackStackIndexOfNoExtensionOrImage(::ResourceLocation const&) const;
+#else // LL_PLAT_C
         virtual ::std::optional<uint>
         getPackStackIndexOfNoExtensionOrImage(::ResourceLocation const& resourceLocation) const;
+#endif
 
+#ifdef LL_PLAT_S
+        virtual ::std::optional<uint> getPackStackIndexOfTextureSet(::ResourceLocation const&) const;
+#else // LL_PLAT_C
         virtual ::std::optional<uint> getPackStackIndexOfTextureSet(::ResourceLocation const& resourceLocation) const;
+#endif
 
+#ifdef LL_PLAT_S
+        virtual bool
+        loadResourceOfExtensions(::ResourceLocationPair const&, ::std::string&, ::gsl::span<::std::string const>) const;
+#else // LL_PLAT_C
         virtual bool loadResourceOfExtensions(
             ::ResourceLocationPair const&    resourceLocationPair,
             ::std::string&                   resourceStream,
             ::gsl::span<::std::string const> extensions
         ) const;
+#endif
 
+#ifdef LL_PLAT_S
+        virtual bool loadResource(::ResourceLocation const&, ::std::string&) const;
+#else // LL_PLAT_C
         virtual bool loadResource(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
+#endif
 
+#ifdef LL_PLAT_S
+        virtual bool loadImageResourceFromMemory(
+            ::std::shared_ptr<::cg::ImageResource>&,
+            ::std::string const&,
+            ::ResourceLocationPair const&,
+            ::mce::ImageFormat const&
+        ) const;
+#else // LL_PLAT_C
         virtual bool loadImageResourceFromMemory(
             ::std::shared_ptr<::cg::ImageResource>& out,
             ::std::string const&                    buffer,
             ::ResourceLocationPair const&           resourceLocationPair,
             ::mce::ImageFormat const&               desiredImageFormat
         ) const;
+#endif
 
+#ifdef LL_PLAT_S
+        virtual bool loadCompressedImageFromMemory(::cg::CompressedImageBuffer&, ::std::string const&) const;
+#else // LL_PLAT_C
         virtual bool loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;
+#endif
+
         // NOLINTEND
 
     public:
@@ -162,11 +197,11 @@ public:
     );
 
     MCNAPI static bool _loadImageLayers(
-        ::ResourceLocation const&                                        resourceLocation,
-        ::std::shared_ptr<::cg::TextureSetDefinition>                    textureSetDefinition,
-        ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const& loadMode,
+        ::ResourceLocation const&                                        textureSetDefinition,
+        ::std::shared_ptr<::cg::TextureSetDefinition>                    loadMode,
+        ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const& resourceHelper,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ColorPipeline const&,
-        ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
+        ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const&
     );
 
     MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(

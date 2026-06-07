@@ -27,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FutureAny& operator=(FutureAny const&);
-    FutureAny();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FutureAny() /*override*/;
@@ -40,6 +35,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FutureAny();
+
+    MCNAPI FutureAny(::Scripting::FutureAny&& rhs);
+
     MCNAPI FutureAny(::Scripting::FutureAny const& rhs);
 
     MCNAPI FutureAny(
@@ -56,12 +55,22 @@ public:
 
     MCNAPI bool isRejected() const;
 
+    MCNAPI bool isResolved() const;
+
     MCNAPI ::Scripting::FutureAny& operator=(::Scripting::FutureAny&& rhs);
+
+    MCNAPI ::Scripting::FutureAny& operator=(::Scripting::FutureAny const& rhs);
+
+    MCNAPI bool valid() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::Scripting::FutureAny&& rhs);
+
     MCNAPI void* $ctor(::Scripting::FutureAny const& rhs);
 
     MCNAPI void* $ctor(

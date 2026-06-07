@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/resource/PackType.h"
+
 // auto generated forward declare list
 // clang-format off
 class ResourceLocation;
+struct InvalidPacksFilterGroup;
 // clang-format on
 
 class InvalidPacks {
@@ -20,17 +24,28 @@ public:
 public:
     // prevent constructor by default
     InvalidPacks& operator=(InvalidPacks const&);
-    InvalidPacks(InvalidPacks const&);
     InvalidPacks();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::InvalidPacks& operator=(::InvalidPacks&&);
+    MCNAPI InvalidPacks(::InvalidPacks const&);
+
+    MCNAPI void addInvalidPack(::ResourceLocation const& packLocation, ::PackType type);
+
+    MCNAPI ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
+
+    MCNAPI ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const;
 
     MCNAPI void untrackInvalidPack(::ResourceLocation const& packLocation);
 
     MCNAPI ~InvalidPacks();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::InvalidPacks const&);
     // NOLINTEND
 
 public:

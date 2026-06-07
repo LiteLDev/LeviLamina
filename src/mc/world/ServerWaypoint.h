@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/math/Vec2.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/Waypoint.h"
 #include "mc/world/level/WorldPosition.h"
@@ -11,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+class Vec3;
 // clang-format on
 
 class ServerWaypoint : public ::Waypoint {
@@ -27,10 +29,11 @@ public:
         // bitfield representation
         Position                = 1u << 0,
         Visibility              = 1u << 1,
-        TextureId               = 1u << 2,
-        Color                   = 1u << 3,
-        ClientPositionAuthority = 1u << 4,
-        All                     = Position | Visibility | TextureId | Color | ClientPositionAuthority,
+        TexturePath             = 1u << 2,
+        IconSize                = 1u << 3,
+        Color                   = 1u << 4,
+        ClientPositionAuthority = 1u << 5,
+        All                     = Position | Visibility | TexturePath | IconSize | Color | ClientPositionAuthority,
     };
 
     struct Payload {
@@ -40,7 +43,8 @@ public:
         ::ll::TypedStorage<4, 4, uint>                              mUpdateFlag;
         ::ll::TypedStorage<1, 2, ::std::optional<bool>>             mIsVisible;
         ::ll::TypedStorage<4, 20, ::std::optional<::WorldPosition>> mWorldPosition;
-        ::ll::TypedStorage<4, 8, ::std::optional<uint>>             mTextureId;
+        ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>   mTexturePath;
+        ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>          mIconSize;
         ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>>    mColor;
         ::ll::TypedStorage<1, 2, ::std::optional<bool>>             mClientPositionAuthority;
         ::ll::TypedStorage<8, 16, ::std::optional<::ActorUniqueID>> mActorID;
@@ -50,6 +54,14 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool operator==(::ServerWaypoint::Payload const&) const;
+
+        MCAPI ~Payload();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -59,7 +71,20 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, int>                  mLowerBound;
         ::ll::TypedStorage<4, 8, ::std::optional<int>> mUpperBound;
-        ::ll::TypedStorage<4, 4, uint>                 mTextureId;
+        ::ll::TypedStorage<8, 32, ::std::string>       mTexturePath;
+        ::ll::TypedStorage<4, 8, ::Vec2>               mIconSize;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Texture();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -73,13 +98,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~TextureSelector();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI ::std::optional<::ServerWaypoint::Texture>
+        tryGetTexture(::Vec3 const& viewingPos, ::Vec3 const& observedPos) const;
         // NOLINTEND
     };
 
@@ -106,15 +126,15 @@ public:
 
     virtual void setClientPositionAuthority(bool clientPositionAuthority) /*override*/;
 
-    virtual void setTextureId(::std::optional<uint> const& textureId) /*override*/;
+    virtual void setTexturePath(::std::optional<::std::string> const& texturePath) /*override*/;
+
+    virtual void setIconSize(::Vec2 const& iconSize) /*override*/;
 
     virtual bool isValid() const;
 
     virtual bool calculateIsVisible(::Player const& viewingPlayer) const;
 
     virtual void update(::Player const& viewingPlayer) /*override*/;
-
-    virtual ~ServerWaypoint() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -125,6 +145,12 @@ public:
         ::std::optional<::mce::Color> const&     color,
         ::WorldPosition                          worldPosition
     );
+
+    MCAPI ::ServerWaypoint::Payload generatePayload(uint updateFlag);
+
+    MCFOLD void setIsEnabled(bool isEnabled);
+
+    MCAPI void setTextureSelector(::ServerWaypoint::TextureSelector const& textureSelector);
     // NOLINTEND
 
 public:
@@ -148,7 +174,9 @@ public:
 
     MCAPI void $setClientPositionAuthority(bool clientPositionAuthority);
 
-    MCAPI void $setTextureId(::std::optional<uint> const& textureId);
+    MCAPI void $setTexturePath(::std::optional<::std::string> const& texturePath);
+
+    MCAPI void $setIconSize(::Vec2 const& iconSize);
 
     MCFOLD bool $isValid() const;
 

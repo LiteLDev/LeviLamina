@@ -31,14 +31,18 @@ public:
     virtual char const* getJsonName() const /*override*/;
 
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
-
-    virtual ~TeleportDescription() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // member functions
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI TeleportDescription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

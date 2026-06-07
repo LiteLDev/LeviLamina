@@ -9,7 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Experiments;
+class Material;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -17,24 +17,24 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class SpongeBlock : public ::BlockType {
 public:
+    // prevent constructor by default
+    SpongeBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
-    virtual ~SpongeBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _attemptAbsorbWater(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI SpongeBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void _evaporateWater(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _attemptAbsorbWater(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool _performAbsorbWater(::BlockSource& region, ::BlockPos const& startPos) const;
 
@@ -48,13 +48,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

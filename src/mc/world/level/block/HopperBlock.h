@@ -29,6 +29,10 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 
 class HopperBlock : public ::ActorBlock {
 public:
+    // prevent constructor by default
+    HopperBlock();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -64,7 +68,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const /*override*/;
 
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
@@ -77,19 +81,18 @@ public:
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
+    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
 
-    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
-        /*override*/;
+    virtual bool allowStateMismatchOnPlacement(::Block const&, ::Block const&) const /*override*/;
 
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual ~HopperBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI HopperBlock(::std::string const& nameId, int id);
+
     MCAPI ::AABB _getSpoutAABB(::Block const& block) const;
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
@@ -101,12 +104,20 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _onSetupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static ::BlockPos getAttachedOffset(uchar facing);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -145,7 +156,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const& face, uchar, ::BlockSupportType) const;
 
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
@@ -162,9 +173,9 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const&, ::Block const&) const;
 
     MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 

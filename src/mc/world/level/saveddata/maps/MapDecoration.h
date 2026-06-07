@@ -54,9 +54,51 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MapDecoration();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MapDecoration(
+        ::MapDecoration::Type img,
+        schar                 x,
+        schar                 y,
+        schar                 rot,
+        ::std::string const&  label,
+        ::mce::Color const&   color
+    );
+
+    MCFOLD ::mce::Color const& getColor() const;
+
+    MCFOLD ::MapDecoration::Type getImg() const;
+
+    MCFOLD ::std::string const& getLabel() const;
+
+    MCFOLD schar getRot() const;
+
+    MCFOLD schar getX() const;
+
+    MCFOLD schar getY() const;
+
+#ifdef LL_PLAT_C
+    MCAPI bool isRenderedOnFrame() const;
+#endif
+
     MCAPI ~MapDecoration();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::MapDecoration::Type img,
+        schar                 x,
+        schar                 y,
+        schar                 rot,
+        ::std::string const&  label,
+        ::mce::Color const&   color
+    );
     // NOLINTEND
 
 public:

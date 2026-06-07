@@ -17,14 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void fireWorldRecoveryTelemetryEvent(::Bedrock::WorldRecoveryTelemetryEvent const& data) = 0;
-
-    virtual ~WorldRecoveryTelemetryHandler() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

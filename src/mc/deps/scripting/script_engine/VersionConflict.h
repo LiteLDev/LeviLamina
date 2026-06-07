@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ModuleDescriptor; }
-// clang-format on
-
 namespace Scripting {
 
 struct VersionConflict {
@@ -29,31 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VersionConflict(::Scripting::VersionConflict&&);
-
-    MCNAPI VersionConflict(
-        ::Scripting::ModuleDescriptor const& conflictModule_,
-        ::Scripting::ModuleDescriptor const& requestedByA_,
-        ::Scripting::ModuleDescriptor const& requestedByB_,
-        ::Scripting::ModuleDescriptor const& versionWantedByA_,
-        ::Scripting::ModuleDescriptor const& versionWantedByB_
-    );
-
     MCNAPI ~VersionConflict();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::VersionConflict&&);
-
-    MCNAPI void* $ctor(
-        ::Scripting::ModuleDescriptor const& conflictModule_,
-        ::Scripting::ModuleDescriptor const& requestedByA_,
-        ::Scripting::ModuleDescriptor const& requestedByB_,
-        ::Scripting::ModuleDescriptor const& versionWantedByA_,
-        ::Scripting::ModuleDescriptor const& versionWantedByB_
-    );
     // NOLINTEND
 
 public:

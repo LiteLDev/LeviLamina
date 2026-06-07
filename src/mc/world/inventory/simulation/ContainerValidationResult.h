@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
+#include "mc/world/inventory/simulation/ContainerValidationOperationType.h"
 #include "mc/world/inventory/simulation/ContainerValidationOutcome.h"
 
 // auto generated forward declare list
@@ -22,13 +23,16 @@ public:
 
 public:
     // prevent constructor by default
-    ContainerValidationResult& operator=(ContainerValidationResult const&);
     ContainerValidationResult();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerValidationResult(::ContainerValidationResult const&);
+    MCAPI explicit ContainerValidationResult(::ContainerValidationOutcome outcome);
+
+    MCFOLD bool isSuccess() const;
+
+    MCAPI ::ContainerValidationOperation const* tryGetOperation(::ContainerValidationOperationType type) const;
 
     MCAPI ~ContainerValidationResult();
     // NOLINTEND
@@ -36,12 +40,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerValidationResult const&);
+    MCAPI void* $ctor(::ContainerValidationOutcome outcome);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

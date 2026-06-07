@@ -10,6 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class EatBlockGoal;
+class EntityContext;
 class ExpressionNode;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -29,15 +31,13 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~EatBlockDefinition() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EatBlockDefinition();
+
     MCAPI void addSuccessChanceExpressionNode(::ExpressionNode const& node);
+
+    MCAPI void initialize(::EntityContext& entity, ::EatBlockGoal& goal) const;
     // NOLINTEND
 
 public:
@@ -50,9 +50,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Network { struct BiomeConfigIdentifierMappings; }
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -24,25 +26,22 @@ public:
 
 public:
     // prevent constructor by default
-    DataTransferServiceRequestBiomeConfigResponsePayload&
-    operator=(DataTransferServiceRequestBiomeConfigResponsePayload const&);
     DataTransferServiceRequestBiomeConfigResponsePayload(DataTransferServiceRequestBiomeConfigResponsePayload const&);
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~DataTransferServiceRequestBiomeConfigResponsePayload() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~DataTransferServiceRequestBiomeConfigResponsePayload() /*override*/;
-#endif
-
-    // NOLINTEND
+    DataTransferServiceRequestBiomeConfigResponsePayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DataTransferServiceRequestBiomeConfigResponsePayload();
+#ifdef LL_PLAT_C
+    MCNAPI DataTransferServiceRequestBiomeConfigResponsePayload(
+        ::mce::UUID                                             requestId,
+        ::std::string const&                                    biomeIdentifier,
+        ::Editor::Network::BiomeConfigIdentifierMappings const& mappings
+    );
+#endif
+
+    MCNAPI ::Editor::Network::DataTransferServiceRequestBiomeConfigResponsePayload&
+    operator=(::Editor::Network::DataTransferServiceRequestBiomeConfigResponsePayload const&);
     // NOLINTEND
 
 public:
@@ -54,13 +53,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::mce::UUID                                             requestId,
+        ::std::string const&                                    biomeIdentifier,
+        ::Editor::Network::BiomeConfigIdentifierMappings const& mappings
+    );
+#endif
     // NOLINTEND
 
 public:

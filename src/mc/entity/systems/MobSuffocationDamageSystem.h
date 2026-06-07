@@ -18,10 +18,10 @@ namespace MobSuffocationDamageSystem {
 // functions
 // NOLINTBEGIN
 MCAPI void _tickApplySuffocation(
-    ::entt::type_list<::Include<::MobIsSuffocatingFlagComponent>>,
-    ::StrictEntityContext const&                      entity,
-    ::ActorOwnerComponent&                            actorOwnerComponent,
-    ::EntityModifier<::MobIsSuffocatingFlagComponent> modifier
+    ::entt::type_list<::Include<::MobIsSuffocatingFlagComponent>> entity,
+    ::StrictEntityContext const&                                  actorOwnerComponent,
+    ::ActorOwnerComponent&                                        modifier,
+    ::EntityModifier<::MobIsSuffocatingFlagComponent>
 );
 
 MCAPI ::TickingSystemWithInfo create();

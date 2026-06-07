@@ -16,17 +16,15 @@ class SwimMoveControl : public ::MoveControl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription* description) /*override*/;
+    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription const* description) /*override*/;
 
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
-
-    virtual ~SwimMoveControl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
+    MCAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription const* description);
 
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 

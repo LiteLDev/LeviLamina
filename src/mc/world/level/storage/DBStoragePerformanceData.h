@@ -38,8 +38,9 @@ public:
         };
 
     public:
-        // member variables
-        // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_C
         ::ll::UntypedStorage<8, 8>  mUnkdfaa44;
         ::ll::UntypedStorage<8, 8>  mUnk8f7f93;
         ::ll::UntypedStorage<8, 8>  mUnk7e1320;
@@ -47,91 +48,44 @@ public:
         ::ll::UntypedStorage<4, 4>  mUnk543c4c;
         ::ll::UntypedStorage<8, 40> mUnk2ac1de;
         ::ll::UntypedStorage<8, 80> mUnkd17500;
+#endif
         // NOLINTEND
 
-#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         AtomicAccumulator& operator=(AtomicAccumulator const&);
         AtomicAccumulator(AtomicAccumulator const&);
         AtomicAccumulator();
 
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        AtomicAccumulator& operator=(AtomicAccumulator const&);
-        AtomicAccumulator(AtomicAccumulator const&);
-
-#endif
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI AtomicAccumulator();
-#endif
-
-#ifdef LL_PLAT_S
         MCNAPI void reset();
-#endif
-
-#ifdef LL_PLAT_C
-        MCNAPI ~AtomicAccumulator();
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void* $ctor();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
         // NOLINTEND
     };
 
     struct DBStorageAccumulator {
     public:
-        // member variables
-        // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_S
+        ::ll::UntypedStorage<1, 640> mUnk7892b7;
+#else // LL_PLAT_C
         ::ll::UntypedStorage<8, 640> mUnk7892b7;
+#endif
         // NOLINTEND
 
-#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         DBStorageAccumulator& operator=(DBStorageAccumulator const&);
         DBStorageAccumulator(DBStorageAccumulator const&);
         DBStorageAccumulator();
 
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        DBStorageAccumulator& operator=(DBStorageAccumulator const&);
-        DBStorageAccumulator(DBStorageAccumulator const&);
-
-#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI DBStorageAccumulator();
-
         MCNAPI ~DBStorageAccumulator();
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void* $ctor();
 #endif
         // NOLINTEND
 
@@ -145,10 +99,12 @@ public:
     };
 
 public:
-    // member variables
-    // NOLINTBEGIN
+// member variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_C
     ::ll::UntypedStorage<8, 640>  mUnka7e208;
-    ::ll::UntypedStorage<8, 8320> mUnk1b7a8f;
+    ::ll::UntypedStorage<8, 8960> mUnk5cba27;
+#endif
     // NOLINTEND
 
 public:
@@ -156,12 +112,6 @@ public:
     DBStoragePerformanceData& operator=(DBStoragePerformanceData const&);
     DBStoragePerformanceData(DBStoragePerformanceData const&);
     DBStoragePerformanceData();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~DBStoragePerformanceData() /*override*/ = default;
-    // NOLINTEND
 
 public:
     // member functions

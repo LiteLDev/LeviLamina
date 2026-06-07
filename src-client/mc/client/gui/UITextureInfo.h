@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ResourceLocation;
 struct AsepriteFrameInformation;
 namespace Json { class Value; }
 // clang-format on
@@ -28,5 +29,15 @@ public:
     MCAPI bool _loadAseprite(::Json::Value const& value);
 
     MCAPI void _loadNineslice(::Json::Value const& value);
+
+    MCFOLD ::glm::vec2 const& getBaseUVSize() const;
+
+    MCFOLD ::ui::SliceSize const& getNinesliceSize() const;
+
+    MCAPI void getPositionAfterMilliseconds(int ms, int& x, int& y) const;
+
+    MCFOLD bool hasNineslice() const;
+
+    MCAPI void load(::ResourceLocation const& value, ::Json::Value const&);
     // NOLINTEND
 };

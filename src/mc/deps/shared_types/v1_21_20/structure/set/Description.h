@@ -15,19 +15,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Description(Description const&);
-    Description();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureSet::Description&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Description&&);
-
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureSet::Description&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Description const&);
-
     MCAPI ~Description();
     // NOLINTEND
 

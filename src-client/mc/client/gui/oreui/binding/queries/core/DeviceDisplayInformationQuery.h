@@ -37,8 +37,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onResizeEnd() /*override*/;
-
-    virtual ~DeviceDisplayInformationQuery() /*override*/ = default;
     // NOLINTEND
 
 public:

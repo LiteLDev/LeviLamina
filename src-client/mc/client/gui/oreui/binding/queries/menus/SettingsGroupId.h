@@ -16,15 +16,19 @@ public:
     // NOLINTEND
 
 public:
-    // virtual functions
+    // prevent constructor by default
+    SettingsGroupId();
+
+public:
+    // member functions
     // NOLINTBEGIN
-    virtual ~SettingsGroupId() /*override*/;
+    MCAPI explicit SettingsGroupId(::std::string_view id);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::std::string_view id);
     // NOLINTEND
 
 public:

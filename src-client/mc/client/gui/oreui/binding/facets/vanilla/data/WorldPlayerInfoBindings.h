@@ -42,15 +42,11 @@ public:
 
 public:
     // prevent constructor by default
-    WorldPlayerInfoBindings& operator=(WorldPlayerInfoBindings const&);
-    WorldPlayerInfoBindings(WorldPlayerInfoBindings const&);
     WorldPlayerInfoBindings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldPlayerInfoBindings(::OreUI::WorldPlayerInfoBindings&&);
-
     MCAPI WorldPlayerInfoBindings(
         ::mce::UUID                              uuid,
         ::PlayerListEntry const*                 playerDetails,
@@ -68,7 +64,7 @@ public:
 
     MCAPI ::std::string const& getActiveProfileImage() const;
 
-    MCAPI ::OreUI::ConnectionType getConnectionType() const;
+    MCAPI bool hasAnyProfileId() const;
 
     MCAPI ~WorldPlayerInfoBindings();
     // NOLINTEND
@@ -76,8 +72,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::WorldPlayerInfoBindings&&);
-
     MCAPI void* $ctor(
         ::mce::UUID                              uuid,
         ::PlayerListEntry const*                 playerDetails,

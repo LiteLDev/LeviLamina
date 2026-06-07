@@ -23,6 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::string const& getName() const;
+
+    MCNAPI void setEnabledFlags(uchar flags);
+
+    MCNAPI void setEnabledFlagsToGlobalDefault();
+
     MCNAPI ~ProfileGroup();
     // NOLINTEND
 

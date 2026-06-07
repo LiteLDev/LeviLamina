@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
+#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -13,6 +14,7 @@ class SceneFactory;
 namespace OreUI { class RouteMatcher; }
 namespace Realms { class RealmsWorldContext; }
 namespace Realms { class RealmsWorldEditor; }
+namespace Realms { class RealmsWorldPackContext; }
 // clang-format on
 
 namespace OreUI::EntryPoints {
@@ -23,7 +25,13 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::Realms::RealmsWorldContext>()>> mRealmsWorldContext;
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::Realms::RealmsWorldEditor>()>>  mRealmsWorldEditor;
+    ::ll::TypedStorage<8, 64, ::std::function<::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackContext>()>>
+        mGetRealmsWorldPackContext;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RealmsReplaceWorldScreen();
 
 public:
     // virtual functions
@@ -35,8 +43,16 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const /*override*/;
+    // NOLINTEND
 
-    virtual ~RealmsReplaceWorldScreen() /*override*/ = default;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI RealmsReplaceWorldScreen(
+        ::std::function<::std::shared_ptr<::Realms::RealmsWorldContext>()>                   realmsWorldContext,
+        ::std::function<::std::shared_ptr<::Realms::RealmsWorldEditor>()>                    realmsWorldEditor,
+        ::std::function<::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackContext>()>&& getRealmsWorldPackContext
+    );
     // NOLINTEND
 
 public:
@@ -44,11 +60,23 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
 
+    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
+
     MCAPI static ::std::add_lvalue_reference_t<char const[]> REALM_ID();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SLOT_ID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::function<::std::shared_ptr<::Realms::RealmsWorldContext>()>                   realmsWorldContext,
+        ::std::function<::std::shared_ptr<::Realms::RealmsWorldEditor>()>                    realmsWorldEditor,
+        ::std::function<::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackContext>()>&& getRealmsWorldPackContext
+    );
     // NOLINTEND
 
 public:

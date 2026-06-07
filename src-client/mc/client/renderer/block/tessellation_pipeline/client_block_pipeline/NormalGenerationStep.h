@@ -21,8 +21,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
-
-    virtual ~NormalGenerationStep() /*override*/ = default;
     // NOLINTEND
 
 public:

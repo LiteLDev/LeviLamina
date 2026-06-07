@@ -30,12 +30,15 @@ public:
 public:
     // prevent constructor by default
     ScriptNetRequest& operator=(ScriptNetRequest const&);
-    ScriptNetRequest(ScriptNetRequest const&);
     ScriptNetRequest();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptNetRequest(::ScriptModuleMinecraftNet::ScriptNetRequest const&);
+
+    MCNAPI explicit ScriptNetRequest(::std::string const& uri);
+
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> addHeader(
         ::std::string const&                                                                key,
         ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> const& value
@@ -61,6 +64,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetRequest const&);
+
+    MCNAPI void* $ctor(::std::string const& uri);
     // NOLINTEND
 
 public:

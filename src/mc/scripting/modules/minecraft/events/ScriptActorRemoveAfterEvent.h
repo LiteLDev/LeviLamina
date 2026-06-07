@@ -20,12 +20,13 @@ public:
 public:
     // prevent constructor by default
     ScriptActorRemoveAfterEvent& operator=(ScriptActorRemoveAfterEvent const&);
-    ScriptActorRemoveAfterEvent(ScriptActorRemoveAfterEvent const&);
     ScriptActorRemoveAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorRemoveAfterEvent(::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent const&);
+
     MCFOLD ::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&&);
 
@@ -36,6 +37,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent const&);
     // NOLINTEND
 
 public:

@@ -32,8 +32,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ::InputMapping const* getMapping(::std::string const& mappingName) /*override*/;
-
-        virtual ~NullInputMappingFactory() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -60,8 +58,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::InputMappingFactory& getInputMappingFactory(int controllerId) /*override*/;
-
-    virtual ~MinecraftInputMappingFactoryMap() /*override*/ = default;
     // NOLINTEND
 
 public:

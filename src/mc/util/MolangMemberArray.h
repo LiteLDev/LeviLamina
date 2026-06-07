@@ -36,26 +36,28 @@ public:
 
 public:
     // prevent constructor by default
+    MolangMemberArray& operator=(MolangMemberArray const&);
+    MolangMemberArray(MolangMemberArray const&);
     MolangMemberArray();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MolangMemberArray(::MolangMemberArray&&);
+
     MCAPI MolangMemberArray(::MolangStruct_RGB, ::mce::Color const& color);
 
-    MCAPI MolangMemberArray(::MolangStruct_RGBA, ::mce::Color const& color);
-
     MCAPI MolangMemberArray(::MolangStruct_XY, ::Vec2 const& vec);
-
-    MCAPI MolangMemberArray(::MolangStruct_XYZ, ::Vec3 const& vec);
 
 #ifdef LL_PLAT_C
     MCAPI MolangMemberArray(::MolangStruct_Z, float z);
 #endif
 
-    MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
+    MCAPI MolangMemberArray(::MolangStruct_RGBA color, ::mce::Color const&);
 
-    MCAPI MolangMemberArray(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
+    MCAPI MolangMemberArray(::MolangStruct_XYZ vec, ::Vec3 const&);
+
+    MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
 
     MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
 
@@ -65,40 +67,58 @@ public:
 
     MCAPI MolangMemberArray(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
 
-    MCAPI MolangMemberArray(::MolangStruct_UV, float u, float v);
+    MCAPI MolangMemberArray(::MolangStruct_MinAndMax min, ::MolangMemberArray&& max, ::MolangMemberArray&&);
+
+    MCAPI MolangMemberArray(::MolangStruct_UV u, float v, float);
 
     MCAPI MolangMemberArray(
-        ::MolangStruct_TRS,
-        ::MolangMemberArray&& translation,
+        ::MolangStruct_TRS    translation,
         ::MolangMemberArray&& rotation,
-        ::MolangMemberArray&& scale
+        ::MolangMemberArray&& scale,
+        ::MolangMemberArray&&
     );
 
     MCAPI void add(::HashedString const& name, ::MolangScriptArg const& value);
 
+    MCAPI ::MolangScriptArg const* get(::HashedString const& name) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::MolangScriptArg const* get(uint64 nameHash) const;
+#endif
+
     MCAPI ::MolangScriptArg& getOrAdd(::HashedString const& name);
+
+    MCAPI bool operator==(::MolangMemberArray const& rhs) const;
 
     MCAPI ~MolangMemberArray();
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::MolangMemberArray const& getDefaultErrorValue();
+#endif
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor(::MolangMemberArray&&);
+
     MCAPI void* $ctor(::MolangStruct_RGB, ::mce::Color const& color);
 
-    MCAPI void* $ctor(::MolangStruct_RGBA, ::mce::Color const& color);
-
     MCAPI void* $ctor(::MolangStruct_XY, ::Vec2 const& vec);
-
-    MCAPI void* $ctor(::MolangStruct_XYZ, ::Vec3 const& vec);
 
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::MolangStruct_Z, float z);
 #endif
 
-    MCAPI void* $ctor(::MolangStruct_BaseAndPattern, int base, int pattern);
+    MCAPI void* $ctor(::MolangStruct_RGBA color, ::mce::Color const&);
 
-    MCAPI void* $ctor(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
+    MCAPI void* $ctor(::MolangStruct_XYZ vec, ::Vec3 const&);
+
+    MCAPI void* $ctor(::MolangStruct_BaseAndPattern, int base, int pattern);
 
     MCAPI void* $ctor(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
 
@@ -108,13 +128,15 @@ public:
 
     MCAPI void* $ctor(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
 
-    MCAPI void* $ctor(::MolangStruct_UV, float u, float v);
+    MCAPI void* $ctor(::MolangStruct_MinAndMax min, ::MolangMemberArray&& max, ::MolangMemberArray&&);
+
+    MCAPI void* $ctor(::MolangStruct_UV u, float v, float);
 
     MCAPI void* $ctor(
-        ::MolangStruct_TRS,
-        ::MolangMemberArray&& translation,
+        ::MolangStruct_TRS    translation,
         ::MolangMemberArray&& rotation,
-        ::MolangMemberArray&& scale
+        ::MolangMemberArray&& scale,
+        ::MolangMemberArray&&
     );
     // NOLINTEND
 

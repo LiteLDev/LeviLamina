@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor {
 
 struct EditorStructureMetadataQueryParams {
@@ -24,11 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorStructureMetadataQueryParams(::Editor::EditorStructureMetadataQueryParams&&);
-
     MCNAPI EditorStructureMetadataQueryParams(::Editor::EditorStructureMetadataQueryParams const&);
-
-    MCNAPI ::Editor::EditorStructureMetadataQueryParams& operator=(::Editor::EditorStructureMetadataQueryParams&&);
 
     MCNAPI ::Editor::EditorStructureMetadataQueryParams& operator=(::Editor::EditorStructureMetadataQueryParams const&);
 
@@ -36,10 +37,14 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::EditorStructureMetadataQueryParams&&);
-
     MCNAPI void* $ctor(::Editor::EditorStructureMetadataQueryParams const&);
     // NOLINTEND
 

@@ -39,6 +39,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptGameTestRegistrationBuilder(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
+
+    MCAPI explicit ScriptGameTestRegistrationBuilder(
+        ::std::shared_ptr<::ScriptModuleGameTest::BaseScriptGameTestFunction> gameTestFunction
+    );
+
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     batch(::std::string batchName);
 
@@ -63,6 +69,10 @@ public:
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     rotate(bool rotate);
 
+    MCAPI void setScriptObjectHandle(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> handle
+    );
+
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     setupTicks(int setupTicks);
 
@@ -80,6 +90,22 @@ public:
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     tag(::std::string tag);
+
+    MCAPI ~ScriptGameTestRegistrationBuilder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
+
+    MCAPI void* $ctor(::std::shared_ptr<::ScriptModuleGameTest::BaseScriptGameTestFunction> gameTestFunction);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

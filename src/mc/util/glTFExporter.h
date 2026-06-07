@@ -2,11 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace glTF { struct Accessor; }
+namespace glTF { struct Asset; }
 namespace glTF { struct Buffer; }
 namespace glTF { struct BufferView; }
 namespace glTF { struct Image; }
@@ -74,8 +78,6 @@ public:
 
     MCNAPI void _serializeBinaryData(::Json::Value& glTF);
 
-    MCNAPI void _serializeSampler(::Json::Value& root, ::glTF::Sampler const& sampler);
-
     MCNAPI int addAccessor(::glTF::Accessor& accessor);
 
     MCNAPI uint64 addBinaryBuffer(::Core::Path const& filePath, uchar const* data, uint64 size);
@@ -83,6 +85,8 @@ public:
     MCNAPI int addBuffer(::glTF::Buffer& buffer);
 
     MCNAPI int addBufferView(::glTF::BufferView& bufferView);
+
+    MCNAPI void addExtension(::std::string const& extension);
 
     MCNAPI int addImage(::glTF::Image& image);
 
@@ -92,28 +96,44 @@ public:
 
     MCNAPI int addNode(::glTF::Node& node);
 
+    MCNAPI void addNodeChild(int nodeID, int childNodeID);
+
     MCNAPI int addSampler(::glTF::Sampler& sampler);
 
     MCNAPI int addScene(::glTF::Scene& scene);
 
     MCNAPI int addTexture(::glTF::Texture& texture);
 
+    MCNAPI ::std::string const& getBinaryFileName() const;
+
+    MCNAPI ::Core::PathBuffer<::std::string> const& getBinaryFilePath() const;
+
+    MCNAPI int getMaterialID(::std::string const& materialName);
+
     MCNAPI glTFExporter(::Core::Path const& folderPath, ::std::string const& modelName);
 
+    MCNAPI bool hasBuffer(int bufferID);
+
+    MCNAPI bool hasMaterial(::std::string const& materialName);
+
     MCNAPI void serialize();
+
+    MCNAPI void setAsset(::glTF::Asset const& asset);
+
+    MCNAPI void setDefaultScene(int sceneName);
+
+    MCNAPI int updateBufferSize(int bufferID, int bufferSize);
+
+    MCNAPI bool useBinary() const;
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& BINARY_EXTENSION();
-
     MCNAPI static ::std::string_view const& GLB_BUFFER_URI();
 
     MCNAPI static ::std::string_view const& GLB_EXTENSION();
-
-    MCNAPI static ::std::string_view const& GLTF_EXTENSION();
     // NOLINTEND
 
 public:

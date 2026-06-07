@@ -22,13 +22,12 @@ namespace Editor::ScriptModule {
 class ScriptWidgetComponentGuideSensor : public ::Editor::ScriptModule::ScriptWidgetComponentBase {
 public:
     // prevent constructor by default
-    ScriptWidgetComponentGuideSensor& operator=(ScriptWidgetComponentGuideSensor const&);
     ScriptWidgetComponentGuideSensor();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentGuideSensor() /*override*/ = default;
+    virtual ~ScriptWidgetComponentGuideSensor() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
@@ -36,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentGuideSensor(::Editor::ScriptModule::ScriptWidgetComponentGuideSensor const&);
-
     MCNAPI ScriptWidgetComponentGuideSensor(
         ::Editor::ServiceProviderCollection&                                             serviceProviders,
         ::mce::UUID const&                                                               componentId,
@@ -57,8 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentGuideSensor const&);
-
     MCNAPI void* $ctor(
         ::Editor::ServiceProviderCollection&                                             serviceProviders,
         ::mce::UUID const&                                                               componentId,
@@ -67,6 +62,12 @@ public:
         ::Editor::ScriptModule::ScriptWidgetService&                                     parentService,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGuideSensorOptions> options
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

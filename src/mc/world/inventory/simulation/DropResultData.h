@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/inventory/simulation/ContainerScreenActionResultData.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ContainerScreenActionResult;
+// clang-format on
+
 struct DropResultData : public ::ContainerScreenActionResultData {
 public:
     // member variables
@@ -17,4 +22,12 @@ public:
     DropResultData& operator=(DropResultData const&);
     DropResultData(DropResultData const&);
     DropResultData();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::optional<bool> getDropRandomly(::ContainerScreenActionResult const& result);
+#endif
+    // NOLINTEND
 };

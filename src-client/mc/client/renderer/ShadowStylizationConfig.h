@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IMinecraftEventing;
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
@@ -69,15 +70,13 @@ public:
 
     public:
         // prevent constructor by default
+        ShadowStylizationConfigSettings& operator=(ShadowStylizationConfigSettings const&);
         ShadowStylizationConfigSettings(ShadowStylizationConfigSettings const&);
         ShadowStylizationConfigSettings();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::ShadowStylizationConfig::ShadowStylizationConfigSettings&
-        operator=(::ShadowStylizationConfig::ShadowStylizationConfigSettings const&);
-
         MCNAPI ~ShadowStylizationConfigSettings();
         // NOLINTEND
 
@@ -117,6 +116,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ShadowStylizationConfig(::IMinecraftEventing& eventing);
+
     MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
 
     MCNAPI ::Puv::LoadResultAny
@@ -143,6 +144,12 @@ public:
     MCNAPI static ::std::string_view const& PAYLOAD_KEY();
 
     MCNAPI static ::std::string_view const& SHADOW_STYLIZATION_GLOBAL_CONFIG_FILE();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

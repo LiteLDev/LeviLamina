@@ -33,12 +33,6 @@ public:
     MCNAPI ::Bedrock::LogLevel
     debugFail(::brstd::function_ref<::std::string()> message, ::Bedrock::CallStack::Frame location) const;
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::Bedrock::AssertLevel const& DebugAssert();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

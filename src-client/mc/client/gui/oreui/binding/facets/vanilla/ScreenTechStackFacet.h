@@ -30,13 +30,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool update() /*override*/;
-
-    virtual ~ScreenTechStackFacet() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ScreenTechStackFacet(::ui::ScreenTechStackSelector& screenTechStackSelector);
+
     MCAPI ::ui::TechStack getPreferredTechStackForScreen(::std::string const& screenName) const;
 
     MCAPI ::ui::TechStack getTechStackForScreen(::std::string const& screenName) const;
@@ -45,9 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static char const* const& NAME();
+    MCAPI void* $ctor(::ui::ScreenTechStackSelector& screenTechStackSelector);
     // NOLINTEND
 
 public:
