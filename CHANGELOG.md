@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.14] - 2026-06-07
+
+### Added
+
+- Added implementation for `DenseEnumMap` (#1810) @Qiuzhizhe
+
+### Changed
+
+- Bumped bedrock-runtime-data to v26.10.4-server.17 and v26.10.4-client.17
+
 ## [26.10.13] - 2026-06-04
 
 ### Added
@@ -1585,7 +1595,8 @@ For lip and tooth-hub test only.
 [#1806]: https://github.com/LiteLDev/LeviLamina/issues/1806
 [#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.13...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.14...HEAD
+[26.10.14]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.13...v26.10.14
 [26.10.13]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.12...v26.10.13
 [26.10.12]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.11...v26.10.12
 [26.10.11]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.10...v26.10.11
