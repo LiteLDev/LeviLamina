@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #ifdef LL_PLAT_S
-#include "mc/common/BiomeIdType.h"
 #include "mc/world/level/biome/Biome.h"
 #include "mc/world/level/biome/registry/BiomeRegistry.h"
 #include "mc/world/level/levelgen/structure/VanillaStructureFeatureType.h"
@@ -85,12 +84,6 @@ public:
         ::ChunkPos const&                    chunkPos,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI VillageFeature(uint seed, int townSpacing, int minTownSeparation, ::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 
 public:

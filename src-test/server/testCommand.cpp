@@ -141,7 +141,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     cmd.overload<ParamTest2>().required("block").required("dim").optional("subcmd").execute(
         [](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param, ::Command const&) {
             output.success("block: {}", param.block.getDescriptionId());
-            output.success("dim: {}", param.dim.id);
+            output.success("dim: {}", param.dim.mValue);
 
             if (param.subcmd) {
                 output.success("subcmd: {}", param.subcmd->getCommandName());

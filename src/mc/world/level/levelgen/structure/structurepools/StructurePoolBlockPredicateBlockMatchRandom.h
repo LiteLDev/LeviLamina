@@ -46,12 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructurePoolBlockPredicateBlockMatchRandom(::Block const& block, float probability);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Block const& block, float probability);

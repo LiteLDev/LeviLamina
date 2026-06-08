@@ -98,16 +98,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PoolElementStructurePiece(
-        ::StructurePoolElement const& element,
-        ::BlockPos                    position,
-        ::Rotation                    rotation,
-        int                           genDepth,
-        ::JigsawJunction&             junction,
-        ::BoundingBox const&          box,
-        ::BlockPos                    refPos
-    );
-
     MCAPI void _fillWithSupportBlock(
         ::BlockPos const&    startPos,
         ::BlockSource&       region,
