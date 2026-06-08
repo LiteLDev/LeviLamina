@@ -6,7 +6,7 @@ std::string VanillaDimensions::toString(DimensionType const& dimension) {
     if (dimNameMap.contains(dimension)) {
         dimName = dimNameMap.at(dimension);
     } else {
-        dimName = fmt::format("dimension.dimensionName{}", dimension.id);
+        dimName = fmt::format("dimension.dimensionName{}", dimension.mValue);
     }
     return dimName;
 }

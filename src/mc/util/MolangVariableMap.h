@@ -55,8 +55,6 @@ public:
 
     MCAPI MolangVariableMap(::MolangVariableMap&& rhs);
 
-    MCAPI MolangVariableMap(::MolangVariableMap const& rhs);
-
     MCAPI ::MolangVariable* _getMolangVariable(
         ::MolangVariableIndex                        molangVariableIndex,
         ::MolangVariableMap::MissingVariableHandling errorHandling

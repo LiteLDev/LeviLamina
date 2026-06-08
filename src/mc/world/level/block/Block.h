@@ -448,8 +448,6 @@ public:
 
     MCAPI bool ignoreEntitiesOnPistonMove() const;
 
-    MCAPI bool isAir() const;
-
     MCAPI bool isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
     MCAPI bool isButtonBlock() const;

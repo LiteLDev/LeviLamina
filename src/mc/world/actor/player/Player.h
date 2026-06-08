@@ -1085,8 +1085,6 @@ public:
 
     MCFOLD ::ItemStack const& getSelectedItem() const;
 
-    MCAPI int getSelectedItemSlot() const;
-
     MCAPI ::SerializedSkinRef const& getSkin() const;
 
     MCAPI float getSleepRotation() const;
@@ -1460,8 +1458,6 @@ public:
 
     MCFOLD static ::Player*
     tryGetFromComponent(::PlayerComponent const&, ::ActorOwnerComponent& actor, bool includeRemoved);
-
-    MCAPI static ::Player* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
     MCAPI static ::Player* tryGetFromEntity(::StackRefResult<::EntityContext> entity, bool includeRemoved);
 

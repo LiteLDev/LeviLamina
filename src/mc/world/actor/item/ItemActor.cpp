@@ -1,4 +1,5 @@
 #include "mc/world/actor/item/ItemActor.h"
+#include "mc/deps/ecs/gamerefs_entity/GameRefsEntity.h"
 
 ItemStack&       ItemActor::item() { return *mItem; }
 ItemStack const& ItemActor::item() const { return *mItem; }

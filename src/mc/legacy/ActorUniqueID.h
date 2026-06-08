@@ -36,8 +36,8 @@ public:
 
 namespace std {
 template <>
-class hash<ActorUniqueID> {
+struct hash<ActorUniqueID> {
 public:
-    size_t operator()(ActorUniqueID const& id) const { return id.getHash(); }
+    size_t operator()(ActorUniqueID const& id) const noexcept { return std::hash<int64>()(id.rawID); }
 };
 } // namespace std

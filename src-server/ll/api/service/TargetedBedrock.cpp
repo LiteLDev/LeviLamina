@@ -14,9 +14,9 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
+#include "mc/server/commands/CommandRegistryArguments.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
-#include "mc/server/commands/CommandRegistryArguments.h"
 
 namespace ll::service::inline bedrock {
 
@@ -28,7 +28,7 @@ LL_TYPE_INSTANCE_HOOK(
     HookPriority::High,
     DedicatedServer,
     &DedicatedServer::runDedicatedServerLoop,
-    ::DedicatedServer::StartResult,
+    ::DedicatedServer::ServerExitCode,
     ::Core::FilePathManager&                                     filePathManager,
     ::PropertiesSettings const&                                  properties,
     ::LevelSettings&                                             settings,
@@ -38,8 +38,8 @@ LL_TYPE_INSTANCE_HOOK(
     ::Bedrock::ActivationArguments const&                        args,
     ::TestConfig&                                                testConfig
 ) {
-    propertiesSettings               = const_cast<PropertiesSettings*>(&properties);
-    DedicatedServer::StartResult res = origin(
+    propertiesSettings                  = const_cast<PropertiesSettings*>(&properties);
+    ServerExitCode res = origin(
         filePathManager,
         properties,
         settings,

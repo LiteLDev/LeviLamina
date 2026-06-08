@@ -24,8 +24,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool FromString(char const* source);
 
-    MCAPI RakNetGUID();
-
     MCAPI ::std::string ToString() const;
 
     MCAPI bool operator!=(::RakNet::RakNetGUID const& right) const;

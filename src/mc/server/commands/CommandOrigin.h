@@ -113,8 +113,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandOrigin();
-
     MCAPI ::std::unique_ptr<::CommandArea> getAreaAt(::BlockPos const& pos, int commandVersion) const;
 
     MCAPI ::std::unique_ptr<::CommandArea>

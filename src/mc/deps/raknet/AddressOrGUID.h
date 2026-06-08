@@ -11,16 +11,18 @@ struct AddressOrGUID {
 public:
     // member variables
     // NOLINTBEGIN
-    ::RakNet::RakNetGUID     rakNetGuid;
-    ::RakNet::SystemAddress  systemAddress;
+    ::RakNet::RakNetGUID    rakNetGuid;
+    ::RakNet::SystemAddress systemAddress;
     // NOLINTEND
 
 public:
     AddressOrGUID()                                = default;
     AddressOrGUID(AddressOrGUID const&)            = default;
     AddressOrGUID& operator=(AddressOrGUID const&) = default;
-    AddressOrGUID(::RakNet::SystemAddress const& input) : rakNetGuid{-1, -1} { systemAddress = input; }
+    AddressOrGUID(::RakNet::SystemAddress const& input)
+    : rakNetGuid{static_cast<unsigned long long>(-1), static_cast<unsigned short>(-1)} {
+        systemAddress = input;
+    }
     AddressOrGUID(::RakNet::RakNetGUID const& input) : rakNetGuid(input), systemAddress{} {}
-
+};
 } // namespace RakNet
-}

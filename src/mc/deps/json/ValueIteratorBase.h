@@ -74,6 +74,9 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
+public:
+    bool operator!=(ValueIteratorBase const& other) const { return !isEqual(other); }
 };
 
 } // namespace Json

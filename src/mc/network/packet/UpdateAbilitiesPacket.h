@@ -45,8 +45,6 @@ public:
     // NOLINTBEGIN
     MCAPI UpdateAbilitiesPacket();
 
-    MCAPI UpdateAbilitiesPacket(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
-
 #ifdef LL_PLAT_C
     MCAPI void fillIn(::LayeredAbilities& layeredAbilities) const;
 

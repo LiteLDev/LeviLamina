@@ -81,8 +81,6 @@ public:
     MCAPI bool operator!=(::NetworkIdentifier const& other) const;
 #endif
 
-    MCAPI bool operator==(::NetworkIdentifier const& other) const;
-
     MCAPI ::std::string toString() const;
     // NOLINTEND
 

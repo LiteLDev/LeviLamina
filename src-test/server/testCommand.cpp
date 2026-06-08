@@ -9,7 +9,6 @@
 
 #include "ll/api/service/Bedrock.h"
 
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/commands/CommandBlockName.h"
 #include "mc/server/commands/CommandPermissionLevel.h"

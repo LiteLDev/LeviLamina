@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/item/ItemStack.h"
 
 // auto generated inclusion list
 #include "mc/world/actor/Actor.h"
@@ -155,8 +154,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::AABB getLiquidAABB(::AABBShapeComponent const& aabbShapeComponent);
-
-    MCAPI static ::ItemActor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:

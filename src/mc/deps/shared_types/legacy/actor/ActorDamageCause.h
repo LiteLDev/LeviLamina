@@ -5,7 +5,7 @@
 namespace SharedTypes::Legacy {
 
 enum class ActorDamageCause : int {
-    None            = 4294967295,
+    None            = -1,
     Override        = 0,
     Contact         = 1,
     EntityAttack    = 2,

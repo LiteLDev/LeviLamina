@@ -1,19 +1,20 @@
 #include "mc/server/commands/CommandParameterData.h"
 
 CommandParameterData::CommandParameterData(
-    Bedrock::typeid_t<CommandRegistry> typeIndex,
-    ParseFunction                      parser,
-    std::string                        name,
-    ::CommandParameterDataType         type,
-    char const*                        enumNameOrPostfix,
-    char const*                        subChain,
-    int                                offset,
-    bool                               optional,
-    int                                flagOffset,
-    CommandParameterOption             options
+    Bedrock::typeid_t<CommandRegistry>       typeIndex,
+    ParseFunction                            parser,
+    std::string                              name,
+    ::CommandParameterDataType               type,
+    char const*                              enumNameOrPostfix,
+    char const*                              subChain,
+    int                                      offset,
+    bool                                     optional,
+    int                                      flagOffset,
+    CommandParameterOption                   options,
+    ::CommandRegistry::ParamParseRule const* rule
 )
 : mTypeIndex(typeIndex),
-  mParse(parser),
+  mParseOverride(parser),
   mName(std::move(name)),
   mEnumNameOrPostfix(enumNameOrPostfix),
   mChainedSubcommand(subChain),
@@ -21,7 +22,8 @@ CommandParameterData::CommandParameterData(
   mOffset(offset),
   mSetOffset(flagOffset),
   mIsOptional(optional),
-  mOptions(options) {}
+  mOptions(options),
+  mParseRule(rule) {}
 
 bool CommandParameterData::operator==(CommandParameterData const& other) const {
     if (mTypeIndex != other.mTypeIndex || mName != other.mName || mOffset != other.mOffset

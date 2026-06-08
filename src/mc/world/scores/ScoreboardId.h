@@ -42,7 +42,7 @@ struct hash<::ScoreboardId> {
     size_t operator()(::ScoreboardId const& id) const noexcept {
         ActorUniqueID uId{};
         uId.rawID = id.mRawID;
-        return uId.getHash();
+        return std::hash<ActorUniqueID>()(uId);
     }
 };
 } // namespace std

@@ -24,8 +24,8 @@ public:
 
 namespace std {
 template <>
-class hash<ActorRuntimeID> {
+struct hash<ActorRuntimeID> {
 public:
-    size_t operator()(ActorRuntimeID const& id) const { return std::hash<int64>()(id.rawID); }
+    size_t operator()(ActorRuntimeID const& id) const noexcept { return std::hash<int64>()(id.rawID); }
 };
 } // namespace std

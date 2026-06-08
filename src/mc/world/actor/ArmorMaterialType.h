@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ArmorMaterialType : int {
-    None                  = 4294967295,
+    None                  = -1,
     DefaultArmor          = 0,
     EnchantedArmor        = 1,
     LeatherArmor          = 2,

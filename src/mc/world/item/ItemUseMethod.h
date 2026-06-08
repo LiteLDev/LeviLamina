@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ItemUseMethod : int {
-    Unknown           = 4294967295,
+    Unknown           = -1,
     EquipArmor        = 0,
     Eat               = 1,
     Attack            = 2,

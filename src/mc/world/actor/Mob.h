@@ -528,8 +528,6 @@ public:
     MCAPI static char const* _getDescriptionJsonName(::Description const* description);
 
     MCAPI static void setSprinting(::BaseAttributeMap& attributes, ::SynchedActorDataWriter data, bool shouldSprint);
-
-    MCAPI static ::Mob* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:

@@ -102,7 +102,7 @@ bool SimulatedPlayer::simulateAttack(Actor* target) {
     if (*mInputCooldownTick && (currentTick - **mInputCooldownTick < 10)) {
         return false;
     }
-    _trySwing(ActorSwingSource::Attack);
+    swing(ActorSwingSource::Attack);
     mInputCooldownTick = currentTick;
     return attack(*target, SharedTypes::Legacy::ActorDamageCause::EntityAttack);
 }

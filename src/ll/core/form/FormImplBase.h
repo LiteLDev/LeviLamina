@@ -34,7 +34,7 @@ public:
         if (update) {
             ServerSettingsResponsePacket(formId, json.dump()).sendTo(player);
         } else {
-            ModalFormRequestPacket(formId, json.dump()).sendTo(player);
+            ModalFormRequestPacket({formId, json.dump()}).sendTo(player);
         }
         return true;
     }

@@ -43,8 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI Command();
 
-    MCAPI ::std::string getCommandName() const;
-
     MCFOLD ::CommandRegistry const& getRegistry() const;
 
     MCAPI bool hasFlag(::CommandFlag flag) const;

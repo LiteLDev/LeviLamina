@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/Actor.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
@@ -22,6 +23,24 @@ public:
     }
 
     HitResult(::HitResult&&) = default;
+
+    HitResult(
+        ::Vec3 const& startPos,
+        ::Vec3 const& rayDir,
+        ::Actor&      entity,
+        ::Vec3 const& pos,
+        ::AABB const& entityAABB
+    )
+    : mStartPos(startPos),
+      mRayDir(rayDir),
+      mType(HitResultType::Entity),
+      mFacing(0),
+      mPos(pos),
+      mEntity(entity.getEntityContext().getWeakRef()),
+      mEntityAABB(entityAABB),
+      mIsHitLiquid(false),
+      mLiquidFacing(0),
+      mIndirectHit(false) {}
 
 public:
     // member variables

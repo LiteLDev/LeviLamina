@@ -761,8 +761,6 @@ public:
 
     MCAPI ::std::vector<::DistanceSortedActor> fetchNearbyActorsSorted(::Vec3 const& distance, ::ActorType actorTypeId);
 
-    MCFOLD ::AABB const& getAABB() const;
-
     MCAPI ::Vec2 const& getAABBDim() const;
 
 #ifdef LL_PLAT_C
@@ -828,8 +826,6 @@ public:
     MCFOLD ::BlockSource const& getDimensionBlockSourceConst() const;
 
     MCFOLD ::Dimension const& getDimensionConst() const;
-
-    MCAPI ::DimensionType getDimensionId() const;
 
     MCAPI ::MobEffectInstance const* getEffect(::MobEffect const& effect) const;
 
@@ -923,8 +919,6 @@ public:
 
     MCAPI ::ActorUniqueID getLeashHolder() const;
 
-    MCFOLD ::Level const& getLevel() const;
-
     MCFOLD ::Level& getLevel();
 
     MCAPI uint64 getLevelTimeStamp() const;
@@ -979,13 +973,9 @@ public:
 
     MCAPI ::Player* getPlayerOwner() const;
 
-    MCFOLD ::Vec3 const& getPosDelta() const;
-
     MCFOLD ::Vec3& getPosDeltaNonConst();
 
     MCAPI ::Vec3 const& getPosPrev() const;
-
-    MCAPI ::Vec3 const& getPosition() const;
 
     MCAPI float getRadius() const;
 
@@ -1000,8 +990,6 @@ public:
     MCAPI ::RenderParams& getRenderParams();
 
     MCAPI float getRidingHeight() const;
-
-    MCFOLD ::Vec2 const& getRotation() const;
 
     MCAPI ::Vec2 const& getRotationPrev() const;
 
@@ -1757,8 +1745,6 @@ public:
     MCFOLD static ::Actor* tryGetFromComponent(::ActorOwnerComponent& component, bool includeRemoved);
 
     MCFOLD static ::Actor const* tryGetFromEntity(::EntityContext const& entity, bool includeRemoved);
-
-    MCFOLD static ::Actor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
     MCAPI static ::Actor* tryGetFromEntity(::StackRefResult<::EntityContext> entity, bool includeRemoved);
 

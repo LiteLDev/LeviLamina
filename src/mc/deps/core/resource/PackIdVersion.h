@@ -45,8 +45,6 @@ public:
 
     MCAPI bool operator<(::PackIdVersion const& rhs) const;
 
-    MCFOLD bool operator==(::PackIdVersion const& rhs) const;
-
     MCAPI bool satisfies(::PackIdVersion const& rhs) const;
     // NOLINTEND
 

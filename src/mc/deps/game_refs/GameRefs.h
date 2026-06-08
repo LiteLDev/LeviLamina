@@ -12,12 +12,12 @@ struct GameRefs {
 
 class EntityContext;
 template <>
-class GameRefs<EntityContext>;
+struct GameRefs<EntityContext>;
 template <>
-class GameRefs<EntityContext const>;
+struct GameRefs<EntityContext const>;
 class EntityId;
 template <>
-class GameRefs<EntityId>;
+struct GameRefs<EntityId>;
 class IFeature;
 template <>
-class GameRefs<IFeature>;
+struct GameRefs<IFeature>;

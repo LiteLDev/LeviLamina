@@ -2,7 +2,7 @@
 
 #include <functional>
 
-#include "mc/platform/brstd/detail/DerivedType.h"
+#include "mc/platform/brstd/detail/derived_type.h"
 #include "mc/platform/brstd/detail/function_base.h"
 #include "mc/platform/brstd/detail/function_base_impl.h"
 

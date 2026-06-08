@@ -10,9 +10,7 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityRegistry.h"
-#include "mc/deps/ecs/strict/StrictEntityContext.h"
 #include "mc/deps/nbt/CompoundTag.h"
-#include "mc/deps/vanilla_components/AABBShapeComponent.h"
 #include "mc/deps/vanilla_components/OnGroundFlagComponent.h"
 #include "mc/deps/vanilla_components/PlayerComponent.h"
 #include "mc/entity/components/ActorOwnerComponent.h"
@@ -25,6 +23,7 @@
 #include "mc/server/commands/standard/TeleportCommand.h"
 #include "mc/server/commands/standard/TeleportTarget.h" // IWYU pragma: keep for TeleportCommand::computeTarget
 #include "mc/util/molang/ExpressionNode.h"
+#include "mc/util/molang/IComplexExpression.h"
 #include "mc/util/rotation_command_utils/RotationData.h"
 #include "mc/world//actor/player/Player.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
@@ -33,7 +32,6 @@
 #include "mc/world/actor/ActorHurtResult.h"
 #include "mc/world/actor/BuiltInActorComponents.h"
 #include "mc/world/actor/animation/AnimationComponent.h"
-#include "mc/world/actor/provider/ActorCollision.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/ShapeType.h"
@@ -191,8 +189,9 @@ void Actor::setName(std::string const& name) {
 }
 
 float Actor::evalMolang(std::string const& expression) {
-    return ExpressionNode(expression, MolangVersion::Latest, {{HashedString{"default"}}})
-        .evalAsFloat(getAnimationComponent().mRenderParams);
+    auto res = ExpressionNode(expression, MolangVersion::Latest, {{HashedString{"default"}}})
+                   .evalGeneric(getAnimationComponent().mRenderParams);
+    return res.mPOD.mFloat;
 }
 
 

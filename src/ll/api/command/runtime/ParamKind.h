@@ -5,7 +5,6 @@
 #include "ll/api/command/ParamTraits.h"
 #include "ll/api/command/Runtime/RuntimeEnum.h"
 
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/typeid_t.h"
 #include "mc/deps/json/Value.h"
 #include "mc/server/commands/BlockStateCommandParam.h"

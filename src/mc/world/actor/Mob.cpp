@@ -1,4 +1,5 @@
 #include "mc/world/actor/Mob.h"
+#include "mc/deps/ecs/gamerefs_entity/GameRefsEntity.h"
 
 void Mob::refreshInventory() {
     sendInventory(true);

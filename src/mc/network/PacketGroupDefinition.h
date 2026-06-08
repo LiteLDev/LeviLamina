@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/IPacketLimitAlgorithm.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -45,6 +46,12 @@ public:
                                                                              mBasicPacketGroups;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> mDefaultAlgorithm;
         // NOLINTEND
+
+    public:
+        PacketGroupBuilder(PacketGroupBuilder&& other) noexcept {
+            mBasicPacketGroups = std::move(other.mBasicPacketGroups);
+            mDefaultAlgorithm  = std::move(other.mDefaultAlgorithm);
+        }
 
     public:
         // member functions

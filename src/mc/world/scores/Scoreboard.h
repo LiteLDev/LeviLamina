@@ -192,14 +192,6 @@ public:
 
     MCAPI int modifyPlayerScore(
         ::ScoreboardOperationResult& result,
-        ::ScoreboardId const&        id,
-        ::Objective&                 objective,
-        int                          scoreValue,
-        ::PlayerScoreSetFunction     action
-    );
-
-    MCAPI int modifyPlayerScore(
-        ::ScoreboardOperationResult& result,
         ::ScoreboardIdentityRef*     identityRef,
         ::Objective&                 objective,
         int                          scoreValue,

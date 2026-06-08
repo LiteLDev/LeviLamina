@@ -27,8 +27,6 @@ LLAPI bool getActorFlag(::EntityContext const& entity, ::ActorFlags flag);
 // NOLINTBEGIN
 MCFOLD bool getActorFlag(::ActorDataFlagComponent const& actorDataFlagComponent, ::ActorFlags flag);
 
-MCAPI bool getActorFlag(::EntityContext const& entity, ::ActorFlags flag);
-
 MCAPI float getBoundingBoxScale(::EntityContext const& entity);
 
 MCAPI ::Vec2 getBoundingBoxSize(::EntityContext const& entity);

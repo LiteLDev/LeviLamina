@@ -60,16 +60,17 @@ public:
     CommandParameterData() = default;
 
     LLNDAPI CommandParameterData(
-        Bedrock::typeid_t<CommandRegistry> typeIndex,
-        ParseFunction                      parser,
-        std::string                        name,
-        ::CommandParameterDataType         type,
-        char const*                        enumNameOrPostfix,
-        char const*                        subChain,
-        int                                offset,
-        bool                               optional,
-        int                                flagOffset,
-        CommandParameterOption             options
+        Bedrock::typeid_t<CommandRegistry>       typeIndex,
+        ParseFunction                            parser,
+        std::string                              name,
+        ::CommandParameterDataType               type,
+        char const*                              enumNameOrPostfix,
+        char const*                              subChain,
+        int                                      offset,
+        bool                                     optional,
+        int                                      flagOffset,
+        CommandParameterOption                   options,
+        ::CommandRegistry::ParamParseRule const* rule = nullptr
     );
 
     LLNDAPI bool operator==(CommandParameterData const& other) const;

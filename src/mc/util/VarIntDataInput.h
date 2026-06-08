@@ -51,12 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit VarIntDataInput(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);

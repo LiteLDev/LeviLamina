@@ -57,8 +57,6 @@ public:
 
     MCAPI ::Ability const& getAbility(::AbilitiesIndex val) const;
 
-    MCAPI ::Ability& getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
-
     MCAPI bool getBool(::AbilitiesIndex val) const;
 
     MCAPI ::std::pair<bool, ::AbilitiesLayer> getBoolWithLayer(::AbilitiesIndex val) const;
@@ -94,10 +92,6 @@ public:
 #endif
 
     MCAPI ::LayeredAbilities& operator=(::LayeredAbilities const& rhs);
-
-    MCAPI void setAbility(::AbilitiesIndex val, float value);
-
-    MCAPI void setAbility(::AbilitiesIndex val, bool value);
 
     MCFOLD void setCommandPermissions(::CommandPermissionLevel permissions);
 

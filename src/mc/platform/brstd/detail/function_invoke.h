@@ -3,7 +3,7 @@
 #include <functional>
 
 #include "ll/api/base/TypeTraits.h"
-#include "mc/platform/brstd/detail/DerivedType.h"
+#include "mc/platform/brstd/detail/derived_type.h"
 #include "mc/platform/brstd/detail/function_invoke_base.h"
 
 namespace brstd::detail::function {

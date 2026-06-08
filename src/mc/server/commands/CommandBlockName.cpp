@@ -1,5 +1,6 @@
 #include "mc/server/commands/CommandBlockName.h"
-#include "mc/world/level/block/BlockType.h"
+
+#include "mc/world/level/block/Block.h"
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 
 std::string const& CommandBlockName::getBlockName() const {
@@ -14,6 +15,5 @@ std::string CommandBlockName::getDescriptionId() const {
         sourceName = nameInfo.mFullName->mStr;
     }
 
-    return BlockType::BLOCK_DESCRIPTION_PREFIX() + sourceName;
-    ;
+    return Block::BLOCK_DESCRIPTION_PREFIX() + sourceName;
 }
