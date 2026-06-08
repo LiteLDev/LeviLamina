@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/NetworkSystem.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"

@@ -1188,10 +1188,6 @@ public:
 
     MCAPI bool isItemOnCooldown(::Item const& item) const;
 
-#ifdef LL_PLAT_C
-    MCAPI bool isOperator() const;
-#endif
-
     MCAPI bool isRespawningFromTheEnd() const;
 
 #ifdef LL_PLAT_C

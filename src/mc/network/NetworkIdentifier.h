@@ -77,10 +77,6 @@ public:
 
     MCAPI bool isUnassigned() const;
 
-#ifdef LL_PLAT_C
-    MCAPI bool operator!=(::NetworkIdentifier const& other) const;
-#endif
-
     MCAPI ::std::string toString() const;
     // NOLINTEND
 

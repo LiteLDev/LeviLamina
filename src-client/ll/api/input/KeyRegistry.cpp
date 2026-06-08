@@ -1,17 +1,16 @@
 #include "ll/api/input/KeyRegistry.h"
 
 #include "ll/api/mod/ModManagerRegistry.h"
-#include "ll/api/service/Bedrock.h"
 #include "mc/client/game/ClientInstance.h"
 #include "mc/client/input/KeyboardRemappingLayout.h"
 #include "mc/client/input/MinecraftInputHandler.h"
 #include "mc/client/input/VanillaClientInputMappingFactory.h"
-#include "mc/client/options/Options.h"
 #include "mc/deps/input/InputHandler.h"
 #include "mc/deps/input/KeyboardInputMapping.h"
 #include "mc/deps/input/KeyboardKeyBinding.h"
 #include "mc/deps/input/MouseButtonBinding.h"
 #include "mc/deps/input/MouseInputMapping.h"
+
 #include <memory>
 #include <string_view>
 
@@ -87,7 +86,7 @@ bool KeyRegistry::hasKey(std::string_view name) {
         return true;
     }
 
-    for (const auto& [fullName, handle] : impl->keys) {
+    for (auto const& [fullName, handle] : impl->keys) {
         size_t dotPos = fullName.find_last_of('.');
         if (dotPos != std::string::npos) {
             std::string baseName = fullName.substr(dotPos + 1);
@@ -105,7 +104,7 @@ std::vector<std::string> KeyRegistry::getRegisteredKeys() const {
     std::vector<std::string> keys;
     keys.reserve(impl->keys.size());
 
-    for (const auto& pair : impl->keys) {
+    for (auto const& pair : impl->keys) {
         keys.push_back(pair.first);
     }
 
@@ -197,7 +196,7 @@ void KeyRegistry::registerKeyboardInputs(
 
 void KeyRegistry::processPendingKeyMappings(std::vector<::Keymapping>& newDefaultMapping) {
     std::lock_guard lock{impl->mutex};
-    for (const auto& pending : impl->pendingKeyMappings) {
+    for (auto const& pending : impl->pendingKeyMappings) {
         Keymapping map("key." + pending.name, pending.keyCodes, pending.allowRemap, false);
         newDefaultMapping.emplace_back(map);
     }

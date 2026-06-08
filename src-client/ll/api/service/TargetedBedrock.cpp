@@ -6,18 +6,11 @@
 
 #include "ll/api/memory/Hook.h"
 
-#include "ll/core/LeviLamina.h"
 #include "mc/client/game/ClientInstance.h"
-#include "mc/client/game/IMinecraftGame.h"
-#include "mc/client/game/MinecraftGame.h"
-#include "mc/client/multiplayer/MultiPlayerLevel.h"
-#include "mc/client/network/LegacyClientNetworkHandler.h"
-#include "mc/common/Globals.h"
 #include "mc/deps/application/AppPlatform.h"
-#include "mc/deps/application/gamecore/Platform_GameCore.h"
 #include "mc/deps/core/utility/ServiceLocator.h"
 #include "mc/deps/raknet/RakPeer.h"
-#include "mc/module/VanillaGameModuleClient.h"
+#include "mc/network/ClientNetworkSystem.h" // IWYU pragma: keep
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/ServerNetworkSystem.h"
 #include "mc/resources/ResourcePackRepository.h"
@@ -25,12 +18,7 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
-#include "mc/server/module/VanillaGameModuleServer.h"
-#include "mc/world/GameSession.h"
 #include "mc/world/Minecraft.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
-#include "mc/world/level/storage/DBStorage.h"
-#include "mc/world/level/storage/DBStorageConfig.h"
 
 
 namespace ll::service::inline bedrock {

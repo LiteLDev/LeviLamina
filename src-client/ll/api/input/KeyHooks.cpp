@@ -49,7 +49,7 @@ LL_TYPE_INSTANCE_HOOK(
     VanillaClientInputMappingFactory,
     &VanillaClientInputMappingFactory::$_updateKeyboardAndMouseControls,
     void,
-    IOptions& options
+    IOptionRegistry& options
 ) {
     origin(options);
     for (auto& mapping : *mActiveInputMappings) {
