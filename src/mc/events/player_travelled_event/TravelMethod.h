@@ -5,7 +5,7 @@
 namespace PlayerTravelledEvent {
 
 enum class TravelMethod : int {
-    Unknown   = 4294967295,
+    Unknown   = -1,
     Walk      = 0,
     SwimWater = 1,
     Fall      = 2,

@@ -27,13 +27,13 @@ class RealmsAllowListScreenController : public ::MainMenuScreenController {
 public:
     // RealmsAllowListScreenController inner types define
     enum class SearchState : int {
-        NotInitialized = 4294967295,
+        NotInitialized = -1,
         NotFound       = 0,
         Found          = 1,
     };
 
     enum class RealmPlayerList : int {
-        InvalidMemberList    = 4294967295,
+        InvalidMemberList    = -1,
         MembersList          = 0,
         InvitedFriendsList   = 1,
         UninvitedFriendsList = 2,

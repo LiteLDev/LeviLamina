@@ -25,7 +25,7 @@ class GameRules : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // GameRules inner types define
     enum class GameRulesIndex : int {
-        InvalidGameRule           = 4294967295,
+        InvalidGameRule           = -1,
         CommandBlockOutput        = 0,
         DoDaylightCycle           = 1,
         DoEntityDrops             = 2,

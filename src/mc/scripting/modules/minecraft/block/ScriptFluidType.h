@@ -5,7 +5,7 @@
 namespace ScriptModuleMinecraft {
 
 enum class ScriptFluidType : int {
-    None       = 4294967295,
+    None       = -1,
     Water      = 0,
     Lava       = 1,
     PowderSnow = 2,

@@ -5,7 +5,7 @@
 namespace TitleInfo {
 
 enum class TitleId : int {
-    Unknown        = 4294967295,
+    Unknown        = -1,
     BedrockVanilla = 0,
     Earth          = 1,
     Edu            = 2,

@@ -5,7 +5,7 @@
 namespace Social {
 
 enum class IdentitySignInTrigger : int {
-    Unknown   = 4294967295,
+    Unknown   = -1,
     Automatic = 0,
     User      = 1,
     External  = 2,

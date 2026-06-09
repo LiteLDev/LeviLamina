@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class TextProcessingEventOrigin : int {
-    Unknown            = 4294967295,
+    Unknown            = -1,
     ServerChatPublic   = 0,
     ServerChatWhisper  = 1,
     SignText           = 2,

@@ -25,7 +25,7 @@ class IEduMultiplayerHeadless : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // IEduMultiplayerHeadless inner types define
     enum class ServerHealth : int {
-        Unknown = 4294967295,
+        Unknown = -1,
         Poor    = 0,
         Mid     = 1,
         Good    = 2,

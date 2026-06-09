@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
+#include "mc/certificates/identity/RawGameServerToken.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/json/Value.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
@@ -18,9 +20,7 @@ class TintMapColor;
 class WebToken;
 struct ConnectionAuthInfo;
 struct ConnectionSkinInfo;
-struct RawGameServerToken;
 struct SyncedClientOptionsComponent;
-namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -36,35 +36,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkc8a2bf;
-        ::ll::UntypedStorage<8, 16> mUnk86437a;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>> rawToken;
+        ::ll::TypedStorage<8, 16, ::Json::Value>                authData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ParsedConnectionString& operator=(ParsedConnectionString const&);
-        ParsedConnectionString(ParsedConnectionString const&);
-        ParsedConnectionString();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ParsedConnectionString();
+        MCAPI ~ParsedConnectionString();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2beee2;
-    ::ll::UntypedStorage<8, 32> mUnkc0eefb;
-    ::ll::UntypedStorage<4, 4>  mUnke8a30e;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>> mRawToken;
+    ::ll::TypedStorage<8, 32, ::RawGameServerToken>         mUnverifiedGameServerToken;
+    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>    mAuthenticationType;
     // NOLINTEND
 
 public:
@@ -83,117 +77,117 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseConnectionRequest(::BaseConnectionRequest const& other);
+    MCAPI BaseConnectionRequest(::BaseConnectionRequest const& other);
 
-    MCNAPI BaseConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCAPI BaseConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
 
-    MCNAPI ::RawGameServerToken const& _getGameServerToken() const;
+    MCFOLD ::RawGameServerToken const& _getGameServerToken() const;
 
-    MCNAPI ::WebToken const& _getRawRequest() const;
+    MCFOLD ::WebToken const& _getRawRequest() const;
 
-    MCNAPI bool _isUsingRestrictedIds() const;
+    MCAPI bool _isUsingRestrictedIds() const;
 
-    MCNAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
+    MCAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
-    MCNAPI ::std::string getArmSize() const;
+    MCAPI ::std::string getArmSize() const;
 
-    MCNAPI ::PlayerAuthenticationType getAuthenticationType() const;
+    MCFOLD ::PlayerAuthenticationType getAuthenticationType() const;
 
-    MCNAPI ::std::vector<uchar> getCapeData() const;
+    MCAPI ::std::vector<uchar> getCapeData() const;
 
-    MCNAPI ::std::string getCapeId() const;
+    MCAPI ::std::string getCapeId() const;
 
-    MCNAPI ushort getCapeImageHeight() const;
+    MCAPI ushort getCapeImageHeight() const;
 
-    MCNAPI ushort getCapeImageWidth() const;
+    MCAPI ushort getCapeImageWidth() const;
 
-    MCNAPI ::SyncedClientOptionsComponent getClientOptions() const;
+    MCAPI ::SyncedClientOptionsComponent getClientOptions() const;
 
-    MCNAPI uint64 getClientRandomId() const;
+    MCAPI uint64 getClientRandomId() const;
 
-    MCNAPI ::InputMode getCurrentInputMode() const;
+    MCAPI ::InputMode getCurrentInputMode() const;
 
-    MCNAPI ::std::string getDeviceId() const;
+    MCAPI ::std::string getDeviceId() const;
 
-    MCNAPI ::BuildPlatform getDeviceOS() const;
+    MCAPI ::BuildPlatform getDeviceOS() const;
 
-    MCNAPI ::std::string getLanguageCode() const;
+    MCAPI ::std::string getLanguageCode() const;
 
-    MCNAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
-    MCNAPI ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
+    MCAPI ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
 
-    MCNAPI ::std::string getPlatformId() const;
+    MCAPI ::std::string getPlatformId() const;
 
-    MCNAPI ::std::string getPlatformOfflineId() const;
+    MCAPI ::std::string getPlatformOfflineId() const;
 
-    MCNAPI ::std::string getPlatformOnlineId() const;
+    MCAPI ::std::string getPlatformOnlineId() const;
 
-    MCNAPI ::PlatformType getPlatformType() const;
+    MCAPI ::PlatformType getPlatformType() const;
 
-    MCNAPI ::std::string getSelfSignedId() const;
+    MCAPI ::std::string getSelfSignedId() const;
 
-    MCNAPI ::std::string getSkinAnimationData() const;
+    MCAPI ::std::string getSkinAnimationData() const;
 
-    MCNAPI ::mce::Color getSkinColor() const;
+    MCAPI ::mce::Color getSkinColor() const;
 
-    MCNAPI ::std::vector<uchar> getSkinData() const;
+    MCAPI ::std::vector<uchar> getSkinData() const;
 
-    MCNAPI ::std::string getSkinGeometry() const;
+    MCAPI ::std::string getSkinGeometry() const;
 
-    MCNAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
+    MCAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
 
-    MCNAPI ::std::string getSkinId() const;
+    MCAPI ::std::string getSkinId() const;
 
-    MCNAPI ushort getSkinImageHeight() const;
+    MCAPI ushort getSkinImageHeight() const;
 
-    MCNAPI ushort getSkinImageWidth() const;
+    MCAPI ushort getSkinImageWidth() const;
 
-    MCNAPI ::std::string getSkinResourcePatch() const;
+    MCAPI ::std::string getSkinResourcePatch() const;
 
-    MCNAPI ::std::string getThirdPartyName() const;
+    MCAPI ::std::string getThirdPartyName() const;
 
-    MCNAPI bool isCapeOnClassicSkin() const;
+    MCAPI bool isCapeOnClassicSkin() const;
 
-    MCNAPI bool isCompatibleWithClientSideChunkGen() const;
+    MCAPI bool isCompatibleWithClientSideChunkGen() const;
 
-    MCNAPI bool isOverrideSkin() const;
+    MCAPI bool isOverrideSkin() const;
 
-    MCNAPI bool isPersonaSkin() const;
+    MCAPI bool isPersonaSkin() const;
 
-    MCNAPI bool isPremiumSkin() const;
+    MCAPI bool isPremiumSkin() const;
 
-    MCNAPI bool isTrustedSkin() const;
+    MCAPI bool isTrustedSkin() const;
 
-    MCNAPI bool isWellFormed() const;
+    MCAPI bool isWellFormed() const;
 
-    MCNAPI ::std::string toString();
+    MCAPI ::std::string toString();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::Json::Value _createAuthJson(::ConnectionAuthInfo const& authInfo);
+    MCAPI static ::Json::Value _createAuthJson(::ConnectionAuthInfo const& authInfo);
 
-    MCNAPI static void _fillPersonaJson(::Json::Value& root, ::ConnectionSkinInfo const& skinInfo);
+    MCAPI static void _fillPersonaJson(::Json::Value& root, ::ConnectionSkinInfo const& skinInfo);
 #endif
 
-    MCNAPI static ::BaseConnectionRequest::ParsedConnectionString _parseConnectionString(::std::string const& str);
+    MCAPI static ::BaseConnectionRequest::ParsedConnectionString _parseConnectionString(::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BaseConnectionRequest const& other);
+    MCAPI void* $ctor(::BaseConnectionRequest const& other);
 
-    MCNAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCAPI void* $ctor(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

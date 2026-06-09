@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class RealmEventId : int {
-    UnknownEvent                 = 4294967295,
+    UnknownEvent                 = -1,
     FirstDiamond                 = 0,
     FirstEnderDragonDefeated     = 1,
     FirstNetherPortalLit         = 2,

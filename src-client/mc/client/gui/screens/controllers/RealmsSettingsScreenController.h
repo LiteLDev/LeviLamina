@@ -58,7 +58,7 @@ public:
     };
 
     enum class SaveType : int {
-        Unknown   = 4294967295,
+        Unknown   = -1,
         Manual    = 0,
         Automatic = 1,
     };

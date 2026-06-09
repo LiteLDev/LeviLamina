@@ -8,17 +8,11 @@ class VirtualAllocatorStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke1f9a8;
-    ::ll::UntypedStorage<8, 8> mUnk2efecb;
-    ::ll::UntypedStorage<8, 8> mUnk54c7b8;
-    ::ll::UntypedStorage<8, 8> mUnkffbb7b;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mTotalReservations;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mTotalCommits;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mReservedMemory;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>> mCommittedMemory;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VirtualAllocatorStats& operator=(VirtualAllocatorStats const&);
-    VirtualAllocatorStats(VirtualAllocatorStats const&);
-    VirtualAllocatorStats();
 };
 
 } // namespace Bedrock::Memory

@@ -262,7 +262,7 @@ public:
         Started   = 1,
         Completed = 2,
         Resumed   = 3,
-        Canceled  = 4294967295,
+        Canceled  = -1,
     };
 
     enum class FileTransmissionType : int {
@@ -298,7 +298,7 @@ public:
     };
 
     enum class MultiplayerSessionUpdateTrigger : int {
-        None         = 4294967295,
+        None         = -1,
         PlayerJoined = 0,
         PlayerLeft   = 1,
     };
@@ -393,7 +393,7 @@ public:
     };
 
     enum class StructureBlockActionType : int {
-        Unknown     = 4294967295,
+        Unknown     = -1,
         Save        = 0,
         Load        = 1,
         Export      = 2,

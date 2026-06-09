@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class HorseType : int {
-    Unset    = 4294967295,
+    Unset    = -1,
     Horse    = 0,
     Donkey   = 1,
     Mule     = 2,

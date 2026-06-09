@@ -35,7 +35,7 @@ public:
     };
 
     enum class SubChunkState : int {
-        Invalid                    = 4294967295,
+        Invalid                    = -1,
         Normal                     = 0,
         IsLightingSystemSubChunk   = 1,
         NeedsRequest               = 2,

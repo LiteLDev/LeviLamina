@@ -5,7 +5,7 @@
 namespace SharedTypes {
 
 enum class AssetType : int {
-    BlockOrEntity           = 4294967295,
+    BlockOrEntity           = -1,
     Block                   = 0,
     Entity                  = 1,
     Atmosphere              = 2,

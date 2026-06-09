@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class PacketViolationType : int {
-    Unknown         = 4294967295,
+    Unknown         = -1,
     PacketMalformed = 0,
 };

@@ -26,7 +26,7 @@ public:
     };
 
     enum class ImmersiveReaderStatusCodes : schar {
-        StatusError   = 255,
+        StatusError   = -1,
         LaunchFailure = 0,
         RetryFailure  = 1,
         Launched      = 2,
