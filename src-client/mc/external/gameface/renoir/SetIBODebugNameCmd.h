@@ -8,7 +8,7 @@ struct SetIBODebugNameCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8da7e8;
+    ::ll::UntypedStorage<4, 8> mUnk8da7e8;
     // NOLINTEND
 
 public:

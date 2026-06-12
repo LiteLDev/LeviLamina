@@ -8,8 +8,8 @@ struct GetReportJsonFunctionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 0> mUnk9356ab;
-    ::ll::UntypedStorage<1, 1> mUnk6758be;
+    ::ll::UntypedStorage<1, 64> mUnk9356ab;
+    ::ll::UntypedStorage<1, 8>  mUnk6758be;
     // NOLINTEND
 
 public:

@@ -6,13 +6,9 @@ namespace PlayerReportingSignal {
 
 struct ReportFunctionData {
 public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_S
-    ::ll::UntypedStorage<1, 0> mUnk9e209c;
-#else // LL_PLAT_C
+    // member variables
+    // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk9e209c;
-#endif
     ::ll::UntypedStorage<8, 64> mUnk6b63f9;
     ::ll::UntypedStorage<1, 1>  mUnkbae8df;
     // NOLINTEND

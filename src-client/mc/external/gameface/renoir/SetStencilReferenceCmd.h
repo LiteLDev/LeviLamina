@@ -8,7 +8,7 @@ struct SetStencilReferenceCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk374443;
+    ::ll::UntypedStorage<1, 8> mUnk374443;
     // NOLINTEND
 
 public:

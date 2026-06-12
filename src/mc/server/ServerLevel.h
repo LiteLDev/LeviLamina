@@ -330,7 +330,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForBlockSourceListener();
+    MCAPI static void** $vftableForBlockSourceListener();
 
     MCNAPI static void** $vftableForIWorldRegistriesProvider();
 

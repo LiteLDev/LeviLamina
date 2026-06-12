@@ -8,7 +8,7 @@ struct DestroyDSTextureCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 0> mUnkbde0c4;
+    ::ll::UntypedStorage<1, 8> mUnkbde0c4;
     // NOLINTEND
 
 public:

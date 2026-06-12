@@ -13,14 +13,10 @@ struct HeightDifference;
 
 struct DeserializationChanges {
 public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_S
-    ::ll::TypedStorage<1, 0, ::std::unordered_map<::BlockPos, ::BlockDifference>> blockChangesMap;
-#else // LL_PLAT_C
+    // member variables
+    // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::BlockDifference>> blockChangesMap;
-#endif
-    ::ll::TypedStorage<8, 24, ::std::vector<::HeightDifference>> heightChanges;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HeightDifference>>                   heightChanges;
     // NOLINTEND
 
 public:

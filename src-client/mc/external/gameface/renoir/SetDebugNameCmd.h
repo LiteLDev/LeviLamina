@@ -8,7 +8,7 @@ struct SetDebugNameCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk62790a;
+    ::ll::UntypedStorage<4, 8> mUnk62790a;
     // NOLINTEND
 
 public:

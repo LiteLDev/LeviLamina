@@ -79,12 +79,12 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ClientNetworkSystem(
+    MCAPI ClientNetworkSystem(
         ::brstd::function_ref<::NetworkSystem::Dependencies()> dependencies,
         ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()>
     );
 
-    MCNAPI ClientNetworkSystem(
+    MCAPI ClientNetworkSystem(
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                        networkToggles,
@@ -94,46 +94,46 @@ public:
         ::std::unique_ptr<::IPacketSerializationController>  packetController
     );
 
-    MCNAPI bool
+    MCAPI bool
     connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
 
-    MCNAPI ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
+    MCAPI ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
         ::std::shared_ptr<::SignalingService>                                        signalingService,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
 
-    MCNAPI ::NetherNet::NetworkID getConnectorNetherNetId() const;
+    MCAPI ::NetherNet::NetworkID getConnectorNetherNetId() const;
 
-    MCNAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
+    MCAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
 
-    MCNAPI void getPingTimeForConnection(
+    MCAPI void getPingTimeForConnection(
         ::Social::GameConnectionInfo const& connection,
         ::std::function<void(uint)>         pingTimeCallback
     );
 
-    MCNAPI void registerForPrimaryUserOptionChanges(::ClientNetworkSystemOptions const& primaryUserOptions);
+    MCAPI void registerForPrimaryUserOptionChanges(::ClientNetworkSystemOptions const& primaryUserOptions);
 
-    MCNAPI void setupNetworkSummary(
+    MCAPI void setupNetworkSummary(
         ::std::function<bool()> isInGame,
         ::std::function<bool()> isSignedIntoSignalingService,
         ::std::function<bool()> isHostingLocalDedicatedServer
     );
 #endif
 
-    MCNAPI ::std::optional<::NetworkIdentifier> tryGetLocalNetworkId() const;
+    MCAPI ::std::optional<::NetworkIdentifier> tryGetLocalNetworkId() const;
 
 #ifdef LL_PLAT_C
-    MCNAPI ::std::optional<::NetworkIdentifier> tryGetPrimaryNetworkId() const;
+    MCAPI ::std::optional<::NetworkIdentifier> tryGetPrimaryNetworkId() const;
 #endif
 
-    MCNAPI ::std::optional<::NetworkIdentifier> tryGetServerId() const;
+    MCAPI ::std::optional<::NetworkIdentifier> tryGetServerId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::NetworkSystem::Dependencies _createConstructionDependencies(
+    MCAPI static ::NetworkSystem::Dependencies _createConstructionDependencies(
         ::ClientNetworkSystem*                               pThis,
         ::Scheduler&                                         recieveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
@@ -150,12 +150,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::brstd::function_ref<::NetworkSystem::Dependencies()> dependencies,
         ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()>
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                        networkToggles,
@@ -170,16 +170,16 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::Social::GameConnectionInfo const& $getConnectionInfo() const;
+    MCAPI ::Social::GameConnectionInfo const& $getConnectionInfo() const;
 
-    MCNAPI ::std::optional<::std::string> $getNetworkInfoString() const;
+    MCAPI ::std::optional<::std::string> $getNetworkInfoString() const;
 #endif
 
 

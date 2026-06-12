@@ -8,7 +8,7 @@ struct SetPSODebugNameCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 0> mUnk8ef4e5;
+    ::ll::UntypedStorage<1, 8> mUnk8ef4e5;
     // NOLINTEND
 
 public:

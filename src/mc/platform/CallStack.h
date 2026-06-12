@@ -34,7 +34,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Context(
+        MCAPI Context(
             ::std::string                        value,
             ::std::optional<::Bedrock::LogLevel> logLevel,
             ::std::optional<::LogAreaID>         logArea
@@ -44,7 +44,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void*
+        MCAPI void*
         $ctor(::std::string value, ::std::optional<::Bedrock::LogLevel> logLevel, ::std::optional<::LogAreaID> logArea);
         // NOLINTEND
     };

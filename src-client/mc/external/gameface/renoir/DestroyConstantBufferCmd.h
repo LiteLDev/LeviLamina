@@ -8,7 +8,7 @@ struct DestroyConstantBufferCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 0> mUnk1b8395;
+    ::ll::UntypedStorage<1, 8> mUnk1b8395;
     // NOLINTEND
 
 public:

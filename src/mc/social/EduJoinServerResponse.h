@@ -6,13 +6,9 @@ namespace Social {
 
 struct EduJoinServerResponse {
 public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_S
-    ::ll::UntypedStorage<1, 72> mUnkce4b98;
-#else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 72> mUnkce4b98;
-#endif
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 72>  mUnkce4b98;
     ::ll::UntypedStorage<8, 40>  mUnk7d94d0;
     ::ll::UntypedStorage<4, 8>   mUnk9dc522;
     ::ll::UntypedStorage<8, 152> mUnk9150cd;

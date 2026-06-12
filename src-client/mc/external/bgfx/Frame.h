@@ -60,8 +60,8 @@ public:
     ::ll::TypedStorage<8, 8388608, ::bgfx::RenderItem[65536]>                                m_renderItem;
     ::ll::TypedStorage<4, 88080384, ::bgfx::RenderBind[65536]>                               m_renderItemBind;
     ::ll::TypedStorage<8, 524288, ::bgfx::RangedBindings* [65536]>                           m_rangedRenderItemBind;
-    ::ll::TypedStorage<4, 4100, uint[1025]>                                                  m_blitKeys;
-    ::ll::TypedStorage<64, 65600, ::bgfx::BlitItem[1025]>                                    m_blitItem;
+    ::ll::TypedStorage<4, 4160, uint[1025]>                                                  m_blitKeys;
+    ::ll::TypedStorage<2, 65600, ::bgfx::BlitItem[1025]>                                     m_blitItem;
     ::ll::TypedStorage<4, 4718624, ::bgfx::FrameCache>                                       m_frameCache;
     ::ll::TypedStorage<8, 8, ::bgfx::UniformBuffer**>                                        m_uniformBuffer;
     ::ll::TypedStorage<4, 4, uint>                                                           m_numRenderItems;
@@ -95,7 +95,7 @@ public:
     ::ll::TypedStorage<4, 488, ::bgfx::RayTracingConfiguration> m_rtConfig;
     ::ll::TypedStorage<8, 192, ::bgfx::RayTracingResources>     m_rtResources;
     ::ll::TypedStorage<1, 1, bool>                              m_capture;
-    ::ll::TypedStorage<1, 1, bool>                              m_skipFlip;
+    ::ll::TypedStorage<1, 63, bool>                             m_skipFlip;
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@ struct CreateDSTextureCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 0>  mUnk525612;
+    ::ll::UntypedStorage<1, 4>  mUnk525612;
     ::ll::UntypedStorage<4, 12> mUnk738d87;
     // NOLINTEND
 

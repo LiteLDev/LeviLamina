@@ -24,7 +24,7 @@ public:
     ::ll::TypedStorage<4, 16, float[4]>                 m_prevWorldPosOffset;
     ::ll::TypedStorage<2, 2, ::bgfx::FrameBufferHandle> m_fbh;
     ::ll::TypedStorage<1, 1, uchar>                     m_mode;
-    ::ll::TypedStorage<1, 1, uchar>                     m_flags;
+    ::ll::TypedStorage<1, 13, uchar>                    m_flags;
     // NOLINTEND
 
 public:
