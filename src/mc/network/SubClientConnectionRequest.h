@@ -30,14 +30,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SubClientConnectionRequest(::SubClientConnectionRequest const& other);
+    MCAPI SubClientConnectionRequest(::SubClientConnectionRequest const& other);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::SubClientConnectionRequest create(
+    MCAPI static ::SubClientConnectionRequest create(
         ::ConnectionAuthInfo const&           authInfo,
         ::std::string const&                  deviceId,
         ::std::string const&                  selfSignedId,
@@ -53,25 +53,25 @@ public:
     );
 #endif
 
-    MCNAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
+    MCAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SubClientConnectionRequest const& other);
+    MCAPI void* $ctor(::SubClientConnectionRequest const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isAuthTypeWellFormed() const;
+    MCAPI bool $_isAuthTypeWellFormed() const;
 
 
     // NOLINTEND

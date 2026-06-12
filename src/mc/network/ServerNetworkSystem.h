@@ -33,6 +33,12 @@ namespace PlayerMessaging { struct NetworkID; }
 
 class ServerNetworkSystem : public ::Bedrock::EnableNonOwnerReferences, public ::NetworkSystem {
 public:
+    // ServerNetworkSystem inner types define
+    using DependencyFactory = ::brstd::function_ref<::NetworkSystem::Dependencies()>;
+
+    using StatisticsFactory = ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()>;
+
+public:
     // prevent constructor by default
     ServerNetworkSystem();
 

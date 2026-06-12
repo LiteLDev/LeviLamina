@@ -8,7 +8,7 @@ struct DestroyIndexBufferCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk192c3a;
+    ::ll::UntypedStorage<4, 8> mUnk192c3a;
     // NOLINTEND
 
 public:

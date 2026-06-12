@@ -6,13 +6,9 @@ namespace Social {
 
 struct EduFetchServersResponse {
 public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_S
-    ::ll::UntypedStorage<1, 72> mUnk92312f;
-#else // LL_PLAT_C
+    // member variables
+    // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnk92312f;
-#endif
     ::ll::UntypedStorage<8, 56> mUnkfcf064;
     // NOLINTEND
 

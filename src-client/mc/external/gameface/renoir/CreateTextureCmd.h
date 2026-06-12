@@ -8,9 +8,9 @@ struct CreateTextureCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke5b16a;
-    ::ll::UntypedStorage<1, 0> mUnk15ef8b;
-    ::ll::UntypedStorage<4, 4> mUnkcf3ad5;
+    ::ll::UntypedStorage<4, 4>  mUnke5b16a;
+    ::ll::UntypedStorage<1, 52> mUnk15ef8b;
+    ::ll::UntypedStorage<4, 8>  mUnkcf3ad5;
     // NOLINTEND
 
 public:

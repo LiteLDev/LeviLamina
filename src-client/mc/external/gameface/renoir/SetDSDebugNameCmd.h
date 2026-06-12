@@ -8,7 +8,7 @@ struct SetDSDebugNameCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 0> mUnk7f9d38;
+    ::ll::UntypedStorage<1, 8> mUnk7f9d38;
     // NOLINTEND
 
 public:

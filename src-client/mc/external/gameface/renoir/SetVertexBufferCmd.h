@@ -8,7 +8,7 @@ struct SetVertexBufferCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkac2450;
+    ::ll::UntypedStorage<4, 8> mUnkac2450;
     // NOLINTEND
 
 public:

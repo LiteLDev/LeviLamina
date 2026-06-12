@@ -66,13 +66,9 @@ public:
 
     struct DBStorageAccumulator {
     public:
-// member variables
-// NOLINTBEGIN
-#ifdef LL_PLAT_S
-        ::ll::UntypedStorage<1, 640> mUnk7892b7;
-#else // LL_PLAT_C
+        // member variables
+        // NOLINTBEGIN
         ::ll::UntypedStorage<8, 640> mUnk7892b7;
-#endif
         // NOLINTEND
 
     public:

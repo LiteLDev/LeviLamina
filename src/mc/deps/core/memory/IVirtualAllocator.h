@@ -17,31 +17,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        uint mUnkb8649a : 1;
-        uint mUnk8510aa : 1;
-        uint mUnkd8880b : 1;
+        uint mAutomaticallyRoundToMinimumSize : 1;
+        uint mMapNoCoalesce                   : 1;
+        uint mMapNoOverwrite                  : 1;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Flags& operator=(Flags const&);
-        Flags(Flags const&);
-        Flags();
     };
 
     struct ReservationInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnke61f86;
-        ::ll::UntypedStorage<8, 8> mUnk54d9ce;
+        ::ll::TypedStorage<8, 8, void*>  mPtr;
+        ::ll::TypedStorage<8, 8, uint64> mReservedSize;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ReservationInfo& operator=(ReservationInfo const&);
-        ReservationInfo(ReservationInfo const&);
-        ReservationInfo();
     };
 };
 

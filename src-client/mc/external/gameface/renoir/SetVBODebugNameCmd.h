@@ -8,7 +8,7 @@ struct SetVBODebugNameCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9eb960;
+    ::ll::UntypedStorage<4, 8> mUnk9eb960;
     // NOLINTEND
 
 public:

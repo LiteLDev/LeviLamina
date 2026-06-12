@@ -5,7 +5,7 @@
 namespace Social {
 
 enum class GuestTenantStatus : int {
-    None                           = 4294967295,
+    None                           = -1,
     Allowed                        = 0,
     OwnerDisallowed                = 1,
     GuestTenantServersDisabled     = 2,

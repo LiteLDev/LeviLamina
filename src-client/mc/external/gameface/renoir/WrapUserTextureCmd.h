@@ -8,9 +8,9 @@ struct WrapUserTextureCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7029e0;
-    ::ll::UntypedStorage<1, 0> mUnk5f9524;
-    ::ll::UntypedStorage<8, 8> mUnkf17887;
+    ::ll::UntypedStorage<4, 4>  mUnk7029e0;
+    ::ll::UntypedStorage<1, 52> mUnk5f9524;
+    ::ll::UntypedStorage<8, 8>  mUnkf17887;
     // NOLINTEND
 
 public:

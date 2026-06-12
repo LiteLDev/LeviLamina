@@ -8,7 +8,7 @@ struct DestroyPSOCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 0> mUnk92b5f4;
+    ::ll::UntypedStorage<1, 8> mUnk92b5f4;
     // NOLINTEND
 
 public:

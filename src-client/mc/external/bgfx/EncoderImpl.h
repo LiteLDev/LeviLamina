@@ -37,7 +37,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                                              m_frame;
-    ::ll::TypedStorage<4, 16, ::bgfx::SortKey>                                            m_key;
+    ::ll::TypedStorage<4, 56, ::bgfx::SortKey>                                            m_key;
     ::ll::TypedStorage<8, 128, ::bgfx::RenderDraw>                                        m_draw;
     ::ll::TypedStorage<4, 64, ::bgfx::RenderCompute>                                      m_compute;
     ::ll::TypedStorage<4, 1344, ::bgfx::RenderBind>                                       m_bind;

@@ -13,7 +13,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4194320, ::bgfx::MatrixCache> m_matrixCache;
-    ::ll::TypedStorage<4, 524292, ::bgfx::RectCache>    m_rectCache;
+    ::ll::TypedStorage<4, 524304, ::bgfx::RectCache>    m_rectCache;
     // NOLINTEND
 };
 

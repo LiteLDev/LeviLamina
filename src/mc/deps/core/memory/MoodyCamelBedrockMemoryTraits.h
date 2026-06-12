@@ -8,9 +8,9 @@ struct MoodyCamelBedrockMemoryTraits : public ::moodycamel::ConcurrentQueueDefau
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void free(void* ptr);
+    MCFOLD static void free(void* ptr);
 
-    MCNAPI static void* malloc(uint64 size);
+    MCAPI static void* malloc(uint64 size);
     // NOLINTEND
 };
 

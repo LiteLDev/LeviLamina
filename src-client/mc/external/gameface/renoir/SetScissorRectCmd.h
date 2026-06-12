@@ -8,8 +8,8 @@ struct SetScissorRectCmd {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd8dfe9;
-    ::ll::UntypedStorage<1, 0> mUnk235728;
+    ::ll::UntypedStorage<1, 4>  mUnkd8dfe9;
+    ::ll::UntypedStorage<1, 20> mUnk235728;
     // NOLINTEND
 
 public:

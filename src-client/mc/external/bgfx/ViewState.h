@@ -20,7 +20,7 @@ public:
     ::ll::TypedStorage<4, 32768, ::bgfx::Matrix4[2][256]> m_viewTmp;
     ::ll::TypedStorage<4, 32768, ::bgfx::Matrix4[2][256]> m_viewProj;
     ::ll::TypedStorage<8, 16, ::bgfx::Matrix4* [2]>       m_view;
-    ::ll::TypedStorage<2, 8, ::bgfx::Rect>                m_rect;
+    ::ll::TypedStorage<2, 16, ::bgfx::Rect>               m_rect;
     ::ll::TypedStorage<4, 64, ::bgfx::Matrix4>            m_invView;
     ::ll::TypedStorage<4, 64, ::bgfx::Matrix4>            m_invProj;
     ::ll::TypedStorage<4, 64, ::bgfx::Matrix4>            m_invViewProj;

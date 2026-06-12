@@ -13,12 +13,8 @@ class SoundEventRepository {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::std::mutex> mSoundMapLock;
-#ifdef LL_PLAT_S
-    ::ll::TypedStorage<1, 0, ::std::unordered_map<::std::string, ::std::shared_ptr<::SoundEvent>>> mSoundEventMap;
-#else // LL_PLAT_C
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                         mSoundMapLock;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::SoundEvent>>> mSoundEventMap;
-#endif
     // NOLINTEND
 
 public:

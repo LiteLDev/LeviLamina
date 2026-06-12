@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void* realloc(void* ptr, uint64 newSize);
+    MCAPI void* realloc(void* ptr, uint64 newSize);
     // NOLINTEND
 
 public:

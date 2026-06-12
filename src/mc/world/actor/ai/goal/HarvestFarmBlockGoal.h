@@ -16,7 +16,7 @@ class HarvestFarmBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // HarvestFarmBlockGoal inner types define
     enum class Task : int {
-        None = 4294967295,
+        None = -1,
         Reap = 0,
         Sow  = 1,
     };

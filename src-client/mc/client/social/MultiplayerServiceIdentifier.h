@@ -11,7 +11,7 @@ enum class MultiplayerServiceIdentifier : int {
     Playstation = 3,
     Edu         = 4,
     Mock        = 5,
-    Undefined   = 4294967295,
+    Undefined   = -1,
 };
 
 }

@@ -16,7 +16,7 @@ class FilterTestDimensionWeather : public ::FilterTest {
 public:
     // FilterTestDimensionWeather inner types define
     enum class WeatherType : int {
-        Undefined     = 4294967295,
+        Undefined     = -1,
         Clear         = 0,
         Precipitation = 1,
         Thunderstorm  = 2,
