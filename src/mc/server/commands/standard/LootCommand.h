@@ -19,6 +19,7 @@ class ItemRegistryRef;
 class ItemStack;
 class Level;
 class Player;
+struct DimensionType;
 namespace Util { struct ReplacementResults; }
 // clang-format on
 

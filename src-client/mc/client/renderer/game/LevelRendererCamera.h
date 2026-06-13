@@ -63,6 +63,7 @@ class WeatherRenderer;
 struct BaseSceneDirectionalLightRenderData;
 struct ChunkRenderObjectCollection;
 struct CrackRenderObjectCollection;
+struct DimensionType;
 struct FogTransitionSetting;
 struct LevelRenderPreRenderUpdateParameters;
 struct NameTagRenderObjectCollection;

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/packet/SpawnPositionType.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 struct SetSpawnPositionPacketPayload {
 public:

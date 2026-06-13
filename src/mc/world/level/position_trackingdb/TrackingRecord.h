@@ -7,6 +7,7 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/PositionTrackingId.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated forward declare list

@@ -6,6 +6,7 @@
 // clang-format off
 class ILevel;
 class MockableOwnedBlockSource;
+struct DimensionType;
 // clang-format on
 
 class BlockSourceFactoryImpl {

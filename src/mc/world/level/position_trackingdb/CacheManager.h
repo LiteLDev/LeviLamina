@@ -9,6 +9,7 @@
 // clang-format off
 class BlockPos;
 class Level;
+struct DimensionType;
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on
 

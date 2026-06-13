@@ -34,6 +34,7 @@ class ServerNetworkSystem;
 class Vec2;
 class Vec3;
 struct ActorUniqueID;
+struct DimensionType;
 struct PlayerAuthenticationInfo;
 struct VariantParameterList;
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }

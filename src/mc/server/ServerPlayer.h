@@ -55,6 +55,7 @@ class ResolvedTextObject;
 class ServerNetworkSystem;
 class TextObjectRoot;
 class Vec3;
+struct DimensionType;
 struct INpcDialogueData;
 struct KnockbackParameters;
 struct PlayerAuthenticationInfo;

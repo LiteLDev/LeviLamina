@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/dimension/DerivedDimensionArguments.h"
 #include "mc/world/level/dimension/DimensionHeightRange.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 struct DimensionArguments {
 public:

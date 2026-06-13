@@ -19,6 +19,7 @@ class MapDecoration;
 class MapItemSavedData;
 class ReadOnlyBinaryStream;
 struct ActorUniqueID;
+struct DimensionType;
 // clang-format on
 
 class ClientboundMapItemDataPacket : public ::Packet {

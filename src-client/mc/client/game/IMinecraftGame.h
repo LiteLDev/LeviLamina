@@ -125,6 +125,7 @@ class Vec3;
 class WorldTemplateManager;
 struct ActorUniqueID;
 struct ControllerIDtoClientMap;
+struct DimensionType;
 struct PlayerJoinWorldContext;
 struct ScreenshotOptions;
 namespace Bedrock::PubSub { class Subscription; }

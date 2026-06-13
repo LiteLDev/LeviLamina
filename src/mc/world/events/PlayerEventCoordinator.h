@@ -22,6 +22,7 @@ class PlayerEventListener;
 class PlayerGameplayHandler;
 struct ActorUniqueID;
 struct DealKineticDamageComponent;
+struct DimensionType;
 // clang-format on
 
 class PlayerEventCoordinator : public ::EventCoordinator<::PlayerEventListener> {

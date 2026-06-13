@@ -29,6 +29,7 @@ struct BiomeJsonDocumentGlue;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
+struct DimensionType;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

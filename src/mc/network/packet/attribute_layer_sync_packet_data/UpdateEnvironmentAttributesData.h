@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/dimension/DimensionType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace EAS { struct EnvironmentAttributeData; }

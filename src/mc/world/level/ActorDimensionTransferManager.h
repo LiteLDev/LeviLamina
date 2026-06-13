@@ -12,6 +12,7 @@ class DimensionManager;
 class IActorDimensionTransferer;
 class PortalForcer;
 class Vec3;
+struct DimensionType;
 // clang-format on
 
 class ActorDimensionTransferManager {

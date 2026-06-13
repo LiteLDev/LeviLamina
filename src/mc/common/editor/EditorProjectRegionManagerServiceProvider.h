@@ -10,6 +10,7 @@
 // clang-format off
 class Dimension;
 struct Bounds;
+struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ProjectRegion; }
 namespace Editor { struct ProjectRegionConfig; }

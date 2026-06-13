@@ -12,6 +12,7 @@ class CompassSpriteCalculator;
 class Level;
 class LodestoneCompassComponentCalculator;
 struct ActorUniqueID;
+struct DimensionType;
 // clang-format on
 
 class LodestoneCompassComponent {

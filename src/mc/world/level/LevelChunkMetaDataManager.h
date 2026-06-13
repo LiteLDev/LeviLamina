@@ -17,6 +17,7 @@ class LevelChunkMetaData;
 class LevelChunkMetaDataBaseGameVersionWrapper;
 class LevelChunkMetaDataDictionary;
 class LevelSeed64;
+struct DimensionType;
 // clang-format on
 
 class LevelChunkMetaDataManager {

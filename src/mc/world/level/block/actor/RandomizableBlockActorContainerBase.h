@@ -14,6 +14,7 @@ class DataLoadHelper;
 class ILevel;
 class Level;
 class SaveContext;
+struct DimensionType;
 // clang-format on
 
 class RandomizableBlockActorContainerBase : public ::BlockActor {

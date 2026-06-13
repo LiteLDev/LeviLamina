@@ -17,6 +17,7 @@ class ICustomBiomeSource;
 class Player;
 class Vec2;
 struct ActorUniqueID;
+struct DimensionType;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class RequestBlockColorsPayload; }

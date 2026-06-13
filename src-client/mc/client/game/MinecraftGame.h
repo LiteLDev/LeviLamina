@@ -148,6 +148,7 @@ class WorldTemplateManager;
 class WorldTransferAgent;
 struct ActorUniqueID;
 struct ControllerIDtoClientMap;
+struct DimensionType;
 struct ExperienceConnectionData;
 struct ExternalWorldTransferActionFunc;
 struct GameConnectionInfoEx;

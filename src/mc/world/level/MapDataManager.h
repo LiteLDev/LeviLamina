@@ -17,6 +17,7 @@ class IMapDataManagerOptions;
 class LevelStorage;
 class MapItemSavedData;
 class PacketSender;
+struct DimensionType;
 // clang-format on
 
 class MapDataManager {

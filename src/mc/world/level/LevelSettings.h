@@ -31,6 +31,7 @@
 // clang-format off
 class Experiments;
 class LevelData;
+struct DimensionType;
 struct LevelSummary;
 struct PackInstanceId;
 namespace mce { class UUID; }

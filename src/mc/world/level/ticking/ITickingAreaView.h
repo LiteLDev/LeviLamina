@@ -10,6 +10,7 @@ class ChunkViewSource;
 class LevelChunk;
 class Random;
 struct Bounds;
+struct DimensionType;
 struct Tick;
 // clang-format on
 

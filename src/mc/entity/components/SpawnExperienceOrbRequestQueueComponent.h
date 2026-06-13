@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/components/SpawnExperienceOrbRequest.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 struct SpawnExperienceOrbRequestQueueComponent {
 public:

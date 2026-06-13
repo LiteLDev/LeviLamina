@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/storage/loot/ActorTarget.h"
 #include "mc/world/level/storage/loot/LootTable.h"
 

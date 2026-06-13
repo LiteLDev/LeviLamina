@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/position_trackingdb/OperationBase.h"
 
 // auto generated forward declare list

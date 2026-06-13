@@ -20,6 +20,7 @@ class Level;
 class Player;
 class Vec3;
 struct ContainerDescription;
+struct DimensionType;
 // clang-format on
 
 class ContainerComponent : public ::ContainerContentChangeListener, public ::ContainerCloseListener {

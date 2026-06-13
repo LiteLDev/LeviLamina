@@ -28,6 +28,7 @@ class Scheduler;
 class TaskGroup;
 struct ActorUnloadedChunkTransferEntry;
 struct ChunkDeletionMetadata;
+struct DimensionType;
 struct LevelChunkFinalDeleter;
 struct PersistentBlendData;
 // clang-format on

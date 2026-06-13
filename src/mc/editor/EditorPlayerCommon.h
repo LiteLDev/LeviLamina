@@ -17,6 +17,7 @@
 // clang-format off
 class Player;
 class PlayerEventCoordinator;
+struct DimensionType;
 struct PlayerDimensionChangeAfterEvent;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }

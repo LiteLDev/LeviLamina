@@ -7,6 +7,7 @@
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

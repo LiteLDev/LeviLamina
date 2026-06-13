@@ -25,6 +25,7 @@ class Player;
 class SaveContext;
 class Vec3;
 struct ActorUniqueID;
+struct DimensionType;
 // clang-format on
 
 class VaultBlockActor : public ::BlockActor {

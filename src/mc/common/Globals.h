@@ -125,6 +125,7 @@ class WorkerPool;
 struct AccessorTypeEnumHasher;
 struct ActorDefinitionIdentifier;
 struct BlockLayer;
+struct DimensionType;
 struct FlatWorldPreset;
 struct HCTraceImplArea;
 struct ImageMimeTypeEnumHasher;

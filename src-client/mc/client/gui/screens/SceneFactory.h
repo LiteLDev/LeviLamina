@@ -77,6 +77,7 @@ class VisualTree;
 struct ActiveDirectoryModalArgs;
 struct ActorUniqueID;
 struct ContentItem;
+struct DimensionType;
 struct EDULibraryCategory;
 struct INpcDialogueData;
 struct LevelSummary;

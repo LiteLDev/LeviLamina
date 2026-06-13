@@ -189,6 +189,7 @@ struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct Bounds;
 struct BreakingItemParticleData;
 struct DerivedDimensionArguments;
+struct DimensionType;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
 struct PlayerMovementSettings;

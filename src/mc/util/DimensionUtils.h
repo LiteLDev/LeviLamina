@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 struct DimensionIdType;
+struct DimensionType;
 // clang-format on
 
 namespace DimensionUtils {

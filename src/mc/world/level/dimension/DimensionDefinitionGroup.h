@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/puv/LoadResult.h"
 #include "mc/world/level/GeneratorType.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

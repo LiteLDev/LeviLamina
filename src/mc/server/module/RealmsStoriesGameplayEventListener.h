@@ -22,6 +22,7 @@ class RealmsStoriesData;
 class Vec3;
 struct ActorAcquiredItemEvent;
 struct ActorKilledEvent;
+struct DimensionType;
 struct PlayerUseNameTagEvent;
 namespace Json { class Value; }
 // clang-format on

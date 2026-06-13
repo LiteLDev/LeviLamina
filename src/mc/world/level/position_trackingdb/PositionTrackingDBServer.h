@@ -14,6 +14,7 @@ class PositionTrackingDBClientRequestPacket;
 class PositionTrackingId;
 class Scheduler;
 class TaskGroup;
+struct DimensionType;
 namespace PositionTrackingDB { class CacheManager; }
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on

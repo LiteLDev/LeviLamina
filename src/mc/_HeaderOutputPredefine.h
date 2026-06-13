@@ -239,14 +239,6 @@ using int64 = int64_t;
 using ldouble  = long double;
 using FacingID = uchar;
 
-template <typename T0, typename T1>
-class AutomaticID {
-public:
-    T1 mValue;
-};
-class Dimension;
-using DimensionType = AutomaticID<Dimension, int>;
-
 struct RecipeNetIdTag;
 struct CreativeItemNetIdTag;
 struct ContainerRuntimeIdTag;

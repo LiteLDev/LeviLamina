@@ -19,6 +19,7 @@ class CompoundTag;
 class Level;
 class Vec2;
 class Vec3;
+struct DimensionType;
 // clang-format on
 
 class MinecartBlockCommandOrigin : public ::BlockCommandOrigin {

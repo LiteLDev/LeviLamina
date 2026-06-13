@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 struct ChunkPositionAndDimension {
 public:

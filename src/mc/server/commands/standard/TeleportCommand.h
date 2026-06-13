@@ -19,6 +19,7 @@ class CommandOutput;
 class CommandRegistry;
 class TeleportTarget;
 class Vec3;
+struct DimensionType;
 namespace RotationCommandUtils { class RotationData; }
 // clang-format on
 

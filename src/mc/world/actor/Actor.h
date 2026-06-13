@@ -104,6 +104,7 @@ struct AABBShapeComponent;
 struct ActorDefinitionIdentifier;
 struct ActorLink;
 struct ActorRotationComponent;
+struct DimensionType;
 struct DistanceSortedActor;
 struct DynamicRenderOffsetComponent;
 struct EquipmentTable;

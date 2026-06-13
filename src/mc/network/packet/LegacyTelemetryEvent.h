@@ -17,6 +17,7 @@ class Mob;
 class Player;
 class Raid;
 struct ActorUniqueID;
+struct DimensionType;
 // clang-format on
 
 namespace LegacyTelemetryEvent {

@@ -44,6 +44,7 @@
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

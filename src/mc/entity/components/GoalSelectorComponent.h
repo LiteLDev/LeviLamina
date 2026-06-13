@@ -7,6 +7,7 @@
 class BaseGoal;
 class Player;
 class PrioritizedGoal;
+struct DimensionType;
 // clang-format on
 
 class GoalSelectorComponent {

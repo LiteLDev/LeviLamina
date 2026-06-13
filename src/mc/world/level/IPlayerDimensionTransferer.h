@@ -15,6 +15,7 @@ class PacketSender;
 class Player;
 class PlayerLimboActorManager;
 struct AddLimboActorHelper;
+struct DimensionType;
 // clang-format on
 
 class IPlayerDimensionTransferer : public ::IPlayerDimensionTransferConnector {

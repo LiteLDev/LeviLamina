@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/saveddata/maps/MapDecoration.h"
 
 // auto generated forward declare list

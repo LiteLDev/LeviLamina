@@ -23,6 +23,7 @@ class Player;
 class Vec2;
 struct ActorUniqueID;
 struct DealKineticDamageComponent;
+struct DimensionType;
 struct PlayerNotificationEvent;
 class IClientInstance;
 class LocalPlayer;

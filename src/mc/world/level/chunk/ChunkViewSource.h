@@ -16,6 +16,7 @@ class LevelChunk;
 class LevelChunkBlockActorAccessToken;
 class Random;
 struct Bounds;
+struct DimensionType;
 struct LevelChunkFinalDeleter;
 // clang-format on
 

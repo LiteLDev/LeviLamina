@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+struct DimensionType;
 struct TickingAreaDescription;
 // clang-format on
 

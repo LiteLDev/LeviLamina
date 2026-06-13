@@ -11,6 +11,7 @@ class AABB;
 class BlockSource;
 class BoundingBox;
 class Vec3;
+struct DimensionType;
 // clang-format on
 
 class MinecraftGameTestInstance : public ::gametest::BaseGameTestInstance {

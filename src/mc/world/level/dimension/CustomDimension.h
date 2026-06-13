@@ -15,6 +15,7 @@ class LevelChunk;
 class Vec3;
 class WorldGenerator;
 struct DerivedDimensionArguments;
+struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 

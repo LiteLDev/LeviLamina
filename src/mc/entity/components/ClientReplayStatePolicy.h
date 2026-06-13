@@ -6,6 +6,7 @@
 #include "mc/entity/components/IReplayStatePolicy.h"
 #include "mc/entity/components/ReplayStateConfig.h"
 #include "mc/entity/utilities/AdvanceFrameResult.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off
