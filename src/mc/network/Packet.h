@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -43,14 +44,17 @@ public:
     /**
      * Send the packet to a specific server player.
      *
-     * @param player The server player to send the packet to.
+     * @param player The server player to send the
+     * packet to.
      */
     LLAPI void sendTo(Player const& player) const;
 
     /**
      * Send the packet to all relevant players in a 2D plane at a position in a given dimension.
-     * @param pos The position to send the packet to.
+     * @param
+     * pos The position to send the packet to.
      * @param dimId The type of dimension to send the packet in.
+     *
      * @param except exclude this player.
      */
     LLAPI void sendTo(BlockPos const& pos, DimensionType dimId, optional_ref<Player const> except = std::nullopt) const;
@@ -58,7 +62,8 @@ public:
     /**
      * Send the packet to all relevant players within a specific actor.
      *
-     * @param actor The actor to send the packet to.
+     * @param actor The actor to
+     * send the packet to.
      * @param except exclude this player.
      */
     LLAPI void sendTo(Actor const& actor, optional_ref<Player const> except = std::nullopt) const;
@@ -66,8 +71,10 @@ public:
     /**
      * Send the packet to a specific client identified by network identifier and sub-client ID.
      *
+     *
      * @param id The network identifier of the client to send the packet to.
-     * @param clientId The sub-client ID of the client to send the packet to.
+     * @param clientId The sub-client ID of
+     * the client to send the packet to.
      */
     LLAPI void sendToClient(NetworkIdentifier const& identifier, ::SubClientId clientId) const;
 

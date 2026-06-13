@@ -21,11 +21,13 @@
 #include "mc/world/events/ActorRemovedEvent.h"
 #include "mc/world/events/ActorStartRidingEvent.h"
 #include "mc/world/events/ActorStopRidingEvent.h"
+#include "mc/world/events/ActorUpgradeEndedEvent.h"
+#include "mc/world/events/ActorUpgradeStartedEvent.h"
+#include "mc/world/events/ActorUpgradeTriggeredEvent.h"
 #include "mc/world/events/ActorUseItemEvent.h"
 #include "mc/world/events/KnockBackEvent.h"
 #include "mc/world/events/MountTamingEvent.h"
 #include "mc/world/events/ProjectileHitEvent.h"
-
 
 // auto generated inclusion list
 #include "mc/world/events/EventVariantImpl.h"

@@ -1,11 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#ifdef LL_PLAT_S
-#include "mc/world/level/biome/Biome.h"
-#include "mc/world/level/biome/registry/BiomeRegistry.h"
-#include "mc/world/level/levelgen/structure/VanillaStructureFeatureType.h"
-#endif
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeature.h"
@@ -32,20 +27,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                           mMinTownSeparation;
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
-
-    VillageFeature(uint seed, int townSpacing, int minTownSeparation, BiomeRegistry const& biomeRegistry)
-    : StructureFeature(seed, VanillaStructureFeatureType::Village()),
-      mTownSpacing(townSpacing),
-      mMinTownSeparation(minTownSeparation) {
-        mAllowedBiomes->clear();
-        mRadius = 4;
-
-        for (auto const& biome : biomeRegistry.mBiomesById.get()) {
-            if (biome.get() != biomeRegistry.mEmptyBiome) {
-                mAllowedBiomes->push_back(biome->mId);
-            }
-        }
-    }
 
 public:
     // prevent constructor by default
@@ -84,6 +65,12 @@ public:
         ::ChunkPos const&                    chunkPos,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI VillageFeature(uint seed, int townSpacing, int minTownSeparation, ::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 
 public:

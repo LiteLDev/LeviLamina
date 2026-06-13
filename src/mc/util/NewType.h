@@ -32,8 +32,7 @@ public:
 
 namespace std {
 template <class T>
-class hash<NewType<T>> {
-public:
+struct hash<NewType<T>> {
     size_t operator()(NewType<T> const& t) const { return std::hash<T>{}(t.mValue); }
 };
 } // namespace std

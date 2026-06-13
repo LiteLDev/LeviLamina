@@ -21,7 +21,7 @@ public:
 
 public:
     // prevent constructor by default
-    SystemAddress(SystemAddress const&);
+    SystemAddress(SystemAddress const&) = default;
 
 
 public:

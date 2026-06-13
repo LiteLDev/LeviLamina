@@ -50,11 +50,11 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v26.10.4-server.17")
+        add_requires("bedrockdata v26.20.5-server.2")
     end
 else
     if is_windows then
-        add_requires("bedrockdata v26.10.4-client.17")
+        add_requires("bedrockdata v26.20.4-client.2")
     end
 end
 

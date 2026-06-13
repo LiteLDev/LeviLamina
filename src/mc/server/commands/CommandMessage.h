@@ -65,7 +65,7 @@ public:
 
 public:
     // prevent constructor by default
-    CommandMessage();
+    CommandMessage() = default;
 
 public:
     // member functions

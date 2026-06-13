@@ -5,6 +5,8 @@
 #include "ll/api/reflection/TypeName.h"
 #include "ll/api/utils/HashUtils.h"
 
+#include "mc/world/level/dimension/DimensionType.h"
+
 namespace Json {
 class Value;
 }

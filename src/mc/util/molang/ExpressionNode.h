@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/molang/IComplexExpression.h"
 #include "mc/util/molang/MolangParseConfig.h"
 
 // auto generated inclusion list

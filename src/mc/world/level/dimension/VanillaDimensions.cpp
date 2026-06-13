@@ -1,4 +1,5 @@
 #include "mc/world/level/dimension/VanillaDimensions.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 std::string VanillaDimensions::toString(DimensionType const& dimension) {
     auto&       dimNameMap = VanillaDimensions::DimensionMap();

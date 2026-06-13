@@ -37,8 +37,7 @@ public:
 
 namespace std {
 template <>
-class hash<ChunkBlockPos> {
-public:
+struct hash<ChunkBlockPos> {
     size_t operator()(ChunkBlockPos const& t) const {
         ll::utils::hash_utils::HashCombiner hc;
         hc.add(std::hash<short>()(t.x));

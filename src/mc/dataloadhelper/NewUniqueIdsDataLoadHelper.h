@@ -29,7 +29,7 @@ public:
 
 public:
     // prevent constructor by default
-    NewUniqueIdsDataLoadHelper();
+    NewUniqueIdsDataLoadHelper() = default;
 
 public:
     // virtual functions
