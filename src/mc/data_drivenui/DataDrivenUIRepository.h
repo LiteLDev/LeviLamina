@@ -122,8 +122,8 @@ public:
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
-        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const&
-    getRoot(::std::string const&) const /*override*/;
+        ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>> const& getRoot(::std::string const&) const
+        /*override*/;
 #else // LL_PLAT_C
     virtual ::std::vector<::std::variant<
         ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,

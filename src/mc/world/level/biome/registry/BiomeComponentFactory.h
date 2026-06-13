@@ -86,8 +86,7 @@ public:
         ::BiomeRegistry const&,
         ::FeatureRegistry&,
         ::BiomeStringList const&
-    )> const&
-    getApplyDataToBiomeFunc() const;
+    )> const& getApplyDataToBiomeFunc() const;
 #endif
 
     MCFOLD ::BiomeJsonDocumentGlue& getBiomeJsonDocumentGlue();
