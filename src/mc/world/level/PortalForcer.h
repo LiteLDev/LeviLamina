@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/util/Random.h"
 #include "mc/world/level/PortalRecord.h"
+#include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/saveddata/SavedData.h"
 
 // auto generated forward declare list

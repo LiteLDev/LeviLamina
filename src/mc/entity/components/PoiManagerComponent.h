@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct DimensionType;
 namespace Poi { class Manager; }
 namespace Poi { class TagProvider; }
 namespace Poi { struct Registry; }

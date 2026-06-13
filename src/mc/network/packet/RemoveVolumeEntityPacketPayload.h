@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/EntityNetId.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 struct RemoveVolumeEntityPacketPayload {
 public:

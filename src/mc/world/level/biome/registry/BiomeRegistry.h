@@ -30,6 +30,7 @@ struct BiomeJsonDocumentGlue;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
+struct DimensionType;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -109,8 +110,8 @@ public:
     MCAPI void _save(::LevelStorage& levelStorage) const;
 
 #ifdef LL_PLAT_C
-    MCAPI uint64
-    assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
+    MCAPI
+        uint64 assignSeasonTextureRow(::BiomeRegistry::SeasonTextureRowSettings const& desiredSettings, uint64 maxSize);
 #endif
 
     MCAPI bool biomeAddTag(::Biome& biome, ::HashedString tag);

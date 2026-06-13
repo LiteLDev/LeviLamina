@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/platform/UUID.h"
 #include "mc/util/Bounds.h"
+#include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/ticking/AddTickingAreaStatus.h"
 #include "mc/world/level/ticking/TickingAreaLoadMode.h"
 

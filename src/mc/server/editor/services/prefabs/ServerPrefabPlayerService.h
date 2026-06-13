@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
+struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class PrefabDBClientInitializedPayload; }

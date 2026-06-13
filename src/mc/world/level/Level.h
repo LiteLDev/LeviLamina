@@ -223,6 +223,7 @@ struct Bounds;
 struct BreakingItemParticleData;
 struct DerivedDimensionArguments;
 struct DimensionFactoryAndManager;
+struct DimensionType;
 struct LevelArguments;
 struct LevelTagIDType;
 struct LevelTagSetIDType;

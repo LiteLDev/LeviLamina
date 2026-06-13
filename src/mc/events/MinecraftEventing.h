@@ -114,6 +114,7 @@ struct AsyncJoinDeny;
 struct BiomeIdType;
 struct ChunkRecyclerTelemetryOutput;
 struct DBStoragePerformanceTelemetryData;
+struct DimensionType;
 struct LevelStorageEventingContext;
 struct LowMemoryReport;
 struct MinecraftEventingDependencies;

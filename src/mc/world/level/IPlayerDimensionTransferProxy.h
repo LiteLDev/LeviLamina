@@ -14,6 +14,7 @@ class MovePlayerPacket;
 class Player;
 class SubChunkPos;
 class Vec3;
+struct DimensionType;
 // clang-format on
 
 class IPlayerDimensionTransferProxy {

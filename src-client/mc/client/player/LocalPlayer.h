@@ -75,6 +75,7 @@ class TextObjectRoot;
 class Vec2;
 struct ActorUniqueID;
 struct ArmorSlotAndDamagePair;
+struct DimensionType;
 struct FurnaceOptions;
 struct INpcDialogueData;
 struct InventoryOptions;

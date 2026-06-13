@@ -10,6 +10,7 @@
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

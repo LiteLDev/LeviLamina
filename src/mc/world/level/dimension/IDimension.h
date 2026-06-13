@@ -17,6 +17,7 @@ class Packet;
 class Player;
 class Vec3;
 struct ActorUniqueID;
+struct DimensionType;
 struct NetworkIdentifierWithSubId;
 // clang-format on
 

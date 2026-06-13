@@ -14,6 +14,7 @@ class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct DimensionType;
 // clang-format on
 
 struct SoundEventRequest {

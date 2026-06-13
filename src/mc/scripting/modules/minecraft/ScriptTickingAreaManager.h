@@ -12,6 +12,7 @@
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
 #include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

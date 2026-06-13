@@ -10,6 +10,7 @@
 // clang-format off
 class DimensionConversionData;
 class Vec3;
+struct DimensionType;
 // clang-format on
 
 class VanillaDimensions {

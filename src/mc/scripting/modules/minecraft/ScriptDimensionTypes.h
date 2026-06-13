@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct DimensionType;
 namespace ScriptModuleMinecraft { class ScriptDimensionType; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }

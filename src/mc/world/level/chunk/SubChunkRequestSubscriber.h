@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class SubChunkPos;
+struct DimensionType;
 class SubChunkRequestManager;
 // clang-format on
 

@@ -9,6 +9,7 @@
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/scripting/modules/minecraft/ScriptRGBA.h"
 #include "mc/scripting/modules/minecraft/primitiveshapes/ScriptPrimitiveShapeType.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

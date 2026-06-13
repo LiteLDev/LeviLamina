@@ -13,6 +13,7 @@
 #include "mc/network/packet/SphereDataPayload.h"
 #include "mc/network/packet/TextDataPayload.h"
 #include "mc/scripting/modules/minecraft/primitiveshapes/ScriptPrimitiveShapeType.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -10,6 +10,7 @@ class BlockSource;
 class CommandOutput;
 class ItemStack;
 class Level;
+struct DimensionType;
 // clang-format on
 
 class LootResolver {

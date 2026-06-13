@@ -13,6 +13,7 @@ class Level;
 class LodestoneCompassComponentCalculator;
 class PositionTrackingId;
 struct ActorUniqueID;
+struct DimensionType;
 // clang-format on
 
 class LodestoneCompassComponent {

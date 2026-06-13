@@ -20,6 +20,7 @@
 #include "mc/world/level/dimension/ActorReplication.h"
 #include "mc/world/level/dimension/DimensionHeightRange.h"
 #include "mc/world/level/dimension/DimensionIdType.h"
+#include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/dimension/DirectionalLightSource.h"
 #include "mc/world/level/dimension/IDimension.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"

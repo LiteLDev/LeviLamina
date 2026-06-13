@@ -6,6 +6,7 @@
 // clang-format off
 class CompoundTag;
 class LevelStorage;
+struct DimensionType;
 // clang-format on
 
 class DimensionDataSerializer {

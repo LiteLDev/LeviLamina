@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 class VolumeBoundsComponent {
 public:

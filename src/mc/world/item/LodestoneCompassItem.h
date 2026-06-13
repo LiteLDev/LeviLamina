@@ -20,6 +20,7 @@ class Mob;
 class PositionTrackingId;
 class Vec3;
 struct ActorUniqueID;
+struct DimensionType;
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on

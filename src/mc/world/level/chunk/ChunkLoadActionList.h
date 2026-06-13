@@ -20,6 +20,7 @@ class JigsawStructureElementRegistry;
 class LevelChunk;
 class LevelStorage;
 class ServerLevel;
+struct DimensionType;
 struct Tick;
 // clang-format on
 

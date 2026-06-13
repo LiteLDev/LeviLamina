@@ -11,6 +11,7 @@
 class Mob;
 class NavigationComponent;
 class Player;
+struct DimensionType;
 // clang-format on
 
 class FollowOwnerGoal : public ::BaseGoal {

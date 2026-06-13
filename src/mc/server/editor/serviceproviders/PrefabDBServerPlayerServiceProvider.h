@@ -14,6 +14,7 @@ class BlockSource;
 class ChunkPos;
 class Vec3;
 class WeakEntityRef;
+struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstance; }
 namespace Editor::Prefabs { class PrefabDBTemplate; }

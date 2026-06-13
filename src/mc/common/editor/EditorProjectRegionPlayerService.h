@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct DimensionType;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct ProjectRegionConfig; }

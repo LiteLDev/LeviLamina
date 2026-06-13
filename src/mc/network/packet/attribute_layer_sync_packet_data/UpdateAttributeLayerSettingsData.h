@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/eas/AttributeLayerSettings.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

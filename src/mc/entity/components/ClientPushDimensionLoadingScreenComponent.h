@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/dimension/DimensionType.h"
+
 struct ClientPushDimensionLoadingScreenComponent {
 public:
     // member variables

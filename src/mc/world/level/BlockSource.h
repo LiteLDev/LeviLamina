@@ -58,6 +58,7 @@ struct BiomeTagIDType;
 struct Bounds;
 struct Brightness;
 struct ClipParameters;
+struct DimensionType;
 struct Tick;
 struct WellKnownBiomeTags;
 namespace BlockSourceVisitor { struct CollisionShape; }

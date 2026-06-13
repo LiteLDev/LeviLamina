@@ -7,6 +7,7 @@
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/resources/MinEngineVersion.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

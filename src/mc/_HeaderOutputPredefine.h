@@ -247,32 +247,6 @@ namespace DirectX {
 #include "mc/platform/brstd/function_ref.h"    // function reference
 #include "mc/math/vector/Vecs.h"               // for vector types
 
-template <typename T0, typename T1>
-class AutomaticID {
-public:
-    T1 mValue;
-
-    [[nodiscard]] constexpr AutomaticID() : mValue(0) {}
-
-    [[nodiscard]] constexpr AutomaticID(T1 x) : mValue(x) {}
-
-    [[nodiscard]] constexpr operator T1() const { return mValue; }
-
-    [[nodiscard]] inline bool operator==(AutomaticID const& other) const { return mValue == other.mValue; }
-
-    [[nodiscard]] inline bool operator==(T1 const& other) const { return mValue == other; }
-
-    [[nodiscard]] inline std::strong_ordering operator<=>(AutomaticID const& other) const { return mValue <=> other.mValue; }
-
-    [[nodiscard]] inline std::strong_ordering operator<=>(T1 const& other) const { return mValue <=> other; }
-};
-template <typename A, typename T>
-struct std::hash<AutomaticID<A, T>> {
-    size_t operator()(AutomaticID<A, T> const& dimId) const { return static_cast<size_t>(dimId.mValue); }
-};
-class Dimension;
-using DimensionType = AutomaticID<Dimension, int>;
-
 struct RecipeNetIdTag;
 struct CreativeItemNetIdTag;
 struct ContainerRuntimeIdTag;

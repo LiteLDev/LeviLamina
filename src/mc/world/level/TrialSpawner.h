@@ -22,6 +22,7 @@ class SpawnData;
 class TrialSpawnerConfigRegistry;
 class Vec3;
 struct ActorUniqueID;
+struct DimensionType;
 // clang-format on
 
 class TrialSpawner {

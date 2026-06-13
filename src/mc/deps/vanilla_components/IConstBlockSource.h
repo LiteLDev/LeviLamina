@@ -17,6 +17,7 @@ class LevelChunk;
 class Material;
 class Vec3;
 struct Bounds;
+struct DimensionType;
 namespace BlockSourceVisitor { struct CollisionShape; }
 // clang-format on
 

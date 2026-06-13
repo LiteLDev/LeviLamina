@@ -21,6 +21,7 @@ class BlockSource;
 class ChunkPos;
 class Vec3;
 class WeakEntityRef;
+struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class EditorManager; }
 namespace Editor { class ServiceProviderCollection; }

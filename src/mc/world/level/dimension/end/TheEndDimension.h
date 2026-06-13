@@ -19,6 +19,7 @@ class Vec3;
 class WorldGenerator;
 struct BiomeIdType;
 struct DerivedDimensionArguments;
+struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 

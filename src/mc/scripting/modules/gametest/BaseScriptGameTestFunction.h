@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+struct DimensionType;
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
 // clang-format on

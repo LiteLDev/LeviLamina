@@ -43,6 +43,7 @@ class Vec3;
 struct ActorDefinitionIdentifier;
 struct CalculateAttackDamageSettings;
 struct Description;
+struct DimensionType;
 struct HurtEffectsSettings;
 struct InterpolationPair;
 struct JumpPreventionResult;

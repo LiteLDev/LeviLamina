@@ -13,6 +13,7 @@ class EntityContext;
 class NetworkIdentifier;
 class PacketSender;
 class UserEntityIdentifierComponent;
+struct DimensionType;
 // clang-format on
 
 class VolumeEntityManagerServer : public ::VolumeEntityManager {

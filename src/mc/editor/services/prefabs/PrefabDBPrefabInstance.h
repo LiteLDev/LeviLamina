@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+struct DimensionType;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { class PrefabDBPrefabInstanceStructureRef; }
 namespace Editor::Prefabs { class PrefabDBTemplate; }

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+struct DimensionType;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 // clang-format on

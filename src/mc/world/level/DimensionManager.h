@@ -22,6 +22,7 @@ class ILevelStorageManagerConnector;
 class LevelStorage;
 class Random;
 struct DimensionIdType;
+struct DimensionType;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 class IDimensionFactory;

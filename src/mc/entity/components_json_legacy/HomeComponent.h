@@ -6,6 +6,7 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/entity/components_json_legacy/RestrictionType.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

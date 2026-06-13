@@ -16,6 +16,7 @@ class Level;
 class LevelChunk;
 class Random;
 struct Bounds;
+struct DimensionType;
 struct Tick;
 namespace LevelChunkTicking { struct Registry; }
 // clang-format on

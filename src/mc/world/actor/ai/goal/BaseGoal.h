@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+struct DimensionType;
 // clang-format on
 
 class BaseGoal {

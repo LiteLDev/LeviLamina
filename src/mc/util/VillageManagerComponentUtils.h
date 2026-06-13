@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class IVillageManager;
+struct DimensionType;
 struct VillageManagerComponent;
 // clang-format on
 

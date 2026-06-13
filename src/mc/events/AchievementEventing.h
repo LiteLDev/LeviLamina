@@ -14,6 +14,7 @@ class ItemInstance;
 class Mob;
 class MobEffectInstance;
 class Player;
+struct DimensionType;
 // clang-format on
 
 namespace Social::Events {

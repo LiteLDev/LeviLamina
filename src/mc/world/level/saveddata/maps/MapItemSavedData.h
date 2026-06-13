@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/dimension/DimensionType.h"
 #include "mc/world/level/saveddata/maps/MapDecoration.h"
 #include "mc/world/level/saveddata/maps/MapItemTrackedActor.h"
 

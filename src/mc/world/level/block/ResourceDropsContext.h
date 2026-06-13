@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/ResourceDropsCause.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list
 // clang-format off

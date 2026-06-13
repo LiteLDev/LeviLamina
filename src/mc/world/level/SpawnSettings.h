@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/SpawnBiomeType.h"
+#include "mc/world/level/dimension/DimensionType.h"
 
 struct SpawnSettings {
 public:

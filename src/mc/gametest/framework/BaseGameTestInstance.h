@@ -12,6 +12,7 @@ class BlockPos;
 class BoundingBox;
 class Vec3;
 class WeakEntityRef;
+struct DimensionType;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class GameTestSequence; }
 namespace gametest { class IGameTestHelperProvider; }

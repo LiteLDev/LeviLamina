@@ -9,6 +9,7 @@
 // clang-format off
 class PacketSender;
 class Vec3;
+struct DimensionType;
 // clang-format on
 
 class ServerParticleManager {

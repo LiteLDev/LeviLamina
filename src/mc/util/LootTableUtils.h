@@ -17,6 +17,7 @@ class LootTableContext;
 class Player;
 class Random;
 class Spawner;
+struct DimensionType;
 // clang-format on
 
 namespace Util {

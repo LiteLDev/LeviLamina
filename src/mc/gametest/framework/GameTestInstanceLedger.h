@@ -9,6 +9,7 @@
 // clang-format off
 class BoundingBox;
 class LevelStorage;
+struct DimensionType;
 namespace gametest { class BaseGameTestInstance; }
 // clang-format on
 

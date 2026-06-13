@@ -23,6 +23,7 @@ class Player;
 class PlayerLimboActorManager;
 class PortalForcer;
 struct AddLimboActorHelper;
+struct DimensionType;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 

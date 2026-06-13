@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player);
+    MCAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player);
     // NOLINTEND
 };
 
