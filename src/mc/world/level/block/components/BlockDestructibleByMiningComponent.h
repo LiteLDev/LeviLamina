@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/components/ItemSpecificSpeed.h"
+
 // auto generated forward declare list
 // clang-format off
 class ItemStackBase;
-struct ItemSpecificSpeed;
 // clang-format on
 
 struct BlockDestructibleByMiningComponent {

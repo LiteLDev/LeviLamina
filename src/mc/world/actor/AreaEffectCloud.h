@@ -8,6 +8,7 @@
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/effect/EffectDuration.h"
+#include "mc/world/effect/MobEffectInstance.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,6 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class MobEffectInstance;
 class Random;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;

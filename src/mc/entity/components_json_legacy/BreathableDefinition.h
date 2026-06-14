@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class BreathableComponent;
 class EntityContext;
 namespace JsonUtil { class EmptyClass; }

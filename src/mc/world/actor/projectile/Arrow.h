@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/projectile/AbstractArrow.h"
+#include "mc/world/effect/MobEffectInstance.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,6 @@ class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class ItemStack;
-class MobEffectInstance;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;

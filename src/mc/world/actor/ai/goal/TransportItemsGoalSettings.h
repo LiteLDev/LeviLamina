@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec2.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class ItemDescriptor;
 // clang-format on
 

@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/effect/MobEffectInstance.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
 class Experiments;
-class MobEffectInstance;
 class Player;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on

@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/components/BlockPlacementDirectionalFilter.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockDescriptor;
-// clang-format on
 
 struct BlockPlacementCondition {
 public:

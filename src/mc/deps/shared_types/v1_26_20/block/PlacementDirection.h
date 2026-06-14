@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/EnumSet.h"
+#include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::Legacy { struct BlockDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

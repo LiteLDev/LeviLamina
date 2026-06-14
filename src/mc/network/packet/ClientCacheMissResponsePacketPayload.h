@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct MissingBlobData;
-// clang-format on
+// auto generated inclusion list
+#include "mc/network/packet/MissingBlobData.h"
 
 struct ClientCacheMissResponsePacketPayload {
 public:

@@ -5,17 +5,17 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/ContainerMixDataEntry.h"
+#include "mc/network/packet/CraftingDataEntry.h"
+#include "mc/network/packet/MaterialReducerDataEntry.h"
+#include "mc/network/packet/PotionMixDataEntry.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class CraftingDataEntry;
 class ReadOnlyBinaryStream;
 class Recipes;
-struct ContainerMixDataEntry;
-struct MaterialReducerDataEntry;
-struct PotionMixDataEntry;
 // clang-format on
 
 class CraftingDataPacket : public ::Packet {

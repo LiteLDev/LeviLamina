@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/registry/TrimMaterial.h"
+
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-struct TrimMaterial;
 // clang-format on
 
 class TrimMaterialRegistry {

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct LocatorBarWaypointPayload;
-// clang-format on
+// auto generated inclusion list
+#include "mc/network/packet/LocatorBarWaypointPayload.h"
 
 struct LocatorBarPacketPayload {
 public:

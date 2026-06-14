@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/AttributeDescription.h"
+#include "mc/world/effect/MobEffectInstance.h"
 
 // auto generated forward declare list
 // clang-format off
-class MobEffectInstance;
 struct DeserializeDataParams;
 // clang-format on
 

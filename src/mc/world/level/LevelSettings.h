@@ -21,6 +21,7 @@
 #include "mc/world/level/GeneratorType.h"
 #include "mc/world/level/LevelSeed64.h"
 #include "mc/world/level/NetherWorldType.h"
+#include "mc/world/level/PackInstanceId.h"
 #include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/WorldVersion.h"
 #include "mc/world/level/storage/CloudSaveLevelInfo.h"
@@ -33,7 +34,6 @@ class Experiments;
 class LevelData;
 struct DimensionType;
 struct LevelSummary;
-struct PackInstanceId;
 namespace mce { class UUID; }
 // clang-format on
 

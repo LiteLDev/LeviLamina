@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class BlockPos;
 class BlockSource;
 class Mob;

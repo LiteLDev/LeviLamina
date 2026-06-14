@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockDescriptor;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/block/BlockDescriptor.h"
 
 class BlockListEventMap {
 public:

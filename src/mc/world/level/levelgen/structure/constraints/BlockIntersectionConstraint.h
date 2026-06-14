@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/structure/constraints/IStructureConstraint.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class BlockPos;
 class IBlockWorldGenAPI;
 class StructureTemplate;

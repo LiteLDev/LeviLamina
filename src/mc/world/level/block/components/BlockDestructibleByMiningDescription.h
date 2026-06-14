@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/ItemSpecificSpeed.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
 class CerealSchemaUpgradeSet;
 class CompoundTag;
-struct ItemSpecificSpeed;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

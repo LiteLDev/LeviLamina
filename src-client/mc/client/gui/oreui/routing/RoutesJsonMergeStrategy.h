@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/resources/ResourcePackMergeStrategy.h"
+#include "mc/world/level/PackInstanceId.h"
 
 // auto generated forward declare list
 // clang-format off
 class LoadedResourceData;
 struct PackIdVersion;
-struct PackInstanceId;
 namespace OreUI { struct RouteData; }
 // clang-format on
 

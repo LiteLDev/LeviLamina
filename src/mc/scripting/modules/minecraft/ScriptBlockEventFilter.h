@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockDescriptor;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptBlockFilterData; }
 namespace Scripting { struct InterfaceBinding; }
