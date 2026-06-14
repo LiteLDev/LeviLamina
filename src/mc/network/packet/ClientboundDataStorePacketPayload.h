@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::DDUI { struct DataStoreChange; }
-namespace Bedrock::DDUI { struct DataStoreRemoval; }
-namespace Bedrock::DDUI { struct DataStoreUpdate; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/scripting/data_sync/DataStoreChange.h"
+#include "mc/scripting/data_sync/DataStoreRemoval.h"
+#include "mc/scripting/data_sync/DataStoreUpdate.h"
 
 struct ClientboundDataStorePacketPayload {
 public:

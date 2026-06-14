@@ -27,6 +27,7 @@
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
 #include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/XAsyncBlock.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core_graphics/TextureSetLayerType.h"
 #include "mc/deps/json/ValueType.h"
@@ -139,7 +140,6 @@ struct SentryEnvelopePayloadStacktraceFrame;
 struct TextProcessingEventOriginEnumHasher;
 struct WorkerConfiguration;
 struct WorldTemplateInfo;
-struct XAsyncBlock;
 struct srtp_auth_t;
 namespace Bedrock { class StaticOptimizedString; }
 namespace Bedrock { class WorkerPoolHandleInterface; }

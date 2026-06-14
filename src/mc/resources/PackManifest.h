@@ -14,6 +14,10 @@
 #include "mc/deps/core/resource/ResourceMetadata.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/DropdownSetting.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/LabelSetting.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/SliderSetting.h"
+#include "mc/deps/shared_types/v3_0_0/pack_manifest/ToggleSetting.h"
 #include "mc/resources/ManifestOrigin.h"
 #include "mc/resources/ManifestType.h"
 #include "mc/resources/MinEngineVersion.h"
@@ -28,11 +32,7 @@
 class ResourceInformation;
 struct LegacyPackIdVersion;
 namespace Json { class Value; }
-namespace SharedTypes::v3_0_0::PackManifestDefinition { struct DropdownSetting; }
-namespace SharedTypes::v3_0_0::PackManifestDefinition { struct LabelSetting; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct NativeModuleDependency; }
-namespace SharedTypes::v3_0_0::PackManifestDefinition { struct SliderSetting; }
-namespace SharedTypes::v3_0_0::PackManifestDefinition { struct ToggleSetting; }
 // clang-format on
 
 class PackManifest : public ::Bedrock::EnableNonOwnerReferences {

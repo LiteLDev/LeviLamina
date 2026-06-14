@@ -3,19 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/settings/ActionComponent.h"
+#include "mc/client/settings/BannerComponent.h"
+#include "mc/client/settings/BooleanComponent.h"
+#include "mc/client/settings/GroupInfoComponent.h"
 #include "mc/client/settings/IRegistry.h"
 #include "mc/client/settings/NumberComponent.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Settings { class ActionComponent; }
-namespace Settings { class BannerComponent; }
-namespace Settings { class BooleanComponent; }
-namespace Settings { class GroupInfoComponent; }
-namespace Settings { class OptionComponent; }
-namespace Settings { class StringComponent; }
-namespace Settings { class TextComponent; }
-// clang-format on
+#include "mc/client/settings/OptionComponent.h"
+#include "mc/client/settings/StringComponent.h"
+#include "mc/client/settings/TextComponent.h"
 
 namespace Settings {
 

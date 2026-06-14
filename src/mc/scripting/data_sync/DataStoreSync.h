@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/scripting/data_sync/DataStoreChange.h"
+#include "mc/scripting/data_sync/DataStoreRemoval.h"
+#include "mc/scripting/data_sync/DataStoreUpdate.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::DDUI { struct DataStoreChange; }
-namespace Bedrock::DDUI { struct DataStoreRemoval; }
-namespace Bedrock::DDUI { struct DataStoreUpdate; }
 namespace Bedrock::DDUI::PathUtility { struct PathQueryError; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }

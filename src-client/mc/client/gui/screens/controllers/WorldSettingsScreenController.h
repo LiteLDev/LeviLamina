@@ -13,6 +13,7 @@
 #include "mc/client/gui/screens/rules/WorldSettingsRules.h"
 #include "mc/client/network/realms/World.h"
 #include "mc/client/world/PostCreateWorldAction.h"
+#include "mc/deps/cereal/schema/dynamic/NullType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -43,7 +44,6 @@ namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Json { class Value; }
 namespace MSGraph::Models { struct DriveItem; }
 namespace MSGraph::Models { struct GraphError; }
-namespace cereal { struct NullType; }
 // clang-format on
 
 class WorldSettingsScreenController : public ::SettingsScreenControllerBase,

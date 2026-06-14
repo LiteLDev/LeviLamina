@@ -11,6 +11,7 @@
 #include "mc/deps/minecraft_renderer/resources/IndexBufferContainer.h"
 #include "mc/deps/renderer/VertexField.h"
 #include "mc/deps/renderer/VertexLayout.h"
+#include "mc/deps/renderer/hal/interface/Buffer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,7 +23,6 @@ namespace dragon { struct RenderMetadata; }
 namespace dragon { struct ResolvedIndexBufferResource; }
 namespace dragon { struct ResolvedVertexBufferResource; }
 namespace dragon::mesh { class Mesh; }
-namespace mce { class Buffer; }
 namespace mce { class MaterialPtr; }
 namespace mce { class MeshContext; }
 namespace mce { class Texture; }
