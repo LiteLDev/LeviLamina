@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/chunk/RuleSet.h"
 #include "mc/world/level/levelgen/v2/processors/StructureProcessor.h"
 #include "mc/world/level/levelgen/v2/processors/StructureProcessorType.h"
 
@@ -13,7 +14,6 @@ class IBlockSource;
 namespace Util { class XXHash; }
 namespace br::worldgen { struct StructureBlockInfo; }
 namespace br::worldgen { struct StructurePlaceSettings; }
-namespace br::worldgen::processors { struct RuleSet; }
 // clang-format on
 
 namespace br::worldgen::processors {

@@ -6,11 +6,11 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockDescriptor;
 class HashedString;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace Scripting { struct Error; }

@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on

@@ -7,6 +7,7 @@
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/util/BaseGameVersion.h"
+#include "mc/world/level/PackInstanceId.h"
 #include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated forward declare list
@@ -14,7 +15,6 @@
 class BinaryStream;
 class Experiments;
 class ReadOnlyBinaryStream;
-struct PackInstanceId;
 // clang-format on
 
 class ResourcePackStackPacket : public ::Packet {

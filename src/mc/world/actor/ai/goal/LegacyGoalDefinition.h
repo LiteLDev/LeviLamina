@@ -16,11 +16,11 @@
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/village/POIType.h"
 #include "mc/world/item/ItemDescriptor.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseGoal;
-class BlockDescriptor;
 class Mob;
 struct ConstDeserializeDataParams;
 struct DrinkPotionData;

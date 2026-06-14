@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/AliasInfoDescription.h"
 #include "mc/world/actor/DefintionDescription.h"
 
 // auto generated forward declare list
 // clang-format off
-struct AliasInfoDescription;
 namespace Json { class Value; }
 // clang-format on
 

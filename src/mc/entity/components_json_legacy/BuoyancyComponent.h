@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/entity/components_json_legacy/BuoyancyMovementType.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class IConstBlockSource;
 class SemVersion;
 struct StateVectorComponent;

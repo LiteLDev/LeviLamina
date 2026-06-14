@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/util/IntRange.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockDescriptor;
 class BlockPos;
 class IBlockWorldGenAPI;
 // clang-format on

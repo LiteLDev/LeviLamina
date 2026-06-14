@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 struct DeserializeDataParams;
 // clang-format on
 

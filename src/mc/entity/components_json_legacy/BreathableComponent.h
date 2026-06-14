@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/BlockDescriptor.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockDescriptor;
 class CompoundTag;
 class DataLoadHelper;
 // clang-format on

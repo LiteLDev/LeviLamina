@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/pathfinder/CanJumpIntoNode.h"
 #include "mc/world/level/pathfinder/NodeType.h"
 
@@ -11,7 +12,6 @@
 // clang-format off
 class Actor;
 class ActorDefinitionDescriptor;
-class BlockDescriptor;
 class BlockPos;
 class Mob;
 class Path;

@@ -424,6 +424,18 @@ template <size_t Align, size_t Size>
 struct TypedStorageImpl<Align, Size, ::tagRECT> {
     using type = ::ll::UntypedStorage<Align, Size>;
 };
+template <size_t Align, size_t Size>
+struct TypedStorageImpl<Align, Size, ::std::unique_ptr<::evp_md_ctx_st>> {
+    using type = ::ll::UntypedStorage<Align, Size>;
+};
+template <size_t Align, size_t Size, class C, class R, class... Args>
+struct TypedStorageImpl<Align, Size, R (C::*)(Args...)> {
+    using type = ::ll::UntypedStorage<Align, Size>;
+};
+template <size_t Align, size_t Size, class C, class R, class... Args>
+struct TypedStorageImpl<Align, Size, R (C::*)(Args...) const> {
+    using type = ::ll::UntypedStorage<Align, Size>;
+};
 
 template <size_t Align, size_t Size, class T>
 using TypedStorage = typename TypedStorageImpl<Align, Size, T>::type;

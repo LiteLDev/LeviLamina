@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/entity/components_json_legacy/OnHitSubcomponent.h"
+#include "mc/world/effect/MobEffectInstance.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class MobEffectInstance;
 class ProjectileComponent;
 namespace Json { class Value; }
 // clang-format on

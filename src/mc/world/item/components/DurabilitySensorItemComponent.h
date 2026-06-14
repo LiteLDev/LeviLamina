@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/components/DurabilityThreshold.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-struct DurabilityThreshold;
 namespace SharedTypes::v1_21_10 { struct DurabilitySensorItemComponent; }
 // clang-format on
 

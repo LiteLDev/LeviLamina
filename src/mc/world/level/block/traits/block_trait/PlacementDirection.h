@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 #include "mc/world/level/block/traits/block_trait/IGetPlacementBlockCallback.h"
 #include "mc/world/level/block/traits/block_trait/ITrait.h"
 #include "mc/world/level/block/traits/block_trait/PlacementCallbackOrder.h"
@@ -15,7 +16,6 @@ class BlockPos;
 class BlockType;
 class CompoundTag;
 class Vec3;
-namespace SharedTypes::Legacy { struct BlockDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

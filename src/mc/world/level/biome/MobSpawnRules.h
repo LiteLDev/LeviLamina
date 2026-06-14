@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class BlockSource;
 class IRandom;
 class MobSpawnerData;

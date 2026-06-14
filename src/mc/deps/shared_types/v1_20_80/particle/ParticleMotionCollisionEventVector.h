@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_20_80/particle/ParticleMotionCollisionEvent.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_20_80 { struct ParticleMotionCollisionEvent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

@@ -8,10 +8,10 @@
 #include "mc/world/actor/ai/util/ExpiringTick.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class BlockSource;
 class Mob;
 class Path;

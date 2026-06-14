@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/ItemComponent.h"
+#include "mc/world/item/components/ItemCustomComponentData.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 class SemVersion;
-struct ItemCustomComponentData;
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace SharedTypes::v1_21_60 { struct CustomComponentsItemComponent; }
 // clang-format on

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/item/enchanting/ItemEnchantOption.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -13,7 +14,6 @@ class ContainerScreenContext;
 class ItemEnchants;
 class ItemStack;
 class Player;
-struct ItemEnchantOption;
 // clang-format on
 
 class EnchantingContainerManagerModel : public ::ContainerManagerModel {

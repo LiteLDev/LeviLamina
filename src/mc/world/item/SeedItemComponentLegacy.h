@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockDescriptor;
 class BlockPos;
 class CompoundTag;
 class Item;

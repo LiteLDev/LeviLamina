@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/world/level/PackInstanceId.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompositePackSource;
 struct PackContentItem;
 struct PackIdVersion;
-struct PackInstanceId;
 namespace Core { class Path; }
 // clang-format on
 

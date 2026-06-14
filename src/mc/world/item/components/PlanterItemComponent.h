@@ -6,13 +6,13 @@
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/item/components/BlockTypePtr.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockDescriptor;
 class BlockPos;
 class BlockType;
 class ComponentItem;
