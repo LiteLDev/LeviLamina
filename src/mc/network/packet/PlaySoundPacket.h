@@ -25,8 +25,7 @@ public:
 
 public:
     template <typename... Args>
-    PlaySoundPacket(Args&&... args) : Packet(),
-                                      PlaySoundPacketPayload(std::forward<Args>(args)...) {}
+    PlaySoundPacket(Args&&... args) : ::ll::PayloadPacket<::PlaySoundPacketPayload>(std::forward<Args>(args)...) {}
 
 public:
     // virtual functions

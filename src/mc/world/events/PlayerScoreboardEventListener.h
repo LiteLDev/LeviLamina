@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
+#include "mc/world/events/SubscribedObjectives.h"
 #include "mc/world/scores/ScoreboardId.h"
 
 // auto generated forward declare list

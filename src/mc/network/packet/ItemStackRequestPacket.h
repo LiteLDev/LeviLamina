@@ -6,6 +6,7 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/inventory/network/ItemStackRequestBatch.h"
 
 // auto generated forward declare list
 // clang-format off

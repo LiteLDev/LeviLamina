@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/DefinitionTrigger.h"
+#include "mc/world/item/components/DiggerBlockTypeInfo.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 

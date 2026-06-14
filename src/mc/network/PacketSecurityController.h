@@ -8,6 +8,7 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/PacketGroupDefinition.h"
 #include "mc/network/PacketRateLimitFeature.h"
+#include "mc/network/PacketViolationHandler.h"
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/platform/ErrorInfo.h"
 

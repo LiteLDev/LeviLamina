@@ -9,6 +9,7 @@
 #include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/PostProcessSettings.h"
 #include "mc/world/level/levelgen/structure/Projection.h"
+#include "mc/world/level/levelgen/structure/structurepools/JigsawBlockInfo.h"
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementSettings.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElementType.h"

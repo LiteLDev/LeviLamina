@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "mc/world/eas/AttributeLayerData.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace EAS { struct AttributeLayerData; }

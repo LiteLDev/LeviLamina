@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/ExpressionNode.h"
+#include "mc/deps/shared_types/legacy/item/ItemDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off

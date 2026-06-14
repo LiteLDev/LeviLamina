@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/SubClientConnectionRequest.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list

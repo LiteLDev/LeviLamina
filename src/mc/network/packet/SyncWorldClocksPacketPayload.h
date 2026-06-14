@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "mc/network/packet/SyncWorldClockStateData.h"
+#include "mc/world/level/clock/TimeMarkerData.h"
+#include "mc/world/level/clock/WorldClockData.h"
+
 // auto generated forward declare list
 // clang-format off
 struct SyncWorldClockStateData;

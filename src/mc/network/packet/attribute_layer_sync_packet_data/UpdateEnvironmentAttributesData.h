@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/eas/attributes/EnvironmentAttributeData.h"
 #include "mc/world/level/dimension/DimensionType.h"
 
 // auto generated forward declare list

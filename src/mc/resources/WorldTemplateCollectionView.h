@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/brstd/move_only_function.h"
+#include "mc/world/WorldTemplateInfo.h"
 
 // auto generated forward declare list
 // clang-format off

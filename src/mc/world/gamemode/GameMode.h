@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/world/gamemode/IGameModeMessenger.h"
+#include "mc/world/gamemode/IGameModeTimer.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list

@@ -6,8 +6,10 @@
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
+#include "mc/world/events/IRealmEventLogger.h"
 #include "mc/world/events/PlayerEventListener.h"
 #include "mc/world/level/storage/RealmEventId.h"
+#include "mc/world/level/storage/RealmsStoriesData.h"
 
 // auto generated forward declare list
 // clang-format off

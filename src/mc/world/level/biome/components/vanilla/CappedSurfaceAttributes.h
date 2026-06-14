@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
+#include "mc/world/level/levelgen/synth/PerlinNoise.h"
 
 // auto generated forward declare list
 // clang-format off

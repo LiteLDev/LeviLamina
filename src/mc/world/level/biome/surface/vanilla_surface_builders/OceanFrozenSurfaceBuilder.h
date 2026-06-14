@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
+#include "mc/world/level/levelgen/synth/FrozenOceanBuilderNoises.h"
 
 // auto generated forward declare list
 // clang-format off

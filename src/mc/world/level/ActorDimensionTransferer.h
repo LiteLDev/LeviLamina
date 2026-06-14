@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/IActorDimensionTransferProxy.h"
 #include "mc/world/level/IActorDimensionTransferer.h"
 
 // auto generated forward declare list

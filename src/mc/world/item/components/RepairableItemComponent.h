@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/NetworkedItemComponent.h"
+#include "mc/world/item/components/RepairItemEntry.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list

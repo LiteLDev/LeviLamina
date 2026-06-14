@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/molang/ExpressionNode.h"
+#include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off

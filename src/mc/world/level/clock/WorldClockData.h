@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "mc/world/level/clock/TimeMarkerData.h"
+
 // auto generated forward declare list
 // clang-format off
 struct TimeMarkerData;

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/AllowListEntry.h"
 #include "mc/server/IJsonSerializable.h"
 
 // auto generated forward declare list
