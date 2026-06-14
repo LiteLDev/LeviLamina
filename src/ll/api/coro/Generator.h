@@ -71,6 +71,7 @@ struct Generator {
     using reference = T&&;
     using yielded   = reference;
 
+    struct iterator;
 
     struct promise_type {
         struct NestInfo {

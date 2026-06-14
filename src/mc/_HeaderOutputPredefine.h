@@ -165,6 +165,16 @@ struct _INITIALIZE_OPTIONS;
 struct HC_CALL;
 struct tagWNDCLASSEXW;
 struct HINSTANCE__;
+namespace ll {
+    template <size_t A, size_t S>
+    struct TypedStorageType<A, S, ::tagPOINT> {
+        using Type = UntypedStorage<A, S>;
+    };
+    template <size_t A, size_t S>
+    struct TypedStorageType<A, S, ::std::unique_ptr<::evp_md_ctx_st>> {
+        using Type = UntypedStorage<A, S>;
+    };
+}
 
 // DirectX definitions
 typedef enum D3D_FEATURE_LEVEL;
@@ -238,6 +248,20 @@ namespace winrt
             struct DataTransferManager;
         }
     }
+}
+namespace ll {
+    template <size_t A, size_t S>
+    struct TypedStorageType<A, S, ::winrt::event_token> {
+        using Type = UntypedStorage<A, S>;
+    };
+    template <size_t A, size_t S>
+    struct TypedStorageType<A, S, ::winrt::Windows::UI::Text::Core::CoreTextEditContext> {
+        using Type = UntypedStorage<A, S>;
+    };
+    template <size_t A, size_t S>
+    struct TypedStorageType<A, S, ::winrt::Windows::ApplicationModel::DataTransfer::DataTransferManager> {
+        using Type = UntypedStorage<A, S>;
+    };
 }
 namespace DirectX {
     struct XMMATRIX;

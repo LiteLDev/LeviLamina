@@ -89,8 +89,8 @@ struct TypedStorageImpl {
     [[nodiscard]] T const&  operator*() const& { return get(); }
     [[nodiscard]] T&&       operator*() && { return std::move(get()); }
     [[nodiscard]] T const&& operator*() const&& { return std::move(get()); }
-    [[nodiscard]] operator T&() { return get(); }
-    [[nodiscard]] operator T const&() const { return get(); }
+    [[nodiscard]]           operator T&() { return get(); }
+    [[nodiscard]]           operator T const&() const { return get(); }
 };
 
 template <size_t A, size_t S, class T>
@@ -98,7 +98,7 @@ struct TypedStorageType {
     using Type = typename TypedStorageImpl<A, S, typename std::remove_cv_t<T>>;
 };
 template <size_t A, size_t S, class T>
-    requires(std::is_reference_v<T> || std::is_scalar_v<T>)
+    requires(std::is_reference_v<T> || (std::is_scalar_v<T> && !std::is_member_pointer_v<T>))
 struct TypedStorageType<A, S, T> {
     using Type = T;
 };

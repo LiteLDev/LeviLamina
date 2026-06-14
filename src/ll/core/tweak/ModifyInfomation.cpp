@@ -40,7 +40,7 @@ LL_STATIC_HOOK(
 
 auto serverLogger = io::LoggerRegistry::getInstance().getOrCreate("Server");
 
-int printfbufc(char const* format, va_list const& pargs) {
+int printfbufc(char const* format, va_list pargs) {
     int     retval;
     va_list argcopy;
     va_copy(argcopy, pargs);

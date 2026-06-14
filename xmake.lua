@@ -19,7 +19,7 @@ add_requires("glm 1.0.1")
 add_requires("leveldb 1.23")
 add_requires("magic_enum v0.9.7")
 add_requires("nlohmann_json v3.11.3")
-add_requires("rapidjson v1.1.0")
+add_requires("rapidjson 2025.02.05")
 add_requires("type_safe v0.2.4")
 add_requires("mimalloc v2.1.7")
 add_requires("cpr[ssl=y] 1.11.1")
@@ -38,6 +38,7 @@ add_requires("trampoline 2024.11.7")
 
 if is_windows then
 add_requires("libhat 0.4.0")
+set_toolchains("clang-cl")
 end
 
 if is_linux then
