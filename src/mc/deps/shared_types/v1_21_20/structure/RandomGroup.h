@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_20/structure/Direct.h"
+#include "mc/deps/shared_types/v1_21_20/structure/Random.h"
 #include "mc/deps/shared_types/v1_21_20/structure/WeightedRandomItem.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace SharedTypes::v1_21_20::PoolAliases { struct Direct; }
-namespace SharedTypes::v1_21_20::PoolAliases { struct Random; }
-// clang-format on
 
 namespace SharedTypes::v1_21_20::PoolAliases {
 

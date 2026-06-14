@@ -11,6 +11,8 @@
 #include "mc/client/world/PackStatus.h"
 #include "mc/client/world/PendingPackActionHash.h"
 #include "mc/client/world/PendingPackActionKey.h"
+#include "mc/client/world/PendingPackActivation.h"
+#include "mc/client/world/PendingPackRemoval.h"
 #include "mc/client/world/WorldID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -36,8 +38,6 @@ namespace World { struct PackCollection; }
 namespace World { struct PackDetails; }
 namespace World { struct PackDownloadProgressInfo; }
 namespace World { struct PackViewAndItem; }
-namespace World { struct PendingPackActivation; }
-namespace World { struct PendingPackRemoval; }
 namespace World { struct WorldPacks; }
 // clang-format on
 

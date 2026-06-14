@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace npc { struct CommandAction; }
-namespace npc { struct UrlAction; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/actor/npc/CommandAction.h"
+#include "mc/world/actor/npc/UrlAction.h"
 
 namespace npc {
 

@@ -7,6 +7,9 @@
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 #include "mc/deps/shared_types/v1_21_20/structure/ConstantHeight.h"
 #include "mc/deps/shared_types/v1_21_20/structure/DimensionPaddingRange.h"
+#include "mc/deps/shared_types/v1_21_20/structure/Direct.h"
+#include "mc/deps/shared_types/v1_21_20/structure/Random.h"
+#include "mc/deps/shared_types/v1_21_20/structure/RandomGroup.h"
 #include "mc/deps/shared_types/v1_21_20/structure/UniformHeight.h"
 #include "mc/deps/shared_types/v1_21_20/structure/definition/Description.h"
 #include "mc/deps/shared_types/v1_21_20/structure/definition/GenerationStep.h"
@@ -18,9 +21,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace SharedTypes::v1_21_20::PoolAliases { struct Direct; }
-namespace SharedTypes::v1_21_20::PoolAliases { struct Random; }
-namespace SharedTypes::v1_21_20::PoolAliases { struct RandomGroup; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/scripting/modules/minecraft/ScriptDimensionLocation.h"
 #include "mc/scripting/modules/minecraft/ScriptRGB.h"
 #include "mc/scripting/modules/minecraft/ScriptWaypointTextureSelector.h"
 
@@ -14,7 +15,6 @@
 // clang-format off
 class ServerWaypoint;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidWaypointError; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidWaypointTextureSelectorError; }
 namespace Scripting { struct ClassBinding; }

@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct SendPacketInfo;
-struct SendPacketToOwnerInfo;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/components/SendPacketInfo.h"
+#include "mc/entity/components/SendPacketToOwnerInfo.h"
 
 struct SendPacketsComponent {
 public:
