@@ -174,6 +174,11 @@ namespace ll {
     struct TypedStorageType<A, S, ::std::unique_ptr<::evp_md_ctx_st>> {
         using Type = UntypedStorage<A, S>;
     };
+    class type_id_ref;
+}
+namespace Bedrock {
+    template <typename Category, typename Type>
+    ::ll::type_id_ref typeid_storage_impl();
 }
 
 // DirectX definitions

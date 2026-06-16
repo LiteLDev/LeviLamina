@@ -30,3 +30,8 @@ public:
     MCAPI void* $ctor(float offset, bool relative);
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RelativeFloat>();
+// clang-format on

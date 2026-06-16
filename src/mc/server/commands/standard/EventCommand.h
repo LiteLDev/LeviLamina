@@ -55,3 +55,8 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::EventCommand::EventAction>();
+// clang-format on

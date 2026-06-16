@@ -97,3 +97,14 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::RideRules>();
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::TeleportRules>();
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::VehicleAction>();
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::VehicleFillType>();
+// clang-format on

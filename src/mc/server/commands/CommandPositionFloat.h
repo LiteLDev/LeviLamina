@@ -9,3 +9,8 @@ class CommandPositionFloat : public ::CommandPosition {
 public:
     using CommandPosition::CommandPosition;
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CommandPositionFloat>();
+// clang-format on

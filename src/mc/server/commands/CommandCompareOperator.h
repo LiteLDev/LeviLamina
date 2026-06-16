@@ -10,3 +10,8 @@ enum class CommandCompareOperator : uchar {
     LessThanEquals    = 4,
     GreaterThanEquals = 5,
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CommandCompareOperator>();
+// clang-format on

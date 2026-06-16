@@ -8,3 +8,8 @@ enum class ShowStoreOfferRedirectType : uchar {
     ThirdPartyServerPage = 2,
     Count                = 3,
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::ShowStoreOfferRedirectType>();
+// clang-format on

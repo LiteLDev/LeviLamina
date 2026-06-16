@@ -459,3 +459,8 @@ public:
 };
 
 } // namespace Json
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::Json::Value>();
+// clang-format on

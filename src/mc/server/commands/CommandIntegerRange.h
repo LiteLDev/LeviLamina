@@ -30,3 +30,8 @@ public:
     MCFOLD void* $ctor(int minVal, int maxVal, bool invert, bool inclusive);
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CommandIntegerRange>();
+// clang-format on

@@ -33,3 +33,8 @@ public:
     MCFOLD void $dtor();
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CommandFilePath>();
+// clang-format on
