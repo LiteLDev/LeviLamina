@@ -22,6 +22,8 @@ public:
         return mType == HitResultType::Tile || mType == HitResultType::Entity;
     }
 
+    HitResult& operator=(HitResult const&) = default;
+    HitResult(HitResult const&)            = default;
     HitResult(::HitResult&&) = default;
 
     HitResult(
@@ -60,18 +62,6 @@ public:
     bool            mIndirectHit;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    HitResult& operator=(HitResult const&);
-    HitResult(HitResult const&);
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    HitResult(HitResult const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -82,10 +72,6 @@ public:
     MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
 
     MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
-
-#ifdef LL_PLAT_C
-    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
-#endif
 
     MCAPI HitResult(
         ::Vec3 const&     startPos,
@@ -100,10 +86,6 @@ public:
     MCAPI ::Actor* getEntity() const;
 
     MCAPI ::HitResult& operator=(::HitResult&&);
-
-#ifdef LL_PLAT_C
-    MCAPI ::HitResult& operator=(::HitResult const&);
-#endif
 
     MCAPI void setIsHitLiquid(bool isHit, ::HitResult const& liquidHit);
     // NOLINTEND

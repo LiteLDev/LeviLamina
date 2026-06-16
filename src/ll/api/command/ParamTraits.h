@@ -13,10 +13,24 @@
 #include "ll/api/command/SoftEnum.h"
 
 #include "mc/deps/core/utility/typeid_t.h"
+#include "mc/deps/json/Value.h"
+#include "mc/server/commands/BlockStateCommandParam.h"
+#include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandBlockName.h"
+#include "mc/server/commands/CommandFilePath.h"
+#include "mc/server/commands/CommandIntegerRange.h"
+#include "mc/server/commands/CommandItem.h"
+#include "mc/server/commands/CommandMessage.h"
 #include "mc/server/commands/CommandParameterData.h"
-#include "mc/server/commands/CommandParameterDataType.h"
 #include "mc/server/commands/CommandParameterOption.h"
-#include "mc/server/commands/CommandRegistry.h"
+#include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/CommandRawText.h"
+#include "mc/server/commands/CommandWildcardInt.h"
+#include "mc/server/commands/RelativeFloat.h"
+#include "mc/server/commands/WildcardCommandSelector.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/player/Player.h"
+#include "mc/world/effect/MobEffect.h"
 
 namespace ll::command {
 template <class T>

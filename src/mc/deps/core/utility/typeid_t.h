@@ -5,21 +5,33 @@
 #include "ll/api/reflection/TypeName.h"
 #include "ll/api/utils/HashUtils.h"
 
-#include "mc/world/level/dimension/DimensionType.h"
-
-namespace Json {
-class Value;
-}
 class CommandRegistry;
-class Command;
-class CommandIntegerRange;
-struct ActorDefinitionIdentifier;
-template <typename>
-class CommandSelector;
-template <typename>
-class WildcardCommandSelector;
-class CommandPosition;
-class CommandPositionFloat;
+
+namespace Bedrock {
+template <typename Category>
+class typeid_t;
+} // namespace Bedrock
+
+namespace ll {
+
+class type_id_ref {
+public:
+    void* ptr{};
+
+    constexpr type_id_ref() noexcept = default;
+
+    template <typename Category>
+    constexpr explicit type_id_ref(Bedrock::typeid_t<Category>& id) noexcept : ptr(&id) {}
+
+    template <typename Category>
+    [[nodiscard]] Bedrock::typeid_t<Category>& get() const noexcept {
+        return *static_cast<Bedrock::typeid_t<Category>*>(ptr);
+    }
+};
+
+static_assert(sizeof(type_id_ref) == sizeof(void*));
+
+} // namespace ll
 
 namespace Bedrock {
 
@@ -51,13 +63,20 @@ template <>
 LLAPI std::atomic_ushort& typeid_t<CommandRegistry>::_getCounter();
 
 // if dll reload, typeid can't keep, so we need a static implementation
-LLAPI ushort crtypidImpl(size_t Type);
+LLAPI ushort crtypidImpl(size_t type);
+
+template <typename Category, typename Type>
+ll::type_id_ref typeid_storage_impl() {
+    static_assert(std::is_same_v<Category, CommandRegistry>);
+    constexpr size_t          hash = ll::hash_utils::doHash(ll::reflection::type_raw_name_v<Type>);
+    static typeid_t<Category> id{crtypidImpl(hash)};
+    return ll::type_id_ref{id};
+}
 
 template <typename Category, typename Type>
 typeid_t<Category> type_id() {
     if constexpr (std::is_same_v<Category, CommandRegistry>) {
-        constexpr size_t hash = ll::hash_utils::doHash(ll::reflection::type_raw_name_v<Type>);
-        return crtypidImpl(hash);
+        return typeid_storage_impl<Category, Type>().template get<Category>();
     } else {
         static typeid_t<Category> id{++typeid_t<Category>::_getCounter()};
         return id;
@@ -65,31 +84,3 @@ typeid_t<Category> type_id() {
 } // namespace Bedrock
 
 }; // namespace Bedrock
-
-// clang-format off
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, int>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, bool>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, float>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, std::string>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, std::unique_ptr<::Command>>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, std::vector<class BlockStateCommandParam>>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandBlockName>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandFilePath>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandMessage>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandPosition>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandPositionFloat>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandRawText>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandSelector<class Actor>>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandSelector<class Player>>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandWildcardInt>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class Json::Value>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class RelativeFloat>();
-MCTAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class WildcardCommandSelector<class Actor>>();
-
-template<> LLAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, DimensionType>();
-template<> LLAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class CommandItem>();
-template<> LLAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, CommandIntegerRange>();
-template<> LLAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, class MobEffect const*>();
-template<> LLAPI Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
-
-// clang-format on
