@@ -38,3 +38,8 @@ enum class EasingType : int {
     Count        = 32,
     Invalid      = 33,
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::EasingType>();
+// clang-format on

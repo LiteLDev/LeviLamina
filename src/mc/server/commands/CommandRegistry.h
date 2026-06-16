@@ -1363,3 +1363,14 @@ public:
     MCAPI void $dtor();
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::std::basic_string<char, ::std::char_traits<char>, ::std::allocator<char> >>();
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, bool>();
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, float>();
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, int>();
+// clang-format on

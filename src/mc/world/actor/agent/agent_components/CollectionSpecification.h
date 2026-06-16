@@ -11,3 +11,8 @@ enum class CollectionSpecification : uchar {
 };
 
 }
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::AgentComponents::CollectionSpecification>();
+// clang-format on

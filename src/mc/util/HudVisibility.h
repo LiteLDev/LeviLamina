@@ -7,3 +7,8 @@ enum class HudVisibility : int {
     Reset = 1,
     Count = 2,
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::HudVisibility>();
+// clang-format on

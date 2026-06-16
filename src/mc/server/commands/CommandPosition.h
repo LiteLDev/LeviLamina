@@ -51,3 +51,8 @@ public:
     MCAPI void* $ctor(::Vec3 const& absoluteOffset);
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CommandPosition>();
+// clang-format on

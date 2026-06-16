@@ -66,3 +66,10 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CameraAimAssistCommand::Action>();
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CameraAimAssistCommand::TargetMode>();
+// clang-format on

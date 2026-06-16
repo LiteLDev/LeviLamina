@@ -55,3 +55,8 @@ public:
     MCAPI void* $ctor(int id, short version, bool overrideAux);
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CommandItem>();
+// clang-format on

@@ -11,3 +11,8 @@ enum class GameType : int {
     Spectator    = 6,
     WorldDefault = 0,
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::GameType>();
+// clang-format on

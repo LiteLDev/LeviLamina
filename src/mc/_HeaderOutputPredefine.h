@@ -11,6 +11,15 @@
 #define MCNAPI [[deprecated("This API is not available. Open an issue if you need it. "\
                             "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
+namespace ll {
+class type_id_ref;
+}
+
+namespace Bedrock {
+template <typename Category, typename Type>
+::ll::type_id_ref typeid_storage_impl();
+}
+
 #ifndef LL_NO_UNIQUE_ADDRESS
 #ifdef _MSC_VER
 #define LL_NO_UNIQUE_ADDRESS [[msvc::no_unique_address]]

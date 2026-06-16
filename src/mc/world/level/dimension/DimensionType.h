@@ -17,3 +17,8 @@ public:
     MCFOLD int value() const;
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::DimensionType>();
+// clang-format on

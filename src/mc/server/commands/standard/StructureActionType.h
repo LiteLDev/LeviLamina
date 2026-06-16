@@ -7,3 +7,8 @@ enum class StructureActionType : int {
     Load   = 1,
     Delete = 2,
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::StructureActionType>();
+// clang-format on

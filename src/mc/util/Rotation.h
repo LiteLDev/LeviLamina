@@ -13,3 +13,8 @@ enum class Rotation : uchar {
     CounterClockwise90 = Clockwise90 | Clockwise180,
     Rotate270          = Clockwise90 | Clockwise180,
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::Rotation>();
+// clang-format on

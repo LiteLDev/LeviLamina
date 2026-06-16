@@ -44,3 +44,8 @@ public:
     MCFOLD void* $ctor(uint64 blockNameHash);
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CommandBlockName>();
+// clang-format on

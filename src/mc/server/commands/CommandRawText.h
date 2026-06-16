@@ -15,3 +15,8 @@ public:
     MCFOLD ::std::string const& getText() const;
     // NOLINTEND
 };
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::CommandRawText>();
+// clang-format on

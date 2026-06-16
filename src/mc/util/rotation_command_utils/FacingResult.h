@@ -11,3 +11,8 @@ enum class FacingResult : int {
 };
 
 }
+
+// clang-format off
+template <>
+MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RotationCommandUtils::FacingResult>();
+// clang-format on
