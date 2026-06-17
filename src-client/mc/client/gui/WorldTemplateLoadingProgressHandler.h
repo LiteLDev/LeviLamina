@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/client/world/WorldTemplateLoader.h"
 
 // auto generated inclusion list
 #include "mc/client/gui/ProgressHandler.h"

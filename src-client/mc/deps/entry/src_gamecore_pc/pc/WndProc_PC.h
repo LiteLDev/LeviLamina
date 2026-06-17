@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/application/win/WindowState.h"
 
 // auto generated inclusion list
 #include "mc/deps/entry/src_gamecore/application/gamecore/WndProc.h"
