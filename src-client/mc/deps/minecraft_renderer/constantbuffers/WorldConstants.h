@@ -7,18 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class ShaderConstantFloat1; }
-namespace mce { class ShaderConstantFloat4; }
+namespace mce { class ShaderConstantMatrix4x4; }
 // clang-format on
 
 namespace mce {
 
-class RenderChunkConstants : public ::mce::ConstantBufferConstantsBase {
+class WorldConstants : public ::mce::ConstantBufferConstantsBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> CHUNK_ORIGIN_AND_SCALE;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat1*> RENDER_CHUNK_FOG_ALPHA;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantMatrix4x4*> WORLDVIEWPROJ;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantMatrix4x4*> WORLD;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantMatrix4x4*> WORLDVIEW;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantMatrix4x4*> PROJ;
     // NOLINTEND
 
 public:
@@ -30,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderChunkConstants();
+    MCAPI WorldConstants();
     // NOLINTEND
 
 public:

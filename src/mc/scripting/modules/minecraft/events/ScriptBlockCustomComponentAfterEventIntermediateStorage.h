@@ -48,8 +48,7 @@ public:
 #ifdef LL_PLAT_S
     MCAPI static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
-        void>>
-    tryGetComponentsToExecute(::Block const& block);
+        void>> tryGetComponentsToExecute(::Block const& block);
 #endif
     // NOLINTEND
 };

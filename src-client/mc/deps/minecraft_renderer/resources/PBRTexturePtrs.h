@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
+
 struct PBRTexturePtrs {
 public:
     // PBRTexturePtrs inner types declare
@@ -18,26 +21,20 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd1a95d;
-    ::ll::UntypedStorage<8, 40> mUnk7e18df;
-    ::ll::UntypedStorage<8, 40> mUnkbaf43a;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                  mColorTexture;
+    ::ll::TypedStorage<8, 40, ::PBRTexturePtrs::MERSTexturePtr>   mMERSTexture;
+    ::ll::TypedStorage<8, 40, ::PBRTexturePtrs::NormalTexturePtr> mNormalTexture;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PBRTexturePtrs& operator=(PBRTexturePtrs const&);
-    PBRTexturePtrs(PBRTexturePtrs const&);
-    PBRTexturePtrs();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PBRTexturePtrs();
+    MCAPI ~PBRTexturePtrs();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

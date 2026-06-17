@@ -7,27 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace mce { class RenderContext; }
 namespace mce { class ShaderConstantFloat2; }
-namespace mce { class ShaderConstantFloat4; }
 // clang-format on
 
 namespace mce {
 
-class ActorConstants : public ::mce::ConstantBufferConstantsBase {
+class EffectConstants : public ::mce::ConstantBufferConstantsBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> OVERLAY_COLOR;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> TILE_LIGHT_COLOR;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat2*> TILE_LIGHT_INTENSITY;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> BLOCK_LIGHT_COLOR;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> CHANGE_COLOR;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> GLINT_COLOR;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> UV_ANIM;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> MULTIPLICATIVE_TINT_CHANGE_COLOR;
     ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat2*> UV_OFFSET;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat2*> UV_ROTATION;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat2*> UV_SCALE;
     // NOLINTEND
 
 public:
@@ -39,7 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorConstants();
+    MCAPI EffectConstants();
+
+    MCAPI void setUVOffset(::mce::RenderContext& renderContext, float uvOffset1, float uvOffset2);
     // NOLINTEND
 
 public:

@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/resource/ResourceLocation.h"
+
 struct ActorTextureResourceLocations {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnkf61888;
-    ::ll::UntypedStorage<8, 64> mUnk2a78cb;
-    ::ll::UntypedStorage<8, 64> mUnkb78c88;
+    ::ll::TypedStorage<8, 56, ::ResourceLocation>                  mColorLocation;
+    ::ll::TypedStorage<8, 64, ::std::optional<::ResourceLocation>> mMERSLocation;
+    ::ll::TypedStorage<8, 64, ::std::optional<::ResourceLocation>> mNormalLocation;
     // NOLINTEND
 
 public:
@@ -18,28 +21,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorTextureResourceLocations(::ActorTextureResourceLocations&&);
+    MCAPI ActorTextureResourceLocations(::ActorTextureResourceLocations&&);
 
-    MCNAPI ActorTextureResourceLocations(::ActorTextureResourceLocations const&);
+    MCAPI ActorTextureResourceLocations(::ActorTextureResourceLocations const&);
 
-    MCNAPI ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations&&);
+    MCFOLD ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations&&);
 
-    MCNAPI ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations const&);
+    MCFOLD ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations const&);
 
-    MCNAPI ~ActorTextureResourceLocations();
+    MCAPI ~ActorTextureResourceLocations();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorTextureResourceLocations&&);
+    MCFOLD void* $ctor(::ActorTextureResourceLocations&&);
 
-    MCNAPI void* $ctor(::ActorTextureResourceLocations const&);
+    MCFOLD void* $ctor(::ActorTextureResourceLocations const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

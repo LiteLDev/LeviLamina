@@ -6,22 +6,16 @@ struct ResourcePackContents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk47836b;
-    ::ll::UntypedStorage<4, 4> mUnk676649;
-    ::ll::UntypedStorage<4, 4> mUnkd3b4ba;
-    ::ll::UntypedStorage<4, 4> mUnk465dfb;
-    ::ll::UntypedStorage<4, 4> mUnk36d194;
-    ::ll::UntypedStorage<4, 4> mUnk2ff3a9;
-    ::ll::UntypedStorage<4, 4> mUnk445b8c;
-    ::ll::UntypedStorage<4, 4> mUnk2b9d8c;
-    ::ll::UntypedStorage<4, 4> mUnkcd4290;
-    ::ll::UntypedStorage<4, 4> mUnkf649a3;
-    ::ll::UntypedStorage<4, 4> mUnkb36fea;
+    ::ll::TypedStorage<4, 4, uint> mUIJson;
+    ::ll::TypedStorage<4, 4, uint> mUITextures;
+    ::ll::TypedStorage<4, 4, uint> mSound;
+    ::ll::TypedStorage<4, 4, uint> mBlockJson;
+    ::ll::TypedStorage<4, 4, uint> mBlockTextures;
+    ::ll::TypedStorage<4, 4, uint> mItemTextures;
+    ::ll::TypedStorage<4, 4, uint> mEntityTextures;
+    ::ll::TypedStorage<4, 4, uint> mModelGeometry;
+    ::ll::TypedStorage<4, 4, uint> mAnimations;
+    ::ll::TypedStorage<4, 4, uint> mMaterials;
+    ::ll::TypedStorage<4, 4, uint> mLanguages;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ResourcePackContents& operator=(ResourcePackContents const&);
-    ResourcePackContents(ResourcePackContents const&);
-    ResourcePackContents();
 };

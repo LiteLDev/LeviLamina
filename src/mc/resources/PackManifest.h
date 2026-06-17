@@ -218,8 +218,7 @@ public:
         ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
         ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
         ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-        ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>>> const&
-    getPackSettingsDef() const;
+        ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>>> const& getPackSettingsDef() const;
 #endif
 
     MCAPI ::std::optional<::std::vector<::std::string>> getPackSettingsLocKeys() const;
