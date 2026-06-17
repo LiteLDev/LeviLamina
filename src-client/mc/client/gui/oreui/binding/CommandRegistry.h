@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/client/gui/oreui/binding/interface/ICommandGroup.h"
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/interface/IBindable.h"
