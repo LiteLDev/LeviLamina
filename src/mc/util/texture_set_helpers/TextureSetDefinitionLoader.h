@@ -16,6 +16,7 @@ namespace cg { class ImageBuffer; }
 namespace cg { class ImageResource; }
 namespace cg { class TextureSetDefinition; }
 namespace cg { class TextureSetLayerDefinition; }
+namespace mce { class ImageResourceLoader; }
 // clang-format on
 
 namespace TextureSetHelpers {
@@ -50,14 +51,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkb9c424;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::ImageResourceLoader>> mImageResourceLoader;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ResourceHelper& operator=(ResourceHelper const&);
-        ResourceHelper(ResourceHelper const&);
-        ResourceHelper();
 
     public:
         // virtual functions
@@ -131,36 +126,36 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI ::ResourceLocation $getBackCompatResourceLocation(::ResourceLocation const& resourceLocation) const;
+        MCAPI ::ResourceLocation $getBackCompatResourceLocation(::ResourceLocation const& resourceLocation) const;
 
-        MCNAPI ::std::optional<uint>
+        MCAPI ::std::optional<uint>
         $getPackStackIndexOfNoExtensionOrImage(::ResourceLocation const& resourceLocation) const;
 
-        MCNAPI ::std::optional<uint> $getPackStackIndexOfTextureSet(::ResourceLocation const& resourceLocation) const;
+        MCAPI ::std::optional<uint> $getPackStackIndexOfTextureSet(::ResourceLocation const& resourceLocation) const;
 
-        MCNAPI bool $loadResourceOfExtensions(
+        MCAPI bool $loadResourceOfExtensions(
             ::ResourceLocationPair const&    resourceLocationPair,
             ::std::string&                   resourceStream,
             ::gsl::span<::std::string const> extensions
         ) const;
 
-        MCNAPI bool $loadResource(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
+        MCAPI bool $loadResource(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-        MCNAPI bool $loadImageResourceFromMemory(
+        MCAPI bool $loadImageResourceFromMemory(
             ::std::shared_ptr<::cg::ImageResource>& out,
             ::std::string const&                    buffer,
             ::ResourceLocationPair const&           resourceLocationPair,
             ::mce::ImageFormat const&               desiredImageFormat
         ) const;
 
-        MCNAPI bool $loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;
+        MCAPI bool $loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;
 #endif
 
 
@@ -177,26 +172,26 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _addImageToLayer(
+    MCAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _addImageToLayer(
         ::std::shared_ptr<::cg::TextureSetDefinition>                          textureSetDefinition,
         ::cg::TextureSetLayerType                                              layerType,
         ::ResourceLocationPair const&                                          resourceLocationPair,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCNAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
+    MCAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
         ::std::shared_ptr<::cg::TextureSetDefinition>                          textureSetDefinition,
         ::Bedrock::NotNullNonOwnerPtr<::cg::TextureSetLayerDefinition const>   layer,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCNAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
+    MCAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
         ::std::shared_ptr<::cg::TextureSetDefinition>                          textureSetDefinition,
         ::cg::TextureSetLayerType                                              layerType,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCNAPI static bool _loadImageLayers(
+    MCAPI static bool _loadImageLayers(
         ::ResourceLocation const&                                        textureSetDefinition,
         ::std::shared_ptr<::cg::TextureSetDefinition>                    loadMode,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const& resourceHelper,
@@ -204,7 +199,7 @@ public:
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const&
     );
 
-    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
+    MCAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
         ::ResourceLocation const&                                              resourceLocation,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const&       loadMode,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ColorPipeline const&  colorMode,
@@ -213,7 +208,7 @@ public:
         bool                                                                   needsDecompression
     );
 
-    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
+    MCAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
         ::ResourceLocationPair const&                                          resourceLocationPair,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const&       loadMode,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ColorPipeline const&  colorMode,
@@ -222,7 +217,7 @@ public:
         bool                                                                   needsDecompression
     );
 
-    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> makeDefinitionFromImageBuffer(
+    MCAPI static ::std::shared_ptr<::cg::TextureSetDefinition> makeDefinitionFromImageBuffer(
         ::ResourceLocationPair const& resourceLocationPair,
         ::cg::ImageBuffer const*      optionalImageBuffer,
         bool                          isMissingTexture,

@@ -8,17 +8,19 @@
 // auto generated forward declare list
 // clang-format off
 namespace mce { class ShaderConstantFloat1; }
-namespace mce { class ShaderConstantFloat4; }
+namespace mce { class ShaderConstantInt1; }
 // clang-format on
 
 namespace mce {
 
-class RenderChunkConstants : public ::mce::ConstantBufferConstantsBase {
+class PostProcessConstants : public ::mce::ConstantBufferConstantsBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> CHUNK_ORIGIN_AND_SCALE;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat1*> RENDER_CHUNK_FOG_ALPHA;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantInt1*>   GaussianBlurSize;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat1*> DepthOfFieldNearEndDepth;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat1*> DepthOfFieldFarStartDepth;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat1*> DepthOfFieldFarEndDepth;
     // NOLINTEND
 
 public:
@@ -30,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderChunkConstants();
+    MCAPI PostProcessConstants();
     // NOLINTEND
 
 public:

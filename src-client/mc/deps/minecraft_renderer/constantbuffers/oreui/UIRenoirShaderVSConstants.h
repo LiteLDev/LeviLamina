@@ -7,18 +7,18 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class ShaderConstantFloat1; }
 namespace mce { class ShaderConstantFloat4; }
+namespace mce { class ShaderConstantMatrix4x4; }
 // clang-format on
 
 namespace mce {
 
-class RenderChunkConstants : public ::mce::ConstantBufferConstantsBase {
+class UIRenoirShaderVSConstants : public ::mce::ConstantBufferConstantsBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> CHUNK_ORIGIN_AND_SCALE;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat1*> RENDER_CHUNK_FOG_ALPHA;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantMatrix4x4*> COORD_TRANSFORM;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*>    RENOIR_SHADER_VS_PROPS_0;
     // NOLINTEND
 
 public:
@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderChunkConstants();
+    MCAPI UIRenoirShaderVSConstants();
     // NOLINTEND
 
 public:

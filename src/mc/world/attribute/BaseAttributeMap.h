@@ -68,8 +68,7 @@ public:
         iterator_impl<
             ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<uint>>>,
             ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::AttributeInstance>>>,
-            ::std::pair<uint const&, ::AttributeInstance const&>>
-        begin() const;
+            ::std::pair<uint const&, ::AttributeInstance const&>> begin() const;
 
     MCFOLD ::brstd::associative_adapter<
         uint,
@@ -100,8 +99,7 @@ public:
         iterator_impl<
             ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<uint>>>,
             ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::AttributeInstance>>>,
-            ::std::pair<uint const&, ::AttributeInstance const&>>
-        end() const;
+            ::std::pair<uint const&, ::AttributeInstance const&>> end() const;
 
     MCFOLD ::brstd::associative_adapter<
         uint,

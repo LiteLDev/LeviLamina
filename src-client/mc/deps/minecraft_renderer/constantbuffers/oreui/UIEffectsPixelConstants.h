@@ -7,18 +7,17 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { class ShaderConstantFloat1; }
 namespace mce { class ShaderConstantFloat4; }
 // clang-format on
 
 namespace mce {
 
-class RenderChunkConstants : public ::mce::ConstantBufferConstantsBase {
+class UIEffectsPixelConstants : public ::mce::ConstantBufferConstantsBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> CHUNK_ORIGIN_AND_SCALE;
-    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat1*> RENDER_CHUNK_FOG_ALPHA;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> COEFFICIENTS;
+    ::ll::TypedStorage<8, 8, ::mce::ShaderConstantFloat4*> PIXEL_OFFSETS;
     // NOLINTEND
 
 public:
@@ -30,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderChunkConstants();
+    MCAPI UIEffectsPixelConstants();
     // NOLINTEND
 
 public:

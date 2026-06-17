@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureDataLoadHelper(
+    MCAPI StructureDataLoadHelper(
         ::BlockPos const& structurePlacementLocation,
         ::BlockPos const& structureWorldOrigin,
         ::Vec3 const&     rotationPivot,
@@ -97,7 +97,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::BlockPos const& structurePlacementLocation,
         ::BlockPos const& structureWorldOrigin,
         ::Vec3 const&     rotationPivot,
@@ -111,44 +111,44 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Vec3 $loadPosition(::Vec3 const& position);
+    MCAPI ::Vec3 $loadPosition(::Vec3 const& position);
 
-    MCNAPI ::BlockPos $loadBlockPosition(::BlockPos const& blockPos);
+    MCAPI ::BlockPos $loadBlockPosition(::BlockPos const& blockPos);
 
-    MCNAPI ::BlockPos $loadBlockPositionOffset(::BlockPos const& blockPosOffset);
+    MCAPI ::BlockPos $loadBlockPositionOffset(::BlockPos const& blockPosOffset);
 
-    MCNAPI float $loadRotationDegreesX(float x);
+    MCFOLD float $loadRotationDegreesX(float x);
 
-    MCNAPI float $loadRotationDegreesY(float y);
+    MCAPI float $loadRotationDegreesY(float y);
 
-    MCNAPI float $loadRotationRadiansX(float x);
+    MCFOLD float $loadRotationRadiansX(float x);
 
-    MCNAPI float $loadRotationRadiansY(float y);
+    MCAPI float $loadRotationRadiansY(float y);
 
-    MCNAPI uchar $loadFacingID(uchar facing);
+    MCAPI uchar $loadFacingID(uchar facing);
 
-    MCNAPI ::Vec3 $loadDirection(::Vec3 const& direction);
+    MCAPI ::Vec3 $loadDirection(::Vec3 const& direction);
 
-    MCNAPI ::Direction::Type $loadDirection(::Direction::Type direction);
+    MCAPI ::Direction::Type $loadDirection(::Direction::Type direction);
 
-    MCNAPI ::Rotation $loadRotation(::Rotation rotation);
+    MCAPI ::Rotation $loadRotation(::Rotation rotation);
 
-    MCNAPI ::Mirror $loadMirror(::Mirror mirror);
+    MCAPI ::Mirror $loadMirror(::Mirror mirror);
 
-    MCNAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
+    MCAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 
-    MCNAPI ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
+    MCAPI ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
 
-    MCNAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
+    MCFOLD ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
         ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
         ::std::string const&                                                                    componentName
     );
 
-    MCNAPI bool $shouldResetTime();
+    MCFOLD bool $shouldResetTime();
 
-    MCNAPI ::DataLoadHelperType $getType() const;
+    MCFOLD ::DataLoadHelperType $getType() const;
 
-    MCNAPI ::ActorUniqueID $_generateNewID();
+    MCAPI ::ActorUniqueID $_generateNewID();
 
 
     // NOLINTEND
