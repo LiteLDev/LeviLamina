@@ -1,9 +1,16 @@
+#include "ll/api/memory/Hook.h"
 #include "ll/api/memory/Memory.h"
+#include "mc/deps/core/memory/bedrock/Memory.h"
 
 namespace ll::memory {
-auto replaceMemoryAllocator = []() -> bool {
-    *(std::atomic<Bedrock::Memory::IMemoryAllocator*>*)"Memory::MemoryTrackerAnon::memoryAllocator"_sym.resolve() =
-        &ll::memory::getDefaultAllocator();
-    return true;
-}();
+
+LL_AUTO_STATIC_HOOK(
+    ModifyMemoryAllocactor,
+    HookPriority::Highest,
+    &Bedrock::Memory::getDefaultAllocator,
+    Bedrock::Memory::IMemoryAllocator&
+) {
+    return getDefaultAllocator();
+}
+
 } // namespace ll::memory
