@@ -28,6 +28,12 @@ void DefaultSink::setFormatter(Polymorphic<Formatter> fmter) {
     std::lock_guard lock(impl.mutex);
     formatter = std::move(fmter);
 }
+
+void DefaultSink::flush() {
+    std::lock_guard lock(impl.mutex);
+    impl.logFile.flush();
+}
+
 void DefaultSink::append(LogMessageView const& view) {
     std::lock_guard lock(impl.mutex);
     std::string     buffer;

@@ -18,6 +18,8 @@ public:
 
     LLAPI void setFormatter(Polymorphic<Formatter> fmter) override;
 
+    LLAPI void flush() override;
+
     LLAPI void append(LogMessageView const& view) override;
 };
 } // namespace ll::io
