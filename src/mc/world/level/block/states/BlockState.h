@@ -45,6 +45,18 @@ public:
     // NOLINTEND
 
 public:
+    constexpr BlockState(
+        uint64                             id,
+        uint64                             variationCount,
+        ::HashedString const&              name,
+        ::BlockState::StateListNode const& node
+    )
+    : mID(id),
+      mVariationCount(variationCount),
+      mName(name),
+      mNode(node) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BlockState();

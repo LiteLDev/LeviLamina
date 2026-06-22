@@ -3,7 +3,7 @@
 #include "ll/api/base/Meta.h"
 #include "ll/api/command/Optional.h"
 #include "ll/api/command/ParamTraits.h"
-#include "ll/api/command/Runtime/RuntimeEnum.h"
+#include "ll/api/command/runtime/RuntimeEnum.h"
 
 namespace ll::command {
 

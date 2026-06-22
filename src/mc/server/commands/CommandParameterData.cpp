@@ -14,6 +14,7 @@ CommandParameterData::CommandParameterData(
     ::CommandRegistry::ParamParseRule const* rule
 )
 : mTypeIndex(typeIndex),
+  mParseRule(rule),
   mParseOverride(parser),
   mName(std::move(name)),
   mEnumNameOrPostfix(enumNameOrPostfix),
@@ -22,8 +23,7 @@ CommandParameterData::CommandParameterData(
   mOffset(offset),
   mSetOffset(flagOffset),
   mIsOptional(optional),
-  mOptions(options),
-  mParseRule(rule) {}
+  mOptions(options) {}
 
 bool CommandParameterData::operator==(CommandParameterData const& other) const {
     if (mTypeIndex != other.mTypeIndex || mName != other.mName || mOffset != other.mOffset

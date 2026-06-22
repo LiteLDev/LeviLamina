@@ -196,7 +196,7 @@ struct LL_EBO Hook {};
         template <class T>                                                                                             \
             requires(::std::is_polymorphic_v<TYPE> && ::std::is_base_of_v<T, TYPE>)                                    \
         [[nodiscard]] TYPE* thisFor() {                                                                                \
-            return static_cast<decltype(this)>(reinterpret_cast<T*>(this));                                            \
+            return static_cast<decltype(this)>(reinterpret_cast<T*>(reinterpret_cast<uintptr_t>(this)));               \
         }                                                                                                              \
         template <class... Args>                                                                                       \
         STATIC RET_TYPE origin(Args&&... params) {                                                                     \

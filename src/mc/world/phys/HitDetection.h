@@ -9,7 +9,7 @@ class BlockSource;
 class Vec3;
 class AABB;
 class HitboxComponent;
-class SubBBsComponent;
+struct SubBBsComponent;
 
 namespace HitDetection {
 

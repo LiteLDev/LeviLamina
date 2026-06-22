@@ -450,7 +450,7 @@ inline bool               CompoundTag::erase(std::string_view name) {
     }
     throw std::out_of_range("invalid nbt key");
 }
-[[nodiscard]] inline void CompoundTag::rename(std::string_view name, std::string_view newName) {
+inline void CompoundTag::rename(std::string_view name, std::string_view newName) {
     if (auto it = mTags.find(name); it != mTags.end()) {
         CompoundTagVariant tmp{std::move(it->second)};
         mTags.erase(it);

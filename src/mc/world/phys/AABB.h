@@ -27,6 +27,7 @@ public:
     [[nodiscard]] constexpr AABB() noexcept : min(0), max(0) {}
     [[nodiscard]] constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max) {}
     [[nodiscard]] constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max) {}
+    constexpr AABB& operator=(const AABB&) noexcept = default;
 
     inline AABB& merge(AABB const& a) noexcept {
         *this = AABB{ll::math::min(a.min, min), ll::math::max(a.max, max)};

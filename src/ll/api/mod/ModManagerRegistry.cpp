@@ -57,7 +57,7 @@ Expected<> ModManagerRegistry::loadMod(Manifest manifest) noexcept try {
         std::string name = manifest.name;
         std::string type = manifest.type;
         return getManager(type)->load(std::move(manifest)).transform([&, this] {
-            impl->loadedMods.insert_or_assign(std::move(name), std::move(type)).first;
+            impl->loadedMods.insert_or_assign(std::move(name), std::move(type));
         });
     } else {
         return makeI18nStringError<"Unrecognized mod type: {0}">(manifest.type);

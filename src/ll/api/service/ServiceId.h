@@ -16,8 +16,8 @@ public:
 
     [[nodiscard]] constexpr explicit ServiceId(std::string_view id, size_t ver) noexcept
     : HashedIdBase(hash_utils::HashCombiner{hash_utils::doHash(id)}.add(ver)),
-      name(id),
-      version(ver) {}
+      version(ver),
+      name(id) {}
 
     [[nodiscard]] constexpr ServiceId(ServiceIdView const& id) noexcept;
 };
@@ -28,12 +28,12 @@ public:
 
     [[nodiscard]] constexpr explicit ServiceIdView(std::string_view id, size_t ver) noexcept
     : HashedIdBase(hash_utils::HashCombiner{hash_utils::doHash(id)}.add(ver)),
-      name(id),
-      version(ver) {}
+      version(ver),
+      name(id) {}
     [[nodiscard]] constexpr ServiceIdView(ServiceId const& id) noexcept
     : HashedIdBase(id.hash),
-      name(id.name),
-      version(id.version) {}
+      version(id.version),
+      name(id.name) {}
 
     template <class T>
     [[nodiscard]] constexpr ServiceIdView(auto_name_t<T>, size_t version) noexcept
@@ -41,8 +41,8 @@ public:
 };
 [[nodiscard]] constexpr ServiceId::ServiceId(ServiceIdView const& id) noexcept
 : HashedIdBase(id.hash),
-  name(id.name),
-  version(id.version) {}
+  version(id.version),
+  name(id.name) {}
 
 constexpr ServiceIdView EmptyServiceId{{}, 0};
 

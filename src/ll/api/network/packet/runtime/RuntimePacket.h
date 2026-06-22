@@ -48,7 +48,7 @@ public:
 
     [[nodiscard]] constexpr optional_ref<ll::network::Packet> getOwnedPacket() const { return ownedPacket.get(); }
 
-    [[nodiscard]] constexpr void movePacket(std::unique_ptr<ll::network::Packet> newPacket) {
+    constexpr void movePacket(std::unique_ptr<ll::network::Packet> newPacket) {
         ownedPacket = std::move(newPacket);
         packet      = ownedPacket.get();
     }

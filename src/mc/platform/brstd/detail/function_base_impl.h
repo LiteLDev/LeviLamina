@@ -12,7 +12,7 @@ template <DerivedType Type, class Return, bool Noexcept, class... Xs>
 class function_base_impl {
     class storage;
 
-    template <DerivedType Type>
+    template <DerivedType>
     struct vtable_base {
         void (*move_to)(storage&, storage&) noexcept;
         void (*destroy)(storage&) noexcept;
@@ -146,7 +146,7 @@ protected:
             auto ptr = std::make_unique<Fn>(std::forward<Ys>(args)...);
             mStorage.set_large_fn_ptr(ptr.release());
         } else {
-            ::new (mStorage.embedded_target_ptr<Fn>()) Fn(std::forward<Ys>(args)...);
+            ::new (mStorage.template embedded_target_ptr<Fn>()) Fn(std::forward<Ys>(args)...);
         }
     }
 
