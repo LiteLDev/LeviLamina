@@ -17,7 +17,7 @@ jobs:
   build-doxygen:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - run: |
           git clone --depth 1 --branch v2.4.1 https://github.com/jothepro/doxygen-awesome-css.git docs/api/doxygen-awesome-css
@@ -48,7 +48,7 @@ jobs:
   build-mkdocs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - run: |
           pip install -r docs/main/requirements.txt
