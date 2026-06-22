@@ -30,6 +30,12 @@ public:
     : mStrHash(computeHash(s)),
       mStr(std::move(s)),
       mLastMatch(nullptr) {}
+
+    [[nodiscard]] constexpr HashedString(std::string const& s) noexcept
+    : mStrHash(computeHash(s)),
+      mStr(s),
+      mLastMatch(nullptr) {}
+
     [[nodiscard]] constexpr HashedString(char const* mStr) noexcept : HashedString(std::string{mStr}) {}
 
     [[nodiscard]] constexpr HashedString(HashedString const& other) noexcept
