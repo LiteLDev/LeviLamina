@@ -60,7 +60,8 @@ CommandParameterData& OverloadData::addParamImpl(
     int                                offset,
     int                                flagOffset,
     bool                               optional,
-    CommandParameterOption             options
+    CommandParameterOption             options,
+    CommandRegistry::ParamParseRule const* rule
 ) {
     std::lock_guard lock{impl->mutex};
     return impl->params.emplace_back(
@@ -73,7 +74,8 @@ CommandParameterData& OverloadData::addParamImpl(
         offset,
         optional,
         flagOffset,
-        options
+        options,
+        rule
     );
 }
 CommandParameterData& OverloadData::addTextImpl(std::string_view text, int offset) {
@@ -88,7 +90,8 @@ CommandParameterData& OverloadData::addTextImpl(std::string_view text, int offse
         offset,
         -1,
         false,
-        CommandParameterOption::EnumAutocompleteExpansion
+        CommandParameterOption::EnumAutocompleteExpansion,
+        nullptr
     );
 }
 void OverloadData::setFactory(CommandRegistry::Overload::AllocFunction&& fn) {

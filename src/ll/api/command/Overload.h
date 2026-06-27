@@ -44,7 +44,8 @@ class Overload : private OverloadData {
                 offset,
                 flagOffset,
                 Opt,
-                Traits::options()
+                Traits::options(),
+                Traits::parseRule()
             ),
             getRegistrar()
         );

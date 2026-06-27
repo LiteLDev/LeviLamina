@@ -70,7 +70,7 @@ public:
         bool                                     optional,
         int                                      flagOffset,
         CommandParameterOption                   options,
-        ::CommandRegistry::ParamParseRule const* rule = nullptr
+        ::CommandRegistry::ParamParseRule const* rule
     );
 
     LLNDAPI bool operator==(CommandParameterData const& other) const;

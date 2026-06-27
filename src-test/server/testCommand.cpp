@@ -5,6 +5,8 @@
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/server/commands/CommandOutput.h"
+#include "mc/server/commands/CommandSyntaxInformation.h"
+#include "mc/server/commands/OverloadSyntaxInformation.h"
 #include "mc/server/commands/ServerCommands.h"
 
 #include "ll/api/service/Bedrock.h"
@@ -265,6 +267,25 @@ TEST(TestCommand, ExecuteCommandRunsSubcommandAndMergesOutput) {
     EXPECT_EQ(output.mMessages[2].mMessageId, "subcmd: t");
     EXPECT_EQ(output.mMessages[3].mMessageId, "overload1");
     EXPECT_EQ(output.mMessages[4].mMessageId, "p1: 123");
+}
+
+TEST(TestCommand, HelpSyntaxDescribesSubcommandParameter) {
+    auto&               registry = *ll::service::getCommandRegistry();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    auto syntax = registry.getCommandOverloadSyntaxInformation(origin, "t");
+    ASSERT_TRUE(syntax.isValid);
+
+    std::string allSyntax;
+    for (auto const& overload : syntax.possibilities.get()) {
+        allSyntax.append(overload.text.get());
+        allSyntax.push_back('\n');
+    }
+
+    auto subcommandType = registry.describe(CommandRegistry::Symbol{CommandRegistry::HardNonTerminal::SlashCommand});
+    ASSERT_NE(subcommandType, "unknown");
+    EXPECT_NE(allSyntax.find("subcmd: " + subcommandType), std::string::npos) << allSyntax;
+    EXPECT_EQ(allSyntax.find("subcmd: unknown"), std::string::npos) << allSyntax;
 }
 
 TEST(TestCommand, ExecuteCommandReturnsErrorOutputWhenCompilationFails) {

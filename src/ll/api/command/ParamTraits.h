@@ -1,10 +1,12 @@
 #pragma once
 
 #include <cstddef>
+#include <memory>
 #include <stdexcept>
 #include <string>
 #include <string_view>
 #include <type_traits>
+#include <vector>
 
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/CommandRegistrar.h"
@@ -17,10 +19,12 @@
 #include "mc/server/commands/BlockStateCommandParam.h"
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandBlockName.h"
+#include "mc/server/commands/CommandCompareOperator.h"
 #include "mc/server/commands/CommandFilePath.h"
 #include "mc/server/commands/CommandIntegerRange.h"
 #include "mc/server/commands/CommandItem.h"
 #include "mc/server/commands/CommandMessage.h"
+#include "mc/server/commands/CommandOperator.h"
 #include "mc/server/commands/CommandParameterData.h"
 #include "mc/server/commands/CommandParameterOption.h"
 #include "mc/server/commands/CommandPositionFloat.h"
@@ -34,17 +38,147 @@
 
 namespace ll::command {
 template <class T>
+struct ParamTraits;
+
+template <class T>
 struct ParamTraitsBase {
     static constexpr CommandParameterDataType    dataType() { return CommandParameterDataType::Basic; }
     static constexpr CommandParameterOption      options() { return CommandParameterOption::None; }
     static inline CommandRegistry::ParseFunction parseFn() { return &CommandRegistry::parse<T>; }
     static constexpr std::string_view            enumNameOrPostfix() { return {}; }
     static constexpr std::string_view            subChain() { return {}; }
+    static CommandRegistry::ParamParseRule const* parseRule() {
+        if constexpr (requires { ParamTraits<T>::parseRuleValue(); }) {
+            static CommandRegistry::ParamParseRule rule = [] {
+                CommandRegistry::ParamParseRule result{};
+                result.parse.get()  = ParamTraits<T>::parseFn();
+                result.symbol.get() = CommandRegistry::Symbol{ParamTraits<T>::parseRuleValue()};
+                return result;
+            }();
+            return &rule;
+        } else {
+            return nullptr;
+        }
+    }
     static Bedrock::typeid_t<CommandRegistry>    typeId() { return Bedrock::type_id<CommandRegistry, T>(); }
     static constexpr void                        transformData(CommandParameterData&, CommandRegistrar&) {}
 };
 template <class T>
 struct ParamTraits : ParamTraitsBase<T> {};
+template <>
+struct ParamTraits<int> : ParamTraitsBase<int> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::Int;
+    }
+};
+template <>
+struct ParamTraits<float> : ParamTraitsBase<float> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::Val;
+    }
+};
+template <>
+struct ParamTraits<std::string> : ParamTraitsBase<std::string> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::Id;
+    }
+};
+template <>
+struct ParamTraits<CommandOperator> : ParamTraitsBase<CommandOperator> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::Operator;
+    }
+};
+template <>
+struct ParamTraits<CommandCompareOperator> : ParamTraitsBase<CommandCompareOperator> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::CompareOperator;
+    }
+};
+template <>
+struct ParamTraits<RelativeFloat> : ParamTraitsBase<RelativeFloat> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::RVal;
+    }
+};
+template <>
+struct ParamTraits<CommandWildcardInt> : ParamTraitsBase<CommandWildcardInt> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::WildcardInt;
+    }
+};
+template <>
+struct ParamTraits<CommandIntegerRange> : ParamTraitsBase<CommandIntegerRange> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::FullIntegerRange;
+    }
+};
+template <>
+struct ParamTraits<CommandFilePath> : ParamTraitsBase<CommandFilePath> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::FilePath;
+    }
+};
+template <>
+struct ParamTraits<CommandPosition> : ParamTraitsBase<CommandPosition> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::Position;
+    }
+};
+template <>
+struct ParamTraits<CommandPositionFloat> : ParamTraitsBase<CommandPositionFloat> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::PositionFloat;
+    }
+};
+template <>
+struct ParamTraits<CommandSelector<Actor>> : ParamTraitsBase<CommandSelector<Actor>> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::Selection;
+    }
+};
+template <>
+struct ParamTraits<CommandSelector<Player>> : ParamTraitsBase<CommandSelector<Player>> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::Selection;
+    }
+};
+template <>
+struct ParamTraits<WildcardCommandSelector<Actor>> : ParamTraitsBase<WildcardCommandSelector<Actor>> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::WildcardSelection;
+    }
+};
+template <>
+struct ParamTraits<CommandMessage> : ParamTraitsBase<CommandMessage> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::MessageRoot;
+    }
+};
+template <>
+struct ParamTraits<CommandRawText> : ParamTraitsBase<CommandRawText> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::RawText;
+    }
+};
+template <>
+struct ParamTraits<Json::Value> : ParamTraitsBase<Json::Value> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::JsonObject;
+    }
+};
+template <>
+struct ParamTraits<std::vector<BlockStateCommandParam>> : ParamTraitsBase<std::vector<BlockStateCommandParam>> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::BlockStateArray;
+    }
+};
+template <>
+struct ParamTraits<std::unique_ptr<::Command>> : ParamTraitsBase<std::unique_ptr<::Command>> {
+    static constexpr CommandRegistry::HardNonTerminal parseRuleValue() {
+        return CommandRegistry::HardNonTerminal::SlashCommand;
+    }
+};
 template <class T>
 struct EnumParser {
     bool operator()(

@@ -37,9 +37,26 @@ TEST(TestMolang, MolangQueryFunctionsCanBeRegisteredAndEvaluated) {
     );
 
     auto renderParams = RenderParams();
-    auto boolQuery    = ExpressionNode("query.is_levilamina", MolangVersion::Latest, {{HashedString{"default"}}});
-    auto numQuery     = ExpressionNode("query.homo_number", MolangVersion::Latest, {{HashedString{"default"}}});
+    auto boolReturn   = MolangQueryFunctionReturnType::Number;
+    auto numReturn    = MolangQueryFunctionReturnType::Number;
 
-    EXPECT_FLOAT_EQ(boolQuery.evalGeneric(renderParams).mPOD.mFloat, 1.0f);
-    EXPECT_FLOAT_EQ(numQuery.evalGeneric(renderParams).mPOD.mFloat, 114514.0f);
+    auto const* boolAccessor = ExpressionNode::queryFunctionAccessorFromString(
+        HashedString{"query.is_levilamina"},
+        MolangVersion::Latest,
+        boolReturn,
+        true
+    );
+    auto const* numAccessor = ExpressionNode::queryFunctionAccessorFromString(
+        HashedString{"query.homo_number"},
+        MolangVersion::Latest,
+        numReturn,
+        true
+    );
+    ASSERT_NE(boolAccessor, nullptr);
+    ASSERT_NE(numAccessor, nullptr);
+    EXPECT_FLOAT_EQ((*boolAccessor)(renderParams, {}).mPOD.mFloat, 1.0f);
+    EXPECT_FLOAT_EQ((*numAccessor)(renderParams, {}).mPOD.mFloat, 114514.0f);
+
+    ExpressionNode::unregisterQueryFunction("query.is_levilamina", HashedString{"default"});
+    ExpressionNode::unregisterQueryFunction("query.homo_number", HashedString{"default"});
 }

@@ -52,7 +52,8 @@ protected:
         int                                offset,
         int                                flagOffset,
         bool                               optional,
-        CommandParameterOption             options
+        CommandParameterOption             options,
+        CommandRegistry::ParamParseRule const* rule
     );
 
     LLAPI CommandParameterData& addTextImpl(std::string_view text, int offset);

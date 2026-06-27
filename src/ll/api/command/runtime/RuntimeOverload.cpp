@@ -35,7 +35,8 @@ void RuntimeOverload::addParam(std::string_view name, ParamKindType kind, bool o
                 offset,
                 offset + OptionalOffsetGetter<ParamStorageType::value_type>::value,
                 optional,
-                Traits::options()
+                Traits::options(),
+                Traits::parseRule()
             ),
             getRegistrar()
         );
