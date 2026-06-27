@@ -116,7 +116,8 @@ TEST(EventTest, EventBusPublishesAndRemovesListeners) {
 
     using namespace ll::event;
     for (auto [modName, id] : bus.events()) {
-        if (!id.name.ends_with("LevelTickEvent") && !id.name.ends_with("ChangedEvent"))
+        if (!id.name.ends_with("LevelTickEvent") && !id.name.ends_with("ChangedEvent")
+            && !id.name.contains("ConsoleOut"))
             bus.addListener(
                 DynamicListener::create([modName](CompoundTag& nbt) {
                     ll::getLogger().debug("event from {}, {}", modName, nbt.toSnbt(SnbtFormat::PrettyChatPrint));

@@ -50,7 +50,7 @@ inline bool loadConfig(T& config, std::filesystem::path const& path, F&& updater
     }
     auto content = file_utils::readFile(path);
     if (content && !content->empty()) {
-        auto data{ParseType<J>{}(*content)};
+        auto data = ParseType<J>{}(*content);
         if (!data.contains("version")) {
             noNeedRewrite = false;
         } else if ((int64)(data["version"]) != config.version) {

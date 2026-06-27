@@ -66,15 +66,38 @@ public:
     handle(const NetworkIdentifier& netId, NetEventCallback& callback, const ll::network::Packet& packet) const = 0;
 };
 
+namespace detail {
+template <bool&>
+struct StaticRegistrationAnchor {};
+
 template <class Derived>
-class PacketBase : public Packet {
+inline bool packetRegistration = [] {
+    PacketRegistrar::getInstance().registerPacket(
+        reflection::type_unprefix_name_v<Derived>,
+        ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>),
+        []() -> std::unique_ptr<Packet> { return std::make_unique<Derived>(); }
+    );
+    return true;
+}();
+
+template <class Derived, class PacketType>
+inline bool packetHandlerRegistration = [] {
+    static Derived instance;
+    PacketRegistrar::getInstance().registerHandler(
+        reflection::type_unprefix_name_v<PacketType>,
+        ll::hash_utils::doHash(reflection::type_unprefix_name_v<PacketType>),
+        instance
+    );
+    return true;
+}();
+} // namespace detail
+
+template <class Derived>
+class PacketBase
+: public Packet,
+  private detail::StaticRegistrationAnchor<detail::packetRegistration<Derived>> {
     static bool ensureRegistered() {
-        PacketRegistrar::getInstance().registerPacket(
-            reflection::type_unprefix_name_v<Derived>,
-            ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>),
-            []() -> std::unique_ptr<Packet> { return std::make_unique<Derived>(); }
-        );
-        return true;
+        return detail::packetRegistration<Derived>;
     }
 
 protected:
@@ -93,15 +116,11 @@ public:
 };
 
 template <class Derived, class PacketType>
-class PacketHandlerBase : public IPacketHandler {
+class PacketHandlerBase
+: public IPacketHandler,
+  private detail::StaticRegistrationAnchor<detail::packetHandlerRegistration<Derived, PacketType>> {
     static bool ensureRegistered() {
-        static Derived instance;
-        PacketRegistrar::getInstance().registerHandler(
-            reflection::type_unprefix_name_v<PacketType>,
-            ll::hash_utils::doHash(reflection::type_unprefix_name_v<PacketType>),
-            instance
-        );
-        return true;
+        return detail::packetHandlerRegistration<Derived, PacketType>;
     }
 
     inline static bool sRegistered = ensureRegistered();

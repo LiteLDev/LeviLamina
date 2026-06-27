@@ -325,7 +325,7 @@ void AddressSampler::removeBreakpoints() {
 
 bool AddressSampler::start() {
     if (mRunning || sInstance) return false;
-    mVehHandle = AddVectoredExceptionHandler(1, vehHandler);
+    mVehHandle = AddVectoredExceptionHandler(TRUE, vehHandler);
     if (!mVehHandle) {
         return false;
     }

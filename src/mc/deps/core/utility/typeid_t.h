@@ -18,11 +18,6 @@ class type_id_ref {
 public:
     void* ptr{};
 
-    constexpr type_id_ref() noexcept = default;
-
-    template <typename Category>
-    constexpr explicit type_id_ref(Bedrock::typeid_t<Category>& id) noexcept : ptr(&id) {}
-
     template <typename Category>
     [[nodiscard]] Bedrock::typeid_t<Category>& get() const noexcept {
         return *static_cast<Bedrock::typeid_t<Category>*>(ptr);
@@ -30,6 +25,8 @@ public:
 };
 
 static_assert(sizeof(type_id_ref) == sizeof(void*));
+static_assert(std::is_trivially_copyable_v<type_id_ref>);
+static_assert(std::is_aggregate_v<type_id_ref>);
 
 } // namespace ll
 
@@ -70,7 +67,7 @@ ll::type_id_ref typeid_storage_impl() {
     static_assert(std::is_same_v<Category, CommandRegistry>);
     constexpr size_t          hash = ll::hash_utils::doHash(ll::reflection::type_raw_name_v<Type>);
     static typeid_t<Category> id{crtypidImpl(hash)};
-    return ll::type_id_ref{id};
+    return ll::type_id_ref{&id};
 }
 
 template <typename Category, typename Type>

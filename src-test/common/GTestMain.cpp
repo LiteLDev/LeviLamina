@@ -15,12 +15,28 @@
 #include <filesystem>
 #include <fstream>
 
+#if defined(_WIN32)
+#include <Windows.h>
+#endif
 
 static ll::io::Logger& getGTestLogger() {
     static auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("GTest");
     return *logger;
 }
 static ll::io::Logger& logger = getGTestLogger();
+
+static bool isDebuggerAttached() {
+#if defined(_WIN32)
+    if (IsDebuggerPresent()) {
+        return true;
+    }
+
+    BOOL remoteDebuggerPresent = FALSE;
+    return CheckRemoteDebuggerPresent(GetCurrentProcess(), &remoteDebuggerPresent) && remoteDebuggerPresent;
+#else
+    return false;
+#endif
+}
 
 class LLTestEventListener final : public testing::TestEventListener {
 private:
@@ -187,29 +203,35 @@ static bool gmain = [] {
         delete listeners.Release(listeners.default_result_printer());
         listeners.Append(new LLTestEventListener());
 
-        auto                                coverageConfig = makeLLCoverageConfig();
-        ll::test::coverage::CoverageCatalog catalog{coverageConfig};
-        bool                                catalogOk = catalog.buildForProcess();
-        if (catalogOk) {
-            catalog.dumpStats(logger);
-        }
-        if (catalog.modules().empty()) {
-            logger.warn("CoverageCatalog found no target modules, coverage disabled");
-            catalogOk = false;
-        }
+        std::optional<ll::test::coverage::CoverageCatalog> catalog;
+        if (isDebuggerAttached()) {
+            logger.warn("Debugger detected, coverage disabled");
+        } else {
+            auto coverageConfig = makeLLCoverageConfig();
+            catalog.emplace(coverageConfig);
 
-        if (catalogOk) {
-            if (!catalog.startSampling()) {
-                logger.warn("CoverageCatalog startSampling failed, coverage disabled");
+            bool catalogOk = catalog->buildForProcess();
+            if (catalogOk) {
+                catalog->dumpStats(logger);
+            }
+            if (catalog->modules().empty()) {
+                logger.warn("CoverageCatalog found no target modules, coverage disabled");
+                catalogOk = false;
+            }
+
+            if (catalogOk) {
+                if (!catalog->startSampling()) {
+                    logger.warn("CoverageCatalog startSampling failed, coverage disabled");
+                }
             }
         }
 
         [[maybe_unused]] auto result = RUN_ALL_TESTS();
         logger.debug("RUN_ALL_TESTS() returned {}", result);
 
-        if (catalog.isSampling()) {
-            catalog.stopSampling();
-            auto summary = catalog.summarizeHits();
+        if (catalog && catalog->isSampling()) {
+            catalog->stopSampling();
+            auto summary = catalog->summarizeHits();
             logger.info(
                 "Coverage summary: lines {}/{} ({:.1f}%), source-fns {}/{} ({:.1f}%), exported-fns {}/{} ({:.1f}%)",
                 summary.hitLines,
@@ -231,7 +253,7 @@ static bool gmain = [] {
                 auto reportPath = outDir / "coverage_hits.json";
                 {
                     std::ofstream reportFile(reportPath);
-                    reportFile << catalog.reportToJson().dump(2);
+                    reportFile << catalog->reportToJson().dump(2);
                 }
                 logger.info("Coverage report written to {}", reportPath.string());
             } catch (...) {
