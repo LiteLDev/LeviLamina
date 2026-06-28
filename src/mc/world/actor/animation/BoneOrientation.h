@@ -90,10 +90,10 @@ public:
 
     MCAPI void setTransform(::BoneOrientationTransform const& transform);
 
-    MCAPI void updateBoneTransform(::Vec3 const* offset, ::DirectX::XMMATRIX& boneToEntitySpaceMatrix);
+    MCAPI void LL_CC_V updateBoneTransform(::Vec3 const* offset, ::DirectX::XMMATRIX& boneToEntitySpaceMatrix);
 #endif
 
-    MCAPI ::DirectX::XMMATRIX updateLocalPreTransformMatrix();
+    MCAPI ::DirectX::XMMATRIX LL_CC_V updateLocalPreTransformMatrix();
 
     MCAPI ~BoneOrientation();
     // NOLINTEND
