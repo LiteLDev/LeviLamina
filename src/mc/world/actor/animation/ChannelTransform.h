@@ -46,7 +46,7 @@ public:
         ::BoneTransformType boneTransformType
     ) const;
 
-    MCAPI bool getDataValues(::__m128& minValueVec, ::__m128& maxValueVec) const;
+    MCAPI bool LL_CC_V getDataValues(::__m128& minValueVec, ::__m128& maxValueVec) const;
     // NOLINTEND
 
 public:

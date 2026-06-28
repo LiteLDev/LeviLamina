@@ -179,7 +179,7 @@ public:
 
     MCAPI void expandAABBWithCompiledGeometry(::AABB& bb) const;
 
-    MCAPI void generateBoneTransformMatrices(
+    MCAPI void LL_CC_V generateBoneTransformMatrices(
         ::RenderParams&                renderParams,
         ::gsl::span<::BoneOrientation> boneOrientations,
         ::RenderController const*      renderControllerId,

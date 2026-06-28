@@ -11,6 +11,38 @@
 #define MCNAPI [[deprecated("This API is not available. Open an issue if you need it. "\
                             "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
+#ifndef LL_CC_V
+#if defined(_MSC_VER) || defined(__clang__)
+#define LL_CC_V __vectorcall
+#else
+#define LL_CC_V
+#endif
+#endif
+
+#ifndef LL_CC_S
+#if defined(_MSC_VER) && (defined(_M_IX86) || defined(__i386__))
+#define LL_CC_S __stdcall
+#else
+#define LL_CC_S
+#endif
+#endif
+
+#ifndef LL_CC_F
+#if defined(_MSC_VER) && (defined(_M_IX86) || defined(__i386__))
+#define LL_CC_F __fastcall
+#else
+#define LL_CC_F
+#endif
+#endif
+
+#ifndef LL_CC_R
+#if defined(__clang__)
+#define LL_CC_R __regcall
+#else
+#define LL_CC_R
+#endif
+#endif
+
 namespace ll {
 class type_id_ref;
 }
