@@ -25,19 +25,18 @@ TEST(ServiceTest, ServiceManagerPublishesRegisterAndUnregisterLifecycle) {
         observedService = currentService;
     });
 
-    // TODO: figure out why this test fails
-    // EXPECT_TRUE(sm.registerService(service));
-    // ASSERT_NE(observedService, nullptr);
-    // EXPECT_EQ(observedService.get(), service.get());
+    EXPECT_TRUE(sm.registerService(service));
+    ASSERT_NE(observedService, nullptr);
+    EXPECT_EQ(observedService.get(), service.get());
 
-    // auto queriedService = sm.getService<SimpleService>();
-    // ASSERT_TRUE(queriedService.has_value());
-    // EXPECT_EQ(queriedService.value().get(), service.get());
+    auto queriedService = sm.getService<SimpleService>();
+    ASSERT_TRUE(queriedService.has_value());
+    EXPECT_EQ(queriedService.value().get(), service.get());
 
-    // EXPECT_TRUE(sm.unregisterService(service->getServiceId()));
-    // EXPECT_TRUE(service->invalidated);
-    // EXPECT_EQ(observedService, nullptr);
-    // EXPECT_FALSE(sm.getService<SimpleService>().has_value());
+    EXPECT_TRUE(sm.unregisterService(service->getServiceId()));
+    EXPECT_TRUE(service->invalidated);
+    EXPECT_EQ(observedService, nullptr);
+    EXPECT_FALSE(sm.getService<SimpleService>().has_value());
 
     event::EventBus::getInstance().removeListener(listener);
 }

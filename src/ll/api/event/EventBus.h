@@ -45,6 +45,7 @@ public:
 
     template <std::derived_from<Event> T>
     bool setEventEmitter(FactoryFn fn, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current()) {
+        detail::registerRuntimeEventId<T>();
         return setEventEmitter(std::move(fn), getEventId<T>, std::move(mod));
     }
 

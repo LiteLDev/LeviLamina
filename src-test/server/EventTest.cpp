@@ -2,6 +2,7 @@
 
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/EventBus.h"
+#include "ll/api/event/service/ServiceEvents.h"
 #include "ll/api/io/PatternFormatter.h"
 #include "ll/api/io/Sink.h"
 #include "ll/api/memory/Hook.h"
@@ -60,6 +61,14 @@ public:
 
 class TestEventEmitter
 : public ll::event::Emitter<[](auto&&...) { return nullptr; }, TestEvent1, TestEvent2, TestEvent3> {};
+
+TEST(EventTest, RuntimeEventIdMatchesRegisteredEventId) {
+    auto serviceRuntime = ll::event::server::ServiceRegisterEvent{nullptr}.getId();
+    auto serviceStatic  = ll::event::getEventId<ll::event::server::ServiceRegisterEvent>;
+
+    EXPECT_EQ(serviceRuntime.name, serviceStatic.name);
+    EXPECT_EQ(serviceRuntime.hash, serviceStatic.hash);
+}
 
 TEST(EventTest, EventBusPublishesAndRemovesListeners) {
     auto& bus = ll::event::EventBus::getInstance();
