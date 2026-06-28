@@ -180,18 +180,10 @@ public:
 #endif
 
 ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator() {
-#ifdef LL_PLAT_C
-#ifdef LL_MEMORY_DEBUG
-    static DebugAllocator<StdMemoryAllocator> ins;
-#else
-    static StdMemoryAllocator ins;
-#endif
-#else
 #ifdef LL_MEMORY_DEBUG
     static DebugAllocator<MimallocMemoryAllocator> ins;
 #else
     static MimallocMemoryAllocator ins;
-#endif
 #endif
     return ins;
 }

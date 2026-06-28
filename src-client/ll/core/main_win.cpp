@@ -81,7 +81,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     SerialWorkList::WorkResult,
     ::std::shared_ptr<::MinecraftGame::InitContext>& initContext
 ) {
-
     mod::ModRegistrar::getInstance().enableAllMods();
     setGamingStatus(GamingStatus::Running);
     return origin(initContext);
