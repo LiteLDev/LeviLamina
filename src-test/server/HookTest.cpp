@@ -49,6 +49,29 @@ LL_TYPE_INSTANCE_HOOK(TestUintptrHook, HookPriority::Normal, TestPtrClass, 0x114
     return origin(a, b);
 }
 
+class TestVirtualDetectorClass {
+public:
+    int         nonVirtual() { return 1; }
+    virtual int virtualMember() { return 2; }
+    virtual int virtualConstMember() const { return 3; }
+};
+
+static_assert(
+    !ll::memory::virtualDetector<
+        decltype(&TestVirtualDetectorClass::nonVirtual),
+        &TestVirtualDetectorClass::nonVirtual>()
+);
+static_assert(
+    ll::memory::virtualDetector<
+        decltype(&TestVirtualDetectorClass::virtualMember),
+        &TestVirtualDetectorClass::virtualMember>()
+);
+static_assert(
+    ll::memory::virtualDetector<
+        decltype(&TestVirtualDetectorClass::virtualConstMember),
+        &TestVirtualDetectorClass::virtualConstMember>()
+);
+
 class HookExTestClass {
 protected:
     int some = 0;

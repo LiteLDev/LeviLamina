@@ -6,6 +6,60 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/reflection/TypeName.h"
 
+#ifndef LL_CC_V
+#if defined(_MSC_VER) || defined(__clang__)
+#define LL_CC_V __vectorcall
+#else
+#define LL_CC_V
+#endif
+#endif
+
+#ifndef LL_CC_S
+#if defined(_MSC_VER) && (defined(_M_IX86) || defined(__i386__))
+#define LL_CC_S __stdcall
+#else
+#define LL_CC_S
+#endif
+#endif
+
+#ifndef LL_CC_F
+#if defined(_MSC_VER) && (defined(_M_IX86) || defined(__i386__))
+#define LL_CC_F __fastcall
+#else
+#define LL_CC_F
+#endif
+#endif
+
+#ifndef LL_CC_R
+#if defined(__clang__)
+#define LL_CC_R __regcall
+#else
+#define LL_CC_R
+#endif
+#endif
+
+namespace ll::internal {
+
+template <class T>
+concept MemFuncPtrT = std::is_member_function_pointer_v<T>;
+
+template <class T, T v1, T v2, class = std::integral_constant<bool, true>>
+struct CanCompare : std::false_type {};
+
+template <class T, T v1, T v2>
+struct CanCompare<T, v1, v2, std::integral_constant<bool, v1 == v2>> : std::true_type {};
+
+template <MemFuncPtrT T, T f>
+consteval bool virtualDetector() noexcept {
+#if defined(_MSC_VER) && !defined(__clang__)
+    return reflection::getRawName<f>().find("::`vcall'{") != std::string_view::npos;
+#else
+    return !CanCompare<T, f, f>::value;
+#endif
+}
+
+} // namespace ll::internal
+
 #ifdef _MSC_VER
 
 #include "intrin.h"
@@ -233,14 +287,6 @@ extern "C" ::_IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifi
 
 [[nodiscard]] LL_FORCEINLINE void* getCurrentModuleHandle() noexcept { return &__ImageBase; }
 
-template <class T>
-concept MemFuncPtrT = std::is_member_function_pointer_v<T>;
-
-template <MemFuncPtrT T, T f>
-consteval bool virtualDetector() noexcept {
-    return reflection::getRawName<f>().find("::`vcall'{") != std::string_view::npos;
-}
-
 using FileHandleT = void*;
 
 } // namespace ll::internal
@@ -324,20 +370,6 @@ namespace ll::internal {
 [[nodiscard]] void* getCurrentModuleHandle() noexcept; // Implemented in SystemUtils_linux.cpp
 
 using FileHandleT = int;
-
-template <class T, T v1, T v2, class = std::integral_constant<bool, true>>
-struct CanCompare : std::false_type {};
-
-template <class T, T v1, T v2>
-struct CanCompare<T, v1, v2, std::integral_constant<bool, v1 == v2>> : std::true_type {};
-
-template <class T>
-concept MemFuncPtrT = std::is_member_function_pointer_v<T>;
-
-template <MemFuncPtrT T, T f>
-consteval bool virtualDetector() noexcept {
-    return !CanCompare<T, f, f>::value;
-}
 
 } // namespace ll::internal
 
