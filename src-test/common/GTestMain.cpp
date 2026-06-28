@@ -8,6 +8,7 @@
 #include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/core/CrashLogger.h"
 
 #include "coverage/CoverageCatalog.h"
 #include "coverage/CoverageConfig.h"
@@ -206,6 +207,8 @@ static bool gmain = [] {
         std::optional<ll::test::coverage::CoverageCatalog> catalog;
         if (isDebuggerAttached()) {
             logger.warn("Debugger detected, coverage disabled");
+        } else if (CrashLogger::isExternalRunning()) {
+            logger.warn("External CrashLogger running, coverage disabled");
         } else {
             auto coverageConfig = makeLLCoverageConfig();
             catalog.emplace(coverageConfig);

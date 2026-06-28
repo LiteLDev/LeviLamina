@@ -1,5 +1,6 @@
 #include "ll/core/CrashLogger.h"
 
+#include <atomic>
 #include <chrono>
 
 #include "ll/api/Versions.h"
@@ -37,6 +38,8 @@ namespace ll {
 using namespace string_utils;
 
 auto crashLoggerPtr = io::LoggerRegistry::getInstance().getOrCreate("CrashLogger");
+
+static std::atomic_bool externalCrashLoggerRunning{false};
 
 class CrashLoggerNew {
     void* previous{};
@@ -208,6 +211,7 @@ void CrashLogger::init() {
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
 
+    externalCrashLoggerRunning.store(true);
     crashLoggerPtr->info("CrashLogger enabled successfully"_tr());
 }
 
@@ -224,6 +228,8 @@ static struct CrashInfo {
     decltype(getLeviConfig().modules.crashLogger) settings{};
     CrashInfo() : loggerPtr(io::LoggerRegistry::getInstance().getOrCreate("CrashLogger")), logger(*loggerPtr) {}
 } crashInfo;
+
+bool CrashLogger::isExternalRunning() { return externalCrashLoggerRunning.load(); }
 
 [[maybe_unused]] static std::string memStr(size_t mem) {
     double r  = (double)mem;
