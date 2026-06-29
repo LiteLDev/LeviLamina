@@ -34,9 +34,11 @@ LLNDAPI Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
 namespace ll::inline utils::stacktrace_utils {
 namespace detail {
 struct DbgHelpState {
-    inline static SRWLOCK srw      = SRWLOCK_INIT;
-    inline static HANDLE  handle   = GetCurrentProcess();
-    inline static size_t  refCount = 0;
+    inline static SRWLOCK   srw = SRWLOCK_INIT;
+    // DbgHelp treats hProcess as a session key; keep stacktrace symbolization isolated from other users.
+    inline static std::byte sessionKey{};
+    inline static HANDLE    handle   = &sessionKey;
+    inline static size_t    refCount = 0;
 };
 
 class [[nodiscard]] DbgHelpLock {
@@ -121,7 +123,7 @@ void ensureModuleLoaded(void const* const address) noexcept {
         return;
     }
     MODULEINFO moduleInfo{};
-    (void)GetModuleInformation(DbgHelpState::handle, static_cast<HMODULE>(module), &moduleInfo, sizeof(moduleInfo));
+    (void)GetModuleInformation(GetCurrentProcess(), static_cast<HMODULE>(module), &moduleInfo, sizeof(moduleInfo));
     (void)SymLoadModuleExW(
         DbgHelpState::handle,
         nullptr,
@@ -191,7 +193,7 @@ using namespace detail;
 
 std::atomic_size_t SymbolLoader::count{};
 
-SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
+SymbolLoader::SymbolLoader() : handle(DbgHelpState::handle) {
     DbgHelpLock lock;
 
     if (!acquireDbgHelpRef(nullptr, true)) {
@@ -199,7 +201,7 @@ SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
     }
     count.fetch_add(1);
 }
-SymbolLoader::SymbolLoader(std::string_view extra) : handle(GetCurrentProcess()) {
+SymbolLoader::SymbolLoader(std::string_view extra) : handle(DbgHelpState::handle) {
     DbgHelpLock lock;
     auto const  path = string_utils::str2wstr(extra);
 

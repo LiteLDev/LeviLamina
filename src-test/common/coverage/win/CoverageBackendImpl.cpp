@@ -24,18 +24,14 @@ using namespace ll::utils::string_utils;
 
 namespace {
 
-std::wstring getSelfModuleFileName() {
-    HMODULE hMod = nullptr;
-    if (!GetModuleHandleExW(
-            GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-            reinterpret_cast<LPCWSTR>(&getSelfModuleFileName),
-            &hMod
-        )) {
-        return {};
-    }
-    WCHAR path[MAX_PATH]{};
-    GetModuleFileNameW(hMod, path, MAX_PATH);
-    return std::wstring(path);
+void configureSymbols() noexcept {
+    auto options = SymGetOptions();
+    options &= ~(SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
+               | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH);
+    options |= SYMOPT_CASE_INSENSITIVE | SYMOPT_UNDNAME | SYMOPT_DEFERRED_LOADS | SYMOPT_LOAD_LINES
+             | SYMOPT_OMAP_FIND_NEAREST | SYMOPT_EXACT_SYMBOLS | SYMOPT_FAIL_CRITICAL_ERRORS | SYMOPT_AUTO_PUBLICS
+             | SYMOPT_NO_PROMPTS;
+    (void)SymSetOptions(options);
 }
 
 bool isInTextSection(uintptr_t base, uintptr_t address) {
@@ -160,12 +156,28 @@ std::vector<DiscoveredModule> ModuleEnumerator::enumerateModules(std::string_vie
     return result;
 }
 
+SymbolProvider::SymbolProvider() : mProcess(&mSessionKey) {
+    SetLastError(ERROR_SUCCESS);
+    mInitialized = SymInitializeW(mProcess, nullptr, false) != FALSE;
+    if (mInitialized) {
+        configureSymbols();
+    }
+}
+
+SymbolProvider::~SymbolProvider() {
+    if (mInitialized) {
+        (void)SymCleanup(mProcess);
+    }
+}
+
 bool SymbolProvider::prepareModule(DiscoveredModule& module) {
-    HANDLE hProcess   = GetCurrentProcess();
-    auto   modulePath = str2wstr(module.modulePath);
+    if (!mInitialized) {
+        return false;
+    }
+    auto modulePath = str2wstr(module.modulePath);
 
     DWORD64 loadedBase = SymLoadModuleExW(
-        hProcess,
+        mProcess,
         nullptr,
         modulePath.c_str(),
         nullptr,
@@ -181,23 +193,27 @@ bool SymbolProvider::prepareModule(DiscoveredModule& module) {
     IMAGEHLP_MODULEW64 modInfo{};
     modInfo.SizeOfStruct = sizeof(modInfo);
     module.hasDebugSymbols =
-        SymGetModuleInfoW64(hProcess, loadedBase, &modInfo) && (modInfo.SymType == SymPdb || modInfo.SymType == SymDia);
+        SymGetModuleInfoW64(mProcess, loadedBase, &modInfo) && (modInfo.SymType == SymPdb || modInfo.SymType == SymDia);
     return true;
 }
 
 std::vector<SymbolRecord> SymbolProvider::enumerateFunctions(DiscoveredModule const& module) {
     std::vector<SymbolRecord> out;
-    HANDLE                    hProcess = GetCurrentProcess();
-    EnumSymbolsContext        ctx{hProcess, &out};
-    SymEnumSymbolsW(hProcess, module.baseAddress, L"*!*", enumSymbolsCallback, &ctx);
+    if (!mInitialized) {
+        return out;
+    }
+    EnumSymbolsContext ctx{mProcess, &out};
+    SymEnumSymbolsW(mProcess, module.baseAddress, L"*!*", enumSymbolsCallback, &ctx);
     return out;
 }
 
 std::vector<SourceLineRecord> SymbolProvider::enumerateLines(DiscoveredModule const& module) {
     std::vector<SourceLineRecord> out;
-    HANDLE                        hProcess = GetCurrentProcess();
-    EnumLinesContext              ctx{module.baseAddress, &out};
-    SymEnumLinesW(hProcess, module.baseAddress, nullptr, nullptr, enumLinesCallback, &ctx);
+    if (!mInitialized) {
+        return out;
+    }
+    EnumLinesContext ctx{module.baseAddress, &out};
+    SymEnumLinesW(mProcess, module.baseAddress, nullptr, nullptr, enumLinesCallback, &ctx);
     return out;
 }
 
@@ -265,6 +281,7 @@ bool AddressSampler::addModule(
     module.size  = imageSize;
     module.addrs.assign(instrumentedAddresses.begin(), instrumentedAddresses.end());
     module.origBytes.resize(module.addrs.size(), 0);
+    module.instrumented.resize(module.addrs.size(), 0);
     module.addressHits.assign(module.addrs.size(), 0);
     return true;
 }
@@ -287,6 +304,11 @@ void AddressSampler::installBreakpoints() {
             if (!VirtualQuery(reinterpret_cast<void*>(addr), &mbi, sizeof(mbi))) continue;
             uintptr_t pageBase = reinterpret_cast<uintptr_t>(mbi.BaseAddress);
             size_t    pageSize = mbi.RegionSize;
+            auto       byte     = *reinterpret_cast<uint8_t*>(addr);
+            if (byte == 0xCC) {
+                continue;
+            }
+
             bool      already  = false;
             for (auto& p : mr.modifiedPages) {
                 if (p.base == pageBase) {
@@ -300,7 +322,8 @@ void AddressSampler::installBreakpoints() {
                     mr.modifiedPages.push_back({pageBase, pageSize, oldProtect});
                 }
             }
-            mr.origBytes[i]                   = *reinterpret_cast<uint8_t*>(addr);
+            mr.origBytes[i]                   = byte;
+            mr.instrumented[i]                = 1;
             *reinterpret_cast<uint8_t*>(addr) = 0xCC;
         }
     }
@@ -311,8 +334,12 @@ void AddressSampler::removeBreakpoints() {
     ll::thread::GlobalThreadPauser pauser;
     for (auto& mr : mRuntimes) {
         for (size_t i = 0; i < mr.addrs.size(); ++i) {
+            if (!mr.instrumented[i]) {
+                continue;
+            }
             uintptr_t addr                    = mr.addrs[i];
             *reinterpret_cast<uint8_t*>(addr) = mr.origBytes[i];
+            mr.instrumented[i]                = 0;
         }
         for (auto& p : mr.modifiedPages) {
             DWORD dummy{};
@@ -352,9 +379,10 @@ LONG NTAPI AddressSampler::vehHandler(EXCEPTION_POINTERS* ep) {
     }
     if (!sInstance) return EXCEPTION_CONTINUE_SEARCH;
 
-    uintptr_t candidates[2] = {
-        reinterpret_cast<uintptr_t>(ep->ExceptionRecord->ExceptionAddress),
-        ep->ContextRecord->Rip > 0 ? ep->ContextRecord->Rip - 1 : 0
+    uintptr_t exceptionAddress = reinterpret_cast<uintptr_t>(ep->ExceptionRecord->ExceptionAddress);
+    uintptr_t candidates[2]    = {
+        exceptionAddress,
+        ep->ContextRecord->Rip > 0 ? ep->ContextRecord->Rip - 1 : 0,
     };
 
     for (uintptr_t addr : candidates) {
@@ -366,9 +394,23 @@ LONG NTAPI AddressSampler::vehHandler(EXCEPTION_POINTERS* ep) {
                 size_t   idx = static_cast<size_t>(it - mr.addrs.begin());
                 uint8_t* ptr = reinterpret_cast<uint8_t*>(addr);
 
+                if (!mr.instrumented[idx]) {
+                    if (*ptr == 0xCC) {
+                        continue;
+                    }
+                    if (addr != exceptionAddress) {
+                        continue;
+                    }
+                    std::atomic_ref<uint8_t>(mr.addressHits[idx]).store(1, std::memory_order_relaxed);
+                    ep->ContextRecord->Rip = addr;
+                    return EXCEPTION_CONTINUE_EXECUTION;
+                }
+
                 if (*ptr == 0xCC) {
                     *ptr = mr.origBytes[idx];
+                    FlushInstructionCache(GetCurrentProcess(), ptr, sizeof(*ptr));
                 }
+                mr.instrumented[idx] = 0;
 
                 std::atomic_ref<uint8_t>(mr.addressHits[idx]).store(1, std::memory_order_relaxed);
 

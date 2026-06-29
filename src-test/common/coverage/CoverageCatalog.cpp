@@ -199,6 +199,9 @@ bool CoverageCatalog::buildForModule(ModuleInfo mod) {
     exports = exportEnumerator->collectExportedAddresses(discovered);
 
     auto functionRecords = symbolProvider->enumerateFunctions(discovered);
+    auto hasLineInfo     = std::ranges::any_of(functionRecords, [](SymbolRecord const& record) {
+        return record.hasLineInfo;
+    });
     funcs.reserve(functionRecords.size());
     for (auto& record : functionRecords) {
         FunctionInfo info;
@@ -215,6 +218,12 @@ bool CoverageCatalog::buildForModule(ModuleInfo mod) {
 
     std::unordered_map<LineKey, std::vector<uintptr_t>, LineKeyHash> lineAddresses;
     auto lineRecords = symbolProvider->enumerateLines(discovered);
+    if (!lineRecords.empty()) {
+        hasLineInfo = true;
+    }
+    if (hasLineInfo) {
+        moduleData.info.hasPdb = true;
+    }
     for (auto& record : lineRecords) {
         if (!isTargetSourceFile(record.file)) {
             continue;
@@ -400,10 +409,10 @@ nlohmann::json CoverageCatalog::reportToJson() const {
 }
 
 void CoverageCatalog::dumpStats(ll::io::Logger& logger) const {
-    size_t totalModules = mModules.size();
-    size_t pdbMissing   = 0;
+    size_t                          totalModules = mModules.size();
+    std::vector<ModuleInfo const*>  pdbMissingModules;
     for (auto& module : mModules)
-        if (!module.info.hasPdb) ++pdbMissing;
+        if (!module.info.hasPdb) pdbMissingModules.push_back(&module.info);
 
     size_t                          totalFiles = 0;
     std::unordered_set<std::string> files;
@@ -432,8 +441,11 @@ void CoverageCatalog::dumpStats(ll::io::Logger& logger) const {
         expFns,
         mTotalInstrumentedAddresses
     );
-    if (pdbMissing) {
-        logger.warn("CoverageCatalog: {} modules missing PDB", pdbMissing);
+    if (!pdbMissingModules.empty()) {
+        logger.warn("CoverageCatalog: {} modules missing PDB", pdbMissingModules.size());
+        for (auto const* module : pdbMissingModules) {
+            logger.warn("CoverageCatalog missing PDB module: {} ({})", module->moduleName, module->modulePath);
+        }
     }
 }
 

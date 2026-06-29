@@ -3,6 +3,8 @@
 #include "coverage/CoverageBackend.h"
 #include "coverage/CoverageCatalog.h"
 
+#include <cstddef>
+
 #include "windows.h"
 
 namespace ll::test::coverage::win {
@@ -14,9 +16,19 @@ public:
 
 class SymbolProvider final : public ISymbolProvider {
 public:
+    SymbolProvider();
+    SymbolProvider(SymbolProvider const&)            = delete;
+    SymbolProvider& operator=(SymbolProvider const&) = delete;
+    ~SymbolProvider() override;
+
     bool                          prepareModule(DiscoveredModule& module) override;
     std::vector<SymbolRecord>     enumerateFunctions(DiscoveredModule const& module) override;
     std::vector<SourceLineRecord> enumerateLines(DiscoveredModule const& module) override;
+
+private:
+    std::byte mSessionKey{};
+    HANDLE    mProcess{};
+    bool      mInitialized{};
 };
 
 class ExportEnumerator final : public IExportEnumerator {
@@ -45,6 +57,7 @@ private:
 
         std::vector<uintptr_t> addrs;
         std::vector<uint8_t>   origBytes;
+        std::vector<uint8_t>   instrumented;
         std::vector<uint8_t>   addressHits;
 
         struct PageInfo {
