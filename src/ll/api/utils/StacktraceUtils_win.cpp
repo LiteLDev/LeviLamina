@@ -1,5 +1,6 @@
 #include "ll/api/utils/StacktraceUtils.h"
 
+#include <cstddef>
 #include <mutex>
 
 #include "ll/api/io/FileUtils.h"
@@ -13,8 +14,7 @@
 #include "windows.h"
 
 #include "DbgHelp.h"
-
-#include "DbgEng.h"
+#include "psapi.h"
 
 #include <stacktrace>
 
@@ -33,192 +33,199 @@ LLNDAPI Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
 
 namespace ll::inline utils::stacktrace_utils {
 namespace detail {
-static void lockRelease() noexcept;
-
-class [[nodiscard]] DbgEngData {
-public:
-    // NOLINTBEGIN(readability-convert-member-functions-to-static)
-    DbgEngData() noexcept { AcquireSRWLockExclusive(&srw); }
-
-    ~DbgEngData() { ReleaseSRWLockExclusive(&srw); }
-
-    DbgEngData(DbgEngData const&)            = delete;
-    DbgEngData& operator=(DbgEngData const&) = delete;
-
-    void release() noexcept {
-        // "Phoenix singleton" - destroy and set to null, so that it can be initialized later again
-
-        if (debugClient != nullptr) {
-            if (attached) {
-                (void)debugClient->DetachProcesses();
-                attached = false;
-            }
-
-            debugClient->Release();
-            debugClient = nullptr;
-        }
-
-        if (debugControl != nullptr) {
-            debugControl->Release();
-            debugControl = nullptr;
-        }
-
-        if (debugSymbols != nullptr) {
-            debugSymbols->Release();
-            debugSymbols = nullptr;
-        }
-
-        if (dbgEng != nullptr) {
-            (void)FreeLibrary(dbgEng);
-            dbgEng = nullptr;
-        }
-
-        initializeAttempted = false;
-    }
-
-    [[nodiscard]] bool tryInit() noexcept {
-        if (!initializeAttempted) {
-            initializeAttempted = true;
-
-            if (std::atexit(lockRelease) != 0) {
-                return false;
-            }
-
-            dbgEng = LoadLibraryExW(L"dbgeng.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
-
-            if (dbgEng != nullptr) {
-                const auto debug_create =
-                    reinterpret_cast<decltype(&DebugCreate)>(GetProcAddress(dbgEng, "DebugCreate"));
-
-                // Deliberately not calling CoInitialize[Ex]. DbgEng.h API works fine without it.
-                // COM initialization may have undesired interference with user's code.
-                if (debug_create != nullptr
-                    && SUCCEEDED(debug_create(IID_IDebugClient, reinterpret_cast<void**>(&debugClient)))
-                    && SUCCEEDED(
-                        debugClient->QueryInterface(IID_IDebugSymbols3, reinterpret_cast<void**>(&debugSymbols))
-                    )
-                    && SUCCEEDED(
-                        debugClient->QueryInterface(IID_IDebugControl, reinterpret_cast<void**>(&debugControl))
-                    )) {
-                    attached = SUCCEEDED(debugClient->AttachProcess(
-                        0,
-                        GetCurrentProcessId(),
-                        DEBUG_ATTACH_NONINVASIVE | DEBUG_ATTACH_NONINVASIVE_NO_SUSPEND
-                    ));
-                    if (attached) {
-                        (void)debugControl->WaitForEvent(0, INFINITE);
-                    }
-                    (void)debugSymbols->AppendSymbolPathWide(
-                        sys_utils::getModulePath(nullptr).value().parent_path().c_str()
-                    );
-                    (void)debugSymbols->RemoveSymbolOptions(
-                        SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
-                        | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH
-                    );
-                    (void)debugSymbols->AddSymbolOptions(
-                        SYMOPT_CASE_INSENSITIVE | SYMOPT_UNDNAME | SYMOPT_DEFERRED_LOADS | SYMOPT_LOAD_LINES
-                        | SYMOPT_OMAP_FIND_NEAREST | SYMOPT_EXACT_SYMBOLS | SYMOPT_FAIL_CRITICAL_ERRORS
-                        | SYMOPT_AUTO_PUBLICS | SYMOPT_NO_PROMPTS
-                    );
-                }
-            }
-        }
-        return attached;
-    }
-
-    StackTraceEntryInfo getInfo(void const* const address) {
-        std::optional<size_t> displacement = 0;
-        std::string           name;
-        std::optional<ulong>  line = 0;
-        std::string           file;
-        if (ulong bufSize;
-            S_OK == debugSymbols->GetNameByOffset((uintptr_t)(address), nullptr, 0, &bufSize, &*displacement)) {
-            std::string buf(bufSize - 1, '\0');
-            if (S_OK == debugSymbols->GetNameByOffset((uintptr_t)(address), buf.data(), bufSize, nullptr, nullptr)) {
-                name = std::move(buf);
-            }
-        } else {
-            displacement = std::nullopt;
-        }
-        if (ulong bufSize;
-            S_OK == debugSymbols->GetLineByOffset((uintptr_t)(address), &*line, nullptr, 0, &bufSize, nullptr)) {
-            std::string buf(bufSize - 1, '\0');
-            if (S_OK
-                == debugSymbols
-                       ->GetLineByOffset((uintptr_t)(address), nullptr, buf.data(), bufSize, nullptr, nullptr)) {
-                file = std::move(buf);
-            }
-        } else {
-            line = std::nullopt;
-        }
-        return {displacement, name, line, file};
-    }
-
-    uintptr_t getSymbol(std::string_view sv) {
-        if (uintptr_t res{}; S_OK == debugSymbols->GetOffsetByName(sv.data(), &res)) {
-            return res;
-        }
-        return 0;
-    }
-    // NOLINTEND(readability-convert-member-functions-to-static)
-private:
-    inline static SRWLOCK         srw                 = SRWLOCK_INIT;
-    inline static IDebugClient*   debugClient         = nullptr;
-    inline static IDebugSymbols3* debugSymbols        = nullptr;
-    inline static IDebugControl*  debugControl        = nullptr;
-    inline static bool            attached            = false;
-    inline static bool            initializeAttempted = false;
-    inline static HMODULE         dbgEng              = nullptr;
+struct DbgHelpState {
+    inline static SRWLOCK srw      = SRWLOCK_INIT;
+    inline static HANDLE  handle   = GetCurrentProcess();
+    inline static size_t  refCount = 0;
 };
 
-void lockRelease() noexcept {
-    DbgEngData data;
+class [[nodiscard]] DbgHelpLock {
+public:
+    DbgHelpLock() noexcept { AcquireSRWLockExclusive(&DbgHelpState::srw); }
 
-    data.release();
+    ~DbgHelpLock() { ReleaseSRWLockExclusive(&DbgHelpState::srw); }
+
+    DbgHelpLock(DbgHelpLock const&)            = delete;
+    DbgHelpLock& operator=(DbgHelpLock const&) = delete;
+};
+
+void configureSymbols() noexcept {
+    auto options = SymGetOptions();
+    options &= ~(SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
+               | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH);
+    options |= SYMOPT_CASE_INSENSITIVE | SYMOPT_UNDNAME | SYMOPT_DEFERRED_LOADS | SYMOPT_LOAD_LINES
+             | SYMOPT_OMAP_FIND_NEAREST | SYMOPT_EXACT_SYMBOLS | SYMOPT_FAIL_CRITICAL_ERRORS | SYMOPT_AUTO_PUBLICS
+             | SYMOPT_NO_PROMPTS;
+    (void)SymSetOptions(options);
 }
+
+bool acquireDbgHelpRef(std::wstring const* searchPath = nullptr, bool invadeProcess = false) noexcept {
+    if (DbgHelpState::refCount == 0) {
+        SetLastError(ERROR_SUCCESS);
+        auto const* path = searchPath != nullptr && !searchPath->empty() ? searchPath->c_str() : nullptr;
+        if (!SymInitializeW(DbgHelpState::handle, path, invadeProcess)) {
+            return false;
+        }
+        configureSymbols();
+    } else if (searchPath != nullptr && !searchPath->empty()) {
+        (void)SymSetSearchPathW(DbgHelpState::handle, searchPath->c_str());
+    }
+    ++DbgHelpState::refCount;
+    return true;
+}
+
+void releaseDbgHelpRef() noexcept {
+    if (DbgHelpState::refCount > 0 && --DbgHelpState::refCount == 0) {
+        (void)SymCleanup(DbgHelpState::handle);
+    }
+}
+
+class [[nodiscard]] DbgHelpQuery {
+public:
+    DbgHelpQuery() noexcept : lock() {
+        if (DbgHelpState::refCount == 0) {
+            ownsRef = acquireDbgHelpRef();
+        } else {
+            initialized = true;
+        }
+    }
+
+    ~DbgHelpQuery() {
+        if (ownsRef) {
+            releaseDbgHelpRef();
+        }
+    }
+
+    DbgHelpQuery(DbgHelpQuery const&)            = delete;
+    DbgHelpQuery& operator=(DbgHelpQuery const&) = delete;
+
+    [[nodiscard]] bool ready() const noexcept { return initialized || ownsRef; }
+
+private:
+    DbgHelpLock lock;
+    bool        ownsRef     = false;
+    bool        initialized = false;
+};
+
+void ensureModuleLoaded(void const* const address) noexcept {
+    auto const addr = reinterpret_cast<DWORD64>(address);
+    if (SymGetModuleBase64(DbgHelpState::handle, addr) != 0) {
+        return;
+    }
+    auto const module = sys_utils::getModuleHandle(const_cast<void*>(address));
+    if (module == nullptr) {
+        return;
+    }
+    auto const path = sys_utils::getModulePath(module);
+    if (!path) {
+        return;
+    }
+    MODULEINFO moduleInfo{};
+    (void)GetModuleInformation(DbgHelpState::handle, static_cast<HMODULE>(module), &moduleInfo, sizeof(moduleInfo));
+    (void)SymLoadModuleExW(
+        DbgHelpState::handle,
+        nullptr,
+        path->c_str(),
+        nullptr,
+        reinterpret_cast<DWORD64>(module),
+        moduleInfo.SizeOfImage,
+        nullptr,
+        0
+    );
+}
+
+StackTraceEntryInfo getInfoByDbgHelp(void const* const address) {
+    StackTraceEntryInfo res;
+    auto                addr = reinterpret_cast<DWORD64>(address);
+
+    ensureModuleLoaded(address);
+
+    alignas(SYMBOL_INFO) std::byte buffer[sizeof(SYMBOL_INFO) + MAX_SYM_NAME * sizeof(char)]{};
+    auto*                          symbol = reinterpret_cast<SYMBOL_INFO*>(buffer);
+    symbol->SizeOfStruct                  = sizeof(SYMBOL_INFO);
+    symbol->MaxNameLen                    = MAX_SYM_NAME;
+
+    DWORD64 displacement{};
+    if (SymFromAddr(DbgHelpState::handle, addr, &displacement, symbol)) {
+        res.displacement = displacement;
+        if (symbol->NameLen != 0) {
+            res.name = {symbol->Name, symbol->NameLen};
+        }
+    } else {
+        res.displacement = std::nullopt;
+    }
+
+    IMAGEHLP_LINE64 lineInfo{};
+    lineInfo.SizeOfStruct = sizeof(IMAGEHLP_LINE64);
+    DWORD lineDisplacement{};
+    if (SymGetLineFromAddr64(DbgHelpState::handle, addr, &lineDisplacement, &lineInfo)) {
+        res.line = lineInfo.LineNumber;
+        res.file = lineInfo.FileName;
+    } else {
+        res.line = std::nullopt;
+    }
+
+    IMAGEHLP_MODULE64 moduleInfo{};
+    moduleInfo.SizeOfStruct = sizeof(IMAGEHLP_MODULE64);
+    if (SymGetModuleInfo64(DbgHelpState::handle, addr, &moduleInfo)) {
+        std::string module = moduleInfo.ModuleName;
+        if (module.empty()) {
+            module = moduleInfo.ImageName;
+        }
+        if (!module.empty()) {
+            if (res.name.empty()) {
+                res.name = std::move(module);
+            } else if (!res.name.contains('!')) {
+                res.name = module + '!' + res.name;
+            }
+        }
+        if (!res.displacement && moduleInfo.BaseOfImage != 0) {
+            res.displacement = static_cast<size_t>(addr - moduleInfo.BaseOfImage);
+        }
+    }
+    return res;
+}
+
 } // namespace detail
 using namespace detail;
 
-
-std::atomic_ullong SymbolLoader::count{};
+std::atomic_size_t SymbolLoader::count{};
 
 SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
-    if (count > 0) {
-        return;
-    }
-    if (!SymInitializeW(handle, nullptr, true)) {
+    DbgHelpLock lock;
+
+    if (!acquireDbgHelpRef(nullptr, true)) {
         throw error_utils::getLastSystemError();
     }
-    count++;
-    DWORD options  = SymGetOptions();
-    options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
-    SymSetOptions(options);
+    count.fetch_add(1);
 }
 SymbolLoader::SymbolLoader(std::string_view extra) : handle(GetCurrentProcess()) {
-    if (count > 0) {
-        return;
-    }
-    if (!SymInitializeW(handle, string_utils::str2wstr(extra).c_str(), true)) {
+    DbgHelpLock lock;
+    auto const  path = string_utils::str2wstr(extra);
+
+    if (!acquireDbgHelpRef(&path, true)) {
         throw error_utils::getLastSystemError();
     }
-    count++;
-    DWORD options  = SymGetOptions();
-    options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
-    SymSetOptions(options);
+    count.fetch_add(1);
 }
 SymbolLoader::~SymbolLoader() {
-    if (--count == 0) {
-        SymCleanup(handle);
+    if (handle != nullptr) {
+        DbgHelpLock lock;
+        releaseDbgHelpRef();
+        if (count > 0) {
+            count.fetch_sub(1);
+        }
+        handle = nullptr;
     }
 }
 
 StackTraceEntryInfo getInfo(StacktraceEntry const& entry) {
-    DbgEngData data;
+    DbgHelpQuery query;
 
-    if (!data.tryInit()) {
+    if (!query.ready()) {
         return {};
     }
-    auto res = data.getInfo(entry.native_handle());
+    auto res = getInfoByDbgHelp(entry.native_handle());
     if (res.name.contains('!')) {
         return res;
     }
@@ -262,6 +269,9 @@ std::string toString(StacktraceEntry const& entry) {
 }
 
 std::string toString(Stacktrace const& t) {
+    if (t.empty()) {
+        return {};
+    }
     std::string res;
     auto        maxsize = std::to_string(t.size() - 1).size();
     for (size_t i = 0; i < t.size(); i++) {
