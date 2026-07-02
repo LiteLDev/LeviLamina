@@ -18,13 +18,13 @@ public:
 
     virtual bool Init() = 0;
 
-    virtual ::cricket::VoiceEngineInterface const& voice() const = 0;
-
     virtual ::cricket::VoiceEngineInterface& voice() = 0;
 
-    virtual ::cricket::VideoEngineInterface const& video() const = 0;
+    virtual ::cricket::VoiceEngineInterface const& voice() const = 0;
 
     virtual ::cricket::VideoEngineInterface& video() = 0;
+
+    virtual ::cricket::VideoEngineInterface const& video() const = 0;
     // NOLINTEND
 
 public:

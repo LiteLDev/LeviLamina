@@ -8,9 +8,9 @@ class DtmfSenderObserverInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnToneChange(::std::string const&);
-
     virtual void OnToneChange(::std::string const&, ::std::string const&);
+
+    virtual void OnToneChange(::std::string const&);
 
     virtual ~DtmfSenderObserverInterface() = default;
     // NOLINTEND

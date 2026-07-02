@@ -150,9 +150,9 @@ public:
 
     virtual void SetMuted(bool) = 0;
 
-    virtual ::webrtc::AudioSendStream::Stats GetStats(bool) const = 0;
-
     virtual ::webrtc::AudioSendStream::Stats GetStats() const = 0;
+
+    virtual ::webrtc::AudioSendStream::Stats GetStats(bool) const = 0;
     // NOLINTEND
 
 public:

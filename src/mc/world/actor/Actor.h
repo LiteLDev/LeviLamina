@@ -233,6 +233,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual bool hasComponent(::HashedString const& name) const;
+
     virtual void outOfWorld();
 
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
@@ -246,8 +248,6 @@ public:
     virtual void _serverInitItemStackIds();
 
     virtual void _doInitialMove();
-
-    virtual bool hasComponent(::HashedString const& name) const;
 
     virtual ~Actor();
 
@@ -1725,6 +1725,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $hasComponent(::HashedString const& name) const;
+
     MCAPI void $outOfWorld();
 
     MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
@@ -1738,8 +1740,6 @@ public:
     MCAPI void $_serverInitItemStackIds();
 
     MCAPI void $_doInitialMove();
-
-    MCAPI bool $hasComponent(::HashedString const& name) const;
 
     MCFOLD void $resetUserPos(::ActorResetRule resetRule);
 

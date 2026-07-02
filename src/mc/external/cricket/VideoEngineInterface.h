@@ -40,13 +40,13 @@ public:
         ::webrtc::CryptoOptions const&
     );
 
-    virtual ::std::vector<::cricket::Codec> send_codecs(bool) const;
-
     virtual ::std::vector<::cricket::Codec> send_codecs() const = 0;
 
-    virtual ::std::vector<::cricket::Codec> recv_codecs(bool) const;
+    virtual ::std::vector<::cricket::Codec> send_codecs(bool) const;
 
     virtual ::std::vector<::cricket::Codec> recv_codecs() const = 0;
+
+    virtual ::std::vector<::cricket::Codec> recv_codecs(bool) const;
     // NOLINTEND
 
 public:

@@ -53,9 +53,9 @@ public:
 
     virtual ::webrtc::PeerConnectionMessageHandler* message_handler() = 0;
 
-    virtual ::webrtc::RtpTransmissionManager const* rtp_manager() const = 0;
-
     virtual ::webrtc::RtpTransmissionManager* rtp_manager() = 0;
+
+    virtual ::webrtc::RtpTransmissionManager const* rtp_manager() const = 0;
 
     virtual bool dtls_enabled() const = 0;
 
