@@ -45,6 +45,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ::std::vector<::AABB>& fetchAABBs(::AABB const& intersectTestBox, bool withUnloadedChunks) = 0;
+
+    virtual ::std::vector<::AABB>& fetchCollisionShapes(
+        ::AABB const&                          intersectTestBox,
+        bool                                   withUnloadedChunks,
+        ::std::optional<::EntityContext const> entity,
+        ::std::vector<::AABB>*                 tempShapes
+    ) = 0;
+
     virtual ::WeakRef<::BlockSource> getWeakRef() = 0;
 
     virtual void addListener(::BlockSourceListener& l) = 0;
@@ -107,15 +116,6 @@ public:
     virtual short getHeight(::brstd::function_ref<bool(::Block const&)> const& type, ::BlockPos const& pos) const = 0;
 
     virtual short getHeight(::brstd::function_ref<bool(::Block const&)> const& type, int x, int z) const = 0;
-
-    virtual ::std::vector<::AABB>& fetchAABBs(::AABB const& intersectTestBox, bool withUnloadedChunks) = 0;
-
-    virtual ::std::vector<::AABB>& fetchCollisionShapes(
-        ::AABB const&                          intersectTestBox,
-        bool                                   withUnloadedChunks,
-        ::std::optional<::EntityContext const> entity,
-        ::std::vector<::AABB>*                 tempShapes
-    ) = 0;
 
     virtual ::HitResult clip(
         ::Vec3 const&                                                            A,

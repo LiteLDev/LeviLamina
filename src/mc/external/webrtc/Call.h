@@ -70,14 +70,14 @@ public:
 
     virtual void DestroyAudioReceiveStream(::webrtc::AudioReceiveStreamInterface*) = 0;
 
+    virtual ::webrtc::VideoSendStream*
+        CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig) = 0;
+
     virtual ::webrtc::VideoSendStream* CreateVideoSendStream(
         ::webrtc::VideoSendStream::Config,
         ::webrtc::VideoEncoderConfig,
         ::std::unique_ptr<::webrtc::FecController>
     );
-
-    virtual ::webrtc::VideoSendStream*
-        CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig) = 0;
 
     virtual void DestroyVideoSendStream(::webrtc::VideoSendStream*) = 0;
 
@@ -103,11 +103,11 @@ public:
 
     virtual void OnAudioTransportOverheadChanged(int) = 0;
 
-    virtual void OnLocalSsrcUpdated(::webrtc::FlexfecReceiveStream&, uint) = 0;
+    virtual void OnLocalSsrcUpdated(::webrtc::AudioReceiveStreamInterface&, uint) = 0;
 
     virtual void OnLocalSsrcUpdated(::webrtc::VideoReceiveStreamInterface&, uint) = 0;
 
-    virtual void OnLocalSsrcUpdated(::webrtc::AudioReceiveStreamInterface&, uint) = 0;
+    virtual void OnLocalSsrcUpdated(::webrtc::FlexfecReceiveStream&, uint) = 0;
 
     virtual void OnUpdateSyncGroup(::webrtc::AudioReceiveStreamInterface&, ::std::string_view) = 0;
 

@@ -78,13 +78,13 @@ public:
 
     virtual int RecordingDeviceName(ushort, char*, char*) = 0;
 
-    virtual int SetPlayoutDevice(::webrtc::AudioDeviceModule::WindowsDeviceType) = 0;
-
     virtual int SetPlayoutDevice(ushort) = 0;
 
-    virtual int SetRecordingDevice(::webrtc::AudioDeviceModule::WindowsDeviceType) = 0;
+    virtual int SetPlayoutDevice(::webrtc::AudioDeviceModule::WindowsDeviceType) = 0;
 
     virtual int SetRecordingDevice(ushort) = 0;
+
+    virtual int SetRecordingDevice(::webrtc::AudioDeviceModule::WindowsDeviceType) = 0;
 
     virtual int PlayoutIsAvailable(bool*) = 0;
 

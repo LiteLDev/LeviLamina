@@ -155,10 +155,10 @@ public:
     virtual void
     SetSource(::rtc::VideoSourceInterface<::webrtc::VideoFrame>*, ::webrtc::DegradationPreference const&) = 0;
 
+    virtual void ReconfigureVideoEncoder(::webrtc::VideoEncoderConfig) = 0;
+
     virtual void
         ReconfigureVideoEncoder(::webrtc::VideoEncoderConfig, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>) = 0;
-
-    virtual void ReconfigureVideoEncoder(::webrtc::VideoEncoderConfig) = 0;
 
     virtual ::webrtc::VideoSendStream::Stats GetStats() = 0;
 
