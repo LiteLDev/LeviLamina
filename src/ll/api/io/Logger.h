@@ -5,15 +5,15 @@
 #include <string_view>
 #include <utility>
 
-#if LL_HAS_CXX23
-#include <expected>
-#endif
-
 #include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/base/Macro.h"
 #include "ll/api/coro/Generator.h"
 #include "ll/api/io/LogLevel.h"
 #include "ll/api/io/Sink.h"
+
+#if LL_HAS_CXX23
+#include <expected>
+#endif
 
 #include "fmt/chrono.h" // IWYU pragma: keep
 #include "fmt/color.h"
