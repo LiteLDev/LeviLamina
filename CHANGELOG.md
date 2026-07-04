@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.20.1] - 2026-07-04
+
+### Fixed
+
+- Fixed Bedrock Dedicated Server version in tooth.json
+
 ## [26.20.0] - 2026-07-04
 
 ### Changed
@@ -1609,7 +1615,8 @@ For lip and tooth-hub test only.
 [#1806]: https://github.com/LiteLDev/LeviLamina/issues/1806
 [#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.1...HEAD
+[26.20.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.0...v26.20.1
 [26.20.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.14...v26.20.0
 [26.10.14]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.13...v26.10.14
 [26.10.13]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.12...v26.10.13
