@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.20.2] - 2026-07-07
+
+### Fixed
+
+- Fixed network protocol version [#1815]
+
 ## [26.20.1] - 2026-07-04
 
 ### Fixed
@@ -1614,8 +1620,10 @@ For lip and tooth-hub test only.
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
 [#1806]: https://github.com/LiteLDev/LeviLamina/issues/1806
 [#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
+[#1815]: https://github.com/LiteLDev/LeviLamina/issues/1815
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.2...HEAD
+[26.20.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.1...v26.20.2
 [26.20.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.0...v26.20.1
 [26.20.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.14...v26.20.0
 [26.10.14]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.13...v26.10.14
