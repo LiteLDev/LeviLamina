@@ -11,7 +11,7 @@ public:
     [[nodiscard]] virtual ServiceId getServiceId() const noexcept = 0;
 
     // this is called when the service is removed from the service manager
-    virtual void invalidate() = 0;
+    virtual void invalidate() {}
 
     static constexpr ServiceIdView ServiceId{EmptyServiceId};
 
@@ -34,7 +34,7 @@ concept IsService = std::is_base_of_v<Service, T> && requires {
 template <class T, size_t version>
 class ServiceImpl : public Service {
 public:
-    [[nodiscard]] class ServiceId getServiceId() const noexcept override { return T::ServiceId; }
+    [[nodiscard]] class ServiceId getServiceId() const noexcept override { return ServiceId; }
 
     static constexpr class ServiceIdView ServiceId{auto_name_t<T>{}, version};
 };

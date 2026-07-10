@@ -27,21 +27,8 @@ struct ServiceInfo {
     : id(id),
       modName(std::move(modName)),
       service(service) {}
-
-    bool operator==(ServiceInfo const& other) const noexcept { return id == other && modName == other.modName; }
-
-    bool operator==(ServiceIdView const& other) const noexcept { return id == other; }
 };
 } // namespace ll::service
-
-namespace std {
-template <>
-struct hash<ll::service::ServiceInfo> {
-    size_t operator()(ll::service::ServiceInfo const& info) const noexcept {
-        return ll::hash_utils::HashCombiner{info.id.hash}.add(info.modName);
-    }
-};
-} // namespace std
 
 namespace ll::service {
 
@@ -49,92 +36,122 @@ class ServiceManager::Impl {
 public:
     std::recursive_mutex mutex;
 
-    DenseMap<std::string, std::unique_ptr<ServiceInfo>> services;
+    DenseMap<ServiceId, std::unique_ptr<ServiceInfo>>  services;
+    DenseMap<std::string, SmallDenseSet<ServiceInfo*>> nameServices; // service name -> versions
+    DenseMap<std::string, SmallDenseSet<ServiceInfo*>> modServices;  // mod name -> services
 
-    DenseMap<std::string, SmallDenseSet<ServiceInfo*>> modServices; // mod name -> services
+    static QueryServiceResult makeQueryResult(ServiceInfo const& info) {
+        return QueryServiceResult{info.id.name, info.id.version, info.modName, info.service};
+    }
+
+    [[nodiscard]] optional_ref<ServiceInfo> findLatestService(std::string_view name) const {
+        auto it = nameServices.find(name);
+        if (it == nameServices.end() || it->second.empty()) return nullptr;
+        return *std::ranges::max_element(it->second, {}, [](auto& info) { return info->id.version; });
+    }
+
+    [[nodiscard]] std::optional<size_t> findLatestVersion(std::string_view name) const {
+        return findLatestService(name).transform([](auto& service) { return service.id.version; });
+    }
 
     bool addService(std::shared_ptr<Service> const& service, std::shared_ptr<mod::Mod> const& mod) {
         std::lock_guard lock(mutex);
         auto            id = service->getServiceId();
-        if (services.contains(id.name)) {
-            return false;
+        if (services.contains(id)) return false;
+
+        auto  info = std::make_unique<ServiceInfo>(id, mod ? mod->getName() : "", service);
+        auto* ptr  = info.get();
+
+        nameServices[id.name].insert(info.get());
+        modServices[info->modName].insert(info.get());
+        services.emplace(ptr->id, std::move(info));
+
+        event::EventBus::getInstance().publish(event::ServiceRegisterEvent{service});
+        return true;
+    }
+
+    bool removeServiceUnlocked(ServiceIdView const& id) {
+        auto it = services.find(ServiceId{id});
+        if (it == services.end()) return false;
+
+        auto* info = it->second.get();
+
+        event::EventBus::getInstance().publish(event::ServiceUnregisterEvent{info->service});
+        info->service->invalidate();
+
+        if (auto modIt = modServices.find(info->modName); modIt != modServices.end()) {
+            modIt->second.erase(info);
+            if (modIt->second.empty()) {
+                modServices.erase(modIt);
+            }
         }
 
-        auto info = std::make_unique<ServiceInfo>(id, mod ? mod->getName() : "", service);
-        modServices[info->modName].insert(info.get());
-        services.emplace(info->id.name, std::move(info));
+        if (auto nameIt = nameServices.find(info->id.name); nameIt != nameServices.end()) {
+            nameIt->second.erase(info);
+            if (nameIt->second.empty()) {
+                nameServices.erase(nameIt);
+            }
+        }
 
-        // notify the service that it has been registered or updated
-        event::EventBus::getInstance().publish(event::ServiceRegisterEvent{service});
-
+        services.erase(it);
         return true;
     }
 
     bool removeService(ServiceIdView const& id) {
         std::lock_guard lock(mutex);
-
-        auto it = services.find(id.name);
-        if (it == services.end()) {
-            return false;
-        }
-
-        // notify the service that it has been unregistered
-        event::EventBus::getInstance().publish(event::ServiceUnregisterEvent{it->second->service});
-
-        // invalidate the service, to notify the service that it is being removed,
-        // so they can do cleanup and other stuff
-        it->second->service->invalidate();
-        modServices[it->second->modName].erase(it->second.get());
-        services.erase(it);
-
-        return true;
+        return removeServiceUnlocked(id);
     }
 
     void removeService(std::string_view modName) {
         std::lock_guard lock(mutex);
-        if (auto it = modServices.find(modName); it != modServices.end()) {
-            for (auto& info : it->second) {
-                services.erase(info->id.name);
-            }
-            modServices.erase(it);
-        }
+        auto            it = modServices.find(modName);
+        if (it == modServices.end()) return;
+
+        std::vector<ServiceId> ids;
+        ids.reserve(it->second.size());
+        std::ranges::copy(it->second | std::views::transform(&ServiceInfo::id), std::back_inserter(ids));
+        std::ranges::for_each(ids, std::bind_front(&Impl::removeServiceUnlocked, this));
     }
 };
 
 Expected<std::shared_ptr<Service>> ServiceManager::getService(ServiceIdView const& id) {
     std::lock_guard lock(impl->mutex);
-    if (!impl->services.contains(id.name)) {
-        return makeError<GetServiceError>(GetServiceError::NotExist);
+
+    if (auto it = impl->services.find(ServiceId{id}); it != impl->services.end()) {
+        return it->second->service;
     }
-    auto& info = impl->services[id.name];
-    if (info->id.version != id.version) {
-        return makeError<GetServiceError>(GetServiceError::VersionMismatch, info->id.version);
+
+    if (auto version = impl->findLatestVersion(id.name); version.has_value()) {
+        return makeError<GetServiceError>(GetServiceError::VersionMismatch, *version);
     }
-    return info->service;
+
+    return makeError<GetServiceError>(GetServiceError::NotExist);
 }
 
 std::optional<QueryServiceResult> ServiceManager::queryService(std::string_view name) {
     std::lock_guard lock(impl->mutex);
-    if (auto it = impl->services.find(name); it != impl->services.end()) {
-        return QueryServiceResult{
-            it->second->id.name,
-            it->second->id.version,
-            it->second->modName,
-            it->second->service
-        };
-    }
-    return std::nullopt;
+    return impl->findLatestService(name).transform(&Impl::makeQueryResult);
 }
 
-bool ServiceManager::unregisterService(ServiceIdView const& id) {
-    std::lock_guard lock(impl->mutex);
-    return impl->removeService(id);
+std::vector<QueryServiceResult> ServiceManager::queryServices(std::string_view name) {
+    std::lock_guard                 lock(impl->mutex);
+    std::vector<QueryServiceResult> result;
+    auto                            it = impl->nameServices.find(name);
+    if (it == impl->nameServices.end()) return result;
+
+    result.reserve(it->second.size());
+    std::ranges::copy(
+        it->second | std::views::transform([](auto& info) { return Impl::makeQueryResult(*info); }),
+        std::back_inserter(result)
+    );
+    std::ranges::sort(result, {}, &QueryServiceResult::version);
+
+    return result;
 }
 
-void ServiceManager::unregisterService(mod::Mod const& mod) {
-    std::lock_guard lock(impl->mutex);
-    impl->removeService(mod.getName());
-}
+bool ServiceManager::unregisterService(ServiceIdView const& id) { return impl->removeService(id); }
+
+void ServiceManager::unregisterService(mod::Mod const& mod) { impl->removeService(mod.getName()); }
 
 bool ServiceManager::registerService(std::shared_ptr<Service> const& service, std::shared_ptr<mod::Mod> const& mod) {
     std::lock_guard lock(impl->mutex);

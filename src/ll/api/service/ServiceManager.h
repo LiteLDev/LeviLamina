@@ -1,6 +1,8 @@
 #pragma once
 
+#include <optional>
 #include <type_traits>
+#include <vector>
 
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/MultiListener.h"
@@ -74,6 +76,7 @@ public:
     LLNDAPI Expected<std::shared_ptr<Service>> getService(ServiceIdView const& id);
 
     LLNDAPI std::optional<QueryServiceResult> queryService(std::string_view name);
+    LLNDAPI std::vector<QueryServiceResult>   queryServices(std::string_view name);
 
     LLAPI bool registerService(
         std::shared_ptr<Service> const&  service,
