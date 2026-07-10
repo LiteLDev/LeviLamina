@@ -30,6 +30,8 @@ public:
     template <std::integral T>
     [[nodiscard]] constexpr explicit IntTag(T value = 0) noexcept : data((int)value) {}
 
+    [[nodiscard]] constexpr IntTag() noexcept : data(0) {}
+
     [[nodiscard]] IntTag operator-() const noexcept { return IntTag{-data}; }
 
 public:
@@ -48,12 +50,6 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual uint64 hash() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI IntTag();
     // NOLINTEND
 
 public:

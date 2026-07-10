@@ -32,6 +32,8 @@ public:
     template <std::integral T>
     [[nodiscard]] constexpr explicit ByteTag(T value = 0) : data((schar)value) {}
 
+    [[nodiscard]] constexpr ByteTag() : data(0) {}
+
     [[nodiscard]] constexpr explicit ByteTag(std::byte b) : data(std::to_integer<schar>(b)) {}
 
     [[nodiscard]] ByteTag operator-() const { return ByteTag{-data}; }
@@ -52,14 +54,6 @@ public:
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
     virtual uint64 hash() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ByteTag();
-
-    MCAPI explicit ByteTag(uchar data);
     // NOLINTEND
 
 public:

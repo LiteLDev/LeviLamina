@@ -44,12 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FloatTag();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();

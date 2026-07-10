@@ -35,7 +35,7 @@ public:
       mPatch(patch),
       mValidVersion(true),
       mAnyVersion(false),
-      mPreRelease(mPreRelease),
+      mPreRelease(preRelease),
       mBuildMeta(buildMeta) {}
 
     MCAPI std::string asString() const;

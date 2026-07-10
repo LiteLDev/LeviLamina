@@ -38,12 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DoubleTag();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();

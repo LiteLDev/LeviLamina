@@ -24,6 +24,8 @@ public:
     template <std::integral T>
     [[nodiscard]] constexpr explicit Int64Tag(T value = 0) noexcept : data((int64)value) {}
 
+    [[nodiscard]] constexpr Int64Tag() noexcept : data(0) {}
+
     [[nodiscard]] Int64Tag operator-() const noexcept { return Int64Tag{(int64)-data}; }
 
 public:
@@ -42,14 +44,6 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual uint64 hash() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Int64Tag();
-
-    MCAPI explicit Int64Tag(int64 data);
     // NOLINTEND
 
 public:

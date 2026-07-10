@@ -24,6 +24,8 @@ public:
     template <std::integral T>
     [[nodiscard]] constexpr explicit ShortTag(T value = 0) noexcept : data((short)value) {}
 
+    [[nodiscard]] constexpr explicit ShortTag() noexcept : data(0) {}
+
     [[nodiscard]] ShortTag operator-() const noexcept { return ShortTag{(short)-data}; }
 
 public:
@@ -42,12 +44,6 @@ public:
     virtual bool equals(::Tag const& rhs) const /*override*/;
 
     virtual uint64 hash() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShortTag();
     // NOLINTEND
 
 public:
