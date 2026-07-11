@@ -33,12 +33,47 @@ LLNDAPI Stacktrace Stacktrace::current(size_t skip, size_t maxDepth) {
 
 namespace ll::inline utils::stacktrace_utils {
 namespace detail {
+class DbgHelpProcessHandle {
+public:
+    DbgHelpProcessHandle() noexcept {
+        if (!DuplicateHandle(
+                GetCurrentProcess(),
+                GetCurrentProcess(),
+                GetCurrentProcess(),
+                &handle,
+                0,
+                false,
+                DUPLICATE_SAME_ACCESS
+            )) {
+            error = GetLastError();
+        }
+    }
+
+    ~DbgHelpProcessHandle() {
+        if (handle != nullptr) {
+            CloseHandle(handle);
+        }
+    }
+
+    DbgHelpProcessHandle(DbgHelpProcessHandle const&)            = delete;
+    DbgHelpProcessHandle& operator=(DbgHelpProcessHandle const&) = delete;
+
+    [[nodiscard]] HANDLE get() const noexcept { return handle; }
+    [[nodiscard]] DWORD  getError() const noexcept { return error; }
+
+    [[nodiscard]] operator HANDLE() const noexcept { return handle; }
+
+private:
+    HANDLE handle{};
+    DWORD  error{ERROR_SUCCESS};
+};
+
 struct DbgHelpState {
-    inline static SRWLOCK   srw = SRWLOCK_INIT;
-    // DbgHelp treats hProcess as a session key; keep stacktrace symbolization isolated from other users.
-    inline static std::byte sessionKey{};
-    inline static HANDLE    handle   = &sessionKey;
-    inline static size_t    refCount = 0;
+    inline static SRWLOCK             srw = SRWLOCK_INIT;
+    // DbgHelp uses the handle value as its session key. A duplicated process handle is unique and remains valid for
+    // fInvadeProcess, preserving eager module loading without sharing another component's symbol session.
+    inline static DbgHelpProcessHandle handle{};
+    inline static size_t               refCount = 0;
 };
 
 class [[nodiscard]] DbgHelpLock {
@@ -63,6 +98,10 @@ void configureSymbols() noexcept {
 
 bool acquireDbgHelpRef(std::wstring const* searchPath = nullptr, bool invadeProcess = false) noexcept {
     if (DbgHelpState::refCount == 0) {
+        if (DbgHelpState::handle == nullptr) {
+            SetLastError(DbgHelpState::handle.getError());
+            return false;
+        }
         SetLastError(ERROR_SUCCESS);
         auto const* path = searchPath != nullptr && !searchPath->empty() ? searchPath->c_str() : nullptr;
         if (!SymInitializeW(DbgHelpState::handle, path, invadeProcess)) {
