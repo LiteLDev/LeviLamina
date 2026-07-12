@@ -24,6 +24,7 @@ struct TargetedConfig {
         bool itemReadUserData = true;
         bool disconnectClient = true;
         bool limitIPFrequency = true;
+        bool simulatedPlayerChunkLoading = true;
     } vulnerabilityFixes;
 };
 } // namespace ll

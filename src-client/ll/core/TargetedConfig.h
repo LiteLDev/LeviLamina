@@ -13,6 +13,7 @@ struct TargetedConfig {
         bool enable = true;
         bool subChunkRequest = true;
         bool rakNet = true;
+        bool simulatedPlayerChunkLoading = true;
     } vulnerabilityFixes;
 };
 } // namespace ll

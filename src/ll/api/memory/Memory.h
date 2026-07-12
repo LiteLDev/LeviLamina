@@ -2,6 +2,7 @@
 
 #include <functional>
 #include <memory>
+#include <optional>
 #include <span>
 #include <string>
 #include <type_traits>
@@ -9,6 +10,7 @@
 
 #include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Signature.h"
 #include "ll/api/memory/Symbol.h"
 #include "mc/platform/brstd/function_ref.h"
@@ -44,6 +46,23 @@ constexpr FuncPtr toFuncPtr(T t) {
     } u{};
     u.t = t;
     return u.fp;
+}
+
+/**
+ * Returns the vtable slot encoded by a compiler-generated virtual-call thunk.
+ * Unsupported ABIs and unrecognised thunks return std::nullopt.
+ */
+LLNDAPI std::optional<uint> getVtableIndex(FuncPtr virtualFunction) noexcept;
+
+template <class T>
+    requires std::is_member_function_pointer_v<T>
+[[nodiscard]] inline std::optional<uint> getVtableIndex(T t) noexcept {
+#if defined(_WIN32) && defined(_MSC_VER) && defined(__clang__) && defined(_M_X64)
+    if constexpr (sizeof(T) == sizeof(FuncPtr)) {
+        return getVtableIndex(toFuncPtr(t));
+    }
+#endif
+    return std::nullopt;
 }
 
 template <class T>
