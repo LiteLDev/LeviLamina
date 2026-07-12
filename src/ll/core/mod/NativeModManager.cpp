@@ -9,6 +9,7 @@
 
 #include "pl/dependency/DependencyWalker.h"
 
+#include "ll/api/base/ScopedValue.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/mod/Manifest.h"
@@ -78,11 +79,8 @@ static Error diagnosticDependency(std::filesystem::path const& path) {
 }
 
 Expected<> NativeModManager::load(Manifest manifest) {
-    auto l(lock());
-    currentLoadingMod = std::make_shared<NativeMod>(std::move(manifest));
-    struct Remover {
-        ~Remover() { currentLoadingMod = nullptr; }
-    } r;
+    auto            l(lock());
+    ScopedValue     currentLoadingScope{currentLoadingMod, std::make_shared<NativeMod>(std::move(manifest))};
     std::error_code ec;
     auto            modDir = getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getName());
     if (auto c = std::filesystem::canonical(modDir, ec); ec.value() == 0) {

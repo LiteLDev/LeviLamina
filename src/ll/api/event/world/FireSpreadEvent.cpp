@@ -1,4 +1,5 @@
 #include "ll/api/event/world/FireSpreadEvent.h"
+#include "ll/api/base/ScopedValue.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
@@ -24,9 +25,8 @@ LL_TYPE_INSTANCE_HOOK(
     void,
     BlockEvents::BlockPlaceEvent& eventData
 ) {
-    onFireSpreadWhenOnPlace = true;
+    ScopedValue scope{onFireSpreadWhenOnPlace, true};
     origin(eventData);
-    onFireSpreadWhenOnPlace = false;
 }
 
 LL_TYPE_INSTANCE_HOOK(

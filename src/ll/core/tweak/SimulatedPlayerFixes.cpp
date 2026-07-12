@@ -1,5 +1,6 @@
 #include "ll/core/tweak/SimulatedPlayerFixes.h"
 
+#include "ll/api/base/ScopedValue.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/core/LeviLamina.h"
@@ -26,21 +27,6 @@ namespace {
 using GameTestSimulatedPlayerSpawnResult = std::variant<gametest::GameTestError, SimulatedPlayer*>;
 
 thread_local bool isSpawningGameTestSimulatedPlayer = false;
-
-class ScopedGameTestSimulatedPlayerSpawn {
-public:
-    explicit ScopedGameTestSimulatedPlayerSpawn(bool value) : mPrevious(isSpawningGameTestSimulatedPlayer) {
-        isSpawningGameTestSimulatedPlayer = value;
-    }
-
-    ~ScopedGameTestSimulatedPlayerSpawn() { isSpawningGameTestSimulatedPlayer = mPrevious; }
-
-    ScopedGameTestSimulatedPlayerSpawn(ScopedGameTestSimulatedPlayerSpawn const&)            = delete;
-    ScopedGameTestSimulatedPlayerSpawn& operator=(ScopedGameTestSimulatedPlayerSpawn const&) = delete;
-
-private:
-    bool mPrevious;
-};
 
 bool shouldUsePlayerChunkLoading(SimulatedPlayer const& player) {
     return !isSpawningGameTestSimulatedPlayer && !static_cast<bool>(player.getGameTestHelper());
@@ -78,7 +64,7 @@ using MemberFunctionToFunctionPointerT = typename MemberFunctionToFunctionPointe
 
 class SimulatedPlayerChunkLoadingVtablePatch {
     using GetSpawnChunkLimit = MemberFunctionToFunctionPointerT<decltype(&SimulatedPlayer::_getSpawnChunkLimit)>;
-    using UpdateChunkView = MemberFunctionToFunctionPointerT<decltype(&SimulatedPlayer::_updateChunkPublisherView)>;
+    using UpdateChunkView    = MemberFunctionToFunctionPointerT<decltype(&SimulatedPlayer::_updateChunkPublisherView)>;
 
     inline static GetSpawnChunkLimit mOriginalGetSpawnChunkLimit{};
     inline static UpdateChunkView    mOriginalUpdateChunkView{};
@@ -184,7 +170,7 @@ LL_TYPE_INSTANCE_HOOK(
     BlockPos const&    pos,
     GameType           gameMode
 ) {
-    ScopedGameTestSimulatedPlayerSpawn scope{true};
+    ScopedValue scope{isSpawningGameTestSimulatedPlayer, true};
     return origin(name, pos, gameMode);
 }
 
@@ -205,7 +191,7 @@ LL_TYPE_INSTANCE_HOOK(
     }
 
     // Do not let callbacks triggered by the GameTest actor creation inherit its provenance.
-    ScopedGameTestSimulatedPlayerSpawn scope{false};
+    ScopedValue scope{isSpawningGameTestSimulatedPlayer, false};
     return origin(actor, initializationMethod);
 }
 

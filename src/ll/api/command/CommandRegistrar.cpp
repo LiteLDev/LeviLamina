@@ -8,6 +8,7 @@
 
 #include "ll/api/Expected.h"
 #include "ll/api/base/Containers.h"
+#include "ll/api/base/ScopedValue.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/OverloadData.h"
@@ -173,12 +174,7 @@ CommandOutput CommandRegistrar::executeCommand(
     }
     auto& command = *compileResult.value();
     try {
-        struct Guard {
-            bool& isExecuting;
-            Guard(bool& isExecuting) : isExecuting(isExecuting) { isExecuting = true; }
-            ~Guard() { isExecuting = false; }
-        };
-        Guard guard(detail::isExecutingCommand);
+        ScopedValue scope{detail::isExecutingCommand, true};
         command.run(origin, output);
     } catch (...) {
         makeExceptionError().error().log(output);

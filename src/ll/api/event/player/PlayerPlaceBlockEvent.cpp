@@ -1,4 +1,5 @@
 #include "ll/api/event/player/PlayerPlaceBlockEvent.h"
+#include "ll/api/base/ScopedValue.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
@@ -43,9 +44,8 @@ LL_TYPE_INSTANCE_HOOK(
     Block const*    block,
     bool            isFirstEvent
 ) {
-    isUsingItem = true;
-    auto result = origin(item, blockPos, face, clickPos, block, isFirstEvent);
-    isUsingItem = false;
+    ScopedValue scope{isUsingItem, true};
+    auto        result = origin(item, blockPos, face, clickPos, block, isFirstEvent);
     return result;
 }
 
