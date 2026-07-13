@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.20.3] - 2026-07-13
+
+### Added
+
+- Implemented SemVersionBase operator @ShrBox
+- Completed `ServerResourcePointer`, `ResourcePointer` class @Qiuzhizhe
+- Supported multi-version API registration for the same service @zimuya4153
+- Added ScopedValue for temporary value restoration @OEOTYAN
+
+### Changed
+
+- Bumped bedrock-runtime-data to v26.20.5-server.5 and v26.20.4-client.5
+
+### Fixed
+
+- Fixed some issues related to nbt @zimuya4153
+- Use a duplicated process handle for DbgHelp sessions @OEOTYAN
+- Preserve GameTest provenance for simulated player creation @OEOTYAN
+- Enable chunk loading for simulated players @OEOTYAN
+- Fixed `DataItem::setData` @zimuya4153
+
 ## [26.20.2] - 2026-07-07
 
 ### Fixed
@@ -1622,7 +1643,8 @@ For lip and tooth-hub test only.
 [#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
 [#1815]: https://github.com/LiteLDev/LeviLamina/issues/1815
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.3...HEAD
+[26.20.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.2...v26.20.3
 [26.20.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.1...v26.20.2
 [26.20.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.20.0...v26.20.1
 [26.20.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.14...v26.20.0
