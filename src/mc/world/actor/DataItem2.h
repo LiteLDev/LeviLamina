@@ -62,7 +62,7 @@ constexpr optional_ref<T> DataItem::getData() {
 template <typename T>
     requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
 constexpr bool DataItem::setData(T&& value) {
-    if (getType() == (::DataItemType)TypeList::index<T>) return false;
+    if (getType() != (::DataItemType)TypeList::index<T>) return false;
     ((DataItem2<T>*)this)->setData(std::forward<T>(value));
     return true;
 }
