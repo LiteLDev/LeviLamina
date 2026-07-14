@@ -5,11 +5,11 @@
 namespace DecoratedPotKeys {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::string const& ANIMATION();
+MCAPI ::std::string const& ANIMATION();
 
-MCNAPI ::std::string const& CONTAINED_ITEM();
+MCAPI ::std::string const& CONTAINED_ITEM();
 
-MCNAPI ::std::string const& SHERDS();
+MCAPI ::std::string const& SHERDS();
 // NOLINTEND
 
 } // namespace DecoratedPotKeys

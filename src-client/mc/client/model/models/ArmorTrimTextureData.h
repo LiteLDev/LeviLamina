@@ -14,53 +14,51 @@ class ArmorTrimTextureData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkc85967;
-    ::ll::UntypedStorage<1, 1>  mUnkab1cea;
-    ::ll::UntypedStorage<1, 1>  mUnk59b073;
-    ::ll::UntypedStorage<8, 32> mUnkc6f924;
-    ::ll::UntypedStorage<8, 32> mUnkfab585;
-    ::ll::UntypedStorage<8, 32> mUnk203778;
-    ::ll::UntypedStorage<8, 32> mUnk93ccfe;
-    ::ll::UntypedStorage<8, 32> mUnk34f876;
+    ::ll::TypedStorage<1, 1, bool>           mIsDyeable;
+    ::ll::TypedStorage<1, 1, bool>           mIsDarker;
+    ::ll::TypedStorage<1, 1, bool>           mIsLegging;
+    ::ll::TypedStorage<8, 32, ::std::string> mMaterialName;
+    ::ll::TypedStorage<8, 32, ::std::string> mPatternName;
+    ::ll::TypedStorage<8, 32, ::std::string> mArmorTexturePath;
+    ::ll::TypedStorage<8, 32, ::std::string> mCustomPatternPath;
+    ::ll::TypedStorage<8, 32, ::std::string> mCustomMaterialPalettePath;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ArmorTrimTextureData& operator=(ArmorTrimTextureData const&);
-    ArmorTrimTextureData(ArmorTrimTextureData const&);
     ArmorTrimTextureData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ArmorTrimTextureData(
+    MCAPI ArmorTrimTextureData(
         ::ArmorTrim const&            armorTrim,
         ::ItemStack const&            item,
         ::std::string const&          armorTexture,
         ::TrimMaterialRegistry const& trimMaterialRegistry
     );
 
-    MCNAPI ::ResourceLocation buildArmorTexturePath() const;
+    MCAPI ::ResourceLocation buildArmorTexturePath() const;
 
-    MCNAPI ::ResourceLocation buildArmorTrimTexturePath() const;
+    MCAPI ::ResourceLocation buildArmorTrimTexturePath() const;
 
-    MCNAPI ::ResourceLocation buildMaterialTexturePath() const;
+    MCAPI ::ResourceLocation buildMaterialTexturePath() const;
 
-    MCNAPI ::ResourceLocation buildPaletteMapTexturePath() const;
+    MCAPI ::ResourceLocation buildPaletteMapTexturePath() const;
 
-    MCNAPI ::ResourceLocation buildTrimTexturePath() const;
+    MCAPI ::ResourceLocation buildTrimTexturePath() const;
 
-    MCNAPI void setCustomMaterialPalettePath(::std::string materialPalettePath);
+    MCAPI void setCustomMaterialPalettePath(::std::string materialPalettePath);
 
-    MCNAPI void setCustomPatternPath(::std::string patternPath);
+    MCAPI void setCustomPatternPath(::std::string patternPath);
 
-    MCNAPI ~ArmorTrimTextureData();
+    MCAPI ~ArmorTrimTextureData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ArmorTrim const&            armorTrim,
         ::ItemStack const&            item,
         ::std::string const&          armorTexture,
@@ -71,6 +69,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
