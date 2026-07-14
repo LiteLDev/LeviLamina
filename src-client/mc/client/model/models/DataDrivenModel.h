@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/model/models/Model.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/animation/AttachableSlotIndex.h"
 
 // auto generated forward declare list
@@ -14,7 +15,6 @@ class ActorResourceDefinition;
 class DataDrivenRenderer;
 class ExpressionNode;
 class GameVersion;
-class HashedString;
 class ItemStack;
 class RenderParams;
 class Vec3;
@@ -24,17 +24,15 @@ class DataDrivenModel : public ::Model {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk7350c7;
-    ::ll::UntypedStorage<8, 48> mUnk716b58;
-    ::ll::UntypedStorage<8, 64> mUnk1aee8d;
-    ::ll::UntypedStorage<1, 1>  mUnkb6b6be;
-    ::ll::UntypedStorage<1, 1>  mUnke411d6;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ActorResourceDefinition>>                       mResourceDefinition;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                                   mName;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::weak_ptr<::DataDrivenRenderer>>> mItemToRendererMap;
+    ::ll::TypedStorage<1, 1, bool>                                                              mEnableAttachables;
+    ::ll::TypedStorage<1, 1, bool>                                                              mHideArmor;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DataDrivenModel& operator=(DataDrivenModel const&);
-    DataDrivenModel(DataDrivenModel const&);
     DataDrivenModel();
 
 public:
@@ -46,11 +44,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DataDrivenModel(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
+    MCAPI explicit DataDrivenModel(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
 
-    MCNAPI ::HashedString _parseRootSkinName(::HashedString const& skinName);
+    MCAPI ::HashedString _parseRootSkinName(::HashedString const& skinName);
 
-    MCNAPI bool _setArmorTrim(
+    MCAPI bool _setArmorTrim(
         ::ItemStack const&                   itemInstance,
         ::std::shared_ptr<::DataDrivenModel> model,
         ::Actor&                             actor,
@@ -58,49 +56,49 @@ public:
         ::RenderParams&                      childRenderParams
     );
 
-    MCNAPI float
+    MCAPI float
     executeScript(::HashedString const& scriptName, ::RenderParams& renderParams, float defaultValueIfNoScript);
 
-    MCNAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
+    MCAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
 
-    MCNAPI ::std::weak_ptr<::DataDrivenRenderer>
+    MCAPI ::std::weak_ptr<::DataDrivenRenderer>
     getDataDrivenRenderer(::RenderParams& renderParams, ::ItemStack const& itemInstance);
 
-    MCNAPI ::std::string getResourceDefinitionName() const;
+    MCAPI ::std::string getResourceDefinitionName() const;
 
-    MCNAPI bool hasScript(::HashedString const& name) const;
+    MCAPI bool hasScript(::HashedString const& name) const;
 
-    MCNAPI void render(
+    MCAPI void render(
         ::std::shared_ptr<::DataDrivenRenderer> renderer,
         ::ActorRenderData&                      actorRenderData,
         ::Vec3 const&                           modelTranslationWithWorldRotation,
         ::Vec3 const&                           cameraTargetPos
     );
 
-    MCNAPI void renderAsChild(::RenderParams& renderParams, ::AttachableSlotIndex const& index);
+    MCAPI void renderAsChild(::RenderParams& renderParams, ::AttachableSlotIndex const& index);
 
-    MCNAPI void renderAttachable(
+    MCAPI void renderAttachable(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         ::RenderParams&              renderParams,
         ::Actor&                     actor
     );
 
-    MCNAPI void renderAttachableNoChecks(
+    MCAPI void renderAttachableNoChecks(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         ::RenderParams&              renderParams,
         ::Actor&                     actor
     );
 
-    MCNAPI void setupAttachable(
+    MCAPI void setupAttachable(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         ::RenderParams&              renderParams,
         ::Actor&                     actor
     );
 
-    MCNAPI void setupAttachableNoChecks(
+    MCAPI void setupAttachableNoChecks(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         ::RenderParams&              renderParams,
@@ -109,13 +107,13 @@ public:
         bool                         runParentSetup
     );
 
-    MCNAPI bool tryExecuteScript(::HashedString const& scriptName, ::RenderParams& renderParams, float& result);
+    MCAPI bool tryExecuteScript(::HashedString const& scriptName, ::RenderParams& renderParams, float& result);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool shouldRenderAttachableOnActor(
+    MCAPI static bool shouldRenderAttachableOnActor(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         bool                         isSpectator,
@@ -129,19 +127,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::GameVersion& Version_1_16_210();
+    MCAPI static ::GameVersion& Version_1_16_210();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
+    MCAPI void* $ctor(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

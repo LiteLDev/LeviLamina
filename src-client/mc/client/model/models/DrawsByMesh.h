@@ -4,16 +4,15 @@
 
 // auto generated forward declare list
 // clang-format off
-class MeshRenderData;
-namespace mce { struct ClientTexture; }
+class DrawsByTexture;
+namespace mce { class Mesh; }
 // clang-format on
 
-class DrawsByTexture {
+class DrawsByMesh {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::mce::ClientTexture const*>      mTexture;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MeshRenderData>> mMeshes;
+    ::ll::TypedStorage<8, 8, ::mce::Mesh*>                     mMesh;
     ::ll::TypedStorage<8, 24, ::std::vector<::DrawsByTexture>> mDrawsByTexture;
     // NOLINTEND
 };

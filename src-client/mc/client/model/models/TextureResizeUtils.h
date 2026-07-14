@@ -11,6 +11,6 @@ class TextureResizeUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::cg::ImageBuffer resizeTexture(::cg::ImageBuffer const& image, uint newHeight, uint newWidth);
+    MCAPI static ::cg::ImageBuffer resizeTexture(::cg::ImageBuffer const& image, uint newHeight, uint newWidth);
     // NOLINTEND
 };
