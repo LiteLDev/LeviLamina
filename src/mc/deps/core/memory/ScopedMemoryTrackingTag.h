@@ -16,30 +16,6 @@ public:
     ::ll::TypedStorage<1, 1, ::Memory::MemoryCategory> mOldCategory;
 #endif
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScopedMemoryTrackingTag();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScopedMemoryTrackingTag(::Memory::MemoryCategory category);
-
-    MCAPI ~ScopedMemoryTrackingTag();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Memory::MemoryCategory category);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Memory

@@ -6,14 +6,10 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/models/PlayScreenDefaultTab.h"
-#include "mc/client/legacy/ImportStatus.h"
 #include "mc/client/network/realms/RealmsAPI.h"
 #include "mc/client/world/LocalWorldInfo.h"
-#include "mc/client/world/NetworkWorldType.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -23,14 +19,7 @@ class DlcChecker;
 class DlcUIWrapper;
 class PlatformMultiplayerRestrictions;
 class PlayScreenModel;
-class ServicesManager;
-class UIPropertyBag;
-struct ImportResult;
-struct LegacyWorldInfo;
-struct NetworkWorldInfo;
 namespace Json { class Value; }
-namespace Realms { struct World; }
-namespace Social { struct PermissionCheckResult; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
@@ -133,87 +122,6 @@ public:
         ::ui::ScreenTechStackSelector&       screenTechStackSelector,
         ::std::string const&                 dirtyLevelId
     );
-
-    MCAPI bool _checkIfPingIsLoading(int collectionIndex);
-
-    MCAPI ::ui::ViewRequest _convertLegacyWorld(::LegacyWorldInfo const& world);
-
-    MCAPI void _displayImportRetailWorldModal(uint64 worldSize, ::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _displayRealmsFailedToJoinModal(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _errorStoreUnavailable();
-
-    MCFOLD int _getCollectionIndex(::UIPropertyBag* bag) const;
-
-    MCAPI ::std::string _getCrossPlatformFriendWorldIconFromCollection(int index) const;
-
-    MCAPI ::std::string _getCrossPlatformFriendsGridWarningText();
-
-    MCAPI ::std::string _getFriendWorldIconFromCollection(int index) const;
-
-    MCAPI ::std::string _getFriendsGridWarningText();
-
-    MCAPI ::std::string _getGeneralMultiplayerWarningText();
-
-    MCAPI ::std::function<void(::Legacy::ImportStatus, float, ::std::shared_ptr<::ImportResult>)>
-    _getLegacyWorldConvertCallback(::LegacyWorldInfo const& worldInfo, ::std::string const& levelId);
-
-    MCAPI ::NetworkWorldType _getNetworkWorldTypeFromCollection(::std::string const& collectionName) const;
-
-    MCAPI ::std::string _getOwnershipVerificationStateText() const;
-
-    MCAPI ::std::string _getRealmsUnavailableMessage() const;
-
-    MCAPI ::ui::ViewRequest _handleLeaveRealm(int index);
-
-    MCAPI ::ui::ViewRequest _handleStartNetworkItem(int index, ::NetworkWorldType nwt);
-
-    MCAPI ::ui::ViewRequest _handleStartRealm(int index);
-
-    MCAPI void _importRetailWorld(::std::string const& worldId);
-
-    MCAPI bool _isRealmCreationPossible() const;
-
-    MCAPI bool _isRealmExpiringForPlatform(::Realms::World const& world);
-
-    MCAPI void _navigatePlayScreenTechStack(::PlayScreenDefaultTab tab);
-
-    MCAPI void _navigateToCreateWorldScreen();
-
-    MCAPI void _onMCTokenUpdated(::ServicesManager*);
-
-    MCAPI void _onWorldConversionCompleted(::std::shared_ptr<::ImportResult> result, ::std::string const& levelId);
-
-    MCAPI void _openProcessWorldProgressDialog();
-
-    MCAPI ::Social::PermissionCheckResult _parentalControlsDialogCheck();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _setOwnershipVerificationAnimationVisibleState();
-
-    MCAPI bool _shouldShowLockIcon(::LocalWorldInfo const& world) const;
-
-    MCAPI ::ui::ViewRequest _startLocalWorld(::LocalWorldInfo const& world);
-
-    MCAPI ::ui::ViewRequest _startNetworkWorld(::NetworkWorldInfo const& world, ::NetworkWorldType worldType);
-
-    MCAPI ::ui::DirtyFlag _tickRealms();
-
-    MCAPI bool _updateFriendsTab();
-
-    MCAPI void _updateNeedsOfflineAuthCode();
-
-    MCAPI bool _worldHasHeader(::NetworkWorldType type, int collectionIndex);
-
-    MCAPI bool _worldHasImage(::NetworkWorldType type, int collectionIndex);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::chrono::seconds& mFiveSecondInterval();
     // NOLINTEND
 
 public:
@@ -251,15 +159,5 @@ public:
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCFOLD ::std::string $_getButtonADescription();
-
-    MCAPI void $_registerEventHandlers();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/script_core/binding_type/scripting/EnumBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponentType.h"
 
 // auto generated forward declare list

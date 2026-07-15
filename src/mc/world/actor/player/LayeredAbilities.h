@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/actor/player/Abilities.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
 #include "mc/world/actor/player/AbilitiesLayer.h"
@@ -26,13 +24,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LayeredAbilities(LayeredAbilities const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI LayeredAbilities();
 
-    MCAPI LayeredAbilities(::LayeredAbilities const& other);
-
+#ifdef LL_PLAT_C
     MCAPI void addSaveData(::CompoundTag& parentTag) const;
+#endif
 
     MCAPI void forEachAbility(
         ::std::function<void(::Ability const&, char const*)> const& callback,
@@ -50,53 +52,13 @@ public:
 
     MCAPI ::Ability const& getAbility(::AbilitiesIndex val) const;
 
-    MCAPI ::Ability& getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
-
     MCAPI bool getBool(::AbilitiesIndex val) const;
 
-    MCAPI ::std::pair<bool, ::AbilitiesLayer> getBoolWithLayer(::AbilitiesIndex val) const;
-
-    MCFOLD ::CommandPermissionLevel getCommandPermissions() const;
-
 #ifdef LL_PLAT_C
-    MCAPI float getFloat(::AbilitiesIndex val) const;
-#endif
-
-    MCAPI ::std::pair<float, ::AbilitiesLayer> getFloatWithLayer(::AbilitiesIndex val) const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::Abilities const& getLayer(::AbilitiesLayer layer) const;
-#endif
-
-    MCFOLD ::Abilities& getLayer(::AbilitiesLayer layer);
-
-    MCFOLD ::PermissionsHandler& getPermissionsHandler();
-
-    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isOperator() const;
-#endif
-
     MCAPI bool loadSaveData(::CompoundTag const& parentTag);
-
-#ifdef LL_PLAT_C
-    MCAPI void onSwitchToCustom();
-
-    MCAPI bool operator!=(::LayeredAbilities const& rhs) const;
 #endif
 
     MCAPI ::LayeredAbilities& operator=(::LayeredAbilities const& rhs);
-
-    MCAPI void setAbility(::AbilitiesIndex val, float value);
-
-    MCAPI void setAbility(::AbilitiesIndex val, bool value);
-
-    MCFOLD void setCommandPermissions(::CommandPermissionLevel permissions);
-
-    MCAPI void setPermissions(::PermissionsHandler const& permissions);
-
-    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
 
     MCAPI ~LayeredAbilities();
     // NOLINTEND
@@ -110,17 +72,9 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_LAYER_AT();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::LayeredAbilities const& other);
     // NOLINTEND
 
 public:

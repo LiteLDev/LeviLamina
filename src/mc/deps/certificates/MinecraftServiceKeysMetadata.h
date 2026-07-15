@@ -14,25 +14,6 @@ public:
 public:
     // prevent constructor by default
     MinecraftServiceKeysMetadata& operator=(MinecraftServiceKeysMetadata const&);
+    MinecraftServiceKeysMetadata(MinecraftServiceKeysMetadata const&);
     MinecraftServiceKeysMetadata();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI MinecraftServiceKeysMetadata(::MinecraftServiceKeysMetadata const&);
-
-    MCNAPI ~MinecraftServiceKeysMetadata();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::MinecraftServiceKeysMetadata const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

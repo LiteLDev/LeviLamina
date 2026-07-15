@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ~ISignalingServiceConfigProvider() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(bool useJsonRpc, ::std::string const& id) = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(::std::string const&) = 0;
 
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() = 0;
 

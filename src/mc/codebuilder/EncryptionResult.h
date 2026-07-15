@@ -18,18 +18,6 @@ public:
     EncryptionResult& operator=(EncryptionResult const&);
     EncryptionResult(EncryptionResult const&);
     EncryptionResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~EncryptionResult();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace CodeBuilder

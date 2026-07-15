@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class PackManifest;
-namespace Core { class Path; }
 // clang-format on
 
 class ScriptPluginPackSource : public ::IScriptPluginSource {
@@ -35,12 +34,6 @@ public:
     virtual ::std::optional<::std::string> loadScript(::std::string const& path) /*override*/;
 
     virtual ::std::string removeRootFromPath(::std::string const& path) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Core::Path _removeRootFromPath(::Core::Path const& pathIn);
     // NOLINTEND
 
 public:

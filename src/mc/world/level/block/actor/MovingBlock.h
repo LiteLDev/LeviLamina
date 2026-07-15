@@ -21,27 +21,23 @@ namespace BlockEvents { class BlockEntityFallOnEvent; }
 
 class MovingBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    MovingBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const&             region,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          bufferAABB,
-        ::AABB&
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
     ) const /*override*/;
 
     virtual bool pushesUpFallingBlocks() const /*override*/;
 
     virtual ::AABB getCollisionShape(
-        ::Block const&             region,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&,
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
@@ -53,15 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MovingBlock(::std::string const& nameId, int id);
-
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -70,18 +58,18 @@ public:
     MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const&             region,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          bufferAABB,
-        ::AABB&
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
     ) const;
 
     MCFOLD bool $pushesUpFallingBlocks() const;
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const&             region,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&,
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 

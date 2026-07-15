@@ -7,7 +7,6 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/Owner.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/util/BaseGameVersion.h"
@@ -16,9 +15,7 @@
 // clang-format off
 class Block;
 class BlockType;
-class BlockTypeRegistryModificationsLock;
 class BlockTypeRegistryRWLock;
-class BlockTypeRegistryReadLock;
 class Experiments;
 class LinkedAssetValidator;
 class ServerScriptManager;
@@ -71,49 +68,6 @@ public:
         ::ll::TypedStorage<8, 24, ::SemVersion>                         mFlattenedInBlocksJsonVersion;
         ::ll::TypedStorage<4, 4, int>                                   mStartVariant;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockComplexAliasContent& operator=(BlockComplexAliasContent const&);
-        BlockComplexAliasContent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI BlockComplexAliasContent(::BlockTypeRegistry::BlockComplexAliasContent const&);
-
-        MCAPI BlockComplexAliasContent(
-            ::std::function<::Block const*(int)> callback,
-            ::BaseGameVersion const&             minRequiredVersion,
-            ::SemVersion const&                  blocksJsonFormatVersion,
-            int                                  startVariant
-        );
-
-        MCFOLD ::BaseGameVersion const& getRequiredBaseGameVersion() const;
-
-        MCAPI ::BlockTypeRegistry::BlockComplexAliasContent& operator=(::BlockTypeRegistry::BlockComplexAliasContent&&);
-
-        MCAPI ~BlockComplexAliasContent();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockTypeRegistry::BlockComplexAliasContent const&);
-
-        MCAPI void* $ctor(
-            ::std::function<::Block const*(int)> callback,
-            ::BaseGameVersion const&             minRequiredVersion,
-            ::SemVersion const&                  blocksJsonFormatVersion,
-            int                                  startVariant
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     struct DirectAccessBlocks {
@@ -136,26 +90,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>> mBlockType;
         ::ll::TypedStorage<8, 8, ::Block const*>               mBlock;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LookupByNameImplReturnType();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockType);
-
-        MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Block const* block, bool resolveBlockType);
-
-        MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
         // NOLINTEND
     };
 
@@ -198,15 +132,16 @@ public:
     // NOLINTBEGIN
     MCAPI BlockTypeRegistry();
 
-    MCAPI ::BlockTypeRegistryReadLock _lockAgainstRegistryModifications() const;
-
-    MCAPI ::BlockTypeRegistryModificationsLock _lockForRegistryModifications() const;
-
     MCAPI ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
         ::HashedString const&                        name,
         int                                          data,
         ::BlockTypeRegistry::LookupByNameImplResolve resolve,
-        bool
+        bool                                         logNotFound
+    ) const;
+
+    MCAPI ::Block const* _lookupByNameImplSetNewBlockStates(
+        ::Block const&                                                         block,
+        ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states
     ) const;
 
 #ifdef LL_PLAT_C
@@ -260,14 +195,6 @@ public:
     MCAPI bool isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
 #endif
 
-    MCAPI ::Block const* lookupByName(::HashedString const& name, int data, bool logNotFound) const;
-
-    MCAPI ::Block const* lookupByName(
-        ::HashedString const&                                                  name,
-        ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states,
-        bool                                                                   logNotFound
-    ) const;
-
     MCAPI ::WeakPtr<::BlockType> lookupByName(::HashedString const& name, bool logNotFound) const;
 
     MCAPI void prepareBlocks(uint latestUpdaterVersion);
@@ -295,14 +222,6 @@ public:
     MCAPI void unregisterBlocks();
 
     MCAPI ~BlockTypeRegistry();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BlockTypeRegistry& get();
-
-    MCAPI static ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry> getNonOwner();
     // NOLINTEND
 
 public:

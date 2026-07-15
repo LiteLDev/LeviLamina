@@ -32,22 +32,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SettingsTextQuery(::OreUI::ClientDependencies const& client, ::std::string const& id);
-
-    MCAPI void _updateProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& id);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 

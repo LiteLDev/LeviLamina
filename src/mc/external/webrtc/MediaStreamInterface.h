@@ -29,21 +29,13 @@ public:
 
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> FindVideoTrack(::std::string const& a1) = 0;
 
-    virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
+    virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> a1);
 
-    virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track);
+    virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> a1);
 
-    virtual bool AddTrack(::webrtc::AudioTrackInterface* track);
+    virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> a1);
 
-    virtual bool AddTrack(::webrtc::VideoTrackInterface* track);
-
-    virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
-
-    virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track);
-
-    virtual bool RemoveTrack(::webrtc::AudioTrackInterface* track);
-
-    virtual bool RemoveTrack(::webrtc::VideoTrackInterface* track);
+    virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> a1);
 
     virtual ~MediaStreamInterface() /*override*/;
     // NOLINTEND
@@ -57,21 +49,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
+    MCNAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> a1);
 
-    MCNAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track);
+    MCNAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> a1);
 
-    MCNAPI bool $AddTrack(::webrtc::AudioTrackInterface* track);
+    MCNAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> a1);
 
-    MCNAPI bool $AddTrack(::webrtc::VideoTrackInterface* track);
-
-    MCNAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
-
-    MCNAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track);
-
-    MCNAPI bool $RemoveTrack(::webrtc::AudioTrackInterface* track);
-
-    MCNAPI bool $RemoveTrack(::webrtc::VideoTrackInterface* track);
+    MCNAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> a1);
 
 
     // NOLINTEND

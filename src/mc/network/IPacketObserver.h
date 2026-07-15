@@ -15,18 +15,22 @@ class IPacketObserver : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size) = 0;
+    virtual void packetSentTo(::NetworkIdentifier const&, ::Packet const&, uint) = 0;
 
-    virtual void packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size) = 0;
+    virtual void packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint) = 0;
 
-    virtual void dataSentTo(::NetworkIdentifier const& target, ::std::string_view data) = 0;
+    virtual void dataSentTo(::NetworkIdentifier const&, ::std::string_view) = 0;
 
-    virtual void dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data) = 0;
+    virtual void dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&) = 0;
+
+    virtual void onObserveeDestroyed();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $onObserveeDestroyed();
+
 
     // NOLINTEND
 };

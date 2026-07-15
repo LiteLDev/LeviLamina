@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/connection/DisconnectFailReason.h"
-
 struct DisconnectionScreenParams {
 public:
     // member variables
@@ -20,39 +17,17 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkce69d6;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DisconnectionScreenParams& operator=(DisconnectionScreenParams const&);
     DisconnectionScreenParams(DisconnectionScreenParams const&);
     DisconnectionScreenParams();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    DisconnectionScreenParams& operator=(DisconnectionScreenParams const&);
-    DisconnectionScreenParams();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI DisconnectionScreenParams(::DisconnectionScreenParams const&);
-
-    MCNAPI explicit DisconnectionScreenParams(::Connection::DisconnectFailReason disconnectFailReason);
-
     MCNAPI ~DisconnectionScreenParams();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::DisconnectionScreenParams const&);
-
-    MCNAPI void* $ctor(::Connection::DisconnectFailReason disconnectFailReason);
 #endif
     // NOLINTEND
 

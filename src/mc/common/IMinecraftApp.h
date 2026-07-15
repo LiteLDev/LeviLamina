@@ -40,7 +40,7 @@ public:
 
     virtual bool isDedicatedServer() const = 0;
 
-    virtual void onNetworkMaxPlayersChanged(uint newMaxPlayerCount) = 0;
+    virtual void onNetworkMaxPlayersChanged(uint) = 0;
 
     virtual ::IGameModuleShared& getGameModuleShared() = 0;
 
@@ -48,7 +48,7 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const = 0;
 
-    virtual bool requestInGamePause(::SubClientId const& subClient, bool status) = 0;
+    virtual bool requestInGamePause(::SubClientId const&, bool) = 0;
     // NOLINTEND
 
 public:

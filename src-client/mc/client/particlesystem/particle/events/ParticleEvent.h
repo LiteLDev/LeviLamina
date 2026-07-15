@@ -7,11 +7,6 @@
 #include "mc/client/particlesystem/particle/events/ParticleVisualEffectEvent.h"
 #include "mc/util/molang/ExpressionNode.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ConstDeserializeDataParams;
-// clang-format on
-
 namespace ParticleSystem {
 
 class ParticleEvent {
@@ -25,21 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ParticleEvent(::ConstDeserializeDataParams const& deserializeDataParams);
-
     MCAPI ~ParticleEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ConstDeserializeDataParams const& deserializeDataParams);
     // NOLINTEND
 
 public:

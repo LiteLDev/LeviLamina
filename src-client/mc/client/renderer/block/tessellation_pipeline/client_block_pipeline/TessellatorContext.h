@@ -8,8 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class IMinecraftGame;
-class LevelRenderer;
-namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 // clang-format on
 
@@ -33,12 +31,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit TessellatorContext(::IMinecraftGame const& game);
 
-    MCAPI explicit TessellatorContext(::LevelRenderer const& levelRenderer);
-
-    MCAPI ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> getMaterialRepository() const;
-
-    MCFOLD bool getTextureShiftsEnabled() const;
-
     MCAPI ~TessellatorContext();
     // NOLINTEND
 
@@ -46,8 +38,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::IMinecraftGame const& game);
-
-    MCAPI void* $ctor(::LevelRenderer const& levelRenderer);
     // NOLINTEND
 
 public:

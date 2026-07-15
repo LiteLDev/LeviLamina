@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace dcsctp { class Parameter; }
@@ -69,7 +72,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::Parameters> Parse(::rtc::ArrayView<uchar const> data);
+    MCNAPI static ::std::optional<::dcsctp::Parameters>
+    Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
     // NOLINTEND
 
 public:

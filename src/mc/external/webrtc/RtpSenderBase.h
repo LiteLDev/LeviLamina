@@ -11,14 +11,16 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class MediaSendChannelInterface; }
-namespace cricket { struct Codec; }
-namespace rtc { class Thread; }
 namespace webrtc { class DtlsTransportInterface; }
+namespace webrtc { class Environment; }
 namespace webrtc { class FrameEncryptorInterface; }
 namespace webrtc { class FrameTransformerInterface; }
+namespace webrtc { class MediaSendChannelInterface; }
 namespace webrtc { class MediaStreamTrackInterface; }
 namespace webrtc { class RTCError; }
+namespace webrtc { class RtpSenderObserverInterface; }
+namespace webrtc { class Thread; }
+namespace webrtc { struct Codec; }
 namespace webrtc { struct RtpEncodingParameters; }
 namespace webrtc { struct RtpParameters; }
 // clang-format on
@@ -52,8 +54,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkcfb04f;
-    ::ll::UntypedStorage<8, 8>   mUnk4f7245;
+    ::ll::UntypedStorage<8, 40>  mUnk6aae6a;
+    ::ll::UntypedStorage<8, 8>   mUnkfc2f92;
+    ::ll::UntypedStorage<8, 8>   mUnkf356b9;
     ::ll::UntypedStorage<4, 4>   mUnka71bc1;
     ::ll::UntypedStorage<1, 1>   mUnk3a48da;
     ::ll::UntypedStorage<1, 1>   mUnk6b9467;
@@ -61,14 +64,16 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnkef6f22;
     ::ll::UntypedStorage<8, 24>  mUnkf68939;
     ::ll::UntypedStorage<8, 192> mUnkd68b10;
-    ::ll::UntypedStorage<8, 24>  mUnk26b69a;
-    ::ll::UntypedStorage<8, 8>   mUnk1a7b11;
+    ::ll::UntypedStorage<8, 24>  mUnk57c40c;
+    ::ll::UntypedStorage<8, 8>   mUnkb7db18;
     ::ll::UntypedStorage<8, 8>   mUnkffabe7;
     ::ll::UntypedStorage<8, 8>   mUnk92bc60;
     ::ll::UntypedStorage<8, 8>   mUnke1b367;
     ::ll::UntypedStorage<8, 40>  mUnkb914f5;
     ::ll::UntypedStorage<8, 24>  mUnk37c703;
     ::ll::UntypedStorage<8, 8>   mUnk7d6a99;
+    ::ll::UntypedStorage<8, 8>   mUnkfe7880;
+    ::ll::UntypedStorage<1, 1>   mUnk36b929;
     ::ll::UntypedStorage<8, 8>   mUnk3e58b8;
     ::ll::UntypedStorage<8, 8>   mUnk662028;
     // NOLINTEND
@@ -82,7 +87,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void SetMediaChannel(::cricket::MediaSendChannelInterface* media_channel) /*override*/;
+    virtual void SetMediaChannel(::webrtc::MediaSendChannelInterface* media_channel) /*override*/;
 
     virtual bool SetTrack(::webrtc::MediaStreamTrackInterface* track) /*override*/;
 
@@ -144,9 +149,8 @@ public:
 
     virtual ::webrtc::RTCError DisableEncodingLayers(::std::vector<::std::string> const& rids) /*override*/;
 
-    virtual void SetEncoderToPacketizerFrameTransformer(
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
-    ) /*override*/;
+    virtual void
+    SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer) /*override*/;
 
     virtual void SetEncoderSelector(
         ::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> encoder_selector
@@ -154,7 +158,13 @@ public:
 
     virtual void SetTransceiverAsStopped() /*override*/;
 
-    virtual void SetSendCodecs(::std::vector<::cricket::Codec> send_codecs) /*override*/;
+    virtual void SetSendCodecs(::std::vector<::webrtc::Codec> send_codecs) /*override*/;
+
+    virtual ::std::vector<::webrtc::Codec> GetSendCodecs() const /*override*/;
+
+    virtual void NotifyFirstPacketSent() /*override*/;
+
+    virtual void SetObserver(::webrtc::RtpSenderObserverInterface* observer) /*override*/;
 
     virtual ::std::string track_kind() const = 0;
 
@@ -181,7 +191,8 @@ public:
     MCNAPI ::webrtc::RTCError CheckSetParameters(::webrtc::RtpParameters const& parameters);
 
     MCNAPI RtpSenderBase(
-        ::rtc::Thread*                               worker_thread,
+        ::webrtc::Environment const&                 env,
+        ::webrtc::Thread*                            worker_thread,
         ::std::string const&                         id,
         ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
     );
@@ -193,7 +204,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::Thread*                               worker_thread,
+        ::webrtc::Environment const&                 env,
+        ::webrtc::Thread*                            worker_thread,
         ::std::string const&                         id,
         ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
     );
@@ -208,7 +220,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $SetMediaChannel(::cricket::MediaSendChannelInterface* media_channel);
+    MCNAPI void $SetMediaChannel(::webrtc::MediaSendChannelInterface* media_channel);
 
     MCNAPI bool $SetTrack(::webrtc::MediaStreamTrackInterface* track);
 
@@ -267,16 +279,20 @@ public:
 
     MCNAPI ::webrtc::RTCError $DisableEncodingLayers(::std::vector<::std::string> const& rids);
 
-    MCNAPI void $SetEncoderToPacketizerFrameTransformer(
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
-    );
+    MCNAPI void $SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer);
 
     MCNAPI void
     $SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> encoder_selector);
 
     MCNAPI void $SetTransceiverAsStopped();
 
-    MCNAPI void $SetSendCodecs(::std::vector<::cricket::Codec> send_codecs);
+    MCNAPI void $SetSendCodecs(::std::vector<::webrtc::Codec> send_codecs);
+
+    MCNAPI ::std::vector<::webrtc::Codec> $GetSendCodecs() const;
+
+    MCNAPI void $NotifyFirstPacketSent();
+
+    MCNAPI void $SetObserver(::webrtc::RtpSenderObserverInterface* observer);
 
     MCNAPI void $AttachTrack();
 
@@ -292,9 +308,11 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForRtpSenderInternal();
+    MCNAPI static void** $vftable();
 
-    MCNAPI static void** $vftableForObserverInterface();
+    MCNAPI static void** $vftableForFrameTransformerHost();
+
+    MCNAPI static void** $vftableForRefCountInterface();
     // NOLINTEND
 };
 

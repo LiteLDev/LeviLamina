@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v3_0_0/pack_manifest/VersionSelectType.h"
 #include "mc/scripting/ScriptRuntimeType.h"
 
 // auto generated forward declare list
@@ -16,37 +15,44 @@ namespace Scripting { struct Version; }
 namespace ScriptPluginUtils {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_S
 MCNAPI ::std::string GetFileExtensionFromRuntimeType(::ScriptRuntimeType runtimeType);
+#endif
 
 MCNAPI ::ScriptRuntimeType GetRuntimeType(::std::string const& runtimeName);
 
+#ifdef LL_PLAT_S
 MCNAPI ::ScriptRuntimeType GetRuntimeTypeFromFileExtension(::std::string const& fileExt);
+#endif
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string JavaScriptModuleNameNormalizer(
     ::std::string_view                  baseName,
     ::std::string const&                moduleName,
     ::std::vector<::std::string> const& knownModuleNames
 );
+#endif
 
+#ifdef LL_PLAT_S
 MCNAPI ::std::string SanitizeRuntimeName(::std::string const& runtimeName);
 
 MCNAPI ::Scripting::Version SemVersionToScriptVer(::SemVersion const& semVer);
 
 MCNAPI ::std::vector<::std::string> ValidatePlugin(::ScriptPlugin const& plugin);
-
-MCNAPI ::std::string_view
-VersionSelectorToPreReleaseTag(::SharedTypes::v3_0_0::PackManifestDefinition::VersionSelectType versionSelector);
+#endif
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_EXTENSION();
+#ifdef LL_PLAT_S
+MCNAPI ::std::unordered_map<::std::string, ::ScriptRuntimeType> const& FileExtToRuntimeType();
+#endif
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_IDENTIFIER_V1();
 
 MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_IDENTIFIER_V2();
-
-MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_NAME();
+#endif
 // NOLINTEND
 
 } // namespace ScriptPluginUtils

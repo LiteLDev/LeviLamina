@@ -4,12 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/BannerBlockType.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -17,10 +16,9 @@ class ILevel;
 class ItemStack;
 class ItemStackBase;
 class SaveContext;
-namespace mce { class Color; }
 // clang-format on
 
-class BannerBlockActor : public ::BlockActor {
+class BannerBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,13 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BannerBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onPlace(::BlockSource&) /*override*/;
+    virtual void onPlace(::BlockSource& region) /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -54,35 +48,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BannerBlockActor(::BlockPos const& pos);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::BannerBlockType getBannerType() const;
-
-    MCAPI ::mce::Color getBaseColor() const;
-#endif
-
-    MCFOLD uchar getBaseColorInt() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::mce::Color getColor(int index) const;
-
-    MCAPI uchar getPattern(int index) const;
-
-    MCAPI int getPatternCount() const;
-#endif
-
     MCAPI void setItemValues(::ItemStackBase const& instance);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
 
-    MCAPI static int getBaseColor(::ItemStack const& item);
-
-#ifdef LL_PLAT_C
     MCAPI static ::std::string getColors(::CompoundTag const* tag);
 #endif
 
@@ -110,8 +84,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_PATTERNS();
-
     MCAPI static ::std::string const& TAG_BASE_COLOR();
 
     MCAPI static ::std::string const& TAG_COLOR();
@@ -124,15 +96,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPlace(::BlockSource&);
+    MCAPI void $onPlace(::BlockSource& region);
 
     MCAPI void $tick(::BlockSource& region);
 
@@ -150,6 +116,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
     // NOLINTEND
 };

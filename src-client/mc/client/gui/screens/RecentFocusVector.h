@@ -17,16 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RecentFocusVector();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecentFocusVector(int size, bool includeMagnetControls);
-
-    MCAPI bool _canControlBeFocused(::UIControl& control) const;
-
     MCAPI ::std::shared_ptr<::UIControl>
     _getValidControl(int startIndex, int endIndex, ::std::shared_ptr<::UIControl> lastFocusedControl);
 
@@ -36,15 +28,7 @@ public:
 
     MCAPI ::std::shared_ptr<::UIControl> getLastGoodFocusedControl(::std::shared_ptr<::UIControl> lastFocusedControl);
 
-    MCFOLD void setIncludeMagnetControls(bool include);
-
     MCAPI ~RecentFocusVector();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int size, bool includeMagnetControls);
     // NOLINTEND
 
 public:

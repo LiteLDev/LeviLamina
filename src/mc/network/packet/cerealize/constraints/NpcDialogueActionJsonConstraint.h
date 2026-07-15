@@ -14,16 +14,22 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 class NpcDialogueActionJsonConstraint : public ::cereal::ConstraintHandle<::NpcDialogueActionJsonConstraint> {
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
-
     MCAPI void validateValue(::std::string const& actionJSON, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+
+
     // NOLINTEND
 };

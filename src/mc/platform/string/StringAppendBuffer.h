@@ -20,17 +20,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual int overflow(int) /*override*/;
+#else // LL_PLAT_C
     virtual int overflow(int c) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual int64 xsputn(char const*, int64) /*override*/;
+#else // LL_PLAT_C
     virtual int64 xsputn(char const* s, int64 n) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI int $overflow(int c);
 
     MCNAPI int64 $xsputn(char const* s, int64 n);
+#endif
 
 
     // NOLINTEND

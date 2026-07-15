@@ -4,9 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class SctpTransportInternal; }
-namespace rtc { class PacketTransportInternal; }
+namespace webrtc { class DtlsTransportInternal; }
 namespace webrtc { class Environment; }
+namespace webrtc { class SctpTransportInternal; }
 // clang-format on
 
 namespace webrtc {
@@ -17,8 +17,8 @@ public:
     // NOLINTBEGIN
     virtual ~SctpTransportFactoryInterface() = default;
 
-    virtual ::std::unique_ptr<::cricket::SctpTransportInternal>
-    CreateSctpTransport(::webrtc::Environment const& env, ::rtc::PacketTransportInternal* transport) = 0;
+    virtual ::std::unique_ptr<::webrtc::SctpTransportInternal>
+    CreateSctpTransport(::webrtc::Environment const& env, ::webrtc::DtlsTransportInternal* transport) = 0;
     // NOLINTEND
 
 public:

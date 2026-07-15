@@ -37,8 +37,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayDeadGoalDefinition(::SharedTypes::v1_26_10::PlayDeadGoalDefinition const&);
-
-    MCAPI ~PlayDeadGoalDefinition();
     // NOLINTEND
 
 public:
@@ -50,14 +48,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& DEFAULT_APPLY_REGENERATION();
-
-    MCAPI static float const& DEFAULT_DURATION();
-
-    MCAPI static float const& DEFAULT_RANDOM_START_CHANCE();
-
-    MCAPI static int const& DEFAULT_USE_BELOW_HEALTH();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
@@ -65,12 +55,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::v1_26_10::PlayDeadGoalDefinition const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

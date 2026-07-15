@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/script_engine/Closure.h"
-
-// auto generated forward declare list
-// clang-format off
-class ScriptDeferredFlushTracker;
-// clang-format on
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -99,23 +94,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _processActive(
-        ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>& slots,
-        uint                                                            currentTick,
-        ::ScriptDeferredFlushTracker&                                   deferredTracker
-    );
-
-    MCAPI void _processPending(
-        ::std::vector<::std::variant<
-            ::ScriptModuleMinecraft::ScriptTickSignal::PendingSubscribe,
-            ::ScriptModuleMinecraft::ScriptTickSignal::PendingUnsubscribe>>& pendingList,
-        ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>&      activeList
-    );
-
-    MCAPI void _removeAllExpired(::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>& activeList);
-
-    MCAPI void _removeById(uint id, ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>& activeList);
-
     MCAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
 
     MCAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
@@ -123,8 +101,6 @@ public:
     MCAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
 
     MCAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
-
-    MCAPI void unschedule(uint id);
     // NOLINTEND
 };
 

@@ -69,8 +69,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv
     );
 
-    MCAPI void _makeBackupOfLevel(::World::WorldID const& id);
-
     MCAPI void _tick();
 
     MCAPI void makeWorldInfinite(
@@ -78,8 +76,6 @@ public:
         ::std::function<void()>                                        onCompleteCallback,
         ::std::function<void(::World::InfiniteWorldConverter::Result)> onErrorCallback
     );
-
-    MCAPI void update(double);
 
     MCAPI ~InfiniteWorldConverter();
     // NOLINTEND

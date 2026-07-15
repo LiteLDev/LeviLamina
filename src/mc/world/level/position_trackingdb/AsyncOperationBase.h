@@ -34,18 +34,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool tick(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        ::PositionTrackingDB::TrackingRecord&                           record
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>,
+        ::PositionTrackingDB::TrackingRecord&
     ) /*override*/;
 
     virtual bool isAsync() const /*override*/;
 
     virtual bool isComplete() const /*override*/;
 
-    virtual bool _init(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        ::PositionTrackingDB::TrackingRecord&                           record
-    );
+    virtual bool
+    _init(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
     virtual bool
     _tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
@@ -57,18 +55,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $tick(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        ::PositionTrackingDB::TrackingRecord&                           record
-    );
-
-    MCFOLD bool $isAsync() const;
-
-    MCAPI bool $isComplete() const;
-
-    MCAPI bool
-    $_quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
-
 
     // NOLINTEND
 };

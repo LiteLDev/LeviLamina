@@ -35,33 +35,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PermissionsHandler& operator=(PermissionsHandler const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PermissionsHandler();
-
-    MCAPI PermissionsHandler(::PermissionsHandler const& rhs);
-
     MCAPI void addSaveData(::CompoundTag& tag) const;
 
-    MCFOLD ::CommandPermissionLevel getCommandPermissions() const;
-
-    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::optional<::std::reference_wrapper<
-        ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
-    getPlayerPermissionsChangedPublisher() const;
-#endif
-
     MCAPI bool loadSaveData(::CompoundTag const& tag);
-
-    MCFOLD void setCommandPermissions(::CommandPermissionLevel permissions);
-
-    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
 
     MCAPI ~PermissionsHandler();
     // NOLINTEND
@@ -69,30 +47,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::std::string>
-    getDiff(::PermissionsHandler const& lhs, ::PermissionsHandler const& rhs);
-#endif
-
     MCAPI static ::PlayerPermissionLevel playerPermissionLevelFromString(::std::string const& s);
 
     MCAPI static ::std::string playerPermissionLevelToString(::PlayerPermissionLevel const& permission);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_COMMAND_PERMISSION();
-
-    MCAPI static ::std::string const& DIFF_PLAYER_PERMISSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::PermissionsHandler const& rhs);
     // NOLINTEND
 
 public:

@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
@@ -102,15 +102,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptFormPromiseTracker() /*override*/;
+    virtual ~ScriptFormPromiseTracker() /*override*/ = default;
 
-    virtual ::EventResult onEvent(::PlayerFormResponseEvent const& formResponseEvent) /*override*/;
+    virtual ::EventResult onEvent(::PlayerFormResponseEvent const&) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerFormCloseEvent const& formCloseEvent) /*override*/;
+    virtual ::EventResult onEvent(::PlayerFormCloseEvent const&) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent) /*override*/;
+    virtual ::EventResult onEvent(::PlayerDataDrivenScreenClosedEvent const&) /*override*/;
 
-    virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
+    virtual ::EventResult onLevelRemovedPlayer(::Player&) /*override*/;
     // NOLINTEND
 
 public:
@@ -121,14 +121,6 @@ public:
         ::LevelEventCoordinator&        levelEventCoordinator,
         ::ServerPlayerEventCoordinator& playerEventCooordinator
     );
-
-    MCNAPI void handleFormClose(::PlayerFormCloseEvent const& formResponse);
-
-    MCNAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
-
-    MCNAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
-
-    MCNAPI void rejectAll();
 
     MCNAPI void showDataDrivenScreenToPlayer(
         ::Player const&                              player,
@@ -141,8 +133,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NetworkIdentifier _getPlayerNetworkId(::Player const& player);
-
     MCNAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
     // NOLINTEND
 
@@ -157,32 +147,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
-
-    MCNAPI ::EventResult $onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent);
-
-    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForEventListenerDispatcherLevelEventListener();
-
-    MCNAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
     // NOLINTEND
 };

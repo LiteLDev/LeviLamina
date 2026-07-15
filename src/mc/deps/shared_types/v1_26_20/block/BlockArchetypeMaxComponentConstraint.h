@@ -4,21 +4,27 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal::internal { struct ConstraintDescription; }
+// clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
-struct BlockArchetypeMaxComponentConstraint
+class BlockArchetypeMaxComponentConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::v1_26_20::BlockDefinition::BlockArchetypeMaxComponentConstraint> {
 public:
-    // static variables
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& ErrorDescription();
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

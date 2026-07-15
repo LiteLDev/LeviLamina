@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,29 +26,9 @@ public:
     DisconnectedError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI DisconnectedError(::std::string const& message, ::std::string const& playerId);
-
-    MCNAPI ~DisconnectedError();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& message, ::std::string const& playerId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

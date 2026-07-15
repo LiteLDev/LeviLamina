@@ -26,20 +26,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void writeBytes(void const* data, uint64 bytes) /*override*/;
+    virtual void writeBytes(void const*, uint64) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $writeBytes(void const* data, uint64 bytes);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -18,28 +18,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::WeakRef<::EntityContext>>> mRecipients;
     ::ll::TypedStorage<4, 4, ::MinecraftPacketIds>                       mPacketId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OutgoingPacketEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OutgoingPacketEvent(::std::vector<::WeakRef<::EntityContext>> recipient, ::MinecraftPacketIds packetId);
-
-    MCAPI ~OutgoingPacketEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::WeakRef<::EntityContext>> recipient, ::MinecraftPacketIds packetId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

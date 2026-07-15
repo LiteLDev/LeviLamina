@@ -11,16 +11,11 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Material;
 class Random;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SculkCatalystBlock : public ::ActorBlock {
-public:
-    // prevent constructor by default
-    SculkCatalystBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,8 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SculkCatalystBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
@@ -39,12 +32,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bloom(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Random&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

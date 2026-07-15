@@ -36,30 +36,19 @@ public:
 public:
     // prevent constructor by default
     EducationMetadata& operator=(EducationMetadata const&);
+    EducationMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EducationMetadata();
-
     MCNAPI EducationMetadata(::EducationMetadata const& other);
 
     MCNAPI ~EducationMetadata();
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::std::string, ::EducationMetadata::ContentType> const& STRING_TO_CONTENT_TYPE();
-
-    MCNAPI static ::std::unordered_map<::std::string, ::EducationMetadata::UserType> const& STRING_TO_USER_TYPE();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::EducationMetadata const& other);
     // NOLINTEND
 

@@ -17,6 +17,7 @@ struct SoundInstanceProperties;
 namespace Core { class Path; }
 namespace Core { class PathView; }
 class SoundItem;
+struct PlaySoundOptions;
 // clang-format on
 
 class NullSoundPlayer : public ::SoundPlayerInterface {
@@ -25,6 +26,8 @@ public:
     // NOLINTBEGIN
     virtual uint64
     play(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>) /*override*/;
+
+    virtual uint64 play(::PlaySoundOptions) /*override*/;
 
     virtual uint64 playUI(::std::string const&, float, float) /*override*/;
 
@@ -40,7 +43,7 @@ public:
 
     virtual bool isPlayingMusic(::Core::PathView) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicName() /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicPath() /*override*/;
 
     virtual bool getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const /*override*/;
 
@@ -61,6 +64,8 @@ public:
 
     virtual void stop(uint64) /*override*/;
 
+    virtual void stop(::ServerSoundHandle) /*override*/;
+
     virtual void fadeOut(uint64, float) /*override*/;
 
     virtual void stopAllSounds() /*override*/;
@@ -77,8 +82,6 @@ public:
 
     virtual uint64 playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&) /*override*/;
 
-    virtual void stopAllDelayedSoundActions() /*override*/;
-
     virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const /*override*/;
 
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const /*override*/;
@@ -87,70 +90,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint64 $play(::std::string const&, ::Vec3 const&, float, float, ::std::optional<::ServerSoundHandle>);
 
-    MCNAPI uint64 $playUI(::std::string const&, float, float);
-
-    MCNAPI ::std::optional<::std::string> $getSubtitle(::std::string const&) const;
-
-    MCNAPI void $playMusic(::std::string const&, float, uint&);
-
-    MCNAPI void $playMusic(::std::string const&, float);
-
-    MCNAPI bool $isLoadingMusic() const;
-
-    MCNAPI bool $isPlayingMusicEvent(::std::string const&) const;
-
-    MCNAPI bool $isPlayingMusic(::Core::PathView) const;
-
-    MCNAPI ::Core::PathBuffer<::std::string> const $getCurrentlyPlayingMusicName();
-
-    MCNAPI bool $getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const;
-
-    MCNAPI void $fadeToStopMusic(float);
-
-    MCNAPI void $setMusicCommandVolumeMultiplier(float);
-
-    MCNAPI void $pauseMusic(bool);
-
-    MCNAPI void $stopMusic();
-
-    MCNAPI uint64 $registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float);
-
-    MCNAPI void $unregisterLoop(uint64, bool);
-
-    MCNAPI void $stop(::std::string const&);
-
-    MCNAPI void $stop(uint64);
-
-    MCNAPI void $fadeOut(uint64, float);
-
-    MCNAPI void $stopAllSounds();
-
-    MCNAPI void $pauseAllPlayingSounds();
-
-    MCNAPI void $resumeAllPreviouslyPlayingSounds();
-
-    MCNAPI bool $isPlayingSound(uint64) const;
-
-    MCNAPI bool $isPlayingSound(::Core::Path const&) const;
-
-    MCNAPI bool $isPlayingSound(::ServerSoundHandle) const;
-
-    MCNAPI uint64 $playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
-
-    MCNAPI void $stopAllDelayedSoundActions();
-
-    MCNAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(uint64) const;
-
-    MCNAPI ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

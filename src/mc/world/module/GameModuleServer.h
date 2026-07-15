@@ -51,9 +51,12 @@ public:
             biomeIdToResolvedData
     ) = 0;
 
-    virtual void configureNewPlayer(::Player&) = 0;
+    virtual void configureNewPlayer(::Player& player) = 0;
 
-    virtual void configureDocumentation(::IGameModuleDocumentation&, ::ItemRegistryRef const) = 0;
+    virtual void configureDocumentation(
+        ::IGameModuleDocumentation& moduleDocumentation,
+        ::ItemRegistryRef const     docItemRegistry
+    ) = 0;
 
     virtual void tick() = 0;
 
@@ -66,26 +69,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI GameModuleServer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

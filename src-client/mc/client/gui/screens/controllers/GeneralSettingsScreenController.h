@@ -5,8 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
-#include "mc/client/gui/ViewRequest.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/MultiplayerLockState.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/client/social/ProfileImageOptions.h"
@@ -24,7 +22,6 @@ class MainMenuScreenModel;
 class StorageManagementScreenController;
 class SubscriptionsScreenController;
 class TaskGroup;
-struct PackInstanceId;
 struct PackManagerContentSourceImpl;
 namespace Json { class Value; }
 namespace MSGraph::Models { struct GraphError; }
@@ -37,6 +34,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>           mIsGlobalSettings;
     ::ll::TypedStorage<1, 1, bool>           mReloadTexturePacksOnExit;
     ::ll::TypedStorage<1, 1, bool>           mGlobalResourcePacksVisible;
+    ::ll::TypedStorage<1, 1, bool>           mLegacySyncOnly;
     ::ll::TypedStorage<1, 1, bool>           mHasLoadedCloudInfo;
     ::ll::TypedStorage<1, 1, bool>           mCloudConnectionError;
     ::ll::TypedStorage<8, 32, ::std::string> mCloudUploadUrl;
@@ -47,6 +45,7 @@ public:
                                                                                         mCloudFolderUrlHandle;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::std::string>>> mLanguages;
     ::ll::TypedStorage<8, 8, uint64>                                                    mCurrentlySelectedIndex;
+    ::ll::TypedStorage<4, 4, int>                                                       mLanguageFocusFrameCountdown;
     ::ll::TypedStorage<8, 8, ::MultiplayerLockState>                                    mMultiplayerState;
     ::ll::TypedStorage<8, 8, ::IContentManager&>                                        mContentManager;
     ::ll::TypedStorage<8, 8, ::PackManagerContentSourceImpl*>                           mResourceContentSource;
@@ -83,7 +82,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GeneralSettingsScreenController() /*override*/;
+    virtual ~GeneralSettingsScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -103,58 +102,11 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         bool                                     isGlobalSettings,
         bool                                     reloadTexturePacksOnExit,
-        ::std::string const&                     initialPackId
+        ::std::string const&                     initialPackId,
+        bool                                     legacySyncOnly
     );
-
-    MCAPI bool _areAnyPackImportsPending() const;
-
-    MCAPI void _chooseLanguage(::std::string const& selectedLanguageCode, int selectedLanguageIndex);
-
-    MCAPI ::std::string _generateAccountInformation() const;
-
-    MCAPI ::std::string _generateBuildInformation() const;
-
-    MCAPI void _getEduCloudInfo();
-
-    MCAPI ::std::vector<int> _getGUIScaleValues() const;
-
-    MCAPI ::ui::ViewRequest _handleLanguageChoiceClick(int i);
-
-    MCAPI void _initLanguageList();
 
     MCAPI void _processPendingImports();
-
-    MCAPI void _registerControllerCallbacks();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerPSPreviewButtonCallbacks();
-
-    MCAPI void _registerPlayerNameEditBoxCallbacks();
-
-    MCAPI void _setFancyBubbles(bool value);
-
-    MCAPI void
-    _setGlobalStack(::std::vector<::PackInstanceId> const& modelManagerIdentities, bool anyVersion, bool saveStack);
-
-    MCAPI void _setResourcePackStack();
-
-    MCAPI void _toggleCrossPlatformPlayState();
-
-    MCAPI void _updateDisplayNameOnScreenFromUser();
-
-    MCAPI void _updateProfileImage();
-
-    MCAPI void confirmationFancyBubblesDialog(
-        ::std::string const&                         messageId,
-        ::std::function<void(::ModalScreenButtonId)> callback
-    );
-
-    MCAPI ::GeneralSettingsScreenControllerProxy* getGeneralSettingsScreenControllerProxy();
-
-    MCAPI void setGuiScaleOption(int guiScaleOffset);
-
-    MCAPI void startExitProcess();
     // NOLINTEND
 
 public:
@@ -171,35 +123,14 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         bool                                     isGlobalSettings,
         bool                                     reloadTexturePacksOnExit,
-        ::std::string const&                     initialPackId
+        ::std::string const&                     initialPackId,
+        bool                                     legacySyncOnly
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI bool $canExit();
-
-    MCAPI void $onOpen();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

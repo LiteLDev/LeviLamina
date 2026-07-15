@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockDescriptor;
 class IBlockWorldGenAPI;
 class Random;
@@ -52,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IFeature();
+    virtual ~IFeature() = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const = 0;
 
@@ -62,35 +61,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isAllowedToPlaceFeature(::IFeature const& feature) const;
-
-    MCFOLD bool isInternal() const;
-
-    MCAPI bool operator==(::IFeature const& other) const;
-
-    MCAPI bool
-    setBlockSafe(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int updateFlags) const;
-
-    MCAPI bool setBlockSafeSimple(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCFOLD void setCanUseInternalFeature(bool canUseInternalFeature);
-
-    MCFOLD void setIsInternal(bool isInternal);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool
     isExposedTo(::IBlockWorldGenAPI const& target, ::BlockPos const& candidatePos, ::BlockDescriptor const& exposedTo);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

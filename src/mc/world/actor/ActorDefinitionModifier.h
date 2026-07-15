@@ -29,19 +29,11 @@ public:
     MCAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
 
     MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
-
-    MCAPI ~ActorDefinitionModifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorDefinitionModifier const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

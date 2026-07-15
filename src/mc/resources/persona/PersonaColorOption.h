@@ -5,7 +5,7 @@
 namespace persona {
 
 enum class PersonaColorOption : uchar {
-    Skin       = 0,
+    SkinColor  = 0,
     Hair       = 1,
     FacialHair = 2,
     Eyebrow    = 3,

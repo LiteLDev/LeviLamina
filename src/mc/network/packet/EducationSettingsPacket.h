@@ -65,16 +65,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EducationSettingsPacket();
-
-    MCAPI explicit EducationSettingsPacket(::EducationSettingsPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::EducationSettingsPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -84,7 +80,7 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
-    MCFOLD ::SerializationMode $getSerializationMode() const;
+    MCAPI ::SerializationMode $getSerializationMode() const;
 
     MCAPI void $setSerializationMode(::SerializationMode mode);
 

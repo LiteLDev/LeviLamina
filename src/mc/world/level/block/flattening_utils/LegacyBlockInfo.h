@@ -25,44 +25,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::HashedString const>>> newBlockFullNamesByVariant;
     ::ll::TypedStorage<8, 24, ::std::vector<::FlatteningUtils::BlockNameRefAuxVariant>>      newBlockNameAuxVariants;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyBlockInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LegacyBlockInfo(
-        int                                                      legacyId_,
-        ::HashedString                                           legacyFullName_,
-        ::HashedString                                           legacyRawName_,
-        uchar                                                    maxAuxValue_,
-        ::std::vector<::FlatteningUtils::BlockNameRefAuxVariant> newBlockNameAuxVariants_,
-        int                                                      startVariant
-    );
-
-    MCAPI ~LegacyBlockInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int                                                      legacyId_,
-        ::HashedString                                           legacyFullName_,
-        ::HashedString                                           legacyRawName_,
-        uchar                                                    maxAuxValue_,
-        ::std::vector<::FlatteningUtils::BlockNameRefAuxVariant> newBlockNameAuxVariants_,
-        int                                                      startVariant
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace FlatteningUtils

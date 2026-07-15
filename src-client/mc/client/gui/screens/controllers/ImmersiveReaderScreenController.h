@@ -13,8 +13,6 @@
 // clang-format off
 class ClientInstanceScreenModel;
 class ImmersiveReaderObserver;
-class ImmersiveReaderToken;
-namespace Bedrock::Http { class Response; }
 // clang-format on
 
 class ImmersiveReaderScreenController : public ::ClientInstanceScreenController {
@@ -60,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ImmersiveReaderScreenController() /*override*/;
+    virtual ~ImmersiveReaderScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
@@ -74,26 +72,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     ImmersiveReaderScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::std::string readerText);
-
-    MCAPI ::std::string const& _getErrorText();
-
-    MCAPI void _handleTokenResponse(::Bedrock::Http::Response& response);
-
-    MCAPI void _launchReader();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _requestToken();
-
-    MCAPI bool _tokenNeedsRefresh();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ImmersiveReaderToken>& mReaderToken();
     // NOLINTEND
 
 public:
@@ -103,26 +81,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

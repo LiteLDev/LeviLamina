@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/options/oreui/PlayScreenWorldLayoutMode.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +13,7 @@ namespace Bedrock::PubSub { class Subscription; }
 
 namespace OreUI {
 
-class ScreenSpecificOptionsFacet : public ::OreUI::FacetBase<::OreUI::ScreenSpecificOptionsFacet> {
+class ScreenSpecificOptionsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ScreenSpecificOptionsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,18 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScreenSpecificOptionsFacet(::IOptionRegistry& options);
-
-    MCAPI bool getDevOreUIGameplayUI() const;
-
-    MCAPI bool getDevPlayScreenHideLanWorlds() const;
-
-    MCAPI ::OreUI::PlayScreenWorldLayoutMode getPlayScreenWorldLayoutMode() const;
-
-    MCAPI void setDevOreUIGameplayUI(bool value);
-
-    MCAPI void setDevPlayScreenHideLanWorlds(bool value);
-
-    MCAPI void setPlayScreenWorldLayoutMode(::OreUI::PlayScreenWorldLayoutMode layoutMode);
     // NOLINTEND
 
 public:

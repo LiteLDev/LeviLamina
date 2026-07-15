@@ -10,9 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
-struct ActorUniqueID;
-struct MobDescriptor;
-struct TrustComponent;
 // clang-format on
 
 class DefendTrustedTargetGoal : public ::NearestAttackableTargetGoal {
@@ -20,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mAggroSound;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>       mOnStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnStartEvent;
     // NOLINTEND
 
 public:
@@ -40,33 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefendTrustedTargetGoal(
-        ::Mob&                                 mob,
-        ::std::vector<::MobDescriptor> const&  targetTypes,
-        float                                  within,
-        int                                    attackInterval,
-        bool                                   mustSee,
-        int                                    mustSeeForgetTicks,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::ActorDefinitionTrigger const&        onStartEvent
-    );
-
-    MCAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
+    MCAPI explicit DefendTrustedTargetGoal(::Mob& mob);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 mob,
-        ::std::vector<::MobDescriptor> const&  targetTypes,
-        float                                  within,
-        int                                    attackInterval,
-        bool                                   mustSee,
-        int                                    mustSeeForgetTicks,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::ActorDefinitionTrigger const&        onStartEvent
-    );
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -33,33 +33,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>>         requirements;
         ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>                releasedMinFormatVersion;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TraitMetadata& operator=(TraitMetadata const&);
-        TraitMetadata();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI TraitMetadata(::BlockTraitFactory::TraitMetadata const&);
-
-        MCAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
-
-        MCAPI ~TraitMetadata();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockTraitFactory::TraitMetadata const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     using RegisteredTraitsMap = ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata>;
@@ -72,17 +45,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockTraitFactory(BlockTraitFactory const&);
-    BlockTraitFactory();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::BlockTrait::ITrait>
     createTrait(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
-
-    MCAPI ::BlockTraitFactory& operator=(::BlockTraitFactory const&);
 
     MCAPI ~BlockTraitFactory();
     // NOLINTEND
@@ -94,8 +60,6 @@ public:
 
     MCAPI static ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata> const*
     registeredTraits(::cereal::ReflectionCtx const& ctx);
-
-    MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

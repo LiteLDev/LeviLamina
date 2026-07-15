@@ -7,15 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Material;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class SmithingTableBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    SmithingTableBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,15 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SmithingTableBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

@@ -18,33 +18,12 @@ public:
 public:
     // prevent constructor by default
     ScriptStatFileHeader& operator=(ScriptStatFileHeader const&);
+    ScriptStatFileHeader(ScriptStatFileHeader const&);
     ScriptStatFileHeader();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptStatFileHeader(::ScriptStatFileHeader const&);
-
-    MCNAPI ::ScriptStatFileHeader& operator=(::ScriptStatFileHeader&&);
-
-    MCNAPI ~ScriptStatFileHeader();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptStatFileHeader const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

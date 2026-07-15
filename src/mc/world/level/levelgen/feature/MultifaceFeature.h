@@ -10,9 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class BlockSource;
-class LevelChunk;
-class Random;
 // clang-format on
 
 class MultifaceFeature : public ::IFeature {
@@ -37,38 +34,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MultifaceFeature();
-
-    MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
-        ::BlockSource&           region,
-        ::BlockPos const&        pos,
-        ::Random&                random,
-        ::gsl::span<uchar const> placementDirections
-    ) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _isNeighbourBlockChunkReady(
-        ::BlockSource&      region,
-        ::BlockPos const&   neighbourPos,
-        ::LevelChunk const* currentChunk
-    );
-
-    MCAPI static void
-    _shuffledDirectionsExcept(::Bedrock::small_vector<uchar, 6>& out, uchar exclude, ::gsl::span<uchar const> faces);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

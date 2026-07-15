@@ -25,8 +25,7 @@ public:
 
 public:
     // prevent constructor by default
-    StructureTemplateDataRequestPacket& operator=(StructureTemplateDataRequestPacket const&);
-    StructureTemplateDataRequestPacket(StructureTemplateDataRequestPacket const&);
+    StructureTemplateDataRequestPacket();
 
 public:
     // virtual functions
@@ -37,17 +36,37 @@ public:
 
     virtual ::SerializationMode getSerializationMode() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual void setSerializationMode(::SerializationMode) /*override*/;
+#else // LL_PLAT_C
     virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&,
+        ::cereal::ReflectionCtx const&,
+        ::std::optional<::SerializationMode>
+    ) const /*override*/;
+#else // LL_PLAT_C
     virtual void writeWithSerializationMode(
         ::BinaryStream&                      stream,
         ::cereal::ReflectionCtx const&       reflectionCtx,
         ::std::optional<::SerializationMode> overrideMode
     ) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+#else // LL_PLAT_C
     virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void write(::BinaryStream&) const /*override*/;
+#else // LL_PLAT_C
     virtual void write(::BinaryStream& stream) const /*override*/;
+#endif
 
     virtual ::Bedrock::Result<void>
     read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
@@ -60,33 +79,38 @@ public:
 
     virtual ::std::string toString() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataRequestPacket();
-
     MCAPI explicit StructureTemplateDataRequestPacket(::StructureTemplateDataRequestPacketPayload payload);
-
-    MCAPI ::StructureTemplateDataRequestPacket& operator=(::StructureTemplateDataRequestPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::StructureTemplateDataRequestPacketPayload payload);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string_view $getName() const;
@@ -119,6 +143,7 @@ public:
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+#endif
 
 
     // NOLINTEND

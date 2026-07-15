@@ -23,26 +23,6 @@ public:
     AllRefreshTaskData& operator=(AllRefreshTaskData const&);
     AllRefreshTaskData(AllRefreshTaskData const&);
     AllRefreshTaskData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI AllRefreshTaskData(::RepositoryLoading::AllRefreshTaskData&&);
-
-    MCNAPI ~AllRefreshTaskData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::RepositoryLoading::AllRefreshTaskData&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace RepositoryLoading

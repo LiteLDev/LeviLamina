@@ -22,9 +22,6 @@ class BlockStateCommandParam;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Scoreboard;
-struct ScoreInfo;
-struct ScoreboardId;
 // clang-format on
 
 class NewExecuteCommand : public ::Command {
@@ -79,95 +76,9 @@ public:
         // NOLINTEND
 
     public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::std::string
-        getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::ConditionSubcommand subcommand);
-
-        MCAPI static ::std::string
-        getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand subcommand);
-
-        MCAPI static void setup(::CommandRegistry& registry);
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static char const*& CHAINED_OPTION_0();
-
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCK();
-
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCKS();
-
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_ENTITY();
-
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_SCORE();
-
-        MCAPI static char const*& SUBCOMMAND_ALIGN();
-
-        MCAPI static char const*& SUBCOMMAND_ANCHORED();
-
-        MCAPI static char const*& SUBCOMMAND_AS();
-
-        MCAPI static char const*& SUBCOMMAND_AT();
-
-        MCAPI static char const*& SUBCOMMAND_BLOCK();
-
-        MCAPI static char const*& SUBCOMMAND_BLOCKS();
-
-        MCAPI static char const*& SUBCOMMAND_ENTITY();
-
-        MCAPI static char const*& SUBCOMMAND_FACING();
-
-        MCAPI static char const*& SUBCOMMAND_IF();
-
-        MCAPI static char const*& SUBCOMMAND_IN();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_ALIGN();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_ANCHORED();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_AS();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_AT();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_ENTITY();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_FACING();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_IF_UNLESS();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_IN();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_POSITIONED();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_ROTATED();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_RUN();
-
-        MCAPI static char const*& SUBCOMMAND_POSITIONED();
-
-        MCAPI static char const*& SUBCOMMAND_ROTATED();
-
-        MCAPI static char const*& SUBCOMMAND_RUN();
-
-        MCAPI static char const*& SUBCOMMAND_SCORE();
-
-        MCAPI static char const*& SUBCOMMAND_UNLESS();
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::string $getCommandName() const;
 
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -205,38 +116,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NewExecuteCommand();
-
-    MCAPI void _commandOutputFail(::CommandOutput& output, ::std::optional<int> const& testPassCount) const;
-
-    MCAPI void _commandOutputSuccess(::CommandOutput& output, ::std::optional<int> const& testPassCount) const;
-
-    MCAPI bool _detectConditionSubcommand(
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        ::std::optional<int>&  testPassCount
-    ) const;
-
-    MCAPI ::std::optional<::ScoreInfo> _getScoreFromSelectorOnObjective(
-        ::Scoreboard const&               scoreboard,
-        ::CommandSelector<::Actor> const& selector,
-        ::std::string const&              objectiveName,
-        ::CommandOrigin const&            origin,
-        ::CommandOutput&                  output
-    ) const;
-
-    MCAPI ::std::optional<::ScoreboardId> _getScoreboardIdForSelector(
-        ::Scoreboard const&               scoreboard,
-        ::CommandSelector<::Actor> const& selector,
-        ::CommandOrigin const&            origin,
-        ::CommandOutput&                  output
-    ) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -246,35 +126,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::NewExecuteCommand::ExecuteChainedSubcommand>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::NewExecuteCommand::ExecuteChainedSubcommand::ConditionSubcommand>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::NewExecuteCommand::ExecuteChainedSubcommand::ScanMode>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::NewExecuteCommand::ExecuteChainedSubcommand::ScoreRangeMode>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand>();
-// clang-format on

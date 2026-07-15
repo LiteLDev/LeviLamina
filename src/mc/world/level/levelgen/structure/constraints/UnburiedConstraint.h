@@ -29,8 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~UnburiedConstraint() /*override*/ = default;
 
-    virtual bool
-    isSatisfied(::IBlockWorldGenAPI const& target, ::BlockPos const& structurePos, ::Rotation const& structureRot) const
+    virtual bool isSatisfied(::IBlockWorldGenAPI const&, ::BlockPos const&, ::Rotation const&, ::BlockPos const&) const
         /*override*/;
     // NOLINTEND
 
@@ -49,18 +48,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSatisfied(
-        ::IBlockWorldGenAPI const& target,
-        ::BlockPos const&          structurePos,
-        ::Rotation const&          structureRot
-    ) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

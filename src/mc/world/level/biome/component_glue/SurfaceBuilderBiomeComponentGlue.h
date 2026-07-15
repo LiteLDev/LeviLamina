@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_26_30/NoiseDescriptor.h"
 #include "mc/world/level/biome/glue/IBiomeComponentGlue.h"
 
 // auto generated forward declare list
@@ -10,6 +11,7 @@
 class Biome;
 class BiomeRegistry;
 class Block;
+struct NoiseBlockSpecifier;
 // clang-format on
 
 struct SurfaceBuilderBiomeComponentGlue : public ::IBiomeComponentGlue {
@@ -38,10 +40,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                            mBrycePillars;
     ::ll::TypedStorage<1, 1, bool>                                            mHasForest;
     ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                  mNonReplaceableBlocks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                  mGradientBlocks;
-    ::ll::TypedStorage<8, 24, ::std::vector<float>>                           mAmplitudes;
-    ::ll::TypedStorage<4, 4, int>                                             mFirstOctave;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mNoiseSeedString;
+    ::ll::TypedStorage<8, 24, ::std::vector<::NoiseBlockSpecifier>>           mGradientBlockRanges;
+    ::ll::TypedStorage<8, 64, ::SharedTypes::v1_26_30::NoiseDescriptor>       mNoiseDescriptor;
     ::ll::TypedStorage<1, 1, ::SurfaceBuilderBiomeComponentGlue::BuilderType> mBuilderType;
     // NOLINTEND
 

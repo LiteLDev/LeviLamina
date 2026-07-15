@@ -39,15 +39,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FilteredContainerModel() /*override*/;
+    virtual ~FilteredContainerModel() /*override*/ = default;
 
     virtual void containerContentChanged(int slot) /*override*/;
 
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const /*override*/;
 
-    virtual void setItemInstance(int modelSlot, ::ItemInstance const& item) /*override*/;
+    virtual void setItemInstance(int, ::ItemInstance const&) /*override*/;
 
-    virtual void refreshContainer(bool fullRefresh) /*override*/;
+    virtual void refreshContainer(bool) /*override*/;
 
     virtual int getContainerSize() const /*override*/;
 
@@ -55,7 +55,7 @@ public:
 
     virtual bool isExpanableItemFiltered(int index) const /*override*/;
 
-    virtual int getIndexForCreativeItem(::ItemStackBase const& item) const /*override*/;
+    virtual int getIndexForCreativeItem(::ItemStackBase const&) const /*override*/;
 
     virtual void _init() /*override*/;
     // NOLINTEND
@@ -72,14 +72,6 @@ public:
         bool                                                         filter,
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
-
-    MCAPI void _refreshContainer(bool fullRefresh);
-
-    MCAPI void setFiltering(bool filter);
-
-#ifdef LL_PLAT_C
-    MCAPI void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
-#endif
     // NOLINTEND
 
 public:
@@ -97,38 +89,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $containerContentChanged(int slot);
 
-    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
-
-    MCAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
-
-    MCAPI void $refreshContainer(bool fullRefresh);
-
-    MCFOLD int $getContainerSize() const;
-
-    MCFOLD int $getFilteredContainerSize() const;
-
-    MCAPI bool $isExpanableItemFiltered(int index) const;
-
-    MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
-
-    MCFOLD void $_init();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

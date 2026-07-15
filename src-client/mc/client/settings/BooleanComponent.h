@@ -30,10 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BooleanComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BooleanComponent() /*override*/ = default;
@@ -42,45 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BooleanComponent(
-        ::std::string_view                                  id,
-        ::std::string_view                                  name,
-        ::std::optional<::std::string>                      description,
-        ::std::unique_ptr<::Settings::IBooleanDataProvider> dataProvider
-    );
-
-    MCFOLD bool flush();
-
-    MCFOLD ::std::vector<::Settings::BooleanConfirmationRequest> getConfirmationRequests() const;
-
-    MCAPI bool getValue() const;
-
-    MCAPI bool updateValue(bool value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string_view                                  id,
-        ::std::string_view                                  name,
-        ::std::optional<::std::string>                      description,
-        ::std::unique_ptr<::Settings::IBooleanDataProvider> dataProvider
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Settings::ComponentState $getDefaultState() const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

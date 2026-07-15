@@ -19,8 +19,6 @@ struct VehicleComponent;
 namespace ActorRiding {
 // functions
 // NOLINTBEGIN
-MCAPI void clearVehiclePrev(::EntityContext& provider);
-
 MCAPI ::StrictEntityContext getPassengerClosestTo(
     ::Vec3 const&                                                       pos,
     ::VehicleComponent const&                                           vehicle,
@@ -29,21 +27,23 @@ MCAPI ::StrictEntityContext getPassengerClosestTo(
 
 MCAPI ::std::vector<::StrictActorIDEntityContextPair> const& getPassengers(::EntityContext const& provider);
 
-MCAPI ::std::vector<::StrictActorIDEntityContextPair> const&
-getPendingRemovePassengers(::EntityContext const& provider);
-
-MCAPI ::ActorUniqueID getVehicleID(::EntityContext const& provider);
-
-MCAPI ::StrictEntityContext getVehiclePrevEntity(::EntityContext const& provider);
-
 MCAPI bool isControlled(::EntityContext const& provider);
 
 MCAPI bool isPassenger(::EntityContext const& provider);
 
-MCAPI void setPassengersChanged(::EntityContext& provider, bool haveChanged);
-
 MCAPI void
 setVehicle(::EntityContext& provider, ::StrictEntityContext vehicleContext, ::ActorUniqueID const& vehicleID);
+// NOLINTEND
+
+// static variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_C
+MCAPI ::std::vector<::StrictActorIDEntityContextPair> const& STRICTACTORIDENTITYCONTEXTPAIR_EMPTY_VECTOR();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::std::vector<::StrictActorIDEntityContextPair> const& STRICTACTORIDENTITYCONTEXTPAIR_EMPTY_VECTOR();
+#endif
 // NOLINTEND
 
 } // namespace ActorRiding

@@ -7,9 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class ResolvedTextObject;
-class Scoreboard;
 struct ResolveData;
 namespace Json { class Value; }
 // clang-format on
@@ -43,14 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addChild(::std::unique_ptr<::ITextObject> childObject);
-
-    MCNAPI ::std::vector<::std::string> asStringVector() const;
-
-    MCNAPI void clear();
-
-    MCNAPI bool isEmpty() const;
-
-    MCNAPI ::ResolvedTextObject resolveRoot(::Actor const& actor, ::Scoreboard const& scoreboard) const;
     // NOLINTEND
 
 public:

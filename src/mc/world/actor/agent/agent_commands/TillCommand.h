@@ -7,11 +7,6 @@
 #include "mc/world/actor/agent/agent_components/Direction.h"
 #include "mc/world/item/ItemStack.h"
 
-// auto generated forward declare list
-// clang-format off
-class Player;
-// clang-format on
-
 namespace AgentCommands {
 
 class TillCommand : public ::AgentCommands::Command {
@@ -23,10 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TillCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute() /*override*/;
@@ -35,31 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TillCommand(::Player& commander, ::std::string itemName, ::AgentComponents::Direction dir);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& commander, ::std::string itemName, ::AgentComponents::Direction dir);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute();
 
-    MCAPI bool $isDone();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

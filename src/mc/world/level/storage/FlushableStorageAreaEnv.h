@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/FlushableEnv.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class FileStorageArea; }
-// clang-format on
-
 class FlushableStorageAreaEnv : public ::FlushableEnv {
 public:
     // member variables
@@ -32,28 +27,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI FlushableStorageAreaEnv(::leveldb::Env* env, ::std::shared_ptr<::Core::FileStorageArea> storageArea);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::leveldb::Env* env, ::std::shared_ptr<::Core::FileStorageArea> storageArea);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $flushToPermanentStorage();
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

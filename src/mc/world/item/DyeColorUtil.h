@@ -5,22 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/item/ItemColor.h"
 
-// auto generated forward declare list
-// clang-format off
-class Random;
-// clang-format on
-
 class DyeColorUtil {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static int getAuxValue(::ItemColor color);
-
-    MCAPI static ::ItemColor getItemColor(int auxValue);
-
-    MCAPI static ::ItemColor getRandomItemColor(::Random& random);
-    // NOLINTEND
-
 public:
     // static variables
     // NOLINTBEGIN

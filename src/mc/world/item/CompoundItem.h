@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ChemistryItem.h"
-#include "mc/world/item/CompoundContainerType.h"
 #include "mc/world/item/CompoundType.h"
 
 // auto generated forward declare list
@@ -21,16 +20,12 @@ struct ResolvedItemIconInfo;
 
 class CompoundItem : public ::ChemistryItem {
 public:
-    // prevent constructor by default
-    CompoundItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
-        /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
@@ -41,21 +36,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundItem(::std::string const& name, int id, ::Experiments const& experiments);
-
     MCAPI void _registerSpecialCompound(::ItemInstance const& item, ::CompoundType type);
 
-    MCAPI void _registerSpecialCompounds(::Experiments const&);
+    MCAPI void _registerSpecialCompounds(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string _getName(::CompoundType type);
-
 #ifdef LL_PLAT_C
-    MCAPI static ::CompoundContainerType getCompoundContainer(::ItemInstance const& instance);
-
     MCAPI static ::std::string getCompoundFormula(::ItemInstance const& instance);
 #endif
 
@@ -79,17 +68,12 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::Experiments const& experiments);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 

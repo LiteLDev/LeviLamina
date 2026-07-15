@@ -14,8 +14,6 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static void addToStreamedLocations(uint64 const& directory);
-
     MCNAPI static bool shouldStream(::ResourceLocation const& resourceLocation);
 #endif
     // NOLINTEND

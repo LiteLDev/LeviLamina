@@ -17,22 +17,12 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getName() const /*override*/;
 
-    virtual bool setup(::FilterTest::Definition const& inputs, ::FilterInputs const&) /*override*/;
+    virtual bool setup(::FilterTest::Definition const&, ::FilterInputs const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getName() const;
 
-    MCNAPI bool $setup(::FilterTest::Definition const& inputs, ::FilterInputs const&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

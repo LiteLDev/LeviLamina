@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<4, 4, int>            minDepth;
     ::ll::TypedStorage<1, 1, bool>           allowInRow;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PieceWeight();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

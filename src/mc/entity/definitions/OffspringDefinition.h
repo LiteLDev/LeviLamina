@@ -92,14 +92,7 @@ public:
     // prevent constructor by default
     OffspringDefinition& operator=(OffspringDefinition const&);
     OffspringDefinition(OffspringDefinition const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OffspringDefinition();
-
-    MCAPI void setMutationStrategy(::std::string const& strategy);
-    // NOLINTEND
+    OffspringDefinition();
 
 public:
     // static functions
@@ -107,11 +100,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OffspringDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

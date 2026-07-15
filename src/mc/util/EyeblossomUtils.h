@@ -6,19 +6,11 @@
 // clang-format off
 class Block;
 class BlockSource;
-class Vec3;
 // clang-format on
 
 namespace EyeblossomUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void emitEyeblossomSoundsAndRequestParticles(
-    ::BlockSource& region,
-    ::Vec3 const&  pos,
-    ::Block const& changedTo,
-    bool           longSound
-);
-
 MCNAPI ::Block const* tryGetEyeblossomForTimeOfDay(::BlockSource& region);
 // NOLINTEND
 

@@ -15,7 +15,6 @@ class Block;
 class BlockPos;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Material;
 // clang-format on
 
 class ThinFenceBlock : public ::BlockType {
@@ -24,10 +23,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool const> mDoesNotCollideWithCamera;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ThinFenceBlock();
 
 public:
     // virtual functions
@@ -77,41 +72,17 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     virtual bool isThinFenceBlock() const /*override*/;
 
-    virtual bool breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ThinFenceBlock(
-        ::std::string const& nameId,
-        int                  id,
-        ::Material const&    material,
-        bool                 singleSide,
-        bool                 doesNotCollideWithCamera
-    );
+    virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const& nameId,
-        int                  id,
-        ::Material const&    material,
-        bool                 singleSide,
-        bool                 doesNotCollideWithCamera
-    );
     // NOLINTEND
 
 public:
@@ -162,11 +133,11 @@ public:
         ::AABB&                    bufferValue
     ) const;
 
-    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD bool $isThinFenceBlock() const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& version, ::BaseGameVersion const) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
 
     // NOLINTEND

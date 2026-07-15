@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/FileBufferingMode.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class FileOpenMode; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace brstd { struct source_location; }
@@ -36,11 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Core::Result close();
 
-    MCNAPI bool isNearTransactionLimit(uint64 windowSize) const;
-
-    MCNAPI ::Core::Result
-    open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
-
     MCNAPI ~File();
     // NOLINTEND
 
@@ -55,19 +48,11 @@ public:
 #endif
 
     MCNAPI static ::Core::Result writeCreateOrAppendFileData(
-        ::Core::PathView            path,
-        uint64                      offset,
-        uint64                      numBytesToWrite,
-        ::std::vector<uchar> const& buffer,
-        ::brstd::source_location    sourceLocation
-    );
-
-    MCNAPI static ::Core::Result writeCreateOrAppendFileData(
-        ::Core::PathView path,
-        uint64           offset,
-        uint64           numBytesToWrite,
-        uchar const*     buffer,
-        ::brstd::source_location
+        ::Core::PathView         path,
+        uint64                   offset,
+        uint64                   numBytesToWrite,
+        uchar const*             buffer,
+        ::brstd::source_location sourceLocation
     );
     // NOLINTEND
 

@@ -63,15 +63,15 @@ public:
     // NOLINTBEGIN
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onComplete(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onComplete(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -92,23 +92,11 @@ public:
         ::std::optional<::CloudSaveLevelInfo>                       cloudSaveLevelInfo
     );
 
-    MCAPI bool exitingErrorScreen() const;
-
-    MCAPI ::std::optional<::CloudSaveLevelInfo> getCloudSaveLevelInfo() const;
-
-    MCAPI ::std::chrono::milliseconds const getIsDoneInterval() const;
-
     MCFOLD ::std::string getLevelId() const;
 
     MCAPI ::std::string const getUploadErrorCode() const;
 
-    MCFOLD ::MSGraph::GraphResponse getUploadErrorStatus() const;
-
-    MCAPI void getUploadErrorStrings(::MSGraph::GraphResponse errorStatus);
-
     MCAPI void startUpload();
-
-    MCAPI void updateText(::MinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:
@@ -125,30 +113,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI void $onCancel(::MinecraftScreenModel&);
-
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
-
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
-
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
-
-    MCFOLD ::std::string $getTitleText() const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCFOLD ::ProgressAnimation $showLoadingBar() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

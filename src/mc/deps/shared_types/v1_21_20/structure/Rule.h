@@ -67,11 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Rule(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
-
     MCAPI Rule(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
-
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule& operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
 
     MCAPI ::SharedTypes::v1_21_20::JigsawStructure::Rule&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
@@ -82,8 +78,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructure::Rule&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructure::Rule const&);
     // NOLINTEND
 

@@ -29,10 +29,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_SPEED_MODIFIER();
-
-    MCAPI static float const& DEFAULT_TIMEOUT_COOLDOWN();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

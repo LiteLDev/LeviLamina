@@ -71,10 +71,10 @@ public:
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
     virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const&             region,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          bufferAABB,
-        ::AABB&
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
     ) const /*override*/;
 
     virtual ::AABB getCollisionShape(
@@ -134,24 +134,11 @@ public:
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI ::Direction::Type getBlockedDirection(::IConstBlockSource const& region, ::BlockPos const& pos) const;
-
     MCAPI ::Direction::Type getDir(::IConstBlockSource const& region, ::BlockPos const& pos) const;
-
-    MCAPI void
-    getDoorPosition(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& lowerPos, ::BlockPos& upperPos) const;
-
-    MCAPI float getDoorThickness() const;
 
     MCAPI bool hasRightHinge(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isToggled(::IConstBlockSource const& region, ::BlockPos const& pos) const;
-
     MCAPI void setToggled(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor, bool toggled) const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool shouldFlipTexture(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
-#endif
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -161,8 +148,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isDoorComplete(::BlockSource const& region, ::BlockPos const& pos);
-
     MCAPI static bool
     _isDoorToggled(::IConstBlockSource const& region, ::BlockType const& blockType, ::BlockPos const& pos);
 
@@ -175,8 +160,6 @@ public:
         ::Block const*&            outLowerBlock,
         ::Block const*&            outUpperBlock
     );
-
-    MCAPI static uchar getDoorFacing(int facing);
     // NOLINTEND
 
 public:
@@ -193,10 +176,10 @@ public:
     MCFOLD ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
     MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const&             region,
-        ::IConstBlockSource const& pos,
-        ::BlockPos const&          bufferAABB,
-        ::AABB&
+        ::Block const&,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
     ) const;
 
     MCAPI ::AABB $getCollisionShape(

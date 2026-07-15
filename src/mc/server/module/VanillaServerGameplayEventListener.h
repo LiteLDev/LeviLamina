@@ -29,9 +29,9 @@ class VanillaServerGameplayEventListener : public ::EventListenerDispatcher<::Ac
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::EventResult onEvent(::ActorHurtEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::ActorHurtEvent const& actorHurtEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::PlayerDamageEvent const&) /*override*/;
+    virtual ::EventResult onEvent(::PlayerDamageEvent const& playerDamageEvent) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent) /*override*/;
 
@@ -41,26 +41,20 @@ public:
 
     virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ::EventResult
-    onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool) /*override*/;
-#else // LL_PLAT_C
     virtual ::EventResult onBlockPlacedByPlayer(
         ::Player&         player,
         ::Block const&    placedBlock,
         ::BlockPos const& pos,
         bool              isUnderwater
     ) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ActorHurtEvent const&);
+    MCFOLD ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
 
-    MCFOLD ::EventResult $onEvent(::PlayerDamageEvent const&);
+    MCFOLD ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
 
     MCAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
 
@@ -71,7 +65,7 @@ public:
     MCAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
     MCAPI ::EventResult
-    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool);
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
 
     // NOLINTEND

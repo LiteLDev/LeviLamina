@@ -11,10 +11,10 @@
 #include "mc/network/packet/OpenSignPacket.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/textobject/TextObjectRoot.h"
-#include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorRendererId.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +29,7 @@ class Player;
 class SaveContext;
 // clang-format on
 
-class SignBlockActor : public ::BlockActor {
+class SignBlockActor : public ::VanillaBlockActor {
 public:
     // SignBlockActor inner types declare
     // clang-format off
@@ -46,22 +46,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> text;
         ::ll::TypedStorage<4, 4, int>            lineLength;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI ~CachedLineData();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD void $dtor();
-#endif
         // NOLINTEND
     };
 
@@ -93,9 +77,9 @@ public:
         MCAPI CachedMessageData(::SignBlockActor::CachedMessageData const&);
 
         MCAPI ::SignBlockActor::CachedMessageData& operator=(::SignBlockActor::CachedMessageData&&);
-#endif
 
         MCAPI ~CachedMessageData();
+#endif
         // NOLINTEND
 
     public:
@@ -109,7 +93,9 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -149,29 +135,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void _parseOldVersionText(::CompoundTag const& tag);
-
-        MCAPI void _parseOtherAttributes(::CompoundTag const& tag);
-
-        MCAPI void _parseText(::CompoundTag const& tag);
-
         MCAPI ::std::string const& getMessage() const;
 
-        MCAPI void load(::CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
-
-        MCAPI bool save(::CompoundTag& tag) const;
-
+#ifdef LL_PLAT_C
         MCAPI void setMessage(::std::string message);
 
         MCAPI void setMessage(::TextObjectRoot message);
+#endif
 
         MCAPI ~Text();
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> SIGN_PERSIST_FORMATTING_TAG();
         // NOLINTEND
 
     public:
@@ -236,48 +208,12 @@ public:
     // NOLINTBEGIN
     MCAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
 
-    MCAPI bool _tryLoadR13Data(::CompoundTag const& tag, ::SignBlockActor::Text& frontText);
-
-    MCAPI bool _tryLoadR19U7Data(::CompoundTag const& tag, ::SignBlockActor::Text& frontText);
-
-    MCAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
-
-#ifdef LL_PLAT_C
-    MCAPI ::SignBlockActor::CachedMessageData const& getCachedMessage(::SignTextSide side) const;
-
-    MCAPI bool getHideGlowOutline(::SignTextSide side) const;
-#endif
-
-    MCAPI bool getIsGlowing(::SignTextSide side) const;
-
-    MCAPI bool getIsLockedForEditing(::ILevel& level);
-
-    MCFOLD bool getIsWaxed() const;
-
     MCAPI ::std::string const& getMessage(::SignTextSide side) const;
-
-    MCAPI ::std::string const& getRawMessage(::SignTextSide side) const;
 
     MCAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
 
-    MCAPI ::mce::Color const& getSignTextColor(::SignTextSide side) const;
-
-    MCAPI ::TextObjectRoot const& getTextObject(::SignTextSide side) const;
-
-    MCAPI bool isStringMessage(::SignTextSide side) const;
-
     MCAPI void
     requestToSendOpenSignPacket(::WeakRef<::EntityContext> entityRef, ::BlockPos const& position, bool isFrontSide);
-
-    MCAPI void serverOnlySetIsLockedForEditing(::Player& player);
-
-#ifdef LL_PLAT_C
-    MCAPI void setCachedMessage(::SignTextSide side, ::SignBlockActor::CachedMessageData cachedMessage);
-#endif
-
-    MCAPI void setHideGlowOutline(::SignTextSide side, bool hideGlowOutline);
-
-    MCAPI void setIsGlowing(::SignTextSide side, bool isGlowing);
 
 #ifdef LL_PLAT_C
     MCAPI void setMessage(::SignTextSide side, ::std::string message);
@@ -288,14 +224,6 @@ public:
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
 
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
-
-    MCAPI void setSignTextColor(::SignTextSide side, ::mce::Color const& color);
-
-    MCAPI void setWaxed(bool waxed);
-
-#ifdef LL_PLAT_C
-    MCAPI bool shouldPersistFormatting(::SignTextSide side) const;
-#endif
     // NOLINTEND
 
 public:
@@ -347,6 +275,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
     // NOLINTEND
 };

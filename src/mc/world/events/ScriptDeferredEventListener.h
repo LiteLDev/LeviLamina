@@ -13,19 +13,19 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptDeferredEventListener() = default;
 
-    virtual void onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker);
+    virtual void onRunSystemTick(::ScriptDeferredFlushTracker&);
 
-    virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&);
 
-    virtual void onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    virtual void onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&);
 
-    virtual void onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    virtual void onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker&);
 
-    virtual void onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    virtual void onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
 
-    virtual void onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    virtual void onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
-    virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&);
 
     virtual void onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
@@ -41,19 +41,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker);
+    MCFOLD void $onRunSystemTick(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCFOLD void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCFOLD void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCFOLD void $onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCFOLD void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCFOLD void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCFOLD void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&);
 
     MCFOLD void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
@@ -66,11 +66,5 @@ public:
     MCFOLD void $onScriptTickEnd();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

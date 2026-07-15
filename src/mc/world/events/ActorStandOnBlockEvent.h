@@ -21,16 +21,4 @@ public:
     ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const> const> mBlock;
     ::ll::TypedStorage<4, 12, ::BlockPos const>                  mPos;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorStandOnBlockEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

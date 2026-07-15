@@ -40,23 +40,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HitDetectSystem();
+    virtual ~HitDetectSystem() = default;
 
     virtual void reset();
 
     virtual void tick();
 
-    virtual void evaluate(::IClientInstance& client, float a);
+    virtual void evaluate(::IClientInstance&, float);
 
-    virtual void _evaluateType(
-        ::IClientInstance& client,
-        float              a,
-        ::Actor&           cameraEntity,
-        ::LocalPlayer&     player,
-        bool               isPicking,
-        ::HitResult&       hitResult,
-        ::HitResult&       liquidHitResult
-    );
+    virtual void _evaluateType(::IClientInstance&, float, ::Actor&, ::LocalPlayer&, bool, ::HitResult&, ::HitResult&);
     // NOLINTEND
 
 public:
@@ -72,34 +64,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reset();
 
-    MCAPI void $tick();
-
-    MCAPI void $evaluate(::IClientInstance& client, float a);
-
-    MCAPI void $_evaluateType(
-        ::IClientInstance& client,
-        float              a,
-        ::Actor&           cameraEntity,
-        ::LocalPlayer&     player,
-        bool               isPicking,
-        ::HitResult&       hitResult,
-        ::HitResult&       liquidHitResult
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

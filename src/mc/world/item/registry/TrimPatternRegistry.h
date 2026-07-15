@@ -43,13 +43,5 @@ public:
 #endif
 
     MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
-
-    MCAPI ~TrimPatternRegistry();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

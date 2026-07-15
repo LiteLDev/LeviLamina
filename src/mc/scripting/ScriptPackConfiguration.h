@@ -29,16 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration const&);
 
-    MCNAPI ::ScriptPackPermissions const& getPermissions() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::ScriptPackPermissions& getPermissions();
-#endif
-
-    MCNAPI ::std::unordered_map<::std::string, ::std::string> const& getSecrets() const;
-
-    MCNAPI ::std::unordered_map<::std::string, ::Json::Value> const& getVariables() const;
-
     MCNAPI ~ScriptPackConfiguration();
     // NOLINTEND
 

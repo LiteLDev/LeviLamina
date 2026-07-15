@@ -12,10 +12,8 @@
 class Biome;
 class BiomeRegistry;
 class Block;
-class BlockPos;
 class BlockSource;
 class Random;
-struct PortalEnvironmentModifiers;
 // clang-format on
 
 class RuinedPortalPiece : public ::StructurePiece {
@@ -66,116 +64,12 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RuinedPortalPiece(int west, int north, ::BiomeRegistry& registry, ::Biome const& biome, short surfaceHeight);
-
-    MCAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos pos);
-
-    MCAPI void _addNetherrackDripColumnsBelowPortal(::Random& random, ::BlockSource& region);
-
-    MCAPI bool _hasAtLeastOneCornerUnderWater(::BlockSource& region);
-
-    MCAPI void _maybeReplaceBlock(
-        ::Random&                           random,
-        ::BlockSource&                      region,
-        ::BlockPos                          pos,
-        ::PortalEnvironmentModifiers const& modifiers
-    );
-
-    MCAPI void _maybeReplaceFullStoneBlock(
-        ::Random&                           random,
-        ::BlockSource&                      region,
-        ::BlockPos                          pos,
-        ::Block const&                      block,
-        ::PortalEnvironmentModifiers const& modifiers
-    );
-
-    MCAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos pos);
-
-    MCAPI void
-    _maybeReplaceIronBars(::BlockSource& region, ::BlockPos pos, ::PortalEnvironmentModifiers const& modifiers);
-
-    MCAPI void _maybeReplaceLava(
-        ::Random&                           random,
-        ::BlockSource&                      region,
-        ::BlockPos                          pos,
-        ::PortalEnvironmentModifiers const& modifiers
-    );
-
-    MCAPI void _maybeReplaceNetherrack(
-        ::Random&                           random,
-        ::BlockSource&                      region,
-        ::BlockPos                          pos,
-        ::PortalEnvironmentModifiers const& modifiers
-    );
-
-    MCAPI void _maybeReplaceObsidian(::Random& random, ::BlockSource& region, ::BlockPos pos);
-
-    MCAPI void _maybeReplaceSlab(
-        ::Random&                           random,
-        ::BlockSource&                      region,
-        ::BlockPos                          pos,
-        ::PortalEnvironmentModifiers const& modifiers
-    );
-
-    MCAPI void _maybeReplaceStairs(
-        ::Random&                           random,
-        ::BlockSource&                      region,
-        ::BlockPos                          pos,
-        ::PortalEnvironmentModifiers const& modifiers
-    );
-
-    MCAPI void _maybeReplaceWall(
-        ::Random&                           random,
-        ::BlockSource&                      region,
-        ::BlockPos                          pos,
-        ::PortalEnvironmentModifiers const& modifiers
-    );
-
-    MCAPI void _moveStructureBoundsToSuitableY(
-        ::Random&                           random,
-        ::BlockSource&                      region,
-        ::PortalEnvironmentModifiers const& modifiers
-    );
-
-    MCAPI void
-    _spreadNetherrack(::Random& random, ::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
-
-    MCAPI bool _threeCornersOnSolidGround(::BlockSource& region, ::PortalEnvironmentModifiers const& modifiers);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _isLava(::BlockSource& region, ::BlockPos pos);
-
-    MCAPI static bool _willLavaFlowIn(::BlockSource& region, ::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int west, int north, ::BiomeRegistry& registry, ::Biome const& biome, short surfaceHeight);
+    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

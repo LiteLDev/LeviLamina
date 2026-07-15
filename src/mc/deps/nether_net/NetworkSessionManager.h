@@ -4,21 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
-#include "mc/deps/nether_net/ESendType.h"
-#include "mc/deps/nether_net/ESessionError.h"
-#include "mc/deps/nether_net/SignalingChannelId.h"
-#include "mc/deps/nether_net/utils/ErrorOr.h"
 #include "mc/platform/threading/UniqueLock.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { class CandidateAdd; }
-namespace NetherNet { class ConnectError; }
-namespace NetherNet { class ConnectRequest; }
-namespace NetherNet { class ConnectResponse; }
 namespace NetherNet { class NetworkSession; }
-namespace NetherNet { struct NetworkID; }
-namespace NetherNet { struct SessionState; }
 // clang-format on
 
 namespace NetherNet {
@@ -62,115 +52,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkSessionManager() /*override*/;
+    virtual ~NetworkSessionManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CloseInactiveSessionsOnSignalThread(
-        ::NetherNet::NetworkID remoteID,
-        ::std::tuple<
-            ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>&,
-            ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&> const& list
-    );
-
-    MCNAPI bool CloseSessionWithReason(
-        ::NetherNet::NetworkID     networkIDRemote,
-        uint64                     connectionId,
-        ::NetherNet::ESessionError reason
-    );
-
-    MCNAPI ::gsl::not_null<::NetherNet::NetworkSession*> FindOrCreateSpecificSession(
-        ::NetherNet::NetworkID                                          remoteId,
-        uint64                                                          connectionId,
-        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& disableTrickleIce,
-        bool
-    );
-
-    MCNAPI bool
-    GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState);
-
-    MCNAPI ::NetherNet::ESessionError InitiateIncomingSession(
-        ::NetherNet::NetworkID                                          remoteID,
-        ::NetherNet::ConnectRequest const&                              offer,
-        ::NetherNet::SignalingChannelId                                 source,
-        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& sessionsLock,
-        bool                                                            disableTrickleIce
-    );
-
-    MCNAPI ::NetherNet::NetworkSession* InitiateOutgoingSession(
-        ::NetherNet::NetworkID                                          remoteID,
-        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const& disableTrickleIce,
-        bool
-    );
-
-    MCNAPI bool IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize) const;
-
-    MCNAPI void NotifyOnSessionOpen(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
-
-    MCNAPI bool OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote, bool disableTrickleIce);
-
     MCNAPI void PeriodicDeadSessionCleanupOnSignalThread();
-
-    MCNAPI void ProcessError(::NetherNet::NetworkID remoteID, uint64 connectionId, ::NetherNet::ESessionError error);
-
-    MCNAPI void ProcessSignal(
-        ::NetherNet::NetworkID           remoteID,
-        ::NetherNet::ConnectError const& error,
-        ::NetherNet::SignalingChannelId,
-        bool
-    ) const;
-
-    MCNAPI void ProcessSignal(
-        ::NetherNet::NetworkID           remoteID,
-        ::NetherNet::CandidateAdd const& signal,
-        ::NetherNet::SignalingChannelId  disableTrickleIce,
-        bool
-    );
-
-    MCNAPI void ProcessSignal(
-        ::NetherNet::NetworkID              remoteID,
-        ::NetherNet::ConnectResponse const& signal,
-        ::NetherNet::SignalingChannelId,
-        bool
-    ) const;
-
-    MCNAPI bool
-    ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);
-
-    MCNAPI ::std::vector<::std::unique_ptr<::NetherNet::NetworkSession>>
-    RemoveSession(::NetherNet::NetworkID remoteID, uint64 connectionId);
-
-    MCNAPI bool SendPacket(
-        ::NetherNet::NetworkID networkIDRemote,
-        uint64                 connectionId,
-        uchar const*           data,
-        uint64                 size,
-        ::NetherNet::ESendType type
-    );
-
-    MCNAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
-        ::NetherNet::NetworkID networkIDTo,
-        ::std::variant<
-            ::NetherNet::ConnectRequest,
-            ::NetherNet::ConnectResponse,
-            ::NetherNet::ConnectError,
-            ::NetherNet::CandidateAdd> const&            signal,
-        ::std::optional<::NetherNet::SignalingChannelId> preference
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

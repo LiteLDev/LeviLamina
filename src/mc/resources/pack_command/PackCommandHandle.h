@@ -16,18 +16,6 @@ public:
     PackCommandHandle& operator=(PackCommandHandle const&);
     PackCommandHandle(PackCommandHandle const&);
     PackCommandHandle();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PackCommandHandle();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PackCommand

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class NetworkStatistics;
-struct TrackerStat;
 // clang-format on
 
 class NetworkDebugManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -34,18 +33,6 @@ public:
         NetherNetStats& operator=(NetherNetStats const&);
         NetherNetStats(NetherNetStats const&);
         NetherNetStats();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~NetherNetStats();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     class Tracker {
@@ -72,20 +59,12 @@ public:
 #ifdef LL_PLAT_C
         MCNAPI void update();
 #endif
-
-        MCNAPI ~Tracker();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -114,13 +93,11 @@ public:
     // NOLINTBEGIN
     MCNAPI NetworkDebugManager();
 
-    MCNAPI ::NetworkStatistics* getNetworkStatistics(::TrackerType type);
-
 #ifdef LL_PLAT_C
-    MCNAPI ::std::vector<::TrackerStat> const& getStats(::TrackerType type) const;
-
-    MCNAPI void update();
+    MCNAPI ::NetworkStatistics* getNetworkStatistics(::TrackerType type);
 #endif
+
+    MCNAPI void registerStatisticsSource(::NetworkStatistics& s);
     // NOLINTEND
 
 public:

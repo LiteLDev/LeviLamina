@@ -10,7 +10,6 @@
 // clang-format off
 class BlockSource;
 class BoundingBox;
-class Random;
 // clang-format on
 
 class MineshaftPiece : public ::StructurePiece {
@@ -25,51 +24,12 @@ public:
     // NOLINTBEGIN
     virtual bool isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB) /*override*/;
 
-    virtual bool canBeReplaced(
-        ::BlockSource&       region,
-        int const            x,
-        int const            y,
-        int const            z,
-        ::BoundingBox const& chunkBB
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _isSupportingBox(int x0, int x1, ::BlockSource& region, int y1, int z);
-
-    MCAPI ::std::unique_ptr<::StructurePiece> createRandomShaftPiece(
-        ::MineshaftData&                                    metadata,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 genDepth
-    );
-
-    MCAPI ::StructurePiece* generateAndAddPiece(
-        ::StructurePiece&                                   startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 depth
-    );
+    virtual bool canBeReplaced(::BlockSource&, int const, int const, int const, ::BoundingBox const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
-
-    MCAPI bool
-    $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
-
 
     // NOLINTEND
 };

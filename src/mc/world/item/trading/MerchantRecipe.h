@@ -9,8 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
-class CompoundTag;
-class SaveContext;
 struct RecipeNetIdTag;
 // clang-format on
 
@@ -34,22 +32,13 @@ public:
     ::ll::TypedStorage<4, 4, ::RecipeNetId>    mRecipeNetId;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     MerchantRecipe();
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI MerchantRecipe();
-#endif
-
-    MCAPI explicit MerchantRecipe(::CompoundTag const* tag);
-
     MCAPI MerchantRecipe(::ItemInstance const& buy, ::ItemInstance const& sell);
 
     MCAPI MerchantRecipe(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
@@ -63,67 +52,9 @@ public:
         ::BaseGameVersion baseGameVersion
     );
 
-    MCAPI void calculateDemandPricesDefaults();
-
-    MCAPI ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
-
-    MCFOLD int getBaseCountA() const;
-
-    MCAPI int getBaseCountB() const;
-
-    MCFOLD ::ItemInstance const& getBuyAItem() const;
-
-    MCFOLD ::ItemInstance const& getBuyBItem() const;
-
-    MCAPI int getDemand() const;
-
-    MCFOLD int getMaxUses() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::RecipeNetId const& getNetId() const;
-#endif
-
-    MCFOLD ::ItemInstance const& getSellItem() const;
-
-    MCFOLD int getTier() const;
-
-    MCFOLD uint getTraderExp() const;
-
-    MCFOLD int getUses() const;
-
-    MCAPI bool hasSecondaryBuyItem() const;
-
-    MCAPI void increaseMaxUses(int amount);
-
-    MCAPI void increaseUses(int count);
-
-    MCAPI void init(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
-
-    MCAPI bool isOutOfUses() const;
-
     MCAPI bool isSame(::MerchantRecipe const& lhs) const;
 
     MCAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
-
-    MCAPI void load(::CompoundTag const* tag);
-
-    MCAPI void setDemand(int demand);
-
-    MCAPI void setMaxUses(int maxUses);
-
-    MCAPI void setPriceMultiplierA(float priceMultiplier);
-
-    MCAPI void setPriceMultiplierB(float priceMultiplier);
-
-    MCAPI void setRewardExp(bool rewardExp);
-
-    MCFOLD void setTier(int tier);
-
-    MCAPI void setTraderExp(uint traderExp);
-
-    MCAPI void setUses(int uses);
-
-    MCFOLD bool shouldRewardExp() const;
 
     MCAPI ~MerchantRecipe();
     // NOLINTEND
@@ -131,12 +62,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
-
-    MCAPI void* $ctor(::CompoundTag const* tag);
-
     MCAPI void* $ctor(::ItemInstance const& buy, ::ItemInstance const& sell);
 
     MCAPI void* $ctor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);

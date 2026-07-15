@@ -32,7 +32,7 @@ public:
         ::Random&                                           random
     ) /*override*/;
 
-    virtual bool postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&) /*override*/;
+    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
 
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
     // NOLINTEND
@@ -40,24 +40,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI void $addChildren(
-        ::StructurePiece&                                   startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
-    );
-
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const&);
-
-    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

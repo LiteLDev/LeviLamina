@@ -67,7 +67,7 @@ public:
 
     virtual bool hasTellPerms() const;
 
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
+    virtual bool canUseAbility(::AbilitiesIndex ability) const;
 
     virtual bool isWorldBuilder() const;
 
@@ -109,23 +109,8 @@ public:
     // NOLINTBEGIN
     MCAPI CommandOrigin();
 
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAt(::BlockPos const& pos, int commandVersion) const;
-
     MCAPI ::std::unique_ptr<::CommandArea>
     getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
-
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(::BlockPos const& pos, int commandVersion) const;
-
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(
-        ::BlockPos const& min,
-        ::BlockPos const& max,
-        int               commandVersion,
-        bool              allowUnloadedChunks
-    ) const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isEditorWorld() const;
-#endif
     // NOLINTEND
 
 public:
@@ -137,12 +122,6 @@ public:
         ::NetworkIdentifier const&                  sourceId,
         ::SubClientId                               sourceSubId
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::NetworkIdentifier& sUnknownSource();
     // NOLINTEND
 
 public:
@@ -162,7 +141,7 @@ public:
 
     MCAPI bool $hasTellPerms() const;
 
-    MCFOLD bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+    MCFOLD bool $canUseAbility(::AbilitiesIndex ability) const;
 
     MCAPI bool $isWorldBuilder() const;
 

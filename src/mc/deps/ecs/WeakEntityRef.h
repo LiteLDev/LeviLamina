@@ -16,32 +16,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mWeakEntity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeakEntityRef& operator=(WeakEntityRef const&);
-    WeakEntityRef(WeakEntityRef const&);
-    WeakEntityRef();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);
-
-    MCAPI explicit operator ::WeakRef<::EntityContext>() const;
-
-    MCAPI bool operator!=(::WeakEntityRef entityRef) const;
-
-    MCAPI ::WeakEntityRef& operator=(::WeakEntityRef&&);
-
-    MCFOLD bool operator==(::WeakEntityRef entityRef) const;
-
-    MCFOLD bool operator==(::WeakRef<::EntityContext> entityRef) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakRef<::EntityContext> entityRef);
-    // NOLINTEND
 };

@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BindingFactory;
 class ClientBindingFactory;
 class ClientInputHandlerProxy;
 class ClientInputMappingFactory;
@@ -19,7 +18,6 @@ class IClientInstance;
 class IGameModuleApp;
 class InputHandler;
 class ItemStack;
-class MobEffectsLayout;
 class ScreenContext;
 struct ActorDataFlagComponent;
 struct MobEffectsComponent;
@@ -75,47 +73,21 @@ public:
 
     MCAPI bool _shouldUseGameInputMapping() const;
 
-    MCFOLD bool allowInteract() const;
-
-    MCAPI bool allowPicking() const;
-
     MCAPI bool canInteract() const;
-
-    MCAPI bool canPaddle() const;
-
-    MCAPI void clearInputDeviceQueues();
-
-    MCAPI void clearInvalidDownKeys();
-
-    MCFOLD ::BindingFactory& getBindingFactory();
-
-    MCAPI ::std::string getBoatExitText() const;
 
     MCAPI ::InputMode getCurrentInputMode() const;
 
     MCAPI void getCursorPos(float& xCursor, float& yCursor) const;
 
-    MCFOLD ::std::string const& getExpectedInGameInputMode() const;
-
-    MCFOLD ::InputBindingMode getInputBindingMode();
-
-    MCAPI bool getInteractActive() const;
-
     MCAPI ::std::string getInteractText() const;
 
     MCAPI bool getSplitscreenJoinPromptVisible() const;
 
-    MCAPI bool hasInteractText() const;
-
     MCAPI bool isBlockSelectToggled() const;
-
-    MCFOLD bool isCreativeMode() const;
 
     MCAPI bool isTouchGameplayAllowed() const;
 
     MCAPI void onConfigChanged(::Config const& c);
-
-    MCAPI void onMobEffectsChanged(::MobEffectsLayout const& layout);
 
     MCAPI void popInputMapping(bool inGame);
 
@@ -131,23 +103,15 @@ public:
 
     MCAPI void setDisableInput(bool disable);
 
-    MCAPI void setInputBindingMode(::InputBindingMode mode);
-
     MCAPI void setSuspendDirectionalInput(bool suspendDirectionalInput);
 
     MCAPI void setSuspendInput(bool suspendInput);
 
     MCAPI bool showBoatExit() const;
 
-    MCAPI bool showCodeBuilder() const;
-
-    MCAPI bool showImmersiveReader() const;
-
     MCAPI void updateInputMapping();
 
     MCAPI bool updateInputMode(::std::string const& mode);
-
-    MCAPI void updateInteractActiveState(bool value);
 
     MCAPI void updatePlayerState(
         ::gsl::not_null<::IClientInstance const*> client,

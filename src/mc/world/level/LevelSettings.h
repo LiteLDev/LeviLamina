@@ -8,10 +8,9 @@
 #include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/network/GamePublishSetting.h"
+#include "mc/network/ServerEditorConnectionPolicy.h"
 #include "mc/options/EduSharedUriResource.h"
-#include "mc/options/EducationEditionOffer.h"
 #include "mc/options/EducationEditionOfferValue.h"
-#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/util/BaseGameVersion.h"
 #include "mc/world/actor/player/PermissionsHandler.h"
 #include "mc/world/level/BlockPos.h"
@@ -30,7 +29,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Experiments;
 class LevelData;
 struct DimensionType;
 struct LevelSummary;
@@ -53,6 +51,8 @@ public:
     ::ll::TypedStorage<8, 48, ::SpawnSettings>                            mSpawnSettings;
     ::ll::TypedStorage<1, 1, bool>                                        mAchievementsDisabled;
     ::ll::TypedStorage<4, 4, ::Editor::WorldType>                         mEditorWorldType;
+    ::ll::TypedStorage<1, 1, bool>                                        mAllowAnonymousBlockDropsInEditorWorlds;
+    ::ll::TypedStorage<4, 4, ::ServerEditorConnectionPolicy>              mServerEditorConnectionPolicy;
     ::ll::TypedStorage<1, 1, bool>                                        mIsCreatedInEditor;
     ::ll::TypedStorage<1, 1, bool>                                        mIsExportedFromEditor;
     ::ll::TypedStorage<4, 4, int>                                         mTime;
@@ -87,7 +87,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                        mPersonaDisabled;
     ::ll::TypedStorage<1, 1, bool>                                        mCustomSkinsDisabled;
     ::ll::TypedStorage<1, 1, bool>                                        mEmoteChatMuted;
-    ::ll::TypedStorage<1, 1, bool>                                        mAllowListActive;
     ::ll::TypedStorage<4, 4, int>                                         mLimitedWorldWidth;
     ::ll::TypedStorage<4, 4, int>                                         mLimitedWorldDepth;
     ::ll::TypedStorage<8, 24, ::PermissionsHandler>                       mDefaultPermissions;
@@ -129,259 +128,21 @@ public:
 
     MCAPI LevelSettings(::LevelData const& data, ::DimensionType dimension);
 
-    MCAPI bool achievementsWillBeDisabledOnLoad() const;
-
-#ifdef LL_PLAT_S
-    MCAPI ::LevelSettings& addExcludedScriptModule(::mce::UUID moduleUUID);
-#endif
-
-    MCAPI bool cloudSaveForWorldIsEnabled() const;
-
-    MCFOLD bool educationFeaturesEnabled() const;
-
-    MCFOLD ::std::string const& educationProductID() const;
-
-    MCFOLD bool forceGameType() const;
-
-    MCFOLD bool getAdventureModeOverridesEnabled() const;
-
-    MCAPI bool getAllowListActive() const;
-
-    MCFOLD ::BaseGameVersion const& getBaseGameVersion() const;
-
-    MCFOLD ::std::string const& getBiomeOverride() const;
-
-    MCFOLD ::ChatRestrictionLevel getChatRestrictionLevel() const;
-
-    MCAPI ::CloudSaveLevelInfo const& getCloudSaveInfo() const;
-
-    MCAPI bool getCustomSkinsDisabled() const;
-
-    MCAPI ::DaylightCycle getDaylightCycle() const;
-
-    MCFOLD ::PermissionsHandler const& getDefaultPermissions() const;
-
-    MCFOLD ::BlockPos const& getDefaultSpawn() const;
-
-    MCAPI bool getDisablePlayerInteractions() const;
-
-    MCFOLD ::Editor::WorldType getEditorWorldType() const;
-
-    MCAPI ::EduSharedUriResource const& getEduSharedUriResource() const;
-
-    MCFOLD ::std::string const& getEducationCreatorID() const;
-
-    MCFOLD ::std::string const& getEducationCreatorWorldID() const;
-
-    MCFOLD ::EducationEditionOffer getEducationEditionOffer() const;
-
-    MCFOLD ::std::optional<::EducationLevelSettings> const& getEducationLevelSettings() const;
-
-    MCFOLD ::std::string const& getEducationReferrerID() const;
-
-    MCAPI bool getEmoteChatMuted() const;
-
-    MCFOLD ::std::vector<::mce::UUID> const& getExcludedScriptModules() const;
-
-    MCFOLD ::Experiments const& getExperiments() const;
-
-    MCFOLD ::Json::Value const& getFlatWorldOptions() const;
-
-    MCFOLD ::SharedTypes::Legacy::Difficulty getGameDifficulty() const;
-
-    MCFOLD ::GameRules const& getGameRules() const;
-
-    MCFOLD ::GameType getGameType() const;
-
-    MCFOLD ::GeneratorType getGenerator() const;
-
-    MCFOLD bool getImmutableWorld() const;
-
-    MCAPI bool getLanBroadcastIntent() const;
-
-    MCAPI float getLightningLevel() const;
-
-    MCFOLD int getLimitedWorldDepth() const;
-
-    MCFOLD int getLimitedWorldWidth() const;
-
-    MCFOLD bool getMultiplayerGameIntent() const;
-
-    MCFOLD ::NetherWorldType getNetherType() const;
-
-    MCFOLD bool getOnlySpawnV1Villagers() const;
-
-    MCAPI bool getPersonaDisabled() const;
-
-    MCFOLD ::Social::GamePublishSetting getPlatformBroadcastIntent() const;
-
-    MCFOLD float getRainLevel() const;
-
-    MCFOLD ::LevelSeed64 getSeed() const;
-
-    MCFOLD uint getServerChunkTickRange() const;
-
     MCAPI ::SpawnSettings getSpawnSettings() const;
 
-    MCFOLD int getTime() const;
-
-    MCFOLD ::WorldVersion getWorldVersion() const;
-
-    MCAPI ::Social::GamePublishSetting getXBLBroadcastIntent() const;
-
-    MCFOLD bool hasAchievementsDisabled() const;
-
-    MCFOLD bool hasBonusChestEnabled() const;
-
-    MCAPI bool hasCheatsEnabled() const;
-
-    MCFOLD bool hasCommandsEnabled() const;
-
-    MCFOLD bool hasConfirmedPlatformLockedContent() const;
-
-    MCAPI bool hasLockedBehaviorPack() const;
-
-    MCAPI bool hasLockedResourcePack() const;
-
-    MCFOLD bool hasStartWithMapEnabled() const;
-
-    MCFOLD bool isCreatedInEditor() const;
+    MCAPI bool hasCloudSaveAssociation() const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool isEditorTestWorld() const;
-#endif
-
-    MCAPI bool isEditorWorld() const;
-
-    MCFOLD bool isExportedFromEditor() const;
-
-    MCAPI bool isFromLockedTemplate() const;
-
-    MCFOLD bool isFromWorldTemplate() const;
-
-    MCFOLD bool isHardcore() const;
-
-    MCAPI bool isRandomSeedAllowed() const;
-
-    MCFOLD bool isTexturepacksRequired() const;
-
-    MCFOLD bool isWorldTemplateOptionLocked() const;
-
     MCAPI ::LevelSettings& operator=(::LevelSettings&&);
-
-#ifdef LL_PLAT_S
-    MCAPI ::LevelSettings& setAdventureModeOverridesEnabled(bool adventureModeOverridesEnabled);
-
-    MCAPI ::LevelSettings& setAllowListActive(bool active);
 #endif
 
     MCAPI ::LevelSettings& setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
-#ifdef LL_PLAT_C
-    MCAPI ::LevelSettings& setBiomeOverride(::std::string const& biomeName);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel chatRestrictionLevel);
-#endif
-
-    MCAPI ::LevelSettings& setCloudSaveInfo(::std::optional<::CloudSaveLevelInfo> cloudSaveInfo);
-
-#ifdef LL_PLAT_S
-    MCAPI ::LevelSettings& setCommandsEnabled(bool commandsEnabled);
-
-    MCAPI ::LevelSettings& setCustomSkinsDisabled(bool val);
-
-    MCAPI ::LevelSettings& setDefaultPlayerPermissions(::PlayerPermissionLevel playerPermissionLevel);
-
-    MCAPI ::LevelSettings& setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
-#endif
-
-    MCAPI ::LevelSettings& setDisablePlayerInteractions(bool disableInteractions);
-
-    MCAPI ::LevelSettings& setEditorWorldType(::Editor::WorldType editorWorldType);
-
-    MCAPI ::LevelSettings& setEducationCreatorID(::std::string id);
-
-    MCAPI ::LevelSettings& setEducationCreatorWorldID(::std::string id);
-
-#ifdef LL_PLAT_C
-    MCAPI ::LevelSettings& setEducationEditionOffer(::EducationEditionOffer offer);
-#endif
-
-    MCAPI ::LevelSettings& setEducationFeaturesEnabled(bool enabled);
-
-#ifdef LL_PLAT_C
-    MCAPI void setEducationLevelSettings(::EducationLevelSettings settings);
-#endif
-
-    MCAPI ::LevelSettings& setEducationProductID(::std::string id);
-
-    MCAPI ::LevelSettings& setEducationReferrerID(::std::string id);
-
-#ifdef LL_PLAT_S
-    MCAPI ::LevelSettings& setEmoteChatMuted(bool val);
-#endif
-
     MCAPI ::LevelSettings& setExperiments(::ExperimentStorage const& experiments);
 
-#ifdef LL_PLAT_S
-    MCAPI ::LevelSettings& setForceGameType(bool value);
-
-    MCAPI ::LevelSettings& setGameRules(::GameRules gameRules);
-
-    MCAPI ::LevelSettings& setGameType(::GameType gameType);
-
-    MCAPI ::LevelSettings& setGeneratorType(::GeneratorType generatorType);
-#endif
-
 #ifdef LL_PLAT_C
-    MCAPI ::LevelSettings& setImmutableWorld(bool immutable);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI ::LevelSettings& setIsHardcore(bool isHardcore);
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI ::LevelSettings& setLanBroadcastIntent(bool lanBroadcastIntent);
-
-    MCAPI ::LevelSettings& setMultiplayerGameIntent(bool multiplayerGameIntent);
-
-    MCAPI ::LevelSettings& setNetherType(::NetherWorldType netherType);
-
-    MCAPI void setNewWorldBehaviorPackIdentities(::std::vector<::PackInstanceId> const& identities);
-
-    MCAPI void setNewWorldResourcePackIdentities(::std::vector<::PackInstanceId> const& identities);
-#endif
-
-#ifdef LL_PLAT_S
-    MCAPI void setOnlySpawnV1Villagers(bool spawnV1Villagers);
-
-    MCAPI ::LevelSettings& setOverrideSavedSettings(bool overrideSaved);
-#endif
-
-    MCAPI ::LevelSettings& setPlatformBroadcastIntent(::Social::GamePublishSetting platformBroadcastIntent);
-
-#ifdef LL_PLAT_S
-    MCFOLD ::LevelSettings& setRandomSeed(::LevelSeed64 seed);
-
-    MCAPI ::LevelSettings& setServerChunkTickRange(uint serverChunkTickRange);
-#endif
-
     MCAPI ::LevelSettings& setSpawnSettings(::SpawnSettings spawnSettings);
-
-#ifdef LL_PLAT_S
-    MCAPI ::LevelSettings& setTexturePackRequired(bool texturePackRequired);
-
-    MCAPI ::LevelSettings& setUseMsaGamertagsOnly(bool useMsaGamertagsOnly);
 #endif
-
-    MCAPI ::LevelSettings& setXblBroadcastIntent(::Social::GamePublishSetting xblBroadcastIntent);
-
-    MCAPI bool shouldOverrideSavedSettings() const;
-
-    MCFOLD bool useMsaGamertagsOnly() const;
 
     MCAPI ~LevelSettings();
     // NOLINTEND

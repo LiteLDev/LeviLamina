@@ -39,40 +39,6 @@ public:
         ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions> imageOptions;
         ::ll::TypedStorage<1, 1, bool>                           succeeded;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FinishedRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI FinishedRequest(
-            ::Gameface::ResourceResponse         response,
-            ::std::string const&                 requestUrl,
-            ::Social::ProfileImageOptions const& imageOptions,
-            bool                                 succeeded
-        );
-
-        MCAPI ~FinishedRequest();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::Gameface::ResourceResponse         response,
-            ::std::string const&                 requestUrl,
-            ::Social::ProfileImageOptions const& imageOptions,
-            bool                                 succeeded
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -96,10 +62,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProfileImageResourceHandler() /*override*/;
+    virtual ~ProfileImageResourceHandler() /*override*/ = default;
 
     virtual ::Gameface::ResourceHandlerStatus
-    onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response) /*override*/;
+    onResourceRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceResponse&) /*override*/;
 
     virtual ::Gameface::ResourceHandlerStatus
     onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
@@ -128,27 +94,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
-    $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::Gameface::ResourceHandlerStatus
-    $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
-
-    MCAPI void $update();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

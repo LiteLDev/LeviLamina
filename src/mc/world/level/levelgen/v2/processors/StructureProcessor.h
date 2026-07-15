@@ -27,21 +27,21 @@ public:
     virtual ~StructureProcessor() = default;
 
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource& processedBlockInfo,
+        ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
     virtual ::std::vector<::br::worldgen::StructureBlockInfo> finalize(
-        ::IBlockSource&                                          region,
-        ::BlockPos                                               pos,
-        ::BlockPos                                               structurePos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
-        ::br::worldgen::StructurePlaceSettings const&            settings
+        ::IBlockSource&,
+        ::BlockPos,
+        ::BlockPos,
+        ::std::vector<::br::worldgen::StructureBlockInfo> const&,
+        ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks,
+        ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
     virtual ::br::worldgen::StructureProcessorType type() const;
@@ -66,29 +66,27 @@ public:
 
     MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>>
     Rule(::std::vector<::br::worldgen::processors::RuleSet> rules);
-
-    MCAPI static void bootstrap();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource& processedBlockInfo,
+        ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
         ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
     MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
-        ::IBlockSource&                                          region,
-        ::BlockPos                                               pos,
-        ::BlockPos                                               structurePos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
-        ::br::worldgen::StructurePlaceSettings const&            settings
+        ::IBlockSource&,
+        ::BlockPos,
+        ::BlockPos,
+        ::std::vector<::br::worldgen::StructureBlockInfo> const&,
+        ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks,
+        ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
     MCFOLD ::br::worldgen::StructureProcessorType $type() const;

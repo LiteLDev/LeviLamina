@@ -16,8 +16,6 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-namespace BlockEvents { class BlockPlaceEvent; }
-namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CoralPlantBlock : public ::BlockType {
@@ -43,7 +41,7 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool mayConsumeFertilizer(::BlockSource&) const /*override*/;
+    virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -60,12 +58,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CoralPlantBlock(::std::string const& nameId, int id, ::HashedString const& deadVersion);
-
-    MCAPI void checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -77,31 +69,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource&) const;
-
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCFOLD bool $isLavaBlocking() const;
-
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
-
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

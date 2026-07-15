@@ -17,16 +17,4 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>               mPriorityPresetId;
     ::ll::TypedStorage<1, 1, bool>                          mShowDebugRender;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CameraAimAssistSettingsComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

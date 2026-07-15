@@ -12,16 +12,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPassenger;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mVehicle;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorStartRidingEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -14,19 +14,6 @@ class RecipeIngredient;
 // clang-format on
 
 class ShapelessRecipe : public ::Recipe {
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ShapelessRecipe();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ShapelessRecipe& operator=(ShapelessRecipe const&);
-    ShapelessRecipe(ShapelessRecipe const&);
-    ShapelessRecipe();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,26 +30,6 @@ public:
         /*override*/;
 
     virtual int size() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ShapelessRecipe(::Recipe::ConstructionContext&& context);
-
-#ifdef LL_PLAT_C
-    MCAPI ShapelessRecipe(::ShapelessRecipe&& recipe);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ShapelessRecipe&& recipe);
-#endif
     // NOLINTEND
 
 public:

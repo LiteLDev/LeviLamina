@@ -17,18 +17,6 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>  mLocator;
     ::ll::TypedStorage<4, 12, ::Vec3>          mOffset;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorBindInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ParticleSystem

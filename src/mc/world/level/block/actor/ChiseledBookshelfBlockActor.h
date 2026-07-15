@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Container.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ class ItemStack;
 class SaveContext;
 // clang-format on
 
-class ChiseledBookshelfBlockActor : public ::BlockActor, public ::Container {
+class ChiseledBookshelfBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,9 +34,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int, ::ItemStack const&) /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -52,51 +52,37 @@ public:
 
     virtual ::Container const* getContainer() const /*override*/;
 
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
     virtual bool isEmpty() const /*override*/;
 
-    virtual bool canPushInItem(int slot, int item, ::ItemStack const&) const /*override*/;
+    virtual bool canPushInItem(int, int, ::ItemStack const&) const /*override*/;
 
-    virtual bool canPullOutItem(int slot, int, ::ItemStack const&) const /*override*/;
+    virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
     virtual bool addItemToFirstEmptySlot(::ItemStack const& item) /*override*/;
 
-    virtual void onChanged(::BlockSource& region) /*override*/;
+    virtual void onChanged(::BlockSource&) /*override*/;
 
-    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& helper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& context) const /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ChiseledBookshelfBlockActor(::BlockPos const& pos);
-
-    MCAPI void _loadItems(::CompoundTag const& base, ::ILevel& level);
-
-    MCAPI void _setItemInternal(int slot, ::ItemStack const& item, bool isLoading);
-
-    MCFOLD uint getLastInteractedSlot() const;
-
-    MCAPI ::ItemStack retrieveBook(int slot);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool allowedItem(::ItemStack const& item);
-
-    MCAPI static ::ChiseledBookshelfBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -108,56 +94,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
-
-    MCAPI ::std::string $getName() const;
-
-    MCFOLD int $getMaxStackSize() const;
-
-    MCFOLD int $getContainerSize() const;
-
-    MCFOLD void $startOpen(::Actor&);
-
-    MCFOLD void $stopOpen(::Actor& actor);
-
-    MCFOLD ::Container* $getContainer();
-
-    MCFOLD ::Container const* $getContainer() const;
-
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
-
-    MCAPI bool $isEmpty() const;
-
-    MCAPI bool $canPushInItem(int slot, int item, ::ItemStack const&) const;
-
-    MCAPI bool $canPullOutItem(int slot, int, ::ItemStack const&) const;
-
-    MCAPI bool $addItemToFirstEmptySlot(::ItemStack const& item);
-
-    MCAPI void $onChanged(::BlockSource& region);
-
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
-
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
-
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
-
-    MCAPI static void** $vftableForBlockActor();
     // NOLINTEND
 };

@@ -17,29 +17,6 @@ public:
     ::ll::TypedStorage<8, 208, ::OreUI::Property<::std::optional<::std::string>>> mDescription;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::std::optional<bool>>>          mDisabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SettingsOption();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    SettingsOption(int value, ::std::string const& label, ::std::optional<::std::string> description, bool disabled);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int value, ::std::string const& label, ::std::optional<::std::string> description, bool disabled);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

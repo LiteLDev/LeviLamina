@@ -11,10 +11,8 @@
 // clang-format off
 class ContentIdentity;
 class IContentKeyProvider;
-class IMinecraftEventing;
 class LevelData;
 class PackAccessStrategy;
-class TaskGroup;
 struct LevelSummary;
 namespace Core { class Path; }
 namespace Core { class Result; }
@@ -23,11 +21,6 @@ namespace Core { class Result; }
 namespace ExternalFileLevelStorage {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Bedrock::Result<void>
-_readLevelDataFromFile(::Core::Path const& datFilename, ::std::string const& worldID, ::LevelData& levelData);
-
-MCNAPI bool _writeLevelDat(::Core::Path const& datFilename, ::LevelData const& levelData);
-
 MCNAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
 
 MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
@@ -36,27 +29,14 @@ MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
     ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
 );
 
-MCNAPI ::std::vector<::std::string> const getImportantFiles();
-
 #ifdef LL_PLAT_C
 MCNAPI bool isLevelCloudSave(::Core::Path const& directory);
 #endif
-
-MCNAPI bool isLevelMarkedForSync(::Core::Path const& directory);
-
-MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::string const& name);
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
 MCNAPI ::Bedrock::Result<bool>
 readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData);
-
-MCNAPI ::Bedrock::Result<bool> readLevelDataFromFile(
-    ::Core::Path const&   directory,
-    ::std::string const&  levelId,
-    ::LevelData&          levelData,
-    ::IMinecraftEventing* eventing
-);
 
 MCNAPI bool readShallowLevelSummaryFromSyncFile(
     ::Core::Path const&  directory,
@@ -64,6 +44,7 @@ MCNAPI bool readShallowLevelSummaryFromSyncFile(
     ::LevelSummary&      summary
 );
 
+#ifdef LL_PLAT_C
 MCNAPI bool readSyncFileData(
     ::Core::Path const& directory,
     ::std::string&      levelName,
@@ -71,6 +52,7 @@ MCNAPI bool readSyncFileData(
     int64&              remoteTimestamp,
     bool&               isSyncUsable
 );
+#endif
 
 MCNAPI void saveLevelData(
     ::Core::Path const&  levelPath,
@@ -79,24 +61,13 @@ MCNAPI void saveLevelData(
     bool                 ignoreCache
 );
 
-MCNAPI void saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelData, ::LevelData const&);
-
-MCNAPI void saveLevelDisplayDataToCache(
-    ::std::string const&          levelId,
-    ::LevelData const&            levelData,
-    ::gsl::not_null<::TaskGroup*> taskGroup
-);
-
 #ifdef LL_PLAT_C
 MCNAPI void syncLevelInfoCache(::std::unordered_set<::Core::PathBuffer<::std::string>> const& levelRootPaths);
+
+MCNAPI ::Core::Result unMarkLevelAsCloudSave(::Core::Path const& directory);
+
+MCNAPI ::Core::Result unMarkLevelForSync(::Core::Path const& directory, bool deleteWorldFolderIfEmpty);
 #endif
-
-MCNAPI ::Core::Result validateLevelDat(::Core::Path filePath);
-// NOLINTEND
-
-// static variables
-// NOLINTBEGIN
-MCNAPI ::std::atomic<bool>& writingToCache();
 // NOLINTEND
 
 } // namespace ExternalFileLevelStorage

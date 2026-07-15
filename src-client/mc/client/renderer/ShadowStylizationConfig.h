@@ -4,16 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftEventing;
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
 namespace Editor::Services { class ClientDataTransferServiceProvider; }
-namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -53,12 +51,6 @@ public:
             ShadowStylizationSettings& operator=(ShadowStylizationSettings const&);
             ShadowStylizationSettings(ShadowStylizationSettings const&);
             ShadowStylizationSettings();
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-            // NOLINTEND
         };
 
     public:
@@ -75,21 +67,9 @@ public:
         ShadowStylizationConfigSettings();
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ShadowStylizationConfigSettings();
-        // NOLINTEND
-
-    public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static ::SemVersion const& VERSION();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -116,14 +96,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ShadowStylizationConfig(::IMinecraftEventing& eventing);
-
     MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
-
-    MCNAPI ::Puv::LoadResultAny
-    loadFromString(::cereal::ReflectionCtx const& ctx, ::std::string const& shadowStylizationJson);
-
-    MCNAPI ::std::optional<::std::string> serializeToString(::cereal::ReflectionCtx const& ctx) const;
     // NOLINTEND
 
 public:
@@ -136,20 +109,6 @@ public:
         ::LocalPlayer&                                         localPlayer,
         ::cereal::ReflectionCtx const&                         ctx
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& PAYLOAD_KEY();
-
-    MCNAPI static ::std::string_view const& SHADOW_STYLIZATION_GLOBAL_CONFIG_FILE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

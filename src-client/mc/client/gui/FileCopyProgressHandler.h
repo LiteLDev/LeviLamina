@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileCopyProgressHandler() /*override*/;
+    virtual ~FileCopyProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -87,34 +87,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel&);
 
-    MCAPI void $tick(::MinecraftScreenModel&);
-
-    MCFOLD void $onCancel(::MinecraftScreenModel&);
-
-    MCFOLD void $onExit(::MinecraftScreenModel&);
-
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
-
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
-
-    MCFOLD ::std::string $getTitleText() const;
-
-    MCAPI ::std::string $getName() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageMigrationProgressScreenController() /*override*/;
+    virtual ~StorageMigrationProgressScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -62,19 +62,9 @@ public:
         ::Bedrock::NonOwnerPointer<::Bedrock::StorageMigration::StorageMigrationService> const& service
     );
 
-    MCAPI void _handleError();
-
-    MCAPI void _handleIntro();
-
-    MCAPI void _handleRestartTransfer();
-
-    MCAPI void _handleTransferFinished();
-
     MCAPI void _registerBindings();
 
     MCAPI void _registerEventHandlers();
-
-    MCAPI void _showModal(::std::string const& modalName);
     // NOLINTEND
 
 public:
@@ -87,17 +77,11 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::std::string $getAdditionalScreenInfo() const;
+    MCAPI ::std::string $getAdditionalScreenInfo() const;
 
     MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 

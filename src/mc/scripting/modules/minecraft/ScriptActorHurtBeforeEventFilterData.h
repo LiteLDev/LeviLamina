@@ -27,8 +27,6 @@ public:
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::SharedTypes::Legacy::ActorDamageCause  damageCause
     );
-
-    MCAPI ~ScriptActorHurtBeforeEventFilterData();
     // NOLINTEND
 
 public:
@@ -43,12 +41,6 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::ScriptModuleMinecraft::ScriptActorData actorData, ::SharedTypes::Legacy::ActorDamageCause damageCause);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

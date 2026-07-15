@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
 namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct TemplatePoolElement; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -51,8 +50,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& DEFAULT_FALLBACK();
-
-    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:

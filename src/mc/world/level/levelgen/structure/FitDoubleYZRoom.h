@@ -16,26 +16,15 @@ class FitDoubleYZRoom : public ::MonumentRoomFitter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool fits(::RoomDefinition const& definition) const /*override*/;
+    virtual bool fits(::RoomDefinition const&) const /*override*/;
 
     virtual ::std::unique_ptr<::OceanMonumentPiece>
-    create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random&) /*override*/;
+    create(int&, ::std::shared_ptr<::RoomDefinition>, ::Random&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $fits(::RoomDefinition const& definition) const;
 
-    MCAPI ::std::unique_ptr<::OceanMonumentPiece>
-    $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

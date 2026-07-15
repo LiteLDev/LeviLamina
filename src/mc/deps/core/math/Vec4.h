@@ -11,16 +11,4 @@ public:
     ::ll::TypedStorage<4, 4, float> z;
     ::ll::TypedStorage<4, 4, float> w;
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::Vec4 const& MAX();
-
-    MCAPI static ::Vec4 const& MIN();
-
-    MCAPI static ::Vec4 const& ONE();
-
-    MCAPI static ::Vec4 const& ZERO();
-    // NOLINTEND
 };

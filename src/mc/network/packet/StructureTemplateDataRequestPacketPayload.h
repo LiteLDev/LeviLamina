@@ -17,16 +17,16 @@ public:
     ::ll::TypedStorage<1, 1, ::StructureTemplateRequestOperation> mRequestOperation;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
-    StructureTemplateDataRequestPacketPayload& operator=(StructureTemplateDataRequestPacketPayload const&);
     StructureTemplateDataRequestPacketPayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataRequestPacketPayload(::StructureTemplateDataRequestPacketPayload const&);
-
 #ifdef LL_PLAT_C
     MCAPI StructureTemplateDataRequestPacketPayload(
         ::std::string const&                structureName,
@@ -35,15 +35,11 @@ public:
         ::StructureTemplateRequestOperation requestOperation
     );
 #endif
-
-    MCAPI ~StructureTemplateDataRequestPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplateDataRequestPacketPayload const&);
-
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::std::string const&                structureName,
@@ -52,11 +48,5 @@ public:
         ::StructureTemplateRequestOperation requestOperation
     );
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

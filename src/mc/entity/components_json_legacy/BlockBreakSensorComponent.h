@@ -28,12 +28,11 @@ public:
     // prevent constructor by default
     BlockBreakSensorComponent& operator=(BlockBreakSensorComponent const&);
     BlockBreakSensorComponent(BlockBreakSensorComponent const&);
+    BlockBreakSensorComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockBreakSensorComponent();
-
     MCAPI void initialize(::Actor& actor);
 
     MCAPI ::BlockBreakSensorComponent& operator=(::BlockBreakSensorComponent&&);
@@ -41,12 +40,6 @@ public:
     MCAPI void updateSensorPos(::Vec3 const& newPos);
 
     MCAPI ~BlockBreakSensorComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

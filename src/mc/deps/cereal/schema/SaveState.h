@@ -16,6 +16,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::cereal::SerializerContext&> mContext;
     ::ll::TypedStorage<8, 8, ::cereal::SaverConfig const&> mConfig;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>>        mScope;
     // NOLINTEND
 
 public:

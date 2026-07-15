@@ -31,9 +31,9 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getName() const /*override*/;
 
-    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
+    virtual bool setup(::FilterTest::Definition const&, ::FilterInputs const&) /*override*/;
 
-    virtual bool evaluate(::FilterContext const& context) const /*override*/;
+    virtual bool evaluate(::FilterContext const&) const /*override*/;
 
     virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getDomain() const /*override*/;
 
@@ -43,22 +43,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getName() const;
 
-    MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
-
-    MCNAPI bool $evaluate(::FilterContext const& context) const;
-
-    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;
-
-    MCNAPI ::Json::Value $_serializeDomain() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

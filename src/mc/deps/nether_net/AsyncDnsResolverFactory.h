@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class SocketAddress; }
 namespace webrtc { class AsyncDnsResolverInterface; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace NetherNet {
@@ -36,30 +36,16 @@ public:
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
+    CreateAndResolve(::webrtc::SocketAddress const&, ::absl::AnyInvocable<void()>) /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
+    CreateAndResolve(::webrtc::SocketAddress const&, int, ::absl::AnyInvocable<void()>) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $Create();
 
-    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    $CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
-
-    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    $CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

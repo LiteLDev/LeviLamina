@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 #include "mc/scripting/modules/minecraft/ErrorMemberType.h"
 
 // auto generated forward declare list
@@ -55,7 +55,7 @@ public:
         ::std::string_view                       entityName
     );
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptInvalidActorError&
+    MCAPI ::ScriptModuleMinecraft::ScriptInvalidActorError&
     operator=(::ScriptModuleMinecraft::ScriptInvalidActorError&&);
 
     MCAPI ~ScriptInvalidActorError();
@@ -70,7 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptInvalidActorError const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptInvalidActorError const&);
 
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType    memberType,
@@ -98,7 +98,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

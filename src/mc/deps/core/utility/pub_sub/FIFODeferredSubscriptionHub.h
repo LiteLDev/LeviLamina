@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/pub_sub/ConnectPosition.h"
 #include "mc/deps/core/utility/pub_sub/DeferredSubscriptionHub.h"
 #include "mc/deps/core/utility/pub_sub/DeferredSubscriptionHubBase.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 namespace Bedrock::PubSub {
 
@@ -14,7 +15,7 @@ class FIFODeferredSubscriptionHub : public ::Bedrock::PubSub::DeferredSubscripti
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 560> mUnke1f3f8;
+    ::ll::UntypedStorage<8, 560> mUnka66d8b;
     // NOLINTEND
 
 public:
@@ -32,8 +33,11 @@ public:
 
     virtual bool _runOneEvent() /*override*/;
 
-    virtual void
-        _enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>) /*override*/;
+    virtual void _enqueue(
+        ::brstd::move_only_function<void()>,
+        ::Bedrock::PubSub::ConnectPosition,
+        ::std::optional<int>
+    ) /*override*/;
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptDimensionLocation.h"
 #include "mc/scripting/modules/minecraft/ScriptWaypoint.h"
 
@@ -39,12 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setDimensionLocation(::ScriptModuleMinecraft::ScriptDimensionLocation const& dimensionLocation);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
@@ -53,23 +47,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isValid() const;
 
-    MCAPI ::Scripting::Result<
-        ::ScriptModuleMinecraft::ScriptDimensionLocation,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    $getDimensionLocation() const;
-
-    MCAPI ::std::unique_ptr<::ServerWaypoint> $createWaypoint() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

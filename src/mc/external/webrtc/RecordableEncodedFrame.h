@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/VideoCodecType.h"
+#include "mc/external/webrtc/VideoRotation.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -46,6 +47,8 @@ public:
     virtual ::webrtc::scoped_refptr<::webrtc::EncodedImageBufferInterface const> encoded_buffer() const = 0;
 
     virtual ::std::optional<::webrtc::ColorSpace> color_space() const = 0;
+
+    virtual ::std::optional<::webrtc::VideoRotation> video_rotation() const = 0;
 
     virtual ::webrtc::VideoCodecType codec() const = 0;
 

@@ -58,21 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Tag();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::std::unique_ptr<::Tag>> newTag(::Tag::Type type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -80,18 +68,10 @@ public:
     // NOLINTBEGIN
     MCFOLD void $deleteChildren();
 
-    MCFOLD bool $equals(::Tag const& rhs) const;
-
     MCAPI void $print(::PrintStream& out) const;
 
     MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

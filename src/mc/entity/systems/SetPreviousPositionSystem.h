@@ -26,9 +26,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    _doSetPreviousPositionSystem(::StrictEntityContext const& stateVectorComponent, ::StateVectorComponent&);
-
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

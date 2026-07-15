@@ -40,10 +40,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool addSource(
-        ::CircuitSceneGraph&         info,
-        ::CircuitTrackingInfo const& dampening,
-        int&                         bDirectlyPowered,
-        bool&
+        ::CircuitSceneGraph&         graph,
+        ::CircuitTrackingInfo const& info,
+        int&                         dampening,
+        bool&                        bDirectlyPowered
     ) /*override*/;
 
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
@@ -63,14 +63,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComparatorCapacitor();
-
-    MCAPI void clearAnalogStrength(uchar dir);
-
-    MCAPI bool isSubtractMode();
-
-    MCAPI void setAnalogStrength(int strength, uchar dir);
-
-    MCFOLD void setMode(::ComparatorCapacitor::Mode mode);
     // NOLINTEND
 
 public:
@@ -83,7 +75,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool
-    $addSource(::CircuitSceneGraph& info, ::CircuitTrackingInfo const& dampening, int& bDirectlyPowered, bool&);
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
@@ -95,7 +87,7 @@ public:
 
     MCFOLD void $setOldStrength(short strength);
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
 
 
     // NOLINTEND

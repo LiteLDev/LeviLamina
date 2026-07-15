@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_20_80 { struct ParticleEventRandomNode; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -31,32 +30,29 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleEventNode& operator=(ParticleEventNode const&);
     ParticleEventNode();
 
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode&&);
+#endif
 
     MCAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode const&);
 
-    MCAPI ::SharedTypes::v1_20_80::ParticleEventNode& operator=(::SharedTypes::v1_20_80::ParticleEventNode&&);
-
-    MCAPI ::SharedTypes::v1_20_80::ParticleEventNode& operator=(::SharedTypes::v1_20_80::ParticleEventNode const&);
+    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEventNode const&) const;
 
     MCAPI ~ParticleEventNode();
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode&&);
+#endif
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode const&);
     // NOLINTEND

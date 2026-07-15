@@ -42,22 +42,16 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI SurfaceMaterialAdjustmentMaterials(
-            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&&
-        );
-
-        MCAPI SurfaceMaterialAdjustmentMaterials(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                 SurfaceMaterialAdjustmentMaterials const&
         );
 
         MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&
-        operator=(
-            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&&
-        );
-
-        MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&
         operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                       SurfaceMaterialAdjustmentMaterials const&);
+
+        MCAPI bool operator==(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                                  SurfaceMaterialAdjustmentMaterials const&) const;
 
         MCAPI ~SurfaceMaterialAdjustmentMaterials();
         // NOLINTEND
@@ -65,10 +59,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&&
-        );
-
         MCAPI void* $ctor(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                 SurfaceMaterialAdjustmentMaterials const&

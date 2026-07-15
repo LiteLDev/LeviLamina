@@ -28,21 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void dropHangingActor(::StrictEntityContext const& entity) /*override*/;
+    virtual void dropHangingActor(::StrictEntityContext const&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $dropHangingActor(::StrictEntityContext const& entity);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

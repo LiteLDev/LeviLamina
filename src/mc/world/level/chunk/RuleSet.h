@@ -10,10 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
-class CompoundTag;
-class IRandom;
-namespace Util { class XXHash; }
 // clang-format on
 
 namespace br::worldgen::processors {
@@ -37,28 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RuleSet(::br::worldgen::processors::RuleSet&&);
-
     MCAPI RuleSet(::br::worldgen::processors::RuleSet const&);
-
-    MCAPI void appendMetadataKey(::Util::XXHash& hash) const;
-
-    MCAPI ::br::worldgen::processors::RuleSet& operator=(::br::worldgen::processors::RuleSet&&);
-
-    MCFOLD ::Block const& outputState() const;
-
-    MCAPI ::std::unique_ptr<::CompoundTag> outputTag(::IRandom& random, ::CompoundTag const* existingTag) const;
-
-    MCAPI bool test(
-        ::Block const& inputState,
-        ::Block const& locState,
-        ::BlockPos     inTemplatePos,
-        ::BlockPos     worldPos,
-        ::BlockPos     reference,
-        ::IRandom&     random
-    ) const;
-
-    MCAPI ::br::worldgen::processors::RuleSet withLoc(::br::worldgen::processors::BlockRules::Test loc);
 
     MCAPI ::br::worldgen::processors::RuleSet withModifier(::br::worldgen::processors::BlockEntity::Modifier modifier);
 
@@ -68,17 +43,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::RuleSet
-    from(::br::worldgen::processors::BlockRules::Test input, ::Block const& output);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::RuleSet&&);
-
     MCAPI void* $ctor(::br::worldgen::processors::RuleSet const&);
     // NOLINTEND
 

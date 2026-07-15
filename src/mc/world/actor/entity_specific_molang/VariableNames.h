@@ -16,6 +16,7 @@ MCAPI ::HashedString const& ANIMATION_AMOUNT();
 
 MCAPI ::HashedString const& ANIMATION_AMOUNT_PREV();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& ARMOR_STAND();
 
 MCAPI ::HashedString const& ATTACK_ANIMATION_TICK();
@@ -29,9 +30,11 @@ MCAPI ::HashedString const& CHARGE_AMOUNT();
 MCAPI ::HashedString const& CROSSBOW_CHARGE();
 
 MCAPI ::HashedString const& DAMAGE_NEARBY_MOBS();
+#endif
 
 MCAPI ::HashedString const& DECOR_TEXTURE_INDEX();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& GLIDING_SPEED_VALUE();
 
 MCAPI ::HashedString const& GOAT_HAS_LEFT_HORN();
@@ -93,11 +96,13 @@ MCAPI ::HashedString const& IS_BLOCKING();
 MCAPI ::HashedString const& IS_BOW_AND_ARROW();
 
 MCAPI ::HashedString const& IS_BRANDISHING_SPEAR();
+#endif
 
 MCAPI ::HashedString const& IS_CHARGING();
 
 MCAPI ::HashedString const& IS_FLASHING();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& IS_HOLDING_ITEM();
 
 MCAPI ::HashedString const& IS_HOLDING_LEFT();
@@ -111,9 +116,11 @@ MCAPI ::HashedString const& IS_SNEAKING();
 MCAPI ::HashedString const& IS_TOOTING_GOAT_HORN();
 
 MCAPI ::HashedString const& IS_USING_BRUSH();
+#endif
 
 MCAPI ::HashedString const& JUMP_ROTATION();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& LEFT_ARM_SWIM_AMOUNT();
 
 MCAPI ::HashedString const& LIE_DOWN_AMOUNT();
@@ -127,23 +134,29 @@ MCAPI ::HashedString const& OFFER_FLOWER_TICK();
 MCAPI ::HashedString const& OPEN_MOUTH();
 
 MCAPI ::HashedString const& PUFFED_STATE();
+#endif
 
 MCAPI ::HashedString const& RAISE_ARMS();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& RIGHT_ARM_SWIM_AMOUNT();
 
 MCAPI ::HashedString const& SHAKE_TAIL();
 
 MCAPI ::HashedString const& SHOULD_BOW_HEAD();
+#endif
 
 MCAPI ::HashedString const& SHULKER();
 
 MCAPI ::HashedString const& SQUID();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& STAND_ANIM();
+#endif
 
 MCAPI ::HashedString const& STATE();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& SWIM_AMOUNT();
 
 MCAPI ::HashedString const& TROPICAL_FISH();
@@ -151,6 +164,7 @@ MCAPI ::HashedString const& TROPICAL_FISH();
 MCAPI ::HashedString const& USE_ITEM_INTERVAL_PROGRESS();
 
 MCAPI ::HashedString const& USE_ITEM_STARTUP_PROGRESS();
+#endif
 
 MCAPI ::HashedString const& WING_FLAP();
 // NOLINTEND

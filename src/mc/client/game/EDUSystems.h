@@ -18,16 +18,8 @@ namespace Identity { struct ActiveDirectoryIdentityParameters; }
 namespace Social { class IEduMultiplayerHeadless; }
 namespace edu::auth { struct CredsLost; }
 class AbstractScene;
-class ActiveDirectorySystem;
-class IClientInstance;
-class IEDUDiscoveryService;
 class IMinecraftGame;
-class LessonInfo;
-class LibraryDeeplinkListener;
 class ServicePackSystem;
-class WebviewSystem;
-namespace EduCloud { struct IEduCloudSaveSystem; }
-namespace Social { class MultiplayerService; }
 // clang-format on
 
 class EDUSystems : public ::IEDUSystems, public ::edu::auth::CredentialsObserver {
@@ -69,11 +61,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~EDUSystems() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~EDUSystems() /*override*/;
-#endif
 
     virtual ::Identity::IEduAuth& getEduAuth() const /*override*/;
 
@@ -82,7 +70,7 @@ public:
 #else // LL_PLAT_C
     virtual ::Social::IEduMultiplayerHeadless& getMultiplayerHeadless() const /*override*/;
 
-    virtual void onNotify(::EDUConfigData const& state) /*override*/;
+    virtual void onNotify(::EDUConfigData const& config) /*override*/;
 
     virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state) /*override*/;
 #endif
@@ -99,45 +87,18 @@ public:
         ::Identity::ActiveDirectoryIdentityParameters&& activeDirectoryIdentityParameters
     );
 
-    MCNAPI void _setupImmersiveReaderListener(::IClientInstance& client);
-
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity();
-
-    MCNAPI ::ActiveDirectorySystem& getActiveDirectorySystem();
-
-    MCNAPI ::LibraryDeeplinkListener* getDeepLinkListener() const;
-
-    MCNAPI ::IEDUDiscoveryService& getDiscoveryService();
-
-    MCNAPI ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> getEduCloudSaveSystem();
-
-    MCNAPI ::LessonInfo& getLessonInfo() const;
-
-    MCNAPI void
-    getMultiplayerServiceListToRegister(::std::vector<::std::shared_ptr<::Social::MultiplayerService>>& inout);
-
     MCNAPI ::std::string getReferrerId() const;
-
-    MCNAPI ::ServicePackSystem* getServicePackSystem() const;
-
-    MCNAPI ::WebviewSystem* getWebviewSystem();
 
     MCNAPI ::ServicePackSystem*
     initializeServicePackSystem(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> identity);
 
     MCNAPI bool needsFramePriority(::AbstractScene* activeScene) const;
 
-    MCNAPI void onClientLevelExit();
-
     MCNAPI void onInitFinished();
-
-    MCNAPI void setDeepLinkListener(::std::unique_ptr<::LibraryDeeplinkListener> listener);
 
     MCNAPI void setReferrerId(::std::string referrerId);
 
     MCNAPI void setReferrerType(::std::string referrerType);
-
-    MCNAPI void tick(bool isAuthenticated) const;
 #endif
     // NOLINTEND
 
@@ -154,32 +115,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::Identity::IEduAuth& $getEduAuth() const;
 
-    MCNAPI ::Social::IEduMultiplayerHeadless& $getMultiplayerHeadless() const;
-
-    MCNAPI void $onNotify(::EDUConfigData const& state);
-
-    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForCredentialsObserver();
-
-    MCNAPI static void** $vftableForIEDUSystems();
     // NOLINTEND
 };

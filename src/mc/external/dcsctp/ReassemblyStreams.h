@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/dcsctp/AnyForwardTsnChunk.h"
 #include "mc/external/dcsctp/UnwrappedSequenceNumber.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -30,11 +31,12 @@ public:
 
     virtual uint64 HandleForwardTsn(
         ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn,
-        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>              skipped_streams
+        ::webrtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const, 18446744073709546905> skipped_streams
     ) = 0;
 
-    virtual void
-    ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids) = 0;
+    virtual void ResetStreams(
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905> stream_ids
+    ) = 0;
 
     virtual ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const = 0;
 

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -45,15 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EditWorld(
-        ::std::function<::ILevelListCache&()> levelListCacheProvider,
-        ::ui::ScreenTechStackSelector const&  screenTechStackSelector
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string composeRoute(::std::string worldId);
@@ -62,22 +52,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> LEGACY_ROUTE();
-
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> PACK_ID();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::function<::ILevelListCache&()> levelListCacheProvider,
-        ::ui::ScreenTechStackSelector const&  screenTechStackSelector
-    );
     // NOLINTEND
 
 public:

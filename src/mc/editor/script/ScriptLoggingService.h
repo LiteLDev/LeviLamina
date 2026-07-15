@@ -3,16 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/editor/logging/LogLevel.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { struct LocalizationEntry; }
-namespace Editor::ScriptModule { class ScriptLogProperties; }
-namespace Editor::Services { class LoggingServiceProvider; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -33,51 +27,9 @@ public:
     ScriptLoggingService();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptLoggingService(
-        ::Editor::Services::LoggingServiceProvider* loggingService,
-        ::Scripting::WeakLifetimeScope const&       scope
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> _logMessage(
-        ::Editor::LogLevel                                           level,
-        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
-        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> debug(
-        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
-        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> error(
-        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
-        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> info(
-        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
-        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> warning(
-        ::std::variant<::std::string, ::Editor::LocalizationEntry>   message,
-        ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Editor::Services::LoggingServiceProvider* loggingService, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

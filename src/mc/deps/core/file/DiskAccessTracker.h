@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/DiskAccessDiagnostics.h"
-#include "mc/deps/core/file/WriteOperation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -90,8 +89,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit DiskAccessTracker(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
 
-    MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation path, ::Core::PathView);
-
 #ifdef LL_PLAT_C
     MCNAPI void _computeTrackerStats(
         ::Core::DiskAccessTracker::TrackerStats& trackerStats,
@@ -136,30 +133,14 @@ public:
             shouldRepeatLowTelemetryFunc
     );
 
-    MCNAPI void showVerboseLogs(bool showLogs);
-
     MCNAPI void update();
 #endif
-
-    MCNAPI ~DiskAccessTracker();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Core::DiskAccessTracker& getDiskAccessTracker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

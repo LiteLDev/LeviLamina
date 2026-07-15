@@ -19,14 +19,10 @@ namespace OreUI { class FramesToPaintQueue; }
 namespace OreUI { class IFacetRegistry; }
 namespace OreUI { class IView; }
 namespace OreUI { class LayoutScheduler; }
-namespace OreUI { class TextInputHandler; }
-namespace OreUI { class ViewInputHandler; }
-namespace OreUI { struct DebugData; }
 namespace OreUI::Detail { class ViewContextFactory; }
 namespace cohtml { class ITimeZoneProvider; }
 namespace cohtml { class System; }
 namespace cohtml { class SystemRenderer; }
-namespace cohtml { class View; }
 // clang-format on
 
 namespace OreUI {
@@ -59,7 +55,7 @@ public:
     ::ll::TypedStorage<8, 8, ::OreUI::FramesToPaintQueue&>                         mFramesToPaint;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::ViewsCoordinator::ViewEntry>> mViews;
     ::ll::TypedStorage<8, 96, ::OreUI::ViewsCacheRegistry>                         mViewsCacheRegistry;
-    ::ll::TypedStorage<8, 8, ::OreUI::DebugData&>                                  mDebugData;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string_view)>>           mShowDebugToast;
     // NOLINTEND
 
 public:
@@ -82,32 +78,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ViewsCoordinator(
-        ::cohtml::System*            system,
-        ::cohtml::SystemRenderer*    systemRenderer,
-        ::cohtml::ITimeZoneProvider* timeZoneProvider,
-        ::OreUI::LayoutScheduler&    layoutScheduler,
-        ::OreUI::FramesToPaintQueue& framesToPaint,
-        ::OreUI::DebugData&          debugData
+        ::cohtml::System*                         system,
+        ::cohtml::SystemRenderer*                 systemRenderer,
+        ::cohtml::ITimeZoneProvider*              timeZoneProvider,
+        ::OreUI::LayoutScheduler&                 layoutScheduler,
+        ::OreUI::FramesToPaintQueue&              framesToPaint,
+        ::std::function<void(::std::string_view)> showDebugToast
     );
-
-    MCAPI ::std::unique_ptr<::OreUI::ViewInputHandler> _createInputHandler(
-        ::cohtml::View&                              gamefaceView,
-        ::std::unique_ptr<::OreUI::TextInputHandler> textInputHandler,
-        ::IClientInstance&                           clientInstance
-    ) const;
-
-    MCAPI ::OreUI::ViewId _createView(
-        ::OreUI::Detail::ViewContextFactory&       contextFactory,
-        ::IClientInstance&                         clientInstance,
-        ::std::string const&                       url,
-        ::std::unique_ptr<::OreUI::IFacetRegistry> facets
-    );
-
-    MCAPI void _destroyView(::OreUI::ViewId viewId);
-
-    MCAPI ::std::vector<::OreUI::ViewId> _getViewIds();
-
-    MCAPI void clearAllViews();
 
     MCAPI void clearUnusedCachedViews(::SubClientId subClientId);
 
@@ -123,12 +100,6 @@ public:
 
     MCAPI void onKeyboardDismissed();
 
-    MCAPI void onResume();
-
-    MCAPI void onSuspend();
-
-    MCAPI void reloadAllViews();
-
     MCAPI void setTextBoxState(::TextBoxStateChange const& stateChange);
 
     MCAPI void update(double time);
@@ -138,12 +109,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::cohtml::System*            system,
-        ::cohtml::SystemRenderer*    systemRenderer,
-        ::cohtml::ITimeZoneProvider* timeZoneProvider,
-        ::OreUI::LayoutScheduler&    layoutScheduler,
-        ::OreUI::FramesToPaintQueue& framesToPaint,
-        ::OreUI::DebugData&          debugData
+        ::cohtml::System*                         system,
+        ::cohtml::SystemRenderer*                 systemRenderer,
+        ::cohtml::ITimeZoneProvider*              timeZoneProvider,
+        ::OreUI::LayoutScheduler&                 layoutScheduler,
+        ::OreUI::FramesToPaintQueue&              framesToPaint,
+        ::std::function<void(::std::string_view)> showDebugToast
     );
     // NOLINTEND
 

@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundBlockVolumeItem;
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -25,23 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void toCompoundBlockVolumeItem(::CompoundBlockVolumeItem& item) const;
-
-    MCAPI ~ScriptCompoundBlockVolumeItem();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bindInterface();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

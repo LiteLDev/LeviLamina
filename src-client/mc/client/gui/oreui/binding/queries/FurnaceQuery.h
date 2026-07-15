@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { class ClientDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -24,39 +23,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FurnaceQuery();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double time) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit FurnaceQuery(::OreUI::ClientDependencies const& client);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    virtual void update(double) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double time);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 

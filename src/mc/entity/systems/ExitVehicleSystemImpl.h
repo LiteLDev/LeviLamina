@@ -3,18 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
-#include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
-#include "mc/deps/ecs/strict/Exclude.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
-#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
@@ -22,25 +16,17 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
-class GetCollisionShapeInterface;
-class IConstBlockSource;
 class StrictEntityContext;
-class Vec3;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
-struct ActorDataSeatOffsetComponent;
 struct ActorGameTypeComponent;
-struct ActorIsBeingDestroyedFlagComponent;
 struct ActorRotationComponent;
 struct ActorSetPositionRequestComponent;
 struct ActorTypeComponent;
 struct CamelFlagComponent;
 struct CanStandOnSnowFlagComponent;
 struct DimensionTypeComponent;
-struct DoesServerAuthOnlyDismountFlagComponent;
 struct EjectedByActivatorRailFlagComponent;
-struct ExitFromPassengerFlagComponent;
 struct ExternalDataComponent;
 struct FallDistanceComponent;
 struct HasLightweightFamilyFlagComponent;
@@ -49,7 +35,6 @@ struct LocalConstBlockSourceFactoryComponent;
 struct MobBodyRotationComponent;
 struct MobFlagComponent;
 struct MovementAbilitiesComponent;
-struct MovementInterpolatorComponent;
 struct OffsetsComponent;
 struct ParrotFlagComponent;
 struct PassengerComponent;
@@ -223,115 +208,6 @@ public:
             ::EntityFactoryT<>>& executionContext,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tickExitVehicle(
-        ::StrictEntityContext const&                            entity,
-        ::PassengerComponent const&                             passenger,
-        ::AABBShapeComponent const&                             aabb,
-        ::StateVectorComponent const&                           svc,
-        ::OffsetsComponent const&                               offsetsComponent,
-        ::ActorDataSeatOffsetComponent const&                   actorDataSeatOffset,
-        ::ActorRotationComponent&                               rotation,
-        ::Optional<::ExitFromPassengerFlagComponent const>      exitFromPassengerFlag,
-        ::Optional<::ActorIsBeingDestroyedFlagComponent const>  actorIsBeingDestroyedFlag,
-        ::Optional<::EjectedByActivatorRailFlagComponent const> ejectedByActivatorRailFlagComponent,
-        ::BaseGameVersion const&                                baseGameVersion,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::VehicleComponent>,
-            ::Exclude<::DoesServerAuthOnlyDismountFlagComponent>,
-            ::StateVectorComponent const,
-            ::ActorRotationComponent const,
-            ::PostTickPositionDeltaComponent const,
-            ::Optional<::MovementInterpolatorComponent const>> const& vehicleView,
-        ::EntityModifier<::ActorSetPositionRequestComponent>&         modifier,
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::StopRidingRequestComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent,
-                ::EjectedByActivatorRailFlagComponent,
-                ::PostTickPositionDeltaComponent>,
-            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
-            ::AddRemove<::ActorSetPositionRequestComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>&   executionContext,
-        bool                       isClientSide,
-        ::IConstBlockSource const& region
-    );
-
-    MCAPI static auto createViews(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::StopRidingRequestComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent,
-                ::EjectedByActivatorRailFlagComponent,
-                ::PostTickPositionDeltaComponent>,
-            ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
-            ::AddRemove<::ActorSetPositionRequestComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
-
-    MCAPI static bool tryPlaceAt(
-        ::Vec3 const&                                      groundPos,
-        ::AABB const&                                      aabbEntity,
-        ::IConstBlockSource const&                         region,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    );
     // NOLINTEND
 
 public:

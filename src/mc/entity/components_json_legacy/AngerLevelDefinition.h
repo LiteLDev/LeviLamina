@@ -32,8 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addOnIncreaseSoundDefinition(::SoundDefinition const& soundDefinition);
-
     MCAPI void initialize(::EntityContext& entity, ::AngerLevelComponent& component) const;
     // NOLINTEND
 

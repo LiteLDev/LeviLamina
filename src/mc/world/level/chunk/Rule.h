@@ -29,11 +29,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource&                           region,
+        ::IBlockSource& region,
+        ::BlockPos,
         ::BlockPos                                structurePos,
-        ::BlockPos                                originalBlockInfo,
-        ::br::worldgen::StructureBlockInfo const& processedBlockInfo,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo const& originalBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&      processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
@@ -43,20 +43,14 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::Rule from(::std::vector<::br::worldgen::processors::RuleSet> rules);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource&                           region,
+        ::IBlockSource& region,
+        ::BlockPos,
         ::BlockPos                                structurePos,
-        ::BlockPos                                originalBlockInfo,
-        ::br::worldgen::StructureBlockInfo const& processedBlockInfo,
-        ::br::worldgen::StructureBlockInfo&&,
+        ::br::worldgen::StructureBlockInfo const& originalBlockInfo,
+        ::br::worldgen::StructureBlockInfo&&      processedBlockInfo,
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 

@@ -4,14 +4,6 @@
 
 namespace Bedrock::Memory {
 
-struct MoodyCamelBedrockMemoryTraits : public ::moodycamel::ConcurrentQueueDefaultTraits {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static void free(void* ptr);
-
-    MCAPI static void* malloc(uint64 size);
-    // NOLINTEND
-};
+struct MoodyCamelBedrockMemoryTraits : public ::moodycamel::ConcurrentQueueDefaultTraits {};
 
 } // namespace Bedrock::Memory

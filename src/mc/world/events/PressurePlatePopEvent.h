@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, int const>                                     mPreviousRedstonePower;
     ::ll::TypedStorage<4, 4, int const>                                     mRedstonePower;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PressurePlatePopEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

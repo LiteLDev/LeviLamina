@@ -16,22 +16,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResolvedTextureData& operator=(ResolvedTextureData const&);
-    ResolvedTextureData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResolvedTextureData(::UI::Resources::ResolvedTextureData const&);
-
     MCAPI ~ResolvedTextureData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::UI::Resources::ResolvedTextureData const&);
     // NOLINTEND
 
 public:

@@ -19,18 +19,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::Block const*>>> mBuffer;
     ::ll::TypedStorage<8, 40, ::BlockVolume>                                   mVolume;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BlockVolumeCacheItem();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

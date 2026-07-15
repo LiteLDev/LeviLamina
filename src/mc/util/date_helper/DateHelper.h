@@ -30,8 +30,6 @@ MCNAPI ::std::string getDurationAsString(
     ::I18n&                      i18n
 );
 
-MCNAPI ::std::pair<::std::string const, ::std::string const> getHourAndMinute(::std::string const& time);
-
 MCNAPI ::std::string getHowLongAgoAsString(int64 now, int64 time);
 
 MCNAPI ::std::string getHowLongAgoAsStringNarration(int64 now, int64 time);
@@ -50,9 +48,11 @@ MCNAPI ::std::string removeSeconds(::std::string const& timeStr);
 
 #ifdef LL_PLAT_C
 MCNAPI ::std::string toLocalDate(int64 time);
+#endif
 
 MCNAPI ::std::string toLocalShortDateTime(int64 time);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string toLocalTime(int64 time);
 #endif
 // NOLINTEND

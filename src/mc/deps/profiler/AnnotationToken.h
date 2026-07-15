@@ -6,9 +6,6 @@
 // clang-format off
 namespace Bedrock::Profile { class ScopeStackStorage; }
 namespace Bedrock::Profiler::details { struct DynamicProfLabel; }
-namespace Bedrock::Profiler::details { struct StaticProfLabel; }
-namespace Core::Profile { class ProfileGroup; }
-namespace brstd { struct source_location; }
 // clang-format on
 
 namespace Core::Profile {
@@ -106,36 +103,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AnnotationToken(
-        ::Core::Profile::ProfileGroup const&          group,
-        uchar                                         flags,
-        ::Bedrock::Profiler::details::StaticProfLabel label,
-        uint                                          color,
-        ::brstd::source_location const&               location
-    );
-
-#ifdef LL_PLAT_C
-    MCNAPI bool emitCounterValue(int64 value);
-#endif
-
     MCNAPI bool enterScopeInternal(
         ::Bedrock::Profile::ScopeStackStorage&                          scope,
         ::std::optional<::Bedrock::Profiler::details::DynamicProfLabel> dynamicLabel
     );
 
     MCNAPI ~AnnotationToken();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Core::Profile::ProfileGroup const&          group,
-        uchar                                         flags,
-        ::Bedrock::Profiler::details::StaticProfLabel label,
-        uint                                          color,
-        ::brstd::source_location const&               location
-    );
     // NOLINTEND
 
 public:

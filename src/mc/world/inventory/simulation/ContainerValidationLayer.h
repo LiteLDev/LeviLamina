@@ -23,16 +23,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::AllowedAnywhereConsume>>                   mAllowedAnywhereConsumes;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>>> mCommitObjects;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ContainerValidationLayer();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

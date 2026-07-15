@@ -16,9 +16,11 @@ class CombinedHotbarAndInventoryContainerValidation : public ::ContainerValidati
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool isItemAllowedToRemove(::ContainerScreenContext const& item, ::ItemStackBase const&) const /*override*/;
+    virtual bool isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const
+        /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& container, ::Container const&) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
 
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
     // NOLINTEND
@@ -26,18 +28,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isItemAllowedToRemove(::ContainerScreenContext const& item, ::ItemStackBase const&) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& container, ::Container const&) const;
-
-    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

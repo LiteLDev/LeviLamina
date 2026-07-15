@@ -9,9 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Block;
 class BlockPos;
-class BlockSource;
 class InteractionResult;
 class ItemStack;
 class Vec3;
@@ -25,29 +23,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DoorItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DoorItem(::std::string const& name, int id, ::DoorBlock::DoorType type);
-
-    MCAPI bool _place(::BlockSource& region, ::BlockPos pos, ::Block const& block) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::DoorBlock::DoorType type);
     // NOLINTEND
 
 public:

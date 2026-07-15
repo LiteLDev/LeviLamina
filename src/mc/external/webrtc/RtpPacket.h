@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RTPExtensionType.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class RtpHeaderExtensionMap; }
 // clang-format on
 
@@ -48,10 +49,10 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk45bd2f;
     ::ll::UntypedStorage<8, 8>  mUnkea8ad5;
     ::ll::UntypedStorage<8, 8>  mUnkb68566;
-    ::ll::UntypedStorage<1, 22> mUnk1ffc18;
+    ::ll::UntypedStorage<1, 23> mUnk1ffc18;
     ::ll::UntypedStorage<8, 24> mUnk12d0d4;
     ::ll::UntypedStorage<8, 8>  mUnk5ddf48;
-    ::ll::UntypedStorage<8, 24> mUnkc4d7dc;
+    ::ll::UntypedStorage<8, 24> mUnkfe8b16;
     // NOLINTEND
 
 public:
@@ -61,23 +62,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::rtc::ArrayView<uchar> AllocateExtension(::webrtc::RTPExtensionType type, uint64 length);
+    MCNAPI ::webrtc::ArrayView<uchar, 18446744073709546905>
+    AllocateExtension(::webrtc::RTPExtensionType type, uint64 length);
 
     MCNAPI uchar* AllocatePayload(uint64 size_bytes);
 
-    MCNAPI ::rtc::ArrayView<uchar> AllocateRawExtension(int id, uint64 length);
+    MCNAPI ::webrtc::ArrayView<uchar, 18446744073709546905> AllocateRawExtension(int id, uint64 length);
 
     MCNAPI void Clear();
 
     MCNAPI ::std::vector<uint> Csrcs() const;
 
-    MCNAPI ::rtc::ArrayView<uchar const> FindExtension(::webrtc::RTPExtensionType type) const;
+    MCNAPI ::webrtc::ArrayView<uchar const, 18446744073709546905> FindExtension(::webrtc::RTPExtensionType type) const;
 
     MCNAPI ::webrtc::RtpPacket::ExtensionInfo& FindOrCreateExtensionInfo(int id);
 
     MCNAPI bool HasExtension(::webrtc::RTPExtensionType type) const;
 
-    MCNAPI bool Parse(::rtc::CopyOnWriteBuffer buffer);
+    MCNAPI bool Parse(::webrtc::CopyOnWriteBuffer buffer);
 
     MCNAPI bool ParseBuffer(uchar const* buffer, uint64 size);
 
@@ -89,13 +91,15 @@ public:
 
     MCNAPI RtpPacket(::webrtc::RtpHeaderExtensionMap const* extensions, uint64 capacity);
 
-    MCNAPI void SetCsrcs(::rtc::ArrayView<uint const> csrcs);
+    MCNAPI void SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
 
     MCNAPI ushort SetExtensionLengthMaybeAddZeroPadding(uint64 extensions_offset);
 
     MCNAPI void SetMarker(bool marker_bit);
 
     MCNAPI bool SetPadding(uint64 padding_bytes);
+
+    MCNAPI void SetPayload(::webrtc::ArrayView<uchar const, 18446744073709546905> payload);
 
     MCNAPI uchar* SetPayloadSize(uint64 size_bytes);
 

@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Player;
-class Vec3;
-namespace Social::Events { class Event; }
-namespace Social::Events { struct PlayerTelemetryLoadout; }
-// clang-format on
-
 namespace Social::Events {
 
 class PlayerTelemetry {
@@ -47,72 +39,7 @@ public:
     // prevent constructor by default
     PlayerTelemetry& operator=(PlayerTelemetry const&);
     PlayerTelemetry(PlayerTelemetry const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void AddBiomeVisited(::std::string biome);
-
-#ifdef LL_PLAT_C
-    MCNAPI void ItemAcquired(::std::string const& itemName, ::std::string const& acquisitionMethod, int itemCount);
-
-    MCNAPI void ItemEquipped(::std::string const& itemName, int slot, int enchantCount);
-#endif
-
-    MCNAPI void ItemUsed(::std::string const& itemName, ::std::string const& useMethod);
-
-#ifdef LL_PLAT_C
-    MCNAPI void MobInteracted(
-        ::std::string                                   InteractedEntity,
-        bool                                            isBaby,
-        bool                                            isGrowthPaused,
-        ::std::string                                   interactionType,
-        int                                             interactedEntityVariant,
-        uchar                                           interactedEntityColor,
-        ::std::string                                   playerMainHand,
-        ::Social::Events::PlayerTelemetryLoadout const& loadout,
-        ::std::map<::std::string, ::std::string> const& mobProps
-    );
-#endif
-
-    MCNAPI PlayerTelemetry();
-
-    MCNAPI void PopulateEvent(::Social::Events::Event& event) const;
-
-    MCNAPI void SetPosition(::std::string dimension, ::Vec3 pos, double metersTravelled);
-
-    MCNAPI void UpdatePlayerLoadout(::Player& player);
-
-    MCNAPI void VehicleEntered(
-        ::std::string const&                            vehicleName,
-        int                                             vehicleVariant,
-        ::std::map<::std::string, ::std::string> const& mobProps,
-        int                                             passengerCount
-    );
-
-    MCNAPI void VehicleExited(
-        ::std::string const&                            vehicleName,
-        int                                             vehicleVariant,
-        ::std::map<::std::string, ::std::string> const& mobProps,
-        int                                             passengerCount,
-        double                                          timeOnMountSeconds,
-        double                                          distanceTravelled
-    );
-
-    MCNAPI ~PlayerTelemetry();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
+    PlayerTelemetry();
 };
 
 } // namespace Social::Events

@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/realms/OpenAndCloseRealmManager.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
@@ -14,7 +13,7 @@ namespace Realms { class OpenAndCloseRealmManager; }
 
 namespace OreUI {
 
-class OpenAndCloseRealmCommandsFacet : public ::OreUI::FacetBase<::OreUI::OpenAndCloseRealmCommandsFacet> {
+class OpenAndCloseRealmCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::OpenAndCloseRealmCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,12 +38,6 @@ public:
     MCAPI explicit OpenAndCloseRealmCommandsFacet(
         ::std::shared_ptr<::Realms::OpenAndCloseRealmManager> openAndCloseRealmManager
     );
-
-    MCAPI void closeRealm(int64 realmId);
-
-    MCAPI ::Realms::OpenAndCloseRealmManager::RequestQueueStatus getStatus() const;
-
-    MCAPI void openRealm(int64 realmId);
     // NOLINTEND
 
 public:
@@ -62,13 +55,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

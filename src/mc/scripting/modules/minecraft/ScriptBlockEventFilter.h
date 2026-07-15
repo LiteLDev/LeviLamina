@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
@@ -51,8 +51,6 @@ public:
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
     MCAPI void process();
-
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptBlockFilterData const& data);
 
     MCAPI ~ScriptBlockEventFilter();
     // NOLINTEND

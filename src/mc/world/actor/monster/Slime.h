@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
-#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/monster/Monster.h"
 
@@ -12,11 +11,9 @@
 // clang-format off
 class ActorDefinitionGroup;
 class BlockPos;
-class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class SpawnConditions;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
@@ -92,27 +89,11 @@ public:
         ::Slime::Parameters                parameters
     );
 
-    MCAPI ::OwnerPtr<::EntityContext> _createChild(int);
-
     MCAPI void _justJumped();
 
     MCAPI void _justLanded();
 
-    MCAPI void _setSlimeSize(int size);
-
-    MCFOLD float getOldSquishValue() const;
-
-    MCAPI float getSquishValue() const;
-
     MCAPI void postNormalTick(bool wasOnGround);
-
-    MCAPI void preNormalTick();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::function<bool(::SpawnConditions const&, ::BlockSource&)> getSpawnRulesCallback();
     // NOLINTEND
 
 public:

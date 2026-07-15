@@ -6,13 +6,6 @@
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/block/BlockDescriptor.h"
-#include "mc/world/level/storage/AllExperiments.h"
-
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 struct EntityPlacerItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
 public:
@@ -33,16 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::EntityPlacerItemComponentLegacyFactoryData& operator=(::EntityPlacerItemComponentLegacyFactoryData&&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
     // NOLINTEND
 
 public:

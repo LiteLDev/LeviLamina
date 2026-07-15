@@ -14,13 +14,13 @@ MCNAPI ::Scripting::Version const& V0_1_0();
 
 MCNAPI ::Scripting::Version const& V1_0_0();
 
-MCNAPI ::Scripting::Version const& V1_1_0();
-
 MCNAPI ::Scripting::Version const& V1_2_0();
 
 MCNAPI ::Scripting::Version const& V1_3_0();
 
 MCNAPI ::Scripting::Version const& V2_0_0();
+
+MCNAPI ::Scripting::Version const& V2_1_0();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraftServerUI::Releases

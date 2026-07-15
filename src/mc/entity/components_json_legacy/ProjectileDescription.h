@@ -61,6 +61,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                   mHitNearestPassenger;
     ::ll::TypedStorage<1, 1, bool>                                                   mIsolatedPhysics;
     ::ll::TypedStorage<4, 4, float>                                                  mReflectImmunityInSeconds;
+    ::ll::TypedStorage<4, 4, int>                                                    mOwnerLaunchImmunityTicks;
     // NOLINTEND
 
 public:
@@ -69,18 +70,6 @@ public:
     virtual char const* getJsonName() const /*override*/;
 
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ProjectileDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

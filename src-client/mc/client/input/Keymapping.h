@@ -23,22 +23,10 @@ public:
 
     MCAPI Keymapping(::std::string const& action, int defaultKey);
 
-    MCAPI Keymapping(::std::string const& action, ::std::vector<int> const& defaultKeys);
-
     MCAPI Keymapping(::std::string const& action, int defaultKey, bool allowRemap, bool sharedKey);
 
     MCAPI
     Keymapping(::std::string const& action, ::std::vector<int> const& defaultKeys, bool allowRemap, bool sharedKey);
-
-    MCFOLD ::std::string const& getAction() const;
-
-    MCAPI int getKeyCount() const;
-
-    MCFOLD ::std::vector<int> const& getKeys() const;
-
-    MCAPI bool isAltKey() const;
-
-    MCAPI bool isAssigned() const;
 
     MCAPI void operator=(::Keymapping const& rhs);
 
@@ -51,8 +39,6 @@ public:
     MCAPI void* $ctor(::Keymapping const&);
 
     MCAPI void* $ctor(::std::string const& action, int defaultKey);
-
-    MCAPI void* $ctor(::std::string const& action, ::std::vector<int> const& defaultKeys);
 
     MCAPI void* $ctor(::std::string const& action, int defaultKey, bool allowRemap, bool sharedKey);
 

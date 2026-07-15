@@ -23,18 +23,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::cereal::SchemaReader*> mAdaptor;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ScopedPop();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -90,12 +78,6 @@ public:
     virtual void pushElement(uint64 index) = 0;
 
     virtual void pop() = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::cereal::SchemaReader::ScopedPop scopedPop();
     // NOLINTEND
 
 public:

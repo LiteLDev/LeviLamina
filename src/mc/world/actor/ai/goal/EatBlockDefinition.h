@@ -33,10 +33,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EatBlockDefinition();
-
-    MCAPI void addSuccessChanceExpressionNode(::ExpressionNode const& node);
-
     MCAPI void initialize(::EntityContext& entity, ::EatBlockGoal& goal) const;
     // NOLINTEND
 
@@ -47,12 +43,6 @@ public:
         ::std::string const&                                                                               name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EatBlockDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

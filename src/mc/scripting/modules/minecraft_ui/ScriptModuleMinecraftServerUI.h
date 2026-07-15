@@ -2,31 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/server/commands/CurrentCmdVersion.h"
-
 // auto generated forward declare list
 // clang-format off
-class Player;
-namespace Json { class Value; }
-namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
-namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
 // functions
 // NOLINTBEGIN
+MCNAPI ::Scripting::InterfaceBinding bindDropdownItemData();
+
+MCNAPI ::Scripting::EnumBinding bindScriptDataDrivenScreenClosedReason();
+
 MCNAPI ::Scripting::EnumBinding bindScriptFormRejectReason();
 
-MCNAPI ::Scripting::EnumBinding bindTextFilteringEnums();
+MCNAPI ::Scripting::EnumBinding bindScriptFormVisibilityErrorReason();
 
-MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> resolveRawMessageAsJson(
-    ::Player&                                                                                player,
-    ::CurrentCmdVersion                                                                      commandVersion,
-    ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text
-);
+MCNAPI ::Scripting::EnumBinding bindTextFilteringEnums();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraftServerUI

@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptCommandOrigin() /*override*/;
+    virtual ~ScriptCommandOrigin() /*override*/ = default;
 
     virtual ::std::string const& getRequestId() const /*override*/;
 
@@ -93,12 +93,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::string const& $getRequestId() const;
@@ -111,7 +105,7 @@ public:
 
     MCFOLD ::std::optional<::Vec2> $getRotation() const;
 
-    MCFOLD ::Level* $getLevel() const;
+    MCAPI ::Level* $getLevel() const;
 
     MCFOLD ::Dimension* $getDimension() const;
 

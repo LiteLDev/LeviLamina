@@ -44,11 +44,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldPlayerListTracker();
+    virtual ~WorldPlayerListTracker() = default;
 
     virtual ::std::vector<::mce::UUID> const& getPlayerList();
 
-    virtual ::PlayerListEntry const* getPlayerEntry(::mce::UUID const& uuid);
+    virtual ::PlayerListEntry const* getPlayerEntry(::mce::UUID const&);
 
     virtual ::std::vector<::mce::UUID> _getCurrentLobby() const;
     // NOLINTEND
@@ -61,17 +61,9 @@ public:
         ::LocalPlayerChangedConnector     localPlayerChangedConnector
     );
 
-    MCAPI void _init();
-
     MCAPI bool _updatePlayerList();
 
     MCAPI ::std::vector<::PlayerListEntry const*> getLobbyPlayerList();
-
-    MCAPI void refresh();
-
-    MCFOLD ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
-
-    MCAPI void update(double timestampMs);
     // NOLINTEND
 
 public:
@@ -84,25 +76,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::mce::UUID> const& $getPlayerList();
 
-    MCAPI ::PlayerListEntry const* $getPlayerEntry(::mce::UUID const& uuid);
-
-    MCAPI ::std::vector<::mce::UUID> $_getCurrentLobby() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

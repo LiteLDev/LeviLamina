@@ -14,13 +14,9 @@ namespace cereal { struct SchemaDescription; }
 namespace cereal {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string const* documentation(::entt::meta_data const& data);
-
-MCNAPI ::std::string const* documentation(::entt::meta_type const& type);
-
-MCNAPI uint enttHash(::std::string_view str);
-
+#ifdef LL_PLAT_C
 MCNAPI ::std::string_view getName(::entt::meta_type const& type);
+#endif
 
 MCNAPI ::std::string_view getName(::entt::meta_type const& type, uint member);
 
@@ -40,12 +36,6 @@ MCNAPI ::std::vector<::cereal::SchemaDescription> getSchemaDescriptionRecursive(
 #ifdef LL_PLAT_S
 MCNAPI ::std::vector<::cereal::SchemaDescription>
 getSchemaDescriptions(::cereal::ReflectionCtx const& ctx, ::cereal::DescriptionConfig config);
-#endif
-
-MCNAPI bool operator==(::cereal::DynamicValue const& lhs, ::cereal::DynamicValue const& rhs);
-
-#ifdef LL_PLAT_S
-MCNAPI ::entt::meta_type resolve(::cereal::ReflectionCtx const& ctx, uint id);
 #endif
 
 MCNAPI ::entt::meta_type resolve(::cereal::ReflectionCtx const& ctx, ::entt::type_info const& info);

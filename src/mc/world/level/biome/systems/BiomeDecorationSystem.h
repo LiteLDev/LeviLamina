@@ -21,16 +21,9 @@ struct BiomeDecorationFeature;
 namespace BiomeDecorationSystem {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI void consolidateDecorationFeatures(::BiomeRegistry& registry);
-
-MCAPI bool decorate(
-    ::LevelChunk&                         lc,
-    ::BlockSource&                        source,
-    ::Random&                             random,
-    ::gsl::span<::BiomeDecorationFeature> featureList,
-    ::std::string const&                  pass,
-    ::IPreliminarySurfaceProvider const&  preliminarySurfaceProvider
-);
+#endif
 
 MCAPI void decorate(
     ::LevelChunk&                                lc,

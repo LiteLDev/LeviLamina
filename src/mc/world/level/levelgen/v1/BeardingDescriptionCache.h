@@ -15,20 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, int>            mZCenter;
     ::ll::TypedStorage<4, 4, float>          mMaxRadius;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BeardingDescriptionCache();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BeardingDescriptionCache(::BoundingBox const& bb, int deltaY);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BoundingBox const& bb, int deltaY);
-    // NOLINTEND
 };

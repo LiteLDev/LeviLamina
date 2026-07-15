@@ -16,30 +16,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorContainerAccessEventFilterData& operator=(ScriptActorContainerAccessEventFilterData const&);
-    ScriptActorContainerAccessEventFilterData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorContainerAccessEventFilterData(
-        ::ScriptModuleMinecraft::EventFilters::ScriptActorContainerAccessEventFilterData const&
-    );
-
     MCAPI ~ScriptActorContainerAccessEventFilterData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorContainerAccessEventFilterData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

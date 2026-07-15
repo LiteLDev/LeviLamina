@@ -15,29 +15,4 @@ public:
     ::ll::TypedStorage<1, 1, ::PackType>     type;
     ::ll::TypedStorage<8, 24, ::SemVersion>  version;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PackInfo& operator=(PackInfo const&);
-    PackInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PackInfo(::PackInfo const&);
-
-    MCAPI ~PackInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PackInfo const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

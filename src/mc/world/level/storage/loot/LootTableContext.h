@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/level/dimension/DimensionType.h"
-#include "mc/world/level/storage/loot/ActorTarget.h"
 #include "mc/world/level/storage/loot/LootTable.h"
 
 // auto generated forward declare list
@@ -14,7 +13,6 @@ class Actor;
 class ActorDamageSource;
 class ILevel;
 class ItemStack;
-class Level;
 class Player;
 // clang-format on
 
@@ -43,37 +41,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Builder();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Builder(::ILevel* level, ::DimensionType dimensionId);
-
-        MCAPI ::LootTableContext create() const;
-
-        MCAPI ::LootTableContext::Builder& withDeathSource(::ActorDamageSource const* deathSource);
-
-        MCAPI ::LootTableContext::Builder& withExplosionRadius(float explosionRadius);
-
-        MCAPI ::LootTableContext::Builder& withKilledActor(::Actor* actor);
-
-        MCFOLD ::LootTableContext::Builder& withKillerPlayer(::Player* player);
-
-        MCAPI ::LootTableContext::Builder& withLuck(float luck);
-
-        MCAPI ::LootTableContext::Builder& withThisEntity(::Actor* actor);
-
-        MCAPI ::LootTableContext::Builder& withTool(::ItemStack const* tool);
-
         MCAPI ~Builder();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ILevel* level, ::DimensionType dimensionId);
         // NOLINTEND
 
     public:
@@ -100,69 +70,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LootTableContext();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LootTableContext(
-        float                      luck,
-        ::ILevel*                  level,
-        ::ActorUniqueID            thisEntityID,
-        ::Player*                  player,
-        ::Actor*                   killedActor,
-        ::ActorDamageSource const* deathSource,
-        float                      explosionRadius,
-        ::DimensionType            dimensionId,
-        ::ItemStack const*         tool
-    );
-
-    MCAPI ::Actor* getDamagingEntity() const;
-
-    MCAPI ::DimensionType getDimensionId() const;
-
-    MCAPI ::Actor* getEntity(::ActorTarget target, bool getRemoved) const;
-
-    MCAPI float getExplosionRadius() const;
-
-    MCFOLD ::Actor* getKilledEntity() const;
-
-    MCAPI ::Actor* getKillerEntity() const;
-
-    MCAPI ::Actor* getKillerPet() const;
-
-    MCFOLD ::Actor* getKillerPlayer() const;
-
-    MCFOLD ::Level* getLevel() const;
-
     MCAPI ::std::string getOriginalItemName() const;
 
-    MCAPI ::Actor* getThisEntity(bool getRemoved) const;
-
-    MCAPI ::Actor* getThisVehicleEntity() const;
-
-    MCFOLD ::ItemStack const* getTool() const;
-
-    MCAPI void setOriginalItemName(::std::string const& originalItemName);
-
     MCAPI ~LootTableContext();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        float                      luck,
-        ::ILevel*                  level,
-        ::ActorUniqueID            thisEntityID,
-        ::Player*                  player,
-        ::Actor*                   killedActor,
-        ::ActorDamageSource const* deathSource,
-        float                      explosionRadius,
-        ::DimensionType            dimensionId,
-        ::ItemStack const*         tool
-    );
     // NOLINTEND
 
 public:

@@ -14,19 +14,6 @@ class DeviceInfoUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::DeviceMemoryTier determineMemoryTier(::BaseGameVersion const&);
-
-#ifdef LL_PLAT_C
-    MCNAPI static ::DeviceMemoryTier determineMemoryTier(
-        ::BaseGameVersion const&            version,
-        ::std::optional<::DeviceMemoryTier> optionalMemoryTierOverride
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::DeviceMemoryTier& mDefaultMemoryTier();
+    MCNAPI static ::DeviceMemoryTier determineMemoryTier(::BaseGameVersion const& version);
     // NOLINTEND
 };

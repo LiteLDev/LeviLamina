@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::Legacy { struct BlockDescriptor; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
@@ -41,20 +40,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& AllowedFacesId();
-
-    MCAPI static ::std::string_view const& BlockFilterId();
-
-    MCAPI static ::std::string_view const& ConditionsId();
-
     MCAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };

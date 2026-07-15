@@ -26,26 +26,11 @@ public:
     // prevent constructor by default
     ScreenCapabilitiesRepo& operator=(ScreenCapabilitiesRepo const&);
     ScreenCapabilitiesRepo(ScreenCapabilitiesRepo const&);
+    ScreenCapabilitiesRepo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScreenCapabilitiesRepo();
-
     MCNAPI ::std::unique_ptr<::IScreenCapabilities> get(::std::string const& screenName) const;
-
-    MCNAPI ~ScreenCapabilitiesRepo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

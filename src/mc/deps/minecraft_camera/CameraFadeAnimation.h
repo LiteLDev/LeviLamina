@@ -34,14 +34,6 @@ public:
     MCAPI void _addKeyframe(float time, float value);
 
     MCAPI void addFade(float inTime, float requestedHoldTime, float outTime, float targetAlpha);
-
-    MCAPI void advanceTime(float deltaTime);
-
-    MCFOLD float getCurrentValue() const;
-
-    MCFOLD bool isActive() const;
-
-    MCAPI void reset();
 #endif
     // NOLINTEND
 };

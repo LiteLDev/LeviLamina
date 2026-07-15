@@ -23,49 +23,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptAimAssistCategorySettings();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptAimAssistCategorySettings(::std::string name);
-
-    MCAPI ::std::unordered_map<::std::string, int> getBlockPriorities() const;
-
-    MCAPI ::std::unordered_map<::std::string, int> getBlockTagPriorities() const;
-
-    MCAPI ::std::unordered_map<::std::string, int> getEntityPriorities() const;
-
-    MCAPI ::std::unordered_map<::std::string, int> getEntityTypeFamilyPriorities() const;
-
-    MCAPI void setBlockPriorities(::std::unordered_map<::std::string, int> blockPriorities);
-
-    MCAPI void setBlockTagPriorities(::std::unordered_map<::std::string, int> blockTagPriorities);
-
-    MCAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
-
-    MCAPI void setEntityTypeFamilyPriorities(::std::unordered_map<::std::string, int> entityTypeFamilyPriorities);
-
-    MCAPI ~ScriptAimAssistCategorySettings();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string name);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

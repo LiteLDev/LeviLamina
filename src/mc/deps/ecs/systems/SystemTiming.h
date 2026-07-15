@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>            mTime;
     ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::SystemCategory>> mCategory;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SystemTiming();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

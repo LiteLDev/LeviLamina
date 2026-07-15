@@ -3,17 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/puv/LoadResult.h"
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
 #include "mc/deps/resource_processing/category/SharedSlicesTraits.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
-class HashedString;
 class IMinecraftEventing;
 class ResourcePackManager;
-namespace SharedTypes::v1_21_110 { struct VoxelShapeDocument; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -37,13 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit VoxelShapeLoader(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_110::VoxelShapeDocument> _loadVoxelShape(
-        ::std::string const&               filenameWithExtension,
-        ::std::string&&                    fileData,
-        ::VoxelShapes::VoxelShapeRegistry& shapeRegistry,
-        bool                               isBaseGamePack
-    );
-
     MCNAPI void loadResources(
         ::ResourcePackManager const&       packManager,
         ::VoxelShapes::VoxelShapeRegistry& shapeRegistry,
@@ -51,16 +40,6 @@ public:
     );
 
     MCNAPI ~VoxelShapeLoader();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool _validateDocumentAndConvertToAABBs(
-        ::HashedString const&                               shapeName,
-        ::SharedTypes::v1_21_110::VoxelShapeDocument const& doc,
-        ::std::vector<::AABB>&                              resultAABBs
-    );
     // NOLINTEND
 
 public:

@@ -33,12 +33,6 @@ public:
 
     MCAPI void initializeAPI(::IClientInstance& client);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace GameplayUI

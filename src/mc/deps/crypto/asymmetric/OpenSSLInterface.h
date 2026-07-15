@@ -78,33 +78,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::string _computeSharedSecretECC(::std::string const& myPrivateKey, ::std::string const& peerPublicKey);
-
-    MCNAPI bool
-    _constructPublicKeyRSA(::std::string const& modulus, ::std::string const& exponent, ::std::string& keyOut);
-
-    MCNAPI ::std::string _decryptDataRSA(
-        ::std::string const&          privateKey,
-        ::std::string const&          data,
-        ::Crypto::Asymmetric::Padding paddingType
-    );
-
-    MCNAPI ::std::string _encryptDataRSA(
-        ::std::string const&               publicKey,
-        ::std::string const&               data,
-        ::Crypto::Asymmetric::Padding      paddingType,
-        ::Crypto::Asymmetric::PubKeyFormat keyFormat,
-        bool                               useSHA256
-    );
-
-    MCNAPI bool _generateKeyPairECC(::std::string& privateKey, ::std::string& publicKey);
-
-    MCNAPI bool _generateKeyPairRSA(::std::string& privateKey, ::std::string& publicKey);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);

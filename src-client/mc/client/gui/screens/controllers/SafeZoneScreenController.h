@@ -46,18 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SafeZoneScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
-
-    MCAPI void _calculateSafeZoneValue();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::string _roundToString(float val);
     // NOLINTEND
 
 public:
@@ -69,14 +57,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest $tryExit();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

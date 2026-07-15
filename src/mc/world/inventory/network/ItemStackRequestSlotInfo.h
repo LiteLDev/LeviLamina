@@ -14,18 +14,4 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                    mSlot;
     ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant> mNetIdVariant;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool matchesContainerAndSlot(::ItemStackRequestSlotInfo const& other) const;
-
-    MCNAPI ~ItemStackRequestSlotInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

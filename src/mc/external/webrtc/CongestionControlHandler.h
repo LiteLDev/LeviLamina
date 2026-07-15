@@ -14,8 +14,8 @@ class CongestionControlHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnke5dece;
-    ::ll::UntypedStorage<8, 80> mUnkaa1b40;
+    ::ll::UntypedStorage<8, 72> mUnke5dece;
+    ::ll::UntypedStorage<8, 72> mUnkaa1b40;
     ::ll::UntypedStorage<1, 1>  mUnk42e9c0;
     ::ll::UntypedStorage<1, 1>  mUnk9786bc;
     ::ll::UntypedStorage<8, 8>  mUnk8ff9ea;

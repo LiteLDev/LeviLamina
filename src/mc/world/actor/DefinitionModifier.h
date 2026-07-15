@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::DefinitionTrigger>>    mTriggers;
     ::ll::TypedStorage<8, 24, ::std::vector<::EventResponse const*>> mResponses;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~DefinitionModifier();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

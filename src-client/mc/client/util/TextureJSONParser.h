@@ -2,15 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core_graphics/TextureSetLayerType.h"
-
 // auto generated forward declare list
 // clang-format off
 class ResourceLocation;
 struct ActorTextureInfo;
 struct ParsedTextureSet;
-struct ParsedTextureSetLayer;
 namespace Json { class Value; }
 namespace mce { class Color; }
 namespace mce { class TextureGroup; }
@@ -26,15 +22,6 @@ public:
     MCAPI static ::ActorTextureInfo getTextureInfoFromTextureSet(
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::ParsedTextureSet const&              textureSet
-    );
-
-    MCAPI static void loadTextureSetLayer(
-        ::ParsedTextureSetLayer&                   layer,
-        ::Json::Value const&                       layerJsonData,
-        float                                      mipFadeAmount,
-        ::mce::Color const&                        mipFadeColor,
-        bool                                       isAdditive,
-        ::std::optional<::cg::TextureSetLayerType> textureSetLayerType
     );
 
     MCAPI static void parseTextureSet(

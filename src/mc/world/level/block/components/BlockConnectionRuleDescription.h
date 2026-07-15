@@ -25,10 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockConnectionRuleDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -36,15 +32,6 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockConnectionRuleDescription(
-        ::Bedrock::EnumSet<::ConnectionID, 4>             connectionsFromMask,
-        ::std::vector<::SharedTypes::v1_26_20::Direction> enabledDirections
-    );
     // NOLINTEND
 
 public:
@@ -56,20 +43,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::
-        unordered_map<::SharedTypes::v1_26_20::ConnectionType, ::Bedrock::EnumSet<::ConnectionID, 4> const> const&
-        CONNECTION_TO_MASK();
-
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::EnumSet<::ConnectionID, 4>             connectionsFromMask,
-        ::std::vector<::SharedTypes::v1_26_20::Direction> enabledDirections
-    );
     // NOLINTEND
 
 public:

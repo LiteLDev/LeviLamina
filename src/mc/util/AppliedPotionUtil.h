@@ -11,8 +11,6 @@ class Potion;
 namespace AppliedPotionUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI void applyPotionToItem(::ItemStackBase& item, ::std::shared_ptr<::Potion const> const& potion);
-
 MCNAPI ::std::optional<int>
 calculateAppliedPotionAuxValue(::std::shared_ptr<::Potion const> const& potion, ::ItemStackBase const& item);
 // NOLINTEND

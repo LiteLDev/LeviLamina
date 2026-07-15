@@ -22,27 +22,32 @@ public:
     ::ll::UntypedStorage<8, 32> mUnke53d84;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    DataTransferServerChangeBiomeMappingPayload& operator=(DataTransferServerChangeBiomeMappingPayload const&);
+    DataTransferServerChangeBiomeMappingPayload(DataTransferServerChangeBiomeMappingPayload const&);
+    DataTransferServerChangeBiomeMappingPayload();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     DataTransferServerChangeBiomeMappingPayload();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI
     DataTransferServerChangeBiomeMappingPayload(::Editor::Network::DataTransferServerChangeBiomeMappingPayload const&);
-
-    MCNAPI DataTransferServerChangeBiomeMappingPayload(
-        ::std::string const& biomeIdentifier,
-        ::std::string const& collectionName,
-        ::std::string const& identifier
-    );
 
     MCNAPI ::Editor::Network::DataTransferServerChangeBiomeMappingPayload&
     operator=(::Editor::Network::DataTransferServerChangeBiomeMappingPayload&&);
 
     MCNAPI ::Editor::Network::DataTransferServerChangeBiomeMappingPayload&
     operator=(::Editor::Network::DataTransferServerChangeBiomeMappingPayload const&);
+#endif
     // NOLINTEND
 
 public:
@@ -54,10 +59,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Editor::Network::DataTransferServerChangeBiomeMappingPayload const&);
-
-    MCNAPI void*
-    $ctor(::std::string const& biomeIdentifier, ::std::string const& collectionName, ::std::string const& identifier);
+#endif
     // NOLINTEND
 
 public:

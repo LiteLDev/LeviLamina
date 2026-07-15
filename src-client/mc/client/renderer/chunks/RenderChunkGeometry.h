@@ -19,7 +19,6 @@ class IRenderChunkGarbage;
 class MinecraftGraphics;
 class RenderChunkBuilder;
 class RenderChunkSorter;
-class TerrainLayer;
 class TerrainTextures;
 class TextureAtlas;
 class Vec3;
@@ -31,7 +30,6 @@ namespace dragon { struct RenderMetadata; }
 namespace mce { class IndexBufferContainer; }
 namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }
-namespace mce { class TexturePtr; }
 namespace mce { struct BufferResourceService; }
 namespace mce { struct ServerTexture; }
 namespace mce::framebuilder { struct FrameLightingModelCapabilities; }
@@ -68,7 +66,6 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                                                     mPosition;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                                     mCenter;
     ::ll::TypedStorage<4, 48, ::Bounds>                                                       mDataBounds;
-    ::ll::TypedStorage<4, 192, ::std::array<::RangeIndices, 24>>                              mUnsortedIndexRange;
     ::ll::TypedStorage<4, 4, ::EntityId>                                                      mEntityId;
     ::ll::TypedStorage<8, 112, ::std::array<::std::shared_ptr<::FaceSortingMetaDataBase>, 7>> mFaceSortingMetaData;
     ::ll::TypedStorage<4, 176, ::std::array<::RangeIndices, 22>>                              mRenderLayerIndexRanges;
@@ -104,8 +101,6 @@ public:
 
     MCAPI void _resetFaceMetadata();
 
-    MCAPI bool didRayTracingModeChangeDuringBuild() const;
-
     MCAPI uint64 endFaceSortOnly(
         ::mce::BufferResourceService& bufferResourceService,
         ::RenderChunkSorter&          sorter,
@@ -113,7 +108,7 @@ public:
             ::std::monostate,
             ::std::shared_ptr<::mce::IndexBufferContainer>,
             ::std::shared_ptr<::RenderChunkDirectIndexData>>& nextIndices,
-        ::std::array<::RangeIndices, 24>&                     sortedIndexRange,
+        ::std::array<::RangeIndices, 22>&                     sortedIndexRange,
         ::dragon::RenderMetadata const&                       renderMetadata
     );
 
@@ -125,35 +120,17 @@ public:
         bool                            useSplitStream
     );
 
-    MCAPI ::mce::TexturePtr const& getDiffuseTexture(::TerrainLayer const& layer) const;
-
-    MCFOLD ::std::variant<
-        ::std::monostate,
-        ::std::shared_ptr<::mce::Mesh>,
-        ::std::shared_ptr<::RenderChunkDirectVertexData>> const&
-    getMeshData() const;
-
-    MCFOLD ::std::vector<::BlockQueueEntry> const& getPointLightCandidates() const;
-
-    MCAPI bool isEmpty() const;
-
-    MCAPI bool isMeshValid() const;
-
-    MCAPI bool isReady() const;
-
-    MCAPI void prefetchMeshPtr() const;
-
     MCAPI void rebuild(
-        ::RenderChunkBuilder& builder,
-        bool                  lightingType,
-        ::BakedBlockLightType forExport,
-        bool                  lightingModelCapabilities,
-        ::mce::framebuilder::FrameLightingModelCapabilities const&
+        ::RenderChunkBuilder&                                      builder,
+        bool                                                       transparentLeaves,
+        ::BakedBlockLightType                                      lightingType,
+        bool                                                       forExport,
+        ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
     );
 
     MCAPI void reset();
 
-    MCAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const&);
+    MCAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
 
     MCAPI ~RenderChunkGeometry();
     // NOLINTEND
@@ -162,8 +139,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::mce::ServerTexture> createTerrainTextureList(::SubClientId player);
-
-    MCAPI static void deinitTextures();
 
     MCAPI static void initTextures(
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> const&  minecraftGraphics,

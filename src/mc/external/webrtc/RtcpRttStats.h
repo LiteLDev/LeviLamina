@@ -8,11 +8,9 @@ class RtcpRttStats {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnRttUpdate(int64) = 0;
-
-    virtual int64 LastProcessedRtt() const = 0;
-
     virtual ~RtcpRttStats() = default;
+
+    virtual void OnRttUpdate(int64) = 0;
     // NOLINTEND
 
 public:

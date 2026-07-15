@@ -29,12 +29,6 @@ public:
 
     MCNAPI void _readConfigFile();
 #endif
-
-    MCNAPI ::std::vector<::std::pair<::std::string, ::std::string>> getCDNUrls();
-
-#ifdef LL_PLAT_S
-    MCNAPI void reloadUrls();
-#endif
     // NOLINTEND
 
 public:

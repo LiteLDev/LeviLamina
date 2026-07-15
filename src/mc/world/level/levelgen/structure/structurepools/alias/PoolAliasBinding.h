@@ -2,15 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/SimpleWeightedEntry.h"
-
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class IRandom;
-class JigsawStructureRegistry;
-struct StructureTemplateRegistrationContext;
 // clang-format on
 
 class PoolAliasBinding {
@@ -31,8 +25,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::string_view getOrDefault(::std::string_view alias, ::std::string_view defaultValue) const;
-
         MCAPI ~PoolAliasLookup();
         // NOLINTEND
 
@@ -56,32 +48,6 @@ public:
     virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const = 0;
 
     virtual ~PoolAliasBinding() = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::PoolAliasBinding> direct(::std::string&& id, ::std::string&& target);
-
-    MCAPI static ::std::shared_ptr<::PoolAliasBinding>
-    random(::std::string&& id, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>&& targets);
-
-    MCAPI static ::std::shared_ptr<::PoolAliasBinding> randomGroup(
-        ::std::vector<::Core::SimpleWeightedEntry<::std::vector<::std::shared_ptr<::PoolAliasBinding>>>>&& targets
-    );
-
-    MCAPI static void registerTargetsAsPools(
-        ::JigsawStructureRegistry&                                  registry,
-        ::StructureTemplateRegistrationContext&                     context,
-        ::std::string_view                                          fallback,
-        ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliasBindings
-    );
-
-    MCAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
-        ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliases,
-        ::BlockPos const&                                           structureStartPosition,
-        int64                                                       levelSeed
-    );
     // NOLINTEND
 
 public:

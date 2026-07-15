@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AsyncBooleanDataProvider() /*override*/;
+    virtual ~AsyncBooleanDataProvider() /*override*/ = default;
 
     virtual void setChangeListener(::std::function<void()> callback) /*override*/;
 
@@ -46,12 +46,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::unique_ptr<::Settings::IBooleanDataProvider> delegateProvider);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

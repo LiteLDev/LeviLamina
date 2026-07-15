@@ -49,6 +49,8 @@ public:
     MCAPI ::SharedTypes::v1_26_20::PickupItemsGoalDefinition&
     operator=(::SharedTypes::v1_26_20::PickupItemsGoalDefinition const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_26_20::PickupItemsGoalDefinition const&) const;
+
     MCAPI ~PickupItemsGoalDefinition();
     // NOLINTEND
 

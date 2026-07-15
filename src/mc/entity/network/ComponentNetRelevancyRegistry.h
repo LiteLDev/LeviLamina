@@ -43,24 +43,6 @@ public:
         NetSerializationCallbacks& operator=(NetSerializationCallbacks const&);
         NetSerializationCallbacks(NetSerializationCallbacks const&);
         NetSerializationCallbacks();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& setNeverClientSide();
-
-        MCNAPI ~NetSerializationCallbacks();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -87,17 +69,5 @@ public:
 
     MCNAPI bool
     serializeComponentDefinitionsForClient(::DefinitionInstanceGroup const& definitionGroup, ::CompoundTag& tag) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ~ComponentNetRelevancyRegistry();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };

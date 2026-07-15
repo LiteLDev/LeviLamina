@@ -6,7 +6,6 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/entity/components/PackedItemUseLegacyInventoryTransaction.h"
 #include "mc/entity/components/PlayerBlockActions.h"
-#include "mc/network/packet/PlayerActionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,21 +28,16 @@ public:
     // prevent constructor by default
     PlayerActionComponent& operator=(PlayerActionComponent const&);
     PlayerActionComponent(PlayerActionComponent const&);
+    PlayerActionComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerActionComponent();
-
     MCAPI PlayerActionComponent(::PlayerActionComponent&&);
 
 #ifdef LL_PLAT_C
     MCAPI void addAbortDestroyBlock(::BlockPos const& pos, int data);
-#endif
 
-    MCAPI void addAction(::PlayerActionType action);
-
-#ifdef LL_PLAT_C
     MCAPI void addContinueDestroyBlock(::BlockPos const& pos, int facing);
 
     MCAPI void addCrackBlock(::BlockPos const& pos, int facing);
@@ -55,9 +49,9 @@ public:
     MCAPI void addStartDestroyBlock(::BlockPos const& pos, int facing);
 
     MCAPI void addStopDestroyBlock();
-#endif
 
     MCAPI void clear();
+#endif
 
     MCAPI ::PlayerActionComponent& operator=(::PlayerActionComponent&&);
 
@@ -67,8 +61,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::PlayerActionComponent&&);
     // NOLINTEND
 

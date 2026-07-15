@@ -14,22 +14,11 @@ public:
     // prevent constructor by default
     ScriptCommandOutput& operator=(ScriptCommandOutput const&);
     ScriptCommandOutput(ScriptCommandOutput const&);
+    ScriptCommandOutput();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptCommandOutput();
-
     MCNAPI ::std::string getMessages() const;
-
-    MCNAPI int getSuccessCount() const;
-
-    MCNAPI void setOutput(int successCount, ::std::string&& messages);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };

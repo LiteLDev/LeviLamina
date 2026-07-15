@@ -30,22 +30,6 @@ public:
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IReplayableActorInput>>               mCapturedInput;
         ::ll::TypedStorage<1, 1, bool>                                                     mIsCorrection;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI ~Snapshot();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -59,40 +43,25 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IReplayableActorInput>>               mNextInput;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ActorHistory();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI explicit ActorHistory(uint64 historyWindow);
+#endif
 
     MCAPI void addCorrectionToFrame(::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
 #ifdef LL_PLAT_C
     MCAPI void addFrame(::EntityContext& entity, uint64 frame, ::EntityRegistry& registry);
 #endif
-
-    MCAPI void clearFrames();
-
-#ifdef LL_PLAT_C
-    MCFOLD ::ActorHistory::Snapshot const* getFrame(uint64 frame) const;
-#endif
-
-    MCFOLD ::ActorHistory::Snapshot* getFrame(uint64 frame);
-
-#ifdef LL_PLAT_C
-    MCFOLD uint64 getHistoryWindow() const;
-#endif
-
-    MCFOLD uint64 getOldestFrame() const;
-
-    MCAPI ::IReplayableActorInput* getOrCreateNextFrame();
-
-    MCAPI void queueCorrection(::std::shared_ptr<::IMovementCorrection> correction);
-
-    MCAPI void setSnapshotAsCorrection(uint64 frame);
 
     MCAPI ~ActorHistory();
     // NOLINTEND
@@ -101,26 +70,20 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::ActorHistory::Snapshot createSnapshot(
-        ::EntityContext const&                     entity,
-        ::EntityRegistry&                          registry,
-        ::std::unique_ptr<::IReplayableActorInput> input
-    );
-
     MCAPI static void prepareEntityForRewindFromCapture(
         ::EntityContext const& fromCapture,
         ::EntityContext const& fromLive,
         ::EntityContext&       toRewind
     );
-
-    MCAPI static void updateHistoryEntity(::EntityContext const& fromRewind, ::EntityContext& toHistory);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(uint64 historyWindow);
+#endif
     // NOLINTEND
 
 public:

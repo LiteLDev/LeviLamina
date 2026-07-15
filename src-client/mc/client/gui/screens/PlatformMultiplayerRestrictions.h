@@ -16,7 +16,7 @@ public:
 
     virtual bool platformRestrictsMultiplayer() const = 0;
 
-    virtual void displayPlatformRestrictsMultiplayerModal(::std::function<void()>&& onCompleteCallback) = 0;
+    virtual void displayPlatformRestrictsMultiplayerModal(::std::function<void()>&&) = 0;
 
     virtual void displayPlatformRestrictsUserGeneratedContentModal(::std::function<void()>&&) = 0;
 

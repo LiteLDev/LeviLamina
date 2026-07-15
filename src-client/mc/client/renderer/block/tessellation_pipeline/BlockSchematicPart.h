@@ -32,22 +32,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockSchematicPart(::ClientBlockPipeline::BlockSchematicPart const&);
-
-    MCAPI ::ClientBlockPipeline::BlockSchematicPart& operator=(::ClientBlockPipeline::BlockSchematicPart&&);
-
-    MCAPI ~BlockSchematicPart();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ClientBlockPipeline::BlockSchematicPart const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

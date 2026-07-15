@@ -23,38 +23,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptTransferBiomeConfigurationData& operator=(ScriptTransferBiomeConfigurationData const&);
+    ScriptTransferBiomeConfigurationData(ScriptTransferBiomeConfigurationData const&);
     ScriptTransferBiomeConfigurationData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptTransferBiomeConfigurationData(::Editor::ScriptModule::ScriptTransferBiomeConfigurationData const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptTransferBiomeConfigurationData&
-    operator=(::Editor::ScriptModule::ScriptTransferBiomeConfigurationData&&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptTransferBiomeConfigurationData&
-    operator=(::Editor::ScriptModule::ScriptTransferBiomeConfigurationData const&);
-
-    MCNAPI ~ScriptTransferBiomeConfigurationData();
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptTransferBiomeConfigurationData const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -47,18 +47,6 @@ public:
                                                            mCache;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~NbtToBlockCache();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace BlockSerializationUtils

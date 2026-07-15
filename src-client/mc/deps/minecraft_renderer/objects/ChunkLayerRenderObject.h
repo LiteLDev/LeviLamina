@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/game/TerrainLayerLOD.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class MaterialPtr; }
@@ -19,39 +22,6 @@ public:
     ::ll::TypedStorage<4, 4, uint>                      mUnsortedIndicesCount;
     ::ll::TypedStorage<4, 4, uint>                      mVisibleCameraMask;
     ::ll::TypedStorage<1, 1, bool>                      mShouldFallBackToUnsorted;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkLayerRenderObject();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChunkLayerRenderObject(
-        ::mce::MaterialPtr const& material,
-        uint64                    index,
-        uint                      indicesStart,
-        uint                      indicesCount,
-        uint                      unsortedIndicesStart,
-        uint                      unsortedIndicesCount,
-        uint                      visibleCameraMask,
-        bool                      unsortedIndices
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::mce::MaterialPtr const& material,
-        uint64                    index,
-        uint                      indicesStart,
-        uint                      indicesCount,
-        uint                      unsortedIndicesStart,
-        uint                      unsortedIndicesCount,
-        uint                      visibleCameraMask,
-        bool                      unsortedIndices
-    );
+    ::ll::TypedStorage<1, 1, ::TerrainLayerLOD>         mTerrainLayerLOD;
     // NOLINTEND
 };

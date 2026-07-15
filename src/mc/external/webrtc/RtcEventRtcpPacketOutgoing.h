@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtcEvent.h"
 
 namespace webrtc {
@@ -11,7 +12,7 @@ class RtcEventRtcpPacketOutgoing : public ::webrtc::RtcEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk56d28c;
+    ::ll::UntypedStorage<8, 24> mUnk43671e;
     // NOLINTEND
 
 public:
@@ -33,13 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RtcEventRtcpPacketOutgoing(::rtc::ArrayView<uchar const> packet);
+    MCNAPI explicit RtcEventRtcpPacketOutgoing(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::ArrayView<uchar const> packet);
+    MCNAPI void* $ctor(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
     // NOLINTEND
 
 public:

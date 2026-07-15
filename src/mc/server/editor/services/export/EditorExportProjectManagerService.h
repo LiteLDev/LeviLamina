@@ -7,7 +7,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/ProjectExportStatus.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/export/ExportResult.h"
@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorExportProjectManagerService() /*override*/;
+    virtual ~EditorExportProjectManagerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -58,10 +58,10 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual void beginExportProject(
-        ::WeakEntityRef                                                     playerRef,
-        ::Editor::GameOptions const&                                        gameOptions,
-        ::Editor::WorldType const                                           editorWorldType,
-        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
+        ::WeakEntityRef,
+        ::Editor::GameOptions const&,
+        ::Editor::WorldType const,
+        ::std::function<void(::Editor::ExportResult const&, ::std::string)>
     ) /*override*/;
 
     virtual bool canExportProject() /*override*/;
@@ -69,32 +69,32 @@ public:
     virtual ::Editor::ProjectExportStatus getExportStatus() /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription addExportBeginTask(
-        ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)> fn
+        ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)>
     ) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription addExportCopyCompleteTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
     ) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-    addExportLevelDataMutationTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn) /*override*/;
+        addExportLevelDataMutationTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)>) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription addExportPreFileRemovalTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
     ) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-    addExportLevelDataFinalizeTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn) /*override*/;
+        addExportLevelDataFinalizeTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)>) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription addExportPrePackageTask(
         ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>
     ) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-    addExportCleanupTask(::std::function<void(::FileArchiver::ExportType)> fn) /*override*/;
+        addExportCleanupTask(::std::function<void(::FileArchiver::ExportType)>) /*override*/;
 
     virtual ::std::shared_ptr<::FileArchiver::InterventionPublishers> getInterventionPublisherTable() /*override*/;
     // NOLINTEND
@@ -106,12 +106,6 @@ public:
         ::Editor::ServiceProviderCollection&                   providers,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
         ::Editor::ProjectExportStatus                          exportStatus
-    );
-
-    MCNAPI void _onExportError(
-        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback,
-        ::std::string                                                       message,
-        ::Editor::ExportResult                                              result
     );
     // NOLINTEND
 
@@ -126,71 +120,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $quit();
-
-    MCNAPI ::std::string_view $getServiceName() const;
-
-    MCNAPI void $beginExportProject(
-        ::WeakEntityRef                                                     playerRef,
-        ::Editor::GameOptions const&                                        gameOptions,
-        ::Editor::WorldType const                                           editorWorldType,
-        ::std::function<void(::Editor::ExportResult const&, ::std::string)> callback
-    );
-
-    MCNAPI bool $canExportProject();
-
-    MCNAPI ::Editor::ProjectExportStatus $getExportStatus();
-
-    MCNAPI ::Bedrock::PubSub::Subscription $addExportBeginTask(
-        ::std::function<void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&)> fn
-    );
-
-    MCNAPI ::Bedrock::PubSub::Subscription $addExportCopyCompleteTask(
-        ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
-    );
-
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $addExportLevelDataMutationTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn);
-
-    MCNAPI ::Bedrock::PubSub::Subscription $addExportPreFileRemovalTask(
-        ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
-    );
-
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $addExportLevelDataFinalizeTask(::std::function<void(::FileArchiver::ExportType, ::LevelData&)> fn);
-
-    MCNAPI ::Bedrock::PubSub::Subscription $addExportPrePackageTask(
-        ::std::function<
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)> fn
-    );
-
-    MCNAPI ::Bedrock::PubSub::Subscription $addExportCleanupTask(::std::function<void(::FileArchiver::ExportType)> fn);
-
-    MCNAPI ::std::shared_ptr<::FileArchiver::InterventionPublishers> $getInterventionPublisherTable();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIEditorService();
-
-    MCNAPI static void** $vftableForEditorPlayerExportProjectServiceProvider();
-
-    MCNAPI static void** $vftableForEditorServerExportProjectServiceProvider();
     // NOLINTEND
 };
 

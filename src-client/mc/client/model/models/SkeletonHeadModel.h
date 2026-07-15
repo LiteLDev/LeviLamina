@@ -11,7 +11,6 @@
 // clang-format off
 class Actor;
 class BaseActorRenderContext;
-class GeometryPtr;
 class ScreenContext;
 // clang-format on
 
@@ -25,66 +24,20 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SkeletonHeadModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void render(
-        ::ScreenContext& screenContext,
-        ::Actor&         e,
-        float            time,
-        float            r,
-        float            bob,
-        float            yRot,
-        float            xRot,
-        float            scale
-    ) /*override*/;
+    virtual void render(::ScreenContext&, ::Actor&, float, float, float, float, float, float) /*override*/;
 
-    virtual void render(::ScreenContext& screenContext) /*override*/;
+    virtual void render(::ScreenContext&) /*override*/;
 
     virtual void render(::BaseActorRenderContext&) /*override*/;
 
-    virtual void setupAnim(float time, float r, float bob, float yRot, float xRot, float scale) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SkeletonHeadModel(::GeometryPtr source);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source);
+    virtual void setupAnim(float, float, float, float, float, float) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
-        ::ScreenContext& screenContext,
-        ::Actor&         e,
-        float            time,
-        float            r,
-        float            bob,
-        float            yRot,
-        float            xRot,
-        float            scale
-    );
 
-    MCAPI void $render(::ScreenContext& screenContext);
-
-    MCFOLD void $render(::BaseActorRenderContext&);
-
-    MCAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

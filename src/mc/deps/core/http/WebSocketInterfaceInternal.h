@@ -47,25 +47,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI HRESULT $connect(
-        char const*,
-        char const*,
-        ::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>,
-        ::gsl::not_null<::XAsyncBlock*>,
-        ::HC_PERFORM_ENV*
-    );
-
-    MCNAPI HRESULT
-        $sendMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::std::string_view, ::gsl::not_null<::XAsyncBlock*>);
-
-    MCNAPI HRESULT $sendBinaryMessage(
-        ::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>,
-        ::gsl::span<uchar const>,
-        ::gsl::not_null<::XAsyncBlock*>
-    );
-
-    MCNAPI HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::HCWebSocketCloseStatus);
-
 
     // NOLINTEND
 };

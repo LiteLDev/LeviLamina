@@ -30,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimateEntityPacketPayload(::AnimateEntityPacketPayload const&);
-
     MCAPI AnimateEntityPacketPayload(
         ::std::vector<::ActorRuntimeID> const& runtimeIds,
         ::std::string const&                   animation,
@@ -42,18 +40,12 @@ public:
         ::std::string const&                   controller
     );
 
-    MCAPI ::AnimateEntityPacketPayload& operator=(::AnimateEntityPacketPayload&&);
-
-    MCAPI ::AnimateEntityPacketPayload& operator=(::AnimateEntityPacketPayload const&);
-
     MCAPI ~AnimateEntityPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AnimateEntityPacketPayload const&);
-
     MCAPI void* $ctor(
         ::std::vector<::ActorRuntimeID> const& runtimeIds,
         ::std::string const&                   animation,

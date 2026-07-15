@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
-#include "mc/deps/core/threading/AsyncPromise.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/ILanEventHandler.h"
 
@@ -12,8 +11,6 @@
 // clang-format off
 class SignalingService;
 struct NetherNetConnector;
-namespace NetherNet { struct NetworkID; }
-namespace NetherNet { struct StunRelayServer; }
 namespace NetherNet::LanEvents { struct MessageReceived; }
 namespace NetherNet::LanEvents { struct MessageSent; }
 namespace PlayerMessaging { struct NetworkID; }
@@ -26,7 +23,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5e1ef6;
     ::ll::UntypedStorage<8, 16> mUnk503029;
-    ::ll::UntypedStorage<8, 88> mUnk7fb513;
+    ::ll::UntypedStorage<8, 72> mUnk7fb513;
     ::ll::UntypedStorage<8, 8>  mUnk83278f;
     ::ll::UntypedStorage<8, 16> mUnk3ab861;
     // NOLINTEND
@@ -40,24 +37,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~SignalingServiceSignInJob() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~SignalingServiceSignInJob() /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const&) /*override*/;
-#else // LL_PLAT_C
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const& event) /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const&) /*override*/;
-#else // LL_PLAT_C
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event) /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -69,23 +53,6 @@ public:
         ::std::shared_ptr<::SignalingService>                                        signalingService,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
-#endif
-
-    MCNAPI void _handleRelayConfig(
-        ::std::vector<::NetherNet::StunRelayServer> const&      config,
-        ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise
-    ) const;
-
-    MCNAPI void _handleSignInResult(
-        ::std::error_code                                       error,
-        ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise,
-        bool                                                    fetchRelayConfig
-    ) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::variant<::PlayerMessaging::NetworkID, ::NetherNet::NetworkID> getSigninId() const;
-
-    MCNAPI bool isSignedIn() const;
 #endif
 
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> signin(bool fetchRelayConfig);
@@ -104,26 +71,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const& event);
 
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

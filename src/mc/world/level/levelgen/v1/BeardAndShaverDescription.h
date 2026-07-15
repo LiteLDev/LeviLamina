@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 struct BeardKernel;
 // clang-format on
 
@@ -26,26 +25,4 @@ public:
     BeardAndShaverDescription& operator=(BeardAndShaverDescription const&);
     BeardAndShaverDescription(BeardAndShaverDescription const&);
     BeardAndShaverDescription();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BeardAndShaverDescription(
-        ::BeardingDescriptionCache cache,
-        ::BeardKernel const&       beardKernel,
-        float                      minBeardWidth,
-        float                      maxBeardWidth
-    );
-
-    MCAPI float calculateContribution(::BlockPos const& pos) const;
-
-    MCFOLD ::BeardingDescriptionCache const& getCache() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::BeardingDescriptionCache cache, ::BeardKernel const& beardKernel, float minBeardWidth, float maxBeardWidth);
-    // NOLINTEND
 };

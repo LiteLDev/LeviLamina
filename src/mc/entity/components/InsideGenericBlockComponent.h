@@ -19,20 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, float>                             mGrow;
     ::ll::TypedStorage<1, 1, bool>                              mHasChunks;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~InsideGenericBlockComponent();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
-    // NOLINTEND
 };

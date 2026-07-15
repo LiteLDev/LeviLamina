@@ -6,7 +6,7 @@ struct zip_source_file_operations {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkaccc79;
+    ::ll::UntypedStorage<8, 8> mUnk15eefe;
     ::ll::UntypedStorage<8, 8> mUnkdab7d2;
     ::ll::UntypedStorage<8, 8> mUnk3ddf21;
     ::ll::UntypedStorage<8, 8> mUnk5a606e;

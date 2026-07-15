@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/screens/LayoutSolvePass.h"
 #include "mc/client/gui/screens/VariableRef.h"
 
 // auto generated forward declare list
@@ -42,24 +41,10 @@ public:
     // NOLINTBEGIN
     MCAPI void _add(::UIControl& control);
 
-    MCAPI void _solve(::ui::DirtyFlag& dirty, ::LayoutSolvePass pass);
-
-    MCAPI void _traceVariablesForDebugControls();
-
     MCAPI void invalidate(::VariableRef& variableRef, bool forceInvalidation);
 
     MCAPI void invalidateDependencies(::VariableRef& variableRef, bool forceInvalidation);
 
-    MCAPI void reinitialize(::VariableRef& variableRef);
-
     MCAPI ::ui::DirtyFlag solve();
-
-    MCAPI ~LayoutVariables();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

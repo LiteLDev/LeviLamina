@@ -9,9 +9,7 @@
 // clang-format off
 class BaseGameVersion;
 class EntityContext;
-class PacketSender;
 class Player;
-class UserEntityIdentifierComponent;
 struct ControlSchemeComponent;
 struct ServerCameraAllowedControlSchemesComponent;
 struct ServerCameraDefaultControlSchemesComponent;
@@ -42,12 +40,6 @@ MCNAPI ::std::string_view getRootInheritedCamera(
     ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presets
 );
 
-MCNAPI bool isSchemeAllowedByCamera(::std::string_view cameraName, ::ControlScheme::Scheme scheme);
-
-#ifdef LL_PLAT_C
-MCNAPI bool isUnlockedRelativeStrafe(::gsl::not_null<::ControlSchemeComponent*> component);
-#endif
-
 MCNAPI void populateControlSchemeServerComponents(
     ::ServerCameraAllowedControlSchemesComponent&               allowedSchemesComponent,
     ::ServerCameraDefaultControlSchemesComponent&               defaultSchemesComponent,
@@ -62,12 +54,6 @@ MCNAPI ::ControlScheme::Scheme resolveControlSchemeOnCameraSetCommand(
     ::Player&                       player
 );
 
-MCNAPI void sendControlSchemeToClient(
-    ::ControlScheme::Scheme                scheme,
-    ::PacketSender&                        sender,
-    ::UserEntityIdentifierComponent const* userIdentifier
-);
-
 MCNAPI void setBaseGameVersion(::BaseGameVersion const& version);
 
 MCNAPI bool setControlScheme(
@@ -80,11 +66,6 @@ MCNAPI bool setControlScheme(
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::unordered_map<::std::string_view, ::std::vector<::ControlScheme::Scheme>> const&
-DEFAULT_ALLOWED_SCHEMES_FOR_CAMERA();
-
-MCNAPI ::std::unordered_set<::std::string_view> const& MC_CAMERAS();
-
 MCNAPI ::BaseGameVersion& baseGameVersion();
 // NOLINTEND
 

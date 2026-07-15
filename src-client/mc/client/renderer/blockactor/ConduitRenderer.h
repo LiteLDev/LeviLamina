@@ -18,7 +18,6 @@ class ConduitCageModel;
 class ConduitWindModel;
 struct BlockActorRenderData;
 namespace dragon { struct RenderMetadata; }
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class ConduitRenderer : public ::BlockActorRenderer, public ::AppPlatformListener {
@@ -35,29 +34,22 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ConduitBaseModel>> mModel;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConduitCageModel>>  mCage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConduitWindModel>>  mOuterWind;
-    ::ll::TypedStorage<8, 552, ::mce::Mesh>                          mHeartMesh;
+    ::ll::TypedStorage<8, 592, ::mce::Mesh>                          mHeartMesh;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConduitRenderer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConduitRenderer() /*override*/;
+    virtual ~ConduitRenderer() /*override*/ = default;
 
     virtual void onAppSuspended() /*override*/;
 
-    virtual void
-    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
+    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ConduitRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
     MCAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
@@ -72,30 +64,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppSuspended();
 
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForAppPlatformListener();
-
-    MCNAPI static void** $vftableForBlockActorRenderer();
     // NOLINTEND
 };

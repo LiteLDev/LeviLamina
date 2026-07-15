@@ -22,26 +22,19 @@ public:
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
     virtual uint64 getNumberOfParticlesToEmit(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::RenderParams&                                   renderParams,
-        ::std::chrono::nanoseconds const&                 dt
+        ::ParticleSystem::ComponentAccessParticleEmitter&,
+        ::RenderParams&,
+        ::std::chrono::nanoseconds const&
     ) = 0;
 
-    virtual uint64 getNumberOfManualParticlesAllowed(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::RenderParams&                                   renderParams
-    );
+    virtual uint64
+    getNumberOfManualParticlesAllowed(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
-    MCFOLD uint64 $getNumberOfManualParticlesAllowed(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::RenderParams&                                   renderParams
-    );
     // NOLINTEND
 };
 

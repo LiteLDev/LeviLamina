@@ -20,12 +20,6 @@ namespace mce { class TextureGroup; }
 
 class ClientCommands {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ClientCommands();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void init(
@@ -34,8 +28,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IApp> const&                        app,
         ::Bedrock::NotNullNonOwnerPtr<::Bedrock::DevTools::CommandExecutor> devToolsCommandExecutor
     );
-
-    MCFOLD static void setupSplitScreenStandard(::MinecraftCommands& minecraftCommands);
 
     MCAPI static void setupStandard(
         ::MinecraftCommands&                   minecraftCommands,
@@ -49,11 +41,5 @@ public:
     );
 
     MCAPI static void setupStartMenuScreen(::MinecraftCommands& minecraftCommands, ::IMinecraftGame& minecraftClient);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -27,12 +27,11 @@ public:
 public:
     // prevent constructor by default
     LayoutOffset& operator=(LayoutOffset const&);
+    LayoutOffset();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayoutOffset();
-
     MCAPI LayoutOffset(::ui::LayoutOffset const&);
 
     MCAPI explicit LayoutOffset(::glm::vec2 size);
@@ -43,16 +42,12 @@ public:
 
     MCAPI bool operator!=(::ui::LayoutOffset const& other) const;
 
-    MCFOLD ::ui::LayoutOffset& operator=(::ui::LayoutOffset&&);
-
     MCAPI ~LayoutOffset();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ui::LayoutOffset const&);
 
     MCAPI void* $ctor(::glm::vec2 size);

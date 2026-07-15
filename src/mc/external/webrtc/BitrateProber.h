@@ -34,9 +34,9 @@ public:
         ::ll::UntypedStorage<8, 24> mUnk3b2d0c;
         ::ll::UntypedStorage<4, 4>  mUnk56aafd;
         ::ll::UntypedStorage<4, 4>  mUnk401b67;
+        ::ll::UntypedStorage<8, 8>  mUnkf0bd02;
         ::ll::UntypedStorage<8, 8>  mUnk910fab;
         ::ll::UntypedStorage<8, 8>  mUnkae7620;
-        ::ll::UntypedStorage<4, 4>  mUnkf56bb5;
         // NOLINTEND
 
     public:
@@ -52,7 +52,7 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk7c484e;
     ::ll::UntypedStorage<8, 40>  mUnk42a314;
     ::ll::UntypedStorage<8, 8>   mUnk85d646;
-    ::ll::UntypedStorage<8, 248> mUnkfed707;
+    ::ll::UntypedStorage<8, 168> mUnkfed707;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 
     MCNAPI void MaybeSetActiveState(::webrtc::DataSize packet_size);
 
-    MCNAPI ::webrtc::Timestamp NextProbeTime(::webrtc::Timestamp now) const;
+    MCNAPI ::webrtc::Timestamp NextProbeTime(::webrtc::Timestamp) const;
 
     MCNAPI void OnIncomingPacket(::webrtc::DataSize packet_size);
 

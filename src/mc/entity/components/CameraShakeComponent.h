@@ -4,81 +4,55 @@
 
 // auto generated inclusion list
 #include "mc/deps/minecraft_camera/CameraShakeType.h"
+#include "mc/entity/components/CameraShakeTypeQueue.h"
 
 // auto generated forward declare list
 // clang-format off
 class Random;
 class SimplexNoise;
 class Vec3;
-struct CameraShakeEvent;
 // clang-format on
 
 class CameraShakeComponent {
 public:
+    // CameraShakeComponent inner types define
+    using ShakeQueueArray = ::std::array<::CameraShakeTypeQueue, 2>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::CameraShakeEvent>> mShakeEvents;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>  xAxisNoise;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>  yAxisNoise;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>  zAxisNoise;
-    ::ll::TypedStorage<8, 8, double>                             mLastUpdatedTime;
-    ::ll::TypedStorage<4, 4, float>                              mNoiseTime;
-    ::ll::TypedStorage<4, 4, float>                              mShakeIntensity;
-    ::ll::TypedStorage<4, 4, float>                              mDecayRate;
-    ::ll::TypedStorage<1, 1, ::CameraShakeType>                  mShakeType;
-    ::ll::TypedStorage<1, 1, bool>                               mWasShaking;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>        xAxisNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>        yAxisNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>        zAxisNoise;
+    ::ll::TypedStorage<8, 8, double>                                   mLastUpdatedTime;
+    ::ll::TypedStorage<4, 4, float>                                    mNoiseTime;
+    ::ll::TypedStorage<4, 4, float>                                    mDecayRate;
+    ::ll::TypedStorage<8, 64, ::std::array<::CameraShakeTypeQueue, 2>> mShakeTypeQueues;
+    ::ll::TypedStorage<1, 1, bool>                                     mWasShaking;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    CameraShakeComponent& operator=(CameraShakeComponent const&);
-    CameraShakeComponent(CameraShakeComponent const&);
-    CameraShakeComponent();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD float getDecayRate() const;
+    MCAPI ::std::vector<::CameraShakeType> getActiveShakeTypes() const;
 
-    MCAPI double getLastUpdateTime() const;
-
-    MCFOLD float getNoiseTime() const;
-
-    MCFOLD ::std::vector<::CameraShakeEvent>& getShakeEventQueue();
-
-    MCFOLD float getShakeIntensity() const;
-
-    MCFOLD ::CameraShakeType getShakeType() const;
-
-    MCAPI ::Vec3 getShakeVector(float noiseMultiplier, float frequency, float amplitude) const;
+    MCAPI ::Vec3
+    getShakeVector(::CameraShakeType shakeType, float noiseMultiplier, float frequency, float amplitude) const;
 
     MCAPI void initialize(::Random& random);
 
-    MCAPI ::CameraShakeComponent& operator=(::CameraShakeComponent&&);
+    MCAPI bool queueShakeEvent(::CameraShakeType shakeType, float intensity, float duration);
 
-    MCAPI bool queueShakeEvent(float intensity, float duration);
-
-    MCAPI void setLastUpdateTime(double newSeconds);
-
-    MCFOLD void setNoiseTime(float noiseTime);
-
-    MCFOLD void setShakeIntensity(float intensity);
-
-    MCFOLD void setShakeType(::CameraShakeType shakeType);
-
-    MCAPI bool shouldShake() const;
-
-    MCAPI void updateShakeNoise(::Random& random);
+    MCAPI ~CameraShakeComponent();
 #endif
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static float getMaxIntensity();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -7,9 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IEventFilter;
-class IEventRecorder;
-class IEventTime;
 namespace Social::Events { class EventManager; }
 class IBrazeEventListener;
 class IPurchaseEventing;
@@ -36,14 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit MinecraftEventingDependencies(::std::shared_ptr<::Social::Events::EventManager> events);
-
-#ifdef LL_PLAT_C
-    MCNAPI ::std::unique_ptr<::IEventFilter> createEventFilter();
-
-    MCNAPI ::std::unique_ptr<::IEventRecorder> createEventRecorder();
-
-    MCNAPI ::std::unique_ptr<::IEventTime> createTime();
-#endif
 
     MCNAPI ~MinecraftEventingDependencies();
     // NOLINTEND

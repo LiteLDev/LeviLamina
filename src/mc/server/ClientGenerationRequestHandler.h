@@ -18,20 +18,4 @@ public:
     ClientGenerationRequestHandler& operator=(ClientGenerationRequestHandler const&);
     ClientGenerationRequestHandler(ClientGenerationRequestHandler const&);
     ClientGenerationRequestHandler();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~ClientGenerationRequestHandler();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };

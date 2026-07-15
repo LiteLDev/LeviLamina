@@ -10,7 +10,6 @@
 class AABB;
 class BlockComponentStorage;
 class CompoundTag;
-class SemVersion;
 class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -38,7 +37,7 @@ public:
 
     virtual bool isNetworkComponent() const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
     // NOLINTEND
@@ -46,30 +45,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockCollisionBoxDescription(bool enabled);
-
     MCAPI BlockCollisionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-
-    MCAPI static ::SemVersion const& Version1_21_130();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool enabled);
-
     MCAPI void* $ctor(::Vec3 const& origin, ::Vec3 const& size);
     // NOLINTEND
 
@@ -84,7 +71,7 @@ public:
 
     MCFOLD bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 

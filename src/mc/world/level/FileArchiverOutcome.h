@@ -11,4 +11,5 @@ enum class FileArchiverOutcome : int {
     FailureEditionMismatch = 5,
     FailureEditorMismatch  = 6,
     FailureZipDepthError   = 7,
+    FailureNotEnoughSpace  = 8,
 };

@@ -30,31 +30,6 @@ public:
             ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>>>
             mProperties;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PropertyCollection();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void fromVariantMap(
-            ::DynamicProperties::PropertyCollection& collection,
-            ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const&
-                properties
-        );
-
-        MCAPI static ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>>
-        toVariantMap(::DynamicProperties::PropertyCollection const& collection);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     using PropertyVariant = ::std::variant<double, float, bool, ::std::string, ::Vec3>;
@@ -78,19 +53,10 @@ public:
 
     MCAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
 
-    MCFOLD uint64 getCollectionCount() const;
-
     MCAPI ::std::variant<double, float, bool, ::std::string, ::Vec3> const*
     getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
     MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::std::string const& collectionName) const;
-
-    MCFOLD ::std::unordered_map<::std::string, ::DynamicProperties::PropertyCollection> const&
-    getPropertyCollections() const;
-
-    MCAPI uint64 getTotalByteCount() const;
-
-    MCAPI uint64 getTotalByteCount(::std::string const& collectionName) const;
 
     MCAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
 
@@ -103,8 +69,6 @@ public:
     );
 
     MCAPI void updateCollectionName(::std::string const& from, ::std::string const& to);
-
-    MCAPI ~DynamicProperties();
     // NOLINTEND
 
 public:
@@ -128,11 +92,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& STORAGE_TAG();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

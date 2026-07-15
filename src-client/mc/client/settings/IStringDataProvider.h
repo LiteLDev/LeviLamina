@@ -15,7 +15,7 @@ public:
 
     virtual ::std::string getValue() const = 0;
 
-    virtual void setValue(::std::string_view value) = 0;
+    virtual void setValue(::std::string_view) = 0;
 
     virtual void commitValue();
 

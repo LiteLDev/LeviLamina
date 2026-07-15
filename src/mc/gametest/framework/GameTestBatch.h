@@ -21,45 +21,28 @@ public:
 
 public:
     // prevent constructor by default
-    GameTestBatch& operator=(GameTestBatch const&);
     GameTestBatch();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GameTestBatch(::gametest::GameTestBatch&&);
-
-    MCNAPI GameTestBatch(::gametest::GameTestBatch const&);
-
     MCNAPI GameTestBatch(
         ::std::string                                                      name,
         ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>> testFunctions,
         ::std::function<void()>                                            beforeBatchFunction,
         ::std::function<void()>                                            afterBatchFunction
     );
-
-    MCNAPI ~GameTestBatch();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gametest::GameTestBatch&&);
-
-    MCNAPI void* $ctor(::gametest::GameTestBatch const&);
-
     MCNAPI void* $ctor(
         ::std::string                                                      name,
         ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>> testFunctions,
         ::std::function<void()>                                            beforeBatchFunction,
         ::std::function<void()>                                            afterBatchFunction
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -22,18 +22,6 @@ public:
         ::ll::TypedStorage<4, 8, ::std::optional<::KeyboardType>> keyboardType;
         ::ll::TypedStorage<8, 32, ::std::string>                  action;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~KeymappingInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -47,12 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearCapturingKeymapping();
-
-    MCAPI void enqueueDeferredCallback(::std::function<void()> callback);
-
-    MCFOLD ::std::optional<::InputSettingsHandler::KeymappingInfo> const& getCapturingKeymapping();
-
     MCAPI void setCapturingKeymapping(::InputSettingsHandler::KeymappingInfo info);
     // NOLINTEND
 };

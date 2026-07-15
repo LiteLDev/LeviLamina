@@ -48,18 +48,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                      mTrackTarget;
         ::ll::TypedStorage<1, 1, bool>                      mHijackMountNavigation;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~NavigationSettings();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -113,49 +101,19 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MeleeAttackBaseGoal(::Mob& mob);
 
-    MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
-
     MCAPI void _attemptMoveToTarget(::Actor const& target);
 
     MCAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
-
-    MCAPI void _decrementAttackTicks();
-
-    MCAPI void _decrementPathRecalculationTicks();
-
-    MCFOLD ::Vec3 const& _getLastCachedTargetPosition() const;
-
-    MCFOLD ::Mob& _getMob() const;
 
     MCAPI ::Mob& _getNavigatingMob() const;
 
     MCAPI ::NavigationComponent* _getNavigationComponent() const;
 
-    MCAPI ::Actor* _getTarget() const;
-
-    MCFOLD int _getTicksToRecalculatePath() const;
-
-    MCAPI void _increasePathRecalculationFailureTick();
-
     MCAPI bool _isNavigationDoneOrStuck() const;
-
-    MCAPI void _resetAttackTicks();
-
-    MCAPI void _setHasAttacked();
 
     MCAPI bool _shouldRecalculatePath(bool canReachTarget) const;
 
-    MCAPI bool _targetPositionPutsMobInSun();
-
     MCAPI void _tryLookAtTarget(::Actor const& target) const;
-
-    MCFOLD int getAttackTicks() const;
-
-    MCFOLD int getCooldownTicks() const;
-
-    MCAPI float getMeleeFOV() const;
-
-    MCAPI bool hasAttackTicksLeft() const;
 
     MCAPI bool isWithinFoV(::Vec3 const& position) const;
     // NOLINTEND
@@ -169,7 +127,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -183,7 +141,7 @@ public:
 
     MCAPI void $stop();
 
-    MCFOLD int $getAttackTicksResetValue() const;
+    MCAPI int $getAttackTicksResetValue() const;
 
 
     // NOLINTEND

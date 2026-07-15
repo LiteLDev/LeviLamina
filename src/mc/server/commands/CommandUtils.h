@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
@@ -14,21 +13,17 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class CommandFilePath;
-class CommandOrigin;
 class CommandOutput;
 class CompoundTag;
 class EntityContext;
 class FunctionEntry;
 class ItemInstance;
 class ItemStack;
-class Level;
-class LevelChunk;
 class LevelData;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
-struct Tick;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
 // clang-format on
@@ -36,9 +31,6 @@ namespace Json { class Value; }
 namespace CommandUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool
-addItemInstanceComponents(::ItemInstance& itemInstance, ::Json::Value const& components, ::std::string& errorMsg);
-
 MCAPI ::Actor* addToLevel(::OwnerPtr<::EntityContext> entity, ::BlockSource& region);
 
 MCAPI void addtoCSVList(::std::string& list, ::std::string const& newItem);
@@ -50,8 +42,6 @@ MCAPI void alterSpawnableEntities(
 );
 
 MCAPI void broadcastPlayerSpawnedMobEvent(::Actor const& entity, ::Actor& summoner);
-
-MCAPI bool canBeSummoned(::ActorDefinitionIdentifier const& actorId, ::CommandOrigin const& origin);
 
 MCAPI void clearBlockEntityContents(::BlockSource& region, ::BlockPos const& pos);
 
@@ -74,27 +64,13 @@ MCAPI void displayLocalizableMessage(
 
 MCAPI ::std::string getActorName(::Actor const& actor);
 
-MCAPI ::BlockPos getFeetBlockPos(::Actor const* entity);
-
-MCAPI ::Vec3 getFeetPos(::Actor const* entity);
-
-MCAPI ::std::vector<::ActorType> getInvalidCommandEntities();
-
 MCAPI ::std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
 
 MCAPI ::std::string getTelemetryErrorList(::CommandOutput const& output);
 
-MCAPI bool isActiveTickingChunk(::LevelChunk const& chunk);
-
-MCAPI bool isActiveTickingChunk(::Tick currentLevelTick, ::Tick chunkLastTick);
-
 MCAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEntry, ::std::string const& resolvedPath);
 
 MCAPI void nameEntity(::Actor& actor, bool nameSet, ::Bedrock::Safety::RedactableString const& actorName);
-
-MCAPI void setDifficulty(::Level& level, ::SharedTypes::Legacy::Difficulty difficulty);
-
-MCAPI void setInitEvent(::ActorDefinitionIdentifier& actorId, ::std::string const& eventName);
 
 MCAPI ::Actor* spawnEntityAt(
     ::BlockSource&                     region,
@@ -111,7 +87,9 @@ MCAPI ::std::string const validatePath(::CommandOutput& output, ::CommandFilePat
 
 // static variables
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI ::std::vector<::std::pair<::std::string, char>> const& CMD_INPUT_UNICODE_TRANSLATE_MAP();
+#endif
 // NOLINTEND
 
 } // namespace CommandUtils

@@ -20,8 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void add(uint64 id, ::std::string& blob, bool isChunkInTickRange);
-
     MCNAPI ~TransferBuilder();
     // NOLINTEND
 

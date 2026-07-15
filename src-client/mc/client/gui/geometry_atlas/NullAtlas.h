@@ -11,6 +11,7 @@
 // clang-format off
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace GeometryAtlas { class IItemTile; }
+namespace GeometryAtlas { class IPaperDollTile; }
 namespace GeometryAtlas { class IRenderContext; }
 namespace GeometryAtlas { struct TileDefinition; }
 // clang-format on
@@ -37,7 +38,12 @@ public:
     virtual ::std::shared_ptr<::GeometryAtlas::IItemTile>
     createItem(::GeometryAtlas::TileDefinition const&) /*override*/;
 
+    virtual ::std::shared_ptr<::GeometryAtlas::IPaperDollTile>
+    createDoll(::GeometryAtlas::TileDefinition const&) /*override*/;
+
     virtual void trySubmitUpdates(::GeometryAtlas::IRenderContext&) /*override*/;
+
+    virtual bool hasAnyUpdates() const /*override*/;
     // NOLINTEND
 
 public:

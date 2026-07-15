@@ -4,12 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/ServerCommand.h"
-#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BlockSource;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -49,52 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _handleCreateTest(::BlockSource& region, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void _handleRun(
-        ::MinecraftGameTest&   gameTest,
-        ::BlockSource&         region,
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output
-    ) const;
-
-    MCAPI void _handleRunNearbyTests(
-        ::MinecraftGameTest&   gameTest,
-        ::BlockSource&         region,
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output
-    ) const;
-
-    MCAPI void _handleRunSet(
-        ::MinecraftGameTest&   gameTest,
-        ::BlockSource&         region,
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        bool                   stopOtherTestsOnFailure
-    ) const;
-
-    MCAPI void _handleRunThis(
-        ::MinecraftGameTest&   gameTest,
-        ::BlockSource&         region,
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output
-    ) const;
-
-    MCAPI void _handleShowPosition(::BlockSource& region, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void _runTestAt(
-        ::MinecraftGameTest&        gameTest,
-        ::BlockSource&              region,
-        ::CommandOutput*            output,
-        ::BlockPos const&           structureBlockPos,
-        ::std::optional<::Rotation> rotation
-    ) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -108,19 +60,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::GameTestCommand::Mode>();
-// clang-format on

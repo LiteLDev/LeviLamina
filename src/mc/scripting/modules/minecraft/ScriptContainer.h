@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptContainerRules.h"
 
 // auto generated forward declare list
@@ -17,7 +17,6 @@ namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptContainerRulesError; }
-namespace ScriptModuleMinecraft { struct ScriptInvalidContainerError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -33,13 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptContainer();
+    virtual ~ScriptContainer() = default;
 
     virtual ::Scripting::Result_deprecated<int> getSize() const;
 
@@ -92,58 +87,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptContainer(::Scripting::WeakLifetimeScope const& scope);
-
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
         ::ScriptModuleMinecraft::ScriptContainerRulesError,
         ::Scripting::Error>
     addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
-
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
-    contains(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
-
-    MCAPI ::Scripting::Result<::std::optional<int>, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
-    find(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
-
-    MCAPI ::Scripting::Result<::std::optional<int>, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
-    findLast(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
-
-    MCAPI ::Scripting::Result<::std::optional<int>, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
-    firstEmptySlot() const;
-
-    MCAPI ::Scripting::Result<::std::optional<int>, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
-    firstItem() const;
-
-    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> getWeight() const;
-
-    MCAPI ::Scripting::Result<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
-        ::ScriptModuleMinecraft::ScriptContainerRulesError,
-        ::Scripting::Error>
-    transferItem(int fromSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::Scripting::Error> _isSlotBeyondMaxCapacity(::Container& container, int slot);
-
-    MCAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
-
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

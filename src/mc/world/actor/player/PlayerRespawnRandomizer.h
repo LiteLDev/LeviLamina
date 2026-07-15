@@ -6,7 +6,6 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/util/random/XoroshiroRandom.h"
 #include "mc/world/actor/player/PlayerRespawnBlockRadiusRandomizer.h"
-#include "mc/world/level/GeneratorType.h"
 
 class PlayerRespawnRandomizer {
 public:
@@ -20,27 +19,5 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                               mSpawnCenter;
     ::ll::TypedStorage<4, 12, ::Vec3>                               mPrimaryOffset;
     ::ll::TypedStorage<4, 12, ::Vec3>                               mPrimaryScale;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerRespawnRandomizer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlayerRespawnRandomizer(uint spawnRadius, ::GeneratorType const& worldType);
-
-    MCAPI ::Vec3 performPrimaryJump(::Vec3 const& spawnCenter);
-
-    MCAPI ::Vec3 performSecondaryJump();
-
-    MCAPI void resetSecondary();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint spawnRadius, ::GeneratorType const& worldType);
     // NOLINTEND
 };

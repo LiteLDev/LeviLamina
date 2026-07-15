@@ -11,6 +11,7 @@
 struct ITaskQueuePortContext;
 struct XTaskQueueObject;
 struct XTaskQueueRegistrationToken;
+struct XTaskQueueTestHooks;
 // clang-format on
 
 struct ITaskQueue : public ::IApi {
@@ -18,6 +19,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::XTaskQueueObject* GetHandle() = 0;
+
+    virtual ::XTaskQueueTestHooks* GetTestHooks() = 0;
+
+    virtual void SetTestHooks(::XTaskQueueTestHooks* testHooks) = 0;
 
     virtual HRESULT GetPortContext(::XTaskQueuePort port, ::ITaskQueuePortContext** portContext) = 0;
 
@@ -38,10 +43,6 @@ public:
     ) = 0;
 
     virtual void UnregisterSubmitCallback(::XTaskQueueRegistrationToken token) = 0;
-
-    virtual bool CanTerminate() = 0;
-
-    virtual bool CanClose() = 0;
 
     virtual HRESULT Terminate(bool wait, void* callbackContext, void (*callback)(void*)) = 0;
     // NOLINTEND

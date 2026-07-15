@@ -18,30 +18,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                           mCurrentMessage;
     ::ll::TypedStorage<8, 8, int64>                                                    mUpdateTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AuthLoadingMessages();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit AuthLoadingMessages(::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> progressTips);
-
-    MCAPI void update();
-
-    MCAPI ~AuthLoadingMessages();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> progressTips);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

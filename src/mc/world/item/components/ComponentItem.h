@@ -6,7 +6,6 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/shared_types/item/EnchantSlot.h"
 #include "mc/deps/shared_types/item/ItemCooldownType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
@@ -34,20 +33,16 @@ class ItemDescriptor;
 class ItemStack;
 class ItemStackBase;
 class Level;
-class ListTag;
 class Mob;
-class PackLoadContext;
 class Player;
 class SemVersion;
 class Vec3;
-struct ComponentItemDataAll_Latest;
-struct ItemComprehensiveLoadResult;
 struct ItemIconInfo;
 struct LegacyEventItemComponentData;
 struct ResolvedItemIconInfo;
+struct SoundEventIdentifier;
 namespace Bedrock::Safety { class RedactableString; }
-namespace Core { class Path; }
-namespace SharedTypes::Legacy { struct ComponentItemData; }
+namespace SharedTypes::v1_26_30 { struct ItemDocument; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -84,9 +79,10 @@ public:
     virtual ~ComponentItem() /*override*/;
 
     virtual void initServer(
-        ::ItemComprehensiveLoadResult&& data,
-        ::SemVersion const&             documentVersion,
-        ::PackLoadContext&              packLoadContext
+        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SemVersion const&                             documentVersion,
+        ::Experiments const&                            experiments,
+        ::std::optional<::LegacyEventItemComponentData> legacyEventData
     ) /*override*/;
 
     virtual void tearDown() /*override*/;
@@ -151,7 +147,7 @@ public:
     ) const /*override*/;
 
     virtual bool
-    isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const
+    isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const
         /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
@@ -174,11 +170,11 @@ public:
 
     virtual void setColor(::ItemStackBase& instance, ::mce::Color const& color) const /*override*/;
 
-    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackMissSound() const /*override*/;
+    virtual ::std::optional<::SoundEventIdentifier> getAttackMissSound() const /*override*/;
 
-    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackHitSound() const /*override*/;
+    virtual ::std::optional<::SoundEventIdentifier> getAttackHitSound() const /*override*/;
 
-    virtual ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getAttackCriticalHitSound() const /*override*/;
+    virtual ::std::optional<::SoundEventIdentifier> getAttackCriticalHitSound() const /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
@@ -234,9 +230,9 @@ public:
     virtual int getVariant(int, int, bool) const;
 
     virtual void initClient(
-        ::ItemComprehensiveLoadResult&& data,
-        ::SemVersion const&             documentVersion,
-        ::PackLoadContext&              packLoadContext,
+        ::SharedTypes::v1_26_30::ItemDocument&& data,
+        ::SemVersion const&                     documentVersion,
+        ::Experiments const&                    experiments,
         ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
     ) /*override*/;
 
@@ -249,7 +245,7 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     virtual bool canBeCharged() const /*override*/;
 
@@ -282,91 +278,19 @@ public:
     // NOLINTBEGIN
     MCAPI ComponentItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void _addRegisteredCerealComponent(
-        ::std::pair<::std::string const, ::std::shared_ptr<::ItemComponent>>& cerealComponent
-    );
-
-    MCAPI ::std::unique_ptr<::CompoundTag> _buildItemPropertiesNetworkTag(::cereal::ReflectionCtx const& ctx) const;
-
-    MCAPI ::std::unique_ptr<::ListTag> _buildItemTagsNetworkTag() const;
-
-    MCAPI bool _doesNotTakeDurabilityDamage() const;
-
     MCAPI void _initializeLoadedComponents(
         ::std::optional<::SemVersion>  documentVersion,
         ::std::optional<::Experiments> _experiments
     );
 
-    MCAPI void _loadComponentsFromNetworkTag(
-        ::std::string const&           componentName,
-        ::CompoundTag const&           componentTag,
-        ::cereal::ReflectionCtx const& ctx
-    );
-
-    MCAPI void _loadItemPropertiesNetworkTag(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
-
-    MCAPI void _loadItemTagsNetworkTag(::ListTag const& listTag);
-
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI bool checkComponentDataForContentErrors() const;
-
-    MCAPI ::IconItemComponent const* getIconComponent() const;
-
     MCAPI float getMovementModifier() const;
-
-    MCAPI void init(
-        ::ComponentItemDataAll_Latest&&                 data,
-        ::SemVersion const&                             documentVersion,
-        ::std::optional<::LegacyEventItemComponentData> legacyEventData,
-        ::Experiments const&                            experiments
-    );
-
-    MCAPI ::Bedrock::PubSub::Connector<void(int&, ::ItemStack&, ::Actor&, ::Mob&)>& onBeforeDurabilityDamage();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHitActor();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&)>& onHitBlock();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHurtActor();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&)>&
-    onMiningBlock();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Player&)>& onUse();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Player&, ::Vec3 const&)>& onUseAsAttack();
-
-    MCAPI ::Bedrock::PubSub::Connector<
-        void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&)>&
-    onUseOn();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>&
-    onUseTimeDepleted();
-
-    MCAPI void setBlockTypeForRendering(::WeakPtr<::BlockType const> const& block);
-
-    MCAPI void setEnchantSlot(::SharedTypes::EnchantSlot enchantSlot);
-
-    MCAPI void setEnchantValue(int enchantValue);
-
-#ifdef LL_PLAT_C
-    MCAPI void setIsAttachable(bool value);
-#endif
-
-    MCAPI void setIsLiquidClipped(bool isLiquidClipped);
-
-    MCAPI void setRequiresInteract(bool requiresInteract);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _moveDataToComponentItem(::ComponentItem& item, ::SharedTypes::Legacy::ComponentItemData& data);
-
-    MCAPI static ::std::optional<::LegacyEventItemComponentData>
-    makeLegacyEvents(::PackLoadContext& packLoadContext, ::ComponentItemDataAll_Latest const& data);
-
     MCAPI static void registerItemComponentTypes(::cereal::ReflectionCtx& ctx);
 
     MCAPI static ::std::tuple<
@@ -380,7 +304,6 @@ public:
         ::cereal::ReflectionCtx const& ctx,
         ::std::string_view             document,
         bool                           isBaseGamePack,
-        ::Core::Path const&            resourceName,
         bool                           betaApis,
         ::std::optional<::SemVersion>  minVersion
     );
@@ -402,9 +325,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initServer(
-        ::ItemComprehensiveLoadResult&& data,
-        ::SemVersion const&             documentVersion,
-        ::PackLoadContext&              packLoadContext
+        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SemVersion const&                             documentVersion,
+        ::Experiments const&                            experiments,
+        ::std::optional<::LegacyEventItemComponentData> legacyEventData
     );
 
     MCFOLD void $tearDown();
@@ -449,9 +373,9 @@ public:
 
     MCAPI short $getMaxDamage() const;
 
-    MCAPI int $getAttackDamage() const;
+    MCFOLD int $getAttackDamage() const;
 
-    MCAPI bool $isGlint(::ItemStackBase const& stack) const;
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
     MCAPI bool $canDestroyInCreative() const;
 
@@ -469,7 +393,7 @@ public:
     ) const;
 
     MCAPI bool
-    $isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const;
+    $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
     MCAPI int $getEnchantSlot() const;
 
@@ -491,11 +415,11 @@ public:
 
     MCAPI void $setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
 
-    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackMissSound() const;
+    MCAPI ::std::optional<::SoundEventIdentifier> $getAttackMissSound() const;
 
-    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackHitSound() const;
+    MCAPI ::std::optional<::SoundEventIdentifier> $getAttackHitSound() const;
 
-    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackCriticalHitSound() const;
+    MCAPI ::std::optional<::SoundEventIdentifier> $getAttackCriticalHitSound() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
@@ -526,9 +450,6 @@ public:
 
     MCAPI void $hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
-
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
     MCFOLD uchar $getMaxStackSize(::ItemDescriptor const&) const;
@@ -546,9 +467,9 @@ public:
     MCFOLD int $getVariant(int, int, bool) const;
 
     MCAPI void $initClient(
-        ::ItemComprehensiveLoadResult&& data,
-        ::SemVersion const&             documentVersion,
-        ::PackLoadContext&              packLoadContext,
+        ::SharedTypes::v1_26_30::ItemDocument&& data,
+        ::SemVersion const&                     documentVersion,
+        ::Experiments const&                    experiments,
         ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
     );
 
@@ -557,11 +478,6 @@ public:
     MCFOLD int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
 
     MCFOLD bool $isEmissive(int auxValue) const;
-
-    MCAPI ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
 
     MCAPI bool $canBeCharged() const;
 
@@ -575,7 +491,7 @@ public:
 
     MCAPI ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
 
-    MCAPI bool
+    MCFOLD bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
@@ -586,11 +502,5 @@ public:
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

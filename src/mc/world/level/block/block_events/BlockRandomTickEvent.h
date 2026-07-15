@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class Random;
 // clang-format on
@@ -32,20 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockRandomTickEvent(::BlockSource& region, ::BlockPos pos, ::Random& random);
-
-    MCFOLD bool isClientSide() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::BlockSource& region, ::BlockPos pos, ::Random& random);
     // NOLINTEND
 
 public:

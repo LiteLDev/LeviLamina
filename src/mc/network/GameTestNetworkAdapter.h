@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-class MinecraftGameTest;
 class PacketSender;
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { struct TestParameters; }
@@ -38,25 +37,15 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void onTestPassed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
+        virtual void onTestPassed(::gametest::BaseGameTestInstance&) /*override*/;
 
-        virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
+        virtual void onTestFailed(::gametest::BaseGameTestInstance&) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& testInstance);
 
-        MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& testInstance);
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -75,19 +64,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit GameTestNetworkAdapter(::MinecraftGameTest& gameTest);
-
     MCNAPI void rungametest(
         ::gsl::not_null<::PacketSender*>  packetSender,
         ::std::string const&              testName,
         ::Dimension&                      dimension,
         ::gametest::TestParameters const& params
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::MinecraftGameTest& gameTest);
     // NOLINTEND
 };

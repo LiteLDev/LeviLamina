@@ -50,24 +50,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit GoHomeGoal(::Mob& mob);
-
-    MCAPI ::BlockPos _getHomePos() const;
-
-    MCAPI bool _hasRequiredComponents() const;
-
-    MCAPI bool _isInHomeDimension() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

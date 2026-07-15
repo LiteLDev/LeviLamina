@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerItem; }
-namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContextList; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,24 +11,15 @@ namespace SharedTypes::v1_21_130::DataDrivenUI {
 // functions
 // NOLINTBEGIN
 MCAPI void bindComponentTypeType(::cereal::ReflectionCtx& ctx);
-
-MCAPI bool operator==(
-    ::std::variant<
-        ::SharedTypes::v1_21_130::DataDrivenUI::ContainerItem,
-        ::SharedTypes::v1_21_130::DataDrivenUI::ContextList> const& lhs,
-    ::std::variant<
-        ::SharedTypes::v1_21_130::DataDrivenUI::ContainerItem,
-        ::SharedTypes::v1_21_130::DataDrivenUI::ContextList> const& rhs
-);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
 MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerFixedGridLayoutName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerItemName();
-
 MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerLayoutName();
+
+MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerSlotName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> ContextListName();
 
@@ -62,7 +51,7 @@ MCAPI ::std::add_lvalue_reference_t<char const[]> PanelSpacingName();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> PanelTextName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> VisibilityName();
+MCAPI ::std::add_lvalue_reference_t<char const[]> ScrollableGridLayoutName();
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_130::DataDrivenUI

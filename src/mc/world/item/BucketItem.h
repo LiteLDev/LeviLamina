@@ -11,19 +11,15 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Block;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class CompoundTag;
 class Container;
 class InteractionResult;
 class ItemDescriptor;
-class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Level;
-class Material;
 class Player;
 class Vec3;
 struct Brightness;
@@ -32,14 +28,27 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class BucketItem : public ::Item {
 public:
+    // BucketItem inner types declare
+    // clang-format off
+    struct FillTypeEntityData;
+    // clang-format on
+
+    // BucketItem inner types define
+    struct FillTypeEntityData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<2, 2, ::BucketFillType> mBucketFillType;
+        ::ll::TypedStorage<4, 4, ::ActorType>      mActorType;
+        ::ll::TypedStorage<8, 32, ::std::string>   mInitEvent;
+        // NOLINTEND
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::BucketFillType> mFillType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BucketItem();
 
 public:
     // virtual functions
@@ -66,7 +75,7 @@ public:
 
     virtual bool isLiquidClipItem() const /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& userData, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
     virtual bool validFishInteraction(int) const /*override*/;
 
@@ -89,68 +98,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BucketItem(::std::string const& name, int id, ::BucketFillType type);
-
-    MCAPI void _broadcastBucketEmptySound(::BlockSource& region, ::Actor& entity, ::BlockPos const& pos) const;
-
-    MCAPI void _broadcastBucketFillSound(::BlockSource& region, ::Actor& entity, ::Material const& material) const;
-
-    MCAPI bool _canEmptyBucketIntoBlock(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::Block const&    block,
-        ::Block const&    extraBlock,
-        ::Actor const*    placer
-    ) const;
-
-    MCAPI bool _emptyBucket(
-        ::BlockSource&     region,
-        ::Block const&     contents,
-        ::BlockPos const&  pos,
-        ::Actor*           placer,
-        ::ItemStack const& instance,
-        uchar              face
-    ) const;
-
-    MCAPI void _replaceWithEmptyBucket(::ItemStack& instance, ::Actor& entity) const;
-
-    MCAPI bool _takeLiquid(::ItemStack& item, ::Actor& entity, ::BlockPos const& pos) const;
-
-    MCAPI bool _takePowderSnow(::ItemStack& item, ::Actor& actor, ::BlockPos const& pos) const;
-
-    MCAPI ::BlockType const* _tryGetBlock(::BucketFillType contents) const;
-
-    MCAPI void addBucketEntitySaveData(::Actor& entity, ::ItemStack& instance) const;
-
-    MCAPI bool readBucketEntitySaveData(
-        ::BlockSource&        region,
-        ::Actor*              placer,
-        ::BlockPos            pos,
-        ::ItemInstance const& instance
-    ) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::string getSchoolName(int color, int color2, int variant, int markVariant);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::pair<::BucketFillType, ::ActorType>> const& mFillTypeToEntityType();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::BucketFillType type);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
@@ -161,7 +108,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
+    MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
@@ -173,7 +120,7 @@ public:
 
     MCAPI bool $isLiquidClipItem() const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& userData, ::CompoundTag const*) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 
     MCAPI bool $validFishInteraction(int) const;
 

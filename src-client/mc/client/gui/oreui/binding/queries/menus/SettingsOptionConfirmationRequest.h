@@ -18,40 +18,6 @@ public:
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mAcceptLabel;
     ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mCancelLabel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SettingsOptionConfirmationRequest();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SettingsOptionConfirmationRequest(
-        int           value,
-        ::std::string title,
-        ::std::string description,
-        ::std::string acceptLabel,
-        ::std::string cancelLabel
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int           value,
-        ::std::string title,
-        ::std::string description,
-        ::std::string acceptLabel,
-        ::std::string cancelLabel
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OreUI

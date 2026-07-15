@@ -58,10 +58,6 @@ public:
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
-
-    MCFOLD ::StorageItemComponent const* getStorageItemComponent() const;
-
-    MCAPI ::StorageWeightLimitItemComponent const* getStorageWeightLimitComponent() const;
     // NOLINTEND
 
 public:
@@ -79,26 +75,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $postInit();
 
-    MCAPI void $containerContentChanged(int slot);
-
-    MCFOLD bool $isValid();
-
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
-
-    MCFOLD int $_getContainerOffset() const;
-
-    MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-
-    MCAPI ::Container* $_getContainer() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 // clang-format on
 
 class HarvestFarmBlockGoal : public ::BaseMoveToBlockGoal {
@@ -32,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HarvestFarmBlockGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -51,24 +46,6 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit HarvestFarmBlockGoal(::Mob& mob);
-
-    MCAPI int findInventorySlotForFarmSeeds();
-
-    MCAPI bool tryHarvestCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
-
-    MCAPI bool trySowCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

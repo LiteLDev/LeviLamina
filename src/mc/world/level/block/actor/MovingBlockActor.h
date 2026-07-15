@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 #include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
@@ -16,12 +17,11 @@ class CompoundTag;
 class DataLoadHelper;
 class IConstBlockSource;
 class ILevel;
-class PistonBlockActor;
 class SaveContext;
 class Vec3;
 // clang-format on
 
-class MovingBlockActor : public ::BlockActor {
+class MovingBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,16 +50,6 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual ::PistonBlockActor* getOwningPiston(::BlockSource& region) /*override*/;
-
-    virtual ::PistonBlockActor const* getOwningPiston(::BlockSource& region) const /*override*/;
-
-    virtual ::AABB getCollisionShape(::IConstBlockSource const& region) const /*override*/;
-
-    virtual bool isPreserved(::BlockSource& region) const /*override*/;
-
-    virtual bool shouldPreserve(::BlockSource& region) /*override*/;
-
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
@@ -70,29 +60,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MovingBlockActor(::BlockPos const& pos);
 
-    MCAPI ::std::pair<::AABB, ::AABB> _getWrappedBlockCollisionShapes(::IConstBlockSource const& region) const;
-
-    MCAPI ::std::shared_ptr<::BlockActor> aquireWrappedBlockActor();
-
-    MCAPI ::Vec3 getDrawPos(::IConstBlockSource const& region, float a) const;
-
-    MCFOLD ::Block const& getWrappedBlock() const;
+    MCAPI bool _shouldPreserve(::BlockSource& region);
 
 #ifdef LL_PLAT_C
-    MCFOLD ::BlockActor* getWrappedBlockActor();
+    MCAPI ::Vec3 getDrawPos(::IConstBlockSource const& region, float a) const;
 #endif
-
-    MCFOLD ::Block const& getWrappedExtraBlock();
-
-    MCAPI void moveCollidedEntities(::PistonBlockActor& pistonBlock, ::BlockSource& region);
-
-    MCAPI void registerPiston(::BlockSource const& region, ::BlockPos const& pistonPos);
-
-    MCAPI void setWrappedBlock(::Block const& inBlock);
-
-    MCAPI void setWrappedBlockActor(::std::shared_ptr<::BlockActor> be);
-
-    MCFOLD void setWrappedExtraBlock(::Block const& extraBlock);
     // NOLINTEND
 
 public:
@@ -110,16 +82,6 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource& region);
-
-    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource& region) const;
-
-    MCAPI ::AABB $getCollisionShape(::IConstBlockSource const& region) const;
-
-    MCAPI bool $isPreserved(::BlockSource& region) const;
-
-    MCAPI bool $shouldPreserve(::BlockSource& region);
-
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
@@ -130,6 +92,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

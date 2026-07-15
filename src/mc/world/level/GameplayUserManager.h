@@ -13,7 +13,6 @@ class EntityContext;
 class GameplayUserManagerProxy;
 class ILevelStorageManagerConnector;
 class IServerMapDataManagerConnector;
-class LevelStorage;
 class MapItemSavedData;
 class Player;
 class WeakEntityRef;
@@ -48,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameplayUserManager();
+    virtual ~GameplayUserManager() = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::EntityContext&)>& getGameplayUserAddedConnector() /*override*/;
 
@@ -73,11 +72,7 @@ public:
 
     MCNAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
 
-    MCNAPI int _getNewPlayerId() const;
-
     MCNAPI void _resumePlayer(::WeakEntityRef weakEntityUser);
-
-    MCNAPI void _saveAllPlayers(::LevelStorage& levelStorage);
 
     MCNAPI void _suspendPlayer(::WeakEntityRef weakEntityUser);
 
@@ -85,13 +80,9 @@ public:
 
     MCNAPI void cleanupRemovedGameplayUsers();
 
+    MCNAPI void clearAllGameplayUserEntities();
+
     MCNAPI void forEachActiveGameplayUser(::std::function<bool(::EntityContext&)> callback) const;
-
-    MCNAPI void forEachActivePlayer(::std::function<bool(::Player&)> callback) const;
-
-    MCNAPI ::std::vector<::WeakEntityRef> const& getActiveGameplayUsers() const;
-
-    MCNAPI ::std::vector<::OwnerPtr<::EntityContext>> const& getGameplayUserEntities() const;
 
     MCNAPI bool isGameplayUserSuspended(::WeakEntityRef weakEntityUser) const;
 
@@ -112,12 +103,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::unique_ptr<::GameplayUserManagerProxy> gameplayUserManagerProxy);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

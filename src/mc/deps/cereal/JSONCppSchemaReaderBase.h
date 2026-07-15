@@ -83,7 +83,7 @@ public:
 
     virtual uint64 members() /*override*/;
 
-    virtual uint64 length(uint64) /*override*/;
+    virtual uint64 length(uint64 expectedSize) /*override*/;
 
     virtual bool pushMember(::std::string_view const name) /*override*/;
 
@@ -176,7 +176,7 @@ public:
 
     MCFOLD uint64 $members();
 
-    MCFOLD uint64 $length(uint64);
+    MCFOLD uint64 $length(uint64 expectedSize);
 
     MCAPI bool $pushMember(::std::string_view const name);
 

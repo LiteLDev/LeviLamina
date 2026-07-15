@@ -11,15 +11,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class Block;
-class BlockPos;
 class BlockSource;
-class BlockType;
 class ComponentItem;
 class Container;
-class HashedString;
-class ItemStack;
 class SemVersion;
 class Vec3;
 namespace SharedTypes::v1_20_50 { struct EntityPlacerItemComponent; }
@@ -57,36 +51,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
 
-    MCAPI void _positionActor(::Actor& actor, ::Vec3 const& position, uchar face) const;
-
-    MCAPI void _positionAndRotateActor(
-        ::Actor&           actor,
-        ::Vec3             position,
-        uchar              face,
-        ::Vec3 const&      playerFeetPos,
-        ::BlockType const* blockType
-    ) const;
-
-    MCAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
-
-    MCAPI void _useOn(
-        bool&              result,
-        ::ItemStack const& currentItemStack,
-        ::ItemStack&       usingActor,
-        ::Actor&           pos,
-        ::BlockPos const&  face,
-        uchar              clickPos,
-        ::Vec3 const&
-    );
-
-    MCAPI bool _useOnMonsterSpawner(
-        ::ItemStack&      item,
-        ::Actor&          usingActor,
-        ::BlockPos const& blockPos,
-        ::BlockSource&    region,
-        ::Block const&    block
-    ) const;
-
     MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     MCAPI ::EntityPlacerItemComponent& operator=(::EntityPlacerItemComponent&&);
@@ -100,8 +64,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

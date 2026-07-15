@@ -14,9 +14,9 @@ public:
     // NOLINTBEGIN
     virtual ~LabTableReactionComponent() = default;
 
-    virtual void _onStart(::LabTableReaction& owner, ::BlockSource& region);
+    virtual void _onStart(::LabTableReaction&, ::BlockSource&);
 
-    virtual void _onTick(::LabTableReaction& owner, ::BlockSource& region);
+    virtual void _onTick(::LabTableReaction&, ::BlockSource&);
 
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region);
     // NOLINTEND
@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $_onStart(::LabTableReaction& owner, ::BlockSource& region);
+    MCFOLD void $_onStart(::LabTableReaction&, ::BlockSource&);
 
-    MCFOLD void $_onTick(::LabTableReaction& owner, ::BlockSource& region);
+    MCFOLD void $_onTick(::LabTableReaction&, ::BlockSource&);
 
 
     // NOLINTEND

@@ -17,18 +17,7 @@ public:
     // prevent constructor by default
     PersistenceGroupCreationOptions& operator=(PersistenceGroupCreationOptions const&);
     PersistenceGroupCreationOptions(PersistenceGroupCreationOptions const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PersistenceGroupCreationOptions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
+    PersistenceGroupCreationOptions();
 };
 
 } // namespace Editor::Services

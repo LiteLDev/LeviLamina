@@ -39,12 +39,6 @@ public:
     MCNAPI void setWorldRealmEventPublished(::RealmEventId eventId);
 
     MCNAPI bool wasPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid) const;
-
-    MCNAPI bool wasWorldRealmEventPublished(::RealmEventId eventId) const;
-
-#ifdef LL_PLAT_S
-    MCNAPI ~RealmsStoriesData();
-#endif
     // NOLINTEND
 
 public:
@@ -53,8 +47,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI static ::RealmEventId getRealmEventIdFromInternalName(::std::string const& internalName);
 #endif
-
-    MCNAPI static ::std::string const& getRealmEventInternalName(::RealmEventId eventId);
     // NOLINTEND
 
 public:
@@ -69,13 +61,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::LevelStorage& levelStorage);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
-#endif
     // NOLINTEND
 };

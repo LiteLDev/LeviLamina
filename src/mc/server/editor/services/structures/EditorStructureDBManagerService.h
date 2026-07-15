@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/EditorStructureDBManagerServiceProvider.h"
 #include "mc/server/editor/services/structures/IStructureDataProvider.h"
@@ -14,8 +12,6 @@
 // clang-format off
 class HashedString;
 class StructureTemplate;
-namespace Core { class Path; }
-namespace Editor { class EditorStructureSourceDataItem; }
 namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorStructureDBMetadata; }
@@ -55,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorStructureDBManagerService() /*override*/;
+    virtual ~EditorStructureDBManagerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -66,107 +62,47 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate const& templateData,
-        ::std::string const&                     id,
-        ::std::optional<::std::string> const&    fullName,
-        ::std::optional<::std::string> const&    displayName
+        ::Editor::EditorStructureTemplate const&,
+        ::std::string const&,
+        ::std::optional<::std::string> const&,
+        ::std::optional<::std::string> const&
     ) /*override*/;
 
-    virtual bool replaceMCStructureFromTemplate(
-        ::mce::UUID const&                       guid,
-        ::Editor::EditorStructureTemplate const& structureTemplate,
-        bool                                     isHost
-    ) /*override*/;
+    virtual bool
+    replaceMCStructureFromTemplate(::mce::UUID const&, ::Editor::EditorStructureTemplate const&, bool) /*override*/;
 
-    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const& guid) const /*override*/;
+    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const&) const /*override*/;
 
     virtual ::std::vector<::HashedString> const getEditorStructureGuids() const /*override*/;
 
     virtual ::std::vector<::Editor::EditorStructureDBMetadata> const
-    queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const& params) const /*override*/;
+    queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const&) const /*override*/;
 
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    deleteEditorStructureDBMetadataByGuid(::mce::UUID const& guid, bool isHost) /*override*/;
+    deleteEditorStructureDBMetadataByGuid(::mce::UUID const&, bool) /*override*/;
 
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const& params, bool isHost) /*override*/;
+    editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const&, bool) /*override*/;
 
     virtual ::std::optional<::Editor::EditorStructureDBMetadata> const
-    getEditorStructureMetadataByGuid(::mce::UUID const& guid) const /*override*/;
+    getEditorStructureMetadataByGuid(::mce::UUID const&) const /*override*/;
 
     virtual void processLevelStructures() /*override*/;
 
-    virtual bool hasStructureData(::mce::UUID const& id) const /*override*/;
+    virtual bool hasStructureData(::mce::UUID const&) const /*override*/;
 
     virtual ::Scripting::Result_deprecated<::std::variant<
         ::StructureTemplate const*,
         ::Editor::EditorStructureTemplate const*,
         ::std::shared_ptr<::StructureTemplate const>,
         ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
-    getStructureData(::mce::UUID const& id) const /*override*/;
+    getStructureData(::mce::UUID const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorStructureDBManagerService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI ::std::optional<::mce::UUID> _addToEditorStructureDB(
-        ::Editor::EditorStructureDBMetadata&     metaData,
-        ::Editor::EditorStructureSourceDataItem& mcStructureData
-    );
-
-    MCNAPI ::std::pair<::std::optional<::mce::UUID>, ::std::optional<::std::string>> _addToEditorStructureDB(
-        ::Editor::EditorStructureSourceDataItem const& mcStructureData,
-        ::std::optional<::std::string> const&          id,
-        ::std::optional<::std::string> const&          displayName
-    );
-
-    MCNAPI void _addToMetadataEntries(
-        ::mce::UUID const&                             guid,
-        ::Editor::EditorStructureSourceDataItem const& mcStructureData,
-        ::Editor::EditorStructureDBMetadata&           metaData
-    );
-
-    MCNAPI void
-    _exportFlaggedStructuresToTarget(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& targetRoot);
-
-    MCNAPI ::std::string const _getJsonStringFromMetadata(::Editor::EditorStructureDBMetadata const& metaData) const;
-
-    MCNAPI ::std::string _getNameFromStructurePath(::Core::Path const& path) const;
-
-    MCNAPI ::std::string _getNamespaceFromStructurePath(::Core::Path const& path) const;
-
-    MCNAPI ::std::string _handleDupeDisplayName(::std::string_view displayName);
-
-    MCNAPI ::std::string _handleDupeName(::std::string_view name);
-
-    MCNAPI ::std::optional<::Editor::EditorStructureSourceDataItem> const
-    _parseJsonToMetadata(::std::string& jsonString, ::Editor::EditorStructureDBMetadata& metaData);
-
-    MCNAPI void _processBPStructures();
-
-    MCNAPI void _processEditorProjectStructures();
-
-    MCNAPI void _processInProjectStructures();
-
-    MCNAPI void _processPersistentEditorStructures();
-
-    MCNAPI bool _writeMetaData(::Core::Path const& path, ::Editor::EditorStructureDBMetadata& metaData) const;
-
-    MCNAPI void buildManifests();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& EDITOR_PROJECT_STRUCTUREDB_FOLDER();
-
-    MCNAPI static ::std::string const& LEVELDB_STRUCTURE_TAG_PREFIX();
-
-    MCNAPI static ::std::string const& STRUCTURE_EXT();
-
-    MCNAPI static ::std::string const& STRUCTURE_FOLDER();
     // NOLINTEND
 
 public:
@@ -176,73 +112,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $quit();
-
-    MCNAPI ::Scripting::Result_deprecated<void> $ready();
-
-    MCNAPI ::std::string_view $getServiceName() const;
-
-    MCNAPI ::std::optional<::std::string> $createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate const& templateData,
-        ::std::string const&                     id,
-        ::std::optional<::std::string> const&    fullName,
-        ::std::optional<::std::string> const&    displayName
-    );
-
-    MCNAPI bool $replaceMCStructureFromTemplate(
-        ::mce::UUID const&                       guid,
-        ::Editor::EditorStructureTemplate const& structureTemplate,
-        bool                                     isHost
-    );
-
-    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> $load(::mce::UUID const& guid) const;
-
-    MCNAPI ::std::vector<::HashedString> const $getEditorStructureGuids() const;
-
-    MCNAPI ::std::vector<::Editor::EditorStructureDBMetadata> const
-    $queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const& params) const;
-
-    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const
-    $deleteEditorStructureDBMetadataByGuid(::mce::UUID const& guid, bool isHost);
-
-    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const
-    $editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const& params, bool isHost);
-
-    MCNAPI ::std::optional<::Editor::EditorStructureDBMetadata> const
-    $getEditorStructureMetadataByGuid(::mce::UUID const& guid) const;
-
-    MCNAPI void $processLevelStructures();
-
-    MCNAPI bool $hasStructureData(::mce::UUID const& id) const;
-
-    MCNAPI ::Scripting::Result_deprecated<::std::variant<
-        ::StructureTemplate const*,
-        ::Editor::EditorStructureTemplate const*,
-        ::std::shared_ptr<::StructureTemplate const>,
-        ::std::shared_ptr<::Editor::EditorStructureTemplate const>>>
-    $getStructureData(::mce::UUID const& id) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEditorStructureDBManagerServiceProvider();
-
-    MCNAPI static void** $vftableForIStructureDataProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

@@ -17,18 +17,6 @@ public:
     CustomBiomeData& operator=(CustomBiomeData const&);
     CustomBiomeData(CustomBiomeData const&);
     CustomBiomeData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~CustomBiomeData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

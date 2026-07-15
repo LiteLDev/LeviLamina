@@ -31,6 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI CameraPresetLoader(
         ::MolangVersion                                    molangVersion,
         ::cereal::ReflectionCtx const&                     ctx,
@@ -39,15 +40,18 @@ public:
 
     MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_90::CameraPresetFile>
     load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(
         ::MolangVersion                                    molangVersion,
         ::cereal::ReflectionCtx const&                     ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
+#endif
     // NOLINTEND
 };

@@ -24,12 +24,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>              pickupOnly;
     ::ll::TypedStorage<1, 1, bool>              singularPickup;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setCraftInto(::std::string const& name);
-
-    MCAPI void setItem(::std::string const& name);
-    // NOLINTEND
 };

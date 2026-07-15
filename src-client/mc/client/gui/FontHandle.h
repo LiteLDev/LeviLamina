@@ -38,17 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI FontHandle(::FontHandle defaultFont, ::std::string const& newFontAlias);
 
-    MCAPI FontHandle(
-        ::std::shared_ptr<::Font>                       defaultFont,
-        uint64                                          fontId,
-        ::Bedrock::NotNullNonOwnerPtr<::FontRepository> fontRepository
-    );
-
     MCAPI ::Font& getFont() const;
-
-    MCAPI bool isLoaded() const;
-
-    MCAPI bool isValid() const;
 
     MCAPI ::FontHandle& operator=(::FontHandle const&);
     // NOLINTEND
@@ -57,20 +47,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::FontHandle& INVALID_FONT_HANDLE();
-
-    MCAPI static ::FontHandle& TEST_FONT_HANDLE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::FontHandle defaultFont, ::std::string const& newFontAlias);
-
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::Font>                       defaultFont,
-        uint64                                          fontId,
-        ::Bedrock::NotNullNonOwnerPtr<::FontRepository> fontRepository
-    );
     // NOLINTEND
 
 public:

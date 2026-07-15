@@ -4,29 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ESessionError.h"
-#include "mc/deps/nether_net/NetworkID.h"
-#include "mc/network/services/signaling/MessagePerformance.h"
-#include "mc/network/services/signaling/player_messaging/NetworkID.h"
-
-// auto generated forward declare list
-// clang-format off
-class ISignalingServiceTelemetry;
-class MessagePerformance;
-namespace JsonRpc { class JsonRpcError; }
-namespace mce { class UUID; }
-// clang-format on
 
 class MessageTracker {
 public:
     // MessageTracker inner types declare
     // clang-format off
-    struct Destination;
     struct MessageStatus;
     // clang-format on
 
     // MessageTracker inner types define
-    struct Destination : public ::std::variant<::NetherNet::NetworkID, ::PlayerMessaging::NetworkID> {};
-
     struct MessageStatus {
     public:
         // member variables
@@ -62,60 +48,4 @@ public:
     MessageTracker& operator=(MessageTracker const&);
     MessageTracker(MessageTracker const&);
     MessageTracker();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit MessageTracker(::gsl::not_null<::std::shared_ptr<::ISignalingServiceTelemetry>> telemetry);
-
-    MCNAPI ::std::vector<::MessagePerformance> _clear();
-
-    MCNAPI void _complete(
-        ::NetherNet::ESessionError        result,
-        ::mce::UUID                       key,
-        ::MessageTracker::MessageStatus&& value,
-        ::MessagePerformance::Status      status
-    );
-
-    MCNAPI void _continueTracking(::mce::UUID key, ::MessageTracker::MessageStatus&& value);
-
-    MCNAPI void _tryGetValue(
-        ::std::string const&                                                    messageId,
-        ::std::function<void(::mce::UUID, ::MessageTracker::MessageStatus&&)>&& fn
-    );
-
-    MCNAPI void
-    add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete, bool isP2P);
-
-    MCNAPI void messageAccepted(::std::string const& messageId);
-
-    MCNAPI void messageDelivered(::std::string const& messageId);
-
-    MCNAPI void messageError(::std::string const& messageId, ::JsonRpc::JsonRpcError const& error);
-
-    MCNAPI void messageError(::std::string const& messageId, ::NetherNet::ESessionError error);
-
-    MCNAPI void messageSent(
-        ::std::optional<::MessageTracker::Destination> to,
-        ::std::string const&                           message,
-        ::std::string const&                           messageId,
-        ::std::error_code                              error
-    );
-
-    MCNAPI bool queryAndUpdateIsMessageIgnored(::std::string const& messageId);
-
-    MCNAPI ~MessageTracker();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::ISignalingServiceTelemetry>> telemetry);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

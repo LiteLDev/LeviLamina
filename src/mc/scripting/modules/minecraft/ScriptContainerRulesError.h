@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,27 +32,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptContainerRulesError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptContainerRulesError(::std::string const& errorMessage);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
 
     MCAPI static ::Scripting::EnumBinding bindReasonEnum();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& errorMessage);
     // NOLINTEND
 };
 

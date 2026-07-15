@@ -38,14 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ShieldModel(::GeometryPtr source);
-
-    MCFOLD void setDefaultMaterial();
-
-    MCFOLD void setGlintMaterial();
-
-    MCAPI void setGlintPatternMaterial();
-
-    MCAPI void setPatternMaterial();
     // NOLINTEND
 
 public:

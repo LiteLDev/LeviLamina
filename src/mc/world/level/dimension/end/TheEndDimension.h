@@ -18,7 +18,6 @@ class LevelChunk;
 class Vec3;
 class WorldGenerator;
 struct BiomeIdType;
-struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
@@ -29,11 +28,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndDragonFight>>       mDragonFight;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndChaosLightManager>> mEndChaosLightManager;
+    ::ll::TypedStorage<1, 1, bool>                                      mEnderDragonExists;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TheEndDimension();
 
 public:
     // virtual functions
@@ -50,7 +46,7 @@ public:
 
     virtual bool isNaturalDimension() const /*override*/;
 
-    virtual bool isValidSpawn(int, int) const /*override*/;
+    virtual bool isValidSpawn(int x, int z) const /*override*/;
 
     virtual short getCloudHeight() const /*override*/;
 
@@ -60,7 +56,7 @@ public:
 
     virtual int getSpawnYPosition() const /*override*/;
 
-    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
+    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const&, ::DimensionType) const /*override*/;
 
     virtual void deserialize(::CompoundTag const& tag) /*override*/;
 
@@ -69,103 +65,29 @@ public:
     virtual float getTimeOfDay(int time, float a) const /*override*/;
 
     virtual ::std::unique_ptr<::WorldGenerator>
-    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
+    createGenerator(::br::worldgen::StructureSetRegistry const&) /*override*/;
 
-    virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
+    virtual bool levelChunkNeedsUpgrade(::LevelChunk const&) const /*override*/;
 
-    virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
+    virtual void upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&) /*override*/;
 
-    virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
+    virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) /*override*/;
 
     virtual ::Dimension::DirectionalLightState getDimensionDirectionalLightSourceState(float a) const /*override*/;
 
     virtual void setDimensionDirectionalLightControls(
-        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
+        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const&
     ) /*override*/;
 
-    virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
+    virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) /*override*/;
 
     virtual ::std::unique_ptr<::ChunkSource>
-    _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TheEndDimension(::DerivedDimensionArguments&& args);
-
-    MCAPI void _handleSoundEffects() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
+        _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $startLeaveGame();
 
-    MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
-
-    MCAPI void $tick();
-
-    MCAPI ::BiomeIdType $getDefaultBiomeId() const;
-
-    MCFOLD bool $isNaturalDimension() const;
-
-    MCFOLD bool $isValidSpawn(int, int) const;
-
-    MCAPI short $getCloudHeight() const;
-
-    MCFOLD bool $mayRespawnViaBed() const;
-
-    MCAPI ::BlockPos $getSpawnPos() const;
-
-    MCAPI int $getSpawnYPosition() const;
-
-    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
-
-    MCAPI void $deserialize(::CompoundTag const& tag);
-
-    MCAPI void $serialize(::CompoundTag& tag) const;
-
-    MCFOLD float $getTimeOfDay(int time, float a) const;
-
-    MCAPI ::std::unique_ptr<::WorldGenerator>
-    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
-
-    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
-
-    MCFOLD void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
-
-    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
-
-    MCAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
-
-    MCAPI void $setDimensionDirectionalLightControls(
-        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
-    );
-
-    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
-
-    MCFOLD ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCAPI static void** $vftableForIDimension();
-
-    MCNAPI static void** $vftableForSavedData();
-
-    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };

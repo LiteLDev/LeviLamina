@@ -4,8 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/AsyncStatefulFunction_DEPRECATED.h"
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/world/IWorldStorageHandler.h"
 #include "mc/client/world/TransferResult.h"
@@ -17,7 +16,7 @@ namespace World { class WorldTransferer; }
 
 namespace OreUI {
 
-class WorldTransferFacet : public ::OreUI::FacetBase<::OreUI::WorldTransferFacet> {
+class WorldTransferFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldTransferFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -47,26 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WorldTransferFacet(::World::WorldTransferer& worldTransferer);
-
-    MCAPI void backupWorld(::std::string const& world);
-
-    MCFOLD ::OreUI::FacetTaskState const getBackupWorldProgress();
-
-    MCFOLD ::std::optional<::World::IWorldStorageHandler::DuplicateWorldResult> const& getBackupWorldResult();
-
-    MCFOLD ::OreUI::AsyncStatefulFunction_DEPRECATED<::World::TransferResult()>& getImportWorldFunctor_DEPRICATED();
-
-    MCFOLD ::OreUI::FacetTaskState const getImportWorldProgress();
-
-    MCAPI float getImportWorldProgressPercentage();
-
-    MCFOLD ::std::optional<::World::TransferResult> const& getImportWorldResult();
-
-    MCAPI void importWorld();
-
-    MCAPI void resetBackupWorld();
-
-    MCAPI void resetImportWorld();
     // NOLINTEND
 
 public:

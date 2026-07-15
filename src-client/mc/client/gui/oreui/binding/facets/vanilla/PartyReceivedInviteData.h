@@ -15,18 +15,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>          mPartyId;
     ::ll::TypedStorage<8, 32, ::std::string>          mConnectionString;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PartyReceivedInviteData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -16,7 +16,6 @@
 class ClientInstanceScreenModel;
 class ItemStackBase;
 class Trade2ContainerManagerController;
-class UIPropertyBag;
 struct ActorUniqueID;
 // clang-format on
 
@@ -48,34 +47,6 @@ public:
         ::ll::TypedStorage<4, 8, ::std::optional<int>>                mTradeIndex;
         ::ll::TypedStorage<8, 16, ::std::optional<::MerchantRecipe*>> mTrade;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TradeItemCollections();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit TradeItemCollections(::UIPropertyBag const& bag);
-
-        MCAPI int getTierIndex() const;
-
-        MCAPI int getTradeIndex() const;
-
-        MCAPI bool hasSellItemCollection() const;
-
-        MCAPI bool hasTradeItem1Collection() const;
-
-        MCAPI bool hasTradeItem2Collection() const;
-
-        MCAPI bool hasValidTradeToggleCollections() const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::UIPropertyBag const& bag);
-        // NOLINTEND
     };
 
 public:
@@ -101,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Trade2ScreenController() /*override*/;
+    virtual ~Trade2ScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -138,26 +109,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Trade2ScreenController(::std::shared_ptr<::ClientInstanceScreenModel> pModel, ::ActorUniqueID uniqueID);
-
-    MCAPI void _changeLeftTab(int dir);
-
-    MCAPI int _getBaseItemCountForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
-
-    MCAPI ::ItemInstance const& _getItemForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
-
-    MCAPI ::std::string _getTradeErrorDetails(::ItemStackBase const& item, bool itemA) const;
-
-    MCAPI bool _hasAdjustedBuyCount(::Trade2ScreenController::TradeItemCollections const& tic) const;
-
-    MCAPI void _makeEnchantmentDetails() const;
-
-    MCAPI void _makeTradeDetails(bool itemA) const;
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerStateMachine();
     // NOLINTEND
 
 public:
@@ -167,50 +118,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI void $onLeave();
-
-    MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
-
-    MCAPI bool $_getGestureControlEnabled() const;
-
-    MCAPI void $_registerCoalesceOrder();
-
-    MCAPI void $_registerAutoPlaceOrder();
-
-    MCFOLD bool $_isStillValid() const;
-
-    MCAPI ::ItemStackBase const&
-    $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
-
-    MCAPI void $_sendFlyingItem(
-        ::ItemStackBase const& item,
-        ::std::string const&   fromName,
-        int                    fromIndex,
-        ::std::string const&   toName,
-        int                    toIndex,
-        ::FadeInIconBehavior   fadeInIconBehavior
-    );
-
-    MCAPI ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

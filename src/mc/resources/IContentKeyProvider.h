@@ -18,15 +18,11 @@ public:
 
     virtual ::std::string getContentKey(::ContentIdentity const& contentIdentity) const = 0;
 
-#ifdef LL_PLAT_S
     virtual ::std::string getAlternateContentKey(::ContentIdentity const&) const;
-#else // LL_PLAT_C
-    virtual ::std::string getAlternateContentKey(::ContentIdentity const& contentIdentity) const;
-#endif
 
     virtual bool requireEncryptedReads() const;
 
-    virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const& keys) = 0;
+    virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) = 0;
 
     virtual void clearTempContentKeys() = 0;
     // NOLINTEND

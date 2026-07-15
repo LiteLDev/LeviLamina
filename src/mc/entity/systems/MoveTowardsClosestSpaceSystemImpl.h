@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -16,8 +15,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IConstBlockSource;
-class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorGameTypeComponent;
@@ -173,57 +170,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& context
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void doTick(
-        ::StrictEntityContext const&                      entity,
-        ::ActorDataFlagComponent const&                   synchedActorData,
-        ::AABBShapeComponent const&                       aabbShape,
-        ::DepenetrationComponent const&                   depenetration,
-        ::Optional<::MovementInterpolatorComponent const> moveInterpolator,
-        ::StateVectorComponent&                           stateVector,
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::ActorMovementTickNeededComponent,
-                ::PassengerComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DepenetrationComponent,
-                ::DimensionTypeComponent,
-                ::MovementInterpolatorComponent>,
-            ::Write<::StateVectorComponent>,
-            ::AddRemove<::MoveTowardsClosestSpaceFlagComponent>,
-            ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>&   executionContext,
-        bool                       isClientSide,
-        ::IConstBlockSource const& region
-    );
     // NOLINTEND
 
 public:

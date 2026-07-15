@@ -18,14 +18,12 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Item;
 class ItemInstance;
 class ItemStack;
 class Player;
 class SignBlockActor;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
-namespace mce { class Color; }
 // clang-format on
 
 class SignBlock : public ::ActorBlock {
@@ -87,10 +85,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SignBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -102,7 +96,8 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
@@ -125,12 +120,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SignBlock(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::SignBlock::SignType getSignType() const;
-#endif
-
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -139,13 +128,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
-    _canUseDye(::SignBlockActor& blockActor, ::SignTextSide side, ::mce::Color const& dyeColor, ::Player& player);
-
-    MCAPI static bool _canUseHoneyComb(::SignBlockActor& blockActor, ::Player& player);
-
-    MCAPI static bool _canUseInkSac(::SignBlockActor& blockActor, ::SignTextSide side, ::Player& player);
-
+#ifdef LL_PLAT_C
     MCAPI static ::SignBlock::SignInteractionResult _getInteractResult(
         ::SignBlockActor& blockActor,
         ::SignTextSide    side,
@@ -155,31 +138,9 @@ public:
         uchar             face
     );
 
-    MCAPI static void _getShape(int facing, ::AABB& bufferValue);
-
-    MCAPI static void _useDye(
-        ::SignBlockActor& blockActor,
-        ::SignTextSide    side,
-        ::ItemStack&      dyeStack,
-        ::BlockPos const& pos,
-        ::Player&         player
-    );
-
-    MCAPI static void
-    _useHoneyComb(::SignBlockActor& blockActor, ::ItemStack& honeyCombStack, ::BlockPos const& pos, ::Player& player);
-
-#ifdef LL_PLAT_C
     MCAPI static ::SignBlock::SignInteractionResult
     getInteractResult(::Player& player, ::BlockPos const& pos, uchar face);
 #endif
-
-    MCAPI static ::mce::Color getSignTextColorFromDyeItem(::Item const& dyeItem);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
     // NOLINTEND
 
 public:
@@ -194,7 +155,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 

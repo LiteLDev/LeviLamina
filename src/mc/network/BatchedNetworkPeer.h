@@ -31,26 +31,6 @@ public:
         ::ll::TypedStorage<4, 4, ::Compressibility>        compressible;
         ::ll::TypedStorage<8, 64, ::std::function<void()>> callback;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DataCallback& operator=(DataCallback const&);
-        DataCallback(DataCallback const&);
-        DataCallback();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::BatchedNetworkPeer::DataCallback& operator=(::BatchedNetworkPeer::DataCallback&&);
-
-        MCAPI ~DataCallback();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -75,31 +55,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BatchedNetworkPeer() /*override*/;
+    virtual ~BatchedNetworkPeer() /*override*/ = default;
 
     virtual void flush(::std::function<void()>&& callback) /*override*/;
 
-    virtual void
-    sendPacket(::std::string const& data, ::NetworkPeer::Reliability compressible, ::Compressibility) /*override*/;
+    virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
     virtual void update() /*override*/;
 
-    virtual ::NetworkPeer::DataStatus _receivePacket(
-        ::std::string&                                                    outData,
-        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-    ) /*override*/;
+    virtual ::NetworkPeer::DataStatus
+    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
-
-    MCAPI void _startSendTask();
-
-    MCAPI void setAsyncEnabled(bool val);
     // NOLINTEND
 
 public:
@@ -109,33 +82,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $flush(::std::function<void()>&& callback);
 
-    MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability compressible, ::Compressibility);
-
-    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
-
-    MCAPI void $update();
-
-    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
-        ::std::string&                                                    outData,
-        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

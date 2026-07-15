@@ -19,16 +19,4 @@ public:
     DirectoryWihEncryptedBlobAccessStrategyOptions& operator=(DirectoryWihEncryptedBlobAccessStrategyOptions const&);
     DirectoryWihEncryptedBlobAccessStrategyOptions(DirectoryWihEncryptedBlobAccessStrategyOptions const&);
     DirectoryWihEncryptedBlobAccessStrategyOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~DirectoryWihEncryptedBlobAccessStrategyOptions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

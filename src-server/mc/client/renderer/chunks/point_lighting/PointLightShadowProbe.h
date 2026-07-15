@@ -4,10 +4,6 @@
 
 namespace PointLighting {
 
-class PointLightShadowProbe {
-public:
-    // PointLightShadowProbe inner types define
-    enum class ProbeFace : uchar {};
-};
+class PointLightShadowProbe {};
 
 } // namespace PointLighting

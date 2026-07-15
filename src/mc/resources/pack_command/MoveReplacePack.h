@@ -16,18 +16,6 @@ public:
     MoveReplacePack& operator=(MoveReplacePack const&);
     MoveReplacePack(MoveReplacePack const&);
     MoveReplacePack();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~MoveReplacePack();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PackCommand

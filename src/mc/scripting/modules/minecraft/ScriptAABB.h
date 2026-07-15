@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -22,25 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptAABB();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptAABB(::AABB const& aabb);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AABB const& aabb);
     // NOLINTEND
 };
 

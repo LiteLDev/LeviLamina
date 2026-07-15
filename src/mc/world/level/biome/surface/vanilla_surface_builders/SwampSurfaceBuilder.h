@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class LevelSeed64;
 class PerlinSimplexNoise;
 class SurfaceBuilderData;
 // clang-format on
@@ -26,11 +27,12 @@ public:
     // prevent constructor by default
     SwampSurfaceBuilder& operator=(SwampSurfaceBuilder const&);
     SwampSurfaceBuilder(SwampSurfaceBuilder const&);
+    SwampSurfaceBuilder();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initBuilder(uint levelSeed) /*override*/;
+    virtual void initBuilder(::LevelSeed64 levelSeed) /*override*/;
 
     virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
@@ -40,21 +42,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SwampSurfaceBuilder();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initBuilder(uint levelSeed);
+    MCAPI void $initBuilder(::LevelSeed64 levelSeed);
 
     MCFOLD void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 

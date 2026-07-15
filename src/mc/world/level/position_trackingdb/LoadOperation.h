@@ -29,8 +29,8 @@ public:
     virtual char const* getDescription() const /*override*/;
 
     virtual bool _init(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        ::PositionTrackingDB::TrackingRecord&                           record
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>,
+        ::PositionTrackingDB::TrackingRecord&
     ) /*override*/;
 
     virtual bool _tick(
@@ -42,23 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getDescription() const;
 
-    MCAPI bool $_init(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
-        ::PositionTrackingDB::TrackingRecord&                           record
-    );
-
-    MCFOLD bool
-    $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

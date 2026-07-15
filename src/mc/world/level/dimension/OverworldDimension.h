@@ -14,7 +14,6 @@ class CompoundTag;
 class LevelChunk;
 class Vec3;
 class WorldGenerator;
-struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
@@ -22,85 +21,35 @@ namespace mce { class Color; }
 
 class OverworldDimension : public ::Dimension {
 public:
-    // prevent constructor by default
-    OverworldDimension();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~OverworldDimension() /*override*/ = default;
 
-    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
+    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const&, ::DimensionType) const /*override*/;
 
     virtual ::std::unique_ptr<::WorldGenerator>
-    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
+    createGenerator(::br::worldgen::StructureSetRegistry const&) /*override*/;
 
-    virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
+    virtual bool levelChunkNeedsUpgrade(::LevelChunk const&) const /*override*/;
 
-    virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
+    virtual void upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&) /*override*/;
 
-    virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
+    virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) /*override*/;
 
     virtual short getCloudHeight() const /*override*/;
 
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
         /*override*/;
 
-    virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
+    virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) /*override*/;
 
-    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
-        ::std::unique_ptr<::ChunkSource> storageSource,
-        ::StorageVersion                 levelVersion
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit OverworldDimension(::DerivedDimensionArguments&& args);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
+    virtual ::std::unique_ptr<::ChunkSource>
+        _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCAPI ::std::unique_ptr<::WorldGenerator>
-    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
-
-    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
-
-    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
-
-    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
-
-    MCAPI short $getCloudHeight() const;
-
-    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
-
-    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
-
-    MCAPI ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForIDimension();
-
-    MCNAPI static void** $vftableForLevelListener();
-
-    MCNAPI static void** $vftableForSavedData();
     // NOLINTEND
 };

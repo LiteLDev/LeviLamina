@@ -47,16 +47,6 @@ public:
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
         MCAPI bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
-
-        MCAPI ~CommandData();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD void $dtor();
 #endif
         // NOLINTEND
     };
@@ -74,17 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _handleActionQueueOrPlay(::CompoundTag& data, ::CommandOutput& output) const;
-
-    MCAPI void _handleActionStop(::CompoundTag& data, ::CommandOutput& output) const;
-
-    MCAPI void _handleActionVolume(::CompoundTag& data, ::CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -96,19 +76,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::MusicCommand::Action>();
-// clang-format on

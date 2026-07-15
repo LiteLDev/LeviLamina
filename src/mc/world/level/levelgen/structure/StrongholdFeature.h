@@ -72,10 +72,10 @@ public:
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& random,
-        ::Random&            cp,
-        ::ChunkPos const&,
+        ::Dimension& generator,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& cp,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
     // NOLINTEND
@@ -84,24 +84,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI StrongholdFeature(::VillageFeature* villages, uint seed);
-
-    MCAPI ::StrongholdFeature::StrongholdResult const _generateStronghold(uint levelSeed, ::ChunkPos const& cp);
-
-    MCAPI bool _getNearestStronghold(
-        ::Dimension const& dimension,
-        uint               levelSeed,
-        ::BlockPos const&  origin,
-        ::BlockPos&        pos,
-        bool               mustBeInNewChunks
-    );
-
-    MCAPI void generatePositions(
-        ::Random&                            random,
-        ::BiomeSource const&                 biomeSource,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
-    );
     // NOLINTEND
 
 public:
@@ -133,10 +115,10 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& random,
-        ::Random&            cp,
-        ::ChunkPos const&,
+        ::Dimension& generator,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& cp,
         ::IPreliminarySurfaceProvider const&
     );
 

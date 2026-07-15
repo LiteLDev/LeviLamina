@@ -11,18 +11,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mShouldFireEvent;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mEventProperties;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScreenChangedProperties();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI::RouterLocationEventingUtils

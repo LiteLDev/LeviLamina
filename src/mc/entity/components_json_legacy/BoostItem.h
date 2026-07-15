@@ -13,10 +13,4 @@ public:
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mReplacementItemDescriptor;
     ::ll::TypedStorage<4, 4, int>               mDamageAmount;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setReplacementItemDescriptor(::ItemDescriptor const& replacementItemDescriptor);
-    // NOLINTEND
 };

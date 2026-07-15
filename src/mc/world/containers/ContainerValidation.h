@@ -31,12 +31,6 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void assignValidForSlotContainerDelegate(
-        ::SparseContainer&              sparseContainer,
-        ::ContainerEnumName             containerEnumName,
-        ::ContainerScreenContext const& screenContext
-    );
-
     MCAPI static void assignValidationDelegates(
         ::SparseContainer&              sparseContainer,
         ::ContainerEnumName             containerEnumName,

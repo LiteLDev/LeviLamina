@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 
 // auto generated forward declare list
@@ -25,57 +24,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CompoundBlockVolume();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundBlockVolume();
-
     MCAPI CompoundBlockVolume(::CompoundBlockVolume const& other);
 
     MCAPI void _recalculateBounds();
 
-    MCAPI uint64 capacity() const;
-
-    MCAPI void clear(bool resetOrigin);
-
     MCAPI void forEachPosition(::brstd::function_ref<bool(::BlockPos const&)> callback) const;
 
-    MCAPI void
-    forEachVolumeItem(::brstd::function_ref<bool(::CompoundBlockVolumeItem&, ::CompoundBlockVolume const&)> func);
-
     MCAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
-
-    MCAPI ::BoundingBox getBoundingBox() const;
-
-    MCAPI ::BlockPos getMax() const;
-
-    MCAPI ::BlockPos getMin() const;
-
-    MCFOLD ::BlockPos const& getOrigin() const;
-
-    MCAPI ::std::vector<::CompoundBlockVolumeItem> getVolumeList() const;
-
-    MCFOLD bool isEmpty() const;
 
     MCAPI bool isInside(::BlockPos const& pos) const;
 
     MCAPI ::CompoundBlockVolume& operator=(::CompoundBlockVolume const& other);
 
-    MCAPI bool operator==(::CompoundBlockVolume const& other) const;
-
-    MCAPI ::std::optional<::CompoundBlockVolumeItem>
-    peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
-
-    MCAPI bool popVolume();
-
-    MCFOLD void pushVolume(::CompoundBlockVolumeItem&& item);
-
-    MCFOLD void pushVolume(::CompoundBlockVolumeItem const& item);
-
     MCAPI void setOrigin(::BlockPos const& newPos, bool preserveExistingVolumes);
-
-    MCAPI void translateOrigin(::BlockPos const& deltaPos, bool preserveExistingVolumes);
-
-    MCAPI uint64 volumeCount() const;
     // NOLINTEND
 
 public:
@@ -87,8 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::CompoundBlockVolume const& other);
     // NOLINTEND
 

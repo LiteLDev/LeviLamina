@@ -9,7 +9,6 @@
 // clang-format off
 class Block;
 class PerlinNoise;
-class Vec3;
 // clang-format on
 
 struct CappedSurfaceAttributes : public ::BiomeComponentBase {
@@ -42,10 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const* getCeilingMaterial(::Vec3 const& pos) const;
-
-    MCAPI ::Block const* getFloorMaterial(::Vec3 const& pos) const;
-
     MCAPI void initializeNoise(uint levelSeed);
     // NOLINTEND
 

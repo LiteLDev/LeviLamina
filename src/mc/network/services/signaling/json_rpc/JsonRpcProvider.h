@@ -2,17 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class IJsonRpcComponent;
-class ISignalingJsonRpcInterop;
-namespace Json { class Value; }
 namespace JsonRpc { class IResultHandler; }
-namespace JsonRpc { class JsonRpcError; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace JsonRpc {
@@ -76,45 +68,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JsonRpcProvider(
-        ::std::shared_ptr<::ISignalingJsonRpcInterop>         signalingServiceInterop,
-        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components
-    );
-
-    MCNAPI void _dispatchJsonRpc(::std::string const& method, ::Json::Value const& params, ::std::string const& id);
-
     MCNAPI void _expirePendingResult(::std::string const& id);
-
-    MCNAPI ::cereal::ReflectionCtx& getReflectionContext();
-
-    MCNAPI void
-    handleJsonRpcResult(::std::string const& id, ::Bedrock::Result<::Json::Value, ::JsonRpc::JsonRpcError>&& result);
-
-#ifdef LL_PLAT_S
-    MCNAPI void initialize();
-#endif
-
-    MCNAPI void onMessage(::std::string_view incomingMessage);
 
     MCNAPI ::std::unique_ptr<::std::string, ::std::function<void(::std::string*)>>
     registerJsonRpcMethod(::std::string method, ::std::unique_ptr<::JsonRpc::IResultHandler> handler);
-
-    MCNAPI ~JsonRpcProvider();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::shared_ptr<::ISignalingJsonRpcInterop>         signalingServiceInterop,
-        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

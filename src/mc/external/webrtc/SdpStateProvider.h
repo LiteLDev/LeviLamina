@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/SSLRole.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
+#include "mc/external/webrtc/SSLRole.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +37,7 @@ public:
 
     virtual bool IceRestartPending(::std::string const& content_name) const = 0;
 
-    virtual ::std::optional<::rtc::SSLRole> GetDtlsRole(::std::string const& mid) const = 0;
+    virtual ::std::optional<::webrtc::SSLRole> GetDtlsRole(::std::string const& mid) const = 0;
     // NOLINTEND
 
 public:

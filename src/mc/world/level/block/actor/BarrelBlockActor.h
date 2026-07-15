@@ -9,15 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
 class BlockSource;
 // clang-format on
 
 class BarrelBlockActor : public ::ChestBlockActor {
-public:
-    // prevent constructor by default
-    BarrelBlockActor();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,18 +27,6 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound() const /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BarrelBlockActor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -67,8 +50,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
 
-    MCAPI static void** $vftableForFillingContainer();
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
     // NOLINTEND
 };

@@ -19,6 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                mContextArea;
     ::ll::TypedStorage<1, 1, ::cereal::SerializationTraits>        mSerializationTraits;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>>                mScope;
     ::ll::TypedStorage<1, 1, ::cereal::internal::DescriptionExtra> mExtraInfo;
     ::ll::TypedStorage<1, 1, bool>                                 mIgnoreDeprecatedMembers;
     ::ll::TypedStorage<1, 1, bool>                                 mIsTopLevel;

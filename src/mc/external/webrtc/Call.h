@@ -8,19 +8,19 @@
 #include "mc/external/webrtc/FlexfecReceiveStream.h"
 #include "mc/external/webrtc/MediaType.h"
 #include "mc/external/webrtc/NetworkState.h"
+#include "mc/external/webrtc/RtcpFeedbackType.h"
 #include "mc/external/webrtc/VideoReceiveStreamInterface.h"
 #include "mc/external/webrtc/VideoSendStream.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { struct SentPacket; }
 namespace webrtc { class AudioReceiveStreamInterface; }
 namespace webrtc { class AudioSendStream; }
 namespace webrtc { class FecController; }
-namespace webrtc { class FieldTrialsView; }
 namespace webrtc { class FlexfecReceiveStream; }
 namespace webrtc { class PacketReceiver; }
+namespace webrtc { class PayloadTypeSuggester; }
 namespace webrtc { class Resource; }
 namespace webrtc { class RtpTransportControllerSendInterface; }
 namespace webrtc { class TaskQueueBase; }
@@ -28,6 +28,7 @@ namespace webrtc { class VideoEncoderConfig; }
 namespace webrtc { class VideoReceiveStreamInterface; }
 namespace webrtc { class VideoSendStream; }
 namespace webrtc { struct BitrateSettings; }
+namespace webrtc { struct SentPacketInfo; }
 // clang-format on
 
 namespace webrtc {
@@ -44,11 +45,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnke1b4e6;
-        ::ll::UntypedStorage<4, 4> mUnkaec353;
-        ::ll::UntypedStorage<4, 4> mUnke83da3;
-        ::ll::UntypedStorage<8, 8> mUnk70bc50;
-        ::ll::UntypedStorage<8, 8> mUnk8d7733;
+        ::ll::UntypedStorage<4, 4>  mUnke1b4e6;
+        ::ll::UntypedStorage<4, 4>  mUnkaec353;
+        ::ll::UntypedStorage<4, 4>  mUnke83da3;
+        ::ll::UntypedStorage<8, 8>  mUnk70bc50;
+        ::ll::UntypedStorage<8, 8>  mUnk8d7733;
+        ::ll::UntypedStorage<8, 16> mUnka7a827;
         // NOLINTEND
 
     public:
@@ -97,6 +99,10 @@ public:
 
     virtual ::webrtc::RtpTransportControllerSendInterface* GetTransportControllerSend() = 0;
 
+    virtual ::webrtc::PayloadTypeSuggester* GetPayloadTypeSuggester();
+
+    virtual void SetPayloadTypeSuggester(::webrtc::PayloadTypeSuggester*);
+
     virtual ::webrtc::Call::Stats GetStats() const = 0;
 
     virtual void SignalChannelNetworkState(::webrtc::MediaType, ::webrtc::NetworkState) = 0;
@@ -111,11 +117,15 @@ public:
 
     virtual void OnUpdateSyncGroup(::webrtc::AudioReceiveStreamInterface&, ::std::string_view) = 0;
 
-    virtual void OnSentPacket(::rtc::SentPacket const&) = 0;
+    virtual void OnSentPacket(::webrtc::SentPacketInfo const&) = 0;
 
     virtual void SetClientBitratePreferences(::webrtc::BitrateSettings const&) = 0;
 
-    virtual ::webrtc::FieldTrialsView const& trials() const = 0;
+    virtual void SetPreferredRtcpCcAckType(::webrtc::RtcpFeedbackType) = 0;
+
+    virtual ::std::optional<int> FeedbackAccordingToRfc8888Count() = 0;
+
+    virtual ::std::optional<int> FeedbackAccordingToTransportCcCount() = 0;
 
     virtual ::webrtc::TaskQueueBase* network_thread() const = 0;
 

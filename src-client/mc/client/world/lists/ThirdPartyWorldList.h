@@ -13,10 +13,7 @@ class IOfferRepository;
 class IThirdPartyServerRepository;
 class ProfanityContext;
 class ServerLocator;
-class ServicesManager;
-struct ExternalServer;
 struct NetworkWorldInfo;
-struct PingedCompatibleServer;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -57,38 +54,13 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext
     );
 
-    MCFOLD bool _areExternalAndRemoteServerSame(
-        ::ExternalServer const&         externalServer,
-        ::PingedCompatibleServer const& remoteServer
-    ) const;
-
     MCAPI void _fetchWorlds(bool forceFetch);
-
-    MCFOLD void _onMCTokenUpdated(::ServicesManager*);
-
-    MCFOLD void _onServersChanged();
 
     MCAPI void _refreshWorlds();
 
-    MCAPI void _remove3PServersMismatchingEditorMode();
-
-    MCAPI void _runProfanityCheckOnWorlds();
-
     MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
-    MCFOLD ::std::vector<::std::shared_ptr<::NetworkWorldInfo>> const& getWorlds() const;
-
-    MCAPI bool isFetchingServers() const;
-
-    MCAPI void refreshRepository();
-
-    MCAPI ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
-
-    MCAPI void sort();
-
     MCAPI void update(double timestampMs);
-
-    MCAPI ~ThirdPartyWorldList();
     // NOLINTEND
 
 public:
@@ -101,12 +73,6 @@ public:
         bool                                                         isEditorMode,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

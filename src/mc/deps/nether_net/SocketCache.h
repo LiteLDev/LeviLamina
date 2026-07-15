@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class AsyncPacketSocket; }
-namespace rtc { class IPAddress; }
-namespace rtc { class SocketAddress; }
+namespace webrtc { class AsyncPacketSocket; }
+namespace webrtc { class IPAddress; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace NetherNet {
@@ -18,8 +18,8 @@ class SocketCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk50509d;
-    ::ll::UntypedStorage<8, 48> mUnkaddf3a;
+    ::ll::UntypedStorage<8, 8>  mUnk3c893a;
+    ::ll::UntypedStorage<8, 48> mUnkd48f54;
     // NOLINTEND
 
 public:
@@ -31,11 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
-    _tryGetCachedSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
-
-    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
-    createGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
+    MCNAPI ::std::shared_ptr<::webrtc::AsyncPacketSocket>
+    createGlobalUdpSocket(::webrtc::SocketAddress const& address, ushort minPort, ushort maxPort);
     // NOLINTEND
 };
 

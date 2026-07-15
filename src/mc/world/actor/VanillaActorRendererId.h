@@ -10,31 +10,33 @@ class HashedString;
 namespace VanillaActorRendererId {
 // static variables
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& _map();
 
 MCAPI ::HashedString const& _photo();
+#endif
 
 MCAPI ::HashedString const& _query();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& elderGuardian();
+#endif
 
 MCAPI ::HashedString const& elderGuardianGhost();
 
-MCAPI ::HashedString const& guardian();
-
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& itemEntity();
+#endif
 
 MCAPI ::HashedString const& lingeringPotion();
 
-MCAPI ::HashedString const& npc();
-
 MCAPI ::HashedString const& player();
 
+#ifdef LL_PLAT_C
 MCAPI ::HashedString const& shield();
+#endif
 
 MCAPI ::HashedString const& thrownPotion();
-
-MCAPI ::HashedString const& trident();
 // NOLINTEND
 
 } // namespace VanillaActorRendererId

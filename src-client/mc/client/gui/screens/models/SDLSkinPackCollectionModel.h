@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DlcId;
 class IContentAcquisition;
 class IEntitlementManager;
 class IPersonaClient;
@@ -57,31 +56,11 @@ public:
         ::IPersonaClient&                                        personaClient
     );
 
-    MCAPI void _addSkinPackModel(::mce::UUID const& packId, int index);
-
-    MCAPI void _collectLegacySkins();
-
-    MCAPI void _extractDlcIdFromOffer(::std::vector<::DlcId>& dlcIds, ::IStoreCatalogItem const& calatogItem);
-
-    MCAPI void addBuiltInSkinPackModel(::std::shared_ptr<::SkinPackModel> skinPackModel);
-
     MCAPI uint64 collectLegacyAndSideLoadedSkinPacks();
 
     MCAPI void collectOffers(::std::vector<::gsl::not_null<::IStoreCatalogItem*>> const& offers);
 
     MCAPI uint64 collectSkinsForOffline(bool collectOwnedSkins, ::mce::UUID const& packId);
-
-    MCAPI ::std::shared_ptr<::SkinPackModel> getFirstSkinPack() const;
-
-    MCAPI uint64 getNumSkinPacks() const;
-
-    MCAPI ::std::shared_ptr<::SkinPackModel> getSkinPackAtIndex(uint64 const& skinPackIndex) const;
-
-    MCFOLD uint64 getVisibleEndRange() const;
-
-    MCAPI void incrementVisibleEndRange(uint64 const& increment);
-
-    MCAPI void setMaxPacksPerFetch(uint const& maxPacksPerFetch);
 
     MCAPI void tick(::ui::DirtyFlag& dirtyFlags);
 

@@ -30,17 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContentLogEndPoint();
-
     MCNAPI void _register(::Bedrock::typeid_t<::ContentLog> id);
 
     MCNAPI void _unregister();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -55,13 +47,5 @@ public:
     MCNAPI void $log(char const*);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForLogEndPoint();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

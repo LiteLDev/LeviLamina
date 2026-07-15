@@ -41,12 +41,11 @@ public:
 public:
     // prevent constructor by default
     ServerCameraStatesComponent& operator=(ServerCameraStatesComponent const&);
+    ServerCameraStatesComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerCameraStatesComponent();
-
     MCAPI ServerCameraStatesComponent(::ServerCameraStatesComponent const&);
 
     MCAPI explicit ServerCameraStatesComponent(::CameraPresets const& presets);
@@ -57,8 +56,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ServerCameraStatesComponent const&);
 
     MCAPI void* $ctor(::CameraPresets const& presets);

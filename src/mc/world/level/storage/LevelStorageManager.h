@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
@@ -75,7 +74,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelStorageManager() /*override*/;
+    virtual ~LevelStorageManager() /*override*/ = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveConnector() /*override*/;
 
@@ -100,25 +99,15 @@ public:
         ::IMinecraftEventing&                         eventing
     );
 
-    MCFOLD void _onNewDimensionCreated(::Dimension& dimension);
+    MCAPI void _onNewDimensionCreated(::Dimension& dimension);
 
     MCAPI void _savePlayer(::Player& player);
-
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> getLevelStorage();
-
-    MCFOLD ::SavedDataStorage& getSavedDataStorage();
 
     MCAPI void initializeWithDimensionManager(::IDimensionManagerConnector& dimensionManagerConnector);
 
     MCAPI void initializeWithPlayerDeathManager(::IPlayerDeathManagerConnector& playerDeathManagerConnector);
 
-    MCAPI void onAppSuspend();
-
-    MCAPI void onLevelTearingDown();
-
     MCAPI void onStartLeaveGame();
-
-    MCAPI ::std::shared_ptr<void*> requestTimedStorageDeferment();
 
     MCAPI void save(::std::chrono::steady_clock::time_point currentTime);
 
@@ -127,8 +116,6 @@ public:
     MCAPI void saveLevelData();
 
     MCAPI void trySaveGameData(::std::chrono::steady_clock::time_point currentTime);
-
-    MCAPI void tryStartGameDataSaveTimerIfNotSet(::std::chrono::steady_clock::time_point currentTime);
     // NOLINTEND
 
 public:
@@ -143,32 +130,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
-
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveLevelDataConnector();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(bool&)>& $getOnCanStartGameSaveTimerCheckConnector();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnStartLeaveGameConnector();
-
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

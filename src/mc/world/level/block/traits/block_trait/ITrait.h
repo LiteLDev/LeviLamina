@@ -15,7 +15,7 @@ class ITrait {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITrait();
+    virtual ~ITrait() = default;
 
     virtual void applyToBlockType(::BlockType& blockType) const = 0;
 
@@ -30,12 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

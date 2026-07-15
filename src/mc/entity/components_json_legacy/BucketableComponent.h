@@ -15,26 +15,12 @@ class BucketableComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BucketableComponent();
-
     MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void implInteraction(::Actor& owner, ::Player& player);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& WATER_BUCKET_USEABLE_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

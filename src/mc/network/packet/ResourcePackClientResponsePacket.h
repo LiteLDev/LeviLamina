@@ -35,34 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ResourcePackClientResponsePacket();
-
-#ifdef LL_PLAT_C
-    MCAPI explicit ResourcePackClientResponsePacket(::ResourcePackResponse response);
-#endif
-
-    MCFOLD ::std::set<::std::string> const& getDownloadingPacks() const;
-
-    MCAPI bool isResponse(::ResourcePackResponse haveThis) const;
-
-#ifdef LL_PLAT_C
-    MCAPI void setDownloadingPacks(::std::set<::std::string>& packs);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ResourcePackResponse response);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::MinecraftPacketIds $getId() const;

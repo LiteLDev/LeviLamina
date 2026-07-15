@@ -6,7 +6,6 @@
 // clang-format off
 class IMinecraftEventing;
 namespace CodeBuilder { class IRequestHandler; }
-namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct RequestHeader; }
 namespace Json { class Value; }
 // clang-format on
@@ -37,26 +36,12 @@ public:
         ::Json::Value const&                body,
         ::IMinecraftEventing*               eventing
     ) const;
-
-    MCNAPI ~RequestInterpreter();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool _parse(::Json::Value const& command, ::CodeBuilder::CommandRequest& request);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

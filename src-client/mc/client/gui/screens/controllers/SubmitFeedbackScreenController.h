@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-namespace Bedrock::Http { class Status; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -37,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SubmitFeedbackScreenController() /*override*/;
+    virtual ~SubmitFeedbackScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -52,18 +51,6 @@ public:
         ::std::string const&                     itemId,
         int                                      feedbackTextLimit
     );
-
-    MCAPI void _displayResponseStatusDialog(bool receivedSuccessResponse);
-
-    MCAPI void _initialize();
-
-    MCAPI void _processPlayerSafetyScanResponse(::Bedrock::Http::Status const& responseStatus, bool isValidText);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _setResponseMessage();
     // NOLINTEND
 
 public:
@@ -74,24 +61,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

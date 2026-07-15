@@ -29,54 +29,20 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CatalogPackCollector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CatalogPackCollector() /*override*/;
+    virtual ~CatalogPackCollector() /*override*/ = default;
 
-    virtual void start(bool allowed) /*override*/;
+    virtual void start(bool) /*override*/;
 
     virtual bool exhausted() const /*override*/;
 
-    virtual ::HandleRangeResult handleRange(int end, int) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CatalogPackCollector(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
-
-    MCAPI void _search();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual ::HandleRangeResult handleRange(int, int) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start(bool allowed);
 
-    MCAPI bool $exhausted() const;
-
-    MCAPI ::HandleRangeResult $handleRange(int end, int);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

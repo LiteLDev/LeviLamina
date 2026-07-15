@@ -34,24 +34,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Descriptions& operator=(Descriptions const&);
-        Descriptions(Descriptions const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Descriptions();
-
-        MCAPI ::FeatureTerrainAdjustments::Descriptions& operator=(::FeatureTerrainAdjustments::Descriptions&& other);
-
         MCAPI ~Descriptions();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor();
         // NOLINTEND
 
     public:
@@ -89,8 +74,6 @@ public:
     MCAPI ::std::shared_ptr<bool> setBeardifier(::BoundingBox const& bb, int deltaY);
 
     MCAPI ::std::shared_ptr<bool> setBury(::BoundingBox const& bb);
-
-    MCAPI ~FeatureTerrainAdjustments();
     // NOLINTEND
 
 public:
@@ -101,21 +84,11 @@ public:
         ::BlockPos const&                                currentPos,
         float                                            noiseValue
     );
-
-    MCAPI static ::BeardKernel& getBeardKernel();
-
-    MCAPI static bool shouldDoTerrainAdjustments(::FeatureTerrainAdjustments::Descriptions const& descriptions);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BeardKernel& mBeardKernel();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

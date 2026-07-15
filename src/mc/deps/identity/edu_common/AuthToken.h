@@ -24,10 +24,6 @@ public:
     // NOLINTBEGIN
     MCNAPI AuthToken(::Identity::AuthToken const&);
 
-#ifdef LL_PLAT_C
-    MCNAPI ::Identity::AuthToken& operator=(::Identity::AuthToken&&);
-#endif
-
     MCNAPI ~AuthToken();
     // NOLINTEND
 

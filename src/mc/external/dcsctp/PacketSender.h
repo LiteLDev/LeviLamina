@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/dcsctp/SctpPacket.h"
 #include "mc/external/dcsctp/SendPacketStatus.h"
+#include "mc/external/webrtc/ArrayView.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkcfadc4;
-    ::ll::UntypedStorage<8, 64> mUnk6c0f8b;
+    ::ll::UntypedStorage<8, 64> mUnkfc62da;
     // NOLINTEND
 
 public:
@@ -31,8 +32,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PacketSender(
-        ::dcsctp::DcSctpSocketCallbacks&                                                 callbacks,
-        ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)> on_sent_packet
+        ::dcsctp::DcSctpSocketCallbacks& callbacks,
+        ::std::function<void(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::dcsctp::SendPacketStatus)>
+            on_sent_packet
     );
 
     MCNAPI bool Send(::dcsctp::SctpPacket::Builder& builder, bool write_checksum);
@@ -44,8 +46,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::dcsctp::DcSctpSocketCallbacks&                                                 callbacks,
-        ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)> on_sent_packet
+        ::dcsctp::DcSctpSocketCallbacks& callbacks,
+        ::std::function<void(::webrtc::ArrayView<uchar const, 18446744073709546905>, ::dcsctp::SendPacketStatus)>
+            on_sent_packet
     );
     // NOLINTEND
 

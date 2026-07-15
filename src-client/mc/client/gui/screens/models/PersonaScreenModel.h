@@ -16,17 +16,15 @@
 // auto generated forward declare list
 // clang-format off
 class AchievementData;
-class DlcBatchCacheModel;
 class IStoreCatalogItem;
 class PersonaAppearance;
-class PersonaProfile;
 class SkinPackCollectionModel;
 class SkinPackModel;
 struct LinksToStyle;
 struct MinecraftScreenModelContext;
 namespace Social::eventData { class PersonaOfferClickedData; }
-namespace mce { class UUID; }
 namespace persona { class PieceOfferWrapper; }
+namespace persona { class Profile; }
 namespace persona { struct PersonaCharacterHandle; }
 // clang-format on
 
@@ -63,9 +61,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PersonaScreenModel() /*override*/;
+    virtual ~PersonaScreenModel() /*override*/ = default;
 
-    virtual void update(::ui::DirtyFlag& dirtyFlags) /*override*/;
+    virtual void update(::ui::DirtyFlag&) /*override*/;
 
     virtual ::SkinHandle const& getSelectedSkinHandle() const /*override*/;
     // NOLINTEND
@@ -77,13 +75,7 @@ public:
 
     MCAPI ::SkinPackCollectionModel& _getInvalidSkinPackCollectionModel();
 
-    MCAPI void _initializeSkinPackCollectors();
-
     MCAPI bool _playerHasContentSubscription() const;
-
-    MCAPI ::SkinHandle addCustomSkin(::SkinHandle const& skinHandle);
-
-    MCAPI bool areSkinPackModelsReady() const;
 
     MCAPI bool checkPersonaServiceSavedToCacheFlag();
 
@@ -95,27 +87,15 @@ public:
         bool                                exclusiveDownload
     );
 
-    MCAPI ::std::shared_ptr<::DlcBatchCacheModel> createDlcBatchCacheModel() const;
-
-    MCAPI void createPersonaAtSelectedSlot(uint defaultIndex, ::std::function<void()> onPersonaCreatedCallback);
-
     MCAPI void cycleCurrentPieceSide(::IStoreCatalogItem const& pieceOffer, ::persona::PieceSide direction);
-
-    MCAPI void displayNewCharacterToast();
 
     MCAPI ::std::string getAchievementOfferLockStateTexture(::persona::PieceOfferWrapper const& pieceOffer) const;
 
-    MCAPI ::persona::PieceSide const& getCurrentPieceSide() const;
-
-    MCAPI ::SkinPackCollectionModel& getCurrentSelectedSkinPackCollector();
-
     MCAPI ::AchievementData const& getOfferAchievement(::persona::PieceOfferWrapper const& offer) const;
 
-    MCAPI ::std::shared_ptr<::PersonaProfile>& getPersonaProfileForActiveClient(::persona::ProfileType type);
+    MCAPI ::std::shared_ptr<::persona::Profile> getPersonaProfileForActiveClient(::persona::ProfileType type);
 
     MCAPI ::std::string const getPrimaryUserTitleAccountPlayFabId();
-
-    MCAPI bool isAchievementOfferNotOwned(::persona::PieceOfferWrapper const& offer) const;
 
     MCAPI bool isArmOrLegTypeAndEquipped(::persona::PieceOfferWrapper const& activeOffer) const;
 
@@ -128,21 +108,11 @@ public:
 
     MCAPI bool isPieceEquipped(::std::string const& pieceId) const;
 
-    MCAPI bool isPieceLoaded(::mce::UUID const& pieceId) const;
-
-    MCAPI bool isPieceOfferLoading(::persona::PieceOfferWrapper const& offer) const;
-
-    MCAPI bool isPiecePreviewed(::std::string const& pieceId) const;
-
-    MCAPI bool isRealmsPlusBannerVisible(::persona::PieceOfferWrapper const& activeOffer) const;
-
     MCAPI bool isRealmsRedeemButtonVisible(::persona::PieceOfferWrapper const& activeOffer) const;
 
     MCAPI bool isRealmsSubscriptionButtonVisible(::persona::PieceOfferWrapper const& activeOffer) const;
 
     MCAPI bool isSkinOwned(::SkinPackModel const& skinPack, ::SkinHandle const& handle) const;
-
-    MCAPI bool isSkinRestricted(::SkinPackModel const& skinPack) const;
 
     MCAPI void newCharacter(::LinksToStyle const& linkTo, uint defaultAppearanceIndex);
 
@@ -155,8 +125,6 @@ public:
     MCAPI void showProfileSettingsScreen();
 
     MCAPI void syncSelectedSkinHandle();
-
-    MCAPI void updateOfferClickedData(::Social::eventData::PersonaOfferClickedData&& offerClickedData);
     // NOLINTEND
 
 public:
@@ -166,30 +134,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(::ui::DirtyFlag& dirtyFlags);
 
-    MCFOLD ::SkinHandle const& $getSelectedSkinHandle() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIMinecraftScreenModel();
-
-    MCNAPI static void** $vftableForIDlcBatcher();
-
-    MCNAPI static void** $vftableForMainMenuScreenModel();
-
-    MCNAPI static void** $vftableForPersonaScreenModelCommon();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

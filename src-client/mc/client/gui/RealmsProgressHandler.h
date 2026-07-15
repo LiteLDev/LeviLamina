@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsProgressHandler() /*override*/;
+    virtual ~RealmsProgressHandler() /*override*/ = default;
 
     virtual void onStart(::MinecraftScreenModel&) /*override*/;
 
@@ -36,7 +36,7 @@ public:
 
     virtual void onCancel(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
+    virtual void onExit(::MinecraftScreenModel&) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
@@ -65,34 +65,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStart(::MinecraftScreenModel&);
 
-    MCFOLD void $tick(::MinecraftScreenModel&);
-
-    MCAPI void $onCancel(::MinecraftScreenModel&);
-
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
-
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCFOLD ::std::string $getTitleText() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

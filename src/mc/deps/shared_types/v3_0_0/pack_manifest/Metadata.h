@@ -4,8 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
-namespace cereal { struct ReflectionCtx; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct RelaxedSemVersion; }
 // clang-format on
 
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
@@ -14,11 +13,16 @@ struct Metadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>>                           mAuthors;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                          mUrl;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                          mLicense;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                          mProductType;
-    ::ll::TypedStorage<8, 24, ::std::optional<::std::map<::std::string, ::std::vector<::SemVersion>>>> mGeneratedWith;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mAuthors;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mUrl;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mLicense;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mProductType;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::optional<
+            ::std::map<::std::string, ::std::vector<::SharedTypes::v3_0_0::PackManifestDefinition::RelaxedSemVersion>>>>
+        mGeneratedWith;
     // NOLINTEND
 
 public:
@@ -36,12 +40,6 @@ public:
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
 
     MCAPI ~Metadata();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

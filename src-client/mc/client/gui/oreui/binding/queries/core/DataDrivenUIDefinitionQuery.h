@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IDataDrivenUIRepository;
 namespace OreUI { class DataDrivenUIGenericNode; }
 namespace OreUI { class GameDependencies; }
 // clang-format on
@@ -41,12 +40,6 @@ public:
         ::OreUI::DefinitionType          definitionType,
         ::std::string const&             definitionId
     );
-
-    MCAPI void _updateState(
-        ::IDataDrivenUIRepository& dataDrivenUIRepository,
-        ::OreUI::DefinitionType    definitionType,
-        ::std::string const&       definitionId
-    );
     // NOLINTEND
 
 public:
@@ -57,14 +50,6 @@ public:
         ::OreUI::DefinitionType          definitionType,
         ::std::string const&             definitionId
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPropertyObject();
-
-    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 

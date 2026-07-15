@@ -14,6 +14,11 @@ class Item;
 
 class ItemInstance : public ::ItemStackBase {
 public:
+    // prevent constructor by default
+    ItemInstance& operator=(ItemInstance const&);
+    ItemInstance();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void reinit(::Block const& block, int count) /*override*/;
@@ -26,21 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemInstance();
-
     MCAPI ItemInstance(::ItemInstance const& rhs);
 
     MCAPI explicit ItemInstance(::ItemStackBase const& rhs);
-
-    MCAPI ItemInstance(::Block const& block, int count, ::CompoundTag const* _userData);
-
-    MCAPI ItemInstance(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
-
-    MCAPI ItemInstance(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
-
-    MCAPI ::ItemInstance clone() const;
-
-    MCAPI ::ItemInstance& operator=(::ItemInstance const& rhs);
     // NOLINTEND
 
 public:
@@ -58,17 +51,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCFOLD void* $ctor(::ItemInstance const& rhs);
 
     MCFOLD void* $ctor(::ItemStackBase const& rhs);
-
-    MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
-
-    MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
-
-    MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
     // NOLINTEND
 
 public:

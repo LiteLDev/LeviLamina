@@ -11,27 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::RidingOffsetInterpolationPair> mInterpolationPair;
     // NOLINTEND
-
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    PassengerRenderingRidingOffsetComponent();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit PassengerRenderingRidingOffsetComponent(::RidingOffsetInterpolationPair const& interpolationPair);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::RidingOffsetInterpolationPair const& interpolationPair);
-#endif
-    // NOLINTEND
 };

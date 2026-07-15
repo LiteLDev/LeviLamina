@@ -18,6 +18,7 @@ class EntityContext;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -56,7 +57,7 @@ public:
     virtual bool isEnchanted() const /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -75,16 +76,6 @@ public:
     );
 
     MCAPI void doNormalTick();
-
-#ifdef LL_PLAT_C
-    MCAPI int getClientSideReturnTridentTickCount() const;
-#endif
-
-    MCFOLD ::ItemStack getPickupItem() const;
-
-    MCAPI void returnWithLoyalty(int enchantLevel);
-
-    MCAPI void setTridentItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
@@ -112,7 +103,8 @@ public:
 
     MCAPI bool $isEnchanted() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

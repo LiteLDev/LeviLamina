@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 namespace webrtc {
 
 class ActiveDecodeTargetsHelper {
@@ -24,11 +27,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void OnFrame(
-        ::rtc::ArrayView<int const> decode_target_protected_by_chain,
-        ::std::bitset<32>           active_decode_targets,
-        bool                        is_keyframe,
-        int64                       frame_id,
-        ::rtc::ArrayView<int const> chain_diffs
+        ::webrtc::ArrayView<int const, 18446744073709546905> decode_target_protected_by_chain,
+        ::std::bitset<32>                                    active_decode_targets,
+        bool                                                 is_keyframe,
+        int64                                                frame_id,
+        ::webrtc::ArrayView<int const, 18446744073709546905> chain_diffs
     );
     // NOLINTEND
 };

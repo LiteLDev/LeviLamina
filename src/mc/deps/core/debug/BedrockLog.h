@@ -5,13 +5,11 @@
 // auto generated inclusion list
 #include "mc/diagnostics/LogAreaID.h"
 #include "mc/platform/diagnostics/bedrock_log/LogCategory.h"
-#include "mc/platform/diagnostics/bedrock_log/LogChannel.h"
 #include "mc/platform/diagnostics/bedrock_log/LogRule.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class ScopeExit; }
-namespace BedrockLog { class LogAreaFilter; }
+namespace BedrockLog { struct CategoryLogs; }
 namespace Core { class Path; }
 class LogSettingsUpdater;
 // clang-format on
@@ -19,30 +17,11 @@ class LogSettingsUpdater;
 namespace BedrockLog {
 // functions
 // NOLINTBEGIN
-MCAPI char const* _areaFilterString(::LogAreaID _area);
-
-MCAPI bool
-_constructAreaFilterFromString(::std::string const& filterString, ::BedrockLog::LogAreaFilter& logAreaFilter);
-
-MCAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
-
-MCAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
-
-MCAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
-
 MCAPI void _initAreaFilterMap();
 
 MCAPI void _initPriorityFilterMap();
 
-MCAPI ::std::string _messageIdString(int _messageId);
-
-MCAPI ::std::string _processIdString();
-
-MCAPI ::std::string _threadIdString();
-
 MCAPI void closeAndResetAllLogs();
-
-MCAPI void closeAndResetLog(::BedrockLog::LogCategory category);
 
 MCAPI void createLog(
     ::Core::Path const&       _path,
@@ -54,16 +33,6 @@ MCAPI void createLog(
     ::LogSettingsUpdater*     _settings,
     double                    _logCycleInS
 );
-
-#ifdef LL_PLAT_C
-MCAPI void dumpLogSettingsToLog();
-#endif
-
-MCAPI void flushAllLogs();
-
-MCAPI ::Bedrock::ScopeExit initialize();
-
-MCAPI void initializeLogExtensions();
 
 MCAPI void log_va(
     ::BedrockLog::LogCategory _category,
@@ -80,26 +49,16 @@ MCAPI void log_va(
 MCAPI int rakDebugLog(char const*, ...);
 
 MCAPI void update();
+// NOLINTEND
 
-#ifdef LL_PLAT_S
-MCAPI void updateLogFilter(
-    ::std::unique_ptr<::LogSettingsUpdater> options,
-    ::std::string const&                    filterType,
-    ::std::vector<::std::string> const&     filters,
-    ::std::string&                          result,
-    bool                                    toggle
-);
-
-MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
+// static variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_C
+MCAPI ::BedrockLog::CategoryLogs& sCategory();
 #endif
 
-#ifdef LL_PLAT_C
-MCAPI void updateLogSetting(
-    ::BedrockLog::LogCategory _category,
-    ::BedrockLog::LogChannel  _channel,
-    ::std::string const&      setting,
-    bool                      newValue
-);
+#ifdef LL_PLAT_S
+MCAPI ::BedrockLog::CategoryLogs& sCategory();
 #endif
 // NOLINTEND
 

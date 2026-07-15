@@ -42,8 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit HoverTextRenderer(::UIResolvedDef const& def);
-
-    MCAPI void _buildTextbox(::IClientInstance& client, bool useGamepadOffset);
     // NOLINTEND
 
 public:

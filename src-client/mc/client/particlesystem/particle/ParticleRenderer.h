@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/particlesystem/particle/ParticleRenderData.h"
 #include "mc/deps/core/utility/buffer_span.h"
 
 // auto generated forward declare list
 // clang-format off
-class Matrix;
 class ParticleRenderData;
 class ScreenContext;
-class Tessellator;
 class Vec3;
 // clang-format on
 
@@ -55,27 +52,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _renderBucket(
-        ::ParticleRenderer::RenderBucketData const& bucketData,
-        ::Matrix const&                             rotMatXYZ,
-        ::Matrix const&                             rotMatY
-    );
-
     MCAPI void _renderBuckets(
         ::ScreenContext&            screenContext,
         ::Vec3 const&               cameraTargetPos,
         ::Vec3 const&               cameraPos,
         ::ParticleRenderData const& particleRenderData
-    );
-
-    MCAPI void _tesselateParticle(
-        ::Tessellator&                            t,
-        ::ParticleRenderData::ParticleData const& particleData,
-        ::Vec3 const&                             cameraTargetPos,
-        ::Vec3 const&                             cameraPos,
-        ::Matrix const&                           rotMatXYZ,
-        ::Matrix const&                           rotMatY,
-        bool                                      includeRandomNumbersInNormalField
     );
 
     MCAPI void renderParticles(
@@ -84,21 +65,5 @@ public:
         ::Vec3 const&               cameraPos,
         ::ParticleRenderData const& particleRenderData
     );
-
-    MCAPI ~ParticleRenderer();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int64& mParticleRenderBucketCount();
-
-    MCAPI static int64& mParticleRenderParticleCount();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

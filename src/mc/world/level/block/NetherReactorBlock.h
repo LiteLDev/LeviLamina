@@ -6,28 +6,7 @@
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockType.h"
 
-// auto generated forward declare list
-// clang-format off
-class Material;
-// clang-format on
-
 class NetherReactorBlock : public ::ActorBlock {
-public:
-    // prevent constructor by default
-    NetherReactorBlock();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NetherReactorBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
 public:
     // vftables
     // NOLINTBEGIN

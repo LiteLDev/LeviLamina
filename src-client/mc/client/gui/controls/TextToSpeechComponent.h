@@ -29,15 +29,16 @@ public:
     ::ll::TypedStorage<1, 1, bool>           mIgnoreForTTSIndexCount;
     ::ll::TypedStorage<1, 1, bool>           mSkipNarration;
     ::ll::TypedStorage<1, 1, bool>           mSkipChildren;
+    ::ll::TypedStorage<1, 1, bool>           mSkipEnumeration;
     ::ll::TypedStorage<1, 1, bool>           mPlayOnUnchangedFocusControl;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextToSpeechComponent() /*override*/;
+    virtual ~TextToSpeechComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
 
     virtual void reset() /*override*/;
     // NOLINTEND
@@ -45,35 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addComponentStringToTTS(
-        ::std::multimap<int, ::std::string>& messageQueue,
-        ::std::function<::std::string(::std::string const&, ::std::optional<::std::vector<::std::string>>)> const&
-            localizationCallback
-    ) const;
-
-    MCAPI ::std::string const _convertString(
-        ::std::string const& value,
-        ::std::function<::std::string(::std::string const&, ::std::optional<::std::vector<::std::string>>)> const&
-            localizationCallback
-    ) const;
-
-    MCAPI ::std::optional<int> _findIndexWithinGrid(::UIControl& control);
-
     MCAPI int _getControlIndex(::std::shared_ptr<::UIControl> ancestor);
-
-    MCAPI ::std::pair<int, int> _getControlIndexAndSectionCount(::std::shared_ptr<::UIControl> ancestor);
 
     MCAPI int _getMaximumContainerSize(::std::shared_ptr<::UIControl> ancestor);
 
     MCAPI int getControlIndex();
 
-    MCFOLD bool getInheritTTSSiblings() const;
-
     MCAPI int getSectionCount();
-
-    MCAPI bool getSkipChildren() const;
-
-    MCFOLD bool getTTSMessageInterruptible() const;
 
     MCFOLD ::std::string getTTSMessageInterruptibleId() const;
 
@@ -87,22 +66,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

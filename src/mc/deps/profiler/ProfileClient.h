@@ -34,6 +34,8 @@ public:
 
     virtual void shutdownProfile();
 
+    virtual void setProfileStamp(::std::string_view);
+
     virtual void onFrameTransition(uchar previousFrameType);
 
     virtual uint getMaxTokens() const;
@@ -96,11 +98,11 @@ public:
     virtual void setMarker(char const*, uint) const;
 
     virtual void generateCPUProfileTokenStatic(
-        ::Core::Profile::CPUProfileToken&             target,
-        char const*                                   group,
-        ::Bedrock::Profiler::details::StaticProfLabel label,
-        uint                                          color,
-        ::brstd::source_location const&               location
+        ::Core::Profile::CPUProfileToken&,
+        char const*,
+        ::Bedrock::Profiler::details::StaticProfLabel,
+        uint,
+        ::brstd::source_location const&
     );
 
     virtual void generateCPUProfileTokenLegacy(
@@ -171,6 +173,8 @@ public:
 
     MCNAPI void $shutdownProfile();
 
+    MCNAPI void $setProfileStamp(::std::string_view);
+
     MCNAPI void $onFrameTransition(uchar previousFrameType);
 
     MCNAPI uint $getMaxTokens() const;
@@ -190,17 +194,11 @@ public:
 
     MCNAPI void $onHeapFree(void const*, uint64, ::Memory::MemoryCategory, char const*);
 
-    MCNAPI void
-    $enterCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
-
     MCNAPI void $enterCPUProfileDynamic(
         ::Bedrock::Profile::ScopeStackStorage&  scope,
         ::Core::Profile::CPUProfileToken const& token,
         ::Bedrock::Profiler::details::DynamicProfLabel
     );
-
-    MCNAPI void
-    $leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage& scope, ::Core::Profile::CPUProfileToken const& token);
 
     MCNAPI uchar $createGPUContext(char const*, int64, float, bool, bool);
 
@@ -231,14 +229,6 @@ public:
     MCNAPI bool $isCaptureEnding();
 
     MCNAPI void $setMarker(char const*, uint) const;
-
-    MCNAPI void $generateCPUProfileTokenStatic(
-        ::Core::Profile::CPUProfileToken&             target,
-        char const*                                   group,
-        ::Bedrock::Profiler::details::StaticProfLabel label,
-        uint                                          color,
-        ::brstd::source_location const&               location
-    );
 
     MCNAPI void $generateCPUProfileTokenLegacy(
         ::Core::Profile::CPUProfileToken&,

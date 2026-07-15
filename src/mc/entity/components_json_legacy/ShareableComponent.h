@@ -7,7 +7,6 @@
 class Actor;
 class ItemActor;
 class ItemStack;
-class Level;
 class ShareableDefinition;
 // clang-format on
 
@@ -17,11 +16,7 @@ public:
     // NOLINTBEGIN
     MCAPI int getCountToPickUp(::Actor const& owner, ::ItemStack const& item) const;
 
-    MCAPI int getCountToPickUp(::Actor const& owner, ::ItemActor const& itemActor) const;
-
     MCAPI int getSlotToSwap(::Actor const& owner, ::ItemActor const& itemActor) const;
-
-    MCAPI int hasSurplus(::Actor const& owner, ::ItemStack const& item, bool includeStackSizeofItem) const;
 
     MCAPI int hasSurplus(
         ::Actor const&     owner,
@@ -46,16 +41,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
-    _canPickupItem(::ItemStack const& item, ::ItemStack const& carriedItem, int maxAmount, bool singularPickupOnly);
-
     MCAPI static bool _shouldReplaceItem(
         ::ItemStack const&           itemToReplace,
         ::ItemStack const&           newItem,
         ::ShareableDefinition const& shareable,
         bool                         canPickupAnyItem
     );
-
-    MCAPI static bool _useLegacySurplusRules(::Level const& level);
     // NOLINTEND
 };

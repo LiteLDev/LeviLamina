@@ -19,9 +19,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryProgressHandler() /*override*/;
+    virtual ~LibraryProgressHandler() /*override*/ = default;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& container) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
     // NOLINTEND
@@ -49,22 +49,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& container) const;
 
-    MCAPI ::std::string $getName() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/ThirdPartyServersStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -13,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class IAppPlatform;
-struct NetworkWorldInfo;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct NetworkWorldData; }
 namespace World { class ThirdPartyWorldList; }
@@ -21,7 +19,7 @@ namespace World { class ThirdPartyWorldList; }
 
 namespace OreUI {
 
-class ThirdPartyWorldListFacet : public ::OreUI::FacetBase<::OreUI::ThirdPartyWorldListFacet> {
+class ThirdPartyWorldListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ThirdPartyWorldListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -55,25 +53,6 @@ public:
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&          appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-
-    MCAPI bool _areWorldsDifferent(
-        ::OreUI::NetworkWorldData const&             thirdPartyWorldData,
-        ::std::shared_ptr<::NetworkWorldInfo> const& thirdPartyWorld
-    ) const;
-
-    MCAPI void _onWorldListUpdated();
-
-    MCAPI void _refresh();
-
-    MCAPI bool _shouldRefresh();
-
-    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getCreatorWorlds() const;
-
-    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getFeaturedWorlds() const;
-
-    MCFOLD ::OreUI::FacetTaskState const getFetchThirdPartyWorldsTaskState() const;
-
-    MCFOLD ::OreUI::ThirdPartyServersStatus const getThirdPartyServersStatus() const;
     // NOLINTEND
 
 public:
@@ -95,13 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

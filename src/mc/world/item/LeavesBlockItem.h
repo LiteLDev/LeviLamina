@@ -24,34 +24,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
+    virtual int getLevelDataForAuxValue(int) const /*override*/;
 
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
-    virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
+    virtual void fixupCommon(::ItemStackBase&, ::ILevel&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
-
-    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
-
-    MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

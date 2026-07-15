@@ -20,8 +20,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $fixupCommon(::ItemStackBase& stack) const;
-
 
     // NOLINTEND
 };

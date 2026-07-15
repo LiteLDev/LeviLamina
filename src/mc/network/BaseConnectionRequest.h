@@ -20,7 +20,6 @@ class TintMapColor;
 class WebToken;
 struct ConnectionAuthInfo;
 struct ConnectionSkinInfo;
-struct SyncedClientOptionsComponent;
 namespace mce { class Color; }
 // clang-format on
 
@@ -81,17 +80,11 @@ public:
 
     MCAPI BaseConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::Json::Value const& authentication);
 
-    MCFOLD ::RawGameServerToken const& _getGameServerToken() const;
-
-    MCFOLD ::WebToken const& _getRawRequest() const;
-
     MCAPI bool _isUsingRestrictedIds() const;
 
     MCAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
     MCAPI ::std::string getArmSize() const;
-
-    MCFOLD ::PlayerAuthenticationType getAuthenticationType() const;
 
     MCAPI ::std::vector<uchar> getCapeData() const;
 
@@ -100,8 +93,6 @@ public:
     MCAPI ushort getCapeImageHeight() const;
 
     MCAPI ushort getCapeImageWidth() const;
-
-    MCAPI ::SyncedClientOptionsComponent getClientOptions() const;
 
     MCAPI uint64 getClientRandomId() const;
 

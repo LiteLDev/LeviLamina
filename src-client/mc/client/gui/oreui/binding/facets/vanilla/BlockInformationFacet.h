@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/string/HashedString.h"
 
 namespace OreUI {
 
-class BlockInformationFacet : public ::OreUI::FacetBase<::OreUI::BlockInformationFacet> {
+class BlockInformationFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::BlockInformationFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -25,8 +25,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockInformationFacet();
-
-    MCFOLD ::std::unordered_map<::HashedString, ::std::string> const& getBlockNames() const;
     // NOLINTEND
 
 public:
@@ -44,13 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

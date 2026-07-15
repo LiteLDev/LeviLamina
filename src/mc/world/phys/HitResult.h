@@ -12,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-struct AABBHitResult;
 // clang-format on
 
 class HitResult {
@@ -35,69 +34,33 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     HitResult& operator=(HitResult const&);
     HitResult(HitResult const&);
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    HitResult(HitResult const&);
+    HitResult();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HitResult();
-
-    MCAPI explicit HitResult(::AABBHitResult const& hit);
-
-    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
-
-    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
-
 #ifdef LL_PLAT_C
     MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
 #endif
 
-    MCAPI HitResult(
-        ::Vec3 const&     startPos,
-        ::Vec3 const&     rayDir,
-        ::BlockPos const& blockPos,
-        uchar             facing,
-        ::Vec3 const&     pos
-    );
-
-    MCAPI float distanceToSqr(::Actor const& otherEntity) const;
-
     MCAPI ::Actor* getEntity() const;
 
-    MCAPI ::HitResult& operator=(::HitResult&&);
-
 #ifdef LL_PLAT_C
-    MCAPI ::HitResult& operator=(::HitResult const&);
+    MCAPI ::HitResult& operator=(::HitResult&&);
 #endif
-
-    MCAPI void setIsHitLiquid(bool isHit, ::HitResult const& liquidHit);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::AABBHitResult const& hit);
-
-    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
-
-    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
-
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
 #endif
-
-    MCAPI void*
-    $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::BlockPos const& blockPos, uchar facing, ::Vec3 const& pos);
     // NOLINTEND
 };

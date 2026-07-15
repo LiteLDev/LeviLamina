@@ -23,15 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorLevelStructureData(::std::string strucNamespace, ::std::string name, ::std::string levelId);
-
     MCNAPI ~EditorLevelStructureData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string strucNamespace, ::std::string name, ::std::string levelId);
     // NOLINTEND
 
 public:

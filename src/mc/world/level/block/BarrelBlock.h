@@ -11,15 +11,10 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Material;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class BarrelBlock : public ::FaceDirectionalBlock {
-public:
-    // prevent constructor by default
-    BarrelBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -44,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BarrelBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -53,12 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setOpen(bool isOpen, ::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

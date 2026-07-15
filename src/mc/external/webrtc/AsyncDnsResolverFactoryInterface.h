@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class SocketAddress; }
 namespace webrtc { class AsyncDnsResolverInterface; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace webrtc {
@@ -20,10 +20,10 @@ public:
     virtual ~AsyncDnsResolverFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) = 0;
+    CreateAndResolve(::webrtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) = 0;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) = 0;
+    CreateAndResolve(::webrtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) = 0;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() = 0;
     // NOLINTEND

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_20/structure/template_pool/Projection.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_50 {
 
 struct JigsawJunction {
@@ -21,12 +16,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                              mSourceZ;
     ::ll::TypedStorage<4, 4, int>                                                              mDeltaY;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Projection> mDestProjection;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

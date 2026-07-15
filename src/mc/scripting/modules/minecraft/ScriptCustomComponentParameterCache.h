@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/deps/scripting/JSON.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/scripting/JSON.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -100,20 +100,12 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle
     registerParameterPayload(::cereal::DynamicValue const& payload);
-
-    MCAPI ~ScriptCustomComponentParameterCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ServerScriptManagerEvents& events);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

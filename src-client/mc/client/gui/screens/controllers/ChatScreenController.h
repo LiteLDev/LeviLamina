@@ -15,8 +15,7 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
-class StringHash;
-struct HostOptionSubCommand;
+namespace AppExtensions { class IDevConsoleScreenExtension; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -59,6 +58,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::HostOptionStates, ::std::string>>> mMainHostButtons;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mProfanityToggleSubscription;
     ::ll::TypedStorage<1, 1, bool>                             mShouldUseFilteredMessage;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppExtensions::IDevConsoleScreenExtension>> mDevConsoleScreenExtension;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ChatScreenController() /*override*/;
+    virtual ~ChatScreenController() /*override*/ = default;
 
     virtual void onInit() /*override*/;
 
@@ -86,98 +86,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    ChatScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, bool openWithCommand, bool isDevConsole);
-
-    MCAPI void _buildHostButtons();
-
-    MCAPI void _getBottomButtonFocusOverrideDown(::std::string& focusOverride);
-
-    MCAPI void _getBottomButtonFocusOverrideUp(::std::string& focusOverride, uint64 lastIndex);
-
-    MCAPI ::std::string _getExitMessage() const;
-
-    MCAPI ::std::optional<uint64> _getNextMessageIndex(
-        ::ChatScreenController::SelectionDirection direction,
-        ::std::deque<::std::string> const&         sentMessages
-    ) const;
-
-    MCAPI ::std::string _getSendMessage() const;
-
-    MCAPI void _handleChatMessage(::std::string const& message, ::std::string const& ttsMessage);
-
-    MCAPI void _handleSelectSentMessage(::ChatScreenController::SelectionDirection direction);
-
-    MCAPI bool _hostOptionNavigation();
-
-    MCAPI void _initScreenControllerProxy();
-
-    MCAPI void _refreshChatMessages();
-
-    MCAPI void _refreshDevConsoleScreenMessages();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerBindingsHostOptions();
-
-    MCAPI void _registerBindingsSubCommand(
-        ::std::vector<::HostOptionSubCommand>& subCommandButtons,
-        ::StringHash const&                    gridName,
-        ::StringHash const&                    collectionName
+    MCAPI ChatScreenController(
+        ::std::shared_ptr<::ClientInstanceScreenModel>                 model,
+        bool                                                           openWithCommand,
+        bool                                                           isDevConsole,
+        ::std::unique_ptr<::AppExtensions::IDevConsoleScreenExtension> devConsoleScreenExtension
     );
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerEventHandlersHostOptions();
-
-    MCAPI void _registerSubControllers();
-
-    MCAPI void _sendChatMessage();
-
-    MCAPI void _teleportWhereHelper();
-
-    MCAPI void _teleportWhoHelper();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const* const& DEV_CONSOLE_SCREEN_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, bool openWithCommand, bool isDevConsole);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ClientInstanceScreenModel>                 model,
+        bool                                                           openWithCommand,
+        bool                                                           isDevConsole,
+        ::std::unique_ptr<::AppExtensions::IDevConsoleScreenExtension> devConsoleScreenExtension
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInit();
 
-    MCAPI void $onOpen();
-
-    MCAPI void $onEntered();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

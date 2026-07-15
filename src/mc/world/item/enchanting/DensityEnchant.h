@@ -20,26 +20,12 @@ public:
 
     virtual int getMaxLevel() const /*override*/;
 
-    virtual float getDamageBonus(int level, ::Actor const& attacker, ::Actor const&) const /*override*/;
+    virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getMinCost(int level) const;
 
-    MCFOLD int $getMaxCost(int level) const;
-
-    MCFOLD int $getMaxLevel() const;
-
-    MCAPI float $getDamageBonus(int level, ::Actor const& attacker, ::Actor const&) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

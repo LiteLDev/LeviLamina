@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class MinecraftScreenModel;
 class UIPropertyBag;
 struct ScreenEvent;
 // clang-format on
@@ -32,45 +31,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NestedButtonScreenController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ui::ViewRequest handleEvent(::ScreenEvent& screenEvent) /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NestedButtonScreenController(::std::shared_ptr<::MinecraftScreenModel>);
-
-    MCAPI void setUpCallbacksForNestedButtonInCollection(
-        ::std::string const&                         nestedBaseButtonId,
-        ::std::string const&                         nestedControlEnabledBinding,
-        ::std::vector<uint>                          ignoredControls,
-        ::std::function<int(::UIPropertyBag&)>       indexSelectionFunc,
-        ::std::function<bool(::UIPropertyBag&, int)> visibilityFunction,
-        ::std::string                                firstControlName
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel>);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/EncodedImageCallback.h"
 #include "mc/external/webrtc/RtpSequenceNumberMap.h"
 #include "mc/external/webrtc/RtpVideoSenderInterface.h"
@@ -12,19 +13,18 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class Clock; }
 namespace webrtc { class DataRate; }
 namespace webrtc { class DataSize; }
 namespace webrtc { class EncodedImage; }
+namespace webrtc { class Environment; }
 namespace webrtc { class FecController; }
-namespace webrtc { class FieldTrialsView; }
 namespace webrtc { class FrameEncryptorInterface; }
 namespace webrtc { class FrameTransformerInterface; }
 namespace webrtc { class Frequency; }
 namespace webrtc { class RateLimiter; }
-namespace webrtc { class RtcEventLog; }
+namespace webrtc { class RtpRtcpInterface; }
 namespace webrtc { class RtpTransportControllerSendInterface; }
-namespace webrtc { class TaskQueueFactory; }
+namespace webrtc { class TaskQueueBase; }
 namespace webrtc { class Transport; }
 namespace webrtc { class VideoBitrateAllocation; }
 namespace webrtc { struct BitrateAllocationUpdate; }
@@ -46,18 +46,19 @@ class RtpVideoSender : public ::webrtc::RtpVideoSenderInterface,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk2fe374;
+    ::ll::UntypedStorage<8, 40>  mUnk456187;
     ::ll::UntypedStorage<1, 1>   mUnkd26cd1;
     ::ll::UntypedStorage<1, 1>   mUnkcae22e;
     ::ll::UntypedStorage<1, 1>   mUnk1089b5;
+    ::ll::UntypedStorage<8, 8>   mUnk7f791d;
     ::ll::UntypedStorage<8, 40>  mUnk42e501;
     ::ll::UntypedStorage<1, 1>   mUnk922b4d;
     ::ll::UntypedStorage<8, 8>   mUnkbe54e8;
     ::ll::UntypedStorage<1, 1>   mUnk80a0fd;
     ::ll::UntypedStorage<8, 24>  mUnkbeb5ce;
-    ::ll::UntypedStorage<8, 288> mUnk74c091;
-    ::ll::UntypedStorage<4, 8>   mUnkce64ca;
+    ::ll::UntypedStorage<8, 320> mUnk74c091;
     ::ll::UntypedStorage<8, 8>   mUnkff5ef2;
+    ::ll::UntypedStorage<8, 24>  mUnk4509d4;
     ::ll::UntypedStorage<8, 8>   mUnk808d3a;
     ::ll::UntypedStorage<1, 1>   mUnk2f9f84;
     ::ll::UntypedStorage<8, 24>  mUnk78885d;
@@ -68,6 +69,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk86c908;
     ::ll::UntypedStorage<8, 8>   mUnkc028fd;
     ::ll::UntypedStorage<8, 16>  mUnkaddf58;
+    ::ll::UntypedStorage<8, 8>   mUnkaa2b41;
     // NOLINTEND
 
 public:
@@ -91,7 +93,7 @@ public:
 
     virtual ::std::map<uint, ::webrtc::RtpPayloadState> GetRtpPayloadStates() const /*override*/;
 
-    virtual void DeliverRtcp(uchar const* packet, uint64 length) /*override*/;
+    virtual void DeliverRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905> packet) /*override*/;
 
     virtual int ProtectionRequest(
         ::webrtc::FecProtectionParams const* delta_params,
@@ -124,8 +126,11 @@ public:
 
     virtual void SetEncodingData(uint64 width, uint64 height, uint64 num_temporal_layers) /*override*/;
 
+    virtual void SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs) /*override*/;
+
     virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers) const /*override*/;
+    GetSentRtpPacketInfos(uint ssrc, ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const
+        /*override*/;
 
     virtual void OnPacketFeedbackVector(
         ::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo> packet_feedback_vector
@@ -145,7 +150,8 @@ public:
     MCNAPI void ConfigureSsrcs(::std::map<uint, ::webrtc::RtpState> const& suspended_ssrcs);
 
     MCNAPI RtpVideoSender(
-        ::webrtc::Clock*                                             clock,
+        ::webrtc::Environment const&                                 env,
+        ::webrtc::TaskQueueBase*                                     transport_queue,
         ::std::map<uint, ::webrtc::RtpState> const&                  suspended_ssrcs,
         ::std::map<uint, ::webrtc::RtpPayloadState> const&           states,
         ::webrtc::RtpConfig const&                                   rtp_config,
@@ -153,24 +159,24 @@ public:
         ::webrtc::Transport*                                         send_transport,
         ::webrtc::RtpSenderObservers const&                          observers,
         ::webrtc::RtpTransportControllerSendInterface*               transport,
-        ::webrtc::RtcEventLog*                                       event_log,
         ::webrtc::RateLimiter*                                       retransmission_limiter,
         ::std::unique_ptr<::webrtc::FecController>                   fec_controller,
         ::webrtc::FrameEncryptorInterface*                           frame_encryptor,
         ::webrtc::CryptoOptions const&                               crypto_options,
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer,
-        ::webrtc::FieldTrialsView const&                             field_trials,
-        ::webrtc::TaskQueueFactory*                                  task_queue_factory
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
     );
 
     MCNAPI void SetActiveModulesLocked(bool sending);
+
+    MCNAPI void SetModuleIsActive(bool sending, ::webrtc::RtpRtcpInterface& rtp_module);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::webrtc::Clock*                                             clock,
+        ::webrtc::Environment const&                                 env,
+        ::webrtc::TaskQueueBase*                                     transport_queue,
         ::std::map<uint, ::webrtc::RtpState> const&                  suspended_ssrcs,
         ::std::map<uint, ::webrtc::RtpPayloadState> const&           states,
         ::webrtc::RtpConfig const&                                   rtp_config,
@@ -178,14 +184,11 @@ public:
         ::webrtc::Transport*                                         send_transport,
         ::webrtc::RtpSenderObservers const&                          observers,
         ::webrtc::RtpTransportControllerSendInterface*               transport,
-        ::webrtc::RtcEventLog*                                       event_log,
         ::webrtc::RateLimiter*                                       retransmission_limiter,
         ::std::unique_ptr<::webrtc::FecController>                   fec_controller,
         ::webrtc::FrameEncryptorInterface*                           frame_encryptor,
         ::webrtc::CryptoOptions const&                               crypto_options,
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer,
-        ::webrtc::FieldTrialsView const&                             field_trials,
-        ::webrtc::TaskQueueFactory*                                  task_queue_factory
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
     );
     // NOLINTEND
 
@@ -202,7 +205,7 @@ public:
 
     MCNAPI ::std::map<uint, ::webrtc::RtpPayloadState> $GetRtpPayloadStates() const;
 
-    MCNAPI void $DeliverRtcp(uchar const* packet, uint64 length);
+    MCNAPI void $DeliverRtcp(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
 
     MCNAPI int $ProtectionRequest(
         ::webrtc::FecProtectionParams const* delta_params,
@@ -235,8 +238,10 @@ public:
 
     MCNAPI void $SetEncodingData(uint64 width, uint64 height, uint64 num_temporal_layers);
 
+    MCNAPI void $SetCsrcs(::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
+
     MCNAPI ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    $GetSentRtpPacketInfos(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers) const;
+    $GetSentRtpPacketInfos(uint ssrc, ::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const;
 
     MCNAPI void
     $OnPacketFeedbackVector(::std::vector<::webrtc::StreamFeedbackObserver::StreamPacketInfo> packet_feedback_vector);

@@ -36,9 +36,6 @@ struct BrightnessPair;
 namespace LightPropagation { class LightVolumeManager; }
 namespace ParticleSystem { class ParticleEffect; }
 namespace ParticleSystem { class ParticleEmitter; }
-namespace ParticleSystem { class ParticleEvent; }
-namespace ParticleSystem { class ParticleEventNode; }
-namespace ParticleSystem { class ParticleVisualEffectEvent; }
 namespace ParticleSystem { struct CommonParticle; }
 namespace mce { class Color; }
 // clang-format on
@@ -59,18 +56,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::AABB>> mAABBList;
         ::ll::TypedStorage<4, 4, uint>                   mLastAccessedFrame;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~AABBCacheElement();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -105,7 +90,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                 mEmitterRenderingFrameCounter;
     ::ll::TypedStorage<4, 4, int>                                 mParticlesRenderingFrameCounter;
     ::ll::TypedStorage<4, 4, int>                                 mNumberOfFramesToInterpolate;
-    ::ll::TypedStorage<8, 512, ::RenderParams>                    mRenderParams;
+    ::ll::TypedStorage<8, 520, ::RenderParams>                    mRenderParams;
     ::ll::TypedStorage<8, 56, ::MolangVariableMap>                mMolangVariableMap;
     ::ll::TypedStorage<2, 2, ::MolangVariableIndex>               mEmitterLifetimeVariableIndex;
     ::ll::TypedStorage<2, 2, ::MolangVariableIndex>               mEmitterAgeVariableIndex;
@@ -156,27 +141,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ParticleEmitterActual() /*override*/;
+    virtual ~ParticleEmitterActual() /*override*/ = default;
 
-    virtual void setActorBindInfo(
-        ::Dimension*          dimension,
-        ::ActorUniqueID       actorId,
-        ::HashedString const& locator,
-        ::Vec3 const&         offset
-    ) /*override*/;
+    virtual void setActorBindInfo(::Dimension*, ::ActorUniqueID, ::HashedString const&, ::Vec3 const&) /*override*/;
 
-    virtual void
-    setActorBindInfo(::WeakEntityRef actorRef, ::HashedString const& locator, ::Vec3 const& offset) /*override*/;
+    virtual void setActorBindInfo(::WeakEntityRef, ::HashedString const&, ::Vec3 const&) /*override*/;
 
-    virtual void setActorBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset) /*override*/;
+    virtual void setActorBindInfo(::Actor*, ::HashedString const&, ::Vec3 const&) /*override*/;
 
-    virtual void setEnableUpdate(bool enable) /*override*/;
+    virtual void setEnableUpdate(bool) /*override*/;
 
-    virtual void setEnableRender(bool enable) /*override*/;
+    virtual void setEnableRender(bool) /*override*/;
 
-    virtual void runInitializationScript(::ExpressionNode const& initializationScript) /*override*/;
+    virtual void runInitializationScript(::ExpressionNode const&) /*override*/;
 
-    virtual void onBlockChanged(::BlockPos const& blockPosition) /*override*/;
+    virtual void onBlockChanged(::BlockPos const&) /*override*/;
 
     virtual void expire() /*override*/;
 
@@ -202,18 +181,19 @@ public:
 
     virtual uint64 getTotalParticleCount() const /*override*/;
 
+    virtual ::Vec3 const& getLastCameraPosition() const /*override*/;
+
     virtual bool getAreParticlesFromActorButWorldRelative() const /*override*/;
 
-    virtual void tick(::std::chrono::nanoseconds const& dtIn, float const a) /*override*/;
+    virtual void tick(::std::chrono::nanoseconds const&, float const) /*override*/;
 
-    virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext) /*override*/;
+    virtual void frameUpdate(::ClientFrameUpdateContext&) /*override*/;
 
-    virtual void extractForRendering(::ParticleRenderData& particleRenderData, float a) /*override*/;
+    virtual void extractForRendering(::ParticleRenderData&, float) /*override*/;
 
-    virtual void setManualParticleEmission(bool manualParticleEmission) /*override*/;
+    virtual void setManualParticleEmission(bool) /*override*/;
 
-    virtual void
-    emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult) /*override*/;
+    virtual void emitParticleManually(::Vec3 const&, ::Vec3 const&, float const) /*override*/;
 
     virtual ::ParticleSystem::ActorBindInfo getActorBindInfo() const /*override*/;
 
@@ -225,7 +205,7 @@ public:
 
     virtual ::Vec3 const& getWorldVelocity() const /*override*/;
 
-    virtual void setMaxNumParticles(uint64 num) /*override*/;
+    virtual void setMaxNumParticles(uint64) /*override*/;
 
     virtual uint64 getMaxNumParticles() const /*override*/;
 
@@ -233,298 +213,53 @@ public:
 
     virtual uint64 getNumParticlesEmitted() const /*override*/;
 
-    virtual void
-    setActorFrameOfReference(bool useActorPosition, bool useActorRotation, bool useEmitterVelocity) /*override*/;
+    virtual void setActorFrameOfReference(bool, bool, bool) /*override*/;
 
-    virtual void setEmissionDuration(float activeTime) /*override*/;
+    virtual void setEmissionDuration(float) /*override*/;
 
-    virtual void setSleepDuration(float sleepTime) /*override*/;
+    virtual void setSleepDuration(float) /*override*/;
 
-    virtual void setFacing(::HashedString const& facing) /*override*/;
+    virtual void setFacing(::HashedString const&) /*override*/;
 
     virtual bool blockListInitialized() /*override*/;
 
-    virtual void initializeBlockList(::buffer_span<::std::string> blockList) /*override*/;
+    virtual void initializeBlockList(::buffer_span<::std::string>) /*override*/;
 
-    virtual bool blockAtPositionIsInList(::BlockPos const& blockPos) /*override*/;
+    virtual bool blockAtPositionIsInList(::BlockPos const&) /*override*/;
 
-    virtual ::BrightnessPair getBrightnessPairAtBlock(::BlockPos const& blockPosition) const /*override*/;
+    virtual ::BrightnessPair getBrightnessPairAtBlock(::BlockPos const&) const /*override*/;
 
     virtual ::std::pair<::BrightnessPair, ::BlockPos>
-    getBrightestNeighbor(::BlockPos const& blockPosition, ::ParticleSystem::CommonParticle const& particle) const
-        /*override*/;
+    getBrightestNeighbor(::BlockPos const&, ::ParticleSystem::CommonParticle const&) const /*override*/;
 
-    virtual bool getVisibilityAtBlock(::BlockPos const& blockPosition) const /*override*/;
+    virtual bool getVisibilityAtBlock(::BlockPos const&) const /*override*/;
 
-    virtual ::mce::Color getGameplayLightForParticle(::ParticleSystem::CommonParticle const& particle) const
-        /*override*/;
+    virtual ::mce::Color getGameplayLightForParticle(::ParticleSystem::CommonParticle const&) const /*override*/;
 
-    virtual ::BrightnessPair getBrightnessPairForParticle(::ParticleSystem::CommonParticle const& particle) const
-        /*override*/;
+    virtual ::BrightnessPair getBrightnessPairForParticle(::ParticleSystem::CommonParticle const&) const /*override*/;
 
-    virtual ::std::vector<::AABB> const&
-    getCollisionShapesForBlockPosition(::BlockPos const& blockPosition) /*override*/;
+    virtual ::std::vector<::AABB> const& getCollisionShapesForBlockPosition(::BlockPos const&) /*override*/;
 
     virtual ::std::vector<::AABB>& getCollisionAabbList() /*override*/;
 
     virtual ::std::vector<::ParticleSystem::ComponentAccessParticleEmitter::CollisionHelper>&
     getCollisionSweepList() /*override*/;
 
-    virtual void
-    fireEvent(::HashedString const& eventName, ::Vec3 const& position, ::Vec3 const& velocity) /*override*/;
+    virtual void fireEvent(::HashedString const&, ::Vec3 const&, ::Vec3 const&) /*override*/;
 
-    virtual void
-    fireEvent(::HashedString const& eventName, ::Matrix const& transform, ::Vec3 const& velocity) /*override*/;
+    virtual void fireEvent(::HashedString const&, ::Matrix const&, ::Vec3 const&) /*override*/;
 
     virtual bool getUseActorPosition() const /*override*/;
 
     virtual bool getUseActorRotation() const /*override*/;
 
-    virtual void getParticleWorldPositionAndVelocity(
-        ::ParticleSystem::CommonParticle& particle,
-        ::Vec3&                           particleWorldPosition,
-        ::Vec3&                           particleWorldVelocity
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleEmitterActual(
-        ::ParticleSystemEngine&                                 particleSystemEngine,
-        ::HashedString const&                                   effectName,
-        ::std::array<::std::array<::mce::Color, 16>, 16> const& lightTextureData,
-        ::BlockSource&                                          region,
-        ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
-        ::Matrix const&                                         transform,
-        ::MolangVariableMap                                     molangVariableMap,
-        int                                                     framesToInterpolate
-    );
-
-    MCAPI void _checkForExpiration();
-
-    MCAPI bool _computeActorTransformAndReturnIfAttachedToLocator(
-        float     a,
-        ::Matrix& actorTransform,
-        bool      useActorPosition,
-        bool      useActorRotation
-    ) const;
-
-    MCAPI void _computeEmitterWorldPositionAndVelocity(::Matrix const& actorTransform, ::std::chrono::nanoseconds& dt);
-
-    MCAPI void _createBoundEmitterFromEvent(::ParticleSystem::ParticleVisualEffectEvent const& event);
-
-    MCAPI void _createManualParticleFromEvent(
-        ::ParticleSystem::ParticleVisualEffectEvent const& event,
-        ::Vec3 const&                                      velocity,
-        ::Vec3 const&                                      position
-    );
-
-    MCAPI void _emitNewParticle(
-        ::ParticleSystem::ParticleEffect const& effect,
-        ::Vec3 const&                           particleOriginOffset,
-        ::Vec3 const&                           velocityAdd,
-        float                                   scale,
-        float                                   a
-    );
-
-    MCAPI void _executeEventNode(
-        ::ParticleSystem::ParticleEventNode const& eventNode,
-        ::HashedString const&                      eventName,
-        ::Matrix const&                            transform,
-        ::Vec3 const&                              velocity
-    );
-
-    MCAPI void _executeSpecificEvent(
-        ::ParticleSystem::ParticleEvent const& event,
-        ::HashedString const&                  eventName,
-        ::Matrix const&                        transform,
-        ::Vec3 const&                          velocity
-    );
-
-    MCAPI void _extractParticleRenderingData(::ParticleRenderData& particleRenderData, float a);
-
-    MCAPI ::mce::Color _getLightColorForParticle(
-        ::ParticleSystem::CommonParticle const&                         particle,
-        ::std::shared_ptr<::LightPropagation::LightVolumeManager const> lightVolumeManager
-    ) const;
-
-    MCAPI ::std::shared_ptr<::ParticleSystem::ParticleEffect> _lockEffect();
-
-    MCAPI bool _prepareEmitterRenderParams();
-
-    MCAPI void _prepareParticleForRendering(
-        ::ParticleSystem::ParticleEffect const& effect,
-        ::ParticleSystem::CommonParticle&       particle
-    );
-
-    MCAPI void _prepareParticlesForRendering(bool particlesRenderFrame);
-
-    MCAPI bool _replaceParticleEffectPointer();
-
-    MCAPI void _resetParticleEffectProperties(bool firstTime);
-
-    MCAPI void _setGracefullyExpire();
-
-    MCAPI void _updateRenderParamsForParticle(
-        ::ParticleSystem::ParticleEffect const& effect,
-        ::ParticleSystem::CommonParticle const& particle
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::mce::Color& mParticleInitialColor();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ParticleSystemEngine&                                 particleSystemEngine,
-        ::HashedString const&                                   effectName,
-        ::std::array<::std::array<::mce::Color, 16>, 16> const& lightTextureData,
-        ::BlockSource&                                          region,
-        ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
-        ::Matrix const&                                         transform,
-        ::MolangVariableMap                                     molangVariableMap,
-        int                                                     framesToInterpolate
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual void getParticleWorldPositionAndVelocity(::ParticleSystem::CommonParticle&, ::Vec3&, ::Vec3&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setActorBindInfo(
-        ::Dimension*          dimension,
-        ::ActorUniqueID       actorId,
-        ::HashedString const& locator,
-        ::Vec3 const&         offset
-    );
 
-    MCAPI void $setActorBindInfo(::WeakEntityRef actorRef, ::HashedString const& locator, ::Vec3 const& offset);
-
-    MCAPI void $setActorBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset);
-
-    MCAPI void $setEnableUpdate(bool enable);
-
-    MCAPI void $setEnableRender(bool enable);
-
-    MCAPI void $runInitializationScript(::ExpressionNode const& initializationScript);
-
-    MCAPI void $onBlockChanged(::BlockPos const& blockPosition);
-
-    MCAPI void $expire();
-
-    MCAPI bool $isValid() const;
-
-    MCAPI bool $isManualEmitter() const;
-
-    MCAPI bool $expirationRequested() const;
-
-    MCAPI bool $hasExpired() const;
-
-    MCFOLD ::AABB const& $getAABB() const;
-
-    MCFOLD ::HashedString const& $getEffectName() const;
-
-    MCFOLD uint64 $getParticleCount() const;
-
-    MCAPI uint64 $getEffectEmitterCount() const;
-
-    MCAPI uint64 $getEffectParticleCount() const;
-
-    MCAPI uint64 $getTotalEmitterCount() const;
-
-    MCAPI uint64 $getTotalParticleCount() const;
-
-    MCAPI bool $getAreParticlesFromActorButWorldRelative() const;
-
-    MCAPI void $tick(::std::chrono::nanoseconds const& dtIn, float const a);
-
-    MCAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
-
-    MCAPI void $extractForRendering(::ParticleRenderData& particleRenderData, float a);
-
-    MCAPI void $setManualParticleEmission(bool manualParticleEmission);
-
-    MCAPI void $emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult);
-
-    MCAPI ::ParticleSystem::ActorBindInfo $getActorBindInfo() const;
-
-    MCFOLD ::Vec3 const& $getPosition() const;
-
-    MCAPI ::Matrix const& $getTransform() const;
-
-    MCFOLD ::Vec3 const& $getWorldPosition() const;
-
-    MCFOLD ::Vec3 const& $getWorldVelocity() const;
-
-    MCAPI void $setMaxNumParticles(uint64 num);
-
-    MCFOLD uint64 $getMaxNumParticles() const;
-
-    MCFOLD uint64 $getNumParticles() const;
-
-    MCFOLD uint64 $getNumParticlesEmitted() const;
-
-    MCAPI void $setActorFrameOfReference(bool useActorPosition, bool useActorRotation, bool useEmitterVelocity);
-
-    MCAPI void $setEmissionDuration(float activeTime);
-
-    MCAPI void $setSleepDuration(float sleepTime);
-
-    MCAPI void $setFacing(::HashedString const& facing);
-
-    MCAPI bool $blockListInitialized();
-
-    MCAPI void $initializeBlockList(::buffer_span<::std::string> blockList);
-
-    MCAPI bool $blockAtPositionIsInList(::BlockPos const& blockPos);
-
-    MCAPI ::BrightnessPair $getBrightnessPairAtBlock(::BlockPos const& blockPosition) const;
-
-    MCAPI ::std::pair<::BrightnessPair, ::BlockPos>
-    $getBrightestNeighbor(::BlockPos const& blockPosition, ::ParticleSystem::CommonParticle const& particle) const;
-
-    MCAPI bool $getVisibilityAtBlock(::BlockPos const& blockPosition) const;
-
-    MCAPI ::mce::Color $getGameplayLightForParticle(::ParticleSystem::CommonParticle const& particle) const;
-
-    MCAPI ::BrightnessPair $getBrightnessPairForParticle(::ParticleSystem::CommonParticle const& particle) const;
-
-    MCAPI ::std::vector<::AABB> const& $getCollisionShapesForBlockPosition(::BlockPos const& blockPosition);
-
-    MCFOLD ::std::vector<::AABB>& $getCollisionAabbList();
-
-    MCAPI ::std::vector<::ParticleSystem::ComponentAccessParticleEmitter::CollisionHelper>& $getCollisionSweepList();
-
-    MCAPI void $fireEvent(::HashedString const& eventName, ::Vec3 const& position, ::Vec3 const& velocity);
-
-    MCAPI void $fireEvent(::HashedString const& eventName, ::Matrix const& transform, ::Vec3 const& velocity);
-
-    MCAPI bool $getUseActorPosition() const;
-
-    MCAPI bool $getUseActorRotation() const;
-
-    MCAPI void $getParticleWorldPositionAndVelocity(
-        ::ParticleSystem::CommonParticle& particle,
-        ::Vec3&                           particleWorldPosition,
-        ::Vec3&                           particleWorldVelocity
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

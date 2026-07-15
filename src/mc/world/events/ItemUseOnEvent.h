@@ -23,20 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemUseOnEvent();
-
     MCAPI ~ItemUseOnEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

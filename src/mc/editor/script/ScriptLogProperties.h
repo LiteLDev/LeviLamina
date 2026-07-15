@@ -22,19 +22,9 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptLogProperties& operator=(ScriptLogProperties const&);
+    ScriptLogProperties(ScriptLogProperties const&);
     ScriptLogProperties();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptLogProperties(::Editor::ScriptModule::ScriptLogProperties&&);
-
-    MCNAPI ScriptLogProperties(::Editor::ScriptModule::ScriptLogProperties const&);
-
-    MCNAPI ::Editor::ScriptModule::ScriptLogProperties& operator=(::Editor::ScriptModule::ScriptLogProperties const&);
-
-    MCNAPI ~ScriptLogProperties();
-    // NOLINTEND
 
 public:
     // static functions
@@ -42,20 +32,6 @@ public:
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
 
     MCNAPI static ::Scripting::EnumBinding bindScriptLogChannel();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptLogProperties&&);
-
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptLogProperties const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

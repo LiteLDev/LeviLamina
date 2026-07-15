@@ -13,7 +13,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Container;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -51,7 +50,8 @@ public:
 
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    virtual bool allowStateMismatchOnPlacement(::Block const&, ::Block const&) const /*override*/;
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -61,21 +61,9 @@ public:
 
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _removeOneLayerOfItems(::Container& container);
-
-    MCFOLD static int getAttachedFace(int facing);
     // NOLINTEND
 
 public:
@@ -113,7 +101,7 @@ public:
 
     MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const&, ::Block const&) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
 
     // NOLINTEND

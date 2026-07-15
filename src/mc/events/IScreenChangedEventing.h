@@ -9,9 +9,9 @@ public:
     virtual ~IScreenChangedEventing() = default;
 
     virtual void fireEventScreenChanged(
-        uint const&                                               userId,
-        ::std::string const&                                      screenName,
-        ::std::unordered_map<::std::string, ::std::string> const& additionalProperties
+        uint const&,
+        ::std::string const&,
+        ::std::unordered_map<::std::string, ::std::string> const&
     ) = 0;
 
     virtual void

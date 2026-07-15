@@ -4,7 +4,7 @@
 
 namespace SharedTypes {
 
-enum class CreativeItemCategory : int {
+enum class CreativeItemCategory : uchar {
     All             = 0,
     Construction    = 1,
     Nature          = 2,

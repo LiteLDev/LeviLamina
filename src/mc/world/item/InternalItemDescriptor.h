@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class CompoundTag;
-class ReadOnlyBinaryStream;
 // clang-format on
 
 struct InternalItemDescriptor : public ::ItemDescriptor::BaseDescriptor {
@@ -43,13 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::InternalItemDescriptor>>
-    deserialize(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
@@ -58,7 +49,7 @@ public:
 
     MCAPI ::std::string $getFullName() const;
 
-    MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
+    MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
 
     MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 

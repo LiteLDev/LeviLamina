@@ -3,22 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/world/item/alchemy/Potion.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class Potion;
-namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPotionDeliveryType; }
 namespace ScriptModuleMinecraft { class ScriptPotionEffectType; }
-namespace ScriptModuleMinecraft { struct ScriptInvalidPotionDeliveryTypeError; }
-namespace ScriptModuleMinecraft { struct ScriptInvalidPotionEffectTypeError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -48,68 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPotions(ScriptPotions const&);
-    ScriptPotions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPotions& operator=(::ScriptModuleMinecraft::ScriptPotions const&);
-
-    MCAPI ~ScriptPotions();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotions>
-    _getHandle(::Scripting::WeakLifetimeScope& scope);
-
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCAPI static ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>>
-    getDeliveryTypes(::Scripting::WeakLifetimeScope scope);
-
-    MCAPI static ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
-    getEffectTypes(::Scripting::WeakLifetimeScope scope);
-
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>
-    getOrCreatePotionDeliveryType(::Potion::PotionType potionType, ::Scripting::WeakLifetimeScope scope);
-
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>
-    getOrCreatePotionEffectType(
-        ::gsl::not_null<::std::shared_ptr<::Potion const>> potion,
-        ::Scripting::WeakLifetimeScope                     scope
-    );
-
-    MCAPI static ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>>
-    getPotionDeliveryType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionTypeId);
-
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
-    getPotionEffectType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionTypeId);
-
-    MCAPI static ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
-        ::ScriptModuleMinecraft::ScriptInvalidPotionDeliveryTypeError,
-        ::ScriptModuleMinecraft::ScriptInvalidPotionEffectTypeError,
-        ::Scripting::EngineError>
-    resolve(
-        ::Scripting::WeakLifetimeScope scope,
-        ::std::variant<
-            ::std::string,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>& potionEffect,
-        ::std::variant<
-            ::std::string,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>>& deliveryType
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

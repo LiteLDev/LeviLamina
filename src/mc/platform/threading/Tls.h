@@ -70,8 +70,6 @@ public:
     MCAPI void free(uint key);
 
     MCAPI void registerThread(::Bedrock::Threading::Detail::Tls::Thread& thread);
-
-    MCAPI void unregisterThread(::Bedrock::Threading::Detail::Tls::Thread& thread);
     // NOLINTEND
 };
 

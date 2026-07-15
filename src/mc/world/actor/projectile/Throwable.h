@@ -9,13 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class Mob;
-class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
@@ -64,16 +61,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI void shoot(::Mob& shooter);
-
-    MCAPI void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Actor* spawnPlayerProjectile(::ActorDefinitionIdentifier const& id, ::Player& player);
     // NOLINTEND
 
 public:

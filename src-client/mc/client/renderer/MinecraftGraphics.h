@@ -29,7 +29,7 @@ public:
     ::ll::TypedStorage<8, 24, ::mce::ClientResourcePointer<::mce::ImmediateBuffer>>         mImmediateBuffer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::framebuilder::PBRTextureDataManager>> mPBRTextureDataManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::ImageResourceLoader>>                mImageResourceLoader;
-    ::ll::TypedStorage<8, 328, ::MinecraftGameplayGraphicsResources> mMinecraftGameplayGraphicsResources;
+    ::ll::TypedStorage<8, 312, ::MinecraftGameplayGraphicsResources> mMinecraftGameplayGraphicsResources;
     // NOLINTEND
 
 public:
@@ -39,7 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MinecraftGraphics() /*override*/;
+    virtual ~MinecraftGraphics() /*override*/ = default;
 
     virtual void onAppSuspended() /*override*/;
 
@@ -53,18 +53,7 @@ public:
 
     MCAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
 
-    MCFOLD ::mce::QuadIndexBuffer& getGlobalQuadBuffer();
-
-    MCFOLD ::std::shared_ptr<::mce::ImageResourceLoader> getImageResourceLoader() const;
-
-    MCFOLD ::mce::ClientResourcePointer<::mce::ImmediateBuffer>& getImmediateBuffer();
-
-    MCFOLD ::MinecraftGameplayGraphicsResources& getMinecraftGameplayGraphicsResources();
-
     MCAPI ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> getPBRTextureDataManager() const;
-
-    MCFOLD void
-    setPBRTextureDataManager(::std::unique_ptr<::mce::framebuilder::PBRTextureDataManager> pbrTextureDataManager);
     // NOLINTEND
 
 public:
@@ -74,24 +63,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onAppSuspended();
 
-    MCFOLD void $onAppTerminated();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForAppPlatformListener();
     // NOLINTEND
 };

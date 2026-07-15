@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;
 
-    virtual ::MolangScriptArg const& evalGeneric(::RenderParams& renderParams) const /*override*/;
+    virtual ::MolangScriptArg const& evalGeneric(::RenderParams&) const /*override*/;
 
     virtual bool isInitialized() const /*override*/;
 
@@ -50,9 +50,8 @@ public:
 
     virtual ::MolangVersion getMolangVersion() const /*override*/;
 
-    virtual void replaceArrayVariables(
-        ::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap
-    ) /*override*/;
+    virtual void
+    replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&) /*override*/;
 
     virtual void validateArrayVariables() const /*override*/;
 
@@ -74,44 +73,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::Molang::details::IComplexExpression> $clone() const;
 
-    MCNAPI ::MolangScriptArg const& $evalGeneric(::RenderParams& renderParams) const;
-
-    MCNAPI bool $isInitialized() const;
-
-    MCNAPI ::Json::Value $toJson() const;
-
-    MCNAPI ::std::string $getExpressionString() const;
-
-    MCNAPI ::MolangVersion $getMolangVersion() const;
-
-    MCNAPI void
-    $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
-
-    MCNAPI void $validateArrayVariables() const;
-
-    MCNAPI bool $isValid() const;
-
-    MCNAPI bool $isConstantValue() const;
-
-    MCNAPI bool $hasVariableAssignments() const;
-
-    MCNAPI ::ExpressionOp $getOp() const;
-
-    MCNAPI bool $needsToCompile() const;
-
-    MCNAPI ::std::optional<::MolangScriptArg> $getValueIfConstant() const;
-
-    MCNAPI ::Molang::details::SourceTree* $getSource();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

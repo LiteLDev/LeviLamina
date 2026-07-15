@@ -8,6 +8,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/platform/threading/LockGuard.h"
+#include "mc/world/level/LevelListCacheObserver.h"
 #include "mc/world/level/storage/ILevelListCache.h"
 
 // auto generated forward declare list
@@ -15,7 +16,6 @@
 class AppPlatform;
 class ContentIdentity;
 class IContentKeyProvider;
-class LevelCache;
 class LevelData;
 class LevelDbEnv;
 class LevelListCacheObserver;
@@ -52,88 +52,75 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelListCache() /*override*/;
+    virtual ~LevelListCache() /*override*/ = default;
 
-    virtual void addLevel(::std::string const& levelId, ::LevelData&& levelData) /*override*/;
+    virtual void addLevel(::std::string const&, ::LevelData&&) /*override*/;
 
-    virtual void deleteLevel(::std::string const& levelId) /*override*/;
+    virtual void deleteLevel(::std::string const&) /*override*/;
 
-    virtual void refreshLevel(::std::string const& levelId) /*override*/;
+    virtual void refreshLevel(::std::string const&) /*override*/;
 
-    virtual void deleteLevelFiles(::std::string const& levelId) /*override*/;
+    virtual void ensureLevelInitialized(::std::string const&) /*override*/;
 
-    virtual void postDeleteLevel(::std::string const& levelId) /*override*/;
+    virtual void deleteLevelFiles(::std::string const&) /*override*/;
 
-    virtual void renameLevel(::std::string const& levelId, ::std::string const& newLevelName) /*override*/;
+    virtual void postDeleteLevel(::std::string const&) /*override*/;
 
-    virtual void renameAndSaveLevelData(
-        ::std::string const& levelId,
-        ::std::string const& newLevelName,
-        ::LevelData const&   levelData
-    ) /*override*/;
+    virtual void renameLevel(::std::string const&, ::std::string const&) /*override*/;
 
-    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& levelData) /*override*/;
+    virtual void renameAndSaveLevelData(::std::string const&, ::std::string const&, ::LevelData const&) /*override*/;
 
-    virtual void createBackupCopyOfWorld(
-        ::std::string const& levelId,
-        ::std::string const& newLevelId,
-        ::std::string const& newName
-    ) /*override*/;
+    virtual void saveLevelData(::std::string const&, ::LevelData const&) /*override*/;
 
-    virtual bool hasLevelWithId(::std::string const& levelId) /*override*/;
+    virtual void createBackupCopyOfWorld(::std::string const&, ::std::string const&, ::std::string const&) /*override*/;
 
-    virtual ::std::string getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath) /*override*/;
+    virtual bool hasLevelWithId(::std::string const&) /*override*/;
 
-    virtual bool checkIfLevelIsCorruptOrMissing(::std::string const& levelId) /*override*/;
+    virtual ::std::string getLevelIdFromPath(::Core::Path const&, ::Core::Path const&) /*override*/;
 
-    virtual void addObserver(::LevelListCacheObserver& observer) /*override*/;
+    virtual bool checkIfLevelIsCorruptOrMissing(::std::string const&) /*override*/;
 
-    virtual void removeObserver(::LevelListCacheObserver& observer) /*override*/;
+    virtual void addObserver(::LevelListCacheObserver&) /*override*/;
+
+    virtual void removeObserver(::LevelListCacheObserver&) /*override*/;
 
     virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
-        ::Scheduler&                                                      scheduler,
-        ::std::string const&                                              levelId,
-        ::ContentIdentity const&                                          contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::std::chrono::nanoseconds const&                                 writeFlushInterval,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv,
-        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
+        ::Scheduler&,
+        ::std::string const&,
+        ::ContentIdentity const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&,
+        ::std::chrono::nanoseconds const&,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>,
+        ::std::unique_ptr<::LevelStorageEventing>
     ) /*override*/;
 
     virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
-        ::std::string const&                                              levelId,
-        ::ContentIdentity const&                                          contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+        ::std::string const&,
+        ::ContentIdentity const&,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&
     ) /*override*/;
 
-    virtual ::LevelSummary* getLevelSummary(::std::string const& levelId) /*override*/;
+    virtual ::LevelSummary* getLevelSummary(::std::string const&) /*override*/;
 
-    virtual ::LevelSummary const* getLevelSummaryByName(::std::string const& levelName) /*override*/;
+    virtual ::LevelSummary const* getLevelSummaryByName(::std::string const&) /*override*/;
 
-    virtual ::LevelSummary* getOrCreateLevelSummary(::Core::Path const& directory) /*override*/;
+    virtual ::LevelSummary* getOrCreateLevelSummary(::Core::Path const&) /*override*/;
 
-    virtual ::LevelData* getLevelData(::std::string const& levelId) /*override*/;
+    virtual ::LevelData* getLevelData(::std::string const&) /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::LevelData>
-    getLevelDataNonOwnerPointer(::std::string const& levelId) /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::LevelData> getLevelDataNonOwnerPointer(::std::string const&) /*override*/;
 
-    virtual ::LevelSummary* getShallowLevelSummary(::std::string const& levelId) /*override*/;
+    virtual ::LevelSummary* getShallowLevelSummary(::std::string const&) /*override*/;
 
-    virtual void getLevelList(
-        ::std::vector<::LevelSummary>& dest,
-        bool                           includeShallowSummaries,
-        bool                           includePartiallyCopiedLevels,
-        bool                           includeBetaRetailLevels,
-        bool                           includeInvalidLevelDataLevels
-    ) /*override*/;
+    virtual void getLevelList(::std::vector<::LevelSummary>&, bool, bool, bool, bool) /*override*/;
 
-    virtual bool hasCachedLevels(bool includeShallowSummaries) const /*override*/;
+    virtual bool hasCachedLevels(bool) const /*override*/;
 
-    virtual void updateLevelCache(::std::string const& levelId) /*override*/;
+    virtual void updateLevelCache(::std::string const&) /*override*/;
 
     virtual ::std::unique_ptr<::LevelStorageObserver> createLevelStorageObserver() /*override*/;
 
-    virtual void onSave(::std::string const& levelId) /*override*/;
+    virtual void onSave(::std::string const&) /*override*/;
 
     virtual void onStorageChanged() /*override*/;
 
@@ -148,28 +135,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform,
         ::std::function<bool()>&&                          checkIsSafeToFlushCache
     );
-
-    MCNAPI ::LevelCache* _addOrReplaceCache(::Core::Path const& path);
-
-    MCNAPI ::LevelCache* _addToCache(::Core::Path const& path);
-
-    MCNAPI ::LevelCache* _addToCache(::std::string const& levelId, ::LevelCache&& levelCache);
-
-    MCNAPI ::LevelCache* _createAndAddToCache(::std::string const& levelId, ::Core::Path const& directory);
-
-    MCNAPI ::LevelCache* _getLevelCache(::std::string const& levelId);
-
-    MCNAPI ::LevelSummary* _getLevelSummary(::std::string const& levelId);
-
-    MCNAPI void _notifyLevelDeleted(::std::string const& levelId);
-
-    MCNAPI void _notifyLevelUpdated(::std::string const& levelId);
-
-    MCNAPI void _notifyNewLevelFound(::std::string const& levelId);
-
-    MCNAPI void _notifySummaryUpdated(::std::string const& levelId);
-
-    MCNAPI void _refreshSummary(::std::string const& levelId, ::LevelCache& cache);
     // NOLINTEND
 
 public:
@@ -183,106 +148,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $addLevel(::std::string const& levelId, ::LevelData&& levelData);
 
-    MCNAPI void $deleteLevel(::std::string const& levelId);
-
-    MCNAPI void $refreshLevel(::std::string const& levelId);
-
-    MCNAPI void $deleteLevelFiles(::std::string const& levelId);
-
-    MCNAPI void $postDeleteLevel(::std::string const& levelId);
-
-    MCNAPI void $renameLevel(::std::string const& levelId, ::std::string const& newLevelName);
-
-    MCNAPI void $renameAndSaveLevelData(
-        ::std::string const& levelId,
-        ::std::string const& newLevelName,
-        ::LevelData const&   levelData
-    );
-
-    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& levelData);
-
-    MCNAPI void $createBackupCopyOfWorld(
-        ::std::string const& levelId,
-        ::std::string const& newLevelId,
-        ::std::string const& newName
-    );
-
-    MCNAPI bool $hasLevelWithId(::std::string const& levelId);
-
-    MCNAPI ::std::string $getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath);
-
-    MCNAPI bool $checkIfLevelIsCorruptOrMissing(::std::string const& levelId);
-
-    MCNAPI void $addObserver(::LevelListCacheObserver& observer);
-
-    MCNAPI void $removeObserver(::LevelListCacheObserver& observer);
-
-    MCNAPI ::Bedrock::UniqueOwnerPointer<::LevelStorage> $createLevelStorage(
-        ::Scheduler&                                                      scheduler,
-        ::std::string const&                                              levelId,
-        ::ContentIdentity const&                                          contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::std::chrono::nanoseconds const&                                 writeFlushInterval,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv,
-        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
-    );
-
-    MCNAPI ::std::unique_ptr<::LevelLooseFileStorage> $createLevelLooseStorage(
-        ::std::string const&                                              levelId,
-        ::ContentIdentity const&                                          contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    );
-
-    MCNAPI ::LevelSummary* $getLevelSummary(::std::string const& levelId);
-
-    MCNAPI ::LevelSummary const* $getLevelSummaryByName(::std::string const& levelName);
-
-    MCNAPI ::LevelSummary* $getOrCreateLevelSummary(::Core::Path const& directory);
-
-    MCNAPI ::LevelData* $getLevelData(::std::string const& levelId);
-
-    MCNAPI ::Bedrock::NonOwnerPointer<::LevelData> $getLevelDataNonOwnerPointer(::std::string const& levelId);
-
-    MCNAPI ::LevelSummary* $getShallowLevelSummary(::std::string const& levelId);
-
-    MCNAPI void $getLevelList(
-        ::std::vector<::LevelSummary>& dest,
-        bool                           includeShallowSummaries,
-        bool                           includePartiallyCopiedLevels,
-        bool                           includeBetaRetailLevels,
-        bool                           includeInvalidLevelDataLevels
-    );
-
-    MCNAPI bool $hasCachedLevels(bool includeShallowSummaries) const;
-
-    MCNAPI void $updateLevelCache(::std::string const& levelId);
-
-    MCNAPI ::std::unique_ptr<::LevelStorageObserver> $createLevelStorageObserver();
-
-    MCNAPI void $onSave(::std::string const& levelId);
-
-    MCNAPI void $onStorageChanged();
-
-    MCNAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForILevelListCache();
-
-    MCNAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
 };

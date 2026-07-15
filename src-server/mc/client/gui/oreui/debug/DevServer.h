@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI {
+namespace OreUI::Debug {
 
 struct DevServer {};
 
-} // namespace OreUI
+} // namespace OreUI::Debug

@@ -10,16 +10,4 @@ public:
     ::ll::TypedStorage<2, 2, ushort>         mDestinationPort;
     ::ll::TypedStorage<1, 1, bool>           mReloadWorld;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~TransferPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -10,7 +10,6 @@
 class BlockComponentStorage;
 class CompoundTag;
 class SemVersion;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockFlowerPottableDescription : public ::NetworkedBlockComponentDescription<::BlockFlowerPottableDescription> {
@@ -19,10 +18,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mUsePreR26U2FlowerPotOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockFlowerPottableDescription();
 
 public:
     // virtual functions
@@ -41,27 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockFlowerPottableDescription(bool hardcoded);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool hardcoded);
     // NOLINTEND
 
 public:

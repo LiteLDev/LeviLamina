@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool IsRttAboveLimit() const;
 
-    MCNAPI explicit RttBasedBackoff(::webrtc::FieldTrialsView const* key_value_config);
+    MCNAPI explicit RttBasedBackoff(::webrtc::FieldTrialsView const& key_value_config);
 
     MCNAPI ~RttBasedBackoff();
     // NOLINTEND
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
+    MCNAPI void* $ctor(::webrtc::FieldTrialsView const& key_value_config);
     // NOLINTEND
 
 public:

@@ -26,20 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $directoryPickingEnabledForPlatform() const;
 
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
-    $pickDirectory(::Bedrock::DirectoryPickerConfig const&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForImplBase();
     // NOLINTEND
 };
 

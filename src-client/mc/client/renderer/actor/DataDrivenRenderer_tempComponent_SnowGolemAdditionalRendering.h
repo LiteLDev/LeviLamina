@@ -10,7 +10,6 @@
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
-class DataDrivenRenderer;
 class RenderParams;
 // clang-format on
 
@@ -19,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnk761f9d;
-    ::ll::UntypedStorage<8, 552> mUnkbe2fcc;
+    ::ll::UntypedStorage<8, 592> mUnkbe2fcc;
     ::ll::UntypedStorage<8, 8>   mUnkda6eb3;
     ::ll::UntypedStorage<4, 64>  mUnkd5039e;
     // NOLINTEND
@@ -38,39 +37,12 @@ public:
     // NOLINTBEGIN
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
 
-    virtual void render(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
+    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCNAPI void
-    $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

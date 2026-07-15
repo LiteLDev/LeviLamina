@@ -22,8 +22,6 @@ class Option;
 class PushNotificationMessage;
 class RecipeToastDataViewer;
 class ResourcePackManager;
-struct ToastIconData;
-namespace Json { class Value; }
 // clang-format on
 
 class ToastManager : public ::IToastManager,
@@ -50,6 +48,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                                          mDeltaTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                        mLastUpdateTimePoint;
     ::ll::TypedStorage<8, 8, ::Option*>                                                      mEnableDebugToastsOption;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                 mLongestRecipeText;
     // NOLINTEND
 
 public:
@@ -61,9 +60,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ToastManager() /*override*/;
+    virtual ~ToastManager() /*override*/ = default;
 
-    virtual void pushToast(::ToastMessage&& message) /*override*/;
+    virtual void pushToast(::ToastMessage&&) /*override*/;
 
     virtual bool isEditorModeEnabled() const /*override*/;
 
@@ -79,77 +78,19 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager> resourcePackManager
     );
 
-    MCAPI void _destroyToast();
-
-    MCAPI ::std::string _extractGameInviteDescription(::Json::Value const& propertyBag);
-
-    MCAPI ::std::string _extractGameInviteHandle(::Json::Value const& propertyBag);
-
-    MCAPI ::std::string const _getKeyNameForCurrentInput() const;
-
-    MCAPI void _handleInvite(bool parseJSON);
-
-    MCAPI void _invitationTelemetry(::Json::Value const& data, ::ToastMessageType type);
+    MCAPI ::std::string _getNewRecipesText() const;
 
     MCAPI bool _isToastAllowed(::ToastMessageType messageType) const;
 
-    MCAPI void _playButtonTTS() const;
-
-    MCAPI void _playDefaultToastSound() const;
-
-    MCAPI void _playRecipeUnlockingToastInSound() const;
-
-    MCAPI void _playRecipeUnlockingToastOutSound() const;
-
-    MCAPI void _reportClick();
-
-    MCAPI void _sendShowToast(bool animateIn);
-
-    MCAPI void _sendTTS(bool useIndication, ::std::string const& message) const;
-
-    MCAPI void _setInitialToastValues();
-
-    MCAPI void _showNewToast();
-
-    MCAPI float getCurrentToastDisplaySeconds() const;
-
-    MCAPI float getCurrentToastRemainingDuration() const;
-
-    MCAPI float getCurrentToastTotalDuration() const;
-
-    MCAPI ::ToastIconData getIconData();
-
-    MCFOLD ::RecipeToastDataViewer const* getIconViewer() const;
+    MCAPI ::std::string getMoreRecipesTitle() const;
 
     MCAPI ::std::string getRecipeTranslationText();
 
-    MCAPI bool getRefreshPendingInvites() const;
-
-    MCAPI ::ToastMessageType getToastMessageType() const;
-
     MCAPI ::ui::ViewRequest handleToastButton();
-
-    MCAPI bool hasActiveToast() const;
-
-    MCAPI bool isToastAllowed(::ToastMessageType messageType) const;
 
     MCAPI void pushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCAPI void registerEventListener(::gsl::not_null<::IToastEventListener*> eventListener);
-
-    MCAPI void registerListener(::IToastListener* listener, ::ToastChannel channel);
-
-    MCAPI void setRefreshPendingInvites(bool flag);
-
-    MCAPI void setToastsEnabled(bool toastsEnabled);
-
-    MCAPI void toastAnimatedInEvent();
-
-    MCAPI void toastAnimatedOutEvent();
-
-    MCAPI void unregisterEventListener(::gsl::not_null<::IToastEventListener*> eventListener);
-
-    MCAPI void unregisterListener(::IToastListener*);
+    MCAPI void unregisterListener(::IToastListener* listener);
 
     MCAPI void update();
     // NOLINTEND
@@ -165,28 +106,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $pushToast(::ToastMessage&& message);
 
-    MCAPI bool $isEditorModeEnabled() const;
-
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIToastManager();
-
-    MCNAPI static void** $vftableForResourcePackListener();
-
-    MCNAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
 };

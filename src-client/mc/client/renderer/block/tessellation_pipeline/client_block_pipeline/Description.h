@@ -30,31 +30,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mDependencies;
         ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mDependants;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BakedStep& operator=(BakedStep const&);
-        BakedStep();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI BakedStep(::ClientBlockPipeline::Description::BakedStep const&);
-
-        MCAPI ~BakedStep();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ClientBlockPipeline::Description::BakedStep const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -69,12 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Description();
-
-    MCAPI explicit Description(::SubChunkPos const& pos);
-
-    MCAPI ::ClientBlockPipeline::Status _checkForCycles(uint64 stepId) const;
-
     MCAPI ::ClientBlockPipeline::Status addDependency(
         ::std::shared_ptr<::ClientBlockPipeline::Step const> step,
         ::std::shared_ptr<::ClientBlockPipeline::Step const> dependency
@@ -83,14 +52,6 @@ public:
     MCAPI ::std::unique_ptr<::ClientBlockPipeline::Instance> makeInstance() const;
 
     MCAPI ~Description();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SubChunkPos const& pos);
     // NOLINTEND
 
 public:

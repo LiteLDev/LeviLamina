@@ -3,20 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Realms { class RealmsPlayerList; }
+namespace Realms { class RealmsPlayerManagement; }
 // clang-format on
 
 namespace OreUI {
 
-class RealmsPlayerListCommandsFacet : public ::OreUI::FacetBase<::OreUI::RealmsPlayerListCommandsFacet> {
+class RealmsPlayerListCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsPlayerListCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsPlayerList>> mRealmsPlayerList;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsPlayerList>>       mRealmsPlayerList;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsPlayerManagement>> mRealmsManagePlayer;
     // NOLINTEND
 
 public:
@@ -34,11 +36,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsPlayerListCommandsFacet(::std::shared_ptr<::Realms::RealmsPlayerList> realmsPlayerList);
-
-    MCAPI void populateMembers();
-
-    MCAPI void resetState();
+    MCAPI RealmsPlayerListCommandsFacet(
+        ::std::shared_ptr<::Realms::RealmsPlayerList>       realmsPlayerList,
+        ::std::shared_ptr<::Realms::RealmsPlayerManagement> realmsManagePlayer
+    );
     // NOLINTEND
 
 public:
@@ -50,7 +51,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsPlayerList> realmsPlayerList);
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::Realms::RealmsPlayerList>       realmsPlayerList,
+        ::std::shared_ptr<::Realms::RealmsPlayerManagement> realmsManagePlayer
+    );
     // NOLINTEND
 
 public:

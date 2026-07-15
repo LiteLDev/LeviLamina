@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Cursor {
 
 struct CursorState {
@@ -27,18 +22,6 @@ public:
     CursorState& operator=(CursorState const&);
     CursorState(CursorState const&);
     CursorState();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void sanitizeState();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 };
 
 } // namespace Editor::Cursor

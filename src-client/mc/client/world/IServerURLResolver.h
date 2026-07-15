@@ -16,10 +16,9 @@ public:
     // NOLINTBEGIN
     virtual ~IServerURLResolver() = default;
 
-    virtual bool
-    fromStringExplicitPort(::PingedCompatibleServer& server, char const* str, ushort port, int ipVersion) = 0;
+    virtual bool fromStringExplicitPort(::PingedCompatibleServer&, char const*, ushort, int) = 0;
 
-    virtual void fromString(::RakNet::RakNetGUID& guid, char const* source) = 0;
+    virtual void fromString(::RakNet::RakNetGUID&, char const*) = 0;
     // NOLINTEND
 
 public:

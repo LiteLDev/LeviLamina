@@ -6,11 +6,6 @@
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/gui/screens/controllers/ipjsc/Inputs.h"
 
-// auto generated forward declare list
-// clang-format off
-class MinecraftScreenModel;
-// clang-format on
-
 class IPJoinScreenController : public ::MinecraftScreenController {
 public:
     // IPJoinScreenController inner types declare
@@ -30,18 +25,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> netherNetId;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~JoinData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     using OnIdJoin = ::std::function<::IPJoinScreenController::JoinRequest(::IPJoinScreenController::JoinData const&)>;
@@ -60,50 +43,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IPJoinScreenController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPJoinScreenController() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI IPJoinScreenController(
-        ::std::shared_ptr<::MinecraftScreenModel>                                                         model,
-        ::std::function<::IPJoinScreenController::JoinRequest(::IPJoinScreenController::JoinData const&)> onIdJoin
-    );
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void setHeaderText(::std::string text);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::MinecraftScreenModel>                                                         model,
-        ::std::function<::IPJoinScreenController::JoinRequest(::IPJoinScreenController::JoinData const&)> onIdJoin
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
+    virtual ~IPJoinScreenController() /*override*/ = default;
     // NOLINTEND
 };

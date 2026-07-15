@@ -12,12 +12,19 @@ namespace Core { class SingleThreadedLock; }
 
 class LevelListCacheObserver : public ::Core::Observer<::LevelListCacheObserver, ::Core::SingleThreadedLock> {
 public:
+    // LevelListCacheObserver inner types define
+    enum class LevelAddedType : int {
+        NewWorld      = 0,
+        ExistingWorld = 1,
+    };
+
+public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    virtual void onLevelAdded(::std::string const&);
+    virtual void onLevelAdded(::std::string const&, ::LevelListCacheObserver::LevelAddedType);
 #else // LL_PLAT_C
-    virtual void onLevelAdded(::std::string const& levelId);
+    virtual void onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 #endif
 
 #ifdef LL_PLAT_S
@@ -45,7 +52,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $onLevelAdded(::std::string const& levelId);
+    MCNAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
     MCNAPI void $onLevelUpdated(::std::string const& levelId);
 

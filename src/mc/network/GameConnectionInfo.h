@@ -41,6 +41,13 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::Social::Nonce>>    mNonce;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    GameConnectionInfo(GameConnectionInfo const&);
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -48,9 +55,9 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI GameConnectionInfo(::Social::GameConnectionInfo&&);
-#endif
 
     MCAPI GameConnectionInfo(::Social::GameConnectionInfo const&);
+#endif
 
     MCAPI GameConnectionInfo(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
 
@@ -120,77 +127,12 @@ public:
         int                      serviceQuality
     );
 
-    MCAPI GameConnectionInfo(
-        ::Social::ConnectionType            connectionType,
-        ::std::string const&                ipAddress,
-        int                                 port,
-        ::RakNet::RakNetGUID const&         rakNetGUID,
-        ::NetherNet::NetworkID const&       netherNetId,
-        ::PlayerMessaging::NetworkID const& playerMessagingId
-    );
-
-    MCFOLD bool getAllowSmallDownloads() const;
-
-    MCAPI ::std::string getCorrelationId() const;
-
-    MCAPI ::std::string const& getCreatorName() const;
-
-    MCFOLD bool getDisableTrickleIce() const;
-
-    MCFOLD ::GatheringServerInfo const& getGatheringServerInfo() const;
-
-    MCFOLD ::GatheringServerInfo& getGatheringServerInfo();
-#endif
-
-    MCFOLD ::std::string const& getHostIpAddress() const;
-
-    MCFOLD ::NetherNet::NetworkID const& getNetherNetId() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::optional<::Social::Nonce> const& getNonce() const;
-#endif
-
-    MCFOLD int getPort() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::string const getRakNetGUID() const;
-
     MCFOLD ::std::string const getServerRegionName() const;
-
-    MCFOLD int getServerServiceQuality() const;
-
-    MCAPI ::ServerSupportedAuthenticationTypes getSupportedAuth() const;
-#endif
-
-    MCFOLD ::ThirdPartyInfo const& getThirdPartyServerInfo() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::ThirdPartyInfo& getThirdPartyServerInfo();
-#endif
-
-    MCFOLD ::Social::ConnectionType getType() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::string const& getUnresolvedUrl() const;
 
     MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo&&);
 #endif
 
     MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo const&);
-
-#ifdef LL_PLAT_C
-    MCAPI void setAllowSmallDownloads(bool allow);
-
-    MCAPI void setDisableTrickleIce(bool value);
-
-    MCAPI void setNonce(::Social::Nonce const& nonce);
-
-    MCAPI void setRakNetGUID(::std::string const& rakNetGUIDStr);
-
-    MCAPI void setSupportedAuth(::ServerSupportedAuthenticationTypes supportedAuth);
-#endif
-
-    MCFOLD void setUnresolvedUrl(::std::string const& url);
 
 #ifdef LL_PLAT_C
     MCAPI void toJson(::Json::Value& connectionJson) const;
@@ -214,9 +156,9 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(::Social::GameConnectionInfo&&);
-#endif
 
     MCAPI void* $ctor(::Social::GameConnectionInfo const&);
+#endif
 
     MCAPI void* $ctor(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
 
@@ -284,15 +226,6 @@ public:
         int                      port,
         ::std::string&           serverRegion,
         int                      serviceQuality
-    );
-
-    MCAPI void* $ctor(
-        ::Social::ConnectionType            connectionType,
-        ::std::string const&                ipAddress,
-        int                                 port,
-        ::RakNet::RakNetGUID const&         rakNetGUID,
-        ::NetherNet::NetworkID const&       netherNetId,
-        ::PlayerMessaging::NetworkID const& playerMessagingId
     );
 #endif
     // NOLINTEND

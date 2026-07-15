@@ -32,19 +32,6 @@ public:
 
     MCAPI void _init();
 
-    MCAPI ::std::string _mapInputIcon(
-        ::std::string const&  action,
-        ::RemappingLayout*    layout,
-        ::InputMode           mode,
-        ::NewInteractionModel interactionModel,
-        bool                  isGameTip
-    );
-
-    MCAPI ::std::string _remapTouchIcon(::std::string const& action, ::NewInteractionModel interactionModel);
-
-    MCAPI bool
-    _trySwapGamepadButtonInPlace(::std::string& button, int gamepadButton1, int gamepadButton2, bool isGameTip) const;
-
     MCAPI void preprocessText(
         ::std::string&        text,
         ::RemappingLayout*    layout,

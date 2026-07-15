@@ -19,16 +19,6 @@ namespace PublisherItemComponent {
 struct OnBeforeDurabilityDamage
 : public ::ItemComponent,
   public ::Bedrock::PubSub::
-      Publisher<void(int&, ::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForDispatchingPublisherBase();
-
-    MCNAPI static void** $vftableForConnector();
-    // NOLINTEND
-};
+      Publisher<void(int&, ::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {};
 
 } // namespace PublisherItemComponent

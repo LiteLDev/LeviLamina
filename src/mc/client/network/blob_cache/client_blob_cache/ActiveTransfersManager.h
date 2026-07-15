@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/network/NetworkIdentifier.h"
-#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -44,23 +43,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI uint64 getMaximumConcurrentTransfers() const;
-
-        MCNAPI uint64 getNumberOfActiveTransfers() const;
-
-        MCNAPI ::std::vector<::ClientBlobCache::Server::ActiveTransfer> const& getTransfers() const;
-#endif
-
         MCNAPI void onAckReceived(uint64 acked);
-
-        MCNAPI ~TransferTracker();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -92,15 +75,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActiveTransfersManager();
-
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
 
     MCAPI void enableCacheFor(::NetworkIdentifier const& client);
-
-    MCAPI bool isCacheEnabledFor(::NetworkIdentifier const& client) const;
-
-    MCAPI void onPeerDisconnected(::NetworkIdentifier const& client);
 
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob>
     rememberBlob(uint64 id, ::std::string& data, bool isChunkInTickRange);
@@ -110,20 +87,6 @@ public:
     MCAPI ::ClientBlobCache::Server::TransferBuilder tryStartTransfer(::NetworkIdentifier const& client) const;
 
     MCAPI void updateNetworkConditions(::ServerNetworkSystem& handler);
-
-#ifdef LL_PLAT_C
-    MCAPI void visitTransfers(
-        ::brstd::function_ref<
-            void(::NetworkIdentifier const&, ::ClientBlobCache::Server::ActiveTransfersManager::TransferTracker const&)>
-            visitor
-    ) const;
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

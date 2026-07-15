@@ -24,9 +24,7 @@ class IThirdPartyServerRepository;
 class ProgressHandler;
 class RealmsAPI;
 class ServerLocator;
-struct ExperienceConnectionData;
 struct IGameServerShutdown;
-struct PlayerJoinWorldContext;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Network { struct ServerID; }
 namespace OreUI { class Router; }
@@ -49,7 +47,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 528, ::World::RealmWorldJoiner>  mRealmWorldJoiner;
-    ::ll::TypedStorage<8, 192, ::World::ServerWorldJoiner> mServerWorldJoiner;
+    ::ll::TypedStorage<8, 256, ::World::ServerWorldJoiner> mServerWorldJoiner;
     ::ll::TypedStorage<8, 8, ::World::ServerURLResolver>   mServerURLResolver;
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>             mRouter;
     // NOLINTEND
@@ -85,24 +83,12 @@ public:
         ::std::function<bool(::Realms::World, ::Realms::PlayerRoleActions)>      canUserDoRealmRoleAction
     );
 
-    MCAPI void cancelJoinRealmWorld();
-
     MCFOLD ::std::string const getRealmErrorData();
-
-    MCAPI ::std::vector<::std::string> const getRealmXuidErrors();
-
-    MCAPI void
-    joinExperienceWorld(::ExperienceConnectionData const& connectionData, ::PlayerJoinWorldContext const& joinContext);
 
     MCAPI void joinExternalNetworkWorld(
         ::std::string const&                                                            id,
         ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
-    );
-
-    MCAPI void joinFriendServerWorld(
-        ::Network::ServerID const&                            serverId,
-        ::std::function<void(::World::JoinServerWorldResult)> onCompleteCallback
     );
 
     MCAPI void joinLANServerWorld(
@@ -124,26 +110,19 @@ public:
         )>  onRealmJoined
     );
 
-    MCAPI void joinRealmWorldV2(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
-
     MCAPI void
     joinRealmWorldWithRoute(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
 
     MCAPI void joinThirdPartyServerWorld(
         ::std::string const&                                                            id,
         ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
-        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
+        ::std::function<void()>                                                         onJoinServerCancelled
     );
 
     MCAPI ::Bedrock::PubSub::Subscription subscribeToJoinRealmWorldResultPublisher(
         ::std::function<void(::World::JoinRealmWorldResult)> onJoinRealmWorldResult
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> REALM_JOIN_ROUTE();
     // NOLINTEND
 
 public:

@@ -96,8 +96,6 @@ public:
         bool* (*isSetFn)(::Command*, int)
     );
 
-    MCAPI ::CommandParameterData& addOptions(::CommandParameterOption options);
-
     MCAPI ~CommandParameterData();
     // NOLINTEND
 

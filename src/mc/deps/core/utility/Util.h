@@ -3,11 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/container/small_vector_base.h"
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/utility/NumberConversionResult.h"
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/platform/brstd/flat_set.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 
 // auto generated forward declare list
@@ -24,33 +22,32 @@ namespace Util {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCNAPI void _breakIntoWordsAndFindProfanity(
-    ::std::string_view                                                                          str,
-    ::std::vector<::std::pair<int, int>> const&                                                 originalStrIndexes,
-    ::brstd::flat_set<char, ::std::less<char>, ::std::vector<char>> const&                      escapeChars,
-    ::std::set<::std::pair<int, int>>&                                                          profanityLocations,
-    ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& exactMap,
-    ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      containsSet
+MCNAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
+#endif
+
+#ifdef LL_PLAT_S
+MCNAPI ::std::vector<::std::string> _getStringsFromViews(::std::vector<::std::string_view> const& views);
+#endif
+
+#ifdef LL_PLAT_C
+MCNAPI int _splitInto(
+    ::std::string const&                str,
+    ::std::vector<::std::string> const& delims,
+    bool                                includeDelimCharsInResult,
+    ::std::vector<::std::string>*       result
 );
 #endif
 
-MCNAPI void _logIfValidLogArea(::LogArea logArea, ::std::string const& msg);
-
-#ifdef LL_PLAT_C
-MCNAPI void _recordProfanityLocationInWord(
-    ::std::string_view                                                                          word,
-    ::std::vector<::std::pair<int, int>> const&                                                 originalStrIndexes,
-    int                                                                                         start,
-    int                                                                                         end,
-    ::std::set<::std::pair<int, int>>&                                                          profanityLocations,
-    ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& exactMap,
-    ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      containsSet
+#ifdef LL_PLAT_S
+MCNAPI int _splitInto(
+    ::std::string const&                str,
+    ::std::vector<::std::string> const& delims,
+    bool                                includeDelimCharsInResult,
+    ::std::vector<::std::string>*       result
 );
 #endif
 
 MCNAPI ::std::string base64_decode(::std::string const& encoded_string);
-
-MCNAPI ::std::string base64_encode(::std::string const& str, bool pad);
 
 MCNAPI ::std::string base64_encode(uchar const* bytes_to_encode, uint64 in_len, bool pad);
 
@@ -58,32 +55,18 @@ MCNAPI ::std::string base64url_decode(::std::string encoded);
 
 MCNAPI ::std::string base64url_encode(::std::string str);
 
-MCNAPI char const* boolToString(bool value);
-
 MCNAPI ::std::string caseFold(::std::string_view str);
 
-MCNAPI ::std::string& clearAndReturn(::std::string& s);
-
 #ifdef LL_PLAT_C
-MCNAPI bool containsUnicodeChar(::std::string const& str);
-
 MCNAPI uint64 countSplitAndDiscardEmpty(::std::string const& str, char delim);
+
+MCNAPI ::std::string
+cpToUTF8(::std::unordered_map<uchar, ::std::string> const& codePageMap, ::std::string_view content);
 #endif
 
-MCNAPI ::std::string cp1252ToUTF8(::std::string const& content);
-
-MCNAPI ::std::string cp437ToUTF8(::std::string_view content);
-
-MCNAPI void crashOnPurpose();
-
-#ifdef LL_PLAT_C
-MCNAPI uint64 createObfuscated64BitIntegerFromXboxLiveID(::std::string const& input);
-
-MCNAPI bool doesStringContainProfanity(
-    ::std::string_view                                                                          str,
-    ::std::unordered_map<::std::string, int, ::Util::string_hash, ::std::equal_to<void>> const& profanityExactMap,
-    ::std::unordered_set<::std::string, ::Util::string_hash, ::std::equal_to<void>> const&      profanityContainsSet
-);
+#ifdef LL_PLAT_S
+MCNAPI ::std::string
+cpToUTF8(::std::unordered_map<uchar, ::std::string> const& codePageMap, ::std::string_view content);
 #endif
 
 MCNAPI ::std::string ensureNamespace(::std::string const& id, ::std::string_view defaultNamespace);
@@ -108,8 +91,6 @@ MCNAPI ::std::set<::std::pair<int, int>> findProfanityInString(
 
 MCNAPI ::std::string formatTickDuration(int ticks);
 
-MCNAPI void freeStringMemory(::std::string& toFree);
-
 MCNAPI ::std::string fromHex(::std::string_view input);
 
 MCNAPI ::BidirectionalUnorderedMap<int, uint64> generateHashMapFromListTag(::ListTag const& enumValues);
@@ -123,58 +104,28 @@ MCNAPI ::std::string getFilesizeString(uint64 filesize);
 
 MCNAPI ::std::string getFilesizeString(uint64 filesize, ::I18n& loc);
 
-MCNAPI ::std::string getIsoTimestamp();
-
 MCNAPI ::std::string getLocalizedStoreDisplayName(::std::string const& storeId);
-#endif
 
-MCNAPI ::std::string_view getNameWithoutNamespace(::std::string_view name);
-
-MCNAPI ::std::string_view getNamespace(::std::string_view name);
-
-#ifdef LL_PLAT_C
 MCNAPI ::std::string getPackDataDownloadProgressString(
     uint64 downloadedDataSize,
     uint64 totalDownloadDataSize,
     ::std::string (*getFileSizeString)(uint64)
 );
 
-MCNAPI ::std::string getPackDownloadProgressString(uint64 downloadedPacks, uint64 packsToDownload);
-
 MCNAPI ::std::string getVirtualCurrencyStringTTS(uint amount);
 
 MCNAPI ::std::string getVirtualCurrencyStringTTS(::std::string const& currency);
-
-MCNAPI uint hashCode(::std::string_view str);
-#endif
-
-MCNAPI uint hashCodeAsUtf16(::std::string_view sv);
-
-MCNAPI bool isIntegral(::std::string const& str, bool allowPlusSign);
-
-MCNAPI bool isNumber(::std::string const& str);
-
-#ifdef LL_PLAT_C
-MCNAPI bool isStringEntirelyWhitespaceOrEmpty(::std::string const& str);
 #endif
 
 MCNAPI bool isValidNamespaceFormat(::std::string_view name);
 
-MCNAPI bool isValidUTF8(::std::string_view content);
-
 MCNAPI bool isVanillaNamespace(::std::string const& identifier);
 
 #ifdef LL_PLAT_C
-MCNAPI bool is_base64(uchar c);
-
 MCNAPI void loadGameVersion(::GameVersion& version, ::Json::Value const& versionNode);
 #endif
 
 MCNAPI void loadGameVersion(::SemVersion& version, ::Json::Value const& versionNode);
-
-#ifdef LL_PLAT_C
-MCNAPI uint nextHigherPow2(uint num);
-#endif
 
 MCNAPI void normalizeLineEndings(::std::string& str);
 
@@ -194,11 +145,6 @@ MCNAPI ::std::string removeTrailingSpaces(::std::string const& str);
 
 #ifdef LL_PLAT_C
 MCNAPI void replaceSingleUtf8CharacterWithAscii(::std::string& toChange, ::std::string const& toFind, char replacement);
-
-MCNAPI void replaceUtf8CharactersWithAscii(
-    ::std::string&                                         target,
-    ::std::vector<::std::pair<::std::string, char>> const& translateMap
-);
 #endif
 
 MCNAPI ::std::istream& safeGetline(::std::istream& inputStream, ::std::string& outString);
@@ -207,24 +153,14 @@ MCNAPI ::std::istream& safeGetline(::std::istream& inputStream, ::std::string& o
 MCNAPI ::std::string safeString(char const* text);
 
 MCNAPI ::std::string simpleFormat(::std::string const& format, ::std::vector<::std::string> const& parameters);
-
-MCNAPI uint64 span_find(::std::string_view str, ::std::string_view text);
 #endif
 
 MCNAPI ::std::vector<::std::string> split(::std::string_view view, char delim);
 
 MCNAPI ::std::vector<::std::string> splitAndDiscardEmpty(::std::string_view str, char delim);
 
-#ifdef LL_PLAT_C
-MCNAPI ::std::vector<::std::string> splitAndDiscardEmpty(
-    ::std::string const&                str,
-    ::std::vector<::std::string> const& delims,
-    bool                                includeDelimCharsInResult
-);
-
 MCNAPI ::std::vector<::std::string>
 splitLines(::std::string const& content, ::std::istream& (*fnGetline)(::std::istream&, ::std::string&));
-#endif
 
 MCNAPI ::std::vector<::std::string> splitLines(
     ::std::string const&                str,
@@ -234,25 +170,7 @@ MCNAPI ::std::vector<::std::string> splitLines(
     ::std::istream& (*fnGetline)(::std::istream&, ::std::string&)
 );
 
-MCNAPI ::std::vector<::std::string>& splitString(::std::string_view s, char delim, ::std::vector<::std::string>& elems);
-
-#ifdef LL_PLAT_C
-MCNAPI ::Bedrock::small_vector_base<::std::string_view>&
-splitStringAsViews(::std::string_view s, char delim, ::Bedrock::small_vector_base<::std::string_view>& elems);
-#endif
-
-MCNAPI ::std::vector<::std::string_view>&
-splitStringAsViews(::std::string_view s, char delim, ::std::vector<::std::string_view>& elems);
-
-MCNAPI ::std::vector<::std::string_view> splitToViews(::std::string_view view, char delim);
-
-MCNAPI ::std::vector<::std::string_view> splitToViewsAndDiscardEmpty(::std::string_view view, char delim);
-
 MCNAPI bool stringContains(::std::string const& s, char character);
-
-#ifdef LL_PLAT_C
-MCNAPI bool stringIsInVector(::std::vector<::std::string> const& stringVector, ::std::string const& searchString);
-#endif
 
 MCNAPI ::std::string
 stringReplace(::std::string str, ::buffer_span<::std::pair<::std::string_view, ::std::string_view>> replacements);
@@ -266,11 +184,7 @@ MCNAPI ::std::string stringTrim(::std::string const& s);
 
 MCNAPI ::std::string stringTrim(::std::string const& s, ::std::string const& chars);
 
-#ifdef LL_PLAT_C
-MCNAPI ::std::string stringUTF16ToUTF8(::std::basic_string_view<wchar_t, ::std::char_traits<wchar_t>> inputStr);
-#endif
-
-MCNAPI void stripBOM(::std::string& contents);
+MCNAPI ::std::string_view stringTrim(::std::string_view s, ::std::string_view chars);
 
 MCNAPI void timeoutForDuration(::std::chrono::seconds duration);
 
@@ -291,36 +205,28 @@ MCNAPI ::std::string toLocalizedString(
     ::std::string const& digitGroupSeparator,
     ::std::string const& decimalSeparator
 );
-#endif
 
 MCNAPI ::std::string toLower(char const* inString);
+#endif
 
 MCNAPI ::std::string toLower(::std::string_view inString);
-
-MCNAPI void toLowerInPlace(::std::string& str);
 
 MCNAPI ::std::string toPascalCase(::std::string const& src, char delimiter);
 
 #ifdef LL_PLAT_C
 MCNAPI bool toSafeNumber(::std::string const& str, uint& output);
+
+MCNAPI bool toSafeNumber(::std::string const& str, uint64& output);
 #endif
 
 MCNAPI ::std::string toString(::std::string_view inputStr);
-
-MCNAPI ::std::string toString(::std::basic_string_view<wchar_t, ::std::char_traits<wchar_t>> inputStr);
 
 MCNAPI ::std::string toStringWithPaddedZeroes(uint number, uchar digitCount);
 
 MCNAPI ::std::string toUpper(::std::string_view inString);
 
-MCNAPI void toUpperInPlace(::std::string& str);
-
-MCNAPI ::std::wstring toWideString(::std::string_view inputStr);
-
-MCNAPI int utf8len(::std::string const& str);
-
 #ifdef LL_PLAT_C
-MCNAPI int utf8len(::std::string_view str);
+MCNAPI int utf8len(::std::string const& str);
 
 MCNAPI int utf8lenNoColorCodes(::std::string_view str);
 #endif
@@ -331,25 +237,35 @@ MCNAPI ::std::string utf8substring(::std::string const& str, int startIndex, int
 MCNAPI ::std::vector<::std::string> utf8substringCharacters(::std::string const& str, int startIndex, int endIndex);
 #endif
 
-MCNAPI ::std::string vFormat(char const* format, char* args);
-
 MCNAPI bool validateIdentifier(
     ::std::string const&                       id,
     ::LogArea                                  logArea,
     bool                                       allowMinecraftNamespace,
     ::std::pair<::std::string, ::std::string>* idNameOut
 );
-
-MCNAPI bool validateIdentifierChunk(::std::string const& chunk, ::LogArea logArea);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
+MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP1252_TO_UTF8();
+#endif
+
+#ifdef LL_PLAT_S
+MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP1252_TO_UTF8();
+#endif
+
+#ifdef LL_PLAT_C
+MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP437_TO_UTF8();
+#endif
+
+#ifdef LL_PLAT_S
+MCNAPI ::std::unordered_map<uchar, ::std::string> const& CP437_TO_UTF8();
+#endif
+
 MCNAPI ::std::string const& EMPTY_GUID();
 
 MCNAPI ::std::string const& EMPTY_STRING();
-
-MCNAPI ::std::string const& HEX_CHARS();
 
 MCNAPI ::std::string const& NEW_LINE();
 // NOLINTEND

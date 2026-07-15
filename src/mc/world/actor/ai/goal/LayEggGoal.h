@@ -13,7 +13,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 // clang-format on
 
 class LayEggGoal : public ::BaseMoveToBlockGoal {
@@ -32,10 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LayEggGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool findTargetBlock() /*override*/;
@@ -48,52 +43,16 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
 
-    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+    virtual bool isValidTarget(::BlockSource&, ::BlockPos const&) /*override*/;
 
     virtual void _moveToBlock() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit LayEggGoal(::Mob& mob);
-
-    MCAPI void _layEgg(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $findTargetBlock();
 
-    MCAPI bool $canUse();
-
-    MCAPI bool $canContinueToUse();
-
-    MCAPI void $start();
-
-    MCAPI void $tick();
-
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI void $_moveToBlock();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

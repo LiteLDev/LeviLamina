@@ -15,18 +15,6 @@ public:
     ::ll::TypedStorage<4, 4, float>                                      progress;
     ::ll::TypedStorage<8, 32, ::std::string>                             name;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PackDownloadProgressInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace World

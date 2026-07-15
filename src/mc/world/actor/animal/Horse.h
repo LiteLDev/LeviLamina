@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/animal/Animal.h"
-#include "mc/world/actor/animal/HorseFlags.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,11 +14,9 @@ class ActorHurtResult;
 class EntityContext;
 class Player;
 class Vec3;
-struct ActorDataDirtyFlagsComponent;
-struct ActorDataHorseFlagComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
-struct RenderPositionComponent;
+struct HurtParameters;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
 struct VariantParameterList;
@@ -35,11 +32,11 @@ public:
     // NOLINTBEGIN
     virtual ~Horse() /*override*/ = default;
 
-    virtual void die(::ActorDamageSource const& damagesource) /*override*/;
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    virtual void setHorseEating(bool state);
+    virtual void setHorseEating(bool);
 
-    virtual float getStandAnim(float a) const;
+    virtual float getStandAnim(float) const;
 
     virtual bool isHorseEating() const;
 
@@ -53,13 +50,13 @@ public:
 
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    virtual bool tameToPlayer(::Player& player, bool tamingParticles);
+    virtual bool tameToPlayer(::Player&, bool);
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
     virtual void openContainerComponent(::Player& player) /*override*/;
 
-    virtual ::Vec3 getInterpolatedRidingOffset(float a, int const) const /*override*/;
+    virtual ::Vec3 getInterpolatedRidingOffset(float, int const) const /*override*/;
 
     virtual float getShadowRadius() const /*override*/;
 
@@ -69,9 +66,10 @@ public:
 
     virtual bool isImmobile() const /*override*/;
 
-    virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
+    virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
     // NOLINTEND
@@ -85,10 +83,6 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _setHorseFlag(::HorseFlags flag, bool shouldAddFlag);
-
-    MCAPI void openMouth();
-
     MCAPI void postAiStep();
 
     MCAPI void postNormalTick();
@@ -101,21 +95,6 @@ public:
         ::RenderRotationComponent const& renderRotationComponent,
         ::StandAnimationComponent const& standAnimationComponent,
         float                            alpha
-    );
-
-    MCAPI static ::Vec3 getNewPassengerPos(
-        ::RenderPositionComponent const& horseRenderPosComponent,
-        ::RenderRotationComponent const& horseRenderRotComponent,
-        ::StandAnimationComponent const& horseStandAnimComponent,
-        float                            alpha,
-        float                            passengerPosY
-    );
-
-    MCAPI static void setHorseFlag(
-        ::ActorDataHorseFlagComponent&  actorDataHorseFlag,
-        ::ActorDataDirtyFlagsComponent& actorDataDirtyFlags,
-        ::HorseFlags                    flag,
-        bool                            shouldAddFlag
     );
     // NOLINTEND
 
@@ -132,52 +111,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& damagesource);
 
-    MCAPI void $setHorseEating(bool state);
-
-    MCAPI float $getStandAnim(float a) const;
-
-    MCAPI bool $isHorseEating() const;
-
-    MCAPI bool $isMouthOpen() const;
-
-    MCAPI void $setStanding(bool value);
-
-    MCAPI void $onFailedTame();
-
-    MCAPI void $makeMad();
-
-    MCAPI ::ActorUniqueID $getControllingPlayer() const;
-
-    MCAPI bool $tameToPlayer(::Player& player, bool tamingParticles);
-
-    MCFOLD void $onSynchedDataUpdate(int dataId);
-
-    MCAPI void $openContainerComponent(::Player& player);
-
-    MCAPI ::Vec3 $getInterpolatedRidingOffset(float a, int const) const;
-
-    MCAPI float $getShadowRadius() const;
-
-    MCAPI void $feed(int itemId);
-
-    MCAPI bool $canFreeze() const;
-
-    MCAPI bool $isImmobile() const;
-
-    MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
-
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
-
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

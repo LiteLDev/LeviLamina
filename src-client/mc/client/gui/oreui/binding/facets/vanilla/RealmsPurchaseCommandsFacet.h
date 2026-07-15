@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace Realms { class RealmsPurchaseReconciler; }
 
 namespace OreUI {
 
-class RealmsPurchaseCommandsFacet : public ::OreUI::FacetBase<::OreUI::RealmsPurchaseCommandsFacet> {
+class RealmsPurchaseCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsPurchaseCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPurchaseCommandsFacet() /*override*/;
+    virtual ~RealmsPurchaseCommandsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -40,18 +40,6 @@ public:
         ::std::shared_ptr<::Realms::RealmsPurchase>           realmsPurchase,
         ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
     );
-
-    MCAPI void fulfillPriorRealmsPurchase(::std::string const& xuid);
-
-    MCAPI void prepareAppStoreForReconciliation(::std::string const& xuid);
-
-    MCAPI void prepareAppStoreForTrialPurchases(::std::string const& xuid, ::std::string const& worldName);
-
-    MCAPI void purchaseTrial(::std::string const& xuid, ::std::string const& worldName);
-
-    MCAPI void resetPurchase();
-
-    MCAPI void resetReconciler();
     // NOLINTEND
 
 public:
@@ -67,12 +55,6 @@ public:
         ::std::shared_ptr<::Realms::RealmsPurchase>           realmsPurchase,
         ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

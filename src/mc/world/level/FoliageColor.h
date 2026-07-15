@@ -11,12 +11,6 @@ class FoliageColor {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int getMapBirchColor();
-
-    MCNAPI static int getMapDryColor();
-
-    MCNAPI static int getMapEvergreenColor();
-
     MCNAPI static int getMapFoliageColor(float temp, float rain);
 
     MCNAPI static int getMapGrassColor(float temp, float rain);

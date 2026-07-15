@@ -4,35 +4,6 @@
 
 namespace Identity {
 
-struct AuthArgs {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk8ee452;
-    ::ll::UntypedStorage<8, 32> mUnke1ca2d;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AuthArgs& operator=(AuthArgs const&);
-    AuthArgs(AuthArgs const&);
-    AuthArgs();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~AuthArgs();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
-};
+struct AuthArgs {};
 
 } // namespace Identity

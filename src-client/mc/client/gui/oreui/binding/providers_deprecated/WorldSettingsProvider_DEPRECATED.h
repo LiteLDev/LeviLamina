@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/LevelDataBindings.h"
-#include "mc/client/gui/oreui/routing/RouterAction.h"
 #include "mc/client/gui/screens/rules/WorldSettingsRules.h"
 #include "mc/client/world/WorldCreationHelper.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -16,7 +15,6 @@
 // clang-format off
 class IContentKeyProvider;
 class ILevelListCache;
-class IMinecraftGame;
 class MainMenuScreenController;
 class MainMenuScreenModel;
 class OreUIResourcePackFacet;
@@ -24,8 +22,6 @@ class TrialManager;
 class WorldTemplateLoader;
 class WorldTemplateManager;
 struct ContentViews;
-namespace OreUI { class Router; }
-namespace OreUI { class RouterLocation; }
 namespace Social { class IUserManager; }
 // clang-format on
 
@@ -48,10 +44,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mLevelDataWrapper;
-    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
+    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                       mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1744, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
     ::ll::TypedStorage<8, 8, ::TrialManager const&>                                       mTrialManager;
-    ::ll::TypedStorage<8, 2464, ::WorldCreationHelper>                                    mWorldCreator;
+    ::ll::TypedStorage<8, 2472, ::WorldCreationHelper>                                    mWorldCreator;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mLevelDataBindings;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mDefaultLevelDataBindings;
     ::ll::TypedStorage<8, 848, ::LevelSummary>                                            mLevelSummary;
@@ -93,107 +89,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSettingsProvider_DEPRECATED(
-        ::IMinecraftGame&                                                 minecraftGame,
-        ::ILevelListCache&                                                levelListCache,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::Social::IUserManager&                                           userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> const&      worldTemplateManager,
-        ::std::shared_ptr<::MainMenuScreenModel>                          mainMenuScreenModel,
-        ::TrialManager const&                                             trialManager,
-        ::OreUI::Router&                                                  router
-    );
-
     MCAPI bool arePacksDifferentFromSnapshotPacks() const;
 
-    MCAPI bool consumeDirtyFlag();
-
-    MCAPI bool consumeInitializeResourcePacksFlag();
-
-    MCAPI bool consumeReloadInitialTemplate();
-
-    MCAPI bool consumeResetFlag();
-
-    MCAPI bool getHasNonAddonBehaviourPack() const;
-
-    MCAPI ::std::string getInitialLoadTemplateID();
-
-    MCFOLD ::LevelDataWrapper& getLevelData();
-
-    MCAPI ::OreUI::LevelDataBindings& getLevelDataBindings();
-
-    MCAPI ::LevelSummary& getLevelSummary();
-
-    MCAPI ::std::shared_ptr<::MainMenuScreenController> getMainMenuScreenController() const;
-
-    MCAPI ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel() const;
-
-    MCAPI bool getTemplateLoadingCompletedFlag() const;
-
-    MCAPI ::WorldCreationHelper& getWorldCreationHelper();
-
-    MCAPI ::std::string const& getWorldPreviewImagePath() const;
-
-    MCAPI ::WorldSettingsRules& getWorldSettingsRules();
-
-    MCAPI bool isFromWorldTemplate() const;
-
-    MCAPI void onRouteChanged(
-        ::std::optional<::OreUI::RouterLocation> const& previousLocation,
-        ::std::optional<::OreUI::RouterLocation> const& currentLocation,
-        ::OreUI::RouterAction                           lastAction
-    );
-
-    MCAPI void reset();
-
     MCAPI void saveResourcePacksSnapshot();
-
-    MCAPI void saveSettingsSnapshot();
 
     MCAPI void setContentViews(
         ::std::shared_ptr<::ContentViews> texturePackViews,
         ::std::shared_ptr<::ContentViews> behaviorPackViews
     );
 
-    MCAPI void setEditorWorldCreationFlag(bool brandNewWorld);
-
-    MCAPI void setHasNonAddonBehaviourPack(bool value);
-
-    MCAPI void setWorldCreated(bool worldCreated);
-
-    MCAPI void setWorldPreviewImagePath(::std::string const& worldPreviewImagePath);
-
     MCAPI ::OreUI::WorldSettingsProvider_DEPRECATED::StartLoadingTemplateResult
     startLoadingTemplate(::std::string const& worldTemplateId);
 
     MCAPI ::OreUI::WorldSettingsProvider_DEPRECATED::TemplateLoadingState tickTemplateLoader();
-
-    MCAPI void toggleTemplateLoadingComplete();
-
-    MCAPI void tryDeleteWorld();
-
-    MCAPI ~WorldSettingsProvider_DEPRECATED();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IMinecraftGame&                                                 minecraftGame,
-        ::ILevelListCache&                                                levelListCache,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::Social::IUserManager&                                           userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> const&      worldTemplateManager,
-        ::std::shared_ptr<::MainMenuScreenModel>                          mainMenuScreenModel,
-        ::TrialManager const&                                             trialManager,
-        ::OreUI::Router&                                                  router
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

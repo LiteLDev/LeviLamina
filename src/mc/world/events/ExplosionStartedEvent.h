@@ -26,16 +26,4 @@ public:
     ExplosionStartedEvent& operator=(ExplosionStartedEvent const&);
     ExplosionStartedEvent(ExplosionStartedEvent const&);
     ExplosionStartedEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ExplosionStartedEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

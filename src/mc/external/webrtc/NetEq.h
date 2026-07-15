@@ -2,9 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class AudioFrame; }
+namespace webrtc { class RtpPacketInfo; }
+namespace webrtc { class Timestamp; }
 namespace webrtc { struct NetEqLifetimeStatistics; }
 namespace webrtc { struct NetEqNetworkStatistics; }
 namespace webrtc { struct NetEqOperationsAndState; }
@@ -86,6 +91,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4>  mUnkd631da;
         ::ll::UntypedStorage<4, 4>  mUnk4cdcd3;
         ::ll::UntypedStorage<4, 4>  mUnkdf1c40;
         ::ll::UntypedStorage<8, 64> mUnk81b817;
@@ -103,7 +109,19 @@ public:
     // NOLINTBEGIN
     virtual ~NetEq() = default;
 
-    virtual int InsertPacket(::webrtc::RTPHeader const&, ::rtc::ArrayView<uchar const>) = 0;
+    virtual int InsertPacket(::webrtc::RTPHeader const&, ::webrtc::ArrayView<uchar const, 18446744073709546905>);
+
+    virtual int InsertPacket(
+        ::webrtc::RTPHeader const&,
+        ::webrtc::ArrayView<uchar const, 18446744073709546905>,
+        ::webrtc::Timestamp
+    );
+
+    virtual int InsertPacket(
+        ::webrtc::RTPHeader const&,
+        ::webrtc::ArrayView<uchar const, 18446744073709546905>,
+        ::webrtc::RtpPacketInfo const&
+    );
 
     virtual void InsertEmptyPacket(::webrtc::RTPHeader const&) = 0;
 
@@ -112,6 +130,8 @@ public:
     virtual void SetCodecs(::std::map<int, ::webrtc::SdpAudioFormat> const&) = 0;
 
     virtual bool RegisterPayloadType(int, ::webrtc::SdpAudioFormat const&) = 0;
+
+    virtual bool CreateDecoder(int);
 
     virtual int RemovePayloadType(uchar) = 0;
 
@@ -141,7 +161,9 @@ public:
 
     virtual int last_output_sample_rate_hz() const = 0;
 
-    virtual ::std::optional<::webrtc::NetEq::DecoderFormat> GetDecoderFormat(int) const = 0;
+    virtual ::std::optional<::webrtc::NetEq::DecoderFormat> GetDecoderFormat(int) const;
+
+    virtual ::std::optional<::webrtc::NetEq::DecoderFormat> GetCurrentDecoderFormat() const;
 
     virtual void FlushBuffers() = 0;
 

@@ -34,32 +34,16 @@ public:
 
     virtual bool isInLava() const /*override*/;
 
-    virtual bool isWaterBlock(::BlockPos const& blockPos) const /*override*/;
+    virtual bool isWaterBlock(::BlockPos const&) const /*override*/;
 
-    virtual bool isLavaBlock(::BlockPos const& blockPos) const /*override*/;
+    virtual bool isLavaBlock(::BlockPos const&) const /*override*/;
 
-    virtual bool isSolidBlock(::BlockPos const& blockPos) const /*override*/;
+    virtual bool isSolidBlock(::BlockPos const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isInWater() const;
 
-    MCNAPI bool $isInLava() const;
-
-    MCNAPI bool $isWaterBlock(::BlockPos const& blockPos) const;
-
-    MCNAPI bool $isLavaBlock(::BlockPos const& blockPos) const;
-
-    MCNAPI bool $isSolidBlock(::BlockPos const& blockPos) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

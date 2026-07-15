@@ -21,15 +21,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ~AutoPlaceResult();
+    MCNAPI AutoPlaceResult(::std::string const& _collectionName, int _collectionIndex, bool _slotEmpty);
 #endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCNAPI void* $ctor(::std::string const& _collectionName, int _collectionIndex, bool _slotEmpty);
 #endif
     // NOLINTEND
 };

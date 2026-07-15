@@ -45,6 +45,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::pair<::ChunkPos, ::ChunkState>>> mChunksReadyForProcessing;
     ::ll::TypedStorage<8, 24, ::std::vector<::LevelChunkBuilderData::ChunkReadyForProcessingElement>> mChunkSortVector;
     ::ll::TypedStorage<4, 4, ::std::atomic<int>> mChunkGenerationTasksInFlight;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mChunkQueueDepth;
     ::ll::TypedStorage<8, 24, ::SpinLockImpl>    mSpawnTasksLock;
     // NOLINTEND
 
@@ -52,6 +53,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI LevelChunkBuilderData();
+
+#ifdef LL_PLAT_C
+    MCAPI void enqueueChunkForProcessing(::ChunkPos const& pos, ::ChunkState state);
+#endif
 
     MCAPI ~LevelChunkBuilderData();
     // NOLINTEND

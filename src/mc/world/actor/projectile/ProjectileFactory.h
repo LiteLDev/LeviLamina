@@ -29,10 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProjectileFactory(::Level& level);
-
-    MCAPI void _applyEnchantmentsToProjectile(::Mob const& owner, ::Actor& projectile);
-
     MCAPI ::Actor* shootProjectileFromDefinition(
         ::ActorDefinitionIdentifier const& identifier,
         ::Mob*                             owner,
@@ -52,8 +48,6 @@ public:
     createSubcomponent(::Json::Value& trigger, ::std::string const& name);
 
     MCAPI static void initFactory();
-
-    MCAPI static void shutdown();
     // NOLINTEND
 
 public:
@@ -61,11 +55,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::std::string, ::std::function<::std::unique_ptr<::OnHitSubcomponent>()>>&
     mSubcomponentMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::Level& level);
     // NOLINTEND
 };

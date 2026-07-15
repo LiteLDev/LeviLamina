@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SocialButtonScreenController() /*override*/;
+    virtual ~SocialButtonScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -42,12 +42,6 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
-
-    MCAPI void _onPartyChanged();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _updateSocialIconControl();
     // NOLINTEND
 
 public:
@@ -57,19 +51,5 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

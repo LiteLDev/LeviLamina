@@ -14,24 +14,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>             mScore;
     ::ll::TypedStorage<1, 1, ::IdentityDefinition::Type> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScoreboardCacheData& operator=(ScoreboardCacheData const&);
-    ScoreboardCacheData(ScoreboardCacheData const&);
-    ScoreboardCacheData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ScoreboardCacheData& operator=(::ScoreboardCacheData&&);
-
-    MCAPI ~ScoreboardCacheData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

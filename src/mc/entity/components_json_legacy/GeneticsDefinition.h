@@ -24,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeneticsDefinition();
-
     MCAPI void addGeneDefinition(::GeneDefinition const& geneDefinition);
 
     MCAPI void initialize(::EntityContext& entity, ::GeneticsComponent& component) const;
@@ -43,11 +41,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static float const& DEFAULT_MUTATION_RATE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

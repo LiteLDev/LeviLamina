@@ -20,17 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::string getPotionDeliveryTypeId() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCAPI static ::std::optional<::Potion::PotionType> tryResolvePotionType(::std::string const& potionTypeId);
     // NOLINTEND
 };
 

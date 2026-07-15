@@ -17,22 +17,6 @@ public:
     EditorRealmsWorldSlot& operator=(EditorRealmsWorldSlot const&);
     EditorRealmsWorldSlot(EditorRealmsWorldSlot const&);
     EditorRealmsWorldSlot();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ~EditorRealmsWorldSlot();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void $dtor();
-#endif
-    // NOLINTEND
 };
 
 } // namespace Editor::Services

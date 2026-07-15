@@ -17,12 +17,6 @@ public:
     ::ll::TypedStorage<4, 4, uint>                              m_size;
     ::ll::TypedStorage<4, 4, ::bgfx::d3d12::HeapProperty::Enum> m_properties;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void getData(uint64& _gpuAddress, void*& _cpuAddress, uint _offset);
-    // NOLINTEND
 };
 
 } // namespace bgfx::d3d12

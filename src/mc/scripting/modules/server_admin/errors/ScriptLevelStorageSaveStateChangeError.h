@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,21 +14,9 @@ namespace ScriptModuleServerAdmin {
 
 class ScriptLevelStorageSaveStateChangeError : public ::Scripting::BaseError {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptLevelStorageSaveStateChangeError();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

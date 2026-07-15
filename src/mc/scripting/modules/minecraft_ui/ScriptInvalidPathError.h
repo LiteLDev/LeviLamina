@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ErrorBinding; }
-// clang-format on
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 struct ScriptInvalidPathError : public ::Scripting::BaseError {
 public:
@@ -21,37 +16,6 @@ public:
 public:
     // prevent constructor by default
     ScriptInvalidPathError& operator=(ScriptInvalidPathError const&);
+    ScriptInvalidPathError(ScriptInvalidPathError const&);
     ScriptInvalidPathError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptInvalidPathError(::ScriptInvalidPathError const&);
-
-    MCNAPI ScriptInvalidPathError(::std::string const& path, ::std::string const& message);
-
-    MCNAPI ::ScriptInvalidPathError& operator=(::ScriptInvalidPathError&&);
-
-    MCNAPI ~ScriptInvalidPathError();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptInvalidPathError const&);
-
-    MCNAPI void* $ctor(::std::string const& path, ::std::string const& message);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

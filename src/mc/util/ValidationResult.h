@@ -21,12 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isSuccess() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI explicit operator bool() const;
-#endif
-
     MCNAPI ~ValidationResult();
     // NOLINTEND
 

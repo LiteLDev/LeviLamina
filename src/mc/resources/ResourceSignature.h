@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class PackAccessStrategy;
-namespace Core { class Path; }
 // clang-format on
 
 class ResourceSignature {
@@ -27,16 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _areKnownFilesValid(::PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
-
-    MCNAPI bool _checkSignedFiles(::PackAccessStrategy const& accessStrategy) const;
-
-    MCNAPI void _loadSignaturesFile(::Core::Path const& filePath, ::PackAccessStrategy const& accessStrategy);
-
 #ifdef LL_PLAT_C
-    MCNAPI bool areKnownFilesValid(::PackAccessStrategy const& accessStrategy);
-
-    MCNAPI bool areKnownFilesValidRequireSignatureExists(::PackAccessStrategy const& accessStrategy);
+    MCNAPI bool _areKnownFilesValid(::PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
 #endif
 
     MCNAPI ~ResourceSignature();

@@ -24,12 +24,6 @@ public:
     EquipmentTableDefinition();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void _setLootTable(::std::string const& lootTable);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

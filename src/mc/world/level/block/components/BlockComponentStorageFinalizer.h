@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on
 
 class BlockComponentStorageFinalizer {
@@ -18,6 +17,8 @@ public:
     MCAPI void _checkForDuplicatingBlockGeometryForPartVisibility(::Block& block);
 #endif
 
+    MCAPI void _checkForMissingCullingComponentForMaterialOverride(::Block& block);
+
     MCAPI void _checkForMissingGeometryComponent(::Block& block);
 
     MCAPI void _checkForSelectionBoxComponentDuplication(::Block& block);
@@ -27,10 +28,5 @@ public:
     MCAPI void _finalizeSelectionBoxComponent(::Block& block);
 
     MCAPI void addRemainingComponents(::Block& block);
-
-    MCAPI void finalizeComponentData(::Block& block);
-
-    MCAPI void
-    finalizeComponentDataForVoxelShapes(::Block& block, ::VoxelShapes::VoxelShapeRegistry& voxelShapeRegistry);
     // NOLINTEND
 };

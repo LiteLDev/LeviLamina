@@ -57,7 +57,7 @@ public:
 
     MCAPI double $nextGaussianDouble();
 
-    MCAPI void $consumeCount(uint count);
+    MCFOLD void $consumeCount(uint count);
 
     MCFOLD ::std::unique_ptr<::IRandom> $fork();
 

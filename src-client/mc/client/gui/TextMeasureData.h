@@ -16,34 +16,4 @@ public:
     ::ll::TypedStorage<1, 1, bool const>                hideHyphen;
     ::ll::TypedStorage<4, 4, ::ui::TextAlignment const> alignment;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TextMeasureData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TextMeasureData(
-        float               _fontSize,
-        float               _linePadding,
-        bool                _renderShadow,
-        bool                _showColorSymbol,
-        bool                _hideHyphen,
-        ::ui::TextAlignment _alignment
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        float               _fontSize,
-        float               _linePadding,
-        bool                _renderShadow,
-        bool                _showColorSymbol,
-        bool                _hideHyphen,
-        ::ui::TextAlignment _alignment
-    );
-    // NOLINTEND
 };

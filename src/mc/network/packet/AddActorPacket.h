@@ -48,9 +48,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AddActorPacket();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddActorPacket() /*override*/;
+    virtual ~AddActorPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -64,53 +68,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddActorPacket();
-
     MCAPI explicit AddActorPacket(::Actor& e);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::vector<::SyncedAttribute> const& getAttributes() const;
-
-    MCFOLD ::std::vector<::std::unique_ptr<::DataItem>> const& getData() const;
-
-    MCFOLD ::ActorUniqueID const getEntityId() const;
-
-    MCFOLD ::Vec3 const& getPosition() const;
-
-    MCFOLD ::Vec2 const& getRot() const;
-
-    MCFOLD ::ActorRuntimeID getRuntimeId() const;
-
-    MCFOLD ::PropertySyncData const& getSynchedProperties() const;
-
-    MCAPI ::ActorDefinitionIdentifier getType() const;
-
-    MCFOLD ::Vec3 const& getVelocity() const;
-
-    MCFOLD float getYBodyRotation() const;
-
-    MCAPI float getYHeadRotation() const;
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Actor& e);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string_view $getName() const;
 

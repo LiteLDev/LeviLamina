@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/Async.h"
 #include "mc/util/DownloaderResult.h"
 #include "mc/util/DownloaderState.h"
 #include "mc/util/IFileChunkDownloader.h"
@@ -12,7 +11,6 @@
 // clang-format off
 struct FileInfo;
 namespace Bedrock::Http { class Request; }
-namespace Bedrock::Http { class Response; }
 // clang-format on
 
 class StreamFileDownloader : public ::IFileChunkDownloader,
@@ -69,13 +67,13 @@ public:
     ) /*override*/;
 #else // LL_PLAT_C
     virtual void initRealmsFileDownloader(
-        ::std::string const& callback,
-        int const,
-        ::std::string const&,
-        ::FileInfo const&,
-        uint64,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
+        ::std::string const&                      downloadId,
+        int const                                 slotIndex,
+        ::std::string const&                      downloadUrl,
+        ::FileInfo const&                         file,
+        uint64                                    fromByteOffset,
+        ::std::string const&                      downloadVersion,
+        ::std::function<void(::DownloaderResult)> callback
     ) /*override*/;
 #endif
 
@@ -91,13 +89,13 @@ public:
     ) /*override*/;
 #else // LL_PLAT_C
     virtual void initFileDownloader(
-        ::std::string const& downloadUrl,
-        ::std::string const& expectedFileSize,
-        ::FileInfo const&    fromByteOffset,
-        uint64               callback,
-        uint64,
         ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
+        ::std::string const& downloadUrl,
+        ::FileInfo const&,
+        uint64 expectedFileSize,
+        uint64 fromByteOffset,
+        ::std::string const&,
+        ::std::function<void(::DownloaderResult)> callback
     ) /*override*/;
 #endif
 
@@ -131,14 +129,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI StreamFileDownloader();
-
-    MCNAPI void _checkErrorAndRequeue(uint64 hasError, bool);
-
-    MCNAPI void _downloadFile();
-
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> _downloadNextChunk(::Bedrock::Http::Request request);
-
-    MCNAPI ::Bedrock::Threading::Async<::std::tuple<uint64, bool>> _processResponse(::Bedrock::Http::Response response);
 #endif
     // NOLINTEND
 
@@ -163,23 +153,23 @@ public:
     MCNAPI void $update();
 
     MCNAPI void $initRealmsFileDownloader(
-        ::std::string const& callback,
-        int const,
-        ::std::string const&,
-        ::FileInfo const&,
-        uint64,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
+        ::std::string const&                      downloadId,
+        int const                                 slotIndex,
+        ::std::string const&                      downloadUrl,
+        ::FileInfo const&                         file,
+        uint64                                    fromByteOffset,
+        ::std::string const&                      downloadVersion,
+        ::std::function<void(::DownloaderResult)> callback
     );
 
     MCNAPI void $initFileDownloader(
-        ::std::string const& downloadUrl,
-        ::std::string const& expectedFileSize,
-        ::FileInfo const&    fromByteOffset,
-        uint64               callback,
-        uint64,
         ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
+        ::std::string const& downloadUrl,
+        ::FileInfo const&,
+        uint64 expectedFileSize,
+        uint64 fromByteOffset,
+        ::std::string const&,
+        ::std::function<void(::DownloaderResult)> callback
     );
 
     MCNAPI void $downloadFile(

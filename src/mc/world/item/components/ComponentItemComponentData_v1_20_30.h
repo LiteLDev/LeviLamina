@@ -38,12 +38,11 @@
 #include "mc/world/item/components/WeaponItemComponent.h"
 #include "mc/world/item/components/WearableItemComponentLegacyFactoryData.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 struct ComponentItemComponentData_v1_20_30 {
+public:
+    // ComponentItemComponentData_v1_20_30 inner types define
+    using CerealDefaultValueOptOut = void;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -66,7 +65,7 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::ThrowableItemComponentLegacyFactoryData>> throwableItemComponent;
     ::ll::TypedStorage<8, 184, ::std::optional<::WeaponItemComponent>>                    weaponItemComponent;
     ::ll::TypedStorage<8, 24, ::std::optional<::WearableItemComponentLegacyFactoryData>>  wearableItemComponent;
-    ::ll::TypedStorage<8, 40, ::std::optional<::RecordItemComponent>>                     recordItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::RecordItemComponent>>                     recordItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::MaxStackSizeItemComponent>>               maxStackSizeItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::CanDestroyInCreativeItemComponent>> canDestroyInCreativeItemComponent;
     ::ll::TypedStorage<8, 72, ::std::optional<::HoverTextColorItemComponent>>       hoverTextColorItemComponent;
@@ -81,43 +80,5 @@ public:
     ::ll::TypedStorage<8, 32, ::std::optional<::UseAnimationItemComponent>>                  useAnimationItemComponent;
     ::ll::TypedStorage<8, 64, ::std::optional<::EnchantableItemComponent>>                   enchantableItemComponent;
     ::ll::TypedStorage<8, 64, ::std::optional<::InteractButtonItemComponent>> interactButtonItemComponent;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ComponentItemComponentData_v1_20_30();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ComponentItemComponentData_v1_20_30(::ComponentItemComponentData_v1_20_30&&);
-
-    MCAPI ComponentItemComponentData_v1_20_30(::ComponentItemComponentData_v1_20_30 const&);
-
-    MCAPI ::ComponentItemComponentData_v1_20_30& operator=(::ComponentItemComponentData_v1_20_30&&);
-
-    MCAPI ::ComponentItemComponentData_v1_20_30& operator=(::ComponentItemComponentData_v1_20_30 const&);
-
-    MCAPI ~ComponentItemComponentData_v1_20_30();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_30&&);
-
-    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_30 const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

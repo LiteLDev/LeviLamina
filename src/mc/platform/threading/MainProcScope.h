@@ -4,26 +4,6 @@
 
 namespace Bedrock::Threading {
 
-class MainProcScope {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MainProcScope();
-
-    MCAPI ~MainProcScope();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-};
+class MainProcScope {};
 
 } // namespace Bedrock::Threading

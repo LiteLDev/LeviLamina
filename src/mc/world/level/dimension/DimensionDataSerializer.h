@@ -27,8 +27,6 @@ public:
 
     MCAPI ::std::string createSaveID(::std::string const& savePrefix, ::std::string const& dimensionPrefix);
 
-    MCAPI void deleteDataWithID(::std::string const& levelStorageId, ::LevelStorage& levelStorage);
-
     MCAPI void forEachKeyWithDimensionPrefix(
         ::std::string const&                                                     savePrefix,
         ::std::string const&                                                     dimensionPrefix,
@@ -36,8 +34,5 @@ public:
         ::LevelStorage&                                                          levelStorage,
         ::std::function<void(::std::string const&, ::CompoundTag const&)> const& callback
     );
-
-    MCAPI void
-    saveDataWithID(::std::string const& levelStorageId, ::CompoundTag const& tag, ::LevelStorage& levelStorage);
     // NOLINTEND
 };

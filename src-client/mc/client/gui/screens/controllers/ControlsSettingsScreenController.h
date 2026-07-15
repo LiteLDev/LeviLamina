@@ -3,21 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/client/input/KeyboardType.h"
 #include "mc/deps/input/InputBindingMode.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
 // clang-format off
 class GamePadRemappingLayout;
 class KeyboardRemappingLayout;
 class MainMenuScreenModel;
-class RemappingLayout;
-class UIPropertyBag;
-struct RawInputScreenEventData;
 // clang-format on
 
 class ControlsSettingsScreenController : public ::SettingsScreenControllerBase {
@@ -39,31 +33,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                mActive;
         ::ll::TypedStorage<4, 4, int>                 mLayoutIndex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BindingInfo& operator=(BindingInfo const&);
-        BindingInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI BindingInfo(::ControlsSettingsScreenController::BindingInfo const&);
-
-        MCAPI ~BindingInfo();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ControlsSettingsScreenController::BindingInfo const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct KeyboardLayoutInfo {
@@ -81,18 +50,6 @@ public:
             ::ll::TypedStorage<8, 24, ::std::vector<::ControlsSettingsScreenController::BindingInfo>> mBindings;
             ::ll::TypedStorage<8, 32, ::std::string> mGridDimensionName;
             ::ll::TypedStorage<8, 32, ::std::string> mCollectionName;
-            // NOLINTEND
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCAPI ~BindingInfoCollection();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCAPI void $dtor();
             // NOLINTEND
         };
 
@@ -114,38 +71,6 @@ public:
         KeyboardLayoutInfo& operator=(KeyboardLayoutInfo const&);
         KeyboardLayoutInfo(KeyboardLayoutInfo const&);
         KeyboardLayoutInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI KeyboardLayoutInfo(
-            ::KeyboardType             type,
-            ::KeyboardRemappingLayout& layout,
-            ::std::string              gridDimensionName,
-            ::std::string              collectionName,
-            ::std::string              keyboardTypeString
-        );
-
-        MCAPI ~KeyboardLayoutInfo();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::KeyboardType             type,
-            ::KeyboardRemappingLayout& layout,
-            ::std::string              gridDimensionName,
-            ::std::string              collectionName,
-            ::std::string              keyboardTypeString
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -172,7 +97,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ControlsSettingsScreenController() /*override*/;
+    virtual ~ControlsSettingsScreenController() /*override*/ = default;
 
     virtual void _registerControllerCallbacks();
 
@@ -188,70 +113,11 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::vector<::std::string> const&      disabledInputMappings
     );
-
-    MCAPI ::ui::ViewRequest _bindRawInputEvent(::RawInputScreenEventData& rawInputData);
-
-    MCAPI bool _canSetCommandMacroCommandAtIndex(
-        int                                                     collectionIndex,
-        ::ControlsSettingsScreenController::KeyboardLayoutInfo& layout
-    ) const;
-
-    MCFOLD bool _commandMacrosAllowed() const;
-
-    MCAPI void _generateBindingInfo(
-        ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
-        ::RemappingLayout&                                              layout,
-        uint                                                            layoutStartIndex
-    );
-
-    MCAPI void _generateKeyboardBindingInfo(
-        ::ControlsSettingsScreenController::KeyboardLayoutInfo& keyboardInfo,
-        uint                                                    layoutStartIndex
-    );
-
-    MCAPI ::std::string _getBindingText(
-        ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
-        int                                                             collectionIndex,
-        ::RemappingLayout&                                              layout
-    );
-
-    MCAPI ::InputBindingMode _getBindingTypeByCollectionName(::std::string const& collectionName) const;
-
-    MCAPI int _getIndexAdjustmentOffsetFromCollectionGroup(::std::string const& collectionGroup, int gridIndex);
-
-    MCAPI ::ui::ViewRequest _handleBindingButtonEvent(::UIPropertyBag* bag);
-
-    MCAPI bool _handleGamepadRawInputEvent(::RawInputScreenEventData& rawInputData);
-
-    MCAPI void _handleKeyboardRawInputEvent(::RawInputScreenEventData& rawInputData);
-
-    MCAPI ::ui::ViewRequest _handleResetBinding(::UIPropertyBag* bag);
-
-    MCAPI void _initKeyboardLayoutInformation(::MainMenuScreenModel const& model);
-
-    MCAPI bool
-    _mapRawInputToLayout(::RemappingLayout& layout, int keymappingIndex, ::RawInputScreenEventData& rawInputData);
-
-    MCAPI void _registerBinds();
-
-    MCAPI void _registerEvents();
-
-    MCAPI ::ui::ViewRequest _resetAllBindingsToDefault(::InputMode inputMode);
-
-    MCAPI void _setCommandMacroCommandAtIndex(int collectionIndex, ::std::string command);
-
-    MCAPI void
-    setUpCallbacksForBooleanInputOption(::OptionID optionID, ::InputMode inputMode, ::std::string const& toggleName);
-
-    MCAPI void
-    setUpCallbacksForFloatInputOption(::OptionID optionID, ::InputMode inputMode, ::std::string const& sliderName);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>& floatSliderLabellerAsInt();
-
     MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>& floatSliderLabellerAsPercentInt();
     // NOLINTEND
 
@@ -263,26 +129,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_registerControllerCallbacks();
 
-    MCAPI void $onTerminate();
-
-    MCAPI bool $canExit();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

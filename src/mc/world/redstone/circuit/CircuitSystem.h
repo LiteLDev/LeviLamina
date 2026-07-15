@@ -10,7 +10,6 @@
 class BaseCircuitComponent;
 class BlockPos;
 class BlockSource;
-class ChunkPos;
 // clang-format on
 
 class CircuitSystem {
@@ -35,53 +34,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CircuitSystem();
-
-    MCAPI void cacheValues();
-
-    MCAPI void checkLocks();
-
     MCAPI ::BaseCircuitComponent*
     createComponent(::BlockPos const& pos, uchar direction, ::std::unique_ptr<::BaseCircuitComponent> newComponent);
 
     MCAPI void evaluate(::BlockSource* region);
 
-    MCAPI void evaluateComponents(bool bOnlyProducers);
-
-    MCAPI int getStrength(::BlockPos const& pos);
-
-    MCAPI void invalidatePos(::BlockPos const& pos);
-
-    MCAPI bool isAvailableAt(::BlockPos const& pos);
-
     MCAPI bool isConnectionAllowed(
         ::BaseCircuitComponent& component,
         ::BlockPos const&       componentPos,
         uchar                   connectionDirection,
-        bool                    directilyPowered
+        bool                    directlyPowered,
+        bool                    speculativeConnection
     );
-
-    MCAPI void preSetupPoweredBlocks(::ChunkPos const& chunkPos);
-
-    MCAPI void removeComponents(::BlockPos const& pos);
 
     MCAPI void setStrength(::BlockPos const& pos, int strength);
 
     MCAPI void updateBlocks(::BlockSource& region, ::BlockPos const& chunkPos);
-
-    MCAPI void updateDependencies(::BlockSource* region);
-
-    MCAPI void updateIndividualBlock(
-        ::gsl::not_null<::BaseCircuitComponent*> component,
-        ::BlockPos const&                        pos,
-        ::BlockPos const&                        region,
-        ::BlockSource&
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

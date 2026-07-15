@@ -48,23 +48,6 @@ public:
             CandidateInfo& operator=(CandidateInfo const&);
             CandidateInfo(CandidateInfo const&);
             CandidateInfo();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ::NetherNet::Statistics::Snapshot::CandidateInfo&
-            operator=(::NetherNet::Statistics::Snapshot::CandidateInfo&&);
-
-            MCNAPI ::Json::Value toJson() const;
-
-            MCNAPI ~CandidateInfo();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
         };
 
         struct CandidatePairInfo {
@@ -99,23 +82,6 @@ public:
             CandidatePairInfo& operator=(CandidatePairInfo const&);
             CandidatePairInfo(CandidatePairInfo const&);
             CandidatePairInfo();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ::NetherNet::Statistics::Snapshot::CandidatePairInfo&
-            operator=(::NetherNet::Statistics::Snapshot::CandidatePairInfo&&);
-
-            MCNAPI ::Json::Value toJson() const;
-
-            MCNAPI ~CandidatePairInfo();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
         };
 
         struct Error {
@@ -135,20 +101,6 @@ public:
             Error& operator=(Error const&);
             Error(Error const&);
             Error();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ::Json::Value toJson() const;
-
-            MCNAPI ~Error();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCNAPI void $dtor();
-            // NOLINTEND
         };
 
     public:
@@ -203,14 +155,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit Statistics(::NetherNet::PeerConnectionObserver& peerObserver);
 
-    MCNAPI void _onIceCandidateError(
-        ::std::string const& address,
-        int                  port,
-        ::std::string const& url,
-        int                  errorCode,
-        ::std::string const& errorMessage
-    );
-
     MCNAPI void addSnapshot(
         ::gsl::span<::std::reference_wrapper<::webrtc::RTCTransportStats const>>          transportsStats,
         ::gsl::span<::std::reference_wrapper<::webrtc::RTCLocalIceCandidateStats const>>  localCandidatesStats,
@@ -219,12 +163,20 @@ public:
     );
 
     MCNAPI bool getLastSnapshot(::NetherNet::SessionState& state) const;
+
+    MCNAPI ~Statistics();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::NetherNet::PeerConnectionObserver& peerObserver);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -24,18 +24,6 @@ public:
         ::ll::TypedStorage<4, 4, int>              amplifier;
         ::ll::TypedStorage<4, 4, float>            chance;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Effect();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -51,13 +39,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addEffect(::FeedItem::Effect const& effect);
-
-    MCAPI ~FeedItem();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -13,7 +13,6 @@
 // clang-format off
 class BlockCommandOrigin;
 class CallbackToken;
-class IMinecraftEventing;
 class Player;
 namespace Safety { struct TextFilterResult; }
 // clang-format on
@@ -29,7 +28,6 @@ public:
         8,
         64,
         ::std::function<::CallbackToken(
-            ::IMinecraftEventing*,
             ::TextProcessingEventOrigin,
             ::std::vector<::std::string> const&,
             ::std::function<void(
@@ -58,7 +56,6 @@ public:
         64,
         ::std::function<::CallbackToken(
             ::BlockCommandOrigin const&,
-            ::IMinecraftEventing*,
             ::TextProcessingEventOrigin,
             ::std::vector<::std::string> const&,
             ::std::function<void(
@@ -77,7 +74,6 @@ public:
     virtual ~MockTextFilteringProcessor() /*override*/ = default;
 
     virtual ::CallbackToken processAnonymousMessages(
-        ::IMinecraftEventing*,
         ::TextProcessingEventOrigin,
         ::std::vector<::std::string> const&,
         ::std::function<void(
@@ -100,7 +96,6 @@ public:
 
     virtual ::CallbackToken processMessages(
         ::BlockCommandOrigin const&,
-        ::IMinecraftEventing*,
         ::TextProcessingEventOrigin,
         ::std::vector<::std::string> const&,
         ::std::function<void(
@@ -110,11 +105,8 @@ public:
         )>
     ) /*override*/;
 
-    virtual ::Bedrock::Threading::Async<::Safety::TextFilterResult> processAnonymousMessagesAsync(
-        ::IMinecraftEventing*,
-        ::TextProcessingEventOrigin,
-        ::std::vector<::std::string> const&
-    ) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Safety::TextFilterResult>
+    processAnonymousMessagesAsync(::TextProcessingEventOrigin, ::std::vector<::std::string> const&) /*override*/;
 
     virtual ::Bedrock::Threading::Async<::Safety::TextFilterResult> processMessagesAsync(
         ::Player const&,

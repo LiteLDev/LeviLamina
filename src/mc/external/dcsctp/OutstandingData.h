@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/dcsctp/SackChunk.h"
 #include "mc/external/dcsctp/UnwrappedSequenceNumber.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -146,7 +147,8 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk849e33;
     ::ll::UntypedStorage<8, 64> mUnk4bf94e;
     ::ll::UntypedStorage<8, 40> mUnk8bc758;
-    ::ll::UntypedStorage<8, 8>  mUnk52c843;
+    ::ll::UntypedStorage<8, 8>  mUnka12429;
+    ::ll::UntypedStorage<8, 8>  mUnk5a00df;
     ::ll::UntypedStorage<8, 8>  mUnk474306;
     ::ll::UntypedStorage<8, 16> mUnk75dd8d;
     ::ll::UntypedStorage<8, 16> mUnk5b7852;
@@ -191,9 +193,9 @@ public:
     GetChunksToBeRetransmitted(uint64 max_size);
 
     MCNAPI ::dcsctp::OutstandingData::AckInfo HandleSack(
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> cumulative_tsn_ack,
-        ::rtc::ArrayView<::dcsctp::SackChunk::GapAckBlock const>                         gap_ack_blocks,
-        bool                                                                             is_in_fast_recovery
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>  cumulative_tsn_ack,
+        ::webrtc::ArrayView<::dcsctp::SackChunk::GapAckBlock const, 18446744073709546905> gap_ack_blocks,
+        bool                                                                              is_in_fast_recovery
     );
 
     MCNAPI ::std::optional<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>> Insert(

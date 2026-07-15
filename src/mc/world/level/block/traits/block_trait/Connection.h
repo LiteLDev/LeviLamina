@@ -42,18 +42,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1>> mStates;
         // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void enabledConnectionStatesFromStringVector(
-            ::BlockTrait::Connection::EnabledConnectionStatesContainer& outStates,
-            ::std::vector<::std::string> const&                         states
-        );
-
-        MCAPI static ::std::vector<::std::string>
-        enabledConnectionStatesToStringVector(::BlockTrait::Connection::EnabledConnectionStatesContainer const& states);
-        // NOLINTEND
     };
 
 public:
@@ -67,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Connection() /*override*/;
+    virtual ~Connection() /*override*/ = default;
 
     virtual void applyToBlockType(::BlockType& blockType) const /*override*/;
 
@@ -79,35 +67,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1> getEnabledConnectionStates() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::BlockTrait::Connection createStandardConnectionTrait(
-        ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1> enabledConnectionStates,
-        int                                                                      updateFlags
-    );
-
     MCAPI static ::NeighborBlockDirections getConnectedDirections(
         ::IConstBlockSource const& region,
         ::Block const&             block,
         ::BlockPos const&          pos,
         ::NeighborBlockDirections  directionsToCheck
     );
-
-    MCFOLD static ::std::string const& getName();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -119,7 +86,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
-    MCFOLD ::std::string const& $_getName() const;
+    MCAPI ::std::string const& $_getName() const;
 
 
     // NOLINTEND

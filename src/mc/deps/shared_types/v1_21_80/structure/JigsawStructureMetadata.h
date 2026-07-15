@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_80 { class JigsawBlockMetadata; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_80 {
@@ -19,24 +18,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos>                                                  mSize;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_80::JigsawBlockMetadata>> mJigsawBlocks;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~JigsawStructureMetadata();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

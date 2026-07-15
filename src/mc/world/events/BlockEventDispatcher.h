@@ -38,13 +38,5 @@ public:
         float                                                                    shapeRadius,
         ::std::function<void(::BlockPos const&, uint, ::Block const&, ::Actor*)> callback
     );
-
-    MCAPI void updatePosition(int handle, ::Vec3 const& newPosition);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

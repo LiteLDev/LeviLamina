@@ -51,12 +51,6 @@ public:
         ::std::string const&                               calledFrom,
         ::std::deque<::std::unique_ptr<::ProgressHandler>> progressHandlerList
     );
-
-    MCAPI ::std::string const _getProgressMessage() const;
-
-    MCAPI ::std::string const _getTitle() const;
-
-    MCAPI void _registerProgressBindings();
     // NOLINTEND
 
 public:
@@ -72,20 +66,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::std::string $getAdditionalScreenInfo() const;
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

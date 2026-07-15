@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class BlockPaletteRemovedPayload
@@ -30,25 +24,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~BlockPaletteRemovedPayload() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~BlockPaletteRemovedPayload() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit BlockPaletteRemovedPayload(::HashedString const& paletteId);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::HashedString const& paletteId);
     // NOLINTEND
 
 public:

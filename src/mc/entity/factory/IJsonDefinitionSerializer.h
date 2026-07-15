@@ -32,24 +32,22 @@ public:
     virtual ~IJsonDefinitionSerializer();
 
     virtual ::std::shared_ptr<::IDefinitionInstance>
-    serializeDefinitionInstance(::Json::Value const& input, ::MinEngineVersion const& minEngineVersion) = 0;
+    serializeDefinitionInstance(::Json::Value const&, ::MinEngineVersion const&) = 0;
 
     virtual ::std::shared_ptr<::IDefinitionInstance> serializeDefinitionInstance(
-        ::Json::Value const&      input,
-        ::MinEngineVersion const& minEngineVersion,
-        ::SemVersion const&       formatVersion,
-        bool const                isBaseGamePack,
-        ::JsonBetaState const     canUseBeta
+        ::Json::Value const&,
+        ::MinEngineVersion const&,
+        ::SemVersion const&,
+        bool const,
+        ::JsonBetaState const
     ) = 0;
 
-    virtual bool hasGetStrictParsingVersion() = 0;
-
     virtual ::std::shared_ptr<::IDefinitionInstance> _serializeDefinitionInstance(
-        ::Json::Value const&      input,
-        ::MinEngineVersion const& minEngineVersion,
-        bool                      removeUnrecognizedFields,
-        bool const                isBaseGamePack,
-        ::JsonBetaState const     canUseBeta
+        ::Json::Value const&,
+        ::MinEngineVersion const&,
+        bool,
+        bool const,
+        ::JsonBetaState const
     ) const = 0;
     // NOLINTEND
 

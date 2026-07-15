@@ -12,8 +12,6 @@
 // clang-format off
 class ActorDefinitionGroup;
 class EntityContext;
-class HitResult;
-class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -69,39 +67,9 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _fishPosEvent();
-
-    MCAPI void _fishTeaseEvent();
-
-    MCAPI void _fishhookEvent();
-
-    MCAPI int _getServerFishSpeed();
-
-    MCAPI float _getWaterPercentage();
-
-    MCAPI ::HitResult _hitCheck();
-
-    MCAPI void _pullCloser(::Actor& inEntity, float inSpeed);
-
-    MCAPI bool _serverHooked();
-
-    MCAPI bool _serverLured();
-
-    MCAPI void _updateGravity();
-
-    MCAPI void _updateServer();
-
     MCAPI void postNormalTick();
 
     MCAPI int retrieve();
-
-    MCAPI void shoot(::Vec3 dir, float pow, float uncertainty);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& BOBBER_SIZE();
     // NOLINTEND
 
 public:

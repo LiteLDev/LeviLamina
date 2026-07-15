@@ -17,29 +17,4 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(::PackIdVersion const&, ::std::function<void(bool)>)>>
         mCreateWorldTemplate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldTemplatesScreenControllerProxyCallbacks& operator=(WorldTemplatesScreenControllerProxyCallbacks const&);
-    WorldTemplatesScreenControllerProxyCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldTemplatesScreenControllerProxyCallbacks(::WorldTemplatesScreenControllerProxyCallbacks const&);
-
-    MCAPI ~WorldTemplatesScreenControllerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::WorldTemplatesScreenControllerProxyCallbacks const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

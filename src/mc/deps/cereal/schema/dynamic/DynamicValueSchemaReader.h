@@ -50,10 +50,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DynamicValueSchemaReader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid() const /*override*/;
@@ -97,7 +93,7 @@ public:
 
     virtual uint64 members() /*override*/;
 
-    virtual uint64 length(uint64) /*override*/;
+    virtual uint64 length(uint64 expectedSize) /*override*/;
 
     virtual bool pushMember(::std::string_view const name) /*override*/;
 
@@ -106,18 +102,6 @@ public:
     virtual void pushElement(uint64 index) /*override*/;
 
     virtual void pop() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DynamicValueSchemaReader(::std::reference_wrapper<::cereal::DynamicValue const> ref);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::reference_wrapper<::cereal::DynamicValue const> ref);
     // NOLINTEND
 
 public:
@@ -164,7 +148,7 @@ public:
 
     MCAPI uint64 $members();
 
-    MCAPI uint64 $length(uint64);
+    MCAPI uint64 $length(uint64 expectedSize);
 
     MCAPI bool $pushMember(::std::string_view const name);
 

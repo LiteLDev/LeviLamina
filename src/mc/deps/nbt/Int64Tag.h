@@ -38,25 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Int64Tag();
-
-    MCAPI explicit Int64Tag(int64 data);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(int64 data);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $write(::IDataOutput& dos) const;
+    MCFOLD void $write(::IDataOutput& dos) const;
 
     MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 

@@ -31,35 +31,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string const>                                         name;
         ::ll::TypedStorage<8, 64, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const> constructor;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FacetPrototype& operator=(FacetPrototype const&);
-        FacetPrototype();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI FacetPrototype(::OreUI::FacetRegistry::FacetPrototype&&);
-
-        MCAPI FacetPrototype(::OreUI::FacetRegistry::FacetPrototype const&);
-
-        MCAPI ~FacetPrototype();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::OreUI::FacetRegistry::FacetPrototype&&);
-
-        MCFOLD void* $ctor(::OreUI::FacetRegistry::FacetPrototype const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct FacetEntry {
@@ -70,26 +41,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                     id;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::IFacet>> facet;
         ::ll::TypedStorage<1, 1, bool>                               isSuspended;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FacetEntry& operator=(FacetEntry const&);
-        FacetEntry(FacetEntry const&);
-        FacetEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::OreUI::FacetRegistry::FacetEntry& operator=(::OreUI::FacetRegistry::FacetEntry&&);
-
-        MCAPI ~FacetEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -106,22 +57,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FacetRegistry() /*override*/;
+    virtual ~FacetRegistry() /*override*/ = default;
 
-    virtual void registerFacet(
-        ::std::string const&                                         name,
-        ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const& constructor
-    ) /*override*/;
+    virtual void
+    registerFacet(::std::string const&, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const&) /*override*/;
 
     virtual ::std::optional<::OreUI::IFacetRegistry::Error> activateFacet(
-        ::OreUI::FacetBinder&                                                                   binder,
-        ::std::string const&                                                                    name,
-        ::std::string const&                                                                    id,
-        ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const& payload
+        ::OreUI::FacetBinder&,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const&
     ) /*override*/;
 
     virtual ::std::optional<::OreUI::IFacetRegistry::Error>
-    deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id) /*override*/;
+    deactivateFacet(::OreUI::FacetBinder&, ::std::string const&) /*override*/;
 
     virtual void clearAllFacets() /*override*/;
 
@@ -129,53 +78,18 @@ public:
 
     virtual void disableFacetActivation() /*override*/;
 
-    virtual void bind(::OreUI::FacetBinder& binder) /*override*/;
+    virtual void bind(::OreUI::FacetBinder&) /*override*/;
 
-    virtual ::std::vector<::std::string> const& update(::OreUI::FacetBinder& binder) /*override*/;
+    virtual ::std::vector<::std::string> const& update(::OreUI::FacetBinder&) /*override*/;
 
     virtual ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>>
     getActiveFacets() /*override*/;
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $registerFacet(::std::string const& name, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const& constructor);
 
-    MCAPI ::std::optional<::OreUI::IFacetRegistry::Error> $activateFacet(
-        ::OreUI::FacetBinder&                                                                   binder,
-        ::std::string const&                                                                    name,
-        ::std::string const&                                                                    id,
-        ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const& payload
-    );
-
-    MCAPI ::std::optional<::OreUI::IFacetRegistry::Error>
-    $deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id);
-
-    MCAPI void $clearAllFacets();
-
-    MCAPI void $suspendAllFacets();
-
-    MCAPI void $disableFacetActivation();
-
-    MCAPI void $bind(::OreUI::FacetBinder& binder);
-
-    MCAPI ::std::vector<::std::string> const& $update(::OreUI::FacetBinder& binder);
-
-    MCAPI ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>> $getActiveFacets();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

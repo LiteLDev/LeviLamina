@@ -16,9 +16,8 @@ class LoadedResourceData;
 class PackInstance;
 class PackSourceReport;
 class ResourceLocation;
-class ResourcePackMergeStrategy;
-struct PackIdVersion;
 struct PackInstanceId;
+class ResourcePackMergeStrategy;
 // clang-format on
 
 class ResourcePackStack {
@@ -33,6 +32,13 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSourceReport>> mPackSourceReport;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ResourcePackStack();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -53,14 +59,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackStack();
-
 #ifdef LL_PLAT_C
     MCAPI ResourcePackStack(
         ::std::vector<::PackInstance> const&                                  packs,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
     );
-#endif
 
     MCAPI ResourcePackStack(
         ::std::vector<::PackInstanceId> const&                                identities,
@@ -70,44 +73,22 @@ public:
 
     MCAPI void _setLoadingReport(::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo);
 
-    MCAPI void
-    add(::PackInstance                                                        packInstance,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        bool                                                                  isDependent);
-
-#ifdef LL_PLAT_C
     MCAPI void ensureSupportedSubpacks(::ContentTierInfo const& contentInfoTier);
 #endif
 
     MCAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::PackType type) const;
 
+#ifdef LL_PLAT_C
     MCAPI ::std::vector<::PackInstance> getPacksWhereAssetExtractionNotViable(
         ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
         ::std::string const&                                     sourceContext
     ) const;
+#endif
 
     MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
 #ifdef LL_PLAT_C
     MCAPI ::std::vector<::PackInstanceId> getStackAsIdentities() const;
-#endif
-
-    MCAPI bool hasPlatformLockedContent() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool hasRestrictedContent() const;
-
-    MCAPI bool isOnStack(::PackIdVersion const& packIdentity) const;
-#endif
-
-    MCAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& callback) const;
-
-    MCAPI void removeDuplicates();
-
-    MCAPI void removeInvalidPacks();
-
-#ifdef LL_PLAT_C
-    MCAPI void removeUnsupportedPacks(::ContentTierInfo const& contentInfoTier);
 
     MCAPI void serialize(::std::ostream& fileStream) const;
 
@@ -137,28 +118,24 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         ::std::optional<::std::string>                                        levelId
     );
-
-    MCAPI static ::std::vector<::PackInstanceId> deserialize(::std::istream& fileStream);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::std::vector<::PackInstance> const&                                  packs,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
     );
-#endif
 
     MCAPI void* $ctor(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                  anyVersion
     );
+#endif
     // NOLINTEND
 
 public:

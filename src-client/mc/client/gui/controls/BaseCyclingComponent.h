@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BaseCyclingComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BaseCyclingComponent() /*override*/;
@@ -41,17 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BaseCyclingComponent(::UIControl& owner);
-
     MCAPI void _notifyPageIndicatorManagerOfNewSubscriber();
 
     MCAPI void _notifySubPageChanged(uint64 newPage);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

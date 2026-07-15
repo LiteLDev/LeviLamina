@@ -26,20 +26,12 @@ public:
 
     MCNAPI ::ECS::Profiling::Diagnostics::EntityDiagnosticTimingInfo&
     operator=(::ECS::Profiling::Diagnostics::EntityDiagnosticTimingInfo&&);
-
-    MCNAPI ~EntityDiagnosticTimingInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ECS::Profiling::Diagnostics::EntityDiagnosticTimingInfo const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

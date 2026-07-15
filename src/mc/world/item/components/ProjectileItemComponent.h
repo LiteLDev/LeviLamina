@@ -13,8 +13,6 @@
 class Actor;
 class BlockSource;
 class Container;
-class HashedString;
-class ItemStack;
 class Player;
 class SemVersion;
 class Vec3;
@@ -41,9 +39,6 @@ public:
 
     MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
 
-    MCAPI ::Actor*
-    createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;
-
     MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     MCAPI ::Actor* shootProjectile(
@@ -63,8 +58,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

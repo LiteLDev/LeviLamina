@@ -3,20 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeIterable.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
-class BlockPos;
+class BlockSource;
 class BlockVolumeBase;
 class BoundingBox;
-class ChunkPos;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptBlockFilter; }
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
+namespace ScriptModuleMinecraft { class ScriptChunkValidator; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -32,46 +33,36 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptBlockVolumeBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBlockVolumeBase() /*override*/;
+    virtual ~ScriptBlockVolumeBase() /*override*/ = default;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) = 0;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() = 0;
+
+    virtual ::std::vector<::Vec3> getFoundBlocks(
+        ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
+        ::BlockSource const&                                 region,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
+    ) const;
+
+    virtual bool containsBlock(
+        ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
+        ::BlockSource const&                                 region,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
+    ) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptBlockVolumeBase(::std::unique_ptr<::BlockVolumeBase> blockVolumeBase);
-
-#ifdef LL_PLAT_C
-    MCAPI void forEach(::std::function<bool(::BlockPos const&)> callback) const;
-#endif
-
     MCAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
-
-#ifdef LL_PLAT_C
-    MCAPI int getCapacity() const;
-#endif
-
-    MCAPI ::std::set<::ChunkPos> getChunks() const;
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
-
-    MCAPI ::Vec3 getSpan() const;
-
-    MCAPI bool isInside(::Vec3 const& location) const;
-
-    MCAPI void translate(::Vec3 const& delta);
     // NOLINTEND
 
 public:
@@ -81,20 +72,20 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::BlockVolumeBase> blockVolumeBase);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::vector<::Vec3> $getFoundBlocks(
+        ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
+        ::BlockSource const&                                 region,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
+    ) const;
+
+    MCAPI bool $containsBlock(
+        ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
+        ::BlockSource const&                                 region,
+        ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
+    ) const;
+
 
     // NOLINTEND
 

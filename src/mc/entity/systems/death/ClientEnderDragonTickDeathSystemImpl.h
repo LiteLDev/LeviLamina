@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -17,13 +16,10 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class StrictEntityContext;
 struct ActorTickedComponent;
 struct DeathTickingComponent;
 struct EnderDragonFlagComponent;
 struct ParticleEventDispatcherComponent;
-struct ParticleEventRequestQueueComponent;
-struct RandomComponent;
 struct RandomReferenceComponent;
 struct StateVectorComponent;
 struct TickDeathNeededComponent;
@@ -60,51 +56,13 @@ public:
             ::AddRemove<>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
+            ::EntityFactoryT<>>&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tick(
-        ::StrictEntityContext const&,
-        ::DeathTickingComponent const&                                       deathTicking,
-        ::ActorOwnerComponent&                                               actorOwner,
-        ::ParticleEventDispatcherComponent&                                  particleEventDispatcherComponent,
-        ::RandomReferenceComponent&                                          randomReference,
-        ::StateVectorComponent&                                              stateVector,
-        ::WingFlapDataComponent&                                             wingFlapData,
-        ::ViewT<::StrictEntityContext, ::RandomComponent>                    randomView,
-        ::ViewT<::StrictEntityContext, ::ParticleEventRequestQueueComponent> particleEventRequestQueueView
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
-            ::Read<::DeathTickingComponent>,
-            ::Write<
-                ::ActorOwnerComponent,
-                ::ParticleEventDispatcherComponent,
-                ::RandomReferenceComponent,
-                ::StateVectorComponent,
-                ::WingFlapDataComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

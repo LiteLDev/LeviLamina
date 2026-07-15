@@ -15,24 +15,14 @@ struct Brightness;
 
 class GlowStickItem : public ::ChemistryStickItem {
 public:
-    // prevent constructor by default
-    GlowStickItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Brightness getLightEmission(int auxValue) const /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
-        /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlowStickItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -42,17 +32,12 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::Brightness $getLightEmission(int auxValue) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 

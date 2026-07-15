@@ -54,14 +54,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void
-    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
+    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
 
     virtual ::SerializedActorRenderer::RenderData getRenderData(
-        ::SerializedActorRenderer::RenderType type,
-        ::BlockType const&                    block,
-        ::SerializedActorBlockActor const*    entity,
-        ::ItemStack const*                    item
+        ::SerializedActorRenderer::RenderType,
+        ::BlockType const&,
+        ::SerializedActorBlockActor const*,
+        ::ItemStack const*
     ) = 0;
     // NOLINTEND
 
@@ -100,6 +99,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+
     // NOLINTEND
 };

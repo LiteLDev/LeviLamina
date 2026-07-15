@@ -22,8 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI StructureData(::Editor::StructureData const&);
 
-    MCNAPI StructureData(::std::string structureNamespace, ::std::string structureName);
-
     MCNAPI ~StructureData();
     // NOLINTEND
 
@@ -31,8 +29,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::StructureData const&);
-
-    MCNAPI void* $ctor(::std::string structureNamespace, ::std::string structureName);
     // NOLINTEND
 
 public:

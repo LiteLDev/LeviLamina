@@ -3,18 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ProgressContentType.h"
 #include "mc/client/gui/oreui/binding/AsyncStatefulFunction_DEPRECATED.h"
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/FacetTaskState.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
 #include "mc/client/gui/screens/ProgressScreenNavigation.h"
-#include "mc/client/services/download/DlcCheckResult.h"
 #include "mc/client/world/IWorldStorageHandler.h"
 #include "mc/client/world/StartLocalWorldResult.h"
-#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,12 +21,11 @@ namespace World { class IWorldResourcePackHandler; }
 namespace World { class LocalWorldStarter; }
 namespace World { class OwnedWorldTemplateManager; }
 namespace World { struct PackDetails; }
-namespace World { struct WorldID; }
 // clang-format on
 
 namespace OreUI {
 
-class WorldStartupFacet : public ::OreUI::FacetBase<::OreUI::WorldStartupFacet> {
+class WorldStartupFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WorldStartupFacet> {
 public:
     // WorldStartupFacet inner types declare
     // clang-format off
@@ -83,7 +77,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldStartupFacet() /*override*/;
+    virtual ~WorldStartupFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -100,38 +94,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition>               contentAcquisition,
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager> ownedWorldTemplateManager
     );
-
-    MCAPI void _backupThenStartLocalWorld_DEPRECATED(::std::string const& worldId);
-
-    MCAPI ::DlcCheckResult _checkDLCsToStartLocalWorld(::std::string const& worldIdStr);
-
-    MCAPI ::ProgressContentType _getContentTypeForWorld(::World::WorldID worldID) const;
-
-    MCAPI void _pushLoadingScreen(::ProgressContentType contentType, ::GameType gametype);
-
-    MCAPI ::Bedrock::Threading::Async<::World::StartLocalWorldResult> _validateDlc(::std::string const& worldIdStr);
-
-    MCAPI void clearStartLocalWorldResult();
-
-    MCFOLD ::OreUI::AsyncStatefulFunction_DEPRECATED<
-        ::OreUI::WorldStartupFacet::BackupThenStartLocalWorldResult(::std::string const&)>&
-    getBackupThenStartLocalWorldFunctor_DEPRECATED();
-
-    MCFOLD ::std::vector<::World::PackDetails> const& getBrokenPacksToStart() const;
-
-    MCAPI bool const getHasMissingResources() const;
-
-    MCFOLD ::std::string const& getMissingPacksSize() const;
-
-    MCFOLD ::std::vector<::World::PackDetails> const& getMissingPacksToStart() const;
-
-    MCFOLD ::std::string const& getMissingTemplateToStart() const;
-
-    MCFOLD ::std::optional<::World::StartLocalWorldResult> const& getStartLocalWorldResult();
-
-    MCAPI ::OreUI::FacetTaskState getStartLocalWorldTaskState() const;
-
-    MCAPI void startLocalWorld(::std::string const& worldIdStr);
     // NOLINTEND
 
 public:
@@ -155,21 +117,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

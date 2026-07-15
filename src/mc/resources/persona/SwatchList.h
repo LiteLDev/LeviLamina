@@ -19,20 +19,6 @@ public:
     SwatchList& operator=(SwatchList const&);
     SwatchList(SwatchList const&);
     SwatchList();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static uint64 getInvalidIndex();
-#endif
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace persona::color

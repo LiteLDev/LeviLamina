@@ -33,6 +33,9 @@ enum class ContainerColorMode : schar {
     WaxedOxidizedCopperChest  = 25,
     WaxedWeatheredCopperChest = 26,
     WaxedCopperChest          = 27,
+    AnvilUndamaged            = 28,
+    AnvilSlightlyDamaged      = 29,
+    AnvilVeryDamaged          = 30,
 };
 
 }

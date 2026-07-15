@@ -3,31 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/NoteBlockInstrument.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/deps/shared_types/v1_26_20/block/NoteBlockInstrument.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
-class BlockType;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
 // clang-format on
 
-class NoteBlockActor : public ::BlockActor {
+class NoteBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, uchar> mNote;
     ::ll::TypedStorage<1, 1, bool>  mOn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NoteBlockActor();
 
 public:
     // virtual functions
@@ -38,27 +33,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NoteBlockActor(::BlockPos const& pos);
-
-    MCAPI void playNote(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI void tune();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NoteBlockInstrument _getInstrumentForSkull(::BlockType const& blockType);
-
-    MCAPI static ::std::optional<::NoteBlockInstrument> getInstrument(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCAPI static ::std::optional<::SharedTypes::v1_26_20::NoteBlockInstrument>
+    getInstrument(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -74,6 +52,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

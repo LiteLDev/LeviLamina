@@ -4,23 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/entity/components/ReplayCorrectionResult.h"
-#include "mc/events/MinecraftEventing.h"
-#include "mc/gameplayhandlers/CoordinatorResult.h"
-#include "mc/world/actor/ActorType.h"
 #include "mc/world/events/ActorGameplayEvent.h"
 #include "mc/world/events/EventCoordinator.h"
 #include "mc/world/events/EventRef.h"
-#include "mc/world/events/MutableActorGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorEventListener;
 class ActorGameplayHandler;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
-class Player;
 // clang-format on
 
 class ActorEventCoordinator : public ::EventCoordinator<::ActorEventListener> {
@@ -35,59 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ActorGameplayHandler& getActorGameplayHandler();
-
-    MCFOLD void registerActorGameplayHandler(::std::unique_ptr<::ActorGameplayHandler>&& handler);
-
     MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
 
     MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI void sendActorCreationAttemptFailed(::Actor& actor, ::std::string_view reason);
-
-#ifdef LL_PLAT_C
-    MCAPI void sendActorInteractedWithMob(
-        ::Actor&                             actor,
-        ::MinecraftEventing::InteractionType interactionType,
-        ::ActorType                          interactedActorType
-    );
-
-    MCAPI void sendActorMovementRewindCorrected(::Actor& actor, uint64 tick, ::ReplayCorrectionResult result);
-#endif
-
-    MCAPI void sendActorSneakChanged(::Actor& actor, bool isSneaking);
-
-    MCAPI void sendActorStartRiding(::Actor& actor, ::Actor& vehicle);
-
-    MCAPI void
-    sendActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
-
-    MCAPI void sendActorTargetAcquired(::Actor& actor, ::Actor& target);
-
-    MCAPI void sendActorTeleported(::Actor& actor);
-
-    MCAPI void sendActorTick(::Actor& actor);
-
-#ifdef LL_PLAT_C
-    MCAPI void sendClientPlayerAIStepBegin(::Player& player);
-#endif
-
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::ActorGameplayEvent<::CoordinatorResult>> const& event);
-
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableActorGameplayEvent<::CoordinatorResult>> event);
-
     MCAPI void sendEvent(::EventRef<::ActorGameplayEvent<void>> const& event);
-
-    MCAPI void sendEvent(::EventRef<::MutableActorGameplayEvent<void>> event);
-
-    MCAPI void sendServerPlayerAuthInputApplied(::Player& player);
-
-    MCAPI void sendServerPlayerAuthInputReceived(::Player& player);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

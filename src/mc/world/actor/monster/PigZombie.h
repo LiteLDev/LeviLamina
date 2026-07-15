@@ -14,6 +14,7 @@ class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class PigZombie : public ::Zombie {
@@ -37,7 +38,7 @@ public:
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
@@ -71,7 +72,8 @@ public:
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 

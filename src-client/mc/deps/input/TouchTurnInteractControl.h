@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/input/TouchControl.h"
 #include "mc/deps/input/TouchTurnControlState.h"
-#include "mc/deps/input/TouchTurnState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TouchTurnInteractControl() /*override*/;
+    virtual ~TouchTurnInteractControl() /*override*/ = default;
 
     virtual void
     tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor) /*override*/;
@@ -58,18 +57,6 @@ public:
     );
 
     MCAPI void addPreviousActivePointer(int pointerId);
-
-    MCFOLD ::TouchTurnControlState const& getCurrentControlState() const;
-
-    MCFOLD ::std::set<int> const& getPreviousActivePointers() const;
-
-    MCAPI void incrementMoveDelta(::InputEventQueue& eventQueue, float x, float y, int yAxisInversionFactor);
-
-    MCAPI void setCurrentControlState(::TouchTurnControlState const& touchTurnControlState);
-
-    MCFOLD void setPersistentData(bool status);
-
-    MCAPI void switchState(::InputEventQueue& eventQueue, ::TouchTurnState newState);
     // NOLINTEND
 
 public:
@@ -88,20 +75,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

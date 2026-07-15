@@ -13,29 +13,4 @@ public:
     ::ll::TypedStorage<8, 16, ::ExpressionNode>                  mCondition;
     ::ll::TypedStorage<8, 112, ::BlockComponentGroupDescription> mComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPermutationDescription& operator=(BlockPermutationDescription const&);
-    BlockPermutationDescription();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockPermutationDescription(::BlockPermutationDescription const&);
-
-    MCAPI ~BlockPermutationDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPermutationDescription const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

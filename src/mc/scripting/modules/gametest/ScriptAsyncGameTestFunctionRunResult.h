@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/deps/scripting/script_engine/Future.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/deps/script_core/script_engine/scripting/Future.h"
 #include "mc/gametest/framework/IGameTestFunctionRunResult.h"
 
 // auto generated forward declare list
@@ -21,13 +21,6 @@ public:
     ::ll::TypedStorage<8, 72, ::Scripting::Result_deprecated<::Scripting::Future<void>>> mResult;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ScriptAsyncGameTestFunctionRunResult();
-
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,37 +30,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI explicit ScriptAsyncGameTestFunctionRunResult(
-        ::Scripting::Result_deprecated<::Scripting::Future<void>> future
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor(::Scripting::Result_deprecated<::Scripting::Future<void>> future);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isComplete() const;
 
-    MCAPI ::std::optional<::gametest::GameTestError> $getError();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

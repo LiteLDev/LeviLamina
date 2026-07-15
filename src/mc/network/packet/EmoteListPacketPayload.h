@@ -17,22 +17,4 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID>            mRuntimeId;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::UUID>> mEmotePieceIds;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~EmoteListPacketPayload();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_EMOTE_PIECE_IDS();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

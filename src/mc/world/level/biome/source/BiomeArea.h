@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class BoundingBox;
 // clang-format on
 
 class BiomeArea {
@@ -18,21 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeArea();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeArea(::BoundingBox const& area, uint scale);
-
     MCAPI ~BiomeArea();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BoundingBox const& area, uint scale);
     // NOLINTEND
 
 public:

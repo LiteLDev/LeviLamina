@@ -18,10 +18,6 @@ MCAPI ::Vec3 getHeadOffset(::EntityContext const& entity);
 
 MCAPI float getHeightOffset(::EntityContext const& entity);
 
-MCAPI void initializeActor(::EntityContext& entity);
-
-MCAPI void initializePlayer(::EntityContext& entity);
-
 MCAPI void setAABBRelativeScaling(
     ::EntityContext&        entity,
     ::std::optional<::Vec2> headScalar,
@@ -53,8 +49,11 @@ MCAPI void setExplosionOffset(::EntityContext& entity, float explosionOffset);
 MCAPI void setEyeOffset(::EntityContext& entity, ::Vec3 const& eyeOffset);
 
 MCAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
+// NOLINTEND
 
-MCAPI void setShulkerScaling(::EntityContext& entity);
+// static variables
+// NOLINTBEGIN
+MCAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
 // NOLINTEND
 
 } // namespace ActorOffset

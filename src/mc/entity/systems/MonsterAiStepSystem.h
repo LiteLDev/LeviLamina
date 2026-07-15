@@ -3,22 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
-#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
 
 // auto generated forward declare list
 // clang-format off
-class IConstBlockSource;
-class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorMovementTickNeededComponent;
 struct BlazeFlagComponent;
@@ -29,7 +25,6 @@ struct MonsterFlagComponent;
 struct NoActionTimeComponent;
 struct OffsetsComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 struct MonsterAiStepSystem
@@ -77,23 +72,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
-    MCAPI static void tickMonsterAiStep(
-        ::StrictEntityContext const&                                        entity,
-        ::AABBShapeComponent const&                                         aabbShapeComponent,
-        ::OffsetsComponent const&                                           offsetsComponent,
-        ::StateVectorComponent const&                                       stateVectorComponent,
-        ::NoActionTimeComponent&                                            noActionTimeComponent,
-        ::ViewT<::StrictEntityContext, ::Include<::BlazeFlagComponent>>     blazeView,
-        ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> lavaSlimeView,
-        ::IConstBlockSource const&                                          region
-    );
     // NOLINTEND
 
 public:

@@ -6,7 +6,6 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockPos;
 class BlockSource;
 class GameEvent;
 class Vec3;
@@ -16,14 +15,6 @@ class GameEventDispatcher {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void post(
-        ::BlockSource&     region,
-        ::Actor*           source,
-        ::GameEvent const& gameEvent,
-        ::BlockPos const&  originPos,
-        ::Block const*     affectedBlock
-    );
-
     MCAPI void post(
         ::BlockSource&     region,
         ::Actor*           source,

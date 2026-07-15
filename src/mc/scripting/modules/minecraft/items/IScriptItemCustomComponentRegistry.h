@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     virtual ::ScriptDeferredEventListener& getEventListener() = 0;
 
-    virtual void setCerealContext(::cereal::ReflectionCtx& ctx);
+    virtual void setCerealContext(::cereal::ReflectionCtx&);
     // NOLINTEND
 
 public:

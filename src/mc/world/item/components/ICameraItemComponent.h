@@ -39,7 +39,7 @@ public:
 
     virtual void use(::ItemStack& instance, ::Player& player) = 0;
 
-    virtual void releaseUsing(::ItemStack&, ::Player&, int) = 0;
+    virtual void releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft) = 0;
 
     virtual bool useOn(::ItemStack&, ::Actor&, ::BlockPos const&, uchar, ::Vec3 const&) = 0;
     // NOLINTEND

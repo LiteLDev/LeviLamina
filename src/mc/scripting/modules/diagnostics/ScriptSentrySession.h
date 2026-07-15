@@ -40,18 +40,6 @@ public:
         Breadcrumb& operator=(Breadcrumb const&);
         Breadcrumb(Breadcrumb const&);
         Breadcrumb();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Breadcrumb();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

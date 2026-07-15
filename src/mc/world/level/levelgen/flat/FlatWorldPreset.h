@@ -25,7 +25,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ushort getBiomeId() const;
+    MCAPI ushort getBiomeId() const;
 #endif
 
     MCAPI ::Json::Value toJson() const;

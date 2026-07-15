@@ -17,10 +17,4 @@ public:
     ColorGraderConfigSessionStorage& operator=(ColorGraderConfigSessionStorage const&);
     ColorGraderConfigSessionStorage(ColorGraderConfigSessionStorage const&);
     ColorGraderConfigSessionStorage();
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

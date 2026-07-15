@@ -3,15 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -21,23 +17,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool _isValid() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::string> getDefaultScene() const;
-
-    MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
-
-    MCAPI ::Scripting::Result_deprecated<int> getSkinIndex() const;
-
-    MCAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
-
-    MCAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
-
-    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError>
-    setSkinIndex(int skinIndex);
     // NOLINTEND
 
 public:
@@ -55,15 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

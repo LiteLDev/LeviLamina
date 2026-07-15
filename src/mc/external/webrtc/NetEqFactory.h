@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class AudioDecoderFactory; }
-namespace webrtc { class Clock; }
+namespace webrtc { class Environment; }
 namespace webrtc { class NetEq; }
 // clang-format on
 
@@ -21,10 +21,10 @@ public:
     // NOLINTBEGIN
     virtual ~NetEqFactory() = default;
 
-    virtual ::std::unique_ptr<::webrtc::NetEq> CreateNetEq(
+    virtual ::std::unique_ptr<::webrtc::NetEq> Create(
+        ::webrtc::Environment const&,
         ::webrtc::NetEq::Config const&,
-        ::webrtc::scoped_refptr<::webrtc::AudioDecoderFactory> const&,
-        ::webrtc::Clock*
+        ::webrtc::scoped_refptr<::webrtc::AudioDecoderFactory>
     ) const = 0;
     // NOLINTEND
 

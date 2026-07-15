@@ -26,24 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerItem& operator=(ContainerItem const&);
-    ContainerItem();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerItem(::GameplayUI::ContainerItem const&);
-
-    MCAPI ::GameplayUI::ContainerItem& operator=(::GameplayUI::ContainerItem&&);
-
     MCAPI ~ContainerItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::GameplayUI::ContainerItem const&);
     // NOLINTEND
 
 public:

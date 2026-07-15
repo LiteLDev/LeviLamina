@@ -9,11 +9,6 @@
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 #include "mc/deps/shared_types/v1_21_120/actor/EntityTypes.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_10 {
 
 struct DropItemForGoalDefinition : public ::SharedTypes::BaseMoveToBlockGoalDefinition {
@@ -35,43 +30,36 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DropItemForGoalDefinition& operator=(DropItemForGoalDefinition const&);
+    DropItemForGoalDefinition(DropItemForGoalDefinition const&);
+    DropItemForGoalDefinition();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DropItemForGoalDefinition();
-
     MCAPI DropItemForGoalDefinition(::SharedTypes::v1_26_10::DropItemForGoalDefinition&&);
-
-    MCAPI DropItemForGoalDefinition(::SharedTypes::v1_26_10::DropItemForGoalDefinition const&);
 
     MCAPI ::SharedTypes::v1_26_10::DropItemForGoalDefinition&
     operator=(::SharedTypes::v1_26_10::DropItemForGoalDefinition&&);
-
-    MCAPI ::SharedTypes::v1_26_10::DropItemForGoalDefinition&
-    operator=(::SharedTypes::v1_26_10::DropItemForGoalDefinition const&);
 
     MCAPI ~DropItemForGoalDefinition();
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::Vec3 const& DEFAULT_TARGET_RANGE();
+
+    MCAPI static ::Vec3 const& DEFAULT_TELEPORT_DISTANCE_FROM_TARGET();
+
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SharedTypes::v1_26_10::DropItemForGoalDefinition&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::DropItemForGoalDefinition const&);
     // NOLINTEND
 
 public:

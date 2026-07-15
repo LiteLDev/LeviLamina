@@ -35,11 +35,11 @@ public:
         ::std::string const& productId
     );
 
+#ifdef LL_PLAT_S
     MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle&&);
+#endif
 
     MCAPI bool operator==(::SerializedPersonaPieceHandle const& rhs) const;
-
-    MCAPI ~SerializedPersonaPieceHandle();
     // NOLINTEND
 
 public:
@@ -54,11 +54,5 @@ public:
         bool                 isDefaultPiece,
         ::std::string const& productId
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

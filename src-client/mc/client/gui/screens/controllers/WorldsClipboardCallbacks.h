@@ -37,24 +37,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldsClipboardCallbacks(::WorldsClipboardCallbacks&&);
-
-    MCAPI bool hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea);
-
     MCAPI ::WorldsClipboardCallbacks& operator=(::WorldsClipboardCallbacks&&);
 
     MCAPI ~WorldsClipboardCallbacks();
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::WorldsClipboardCallbacks&&);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

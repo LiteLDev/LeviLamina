@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
@@ -18,13 +17,12 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class ListTag;
 class Packet;
 class Player;
 class Vec3;
-struct AABBShapeComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct HurtParameters;
 struct VariantParameterList;
 // clang-format on
 
@@ -71,7 +69,7 @@ public:
 
     virtual ~ItemActor() /*override*/ = default;
 
-    virtual void playerTouch(::Player& player) /*override*/;
+    virtual void playerTouch(::Player&) /*override*/;
 
     virtual ::std::unique_ptr<::Packet> tryCreateAddActorPacket() /*override*/;
 
@@ -85,9 +83,9 @@ public:
 
     virtual bool isFireImmune() const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& damage, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, ::HurtParameters const&) /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
     // NOLINTEND
@@ -101,18 +99,6 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _addComponents();
-
-    MCAPI void _dropContents();
-
-    MCAPI void _dropItemList(::ListTag* itemList);
-
-    MCAPI bool _merge(::ItemActor* target);
-
-    MCAPI void _mergeWithNeighbours();
-
-    MCAPI void _validateItem();
-
 #ifdef LL_PLAT_C
     MCAPI void clientInitialize(
         ::BlockSource&     region,
@@ -122,10 +108,6 @@ public:
         bool               isInItemFrame,
         bool               isFromFishing
     );
-
-    MCFOLD ::std::optional<::ItemActor::ItemRenderAdjustments> const& getRenderAdjustments() const;
-
-    MCFOLD ::std::optional<::ItemActor::ItemRenderAdjustments>& getRenderAdjustments();
 #endif
 
     MCAPI void postNormalTick();
@@ -136,8 +118,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AABB getLiquidAABB(::AABBShapeComponent const& aabbShapeComponent);
-
     MCAPI static ::ItemActor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
@@ -154,34 +134,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCAPI void $playerTouch(::Player& player);
-
-    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
-
-    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
-
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
-
-    MCAPI bool $canSynchronizeNewEntity() const;
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
-
-    MCAPI bool $isFireImmune() const;
-
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& damage, float, bool, bool);
-
-    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

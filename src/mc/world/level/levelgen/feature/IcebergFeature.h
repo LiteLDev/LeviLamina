@@ -39,18 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI IcebergFeature();
-
-    MCAPI void carve(
-        int               radius,
-        int               yOff,
-        ::BlockPos const& globalOrigin,
-        ::BlockSource&    region,
-        bool              underWater,
-        float             angle,
-        ::BlockPos const& localOrigin,
-        int               ellipseA,
-        int               ellipseC
-    ) const;
     // NOLINTEND
 
 public:

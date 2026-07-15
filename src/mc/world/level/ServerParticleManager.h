@@ -21,23 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerParticleManager();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ServerParticleManager(bool isClientSide);
-
-    MCNAPI void setPacketSender(::PacketSender& packetSender);
-
     MCNAPI void
     spawnParticleEffect(::std::string const& effectName, ::Vec3 const& spawnLocation, ::DimensionType dimensionType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(bool isClientSide);
     // NOLINTEND
 };

@@ -26,8 +26,6 @@ public:
 
     MCAPI explicit MaterialVariants(::mce::MaterialPtr const& skinningMaterial);
 
-    MCAPI bool operator==(::MaterialVariants const& rhs) const;
-
     MCAPI ~MaterialVariants();
 #endif
     // NOLINTEND

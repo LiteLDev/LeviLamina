@@ -10,10 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Scheduler;
 class TaskResult;
-class WorkerPool;
-namespace Bedrock::Profiler::details { struct PredeclaredAnnotation; }
 // clang-format on
 
 class ResourceLoadManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -65,23 +62,6 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI ResourceLoadTaskGroup(
-            ::std::string_view                                    groupName,
-            ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
-            ::ResourceLoadType                                    loadType,
-            ::std::vector<::ResourceLoadType>                     dependencies,
-            ::Scheduler&                                          scheduler,
-            ::WorkerPool&                                         workerPool
-        );
-#endif
-
-        MCNAPI ::Bedrock::Threading::Async<void> queue(
-            ::brstd::move_only_function<::TaskResult()> threadedCallback,
-            ::std::function<void()>                     mainThreadCallback,
-            uint                                        taskPriority
-        );
-
-#ifdef LL_PLAT_C
         MCNAPI ::Bedrock::Threading::Async<void>
         queueAsync(::brstd::move_only_function<::TaskResult()> callback, uint taskPriority);
 
@@ -89,21 +69,6 @@ public:
         queueSync(::brstd::move_only_function<::TaskResult()> callback, uint taskPriority);
 
         MCNAPI ~ResourceLoadTaskGroup();
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void* $ctor(
-            ::std::string_view                                    groupName,
-            ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
-            ::ResourceLoadType                                    loadType,
-            ::std::vector<::ResourceLoadType>                     dependencies,
-            ::Scheduler&                                          scheduler,
-            ::WorkerPool&                                         workerPool
-        );
 #endif
         // NOLINTEND
 
@@ -144,12 +109,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ResourceLoadManager() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~ResourceLoadManager() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -162,13 +122,9 @@ public:
 
     MCNAPI bool areDependenciesLoaded(::ResourceLoadType resourceLoadType) const;
 
-    MCNAPI void hardCancel();
-
     MCNAPI bool isComplete() const;
 
     MCNAPI bool isComplete(::ResourceLoadType resourceLoadType) const;
-
-    MCNAPI bool isSuspended();
 
     MCNAPI void printRunningTasks();
 #endif
@@ -193,23 +149,10 @@ public:
         uint                                        taskPriority
     );
 
-    MCNAPI void registerResourceLoadTaskGroup(
-        ::std::string_view                                    groupName,
-        ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
-        ::ResourceLoadType                                    resourceLoadType,
-        ::std::vector<::ResourceLoadType>                     dependencies
-    );
-
     MCNAPI void setAppSuspended(bool suspended);
 
-    MCNAPI void setCannotBeCanceled();
-
     MCNAPI bool softCancel();
-#endif
 
-    MCNAPI bool softCancel(::ResourceLoadType resourceLoadType);
-
-#ifdef LL_PLAT_C
     MCNAPI void sync(::ResourceLoadType resourceLoadType);
 
     MCNAPI void update();
@@ -219,11 +162,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::function<void()> _wrapMainThreadCallback(
-        ::ResourceLoadManager::ResourceLoadTaskGroup& resourceLoadTaskGroup,
-        ::std::function<void()>&&                     mainThreadCallback
-    );
-
     MCNAPI static void queueChild(
         ::brstd::move_only_function<::TaskResult()> threadedCallback,
         ::std::function<void()>                     mainThreadCallback,
@@ -237,12 +175,6 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor();
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

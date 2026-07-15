@@ -3,28 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Prefabs { struct PrefabDBInstanceInteractionEvent; }
-namespace Editor::ScriptModule { class ScriptPrefabTemplate; }
-namespace Editor::ScriptModule { class ScriptPrefabTemplateInstance; }
-namespace Editor::ScriptModule { class ScriptPrefabTemplateMetadata; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidInstance; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidName; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidTemplate; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorServiceError; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorStringInvalidLength; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorTemplateExists; }
-namespace Editor::ScriptModule { struct ScriptPrefabErrorTemplateNotFound; }
-namespace Editor::ScriptModule { struct ScriptPrefabServiceCreateTemplateOptions; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -51,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptPrefabService();
+    virtual ~ScriptPrefabService() = default;
     // NOLINTEND
 
 public:
@@ -61,97 +46,6 @@ public:
         ::Editor::ServiceProviderCollection&  serviceProviders,
         ::Scripting::WeakLifetimeScope const& scope
     );
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError> _beginCaptureMouseClicks();
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError>
-    _clearSelectedPrefabInstances();
-
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplate>,
-        ::Scripting::Error,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidName,
-        ::Editor::ScriptModule::ScriptPrefabErrorTemplateNotFound,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplate,
-        ::Editor::ScriptModule::ScriptPrefabErrorTemplateExists>
-    _cloneTemplate(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplate>,
-            ::Editor::ScriptModule::ScriptPrefabTemplateMetadata> templateHandleOrMetadata,
-        ::std::string const&                                      newName,
-        ::std::optional<::std::string> const&                     optNewDisplayName
-    );
-
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplate>,
-        ::Scripting::Error,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidName,
-        ::Editor::ScriptModule::ScriptPrefabErrorStringInvalidLength>
-    _createTemplate(
-        ::std::string const&                                                                     name,
-        ::std::optional<::Editor::ScriptModule::ScriptPrefabServiceCreateTemplateOptions> const& optOptions
-    );
-
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _deletePrefabInstance(
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplateInstance> instance
-    );
-
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptPrefabErrorTemplateNotFound,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidTemplate,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidName>
-    _deleteTemplate(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplate>,
-            ::Editor::ScriptModule::ScriptPrefabTemplateMetadata> templateHandleOrMetadata
-    );
-
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _deselectPrefabInstance(
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplateInstance> instance
-    );
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError> _endCaptureMouseClicks();
-
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplate>,
-        ::Scripting::Error,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidName,
-        ::Editor::ScriptModule::ScriptPrefabErrorTemplateNotFound>
-    _getTemplate(
-        ::std::variant<::Editor::ScriptModule::ScriptPrefabTemplateMetadata, ::std::string> searchMetadata_or_name
-    );
-
-    MCNAPI ::Scripting::Result<
-        ::std::vector<::Editor::ScriptModule::ScriptPrefabTemplateMetadata>,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError>
-    _getTemplateList();
-
-    MCNAPI void _handlePrefabInstanceInteractionEvent(::Editor::Prefabs::PrefabDBInstanceInteractionEvent const& event);
-
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptPrefabErrorServiceError,
-        ::Editor::ScriptModule::ScriptPrefabErrorInvalidInstance>
-    _selectPrefabInstance(
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptPrefabTemplateInstance> instance,
-        bool                                                                                       appendToSelection
-    );
-
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError>
-    _shouldCaptureMouseClicks(bool active);
     // NOLINTEND
 
 public:
@@ -165,18 +59,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

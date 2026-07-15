@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/CrashDumpLogStringID.h"
 
-// auto generated forward declare list
-// clang-format off
-struct CrashDumpFormatEntryImpl;
-// clang-format on
-
 struct CrashDumpEventData {
 public:
     // member variables
@@ -28,12 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI CrashDumpEventData(::CrashDumpLogStringID tag0, ::CrashDumpLogStringID tag1);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<::CrashDumpFormatEntryImpl const[]> kFormat();
     // NOLINTEND
 
 public:

@@ -2,20 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
-#include "mc/deps/ecs/strict/Include.h"
-
 // auto generated forward declare list
 // clang-format off
-class ActorOwnerComponent;
 class ItemStack;
-class Level;
-class Recipes;
-class ServerPlayer;
-class StrictEntityContext;
-class UnlockedRecipesServerComponent;
-struct ServerPlayerComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -45,36 +34,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    _handleCriterionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
-
-    MCAPI static void
-    _handleInitialUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
-
-    MCAPI static void
-    _handleInstructionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
-
-    MCAPI static void _tick(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ServerPlayerComponent>,
-            ::UnlockedRecipesServerComponent,
-            ::ActorOwnerComponent> view
-    );
-
-    MCAPI static ::std::vector<::std::string> _unlockRecipes(
-        ::UnlockedRecipesServerComponent&                                     unlockedComp,
-        ::Recipes const&                                                      recipes,
-        bool                                                                  playerIsInWater,
-        bool                                                                  doLimitedCrafting,
-        ::std::optional<::RecipeUnlockingSystem::InventoryChangedData> const& inventoryChanged
-    );
-
-    MCAPI static void
-    _updateRecipeUnlocking(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
-
     MCAPI static ::TickingSystemWithInfo createSystem();
-
-    MCAPI static bool isEnabled(::Level const& level);
     // NOLINTEND
 };

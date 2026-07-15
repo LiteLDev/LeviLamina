@@ -14,16 +14,4 @@ public:
     SendPacketToOwnerInfo& operator=(SendPacketToOwnerInfo const&);
     SendPacketToOwnerInfo(SendPacketToOwnerInfo const&);
     SendPacketToOwnerInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SendPacketToOwnerInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

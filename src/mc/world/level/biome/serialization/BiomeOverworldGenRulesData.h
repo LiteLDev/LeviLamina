@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
 struct BiomeConditionalTransformationData;
 struct BiomeWeightedData;
 struct BiomeWeightedTemperatureData;
@@ -29,34 +24,16 @@ public:
 
 public:
     // prevent constructor by default
+    BiomeOverworldGenRulesData& operator=(BiomeOverworldGenRulesData const&);
+    BiomeOverworldGenRulesData(BiomeOverworldGenRulesData const&);
     BiomeOverworldGenRulesData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeOverworldGenRulesData(::BiomeOverworldGenRulesData const&);
-
     MCAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData&&);
 
-    MCAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData const&);
-
-    MCAPI bool operator==(::BiomeOverworldGenRulesData const& other) const;
-
-    MCAPI void write(::BinaryStream& stream) const;
-
     MCAPI ~BiomeOverworldGenRulesData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeOverworldGenRulesData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeOverworldGenRulesData const&);
     // NOLINTEND
 
 public:

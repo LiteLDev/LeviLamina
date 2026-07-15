@@ -21,16 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCFOLD int getInsomniaTimerTicks() const;
-
-    MCFOLD int getTicksUntilInsomnia() const;
-
-    MCAPI int incrementTimeSinceRest();
-
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCFOLD void restartTimer();
     // NOLINTEND
 };

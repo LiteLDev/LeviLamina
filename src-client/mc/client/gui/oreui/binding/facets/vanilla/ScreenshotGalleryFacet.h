@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/ScreenshotGalleryFacetError.h"
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -21,7 +21,7 @@ namespace Social { class IUserManager; }
 
 namespace OreUI {
 
-class ScreenshotGalleryFacet : public ::OreUI::FacetBase<::OreUI::ScreenshotGalleryFacet> {
+class ScreenshotGalleryFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ScreenshotGalleryFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -53,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScreenshotGalleryFacet() /*override*/;
+    virtual ~ScreenshotGalleryFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -66,52 +66,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
-
-    MCAPI void _reset();
-
-    MCAPI void addScreenshotToShowcase(::std::string const& id, bool isFeatured);
-
-    MCAPI void clearDeleteScreenshotsError();
-
-    MCAPI void clearLoadGalleryError();
-
-    MCAPI void clearModifyShowcaseGalleryError();
-
-    MCAPI void deleteScreenshots(::std::vector<::std::string> const& ids);
-
-    MCAPI uint64 getCount() const;
-
-    MCFOLD ::OreUI::ScreenshotGalleryFacetError const getDeleteScreenshotsError() const;
-
-    MCFOLD ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
-
-    MCAPI bool const getIsAddFeaturedImageInProgress() const;
-
-    MCAPI bool const getIsAddShowcasedImageInProgress() const;
-
-    MCFOLD bool const getIsDeleteScreenshotsInProgress() const;
-
-    MCFOLD bool const getIsLoadGalleryInProgress() const;
-
-    MCFOLD bool const getIsModifyShowcaseGalleryInProgress() const;
-
-    MCFOLD ::OreUI::ScreenshotGalleryFacetError const getLoadGalleryError() const;
-
-    MCFOLD uint64 getMaxScreenshots() const;
-
-    MCFOLD ::OreUI::ScreenshotGalleryFacetError const getModifyShowcaseGalleryError() const;
-
-    MCFOLD ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
-
-    MCAPI uint64 getUndownloadedCount() const;
-
-    MCAPI bool isLoadingCount() const;
-
-    MCAPI bool isLoadingFeaturedScreenshot() const;
-
-    MCAPI void removeShowcasedScreenshot(::std::string const& id);
-
-    MCAPI void retryLoadGallery();
     // NOLINTEND
 
 public:
@@ -131,21 +85,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

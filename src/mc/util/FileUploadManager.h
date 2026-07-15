@@ -39,18 +39,6 @@ public:
         ::ll::TypedStorage<8, 8, uint64>         totalFileByte;
         ::ll::TypedStorage<8, 8, uint64>         totalStreamSize;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~MultiPartStreamHelper();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -89,7 +77,12 @@ public:
         ::std::string const& realmsGuid
     ) = 0;
 
+#ifdef LL_PLAT_S
+    virtual void uploadFileToRealmStorage(::std::string const&, ::Core::Path const&, int const);
+#else // LL_PLAT_C
     virtual void uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+#endif
+
     // NOLINTEND
 
 public:
@@ -105,31 +98,9 @@ public:
     );
 #endif
 
-    MCAPI void _generateMultiPartHelper();
-
     MCAPI void _uploadChunk(::FileChunkInfo const& chunk);
 
-    MCAPI void _uploadStream();
-
     MCAPI void addCallbackQueue(::std::function<void()> callback);
-
-#ifdef LL_PLAT_C
-    MCAPI bool canCancelUpload() const;
-
-    MCAPI void cancelUpload();
-
-    MCFOLD ::UploadError const& getError() const;
-
-    MCAPI uint64 getFileSize() const;
-
-    MCFOLD ::UploadState getUploadState() const;
-#endif
-
-    MCAPI void setFailed(::UploadError reason);
-
-    MCAPI void setUseStream(bool stream);
-
-    MCAPI void uploadChunk(int chunkID);
 
     MCAPI void uploadFile(
         ::std::string const& uploadId,
@@ -137,12 +108,6 @@ public:
         bool                 autoStartUpload,
         ::Json::Value const& uploadOptions
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& BOUNDARY();
     // NOLINTEND
 
 public:
@@ -170,14 +135,10 @@ public:
     // NOLINTBEGIN
     MCAPI float $getUploadProgress() const;
 
+#ifdef LL_PLAT_C
     MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

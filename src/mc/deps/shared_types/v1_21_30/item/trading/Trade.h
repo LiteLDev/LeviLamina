@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_30 { struct TradeItemList; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_30 {
@@ -28,12 +27,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ~Trade();
 #endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

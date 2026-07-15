@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ResourcePack;
-// clang-format on
-
 struct RepositoryPackTuple {
 public:
     // member variables
@@ -20,20 +15,4 @@ public:
     RepositoryPackTuple& operator=(RepositoryPackTuple const&);
     RepositoryPackTuple(RepositoryPackTuple const&);
     RepositoryPackTuple();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ::ResourcePack* operator->();
-#endif
-
-    MCNAPI ~RepositoryPackTuple();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

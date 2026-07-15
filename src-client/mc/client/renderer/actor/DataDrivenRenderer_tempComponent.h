@@ -20,25 +20,13 @@ public:
     // NOLINTBEGIN
     virtual ~DataDrivenRenderer_tempComponent() = default;
 
-    virtual void preRender(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    );
+    virtual void preRender(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
 
-    virtual void render(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    ) = 0;
+    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) = 0;
 
-    virtual void renderEffects(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    );
+    virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
 
-    virtual ::AABB getRenderBounds(::Actor const& entity) const;
+    virtual ::AABB getRenderBounds(::Actor const&) const;
 
     virtual ::V2TempComponentRequirements getV2Requirements() const;
     // NOLINTEND
@@ -46,20 +34,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $preRender(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    );
 
-    MCNAPI void $renderEffects(
-        ::BaseActorRenderContext& renderContext,
-        ::ActorRenderData&        actorRenderData,
-        ::RenderParams&           renderParams
-    );
-
-    MCNAPI ::AABB $getRenderBounds(::Actor const& entity) const;
-
-    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
     // NOLINTEND
 };

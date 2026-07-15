@@ -10,7 +10,6 @@ class Block;
 class BlockPos;
 class IConstBlockSource;
 class Vec3;
-struct ActorUniqueID;
 namespace VehicleUtils { struct VehicleDirections; }
 // clang-format on
 
@@ -21,23 +20,12 @@ MCAPI bool arePassengersOfSameActor(::Actor const& maybePassenger1, ::Actor cons
 
 MCAPI ::std::optional<float> calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
 
-MCAPI ::VehicleUtils::VehicleDirections calculateVehicleDirections(::Vec3 const& currentPos, ::Vec3 const& prevPos);
-
-MCAPI auto getActivatorRailExitPatternStrategy(::BaseGameVersion const& version) -> ::std::optional<::Vec3> (*)(
-    ::VehicleUtils::VehicleDirections const&,
-    ::std::function<bool(::Vec3 const&, ::Vec3 const&)>
-);
-
 MCAPI auto getActorExitPatternStrategy(::BaseGameVersion const& version) -> ::std::optional<::Vec3> (*)(
     ::VehicleUtils::VehicleDirections const&,
     ::std::function<bool(::Vec3 const&, ::Vec3 const&)>
 );
 
 MCAPI bool ignoredExitCollisionBlock(::Block const& block);
-
-MCAPI bool isPassengerOfActor(::Actor const& maybePassenger, ::ActorUniqueID const& actorID);
-
-MCAPI bool isVehicleOfActor(::Actor const& maybeVehicle, ::ActorUniqueID const& actorID);
 
 MCAPI ::std::optional<::Vec3> testPosFollowingEjectPattern(
     ::VehicleUtils::VehicleDirections const&            vehicleDirections,
@@ -50,8 +38,8 @@ MCAPI ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
 );
 
 MCAPI ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
-    ::VehicleUtils::VehicleDirections const& callback,
-    ::std::function<bool(::Vec3 const&, ::Vec3 const&)>
+    ::VehicleUtils::VehicleDirections const&,
+    ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
 );
 // NOLINTEND
 

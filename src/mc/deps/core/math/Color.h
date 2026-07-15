@@ -17,34 +17,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI bool isNan() const;
-
-    MCAPI bool operator<(::mce::Color const& c) const;
-#endif
+    MCAPI bool operator!=(::mce::Color const& c) const;
 
     MCAPI bool operator==(::mce::Color const& c) const;
 
-    MCAPI int toABGR() const;
-
+#ifdef LL_PLAT_C
     MCAPI int toARGB() const;
+#endif
 
     MCAPI ::std::string toHexString() const;
-
-    MCAPI ::glm::vec3 toVec3() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::glm::vec4 toVec4() const;
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::mce::Color fromHSB(float hue, float saturation, float brightness);
-#endif
-
     MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
     MCAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);

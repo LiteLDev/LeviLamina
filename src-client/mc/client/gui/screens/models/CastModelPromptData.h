@@ -10,7 +10,6 @@
 // clang-format off
 class CatalogInfo;
 class CharacterSelectorModel;
-class PersonaScreenModel;
 // clang-format on
 
 class CastModelPromptData : public ::IProfileEntryPromptData {
@@ -32,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CastModelPromptData() /*override*/;
+    virtual ~CastModelPromptData() /*override*/ = default;
 
     virtual bool allowedToOpenCheck() const /*override*/;
 
@@ -42,42 +41,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CastModelPromptData(
-        ::Bedrock::NotNullNonOwnerPtr<::PersonaScreenModel>  screenModel,
-        ::Bedrock::NonOwnerPointer<::CharacterSelectorModel> characterSelectorModel
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::PersonaScreenModel>  screenModel,
-        ::Bedrock::NonOwnerPointer<::CharacterSelectorModel> characterSelectorModel
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $allowedToOpenCheck() const;
 
-    MCAPI void $callOnOpen();
-
-    MCAPI void $callOnClose();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

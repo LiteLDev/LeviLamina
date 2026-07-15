@@ -11,7 +11,6 @@
 // clang-format off
 namespace SharedTypes::Legacy { struct ItemDescriptor; }
 namespace SharedTypes::v1_21_120 { struct ActorDefinitionTrigger; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_120 {
@@ -35,13 +34,12 @@ public:
 public:
     // prevent constructor by default
     AvoidBlockGoalDefinition& operator=(AvoidBlockGoalDefinition const&);
+    AvoidBlockGoalDefinition(AvoidBlockGoalDefinition const&);
     AvoidBlockGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AvoidBlockGoalDefinition(::SharedTypes::v1_21_120::AvoidBlockGoalDefinition const&);
-
     MCAPI ::SharedTypes::v1_21_120::AvoidBlockGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidBlockGoalDefinition&&);
 
@@ -49,31 +47,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_INTERVAL();
-
-    MCAPI static int const& DEFAULT_SEARCH_HEIGHT();
-
-    MCAPI static int const& DEFAULT_SEARCH_RANGE();
-
-    MCAPI static float const& DEFAULT_SPRINT_SPEED_MODIFIER();
-
-    MCAPI static float const& DEFAULT_WALK_SPEED_MODIFIER();
-
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::AvoidBlockGoalDefinition const&);
     // NOLINTEND
 
 public:

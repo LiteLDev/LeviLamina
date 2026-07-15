@@ -45,20 +45,6 @@ public:
         ::std::shared_ptr<::ClientInstanceScreenModel> clientModel,
         ::std::shared_ptr<::PersonaScreenModelCommon>  model
     );
-
-    MCAPI ::std::string _getChangeOrExitInstructions() const;
-
-    MCAPI ::std::string _getEmoteScreenInstructions();
-
-    MCAPI ::std::string _getEntranceInstructions() const;
-
-    MCAPI void _onButtonPress(int emoteIndex);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _sendButtonPressedMessage(bool slotSet) const;
     // NOLINTEND
 
 public:
@@ -73,18 +59,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::std::string $_getButtonStartDescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

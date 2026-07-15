@@ -30,10 +30,4 @@ public:
     ::ll::TypedStorage<4, 4, int>   pointerId;
     ::ll::TypedStorage<1, 1, bool>  forceMotionlessPointer;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isButton() const;
-    // NOLINTEND
 };

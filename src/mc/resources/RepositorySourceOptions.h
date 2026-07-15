@@ -12,7 +12,7 @@ struct RepositorySourceOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 320> mUnk3b934b;
+    ::ll::UntypedStorage<8, 384> mUnk3b934b;
     ::ll::UntypedStorage<8, 32>  mUnk2c4b26;
     ::ll::UntypedStorage<8, 32>  mUnk70b3c8;
     ::ll::UntypedStorage<8, 32>  mUnka99df8;
@@ -21,6 +21,8 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk31ab05;
     ::ll::UntypedStorage<8, 32>  mUnk90c9a3;
     ::ll::UntypedStorage<8, 32>  mUnk1299d1;
+    ::ll::UntypedStorage<8, 32>  mUnkd449b1;
+    ::ll::UntypedStorage<8, 32>  mUnk878ced;
     ::ll::UntypedStorage<1, 1>   mUnk5e06cb;
     ::ll::UntypedStorage<1, 1>   mUnk3d4066;
     ::ll::UntypedStorage<1, 1>   mUnk9bf213;
@@ -35,18 +37,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~RepositorySourceOptions();
+#ifdef LL_PLAT_C
+    MCNAPI RepositorySourceOptions(::RepositorySourceOptions&&);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::RepositorySourceOptions create(::IResourcePackRepository const& repo, ::AppPlatform& platform);
+#endif
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::RepositorySourceOptions&&);
+#endif
     // NOLINTEND
 };

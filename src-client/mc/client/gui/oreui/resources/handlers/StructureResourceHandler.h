@@ -49,18 +49,6 @@ public:
         ::ll::TypedStorage<4, 4, ::OreUI::StructureResourceHandler::FetchRequestState> mRequestState;
         ::ll::TypedStorage<4, 4, ::Gameface::ResourceHandlerStatus>                    mStatus;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ThumbnailRequest();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     using ReqResponsePair = ::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse>;
@@ -89,7 +77,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StructureResourceHandler() /*override*/;
+    virtual ~StructureResourceHandler() /*override*/ = default;
 
     virtual void update() /*override*/;
 
@@ -109,25 +97,12 @@ public:
         ::ResourcePackManager const&        packManager,
         ::Gameface::TemporaryTextureHolder& textureHolder
     );
-
-    MCAPI void _handleFetchRequests();
-
-    MCAPI bool _sendFetchAsync(
-        ::std::string_view                                                            id,
-        ::std::pair<::Gameface::ResourceRequest, ::Gameface::ResourceResponse> const& reqResponsePair
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ResourcePackManager const& packManager, ::Gameface::TemporaryTextureHolder& textureHolder);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

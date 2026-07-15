@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PartyChatMemberQuery() /*override*/;
+    virtual ~PartyChatMemberQuery() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,20 +50,6 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client, ::std::string const& xuid);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
-    MCNAPI static void** $vftableForPropertyObject();
     // NOLINTEND
 };
 

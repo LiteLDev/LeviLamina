@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/FecHeaderWriter.h"
 #include "mc/external/webrtc/ForwardErrorCorrection.h"
 
@@ -19,8 +20,8 @@ public:
     virtual uint64 FecHeaderSize(uint64 packet_mask_size) const /*override*/;
 
     virtual void FinalizeFecHeader(
-        ::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams,
-        ::webrtc::ForwardErrorCorrection::Packet&                          fec_packet
+        ::webrtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const, 18446744073709546905> protected_streams,
+        ::webrtc::ForwardErrorCorrection::Packet&                                                   fec_packet
     ) const /*override*/;
     // NOLINTEND
 
@@ -44,8 +45,8 @@ public:
     MCNAPI uint64 $FecHeaderSize(uint64 packet_mask_size) const;
 
     MCNAPI void $FinalizeFecHeader(
-        ::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams,
-        ::webrtc::ForwardErrorCorrection::Packet&                          fec_packet
+        ::webrtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const, 18446744073709546905> protected_streams,
+        ::webrtc::ForwardErrorCorrection::Packet&                                                   fec_packet
     ) const;
 
 

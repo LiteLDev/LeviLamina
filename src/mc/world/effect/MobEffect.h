@@ -19,7 +19,6 @@ class BaseAttributeMap;
 class BaseGameVersion;
 class CompoundTag;
 class Experiments;
-class TemporalAttributeBuff;
 struct EffectDuration;
 // clang-format on
 
@@ -50,13 +49,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+#endif
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
         MCAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
+#endif
         // NOLINTEND
     };
 
@@ -91,103 +94,50 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MobEffect();
+    virtual ~MobEffect() = default;
 
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
+    virtual void removeEffects(::BaseAttributeMap&);
 
     virtual void onEffectExpired(::Actor& target) const;
 
-    virtual void onActorDied(::Actor&, int) const;
+    virtual void onActorDied(::Actor& target, int amplifier) const;
 
     virtual void onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
-    virtual void
-    applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
+    virtual void applyInstantaneousEffect(::Actor*, ::Actor*, ::Actor*, int, float) const;
 
     virtual bool isInstantaneous() const;
 
-    virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
+    virtual float getAttributeModifierValue(int, ::AttributeModifier const&) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEffect(
-        uint                 id,
-        ::std::string const& resourceName,
-        ::std::string const& locName,
-        bool                 isHarmful,
-        int                  color,
-        int                  icon,
-        ::std::string const& iconName,
-        bool                 drawParticles
-    );
-
-    MCAPI ::TemporalAttributeBuff
-    _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
-
-    MCAPI void _setParticleEffectIds(char const* particleEffectId, char const* particleEffectAmbientId);
-
-    MCAPI void addAttributeBuff(::Attribute const& attribute, ::std::shared_ptr<::AttributeBuff> buff);
-
-    MCAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
-
     MCAPI void applyModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
         ::EffectDuration    durationTicks,
         int                 amplification
     ) const;
 
-    MCFOLD ::mce::Color const& getColor() const;
-
-    MCFOLD ::std::string const& getDescriptionId() const;
-
-    MCAPI float getDurationModifier() const;
-
 #ifdef LL_PLAT_C
-    MCAPI ::std::string const& getIconName() const;
+    MCAPI void updateEffects(::Actor& target, ::EffectDuration durationTicks, int amplification);
 #endif
-
-    MCFOLD uint getId() const;
-
-    MCAPI ::HashedString const& getParticleEffect(bool isAmbient) const;
-
-    MCFOLD ::std::string const& getResourceName() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool hasIcon() const;
-#endif
-
-    MCFOLD bool isHarmful() const;
-
-    MCFOLD bool isVisible() const;
 
     MCAPI void updateModsAndBuffs(
         ::BaseAttributeMap& attributeMapToRemoveFrom,
         ::EffectDuration    durationTicks,
         int                 amplification
     ) const;
-
-    MCFOLD ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>> const&
-    viewAttributeModifiers() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
-
-    MCAPI static ::MobEffect* getById(uint effectId);
-
     MCAPI static ::MobEffect* getByName(::std::string const& name);
 
     MCAPI static ::std::string getNameById(uint effectId);
@@ -205,8 +155,6 @@ public:
     MCAPI static ::MobEffect*& BAD_OMEN();
 
     MCAPI static ::MobEffect*& BLINDNESS();
-
-    MCAPI static ::MobEffect*& BREATH_OF_THE_NAUTILUS();
 
     MCAPI static ::MobEffect*& CONDUIT_POWER();
 
@@ -258,8 +206,6 @@ public:
 
     MCAPI static ::MobEffect*& POISON();
 
-    MCAPI static ::MobEffect*& RAID_OMEN();
-
     MCAPI static ::MobEffect*& REGENERATION();
 
     MCAPI static ::MobEffect*& SATURATION();
@@ -282,57 +228,12 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        uint                 id,
-        ::std::string const& resourceName,
-        ::std::string const& locName,
-        bool                 isHarmful,
-        int                  color,
-        int                  icon,
-        ::std::string const& iconName,
-        bool                 drawParticles
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
-
-    MCFOLD void $onEffectExpired(::Actor& target) const;
-
-    MCFOLD void $onActorDied(::Actor&, int) const;
-
-    MCFOLD void $onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
-
-    MCAPI void
-    $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
-
-    MCFOLD bool $isInstantaneous() const;
-
-    MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
+    MCFOLD void $onActorDied(::Actor& target, int amplifier) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::MobEffect const *>();
-// clang-format on

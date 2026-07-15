@@ -20,24 +20,16 @@ class RedStoneWireTessellationPolicy : public ::BiomeColorSampling::Tessellation
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color get(::Block const& block, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const
+    virtual ::mce::Color get(::Block const&, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const
         /*override*/;
 
-    virtual ::mce::Color get(::Block const& block) const /*override*/;
+    virtual ::mce::Color get(::Block const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $get(::Block const& block, ::BlockSource&, ::BlockPos const&, ::BiomeTintCache const*) const;
 
-    MCFOLD ::mce::Color $get(::Block const& block) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

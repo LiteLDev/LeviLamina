@@ -40,50 +40,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TrailToSurfaceFeature(
-        ::std::string const&                                                       feature,
-        ::HashedString const&                                                      hangingBlock,
-        ::HashedString const&                                                      trailBlock,
-        ::std::vector<::std::reference_wrapper<::HashedString const>> const&       replaceableBlocks,
-        ::brstd::function_ref<bool(::IBlockWorldGenAPI const&, ::BlockPos const&)> isValidFeaturePos
-    );
-
-    MCAPI bool _hasEnoughSpaceForFeature(::BlockSource const& region, ::BlockPos const& pos) const;
-
-    MCAPI uint _shallowWaterDepth(::BlockSource const& region, ::BlockPos const& pos) const;
-
-    MCAPI bool _tryPlaceFeature(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uint waterDepth) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                                                       feature,
-        ::HashedString const&                                                      hangingBlock,
-        ::HashedString const&                                                      trailBlock,
-        ::std::vector<::std::reference_wrapper<::HashedString const>> const&       replaceableBlocks,
-        ::brstd::function_ref<bool(::IBlockWorldGenAPI const&, ::BlockPos const&)> isValidFeaturePos
-    );
+    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

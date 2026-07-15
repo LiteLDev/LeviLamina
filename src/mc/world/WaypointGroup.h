@@ -21,28 +21,12 @@ public:
         // clang-format on
 
         // WaypointHandle inner types define
-        struct Hasher {
-        public:
-            // member functions
-            // NOLINTBEGIN
-#ifdef LL_PLAT_C
-            MCAPI uint64 operator()(::WaypointGroup::WaypointHandle const& handle) const;
-#endif
-            // NOLINTEND
-        };
+        struct Hasher {};
 
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::mce::UUID> mUUID;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator<(::WaypointGroup::WaypointHandle const& other) const;
-
-        MCFOLD bool operator==(::WaypointGroup::WaypointHandle const& other) const;
         // NOLINTEND
     };
 

@@ -5,12 +5,11 @@
 // auto generated inclusion list
 #include "mc/common/editor/EditorProjectRegionPlayerServiceProvider.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 
 // auto generated forward declare list
 // clang-format off
-struct DimensionType;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct ProjectRegionConfig; }
@@ -38,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorProjectRegionPlayerService() /*override*/;
+    virtual ~EditorProjectRegionPlayerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -61,20 +60,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorProjectRegionPlayerService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _handleDimensionChange(::DimensionType, ::DimensionType);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

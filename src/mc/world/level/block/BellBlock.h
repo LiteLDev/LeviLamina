@@ -21,10 +21,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class BellBlock : public ::ActorBlock {
 public:
-    // prevent constructor by default
-    BellBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -42,7 +38,9 @@ public:
 
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const
         /*override*/;
@@ -56,33 +54,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BellBlock(::std::string const& nameId, int id);
-
-    MCAPI ::Block const&
-    _determineAttachment(::Actor const& by, ::BlockSource& region, ::BlockPos const& pos, uchar face) const;
-
-    MCAPI short _getItemId(::BlockSource const& region, ::std::string_view itemName) const;
-
-    MCAPI void _sendBellUsedEventToClient(::BlockSource const& region, ::Actor const& sourceActor) const;
-
-    MCAPI void _tryAttachToNeighbors(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::BlockPos const& neighborPos,
-        int               updateFlags
-    ) const;
-
     MCAPI bool hasValidAttachment(::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -106,7 +82,8 @@ public:
 
     MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
+    MCFOLD bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 

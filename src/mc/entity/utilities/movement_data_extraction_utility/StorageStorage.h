@@ -9,7 +9,6 @@ class BuoyancyComponent;
 class CollisionBoxComponent;
 class DimensionStateComponent;
 class EntityId;
-class EntityRegistry;
 class FreezingComponent;
 class HitboxComponent;
 class JumpControlComponent;
@@ -244,7 +243,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 904> mUnkd9365b;
+    ::ll::UntypedStorage<8, 904> mUnka2c82d;
     // NOLINTEND
 
 public:
@@ -252,14 +251,6 @@ public:
     StorageStorage& operator=(StorageStorage const&);
     StorageStorage(StorageStorage const&);
     StorageStorage();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::MovementDataExtractionUtility::StorageStorage& getOrInit(::EntityRegistry& registry);
-#endif
-    // NOLINTEND
 };
 
 } // namespace MovementDataExtractionUtility

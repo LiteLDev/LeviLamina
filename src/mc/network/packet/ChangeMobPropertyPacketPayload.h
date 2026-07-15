@@ -16,31 +16,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>  mStringComponentVal;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChangeMobPropertyPacketPayload& operator=(ChangeMobPropertyPacketPayload const&);
-    ChangeMobPropertyPacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChangeMobPropertyPacketPayload(::ChangeMobPropertyPacketPayload const&);
-
-    MCAPI ::ChangeMobPropertyPacketPayload& operator=(::ChangeMobPropertyPacketPayload&&);
-
-    MCAPI ~ChangeMobPropertyPacketPayload();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ChangeMobPropertyPacketPayload const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

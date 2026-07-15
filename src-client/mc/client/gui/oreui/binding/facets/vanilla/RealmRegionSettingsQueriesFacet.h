@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/RealmsRegionSettingsState.h"
 #include "mc/client/realms/RealmsWorldEditorStateStatus.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -16,7 +16,7 @@ namespace Realms { struct ServerRegion; }
 
 namespace OreUI {
 
-class RealmRegionSettingsQueriesFacet : public ::OreUI::FacetBase<::OreUI::RealmRegionSettingsQueriesFacet> {
+class RealmRegionSettingsQueriesFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmRegionSettingsQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmRegionSettingsQueriesFacet() /*override*/;
+    virtual ~RealmRegionSettingsQueriesFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -51,18 +51,6 @@ public:
     MCAPI explicit RealmRegionSettingsQueriesFacet(
         ::std::weak_ptr<::Realms::RealmsRegionSettings> realmsRegionSettings
     );
-
-    MCFOLD bool getDoNotShowPingWarning() const;
-
-    MCFOLD bool getLowPingWarning() const;
-
-    MCFOLD ::Realms::RealmsRegionSettingsState getRealmRegionSettingsState() const;
-
-    MCFOLD int getRegionSelectedIndex() const;
-
-    MCFOLD ::std::vector<::Realms::ServerRegion> const& getRegions() const;
-
-    MCFOLD ::Realms::RealmsWorldEditorStateStatus getStatus() const;
     // NOLINTEND
 
 public:
@@ -78,21 +66,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

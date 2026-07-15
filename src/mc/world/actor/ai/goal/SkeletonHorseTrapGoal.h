@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/world/actor/ai/goal/BaseGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Horse;
-class Skeleton;
 // clang-format on
 
 class SkeletonHorseTrapGoal : public ::BaseGoal {
@@ -37,22 +35,6 @@ public:
     virtual void start() /*override*/;
 
     virtual void appendDebugInfo(::std::string& debugInfo) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SkeletonHorseTrapGoal(::Horse& mob, int trapLifeTicks, float triggerDistance);
-
-    MCAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const&);
-
-    MCAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& otherHorse, ::Horse const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Horse& mob, int trapLifeTicks, float triggerDistance);
     // NOLINTEND
 
 public:

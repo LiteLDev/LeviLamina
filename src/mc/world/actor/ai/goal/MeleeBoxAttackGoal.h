@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/MeleeAttackBaseGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class Mob;
-// clang-format on
-
 class MeleeBoxAttackGoal : public ::MeleeAttackBaseGoal {
 public:
     // member variables
@@ -19,41 +13,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MeleeBoxAttackGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MeleeBoxAttackGoal() /*override*/;
+    virtual ~MeleeBoxAttackGoal() /*override*/ = default;
 
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MeleeBoxAttackGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

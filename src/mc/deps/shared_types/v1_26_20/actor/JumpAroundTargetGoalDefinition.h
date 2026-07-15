@@ -46,7 +46,7 @@ public:
 
     MCAPI JumpAroundTargetGoalDefinition(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&);
 
-    MCAPI ~JumpAroundTargetGoalDefinition();
+    MCAPI bool operator==(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -58,19 +58,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_COOLDOWN_SECONDS();
-
-    MCAPI static float const& DEFAULT_COOLDOWN_WHEN_HURT_SECONDS();
-
     MCAPI static ::std::vector<float> const& DEFAULT_JUMP_ANGLES();
-
-    MCAPI static int const& DEFAULT_LANDING_POSITION_SPREAD_DEGREES();
-
-    MCAPI static int const& DEFAULT_LINE_OF_SIGHT_CHECK_HEIGHT();
-
-    MCAPI static int const& DEFAULT_REQUIRED_VERTICAL_SPACE();
-
-    MCAPI static int const& DEFAULT_SNAP_TO_SURFACE_BLOCK_RANGE();
 
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
@@ -81,12 +69,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

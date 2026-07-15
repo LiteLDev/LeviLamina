@@ -11,7 +11,6 @@
 class BinaryStream;
 class BlockPalette;
 class ItemInstance;
-class ItemStackDescriptor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -30,22 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NetworkItemInstanceDescriptor(::ItemStackDescriptor const& descriptor);
-
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
     MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
+#ifdef LL_PLAT_C
     MCAPI void write(::BinaryStream& stream) const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackDescriptor const& descriptor);
-
     MCAPI void* $ctor(::ItemInstance const& item);
     // NOLINTEND
 

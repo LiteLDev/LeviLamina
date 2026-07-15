@@ -15,8 +15,3 @@ enum class Direction : uchar {
 };
 
 }
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::AgentComponents::Direction>();
-// clang-format on

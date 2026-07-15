@@ -49,8 +49,6 @@ public:
         ::std::string const&                           screenName,
         ::std::function<void(::MinecraftScreenModel&)> applyPacks
     );
-
-    MCAPI void _registerBindings();
     // NOLINTEND
 
 public:
@@ -66,18 +64,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCFOLD ::ui::SceneType $getSceneType() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

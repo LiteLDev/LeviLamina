@@ -7,11 +7,6 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_10 {
 
 struct LayEggGoalDefinition : public ::SharedTypes::BaseMoveToBlockGoalDefinition {
@@ -29,33 +24,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LayEggGoalDefinition& operator=(LayEggGoalDefinition const&);
+    LayEggGoalDefinition(LayEggGoalDefinition const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI LayEggGoalDefinition();
 
     MCAPI LayEggGoalDefinition(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
 
-    MCAPI LayEggGoalDefinition(::SharedTypes::v1_26_10::LayEggGoalDefinition const&);
-
     MCAPI ::SharedTypes::v1_26_10::LayEggGoalDefinition& operator=(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
-
-    MCAPI ::SharedTypes::v1_26_10::LayEggGoalDefinition&
-    operator=(::SharedTypes::v1_26_10::LayEggGoalDefinition const&);
 
     MCAPI ~LayEggGoalDefinition();
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DEFAULT_EGG_TYPE();
-
     MCAPI static ::std::vector<::std::string> const& DEFAULT_TARGET_BLOCKS();
 
     MCAPI static ::std::vector<::std::string> const& DEFAULT_TARGET_MATERIALS_ABOVE_BLOCK_STRINGS();
@@ -69,8 +56,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::SharedTypes::v1_26_10::LayEggGoalDefinition&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::LayEggGoalDefinition const&);
     // NOLINTEND
 
 public:

@@ -4,27 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/EditorMinimapService.h"
-#include "mc/common/editor/MinimapCacheClearMode.h"
 #include "mc/common/editor/MinimapMarkerType.h"
+#include "mc/common/editor/MinimapTrackingMode.h"
 #include "mc/common/editor/MinimapViewType.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
 class ICustomBiomeSource;
-class Player;
 class Vec2;
 struct ActorUniqueID;
-struct DimensionType;
-namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Network { class RequestBlockColorsPayload; }
-namespace Editor::Network { class RequestPlayersPayload; }
-namespace Editor::Network { struct BlockColorInfo; }
-namespace Editor::Services { class EditorProjectRegionPlayerServiceProvider; }
 namespace Editor::Services { class MinimapItem; }
+namespace Editor::Services { struct MinimapMarkerData; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
@@ -36,10 +29,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk24996e;
-    ::ll::UntypedStorage<8, 64> mUnkcbf122;
     ::ll::UntypedStorage<8, 64> mUnk514da7;
     ::ll::UntypedStorage<8, 64> mUnk3a2a8e;
     ::ll::UntypedStorage<8, 64> mUnk2a898b;
+    ::ll::UntypedStorage<8, 64> mUnk107dbb;
+    ::ll::UntypedStorage<8, 16> mUnk6f42e6;
     // NOLINTEND
 
 public:
@@ -53,7 +47,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    virtual ~EditorServerMinimapService() /*override*/;
+    virtual ~EditorServerMinimapService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -72,6 +66,10 @@ public:
 
     virtual bool isMinimapActive(::mce::UUID const& minimapId) const /*override*/;
 
+    virtual int getMinimapYLevel(::mce::UUID const& minimapId) const /*override*/;
+
+    virtual ::Vec2 getMinimapFreeCenter(::mce::UUID const& minimapId) const /*override*/;
+
     virtual ::Scripting::Result_deprecated<void>
     setMinimapActive(::mce::UUID const& minimapId, bool active) /*override*/;
 
@@ -82,10 +80,13 @@ public:
     setMinimapViewType(::mce::UUID const& minimapId, ::Editor::Services::MinimapViewType minimapViewType) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    addMinimapMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType markerType) /*override*/;
+    setMinimapYLevel(::mce::UUID const& minimapId, int yLevel) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    removeMinimapMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType markerType) /*override*/;
+    setMinimapTrackingMode(::mce::UUID const& minimapId, ::Editor::Services::MinimapTrackingMode mode) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    setMinimapFreeCenter(::mce::UUID const& minimapId, ::Vec2 const& center) /*override*/;
 
     virtual ::Scripting::Result_deprecated<bool>
     setCustomBiome(::mce::UUID const& minimapId, ::WeakRef<::ICustomBiomeSource> const& customBiomeSource) /*override*/;
@@ -100,65 +101,52 @@ public:
 
     virtual ::Scripting::Result_deprecated<void>
     updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> addMultiplayerMarker(::mce::UUID const& minimapId) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> removeMultiplayerMarker(::mce::UUID const& minimapId) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> addLocationMarker(
+        ::mce::UUID const&                                   minimapId,
+        ::std::vector<::Editor::Services::MinimapMarkerData> data,
+        ::std::string const&                                 dimensionId
+    ) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    removeLocationMarker(::mce::UUID const& minimapId, ::std::string const& dimensionId) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> addCustomMarker(
+        ::mce::UUID const&                                   minimapId,
+        ::std::string const&                                 iconIdentifier,
+        ::std::vector<::Editor::Services::MinimapMarkerData> data,
+        ::std::string const&                                 dimensionId
+    ) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> removeCustomMarker(
+        ::mce::UUID const&   minimapId,
+        ::std::string const& iconIdentifier,
+        ::std::string const& dimensionId
+    ) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    removeAllCustomMarkers(::mce::UUID const& minimapId, ::std::string const& dimensionId) /*override*/;
+
+    virtual bool hasMinimapMarkerOfType(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType type) const
+        /*override*/;
+
+    virtual bool hasCustomGroup(::mce::UUID const& minimapId, ::std::string const& iconIdentifier) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorServerMinimapService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI ::std::vector<::Editor::Network::BlockColorInfo> _collectBlockColors(
-        ::Player*                          player,
-        ::mce::UUID const&                 minimapId,
-        ::WeakRef<::ICustomBiomeSource>    customBiomeWeakRef,
-        ::Vec2 const&                      center,
-        int                                radius,
-        ::WeakRef<::Editor::ProjectRegion> regionRef,
-        ::Vec2 const&                      previousCenter,
-        int                                previousRadius
-    );
-
-    MCNAPI ::mce::Color _getDefaultBiomeColor(::Biome const* biome) const;
-
-    MCNAPI ::mce::Color _getOrAssignPlayerColor(::ActorUniqueID playerId);
-
-    MCNAPI bool _getOrCreateRegionRef(
-        ::Editor::Network::RequestBlockColorsPayload const&           payload,
-        ::Editor::Services::EditorProjectRegionPlayerServiceProvider* regionServiceProvider,
-        ::WeakRef<::Editor::ProjectRegion>&                           out,
-        bool&                                                         neededBoundsUpdate
-    );
-
-    MCNAPI void _handleRequestBlockColorsPayload(::Editor::Network::RequestBlockColorsPayload const& payload);
-
-    MCNAPI void _handleRequestPlayersPayload(::Editor::Network::RequestPlayersPayload const& payload);
-
-    MCNAPI void _notifyMinimapMarkerTypeChange(
-        ::mce::UUID const&                                                 minimapId,
-        ::std::unordered_set<::Editor::Services::MinimapMarkerType> const& markerTypes
-    );
-
-    MCNAPI void _processBlockColorsRequest(
-        ::Editor::Network::RequestBlockColorsPayload const& payload,
-        ::Editor::Services::MinimapCacheClearMode           clearMode
-    );
-
-    MCNAPI void _sendEmptyBlockColorResponse(::mce::UUID const& minimapId, ::DimensionType dimensionId);
-
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    _setCustomBiomeInternal(::mce::UUID const& minimapId, ::WeakRef<::ICustomBiomeSource> const& customBiomeSource);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -183,6 +171,10 @@ public:
 
     MCNAPI bool $isMinimapActive(::mce::UUID const& minimapId) const;
 
+    MCNAPI int $getMinimapYLevel(::mce::UUID const& minimapId) const;
+
+    MCNAPI ::Vec2 $getMinimapFreeCenter(::mce::UUID const& minimapId) const;
+
     MCNAPI ::Scripting::Result_deprecated<void> $setMinimapActive(::mce::UUID const& minimapId, bool active);
 
     MCNAPI ::Scripting::Result_deprecated<void>
@@ -191,11 +183,13 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void>
     $setMinimapViewType(::mce::UUID const& minimapId, ::Editor::Services::MinimapViewType minimapViewType);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $addMinimapMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType markerType);
+    MCNAPI ::Scripting::Result_deprecated<void> $setMinimapYLevel(::mce::UUID const& minimapId, int yLevel);
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $removeMinimapMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType markerType);
+    $setMinimapTrackingMode(::mce::UUID const& minimapId, ::Editor::Services::MinimapTrackingMode mode);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $setMinimapFreeCenter(::mce::UUID const& minimapId, ::Vec2 const& center);
 
     MCNAPI ::Scripting::Result_deprecated<bool>
     $setCustomBiome(::mce::UUID const& minimapId, ::WeakRef<::ICustomBiomeSource> const& customBiomeSource);
@@ -210,6 +204,39 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void>
     $updateVanillaColorMap(::std::string const& biomeId, ::mce::Color const& color);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $addMultiplayerMarker(::mce::UUID const& minimapId);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $removeMultiplayerMarker(::mce::UUID const& minimapId);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $addLocationMarker(
+        ::mce::UUID const&                                   minimapId,
+        ::std::vector<::Editor::Services::MinimapMarkerData> data,
+        ::std::string const&                                 dimensionId
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $removeLocationMarker(::mce::UUID const& minimapId, ::std::string const& dimensionId);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $addCustomMarker(
+        ::mce::UUID const&                                   minimapId,
+        ::std::string const&                                 iconIdentifier,
+        ::std::vector<::Editor::Services::MinimapMarkerData> data,
+        ::std::string const&                                 dimensionId
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void> $removeCustomMarker(
+        ::mce::UUID const&   minimapId,
+        ::std::string const& iconIdentifier,
+        ::std::string const& dimensionId
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $removeAllCustomMarkers(::mce::UUID const& minimapId, ::std::string const& dimensionId);
+
+    MCNAPI bool $hasMinimapMarkerOfType(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType type) const;
+
+    MCNAPI bool $hasCustomGroup(::mce::UUID const& minimapId, ::std::string const& iconIdentifier) const;
 
 
     // NOLINTEND

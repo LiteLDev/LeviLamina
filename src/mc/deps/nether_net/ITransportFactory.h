@@ -28,8 +28,8 @@ public:
     virtual void resumeTransport() = 0;
 
     virtual ::NetherNet::INetherNetTransportInterface* createTransportInterface(
-        ::NetherNet::NetworkID,
-        ::NetherNet::TransportConfiguration*,
+        ::NetherNet::NetworkID const&,
+        ::NetherNet::TransportConfiguration const&,
         ::NetherNet::INetherNetTransportInterfaceCallbacks*
     ) = 0;
 

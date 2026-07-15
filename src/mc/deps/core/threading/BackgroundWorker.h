@@ -62,7 +62,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BackgroundWorker() /*override*/;
+    virtual ~BackgroundWorker() /*override*/ = default;
 
     virtual bool isAsync() const /*override*/;
 
@@ -82,39 +82,17 @@ public:
         ::WorkerPool&                                 workerPool
     );
 
-    MCNAPI void _doNoWorkDelay();
-
+#ifdef LL_PLAT_C
     MCNAPI bool _processNextTask(::RunTaskOptions const& options);
-
-    MCNAPI ::BackgroundWorker::RunOneResult _runOneTask(::RunTaskOptions const& options);
-
-    MCNAPI ::std::shared_ptr<::BackgroundTaskBase> _tryPop(::WorkerPool& pool);
-
-    MCNAPI uint64 getApproximateTaskCount() const;
-
-    MCNAPI ::RunTaskOptions getRunOptions();
-
-    MCNAPI ::std::thread::id getThreadId() const;
-
-    MCNAPI bool isIdle() const;
-
-    MCNAPI bool processTaskSync(::RunTaskOptions const& options);
+#endif
 
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
     MCNAPI void requestStop(bool wait);
 
-    MCNAPI void resortPriorityQueue();
-
     MCNAPI void start();
 
     MCNAPI void wake();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::BackgroundWorker* getLocal();
     // NOLINTEND
 
 public:
@@ -135,12 +113,6 @@ public:
         ::std::optional<int>                          idealCore,
         ::WorkerPool&                                 workerPool
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

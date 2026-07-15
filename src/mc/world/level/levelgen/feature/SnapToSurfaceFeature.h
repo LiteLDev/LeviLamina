@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class IBlockWorldGenAPI;
 // clang-format on
 
 class SnapToSurfaceFeature : public ::IFeature {
@@ -40,24 +39,6 @@ public:
     virtual ~SnapToSurfaceFeature() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SnapToSurfaceFeature();
-
-    MCAPI ::std::optional<::BlockPos> _findSnapPos(
-        ::IBlockWorldGenAPI&            target,
-        ::BlockPos const&               pos,
-        ::SnapToSurfaceFeature::Surface targetSurface
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

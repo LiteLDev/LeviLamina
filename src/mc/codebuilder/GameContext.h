@@ -94,13 +94,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GameContext(
-        ::std::unordered_map<::std::string, ::std::vector<::std::string>> mobs,
-        ::CodeBuilder::GameContext::ObjectTypeList                        blocks,
-        ::CodeBuilder::GameContext::ItemTypeList                          items,
-        ::std::function<::ILevel*()>                                      levelGetter
-    );
-
     MCNAPI ::Json::Value blocksToJson() const;
 
     MCNAPI ::Json::Value getFileJson(::std::string const& filePath, ::std::string const& fileContents) const;
@@ -112,31 +105,12 @@ public:
     MCNAPI ::Json::Value itemsToJson() const;
 
     MCNAPI ::Json::Value mobsToJson() const;
-
-    MCNAPI ~GameContext();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::CodeBuilder::GameContext> create(::std::function<::ILevel*()> levelGetter);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unordered_map<::std::string, ::std::vector<::std::string>> mobs,
-        ::CodeBuilder::GameContext::ObjectTypeList                        blocks,
-        ::CodeBuilder::GameContext::ItemTypeList                          items,
-        ::std::function<::ILevel*()>                                      levelGetter
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

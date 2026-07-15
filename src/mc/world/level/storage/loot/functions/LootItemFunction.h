@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ItemInstance;
 class ItemStack;
 class LootItemCondition;
@@ -62,7 +61,7 @@ public:
 
     virtual int apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) = 0;
+    virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) = 0;
 
     virtual int apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
@@ -70,26 +69,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::unique_ptr<::LootItemCondition>> const& getConditions() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<
-        ::HashedString,
-        ::std::function<::std::unique_ptr<
-            ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
-    mLootingFunctions();
     // NOLINTEND
 
 public:

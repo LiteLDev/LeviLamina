@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class IMinecraftEventing;
 class LinkedAssetValidator;
 class ResourcePackManager;
 namespace Puv { class LoadResultAny; }
@@ -35,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ::Puv::LoadResultAny loadFromString(
         ::cereal::ReflectionCtx const&                     ctx,
-        ::std::string const&                               atmosphereJson,
+        ::std::string const&                               jsonAsString,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) = 0;
 
@@ -46,22 +45,6 @@ public:
     ) = 0;
 
     virtual void _setDefaultIdentifierImpl(::HashedString const& defaultIdentifier) = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit RenderingResourcePackJsonConfig(::IMinecraftEventing& eventing);
-
-    MCNAPI ::HashedString const& getDefaultIdentifer() const;
-
-    MCNAPI void setDefaultIdentifier(::HashedString const& defaultIdentifier);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

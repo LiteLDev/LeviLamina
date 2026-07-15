@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI::Debug { struct QueryInformation; }
 namespace OreUI::Detail { class Binder; }
 namespace OreUI::Detail { class IHandlerFactory; }
 namespace OreUI::Detail { class IQuery; }
@@ -171,10 +170,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    QueryRegistry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~QueryRegistry() /*override*/;
@@ -191,8 +186,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit QueryRegistry(::OreUI::Detail::Binder& binder);
-
     MCAPI void _createQuery(
         ::OreUI::Detail::IdType const&             id,
         ::OreUI::ECapabilities                     capabilities,
@@ -203,14 +196,6 @@ public:
     MCAPI void _destroyQuery(::OreUI::Detail::IdType const& id);
 
     MCAPI void _syncQueries();
-
-    MCAPI ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::Detail::Binder& binder);
     // NOLINTEND
 
 public:
@@ -226,15 +211,7 @@ public:
 
     MCAPI void $onSuspend();
 
-    MCFOLD void $onBindingsReleased();
-
     MCAPI void $update(double const time);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

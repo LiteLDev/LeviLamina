@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isModuleAllowed(::std::string const& moduleName) const;
-
 #ifdef LL_PLAT_C
     MCNAPI void setAllModulesAllowed();
 #endif

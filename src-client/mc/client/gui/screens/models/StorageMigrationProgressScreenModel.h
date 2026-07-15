@@ -5,15 +5,12 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/MainMenuScreenModel.h"
 #include "mc/client/gui/screens/models/StorageMigrationStatus.h"
-#include "mc/deps/application/storage_migration/MigrationResult.h"
 #include "mc/deps/application/storage_migration/StorageMigrationType.h"
-#include "mc/deps/application/storage_migration/StorageMigrator.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftEventing;
 struct MinecraftScreenModelContext;
 namespace Bedrock::StorageMigration { class MigrationDetector; }
 namespace Bedrock::StorageMigration { class StorageMigrationService; }
@@ -40,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StorageMigrationProgressScreenModel() /*override*/;
+    virtual ~StorageMigrationProgressScreenModel() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -48,55 +45,15 @@ public:
     // NOLINTBEGIN
     MCAPI explicit StorageMigrationProgressScreenModel(::MinecraftScreenModelContext context);
 
-    MCAPI void beginDetection();
-
     MCAPI void beginTransfer();
-
-    MCFOLD uint64 getAvailableDiskFreeSpace() const;
-
-    MCFOLD ::StorageMigrationStatus const& getTransferStatus() const;
 
     MCAPI void
     initTransferSystem(::Bedrock::NonOwnerPointer<::Bedrock::StorageMigration::StorageMigrationService> const& service);
-
-    MCAPI void resetTransfer();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void onMigrationComplete(
-        ::StorageMigrationStatus&                               transferStatus,
-        ::Bedrock::StorageMigration::MigrationResult            result,
-        ::Bedrock::StorageMigration::StorageMigrationType       migrationType,
-        ::Bedrock::NonOwnerPointer<::IMinecraftEventing> const& eventing
-    );
-
-    MCAPI static void onMigrationProgressUpdate(
-        ::StorageMigrationStatus&                                              transferStatus,
-        ::Bedrock::StorageMigration::StorageMigrator::MigrationProgress const& progress
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::MinecraftScreenModelContext context);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIMinecraftScreenModel();
-
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForIDlcBatcher();
     // NOLINTEND
 };

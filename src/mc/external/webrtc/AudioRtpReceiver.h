@@ -3,24 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/MediaType.h"
 #include "mc/external/webrtc/AudioSourceInterface.h"
+#include "mc/external/webrtc/MediaType.h"
 #include "mc/external/webrtc/ObserverInterface.h"
 #include "mc/external/webrtc/RtpReceiverInternal.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class MediaReceiveChannelInterface; }
-namespace cricket { class VoiceMediaReceiveChannelInterface; }
-namespace rtc { class Thread; }
 namespace webrtc { class DtlsTransportInterface; }
 namespace webrtc { class FrameDecryptorInterface; }
 namespace webrtc { class FrameTransformerInterface; }
+namespace webrtc { class MediaReceiveChannelInterface; }
 namespace webrtc { class MediaStreamInterface; }
 namespace webrtc { class MediaStreamTrackInterface; }
 namespace webrtc { class RtpReceiverObserverInterface; }
 namespace webrtc { class RtpSource; }
+namespace webrtc { class Thread; }
+namespace webrtc { class VoiceMediaReceiveChannelInterface; }
 namespace webrtc { struct RtpParameters; }
 // clang-format on
 
@@ -33,11 +33,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk14aa39;
-    ::ll::UntypedStorage<8, 8>  mUnk82ccea;
+    ::ll::UntypedStorage<8, 8>  mUnk295e5b;
     ::ll::UntypedStorage<8, 32> mUnkd4a6b4;
     ::ll::UntypedStorage<8, 8>  mUnk40ee5a;
     ::ll::UntypedStorage<8, 8>  mUnke945c6;
-    ::ll::UntypedStorage<8, 8>  mUnk4f90e9;
+    ::ll::UntypedStorage<8, 8>  mUnk32ec3f;
     ::ll::UntypedStorage<4, 8>  mUnk9e29a4;
     ::ll::UntypedStorage<8, 24> mUnka13ce8;
     ::ll::UntypedStorage<1, 1>  mUnk5c7f82;
@@ -75,7 +75,7 @@ public:
 
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> streams() const /*override*/;
 
-    virtual ::cricket::MediaType media_type() const /*override*/;
+    virtual ::webrtc::MediaType media_type() const /*override*/;
 
     virtual ::std::string id() const /*override*/;
 
@@ -107,34 +107,33 @@ public:
 
     virtual void SetJitterBufferMinimumDelay(::std::optional<double> delay_seconds) /*override*/;
 
-    virtual void SetMediaChannel(::cricket::MediaReceiveChannelInterface* media_channel) /*override*/;
+    virtual void SetMediaChannel(::webrtc::MediaReceiveChannelInterface* media_channel) /*override*/;
 
     virtual ::std::vector<::webrtc::RtpSource> GetSources() const /*override*/;
 
     virtual int AttachmentId() const /*override*/;
 
-    virtual void SetDepacketizerToDecoderFrameTransformer(
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
-    ) /*override*/;
+    virtual void
+    SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI AudioRtpReceiver(
-        ::rtc::Thread*                                worker_thread,
-        ::std::string                                 receiver_id,
-        ::std::vector<::std::string>                  stream_ids,
-        bool                                          is_unified_plan,
-        ::cricket::VoiceMediaReceiveChannelInterface* voice_channel
+        ::webrtc::Thread*                            worker_thread,
+        ::std::string                                receiver_id,
+        ::std::vector<::std::string>                 stream_ids,
+        bool                                         is_unified_plan,
+        ::webrtc::VoiceMediaReceiveChannelInterface* voice_channel
     );
 
     MCNAPI AudioRtpReceiver(
-        ::rtc::Thread*                                                                worker_thread,
+        ::webrtc::Thread*                                                             worker_thread,
         ::std::string const&                                                          receiver_id,
         ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const& streams,
         bool                                                                          is_unified_plan,
-        ::cricket::VoiceMediaReceiveChannelInterface*                                 voice_channel
+        ::webrtc::VoiceMediaReceiveChannelInterface*                                  voice_channel
     );
 
     MCNAPI void Reconfigure(bool track_enabled);
@@ -148,19 +147,19 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::rtc::Thread*                                worker_thread,
-        ::std::string                                 receiver_id,
-        ::std::vector<::std::string>                  stream_ids,
-        bool                                          is_unified_plan,
-        ::cricket::VoiceMediaReceiveChannelInterface* voice_channel
+        ::webrtc::Thread*                            worker_thread,
+        ::std::string                                receiver_id,
+        ::std::vector<::std::string>                 stream_ids,
+        bool                                         is_unified_plan,
+        ::webrtc::VoiceMediaReceiveChannelInterface* voice_channel
     );
 
     MCNAPI void* $ctor(
-        ::rtc::Thread*                                                                worker_thread,
+        ::webrtc::Thread*                                                             worker_thread,
         ::std::string const&                                                          receiver_id,
         ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const& streams,
         bool                                                                          is_unified_plan,
-        ::cricket::VoiceMediaReceiveChannelInterface*                                 voice_channel
+        ::webrtc::VoiceMediaReceiveChannelInterface*                                  voice_channel
     );
     // NOLINTEND
 
@@ -185,7 +184,7 @@ public:
 
     MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> $streams() const;
 
-    MCNAPI ::cricket::MediaType $media_type() const;
+    MCNAPI ::webrtc::MediaType $media_type() const;
 
     MCNAPI ::std::string $id() const;
 
@@ -215,15 +214,13 @@ public:
 
     MCNAPI void $SetJitterBufferMinimumDelay(::std::optional<double> delay_seconds);
 
-    MCNAPI void $SetMediaChannel(::cricket::MediaReceiveChannelInterface* media_channel);
+    MCNAPI void $SetMediaChannel(::webrtc::MediaReceiveChannelInterface* media_channel);
 
     MCNAPI ::std::vector<::webrtc::RtpSource> $GetSources() const;
 
     MCNAPI int $AttachmentId() const;
 
-    MCNAPI void $SetDepacketizerToDecoderFrameTransformer(
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
-    );
+    MCNAPI void $SetFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer);
 
 
     // NOLINTEND
@@ -231,11 +228,13 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
+    MCNAPI static void** $vftableForRefCountInterface();
+
     MCNAPI static void** $vftableForAudioObserver();
 
-    MCNAPI static void** $vftableForRtpReceiverInternal();
-
     MCNAPI static void** $vftableForObserverInterface();
+
+    MCNAPI static void** $vftableForFrameTransformerHost();
     // NOLINTEND
 };
 

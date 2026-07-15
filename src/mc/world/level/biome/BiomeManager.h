@@ -11,10 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 class AutomaticFeatureRules;
-class BaseGameVersion;
 class BiomeComponentFactory;
 class BiomeRegistry;
-class ILevelStorageManagerConnector;
 class IWorldRegistriesProvider;
 class LevelSeed64;
 class LevelStorage;
@@ -23,7 +21,6 @@ class ResourcePackManager;
 class SurfaceBuilderRegistry;
 struct BiomeDecorationFeature;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -67,14 +64,6 @@ public:
             biomeIdToResolvedData
     );
 
-    MCFOLD ::BiomeComponentFactory& getBiomeComponentFactory();
-
-    MCFOLD ::std::unordered_map<::HashedString, ::BiomeDecorationFeature> const& getBiomeDecorationFeatures() const;
-
-    MCFOLD ::BiomeRegistry& getBiomeRegistry();
-
-    MCFOLD ::SurfaceBuilderRegistry& getSurfaceBuilderRegistry();
-
     MCAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
         ::IWorldRegistriesProvider&                        worldRegistries,
         ::ResourcePackManager&                             resourcePackManager,
@@ -85,25 +74,7 @@ public:
             biomeIdToResolvedData
     );
 
-    MCAPI void
-    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
-
-    MCAPI void loadBiomeData(::LevelStorage& levelStorage);
-
-#ifdef LL_PLAT_C
-    MCAPI void sendLevelBiomesRegistered();
-
-    MCAPI ::Bedrock::PubSub::Subscription
-    subscribeToLevelBiomesRegistered(::std::function<void(::BiomeRegistry&)> callback);
-#endif
-
     MCAPI ~BiomeManager();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool use3DBiomeMaps(::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:

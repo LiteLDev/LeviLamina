@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::PlatformUpsellDialog> create();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 

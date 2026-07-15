@@ -76,18 +76,6 @@ public:
     MCNAPI explicit DiskAccessDiagnostics(::std::chrono::nanoseconds logInterval);
 
 #ifdef LL_PLAT_C
-    MCNAPI void _checkWriteBudget(
-        ::std::chrono::steady_clock::time_point currentTime,
-        uint64                                  budgetLowPoint,
-        uint64                                  budgetReplenishPoint,
-        uint64                                  currentWriteBudget,
-        double                                  writesMBPerMinute,
-        double                                  writeCountPerMinute,
-        double                                  writeCountLimitPerMinute,
-        uint                                    writeCountLimitPerPeriod,
-        ::std::optional<uint64>                 osMaxWriteSpeed
-    );
-
     MCNAPI void update(
         uint64                     byteWrittenPerPeriod,
         ::std::chrono::nanoseconds byteWriteLimitPeriodDuration,
@@ -97,20 +85,12 @@ public:
         uint                       writeCountLimitPerPeriod
     );
 #endif
-
-    MCNAPI ~DiskAccessDiagnostics();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::chrono::nanoseconds logInterval);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

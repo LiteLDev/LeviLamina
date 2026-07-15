@@ -36,9 +36,6 @@ public:
     // NOLINTBEGIN
     virtual bool isChildEntitySource() const /*override*/;
 
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
-    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
-
     virtual bool getDamagingEntityIsCreative() const /*override*/;
 
     virtual bool getDamagingEntityIsWorldBuilder() const /*override*/;
@@ -50,6 +47,9 @@ public:
     virtual ::ActorCategory getDamagingEntityCategories() const /*override*/;
 
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
+
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    _getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const /*override*/;
     // NOLINTEND
 
 public:
@@ -73,20 +73,20 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isChildEntitySource() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
-    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
+    MCAPI bool $getDamagingEntityIsCreative() const;
 
-    MCFOLD bool $getDamagingEntityIsCreative() const;
+    MCAPI bool $getDamagingEntityIsWorldBuilder() const;
 
-    MCFOLD bool $getDamagingEntityIsWorldBuilder() const;
-
-    MCFOLD ::ActorUniqueID $getDamagingEntityUniqueID() const;
+    MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
 
     MCFOLD ::ActorType $getDamagingEntityType() const;
 
-    MCFOLD ::ActorCategory $getDamagingEntityCategories() const;
+    MCAPI ::ActorCategory $getDamagingEntityCategories() const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $_getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
 
 
     // NOLINTEND

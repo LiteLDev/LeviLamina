@@ -32,6 +32,13 @@ public:
         ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                      mWestSlopes;
         ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                      mEastSlopes;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool
+        operator==(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&) const;
+        // NOLINTEND
     };
 
     struct TopSlideSettings {

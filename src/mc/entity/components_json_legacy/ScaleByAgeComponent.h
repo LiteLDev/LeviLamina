@@ -18,14 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScaleByAgeComponent();
-
     MCAPI void _initializeScale(::EntityContext& entity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

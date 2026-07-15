@@ -3,48 +3,34 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/game/ControlOptionType.h"
 #include "mc/client/game/CoordinateCaptureType.h"
-#include "mc/client/gui/CraftingType.h"
 #include "mc/client/gui/SoundDirection.h"
 #include "mc/client/gui/screens/models/MinecraftScreenModel.h"
 #include "mc/client/util/ChatMessageRestrictions.h"
 #include "mc/deps/core/threading/Async.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/enums/WYSIWYGState.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/network/packet/MultiplayerSettingsPacketType.h"
 #include "mc/network/packet/StructureTemplateRequestOperation.h"
-#include "mc/options/UIProfile.h"
-#include "mc/options/option_types/OptionID.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/ProfanityFilterContext.h"
 #include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ai/util/BossEventUpdateType.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
-#include "mc/world/level/block/actor/ChalkboardSize.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class BlockActor;
 class BlockEventListener;
 class BlockPos;
 class BlockSource;
 class BookScreenManager;
-class BossEventPacket;
 class BoundingBox;
-class ClientInputHandler;
 class CommandOrigin;
-class ContainerContentChangeListener;
-class GuiData;
 class GuiMessage;
 class HudContainerManagerController;
 class ItemStack;
 class MinecartCommandBlockManager;
 class MinecraftglTFExporter;
-class MobEffectInstance;
 class NpcEventListener;
 class PlayerEventListener;
 class PortfolioScreenManager;
@@ -57,12 +43,11 @@ class StructureTemplate;
 class TitleMessage;
 class Vec3;
 struct BossInfo;
+struct ModalScreenData;
 struct PhotoRecord;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::Safety { class RedactableString; }
 namespace Core { class Path; }
-namespace OreUI { class Router; }
-namespace Social { class User; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
@@ -103,8 +88,6 @@ public:
 
     MCAPI bool canHangItemFrame(::ItemStack const& heldItemInstance, uchar face, ::BlockPos blockPos) const;
 
-    MCFOLD bool canInteractWhileKeyboardIsOpen() const;
-
     MCAPI bool canPlaceCamera(::ItemStack const& camera, ::BlockPos const& blockPos, uchar facing) const;
 
     MCAPI bool canPlaceChalkboard(::ItemStack const& chalkboard, ::BlockPos const& blockPos, uchar facing) const;
@@ -115,21 +98,17 @@ public:
 
     MCAPI bool canPlaceWaterlily() const;
 
-    MCAPI bool canPlayerFly() const;
-
     MCAPI bool canTipArrows(::BlockPos const& blockPos) const;
 
     MCAPI bool canUseReed() const;
 
     MCAPI bool canUseSeed() const;
 
-    MCAPI void clearActiveControlOptions();
-
     MCAPI void clearInvalidDownKeys();
 
     MCAPI void clearTitleMessages();
 
-    MCAPI bool connectedToThirdPartyServer() const;
+    MCAPI void consumeNewScreenModal(::ModalScreenData& outModalScreenData) const;
 
     MCAPI ::std::unique_ptr<::BookScreenManager> createBookScreenManager(int bookSlot, ::BlockActor* lectern);
 
@@ -141,8 +120,6 @@ public:
     MCAPI void createPhotoItem(::PhotoRecord const& record);
 
     MCAPI ::std::unique_ptr<::PortfolioScreenManager> createPortfolioScreenManager();
-
-    MCAPI void deleteContainerManager();
 
     MCAPI ::BoundingBox detectStructureBlockCorners(::BlockPos const& pos);
 
@@ -158,23 +135,13 @@ public:
 
     MCAPI bool doOtherConfigsExistInThisCategory() const;
 
-    MCFOLD bool doesPlatformShowHideKeyboardButton() const;
-
     MCAPI bool endPortalFrameBlockHasEye(::BlockPos const& blockPos) const;
-
-    MCAPI ::ChatMessageRestrictions executeCommand(::std::string const& commandLine);
 
     MCAPI bool exportStructureBlock(::std::string const& structureName, ::Core::Path const& filePath);
 
     MCAPI bool findStructure(::StructureEditorData& structureData);
 
     MCAPI bool forceAllowEating() const;
-
-    MCAPI ::std::set<uint> const& getActiveControlOptions() const;
-
-    MCAPI ::std::vector<::OptionID> getActiveOptionIDs(::ControlOptionType controlOptionType) const;
-
-    MCAPI ::std::vector<::MobEffectInstance> const& getAllPlayerEffects() const;
 
     MCAPI ::Block const& getBlockAt(::BlockPos const& blockPos) const;
 
@@ -186,25 +153,11 @@ public:
 
     MCAPI ::Bedrock::Safety::RedactableString getBossName(int index) const;
 
-    MCAPI ::ChalkboardSize getChalkboardType(::BlockPos const& pos);
-
-    MCAPI ::Social::User& getClientUser();
-
     MCAPI ::CoordinateCaptureType getCoordinateCaptureType() const;
-
-    MCFOLD ::OreUI::Router& getCurrentUIRouter();
 
     MCAPI ::std::unique_ptr<::CommandOrigin> getDevConsoleCommandOrigin() const;
 
-    MCAPI ::std::deque<::std::string> const& getDevConsoleMessageHistory();
-
-    MCAPI ::Actor* getEntity(::ActorUniqueID const& entityId);
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData> getGuiData() const;
-
     MCAPI ::std::vector<::GuiMessage>& getGuiMessageList();
-
-    MCAPI ::ClientInputHandler* getInput();
 
     MCAPI ::std::string getInteractionText() const;
 
@@ -224,15 +177,9 @@ public:
 
     MCAPI ::ItemStack const& getOffhandSlot() const;
 
-    MCAPI float getPickRange() const;
-
-    MCAPI float getPlayerAbsorptionValue() const;
-
     MCAPI int getPlayerArmorValue() const;
 
     MCAPI ::std::unique_ptr<::CommandOrigin> getPlayerCommandOrigin() const;
-
-    MCAPI ::std::optional<::BlockPos> const getPlayerCursorBlockHitPosition() const;
 
     MCAPI float getPlayerExp();
 
@@ -248,8 +195,6 @@ public:
 
     MCAPI ::ItemStack const& getSelectedItem() const;
 
-    MCAPI ::std::deque<::std::string> const& getSentMessageHistory();
-
     MCAPI ::std::string const& getStoreName() const;
 
     MCAPI ::std::vector<::GuiMessage>& getSubtitleList();
@@ -259,8 +204,6 @@ public:
 
     MCAPI ::TitleMessage const& getTitleMessage() const;
 
-    MCAPI ::UIProfile getUIProfile() const;
-
     MCAPI ::WYSIWYGState getWYSIWYGState() const;
 
     MCAPI float getXToScreenRatio(float x) const;
@@ -268,6 +211,8 @@ public:
     MCAPI float getYToScreenRatio(float y) const;
 
     MCAPI void handleQuitButtonPress();
+
+    MCAPI bool hasNewScreenModal() const;
 
     MCAPI bool hasPlayerSleepFlagSet() const;
 
@@ -287,8 +232,6 @@ public:
 
     MCAPI void insertStructureBlockRequest(::std::string const& structureName, ::StructureTemplate const& temp);
 
-    MCAPI bool isAbleToRespawn() const;
-
     MCAPI bool isBossProperlyRegistered(int index) const;
 
     MCFOLD bool isChatMute() const;
@@ -299,27 +242,15 @@ public:
 
     MCAPI bool const isHudElementVisible(::HudElement hudElement) const;
 
-    MCAPI bool isInEditorToolMode() const;
-
     MCAPI bool isInteracting() const;
 
     MCAPI bool isNoConfigSelected() const;
 
-    MCAPI bool isOxygenBubbleShowing() const;
-
-    MCAPI bool isPlayerFlying() const;
-
     MCAPI bool isPlayerHungry() const;
-
-    MCAPI bool isPlayerInPortal() const;
 
     MCAPI bool isPlayerInWater() const;
 
-    MCAPI bool isPlayerOnDescendableBlock() const;
-
     MCAPI bool isPlayerOnGround() const;
-
-    MCAPI bool isPlayerRiding() const;
 
     MCAPI bool isPlayerRidingActorType(::ActorType type) const;
 
@@ -344,13 +275,11 @@ public:
 
     MCAPI bool mayEditChalkboard(::BlockPos const& blockPos) const;
 
-    MCAPI void navigateToChatScreen();
-
     MCAPI void navigateToImmersiveReaderScreen(::std::string readerText);
 
-    MCAPI void navigateToInventoryScreen(::CraftingType craftType);
-
     MCAPI void navigateToLeaveLevelScreen(bool switchScreen);
+
+    MCAPI void navigateToModalScreen(::ModalScreenData const& modalScreenData);
 
     MCAPI void navigateToServerStoreScreen();
 
@@ -359,8 +288,6 @@ public:
     MCAPI void registerBlockEventListener(::BlockEventListener& listener);
 
     MCAPI void registerClientPlayerEventCoordinatorListener(::PlayerEventListener& listener);
-
-    MCAPI void registerContentChangeListener(::ContainerContentChangeListener& listener);
 
     MCAPI void registerNpcEventListener(::NpcEventListener& listener);
 
@@ -378,8 +305,6 @@ public:
 
     MCAPI void sendCommandBlockUpdatePacket(::BlockPos const& pos);
 
-    MCAPI void sendMultiplayerSettingsPacket(::MultiplayerSettingsPacketType type);
-
     MCAPI void sendRespawnRequest() const;
 
     MCAPI void sendStructureBlockUpdatePacket(
@@ -392,11 +317,7 @@ public:
 
     MCAPI void setClipboardToPosition(::BlockPos const& pos);
 
-    MCAPI void setControlTipsTimeElapsedStart();
-
     MCAPI void setCoordinateCaptureType(::CoordinateCaptureType coordinateCaptureType);
-
-    MCAPI void setInteractActiveState(bool isInteractActive);
 
     MCAPI void setMenuPointerPressed(bool pressed);
 
@@ -404,35 +325,13 @@ public:
 
     MCAPI void setPauseIntent(bool intent);
 
-    MCAPI void setWYSIWYGState(::WYSIWYGState wysiwygState);
-
     MCAPI bool shouldDisplayDaysPlayed() const;
 
     MCAPI bool shouldDisplayPlayerPosition() const;
 
-    MCAPI bool shouldRequestThirdPartyDisplayPicture(::mce::UUID const& playerId) const;
-
     MCAPI void splitVibrate(int milliSeconds);
 
-    MCAPI ::Bedrock::PubSub::Subscription subscribeToBossEvent(
-        ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
-    );
-
-    MCAPI ::Bedrock::PubSub::Subscription subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
-
     MCAPI ::Bedrock::PubSub::Subscription subscribeToProfanityToggleEvent(::std::function<void(bool, bool)> callback);
-
-    MCAPI ::Bedrock::PubSub::Subscription subscribeToSoundEvent(
-        ::std::function<void(
-            ::std::string const&,
-            ::std::optional<::std::string>,
-            ::Vec3 const&,
-            float,
-            ::Vec3 const&,
-            ::Vec3 const&,
-            bool
-        )> callback
-    );
 
     MCAPI bool thirdPartyGamerpicAllowed(::mce::UUID const& playerId) const;
 
@@ -448,11 +347,7 @@ public:
 
     MCAPI void unregisterClientPlayerEventCoordinatorListener(::PlayerEventListener& listener);
 
-    MCAPI void unregisterContentChangeListener(::ContainerContentChangeListener& listener);
-
     MCAPI void unregisterNpcEventListener(::NpcEventListener& listener);
-
-    MCAPI bool useMsaGamertagsOnly() const;
     // NOLINTEND
 
 public:

@@ -5,9 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class TaskGroup;
-class TaskResult;
 namespace Core { class IFileStorageAreaFetcher; }
-namespace Core { class PathView; }
 // clang-format on
 
 class UserStorageChecker {
@@ -31,12 +29,6 @@ public:
         ::std::unique_ptr<::TaskGroup>                     taskGroup,
         ::std::unique_ptr<::Core::IFileStorageAreaFetcher> fileStorageFetcher
     );
-
-    MCNAPI ::TaskResult _checkUserStoragePath(::Core::PathView storagePath) const;
-
-    MCNAPI void queueCheckUserStorage(::Core::PathView storagePath);
-
-    MCNAPI ~UserStorageChecker();
     // NOLINTEND
 
 public:
@@ -46,11 +38,5 @@ public:
         ::std::unique_ptr<::TaskGroup>                     taskGroup,
         ::std::unique_ptr<::Core::IFileStorageAreaFetcher> fileStorageFetcher
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

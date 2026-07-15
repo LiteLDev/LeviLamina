@@ -14,7 +14,7 @@ class IToastManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void pushToast(::ToastMessage&& message) = 0;
+    virtual void pushToast(::ToastMessage&&) = 0;
 
     virtual bool isEditorModeEnabled() const = 0;
     // NOLINTEND
@@ -23,11 +23,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

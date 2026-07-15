@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/MediaType.h"
+#include "mc/external/webrtc/ArrayView.h"
+#include "mc/external/webrtc/MediaType.h"
 #include "mc/external/webrtc/RefCountInterface.h"
 #include "mc/external/webrtc/RtpTransceiverDirection.h"
 #include "mc/external/webrtc/scoped_refptr.h"
@@ -23,7 +24,7 @@ class RtpTransceiverInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cricket::MediaType media_type() const = 0;
+    virtual ::webrtc::MediaType media_type() const = 0;
 
     virtual ::std::optional<::std::string> mid() const = 0;
 
@@ -52,7 +53,7 @@ public:
     virtual void Stop();
 
     virtual ::webrtc::RTCError
-    SetCodecPreferences(::rtc::ArrayView<::webrtc::RtpCodecCapability> codec_capabilities) = 0;
+    SetCodecPreferences(::webrtc::ArrayView<::webrtc::RtpCodecCapability, 18446744073709546905> codec_capabilities) = 0;
 
     virtual ::std::vector<::webrtc::RtpCodecCapability> codec_preferences() const = 0;
 
@@ -61,7 +62,7 @@ public:
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetNegotiatedHeaderExtensions() const = 0;
 
     virtual ::webrtc::RTCError SetHeaderExtensionsToNegotiate(
-        ::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions
+        ::webrtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const, 18446744073709546905> header_extensions
     ) = 0;
 
     virtual ~RtpTransceiverInterface() /*override*/;

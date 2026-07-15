@@ -11,6 +11,7 @@
 // clang-format off
 class IGameServerStartup;
 class ILevelListCache;
+namespace Core { class FileSystem; }
 namespace World { class IWorldStorageHandler; }
 namespace World { struct WorldID; }
 // clang-format on
@@ -24,6 +25,8 @@ public:
     ::ll::TypedStorage<8, 8, ::IGameServerStartup&>                           mGameServerStartup;
     ::ll::TypedStorage<8, 8, ::ILevelListCache&>                              mLevelListCache;
     ::ll::TypedStorage<8, 8, ::World::IWorldStorageHandler&>                  mWorldStorageHandler;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                        mHasValidCrossPlatformSkin;
+    ::ll::TypedStorage<8, 8, ::Core::FileSystem&>                             mFileSystem;
     ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>              mServerStartupResult;
     ::ll::TypedStorage<4, 8, ::std::optional<::World::StartLocalWorldResult>> mStartLocalWorldErrorOverride;
     ::ll::TypedStorage<1, 2, ::std::optional<::World::IWorldStorageHandler::DuplicateWorldResult>>
@@ -39,12 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LocalWorldStarter(
-        ::IGameServerStartup&          gameServerStartup,
-        ::ILevelListCache&             levelListCache,
-        ::World::IWorldStorageHandler& worldStorageHandler
-    );
-
     MCAPI void backupThenStartLocalWorld(
         ::World::WorldID const& worldID,
         ::std::function<
@@ -52,17 +49,9 @@ public:
             onComplete
     );
 
-    MCAPI ::World::StartLocalWorldResult startLocalWorld(::World::WorldID const& worldID);
-    // NOLINTEND
+    MCAPI void setConfirmedPlatformLockedContentForWorld(::World::WorldID const& worldID);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::IGameServerStartup&          gameServerStartup,
-        ::ILevelListCache&             levelListCache,
-        ::World::IWorldStorageHandler& worldStorageHandler
-    );
+    MCAPI ::World::StartLocalWorldResult startLocalWorld(::World::WorldID const& worldID);
     // NOLINTEND
 };
 

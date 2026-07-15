@@ -10,10 +10,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Container;
 class ItemStack;
-class Level;
-class Player;
 struct BlockAnimateTickData;
 struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -21,10 +18,6 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class RespawnAnchorBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    RespawnAnchorBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -42,15 +35,13 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RespawnAnchorBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -59,36 +50,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _bumpCharge(::BlockSource& region, ::BlockPos const& pos, ::Player* source, short delta);
-
-    MCAPI static void
-    _explode(::Player& player, ::BlockPos const& anchorBlockPos, ::BlockSource& region, ::Level& level);
-
-    MCAPI static bool _isInWater(::BlockSource const& region, ::BlockPos const& pos);
-
-    MCAPI static bool
-    _tryCharge(::Player& player, ::BlockPos const& anchorBlockPos, ::BlockSource& region, ::Level& level);
-
-    MCAPI static bool
-    _trySetSpawn(::Player& player, ::BlockPos const& anchorBlockPos, ::BlockSource& region, ::Level& level);
-
     MCAPI static bool
     addItem(::ItemStack const& item, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
-
-    MCAPI static bool addItem(
-        ::Container&       fromContainer,
-        int                slot,
-        ::ItemStack const& item,
-        ::BlockSource&     region,
-        ::Block const&     block,
-        ::BlockPos const&  pos
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -108,7 +71,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const&, uchar) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
 
     // NOLINTEND

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class PieceWeight;
-class Random;
 class StructurePiece;
 // clang-format on
 
@@ -24,38 +23,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NBStartPiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NBStartPiece(::Random& random, int west, int north);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Random& random, int west, int north);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

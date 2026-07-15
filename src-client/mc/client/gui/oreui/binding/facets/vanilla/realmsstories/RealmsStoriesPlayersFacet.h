@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/PostStatus.h"
 #include "mc/client/realms/stories/FetchStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -17,7 +17,7 @@ namespace Realms::Stories { class FacetStateManager; }
 
 namespace OreUI {
 
-class RealmsStoriesPlayersFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesPlayersFacet> {
+class RealmsStoriesPlayersFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsStoriesPlayersFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsStoriesPlayersFacet() /*override*/;
+    virtual ~RealmsStoriesPlayersFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -49,14 +49,6 @@ public:
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> provider,
         ::Bedrock::NonOwnerPointer<::OreUI::IResourceAllowList> resourceAllowList
     );
-
-    MCAPI ::Realms::Stories::FetchStatus _getFetchMembersStatus() const;
-
-    MCAPI ::Realms::Stories::FetchStatus _getFetchOnlineMembersStatus() const;
-
-    MCAPI ::Realms::Stories::PostStatus _getManageMembersState() const;
-
-    MCAPI void _regenerateView();
     // NOLINTEND
 
 public:
@@ -75,21 +67,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -12,8 +12,6 @@ struct TeleportToOwnerParameters;
 namespace TeleportToOwnerUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool canTeleport(::Mob const& mob);
-
 MCNAPI void teleport(::Mob& mob, ::Vec3 position);
 
 MCNAPI ::std::optional<::Vec3>

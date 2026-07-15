@@ -10,13 +10,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
-class CompoundTag;
 class GameRule;
 class GameRulesChangedPacket;
 class GameRulesChangedPacketData;
 struct GameRuleId;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace cereal { struct NullType; }
 // clang-format on
@@ -43,35 +40,36 @@ public:
         MobGriefing               = 14,
         Pvp                       = 15,
         ShowCoordinates           = 16,
-        LocatorBar                = 17,
-        ShowDaysPlayed            = 18,
-        DoNaturalRegeneration     = 19,
-        DoTntExplode              = 20,
-        SendCommandFeedback       = 21,
-        MaxCommandChainLength     = 22,
-        DoInsomnia                = 23,
-        CommandBlocksEnabled      = 24,
-        RandomTickSpeed           = 25,
-        DoImmediateRespawn        = 26,
-        ShowDeathMessages         = 27,
-        FunctionCommandLimit      = 28,
-        PlayerSpawnRadius         = 29,
-        ShowTags                  = 30,
-        FreezeDamage              = 31,
-        RespawnBlocksExplode      = 32,
-        ShowBorderEffect          = 33,
-        ShowRecipeMessages        = 34,
-        PlayerSleepingPercentage  = 35,
-        ProjectilesCanBreakBlocks = 36,
-        TntExplosionDropDecay     = 37,
-        VanillaGameRuleCount      = 38,
-        GlobalMute                = 38,
-        AllowDestructiveObjects   = 39,
-        AllowMobs                 = 40,
-        CodeBuilder               = 41,
-        EduCloudSave              = 42,
-        EduGameRuleCount          = 43,
-        GameRuleCount             = 43,
+        PlayerWaypoints           = 17,
+        LocatorBarDeprecated      = 18,
+        ShowDaysPlayed            = 19,
+        DoNaturalRegeneration     = 20,
+        DoTntExplode              = 21,
+        SendCommandFeedback       = 22,
+        MaxCommandChainLength     = 23,
+        DoInsomnia                = 24,
+        CommandBlocksEnabled      = 25,
+        RandomTickSpeed           = 26,
+        DoImmediateRespawn        = 27,
+        ShowDeathMessages         = 28,
+        FunctionCommandLimit      = 29,
+        PlayerSpawnRadius         = 30,
+        ShowTags                  = 31,
+        FreezeDamage              = 32,
+        RespawnBlocksExplode      = 33,
+        ShowBorderEffect          = 34,
+        ShowRecipeMessages        = 35,
+        PlayerSleepingPercentage  = 36,
+        ProjectilesCanBreakBlocks = 37,
+        TntExplosionDropDecay     = 38,
+        VanillaGameRuleCount      = 39,
+        GlobalMute                = 39,
+        AllowDestructiveObjects   = 40,
+        AllowMobs                 = 41,
+        CodeBuilder               = 42,
+        EduCloudSave              = 43,
+        EduGameRuleCount          = 44,
+        GameRuleCount             = 44,
     };
 
     using GameRuleMap = ::std::vector<::GameRule>;
@@ -104,8 +102,6 @@ public:
 
     MCAPI GameRules(::GameRules const& rhs);
 
-    MCAPI ::GameRule& _registerRule(::std::string const& name, ::GameRuleId rule);
-
     MCAPI void _registerRules();
 
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> _setGameRule(
@@ -124,81 +120,13 @@ public:
 
     MCAPI bool getBool(::GameRuleId ruleType, bool defaultValue) const;
 
-    MCAPI float getFloat(::GameRuleId ruleType) const;
-
-    MCAPI int getInt(::GameRuleId ruleType) const;
-
-    MCAPI ::GameRule const* getRule(::GameRuleId rule) const;
-
-    MCFOLD ::std::vector<::GameRule> const& getRules() const;
-
-    MCAPI void getTagData(::CompoundTag const& tag, ::BaseGameVersion const& version);
-
-    MCAPI bool hasRule(::GameRuleId ruleType) const;
-
-    MCAPI ::GameRuleId nameToGameRuleIndex(::std::string const& name) const;
-
     MCAPI ::GameRules& operator=(::GameRules const& rhs);
 
 #ifdef LL_PLAT_C
     MCAPI bool operator==(::GameRules const& rhs) const;
-#endif
-
-    MCFOLD ::Bedrock::PubSub::Subscription
-    registerOnGameRuleChangeCallback(::std::function<void(::GameRules const&, ::GameRuleId const&)> callback);
 
     MCAPI void setMarketplaceOverrides();
-
-    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
-        ::GameRuleId                 rule,
-        int                          value,
-        bool                         returnPacket,
-        bool*                        pValueValidated,
-        bool*                        pValueChanged,
-        ::GameRule::ValidationError* errorOutput
-    );
-
-    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
-        ::GameRuleId                 rule,
-        float                        value,
-        bool                         returnPacket,
-        bool*                        pValueValidated,
-        bool*                        pValueChanged,
-        ::GameRule::ValidationError* errorOutput
-    );
-
-    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
-        ::GameRuleId                 rule,
-        bool                         value,
-        bool                         returnPacket,
-        bool*                        pValueValidated,
-        bool*                        pValueChanged,
-        ::GameRule::ValidationError* errorOutput
-    );
-
-    MCAPI void setTagData(::CompoundTag& tag) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::map<::GameRuleId, ::GameRule> const& _getMarketplaceGameRulesDefaultMap();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_RANDOMTICKSPEED();
-
-    MCAPI static int const& MAX_FUNCTIONCOMMANDLIMIT();
-
-    MCAPI static uint const& MAX_PLAYER_SPAWN_RADIUS();
-
-    MCAPI static int const& MAX_RANDOMTICKSPEED();
-
-    MCAPI static uint const& MIN_PLAYER_SPAWN_RADIUS();
-
-    MCAPI static ::std::string const& WORLD_POLICY_TAG_NAME();
+#endif
     // NOLINTEND
 
 public:

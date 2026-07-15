@@ -53,10 +53,6 @@ public:
         MCAPI explicit Results(::std::vector<::ItemInstance> const& results);
 
 #ifdef LL_PLAT_C
-        MCAPI explicit Results(::std::vector<::NetworkItemInstanceDescriptor> const& results);
-
-        MCFOLD ::std::vector<::ItemInstance> const& getItems() const;
-
         MCAPI void load(::BlockPalette const& blockPalette) const;
 #endif
 
@@ -67,10 +63,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::std::vector<::ItemInstance> const& results);
-
-#ifdef LL_PLAT_C
-        MCAPI void* $ctor(::std::vector<::NetworkItemInstanceDescriptor> const& results);
-#endif
         // NOLINTEND
 
     public:
@@ -192,33 +184,7 @@ public:
 
     MCAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
 
-    MCAPI void generateUUID();
-
     MCAPI ::Recipe::ConstructionContext getConstructionContext() const;
-
-    MCFOLD int getHeight() const;
-
-    MCFOLD ::std::vector<::RecipeIngredient> const& getIngredients() const;
-
-    MCFOLD ::RecipeNetId const& getNetId() const;
-
-    MCFOLD int getPriority() const;
-
-    MCFOLD ::std::string const& getRecipeId() const;
-
-    MCFOLD ::HashedString const& getTag() const;
-
-    MCFOLD ::RecipeUnlockingRequirement const& getUnlockingRequirement() const;
-
-    MCFOLD int getWidth() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void loadResultList(::BlockPalette const& palette) const;
-#endif
-
-    MCAPI void setId(::mce::UUID const& uuid);
-
-    MCAPI void setNetId(::RecipeNetId const& recipeNetId);
     // NOLINTEND
 
 public:
@@ -240,7 +206,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

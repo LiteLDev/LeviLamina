@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-struct DimensionType;
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
 namespace gametest { class IGameTestFunctionRunResult; }
@@ -68,18 +66,6 @@ public:
     );
 
     MCNAPI void _addTag(::std::string tag);
-
-    MCNAPI ::std::string const& getBatchName() const;
-
-    MCNAPI bool getRotate() const;
-
-    MCNAPI ::std::optional<::DimensionType> getStructureDimension() const;
-
-    MCNAPI ::std::optional<::BlockPos> getStructureLocation() const;
-
-    MCNAPI ::std::string const& getStructureName() const;
-
-    MCNAPI ::std::string const& getTestName() const;
 
     MCNAPI bool hasTag(::std::string const& tag) const;
     // NOLINTEND

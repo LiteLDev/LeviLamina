@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/world/item/enchanting/Enchant.h"
 
 // auto generated forward declare list
@@ -28,29 +28,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>   mName;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ScriptItemEnchantmentType& operator=(ScriptItemEnchantmentType const&);
-    ScriptItemEnchantmentType(ScriptItemEnchantmentType const&);
-
-#else // LL_PLAT_C
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ScriptItemEnchantmentType();
-
-    MCAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType&
-    operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentType&& rhs);
-
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptItemEnchantmentType const& other) const;
-
-    MCAPI ~ScriptItemEnchantmentType();
-#endif
-    // NOLINTEND
-
 public:
     // static functions
     // NOLINTBEGIN
@@ -64,22 +41,6 @@ public:
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void* $ctor();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCFOLD void $dtor();
-#endif
     // NOLINTEND
 };
 

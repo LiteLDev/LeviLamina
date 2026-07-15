@@ -23,8 +23,6 @@ class ServerCommand : public ::Command {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isTextProcessorEnabled() const;
-
     MCAPI bool tryToFilterTextWithRemoteFilter(
         ::CommandOrigin const&              origin,
         ::CommandOutput&                    output,
@@ -47,8 +45,6 @@ public:
         ::IMinecraftEventing&                              eventing,
         ::std::string const&                               message
     );
-
-    MCAPI static void setup(::Minecraft& game);
     // NOLINTEND
 
 public:

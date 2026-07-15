@@ -15,18 +15,6 @@ public:
     ::ll::TypedStorage<8, 32, ::World::WorldID>   mWorldID;
     ::ll::TypedStorage<1, 1, ::World::PackAction> mPackAction;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PendingPackActionKey();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace World

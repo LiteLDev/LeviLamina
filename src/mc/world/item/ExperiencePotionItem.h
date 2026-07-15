@@ -18,10 +18,6 @@ class Vec3;
 
 class ExperiencePotionItem : public ::Item {
 public:
-    // prevent constructor by default
-    ExperiencePotionItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
@@ -39,18 +35,6 @@ public:
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ExperiencePotionItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

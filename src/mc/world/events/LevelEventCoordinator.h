@@ -4,24 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/gameplayhandlers/CoordinatorResult.h"
-#include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/events/EventCoordinator.h"
-#include "mc/world/events/EventRef.h"
-#include "mc/world/events/LevelGameplayEvent.h"
-#include "mc/world/events/MutableLevelGameplayEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class EntityContext;
 class GameRules;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
-class Level;
 class LevelEventListener;
 class LevelGameplayHandler;
-struct GameRuleId;
 // clang-format on
 
 class LevelEventCoordinator : public ::EventCoordinator<::LevelEventListener> {
@@ -44,37 +36,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelEventCoordinator();
-
-    MCAPI void _onGameRuleChange(::GameRules const& gameRules, ::GameRuleId const& gameRuleId);
-
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
-
-    MCFOLD ::LevelGameplayHandler& getLevelGameplayHandler();
-
     MCAPI void registerGameRules(::GameRules& gameRules);
-
-    MCFOLD void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
 
     MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
 
     MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
-
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableLevelGameplayEvent<::CoordinatorResult>> event);
-
-    MCAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
-
-    MCAPI void sendLevelInitialized(::Level& level);
-
-    MCAPI void sendLevelRemovedActor(::Actor& actor);
-
-    MCAPI void sendLevelTick(::Level& level);
-
-    MCAPI void sendLevelTickEnd(::Level& level);
-
-    MCAPI void sendLevelTickStart(::Level& level);
 
     MCAPI void sendLevelWeatherChanged(
         ::std::string const& dimension,
@@ -83,12 +51,6 @@ public:
         bool                 isRaining,
         bool                 isLightning
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

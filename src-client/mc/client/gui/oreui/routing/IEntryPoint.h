@@ -18,7 +18,7 @@ class IEntryPoint {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IEntryPoint();
+    virtual ~IEntryPoint() = default;
 
     virtual bool shouldAddToConfiguration() const = 0;
 
@@ -27,12 +27,6 @@ public:
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

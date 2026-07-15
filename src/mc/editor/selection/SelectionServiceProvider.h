@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,18 +37,6 @@ public:
         ManifestEntry& operator=(ManifestEntry const&);
         ManifestEntry(ManifestEntry const&);
         ManifestEntry();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ManifestEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct ManifestState {
@@ -90,20 +78,17 @@ public:
     virtual uint64 generateManifestWithCallback(
         ::std::function<
             void(::Scripting::Result_deprecated<::Editor::Services::SelectionServiceProvider::ManifestState> const&)>
-            callback
     ) = 0;
 
     virtual ::Editor::Services::SelectionServiceProvider::ManifestState const& getCurrentManifest() const = 0;
 
-    virtual void deselectBlocksAsync(
-        ::std::string const&                                                 blockIdentifier,
-        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
-    ) = 0;
+    virtual void
+    deselectBlocksAsync(::std::string const&, ::std::function<void(::Scripting::Result_deprecated<uint64> const&)>) = 0;
 
     virtual void replaceBlocksAsync(
-        ::std::string const&                                                 fromBlockIdentifier,
-        ::std::string const&                                                 toBlockIdentifier,
-        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
+        ::std::string const&,
+        ::std::string const&,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)>
     ) = 0;
     // NOLINTEND
 
@@ -111,12 +96,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -48,12 +48,4 @@ public:
         ::RedstoneScreenType                           screenType
     );
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
-    // NOLINTEND
 };

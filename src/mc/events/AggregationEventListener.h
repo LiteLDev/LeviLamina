@@ -45,22 +45,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~AggregationEventListener() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~AggregationEventListener() /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void
+    recordEvent(::Social::Events::Event const&, ::Bedrock::NonOwnerPointer<::AppPlatform> const&) /*override*/;
+#else // LL_PLAT_C
     virtual void recordEvent(
         ::Social::Events::Event const&                   event,
         ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform
     ) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual void sendEvents(bool) /*override*/;
+#else // LL_PLAT_C
     virtual void sendEvents(bool forceSend) /*override*/;
+#endif
 
-    virtual void sendEvent(::Social::Events::Event const& event) = 0;
+    virtual void sendEvent(::Social::Events::Event const&) = 0;
 
     virtual void stopDebugEventLogging() /*override*/;
 
     virtual void _flushEventQueue();
 
-    virtual bool _checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
+    virtual bool _checkAgainstEventAllowlist(::Social::Events::Event const&) const;
 
     virtual bool _isListenerReadyForEvents() const;
     // NOLINTEND
@@ -68,9 +81,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
 
-#ifdef LL_PLAT_C
     MCNAPI AggregationEventListener(
         uint                regBatchSize,
         uint                regSendInterval,
@@ -78,28 +91,14 @@ public:
         ::Core::Path const& logFileName
     );
 #endif
-
-    MCNAPI void _handleAggregation(
-        ::std::deque<::Social::Events::Event>& listOfSameTypeEvents,
-        ::Social::Events::Event const&         event
-    );
-
-    MCNAPI void _recordAggregatedEvent(
-        ::Social::Events::Event const&                                              event,
-        ::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& eventQueue
-    );
-
-    MCNAPI void _sendCustomAggregatedEvents(bool forceSend);
-
-    MCNAPI void _sendNextEvent(::std::unordered_map<::std::string, ::std::deque<::Social::Events::Event>>& queueToSend);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Core::Path const& logFileName);
 
-#ifdef LL_PLAT_C
     MCNAPI void*
     $ctor(uint regBatchSize, uint regSendInterval, uint throttledSendInterval, ::Core::Path const& logFileName);
 #endif
@@ -114,6 +113,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void
     $recordEvent(::Social::Events::Event const& event, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
 
@@ -123,17 +123,10 @@ public:
 
     MCNAPI void $_flushEventQueue();
 
-    MCNAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
-
     MCNAPI bool $_isListenerReadyForEvents() const;
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

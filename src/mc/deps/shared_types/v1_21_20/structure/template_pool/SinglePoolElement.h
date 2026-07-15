@@ -27,9 +27,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SinglePoolElement(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
-
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&&);
     // NOLINTEND
 
 public:

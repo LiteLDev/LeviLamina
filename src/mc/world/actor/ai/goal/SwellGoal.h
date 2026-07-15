@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Creeper;
+class Mob;
 // clang-format on
 
 class SwellGoal : public ::BaseGoal {
@@ -38,40 +38,24 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SwellGoal(::Creeper* creeper, float startSwellDist, float stopSwellDist);
+    MCAPI explicit SwellGoal(::Mob& mob);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Creeper* creeper, float startSwellDist, float stopSwellDist);
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
 
-    MCAPI void $start();
-
-    MCAPI void $stop();
-
-    MCAPI void $tick();
-
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

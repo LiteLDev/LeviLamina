@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/ServiceReference.h"
 
 // auto generated forward declare list
@@ -13,7 +13,7 @@ class AppPlatform;
 
 namespace OreUI {
 
-class ShareFacet : public ::OreUI::FacetBase<::OreUI::ShareFacet> {
+class ShareFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::ShareFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,13 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ShareFacet();
-
-    MCAPI bool isShareSupported() const;
-
-    MCAPI void share(::std::string const& shareTitle, ::std::string const& shareText, ::std::string const& shareUri);
-
-    MCAPI void
-    shareFile(::std::string const& shareTitle, ::std::string const& shareText, ::std::string const& filePath);
     // NOLINTEND
 
 public:

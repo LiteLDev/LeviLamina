@@ -55,18 +55,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
-
     MCAPI void finalize(
         ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry> const& registry,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                  parameterCache
     );
-
-    MCFOLD bool hasPlayerInteractEvent() const;
-
-    MCFOLD bool hasPlayerPlacingEvent() const;
-
-    MCFOLD bool isV1() const;
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,

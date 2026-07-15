@@ -38,28 +38,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TrimDataPacket();
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::vector<::TrimMaterial> const& getTrimMaterials() const;
-
-    MCFOLD ::std::vector<::TrimPattern> const& getTrimPatterns() const;
-#endif
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TrimDataPacket
     prepareFromRegistries(::TrimPatternRegistry const& patternRegistry, ::TrimMaterialRegistry const& materialRegistry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

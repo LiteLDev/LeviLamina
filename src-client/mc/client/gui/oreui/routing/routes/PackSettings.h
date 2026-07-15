@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -15,7 +14,6 @@ class IContentTierManager;
 class ISceneStack;
 class PackManifestFactory;
 class SceneFactory;
-struct ContentItem;
 struct PackContentItem;
 namespace OreUI { class RouteMatcher; }
 // clang-format on
@@ -55,39 +53,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PackSettings(
-        ::PackManifestFactory&                                            manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& contentKeyProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
-        ::std::function<::IContentManager&()>                             getContentManager
-    );
-
-    MCAPI ::std::shared_ptr<::PackContentItem> _findPackFromId(
-        ::std::string_view                                     contentId,
-        ::std::string_view                                     levelId,
-        ::std::vector<::std::shared_ptr<::ContentItem>> const& contentItems
-    ) const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::PackManifestFactory&                                            manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& contentKeyProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
-        ::std::function<::IContentManager&()>                             getContentManager
-    );
     // NOLINTEND
 
 public:

@@ -31,45 +31,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ControlConfiguration();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ControlConfiguration(
-        uint                                    id,
-        uint                                    configCategory,
-        uint                                    configGroup,
-        ::std::function<bool()>                 enabled,
-        ::std::unique_ptr<::PointControlOption> position,
-        ::std::unique_ptr<::FloatControlOption> scale,
-        float                                   baseWidth,
-        float                                   baseHeight,
-        float                                   aspectRatio,
-        bool                                    keepAspectRatio
-    );
-
-    MCAPI void addSubOption(::std::unique_ptr<::ControlOption> subOption);
-
     MCAPI ~ControlConfiguration();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        uint                                    id,
-        uint                                    configCategory,
-        uint                                    configGroup,
-        ::std::function<bool()>                 enabled,
-        ::std::unique_ptr<::PointControlOption> position,
-        ::std::unique_ptr<::FloatControlOption> scale,
-        float                                   baseWidth,
-        float                                   baseHeight,
-        float                                   aspectRatio,
-        bool                                    keepAspectRatio
-    );
     // NOLINTEND
 
 public:

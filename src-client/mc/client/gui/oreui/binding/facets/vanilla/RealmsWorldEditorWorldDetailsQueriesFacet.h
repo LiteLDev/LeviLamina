@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/RealmsWorldEditorState.h"
 #include "mc/client/realms/RealmsWorldEditorStateStatus.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -17,7 +17,7 @@ namespace Realms { class RealmsWorldEditor; }
 namespace OreUI {
 
 class RealmsWorldEditorWorldDetailsQueriesFacet
-: public ::OreUI::FacetBase<::OreUI::RealmsWorldEditorWorldDetailsQueriesFacet> {
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsWorldEditorWorldDetailsQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,7 +49,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsWorldEditorWorldDetailsQueriesFacet() /*override*/;
+    virtual ~RealmsWorldEditorWorldDetailsQueriesFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -60,32 +60,6 @@ public:
     MCAPI explicit RealmsWorldEditorWorldDetailsQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor
     );
-
-    MCAPI void _refreshRealmWorldSubscriptions();
-
-    MCFOLD bool areRealmTexturesRequired() const;
-
-    MCFOLD ::std::optional<::std::string> const& getFlatWorldPreset() const;
-
-    MCFOLD int getGeneratorType() const;
-
-    MCFOLD ::std::string const& getRealmsDescription() const;
-
-    MCFOLD ::std::string const& getRealmsName() const;
-
-    MCFOLD int getSimulationDistance() const;
-
-    MCFOLD bool getStartWithBonusChest() const;
-
-    MCFOLD bool getStartWithMap() const;
-
-    MCFOLD ::Realms::RealmsWorldEditorState getState() const;
-
-    MCFOLD ::Realms::RealmsWorldEditorStateStatus getStatus() const;
-
-    MCFOLD bool getUseFlatWorld() const;
-
-    MCFOLD ::std::string const& getWorldSeed() const;
     // NOLINTEND
 
 public:
@@ -101,21 +75,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

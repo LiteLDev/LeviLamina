@@ -13,8 +13,6 @@
 class Block;
 class BlockPos;
 class RuntimeLocalLightingConfig;
-class Vec3;
-struct BlockQueueEntry;
 struct Bounds;
 namespace PointLighting { struct ICandidacyHeuristic; }
 namespace PointLighting { struct ManagedPointLight; }
@@ -50,30 +48,14 @@ public:
     MCAPI
     PointLightCoordinator(bool lightLODsEnabled, ::std::weak_ptr<::RuntimeLocalLightingConfig const> lightingConfig);
 
-    MCAPI void _advanceTransition(::BlockPos const& blockPos, ::PointLighting::ManagedPointLight& pointLight);
-
-    MCAPI void _advanceTransitions();
-
-    MCAPI ::std::unordered_map<::BlockPos, float> _computeCurrentLightScores() const;
-
     MCAPI ::std::optional<::mce::PointLightParameters>
     _createPointLightFromBlock(::Block const& block, ::BlockPos const& blockPos) const;
-
-    MCAPI ::Vec3 _getLightOffsetWithinBlock(::Block const& block) const;
-
-    MCAPI void _prune(::Bounds const& viewBounds);
-
-    MCAPI void _releaseAllResources(::BlockPos const& blockPos, ::PointLighting::ManagedPointLight& pointLight);
-
-    MCAPI void applyBlockQueue(::std::vector<::BlockQueueEntry> const& queue);
 
     MCAPI void clear();
 
     MCAPI ::std::vector<::mce::AnalyticalLight> getAnalyticalLights() const;
 
     MCAPI void onBlockChanged(::BlockPos const& blockPos, ::Block const& block, ::Block const& oldBlock);
-
-    MCAPI void resetLightingConfig(::std::weak_ptr<::RuntimeLocalLightingConfig const> localLightConfig);
 
     MCAPI void update(
         ::std::optional<::Bounds> const&                           viewBounds,
@@ -82,12 +64,6 @@ public:
     );
 
     MCAPI ~PointLightCoordinator();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isPointLightCandidate(::Block const& block, ::RuntimeLocalLightingConfig const& lightConfig);
     // NOLINTEND
 
 public:

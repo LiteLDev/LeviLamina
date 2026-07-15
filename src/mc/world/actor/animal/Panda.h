@@ -50,12 +50,6 @@ public:
     MCAPI float getSitAmount(float a) const;
 
     MCAPI void postNormalTick();
-
-    MCAPI void updateLaying();
-
-    MCAPI void updateRollAmount();
-
-    MCAPI void updateSitting();
     // NOLINTEND
 
 public:
@@ -71,18 +65,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setTransitioningSitting(bool value);
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,25 +14,9 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptInvalidPotionDeliveryTypeError : public ::Scripting::BaseError {
 public:
-    // prevent constructor by default
-    ScriptInvalidPotionDeliveryTypeError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptInvalidPotionDeliveryTypeError(::std::string const& invalidDeliveryName);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& invalidDeliveryName);
     // NOLINTEND
 };
 

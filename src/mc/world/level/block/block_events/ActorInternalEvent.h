@@ -38,10 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorInternalEvent(::BlockPos pos, ::Actor& entity, ::std::string const& name);
-
-    MCFOLD ::Actor& getEntity() const;
-
-    MCFOLD ::std::string const& getName() const;
     // NOLINTEND
 
 public:

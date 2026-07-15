@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/level/BlockPos.h"
@@ -13,7 +12,6 @@
 class ContainerScreenContext;
 class ItemInstance;
 class ItemStack;
-class Player;
 struct RecipeNetIdTag;
 // clang-format on
 
@@ -23,10 +21,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SmithingTableContainerManagerModel();
 
 public:
     // virtual functions
@@ -51,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SmithingTableContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
 #ifdef LL_PLAT_C
     MCAPI void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
 
@@ -62,22 +54,6 @@ public:
         ::ItemStack const& materialStack
     );
 #endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& INPUT_SLOT();
-
-    MCAPI static int const& MATERIAL_SLOT();
-
-    MCAPI static int const& TEMPLATE_SLOT();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:

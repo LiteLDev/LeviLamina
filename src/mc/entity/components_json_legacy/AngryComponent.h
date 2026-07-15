@@ -32,12 +32,11 @@ public:
 public:
     // prevent constructor by default
     AngryComponent& operator=(AngryComponent const&);
+    AngryComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AngryComponent();
-
     MCAPI AngryComponent(::AngryComponent&&);
 
     MCAPI AngryComponent(::AngryComponent const&);
@@ -46,27 +45,7 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent const getAngrySound(::Mob const& mob) const;
 
-    MCFOLD bool getBroadcastAnger() const;
-
-    MCFOLD bool getBroadcastAngerOnAttack() const;
-
-    MCFOLD bool getBroadcastAngerOnBeingAttacked() const;
-
-    MCFOLD bool getBroadcastAngerWhenDying() const;
-
-    MCFOLD ::ActorFilterGroup const& getBroadcastFilter() const;
-
-    MCFOLD int getBroadcastRange() const;
-
-    MCFOLD bool getHasTicked() const;
-
-    MCFOLD ::Tick const getNextSoundEventTick() const;
-
     MCAPI void restartTimer(::Mob& owner);
-
-    MCAPI void setAngry(::Mob& owner, bool value);
-
-    MCAPI void setHasTicked(bool hasTicked);
 
     MCAPI void setNextSoundEventTick(::Mob const& mob);
     // NOLINTEND
@@ -74,8 +53,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCFOLD void* $ctor(::AngryComponent&&);
 
     MCFOLD void* $ctor(::AngryComponent const&);

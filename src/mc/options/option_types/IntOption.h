@@ -36,11 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~IntOption() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~IntOption() /*override*/;
-#endif
 
 #ifdef LL_PLAT_S
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
@@ -85,7 +81,11 @@ public:
         ::GameVersion        version
     );
 
+    MCAPI void reset(bool saveOptionChange);
+
     MCAPI void set(int value, bool saveOptionChange);
+
+    MCFOLD void setCoerceSaveValueCallback(::std::function<int(int)> callback);
 
     MCAPI void setValues(::std::vector<int> values);
 #endif
@@ -120,12 +120,6 @@ public:
         ::GameVersion        version
     );
 #endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

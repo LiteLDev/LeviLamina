@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/MinimapMarkerType.h"
-#include "mc/common/editor/MinimapViewType.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -33,26 +30,13 @@ public:
     ScriptMinimapItem();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> addMarker(::Editor::Services::MinimapMarkerType markerType) const;
-
-    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA>
-    getPlayerColor(::std::string const& playerId) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> removeMarker(::Editor::Services::MinimapMarkerType markerType) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> setActive(bool active) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> setMinimapViewType(::Editor::Services::MinimapViewType viewType) const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> setSize(int mapWidth, int mapHeight) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::Scripting::InterfaceBinding bindMinimapMarkerData();
+
     MCNAPI static ::Scripting::EnumBinding bindMinimapMarkerType();
+
+    MCNAPI static ::Scripting::EnumBinding bindMinimapTrackingMode();
 
     MCNAPI static ::Scripting::EnumBinding bindMinimapViewType();
 

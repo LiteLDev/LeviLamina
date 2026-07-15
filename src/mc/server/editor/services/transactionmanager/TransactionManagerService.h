@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/EntityOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/TransactionManagerServiceProvider.h"
 #include "mc/world/events/EventListenerDispatcher.h"
@@ -15,12 +15,9 @@
 // clang-format off
 class Actor;
 class BlockPos;
-class BlockSource;
 class BlockVolumeBase;
 struct PlayerDimensionChangeBeforeEvent;
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Network { class RedoOperationPayload; }
-namespace Editor::Network { class UndoOperationPayload; }
 namespace Editor::Transactions { class TransactionContext; }
 // clang-format on
 
@@ -50,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransactionManagerService() /*override*/;
+    virtual ~TransactionManagerService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -116,29 +113,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit TransactionManagerService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _handleRedoMessage(::Editor::Network::RedoOperationPayload const&);
-
-    MCNAPI void _handleUndoMessage(::Editor::Network::UndoOperationPayload const&);
-
-    MCNAPI ::Scripting::Result_deprecated<void> _redo();
-
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    _trackBlockChanges(::BlockSource const& region, ::std::vector<::BlockPos> const& locations);
-
-    MCNAPI ::Scripting::Result_deprecated<void> _undo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

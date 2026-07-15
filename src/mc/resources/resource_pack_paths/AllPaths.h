@@ -18,6 +18,8 @@ public:
     ::ll::UntypedStorage<8, 32> mUnka7453e;
     ::ll::UntypedStorage<8, 32> mUnk98ca8e;
     ::ll::UntypedStorage<8, 32> mUnka4f4d6;
+    ::ll::UntypedStorage<8, 32> mUnk5e3ccc;
+    ::ll::UntypedStorage<8, 32> mUnk86a380;
     // NOLINTEND
 
 public:
@@ -29,13 +31,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ~AllPaths();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

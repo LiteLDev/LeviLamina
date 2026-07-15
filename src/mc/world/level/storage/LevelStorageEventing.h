@@ -11,7 +11,6 @@
 // clang-format off
 class DBStorageFolderWatcher;
 class LevelData;
-struct DBStoragePerformanceTelemetryData;
 // clang-format on
 
 class LevelStorageEventing : public ::Bedrock::EnableNonOwnerReferences {
@@ -43,8 +42,6 @@ public:
         ::DBStorageFolderWatcherSnapshotKind kind
     ) const;
 
-    MCNAPI void fireEventLevelDBPerformanceData(::DBStoragePerformanceTelemetryData const& perfData) const;
-
     MCNAPI void fireEventWorldCorruptionCausedWorldShutdown(
         ::std::string const&  reason,
         ::std::optional<bool> isOutOfDiskSpace
@@ -55,11 +52,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& creationReason, ::LevelData const& levelData, ::std::string const& levelId);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

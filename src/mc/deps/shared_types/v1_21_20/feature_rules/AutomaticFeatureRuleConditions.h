@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_20 {
 
 struct AutomaticFeatureRuleConditions {
@@ -24,12 +19,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~AutomaticFeatureRuleConditions();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

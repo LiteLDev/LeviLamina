@@ -21,7 +21,6 @@ class ChunkPos;
 class ChunkViewSource;
 class Dimension;
 class FixedBiomeSource;
-class FlatWorldOptions;
 class HashedString;
 class LevelChunk;
 class Random;
@@ -55,7 +54,7 @@ public:
 
     virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
 
-    virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
+    virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
 
     virtual ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos) /*override*/;
 
@@ -69,12 +68,11 @@ public:
         ::std::optional<::HashedString> biomeTag
     ) /*override*/;
 
-    virtual void
-    prepareHeights(::BlockVolume& box, ::ChunkPos const& zxHeights, ::std::vector<short>*, bool) /*override*/;
+    virtual void prepareHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>*, bool) /*override*/;
 
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks) /*override*/;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const /*override*/;
 
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 
@@ -94,8 +92,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FlatWorldGenerator(::Dimension& dimension, uint, ::Json::Value const& generationOptionsJSON);
-
-    MCAPI void _generatePrototypeBlockValues(::FlatWorldOptions const& layersDesc, short minHeight);
     // NOLINTEND
 
 public:
@@ -107,49 +103,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource&);
-
-    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
-
-    MCFOLD ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
-
-    MCAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
-
-    MCAPI bool $findNearestStructureFeature(
-        ::HashedString                  feature,
-        ::BlockPos const&               origin,
-        ::BlockPos&                     pos,
-        bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
-    );
-
-    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& zxHeights, ::std::vector<short>*, bool);
-
-    MCFOLD void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
-
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
-
-    MCAPI ::BlockPos $findSpawnPosition() const;
-
-    MCFOLD ::BiomeSource const& $getBiomeSource() const;
-
-    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
-
-    MCFOLD void
-    $decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const;
-
-    MCFOLD void $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
-
-    MCNAPI static void** $vftableForChunkSource();
     // NOLINTEND
 };

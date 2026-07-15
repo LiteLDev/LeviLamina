@@ -9,10 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class LibraryCollection;
-class LibraryItem;
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
-class UIPropertyBag;
 namespace Json { class Value; }
 namespace librarySearch { struct TelemetryData; }
 // clang-format on
@@ -68,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryScreenController() /*override*/;
+    virtual ~LibraryScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -106,22 +104,6 @@ public:
         ::std::string const&                       categoryTitle,
         ::LibraryScreenController::OptionalFeature optionalFeatures
     );
-
-    MCAPI void _fireEventLibrarySearch();
-
-    MCAPI ::LibraryItem* _getItem(::UIPropertyBag& bag) const;
-
-    MCAPI void _handleFetchCompletion();
-
-    MCAPI void _handleFetchErrors();
-
-    MCAPI void _initialize();
-
-    MCAPI void _initializeLibraryCollection(::std::shared_ptr<::LibraryCollection> libraryCollection);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -154,28 +136,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onOpen();
-
-    MCAPI void $onInit();
-
-    MCAPI ::ui::DirtyFlag $tick();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

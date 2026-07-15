@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class BackwardsCompatTextureInfo;
-class ResourceLocation;
 class ResourceLocationPair;
 // clang-format on
 
@@ -26,8 +25,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::BackwardsCompatTextureInfo const& getBackCompatInfo(::ResourceLocation const& resourceLocation) const;
-
     MCNAPI void loadTextures(::gsl::span<::ResourceLocationPair> texturesToLoad);
 
     MCNAPI void populate(::std::string const& backCompatFile);

@@ -4,14 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/item/CompoundContainerType.h"
-#include "mc/world/item/CompoundType.h"
 #include "mc/world/level/block/actor/LabTableReactionType.h"
 
 // auto generated forward declare list
 // clang-format off
-class ItemDescriptor;
 class ItemStack;
-struct ChemistryIngredient;
 // clang-format on
 
 class CraftableCompounds {
@@ -46,25 +43,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI CraftableCompounds();
-
-    MCNAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
-
-    MCNAPI void _registerCompound(
-        ::std::vector<::ChemistryIngredient> const& input,
-        ::ItemStack const&                          result,
-        ::LabTableReactionType                      reaction,
-        ::CompoundContainerType                     containerOverride
-    );
-
-    MCNAPI void _registerCompound(
-        ::std::vector<::ChemistryIngredient> const& input,
-        ::CompoundType                              result,
-        ::LabTableReactionType                      reaction,
-        ::CompoundContainerType                     containerOverride,
-        int                                         stackCount
-    );
-
-    MCNAPI ::std::vector<::ItemStack> const* getComponents(::ItemDescriptor const& compound) const;
 
     MCNAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
 

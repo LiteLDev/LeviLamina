@@ -22,8 +22,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
-
-    MCFOLD ::SemVersion const& getFormatVersion() const;
     // NOLINTEND
 
 public:

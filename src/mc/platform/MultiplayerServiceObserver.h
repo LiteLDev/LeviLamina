@@ -20,13 +20,13 @@ class MultiplayerServiceObserver
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
+    virtual void onInvalidPlayerJoinedLobby(::mce::UUID const&, ::std::string const&);
 
     virtual void onUserDisconnectedBecauseConcurrentLogin(::std::string const&);
 
-    virtual void onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
+    virtual void onPlayerJoinedLobby(::Social::OnlineId const&, ::Social::Nonce const&);
 
-    virtual void onPlayerLeftLobby(::Social::OnlineId const& player);
+    virtual void onPlayerLeftLobby(::Social::OnlineId const&);
     // NOLINTEND
 
 public:
@@ -35,11 +35,11 @@ public:
     MCFOLD void $onUserDisconnectedBecauseConcurrentLogin(::std::string const&);
 
 #ifdef LL_PLAT_C
-    MCFOLD void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
+    MCFOLD void $onInvalidPlayerJoinedLobby(::mce::UUID const&, ::std::string const&);
 
-    MCFOLD void $onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
+    MCFOLD void $onPlayerJoinedLobby(::Social::OnlineId const&, ::Social::Nonce const&);
 
-    MCFOLD void $onPlayerLeftLobby(::Social::OnlineId const& player);
+    MCFOLD void $onPlayerLeftLobby(::Social::OnlineId const&);
 #endif
 
 

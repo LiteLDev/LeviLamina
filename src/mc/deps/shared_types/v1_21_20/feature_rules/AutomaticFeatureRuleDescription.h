@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_20 {
 
 struct AutomaticFeatureRuleDescription {
@@ -31,12 +26,6 @@ public:
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&&);
 
     MCAPI ~AutomaticFeatureRuleDescription();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

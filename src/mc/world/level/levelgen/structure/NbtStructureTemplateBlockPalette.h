@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class LegacyStructureBlockInfo;
-namespace br::worldgen { struct StructureBlockInfo; }
 // clang-format on
 
 namespace br::worldgen {
@@ -20,12 +19,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::vector<::LegacyStructureBlockInfo> const*> mNbt;
     ::ll::TypedStorage<8, 8, uint64>                                           mIndex;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> next();
     // NOLINTEND
 };
 

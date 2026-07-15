@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorType.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-struct ActorUniqueID;
-// clang-format on
-
 struct EventingRequest {
 public:
     // EventingRequest inner types declare
@@ -109,11 +103,5 @@ public:
 
     MCAPI static ::EventingRequest
     addPersonaEmotePlayed(::std::string const& emoteProductId, bool isEmoteEndedEarly, int emoteSlotId);
-
-    MCAPI static ::EventingRequest
-    addPlayerBounced(::ActorUniqueID const& playerID, ::Block const& block, int bounceHeight);
-
-    MCAPI static ::EventingRequest
-    addPlayerUnexpectedFallDamage(float fallDistance, bool isVehicle, float divergenceAmount);
     // NOLINTEND
 };

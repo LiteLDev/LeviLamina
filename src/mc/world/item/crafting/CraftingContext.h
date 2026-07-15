@@ -81,14 +81,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CraftingContext(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
 
-    MCAPI ::BaseGameVersion getBaseGameVersion() const;
-
-    MCAPI ::std::weak_ptr<::TrimMaterialRegistry const> const getTrimMaterialRegistry() const;
-
-    MCAPI ::std::weak_ptr<::TrimPatternRegistry const> const getTrimPatternRegistry() const;
-
-    MCAPI ::std::weak_ptr<::TrimPatternRegistry> const getTrimPatternRegistry();
-
     MCAPI ~CraftingContext();
     // NOLINTEND
 

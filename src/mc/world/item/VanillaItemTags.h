@@ -118,15 +118,21 @@ MCAPI ::ItemTag const& StoneToolMaterials();
 
 MCAPI ::ItemTag const& SulfurCubeArchetypeBouncy();
 
+MCAPI ::ItemTag const& SulfurCubeArchetypeExplosive();
+
 MCAPI ::ItemTag const& SulfurCubeArchetypeFastFlat();
 
 MCAPI ::ItemTag const& SulfurCubeArchetypeFastSliding();
 
 MCAPI ::ItemTag const& SulfurCubeArchetypeHighResistance();
 
+MCAPI ::ItemTag const& SulfurCubeArchetypeHot();
+
 MCAPI ::ItemTag const& SulfurCubeArchetypeLight();
 
 MCAPI ::ItemTag const& SulfurCubeArchetypeRegular();
+
+MCAPI ::ItemTag const& SulfurCubeArchetypeSlowBouncy();
 
 MCAPI ::ItemTag const& SulfurCubeArchetypeSlowFlat();
 

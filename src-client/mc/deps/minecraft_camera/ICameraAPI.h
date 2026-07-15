@@ -64,7 +64,7 @@ public:
 
     virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext> actorRef) const = 0;
 
-    virtual ::std::optional<::ICameraAPI::ShakeParameters> tryGetShakeParameters(
+    virtual ::std::vector<::ICameraAPI::ShakeParameters> tryGetShakeParameters(
         ::WeakRef<::EntityContext> actorRef,
         float                      noiseMultiplier,
         float                      frequency,

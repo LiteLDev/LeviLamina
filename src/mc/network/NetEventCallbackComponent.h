@@ -16,10 +16,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::NetEventCallback>> mCallback;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void set(::Bedrock::NonOwnerPointer<::NetEventCallback> callback);
-    // NOLINTEND
 };

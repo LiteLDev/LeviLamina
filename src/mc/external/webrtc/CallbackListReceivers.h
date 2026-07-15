@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/FunctionView.h"
+#include "mc/external/webrtc/FunctionView.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -64,7 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI CallbackListReceivers();
 
-    MCNAPI void Foreach(::rtc::FunctionView<void(::webrtc::UntypedFunction&)> fv);
+    MCNAPI void Foreach(::webrtc::FunctionView<void(::webrtc::UntypedFunction&)> fv);
 
     MCNAPI void RemoveReceivers(void const* removal_tag);
 

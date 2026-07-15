@@ -18,8 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InputEventQueue();
-
     MCAPI void enqueueButton(
         uint          id,
         ::ButtonState state,
@@ -47,19 +45,5 @@ public:
     );
 
     MCAPI void enqueuePointerLocationWithId(int id, short x, short y, bool updateActionPointer);
-
-    MCAPI ~InputEventQueue();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

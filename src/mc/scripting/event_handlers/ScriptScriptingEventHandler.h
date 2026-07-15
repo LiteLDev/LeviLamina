@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
@@ -16,7 +15,6 @@ struct BeforeWatchdogTerminateEvent;
 struct ScriptModuleShutdownEvent;
 struct ScriptModuleStartupEvent;
 namespace ScriptModuleMinecraft { class ScriptSystemBeforeEvents; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 class ScriptScriptingEventHandler : public ::EventHandlerDispatcher<::ScriptingEventHandler>,
@@ -35,28 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _handlScriptModuleShutdownEvent(
-        ::ScriptModuleShutdownEvent const&                                                moduleShutdownEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> scriptSystemBeforeEventsHandle
-    ) const;
-
-    MCAPI bool _handleScriptModuleStartupEvent(
-        ::ScriptModuleStartupEvent const&                                                 moduleStartupEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> scriptSystemBeforeEventsHandle
-    ) const;
-
-    MCAPI bool _handleWatchdogTerminateEvent(
-        ::BeforeWatchdogTerminateEvent&                                                   beforeWatchdogTerminateEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> scriptSystemBeforeEventsHandle
-    ) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::GameplayHandlerResult<::CoordinatorResult>
@@ -69,11 +45,5 @@ public:
     $handleEvent(::ScriptModuleShutdownEvent const& moduleShutdownEvent);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

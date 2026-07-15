@@ -58,11 +58,9 @@ public:
 
     MCNAPI void addLoadTime(::PuvLoadData::LoadResultWithTiming const& loadTime);
 
-    MCNAPI void calculateStats();
-
-    MCNAPI bool filesWereLoaded() const;
-
+#ifdef LL_PLAT_C
     MCNAPI void tryAddPackName(::std::string const& packName);
+#endif
 
     MCNAPI ~TelemetryEventData();
     // NOLINTEND

@@ -7,7 +7,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/json/Value.h"
 #include "mc/platform/threading/SharedLock.h"
-#include "mc/resources/ResourceLoadType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,32 +33,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                                      mName;
         ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Json::Value>> mDefs;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UIDefNamespace();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit UIDefNamespace(::std::string const& name);
-
-        MCAPI ::Json::Value const& findDefInNamespace(::std::string const& defName) const;
-
-        MCAPI ~UIDefNamespace();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string const& name);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct DefEntry {
@@ -72,18 +45,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> refNs;
         ::ll::TypedStorage<8, 32, ::std::string> refName;
         ::ll::TypedStorage<8, 16, ::Json::Value> jsonVal;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~DefEntry();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -113,19 +74,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void loadDefsList(
-        ::ResourceLocation const&                           defsListFile,
-        ::ResourcePackStack const&                          packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&,
+        ::ResourcePackStack const&,
+        ::std::function<void(::std::vector<::PackReport>&)>
     ) /*override*/;
 
     virtual void validateDefEntries(
-        ::ResourceLocation const&                           defsListFile,
-        ::std::shared_ptr<::ResourcePackStack const>        packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&,
+        ::std::shared_ptr<::ResourcePackStack const>,
+        ::std::function<void(::std::vector<::PackReport>&)>
     ) const /*override*/;
 
-    virtual ::Json::Value const& findDef(::std::string const& defNamespace, ::std::string const& defName) const
-        /*override*/;
+    virtual ::Json::Value const& findDef(::std::string const&, ::std::string const&) const /*override*/;
 
     virtual ::Bedrock::Threading::SharedLock<::std::shared_mutex> acquireSharedLock() const /*override*/;
 
@@ -143,55 +103,17 @@ public:
 
     virtual bool isUIValidationDone() const /*override*/;
 
-    virtual void
-    forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)> callback) /*override*/;
+    virtual void forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)>) /*override*/;
 
     virtual ::Json::Value const& getGlobalVariables() const /*override*/;
 
-    virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry) /*override*/;
+    virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit UIDefRepository(::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager);
-
-    MCAPI void _applyGlobalColorFormat();
-
-    MCAPI void _collectAllDefEntries(
-        ::ResourceLoadType                                            loadType,
-        ::ResourceLocation const&                                     defsListFile,
-        ::ResourcePackStack const&                                    packStack,
-        ::std::shared_ptr<::std::vector<::UIDefRepository::DefEntry>> allDefEntries,
-        ::std::shared_ptr<::std::vector<::PackReport>>                packReports
-    ) const;
-
-    MCAPI void _forEachControl(
-        ::Json::Value const&                                              value,
-        ::std::string const&                                              namePath,
-        ::std::function<void(::Json::Value const&, ::std::string const&)> callback
-    );
-
-    MCAPI void _queueFinishLoad(
-        ::std::shared_ptr<::std::unordered_map<::std::string, ::UIDefRepository::UIDefNamespace>> defNamespaces,
-        ::std::shared_ptr<::std::vector<::PackReport>>                                            packReportsPtr,
-        ::ResourcePackStack const&                                                                packStack,
-        ::std::function<void(::std::vector<::PackReport>&)>                                       onReportsReady
-    );
-
-    MCAPI void _readGlobalVariables(::ResourcePackStack const& packStack);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _resolveReferences(
-        ::UIDefRepository::DefEntry&                      defEntry,
-        ::std::vector<::UIDefRepository::DefEntry> const& allDefEntries,
-        ::std::vector<int> const&                         sortedDefEntries,
-        ::std::unordered_set<int>&                        visitedRefs,
-        ::std::vector<bool>&                              resolved
-    );
     // NOLINTEND
 
 public:
@@ -203,46 +125,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadDefsList(
-        ::ResourceLocation const&                           defsListFile,
-        ::ResourcePackStack const&                          packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
-    );
 
-    MCAPI void $validateDefEntries(
-        ::ResourceLocation const&                           defsListFile,
-        ::std::shared_ptr<::ResourcePackStack const>        packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
-    ) const;
-
-    MCAPI ::Json::Value const& $findDef(::std::string const& defNamespace, ::std::string const& defName) const;
-
-    MCAPI ::Bedrock::Threading::SharedLock<::std::shared_mutex> $acquireSharedLock() const;
-
-    MCAPI void $syncUILoad();
-
-    MCAPI void $syncUILoadDefinitions();
-
-    MCAPI void $syncUILoadDefinitionReferences();
-
-    MCAPI void $cancelUIValidation();
-
-    MCAPI bool $isLoadingDone() const;
-
-    MCAPI bool $isUILoadingDone() const;
-
-    MCAPI bool $isUIValidationDone() const;
-
-    MCAPI void $forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)> callback);
-
-    MCFOLD ::Json::Value const& $getGlobalVariables() const;
-
-    MCAPI void $translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -10,16 +10,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>           mStopAll;
     ::ll::TypedStorage<1, 1, bool>           mStopMusicLegacy;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~StopSoundPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

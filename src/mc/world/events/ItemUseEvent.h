@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<8, 128, ::ItemInstance> mItemInstance;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mActor;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ItemUseEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

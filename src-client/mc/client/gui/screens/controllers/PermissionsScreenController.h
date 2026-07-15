@@ -6,10 +6,8 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/ScreenExitBehavior.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/actor/player/LayeredAbilities.h"
 
 // auto generated forward declare list
@@ -44,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PermissionsScreenController() /*override*/;
+    virtual ~PermissionsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -66,56 +64,6 @@ public:
         ::std::weak_ptr<::UserDataScreenController>    userDataScreenController,
         ::ScreenExitBehavior                           exitBehavior
     );
-
-    MCAPI void _closeEduPermissionsPopup();
-
-    MCAPI void _confirmationBanningPlayerDialog(
-        ::std::string const&                         selectedPlayerName,
-        ::std::function<void(::ModalScreenButtonId)> callback
-    );
-
-    MCAPI void _confirmationDeoppingOtherDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _confirmationDeoppingSelfDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _confirmationKickingPlayerDialog(
-        ::std::string const&                         selectedPlayerName,
-        ::std::function<void(::ModalScreenButtonId)> callback
-    );
-
-    MCAPI void _confirmationNoCheatsDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _confirmationRemovingPlayerDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _decidePermissions();
-
-    MCAPI void _evaluateCanEdit();
-
-    MCAPI void _handleOperatorAbility();
-
-    MCAPI bool _isLocalPlayerSelected() const;
-
-    MCAPI bool _isNonXboxLivePlayerSelected() const;
-
-    MCAPI void _populateClientIds();
-
-    MCAPI void _processAbilityChange(int index, bool checked);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
-
-    MCAPI void _setCurrentPermissionLevel(::PlayerPermissionLevel permissionLevel, bool checkDefaultCustomAbilities);
-
-    MCAPI void _setPermissionLevelEdu(::PlayerPermissionLevel permissionLevel);
-
-    MCAPI void _setPermissionLevelRealms(::PlayerPermissionLevel permissionLevel);
-
-    MCAPI void _syncAbilities();
-
-    MCAPI void openEduPermissionsPopup(::ActorUniqueID id);
     // NOLINTEND
 
 public:
@@ -130,30 +78,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI void $onLeave();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

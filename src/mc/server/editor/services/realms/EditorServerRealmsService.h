@@ -4,19 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/RealmsWorldUploadResult.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/realms/EditorRealmsService.h"
 
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
 namespace Editor { class GameOptions; }
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Network { class EditorIsRealmsServiceAvailablePayload; }
-namespace Editor::Network { class RealmWorldDownloadResponsePayload; }
-namespace Editor::Network { class RealmWorldListDownloadPayload; }
-namespace Editor::Network { class RealmWorldSlotsDownloadPayload; }
-namespace Editor::Network { class RealmWorldUploadResponsePayload; }
 // clang-format on
 
 namespace Editor::Services {
@@ -59,31 +53,6 @@ public:
     ) /*override*/;
 
     virtual void beginDownloadWorld(::std::string const& worldId, int slotId, ::WeakEntityRef playerRef) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit EditorServerRealmsService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void
-    _handleIsRealmsServiceAvailablePayload(::Editor::Network::EditorIsRealmsServiceAvailablePayload const& payload);
-
-    MCNAPI void _handleRealmWorldDownloadResponse(::Editor::Network::RealmWorldDownloadResponsePayload const& payload);
-
-    MCNAPI void _handleRealmWorldListDownloadPayload(::Editor::Network::RealmWorldListDownloadPayload const& payload);
-
-    MCNAPI void _handleRealmWorldSlotsDownloadPayload(::Editor::Network::RealmWorldSlotsDownloadPayload const& payload);
-
-    MCNAPI void _handleRealmWorldUploadResponse(::Editor::Network::RealmWorldUploadResponsePayload const& payload);
-
-    MCNAPI bool _isDedicatedServer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

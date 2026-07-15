@@ -1,0 +1,57 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+namespace webrtc {
+
+enum class SdpMungingType : int {
+    KNoModification                          = 0,
+    KUnknownModification                     = 1,
+    KWithoutCreateAnswer                     = 2,
+    KWithoutCreateOffer                      = 3,
+    KNumberOfContents                        = 4,
+    KCurrentDescriptionFailedToParse         = 5,
+    KIceOptions                              = 20,
+    KIcePwd                                  = 21,
+    KIceUfrag                                = 22,
+    KIceMode                                 = 23,
+    KDtlsSetup                               = 24,
+    KMid                                     = 25,
+    KPayloadTypes                            = 26,
+    KSsrcs                                   = 27,
+    KIceOptionsRenomination                  = 28,
+    KDirection                               = 29,
+    KRtcpMux                                 = 30,
+    KIceOptionsTrickle                       = 31,
+    KIceCandidateCount                       = 32,
+    KRtpHeaderExtensionRemoved               = 40,
+    KRtpHeaderExtensionAdded                 = 41,
+    KRtpHeaderExtensionModified              = 42,
+    KAudioCodecsRemoved                      = 60,
+    KAudioCodecsAdded                        = 61,
+    KAudioCodecsReordered                    = 62,
+    KAudioCodecsAddedMultiOpus               = 63,
+    KAudioCodecsAddedL16                     = 64,
+    KAudioCodecsRtcpFbAudioNack              = 65,
+    KAudioCodecsFmtpOpusFec                  = 66,
+    KAudioCodecsFmtpOpusCbr                  = 67,
+    KAudioCodecsFmtpOpusStereo               = 68,
+    KAudioCodecsFmtpOpusDtx                  = 69,
+    KAudioCodecsFmtp                         = 70,
+    KAudioCodecsRtcpFb                       = 71,
+    KAudioCodecsRtcpFbRrtr                   = 72,
+    KAudioCodecsRtcpReducedSize              = 73,
+    KVideoCodecsRemoved                      = 80,
+    KVideoCodecsAdded                        = 81,
+    KVideoCodecsReordered                    = 82,
+    KVideoCodecsLegacySimulcast              = 83,
+    KVideoCodecsFmtpH264SpsPpsIdrInKeyframe  = 84,
+    KVideoCodecsFmtp                         = 85,
+    KVideoCodecsRtcpFb                       = 86,
+    KVideoCodecsAddedWithRawPacketization    = 87,
+    KVideoCodecsModifiedWithRawPacketization = 88,
+    KVideoCodecsRtcpReducedSize              = 89,
+    KMaxValue                                = 90,
+};
+
+}

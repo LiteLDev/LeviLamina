@@ -66,28 +66,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI void $playAmbientSound();
-
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
-
-    MCAPI void $setSitting(bool value);
-
-    MCAPI bool $canBePulledIntoVehicle() const;
-
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
-
-    MCAPI float $getShadowRadius() const;
-
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

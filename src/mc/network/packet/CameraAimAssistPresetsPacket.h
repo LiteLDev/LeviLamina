@@ -25,8 +25,7 @@ public:
 
 public:
     // prevent constructor by default
-    CameraAimAssistPresetsPacket& operator=(CameraAimAssistPresetsPacket const&);
-    CameraAimAssistPresetsPacket(CameraAimAssistPresetsPacket const&);
+    CameraAimAssistPresetsPacket();
 
 public:
     // virtual functions
@@ -69,25 +68,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistPresetsPacket();
-
     MCAPI explicit CameraAimAssistPresetsPacket(::CameraAimAssistPresetsPacketPayload payload);
-
-    MCAPI ::CameraAimAssistPresetsPacket& operator=(::CameraAimAssistPresetsPacket&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::CameraAimAssistPresetsPacketPayload payload);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string_view $getName() const;
 

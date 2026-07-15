@@ -7,9 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class HashedString;
-class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -33,35 +30,9 @@ public:
     NativeBrushBlockChangeListPayload();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI NativeBrushBlockChangeListPayload(
-        ::std::vector<::BlockPos> const&     blockPositions,
-        ::std::vector<::HashedString> const& blockTypes,
-        uchar                                faceId,
-        ::Vec3 const&                        faceIntersection
-    );
-#endif
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::std::vector<::BlockPos> const&     blockPositions,
-        ::std::vector<::HashedString> const& blockTypes,
-        uchar                                faceId,
-        ::Vec3 const&                        faceIntersection
-    );
-#endif
     // NOLINTEND
 
 public:

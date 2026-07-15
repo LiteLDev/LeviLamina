@@ -20,10 +20,6 @@ namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 
 class TntBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    TntBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const /*override*/;
@@ -32,20 +28,16 @@ public:
     destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const
         /*override*/;
 
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    virtual bool shouldDispense(::BlockSource& region, ::Container&) const /*override*/;
+    virtual bool shouldDispense(::BlockSource& region, ::Container& container) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TntBlock(::std::string const& nameId, int id);
-
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
-
-    MCAPI void _setAllowUnderwater(::Actor* e) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
@@ -57,12 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
@@ -70,9 +56,9 @@ public:
     MCAPI void
     $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI bool $shouldDispense(::BlockSource& region, ::Container&) const;
+    MCAPI bool $shouldDispense(::BlockSource& region, ::Container& container) const;
 
 
     // NOLINTEND

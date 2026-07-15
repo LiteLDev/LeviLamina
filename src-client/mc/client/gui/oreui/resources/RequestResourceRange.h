@@ -26,12 +26,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Gameface::RequestResourceRange::RangeInBytes> mRangeInBytes;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::Gameface::RequestResourceRange::RangeInBytes const& getRangeInBytes() const;
-    // NOLINTEND
 };
 
 } // namespace Gameface

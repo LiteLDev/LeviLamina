@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/deps/scripting/script_engine/ClosureGeneric.h"
+#include "mc/deps/script_core/script_engine/scripting/ClosureGeneric.h"
 #include "mc/scripting/modules/minecraft/ScriptServerStateMonitor.h"
 #include "mc/scripting/modules/minecraft/commands/ScriptCustomCommandInterface.h"
 
@@ -13,10 +12,7 @@
 class CommandRegistry;
 struct ServerScriptManagerEvents;
 namespace ScriptModuleMinecraft { class CommandClosureStorage; }
-namespace ScriptModuleMinecraft { struct ScriptCustomCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandResult; }
-namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
-namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -48,18 +44,6 @@ public:
                 104,
                 ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>>>
                 mClosure;
-            // NOLINTEND
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCAPI ~CommandData();
-            // NOLINTEND
-
-        public:
-            // destructor thunk
-            // NOLINTBEGIN
-            MCAPI void $dtor();
             // NOLINTEND
         };
 
@@ -125,7 +109,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CustomCommandRegistry() /*override*/;
+    virtual ~CustomCommandRegistry() /*override*/ = default;
 
     virtual void _onScriptInitializationComplete() /*override*/;
     // NOLINTEND
@@ -134,68 +118,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CustomCommandRegistry(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
-
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandError> _checkNamespaceConsistency(
-        ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,
-        ::std::string_view                                                          newNamespace
-    ) const;
-
-    MCAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&
-    _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string_view newNamespace);
-
-    MCAPI bool _isDuplicateCommand(::std::string const& name) const;
-
-    MCAPI bool _isDuplicateEnum(::std::string const& name) const;
-
-    MCAPI void _processRegistrations();
-
-    MCAPI void _reloadRegistrations();
-
-    MCAPI ::std::optional<::std::string> _tryClaimAlias(::std::string const& commandName);
-
-    MCAPI void _tryRegisterAlias(::std::string const& commandName, ::std::optional<::std::string> const& aliasOpt);
-
-    MCAPI bool
-    _validParametersForReload(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& newInterface) const;
-
-    MCAPI ::std::optional<::std::string> _validateEnumDependencies(
-        ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,
-        ::ScriptModuleMinecraft::ScriptCustomCommandInterface const&                commandInterface
-    ) const;
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::ScriptModuleMinecraft::ScriptCustomCommandError,
-        ::Scripting::EngineError>
-    addPendingCommand(
-        ::std::string const&                                         packUUID,
-        ::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface,
-        ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>>&& closure
-    );
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::ScriptModuleMinecraft::ScriptCustomCommandError,
-        ::Scripting::EngineError>
-    addPendingEnum(
-        ::std::string const&                packUUID,
-        ::std::string const&                name,
-        ::std::vector<::std::string> const& values
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

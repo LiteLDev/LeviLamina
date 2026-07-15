@@ -20,13 +20,5 @@ public:
     MCAPI void sendOnObjectiveRemoved(::std::string const& objective);
 
     MCAPI void sendOnScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
-
-    MCAPI void sendOnScoreboardIdentityRemoved(::ScoreboardId const& id);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -31,30 +31,12 @@ public:
 
     virtual ::Json::Value asJsonValue() const /*override*/;
 
-    virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& RAW_TEXT_SELECTOR_KEY();
+    virtual ::Json::Value resolve(::ResolveData const&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $asString() const;
 
-    MCNAPI ::Json::Value $asJsonValue() const;
-
-    MCNAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

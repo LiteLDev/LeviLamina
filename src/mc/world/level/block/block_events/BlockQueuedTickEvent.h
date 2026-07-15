@@ -7,10 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class Random;
-class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -34,22 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockQueuedTickEvent(::BlockSource& region, ::BlockPos pos, ::Random& random, bool isInstaticking);
-
-    MCFOLD void configureRenderParamsForTrigger(::RenderParams& params) const;
-
-    MCFOLD bool isClientSide() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::BlockPos pos, ::Random& random, bool isInstaticking);
     // NOLINTEND
 
 public:

@@ -41,11 +41,9 @@ public:
     // NOLINTBEGIN
     virtual bool shouldAddToConfiguration() const /*override*/;
 
-    virtual void addToMatcher(
-        ::OreUI::RouteMatcher&                              routeMatcher,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
-    ) const /*override*/;
+    virtual void
+    addToMatcher(::OreUI::RouteMatcher&, ::SceneFactory&, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -71,19 +69,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
-        ::OreUI::RouteMatcher&                              routeMatcher,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
-    ) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

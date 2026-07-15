@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class EntityContext;
 class GameplayUserManager;
 class IActorManagerConnector;
 class WeakEntityRef;
@@ -40,34 +39,14 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorRuntimeIDManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
-    MCAPI void _addEntity(::EntityContext const& entity);
-
-    MCAPI void _onActorAdded(::Actor& actor);
-
-    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
-
-    MCAPI void _removeEntity(::EntityContext const& entity);
-
-    MCFOLD ::ActorRuntimeID getNextRuntimeID();
-
     MCAPI ::Actor* getRuntimeActorEntity(::ActorRuntimeID actorId, bool getRemoved) const;
 
-    MCAPI ::std::vector<::Actor*> getRuntimeActorList() const;
-
     MCAPI void initialize(::IActorManagerConnector& actorManagerConnector);
-
-    MCAPI ~ActorRuntimeIDManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -3,20 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/BasicPacketSocketFactory.h"
+#include "mc/external/webrtc/BasicPacketSocketFactory.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class AsyncPacketSocket; }
-namespace rtc { class SocketAddress; }
-namespace rtc { class SocketFactory; }
 namespace webrtc { class AsyncDnsResolverInterface; }
-namespace webrtc { class TaskQueueBase; }
+namespace webrtc { class AsyncPacketSocket; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace NetherNet {
 
-class PacketSocketFactory : public ::rtc::BasicPacketSocketFactory {
+class PacketSocketFactory : public ::webrtc::BasicPacketSocketFactory {
 public:
     // member variables
     // NOLINTBEGIN
@@ -36,45 +34,19 @@ public:
     // NOLINTBEGIN
     virtual ~PacketSocketFactory() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::rtc::AsyncPacketSocket>
-    CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::AsyncPacketSocket>
+    CreateUdpSocket(::webrtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
 
-    virtual ::std::shared_ptr<::rtc::AsyncPacketSocket>
-    CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort) /*override*/;
+    virtual ::std::shared_ptr<::webrtc::AsyncPacketSocket>
+    CreateGlobalUdpSocket(::webrtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI PacketSocketFactory(::rtc::SocketFactory* socketFactory, ::webrtc::TaskQueueBase* workerThread);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::SocketFactory* socketFactory, ::webrtc::TaskQueueBase* workerThread);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::rtc::AsyncPacketSocket>
-    $CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port);
 
-    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
-    $CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
-
-    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

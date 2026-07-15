@@ -31,6 +31,8 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_110::ItemDescription& operator=(::SharedTypes::v1_21_110::ItemDescription const&);
 
+    MCAPI bool operator==(::SharedTypes::v1_21_110::ItemDescription const&) const;
+
     MCAPI ~ItemDescription();
     // NOLINTEND
 

@@ -3,29 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
-#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
 
 // auto generated forward declare list
 // clang-format off
-class IConstBlockSource;
-class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorInWallDetectionComponent;
 struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
-struct GetAttachPositionViews;
 struct MobFlagComponent;
 struct MobIsSuffocatingFlagComponent;
 struct OffsetsComponent;
@@ -76,32 +69,6 @@ public:
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _isShulkerInWall(
-        ::StateVectorComponent const&      stateVectorComponent,
-        ::AABBShapeComponent const&        aabbShapeComponent,
-        ::SynchedActorDataComponent const& synchedActorDataComponent,
-        ::OffsetsComponent const&          offsetsComponent,
-        ::IConstBlockSource const&         region
-    );
-
-    MCAPI static void _tickCheckSuffocation(
-        ::StrictEntityContext const&           entity,
-        ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,
-        ::StateVectorComponent const&          stateVectorComponent,
-        ::AABBShapeComponent const&            aabbShapeComponent,
-        ::SynchedActorDataComponent const&     synchedActorDataComponent,
-        ::OffsetsComponent const&              offsetsComponent,
-        ::Optional<::VehicleComponent const>   vehicleComponent,
-        ::GetAttachPositionViews const&        getAttachPosViews,
-        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers,
-        ::EntityModifier<::MobIsSuffocatingFlagComponent>                                         modifier,
-        ::IConstBlockSource const&                                                                region
-    );
     // NOLINTEND
 
 public:

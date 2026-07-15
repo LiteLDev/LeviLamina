@@ -15,16 +15,4 @@ public:
     ::ll::TypedStorage<8, 56, ::CollisionShapes> mCollisionShapes;
     ::ll::TypedStorage<4, 24, ::AABB>            mMoveCollisionLastFetchedBox;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~RewindCollisionShapesComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -17,7 +16,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IConstBlockSource;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
@@ -27,7 +25,6 @@ struct DimensionTypeComponent;
 struct LavaSlimeFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct SoundEventPlayerComponent;
-struct SoundEventRequestQueueComponent;
 struct StateVectorComponent;
 struct TriggerJumpRequestComponent;
 // clang-format on
@@ -92,24 +89,6 @@ public:
             ::EntityFactoryT<>>& context,
         ::StrictEntityContext&   entityContext
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void doPlayJumpSoundSystem(
-        ::StrictEntityContext const&                                      entity,
-        ::ActorDataFlagComponent const&                                   actorFlags,
-        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
-        ::ActorUniqueIDComponent const&                                   actorUniqueID,
-        ::DimensionTypeComponent const&                                   dimensionType,
-        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
-        ::StateVectorComponent const&                                     stateVectorComponent,
-        ::AABBShapeComponent const&                                       aabbShapeComponent,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView,
-        ::PlayJumpSoundSystem::SoundType                                  jumpType,
-        ::IConstBlockSource const&                                        region
-    );
     // NOLINTEND
 
 public:

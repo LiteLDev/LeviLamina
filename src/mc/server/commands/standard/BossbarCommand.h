@@ -50,7 +50,7 @@ public:
     ::ll::TypedStorage<4, 4, ::BossbarCommand::BossbarSetOption> mSetOption;
     ::ll::TypedStorage<8, 32, ::std::string>                     mId;
     ::ll::TypedStorage<8, 16, ::Json::Value>                     mName;
-    ::ll::TypedStorage<4, 4, ::BossBarColor>                     mColor;
+    ::ll::TypedStorage<1, 1, ::BossBarColor>                     mColor;
     ::ll::TypedStorage<4, 4, int>                                mMax;
     ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>>      mTargets;
     ::ll::TypedStorage<4, 4, int>                                mValue;

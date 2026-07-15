@@ -45,13 +45,6 @@ public:
         ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector
     );
 
-    MCNAPI static ::Core::Result replaceFlatFileManifest(
-        ::Core::FileSystemImpl&                            transaction,
-        ::Core::PathView                                   flatFileManifestPath,
-        ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,
-        bool                                               keepCached
-    );
-
     MCNAPI static ::Core::Result transferFlatFileDirectory(
         ::Core::FileSystemImpl* sourceTransaction,
         ::Core::PathView        sourceDirectoryPath,
@@ -63,17 +56,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static uint64 const& FLAT_FILE_CURRENT_VERSION();
-
     MCNAPI static ::std::string const& FLAT_FILE_EMPTY_MANIFEST_FILE();
 
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_EXTENSION();
 
-    MCNAPI static uint64 const& FLAT_FILE_INVALID_VERSION();
-
     MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_MANIFEST_EXTENSION();
-
-    MCNAPI static uint64 const& FLAT_FILE_WRITE_CHUNK_SIZE();
     // NOLINTEND
 };
 

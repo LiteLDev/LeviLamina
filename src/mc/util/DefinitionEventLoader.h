@@ -17,14 +17,6 @@ class DefinitionEventLoader {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _loadCollection(
-        ::DefinitionEvent&            defEvent,
-        ::Json::Value const&          collection,
-        ::MinEngineVersion const&     minEngineVersion,
-        ::TypeExecutingEvent          eventCaller,
-        ::EventResponseFactory const* responseFactory
-    );
-
     MCNAPI static ::DefinitionEvent loadEvent(
         ::Json::Value                 root,
         ::MinEngineVersion const&     minEngineVersion,

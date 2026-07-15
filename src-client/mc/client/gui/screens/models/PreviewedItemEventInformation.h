@@ -24,23 +24,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mIsOwned;
     ::ll::TypedStorage<1, 1, bool>                                mEventSent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PreviewedItemEventInformation(PreviewedItemEventInformation const&);
-    PreviewedItemEventInformation();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::PreviewedItemEventInformation& operator=(::PreviewedItemEventInformation const&);
-
-    MCAPI ~PreviewedItemEventInformation();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

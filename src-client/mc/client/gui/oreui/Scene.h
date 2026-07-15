@@ -7,9 +7,7 @@
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/oreui/SceneState.h"
 #include "mc/client/gui/oreui/interface/IScene.h"
-#include "mc/client/gui/oreui/interface/RouteMode.h"
 #include "mc/client/gui/oreui/interface/ViewId.h"
-#include "mc/client/gui/oreui/routing/RouterAction.h"
 #include "mc/client/gui/screens/AbstractScene.h"
 #include "mc/client/renderer/screen/EyeRenderingModeBit.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -38,8 +36,6 @@ struct TouchPadTouchEventData;
 namespace OreUI { class IView; }
 namespace OreUI { class IViewProvider; }
 namespace OreUI { class RouteModeInputHandler; }
-namespace OreUI { class Router; }
-namespace OreUI { class RouterLocation; }
 namespace OreUI::Debug { class ISceneDataProvider; }
 // clang-format on
 
@@ -56,28 +52,25 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                                 mCurrentRoute;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::RouteModeInputHandler>> mRouteModeInputHandler;
     ::ll::TypedStorage<1, 1, ::OreUI::SceneState>                                            mState;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mOnRouteChangedSubscription;
-    ::ll::TypedStorage<4, 8, ::glm::vec2>                                             mGamepadCursorPosition;
-    ::ll::TypedStorage<2, 2, short>                                                   mCurrentPointerPositionX;
-    ::ll::TypedStorage<2, 2, short>                                                   mCurrentPointerPositionY;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AbstractScreenSetupCleanupStrategy>> mScreenSetupCleanup;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AbstractSceneProxy>>                mProxy;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnRouteChangedSubscription;
+    ::ll::TypedStorage<4, 8, ::glm::vec2>                      mGamepadCursorPosition;
+    ::ll::TypedStorage<2, 2, short>                            mCurrentPointerPositionX;
+    ::ll::TypedStorage<2, 2, short>                            mCurrentPointerPositionY;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::AbstractScreenSetupCleanupStrategy>>>
+                                                                       mScreenSetupCleanup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AbstractSceneProxy>> mProxy;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Scene();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Scene() /*override*/;
+    virtual ~Scene() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 
     virtual void init(::ScreenSizeData const&) /*override*/;
 
-    virtual void setSize(::ScreenSizeData const& screenSizeData) /*override*/;
+    virtual void setSize(::ScreenSizeData const&) /*override*/;
 
     virtual void onSetKeyboardHeight(float) /*override*/;
 
@@ -109,7 +102,7 @@ public:
 
     virtual void prepareFrame(::ScreenContext&) /*override*/;
 
-    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const&) /*override*/;
+    virtual void render(::ScreenContext&, ::FrameRenderObject const&) /*override*/;
 
     virtual void postRenderUpdate(::ScreenContext&) /*override*/;
 
@@ -181,9 +174,9 @@ public:
 
     virtual ::std::string getScreenName() const /*override*/;
 
-    virtual bool equalsScreenName(::std::string_view comparison) const /*override*/;
+    virtual bool equalsScreenName(::std::string_view) const /*override*/;
 
-    virtual bool containsScreenNameSubstring(::std::string_view substring) const /*override*/;
+    virtual bool containsScreenNameSubstring(::std::string_view) const /*override*/;
 
     virtual ::std::string getRawScreenName() const /*override*/;
 
@@ -243,7 +236,7 @@ public:
 
     virtual bool hasFinishedLoading() const /*override*/;
 
-    virtual void sendScreenEvent(::std::string const& eventName, ::std::string const& eventData) /*override*/;
+    virtual void sendScreenEvent(::std::string const&, ::std::string const&) /*override*/;
 
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
 
@@ -260,246 +253,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Scene(
-        ::OreUI::ViewId                                               viewId,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IViewProvider>         viewProvider,
-        ::OreUI::Router&                                              router,
-        ::OreUI::RouteMode                                            routeMode,
-        ::std::function<void()>                                       onLoadFailedCallback,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::RouteModeInputHandler> routeModeInputHandler
-    );
-
-    MCAPI bool _isSameScene(::std::optional<::OreUI::RouterLocation> const& currentLocation) const;
-
-    MCAPI void _updateRouteAndRouteMode(
-        ::std::optional<::OreUI::RouterLocation> const& previousLocation,
-        ::std::optional<::OreUI::RouterLocation> const& currentLocation
-    );
-
-    MCAPI void onRouteChanged(
-        ::std::optional<::OreUI::RouterLocation> const& previousLocation,
-        ::std::optional<::OreUI::RouterLocation> const& currentLocation,
-        ::OreUI::RouterAction
-    );
-
-    MCAPI void setScreenSetupCleanup(::std::unique_ptr<::AbstractScreenSetupCleanupStrategy> strategy);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::OreUI::ViewId                                               viewId,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IViewProvider>         viewProvider,
-        ::OreUI::Router&                                              router,
-        ::OreUI::RouteMode                                            routeMode,
-        ::std::function<void()>                                       onLoadFailedCallback,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::RouteModeInputHandler> routeModeInputHandler
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onCreation();
 
-    MCFOLD void $init(::ScreenSizeData const&);
-
-    MCAPI void $setSize(::ScreenSizeData const& screenSizeData);
-
-    MCFOLD void $onSetKeyboardHeight(float);
-
-    MCFOLD ::std::vector<::RectangleArea> $getInputAreas() const;
-
-    MCFOLD void $onInternetUpdate();
-
-    MCFOLD void $onFocusGained();
-
-    MCAPI void $onFocusLost();
-
-    MCFOLD void $terminate();
-
-    MCFOLD void $onLeave();
-
-    MCFOLD void $onGameEventNotification(::ui::GameEventNotification);
-
-    MCFOLD void $leaveScreen();
-
-    MCFOLD void $preFrameTick();
-
-    MCFOLD void $tick(int, int);
-
-    MCFOLD void $frameUpdate(::MinecraftUIFrameUpdateContext&);
-
-    MCFOLD void $applyInput(float);
-
-    MCFOLD void $preRenderUpdate(::ScreenContext&);
-
-    MCFOLD void $prepareFrame(::ScreenContext&);
-
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
-
-    MCFOLD void $postRenderUpdate(::ScreenContext&);
-
-    MCFOLD void $handleInputModeChanged(::InputMode);
-
-    MCFOLD void $handleButtonPress(uint, ::FocusImpact);
-
-    MCFOLD void $handleButtonRelease(uint, ::FocusImpact);
-
-    MCFOLD void $handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool);
-
-    MCFOLD bool $handlePointerLocation(::PointerLocationEventData const&, ::FocusImpact);
-
-    MCFOLD void $handlePointerPressed(bool);
-
-    MCFOLD void $handleDirection(::DirectionId, float, float, ::FocusImpact);
-
-    MCFOLD void $handleTextChar(::std::string const&, ::FocusImpact);
-
-    MCFOLD void $handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact);
-
-    MCFOLD void $setTextboxText(::std::string const&, ::TextboxTextUpdateReason);
-
-    MCFOLD void $onKeyboardDismissed();
-
-    MCFOLD void $handleLicenseChanged();
-
-    MCFOLD bool $renderGameBehind() const;
-
-    MCAPI bool $absorbsInput() const;
-
-    MCFOLD bool $closeOnPlayerHurt() const;
-
-    MCFOLD bool $useCustomPocketToast() const;
-
-    MCFOLD bool $isModal() const;
-
-    MCFOLD bool $isEditorMode() const;
-
-    MCAPI bool $isShowingMenu() const;
-
-    MCAPI bool $shouldStealMouse() const;
-
-    MCFOLD bool $screenIsNotFlushable() const;
-
-    MCFOLD bool $alwaysAcceptsInput() const;
-
-    MCFOLD bool $screenDrawsLast() const;
-
-    MCFOLD bool $isPlayScreen() const;
-
-    MCFOLD bool $renderOnlyWhenTopMost() const;
-
-    MCFOLD bool $lowFreqRendering() const;
-
-    MCAPI bool $ignoreAsTop() const;
-
-    MCFOLD bool $shouldBeSkippedInAutomation() const;
-
-    MCAPI int $getWidth();
-
-    MCAPI int $getHeight();
-
-    MCFOLD void $reload();
-
-    MCAPI ::EyeRenderingModeBit $getEyeRenderingMode() const;
-
-    MCFOLD ::ui::SceneType $getSceneType() const;
-
-    MCAPI ::std::string $getScreenName() const;
-
-    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
-
-    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
-
-    MCAPI ::std::string $getRawScreenName() const;
-
-    MCFOLD ::std::string $getRoute() const;
-
-    MCFOLD ::std::string $getScreenTelemetryName() const;
-
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
-
-    MCFOLD int $getScreenVersion() const;
-
-    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&);
-
-    MCFOLD bool $getShouldSendEvents();
-
-    MCFOLD void $setShouldSendEvents(bool);
-
-    MCFOLD bool $getWantsTextOnly();
-
-    MCFOLD void $setWantsTextOnly(bool);
-
-    MCFOLD void $onDelete(::CachedScenes&, ::TaskGroup&);
-
-    MCFOLD bool $isGamepadCursorEnabled() const;
-
-    MCFOLD bool $isGamepadDeflectionModeEnabled() const;
-
-    MCFOLD ::glm::vec2 const& $getGamepadCursorPosition() const;
-
-    MCFOLD void $cleanInputComponents();
-
-    MCAPI ::std::weak_ptr<::AbstractSceneProxy> $getProxy();
-
-    MCFOLD bool $canBePushed() const;
-
-    MCFOLD bool $canBePopped() const;
-
-    MCAPI bool $canBeTransitioned() const;
-
-    MCAPI void $onScreenExit(bool, bool, ::std::shared_ptr<::AbstractScene>);
-
-    MCAPI void $onScreenEntrance(bool, bool);
-
-    MCFOLD bool $isEntering() const;
-
-    MCAPI bool $isExiting() const;
-
-    MCFOLD void $schedulePop();
-
-    MCFOLD bool $isTerminating() const;
-
-    MCFOLD bool $loadScreenImmediately() const;
-
-    MCFOLD bool $forceUpdateActiveSceneStackWhenPushed() const;
-
-    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
-
-    MCAPI bool $hasFinishedLoading() const;
-
-    MCAPI void $sendScreenEvent(::std::string const& eventName, ::std::string const& eventData);
-
-    MCFOLD void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
-
-    MCFOLD ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> $getDebugDataProvider() const;
-
-    MCAPI void $onLoadFailed(char const*, char const*);
-
-    MCAPI void $onViewReused();
-
-    MCAPI void $onReusedViewReleased();
-
-    MCAPI bool $isInputEnabled() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForAbstractScene();
-
-    MCNAPI static void** $vftableForIScene();
     // NOLINTEND
 };
 

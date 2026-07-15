@@ -2,15 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleServerAdmin { class ScriptLevelStorageSaveStateChangeError; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleServerAdmin {
@@ -49,20 +43,6 @@ public:
     ScriptLevelStorage& operator=(ScriptLevelStorage const&);
     ScriptLevelStorage(ScriptLevelStorage const&);
     ScriptLevelStorage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError> saveHold();
-
-    MCNAPI ::Scripting::Result<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<
-            ::ScriptModuleServerAdmin::ScriptLevelStorage::ScriptLevelStorageQuerySnapshotFile>>,
-        ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError>
-    saveQuery(::Scripting::WeakLifetimeScope const& scope);
-
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError> saveResume();
-    // NOLINTEND
 
 public:
     // static functions

@@ -16,26 +16,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mUsed;
     ::ll::TypedStorage<1, 1, bool>                          mToStart;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD int getPriority() const;
-
-    MCFOLD bool getToStart() const;
-
-    MCFOLD bool getUsed() const;
-
-    MCFOLD void setToStart(bool start);
-
-    MCAPI void setUsed(bool used);
-
-    MCAPI ~PrioritizedGoal();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

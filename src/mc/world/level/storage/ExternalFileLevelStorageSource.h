@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/storage/LevelDataLoadResult.h"
 #include "mc/world/level/storage/LevelStorageSource.h"
 
 // auto generated forward declare list
@@ -20,6 +21,7 @@ class LevelStorage;
 class LevelStorageEventing;
 class SaveTransactionManager;
 class Scheduler;
+struct LevelInfoPath;
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
 // clang-format on
@@ -59,8 +61,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     ) /*override*/;
 
-    virtual ::Bedrock::Result<bool> getLevelData(::std::string const& levelId, ::LevelData& levelDataOut) const
-        /*override*/;
+    virtual ::Bedrock::Result<::LevelDataLoadResult>
+    getLevelData(::std::string const& levelId, ::LevelData& levelDataOut) const /*override*/;
 
     virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) /*override*/;
 
@@ -89,8 +91,7 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const getPathToLevel(::std::string const& levelId) const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> const getPathToLevelInfo(::std::string const& levelId, bool) const
-        /*override*/;
+    virtual ::LevelInfoPath getPathToLevelInfo(::std::string const& levelId, bool) const /*override*/;
 
     virtual ::std::string getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath) const
         /*override*/;
@@ -105,8 +106,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&  pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager> const& saveTransactionManager
     );
-
-    MCAPI void _getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths) const;
     // NOLINTEND
 
 public:
@@ -145,7 +144,8 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCAPI ::Bedrock::Result<bool> $getLevelData(::std::string const& levelId, ::LevelData& levelDataOut) const;
+    MCAPI ::Bedrock::Result<::LevelDataLoadResult>
+    $getLevelData(::std::string const& levelId, ::LevelData& levelDataOut) const;
 
     MCAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& data);
 
@@ -173,7 +173,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> const $getPathToLevelInfo(::std::string const& levelId, bool) const;
+    MCAPI ::LevelInfoPath $getPathToLevelInfo(::std::string const& levelId, bool) const;
 
     MCAPI ::std::string $getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath) const;
 

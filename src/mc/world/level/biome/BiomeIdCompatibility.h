@@ -11,8 +11,6 @@ namespace BiomeIdCompatibility {
 // functions
 // NOLINTBEGIN
 MCAPI ::std::string_view getFixedBiomeName(::BiomeIdType biomeId);
-
-MCAPI bool isReserved(::BiomeIdType id);
 // NOLINTEND
 
 // static variables

@@ -18,16 +18,4 @@ public:
     WorldTemplatePackSourceOptions& operator=(WorldTemplatePackSourceOptions const&);
     WorldTemplatePackSourceOptions(WorldTemplatePackSourceOptions const&);
     WorldTemplatePackSourceOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~WorldTemplatePackSourceOptions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

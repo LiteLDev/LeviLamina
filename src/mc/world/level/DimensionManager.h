@@ -18,8 +18,6 @@ class Dimension;
 class DimensionRegistry;
 class IDimensionFactory;
 class ILevelStorageManagerConnector;
-class LevelStorage;
-class Random;
 struct DimensionIdType;
 struct DimensionType;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -55,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DimensionManager();
+    virtual ~DimensionManager() = default;
 
     virtual ::Bedrock::PubSub::Connector<void(::DimensionManager&)>&
     getOnReadyForCustomDimensionRegistrationConnector() /*override*/;
@@ -79,51 +77,20 @@ public:
 
     MCAPI void _registerCustomDimensionWithFactory(::std::string_view name, ::DimensionType type);
 
-    MCAPI void _registerFixedVanillaDimensionIds();
-
-#ifdef LL_PLAT_C
-    MCAPI void clientRegisterCustomDimension(::std::string_view name, ::DimensionType type);
-#endif
-
     MCFOLD void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
     MCFOLD void forEachDimension(::std::function<bool(::Dimension const&)> callback) const;
 
     MCAPI ::WeakRef<::Dimension> getDimension(::DimensionType dimensionType) const;
 
-    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
-    getDimensionDefinition(::std::string const& dimensionName) const;
-
-    MCFOLD ::DimensionDefinitionGroup& getDimensionDefinitionGroup();
-
-    MCAPI ::DimensionType getDimensionId(::std::string_view name) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::string getDimensionName(::DimensionType type) const;
-#endif
-
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::std::string_view dimensionName);
 
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
-
-    MCAPI ::WeakRef<::Dimension> getRandomDimension(::Random& random);
-
-    MCAPI bool hasDimensions() const;
-
-    MCAPI bool isDimensionTypeActive(::DimensionType type) const;
 
     MCAPI void serverInitialize(
         ::ILevelStorageManagerConnector& levelStorageManagerConnector,
         ::DimensionDefinitionGroup       dimensionDefinitionGroup
     );
-
-    MCAPI void serverLoadDimensionNameIdStoreTable(::LevelStorage const& levelStorage);
-
-    MCAPI ::std::optional<::DimensionType> serverRegisterCustomDimension(::std::string_view name);
-
-    MCAPI void serverSaveDimensionNameIdStoreTable(::LevelStorage& levelStorage) const;
-
-    MCAPI void shutdown();
     // NOLINTEND
 
 public:
@@ -140,25 +107,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionManager&)>&
-    $getOnReadyForCustomDimensionRegistrationConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -11,49 +11,14 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorDataFlagComponent;
 struct ControlledByLocalInstanceComponent;
 struct LocalPlayerComponent;
 struct PlayerComponent;
-struct VehicleComponent;
 // clang-format on
 
 namespace ControlledByLocalInstanceSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void _addOrRemoveCBLI(
-    ::StrictEntityContext const&                           entity,
-    ::EntityModifier<::ControlledByLocalInstanceComponent> modifier,
-    bool                                                   isLocallyControlled
-);
-
-MCAPI void _calculateBoatControlledByLocalInstanceSystem(
-    ::StrictEntityContext const& entity,
-    ::VehicleComponent const&    vehicleComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
-    ::EntityModifier<::ControlledByLocalInstanceComponent>                                                  modifier,
-    void (*setCBLI)(
-        ::StrictEntityContext const&,
-        ::std::optional<::StrictEntityContext> const&,
-        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
-        ::EntityModifier<::ControlledByLocalInstanceComponent>
-    )
-);
-
-MCAPI void _calculateHorseControlledByLocalInstanceSystem(
-    ::StrictEntityContext const&    entity,
-    ::VehicleComponent const&       vehicleComponent,
-    ::ActorDataFlagComponent const& actorData,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
-    ::EntityModifier<::ControlledByLocalInstanceComponent>                                                  modifier,
-    void (*setCBLI)(
-        ::StrictEntityContext const&,
-        ::std::optional<::StrictEntityContext> const&,
-        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
-        ::EntityModifier<::ControlledByLocalInstanceComponent>
-    )
-);
-
 MCAPI void setControlledByLocalInstanceClient(
     ::StrictEntityContext const&                           entity,
     ::EntityModifier<::ControlledByLocalInstanceComponent> modifier

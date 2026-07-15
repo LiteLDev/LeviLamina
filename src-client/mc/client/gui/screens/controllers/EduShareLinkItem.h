@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>    title;
     ::ll::TypedStorage<4, 4, ::EduShareUriType> shareType;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~EduShareLinkItem();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

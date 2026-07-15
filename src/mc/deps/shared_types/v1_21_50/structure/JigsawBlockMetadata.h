@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/world/level/levelgen/structure/JigsawJointType.h"
 #include "mc/world/level/BlockPos.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_50 {
 
 class JigsawBlockMetadata {
@@ -37,19 +32,9 @@ public:
     // NOLINTBEGIN
     MCAPI JigsawBlockMetadata(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
 
-    MCFOLD ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata&&);
-
     MCFOLD ::SharedTypes::v1_21_50::JigsawBlockMetadata& operator=(::SharedTypes::v1_21_50::JigsawBlockMetadata const&);
 
-    MCFOLD bool operator==(::SharedTypes::v1_21_50::JigsawBlockMetadata const& rhs) const;
-
     MCAPI ~JigsawBlockMetadata();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

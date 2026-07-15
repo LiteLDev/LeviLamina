@@ -12,7 +12,7 @@ public:
     // NOLINTBEGIN
     virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) /*override*/;
 
-    virtual ::Bedrock::Result<void> readBigEndianBytesResult(void* data, uint64 bytes);
+    virtual ::Bedrock::Result<void> readBigEndianBytesResult(void*, uint64);
 
     virtual ::Bedrock::Result<float> readFloatResult() /*override*/;
 
@@ -28,26 +28,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
 
-    MCAPI ::Bedrock::Result<void> $readBigEndianBytesResult(void* data, uint64 bytes);
-
-    MCAPI ::Bedrock::Result<float> $readFloatResult();
-
-    MCAPI ::Bedrock::Result<double> $readDoubleResult();
-
-    MCAPI ::Bedrock::Result<short> $readShortResult();
-
-    MCAPI ::Bedrock::Result<int> $readIntResult();
-
-    MCAPI ::Bedrock::Result<int64> $readLongLongResult();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

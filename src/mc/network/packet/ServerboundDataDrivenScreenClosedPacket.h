@@ -63,26 +63,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ServerboundDataDrivenScreenClosedPacket();
-
-#ifdef LL_PLAT_C
-    MCAPI explicit ServerboundDataDrivenScreenClosedPacket(::ServerboundDataDrivenScreenClosedPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ServerboundDataDrivenScreenClosedPacketPayload payload);
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;

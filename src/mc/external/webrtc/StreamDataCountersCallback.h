@@ -15,6 +15,8 @@ public:
     // NOLINTBEGIN
     virtual ~StreamDataCountersCallback() = default;
 
+    virtual ::webrtc::StreamDataCounters GetDataCounters(uint) const;
+
     virtual void DataCountersUpdated(::webrtc::StreamDataCounters const&, uint) = 0;
     // NOLINTEND
 

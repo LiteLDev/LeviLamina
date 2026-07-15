@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 class Village;
 // clang-format on
 
@@ -22,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MoveToVillageGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void start() /*override*/;
@@ -34,7 +29,7 @@ public:
 
     virtual bool canContinueToUse() /*override*/;
 
-    virtual bool isValidTarget(::BlockSource& pos, ::BlockPos const&) /*override*/;
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual void tick() /*override*/;
 
@@ -48,15 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToVillageGoal(::Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange);
-
     MCAPI ::std::shared_ptr<::Village> _tryGetCurrentVillage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange);
     // NOLINTEND
 
 public:
@@ -68,7 +55,7 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI bool $isValidTarget(::BlockSource& pos, ::BlockPos const&);
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI void $tick();
 

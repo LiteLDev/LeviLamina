@@ -30,49 +30,23 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::br::worldgen::StructureBlockInfo> finalize(
-        ::IBlockSource&                                          region,
-        ::BlockPos                                               pos,
-        ::BlockPos                                               structurePos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
-        ::br::worldgen::StructurePlaceSettings const&            settings
+        ::IBlockSource&,
+        ::BlockPos,
+        ::BlockPos,
+        ::std::vector<::br::worldgen::StructureBlockInfo> const&,
+        ::std::vector<::br::worldgen::StructureBlockInfo>&&,
+        ::br::worldgen::StructurePlaceSettings const&
     ) const /*override*/;
 
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
 
-    virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::Capped
-    from(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
+    virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
-        ::IBlockSource&                                          region,
-        ::BlockPos                                               pos,
-        ::BlockPos                                               structurePos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
-        ::br::worldgen::StructurePlaceSettings const&            settings
-    ) const;
 
-    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
-
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

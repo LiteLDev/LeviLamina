@@ -7,17 +7,6 @@
 
 namespace OreUI {
 
-struct FacetResourcePackId : public ::NewType<::std::string> {
-public:
-    // prevent constructor by default
-    FacetResourcePackId(FacetResourcePackId const&);
-    FacetResourcePackId();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::OreUI::FacetResourcePackId& operator=(::OreUI::FacetResourcePackId const&);
-    // NOLINTEND
-};
+struct FacetResourcePackId : public ::NewType<::std::string> {};
 
 } // namespace OreUI

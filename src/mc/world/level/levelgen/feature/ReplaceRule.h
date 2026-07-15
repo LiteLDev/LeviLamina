@@ -12,28 +12,4 @@ public:
     ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mBlock;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayReplace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReplaceRule();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ReplaceRule(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);
-
-    MCAPI ~ReplaceRule();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

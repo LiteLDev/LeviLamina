@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core_graphics/enums/PrimitiveMode.h"
-#include "mc/deps/renderer/VertexField.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,7 +31,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<ushort>>         mPBRTextureIndices;
     ::ll::TypedStorage<8, 24, ::std::vector<uint>>           mMERS;
     ::ll::TypedStorage<8, 24, ::std::vector<uchar>>          mGeoType;
-    ::ll::TypedStorage<1, 14, ::std::array<bool, 14>>        mFieldEnabled;
+    ::ll::TypedStorage<1, 15, ::std::array<bool, 15>>        mFieldEnabled;
     // NOLINTEND
 
 public:
@@ -50,13 +49,9 @@ public:
 
     MCAPI void clear();
 
-    MCAPI void enableField(::mce::VertexField field);
-
     MCAPI void freeMemory();
 
     MCAPI ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
-
-    MCAPI bool hasField(::mce::VertexField field) const;
 
     MCAPI ::mce::MeshData& operator=(::mce::MeshData&&);
 

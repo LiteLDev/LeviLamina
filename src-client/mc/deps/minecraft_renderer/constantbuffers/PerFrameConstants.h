@@ -37,15 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PerFrameConstants();
-
     MCAPI void getShaderConstants();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

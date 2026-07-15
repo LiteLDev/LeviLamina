@@ -15,16 +15,4 @@ public:
     CompositePackSourceOptions& operator=(CompositePackSourceOptions const&);
     CompositePackSourceOptions(CompositePackSourceOptions const&);
     CompositePackSourceOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~CompositePackSourceOptions();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

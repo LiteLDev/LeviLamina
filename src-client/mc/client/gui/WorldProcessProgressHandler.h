@@ -37,13 +37,13 @@ public:
     // NOLINTBEGIN
     virtual ~WorldProcessProgressHandler() /*override*/ = default;
 
-    virtual void tick(::MinecraftScreenModel&) /*override*/;
+    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getTTSProgressMessage() const /*override*/;
 
@@ -75,24 +75,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MinecraftScreenModel&);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
-
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
-
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
-
-    MCAPI ::std::string $getTTSProgressMessage() const;
-
-    MCAPI ::std::string $getTitleText() const;
-
-    MCAPI ::std::string $getName() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/v1_21_60/dimension_definition/Bounds.h"
 #include "mc/deps/shared_types/v1_21_60/dimension_definition/Generation.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_21_60::DimensionDefinition {
 
 struct Components {
@@ -19,12 +14,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::SharedTypes::v1_21_60::DimensionDefinition::Bounds>      mDimensionBoundsComponent;
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_60::DimensionDefinition::Generation> mGeneration;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

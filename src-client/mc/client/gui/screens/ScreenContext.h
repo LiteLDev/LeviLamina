@@ -12,7 +12,6 @@
 // clang-format off
 class CommandListQueue;
 class GuiData;
-class MinecraftGameplayGraphicsResources;
 class MinecraftGraphics;
 class ProfanityContext;
 class Tessellator;
@@ -65,8 +64,6 @@ public:
         int                                                       ym,
         float                                                     a
     );
-
-    MCAPI ::MinecraftGameplayGraphicsResources& getMinecraftGameplayGraphicsResources();
 
     MCAPI ~ScreenContext();
     // NOLINTEND

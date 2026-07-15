@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_21_50::JigsawStructureMetadataFile const& rhs) const;
-
     MCAPI ~JigsawStructureMetadataFile();
     // NOLINTEND
 
@@ -32,12 +30,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:

@@ -9,7 +9,6 @@
 // clang-format off
 class HashedString;
 struct ActorUniqueID;
-namespace ScriptModuleMinecraft { struct ScriptActorData; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::EventFilters {
@@ -36,13 +35,6 @@ public:
     );
 
     MCAPI ~ScriptDataDrivenActorTriggerEventFilterData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilterData
-    create(::std::string const& eventType, ::ScriptModuleMinecraft::ScriptActorData const& actor);
     // NOLINTEND
 
 public:

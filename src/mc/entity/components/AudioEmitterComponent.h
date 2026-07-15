@@ -23,18 +23,6 @@ public:
         SoundEvent& operator=(SoundEvent const&);
         SoundEvent(SoundEvent const&);
         SoundEvent();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~SoundEvent();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:

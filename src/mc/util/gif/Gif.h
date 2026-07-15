@@ -24,8 +24,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::gif::Gif& operator=(::gif::Gif&&);
-
     MCNAPI ~Gif();
 #endif
     // NOLINTEND

@@ -38,22 +38,6 @@ public:
         KeepAlive& operator=(KeepAlive const&);
         KeepAlive(KeepAlive const&);
         KeepAlive();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ~KeepAlive();
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void $dtor();
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -89,7 +73,7 @@ public:
         char const*                                   group,
         ::Bedrock::Profiler::details::StaticProfLabel label,
         uint                                          color,
-        ::brstd::source_location const&               location
+        ::brstd::source_location const&
     ) /*override*/;
     // NOLINTEND
 
@@ -102,24 +86,13 @@ public:
     MCNAPI ::std::shared_ptr<::Core::Profile::Whisker_ProfileClient::KeepAlive const>
     makeActive(::std::string_view consumerName);
 
-    MCNAPI void prepareForFetch(::Bedrock::Profile::Whisker::ScopeData& output, void const* key) const;
-
-    MCNAPI void
-    queryThreadIDsByType(::std::vector<::std::thread::id>& output, ::Core::Profile::ThreadFrameType threadType) const;
+    MCNAPI void purgeAllRecords();
 
     MCNAPI void resolveUniqueKeysByName(
         ::gsl::span<void const*>              output,
         ::gsl::span<::std::string_view const> names,
         ::std::thread::id                     thread
     ) const;
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI static ::Core::Profile::Whisker_ProfileClient getInterface();
 #endif
     // NOLINTEND
 
@@ -150,7 +123,7 @@ public:
         char const*                                   group,
         ::Bedrock::Profiler::details::StaticProfLabel label,
         uint                                          color,
-        ::brstd::source_location const&               location
+        ::brstd::source_location const&
     );
 
 

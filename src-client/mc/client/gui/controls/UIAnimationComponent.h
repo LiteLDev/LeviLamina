@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/controls/AnimEvent.h"
-#include "mc/client/gui/controls/AnimationTickResult.h"
 #include "mc/client/gui/controls/ComponentReceiveActionType.h"
 #include "mc/client/gui/controls/UIComponent.h"
 #include "mc/client/gui/screens/AnimationStatus.h"
@@ -15,8 +13,6 @@ class ScreenInputContext;
 class UIAnim;
 class UIAnimationController;
 class UIControl;
-class UIControlFactory;
-class UIResolvedDef;
 class VisualTree;
 struct ScreenEvent;
 namespace mce { struct TimeStep; }
@@ -37,18 +33,6 @@ public:
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::UIAnim>> newAnim;
         ::ll::TypedStorage<4, 4, float>                        lastAnimDuration;
         ::ll::TypedStorage<4, 4, float>                        lastAnimTime;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~NewAnimation();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -72,80 +56,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIAnimationComponent() /*override*/;
+    virtual ~UIAnimationComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree&         animationController,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addNextAnimation(
-        ::UIAnim&                                               anim,
-        ::std::map<::std::string, ::std::shared_ptr<::UIAnim>>& animationNames,
-        ::std::shared_ptr<::UIAnim> const&                      firstAnim,
-        ::UIControlFactory&                                     factory
-    );
-
     MCAPI ::ui::AnimationStatus _animationTick(::mce::TimeStep const& timeStep);
 
-    MCAPI ::std::shared_ptr<::UIAnim> _createAnimation(::UIResolvedDef& def, ::UIControlFactory&);
-
-    MCAPI ::std::shared_ptr<::UIAnim> _createAnimation(::std::string const& name, ::UIControlFactory& factory);
-
     MCAPI void _resetAnimations();
-
-    MCAPI ::AnimationTickResult
-    _tickUIAnim(::UIAnim* anim, ::std::vector<::UIAnimationComponent::NewAnimation>& newAnimsToAdd, float deltaTime);
-
-    MCAPI ::UIAnim* addAnimation(::std::string const& name, ::UIResolvedDef& def, ::UIControlFactory& factory);
-
-    MCAPI void collectScreenEvents(::AnimEvent animEvent, ::std::vector<::ScreenEvent>& screenEvents);
 
     MCAPI void handleScreenEvent(::UIAnimationController& animationController, ::ScreenEvent const& screenEvent);
 
     MCAPI bool hasAnimationWithEndEventId(uint id) const;
 
     MCAPI bool hasAnimationWithPlayAndEndEventIds(uint playEventId, uint endEventId) const;
-
-    MCAPI bool isEventListener() const;
-
-    MCAPI void updateProperties();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
-
-    MCAPI ::ComponentReceiveActionType $receive(
-        ::VisualTree&         animationController,
-        ::ScreenInputContext& screenEvent,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

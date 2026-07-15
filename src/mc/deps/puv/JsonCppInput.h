@@ -18,6 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkec571a;
+    ::ll::UntypedStorage<8, 24> mUnkb4e3a6;
     // NOLINTEND
 
 public:
@@ -37,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit JsonCppInput(::Json::Value json);
+    MCNAPI JsonCppInput(::Json::Value json, ::SemVersion version);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Json::Value json);
+    MCNAPI void* $ctor(::Json::Value json, ::SemVersion version);
     // NOLINTEND
 
 public:

@@ -4,8 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class DataChannelSink; }
+namespace webrtc { class PriorityValue; }
 namespace webrtc { class RTCError; }
 namespace webrtc { struct SendDataParams; }
 // clang-format on
@@ -18,10 +19,10 @@ public:
     // NOLINTBEGIN
     virtual ~DataChannelTransportInterface() = default;
 
-    virtual ::webrtc::RTCError OpenChannel(int channel_id) = 0;
+    virtual ::webrtc::RTCError OpenChannel(int channel_id, ::webrtc::PriorityValue priority) = 0;
 
     virtual ::webrtc::RTCError
-    SendData(int channel_id, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& buffer) = 0;
+    SendData(int channel_id, ::webrtc::SendDataParams const& params, ::webrtc::CopyOnWriteBuffer const& buffer) = 0;
 
     virtual ::webrtc::RTCError CloseChannel(int channel_id) = 0;
 

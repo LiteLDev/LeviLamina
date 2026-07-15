@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
 
 // auto generated forward declare list
@@ -26,18 +25,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> path;
         ::ll::TypedStorage<1, 1, bool>           mIncludeInExport;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ImageRecord();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -65,16 +52,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EduLessonCompleteScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
-
-    MCAPI void _buildImageRecords();
-
-    MCAPI ::ui::ViewRequest _handleImagesExport();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
     // NOLINTEND
 
 public:
@@ -86,14 +63,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isStillValid() const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

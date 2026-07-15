@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonMode.h"
 #include "mc/client/gui/screens/controllers/ModalScreenData.h"
 #include "mc/client/gui/screens/controllers/MultiplayerLockState.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
@@ -14,7 +13,6 @@
 #include "mc/client/network/realms/World.h"
 #include "mc/client/network/realms/WorldBackupList.h"
 #include "mc/client/services/clubs/ClubModel.h"
-#include "mc/deps/core/resource/PackType.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/storage/GameRules.h"
 
@@ -24,19 +22,14 @@ class DlcUIWrapper;
 class IContentManager;
 class IContentManagerContext;
 class MainMenuScreenModel;
-class Pack;
 class PlatformMultiplayerRestrictions;
 class RealmsAllowListScreenController;
 class ResourcePacksScreenController;
-class UIPropertyBag;
-struct GameRuleId;
 struct PackContentItem;
 struct PackManagerContentSource;
 namespace Realms { class ContentService; }
-namespace Realms { struct Content; }
 namespace Realms { struct InviteLink; }
 namespace Realms { struct ServerRegion; }
-namespace Realms { struct WorldBackup; }
 // clang-format on
 
 class RealmsSettingsScreenController : public ::SettingsScreenControllerBase {
@@ -97,26 +90,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::Realms::ConfigInfo::Version>> mFilteredVersions;
         ::ll::TypedStorage<8, 104, ::Realms::ConfigInfo::Version>               mMatchingVersion;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI RealmsVersionState();
-
-        MCAPI ~RealmsVersionState();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     struct DelayedStandardModalScreenData {
@@ -125,32 +98,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 368, ::ModalScreenData>                           screenData;
         ::ll::TypedStorage<8, 64, ::std::function<void(::ModalScreenButtonId)>> callback;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DelayedStandardModalScreenData& operator=(DelayedStandardModalScreenData const&);
-        DelayedStandardModalScreenData(DelayedStandardModalScreenData const&);
-        DelayedStandardModalScreenData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI DelayedStandardModalScreenData(::RealmsSettingsScreenController::DelayedStandardModalScreenData&&);
-
-        MCAPI ~DelayedStandardModalScreenData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::RealmsSettingsScreenController::DelayedStandardModalScreenData&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -239,7 +186,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsSettingsScreenController() /*override*/;
+    virtual ~RealmsSettingsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -249,8 +196,7 @@ public:
 
     virtual ::std::string getAdditionalScreenInfo() const /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
-        /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -261,222 +207,12 @@ public:
         ::Realms::World const&                   world,
         ::std::string const&                     initialPackId
     );
-
-    MCAPI void _addContentToBeAppliedAndUploadIfNeeded(
-        ::std::vector<::std::shared_ptr<::PackContentItem>>                             contentToUpload,
-        ::std::shared_ptr<::std::vector<::Realms::Content>>                             contentToApply,
-        int                                                                             index,
-        ::std::function<void(::std::vector<::Realms::Content>)>                         completeUploadCallback,
-        ::std::function<void(::std::vector<::std::shared_ptr<::PackContentItem>>, int)> failedUploadCallback
-    );
-
-    MCAPI void _addInviteLink();
-
-    MCAPI void _applyPacks(::std::function<void()> packsApplyCallback);
-
-    MCAPI bool _canChangeCheatGameRules() const;
-
-    MCAPI bool _checkMultiplayerPrivileges();
-
-    MCAPI void _clearRealmsContentSelected();
-
-    MCAPI void _confirmCloseRealm();
-
-    MCAPI void _confirmResetRealm();
-
-    MCAPI bool _contentNeedApplication(::std::vector<::std::shared_ptr<::PackContentItem>> const& selectedContent);
-
-    MCAPI ::std::function<void(::std::vector<::Realms::Content>)>
-    _createApplyContentOnRealmProgressCallbackChain(::std::function<void()> packApplyCallback);
-
-    MCAPI ::std::unique_ptr<::Pack> _createUnknownPack(::Realms::Content const& content, ::PackType packType);
-
-    MCAPI void _deleteBackup();
-
-    MCAPI void _displayDelayedStandardModalPopups();
-
-    MCAPI void _displayFreeUpSpacePopup();
-
-    MCAPI void _displayModalPopup(
-        ::std::string const&        title,
-        ::std::string const&        message,
-        ::std::function<void(bool)> callback,
-        ::std::string const&        leftButtonLabel,
-        ::std::string const&        middleButtonLabel,
-        ::std::string const&        rightButtonLabel,
-        ::ModalScreenButtonMode     buttonNumber,
-        ::std::string const&        telemetryOverride
-    );
-
-    MCAPI void _displayModalPopup(
-        ::std::string const&                         title,
-        ::std::string const&                         message,
-        ::std::function<void(::ModalScreenButtonId)> callback,
-        ::std::string const&                         leftButtonLabel,
-        ::std::string const&                         middleButtonLabel,
-        ::std::string const&                         rightButtonLabel,
-        ::ModalScreenButtonMode                      buttonNumber,
-        ::std::string const&                         telemetryOverride
-    );
-
-    MCAPI void _downloadMostRecentBackup();
-
-    MCAPI void _downloadRealmsBackupInContext();
-
-    MCAPI void _downloadRealmsWorld(
-        uint64               estimatedSize,
-        ::std::string const& backupId,
-        ::std::string const& time,
-        bool                 shouldCheckForSettingsChanged
-    );
-
-    MCAPI void _fetchActiveWorldSize();
-
-    MCAPI void _fetchAppliedContent();
-
-    MCAPI void _fetchInviteLinks();
-
-    MCAPI void _fetchWorldBackupList();
-
-    MCAPI ::std::vector<::std::shared_ptr<::PackContentItem>> _gatherSelectedContent();
-
-    MCAPI ::std::string _getConsumableToSubscriptionInfoText();
-
-    MCAPI ::std::string _getCurrentRealmsVersionReference();
-
-    MCAPI ::std::string _getDurationLabelText();
-
-    MCAPI ::std::string _getMaxPlayerLabelText();
-
-    MCAPI ::std::string _getPageLabel() const;
-
-    MCAPI void _getPreferredRegions();
-
-    MCAPI ::std::string _getRealmsVersionBranchName(int slot);
-
-    MCAPI ::std::string _getRealmsVersionReferenceId(int slot);
-
-    MCAPI ::std::string _getSubscriptionAddendumLabelText() const;
-
-    MCAPI ::std::string _getSubscriptionOriginMismatchLabelText();
-
-    MCAPI void _goToManageSubscriptionLink();
-
-    MCAPI void _handleRealmBranchButtonClick(::UIPropertyBag& bag);
-
-    MCAPI void _handleRealmInviteLinkButtonClick(::UIPropertyBag& bag);
-
-    MCAPI bool _hasGameRulesChanged();
-
-    MCAPI bool _hasSlotInfoChanged();
-
-    MCAPI bool _hasWorldInfoChanged();
-
-    MCAPI bool _isStoreMismatch() const;
-
-    MCAPI void _openCloseRealm(bool isRequestToOpen);
-
-    MCAPI void _queryRealmsConfigInfo();
-
-    MCAPI void _querySubscriptionInfo();
-
-    MCAPI bool _randomTickSpeedHelper(::std::string const& optionValue);
-
-    MCAPI void _refreshRealmsConfigDetails(::Realms::ConfigInfo& realmsConfigInfo);
-
-    MCAPI void _refreshWorldInfo(bool refreshSubscriptionInfo);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _removeUnneededItemsFromRealmsUnknownContentSource();
-
-    MCAPI void _renewRealmHandler();
-
-    MCAPI void _resetRealm();
-
-    MCAPI bool _respawnRadiusHelper(::std::string const& optionValue);
-
-    MCAPI void _restoreBackup();
-
-    MCAPI void _saveAutoRealmWorldBackup();
-
-    MCAPI void _saveClubInfo();
-
-    MCAPI void _saveRealmWorldBackup();
-
-    MCAPI void _saveSettings(bool actionAfterSave, ::std::function<void(bool)>);
-
-    MCAPI void _saveSettingsAndExitScreen();
-
-    MCAPI void _setAllowCheatsWithConfirmation(bool value);
-
-    MCAPI void _setGameModeWithConfirmation(int value);
-
-    MCAPI void _setIsHardcore(bool isHardcore);
-
-    MCAPI void _setRealmsContentSelected();
-
-    MCAPI void _setUpCallbacksBooleanGameRuleSettings(
-        ::std::vector<::std::pair<::std::string, ::GameRuleId>> const& rules,
-        ::std::function<bool()>                                        enabledFunction
-    );
-
-    MCAPI void _setupPacksScreen();
-
-    MCAPI void _showErrorPopup(::std::string titleId, ::std::string contentId, ::std::function<void(bool)> action);
-
-    MCAPI void _showErrorPopupAndExitScreenAfterDismissed(::std::string titleId, ::std::string contentId);
-
-    MCAPI void _showRefreshWorldInfoPopup();
-
-    MCAPI void _showSaveAndDeletePopup(int deleteQty);
-
-    MCAPI void _showSuccessPopup();
-
-    MCAPI void _updateRealmBranchConfig(::std::string const& ref);
-
-    MCAPI void _updateSubscriptionInformation(::Realms::SubscriptionInfo subscription);
-
-    MCAPI void _updateVersionsModel(::std::string const& filter, bool forceUpdate);
-
-    MCAPI void _updateWorld(::Realms::World& world);
-
-    MCAPI void _uploadWorld();
-
-    MCAPI void activateInitialPack();
-
-    MCAPI ::Realms::World const& getWorld() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::string
-    _getDateAsFormattedStringForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
-
-    MCAPI static ::std::string
-    _getGameServerVersionForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
-
-    MCAPI static ::std::string
-    _getPacksListTextForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
-
-    MCAPI static ::std::string _getSizeForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
-
-    MCAPI static ::std::string
-    _getTimeAsFormattedStringForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
-
-    MCAPI static ::std::string
-    _getWorldNameForBackupByIndex(::std::vector<::Realms::WorldBackup> const& backups, int index);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& DEFAULT_SAVES_TAB_FOCUS();
-
-    MCAPI static ::std::string const& SAVES_BUTTON_FOCUS_CONTROL();
     // NOLINTEND
 
 public:
@@ -490,30 +226,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $onCreation();
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
-
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

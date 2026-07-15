@@ -29,12 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ClientPlayerRewindListener();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::EventResult _applyCorrectionToTick(
@@ -58,12 +52,6 @@ public:
     _onUpdatePlayerGameTypePacketReceived(::Actor& actor, ::UpdatePlayerGameTypePacket const& packet);
 
     MCAPI static ::ReplayStateComponent* tryGetReplayStateComponentForCorrection(::EntityContext& entity, uint64 tick);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

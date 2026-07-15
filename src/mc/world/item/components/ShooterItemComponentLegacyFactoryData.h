@@ -5,13 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
-#include "mc/world/level/storage/AllExperiments.h"
-
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 struct ShooterItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactoryData {
 public:
@@ -40,16 +33,6 @@ public:
     ::ll::TypedStorage<4, 4, float> mDrawDuration;
     ::ll::TypedStorage<1, 1, bool>  mScalePowerByDrawDuration;
     ::ll::TypedStorage<1, 1, bool>  mChargeOnDraw;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
     // NOLINTEND
 
 public:

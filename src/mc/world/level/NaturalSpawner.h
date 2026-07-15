@@ -13,7 +13,6 @@
 // clang-format off
 class ActorSpawnRuleGroup;
 class Biome;
-class Block;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
@@ -29,7 +28,6 @@ class SpawnGroupRegistry;
 class Vec3;
 struct ActorUniqueID;
 namespace br::spawn { class EntityTypeCache; }
-namespace br::spawn { struct EntityType; }
 namespace br::spawn { struct State; }
 // clang-format on
 
@@ -110,13 +108,6 @@ public:
         bool,
         ::std::function<void(::Mob&)>&&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool
-    isValidEmptySpawnBlock(::BlockSource&, ::BlockPos, ::Block const& blockState, ::br::spawn::EntityType const& type);
     // NOLINTEND
 
 public:

@@ -12,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class BoneOrientation;
-class DataDrivenModel;
 class ModelPart;
 class ModelPartLocator;
 class RenderController;
@@ -38,10 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataDrivenGeometry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DataDrivenGeometry();
@@ -50,17 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenGeometry(::DataDrivenModel& owner, ::std::string const& name, ::GeometryPtr sourceGeo);
-
-    MCAPI void clear();
-
     MCAPI void copyBoneMatricesToActor(
-        ::RenderParams&                      renderParams,
-        ::gsl::span<::BoneOrientation const> boneOrientations,
-        ::RenderController const*            renderControllerId
-    );
-
-    MCAPI void copyBoneMatricesToSkinnedMeshes(
         ::RenderParams&                      renderParams,
         ::gsl::span<::BoneOrientation const> boneOrientations,
         ::RenderController const*            renderControllerId
@@ -68,37 +53,7 @@ public:
 
     MCAPI void copyTransformMatricesToModelParts(::RenderParams& renderParams);
 
-    MCFOLD ::std::vector<::BoneOrientation> const& getDefaultBoneOrientations() const;
-
-    MCFOLD ::std::vector<::BoneOrientation>& getDefaultBoneOrientations();
-
-    MCFOLD ::std::vector<::ModelPart> const& getModelParts() const;
-
-    MCFOLD ::std::vector<::ModelPart>& getModelParts();
-
-    MCFOLD ::HashedString const& getName() const;
-
     MCAPI ::std::vector<::HashedString> getQueryableBoneOrientations() const;
-
-    MCAPI ::SkeletalHierarchyIndex getSkeletalHierarchyIndex() const;
-
-    MCFOLD ::std::vector<::SkinnedMeshGroup>& getSkinnedMeshGroups();
-
-    MCAPI ::GeometryPtr const getSourceGeometry() const;
-
-    MCAPI void setupModelPart(
-        ::DataDrivenModel&             owner,
-        ::GeometryPtr                  sourceGeo,
-        ::std::vector<::HashedString>& nodeNames,
-        ::ModelPart&                   part,
-        int                            parentIndex
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DataDrivenModel& owner, ::std::string const& name, ::GeometryPtr sourceGeo);
     // NOLINTEND
 
 public:

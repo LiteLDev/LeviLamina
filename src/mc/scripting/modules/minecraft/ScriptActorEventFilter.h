@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,8 +51,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptActorEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
-
-    MCAPI bool isInvalidated(::ActorUniqueID const& actorId);
 
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);

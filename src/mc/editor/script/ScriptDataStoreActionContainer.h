@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
@@ -25,16 +22,6 @@ public:
     ScriptDataStoreActionContainer& operator=(ScriptDataStoreActionContainer const&);
     ScriptDataStoreActionContainer(ScriptDataStoreActionContainer const&);
     ScriptDataStoreActionContainer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
-    bindActionToControl(::std::string controlId, ::std::string const& actionPayload);
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    removeActionFromControl(::std::string controlId, ::std::optional<::std::string> actionPayload);
-    // NOLINTEND
 
 public:
     // static functions

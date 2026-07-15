@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorPuvInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::SemVersion version() const /*override*/;
@@ -33,23 +29,13 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ActorPuvInput(::Json::Value value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::Value value);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD ::SemVersion $version() const;
 
     MCFOLD ::Puv::Input::Data $data() const;
+#endif
 
 
     // NOLINTEND

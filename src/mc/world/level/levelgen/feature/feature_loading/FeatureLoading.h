@@ -2,26 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/json_util/JsonParseState.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/level/levelgen/feature/feature_loading/ConcreteFeatureHolder.h"
-
 // auto generated forward declare list
 // clang-format off
-class ScatterFeature;
-namespace FeatureLoading { struct FeatureRootParseContext; }
-namespace JsonUtil { class EmptyClass; }
+namespace FeatureLoading { struct VersionInfo; }
 // clang-format on
 
 namespace FeatureLoading {
-// functions
+// static variables
 // NOLINTBEGIN
-MCAPI void _addScatterParamsLegacySchema(
-    ::JsonUtil::JsonSchemaObjectNode<
-        ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
-        ::FeatureLoading::ConcreteFeatureHolder<::ScatterFeature>>& schemaNode
-);
+#ifdef LL_PLAT_C
+MCAPI ::std::add_lvalue_reference_t<::FeatureLoading::VersionInfo const[]> FeatureVersionToFormatMap();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::std::add_lvalue_reference_t<::FeatureLoading::VersionInfo const[]> FeatureVersionToFormatMap();
+#endif
 // NOLINTEND
 
 } // namespace FeatureLoading

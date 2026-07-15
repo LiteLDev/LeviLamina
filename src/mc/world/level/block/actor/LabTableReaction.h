@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class BlockSource;
 class ItemStack;
 class LabTableReactionComponent;
 class Random;
@@ -30,33 +29,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LabTableReaction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LabTableReaction();
+    virtual ~LabTableReaction() = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LabTableReaction(
-        ::LabTableReactionType type,
-        ::BlockPos const&      pos,
-        bool                   isClientSide,
-        int                    maxLifetime,
-        int                    startDelay
-    );
-
     MCAPI void addResultItem(::ItemStack const& resultItem);
-
-    MCFOLD int getReactionId();
-
-    MCFOLD ::LabTableReactionType getType();
-
-    MCAPI bool tick(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -64,24 +45,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::LabTableReaction>
     createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide, int maxLifetime, int startDelay);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

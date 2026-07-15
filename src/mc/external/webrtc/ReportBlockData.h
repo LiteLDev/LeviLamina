@@ -22,6 +22,7 @@ public:
     ::ll::UntypedStorage<4, 4> mUnkcdb530;
     ::ll::UntypedStorage<4, 4> mUnkba9e0c;
     ::ll::UntypedStorage<8, 8> mUnkcc2639;
+    ::ll::UntypedStorage<8, 8> mUnk60551c;
     ::ll::UntypedStorage<8, 8> mUnkfe43e3;
     ::ll::UntypedStorage<8, 8> mUnk3ca37c;
     ::ll::UntypedStorage<8, 8> mUnkea71c6;
@@ -41,7 +42,8 @@ public:
     MCNAPI void SetReportBlock(
         uint                               sender_ssrc,
         ::webrtc::rtcp::ReportBlock const& report_block,
-        ::webrtc::Timestamp                report_block_timestamp_utc
+        ::webrtc::Timestamp                report_block_timestamp_utc,
+        ::webrtc::Timestamp                report_block_timestamp
     );
 
     MCNAPI ::webrtc::TimeDelta jitter(int rtp_clock_rate_hz) const;

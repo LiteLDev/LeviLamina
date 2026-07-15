@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,11 +25,11 @@ public:
     virtual ~IScriptBlockComponentFactory() = default;
 
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
-    createComponent(::BlockSource& region, ::BlockPos const& position, ::Scripting::WeakLifetimeScope const& scope) = 0;
+    createComponent(::BlockSource&, ::BlockPos const&, ::Scripting::WeakLifetimeScope const&) = 0;
 
     virtual ::std::vector<::Scripting::ClassBinding> bind() const = 0;
 
-    virtual bool canAddOn(::Block const& block) const;
+    virtual bool canAddOn(::Block const&) const;
 
     virtual ::std::optional<::Scripting::Release> overrideEnumVersion() const;
     // NOLINTEND
@@ -37,8 +37,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canAddOn(::Block const& block) const;
-
 
     // NOLINTEND
 };

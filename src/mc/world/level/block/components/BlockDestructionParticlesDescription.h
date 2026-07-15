@@ -36,16 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockDestructionParticlesDescription();
-
-    MCAPI explicit BlockDestructionParticlesDescription(uchar particleNumber);
-
-    MCAPI BlockDestructionParticlesDescription(::std::string texture, ::TintMethod tintMethod, uchar particleNumber);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -60,33 +50,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uchar const& DEFAULT_NON_CUBE_PARTICLE_COUNT();
-
-    MCAPI static uchar const& DEFAULT_PARTICLE_COUNT();
-
     MCAPI static ::std::string const& NameID();
-
-    MCAPI static ::std::string const& ParticleCountID();
-
-    MCAPI static ::std::string const& SchemaID();
-
-    MCAPI static ::std::string const& TextureID();
-
-    MCAPI static ::std::string const& TintMethodID();
-
-    MCAPI static ::SemVersion const& Version1_21_70();
-
-    MCAPI static ::SemVersion const& Version1_21_90();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(uchar particleNumber);
-
-    MCAPI void* $ctor(::std::string texture, ::TintMethod tintMethod, uchar particleNumber);
     // NOLINTEND
 
 public:

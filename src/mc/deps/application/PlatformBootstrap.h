@@ -146,8 +146,6 @@ public:
 
     MCNAPI static ::Bedrock::PlatformBootstrap::SaveResult
     _makeSaveError(::Bedrock::PlatformBootstrap::SaveResultCode, char*, uint64, char const*, ...);
-
-    MCNAPI static ::Bedrock::PlatformBootstrap& getSharedInstance();
     // NOLINTEND
 
 public:

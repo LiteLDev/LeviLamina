@@ -18,20 +18,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mActor;
     ::ll::TypedStorage<8, 128, ::ItemInstance const>      mItem;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~CraftUpdateResultItemClientEvent();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
-    // NOLINTEND
 };

@@ -16,16 +16,4 @@ public:
     ::ll::TypedStorage<4, 8, ::IntRange>                 bothAllele;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> onBorn;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~GeneticVariant();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

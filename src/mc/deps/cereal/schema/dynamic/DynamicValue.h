@@ -63,8 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::cereal::DynamicValue> const& asArray() const;
-
     MCAPI ::std::vector<::cereal::DynamicValue>& asArray();
 
     MCAPI bool const& asBool() const;
@@ -73,27 +71,15 @@ public:
 
     MCAPI double const& asNumber() const;
 
-    MCAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue> const& asObject() const;
-
     MCAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue>& asObject();
 
     MCAPI ::std::string const& asString() const;
 
-#ifdef LL_PLAT_C
-    MCAPI ::std::string& asString();
-
     MCAPI bool hasMember(::std::string const& member) const;
-#endif
 
     MCAPI uint64 hash() const;
 
-#ifdef LL_PLAT_C
-    MCAPI ::cereal::DynamicValue const& operator[](::std::string const& member) const;
-
-    MCAPI ::cereal::DynamicValue& operator[](::std::string const& member);
-#endif
-
-    MCAPI ::cereal::DynamicValue::Type type() const;
+    MCAPI bool operator==(::cereal::DynamicValue const& other) const;
     // NOLINTEND
 };
 

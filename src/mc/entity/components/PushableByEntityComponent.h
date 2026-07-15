@@ -15,8 +15,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::PushablePreset>> mPresets;
-    ::ll::TypedStorage<8, 8, ::Tick>                           mPlaySoundCooldownTicks;
-    ::ll::TypedStorage<4, 4, float>                            mPlaySoundImpulseThreshold;
     ::ll::TypedStorage<8, 8, ::Tick>                           mLastPlayedSoundAtTick;
     // NOLINTEND
 };

@@ -9,8 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class MobEffectComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -27,32 +25,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MobEffectDefinition();
-
-    MCAPI void initialize(::EntityContext&, ::MobEffectComponent& component) const;
-
-    MCAPI void setCooldownTimeInTicks(int const& seconds);
-
-    MCAPI void setEffectTimeInTicks(int const& seconds);
-
-    MCAPI void setEffectTimeWithInfiniteString(::std::string const& duration);
-
-    MCAPI void setMobEffectByName(::std::string const& mobEffect);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MobEffectDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

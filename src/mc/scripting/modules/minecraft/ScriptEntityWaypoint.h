@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptEntityVisibilityRules.h"
 #include "mc/scripting/modules/minecraft/ScriptWaypoint.h"
 
@@ -43,22 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    getEntity();
-
-    MCAPI ::Scripting::Result<
-        ::ScriptModuleMinecraft::ScriptEntityVisibilityRules,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    getEntityRules();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
@@ -67,23 +51,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
 
-    MCAPI ::Scripting::Result<
-        ::ScriptModuleMinecraft::ScriptDimensionLocation,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointError,
-        ::ScriptModuleMinecraft::ScriptInvalidWaypointTextureSelectorError>
-    $getDimensionLocation() const;
-
-    MCAPI ::std::unique_ptr<::ServerWaypoint> $createWaypoint() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

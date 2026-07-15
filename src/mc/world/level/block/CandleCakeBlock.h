@@ -27,9 +27,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    virtual ::AABB const& getVisualShape(::Block const& bufferAABB, ::AABB&) const /*override*/;
+    virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -40,18 +40,20 @@ public:
 
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource&, ::BlockPos const&, ::Block const&, uchar) const /*override*/;
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    virtual bool checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     virtual bool isCandleCakeBlock() const /*override*/;
 
     virtual int _getNumCandles(::Block const&) const /*override*/;
 
     virtual void _iterateCandles(
-        ::Block const&    pos,
-        ::BlockPos const& callback,
-        ::brstd::function_ref<void(::Vec3 const&, int)>
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
     ) const /*override*/;
 
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
@@ -62,17 +64,15 @@ public:
     // NOLINTBEGIN
     MCAPI CandleCakeBlock(::std::string const& nameId, int id);
 
-    MCAPI void _popCandle(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& getCandleCakeFromCandle(::Block const& candleBlock);
-
+#ifdef LL_PLAT_C
     MCAPI static ::Block const& getCandleFromCandleCake(::Block const& candleCakeBlock);
+#endif
 
     MCAPI static bool tryLightFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor);
     // NOLINTEND
@@ -86,9 +86,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& bufferAABB, ::AABB&) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
 
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -98,18 +98,19 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int $getComparatorSignal(::BlockSource&, ::BlockPos const&, ::Block const&, uchar) const;
+    MCFOLD int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD bool $checkIsPathable(::Actor&, ::BlockPos const&, ::BlockPos const&) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCFOLD bool $isCandleCakeBlock() const;
 
     MCFOLD int $_getNumCandles(::Block const&) const;
 
     MCAPI void $_iterateCandles(
-        ::Block const&    pos,
-        ::BlockPos const& callback,
-        ::brstd::function_ref<void(::Vec3 const&, int)>
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
     ) const;
 
     MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;

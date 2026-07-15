@@ -9,16 +9,4 @@ public:
     ::ll::TypedStorage<4, 4, uint>           mFormId;
     ::ll::TypedStorage<8, 32, ::std::string> mFormJSON;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ServerSettingsResponsePacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

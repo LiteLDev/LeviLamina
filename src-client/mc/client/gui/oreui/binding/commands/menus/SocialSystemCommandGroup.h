@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class GameDependencies; }
-namespace OreUI { class InvocationStatus; }
+namespace Social { class ReceivedFriendRequestsList; }
 namespace Social { class SocialDrawerManager; }
 // clang-format on
 
@@ -19,8 +19,10 @@ class SocialSystemCommandGroup : public ::OreUI::CommandGroupBase<::OreUI::Socia
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::SocialDrawerManager>> mSocialDrawerManager;
-    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, bool>>       mReportIsDrawerVisible;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::SocialDrawerManager>>        mSocialDrawerManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ReceivedFriendRequestsList>> mReceivedFriendRequestsList;
+    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, bool>>              mReportIsDrawerVisible;
+    ::ll::TypedStorage<8, 136, ::OreUI::Detail::CallableImpl<void, bool>>              mSetPollingForReceivedRequests;
     // NOLINTEND
 
 public:
@@ -31,20 +33,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SocialSystemCommandGroup(::OreUI::GameDependencies const& game);
-
-    MCAPI void _reportIsDrawerVisible(::OreUI::InvocationStatus status, bool isVisible) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::OreUI::GameDependencies const& game);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -65,75 +65,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GestureRecognizerBase();
+    virtual ~GestureRecognizerBase() = default;
 
-    virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
+    virtual void onTouchesBegan(::std::vector<::OreUI::TouchEventData> const&);
 
     virtual void onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&);
 
-    virtual void
-    onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
+    virtual void onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&);
 
     virtual void onGestureRecognized();
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GestureRecognizerBase(
-        ::OreUI::IGestureListener&                            gestureListener,
-        int                                                   priority,
-        float                                                 pixelsPerCm,
-        ::std::function<::std::chrono::milliseconds()> const& getTime
-    );
-
-    MCAPI bool filterOnlyTrackedTouchesAndUpdate(::std::vector<::OreUI::TouchEventData> const& touches);
-
-    MCFOLD ::OreUI::GestureRecognizerBase::GestureRecognizerState getState() const;
-
-    MCAPI ::Vec2 getTouchLocation() const;
-
-    MCAPI void handleState(::OreUI::GestureRecognizerBase::GestureRecognizerState state);
-
-    MCAPI void recognizeTouches(::std::vector<::OreUI::TouchEventData> const& touches);
-
-    MCAPI void removeTrackingTouch(uint id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::OreUI::IGestureListener&                            gestureListener,
-        int                                                   priority,
-        float                                                 pixelsPerCm,
-        ::std::function<::std::chrono::milliseconds()> const& getTime
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
 
-    MCFOLD void $onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const&);
-
-    MCFOLD void
-    $onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
-
-    MCFOLD void $onGestureRecognized();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

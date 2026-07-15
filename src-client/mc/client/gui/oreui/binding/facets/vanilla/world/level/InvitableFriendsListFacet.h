@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/FriendsLoadingState.h"
-#include "mc/client/social/FriendInviteType.h"
 #include "mc/client/social/InvitableFriendsHandler.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -22,7 +21,7 @@ namespace World { class WorldPlayerListTracker; }
 
 namespace OreUI {
 
-class InvitableFriendsListFacet : public ::OreUI::FacetBase<::OreUI::InvitableFriendsListFacet> {
+class InvitableFriendsListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::InvitableFriendsListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InvitableFriendsListFacet() /*override*/;
+    virtual ~InvitableFriendsListFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -61,18 +60,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                     userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList
     );
-
-    MCAPI void _fetchInvitableFriends();
-
-    MCFOLD ::std::vector<::OreUI::InvitableFriendBindings> const& getInvitableFriends();
-
-    MCFOLD ::OreUI::FriendsLoadingState getPlatformFriendsLoadingState() const;
-
-    MCAPI ::OreUI::FriendsLoadingState getXblFriendsLoadingState() const;
-
-    MCAPI bool const hasPlatformIcons() const;
-
-    MCAPI void sendInvite(::std::string userId, ::Social::FriendInviteType entryType);
     // NOLINTEND
 
 public:
@@ -94,21 +81,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

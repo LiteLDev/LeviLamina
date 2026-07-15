@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RTCPPacketType.h"
 #include "mc/external/webrtc/RtcpFeedbackSenderInterface.h"
 #include "mc/external/webrtc/RtcpMode.h"
@@ -40,14 +41,12 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnka78adf;
         ::ll::UntypedStorage<1, 1>  mUnkaee14f;
-        ::ll::UntypedStorage<8, 8>  mUnkcfff30;
         ::ll::UntypedStorage<8, 8>  mUnkf899be;
         ::ll::UntypedStorage<8, 8>  mUnkf4e0c9;
         ::ll::UntypedStorage<8, 8>  mUnk40ee54;
         ::ll::UntypedStorage<8, 8>  mUnk8c652a;
         ::ll::UntypedStorage<8, 8>  mUnkf205e4;
         ::ll::UntypedStorage<8, 8>  mUnk566305;
-        ::ll::UntypedStorage<8, 8>  mUnkc4dbf5;
         ::ll::UntypedStorage<8, 8>  mUnk28f816;
         ::ll::UntypedStorage<8, 8>  mUnk3a26bf;
         ::ll::UntypedStorage<8, 8>  mUnk4c17db;
@@ -56,7 +55,6 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnkce9c79;
         ::ll::UntypedStorage<8, 8>  mUnk308036;
         ::ll::UntypedStorage<8, 8>  mUnk800d0a;
-        ::ll::UntypedStorage<8, 8>  mUnkd7423e;
         ::ll::UntypedStorage<8, 8>  mUnk627d15;
         ::ll::UntypedStorage<8, 8>  mUnka40e19;
         ::ll::UntypedStorage<8, 8>  mUnk36d3c9;
@@ -67,7 +65,6 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnk1f0933;
         ::ll::UntypedStorage<1, 1>  mUnk340253;
         ::ll::UntypedStorage<1, 1>  mUnk3d3cd8;
-        ::ll::UntypedStorage<8, 8>  mUnkab83f9;
         ::ll::UntypedStorage<4, 4>  mUnkd28b07;
         ::ll::UntypedStorage<4, 8>  mUnkbcc29e;
         ::ll::UntypedStorage<1, 1>  mUnk2ab222;
@@ -115,8 +112,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkdaf484;
-        ::ll::UntypedStorage<8, 8> mUnk82f1cc;
+        ::ll::UntypedStorage<8, 8> mUnkc87b9c;
+        ::ll::UntypedStorage<8, 8> mUnk29ad06;
+        ::ll::UntypedStorage<8, 8> mUnk98da76;
         ::ll::UntypedStorage<4, 4> mUnk8f8f3b;
         ::ll::UntypedStorage<4, 4> mUnkccfbec;
         ::ll::UntypedStorage<8, 8> mUnkddfc83;
@@ -133,7 +131,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void IncomingRtcpPacket(::rtc::ArrayView<uchar const> rtcp_packet) = 0;
+    virtual void IncomingRtcpPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> rtcp_packet) = 0;
 
     virtual void SetRemoteSSRC(uint ssrc) = 0;
 
@@ -145,7 +143,7 @@ public:
 
     virtual void RegisterSendPayloadFrequency(int payload_type, int payload_frequency) = 0;
 
-    virtual int DeRegisterSendPayload(schar payload_type) = 0;
+    virtual int DeRegisterSendPayload(schar) = 0;
 
     virtual void SetExtmapAllowMixed(bool extmap_allow_mixed) = 0;
 
@@ -231,14 +229,14 @@ public:
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFecPackets() = 0;
 
-    virtual void OnAbortedRetransmissions(::rtc::ArrayView<ushort const> sequence_numbers) = 0;
+    virtual void OnAbortedRetransmissions(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) = 0;
 
-    virtual void OnPacketsAcknowledged(::rtc::ArrayView<ushort const> sequence_numbers) = 0;
+    virtual void OnPacketsAcknowledged(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) = 0;
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(uint64 target_size_bytes) = 0;
 
     virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const = 0;
+    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const = 0;
 
     virtual uint64 ExpectedPerPacketOverhead() const = 0;
 

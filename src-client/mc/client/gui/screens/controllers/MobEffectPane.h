@@ -11,16 +11,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mName;
     ::ll::TypedStorage<1, 1, bool>           mIsAmbient;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MobEffectPane();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

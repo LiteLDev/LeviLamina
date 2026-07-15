@@ -11,7 +11,6 @@
 // clang-format off
 class Actor;
 class Item;
-class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Level;
@@ -37,10 +36,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
     virtual int
     getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
@@ -53,26 +51,21 @@ public:
 
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    virtual void playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const /*override*/;
+    virtual void playSoundIncrementally(::ItemStack const&, ::Mob&) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
 
     virtual bool canBeCharged() const /*override*/;
 
-    virtual int getMaxUseDuration(::ItemStack const* instance) const /*override*/;
+    virtual int getMaxUseDuration(::ItemStack const*) const /*override*/;
 
-    virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
+    virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI CrossbowItem(::std::string const& name, int id);
-
-    MCAPI void
-    _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
-
-    MCAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
     // NOLINTEND
 
 public:
@@ -84,36 +77,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCFOLD ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
-
-    MCAPI int
-    $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
-
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
-
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
-
-    MCAPI void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
-
-    MCAPI int $getEnchantSlot() const;
-
-    MCFOLD bool $canBeCharged() const;
-
-    MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
-
-    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

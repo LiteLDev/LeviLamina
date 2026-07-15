@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,9 +11,7 @@ class Experiments;
 class IMinecraftEventing;
 class LinkedAssetValidator;
 class ResourcePackManager;
-namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace SharedTypes::v1_21_90 { struct CameraPreset; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CameraPresets {
@@ -42,22 +39,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI CameraList(::CameraPresets::CameraList const&);
-
-        MCNAPI ::CameraPresets::CameraList& operator=(::CameraPresets::CameraList&&);
-
-        MCNAPI ~CameraList();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::CameraPresets::CameraList const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -77,37 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _discardInvalidPresets();
-
-    MCNAPI ::PuvLoadData::LoadResultWithTiming _parseAndLoadCameraList(
-        ::std::string const&                               fileData,
-        ::MolangVersion                                    molangVersion,
-        ::std::string_view                                 filename,
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
-    );
-
-    MCNAPI ::PuvLoadData::LoadResultWithTiming _parseAndLoadCameraPreset(
-        ::std::string const&                               fileData,
-        ::MolangVersion                                    molangVersion,
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
-    );
-
-    MCNAPI void _storeCameraList(::CameraPresets::CameraList&& list);
-
-    MCNAPI void _storeCameraPreset(::SharedTypes::v1_21_90::CameraPreset&& preset);
-
-    MCNAPI ::std::vector<::std::string> buildCameraPresetList() const;
-
-    MCNAPI ::SharedTypes::v1_21_90::CameraPreset const* getCameraPreset(uint64 presetIndex) const;
-
-    MCNAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;
-
-    MCNAPI ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& getPresets() const;
-
-    MCNAPI bool isEmpty() const;
-
     MCNAPI void loadPresets(
         ::ResourcePackManager&                             resourcePackManager,
         ::Experiments const&                               experiments,
@@ -123,8 +79,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCNAPI static bool isAllowedEaseTarget(::std::string const& easeTarget);
 
     MCNAPI static bool isVanillaCamera(::std::string const& cameraName);

@@ -11,7 +11,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 class POIInstance;
 class Path;
 class Vec3;
@@ -29,10 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MoveToPOIGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool canUse() /*override*/;
@@ -41,7 +36,7 @@ public:
 
     virtual void stop() /*override*/;
 
-    virtual bool isValidTarget(::BlockSource&, ::BlockPos const&) /*override*/;
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
@@ -55,19 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToPOIGoal(::Mob& mob, ::POIType poiType);
-
-    MCAPI bool _canReachPOI(::Vec3 const& pos, float radiusSqr, bool usingBoundingBox);
-
     MCAPI void _updatePOIBooking();
 
     MCAPI bool getPOI(::POIType type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::POIType poiType);
     // NOLINTEND
 
 public:
@@ -79,7 +64,7 @@ public:
 
     MCAPI void $stop();
 
-    MCAPI bool $isValidTarget(::BlockSource&, ::BlockPos const&);
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
 

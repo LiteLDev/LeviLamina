@@ -5,12 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/world/IWorldTemplateHandler.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/world/level/FileArchiver.h"
 
 // auto generated forward declare list
 // clang-format off
 class FileArchiver;
-class FilePickerSettings;
 class IContentKeyProvider;
 class ILevelListCache;
 class WorldTemplateManager;
@@ -44,15 +42,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldTemplateHandler() /*override*/;
+    virtual ~WorldTemplateHandler() /*override*/ = default;
 
     virtual void loadTemplate(
-        ::std::string const&                                                                            templateId,
-        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)> onComplete
+        ::std::string const&,
+        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)>
     ) /*override*/;
 
     virtual ::std::optional<::World::IWorldTemplateHandler::WriteTemplateError>
-    saveTemplate(::LevelSummary const& levelSummary) const /*override*/;
+    saveTemplate(::LevelSummary const&) const /*override*/;
 
     virtual bool isTemplateExportEnabled() const /*override*/;
 
@@ -60,43 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::FilePickerSettings> _generateFilePickerSettingsForExport(
-        ::std::string const&       levelId,
-        ::std::string const&       levelName,
-        ::FileArchiver::ExportType type
-    ) const;
-
-    MCFOLD void _pickFile(::std::shared_ptr<::FilePickerSettings> settings) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadTemplate(
-        ::std::string const&                                                                            templateId,
-        ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)> onComplete
-    );
 
-    MCAPI ::std::optional<::World::IWorldTemplateHandler::WriteTemplateError>
-    $saveTemplate(::LevelSummary const& levelSummary) const;
-
-    MCFOLD bool $isTemplateExportEnabled() const;
-
-    MCAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& $getLocalTemplates() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

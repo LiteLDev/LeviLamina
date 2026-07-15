@@ -38,11 +38,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI explicit CopyableDataList(::std::vector<::std::unique_ptr<::DataItem>> const& dataList);
-
         MCAPI CopyableDataList(::SynchedActorData::CopyableDataList const& other);
-
-        MCAPI ~CopyableDataList();
 #endif
         // NOLINTEND
 
@@ -50,17 +46,7 @@ public:
         // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD void* $ctor(::std::vector<::std::unique_ptr<::DataItem>> const& dataList);
-
-        MCFOLD void* $ctor(::SynchedActorData::CopyableDataList const& other);
-#endif
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCFOLD void $dtor();
+        MCAPI void* $ctor(::SynchedActorData::CopyableDataList const& other);
 #endif
         // NOLINTEND
     };
@@ -95,21 +81,12 @@ public:
     // prevent constructor by default
     SynchedActorData& operator=(SynchedActorData const&);
     SynchedActorData(SynchedActorData const&);
+    SynchedActorData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SynchedActorData();
-
-    MCAPI SynchedActorData(::SynchedActorData&& rhs);
-
     MCAPI ::SynchedActorData _clone() const;
-
-    MCAPI ::DataItem* _find(ushort id) const;
-
-    MCAPI ::DataItem& _get(ushort id);
-
-    MCAPI void _resizeToContain(ushort id);
 
 #ifdef LL_PLAT_C
     MCAPI bool assignValue(::DataItem const& newItem);
@@ -122,22 +99,6 @@ public:
 #endif
 
     MCAPI ::CompoundTag const& getCompoundTag(ushort id) const;
-
-    MCAPI float getFloat(ushort id) const;
-
-    MCAPI int getInt(ushort id) const;
-
-    MCAPI int64 getInt64(ushort id) const;
-
-    MCAPI schar getInt8(ushort id) const;
-
-    MCAPI short getShort(ushort id) const;
-
-    MCAPI ::std::string const& getString(ushort id) const;
-
-    MCAPI ::Vec3 getVec3(ushort id) const;
-
-    MCAPI bool hasData(ushort id) const;
 
     MCAPI ::SynchedActorData& operator=(::SynchedActorData&& rhs);
 
@@ -161,20 +122,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::unique_ptr<::DataItem>>
     cloneDataList(::std::vector<::std::unique_ptr<::DataItem>> const& list);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_ITEM_NULL();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCAPI void* $ctor(::SynchedActorData&& rhs);
     // NOLINTEND
 
 public:

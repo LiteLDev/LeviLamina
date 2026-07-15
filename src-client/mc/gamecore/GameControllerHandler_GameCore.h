@@ -4,11 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/TaskGroup.h"
-#include "mc/deps/core/threading/XTaskQueuePort.h"
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
-#include "mc/external/game_input/GameInputDeviceStatus.h"
 #include "mc/input/GameControllerHandler.h"
-#include "mc/platform/Result.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
@@ -16,8 +13,6 @@
 class GameCorePlayerInput;
 class HIDController;
 struct XTaskQueueObject;
-namespace GameInput::v2 { struct GameInputDeviceInfo; }
-namespace GameInput::v2 { struct IGameInputDevice; }
 // clang-format on
 
 class GameControllerHandler_GameCore : public ::GameControllerHandler {
@@ -42,82 +37,20 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameControllerHandler_GameCore();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GameControllerHandler_GameCore() /*override*/;
+    virtual ~GameControllerHandler_GameCore() /*override*/ = default;
 
     virtual void refresh() /*override*/;
 
     virtual float normalizeAxis(float raw, float deadzone) /*override*/;
 
-    virtual void normalizeAxes(float& ioX, float& ioY, float deadzone) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameControllerHandler_GameCore(
-        ::std::shared_ptr<::HIDController> const& hidController,
-        short                                     screenWidth,
-        short                                     screenHeight
-    );
-
-    MCAPI void _onDeviceStatusChanged(
-        ::GameInput::v2::IGameInputDevice*     device,
-        ::GameInput::v2::GameInputDeviceStatus currentStatus
-    );
-
-    MCAPI void _taskSubmitted(::XTaskQueueObject* taskQueue, ::XTaskQueuePort port);
-
-    MCAPI ::Bedrock::Result<void> initialize();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::string _generateGameInputKindString(::GameInput::v2::GameInputDeviceInfo const& deviceInfo);
-
-    MCAPI static void _onDeviceStatusChangedCallback(
-        uint64                             context,
-        void*                              device,
-        ::GameInput::v2::IGameInputDevice* currentStatus,
-        uint64,
-        ::GameInput::v2::GameInputDeviceStatus,
-        ::GameInput::v2::GameInputDeviceStatus
-    );
-
-    MCAPI static void _taskSubmittedCallback(void* context, ::XTaskQueueObject* taskQueue, ::XTaskQueuePort port);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::HIDController> const& hidController, short screenWidth, short screenHeight);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual void normalizeAxes(float&, float&, float) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $refresh();
 
-    MCAPI float $normalizeAxis(float raw, float deadzone);
-
-    MCAPI void $normalizeAxes(float& ioX, float& ioY, float deadzone);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

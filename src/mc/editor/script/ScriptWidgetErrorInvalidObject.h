@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +16,9 @@ class ScriptWidgetErrorInvalidObject : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ScriptWidgetErrorInvalidObject();
+#endif
     // NOLINTEND
 
 public:
@@ -28,7 +30,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 };
 

@@ -11,28 +11,18 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk35e607;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PersonaAnimationDefinition& operator=(PersonaAnimationDefinition const&);
     PersonaAnimationDefinition(PersonaAnimationDefinition const&);
     PersonaAnimationDefinition();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    PersonaAnimationDefinition& operator=(PersonaAnimationDefinition const&);
-    PersonaAnimationDefinition();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI PersonaAnimationDefinition(::PersonaAnimationDefinition const&);
-#endif
-
     MCNAPI ~PersonaAnimationDefinition();
+#endif
     // NOLINTEND
 
 public:
@@ -42,16 +32,10 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::PersonaAnimationDefinition const&);
-#endif
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

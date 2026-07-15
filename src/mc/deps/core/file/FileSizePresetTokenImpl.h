@@ -27,19 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~FileSizePresetTokenImpl() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    virtual ~FileSizePresetTokenImpl() /*override*/ = default;
     // NOLINTEND
 };
 

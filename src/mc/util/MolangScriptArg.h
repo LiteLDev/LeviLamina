@@ -24,13 +24,6 @@
 #include "mc/util/MolangTempVariable.h"
 #include "mc/util/MolangTextureVariable.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-struct MolangActorPtr;
-struct MolangItemStackBasePtr;
-// clang-format on
-
 struct MolangScriptArg {
 public:
     // member variables
@@ -91,57 +84,26 @@ public:
 public:
     // prevent constructor by default
     MolangScriptArg& operator=(MolangScriptArg const&);
+    MolangScriptArg();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangScriptArg();
-
-    MCAPI MolangScriptArg(::MolangScriptArg&& other);
-
     MCAPI MolangScriptArg(::MolangScriptArg const& other);
-
-    MCAPI explicit MolangScriptArg(float value);
-
-    MCAPI void _setPOD(float value);
-
-#ifdef LL_PLAT_C
-    MCAPI void _setPOD(::MolangActorPtr value);
-#endif
-
-    MCAPI void _setPOD(::MolangItemStackBasePtr value);
-
-    MCAPI void _setPOD(uint64 value);
-
-    MCAPI ::HashedString const& getName() const;
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
-    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
-
-    MCAPI bool operator==(::MolangScriptArg const& rhs) const;
-
+#ifdef LL_PLAT_C
     MCAPI void reportGetFailure() const;
-
-    MCFOLD void setType(::MolangScriptArgType type);
-
-    MCAPI ~MolangScriptArg();
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_break();
-
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_emptyStringHash();
-
     MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float0();
 
     MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float1();
-
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_floatNeg1();
-
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_molangActorIdEmptyArrayPtr();
 
     MCAPI static ::MolangScriptArg const& mDefaultReturnValue_structUV0();
     // NOLINTEND
@@ -149,18 +111,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::MolangScriptArg&& other);
-
     MCAPI void* $ctor(::MolangScriptArg const& other);
-
-    MCAPI void* $ctor(float value);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

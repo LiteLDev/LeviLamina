@@ -15,10 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, float> mWeirdness;
     ::ll::TypedStorage<4, 4, float> mWeight;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

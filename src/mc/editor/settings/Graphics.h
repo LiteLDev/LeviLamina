@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/options/GraphicsMode.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Editor::Settings { struct GraphicsProps; }
@@ -32,57 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit Graphics(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
 
-    MCNAPI bool getDisableBlockEntityRendering() const;
-
-    MCNAPI bool getDisableEntityRendering() const;
-
-    MCNAPI bool getDisableParticleRendering() const;
-
-    MCNAPI bool getDisableTerrainRendering() const;
-
-    MCNAPI bool getDisableWeatherRendering() const;
-
-    MCNAPI ::GraphicsMode getGraphicsMode() const;
-
-    MCNAPI bool getNightVision() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Editor::Settings::GraphicsProps const& getProperties() const;
-#endif
-
-    MCNAPI bool getShowChunkBoundaries() const;
-
-    MCNAPI bool getShowCompass() const;
-
-    MCNAPI bool getShowInvisibleBlocks() const;
-
-    MCNAPI bool getShowToastNotifications() const;
-
-    MCNAPI void setDisableBlockEntityRendering(bool disableBlockEntityRendering);
-
-    MCNAPI void setDisableEntityRendering(bool disableEntityRendering);
-
-    MCNAPI void setDisableParticleRendering(bool disableParticleRendering);
-
-    MCNAPI void setDisableTerrainRendering(bool disableTerrainRendering);
-
-    MCNAPI void setDisableWeatherRendering(bool disableWeatherRendering);
-
-    MCNAPI void setGraphicsMode(::GraphicsMode graphicsMode);
-
-    MCNAPI void setNightVision(bool nightVision);
-
-    MCNAPI void setShowChunkBoundaries(bool shouldShow);
-
-    MCNAPI void setShowCompass(bool shouldShow);
-
-    MCNAPI void setShowInvisibleBlocks(bool shouldShow);
-
-    MCNAPI void setShowToastNotifications(bool showNotifications);
-
     MCNAPI void updateSettings(::Editor::Settings::GraphicsProps const& props, bool notifyUpdate);
-
-    MCNAPI ~Graphics();
     // NOLINTEND
 
 public:
@@ -95,12 +42,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

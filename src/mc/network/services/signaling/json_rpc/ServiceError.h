@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace JsonRpc {
 
 class ServiceError {
@@ -23,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    ServiceError& operator=(ServiceError const&);
     ServiceError();
 
 public:
@@ -32,19 +28,7 @@ public:
 
     MCNAPI ServiceError(::JsonRpc::ServiceError const&);
 
-    MCNAPI ::JsonRpc::ServiceError& operator=(::JsonRpc::ServiceError&&);
-
-    MCNAPI ::JsonRpc::ServiceError& operator=(::JsonRpc::ServiceError const&);
-
-    MCNAPI bool operator==(::JsonRpc::ServiceError const& rhs) const;
-
     MCNAPI ~ServiceError();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -12,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
-class Vec3;
 // clang-format on
 
 class ServerWaypoint : public ::Waypoint {
@@ -74,18 +73,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>       mTexturePath;
         ::ll::TypedStorage<4, 8, ::Vec2>               mIconSize;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Texture();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct TextureSelector {
@@ -93,13 +80,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::ServerWaypoint::Texture>> mTextures;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ::std::optional<::ServerWaypoint::Texture>
-        tryGetTexture(::Vec3 const& viewingPos, ::Vec3 const& observedPos) const;
         // NOLINTEND
     };
 
@@ -110,10 +90,6 @@ public:
     ::ll::TypedStorage<8, 24, ::ServerWaypoint::TextureSelector> mTextureSelector;
     ::ll::TypedStorage<4, 4, uint>                               mUpdateFlags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerWaypoint();
 
 public:
     // virtual functions
@@ -140,27 +116,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerWaypoint(
-        ::ServerWaypoint::TextureSelector const& textureSelector,
-        ::std::optional<::mce::Color> const&     color,
-        ::WorldPosition                          worldPosition
-    );
-
     MCAPI ::ServerWaypoint::Payload generatePayload(uint updateFlag);
-
-    MCFOLD void setIsEnabled(bool isEnabled);
-
-    MCAPI void setTextureSelector(::ServerWaypoint::TextureSelector const& textureSelector);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ServerWaypoint::TextureSelector const& textureSelector,
-        ::std::optional<::mce::Color> const&     color,
-        ::WorldPosition                          worldPosition
-    );
     // NOLINTEND
 
 public:

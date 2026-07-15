@@ -24,18 +24,14 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk8ec1d7;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PriorityCategory& operator=(PriorityCategory const&);
+    PriorityCategory();
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PriorityCategory();
-
     MCNAPI PriorityCategory(::CameraAimAssist::PriorityCategory const&);
 
     MCNAPI PriorityCategory(
@@ -54,12 +50,8 @@ public:
 
     MCNAPI int getEntityPriority(::Actor const& entity) const;
 
-    MCNAPI ::HashedString const& getId() const;
-
-    MCNAPI ::CameraAimAssist::PriorityCategory& operator=(::CameraAimAssist::PriorityCategory&&);
-
 #ifdef LL_PLAT_C
-    MCNAPI ::CameraAimAssist::PriorityCategory& operator=(::CameraAimAssist::PriorityCategory const&);
+    MCNAPI ::CameraAimAssist::PriorityCategory& operator=(::CameraAimAssist::PriorityCategory&&);
 #endif
 
     MCNAPI ~PriorityCategory();
@@ -68,14 +60,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::CameraAimAssist::PriorityCategory const& NO_PRIORITY();
+    MCNAPI static ::CameraAimAssist::PriorityCategory const& PRIORITY_NONE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::CameraAimAssist::PriorityCategory const&);
 
     MCNAPI void* $ctor(

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/item/ItemDescriptor.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct DestructibleByMiningComponent {
@@ -41,14 +36,6 @@ public:
             ::std::vector<::SharedTypes::v1_26_20::BlockDefinition::DestructibleByMiningComponent::ItemSpecificSpeed>>
             mItemSpecificSpeeds;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(
-            ::SharedTypes::v1_26_20::BlockDefinition::DestructibleByMiningComponent::DetailedMiningSpeed const& value
-        ) const;
-        // NOLINTEND
     };
 
 public:
@@ -63,23 +50,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DestroySpeedId();
-
-    MCAPI static ::std::string_view const& ItemId();
-
     MCAPI static ::std::string_view const& NameId();
-
-    MCAPI static ::std::string_view const& SecondsToDestroyId();
-
-    MCAPI static ::std::string_view const& SpecificSpeedsId();
     // NOLINTEND
 };
 

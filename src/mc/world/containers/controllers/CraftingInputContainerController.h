@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContainerModel;
 class ItemInstance;
 class Recipe;
 class RecipeIngredient;
@@ -20,33 +19,14 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRecipeItems;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    CraftingInputContainerController();
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CraftingInputContainerController() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CraftingInputContainerController() /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
-    virtual int getBackgroundStyle(int, bool) const /*override*/;
-#else // LL_PLAT_C
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const /*override*/;
-#endif
 
-#ifdef LL_PLAT_S
     virtual ::ItemInstance const& getRecipeItem(int) const /*override*/;
-#else // LL_PLAT_C
-    virtual ::ItemInstance const& getRecipeItem(int slot) const /*override*/;
-#endif
 
     virtual void clearSelectedRecipe() /*override*/;
     // NOLINTEND
@@ -55,8 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit CraftingInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
-
     MCNAPI void onRecipeSelectedWithSpecificIngredients(
         ::Recipe const*                          recipe,
         uint64                                   gridSize,
@@ -67,36 +45,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
-    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
-
-    MCNAPI void $clearSelectedRecipe();
-#endif
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

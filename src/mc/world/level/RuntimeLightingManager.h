@@ -63,21 +63,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RuntimeLightingManager();
+    virtual ~RuntimeLightingManager() = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RuntimeLightingManager(::Dimension& dimension);
-
     MCAPI void _getListOfChunksWithPlayerDistance();
 
     MCAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
 
     MCAPI void _removeProcessedSubchunks();
-
-    MCAPI void flushRunTimeLighting();
 
     MCAPI void updateBlockLight(
         ::BlockPos const& blockPos,
@@ -87,18 +83,6 @@ public:
         ::Brightness      newAbsorption,
         bool              isSkyLight
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -145,8 +145,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemComponentData(::SharedTypes::v1_21_90::ComponentItemComponentData&&);
-
     MCAPI ComponentItemComponentData(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
 
     MCFOLD ::std::shared_ptr<::cereal::DynamicValue>
@@ -175,8 +173,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_90::ComponentItemComponentData&&);
-
     MCAPI void* $ctor(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
     // NOLINTEND
 

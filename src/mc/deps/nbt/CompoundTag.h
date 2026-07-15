@@ -11,12 +11,7 @@
 class CompoundTagVariant;
 class IDataInput;
 class IDataOutput;
-class Int64Tag;
-class IntTag;
-class ListTag;
 class PrintStream;
-class ShortTag;
-class StringTag;
 // clang-format on
 
 class CompoundTag : public ::Tag {
@@ -29,11 +24,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::CompoundTagVariant, ::std::less<void>>> mTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompoundTag& operator=(CompoundTag const&);
-    CompoundTag(CompoundTag const&);
 
 public:
     // virtual functions
@@ -62,71 +52,17 @@ public:
     // NOLINTBEGIN
     MCAPI CompoundTag();
 
-    MCAPI CompoundTag(::CompoundTag&& rhs);
-
     MCAPI void append(::CompoundTag const& tag);
-
-    MCFOLD ::std::_Tree_const_iterator<
-        ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::CompoundTagVariant>>>>
-    begin() const;
-
-    MCAPI void clear();
 
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
 
-    MCAPI bool contains(::std::string_view name) const;
-
-    MCAPI bool contains(::std::string_view name, ::Tag::Type type) const;
-
     MCAPI void deepCopy(::CompoundTag const& other);
-
-    MCFOLD ::std::_Tree_const_iterator<
-        ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::CompoundTagVariant>>>>
-    end() const;
 
     MCFOLD ::Tag const* get(::std::string_view name) const;
 
     MCFOLD ::Tag* get(::std::string_view name);
 
-    MCAPI bool getBoolean(::std::string_view string) const;
-
-    MCAPI uchar getByte(::std::string_view name) const;
-
     MCAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
-
-    MCFOLD ::CompoundTag const* getCompound(::std::string_view name) const;
-
-    MCFOLD ::CompoundTag* getCompound(::std::string_view name);
-
-    MCAPI float getFloat(::std::string_view name) const;
-
-    MCAPI int getInt(::std::string_view name) const;
-
-    MCAPI int64 getInt64(::std::string_view name) const;
-
-    MCFOLD ::Int64Tag const* getInt64Tag(::std::string_view name) const;
-
-    MCFOLD ::Int64Tag* getInt64Tag(::std::string_view name);
-
-    MCAPI ::IntTag const* getIntTag(::std::string_view name) const;
-
-    MCFOLD ::ListTag const* getList(::std::string_view name) const;
-
-    MCFOLD ::ListTag* getList(::std::string_view name);
-
-    MCAPI short getShort(::std::string_view name) const;
-
-    MCAPI ::ShortTag const* getShortTag(::std::string_view name) const;
-
-    MCAPI ::std::string const& getString(::std::string_view name) const;
-
-    MCAPI ::StringTag const* getStringTag(::std::string_view name) const;
-
-    MCFOLD bool isEmpty() const;
-
-    MCAPI ::CompoundTag& operator=(::CompoundTag&& rhs);
-
-    MCFOLD bool operator==(::CompoundTag const& other) const;
 
     MCAPI ::Tag& put(::std::string name, ::Tag&& tag);
 
@@ -152,21 +88,15 @@ public:
 
     MCAPI ::std::string& putString(::std::string name, ::std::string value);
 
-    MCFOLD ::std::map<::std::string, ::CompoundTagVariant, ::std::less<void>> const& rawView() const;
-
     MCAPI bool remove(::std::string_view name);
 
     MCAPI void rename(::std::string_view name, ::std::string newName);
-
-    MCFOLD uint64 size() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CompoundTag&& rhs);
     // NOLINTEND
 
 public:

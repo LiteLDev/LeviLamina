@@ -32,14 +32,17 @@ public:
 public:
     // prevent constructor by default
     PingedCompatibleServer& operator=(PingedCompatibleServer const&);
+    PingedCompatibleServer();
 
 #else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PingedCompatibleServer();
+
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PingedCompatibleServer();
-
     MCNAPI PingedCompatibleServer(::PingedCompatibleServer const&);
 
 #ifdef LL_PLAT_C
@@ -58,8 +61,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::PingedCompatibleServer const&);
     // NOLINTEND
 

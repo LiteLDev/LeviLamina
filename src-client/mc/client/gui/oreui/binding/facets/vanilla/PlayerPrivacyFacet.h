@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/identity/XUID.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +16,7 @@ namespace Social { class XboxLiveUserPrivacy; }
 
 namespace OreUI {
 
-class PlayerPrivacyFacet : public ::OreUI::FacetBase<::OreUI::PlayerPrivacyFacet> {
+class PlayerPrivacyFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerPrivacyFacet> {
 public:
     // PlayerPrivacyFacet inner types declare
     // clang-format off
@@ -52,7 +51,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PlayerPrivacyFacet() /*override*/;
+    virtual ~PlayerPrivacyFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -61,14 +60,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit PlayerPrivacyFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
-
-    MCAPI ::Bedrock::Result<void> _load(::std::string const& id);
-
-    MCAPI ::OreUI::PlayerPrivacyFacet::PrivacyData const& getData();
-
-    MCFOLD bool getLoaded();
-
-    MCAPI void load(::std::string const& id);
     // NOLINTEND
 
 public:
@@ -81,12 +72,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

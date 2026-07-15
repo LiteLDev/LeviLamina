@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ namespace Realms { class RealmsWorldEditor; }
 
 namespace OreUI {
 
-class RealmWorldEditorCommandsFacet : public ::OreUI::FacetBase<::OreUI::RealmWorldEditorCommandsFacet> {
+class RealmWorldEditorCommandsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmWorldEditorCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,14 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RealmWorldEditorCommandsFacet(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
-
-    MCAPI void clearRealmWorldEditorState();
-
-    MCAPI void resetRealmWorld(::std::string const& realmId);
-
-    MCAPI void saveRealmWorld(::std::string const& realmId);
-
-    MCAPI void setUseRealmWorldBackend(bool shouldUseRealmWorldBackend);
     // NOLINTEND
 
 public:

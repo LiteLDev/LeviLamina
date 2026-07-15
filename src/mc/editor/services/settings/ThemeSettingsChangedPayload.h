@@ -21,30 +21,16 @@ public:
     ::ll::UntypedStorage<8, 176> mUnkd67276;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ThemeSettingsChangedPayload& operator=(ThemeSettingsChangedPayload const&);
     ThemeSettingsChangedPayload(ThemeSettingsChangedPayload const&);
     ThemeSettingsChangedPayload();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ThemeSettingsChangedPayload& operator=(ThemeSettingsChangedPayload const&);
-    ThemeSettingsChangedPayload(ThemeSettingsChangedPayload const&);
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ThemeSettingsChangedPayload();
-#endif
-
     MCNAPI explicit ThemeSettingsChangedPayload(::Editor::Settings::ThemeProps const& props);
-
-    MCNAPI ::Editor::Settings::ThemeProps const& getThemeSettingsProps() const;
     // NOLINTEND
 
 public:
@@ -56,10 +42,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-#endif
-
     MCNAPI void* $ctor(::Editor::Settings::ThemeProps const& props);
     // NOLINTEND
 

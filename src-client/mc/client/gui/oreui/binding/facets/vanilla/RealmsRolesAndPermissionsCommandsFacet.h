@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/realms/PlayerRole.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +13,7 @@ namespace Realms { class RealmsRolesAndPermissions; }
 namespace OreUI {
 
 class RealmsRolesAndPermissionsCommandsFacet
-: public ::OreUI::FacetBase<::OreUI::RealmsRolesAndPermissionsCommandsFacet> {
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsRolesAndPermissionsCommandsFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,18 +38,6 @@ public:
     MCAPI explicit RealmsRolesAndPermissionsCommandsFacet(
         ::std::shared_ptr<::Realms::RealmsRolesAndPermissions> rolesAndPermissions
     );
-
-    MCAPI void initRealmsRolesAndActions(::std::string const& realmId);
-
-    MCAPI void initRealmsUserRoleAndActions(::std::string const& playerXuid, ::Realms::PlayerRole role);
-
-    MCAPI void refreshAllRealmRolesAndActionsForCurrentUser();
-
-    MCAPI void resetState();
-
-    MCAPI void saveRealmsUserRole(::std::string const& realmId, ::std::string const& playerXuid);
-
-    MCAPI void setRealmsUserRole(::std::string const& playerXuid, ::Realms::PlayerRole role);
     // NOLINTEND
 
 public:

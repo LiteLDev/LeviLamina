@@ -15,13 +15,11 @@ class Block;
 class BlockPos;
 class BoundingBox;
 class Dimension;
-class JigsawBlockInfo;
 class JigsawStructureRegistry;
 class PoolElementStructurePiece;
 class Random;
 class StructurePiece;
 class StructurePoolElement;
-class StructureTemplatePool;
 struct JigsawJunction;
 // clang-format on
 
@@ -96,33 +94,6 @@ public:
         ::Dimension&                                        dimension
     );
 
-    MCAPI void _addPiece(
-        ::PoolElementStructurePiece const&         sourcePiece,
-        ::BlockPos const&                          position,
-        ::Rotation const&                          rotation,
-        ::BlockPos const&                          refPos,
-        uint64                                     contextDepth,
-        ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
-    );
-
-    MCAPI ::BlockPos _findLocalAnchorOffset(
-        ::StructurePoolElement const& initialElement,
-        ::BlockPos const&             pieceCornerPosition,
-        ::Rotation const&             rotation,
-        ::std::string_view            startAnchorName
-    ) const;
-
-    MCAPI bool _tryPlacingPiece(
-        ::PoolElementStructurePiece const&         sourcePiece,
-        ::BoundingBox const&                       sourceBB,
-        ::JigsawBlockInfo const&                   sourceJigsaw,
-        ::BlockPos const&                          attachPos,
-        ::StructureTemplatePool const*             targetPool,
-        ::BlockPos const&                          refPos,
-        uint64                                     contextDepth,
-        ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
-    );
-
     MCAPI void addPieces(
         ::StructurePoolElement const&              initialElement,
         ::BlockPos const&                          startPosition,
@@ -130,8 +101,6 @@ public:
         ::std::string_view                         startAnchorName,
         ::PoolAliasBinding::PoolAliasLookup const& poolAliasLookup
     );
-
-    MCAPI ~JigsawPlacement();
     // NOLINTEND
 
 public:
@@ -154,11 +123,5 @@ public:
         ::JigsawStructureRegistry const&                    pools,
         ::Dimension&                                        dimension
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

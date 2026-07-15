@@ -89,7 +89,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProgressScreenController() /*override*/;
+    virtual ~ProgressScreenController() /*override*/ = default;
 
     virtual void onCreation() /*override*/;
 
@@ -103,8 +103,7 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
-        /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
@@ -143,30 +142,6 @@ public:
         ::GameType                                              gameType,
         bool                                                    isCancellable
     );
-
-    MCAPI void _confirmSpaceAvailable();
-
-    MCAPI ::std::string const _getErrorCode() const;
-
-    MCAPI ::std::string const _getProgressMessage() const;
-
-    MCAPI ::std::string const _getProgressTitle() const;
-
-    MCAPI bool _isInCancellableState() const;
-
-    MCAPI bool _isMobileDataIconVisible() const;
-
-    MCAPI void _openConfirmationDialog();
-
-    MCAPI void _openPartyNotEligibleModal();
-
-    MCAPI void _openPartyPartiallyEligibleModal();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerProgressBindings();
-
-    MCAPI void _updateProgressMessage(int64 const& timeNow, bool force);
     // NOLINTEND
 
 public:
@@ -202,40 +177,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
 
-    MCAPI void $onOpen();
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCFOLD ::std::string $getAdditionalScreenInfo() const;
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
-
-    MCFOLD ::ui::SceneType $getSceneType() const;
-
-    MCAPI bool $_getGamepadHelperVisible() const;
-
-    MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

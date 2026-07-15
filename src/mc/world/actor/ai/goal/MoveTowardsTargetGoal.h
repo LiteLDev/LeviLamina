@@ -45,29 +45,13 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MoveTowardsTargetGoal(::Mob& pathMob);
-
-    MCAPI MoveTowardsTargetGoal(::Mob& pathMob, float speedModifier, float within);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& pathMob);
-
-    MCAPI void* $ctor(::Mob& pathMob, float speedModifier, float within);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();
 
     MCAPI bool $canContinueToUse();
 
-    MCFOLD void $stop();
+    MCAPI void $stop();
 
     MCAPI void $start();
 

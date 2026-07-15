@@ -62,36 +62,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockSource& $getBlockSource() const;
 
-    MCNAPI void $initialize();
-
-    MCNAPI bool $hasStructureBlock() const;
-
-    MCNAPI void $clearStructure();
-
-    MCNAPI void $spawnStructure();
-
-    MCNAPI ::std::optional<::AABB> $getStructureBounds() const;
-
-    MCNAPI ::std::optional<::Vec3> $getStructureBlockPivot() const;
-
-    MCNAPI ::std::optional<::Vec3> $getStructureBlockPosPivot() const;
-
-    MCNAPI ::BoundingBox $getStructureBoundingBox() const;
-
-    MCNAPI ::DimensionType $getStructureDimension() const;
-
-    MCNAPI int $_getLevelTick() const;
-
-    MCNAPI bool $_isTestReady();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

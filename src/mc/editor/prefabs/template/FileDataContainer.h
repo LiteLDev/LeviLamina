@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::Prefabs::PrefabDBTemplateLoader::v1 { struct TemplateData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,37 +24,9 @@ public:
     FileDataContainer();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~FileDataContainer();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCNAPI static ::std::optional<::Editor::Prefabs::PrefabDBTemplateLoader::CurrentVersion::FileDataContainer>
-    fromString(
-        ::Puv::SlicedLoader<
-            ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData,
-            nullptr_t,
-            nullptr_t,
-            ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData>& loader,
-        ::std::string&                                                    jsonString,
-        ::std::vector<::std::string>&                                     outErrors
-    );
-
-    MCNAPI static ::std::optional<::std::string> toString(
-        ::cereal::ReflectionCtx&                                           ctx,
-        ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const& templateData
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

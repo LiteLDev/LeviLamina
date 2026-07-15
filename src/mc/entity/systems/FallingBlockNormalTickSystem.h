@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class ITickDelegate;
 class StrictEntityContext;
 struct FallingBlockFlagComponent;
 struct InterpolateMovementNeededComponent;
@@ -27,19 +26,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doFallingBlockNormalTickSystem(
-        ::StrictEntityContext const& actorOwnerComponent,
-        ::ActorOwnerComponent&       onLand,
-        ::ITickDelegate&
-    );
-
-    MCAPI static void _tickFallingBlockNormalTickSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::InterpolateMovementNeededComponent, ::FallingBlockFlagComponent>,
-            ::ActorOwnerComponent> view
-    );
-
     MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -43,12 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& TICKING_AREA_PREFIX();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Dimension& dimension, ::BoundingBox const& bounds, ::std::string const& structureName);

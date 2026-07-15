@@ -33,19 +33,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SystemInfo(::SystemInfo const&);
-
-    MCAPI ~SystemInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SystemInfo const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

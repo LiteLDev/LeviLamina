@@ -11,19 +11,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>      defaultName;
     ::ll::TypedStorage<8, 32, ::std::string>      carriedName;
-    ::ll::TypedStorage<8, 64, ::TextureAtlasItem> defaultItem;
-    ::ll::TypedStorage<8, 64, ::TextureAtlasItem> carriedItem;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~TextureItem();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    ::ll::TypedStorage<8, 72, ::TextureAtlasItem> defaultItem;
+    ::ll::TypedStorage<8, 72, ::TextureAtlasItem> carriedItem;
     // NOLINTEND
 };

@@ -28,50 +28,6 @@ public:
         ::ll::TypedStorage<8, 64, ::std::function<int(int)>>                      mGetValue;
         ::ll::TypedStorage<8, 64, ::std::function<void(int, int)>>                mSetValue;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SetUpCallbacksForCollectionDropdownOptionsParameters();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI SetUpCallbacksForCollectionDropdownOptionsParameters(
-            ::std::string const&                            collectionName,
-            ::std::string const&                            dropdownName,
-            ::std::string const&                            dropdownToggleLabelBindingName,
-            ::std::unordered_map<::std::string, int> const& nameValuePairs,
-            ::std::unordered_map<int, ::std::string> const& valueLabelPairs,
-            ::std::string const&                            enabledBindingName,
-            ::std::function<bool(int)>                      isEnabled,
-            ::std::function<int(int)>                       getValue,
-            ::std::function<void(int, int)>                 setValue
-        );
-
-        MCAPI ~SetUpCallbacksForCollectionDropdownOptionsParameters();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::std::string const&                            collectionName,
-            ::std::string const&                            dropdownName,
-            ::std::string const&                            dropdownToggleLabelBindingName,
-            ::std::unordered_map<::std::string, int> const& nameValuePairs,
-            ::std::unordered_map<int, ::std::string> const& valueLabelPairs,
-            ::std::string const&                            enabledBindingName,
-            ::std::function<bool(int)>                      isEnabled,
-            ::std::function<int(int)>                       getValue,
-            ::std::function<void(int, int)>                 setValue
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
     using BooleanOptionGetter = ::std::function<bool()>;
@@ -102,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DropdownScreenController() /*override*/;
+    virtual ~DropdownScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
     // NOLINTEND
@@ -110,10 +66,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DropdownScreenController();
-
-    MCAPI void setOffset(int offset);
-
     MCAPI void setUpCallbacksForCollectionDropdownOption(
         ::std::string const&                            collectionName,
         int const&                                      collectionSize,
@@ -139,18 +91,6 @@ public:
     );
 
     MCAPI void updateDropdownCollectionSize(int const& collectionSize);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

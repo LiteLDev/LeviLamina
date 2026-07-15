@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Level;
-class MinecraftGameTest;
-class ServerInstance;
-class TestConfig;
-// clang-format on
-
 class DedicatedServerGameTestRunner {
 public:
     // member variables
@@ -34,42 +26,4 @@ public:
     DedicatedServerGameTestRunner& operator=(DedicatedServerGameTestRunner const&);
     DedicatedServerGameTestRunner(DedicatedServerGameTestRunner const&);
     DedicatedServerGameTestRunner();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI DedicatedServerGameTestRunner(
-        ::TestConfig const&  testConfig,
-        ::MinecraftGameTest& gameTest,
-        ::ServerInstance&    server,
-        ::Level&             level
-    );
-
-    MCNAPI void _finalizeReport();
-
-    MCNAPI void _initializeReport();
-
-    MCNAPI void _runTestGroup(::std::vector<::std::string> const& tags);
-
-    MCNAPI bool _saveReport();
-
-    MCNAPI bool _writeFile(::std::string const& fileName, ::std::string const& contents);
-
-    MCNAPI void tick();
-
-    MCNAPI ~DedicatedServerGameTestRunner();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::TestConfig const& testConfig, ::MinecraftGameTest& gameTest, ::ServerInstance& server, ::Level& level);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

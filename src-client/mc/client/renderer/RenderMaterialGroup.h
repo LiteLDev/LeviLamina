@@ -16,7 +16,6 @@
 class ResourceLoadManager;
 class ResourcePackManager;
 struct PackIdVersion;
-namespace mce { class MaterialPtr; }
 namespace mce { class RenderMaterialInfo; }
 namespace mce { class ShaderGroup; }
 // clang-format on
@@ -44,24 +43,14 @@ public:
     // NOLINTBEGIN
     virtual void onAppResumed() /*override*/;
 
-    virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const& name) /*override*/;
+    virtual ::mce::RenderMaterialInfo& getMaterialInfo(::HashedString const&) /*override*/;
 
-    virtual void clearMaterial(::HashedString const& name) /*override*/;
+    virtual void clearMaterial(::HashedString const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderMaterialGroup();
-
-    MCAPI bool
-    _loadList(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup, ::ResourcePackManager& resourcePackManager);
-
-    MCAPI ::mce::MaterialPtr getMaterial(::HashedString const& name);
-
-    MCFOLD ::std::unordered_map<::HashedString, ::std::shared_ptr<::mce::RenderMaterialInfo>> const&
-    getMaterialMap() const;
-
     MCAPI bool loadList(
         ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>       shaderGroup,
         ::ResourceLocation const&                            listPath,
@@ -71,8 +60,6 @@ public:
     );
 
     MCAPI void reset();
-
-    MCAPI void setShaderGroup(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const& shaderGroup);
     // NOLINTEND
 
 public:
@@ -90,27 +77,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppResumed();
 
-    MCAPI ::mce::RenderMaterialInfo& $getMaterialInfo(::HashedString const& name);
-
-    MCAPI void $clearMaterial(::HashedString const& name);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForRenderMaterialGroupBase();
-
-    MCNAPI static void** $vftableForAppPlatformListener();
     // NOLINTEND
 };
 

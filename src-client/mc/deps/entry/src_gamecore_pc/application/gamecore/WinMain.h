@@ -41,20 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WinMain();
-
-    MCAPI int64 wndProc(::HWND__* hwnd, uint uMsg, uint64 wParam, int64 lParam);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_processProtocolActivationArguments(::Bedrock::ActivationArguments& args);

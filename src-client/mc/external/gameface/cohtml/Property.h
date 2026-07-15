@@ -47,6 +47,8 @@ public:
 
     virtual bool ToNumber(void* object, float* number) const = 0;
 
+    virtual bool ToNumber(void* object, double* number) const;
+
     virtual bool ToString(void* object, char* buffer, uint64* length) const = 0;
 
     virtual bool ToColor(void* object, ::renoir::Color* color) const = 0;
@@ -65,13 +67,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI bool $ToNumber(void* object, double* number) const;
     // NOLINTEND
 };
 

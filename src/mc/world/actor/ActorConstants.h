@@ -10,13 +10,7 @@ class Vec3;
 namespace ActorConstants {
 // static variables
 // NOLINTBEGIN
-MCAPI float const& DEFAULT_AMBIENT_SOUND_INTERVAL();
-
-MCAPI float const& DEFAULT_AMBIENT_SOUND_INTERVAL_RANGE();
-
 MCAPI ::Vec3 const& LAVA_AABB_SHRINK_AMOUNT();
-
-MCAPI ::Vec3 const& WATER_AABB_SHRINK_AMOUNT();
 // NOLINTEND
 
 } // namespace ActorConstants

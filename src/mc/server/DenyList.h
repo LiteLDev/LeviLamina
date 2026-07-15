@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/platform/threading/LockGuard.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
-
 class DenyList {
 public:
     // DenyList inner types declare
@@ -42,15 +37,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid);
-
         MCNAPI ~Entry();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid);
         // NOLINTEND
 
     public:

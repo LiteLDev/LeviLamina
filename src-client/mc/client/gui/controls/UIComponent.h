@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UIComponent();
+    virtual ~UIComponent() = default;
 
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const = 0;
 
@@ -69,30 +69,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit UIComponent(::UIControl& owner);
-
-    MCFOLD ::UIControl const& getOwner() const;
-
-    MCFOLD ::UIControl& getOwner();
-
-    MCAPI bool isLocked() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::ComponentReceiveActionType $receive(
@@ -125,11 +101,5 @@ public:
     MCFOLD void $reload(::UIComponent const& rhs);
 
     MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

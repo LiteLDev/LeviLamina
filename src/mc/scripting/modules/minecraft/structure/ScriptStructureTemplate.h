@@ -4,30 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/IScriptSerializable.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class LevelStorage;
 class StructureManager;
-class Vec3;
-namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
-namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct EngineError; }
 namespace Scripting { struct EnumBinding; }
-namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptStructureTemplate {
+class ScriptStructureTemplate : public ::ScriptModuleMinecraft::IScriptSerializable {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,55 +34,13 @@ public:
 public:
     // prevent constructor by default
     ScriptStructureTemplate& operator=(ScriptStructureTemplate const&);
+    ScriptStructureTemplate(ScriptStructureTemplate const&);
     ScriptStructureTemplate();
 
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI ScriptStructureTemplate(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
-
-    MCAPI ScriptStructureTemplate(
-        ::std::string const&                                                                id,
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
-        ::Scripting::WeakLifetimeScope                                                      scope,
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
-        ::LevelStorage&                                                                     levelStorage
-    );
-
-    MCFOLD ::Scripting::InvalidArgumentError
-    _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
-
-    MCAPI ::Scripting::Result<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
-        ::ScriptModuleMinecraft::ScriptInvalidStructureError,
-        ::Scripting::InvalidArgumentError>
-    getBlockPermutation(::Vec3 const& location) const;
-
-    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
-
-    MCAPI ::Scripting::
-        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
-        isWaterlogged(::Vec3 const& location) const;
-
-    MCAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>,
-        ::ScriptModuleMinecraft::ScriptInvalidStructureError,
-        ::Scripting::EngineError,
-        ::Scripting::InvalidArgumentError>
-    saveAs(::std::string const& identifier, ::StructureRedstoneSaveMode saveMode);
-
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError> saveToWorld();
-
-    MCAPI ::Scripting::
-        Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-        setBlockPermutation(
-            ::Vec3 const& location,
-            ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
-                 blockPermutation,
-            bool waterlogged
-        );
-
-    MCAPI ~ScriptStructureTemplate();
+    virtual ::std::string const& getContentType() const /*override*/;
     // NOLINTEND
 
 public:
@@ -108,23 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
 
-    MCAPI void* $ctor(
-        ::std::string const&                                                                id,
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
-        ::Scripting::WeakLifetimeScope                                                      scope,
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
-        ::LevelStorage&                                                                     levelStorage
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

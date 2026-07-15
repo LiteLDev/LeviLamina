@@ -8,7 +8,6 @@ class AtlasItemManager;
 class Experiments;
 class TextureShiftManager;
 struct BlockMaterialInstancesComponent;
-struct TextureUVCoordinateSet;
 namespace ClientBlockPipeline { class Material; }
 // clang-format on
 
@@ -33,14 +32,6 @@ public:
         ::Experiments const&               experiments,
         bool                               fromBlockItemVisualComponent
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::ClientBlockPipeline::Material>& mDefaultMaterial();
-
-    MCAPI static ::std::vector<::TextureUVCoordinateSet>& mDefaultTexture();
     // NOLINTEND
 };
 

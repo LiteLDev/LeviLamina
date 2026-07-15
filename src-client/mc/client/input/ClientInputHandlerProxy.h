@@ -9,6 +9,6 @@ class ClientInputHandlerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::ClientInputHandlerProxyCallbacks const> mCallbacks;
+    ::ll::TypedStorage<8, 64, ::ClientInputHandlerProxyCallbacks const> mCallbacks;
     // NOLINTEND
 };

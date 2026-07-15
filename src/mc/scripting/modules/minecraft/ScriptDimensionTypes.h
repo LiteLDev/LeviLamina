@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 struct DimensionType;
 namespace ScriptModuleMinecraft { class ScriptDimensionType; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -33,18 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
-    get(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
-
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
-    getAll(::Scripting::WeakLifetimeScope scope);
-
-    MCAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::std::string, ::std::string> _getDimensionStringNames();
@@ -54,12 +41,6 @@ public:
     MCAPI static ::DimensionType fromString(::std::string const& name);
 
     MCAPI static ::std::string toString(::DimensionType const& type);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& sMinecraftNamespace();
     // NOLINTEND
 };
 

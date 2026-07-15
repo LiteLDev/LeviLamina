@@ -8,12 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BoundingBox;
 class Vec3;
-namespace Bedrock::PubSub { class Subscription; }
-namespace Editor { class RelativeVolumeListBlockVolume; }
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Selection { struct SelectionVolumeEvent; }
 // clang-format on
 
 namespace Editor::Selection {
@@ -41,35 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit SelectionContainerVolume(::Editor::ServiceProviderCollection& serviceProviders);
-
-    MCNAPI void _fireSelectionVolumeRemoveEvent();
-
-    MCNAPI void _fireSelectionVolumeSetEvent();
-
-    MCNAPI ::std::optional<::BoundingBox> bounds() const;
-
     MCNAPI void clear(::Editor::Selection::EventSource eventSource);
-
-    MCNAPI ::Editor::RelativeVolumeListBlockVolume const& getVolume() const;
-
-    MCNAPI int getVolumeCount() const;
-
-    MCNAPI bool isEmpty() const;
 
     MCNAPI void moveTo(::Vec3 const& location, ::Editor::Selection::EventSource eventSource);
 
-    MCNAPI ::Bedrock::PubSub::Subscription registerSelectionVolumeEventListener(
-        ::std::function<void(::Editor::Selection::SelectionVolumeEvent const&)> callback
-    );
-
     MCNAPI void translate(::Vec3 const& offset, ::Editor::Selection::EventSource eventSource);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders);
     // NOLINTEND
 
 public:

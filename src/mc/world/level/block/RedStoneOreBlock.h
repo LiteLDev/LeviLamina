@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RedStoneOreBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
@@ -51,19 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RedStoneOreBlock(::std::string const& nameId, int id, bool lit);
-
-    MCAPI void _poofParticles(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCFOLD void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
     // NOLINTEND
 
 public:

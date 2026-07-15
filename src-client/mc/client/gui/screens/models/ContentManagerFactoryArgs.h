@@ -42,16 +42,4 @@ public:
     ContentManagerFactoryArgs& operator=(ContentManagerFactoryArgs const&);
     ContentManagerFactoryArgs(ContentManagerFactoryArgs const&);
     ContentManagerFactoryArgs();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ContentManagerFactoryArgs();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

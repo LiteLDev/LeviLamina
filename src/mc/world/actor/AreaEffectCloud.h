@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/comprehensive/ParticleType.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
@@ -16,7 +15,6 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class Random;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 namespace mce { class Color; }
@@ -46,7 +44,7 @@ public:
     // NOLINTBEGIN
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
-    virtual void setOwner(::ActorUniqueID const ownerID) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
     virtual void normalTick() /*override*/;
 
@@ -66,35 +64,19 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _spawnParticles(::Random& random, uint numParticles, float radius);
-
     MCAPI void addAreaEffect(::MobEffectInstance effect);
 
     MCAPI void calculateAndSetRadiusPerTick();
 
     MCAPI float getEffectiveRadius() const;
 
-    MCAPI ::ParticleType getParticle() const;
-
     MCAPI void notifyPickup();
-
-    MCFOLD void setAffectOwner(bool shouldAffect);
 
     MCAPI void setDuration(::EffectDuration duration);
 
     MCAPI void setInitialRadius(float radius);
 
-    MCAPI void setParticle(::ParticleType type);
-
     MCAPI void setParticleColor(::mce::Color& c);
-
-    MCFOLD void setPotion(short potionAUX);
-
-    MCAPI void setRadiusChangeOnPickup(float changeAmount);
-
-    MCAPI void setRadiusOnUse(float radiusOnUse);
-
-    MCFOLD void setReapplicationDelay(int delay);
     // NOLINTEND
 
 public:
@@ -110,24 +92,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerID);
-
-    MCAPI void $normalTick();
-
-    MCFOLD float $getShadowRadius() const;
-
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

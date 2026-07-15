@@ -4,13 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
-namespace ScriptModuleMinecraft { struct ScriptPlayerAimAssistSettings; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
@@ -36,22 +35,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> _getAimAssistSettings() const;
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::Scripting::ArgumentOutOfBoundsError,
-        ::Scripting::InvalidArgumentError,
-        ::Scripting::EngineError,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError,
-        ::Scripting::Error>
-    setAimAssistSettings(::std::optional<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> settings);
     // NOLINTEND
 
 public:

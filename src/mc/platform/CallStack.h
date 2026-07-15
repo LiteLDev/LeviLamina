@@ -26,27 +26,6 @@ public:
         ::ll::TypedStorage<1, 3, ::std::optional<::Bedrock::LogLevel>> mLogLevel;
         ::ll::TypedStorage<4, 8, ::std::optional<::LogAreaID>>         mLogArea;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Context();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Context(
-            ::std::string                        value,
-            ::std::optional<::Bedrock::LogLevel> logLevel,
-            ::std::optional<::LogAreaID>         logArea
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void*
-        $ctor(::std::string value, ::std::optional<::Bedrock::LogLevel> logLevel, ::std::optional<::LogAreaID> logArea);
-        // NOLINTEND
     };
 
     struct Frame {
@@ -68,23 +47,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        FrameWithContext();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI
-        FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
-
         MCAPI ~FrameWithContext();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void*
-        $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
         // NOLINTEND
 
     public:
@@ -108,16 +73,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
-
-    MCAPI explicit CallStack(::std::vector<::Bedrock::CallStack::FrameWithContext>&& frames);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&& frame);
-
-    MCFOLD void* $ctor(::std::vector<::Bedrock::CallStack::FrameWithContext>&& frames);
     // NOLINTEND
 };
 

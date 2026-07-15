@@ -32,57 +32,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
 
     virtual void getNextParticleSpawnOffsetAndDirection(
-        ::Vec3&                                                 offset,
-        ::Vec3&                                                 direction,
-        ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
-        ::RenderParams&                                         renderParams
+        ::Vec3&,
+        ::Vec3&,
+        ::ParticleSystem::ComponentAccessParticleEmitter const&,
+        ::RenderParams&
     ) /*override*/;
 
-    virtual void applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EmitterShapeSphereComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    virtual void applyPreNormalizationModifiers(::Vec3&, ::RenderParams&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
-
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void $getNextParticleSpawnOffsetAndDirection(
-        ::Vec3&                                                 offset,
-        ::Vec3&                                                 direction,
-        ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
-        ::RenderParams&                                         renderParams
-    );
-
-    MCFOLD void $applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -14,18 +14,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>          partyId;
     ::ll::TypedStorage<8, 656, ::OreUI::SocialPlayer> partyFriend;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~JoinablePartyFriend();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

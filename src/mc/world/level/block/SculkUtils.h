@@ -8,9 +8,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
-class IBlockWorldGenAPI;
 class Random;
-class SculkSpreader;
 // clang-format on
 
 namespace SculkUtils {
@@ -26,25 +24,9 @@ MCAPI void addChargePopEffects(::BlockSource& region, ::CompoundTag const& data,
 MCAPI void addChargePopEffects(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
 #endif
 
-MCAPI bool canSpreadIntoBlock(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos);
-
 MCAPI ::std::set<::Block const*> generateSculkReplaceableBlocks();
 
 MCAPI ::std::set<::Block const*> generateSculkReplaceableBlocksWorldgen();
-
-MCAPI bool isSculkOrSculkVein(::Block const& block);
-
-MCAPI bool isSculkVeinWithSubstrateAccess(
-    ::IBlockWorldGenAPI& target,
-    ::Block const&       block,
-    ::BlockPos const&    pos,
-    ::SculkSpreader&     spreader
-);
-
-MCAPI void
-requestChargeEffects(::IBlockWorldGenAPI& region, ::BlockSource* pos, ::BlockPos const& charge, int facingData, int);
-
-MCAPI void requestChargePopEffects(::IBlockWorldGenAPI& region, ::BlockSource* pos, ::BlockPos const&);
 // NOLINTEND
 
 } // namespace SculkUtils

@@ -38,8 +38,6 @@ public:
         ::std::unique_ptr<::LayoutManager>    layoutManager
     );
 
-    MCAPI void clearCache();
-
     MCAPI ::std::unique_ptr<::CachedScene> getCachedScene(::Json::Value const& info);
 
     MCAPI ~CachedScenes();

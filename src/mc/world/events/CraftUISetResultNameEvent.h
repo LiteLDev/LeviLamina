@@ -15,20 +15,4 @@ public:
     ::ll::TypedStorage<4, 4, ::CraftUISetResultNameEvent::BlockType const> mType;
     ::ll::TypedStorage<8, 32, ::std::string const>                         mName;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~CraftUISetResultNameEvent();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD void $dtor();
-#endif
-    // NOLINTEND
 };

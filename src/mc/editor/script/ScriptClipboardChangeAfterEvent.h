@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace Editor::ScriptModule {
 
 struct ScriptClipboardChangeAfterEvent {
@@ -22,24 +17,6 @@ public:
     ScriptClipboardChangeAfterEvent& operator=(ScriptClipboardChangeAfterEvent const&);
     ScriptClipboardChangeAfterEvent(ScriptClipboardChangeAfterEvent const&);
     ScriptClipboardChangeAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptClipboardChangeAfterEvent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

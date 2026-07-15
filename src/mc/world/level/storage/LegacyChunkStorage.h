@@ -46,7 +46,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LegacyChunkStorage() /*override*/;
+    virtual ~LegacyChunkStorage() /*override*/ = default;
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
@@ -64,14 +64,6 @@ public:
         ::StorageVersion                 v,
         ::Biome&                         defaultBiome
     );
-
-    MCNAPI bool _isImported(::ChunkPos const& pos);
-
-    MCNAPI bool _loadChunk(::LevelChunk& lc);
-
-    MCNAPI void _loadEntities();
-
-    MCNAPI void _markChunkAsImported(::ChunkPos const& pos);
     // NOLINTEND
 
 public:
@@ -86,26 +78,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCNAPI bool $saveLiveChunk(::LevelChunk& lc);
-
-    MCNAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -9,12 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
-class BlockPos;
 class ComponentItem;
-class HashedString;
-class ItemStack;
-class Mob;
 namespace SharedTypes::Legacy { struct OnHitBlockTriggerItemComponent; }
 // clang-format on
 
@@ -42,14 +37,6 @@ public:
     MCAPI explicit LegacyOnHitBlockTriggerItemComponent(
         ::SharedTypes::Legacy::OnHitBlockTriggerItemComponent&& componentData
     );
-
-    MCAPI void _onHitBlock(::ItemStack& item, ::Block const& blockPos, ::BlockPos const& attacker, ::Mob&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

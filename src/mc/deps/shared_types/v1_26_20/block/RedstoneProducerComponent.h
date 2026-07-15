@@ -6,11 +6,6 @@
 #include "mc/deps/core/container/EnumSet.h"
 #include "mc/deps/shared_types/legacy/Facing.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct RedstoneProducerComponent {
@@ -24,23 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& ConnectedFacesId();
-
     MCAPI static ::std::string_view const& NameId();
-
-    MCAPI static ::std::string_view const& PowerId();
-
-    MCAPI static ::std::string_view const& StronglyPoweredFaceId();
-
-    MCAPI static ::std::string_view const& TransformRelativeId();
     // NOLINTEND
 };
 

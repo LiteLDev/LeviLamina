@@ -4,12 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IOperation.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Transactions { class ScriptOperationPayload; }
 // clang-format on
 
 namespace Editor::Transactions {
@@ -39,35 +38,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI
-    ScriptOperation(::std::string const& operationName, ::Editor::Transactions::ScriptOperationPayload const&& payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string const& operationName, ::Editor::Transactions::ScriptOperationPayload const&& payload);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getName();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_undo(::Editor::ServiceProviderCollection&);
-
-    MCNAPI ::Scripting::Result_deprecated<void> $_redo(::Editor::ServiceProviderCollection&);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

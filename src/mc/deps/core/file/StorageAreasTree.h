@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace Core { class FileStorageArea; }
 namespace Core { class PathView; }
 // clang-format on
@@ -36,26 +35,6 @@ public:
         TreeChild& operator=(TreeChild const&);
         TreeChild(TreeChild const&);
         TreeChild();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI TreeChild(::HashedString key, ::std::unique_ptr<::Core::StorageAreasTree::TreeNode> node);
-
-        MCNAPI ~TreeChild();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::HashedString key, ::std::unique_ptr<::Core::StorageAreasTree::TreeNode> node);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct TreeNode {
@@ -71,18 +50,6 @@ public:
         TreeNode& operator=(TreeNode const&);
         TreeNode(TreeNode const&);
         TreeNode();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~TreeNode();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

@@ -9,8 +9,6 @@
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/containers/models/FilterResult.h"
-#include "mc/world/containers/models/TextSearchMode.h"
-#include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
@@ -18,8 +16,8 @@
 // clang-format off
 class ContainerModel;
 class ContainerScreenContext;
-class FurnaceBlockActor;
 class ItemDescriptor;
+class ItemInstance;
 class ItemStack;
 class Player;
 class Recipe;
@@ -41,9 +39,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                         mLastStoredXP;
     ::ll::TypedStorage<4, 4, int>                                         mLastInputId;
     ::ll::TypedStorage<4, 4, int>                                         mLastInputAux;
-    ::ll::TypedStorage<8, 128, ::ItemInstance>                            mLastCraftedItem;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mLastOutputName;
-    ::ll::TypedStorage<4, 4, int>                                         mLastResultDisplayId;
     ::ll::TypedStorage<1, 1, ::BlockActorType const>                      mBlockActorType;
     ::ll::TypedStorage<1, 1, ::ContainerEnumName const>                   mIngredientContainerName;
     ::ll::TypedStorage<8, 48, ::HashedString const>                       mRecipeTag;
@@ -67,7 +62,7 @@ public:
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
@@ -85,8 +80,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
     MCAPI FurnaceContainerManagerModel(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
@@ -96,22 +89,7 @@ public:
         ::BlockPos const&                    blockPos
     );
 
-    MCAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
-
-    MCAPI ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
-
-    MCAPI ::FilterResult
-    _filterByTextAndInventory(::ItemInstance const& item, bool includeCursorItem, ::TextSearchMode searchMode) const;
-
-    MCAPI bool _foundInStartOfAnyWord(::std::string const& itemName) const;
-
-    MCAPI ::FurnaceBlockActor* _getFurnaceEntity();
-
-    MCAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
-
     MCAPI void _populateRecipeBook();
-
-    MCAPI void _updateResultSlotInfo();
 
 #ifdef LL_PLAT_C
     MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
@@ -126,6 +104,8 @@ public:
     MCAPI ::std::vector<::ItemInstance> getUnlockedRecipeIngredientsForResult(::ItemInstance const& item) const;
 
 #ifdef LL_PLAT_C
+    MCAPI void grantExperienceForSmelting(::ItemInstance const& item, int count);
+
     MCAPI bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
 #endif
 
@@ -144,8 +124,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
     MCAPI void* $ctor(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
@@ -167,7 +145,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 

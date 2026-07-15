@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class EntityRegistry;
-namespace mce { class UUID; }
 // clang-format on
 
 class FreezingSystem : public ::ITickingSystem {
@@ -19,22 +18,10 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& FREEZE_EFFECT_UUID();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::EntityRegistry& registry);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

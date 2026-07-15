@@ -2,18 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/container/list.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::JSONObject { class DocumentOptions; }
-namespace Bedrock::JSONObject { class MemoryPage; }
-namespace Bedrock::JSONObject { class Node; }
 namespace Bedrock::JSONObject { class NodeBase; }
 namespace Bedrock::JSONObject { class OutputOptions; }
 namespace Bedrock::JSONObject { class ParseResult; }
-namespace Bedrock::JSONObject { class StringNode; }
 namespace Bedrock::JSONObject { class ValueWrapper; }
 // clang-format on
 
@@ -44,22 +37,6 @@ public:
         AllocatedResources& operator=(AllocatedResources const&);
         AllocatedResources(AllocatedResources const&);
         AllocatedResources();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI explicit AllocatedResources(::Bedrock::JSONObject::MemoryPage* owningMemoryPage);
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI void* $ctor(::Bedrock::JSONObject::MemoryPage* owningMemoryPage);
-#endif
-        // NOLINTEND
     };
 
 public:
@@ -83,43 +60,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit Document(::Bedrock::JSONObject::DocumentOptions const& options);
-
-    MCNAPI void* _acquireNode(
-        ::Bedrock::Intrusive::
-            list<::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase>&
-                freeList,
-        uint64  size,
-        uint64  alignment
-    );
-
-    MCNAPI void* _acquireStringBuffer(uint64 length, uint64& outCapacity);
-
     MCNAPI ::Bedrock::JSONObject::NodeBase* _createNode(::Bedrock::JSONObject::ValueWrapper const& value);
-
-    MCNAPI ::Bedrock::JSONObject::MemoryPage& _getMemoryPage();
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::JSONObject::MemoryPage* _getMemoryPageAt(uint index);
-#endif
 
     MCNAPI void _initialize();
 
     MCNAPI void _releaseNode(::Bedrock::JSONObject::NodeBase& node);
 
-#ifdef LL_PLAT_C
-    MCNAPI void _releaseStringBuffer(::Bedrock::JSONObject::StringNode& node);
-#endif
-
-    MCNAPI void _setRoot(::Bedrock::JSONObject::NodeBase* base);
-
     MCNAPI ::Bedrock::JSONObject::ParseResult const& loadString(::std::string_view str);
-
-    MCNAPI void reset();
-
-    MCNAPI void setOptions(::Bedrock::JSONObject::DocumentOptions const& options);
-
-    MCNAPI ::Bedrock::JSONObject::Node* setRoot(::Bedrock::JSONObject::ValueWrapper const& value);
 
 #ifdef LL_PLAT_C
     MCNAPI void writeStream(::std::ostream& out, ::Bedrock::JSONObject::OutputOptions const& outputOptions) const;
@@ -128,12 +75,6 @@ public:
 #endif
 
     MCNAPI ~Document();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::JSONObject::DocumentOptions const& options);
     // NOLINTEND
 
 public:

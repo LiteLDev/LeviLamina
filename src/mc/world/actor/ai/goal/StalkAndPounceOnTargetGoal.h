@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
-class Vec3;
 // clang-format on
 
 class StalkAndPounceOnTargetGoal : public ::BaseGoal {
@@ -82,18 +81,6 @@ public:
         float                     stuckTime,
         bool                      setPersistent
     );
-
-    MCAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
-
-    MCAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
-
-    MCAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
-
-    MCAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
-
-    MCAPI void _stalkPrey(::Vec3 const& mobPos, ::Vec3 const& targetPos);
-
-    MCAPI void _stuck();
     // NOLINTEND
 
 public:

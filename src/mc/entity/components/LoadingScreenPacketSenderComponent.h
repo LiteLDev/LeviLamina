@@ -17,15 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoadingScreenPacketSenderComponent();
-
     MCAPI ~LoadingScreenPacketSenderComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

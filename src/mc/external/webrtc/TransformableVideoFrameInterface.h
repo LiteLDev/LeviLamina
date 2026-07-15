@@ -14,6 +14,10 @@ namespace webrtc {
 
 class TransformableVideoFrameInterface : public ::webrtc::TransformableFrameInterface {
 public:
+    // prevent constructor by default
+    TransformableVideoFrameInterface();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TransformableVideoFrameInterface() /*override*/ = default;
@@ -22,13 +26,31 @@ public:
 
     virtual ::webrtc::VideoFrameMetadata Metadata() const = 0;
 
-    virtual void SetMetadata(::webrtc::VideoFrameMetadata const&) = 0;
+    virtual void SetMetadata(::webrtc::VideoFrameMetadata const& metadata) = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit TransformableVideoFrameInterface(::webrtc::TransformableFrameInterface::Passkey passkey);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::webrtc::TransformableFrameInterface::Passkey passkey);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

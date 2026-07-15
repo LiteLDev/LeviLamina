@@ -10,7 +10,6 @@
 // clang-format off
 class Actor;
 class Mob;
-class Vec3;
 // clang-format on
 
 class RangedAttackGoal : public ::BaseGoal {
@@ -63,20 +62,13 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RangedAttackGoal(::Mob& mob);
-
-    MCAPI void _dischargeCarriedItem();
-
-    MCAPI void
-    handleAttackBehavior(::Actor* lockedTarget, ::Vec3 const& lockedTargetPos, float targetDistanceSq, bool canSee);
-
-    MCAPI void handleChargeData();
     // NOLINTEND
 
 public:
@@ -88,24 +80,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
-
-    MCAPI void $start();
-
-    MCAPI void $stop();
-
-    MCAPI void $tick();
-
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

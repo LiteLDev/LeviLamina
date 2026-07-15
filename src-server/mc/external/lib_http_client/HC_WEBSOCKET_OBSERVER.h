@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HC_WEBSOCKET_OBSERVER() = default;
+    virtual ~HC_WEBSOCKET_OBSERVER();
     // NOLINTEND
 
 public:
@@ -57,6 +57,12 @@ public:
     CloseFunc(::HC_WEBSOCKET_OBSERVER* internalHandle, ::HCWebSocketCloseStatus status, void* context);
 
     MCNAPI static void MessageFunc(::HC_WEBSOCKET_OBSERVER* internalHandle, char const* message, void* context);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

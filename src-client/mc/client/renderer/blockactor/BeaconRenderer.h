@@ -35,8 +35,7 @@ public:
     // NOLINTBEGIN
     virtual ~BeaconRenderer() /*override*/ = default;
 
-    virtual void
-    render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) /*override*/;
+    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) /*override*/;
     // NOLINTEND
 
 public:
@@ -71,12 +70,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

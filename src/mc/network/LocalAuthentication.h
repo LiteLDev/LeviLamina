@@ -4,9 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class PrivateKeyManager;
 struct PlayerAuthenticationInfo;
-struct RawGameServerToken;
 // clang-format on
 
 class LocalAuthentication {
@@ -30,16 +28,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI explicit LocalAuthentication(::std::string const& selfSignedId);
-
-    MCNAPI ::RawGameServerToken const& getHostSignedToken() const;
-
-    MCNAPI ::PrivateKeyManager const& getLocalKeys() const;
-
-    MCNAPI ::RawGameServerToken const& getNewLocalToken() const;
-
-    MCNAPI ::std::string const& getSelfSignedId() const;
-
-    MCNAPI void overrideLocalKeys(::PrivateKeyManager const& newKeys);
 
     MCNAPI void
     regenerateSelfSigned(::PlayerAuthenticationInfo authInfo, bool isSignedIn, uint64 clientRandomId, bool isPrimary);

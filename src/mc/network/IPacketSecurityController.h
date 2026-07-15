@@ -24,18 +24,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::PacketViolationResponse checkForViolation(
-        ::MinecraftPacketIds                                                     packetId,
-        ::SubClientId                                                            subClientId,
-        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
-        bool*                                                                    outIsNewOrUpdatedViolation
+        ::MinecraftPacketIds,
+        ::SubClientId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&,
+        bool*
     ) = 0;
 
     virtual uint getTelemetryData() = 0;
 
-    virtual ::Bedrock::ErrorInfo<::std::error_code> consumePacketError(::SubClientId subClientId) = 0;
+    virtual ::Bedrock::ErrorInfo<::std::error_code> consumePacketError(::SubClientId) = 0;
 
-    virtual void
-    reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder) = 0;
+    virtual void reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder>) = 0;
 
     virtual ~IPacketSecurityController() /*override*/ = default;
     // NOLINTEND

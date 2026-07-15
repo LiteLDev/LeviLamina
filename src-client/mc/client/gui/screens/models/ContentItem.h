@@ -29,27 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContentItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ContentItem() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContentItem(::ContentSource* src, ::ContentItemType type);
-
-    MCAPI void toggleIsDescriptionExpanded();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentSource* src, ::ContentItemType type);
     // NOLINTEND
 
 public:

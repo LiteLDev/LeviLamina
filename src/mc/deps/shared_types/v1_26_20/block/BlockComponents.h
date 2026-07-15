@@ -5,19 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/ComponentStorage.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
-struct BlockComponents : public ::cereal::ComponentStorage {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-};
+struct BlockComponents : public ::cereal::ComponentStorage {};
 
 } // namespace SharedTypes::v1_26_20::BlockDefinition

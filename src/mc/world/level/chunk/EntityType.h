@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Block;
 // clang-format on
 
@@ -30,16 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool isBlockDangerous(::Block const& block) const;
-
-    MCAPI ::AABB spawnAabb(float x, float y, float z) const;
-
-    MCAPI ~EntityType();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -4,9 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/Value.h"
-#include "mc/network/packet/SetTitlePacketPayload.h"
 #include "mc/server/commands/CommandSelector.h"
-#include "mc/server/commands/CommandSelectorResults.h"
 #include "mc/server/commands/standard/MessagingCommand.h"
 
 // auto generated forward declare list
@@ -44,18 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _sendTitlePacketTextObject(
-        ::SetTitlePacketPayload::TitleType        type,
-        ::CommandOrigin const&                    origin,
-        ::CommandOutput&                          output,
-        ::CommandSelectorResults<::Player> const& targets
-    ) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -67,19 +54,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::TitleRawCommand::Mode>();
-// clang-format on

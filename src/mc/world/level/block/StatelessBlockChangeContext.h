@@ -8,5 +8,6 @@ enum class StatelessBlockChangeContext : uchar {
     Commands           = 2,
     Structure          = 3,
     MultiBlock         = 4,
-    Count              = 5,
+    ExtraBlock         = 5,
+    Count              = 6,
 };

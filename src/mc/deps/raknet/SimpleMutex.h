@@ -15,30 +15,7 @@ public:
     // prevent constructor by default
     SimpleMutex& operator=(SimpleMutex const&);
     SimpleMutex(SimpleMutex const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void Lock();
-
-    MCAPI SimpleMutex();
-
-    MCAPI void Unlock();
-
-    MCAPI ~SimpleMutex();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
+    SimpleMutex();
 };
 
 } // namespace RakNet

@@ -12,6 +12,7 @@ namespace SharedTypes::v1_21_100 { struct CameraDocument; }
 namespace SharedTypes::v1_21_110 { struct VoxelShapeDocument; }
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
 namespace SharedTypes::v1_26_0 { struct CameraSplineFile; }
+namespace SharedTypes::v1_26_30 { struct ItemDocument; }
 // clang-format on
 
 namespace Bedrock::Resources {
@@ -32,7 +33,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~LoaderRegistry() = default;
+#else // LL_PLAT_C
+    virtual ~LoaderRegistry();
+#endif
 
     virtual ::Puv::
         Loader<::SharedTypes::v1_20_80::ParticleEffectData, ::SharedTypes::v1_20_80::ParticleEffectData> const&
@@ -50,12 +55,27 @@ public:
 
     virtual ::Puv::Loader<::SharedTypes::v1_26_0::CameraSplineFile, ::SharedTypes::v1_26_0::CameraSplineFile> const&
     getCameraSplineLoader() const = 0;
+
+    virtual ::Puv::Loader<::SharedTypes::v1_26_30::ItemDocument, ::SharedTypes::v1_26_30::ItemDocument> const&
+    getItemLoader() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

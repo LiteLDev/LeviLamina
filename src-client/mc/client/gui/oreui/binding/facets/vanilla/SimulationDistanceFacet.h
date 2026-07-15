@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 namespace OreUI {
 
-class SimulationDistanceFacet : public ::OreUI::FacetBase<::OreUI::SimulationDistanceFacet> {
+class SimulationDistanceFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::SimulationDistanceFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,13 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

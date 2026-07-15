@@ -24,6 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool operator==(::SharedTypes::v1_20_50::ItemDeprecatedComponentData const&) const;
+
     MCAPI ~ItemDeprecatedComponentData();
     // NOLINTEND
 

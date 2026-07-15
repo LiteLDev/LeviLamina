@@ -93,40 +93,6 @@ MCAPI void addOption(
     ::IOptionRegistry&                  options
 );
 
-MCAPI ::std::variant<
-    ::Settings::BooleanComponent,
-    ::Settings::NumberComponent<int>,
-    ::Settings::NumberComponent<float>,
-    ::Settings::OptionComponent,
-    ::Settings::StringComponent,
-    ::Settings::ActionComponent,
-    ::Settings::TextComponent,
-    ::Settings::GroupInfoComponent,
-    ::Settings::BannerComponent>*
-addSetting(
-    ::std::vector<::std::unique_ptr<::std::variant<
-        ::Settings::BooleanComponent,
-        ::Settings::NumberComponent<int>,
-        ::Settings::NumberComponent<float>,
-        ::Settings::OptionComponent,
-        ::Settings::StringComponent,
-        ::Settings::ActionComponent,
-        ::Settings::TextComponent,
-        ::Settings::GroupInfoComponent,
-        ::Settings::BannerComponent>>>&  settings,
-    ::std::optional<::std::unique_ptr<::std::variant<
-        ::Settings::BooleanComponent,
-        ::Settings::NumberComponent<int>,
-        ::Settings::NumberComponent<float>,
-        ::Settings::OptionComponent,
-        ::Settings::StringComponent,
-        ::Settings::ActionComponent,
-        ::Settings::TextComponent,
-        ::Settings::GroupInfoComponent,
-        ::Settings::BannerComponent>>>&& settingsValue,
-    ::std::string_view                   details
-);
-
 MCAPI ::std::string getOptionName(::Option const& option);
 
 MCAPI ::std::optional<::std::string> getOptionalDescription(::Option const& option);

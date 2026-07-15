@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/AudioMixer.h"
 #include "mc/external/webrtc/MediaReceiveStreamInterface.h"
 #include "mc/external/webrtc/ReceiveStreamInterface.h"
 
@@ -36,6 +37,7 @@ public:
             // member variables
             // NOLINTBEGIN
             ::ll::UntypedStorage<4, 4> mUnkba2619;
+            ::ll::UntypedStorage<4, 4> mUnkc91912;
             // NOLINTEND
 
         public:
@@ -48,7 +50,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk34be58;
+        ::ll::UntypedStorage<4, 16> mUnk34be58;
         ::ll::UntypedStorage<1, 1>  mUnk64629b;
         ::ll::UntypedStorage<8, 8>  mUnk8cd4b6;
         ::ll::UntypedStorage<8, 8>  mUnk37c9d4;
@@ -58,7 +60,7 @@ public:
         ::ll::UntypedStorage<8, 16> mUnk6d2910;
         ::ll::UntypedStorage<8, 8>  mUnk512466;
         ::ll::UntypedStorage<8, 16> mUnk9d307f;
-        ::ll::UntypedStorage<1, 5>  mUnk2ed8d5;
+        ::ll::UntypedStorage<8, 32> mUnk2ed8d5;
         ::ll::UntypedStorage<8, 8>  mUnka5a032;
         ::ll::UntypedStorage<8, 8>  mUnkff47e7;
         // NOLINTEND
@@ -78,6 +80,8 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnk234065;
         ::ll::UntypedStorage<8, 8>  mUnke8ac34;
         ::ll::UntypedStorage<4, 4>  mUnk23405a;
+        ::ll::UntypedStorage<8, 8>  mUnk546b69;
+        ::ll::UntypedStorage<8, 8>  mUnke674f8;
         ::ll::UntypedStorage<8, 8>  mUnk8e1192;
         ::ll::UntypedStorage<8, 8>  mUnk6f2f5a;
         ::ll::UntypedStorage<4, 4>  mUnk8cffbd;
@@ -102,6 +106,7 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnk62caaa;
         ::ll::UntypedStorage<8, 8>  mUnkdeaf0c;
         ::ll::UntypedStorage<8, 8>  mUnk6e2b12;
+        ::ll::UntypedStorage<8, 8>  mUnk61b6f3;
         ::ll::UntypedStorage<4, 4>  mUnk68678b;
         ::ll::UntypedStorage<4, 4>  mUnk52a7db;
         ::ll::UntypedStorage<4, 4>  mUnk68edea;
@@ -124,8 +129,9 @@ public:
         ::ll::UntypedStorage<4, 4>  mUnkb1b9c0;
         ::ll::UntypedStorage<4, 4>  mUnke5533c;
         ::ll::UntypedStorage<8, 16> mUnk3bd52c;
-        ::ll::UntypedStorage<8, 16> mUnk8ccc21;
-        ::ll::UntypedStorage<8, 16> mUnkd2d781;
+        ::ll::UntypedStorage<8, 16> mUnk97a257;
+        ::ll::UntypedStorage<8, 16> mUnk3ebfc7;
+        ::ll::UntypedStorage<8, 16> mUnk6b69e9;
         ::ll::UntypedStorage<8, 8>  mUnk279d2d;
         ::ll::UntypedStorage<8, 8>  mUnk8993b2;
         ::ll::UntypedStorage<8, 8>  mUnke5b7dd;
@@ -163,6 +169,8 @@ public:
     virtual int GetBaseMinimumPlayoutDelayMs() const = 0;
 
     virtual uint remote_ssrc() const = 0;
+
+    virtual ::webrtc::AudioMixer::Source* source() = 0;
 
     virtual ~AudioReceiveStreamInterface() /*override*/ = default;
     // NOLINTEND

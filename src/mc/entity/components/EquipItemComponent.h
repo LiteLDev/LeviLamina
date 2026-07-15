@@ -18,13 +18,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onEquipItemPickedUp(::ItemStack item, int countToPickup);
-
-    MCAPI ~EquipItemComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,19 +30,24 @@ public:
         mDimension;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ScriptObstructionCallbackArgs();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ScriptObstructionCallbackArgs(
         ::Scripting::WeakLifetimeScope scope,
         ::br::spawn::EntityType const& entityType,
         ::BlockSource&                 region,
         ::Mob const&                   mob
     );
+#endif
     // NOLINTEND
 
 public:
@@ -54,12 +59,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(
         ::Scripting::WeakLifetimeScope scope,
         ::br::spawn::EntityType const& entityType,
         ::BlockSource&                 region,
         ::Mob const&                   mob
     );
+#endif
     // NOLINTEND
 };
 

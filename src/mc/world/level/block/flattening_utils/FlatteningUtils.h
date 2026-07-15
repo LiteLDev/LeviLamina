@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockType;
 class CompoundTagUpdaterContext;
+class SemVersionConstant;
 struct ItemRegistryComplexAlias;
 namespace FlatteningUtils { class RemovedState; }
 namespace FlatteningUtils { struct LegacyBlockInfo; }
@@ -25,13 +25,8 @@ MCAPI void addUpdate(
     ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates
 );
 
-#ifdef LL_PLAT_C
-MCAPI void
-assignPreFlatteningDestructionParticlesTexture(::Block const& block, ::std::string& texture, ushort& auxValue);
-#endif
-
 MCAPI ::std::vector<::WeakPtr<::BlockType const>>
-getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64);
+getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
 MCAPI ::ItemRegistryComplexAlias
 getSimpleItemComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, bool allowCommands);
@@ -39,6 +34,46 @@ getSimpleItemComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& lega
 
 // static variables
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_20_50();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_20_50();
+#endif
+
+#ifdef LL_PLAT_C
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_10();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_10();
+#endif
+
+#ifdef LL_PLAT_C
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_20();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_20();
+#endif
+
+#ifdef LL_PLAT_C
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_30();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_30();
+#endif
+
+#ifdef LL_PLAT_C
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_40();
+#endif
+
+#ifdef LL_PLAT_S
+MCAPI ::SemVersionConstant const& BlockJsonFormatVersion_1_21_40();
+#endif
+
 MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyAnvilInfo();
 
 MCAPI ::std::vector<::std::reference_wrapper<::FlatteningUtils::LegacyBlockInfo const>> const& LegacyBlockInfos();

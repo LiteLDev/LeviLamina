@@ -36,27 +36,29 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnchantingBookModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void render(
         ::ScreenContext& screenContext,
-        ::Actor&         time,
+        ::Actor&         e,
+        float            time,
         float            r,
         float            bob,
         float            yRot,
         float            xRot,
-        float            scale,
-        float
+        float            scale
     ) /*override*/;
 
-    virtual void setupAnim(float time, float r, float bob, float yRot, float, float) /*override*/;
+    virtual void setupAnim(float time, float r, float bob, float yRot, float xRot, float scale) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnchantingBookModel();
-
     MCAPI explicit EnchantingBookModel(bool isOnLectern);
 
     MCAPI void
@@ -66,8 +68,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(bool isOnLectern);
     // NOLINTEND
 
@@ -76,16 +76,16 @@ public:
     // NOLINTBEGIN
     MCAPI void $render(
         ::ScreenContext& screenContext,
-        ::Actor&         time,
+        ::Actor&         e,
+        float            time,
         float            r,
         float            bob,
         float            yRot,
         float            xRot,
-        float            scale,
-        float
+        float            scale
     );
 
-    MCAPI void $setupAnim(float time, float r, float bob, float yRot, float, float);
+    MCAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 
 public:

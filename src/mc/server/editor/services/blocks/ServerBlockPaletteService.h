@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/services/blocks/EditorBlockPaletteService.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class HashedString;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorBlockPalette; }
 namespace Editor { struct ProbabilityBlockPaletteItem; }
 namespace Editor { struct SimpleBlockPaletteItem; }
@@ -25,10 +24,6 @@ namespace Editor::Services {
 
 class ServerBlockPaletteService : public ::Editor::Services::EditorBlockPaletteService {
 public:
-    // prevent constructor by default
-    ServerBlockPaletteService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ServerBlockPaletteService() /*override*/ = default;
@@ -41,7 +36,7 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int index) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> setPaletteItem(
         ::HashedString const&                                                                          paletteId,
@@ -77,28 +72,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ServerBlockPaletteService(::Editor::ServiceProviderCollection& serviceProviders);
-
-    MCNAPI ::Scripting::Result_deprecated<void> _setActiveAndSyncPalette(::HashedString const& paletteId);
-
-    MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncPaletteItem(
-        ::HashedString const&                                                                          paletteId,
-        int                                                                                            index,
-        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncSelectedPaletteIndex(int index);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> $init();
@@ -109,7 +82,7 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $setSelectedPaletteItemIndex(int);
+    MCNAPI ::Scripting::Result_deprecated<void> $setSelectedPaletteItemIndex(int index);
 
     MCNAPI ::Scripting::Result_deprecated<void> $setPaletteItem(
         ::HashedString const&                                                                          paletteId,

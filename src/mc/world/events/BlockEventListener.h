@@ -29,19 +29,15 @@ public:
     // NOLINTBEGIN
     virtual ~BlockEventListener() = default;
 
-#ifdef LL_PLAT_S
-    virtual ::EventResult onBlockPlacedByPlayer(::Player&, ::Block const&, ::BlockPos const&, bool);
-#else // LL_PLAT_C
     virtual ::EventResult
     onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
-#endif
 
     virtual ::EventResult onBlockDestroyedByPlayer(
-        ::Player&              player,
-        ::Block const&         destroyedBlock,
-        ::BlockPos const&      pos,
-        ::ItemStackBase const& currentItem,
-        ::ItemStackBase const& itemBeforeBlockBreak
+        ::Player&         player,
+        ::Block const&    destroyedBlock,
+        ::BlockPos const& pos,
+        ::ItemStackBase const&,
+        ::ItemStackBase const&
     );
 
     virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
@@ -52,7 +48,10 @@ public:
     virtual ::EventResult onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
     virtual ::EventResult
-    onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
+    onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const);
+
+    virtual ::EventResult
+    onBlockDestructionContinued(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const);
 
     virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
@@ -70,11 +69,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::EventResult $onBlockDestroyedByPlayer(
-        ::Player&              player,
-        ::Block const&         destroyedBlock,
-        ::BlockPos const&      pos,
-        ::ItemStackBase const& currentItem,
-        ::ItemStackBase const& itemBeforeBlockBreak
+        ::Player&         player,
+        ::Block const&    destroyedBlock,
+        ::BlockPos const& pos,
+        ::ItemStackBase const&,
+        ::ItemStackBase const&
     );
 
     MCFOLD ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
@@ -85,7 +84,10 @@ public:
     MCFOLD ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
     MCFOLD ::EventResult
-    $onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
+    $onBlockDestructionStarted(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const);
+
+    MCFOLD ::EventResult
+    $onBlockDestructionContinued(::Player&, ::BlockPos const&, ::Block const&, uchar const, int const);
 
     MCFOLD ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 

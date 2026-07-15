@@ -8,7 +8,6 @@ struct BitrateProberConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk5f402a;
     ::ll::UntypedStorage<8, 80> mUnk8eb1b1;
     ::ll::UntypedStorage<8, 80> mUnk918866;
     ::ll::UntypedStorage<1, 1>  mUnkd072c6;

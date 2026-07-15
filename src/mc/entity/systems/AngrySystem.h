@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AngryComponent;
-class EntityContext;
 class EntityRegistry;
 // clang-format on
 
@@ -20,22 +18,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tickComponent(::EntityContext& entity, ::AngryComponent& angryComponent);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::EntityRegistry& registry);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

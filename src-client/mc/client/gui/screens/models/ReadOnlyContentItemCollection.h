@@ -28,8 +28,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void appendLatest(
-        ::ContentItemCollectionVersion&                                         version,
-        ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>& output
+        ::ContentItemCollectionVersion&,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>&
     ) const /*override*/;
 
     virtual ::ContentItemCollectionVersion getVersion() const /*override*/;
@@ -38,17 +38,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendLatest(
-        ::ContentItemCollectionVersion&                                         version,
-        ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>& output
-    ) const;
 
-    MCFOLD ::ContentItemCollectionVersion $getVersion() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

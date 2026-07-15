@@ -3,18 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::ScriptModule { class ScriptPersistenceGroupItem; }
-namespace Editor::ScriptModule { class ScriptPersistenceService; }
-namespace Editor::Services { class PersistenceGroup; }
-namespace Editor::Services { class PersistenceItem; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -39,64 +31,9 @@ public:
     ScriptPersistenceGroup();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptPersistenceGroup(
-        ::WeakRef<::Editor::Services::PersistenceGroup>   persistenceGroup,
-        ::Editor::ScriptModule::ScriptPersistenceService* owner,
-        ::Scripting::WeakLifetimeScope const&             scope
-    );
-
-    MCNAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>
-    _createScriptPersistenceGroupItem(::WeakRef<::Editor::Services::PersistenceItem> groupItemRef);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>
-    createItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
-
-    MCNAPI ::Scripting::Result_deprecated<void> deleteItem(::std::string const& itemName);
-
-    MCNAPI ::Scripting::Result_deprecated<bool> dispose();
-
-    MCNAPI ::Scripting::Result_deprecated<void> disposeAllGroupItems();
-
-    MCNAPI ::Scripting::Result_deprecated<bool> disposeGroupItem(::std::string key);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>>
-    fetchItem(::std::string const& itemName);
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>
-    getOrCreateItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
-
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> listItems() const;
-
-    MCNAPI ::Scripting::Result_deprecated<bool> saveToClient();
-
-    MCNAPI ~ScriptPersistenceGroup();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::WeakRef<::Editor::Services::PersistenceGroup>   persistenceGroup,
-        ::Editor::ScriptModule::ScriptPersistenceService* owner,
-        ::Scripting::WeakLifetimeScope const&             scope
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftEventing;
 class ScriptPluginManagerResult;
 // clang-format on
 
@@ -35,18 +34,6 @@ public:
     virtual void onDebuggerListen(bool autoAttach) /*override*/;
 
     virtual void onDebuggerConnect(bool autoAttach, int retries) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI MinecraftScriptTelemetryLogger(::IMinecraftEventing& eventing, bool isClientside);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::IMinecraftEventing& eventing, bool isClientside);
     // NOLINTEND
 
 public:

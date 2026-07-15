@@ -9,8 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ExpressionNode;
-struct BlockGeometryDescription;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace BlockGeometrySerializer {
@@ -26,46 +24,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ExpressionNode>>      mBoneVisibilities;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
     ::ll::TypedStorage<4, 52, ::BlockRendererDescription>                       mRenderer;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Proxy();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Proxy(::BlockGeometrySerializer::Proxy&&);
-
-    MCAPI Proxy(::BlockGeometrySerializer::Proxy const&);
-
-    MCAPI ::BlockGeometrySerializer::Proxy& operator=(::BlockGeometrySerializer::Proxy const&);
-
-    MCAPI ~Proxy();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void from(::BlockGeometryDescription& desc, ::BlockGeometrySerializer::Proxy proxy);
-
-    MCAPI static ::BlockGeometrySerializer::Proxy to(::BlockGeometryDescription const& desc);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockGeometrySerializer::Proxy&&);
-
-    MCAPI void* $ctor(::BlockGeometrySerializer::Proxy const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

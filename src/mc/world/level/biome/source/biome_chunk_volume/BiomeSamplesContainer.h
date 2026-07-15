@@ -20,22 +20,6 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos const>              mBufferWorldOrigin;
     ::ll::TypedStorage<4, 4, int const>                      mBufferSizeY;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeSamplesContainer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BiomeSamplesContainer(::BlockPos chunkMin, short chunkHeight);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos chunkMin, short chunkHeight);
-    // NOLINTEND
 };
 
 } // namespace BiomeChunkVolume

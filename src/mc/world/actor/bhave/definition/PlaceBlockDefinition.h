@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/actor/bhave/definition/BehaviorDefinition.h"
 
-class PlaceBlockDefinition : public ::BehaviorDefinition {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
-};
+class PlaceBlockDefinition : public ::BehaviorDefinition {};

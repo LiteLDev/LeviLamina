@@ -29,33 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void sendRequest(::SentryEnvelope sentryEvent) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit MinecraftScriptSentryRequestSender(::std::string sentryEnvelopeApiUri);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string sentryEnvelopeApiUri);
+    virtual void sendRequest(::SentryEnvelope) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $sendRequest(::SentryEnvelope sentryEvent);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

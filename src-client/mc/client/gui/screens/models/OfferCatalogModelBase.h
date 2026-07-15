@@ -9,11 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class DateManager;
 class FlightingService;
 class IOfferRepository;
 struct ProductSku;
-namespace Social { class IUserManager; }
 // clang-format on
 
 class OfferCatalogModelBase {
@@ -30,13 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OfferCatalogModelBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OfferCatalogModelBase();
+    virtual ~OfferCatalogModelBase() = default;
 
     virtual ::OfferCatalogStatus update() = 0;
 
@@ -46,76 +40,24 @@ public:
 
     virtual uint getNumActiveOfferModels() const;
 
-    virtual ::PlatformOfferModel& getOfferModel(int index);
+    virtual ::PlatformOfferModel& getOfferModel(int);
 
-    virtual ::PlatformOfferModel& getActiveOfferModel(int index);
+    virtual ::PlatformOfferModel& getActiveOfferModel(int);
 
-    virtual ::PlatformOfferModel* findOfferModelBySku(::ProductSku const& sku);
+    virtual ::PlatformOfferModel* findOfferModelBySku(::ProductSku const&);
 
-    virtual ::PlatformOfferModel* findOfferModelByMinCoins(::std::string const& coinsNeeded);
+    virtual ::PlatformOfferModel* findOfferModelByMinCoins(::std::string const&);
 
-    virtual ::PlatformOfferModel* findOfferModelByMinCoins(int const coinsNeeded);
+    virtual ::PlatformOfferModel* findOfferModelByMinCoins(int const);
 
-    virtual ::PlatformOfferModel* _findActiveOfferModelByProductId(::std::string const& productId);
+    virtual ::PlatformOfferModel* _findActiveOfferModelByProductId(::std::string const&);
 
-    virtual ::PlatformOfferModel* _findOfferModelByProductId(::std::string const& productId);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OfferCatalogModelBase(
-        ::Bedrock::NotNullNonOwnerPtr<::FlightingService> const&     flightingService,
-        ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> const&     offerRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>           dateManager
-    );
-
-    MCAPI void _sortOfferModelListByCoinCount(::std::vector<::PlatformOfferModel>& modelListToSort);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::FlightingService> const&     flightingService,
-        ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> const&     offerRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>           dateManager
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    virtual ::PlatformOfferModel* _findOfferModelByProductId(::std::string const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint $getNumOfferModels() const;
 
-    MCAPI uint $getNumActiveOfferModels() const;
-
-    MCAPI ::PlatformOfferModel& $getOfferModel(int index);
-
-    MCAPI ::PlatformOfferModel& $getActiveOfferModel(int index);
-
-    MCAPI ::PlatformOfferModel* $findOfferModelBySku(::ProductSku const& sku);
-
-    MCAPI ::PlatformOfferModel* $findOfferModelByMinCoins(::std::string const& coinsNeeded);
-
-    MCAPI ::PlatformOfferModel* $findOfferModelByMinCoins(int const coinsNeeded);
-
-    MCAPI ::PlatformOfferModel* $_findActiveOfferModelByProductId(::std::string const& productId);
-
-    MCAPI ::PlatformOfferModel* $_findOfferModelByProductId(::std::string const& productId);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

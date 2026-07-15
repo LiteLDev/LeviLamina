@@ -27,36 +27,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
 
-    virtual void
-    setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& renderParams, ::RenderParams&) /*override*/;
+    virtual void setupInitial(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&) /*override*/;
 
-    virtual void update(::ParticleSystem::ComponentAccessParticleEmitter& renderParams, ::RenderParams&) /*override*/;
+    virtual void update(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCFOLD void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
-
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCAPI void $setupInitial(::ParticleSystem::ComponentAccessParticleEmitter& renderParams, ::RenderParams&);
-
-    MCAPI void $update(::ParticleSystem::ComponentAccessParticleEmitter& renderParams, ::RenderParams&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

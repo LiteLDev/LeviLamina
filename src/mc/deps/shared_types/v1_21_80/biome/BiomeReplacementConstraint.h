@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
-#include "mc/deps/shared_types/v1_21_80/biome/ReplaceBiomesBiomeJsonComponent.h"
+#include "mc/deps/cereal/ContextArea.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_21_80 {
@@ -16,19 +16,15 @@ namespace SharedTypes::v1_21_80 {
 class BiomeReplacementConstraint
 : public ::cereal::ConstraintHandle<::SharedTypes::v1_21_80::BiomeReplacementConstraint> {
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI void validateValue(
-        ::std::vector<::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement> const&
-                                     biomeReplacements,
-        ::cereal::SerializerContext& context
-    ) const;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
     // NOLINTEND
 
 public:
-    // vftables
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+
     // NOLINTEND
 };
 

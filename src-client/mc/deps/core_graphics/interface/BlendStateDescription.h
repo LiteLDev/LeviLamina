@@ -19,18 +19,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>               enableBlend;
     ::ll::TypedStorage<1, 1, bool>               enableAlphaToCoverage;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlendStateDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };
 
 } // namespace mce

@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BurnOdds.h"
-#include "mc/world/level/block/FlameOdds.h"
-#include "mc/world/level/block/LavaFlammable.h"
+#include "mc/deps/shared_types/v1_26_20/block/LavaFlammable.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -19,14 +16,10 @@ struct BlockFlammableDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::LavaFlammable> mLavaFlammable;
-    ::ll::TypedStorage<4, 4, int>             mCatchChanceModifier;
-    ::ll::TypedStorage<4, 4, int>             mDestroyChanceModifier;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_20::LavaFlammable> mLavaFlammable;
+    ::ll::TypedStorage<4, 4, int>                                    mCatchChanceModifier;
+    ::ll::TypedStorage<4, 4, int>                                    mDestroyChanceModifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockFlammableDescription();
 
 public:
     // virtual functions
@@ -39,33 +32,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockFlammableDescription(
-        ::FlameOdds     catchChanceModifier,
-        ::BurnOdds      destroyChanceModifier,
-        ::LavaFlammable lavaFlammable
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FlameOdds catchChanceModifier, ::BurnOdds destroyChanceModifier, ::LavaFlammable lavaFlammable);
     // NOLINTEND
 
 public:

@@ -21,12 +21,11 @@ public:
     // prevent constructor by default
     PersistenceGroupDataCollection& operator=(PersistenceGroupDataCollection const&);
     PersistenceGroupDataCollection(PersistenceGroupDataCollection const&);
+    PersistenceGroupDataCollection();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PersistenceGroupDataCollection();
-
     MCNAPI ::Editor::Services::PersistenceGroupDataCollection&
     operator=(::Editor::Services::PersistenceGroupDataCollection&&);
 
@@ -37,12 +36,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

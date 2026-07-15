@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>              mReadConsole;
     ::ll::TypedStorage<8, 16, ::std::thread>                   mConsoleThread;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ConsoleInputReader();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
 };

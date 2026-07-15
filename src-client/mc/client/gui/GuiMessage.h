@@ -63,41 +63,7 @@ public:
         bool                           ttsRequired
     );
 
-    MCFOLD ::std::string const& getAuthorXuid() const;
-
-    MCFOLD ::SoundDirection getDirection() const;
-
-    MCAPI ::std::string const getFilteredMessage() const;
-
-    MCAPI ::std::string const getFilteredString() const;
-
-    MCFOLD ::std::string const& getMessage() const;
-
-    MCFOLD ::std::string const& getString() const;
-
-    MCFOLD ::std::string const& getTTSMessage() const;
-
-    MCFOLD ::GuiMessage::MessageType getType() const;
-
-    MCFOLD ::std::string const& getUser() const;
-
-    MCFOLD bool hasBeenSeen() const;
-
-    MCAPI bool isAlive() const;
-
-    MCFOLD bool isForceVisible() const;
-
-    MCFOLD bool isLocalPlayer() const;
-
-    MCAPI ::GuiMessage& operator=(::GuiMessage&&);
-
-    MCAPI void setDuration(float seconds);
-
-    MCAPI void setHasBeenSeen();
-
-    MCAPI void setIsLocalPlayer(bool isLocalPlayer);
-
-    MCFOLD bool wasEverSeen() const;
+    MCAPI void prependDevAttributionTag();
 
     MCAPI ~GuiMessage();
     // NOLINTEND

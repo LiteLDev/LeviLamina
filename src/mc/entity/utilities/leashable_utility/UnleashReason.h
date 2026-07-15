@@ -9,7 +9,8 @@ enum class UnleashReason : int {
     Broken      = 1,
     Sheared     = 2,
     Removed     = 3,
-    Despawned   = 4,
+    Exploded    = 4,
+    Despawned   = 5,
 };
 
 }

@@ -50,9 +50,6 @@ public:
 
     virtual bool isFallDamage() const;
 
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
-    getDeathMessage(::std::string deadName, ::Actor* dead) const;
-
     virtual bool getIsCreative() const;
 
     virtual bool getIsWorldBuilder() const;
@@ -74,6 +71,9 @@ public:
     virtual ::ActorCategory getDamagingEntityCategories() const;
 
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const;
+
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    _getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
     // NOLINTEND
 
 public:
@@ -81,9 +81,8 @@ public:
     // NOLINTBEGIN
     MCAPI ActorDamageSource(::SharedTypes::Legacy::ActorDamageCause cause, ::std::string deathMessageOverride);
 
-    MCFOLD ::SharedTypes::Legacy::ActorDamageCause getCause() const;
-
-    MCFOLD void setCause(::SharedTypes::Legacy::ActorDamageCause cause);
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string const& deadName, ::Actor* dead) const;
     // NOLINTEND
 
 public:
@@ -96,10 +95,6 @@ public:
     generateNewDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
     MCAPI static ::std::vector<::VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
-
-    MCAPI static ::Scripting::Version getVersionByCause(::SharedTypes::Legacy::ActorDamageCause cause);
-
-    MCAPI static bool isDamageCausedByMob(::SharedTypes::Legacy::ActorDamageCause cause);
 
     MCAPI static ::SharedTypes::Legacy::ActorDamageCause lookupCause(::std::string const& name);
 
@@ -139,9 +134,6 @@ public:
 
     MCAPI bool $isFallDamage() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
-    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
-
     MCFOLD bool $getIsCreative() const;
 
     MCFOLD bool $getIsWorldBuilder() const;
@@ -163,6 +155,9 @@ public:
     MCFOLD ::ActorCategory $getDamagingEntityCategories() const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $_getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
 
 
     // NOLINTEND

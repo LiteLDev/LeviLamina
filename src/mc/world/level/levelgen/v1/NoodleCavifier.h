@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class NoodleCavifierNoises;
+class Vec3;
 // clang-format on
 
 class NoodleCavifier {
@@ -36,4 +37,10 @@ public:
     NoodleCavifier& operator=(NoodleCavifier const&);
     NoodleCavifier(NoodleCavifier const&);
     NoodleCavifier();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
+    // NOLINTEND
 };

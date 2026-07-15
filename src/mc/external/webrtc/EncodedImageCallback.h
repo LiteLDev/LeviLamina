@@ -56,13 +56,13 @@ public:
         ::webrtc::CodecSpecificInfo const* codec_specific_info
     ) = 0;
 
-    virtual void OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason reason);
+    virtual void OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason reason);
+    MCNAPI void $OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason);
 
 
     // NOLINTEND

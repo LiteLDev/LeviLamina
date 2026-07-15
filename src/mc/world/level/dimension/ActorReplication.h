@@ -48,13 +48,5 @@ public:
         ::Level const&                        level,
         ::ChunkSource&                        chunkSource
     );
-
-    MCAPI ~ActorReplication();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

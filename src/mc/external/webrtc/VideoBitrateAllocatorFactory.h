@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class Environment; }
 namespace webrtc { class VideoBitrateAllocator; }
 namespace webrtc { class VideoCodec; }
 // clang-format on
@@ -17,7 +18,7 @@ public:
     virtual ~VideoBitrateAllocatorFactory() = default;
 
     virtual ::std::unique_ptr<::webrtc::VideoBitrateAllocator>
-    CreateVideoBitrateAllocator(::webrtc::VideoCodec const&) = 0;
+    Create(::webrtc::Environment const&, ::webrtc::VideoCodec const&) = 0;
     // NOLINTEND
 
 public:

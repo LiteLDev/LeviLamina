@@ -9,9 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class EventResponse;
-class PackLoadContext;
-class SemVersion;
 struct EventResponseCollection;
+struct PackLoadInfo;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -31,18 +30,9 @@ public:
     // NOLINTBEGIN
     virtual ~EventResponseFactory();
 
-    virtual void initializeFactory(::PackLoadContext const& packLoadContext) = 0;
+    virtual void initializeFactory(::PackLoadInfo const& packLoadInfo) = 0;
 
     virtual void initSchema() = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>> const&
-    getSchema() const;
-
-    MCNAPI void initSchema(::std::string const& schemaName, ::SemVersion const& version);
     // NOLINTEND
 
 public:

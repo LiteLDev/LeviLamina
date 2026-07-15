@@ -45,8 +45,6 @@ public:
             registerLevelChangeCallback,
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors
     );
-
-    MCAPI void _updateSubscriptions();
     // NOLINTEND
 
 public:
@@ -62,13 +60,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canModify() const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -20,31 +20,41 @@ public:
     ::ll::TypedStorage<1, 1, bool> mRandomly;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ItemStackRequestActionDrop();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual void _write(::BinaryStream&) const /*override*/;
+#else // LL_PLAT_C
     virtual void _write(::BinaryStream& stream) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
+#else // LL_PLAT_C
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionDrop();
-
 #ifdef LL_PLAT_C
     MCNAPI ItemStackRequestActionDrop(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
 #endif
-
-    MCNAPI bool getRandomly() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
 #endif
@@ -53,9 +63,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $_write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+#endif
 
 
     // NOLINTEND

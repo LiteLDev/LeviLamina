@@ -11,20 +11,12 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
-class DynamicContainerTracker;
-class FillingContainer;
 class HashedString;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class ItemDescriptor;
-class ItemStack;
-class ListTag;
-class Player;
-class SaveContext;
 class SemVersion;
-struct FullContainerName;
-namespace SharedTypes::v1_21_60 { struct StorageItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -66,26 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StorageItemComponent(::SharedTypes::v1_21_60::StorageItemComponent const& component);
-
-    MCAPI ::std::shared_ptr<::DynamicContainerTracker>
-    createDynamicContainerTracker(::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
-
-    MCFOLD bool getAllowNestedStorageItem() const;
-
-    MCFOLD ::std::vector<::ItemDescriptor> const& getAllowedItems() const;
-
-    MCAPI ::std::shared_ptr<::FillingContainer>
-    getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
-
-    MCFOLD ::std::vector<::ItemDescriptor> const& getBannedItems() const;
-
-    MCFOLD int getNumSlot() const;
-
     MCAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
-
-    MCAPI ::std::unique_ptr<::ListTag>
-    serializeStorageItem(::FullContainerName const& name, ::SaveContext const& saveContext) const;
 
     MCAPI void setContainerRegistryHandlers(
         ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
@@ -103,15 +76,9 @@ public:
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
+#ifdef LL_PLAT_C
     MCAPI static ::HashedString const& getIdentifier();
-
-    MCAPI static void use(bool& result, ::ItemStack const& item, ::Player& player);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_60::StorageItemComponent const& component);
+#endif
     // NOLINTEND
 
 public:

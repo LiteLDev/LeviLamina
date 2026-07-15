@@ -58,12 +58,6 @@ public:
         ::BlockActorType                               blockActorType,
         ::SignTextSide                                 signSide
     );
-
-    MCAPI void _finalizeMessage();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _setMessageToSign(::std::string message);
     // NOLINTEND
 
 public:
@@ -80,24 +74,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI void $onOpen();
-
-    MCAPI void $onLeave();
-
-    MCAPI void $onTerminate();
-
-    MCAPI bool $_isStillValid() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

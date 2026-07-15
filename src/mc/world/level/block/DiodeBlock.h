@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DiodeBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -57,7 +53,7 @@ public:
 
     virtual int getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    virtual int getOutputSignal(::Block const&) const;
+    virtual int getOutputSignal(::Block const& block) const;
 
     virtual int getTurnOffDelay(::Block const& block) const;
 
@@ -69,32 +65,14 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DiodeBlock(::std::string const& nameId, int id, bool on);
-
-    MCAPI int getAlternateSignalAt(::BlockSource& region, ::BlockPos const& pos, int facing) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool isDiode(::Block const& block);
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
@@ -102,8 +80,6 @@ public:
     MCAPI int $getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
     MCFOLD bool $isSignalSource() const;
-
-    MCFOLD bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $isSameDiode(::Block const& block) const;
 
@@ -117,20 +93,12 @@ public:
 
     MCAPI int $getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $isAlternateInput(::Block const& block) const;
-
     MCAPI int $getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD int $getOutputSignal(::Block const&) const;
+    MCFOLD int $getOutputSignal(::Block const& block) const;
 
     MCAPI int $getTurnOffDelay(::Block const& block) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

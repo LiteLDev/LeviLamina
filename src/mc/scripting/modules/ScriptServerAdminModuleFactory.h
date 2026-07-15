@@ -4,16 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
 class Level;
 class ScriptPackConfigurationManager;
-class ScriptServerNetworkHandlerReference;
-namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { struct ContextConfig; }
-namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
 namespace mce { class UUID; }
@@ -39,24 +35,7 @@ public:
     MCNAPI ScriptServerAdminModuleFactory(
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Level*                                                     level,
-        ::IScriptDedicatedServerUtils*                               dedicatedServerUtils,
-        ::ScriptServerNetworkHandlerReference*                       serverNetworkHandlerReference
-    );
-
-    MCNAPI void _addVersions(
-        ::Level*                               level,
-        ::IScriptDedicatedServerUtils*         dedicatedServerUtils,
-        ::ScriptServerNetworkHandlerReference* serverNetworkHandlerReference
-    );
-
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(
-        ::Scripting::ModuleBindingBuilder&          moduleBuilder,
-        ::std::optional<::Scripting::ContextConfig> contextConfig,
-        bool                                        allowUntagged,
-        ::std::vector<::std::string> const&         allowedTags,
-        ::Level*                                    level,
-        ::IScriptDedicatedServerUtils*              dedicatedServerUtils,
-        ::ScriptServerNetworkHandlerReference*      serverNetworkHandlerReference
+        ::IScriptDedicatedServerUtils*                               dedicatedServerUtils
     );
     // NOLINTEND
 
@@ -80,14 +59,7 @@ public:
     MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Level*                                                     level,
-        ::IScriptDedicatedServerUtils*                               dedicatedServerUtils,
-        ::ScriptServerNetworkHandlerReference*                       serverNetworkHandlerReference
+        ::IScriptDedicatedServerUtils*                               dedicatedServerUtils
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

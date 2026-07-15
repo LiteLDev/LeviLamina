@@ -8,7 +8,8 @@ class ScriptObservableCallback {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk189f40;
+    ::ll::UntypedStorage<8, 32> mUnk8e4645;
+    ::ll::UntypedStorage<8, 16> mUnk176906;
     // NOLINTEND
 
 public:

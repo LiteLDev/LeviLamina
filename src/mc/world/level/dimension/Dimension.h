@@ -24,6 +24,7 @@
 #include "mc/world/level/dimension/DirectionalLightSource.h"
 #include "mc/world/level/dimension/IDimension.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"
+#include "mc/world/level/levelgen/ChunkGenSessionContext.h"
 #include "mc/world/level/levelgen/v1/FeatureTerrainAdjustments.h"
 #include "mc/world/level/levelgen/v2/providers/IntProvider.h"
 #include "mc/world/level/saveddata/SavedData.h"
@@ -48,7 +49,6 @@ class EntityContext;
 class GameEventDispatcher;
 class ILevel;
 class ILevelStorageManagerConnector;
-class Level;
 class LevelChunk;
 class LevelChunkBuilderData;
 class LevelChunkMetaData;
@@ -72,13 +72,10 @@ struct BiomeIdType;
 struct DimensionArguments;
 struct NetworkIdentifierWithSubId;
 struct UpdateSubChunkBlocksChangedInfo;
-struct UpdateSubChunkNetworkBlockInfo;
 namespace Poi { class Manager; }
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
-class ClientDimensionExtensions;
 class IClientDimensionExtensions;
-class IStructureWireframeQueue;
 // clang-format on
 
 class Dimension : public ::IDimension,
@@ -114,6 +111,7 @@ public:
         ::ll::TypedStorage<4, 4, float>                    mPerpendicularAngle;
         ::ll::TypedStorage<4, 4, float>                    mIntensityMultiplier;
         ::ll::TypedStorage<4, 4, ::DirectionalLightSource> mLightSource;
+        ::ll::TypedStorage<1, 1, bool>                     mDisableLightSource;
         // NOLINTEND
     };
 
@@ -176,6 +174,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mLastPruneTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mLastStructurePruneTime;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkBuildOrderPolicyBase>> mChunkBuildOrderPolicy;
+    ::ll::TypedStorage<8, 40, ::ChunkGenSessionContext>                      mChunkGenSessionContext;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VillageManager>>            mVillageManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Poi::Manager>>              mPoiManager;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkIdentifierWithSubId>>   mTemporaryPlayerIds;
@@ -206,22 +205,21 @@ public:
 
     virtual void tickRedstone();
 
-    virtual ::std::unique_ptr<::WorldGenerator>
-    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) = 0;
+    virtual ::std::unique_ptr<::WorldGenerator> createGenerator(::br::worldgen::StructureSetRegistry const&) = 0;
 
-    virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) = 0;
+    virtual void upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&) = 0;
 
-    virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) = 0;
+    virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) = 0;
 
     virtual void initializeWithLevelStorageManagerConnector(
         ::ILevelStorageManagerConnector& levelStorageManagerConnector
     ) /*override*/;
 
-    virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const = 0;
+    virtual bool levelChunkNeedsUpgrade(::LevelChunk const&) const = 0;
 
     virtual bool isNaturalDimension() const /*override*/;
 
-    virtual bool isValidSpawn(int, int) const;
+    virtual bool isValidSpawn(int x, int z) const;
 
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
@@ -239,9 +237,8 @@ public:
 
     virtual float getTimeOfDay(int time, float a) const;
 
-    virtual void setDimensionDirectionalLightControls(
-        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
-    );
+    virtual void
+    setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const&);
 
     virtual ::Dimension::DirectionalLightState getDimensionDirectionalLightSourceState(float a) const;
 
@@ -306,11 +303,12 @@ public:
 
     virtual void flushLevelChunkGarbageCollector() /*override*/;
 
-    virtual void updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const /*override*/;
+    virtual void updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const
+        /*override*/;
 
     virtual ::std::unique_ptr<::ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
 
-    virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) = 0;
+    virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) = 0;
 
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
@@ -323,54 +321,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Dimension(::DimensionArguments&& args);
 
-    MCAPI void _addActorUnloadedChunkTransferToQueue(
-        ::ChunkPos const&                fromChunkPos,
-        ::ChunkPos const&                toChunkPos,
-        ::DimensionType                  dimId,
-        ::std::string&                   actorStorageKey,
-        ::std::unique_ptr<::CompoundTag> entityTag
-    );
-
-    MCAPI void _completeEntityTransfer(::OwnerPtr<::EntityContext> entity);
-
-    MCAPI ::BlockSource _createFixupBlockSource(::ChunkSource& source);
-
-    MCAPI void _processEntityChunkTransfers();
-
-    MCAPI void _runChunkGenerationWatchdog();
-
-    MCAPI void _sendBlockEntityUpdatePacket(::BlockPos const& pos);
-
-    MCAPI void _sendBlocksChangedPackets();
-
-    MCAPI void _sendUpdateBlockPacket(::UpdateSubChunkNetworkBlockInfo const& info, uint const& layer);
-
-    MCAPI void _tickEntityChunkMoves();
-
-    MCAPI void addPlayerToReplication(::WeakEntityRef const& player);
-
     MCAPI void addWither(::ActorUniqueID const& id);
 
-    MCAPI void clearPlayerReplicationList();
-
-    MCAPI float distanceToNearestPlayerSqr2D(::Vec3 origin);
-
-    MCAPI ::Player* fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
-
-    MCAPI ::Player* fetchNearestAttackablePlayer(::Actor& source, float maxDist) const;
-
-    MCAPI ::Player* fetchNearestAttackablePlayer(::BlockPos source, float maxDist, ::Actor* sourceActor) const;
-
     MCAPI ::Player* fetchNearestInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
-
-    MCAPI ::Player* fetchNearestInteractablePlayer(::Actor& source, float maxDist) const;
-
-    MCAPI ::Player* fetchNearestPlayer(
-        ::Vec3 const&                                searchPos,
-        float                                        maxDist,
-        bool                                         isFetchAny,
-        ::brstd::function_ref<bool(::Player const&)> playerFilter
-    ) const;
 
     MCAPI ::Player* findPlayer(::brstd::function_ref<bool(::Player const&)> pred) const;
 
@@ -378,171 +331,26 @@ public:
 
     MCAPI void flushRunTimeLighting();
 
-    MCFOLD ::BlockEventDispatcher& getBlockEventDispatcher();
-
-    MCFOLD ::ChunkBuildOrderPolicyBase& getChunkBuildOrderPolicy();
-
-    MCAPI ::gsl::not_null<::ChunkLoadActionList*> getChunkLoadActionList();
-
     MCAPI ::ChunkSource& getChunkSource() const;
-
-    MCFOLD ::CircuitSystem& getCircuitSystem();
-
-    MCAPI ::gsl::not_null<::DelayActionList*> getDelayActionList();
-
-    MCFOLD ::std::vector<::WeakEntityRef>& getDisplayEntities();
-
-    MCFOLD ::std::unordered_map<::ActorUniqueID, ::WeakEntityRef>& getEntityIdMap();
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::unordered_map<::ActorUniqueID, ::WeakEntityRef> const& getEntityIdMapConst() const;
-#endif
-
-    MCFOLD ::FeatureTerrainAdjustments& getFeatureTerrainAdjustments();
-
-    MCAPI ::GameEventDispatcher* getGameEventDispatcher() const;
-
-    MCAPI short getHeight() const;
-
-    MCAPI ushort getHeightInSubchunks() const;
-
-    MCFOLD ::DimensionHeightRange const& getHeightRange() const;
-
-    MCFOLD ::Level& getLevel() const;
-
-    MCFOLD ::Level const& getLevelConst() const;
-
-    MCAPI ::std::string getLocalizationKey() const;
-
-    MCAPI short getMinHeight() const;
-
-    MCAPI uchar getMonsterSpawnBlockLightLimit() const;
-
-    MCAPI ::IntProvider getMonsterSpawnLightTest() const;
-
-    MCAPI float getMoonBrightness() const;
-
-    MCAPI int getMoonPhase() const;
-
-    MCAPI ::Brightness getOldSkyDarken(float a);
-
-    MCAPI float getPopCap(int catID, bool surface) const;
-
-    MCFOLD ::Seasons& getSeasons();
 
 #ifdef LL_PLAT_C
     MCAPI float getSkyDarken(float a) const;
-#endif
-
-    MCAPI ::Brightness getSkyDarken() const;
 
     MCAPI float getSunAngle(float a) const;
 
-    MCFOLD ::std::shared_ptr<::LevelChunkMetaData const> getTargetMetaData();
-
-    MCFOLD ::TickingAreaList& getTickingAreas();
-
-    MCFOLD ::TickingAreaList const& getTickingAreasConst() const;
-
     MCAPI float getTimeOfDay(float a) const;
 
-    MCFOLD ::std::string const& getTypeId() const;
-
-    MCAPI ::std::unique_ptr<::VillageManager> const& getVillageManager() const;
-
-    MCAPI ::WeakRef<::Dimension> getWeakRef();
-
-    MCFOLD ::Weather& getWeather() const;
-
-    MCFOLD ::WorldGenerator* getWorldGenerator() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool hasAddedWither() const;
-#endif
-
-    MCAPI bool hasCeiling() const;
-
-    MCFOLD bool hasSkylight() const;
-
-    MCAPI bool isBrightOutside() const;
-
-    MCAPI bool isChunkKnown(::ChunkPos const& chunkPos) const;
-
-    MCAPI bool const isClientSideGenerationEnabled() const;
-
-    MCAPI bool isHeightWithinRange(short const& height) const;
-
-    MCAPI bool isLeaveGameDone();
-
-    MCAPI bool isMoonVisible() const;
-
-    MCAPI bool isRedstoneTick();
-
-    MCAPI bool isSubChunkHeightWithinRange(short const& subChunkHeight) const;
-
-    MCAPI bool isUltraWarm() const;
-
-    MCAPI void neighborAwareChunkUpgrade(::ChunkSource& source, ::LevelChunk& levelChunk);
-
-    MCAPI void onStaticTickingAreaAdded(::std::string const& tickingAreaName);
-
-    MCAPI void pauseAndFlushTaskGroups();
-
-    MCAPI void processPlayerReplication();
-
-#ifdef LL_PLAT_C
     MCAPI void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
 #endif
 
-    MCAPI void registerEntity(::ActorUniqueID const& actorID, ::WeakRef<::EntityContext> entityRef);
-
     MCAPI void removeActorByID(::ActorUniqueID const& id);
-
-    MCAPI void removeWither(::ActorUniqueID const& id);
-
-    MCAPI void sendPacketToClients(::Packet const& packet, ::std::vector<::NetworkIdentifierWithSubId> ids);
-
-    MCAPI void setCeiling(bool ceiling);
-
-#ifdef LL_PLAT_C
-    MCAPI void setRunChunkGenWatchDog(bool runWatchDog);
-#endif
-
-    MCAPI void setSkylight(bool skylight);
-
-    MCAPI void setUltraWarm(bool warm);
-
-#ifdef LL_PLAT_C
-    MCAPI void setWorldGenerator(::WorldGenerator* generator);
-#endif
 
     MCAPI void
     transferEntity(::ChunkPos const& fromChunkPos, ::Vec3 const& spawnPos, ::std::unique_ptr<::CompoundTag> entityTag);
 
-    MCAPI void transferEntityToUnloadedChunk(::Actor& actor, ::LevelChunk* fromChunk);
-
-    MCAPI void tryGarbageCollectStructures();
-
     MCAPI void tryLoadLimboEntities(::ChunkPos const& loadPos);
 
     MCAPI void unregisterDisplayEntity(::WeakRef<::EntityContext> entityRef);
-
-    MCAPI void unregisterEntity(::ActorUniqueID const& actorID);
-
-    MCAPI void updateBlockLight(
-        ::BlockPos const& blockPos,
-        ::Brightness      oldBrightness,
-        ::Brightness      newBrightness,
-        ::Brightness      oldAbsorb,
-        ::Brightness      newAbsorb,
-        bool              isSunLight
-    );
-
-#ifdef LL_PLAT_C
-    MCAPI void visitExtensions(::brstd::function_ref<void(::ClientDimensionExtensions&)> visitor);
-#endif
-
-    MCAPI void visitStructureWireframe(::brstd::function_ref<void(::IStructureWireframeQueue&)> visitor);
     // NOLINTEND
 
 public:
@@ -577,7 +385,7 @@ public:
 
     MCFOLD bool $isNaturalDimension() const;
 
-    MCFOLD bool $isValidSpawn(int, int) const;
+    MCFOLD bool $isValidSpawn(int x, int z) const;
 
     MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
@@ -595,9 +403,8 @@ public:
 
     MCAPI float $getTimeOfDay(int time, float a) const;
 
-    MCFOLD void $setDimensionDirectionalLightControls(
-        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
-    );
+    MCFOLD void
+    $setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const&);
 
     MCAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
 
@@ -661,22 +468,10 @@ public:
 
     MCAPI void $flushLevelChunkGarbageCollector();
 
-    MCAPI void $updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
+    MCAPI void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
 
     MCAPI ::std::unique_ptr<::ChunkBuildOrderPolicyBase> $_createChunkBuildOrderPolicy();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForSavedData();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForIDimension();
-
-    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };

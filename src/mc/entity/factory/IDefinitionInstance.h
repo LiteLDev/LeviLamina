@@ -25,21 +25,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _initialize(::EntityContext& entity) const = 0;
+    virtual void _initialize(::EntityContext&) const = 0;
 
-    virtual void _uninitialize(::EntityContext& entity) const = 0;
+    virtual void _uninitialize(::EntityContext&) const = 0;
 
-    virtual void _save(::EntityContext const& entity, ::CompoundTag& tag) const = 0;
+    virtual void _save(::EntityContext const&, ::CompoundTag&) const = 0;
 
-    virtual void _load(::EntityContext& entity, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const = 0;
+    virtual void _load(::EntityContext&, ::CompoundTag const&, ::DataLoadHelper&) const = 0;
 
-    virtual void _reload(::EntityContext& entity) const = 0;
+    virtual void _reload(::EntityContext&) const = 0;
 
     virtual ~IDefinitionInstance();
 
     virtual ushort getDefinitionTypeId() const = 0;
-
-    virtual ushort getRuntimeTypeId() const;
     // NOLINTEND
 
 public:
@@ -51,8 +49,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ushort $getRuntimeTypeId() const;
-
 
     // NOLINTEND
 

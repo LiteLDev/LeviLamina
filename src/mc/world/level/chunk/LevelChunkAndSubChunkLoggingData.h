@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ChunkPos;
-class SubChunkPos;
-// clang-format on
-
 struct LevelChunkAndSubChunkLoggingData {
 public:
     // LevelChunkAndSubChunkLoggingData inner types declare
@@ -37,16 +31,4 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                    mIsClientSide;
         // NOLINTEND
     };
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD static void logGeneralEvent(char const* message, bool isClientSide);
-#endif
-
-    MCFOLD static void logLevelChunkEvent(::ChunkPos const& chunkPos, char const* message, bool isClientSide);
-
-    MCFOLD static void logSubChunkEvent(::SubChunkPos const& subChunkPos, char const* message, bool isClientSide);
-    // NOLINTEND
 };

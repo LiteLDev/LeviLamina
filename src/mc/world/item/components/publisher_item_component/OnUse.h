@@ -10,23 +10,16 @@
 // clang-format off
 class ItemStack;
 class Player;
+struct ItemOnUseResult;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 namespace PublisherItemComponent {
 
-struct OnUse : public ::ItemComponent,
-               public ::Bedrock::PubSub::
-                   Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForDispatchingPublisherBase();
-
-    MCNAPI static void** $vftableForConnector();
-    // NOLINTEND
+struct OnUse
+: public ::ItemComponent,
+  public ::Bedrock::PubSub::
+      Publisher<void(::ItemOnUseResult&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 };
 
 } // namespace PublisherItemComponent

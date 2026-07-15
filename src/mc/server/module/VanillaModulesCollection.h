@@ -33,35 +33,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual void init(
+        ::WeakRef<::EntityRegistry>,
+        ::VanillaSystemsRegistration::RegistrationOptions&,
+        ::Bedrock::NonOwnerPointer<::IMinecraftEventing>
+    ) /*override*/;
+#else // LL_PLAT_C
     virtual void init(
         ::WeakRef<::EntityRegistry>                        registry,
         ::VanillaSystemsRegistration::RegistrationOptions& options,
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     ) /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void _setupActorMoveModule(
-        ::WeakRef<::EntityRegistry>                        registry,
-        ::VanillaSystemsRegistration::RegistrationOptions& options
-    );
-
-    MCNAPI void _setupTypeIds(::VanillaSystemsRegistration::RegistrationOptions& options);
-
-    MCNAPI void
-    _setupVanillaSystemsEventing(::EntityRegistry& registry, ::Bedrock::NonOwnerPointer<::IMinecraftEventing> eventing);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $init(
         ::WeakRef<::EntityRegistry>                        registry,
         ::VanillaSystemsRegistration::RegistrationOptions& options,
         ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     );
+#endif
 
 
     // NOLINTEND

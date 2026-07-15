@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/CrashDumpLogBlobHeader.h"
 
-// auto generated forward declare list
-// clang-format off
-struct CrashDumpFormatEntryImpl;
-// clang-format on
-
 struct CrashDumpGlobalData : public ::CrashDumpLogBlobHeader {
 public:
     // member variables
@@ -35,10 +30,4 @@ public:
     CrashDumpGlobalData& operator=(CrashDumpGlobalData const&);
     CrashDumpGlobalData(CrashDumpGlobalData const&);
     CrashDumpGlobalData();
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<::CrashDumpFormatEntryImpl const[]> kFormat();
-    // NOLINTEND
 };

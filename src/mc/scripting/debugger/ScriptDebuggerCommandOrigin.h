@@ -64,7 +64,7 @@ public:
 
     virtual ::CommandOriginType getOriginType() const /*override*/;
 
-    virtual void handleCommandOutputCallback(int successCount, ::std::string&& messages) const /*override*/;
+    virtual void handleCommandOutputCallback(int, ::std::string&&) const /*override*/;
 
     virtual bool isValid() const /*override*/;
     // NOLINTEND
@@ -72,42 +72,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getRequestId() const;
 
-    MCNAPI ::std::string $getName() const;
-
-    MCNAPI ::BlockPos $getBlockPosition() const;
-
-    MCNAPI ::Vec3 $getWorldPosition() const;
-
-    MCNAPI ::std::optional<::Vec2> $getRotation() const;
-
-    MCNAPI ::Level* $getLevel() const;
-
-    MCNAPI ::Dimension* $getDimension() const;
-
-    MCNAPI ::Actor* $getEntity() const;
-
-    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
-
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
-
-    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
-
-    MCNAPI bool $isSelectorExpansionAllowed() const;
-
-    MCNAPI ::CommandOriginType $getOriginType() const;
-
-    MCNAPI void $handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
-
-    MCNAPI bool $isValid() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

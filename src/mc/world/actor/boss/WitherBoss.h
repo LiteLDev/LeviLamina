@@ -12,23 +12,19 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorHurtResult;
 class Block;
-class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class Level;
 class MobEffectInstance;
 struct ActorDefinitionIdentifier;
-struct ActorUniqueID;
 struct HurtEffectsSettings;
+struct HurtParameters;
 struct VariantParameterList;
-namespace mce { class UUID; }
 // clang-format on
 
 class WitherBoss : public ::Monster {
@@ -98,7 +94,7 @@ public:
 
     virtual bool canFreeze() const /*override*/;
 
-    virtual bool canBeAffected(uint effectId) const /*override*/;
+    virtual bool canBeAffected(uint id) const /*override*/;
 
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
@@ -126,7 +122,7 @@ public:
     virtual ::Vec3 getFiringPos() const /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -138,55 +134,17 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _destroyBlocks(
-        ::Level&                       level,
-        ::AABB const&                  bb,
-        ::BlockSource&                 region,
-        int                            range,
-        ::WitherBoss::WitherAttackType attackType
-    );
-
-    MCAPI void _performRangedAttack(int headID, ::Actor& target);
-
-    MCAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
-
     MCAPI void awardSpawnWitherAchievement() const;
-
-    MCAPI void baseDie();
-
-    MCAPI ::Vec2 getHeadRot(int headID) const;
-
-    MCAPI int getInvulnerableTicks() const;
-
-    MCAPI bool hasAerialAttack() const;
 
     MCAPI void postAiStep();
 
     MCAPI ::WitherBossPreAIStepResult preAiStep();
-
-    MCAPI void removeSkeleton();
-
-    MCAPI void setAlternativeTarget(int headIndex, ::ActorUniqueID entityId);
-
-    MCAPI void setIsPathing(bool isPathing);
-
-    MCAPI void setShotDelay(int delay);
-
-    MCAPI void setWantsToMove(bool shouldMove);
-
-    MCAPI bool wantsToMove();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canDestroy(::Block const& block, ::WitherBoss::WitherAttackType attackType);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& MAX_HEALTH_CAP_UUID();
     // NOLINTEND
 
 public:
@@ -202,50 +160,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
-
-    MCAPI void $aiStep();
-
-    MCAPI void $newServerAiStep();
-
-    MCFOLD bool $canFreeze() const;
-
-    MCAPI bool $canBeAffected(uint effectId) const;
-
-    MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
-
-    MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
-
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCFOLD float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
-
-    MCAPI int $getArmorValue() const;
-
-    MCAPI void $die(::ActorDamageSource const& source);
-
-    MCAPI void $remove();
-
-    MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
-
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
-
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
-
-    MCAPI ::Vec3 $getFiringPos() const;
-
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

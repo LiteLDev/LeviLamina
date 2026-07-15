@@ -24,8 +24,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Direct(::SharedTypes::v1_21_20::PoolAliases::Direct const&);
-
-    MCFOLD ::SharedTypes::v1_21_20::PoolAliases::Direct& operator=(::SharedTypes::v1_21_20::PoolAliases::Direct&&);
     // NOLINTEND
 
 public:

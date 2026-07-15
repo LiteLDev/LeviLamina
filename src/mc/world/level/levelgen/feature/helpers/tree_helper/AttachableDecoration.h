@@ -6,7 +6,6 @@
 #include "mc/util/ChanceInformation.h"
 #include "mc/util/IntRange.h"
 #include "mc/world/level/block/BlockDescriptor.h"
-#include "mc/world/level/block/states/CommonDirection.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -68,14 +67,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeMultiDecoration(
-        ::IBlockWorldGenAPI& target,
-        ::Random&            random,
-        ::BlockPos const&    pos,
-        ::CommonDirection    dir,
-        ::BlockPos const&    origin
-    ) const;
-
     MCAPI void placeDecoration(
         ::IBlockWorldGenAPI&                                     target,
         ::BlockPos const&                                        pos,

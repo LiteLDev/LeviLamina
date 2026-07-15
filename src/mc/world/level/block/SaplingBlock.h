@@ -12,8 +12,6 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Random;
-namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class SaplingBlock : public ::FoliageBlock {
@@ -35,10 +33,11 @@ public:
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    virtual bool canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -51,30 +50,6 @@ public:
         ::std::optional<::std::string> singleSaplingTreeWithBeehive,
         ::std::optional<::std::string> quadrupleSaplingTree
     );
-
-    MCAPI bool _age(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI ::std::optional<::BlockPos>
-    _getQuadrupleSaplingOffset(::BlockSource const& region, ::BlockPos const& pos) const;
-
-    MCAPI bool _placeFeature(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::std::optional<::BlockPos> quadrupleSaplingOffset,
-        ::std::string const&        featureName,
-        ::Random&                   random
-    ) const;
-
-    MCAPI bool _placeTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void _setBlockNoUpdate(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::std::optional<::BlockPos> quadrupleSaplingOffset,
-        ::Block const&              block
-    ) const;
-
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -92,19 +67,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const;
-
-    MCFOLD bool $canBeFertilized(::BlockSource&, ::BlockPos const&, ::Block const&) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

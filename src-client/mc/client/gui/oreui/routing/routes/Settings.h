@@ -6,7 +6,6 @@
 #include "mc/client/gui/SettingsModalType.h"
 #include "mc/client/gui/SettingsTabIndex.h"
 #include "mc/client/gui/oreui/routing/IEntryPoint.h"
-#include "mc/client/gui/oreui/routing/RouteFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -18,7 +17,6 @@ class SceneFactory;
 class ServerInstance;
 class TaskGroup;
 namespace OreUI { class RouteMatcher; }
-namespace OreUI { struct RouteAction; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
@@ -49,11 +47,9 @@ public:
     // NOLINTBEGIN
     virtual bool shouldAddToConfiguration() const /*override*/;
 
-    virtual void addToMatcher(
-        ::OreUI::RouteMatcher&                              routeMatcher,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
-    ) const /*override*/;
+    virtual void
+    addToMatcher(::OreUI::RouteMatcher&, ::SceneFactory&, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -68,25 +64,6 @@ public:
         ::std::weak_ptr<::RealmsAPI>          realms,
         ::ui::ScreenTechStackSelector&        screenTechStackSelector
     );
-
-    MCAPI void _navigateToScreen(
-        ::SettingsTabIndex                                  tabIndex,
-        ::std::string const&                                path,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack,
-        ::OreUI::RouteAction const&                         routeAction,
-        bool                                                fullscreen,
-        bool                                                skipLegacyProgress
-    ) const;
-
-    MCAPI bool _routeValid() const;
-
-    MCAPI bool _tryToPushRealmsManageTab(
-        ::std::string const&                                path,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack,
-        ::SettingsTabIndex                                  settingsTabIndex
-    ) const;
     // NOLINTEND
 
 public:
@@ -105,11 +82,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::OreUI::EntryPoints::RouteFlags const& FLAGS();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> OREUI_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> STORAGE_LEGACY_ROUTE();
     // NOLINTEND
 
 public:
@@ -129,19 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
-        ::OreUI::RouteMatcher&                              routeMatcher,
-        ::SceneFactory&                                     sceneFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
-    ) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

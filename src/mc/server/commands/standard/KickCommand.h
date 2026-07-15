@@ -12,8 +12,6 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Level;
-class Minecraft;
 class Player;
 // clang-format on
 
@@ -28,51 +26,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool
-    _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
-
-    MCAPI ::Player const*
-    _findTarget(::CommandOrigin const& output, ::CommandOutput& level, ::Level& idOrName, ::std::string const&) const;
-
-    MCAPI void _generateSuccessOutput(
-        ::CommandOutput&     output,
-        ::std::string const& playerNameTag,
-        ::std::string const& reason
-    ) const;
-
-    MCAPI void _refreshJoinCode(::Level& level) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _kickPlayer(
-        ::Minecraft*                   game,
-        ::Player const&                matchingPlayer,
-        ::std::string const&           message,
-        ::std::optional<::std::string> filteredMessage
-    );
-
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

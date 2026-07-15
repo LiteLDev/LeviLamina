@@ -7,11 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class FilterInput;
 class FilterTest;
 struct FilterContext;
 struct FilterInputs;
-struct FilterParamDefinition;
 namespace Json { class Value; }
 namespace SharedTypes::v1_21_20 { struct FilterGroupData; }
 namespace SharedTypes::v1_21_20 { struct FilterTestData; }
@@ -51,42 +49,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _parseFilterInputs(
-        ::SharedTypes::v1_21_20::FilterTestData const& filterTestData,
-        ::FilterTest::Definition const&                filterDef,
-        ::FilterInputs&                                inputs
-    );
-
-    MCAPI bool _parseFilterParam(
-        ::std::string const&                                             filter,
-        ::std::string const&                                             member,
-        ::std::optional<::std::variant<bool, int, float, ::std::string>> param,
-        ::FilterParamDefinition const&                                   paramDef,
-        ::FilterInput&                                                   input
-    );
-
-    MCAPI bool _parseMemberCollection(
-        ::FilterGroup::CollectionType                   collectionType,
-        ::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData
-    );
-
     MCAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
 
     MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCAPI bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
-
-    MCAPI bool empty() const;
-
     MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 
     MCAPI void fillFromData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
-
-    MCFOLD ::std::vector<::std::shared_ptr<::FilterGroup>> const& getChildren() const;
-
-    MCFOLD ::FilterGroup::CollectionType getCollectionType() const;
-
-    MCFOLD ::std::vector<::std::shared_ptr<::FilterTest>> const& getMembers() const;
 
     MCAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-struct TripWireTripEvent;
 namespace ScriptModuleMinecraft { struct ScriptActorData; }
 // clang-format on
 
@@ -29,18 +28,6 @@ public:
     ScriptTripWireTripAfterEventIntermediateData& operator=(ScriptTripWireTripAfterEventIntermediateData const&);
     ScriptTripWireTripAfterEventIntermediateData(ScriptTripWireTripAfterEventIntermediateData const&);
     ScriptTripWireTripAfterEventIntermediateData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptTripWireTripAfterEventIntermediateData(::TripWireTripEvent const& eventData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::TripWireTripEvent const& eventData);
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

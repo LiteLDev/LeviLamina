@@ -18,6 +18,7 @@ namespace SharedTypes::v1_21_90 { struct ActorDocument; }
 namespace SharedTypes::v1_26_0 { struct ActorDocument; }
 namespace SharedTypes::v1_26_10 { struct ActorDocument; }
 namespace SharedTypes::v1_26_20 { struct ActorDocument; }
+namespace SharedTypes::v1_26_30 { struct ActorDocument; }
 // clang-format on
 
 namespace JsonComponentGlueUtils {
@@ -40,14 +41,16 @@ public:
         ::SharedTypes::v1_26_0::ActorDocument,
         ::SharedTypes::v1_26_10::ActorDocument,
         ::SharedTypes::v1_26_20::ActorDocument,
+        ::SharedTypes::v1_26_30::ActorDocument,
         ::SharedTypes::Beta::ActorDocument>;
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI static void upgrade_beta_dummy(
         ::Puv::CerealUpgrader<
-            ::SharedTypes::v1_26_20::ActorDocument,
+            ::SharedTypes::v1_26_30::ActorDocument,
             ::SharedTypes::Beta::ActorDocument,
             ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
     );
@@ -114,6 +117,14 @@ public:
             ::SharedTypes::v1_26_20::ActorDocument,
             ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
     );
+
+    MCAPI static void upgrade_v1_26_30(
+        ::Puv::CerealUpgrader<
+            ::SharedTypes::v1_26_20::ActorDocument,
+            ::SharedTypes::v1_26_30::ActorDocument,
+            ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
+    );
+#endif
     // NOLINTEND
 
 public:

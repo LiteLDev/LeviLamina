@@ -26,7 +26,7 @@ public:
 
     virtual bool hasAdequateConnectedGameController() const = 0;
 
-    virtual bool hasAdequateConnectedGameControllers(uint64 const playerCount) const = 0;
+    virtual bool hasAdequateConnectedGameControllers(uint64 const) const = 0;
 
     virtual uint64 getMaxGameControllerButtons() const = 0;
 
@@ -40,8 +40,7 @@ public:
 
     virtual ::GameControllerErrorType getPlatformSpecificControllerError() const = 0;
 
-    virtual void
-    setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda) = 0;
+    virtual void setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&&) = 0;
 
     virtual void resetClientControllerCount() = 0;
 

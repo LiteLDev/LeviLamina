@@ -31,8 +31,6 @@ MCAPI ::std::vector<::cg::ImageBuffer> createZeroedImageBuffers(::mce::TextureDe
 
 MCAPI ::mce::TextureContainer createZeroedTextureContainer(::mce::TextureDescription const& textureDescription);
 
-MCFOLD bool isUsingRenderDragon();
-
 MCAPI void* prepareRenderDragonTexture(
     ::mce::TextureResourceService& textureResourceService,
     ::mce::ClientTexture&          targetTexture,

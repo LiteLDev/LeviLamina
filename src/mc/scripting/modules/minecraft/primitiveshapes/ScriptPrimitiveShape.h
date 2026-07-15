@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/scripting/modules/minecraft/ScriptRGBA.h"
@@ -42,6 +42,10 @@ public:
         UpdateSegmentCount    = 4096,
         UpdateAttachedTo      = 8192,
         UpdateRenderDist      = 16384,
+        UpdateCylinderData    = 32768,
+        UpdatePyramidData     = 65536,
+        UpdateEllipsoidData   = 131072,
+        UpdateConeData        = 262144,
         SerializeAll          = 4294967294,
     };
 
@@ -94,8 +98,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool IsDebugShape() const;
-
     MCAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
 
     MCAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
@@ -106,98 +108,18 @@ public:
         bool                                                                            isDebugShape
     );
 
-    MCAPI void addToWorld();
-
-    MCFOLD bool existsInWorld() const;
-
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const&
-    getAttachedTo() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::ActorUniqueID getAttachedToId() const;
-#endif
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptRGBA const& getColor() const;
-
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> getDimension() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::DimensionType getDimensionId() const;
-#endif
-
-    MCFOLD uint getFlags() const;
-
-    MCAPI ::Vec3 getLocation() const;
-
-    MCFOLD ::std::optional<float> getMaxRenderDistance() const;
-
-    MCFOLD uint64 getNetworkId() const;
-
-    MCFOLD ::Vec3 const& getRotation() const;
-
-    MCFOLD float getScale() const;
-
-    MCFOLD ::std::set<::NetworkIdentifierWithSubId>& getSentToClients();
-
-#ifdef LL_PLAT_C
-    MCFOLD ::ScriptModuleMinecraft::ScriptPrimitiveShapeType getShapeType() const;
-#endif
-
-    MCAPI ::std::optional<float> getTimeLeftSec() const;
-
-    MCFOLD ::std::optional<float> getTotalTimeLeftSec() const;
-
-    MCFOLD ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
-    getVisibleTo() const;
-
-    MCFOLD ::std::set<::NetworkIdentifierWithSubId> const& getVisibleToClients() const;
-
-    MCAPI bool hasDuration() const;
-
-    MCAPI bool isDirty() const;
-
-    MCAPI bool isFlaggedToRemove() const;
-
-    MCAPI bool isNewShape() const;
-
-    MCAPI void markAttachedEntityReloaded();
-
     MCAPI ::ScriptModuleMinecraft::ScriptPrimitiveShape&
     operator=(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
-
-    MCAPI void remove();
-
-    MCAPI void setAttachedEntityWasUnloaded(bool unloaded);
 
     MCAPI void setAttachedTo(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const& attachedTo
     );
 
-    MCAPI void setColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
-
-    MCFOLD void setFlags(uint flags);
-
     MCAPI void setLocation(::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location);
-
-    MCAPI void setMaxRenderDistance(::std::optional<float> dist);
-
-    MCFOLD void setNetworkId(uint64 networkId);
-
-    MCAPI void setRotation(::Vec3 const& rotation);
-
-    MCAPI void setScale(float scale);
-
-    MCAPI void setTotalTimeLeft(::std::optional<float> timeSec);
 
     MCAPI void setVisibleTo(
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const& visibleTo
     );
-
-    MCAPI void tickTimeLeft(float dt);
-
-    MCAPI void unDirty();
-
-    MCFOLD bool wasAttachedEntityUnloaded() const;
     // NOLINTEND
 
 public:

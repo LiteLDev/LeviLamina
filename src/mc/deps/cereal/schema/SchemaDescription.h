@@ -55,6 +55,7 @@ public:
 
 public:
     // prevent constructor by default
+    SchemaDescription& operator=(SchemaDescription const&);
     SchemaDescription();
 
 public:
@@ -63,10 +64,6 @@ public:
     MCAPI SchemaDescription(::cereal::SchemaDescription&&);
 
     MCAPI SchemaDescription(::cereal::SchemaDescription const&);
-
-    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription&&);
-
-    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
 
     MCAPI ~SchemaDescription();
     // NOLINTEND

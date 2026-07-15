@@ -11,6 +11,11 @@ namespace SharedTypes::v1_19_40 {
 
 struct ItemCategory {
 public:
+    // ItemCategory inner types declare
+    // clang-format off
+    struct CREATIVE_ITEM_CATEGORY_MAPPING;
+    // clang-format on
+
     // ItemCategory inner types define
     enum class CreativeItemCategory : uchar {
         All             = 0,
@@ -28,17 +33,18 @@ public:
         NotFound    = 1,
     };
 
+    struct CREATIVE_ITEM_CATEGORY_MAPPING {
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCAPI static ::std::initializer_list<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory> const& $RT1();
+        // NOLINTEND
+    };
+
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::initializer_list<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory> const&
-    CREATIVE_ITEM_CATEGORY_MAPPING();
     // NOLINTEND
 };
 

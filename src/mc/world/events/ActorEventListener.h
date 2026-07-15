@@ -115,10 +115,6 @@ public:
 
     MCFOLD ::EventResult $onActorMovementRewindCorrected(::Actor&, uint64, ::ReplayCorrectionResult);
 
-#ifdef LL_PLAT_C
-    MCFOLD ::EventResult $onEvent(::ActorNotificationEvent const& event);
-#endif
-
 
     // NOLINTEND
 };

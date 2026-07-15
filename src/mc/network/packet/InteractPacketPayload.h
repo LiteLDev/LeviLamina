@@ -24,25 +24,4 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mTargetId;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>        mPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InteractPacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI InteractPacketPayload(
-        ::InteractPacketPayload::Action action,
-        ::ActorRuntimeID                targetId,
-        ::std::optional<::Vec3> const&  pos
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::InteractPacketPayload::Action action, ::ActorRuntimeID targetId, ::std::optional<::Vec3> const& pos);
-    // NOLINTEND
 };

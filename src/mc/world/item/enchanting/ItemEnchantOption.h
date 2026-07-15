@@ -30,21 +30,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ItemEnchantOption(::ItemEnchantOption const&);
-
-    MCAPI bool operator==(::ItemEnchantOption const& rhs) const;
-
-    MCAPI ~ItemEnchantOption();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemEnchantOption const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class LootItemCondition;
 class PropertyComponent;
 namespace Json { class Value; }
@@ -30,15 +29,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool _hasPropertyValue(::PropertyComponent const& component) const /*override*/;
+    virtual bool _hasPropertyValue(::PropertyComponent const&) const /*override*/;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI LootItemIntPropertyValueCondition(::HashedString propertyName, int value);
     // NOLINTEND
 
 public:
@@ -48,24 +41,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::HashedString propertyName, int value);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_hasPropertyValue(::PropertyComponent const& component) const;
 
-    MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

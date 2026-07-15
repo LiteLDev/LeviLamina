@@ -32,13 +32,6 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                            mW;
     ::ll::TypedStorage<4, 12, ::OreUI::PaddedSlimVertexInstanceData::Padding> mPadD;
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    vertexBufferTransform(::std::vector<uchar> const& gameface, ::std::vector<uchar>& dragon, uint64 elementCount);
-    // NOLINTEND
 };
 
 } // namespace OreUI

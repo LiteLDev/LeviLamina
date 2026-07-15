@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/dcsctp/PacketObserver.h"
+#include "mc/external/webrtc/ArrayView.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,9 +29,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnSentPacket(::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload) /*override*/;
+    virtual void
+    OnSentPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const, 18446744073709546905> payload) /*override*/;
 
-    virtual void OnReceivedPacket(::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload) /*override*/;
+    virtual void
+    OnReceivedPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const, 18446744073709546905> payload) /*override*/;
 
     virtual ~TextPcapPacketObserver() /*override*/ = default;
     // NOLINTEND
@@ -39,19 +42,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void PrintPacket(
-        ::std::string_view            prefix,
-        ::std::string_view            socket_name,
-        ::dcsctp::TimeMs              now,
-        ::rtc::ArrayView<uchar const> payload
+        ::std::string_view                                     prefix,
+        ::std::string_view                                     socket_name,
+        ::dcsctp::TimeMs                                       now,
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> payload
     );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $OnSentPacket(::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload);
+    MCNAPI void $OnSentPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const, 18446744073709546905> payload);
 
-    MCNAPI void $OnReceivedPacket(::dcsctp::TimeMs now, ::rtc::ArrayView<uchar const> payload);
+    MCNAPI void $OnReceivedPacket(::dcsctp::TimeMs now, ::webrtc::ArrayView<uchar const, 18446744073709546905> payload);
 
 
     // NOLINTEND

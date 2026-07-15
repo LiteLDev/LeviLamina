@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/editor/RelativeVolumeListBlockVolumeAction.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeBase.h"
 
 // auto generated forward declare list
@@ -13,7 +13,6 @@
 class BaseBlockLocationIterator;
 class SimpleBlockVolume;
 class Vec3;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
@@ -40,11 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ScriptRelativeVolumeListBlockVolume() /*override*/;
-#else // LL_PLAT_C
     virtual ~ScriptRelativeVolumeListBlockVolume() /*override*/ = default;
-#endif
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
@@ -71,46 +66,6 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toAdd);
-
-    MCNAPI ::Editor::RelativeVolumeListBlockVolume const& getVolume() const;
-
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>>
-    getVolumes(::Scripting::WeakLifetimeScope scope) const;
-
-    MCNAPI bool hasAdjacent(::Vec3 const& pos, ::Vec3 const& offset) const;
-
-    MCNAPI void moveTo(::Vec3 const& location);
-
-    MCNAPI ::Bedrock::PubSub::Subscription registerVolumeChangeListener(
-        ::std::function<void(
-            ::Editor::RelativeVolumeListBlockVolume const&,
-            ::Editor::RelativeVolumeListBlockVolumeAction,
-            ::std::variant<
-                ::Vec3 const,
-                ::std::vector<::Vec3> const,
-                ::Editor::RelativeVolumeListBlockVolume const,
-                ::SimpleBlockVolume const> const&
-        )> fnListener
-    );
-
-    MCNAPI void remove(
-        ::std::variant<
-            ::Vec3 const,
-            ::std::vector<::Vec3> const,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toRemove
-    );
-
-    MCNAPI void
-    set(::std::variant<
-        ::Vec3 const,
-        ::std::vector<::Vec3> const,
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toSet);
-
-    MCNAPI void translate(::Vec3 const& offset);
     // NOLINTEND
 
 public:
@@ -129,12 +84,6 @@ public:
     MCNAPI void* $ctor(::Vec3 const& location, ::std::optional<::Vec3> const& origin);
 
     MCNAPI void* $ctor(::std::vector<::Vec3> const& locations, ::std::optional<::Vec3> const& origin);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

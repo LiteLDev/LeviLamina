@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptRGBA.h"
 #include "mc/scripting/modules/minecraft/primitiveshapes/ScriptPrimitiveShape.h"
 #include "mc/textobject/TextObjectRoot.h"
@@ -17,7 +17,6 @@ namespace ScriptModuleMinecraft { struct ScriptRawMessageError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
-namespace mce { class Color; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -38,6 +37,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptTextPrimitive();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void populatePacketData(::PrimitiveShapeDataPayload& packetShapeData) const /*override*/;
@@ -48,8 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTextPrimitive();
-
     MCAPI ScriptTextPrimitive(
         ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const&          location,
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text,
@@ -58,46 +59,15 @@ public:
         uint                                                                                     maxTextLines
     );
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    _verifyRawMessageLength(::std::string const& text) const;
-
-    MCFOLD ::std::optional<::ScriptModuleMinecraft::ScriptRGBA> const& getBackgroundColorOverride() const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::optional<::mce::Color> getBackgroundMCEColor() const;
-#endif
-
-    MCFOLD bool getDepthTest() const;
-
 #ifdef LL_PLAT_C
     MCAPI ::std::string const& getLocalizedText() const;
-
-    MCFOLD uint getMaxLines() const;
-
-    MCFOLD uint getMaxTextLength() const;
 #endif
 
-    MCFOLD bool getShowBackface() const;
-
-    MCFOLD bool getShowTextBackface() const;
-
     MCAPI ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> getText() const;
-
-    MCAPI bool getUseRotation() const;
-
-    MCAPI void setBackgroundColorOverride(::std::optional<::ScriptModuleMinecraft::ScriptRGBA> const& color);
-
-    MCAPI void setDepthTest(bool depthTest);
-
-    MCAPI void setShowBackface(bool showBackface);
-
-    MCAPI void setShowTextBackface(bool showTextBackface);
 
     MCAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::Scripting::ArgumentOutOfBoundsError>
         setText(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text);
-
-    MCAPI void setUseRotation(bool useRotation);
     // NOLINTEND
 
 public:
@@ -109,8 +79,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(
         ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const&          location,
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text,

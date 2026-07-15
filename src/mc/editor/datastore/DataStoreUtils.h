@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,9 +19,18 @@ public:
     MCNAPI static ::std::optional<::std::string>
     getSelectedModalTool(::Editor::Services::DataStoreServiceProvider& dataStore);
 
+    MCNAPI static ::std::optional<::std::vector<::std::string>>
+    getSortOrder(::Editor::Services::DataStoreServiceProvider& dataStore, ::std::string const& groupId);
+
     MCNAPI static ::Scripting::Result_deprecated<void> updateSelectedModalTool(
         ::Editor::Services::DataStoreServiceProvider& dataStore,
         ::std::optional<::std::string> const&         newToolId
+    );
+
+    MCNAPI static ::Scripting::Result_deprecated<void> updateSortOrder(
+        ::Editor::Services::DataStoreServiceProvider&        dataStore,
+        ::std::string const&                                 groupId,
+        ::std::optional<::std::vector<::std::string>> const& sortOrder
     );
     // NOLINTEND
 };

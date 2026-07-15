@@ -8,12 +8,6 @@
 
 class ItemStackNetResultMap {
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& getItemStackNetResultName(::ItemStackNetResult result);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::BidirectionalUnorderedMap<::ItemStackNetResult, ::std::string> const& mMap();

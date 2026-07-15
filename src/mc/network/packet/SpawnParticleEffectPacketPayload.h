@@ -20,40 +20,27 @@ public:
 
 public:
     // prevent constructor by default
-    SpawnParticleEffectPacketPayload& operator=(SpawnParticleEffectPacketPayload const&);
     SpawnParticleEffectPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnParticleEffectPacketPayload(::SpawnParticleEffectPacketPayload const&);
-
     MCAPI SpawnParticleEffectPacketPayload(
         ::Vec3 const&                        pos,
         ::std::string const&                 name,
         uchar                                vanillaDimensionId,
         ::std::optional<::MolangVariableMap> molangVariables
     );
-
-    MCAPI ~SpawnParticleEffectPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SpawnParticleEffectPacketPayload const&);
-
     MCAPI void* $ctor(
         ::Vec3 const&                        pos,
         ::std::string const&                 name,
         uchar                                vanillaDimensionId,
         ::std::optional<::MolangVariableMap> molangVariables
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

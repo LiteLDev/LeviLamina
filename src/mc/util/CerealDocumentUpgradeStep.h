@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CerealDocumentUpgradeStep();
+    virtual ~CerealDocumentUpgradeStep() = default;
     // NOLINTEND
 
 public:
@@ -37,17 +37,5 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&             documentVersion
     ) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

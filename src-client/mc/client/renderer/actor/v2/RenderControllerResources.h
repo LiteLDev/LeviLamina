@@ -26,16 +26,4 @@ public:
     RenderControllerResources& operator=(RenderControllerResources const&);
     RenderControllerResources(RenderControllerResources const&);
     RenderControllerResources();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~RenderControllerResources();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

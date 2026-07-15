@@ -25,16 +25,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackCollection& operator=(PackCollection const&);
-    PackCollection(PackCollection const&);
-    PackCollection();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::World::PackCollection& operator=(::World::PackCollection&&);
-
     MCAPI ~PackCollection();
     // NOLINTEND
 

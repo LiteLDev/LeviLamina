@@ -22,7 +22,7 @@ public:
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
-    virtual bool update(::IClientInstance&, ::UIControl&, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
 
     virtual void preRenderSetup(::MinecraftUIRenderContext& renderContext) /*override*/;
 
@@ -30,25 +30,13 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EditorGizmoRenderer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCFOLD bool $update(::IClientInstance&, ::UIControl&, ::UIScene const&);
+    MCFOLD bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
 
-    MCAPI void $preRenderSetup(::MinecraftUIRenderContext& renderContext);
+    MCFOLD void $preRenderSetup(::MinecraftUIRenderContext& renderContext);
 
     MCAPI void $render(::MinecraftUIRenderContext& context, ::IClientInstance& client, ::UIControl&, int);
     // NOLINTEND

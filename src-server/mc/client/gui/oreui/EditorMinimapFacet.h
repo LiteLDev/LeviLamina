@@ -8,15 +8,18 @@ class EditorMinimapFacet {
 public:
     // EditorMinimapFacet inner types declare
     // clang-format off
-    struct PlayerMarkerData;
+    struct MinimapOreUIMarkerData;
     struct MapDimensions;
+    struct MinimapHoverInfo;
     struct MinimapData;
     // clang-format on
 
     // EditorMinimapFacet inner types define
-    struct PlayerMarkerData {};
+    struct MinimapOreUIMarkerData {};
 
     struct MapDimensions {};
+
+    struct MinimapHoverInfo {};
 
     struct MinimapData {};
 };

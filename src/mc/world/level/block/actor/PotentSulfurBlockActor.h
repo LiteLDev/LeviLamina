@@ -3,39 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 // clang-format on
 
-class PotentSulfurBlockActor : public ::BlockActor {
+class PotentSulfurBlockActor : public ::VanillaBlockActor {
 public:
-    // prevent constructor by default
-    PotentSulfurBlockActor();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mNextEruptionActiveSoundTick;
+    // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PotentSulfurBlockActor(::BlockPos const& pos);
-
-    MCAPI void _clientTick(::BlockSource& region, ::BlockPos const& gasSourceBlockPos);
-
-    MCAPI void _serverTick(::BlockSource& region, ::BlockPos const& gasSourceBlockPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -49,6 +34,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

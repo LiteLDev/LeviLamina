@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct DropdownOption; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v3_0_0::PackManifestDefinition {
@@ -34,26 +33,9 @@ public:
     MCAPI DropdownSetting(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
 
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&&);
-
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
 
-    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const& other) const;
-
     MCAPI ~DropdownSetting();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:

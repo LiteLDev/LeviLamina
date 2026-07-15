@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace PlayerMessaging {
@@ -26,21 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit NetworkID(::std::string const& str);
-
-    MCNAPI explicit NetworkID(::mce::UUID const& value);
-
     MCNAPI ::Json::Value toJson() const;
-
-    MCNAPI ::std::string toString() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& str);
-
-    MCNAPI void* $ctor(::mce::UUID const& value);
     // NOLINTEND
 };
 

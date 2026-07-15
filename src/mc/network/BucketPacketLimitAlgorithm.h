@@ -23,26 +23,18 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk66956d;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    BucketPacketLimitAlgorithm& operator=(BucketPacketLimitAlgorithm const&);
-    BucketPacketLimitAlgorithm();
-
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     BucketPacketLimitAlgorithm& operator=(BucketPacketLimitAlgorithm const&);
     BucketPacketLimitAlgorithm(BucketPacketLimitAlgorithm const&);
     BucketPacketLimitAlgorithm();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const /*override*/;
 
-    virtual uint checkPacket(::MinecraftPacketIds) /*override*/;
+    virtual uint checkPacket(::MinecraftPacketIds packet) /*override*/;
 
     virtual ~BucketPacketLimitAlgorithm() /*override*/ = default;
     // NOLINTEND
@@ -50,48 +42,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI BucketPacketLimitAlgorithm(::BucketPacketLimitAlgorithm const& other);
-
     MCNAPI BucketPacketLimitAlgorithm(
         float                                                      drainRatePerSec,
         uint                                                       maxBucketSize,
         ::std::function<::std::chrono::steady_clock::time_point()> getTime
     );
-#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI static ::Bedrock::Result<::BucketPacketLimitAlgorithm> createFromJsonParams(::Json::Value& paramsNode);
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void* $ctor(::BucketPacketLimitAlgorithm const& other);
-
     MCNAPI void* $ctor(
         float                                                      drainRatePerSec,
         uint                                                       maxBucketSize,
         ::std::function<::std::chrono::steady_clock::time_point()> getTime
     );
-#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI ::std::unique_ptr<::IPacketLimitAlgorithm> $copy() const;
 
-    MCNAPI uint $checkPacket(::MinecraftPacketIds);
-#endif
+    MCNAPI uint $checkPacket(::MinecraftPacketIds packet);
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

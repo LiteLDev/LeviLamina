@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,10 +12,6 @@ class Scheduler;
 class ScriptPackConfigurationManager;
 class ServerLevel;
 namespace ScriptModuleMinecraftNet { class ScriptNativeWebSocketFactory; }
-namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { struct ContextConfig; }
-namespace Scripting { struct ModuleBinding; }
-namespace mce { class UUID; }
 // clang-format on
 
 class ScriptMinecraftNetModuleFactory : public ::Scripting::GenericModuleBindingFactory {
@@ -26,6 +22,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkc9f7d9;
     ::ll::UntypedStorage<8, 8>  mUnk4fb1f9;
     ::ll::UntypedStorage<8, 16> mUnk167a04;
+    ::ll::UntypedStorage<8, 16> mUnkc2b23c;
     // NOLINTEND
 
 public:
@@ -33,6 +30,12 @@ public:
     ScriptMinecraftNetModuleFactory& operator=(ScriptMinecraftNetModuleFactory const&);
     ScriptMinecraftNetModuleFactory(ScriptMinecraftNetModuleFactory const&);
     ScriptMinecraftNetModuleFactory();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ScriptMinecraftNetModuleFactory() /*override*/ = default;
+    // NOLINTEND
 
 public:
     // member functions
@@ -43,23 +46,6 @@ public:
         ::ServerLevel*                                                              level,
         ::std::shared_ptr<::ScriptModuleMinecraftNet::ScriptNativeWebSocketFactory> webSocketFactory
     );
-
-    MCNAPI void _addVersions();
-
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(
-        ::Scripting::ModuleBindingBuilder&          moduleBuilder,
-        ::std::optional<::Scripting::ContextConfig> contextConfig,
-        bool                                        allowUntagged,
-        ::std::vector<::std::string> const&         allowedTags
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static char const*& ModuleName();
-
-    MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 
 public:
@@ -71,11 +57,5 @@ public:
         ::ServerLevel*                                                              level,
         ::std::shared_ptr<::ScriptModuleMinecraftNet::ScriptNativeWebSocketFactory> webSocketFactory
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

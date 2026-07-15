@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace renoir { class DynamicRendererBackend; }
 namespace renoir { struct ConstantBufferObject; }
 namespace renoir { struct DepthStencilTexture; }
 namespace renoir { struct DepthStencilTextureObject; }
@@ -100,7 +99,7 @@ public:
     // NOLINTBEGIN
     virtual ~RendererBackend() = default;
 
-    virtual void FillCaps(::renoir::RendererCaps& outCaps) = 0;
+    virtual void FillCaps(::renoir::RendererCaps&) = 0;
 
     virtual void BeginCommands() = 0;
 
@@ -113,41 +112,35 @@ public:
         ::renoir::DepthStencilTextureObject
     ) = 0;
 
-    virtual void
-    WrapUserTexture(void* userObject, ::renoir::Texture2D const& description, ::renoir::Texture2DObject object) = 0;
+    virtual void WrapUserTexture(void*, ::renoir::Texture2D const&, ::renoir::Texture2DObject) = 0;
 
-    virtual bool CreatePipelineState(::renoir::PipelineState const& state, ::renoir::PipelineStateObject object) = 0;
+    virtual bool CreatePipelineState(::renoir::PipelineState const&, ::renoir::PipelineStateObject) = 0;
 
-    virtual void DestroyPipelineState(::renoir::PipelineStateObject object) = 0;
+    virtual void DestroyPipelineState(::renoir::PipelineStateObject) = 0;
 
     virtual bool CreateVertexBuffer(::renoir::VertexType, uint, ::renoir::VertexBufferObject, bool) = 0;
 
-    virtual void DestroyVertexBuffer(::renoir::VertexBufferObject object) = 0;
+    virtual void DestroyVertexBuffer(::renoir::VertexBufferObject) = 0;
 
-    virtual void* MapVertexBuffer(::renoir::VertexBufferObject object) = 0;
+    virtual void* MapVertexBuffer(::renoir::VertexBufferObject) = 0;
 
-    virtual void UnmapVertexBuffer(::renoir::VertexBufferObject object, uint count) = 0;
+    virtual void UnmapVertexBuffer(::renoir::VertexBufferObject, uint) = 0;
 
     virtual bool CreateIndexBuffer(::renoir::IndexBufferType, uint, ::renoir::IndexBufferObject, bool) = 0;
 
-    virtual void DestroyIndexBuffer(::renoir::IndexBufferObject object) = 0;
+    virtual void DestroyIndexBuffer(::renoir::IndexBufferObject) = 0;
 
-    virtual void* MapIndexBuffer(::renoir::IndexBufferObject object) = 0;
+    virtual void* MapIndexBuffer(::renoir::IndexBufferObject) = 0;
 
-    virtual void UnmapIndexBuffer(::renoir::IndexBufferObject object, uint elemCount) = 0;
+    virtual void UnmapIndexBuffer(::renoir::IndexBufferObject, uint) = 0;
 
-    virtual bool CreateConstantBuffer(::renoir::CBType type, ::renoir::ConstantBufferObject object, uint size) = 0;
+    virtual bool CreateConstantBuffer(::renoir::CBType, ::renoir::ConstantBufferObject, uint) = 0;
 
-    virtual void DestroyConstantBuffer(::renoir::ConstantBufferObject object) = 0;
+    virtual void DestroyConstantBuffer(::renoir::ConstantBufferObject) = 0;
 
-    virtual bool CreateTexture(
-        ::renoir::Texture2DObject  object,
-        ::renoir::Texture2D const& description,
-        void const*                data,
-        uint                       dataLen
-    ) = 0;
+    virtual bool CreateTexture(::renoir::Texture2DObject, ::renoir::Texture2D const&, void const*, uint) = 0;
 
-    virtual void DestroyTexture(::renoir::Texture2DObject object) = 0;
+    virtual void DestroyTexture(::renoir::Texture2DObject) = 0;
 
     virtual void UpdateTexture(
         ::renoir::Texture2DObject,
@@ -158,12 +151,10 @@ public:
         bool
     ) = 0;
 
-    virtual bool CreateDepthStencilTexture(
-        ::renoir::DepthStencilTextureObject  object,
-        ::renoir::DepthStencilTexture const& description
-    ) = 0;
+    virtual bool
+    CreateDepthStencilTexture(::renoir::DepthStencilTextureObject, ::renoir::DepthStencilTexture const&) = 0;
 
-    virtual void DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject object) = 0;
+    virtual void DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject) = 0;
 
     virtual void CopyTextureToTexture(
         ::renoir::Texture2DObject,
@@ -172,15 +163,15 @@ public:
         ::renoir::float2
     ) = 0;
 
-    virtual bool CreateSampler2D(::renoir::Sampler2DObject object, ::renoir::Sampler2D const& description) = 0;
+    virtual bool CreateSampler2D(::renoir::Sampler2DObject, ::renoir::Sampler2D const&) = 0;
 
-    virtual void DestroySampler2D(::renoir::Sampler2DObject object) = 0;
+    virtual void DestroySampler2D(::renoir::Sampler2DObject) = 0;
 
     virtual void ExecuteRendering(
-        ::renoir::RendererBackend::BackendCommandsBuffer const*    buffers,
-        uint                                                       buffersCount,
-        ::renoir::RendererBackend::ConstantBufferUpdateData const* cboUpdates,
-        uint                                                       numCboUpdates
+        ::renoir::RendererBackend::BackendCommandsBuffer const*,
+        uint,
+        ::renoir::RendererBackend::ConstantBufferUpdateData const*,
+        uint
     ) = 0;
 
     virtual void ExecuteResourceCommands(
@@ -190,8 +181,6 @@ public:
     ) = 0;
 
     virtual void EndCommands() = 0;
-
-    virtual ::renoir::DynamicRendererBackend* GetDynamicInterface();
 
     virtual void SetDebugName(::renoir::Texture2DObject, char const*);
 
@@ -225,33 +214,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::renoir::DynamicRendererBackend* $GetDynamicInterface();
 
-    MCNAPI void $SetDebugName(::renoir::Texture2DObject, char const*);
-
-    MCNAPI void $SetDebugName(::renoir::DepthStencilTextureObject, char const*);
-
-    MCNAPI void $SetDebugName(::renoir::VertexBufferObject, char const*);
-
-    MCNAPI void $SetDebugName(::renoir::IndexBufferObject, char const*);
-
-    MCNAPI void $SetDebugName(::renoir::PipelineStateObject, char const*);
-
-    MCNAPI void $SetDebugName(::renoir::ConstantBufferObject, char const*);
-
-    MCNAPI void $SetDebugName(::renoir::Sampler2DObject, char const*);
-
-    MCNAPI void $BeginGPUPerformanceTiming(uint);
-
-    MCNAPI void $EndGPUPerformanceTiming(uint);
-
-    MCNAPI bool $ReadVertexBuffer(::renoir::VertexBufferObject, void*);
-
-    MCNAPI bool $ReadIndexBuffer(::renoir::IndexBufferObject, void*);
-
-    MCNAPI bool $GetNativeTexture(::renoir::Texture2DObject, void*);
-
-    MCNAPI ::renoir::RendererBackend::GPUPerfTimingResult $TryGetLatestGPUPerformanceTiming(uint, float&);
     // NOLINTEND
 };
 

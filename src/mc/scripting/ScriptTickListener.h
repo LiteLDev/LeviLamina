@@ -16,7 +16,6 @@ class ScriptAsyncJobCoordinator;
 class ScriptDeferredEventCoordinator;
 class ScriptDiagnostics;
 class ScriptPluginManager;
-struct ServerPerformanceData;
 // clang-format on
 
 class ScriptTickListener : public ::LevelEventListener, public ::ScriptDeferredEventListener {
@@ -44,9 +43,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptTickListener() /*override*/;
+    virtual ~ScriptTickListener() /*override*/ = default;
 
-    virtual ::EventResult onLevelTickStart(::Level& level) /*override*/;
+    virtual ::EventResult onLevelTickStart(::Level&) /*override*/;
 
     virtual ::EventResult onLevelTickEnd(::Level&) /*override*/;
 
@@ -56,56 +55,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptTickListener(
-        ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
-        ::LevelEventCoordinator&          levelEventCoordinator,
-        ::ScriptPluginManager&            pluginManager,
-        ::ScriptDiagnostics&              diagnostics,
-        ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
-    );
-
-    MCAPI ::ServerPerformanceData& _getServerPerfData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
-        ::LevelEventCoordinator&          levelEventCoordinator,
-        ::ScriptPluginManager&            pluginManager,
-        ::ScriptDiagnostics&              diagnostics,
-        ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onLevelTickStart(::Level& level);
 
-    MCAPI ::EventResult $onLevelTickEnd(::Level&);
-
-    MCAPI void $onScriptTickStart();
-
-    MCAPI void $onScriptTickEnd();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScriptDeferredEventListener();
-
-    MCNAPI static void** $vftableForLevelEventListener();
     // NOLINTEND
 };

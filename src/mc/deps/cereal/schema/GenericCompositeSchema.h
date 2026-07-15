@@ -37,21 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI int iterate(
-        ::entt::meta_type const& type,
-        ::entt::meta_any&        src,
-        ::entt::meta_any&        dst,
-        ::cereal::MetaVisitor&   visitor
-    ) const;
-
-    MCAPI void members(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
-
-    MCAPI bool setters(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $doLoad(

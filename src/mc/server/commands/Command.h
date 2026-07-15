@@ -12,7 +12,6 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class CommandSelectorBase;
-class Player;
 // clang-format on
 
 class Command {
@@ -29,43 +28,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Command();
+    virtual ~Command() = default;
 
     virtual bool collectOptionalArguments();
 
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const = 0;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Command();
-
-    MCAPI ::std::string getCommandName() const;
-
-    MCFOLD ::CommandRegistry const& getRegistry() const;
-
-    MCAPI bool hasFlag(::CommandFlag flag) const;
-
     MCAPI void run(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void sendTelemetry(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI bool shouldSendTelemetry(::CommandOrigin const& origin) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Player* getPlayerFromOrigin(::CommandOrigin const& origin);
-
-    MCAPI static bool isTemplateLockedAction(::CommandOrigin const& origin);
-
     MCAPI static bool isWildcard(::CommandSelectorBase const& selector);
 
     MCAPI static bool shouldUseCommandOriginRotation(::CommandOrigin const& origin, int version);
-
-    MCAPI static bool validData(int input, ushort& data, ::CommandOutput& output);
 
     MCAPI static bool validRange(int input, int low, int high, ::CommandOutput& output);
 
@@ -79,29 +60,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $collectOptionalArguments();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

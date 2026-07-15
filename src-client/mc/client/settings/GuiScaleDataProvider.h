@@ -32,6 +32,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mGuiScaleSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mGuiAccessibilityScalingSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mSceneSizeChangedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mLanguageChangedSubscription;
     ::ll::TypedStorage<8, 24, ::std::vector<::Settings::OptionData>> mDropdownOptions;
     // NOLINTEND
 
@@ -50,7 +51,7 @@ public:
 
     virtual int getValue() const /*override*/;
 
-    virtual void setValue(int value) /*override*/;
+    virtual void setValue(int) /*override*/;
 
     virtual ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
@@ -65,10 +66,6 @@ public:
         ::std::function<float()>                      getOptimalGuiScale,
         ::std::function<float()>                      getMaxGuiScale
     );
-
-    MCAPI void _updateInfo();
-
-    MCAPI void _updateOptions();
     // NOLINTEND
 
 public:
@@ -84,23 +81,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canModify() const;
 
-    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
-
-    MCAPI int $getValue() const;
-
-    MCAPI void $setValue(int value);
-
-    MCFOLD ::std::optional<
-        ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
-    $getInfo() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

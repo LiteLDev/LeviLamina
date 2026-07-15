@@ -59,27 +59,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrushableBlockActor() /*override*/;
+    virtual ~BrushableBlockActor() /*override*/ = default;
 
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
     virtual int getContainerSize() const /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int, ::ItemStack const&) /*override*/;
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual void onChanged(::BlockSource& region) /*override*/;
+    virtual void onChanged(::BlockSource&) /*override*/;
 
-    virtual void onRemoved(::BlockSource& region) /*override*/;
+    virtual void onRemoved(::BlockSource&) /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
@@ -87,7 +83,7 @@ public:
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&) /*override*/;
     // NOLINTEND
 
 public:
@@ -103,10 +99,6 @@ public:
     MCAPI ::BrushableBlockActor::BrushingState brush(::BlockSource& region, ::BlockPos const& pos, uchar face);
 
 #ifdef LL_PLAT_C
-    MCFOLD int getBrushCount() const;
-
-    MCAPI uchar getBrushDirection() const;
-
     MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
 #endif
 
@@ -117,8 +109,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
-
-    MCAPI static ::BrushableBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -128,50 +118,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
 
-    MCFOLD int $getContainerSize() const;
-
-    MCFOLD int $getMaxStackSize() const;
-
-    MCAPI ::ItemStack const& $getItem(int slot) const;
-
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
-
-    MCFOLD void $stopOpen(::Actor& actor);
-
-    MCAPI void $onChanged(::BlockSource& region);
-
-    MCAPI void $onRemoved(::BlockSource& region);
-
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
-
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
-
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
-
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

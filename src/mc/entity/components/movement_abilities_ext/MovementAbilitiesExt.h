@@ -3,21 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/vanilla_components/MovementAbilities.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
-struct AbilitiesComponent;
-struct MovementAbilitiesComponent;
+namespace MovementAbilitiesExt { struct MovementAbilityInfo; }
 // clang-format on
 
 namespace MovementAbilitiesExt {
-// functions
+// static variables
 // NOLINTBEGIN
-MCAPI ::MovementAbilities const getMovementAbilitiesFromAbilitiesIndex(::AbilitiesIndex index);
+#ifdef LL_PLAT_C
+MCAPI ::std::unordered_map<::AbilitiesIndex, ::MovementAbilitiesExt::MovementAbilityInfo> const& ABILITIES_MAP();
+#endif
 
-MCAPI void inheritFrom(::MovementAbilitiesComponent& destination, ::AbilitiesComponent const& abilities);
+#ifdef LL_PLAT_S
+MCAPI ::std::unordered_map<::AbilitiesIndex, ::MovementAbilitiesExt::MovementAbilityInfo> const& ABILITIES_MAP();
+#endif
 // NOLINTEND
 
 } // namespace MovementAbilitiesExt

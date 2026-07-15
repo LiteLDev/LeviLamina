@@ -22,16 +22,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockDeprecatedR16EventListenerComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockDeprecatedR16EventListenerComponent(
-        ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers
-    );
-
     MCAPI void _executeEvent(
         ::std::string const&                                            eventName,
         ::Bedrock::small_vector_base<::ActorDefinitionEventStackEntry>& eventStack,
@@ -45,11 +37,5 @@ public:
     MCAPI static void executeEvent(::Block const& block, ::std::string const& eventName, ::RenderParams& params);
 
     MCAPI static bool executeTrigger(::Block const& block, ::DefinitionTrigger const& trigger, ::RenderParams& params);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers);
     // NOLINTEND
 };

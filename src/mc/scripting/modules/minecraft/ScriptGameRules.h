@@ -7,6 +7,7 @@
 class GameRules;
 class Level;
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { struct EnumBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -26,6 +27,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
+
+    MCAPI static ::Scripting::EnumBinding bindPlayerWaypointsModeEnum();
     // NOLINTEND
 };
 

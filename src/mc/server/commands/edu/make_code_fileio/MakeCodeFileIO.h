@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/Result.h"
 #include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
 
 // auto generated forward declare list
@@ -16,10 +15,6 @@ namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
 namespace MakeCodeFileIO {
 // functions
 // NOLINTBEGIN
-MCAPI ::Bedrock::Result<::std::string> _writeFile(::std::string const& filePath, ::std::string const& input);
-
-MCAPI bool isFileTypeValid(::std::string const& filePath);
-
 #ifdef LL_PLAT_C
 MCAPI void openFilePicker(
     ::std::string&                      resultPath,

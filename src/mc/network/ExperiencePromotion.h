@@ -27,6 +27,7 @@ public:
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
+    ExperiencePromotion& operator=(ExperiencePromotion const&);
     ExperiencePromotion();
 
 #endif
@@ -37,10 +38,6 @@ public:
     MCNAPI ExperiencePromotion(::ExperiencePromotion const&);
 
     MCNAPI ::ExperiencePromotion& operator=(::ExperiencePromotion&&);
-
-    MCNAPI ::ExperiencePromotion& operator=(::ExperiencePromotion const&);
-
-    MCNAPI bool operator==(::ExperiencePromotion const&) const;
 
     MCNAPI ~ExperiencePromotion();
 #endif

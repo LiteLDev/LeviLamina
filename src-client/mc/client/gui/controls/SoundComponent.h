@@ -38,36 +38,6 @@ public:
         ::ll::TypedStorage<4, 4, ::ScreenEventType>                       mScreenEventType;
         ::ll::TypedStorage<4, 8, ::SoundEventConditions>                  mEventConditions;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SoundEventInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI SoundEventInfo(
-            ::std::string                 soundName,
-            float                         volume,
-            float                         pitch,
-            ::std::chrono::milliseconds   minTimeBetweenPlays,
-            ::ScreenEventType             screenEventType,
-            ::SoundEventConditions const& screenEventConditions
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::std::string                 soundName,
-            float                         volume,
-            float                         pitch,
-            ::std::chrono::milliseconds   minTimeBetweenPlays,
-            ::ScreenEventType             screenEventType,
-            ::SoundEventConditions const& screenEventConditions
-        );
-        // NOLINTEND
     };
 
 public:
@@ -85,49 +55,23 @@ public:
     // NOLINTBEGIN
     virtual ~SoundComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const /*override*/;
 
     virtual void reset() /*override*/;
 
     virtual ::ComponentReceiveActionType receive(::ScreenEvent const& screenEvent) /*override*/;
 
     virtual ::ComponentReceiveActionType receive(
-        ::VisualTree& screenEvent,
-        ::ScreenInputContext&,
-        ::UIAnimationController&,
-        ::ScreenEvent const&
+        ::VisualTree&            visualTree,
+        ::ScreenInputContext&    context,
+        ::UIAnimationController& animationController,
+        ::ScreenEvent const&     screenEvent
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void addSoundEvent(
-        ::std::string const&          soundName,
-        float                         volume,
-        float                         pitch,
-        ::std::chrono::milliseconds   minTimeBetweenPlays,
-        ::ScreenEventType             screenEventType,
-        ::SoundEventConditions const& screenEventConditions
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
-
-    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
-
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree& screenEvent, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

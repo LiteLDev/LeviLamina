@@ -39,7 +39,7 @@ public:
 
     virtual int size() const /*override*/;
 
-    virtual ::RecipeIngredient const& getIngredient(int, int) const /*override*/;
+    virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 
     MCFOLD int $size() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int, int) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
 
     // NOLINTEND

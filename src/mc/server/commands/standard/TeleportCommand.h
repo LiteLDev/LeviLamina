@@ -6,14 +6,12 @@
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandPositionFloat.h"
 #include "mc/server/commands/CommandSelector.h"
-#include "mc/server/commands/CommandSelectorResults.h"
 #include "mc/server/commands/RelativeFloat.h"
 #include "mc/util/rotation_command_utils/FacingResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class CommandArea;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -65,22 +63,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TeleportCommand();
-
-    MCAPI void doArmorStandTeleportBackwardCompability(::Actor& target, ::Actor const* destinationEntity) const;
-
-    MCAPI ::RotationCommandUtils::FacingResult getFacingDirection(
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        ::Vec3&                faceTarget,
-        ::Actor*               destinationEntity
-    ) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -97,34 +80,12 @@ public:
         int                                                          commandVersion
     );
 
-    MCAPI static ::std::unique_ptr<::CommandArea> getCommandAreaForTargets(
-        ::CommandOrigin const&                   origin,
-        ::CommandSelectorResults<::Actor> const& targets,
-        ::Vec3                                   destination,
-        int                                      commandVersion,
-        bool                                     allowUnloadedChunks
-    );
-
     MCAPI static void setup(::CommandRegistry& registry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

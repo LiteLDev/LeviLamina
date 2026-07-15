@@ -11,10 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
-class BlockSource;
 class Mob;
-class Vec3;
 // clang-format on
 
 class TransportItemsGoal : public ::BaseGoal {
@@ -84,45 +81,6 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TransportItemsGoal(::Mob& mob);
-
-    MCAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
-
-    MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
-
-    MCAPI void _reset();
-
-    MCAPI void _startCooldown();
-
-    MCAPI void _tickIdle();
-
-    MCAPI void _tickInteracting(::BlockPos const& targetPos);
-
-    MCAPI void _tickQueuing(::BlockPos const& targetPos);
-
-    MCAPI void _tickTravelling(::BlockPos const& targetPos);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _canSeeTarget(
-        ::BlockSource const& region,
-        ::Vec3 const&        mobHeadPosition,
-        ::AABB const&        visualShape,
-        ::BlockPos const&    targetPosition
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

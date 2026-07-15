@@ -8,14 +8,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int> mValue;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isCustom() const;
-
-    MCFOLD int value() const;
-    // NOLINTEND
 };
 
 // clang-format off

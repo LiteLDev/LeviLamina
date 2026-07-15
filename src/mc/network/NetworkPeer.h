@@ -64,7 +64,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkPeer();
+    virtual ~NetworkPeer() = default;
 
     virtual void
     sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible) = 0;
@@ -85,12 +85,6 @@ public:
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     ) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

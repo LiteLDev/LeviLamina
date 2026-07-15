@@ -29,14 +29,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void enqueueMessage(
-        ::brstd::move_only_function<void()>      message,
-        ::ServerInstanceMessenger::MessageAction action
-    ) /*override*/;
+    virtual void
+        enqueueMessage(::brstd::move_only_function<void()>, ::ServerInstanceMessenger::MessageAction) /*override*/;
 
     virtual void enqueueAndAwaitExecution(
-        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)> message,
-        ::ServerInstanceMessenger::MessageAction                                     action
+        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)>,
+        ::ServerInstanceMessenger::MessageAction
     ) /*override*/;
 
     virtual void processMessages() /*override*/;
@@ -49,31 +47,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $enqueueMessage(::brstd::move_only_function<void()> message, ::ServerInstanceMessenger::MessageAction action);
 
-    MCNAPI void $enqueueAndAwaitExecution(
-        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)> message,
-        ::ServerInstanceMessenger::MessageAction                                     action
-    );
-
-    MCNAPI void $processMessages();
-
-    MCNAPI ::ServerInstanceMessenger::IMessageProducer& $getProducer();
-
-    MCNAPI ::ServerInstanceMessenger::IMessageConsumer& $getConsumer();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIMessenger();
-
-    MCNAPI static void** $vftableForIMessageConsumer();
-
-    MCNAPI static void** $vftableForIMessageProducer();
     // NOLINTEND
 };
 

@@ -3,42 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/utility/Keyframes.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes { struct ColorNormRGB; }
+// clang-format on
 
 struct FogVolumetricCoefficientSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::mce::Color> mScattering;
-    ::ll::TypedStorage<4, 16, ::mce::Color> mAbsorption;
+    ::ll::TypedStorage<8, 32, ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB>> mScattering;
+    ::ll::TypedStorage<8, 32, ::Core::Keyframes<float, ::SharedTypes::ColorNormRGB>> mAbsorption;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FogVolumetricCoefficientSetting();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FogVolumetricCoefficientSetting(::mce::Color const& scattering, ::mce::Color const& absorption);
+    MCAPI ~FogVolumetricCoefficientSetting();
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static ::FogVolumetricCoefficientSetting
-    lerp(::FogVolumetricCoefficientSetting const& src, ::FogVolumetricCoefficientSetting const& dst, float alpha);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::FogVolumetricCoefficientSetting const& ZERO_SETTING();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::Color const& scattering, ::mce::Color const& absorption);
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -11,7 +11,6 @@ class ClientPBRTextureData;
 class ExpressionNode;
 class MaterialVariants;
 class Matrix;
-class ModelPart;
 class RenderParams;
 class ScreenContext;
 class SkinnedMesh;
@@ -31,24 +30,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SkinnedMeshGroup();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkinnedMeshGroup(
-        ::ModelPart& modelPart,
-        int          skinnedMeshGroupIdentifier,
-        bool         isUniqueGroup,
-        uint64       skinnedMeshGroupIndex
-    );
-
-    MCAPI ::MaterialVariants const&
-    _evalMaterialVarants(::RenderParams& renderParams, ::RenderController const* renderController);
-
-    MCAPI void clear();
-
     MCAPI void copyBoneMatrixToSkinnedMesh(
         int                            meshIndex,
         int                            partIndex,
@@ -74,29 +57,7 @@ public:
         ::std::optional<::MERSUniformData> const& mersUniforms
     );
 
-    MCAPI bool
-    isMaterialExpressionMapEqual(::std::unordered_map<::RenderController const*, ::ExpressionNode> const& rhs) const;
-
-    MCAPI void prepareSkinning();
-
-    MCAPI void registerPart(::ModelPart& part, int groupIndex);
-
-    MCAPI void setMaterialExpression(::RenderController const* renderControllerId, ::ExpressionNode const& expression);
-
     MCAPI ~SkinnedMeshGroup();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static uint64 getMaxBoneCount();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::ModelPart& modelPart, int skinnedMeshGroupIdentifier, bool isUniqueGroup, uint64 skinnedMeshGroupIndex);
     // NOLINTEND
 
 public:

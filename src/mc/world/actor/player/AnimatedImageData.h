@@ -22,15 +22,21 @@ public:
     ::ll::TypedStorage<4, 4, float>                          mFrames;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    AnimatedImageData(AnimatedImageData const&);
+    AnimatedImageData();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AnimatedImageData();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimatedImageData(::AnimatedImageData const& rhs);
-
     MCAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
@@ -38,18 +44,16 @@ public:
         float                          frames
     );
 
-    MCFOLD ::SkinImage const& getSkinImage() const;
-
+#ifdef LL_PLAT_S
     MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
 
     MCAPI void setSkinImage(::SkinImage const& image);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AnimatedImageData const& rhs);
-
     MCAPI void* $ctor(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,

@@ -3,17 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/script_engine/Closure.h"
-#include "mc/deps/scripting/script_engine/Future.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
+#include "mc/deps/script_core/script_engine/scripting/Future.h"
 
 // auto generated forward declare list
 // clang-format off
-class AsyncVerdictPromise;
-class IAsyncJoinRegistrar;
-struct PlayerAuthenticationInfo;
 namespace ScriptModuleServerAdmin { struct ScriptAsyncPlayerJoinBeforeEvent; }
-namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
 namespace ScriptModuleServerAdmin {
@@ -39,18 +35,6 @@ public:
         Subscriber& operator=(Subscriber const&);
         Subscriber(Subscriber const&);
         Subscriber();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Subscriber();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -67,49 +51,6 @@ public:
     ScriptAsyncJoinEventSignal& operator=(ScriptAsyncJoinEventSignal const&);
     ScriptAsyncJoinEventSignal(ScriptAsyncJoinEventSignal const&);
     ScriptAsyncJoinEventSignal();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void OnAsyncJoinCallback(
-        ::Scripting::Closure<::Scripting::Future<void()>(
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>
-        )>                                       closure,
-        ::IAsyncJoinRegistrar*                   asyncJoinRegistrar,
-        ::PlayerAuthenticationInfo const&        playerInfo,
-        ::std::shared_ptr<::AsyncVerdictPromise> promisePtr
-    );
-
-    MCNAPI ::Scripting::Closure<::Scripting::Future<
-        void()>(::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>)>
-    subscribe(
-        ::Scripting::Closure<::Scripting::Future<void()>(
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>
-        )> closure
-    );
-
-    MCNAPI void tick();
-
-    MCNAPI bool unsubscribe(
-        ::Scripting::Closure<::Scripting::Future<void()>(
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>
-        )> const& closure
-    );
-
-    MCNAPI ~ScriptAsyncJoinEventSignal();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleServerAdmin

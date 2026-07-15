@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/dcsctp/UnwrappedSequenceNumber.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -96,8 +97,10 @@ public:
     MCNAPI ::std::optional<::std::vector<::dcsctp::ReconfigurationResponseParameter>>
     Process(::dcsctp::ReConfigChunk const& chunk);
 
-    MCNAPI void
-    ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
+    MCNAPI void ResetStreams(
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            outgoing_streams
+    );
 
     MCNAPI StreamResetHandler(
         ::std::string_view                         log_prefix,

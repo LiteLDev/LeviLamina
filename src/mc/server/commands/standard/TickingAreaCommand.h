@@ -11,9 +11,6 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Dimension;
-class Level;
-struct TickingAreaDescription;
 // clang-format on
 
 class TickingAreaCommand : public ::Command {
@@ -55,55 +52,18 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    _add(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
-
-    MCAPI void _list(::CommandOrigin const& output, ::CommandOutput& level, ::Level& dimension, ::Dimension&) const;
-
-    MCAPI void
-    _preload(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
-
-    MCAPI void
-    _remove(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
-
-    MCAPI void
-    _removeAll(::CommandOrigin const& output, ::CommandOutput& level, ::Level& dimension, ::Dimension&) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string formatTickingAreaList(::std::vector<::TickingAreaDescription> const& tickingAreas);
-
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::TickingAreaCommand::AddAreaType>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::TickingAreaCommand::Mode>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::TickingAreaCommand::TargetDimensions>();
-// clang-format on

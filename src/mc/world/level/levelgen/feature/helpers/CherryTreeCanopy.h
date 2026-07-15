@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class IBlockWorldGenAPI;
 class Random;
@@ -50,30 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _placeLayerOfLeaves(
-        ::IBlockWorldGenAPI&            target,
-        ::Random&                       random,
-        ::BlockPos const&               canopyPos,
-        int                             layerOffset,
-        ::Block const&                  leavesBlock,
-        int                             radius,
-        ::TreeHelper::TreeParams const& treeParams
-    ) const;
-
-    MCAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
-        ::IBlockWorldGenAPI&            target,
-        ::Random&                       random,
-        ::BlockPos const&               canopyPos,
-        int                             layerOffset,
-        ::Block const&                  leavesBlock,
-        int                             radius,
-        ::TreeHelper::TreeParams const& treeParams
-    ) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> $placeCanopy(
@@ -88,11 +63,5 @@ public:
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

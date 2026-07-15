@@ -45,11 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI StructureAnimationAction(
-        ::std::unique_ptr<::StructureAnimationData> structureAnimationData,
-        ::DimensionType                             dimensionType
-    );
-
-    MCAPI StructureAnimationAction(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -67,9 +62,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::unique_ptr<::StructureAnimationData> structureAnimationData, ::DimensionType dimensionType);
-
     MCAPI void* $ctor(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,

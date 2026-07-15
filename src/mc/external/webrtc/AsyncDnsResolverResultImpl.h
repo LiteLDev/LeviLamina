@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class SocketAddress; }
+namespace webrtc { class SocketAddress; }
 // clang-format on
 
 namespace webrtc {
@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk600c9e;
-    ::ll::UntypedStorage<8, 80> mUnk69ac6e;
-    ::ll::UntypedStorage<8, 24> mUnk2b9f20;
+    ::ll::UntypedStorage<8, 80> mUnkbcfc7f;
+    ::ll::UntypedStorage<8, 24> mUnk558874;
     ::ll::UntypedStorage<4, 4>  mUnk997dd5;
     // NOLINTEND
 
@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool GetResolvedAddress(int family, ::rtc::SocketAddress* addr) const /*override*/;
+    virtual bool GetResolvedAddress(int family, ::webrtc::SocketAddress* addr) const /*override*/;
 
     virtual int GetError() const /*override*/;
 
@@ -41,7 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $GetResolvedAddress(int family, ::rtc::SocketAddress* addr) const;
+    MCNAPI bool $GetResolvedAddress(int family, ::webrtc::SocketAddress* addr) const;
 
     MCNAPI int $GetError() const;
 

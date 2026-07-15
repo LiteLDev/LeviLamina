@@ -253,5 +253,8 @@ enum class MinecraftPacketIds : int {
     ClientboundAttributeLayerSyncPacket      = 345,
     ServerStoreInfo                          = 346,
     ServerPresenceInfo                       = 347,
-    EndId                                    = 348,
+    ClientboundUpdateSoundData               = 348,
+    SendPartyDestinationCookie               = 349,
+    PartyDestinationCookieResponse           = 350,
+    EndId                                    = 351,
 };

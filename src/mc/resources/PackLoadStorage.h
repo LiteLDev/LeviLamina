@@ -14,16 +14,4 @@ public:
     PackLoadStorage& operator=(PackLoadStorage const&);
     PackLoadStorage(PackLoadStorage const&);
     PackLoadStorage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PackLoadStorage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

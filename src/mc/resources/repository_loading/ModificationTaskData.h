@@ -18,18 +18,6 @@ public:
     ModificationTaskData& operator=(ModificationTaskData const&);
     ModificationTaskData(ModificationTaskData const&);
     ModificationTaskData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ModificationTaskData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace RepositoryLoading

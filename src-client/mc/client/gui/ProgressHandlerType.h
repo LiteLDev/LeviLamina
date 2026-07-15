@@ -35,5 +35,6 @@ enum class ProgressHandlerType : int {
     SplitScreenAppearance = 29,
     PartyEligibility      = 30,
     WorldTransfer         = 31,
-    Generic               = 32,
+    ExperienceJoin        = 32,
+    Generic               = 33,
 };

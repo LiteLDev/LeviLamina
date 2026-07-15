@@ -16,15 +16,9 @@ class NetheriteArmorEquippedListener : public ::EventListenerDispatcher<::ActorE
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetheriteArmorEquippedListener() /*override*/;
+    virtual ~NetheriteArmorEquippedListener() /*override*/ = default;
 
     virtual ::EventResult onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent) /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

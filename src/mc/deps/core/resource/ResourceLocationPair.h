@@ -20,23 +20,18 @@ public:
 public:
     // prevent constructor by default
     ResourceLocationPair& operator=(ResourceLocationPair const&);
+    ResourceLocationPair();
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ResourceLocationPair();
-
     MCAPI ResourceLocationPair(::ResourceLocationPair&&);
 
     MCAPI ResourceLocationPair(::ResourceLocationPair const&);
 
     MCAPI ResourceLocationPair(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
-
-    MCAPI bool operator<(::ResourceLocationPair const& rhs) const;
-
-    MCAPI bool operator==(::ResourceLocationPair const& rhs) const;
 
     MCAPI ~ResourceLocationPair();
 #endif
@@ -46,8 +41,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ResourceLocationPair&&);
 
     MCAPI void* $ctor(::ResourceLocationPair const&);

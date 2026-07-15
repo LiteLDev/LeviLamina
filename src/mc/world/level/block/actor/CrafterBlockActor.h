@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class CraftingContainer;
@@ -17,7 +16,6 @@ class ILevel;
 class ItemInstance;
 class ItemStack;
 class Level;
-class Recipe;
 class SaveContext;
 // clang-format on
 
@@ -48,15 +46,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CrafterBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string getName() const /*override*/;
 
-    virtual bool canPushInItem(int slot, int item, ::ItemStack const&) const /*override*/;
+    virtual bool canPushInItem(int slot, int, ::ItemStack const& item) const /*override*/;
 
     virtual bool isSlotDisabled(int slot) const /*override*/;
 
@@ -74,36 +68,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CrafterBlockActor(::BlockPos pos);
-
-#ifdef LL_PLAT_C
-    MCAPI ::std::bitset<9> const& getDisabledSlots() const;
-#endif
-
-    MCAPI int getDisabledSlotsCount() const;
-
     MCAPI void onDisabledSlotToggleRequested(::BlockSource& region, int slot, bool shouldDisable);
 
     MCAPI void setToCraftingVisualState(::BlockSource& region);
 
     MCAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
-
-    MCAPI void unsetCraftingVisualState(::BlockSource& region);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::Recipe const*>
-    _getRecipesForCraftingGrid(::Level& level, ::CraftingContainer& craftingContainer);
-
     MCAPI static ::std::vector<::ItemInstance> getCraftableItem(::CraftingContainer& craftingGrid, ::Level& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos pos);
     // NOLINTEND
 
 public:
@@ -111,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $getName() const;
 
-    MCAPI bool $canPushInItem(int slot, int item, ::ItemStack const&) const;
+    MCAPI bool $canPushInItem(int slot, int, ::ItemStack const& item) const;
 
     MCAPI bool $isSlotDisabled(int slot) const;
 
@@ -131,8 +106,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
 
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
     // NOLINTEND
 };

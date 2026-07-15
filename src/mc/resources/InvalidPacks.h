@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ResourceLocation;
-struct InvalidPacksFilterGroup;
 // clang-format on
 
 class InvalidPacks {
@@ -33,24 +32,12 @@ public:
 
     MCNAPI void addInvalidPack(::ResourceLocation const& packLocation, ::PackType type);
 
-    MCNAPI ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
-
-    MCNAPI ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const;
-
     MCNAPI void untrackInvalidPack(::ResourceLocation const& packLocation);
-
-    MCNAPI ~InvalidPacks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::InvalidPacks const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

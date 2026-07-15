@@ -17,36 +17,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::ItemStack const&(::std::string const&, int)>> mGetItemInstance;
     ::ll::TypedStorage<8, 64, ::std::function<void(int, ::std::string const&, int)>>          mAutoPlace;
-    ::ll::TypedStorage<8, 64, ::std::function<uint(::std::string const&)>>                    mGetNameId;
     ::ll::TypedStorage<8, 64, ::std::function<::NodeId(uint, ::ButtonEventType, ::std::string const&, int)>>
                                                        mReceiveEvent;
     ::ll::TypedStorage<8, 64, ::std::function<void()>> mLeave;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>> mCanBeClosedByServer;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenControllerProxyCallbacks& operator=(ContainerScreenControllerProxyCallbacks const&);
-    ContainerScreenControllerProxyCallbacks(ContainerScreenControllerProxyCallbacks const&);
-    ContainerScreenControllerProxyCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContainerScreenControllerProxyCallbacks(::ContainerScreenControllerProxyCallbacks&&);
-
-    MCAPI ~ContainerScreenControllerProxyCallbacks();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerScreenControllerProxyCallbacks&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -35,8 +35,6 @@ public:
     // NOLINTBEGIN
     MCAPI TradeItem(::TradeItem&& item);
 
-    MCAPI ::TradeItem& operator=(::TradeItem&& item);
-
     MCAPI ~TradeItem();
     // NOLINTEND
 

@@ -31,27 +31,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI WebToken(::WebToken&&);
-#endif
-
     MCAPI WebToken(::WebToken const&);
 
-    MCAPI explicit WebToken(::std::string token);
-
-    MCAPI void _parse(::Json::Value& value, ::std::string const& data);
-
-    MCAPI ::std::string _signatureToDER() const;
+    MCAPI explicit WebToken(::std::string_view token);
 
     MCAPI ::std::string getKeyId() const;
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getSignerPublicKey() const;
-
-    MCAPI ::WebToken& operator=(::WebToken&&);
 #endif
-
-    MCAPI ::std::string toString() const;
 
     MCAPI bool verifyWithExternalKey(::std::string const& publicKey) const;
 
@@ -63,8 +51,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string _DERToBinary(::std::string const& derSignature, int outputLength);
-
     MCAPI static ::std::unique_ptr<::WebToken> createFromData(
         ::Json::Value const&                                           dataInfo,
         ::PrivateKeyManager const&                                     manager,
@@ -76,13 +62,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::WebToken&&);
-#endif
-
     MCAPI void* $ctor(::WebToken const&);
 
-    MCAPI void* $ctor(::std::string token);
+    MCAPI void* $ctor(::std::string_view token);
     // NOLINTEND
 
 public:

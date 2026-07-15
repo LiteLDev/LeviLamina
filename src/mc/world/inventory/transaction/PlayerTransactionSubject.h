@@ -36,15 +36,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void setSelectedSlot(int slot, ::ContainerID containerId) /*override*/;
+    virtual void setSelectedSlot(int, ::ContainerID) /*override*/;
 
     virtual bool isAlive() const /*override*/;
 
-    virtual ::ItemStack unwrapItem(::NetworkItemStackDescriptor const& item) const /*override*/;
+    virtual ::ItemStack unwrapItem(::NetworkItemStackDescriptor const&) const /*override*/;
 
     virtual ::ItemStack const& getSelectedItem() const /*override*/;
 
-    virtual void setSelectedItem(::ItemStack const& item) /*override*/;
+    virtual void setSelectedItem(::ItemStack const&) /*override*/;
 
     virtual ::PlayerInventorySlotData getSelectedSlot() const /*override*/;
 
@@ -52,29 +52,23 @@ public:
 
     virtual ::Vec3 getPosition() const /*override*/;
 
-    virtual void setPosition(::Vec3 const& position) /*override*/;
+    virtual void setPosition(::Vec3 const&) /*override*/;
 
     virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback,
-        ::std::function<void()>&&                                                          execute
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&&,
+        ::std::function<void()>&&
     ) /*override*/;
 
-    virtual void addExpectedAction(::InventoryAction const& action) /*override*/;
+    virtual void addExpectedAction(::InventoryAction const&) /*override*/;
 
-    virtual bool baseUseItem(::ItemStack& item) /*override*/;
+    virtual bool baseUseItem(::ItemStack&) /*override*/;
 
-    virtual bool baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection) /*override*/;
+    virtual bool baseUseItemAsAttack(::ItemStack&, ::Vec3 const&) /*override*/;
 
-    virtual ::InteractionResult useItemOn(
-        ::ItemStack&      item,
-        ::BlockPos const& at,
-        uchar             face,
-        ::Vec3 const&     hit,
-        ::Block const*    targetBlock,
-        bool              isFirstEvent
-    ) /*override*/;
+    virtual ::InteractionResult
+    useItemOn(::ItemStack&, ::BlockPos const&, uchar, ::Vec3 const&, ::Block const*, bool) /*override*/;
 
-    virtual void resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const /*override*/;
+    virtual void resendBlocksAroundArea(::BlockPos const&, uchar) const /*override*/;
 
     virtual void resendPlayerState() const /*override*/;
 
@@ -82,15 +76,15 @@ public:
 
     virtual bool isSneaking() const /*override*/;
 
-    virtual ::Block const& unwrapBlock(uint const& block) const /*override*/;
+    virtual ::Block const& unwrapBlock(uint const&) const /*override*/;
 
-    virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
+    virtual ::Block const& getBlock(::BlockPos const&) const /*override*/;
 
-    virtual ::Block const& getExtraBlock(::BlockPos const& pos) const /*override*/;
+    virtual ::Block const& getExtraBlock(::BlockPos const&) const /*override*/;
 
     virtual bool isLastBuildBlockInteractive() const /*override*/;
 
-    virtual void sendBlockInteractedWith(::BlockPos const& pos) /*override*/;
+    virtual void sendBlockInteractedWith(::BlockPos const&) /*override*/;
 
     virtual ::DepenetrationComponent& getDepenetrationComponent() /*override*/;
     // NOLINTEND
@@ -98,70 +92,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSelectedSlot(int slot, ::ContainerID containerId);
 
-    MCAPI bool $isAlive() const;
-
-    MCAPI ::ItemStack $unwrapItem(::NetworkItemStackDescriptor const& item) const;
-
-    MCAPI ::ItemStack const& $getSelectedItem() const;
-
-    MCAPI void $setSelectedItem(::ItemStack const& item);
-
-    MCAPI ::PlayerInventorySlotData $getSelectedSlot() const;
-
-    MCAPI float $getMaxPickRange() const;
-
-    MCAPI ::Vec3 $getPosition() const;
-
-    MCAPI void $setPosition(::Vec3 const& position);
-
-    MCAPI void $createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback,
-        ::std::function<void()>&&                                                          execute
-    );
-
-    MCAPI void $addExpectedAction(::InventoryAction const& action);
-
-    MCAPI bool $baseUseItem(::ItemStack& item);
-
-    MCAPI bool $baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
-
-    MCAPI ::InteractionResult $useItemOn(
-        ::ItemStack&      item,
-        ::BlockPos const& at,
-        uchar             face,
-        ::Vec3 const&     hit,
-        ::Block const*    targetBlock,
-        bool              isFirstEvent
-    );
-
-    MCAPI void $resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const;
-
-    MCAPI void $resendPlayerState() const;
-
-    MCAPI void $sendPlayerInventory() const;
-
-    MCAPI bool $isSneaking() const;
-
-    MCAPI ::Block const& $unwrapBlock(uint const& block) const;
-
-    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
-
-    MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
-
-    MCAPI bool $isLastBuildBlockInteractive() const;
-
-    MCAPI void $sendBlockInteractedWith(::BlockPos const& pos);
-
-    MCAPI ::DepenetrationComponent& $getDepenetrationComponent();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

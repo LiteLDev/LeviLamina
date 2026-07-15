@@ -14,12 +14,8 @@
 class AABB;
 class Actor;
 class ActorRenderData;
-class ActorResourceDefinition;
 class BaseActorRenderContext;
-class BlockTessellator;
-class DataDrivenModel;
 class DataDrivenRenderer_tempComponent;
-class Model;
 class RenderParams;
 class Vec3;
 namespace mce { class TextureGroup; }
@@ -35,101 +31,30 @@ public:
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                                    mDefaultSkin;
     ::ll::TypedStorage<8, 16, ::ExpressionNode> mUpdateBonesAndEffectsIfOffScreen;
     ::ll::TypedStorage<8, 16, ::ExpressionNode> mUpdateEffectsIfOffScreen;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode> mHideHeldItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataDrivenRenderer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void getLeashOffsets(
-        ::Actor& actor,
-        float    legacyOffset,
-        float    output,
-        float,
-        bool,
-        ::Bedrock::small_vector_base<::Vec3>&
-    ) const /*override*/;
+    virtual void getLeashOffsets(::Actor&, float, float, float, bool, ::Bedrock::small_vector_base<::Vec3>&) const
+        /*override*/;
 
-    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) /*override*/;
+    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&) /*override*/;
 
-    virtual void
-    renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) /*override*/;
+    virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&) /*override*/;
 
     virtual ::AABB getRenderBounds(::Actor const& entity) const /*override*/;
 
-    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup) /*override*/;
+    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>) /*override*/;
 
-    virtual void setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const /*override*/;
+    virtual void setIsOnScreen(::Actor&, bool const, float) const /*override*/;
 
-    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
+    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const /*override*/;
 
-    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const /*override*/;
-    // NOLINTEND
+    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams&) const /*override*/;
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DataDrivenRenderer(
-        ::std::shared_ptr<::ActorResourceDefinition> definition,
-        ::std::shared_ptr<::mce::TextureGroup>       textureGroup
-    );
-
-    MCAPI void addAgentAdditionalRendering();
-
-    MCAPI void addBalloonAdditionalRendering();
-
-    MCAPI void addEnderCrystalAdditionalRendering();
-
-    MCAPI void addEnderDragonAdditionalRendering();
-
-    MCAPI void addEnderManAdditionalRendering(::BlockTessellator* blockTesselator);
-
-    MCAPI void addFoxAdditionalRendering();
-
-    MCAPI void addGuardianAdditionalRendering();
-
-    MCAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI void addIronGolemAdditionalRendering(::BlockTessellator* blockTesselator);
-
-    MCAPI void addMinecartAdditionalRendering(::BlockTessellator& commonBlockRenderer);
-
-    MCAPI void addMushroomCowAdditionalRendering(::BlockTessellator& commonBlockRenderer);
-
-    MCAPI void addPandaAdditionalRendering();
-
-    MCAPI void addSnowGolemAdditionalRendering(::BlockTessellator* blockTesselator);
-
-    MCAPI void addVexAdditionalRendering();
-
-    MCAPI void addVillagerAdditionalRendering();
-
-    MCFOLD void addVillagerV2AdditionalRendering();
-
-    MCFOLD void addWanderingTraderAdditionalRendering();
-
-    MCAPI void addWitchAdditionalRendering();
-
-    MCAPI bool armorHidden() const;
-
-    MCAPI bool attachablesEnabled() const;
-
-    MCAPI ::DataDrivenModel& getModel();
-
-    MCAPI ::std::shared_ptr<::DataDrivenModel> getModelShared();
-
-    MCAPI bool isAttachable() const;
-
-    MCAPI void renderModel(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::Model&);
-
-    MCAPI void setupModel(
-        ::ActorRenderData&        actorRenderData,
-        ::BaseActorRenderContext* baseActorRenderContext,
-        float                     actorFrameAlpha
-    );
+    virtual bool shouldHideHeldItems(::RenderParams&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -139,42 +64,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::shared_ptr<::ActorResourceDefinition> definition, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $getLeashOffsets(
-        ::Actor& actor,
-        float    legacyOffset,
-        float    output,
-        float,
-        bool,
-        ::Bedrock::small_vector_base<::Vec3>&
-    ) const;
 
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
-
-    MCAPI void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
-
-    MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
-
-    MCAPI void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI void $setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
-
-    MCAPI bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
-
-    MCAPI bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

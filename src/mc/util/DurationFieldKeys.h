@@ -16,70 +16,9 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk7c5a2d;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DurationFieldKeys& operator=(DurationFieldKeys const&);
     DurationFieldKeys(DurationFieldKeys const&);
     DurationFieldKeys();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    DurationFieldKeys();
-
-#endif
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI DurationFieldKeys(::DurationFieldKeys const&);
-#endif
-
-    MCNAPI DurationFieldKeys(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
-
-    MCNAPI DurationFieldKeys(
-        ::std::string days,
-        ::std::string hours,
-        ::std::string minutes,
-        ::std::string seconds,
-        ::std::string day,
-        ::std::string hour,
-        ::std::string minute,
-        ::std::string second
-    );
-
-#ifdef LL_PLAT_C
-    MCNAPI ::DurationFieldKeys& operator=(::DurationFieldKeys const&);
-#endif
-
-    MCNAPI ~DurationFieldKeys();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::DurationFieldKeys const&);
-#endif
-
-    MCNAPI void* $ctor(::std::string days, ::std::string hours, ::std::string minutes, ::std::string seconds);
-
-    MCNAPI void* $ctor(
-        ::std::string days,
-        ::std::string hours,
-        ::std::string minutes,
-        ::std::string seconds,
-        ::std::string day,
-        ::std::string hour,
-        ::std::string minute,
-        ::std::string second
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

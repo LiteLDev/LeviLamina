@@ -23,25 +23,7 @@ public:
     // clang-format on
 
     // ValidatorRegistry inner types define
-    struct ValidatorRegisterer {
-    public:
-        // prevent constructor by default
-        ValidatorRegisterer();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI explicit ValidatorRegisterer(
-            ::std::function<void(::Bedrock::NonOwnerPointer<::ValidatorRegistry> const&)> registerFunc
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::std::function<void(::Bedrock::NonOwnerPointer<::ValidatorRegistry> const&)> registerFunc);
-        // NOLINTEND
-    };
+    struct ValidatorRegisterer {};
 
     class ValidatorRegistryValidators {
     public:
@@ -53,31 +35,9 @@ public:
 
     public:
         // prevent constructor by default
+        ValidatorRegistryValidators& operator=(ValidatorRegistryValidators const&);
         ValidatorRegistryValidators(ValidatorRegistryValidators const&);
         ValidatorRegistryValidators();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)>
-        getPackInstanceValidatorFunction() const;
-
-        MCNAPI ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
-        getSubpackInfoValidatorFunction() const;
-#endif
-
-        MCNAPI ::ValidatorRegistry::ValidatorRegistryValidators&
-        operator=(::ValidatorRegistry::ValidatorRegistryValidators const&);
-
-        MCNAPI ~ValidatorRegistryValidators();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -86,40 +46,45 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk8ed098;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ValidatorRegistry& operator=(ValidatorRegistry const&);
+    ValidatorRegistry(ValidatorRegistry const&);
+    ValidatorRegistry();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ValidatorRegistry& operator=(ValidatorRegistry const&);
     ValidatorRegistry(ValidatorRegistry const&);
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI ValidatorRegistry();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI static ::Bedrock::NonOwnerPointer<::ValidatorRegistry> _get();
-
-    MCNAPI static bool
-    findValidators(::std::string const& validatorName, ::ValidatorRegistry::ValidatorRegistryValidators& validatorPair);
+#endif
 
     MCNAPI static ::std::unordered_map<::std::string, ::ValidatorRegistry::ValidatorRegistryValidators> const&
     getValidatorMap();
-
-    MCNAPI static void registerValidators(
-        ::std::string_view                                                                                validatorName,
-        ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)> packValidator,
-        ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
-            subpackValidator
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

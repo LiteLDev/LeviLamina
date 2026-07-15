@@ -18,7 +18,7 @@ class StructurePoolBlockPredicateAlwaysTrue : public ::IStructurePoolBlockPredic
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool test(::Block const&, ::IRandom&) const /*override*/;
+    virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
     virtual bool test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const /*override*/;
 
@@ -28,21 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructurePoolBlockPredicateAlwaysTrue();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $test(::Block const&, ::IRandom&) const;
+    MCFOLD bool $test(::Block const& block, ::IRandom& random) const;
 
     MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const;
 

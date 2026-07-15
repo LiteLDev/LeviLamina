@@ -14,18 +14,6 @@ public:
     ::ll::TypedStorage<1, 1, ::AgentComponents::Direction> dir;
     ::ll::TypedStorage<8, 32, ::std::string>               item;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~Till();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace AgentComponents::Actions

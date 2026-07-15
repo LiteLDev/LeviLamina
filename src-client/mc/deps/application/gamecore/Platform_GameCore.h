@@ -6,7 +6,6 @@
 #include "mc/deps/application/CommonPlatform.h"
 #include "mc/deps/core/platform/DisplayOrientation.h"
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
-#include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/ResetCallbackObject.h"
 
@@ -17,9 +16,7 @@ class AppPlatform_GameCore;
 class GameControllerHandler_GameCore;
 class HIDControllerGameCoreDesktop;
 class IMinecraftEventing;
-class IMinecraftGame;
 class PushNotificationMessage;
-class RegistryKey;
 struct XTaskQueueObject;
 namespace Bedrock { class ActivationArguments; }
 // clang-format on
@@ -68,13 +65,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Platform_GameCore();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Platform_GameCore() /*override*/;
+    virtual ~Platform_GameCore() /*override*/ = default;
 
     virtual bool updatePlatformInfo() /*override*/;
 
@@ -102,19 +95,19 @@ public:
 
     virtual void issueDPIChange(float dpi) /*override*/;
 
-    virtual void issueOrientationChange(::DisplayOrientation const& orientation) /*override*/;
+    virtual void issueOrientationChange(::DisplayOrientation const&) /*override*/;
 
     virtual bool _preAppCreation(::Bedrock::ActivationArguments const&) /*override*/;
 
-    virtual void _processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
+    virtual void _processActivationArguments(::Bedrock::ActivationArguments const&) /*override*/;
 
-    virtual bool _postAppCreation(::Bedrock::ActivationArguments const& actArgs) /*override*/;
+    virtual bool _postAppCreation(::Bedrock::ActivationArguments const&) /*override*/;
 
-    virtual bool _update(bool canRender) /*override*/;
+    virtual bool _update(bool) /*override*/;
 
-    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const& msg) /*override*/;
+    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const&) /*override*/;
 
-    virtual void notifyUriListeners_Shim(::ActivationUri const& uri) /*override*/;
+    virtual void notifyUriListeners_Shim(::ActivationUri const&) /*override*/;
 
     virtual ::std::string getDeviceId_Shim() const /*override*/;
 
@@ -126,112 +119,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    Platform_GameCore(::HWND__* hwnd, ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
-
-    MCAPI bool _checkResetGame();
-
-    MCAPI ::Bedrock::Result<void> _onScreenKeyboardHeightHandler();
-
-    MCAPI bool closeAppRequest();
-
-    MCAPI void displayMigrationFailureScreen();
-
-    MCAPI ::std::optional<::std::string> extractProtocolActivationURI();
-
-    MCAPI void performCriticalChecksTerminateOnFailure();
-
-    MCAPI void rapidShutdown();
-
-    MCAPI void setRemoteSession(bool value);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::RegistryKey getAppRegistryKey();
-
-    MCAPI static void onProtocolActivation(void* context, char const* uri);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& sAppName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HWND__* hwnd, ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $updatePlatformInfo();
 
-    MCAPI bool $updatePlatformGraphicsInfo();
-
-    MCAPI void $issueShutdown();
-
-    MCAPI void $issueBack();
-
-    MCFOLD void $issueLowMemory();
-
-    MCAPI void $issueFocusLost();
-
-    MCAPI void $issueFocusGained();
-
-    MCFOLD void $issueInputPaneVisible();
-
-    MCFOLD void $issueInputPaneHidden();
-
-    MCFOLD void $issueSuspendWarning();
-
-    MCAPI void $issueVisibilityChange(bool visible);
-
-    MCAPI void $issueWindowSizeChange(int width, int height);
-
-    MCAPI void $issueDPIChange(float dpi);
-
-    MCAPI void $issueOrientationChange(::DisplayOrientation const& orientation);
-
-    MCAPI bool $_preAppCreation(::Bedrock::ActivationArguments const&);
-
-    MCAPI void $_processActivationArguments(::Bedrock::ActivationArguments const& args);
-
-    MCAPI bool $_postAppCreation(::Bedrock::ActivationArguments const& actArgs);
-
-    MCAPI bool $_update(bool canRender);
-
-    MCAPI void $pushNotificationReceived_Shim(::PushNotificationMessage const& msg);
-
-    MCAPI void $notifyUriListeners_Shim(::ActivationUri const& uri);
-
-    MCAPI ::std::string $getDeviceId_Shim() const;
-
-    MCFOLD bool $_isShuttingDown();
-
-    MCFOLD bool $_isShutdown();
-
-    MCFOLD void $resetCallback();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForResetCallbackObject();
-
-    MCNAPI static void** $vftableForCommonPlatform();
     // NOLINTEND
 };
 

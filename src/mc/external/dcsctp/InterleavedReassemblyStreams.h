@@ -6,6 +6,7 @@
 #include "mc/external/dcsctp/AnyForwardTsnChunk.h"
 #include "mc/external/dcsctp/ReassemblyStreams.h"
 #include "mc/external/dcsctp/UnwrappedSequenceNumber.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -74,7 +75,12 @@ public:
                 ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>,
                 ::std::pair<
                     ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
-                    ::dcsctp::Data>> const& tsn_chunks
+                    ::dcsctp::Data>>& tsn_chunks
+        );
+
+        MCNAPI uint64 AssembleMessage(
+            ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn,
+            ::dcsctp::Data                                                                   data
         );
 
         MCNAPI Stream(
@@ -104,7 +110,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka7495b;
-    ::ll::UntypedStorage<8, 64> mUnkebca0f;
+    ::ll::UntypedStorage<8, 64> mUnkd9a7ba;
     ::ll::UntypedStorage<8, 16> mUnkcdeed5;
     // NOLINTEND
 
@@ -122,12 +128,13 @@ public:
         ::dcsctp::Data                                                                   data) /*override*/;
 
     virtual uint64 HandleForwardTsn(
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn,
-        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>              skipped_streams
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
+        ::webrtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const, 18446744073709546905> skipped_streams
     ) /*override*/;
 
-    virtual void
-    ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids) /*override*/;
+    virtual void ResetStreams(
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905> stream_ids
+    ) /*override*/;
 
     virtual ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const /*override*/;
 
@@ -147,7 +154,9 @@ public:
     MCNAPI InterleavedReassemblyStreams(
         ::std::string_view log_prefix,
         ::std::function<void(
-            ::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>,
+            ::webrtc::ArrayView<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                18446744073709546905>,
             ::dcsctp::DcSctpMessage
         )>                 on_assembled_message
     );
@@ -159,7 +168,9 @@ public:
     MCNAPI void* $ctor(
         ::std::string_view log_prefix,
         ::std::function<void(
-            ::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>,
+            ::webrtc::ArrayView<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                18446744073709546905>,
             ::dcsctp::DcSctpMessage
         )>                 on_assembled_message
     );
@@ -172,11 +183,13 @@ public:
     $Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
 
     MCNAPI uint64 $HandleForwardTsn(
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn,
-        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>              skipped_streams
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
+        ::webrtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const, 18446744073709546905> skipped_streams
     );
 
-    MCNAPI void $ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids);
+    MCNAPI void $ResetStreams(
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905> stream_ids
+    );
 
     MCNAPI ::dcsctp::HandoverReadinessStatus $GetHandoverReadiness() const;
 

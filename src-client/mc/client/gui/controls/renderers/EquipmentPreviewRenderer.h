@@ -10,14 +10,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class BlockSource;
 class IClientInstance;
 class MinecraftUIRenderContext;
-class MultiPlayerLevel;
 class UIControl;
 class UICustomRenderer;
-class UIPropertyBag;
 class UIResolvedDef;
 class UIScene;
 // clang-format on
@@ -45,21 +41,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ItemProperties();
-
-        MCAPI explicit ItemProperties(::UIPropertyBag const& propertyBag);
-
-        MCAPI bool operator==(::EquipmentPreviewRenderer::ItemProperties const& rhs) const;
-
         MCAPI ~ItemProperties();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-
-        MCAPI void* $ctor(::UIPropertyBag const& propertyBag);
         // NOLINTEND
 
     public:
@@ -85,7 +67,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EquipmentPreviewRenderer() /*override*/;
+    virtual ~EquipmentPreviewRenderer() /*override*/ = default;
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const /*override*/;
 
@@ -99,26 +81,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EquipmentPreviewRenderer(::UIResolvedDef const& definition);
-
-    MCAPI explicit EquipmentPreviewRenderer(::Vec2 const& rotation);
-
-    MCAPI ::Actor* _getOrCreateDisplayArmorStand(::MultiPlayerLevel& level, ::BlockSource& region);
-
-    MCAPI void _removeDisplayArmorStand();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UIResolvedDef const& definition);
-
-    MCAPI void* $ctor(::Vec2 const& rotation);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class Vec2;
 class Vec3;
-namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -37,53 +35,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Scripting::Result_deprecated<void>
-    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const /*override*/;
+    virtual ::Scripting::Result_deprecated<void> validate(::AABB const&, ::Vec3 const&, ::Vec3 const&) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-
-    MCNAPI static ::Scripting::Result_deprecated<void> validateGridCountValues(::Vec2 const& gridCount);
-
-    MCNAPI static ::Scripting::Result_deprecated<void> validateGridSizeValues(::Vec2 const& gridSize);
-
-    MCNAPI static ::Scripting::Result_deprecated<void> validateNormalizedOriginValues(::Vec2 const& normalizedOrigin);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_COLOR();
-
-    MCNAPI static ::Vec2 const& MAX_GRID_COUNT();
-
-    MCNAPI static ::Vec2 const& MAX_GRID_SIZE();
-
-    MCNAPI static ::Vec2 const& MAX_NORMALIZED_ORIGIN();
-
-    MCNAPI static ::Vec2 const& MIN_GRID_COUNT();
-
-    MCNAPI static ::Vec2 const& MIN_GRID_SIZE();
-
-    MCNAPI static ::Vec2 const& MIN_NORMALIZED_ORIGIN();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

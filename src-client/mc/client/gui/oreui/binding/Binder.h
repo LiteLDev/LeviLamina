@@ -19,25 +19,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Binder();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Binder(::cohtml::View* view);
-
-    MCAPI void destroyObject(::OreUI::Detail::IPropertyObject* object) const;
-
     MCAPI void triggerCreated(::OreUI::Detail::IdType id, ::OreUI::Detail::IPropertyObject const& object) const;
 
     MCAPI void triggerUpdated(::OreUI::Detail::IdType id, ::OreUI::Detail::IPropertyObject const& object) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::cohtml::View* view);
     // NOLINTEND
 };
 

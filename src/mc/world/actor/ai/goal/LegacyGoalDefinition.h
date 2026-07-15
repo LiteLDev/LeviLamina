@@ -27,7 +27,6 @@ struct DrinkPotionData;
 struct MobDescriptor;
 struct SendEventData;
 struct SummonSpellData;
-namespace Json { class Value; }
 // clang-format on
 
 struct LegacyGoalDefinition {
@@ -78,8 +77,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                   mContinueIfLeashed;
     ::ll::TypedStorage<4, 4, float>                                  mMinAngleOfViewY;
     ::ll::TypedStorage<4, 4, float>                                  mMaxAngleOfViewY;
-    ::ll::TypedStorage<4, 4, int>                                    mMinLookAroundTime;
-    ::ll::TypedStorage<4, 4, int>                                    mMaxLookAroundTime;
     ::ll::TypedStorage<4, 4, int>                                    mMinLookCount;
     ::ll::TypedStorage<4, 4, int>                                    mMaxLookCount;
     ::ll::TypedStorage<4, 4, int>                                    mRandomLookAroundCooldown;
@@ -272,6 +269,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyGoalDefinition& operator=(LegacyGoalDefinition const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI LegacyGoalDefinition();
@@ -279,10 +280,6 @@ public:
     MCAPI LegacyGoalDefinition(::LegacyGoalDefinition&&);
 
     MCAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
-
-    MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition&&);
-
-    MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
 
     MCAPI bool parse(::ConstDeserializeDataParams const& deserializeDataParams, int priority);
 
@@ -292,20 +289,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _controlFlagsFromArr(::Json::Value const& flags);
-
-    MCAPI static ::POIType _getPOITypeFromString(::std::string poiStr);
-
-    MCAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause>
-    _getPanicGoalDamageSources(::ConstDeserializeDataParams const& deserializeDataParams);
-
     MCAPI static ::std::unique_ptr<::BaseGoal> createGoal(::Mob& mob, ::LegacyGoalDefinition const& def);
 
     MCAPI static bool goalExists(::std::string const& name);
-
-    MCFOLD static void init();
-
-    MCAPI static void shutdown();
     // NOLINTEND
 
 public:

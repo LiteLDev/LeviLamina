@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -24,10 +23,14 @@ public:
     ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                   mRotationDragCoefficientExpr;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ParticleMotionDynamicComponent& operator=(ParticleMotionDynamicComponent const&);
+    ParticleMotionDynamicComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,17 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleMotionDynamicComponent();
-
+#ifdef LL_PLAT_C
     MCAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
 
     MCAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
@@ -59,17 +56,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::HashedString const& $getIdentifier() const;
+#endif
 
 
     // NOLINTEND

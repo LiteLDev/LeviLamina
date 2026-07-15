@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Random;
 namespace Json { class Value; }
 // clang-format on
 
@@ -25,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI float getValue(::Random& random) const;
-
     MCNAPI bool parseJson(::Json::Value const& node, float minDefault, float maxDefault);
     // NOLINTEND
 };

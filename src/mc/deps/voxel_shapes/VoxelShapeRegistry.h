@@ -35,25 +35,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::VoxelShapes::RegistryHandle _insertOrFindDuplicate(::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
 
-    MCNAPI ::VoxelShapes::RegistryHandle addShape(::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
-
-    MCNAPI ::VoxelShapes::RegistryHandle
-    addShapeForIdentifier(::HashedString const& name, ::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
-
-    MCNAPI uint64 getCustomShapeCount() const;
-
-    MCNAPI ::VoxelShapes::RegistryHandle getEmptyShapeHandle() const;
-
     MCNAPI ::VoxelShapes::RegistryHandle getHandleByName(::HashedString const& name) const;
 
-    MCNAPI ::std::unordered_map<::HashedString, ::VoxelShapes::RegistryHandle> const&
-    getNameMapForSerialization() const;
-
-    MCNAPI ::VoxelShapes::VoxelShape const* getShapeByHandle(::VoxelShapes::RegistryHandle registryHandle) const;
-
-    MCNAPI ::std::vector<::VoxelShapes::VoxelShape> const& getShapesForSerialization() const;
-
-    MCNAPI ::VoxelShapes::RegistryHandle getUnitCubeHandle() const;
+    MCNAPI bool hasName(::HashedString const& name) const;
 
     MCNAPI void initialize();
 
@@ -64,8 +48,6 @@ public:
         ushort                                                                     customShapeCount
     );
 #endif
-
-    MCNAPI bool isInitialized() const;
     // NOLINTEND
 
 public:
@@ -77,8 +59,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HashedString const& EMPTY_ID();
-
     MCNAPI static ::HashedString const& UNIT_CUBE_ID();
     // NOLINTEND
 };

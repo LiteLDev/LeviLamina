@@ -11,6 +11,7 @@ class Biome;
 class BlockPos;
 class BlockVolume;
 class HeightmapWrapper;
+class LevelSeed64;
 class PerlinSimplexNoise;
 class Random;
 class SurfaceBuilderData;
@@ -105,7 +106,7 @@ public:
     // NOLINTBEGIN
     virtual ~ISurfaceBuilder() = default;
 
-    virtual void initBuilder(uint levelSeed) = 0;
+    virtual void initBuilder(::LevelSeed64 levelSeed) = 0;
 
     virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const = 0;
 

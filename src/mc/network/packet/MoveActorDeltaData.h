@@ -40,12 +40,4 @@ public:
     ::ll::TypedStorage<1, 1, schar>                        mRotYHead;
     ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData>     mPreviousData;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::MoveActorAbsoluteData parseDeltas(::MoveActorAbsoluteData const& previousAbsoluteMoveData) const;
-#endif
-    // NOLINTEND
 };

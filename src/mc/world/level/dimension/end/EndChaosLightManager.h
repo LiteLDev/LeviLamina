@@ -30,14 +30,4 @@ public:
     EndChaosLightManager& operator=(EndChaosLightManager const&);
     EndChaosLightManager(EndChaosLightManager const&);
     EndChaosLightManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI float _calculateIntensityAtTime() const;
-#endif
-
-    MCAPI void tick();
-    // NOLINTEND
 };

@@ -18,7 +18,6 @@
 // clang-format off
 class Actor;
 class ActorAnimationControllerInfo;
-class ActorAnimationControllerPlayer;
 class ActorAnimationControllerStatePlayer;
 class ActorAnimationPlayer;
 class ActorSkeletalAnimationPtr;
@@ -30,6 +29,7 @@ class Matrix;
 class ModelPartLocator;
 struct AnimationComponentArguments;
 struct ApplyAnimationCache;
+namespace Util { struct HashStringHashGreater; }
 class ActorRenderData;
 class ClientAnimationComponent;
 // clang-format on
@@ -71,9 +71,9 @@ public:
                                                                                         mOwnedAnimationControllers;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ModelPartLocator>> mModelPartLocators;
 #ifdef LL_PLAT_S
-    ::ll::TypedStorage<8, 496, ::RenderParams> mRenderParams;
+    ::ll::TypedStorage<8, 504, ::RenderParams> mRenderParams;
 #else // LL_PLAT_C
-    ::ll::TypedStorage<8, 512, ::RenderParams> mRenderParams;
+    ::ll::TypedStorage<8, 520, ::RenderParams> mRenderParams;
 #endif
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorAnimationPlayer>>      mPlaySingleAnimation;
     ::ll::TypedStorage<8, 8, void*>                                           mModelRenderControllerCacheWasBuiltFrom;
@@ -93,20 +93,33 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mNeedToUpdateQueryableBoneOrientations;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     AnimationComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~AnimationComponent() = default;
+#else // LL_PLAT_C
     virtual ~AnimationComponent();
+#endif
 
     virtual ::ClientAnimationComponent* tryGetClient();
 
+#ifdef LL_PLAT_S
+    virtual void visitApplyContext(
+        ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)>
+    ) const;
+#else // LL_PLAT_C
     virtual void visitApplyContext(
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
+#endif
 
 #ifdef LL_PLAT_S
     virtual void initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
@@ -121,35 +134,35 @@ public:
 
     virtual void updateQueryableGeometryBoneOrientations();
 
+#ifdef LL_PLAT_S
+    virtual ::Matrix const* getQueryableBoneOrientation(uint64) const;
+#else // LL_PLAT_C
     virtual ::Matrix const* getQueryableBoneOrientation(uint64 boneNameHash) const;
+#endif
 
     virtual ::gsl::span<::SkeletalHierarchyIndex const> getSkeletalHierarchiesToProcess() const;
 
+#ifdef LL_PLAT_S
+    virtual float _getActorRenderDeltaTime(::ActorRenderData const&) const;
+#else // LL_PLAT_C
     virtual float _getActorRenderDeltaTime(::ActorRenderData const& data) const;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AnimationComponent(::AnimationComponentArguments&& args);
-
 #ifdef LL_PLAT_C
-    MCAPI void _addAnimationToStatePlayer(
-        ::HashedString const&                                    friendlyName,
-        ::std::shared_ptr<::ActorAnimationControllerStatePlayer> player
-    );
+    MCAPI explicit AnimationComponent(::AnimationComponentArguments&& args);
 #endif
 
     MCAPI ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
 
-#ifdef LL_PLAT_C
-    MCAPI void applyAnimations(bool setDefaultPose);
-#endif
-
     MCAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
-        ::HashedString const&                                    friendlyName,
-        ::ExpressionNode const&                                  blendExpression,
-        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
+        ::HashedString const&                                      friendlyName,
+        ::ExpressionNode const&                                    blendExpression,
+        ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
     );
 
 #ifdef LL_PLAT_C
@@ -162,51 +175,12 @@ public:
         ::std::string const&  runtimeController
     );
 
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
-
-    MCAPI void forceNextUpdateToApplyAnimations();
-#endif
-
-    MCFOLD ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& getAllBoneOrientations();
-
-#ifdef LL_PLAT_C
-    MCAPI ::AnimationComponentGroupType getAnimationComponentType() const;
-
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerPlayer>
-    getAnimationControllerPlayer(::HashedString const& destControllerName, bool createIfMissing);
-#endif
-
-    MCAPI ::std::vector<::BoneOrientation>*
-    getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::vector<::AnimationComponent::ChildAnimationComponentInfo>& getChildAnimationComponents();
-
-    MCAPI ::std::weak_ptr<::CommonResourceDefinitionMap> getCommonResourceDefinitionMap();
-#endif
-
-    MCFOLD ::std::shared_ptr<::ActorAnimationControllerStatePlayer> const
-    getCurrentAnimationControllerStatePlayer() const;
-
-#ifdef LL_PLAT_C
     MCAPI ::ModelPartLocator* getLocator(::HashedString const& locatorNameHash);
-#endif
-
-    MCAPI ::ModelPartLocator* getLocator(uint64 const& locatorNameHash);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::std::unordered_map<::HashedString, ::ModelPartLocator>& getLocators();
 
     MCAPI float getRegisteredAnimationLength(::std::string const& friendlyName) const;
-#endif
-
-    MCFOLD ::RenderParams& getRenderParams();
-
-#ifdef LL_PLAT_C
-    MCAPI bool haveInitializedScriptsRun() const;
-#endif
 
     MCAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
+#endif
 
     MCAPI void initializeServerAnimationComponent(
         ::Actor&                                         actor,
@@ -216,11 +190,7 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI bool isAnimationRegistered(::HashedString const& friendlyName) const;
-#endif
 
-    MCAPI bool isInitialized() const;
-
-#ifdef LL_PLAT_C
     MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> playAnimation(
         ::HashedString const& friendlyName,
         ::HashedString const& owningStateName,
@@ -232,23 +202,11 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI void setInitializedScriptsRun(bool);
-#endif
-
-    MCAPI void setLastReloadInitTimeStampClient(uint64 lastReloadInitTimeStamp);
-
-#ifdef LL_PLAT_C
-    MCAPI void setShouldApplyAnimations(bool shouldAnimate);
 
     MCAPI void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);
-#endif
 
-    MCAPI bool shouldReloadBasedOnLastReloadInitTimeStamp() const;
-
-#ifdef LL_PLAT_C
     MCAPI bool tryRegisterAnimation(::HashedString const& friendlyName, ::ActorSkeletalAnimationPtr animation);
 #endif
-
-    MCAPI bool usesLastReloadInitTimeStampClient() const;
     // NOLINTEND
 
 public:
@@ -257,25 +215,11 @@ public:
 #ifdef LL_PLAT_C
     MCAPI static ::ApplyAnimationCache createBase(::Actor const* actor);
 #endif
-
-    MCAPI static uint64 getReloadTimeStampClient();
-
-#ifdef LL_PLAT_C
-    MCAPI static void incrementCurrentClientFrameIndex();
-#endif
-
-    MCAPI static void incrementCurrentServerFrameIndex();
-
-#ifdef LL_PLAT_C
-    MCAPI static uint64 incrementReloadTimeStampClient();
-#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const* const& DEFAULT_RUNTIME_CONTROLLER();
-
     MCAPI static ::std::atomic<int64>& mClientFrameIndex();
 
     MCAPI static ::std::atomic<int64>& mReloadTimeStampClient();
@@ -286,7 +230,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::AnimationComponentArguments&& args);
+#endif
     // NOLINTEND
 
 public:
@@ -298,13 +244,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCFOLD ::ClientAnimationComponent* $tryGetClient();
 
     MCAPI void $visitApplyContext(
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
 
-    MCFOLD void $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
+    MCFOLD void
+    $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
 
     MCFOLD void $ensureClientAnimationComponentIsInitialized();
 
@@ -317,6 +265,7 @@ public:
     MCFOLD ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
 
     MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const& data) const;
+#endif
 
 
     // NOLINTEND

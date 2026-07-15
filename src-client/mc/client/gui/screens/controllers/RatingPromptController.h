@@ -26,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RatingPromptController() /*override*/;
+    virtual ~RatingPromptController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -38,8 +38,6 @@ public:
         ::std::string const&                      image,
         ::std::string const&                      buttonName
     );
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -51,19 +49,5 @@ public:
         ::std::string const&                      image,
         ::std::string const&                      buttonName
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

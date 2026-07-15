@@ -14,8 +14,6 @@ class SitComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _sitEvent(::Actor& actor, bool sit);
-
     MCAPI ::InteractionResult getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

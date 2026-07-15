@@ -13,24 +13,28 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk7f5f40;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ResourceMetadata& operator=(ResourceMetadata const&);
+    ResourceMetadata();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ResourceMetadata();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ResourceMetadata(::ResourceMetadata const&);
 
+#ifdef LL_PLAT_C
     MCNAPI ::ResourceMetadata& operator=(::ResourceMetadata const&);
+#endif
 
     MCNAPI ~ResourceMetadata();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static char const*& PRODUCT_TYPE_ADD_ON();
     // NOLINTEND
 
 public:

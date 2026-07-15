@@ -21,14 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setRegenDuration(int const& duration);
-
-    MCAPI void setRegenDurationWithInfiniteString(::std::string const& duration);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

@@ -2,15 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 namespace Json { class Value; }
-namespace Social::Events { class CompoundMeasurement; }
-namespace Social::Events { class Measurement; }
 namespace Social::Events { class Property; }
 // clang-format on
 
@@ -46,86 +40,51 @@ public:
 public:
     // prevent constructor by default
     Event& operator=(Event const&);
+    Event(Event const&);
     Event();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Event(::Social::Events::Event const&);
-
+#ifdef LL_PLAT_C
     MCNAPI Event(
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
         int                                                               eventTags
     );
-
-    MCNAPI Event(
-        uint                                                              id,
-        ::std::string const&                                              eventName,
-        ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&                  appPlatform,
-        int                                                               eventTags
-    );
-
-    MCNAPI void _addOrUpdateCompoundMeasurement(
-        ::std::string const&                    dynamicColumnName,
-        ::Social::Events::CompoundMeasurement&& compoundMeasurement
-    );
-
-    MCNAPI bool _areAllPropertiesEqual(::Social::Events::Event const& other) const;
-
-    MCNAPI bool _areUniquePropertiesEqual(::Social::Events::Event const& other) const;
-
-    MCNAPI void addMeasurement(::Social::Events::Measurement const& measurement);
+#endif
 
     MCNAPI void addProperty(::Social::Events::Property const& property, bool isUniqueProperty);
 
-    MCNAPI ::std::optional<::std::reference_wrapper<::Social::Events::Property const>>
-    getProperty(::std::string const& propertyName) const;
-
 #ifdef LL_PLAT_C
-    MCNAPI uint getUserId() const;
-
     MCNAPI ::Json::Value measurementsAsJsonValue() const;
 
-    MCNAPI bool passesFilter(int tagsToExclude) const;
-
     MCNAPI ::Json::Value propertiesAsJsonValue() const;
-#endif
-
-    MCNAPI void updateCompoundMeasurements(::Social::Events::Event const& event);
-
-    MCNAPI void updateMeasurements(::Social::Events::Event const& other);
 
     MCNAPI ~Event();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Social::Events::Event const&);
-
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor(
         uint                                                              id,
         ::std::string const&                                              eventName,
         ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
         int                                                               eventTags
     );
-
-    MCNAPI void* $ctor(
-        uint                                                              id,
-        ::std::string const&                                              eventName,
-        ::std::unordered_map<::std::string, ::Social::Events::Property>&& commonProperties,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&                  appPlatform,
-        int                                                               eventTags
-    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

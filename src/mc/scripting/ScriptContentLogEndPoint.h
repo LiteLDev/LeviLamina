@@ -7,11 +7,6 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 
-// auto generated forward declare list
-// clang-format off
-class ScriptDebugger;
-// clang-format on
-
 class ScriptContentLogEndPoint : public ::ContentLogEndPoint {
 public:
     // member variables
@@ -31,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptContentLogEndPoint() /*override*/;
 
-    virtual void log(::LogArea const logLevel, ::LogLevel const message, char const*) /*override*/;
+    virtual void log(::LogArea const, ::LogLevel const logLevel, char const* message) /*override*/;
 
     virtual bool logOnlyOnce() const /*override*/;
 
@@ -43,18 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptContentLogEndPoint(::ScriptDebugger& debugger);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDebugger& debugger);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
@@ -63,7 +46,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $log(::LogArea const logLevel, ::LogLevel const message, char const*);
+    MCNAPI void $log(::LogArea const, ::LogLevel const logLevel, char const* message);
 
     MCNAPI bool $logOnlyOnce() const;
 
@@ -74,13 +57,5 @@ public:
     MCNAPI bool $isEnabled() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForLogEndPoint();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

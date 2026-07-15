@@ -9,7 +9,6 @@
 // clang-format off
 class AmbientSoundServerComponent;
 class EntityContext;
-struct DynamicAmbientSound;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -32,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addDynamic(::DynamicAmbientSound const& definition);
-
     MCAPI void initialize(::EntityContext& entity, ::AmbientSoundServerComponent& component) const;
     // NOLINTEND
 

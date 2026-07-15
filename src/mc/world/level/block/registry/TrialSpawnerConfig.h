@@ -27,15 +27,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TrialSpawnerConfig(TrialSpawnerConfig const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI TrialSpawnerConfig();
 
-    MCAPI TrialSpawnerConfig(::TrialSpawnerConfig const&);
-
     MCAPI ::std::unique_ptr<::CompoundTag> asInlineConfig() const;
-
-    MCAPI bool hasRegistryKey() const;
 
     MCAPI void loadConfig(::CompoundTag const* data);
 
@@ -48,8 +48,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::TrialSpawnerConfig const&);
     // NOLINTEND
 
 public:

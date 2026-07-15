@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class IceTransportInternal; }
+namespace webrtc { class IceTransportInternal; }
 // clang-format on
 
 namespace webrtc {
@@ -16,7 +16,7 @@ class IceTransportInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cricket::IceTransportInternal* internal() = 0;
+    virtual ::webrtc::IceTransportInternal* internal() = 0;
 
     virtual ~IceTransportInterface() /*override*/;
     // NOLINTEND

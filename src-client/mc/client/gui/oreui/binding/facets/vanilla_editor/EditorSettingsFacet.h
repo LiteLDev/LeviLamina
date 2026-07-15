@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/common/editor/ThemeSettingsColorKey.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -12,16 +11,12 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace Editor::Services { class EditorPersistenceServiceProvider; }
-namespace Editor::Services { class EditorSettingsServiceProvider; }
 namespace Editor::Settings { struct ThemePalette; }
-namespace Editor::Settings { struct ThemeProps; }
-namespace mce { class Color; }
 // clang-format on
 
 namespace OreUI {
 
-class EditorSettingsFacet : public ::OreUI::FacetBase<::OreUI::EditorSettingsFacet> {
+class EditorSettingsFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::EditorSettingsFacet> {
 public:
     // EditorSettingsFacet inner types define
     enum class EditorOperatorType : int {
@@ -60,7 +55,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EditorSettingsFacet() /*override*/;
+    virtual ~EditorSettingsFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -69,64 +64,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorSettingsFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-
-    MCAPI ::Editor::Services::EditorPersistenceServiceProvider* _getEditorPersistenceProvider();
-
-    MCAPI ::Editor::Services::EditorSettingsServiceProvider* _getEditorSettingsProvider();
-
-    MCAPI void _handleCurrentThemeChanged(::std::string const& newThemeId);
-
-    MCAPI void _handleNewThemeCreated(::std::string const& newThemeId);
-
-    MCAPI void _handleThemeColorUpdated(
-        ::std::string const&                      themeId,
-        ::Editor::Settings::ThemeSettingsColorKey key,
-        ::mce::Color const&                       color
-    );
-
-    MCAPI void _handleThemeDeleted(::std::string const& newThemeId);
-
-    MCAPI void _handleThemeSettingsChanged(::Editor::Settings::ThemeProps const& themeProp);
-
-    MCAPI void _loadSettings();
-
-    MCAPI void _saveSettings();
-
-    MCAPI void addNewTheme(
-        ::std::string&                  themeId,
-        ::std::optional<::std::string>& name,
-        ::std::optional<::std::string>& sourceThemeId
-    );
-
-    MCAPI void deleteTheme(::std::string& id);
-
-    MCFOLD ::std::string const& getCurrentThemeId() const;
-
-    MCFOLD int getFontZoom() const;
-
-    MCAPI ::std::string getKey(::std::string const& key) const;
-
-    MCFOLD ::OreUI::EditorSettingsFacet::EditorOperatorType getSelectedOperator() const;
-
-    MCFOLD ::std::string const& getSelectedTool() const;
-
-    MCFOLD ::std::unordered_map<::HashedString, ::Editor::Settings::ThemePalette> const& getThemesMap() const;
-
-    MCAPI bool hasKey(::std::string const& key) const;
-
-    MCAPI void setCurrentThemeId(::std::string const& themeId);
-
-    MCAPI void setFontZoom(int fontZoom);
-
-    MCAPI void setKey(::std::string const& key, ::std::string const& value);
-
-    MCAPI void setKeys(::std::unordered_map<::std::string, ::std::string> const& entries);
-
-    MCAPI void setSelectedOperator(::OreUI::EditorSettingsFacet::EditorOperatorType operatorType);
-
-    MCAPI void setSelectedTool(::std::string const& toolId);
-
-    MCAPI void updateThemeColor(::std::string& id, ::std::string& key, ::mce::Color newColor);
     // NOLINTEND
 
 public:
@@ -142,21 +79,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

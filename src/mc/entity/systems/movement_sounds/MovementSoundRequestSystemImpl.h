@@ -3,11 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
-#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
@@ -25,12 +22,10 @@ struct ActorUniqueIDComponent;
 struct ClimbingLadderBlockComponent;
 struct CurrentlyStandingOnBlockComponent;
 struct DimensionTypeComponent;
-struct MakesLavaStepSoundComponent;
 struct MovementSoundComponent;
 struct ShouldPlayMovementSoundComponent;
 struct ShouldPlayStepSoundComponent;
 struct SoundEventPlayerComponent;
-struct SoundEventRequestQueueComponent;
 struct StateVectorComponent;
 // clang-format on
 
@@ -71,7 +66,7 @@ public:
             ::AddRemove<::ShouldPlayStepSoundComponent>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
+            ::EntityFactoryT<>>&
     ) /*override*/;
 
     virtual void singleTick(
@@ -91,88 +86,14 @@ public:
             ::AddRemove<::ShouldPlayStepSoundComponent>,
             ::GlobalRead<>,
             ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context,
-        ::StrictEntityContext&   entityContext
+            ::EntityFactoryT<>>&,
+        ::StrictEntityContext&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void doMovementSoundRequestSystem(
-        ::StrictEntityContext const&                                      entity,
-        ::ActorDataFlagComponent const&                                   actorFlags,
-        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
-        ::ActorUniqueIDComponent const&                                   actorUniqueID,
-        ::DimensionTypeComponent const&                                   dimensionType,
-        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
-        ::StateVectorComponent const&                                     stateVectorComponent,
-        ::MovementSoundComponent const&                                   movementSoundComponent,
-        ::Optional<::ClimbingLadderBlockComponent const>                  climbingLadderBlockComponent,
-        ::Optional<::CurrentlyStandingOnBlockComponent const>             currentlyStandingOnBlockComponent,
-        ::Optional<::MakesLavaStepSoundComponent const>                   makesLavaStepSoundComponent,
-        ::EntityModifier<::ShouldPlayStepSoundComponent>                  entityModifier,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView
-    );
-
-    MCAPI static void prepareForStepSound(
-        ::StrictEntityContext const&                          entity,
-        ::MovementSoundComponent const&                       movementSoundComponent,
-        ::Optional<::CurrentlyStandingOnBlockComponent const> currentlyStandingOnBlockComponent,
-        ::EntityModifier<::ShouldPlayStepSoundComponent>&     entityModifier
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::ShouldPlayMovementSoundComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDefinitionIdentifierComponent,
-                ::ActorUniqueIDComponent,
-                ::DimensionTypeComponent,
-                ::SoundEventPlayerComponent,
-                ::StateVectorComponent,
-                ::MovementSoundComponent,
-                ::ClimbingLadderBlockComponent,
-                ::CurrentlyStandingOnBlockComponent>,
-            ::Write<>,
-            ::AddRemove<::ShouldPlayStepSoundComponent>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
 
-    MCAPI void $singleTick(
-        ::StrictExecutionContext<
-            ::Filter<::ShouldPlayMovementSoundComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDefinitionIdentifierComponent,
-                ::ActorUniqueIDComponent,
-                ::DimensionTypeComponent,
-                ::SoundEventPlayerComponent,
-                ::StateVectorComponent,
-                ::MovementSoundComponent,
-                ::ClimbingLadderBlockComponent,
-                ::CurrentlyStandingOnBlockComponent>,
-            ::Write<>,
-            ::AddRemove<::ShouldPlayStepSoundComponent>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context,
-        ::StrictEntityContext&   entityContext
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

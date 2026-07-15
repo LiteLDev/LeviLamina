@@ -6,8 +6,6 @@
 // clang-format off
 class BehaviorDefinition;
 class BehaviorNode;
-class BehaviorTreeDefinitionPtr;
-namespace Json { class Value; }
 // clang-format on
 
 class BehaviorFactory {
@@ -34,27 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BehaviorFactory();
-
     MCAPI void _initNodes();
-
-    MCAPI ::std::unique_ptr<::BehaviorDefinition>
-    loadNodeDefinition(::std::string const& name, ::Json::Value root, ::BehaviorTreeDefinitionPtr& ptr) const;
-
-    MCAPI void registerNodePair(
-        ::std::string const&                                       id,
-        ::std::function<::std::unique_ptr<::BehaviorDefinition>()> definitionCreator,
-        ::std::function<::std::unique_ptr<::BehaviorNode>()>       nodeCreator
-    );
-
-    MCAPI ::std::unique_ptr<::BehaviorDefinition> tryGetDefinition(::std::string const& id) const;
-
-    MCAPI ::std::unique_ptr<::BehaviorNode> tryGetNode(::std::string const& id) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

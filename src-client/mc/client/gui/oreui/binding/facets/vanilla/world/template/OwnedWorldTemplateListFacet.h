@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -16,7 +16,7 @@ namespace World { class OwnedWorldTemplateManager; }
 
 namespace OreUI {
 
-class OwnedWorldTemplateListFacet : public ::OreUI::FacetBase<::OreUI::OwnedWorldTemplateListFacet> {
+class OwnedWorldTemplateListFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::OwnedWorldTemplateListFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,10 +46,6 @@ public:
         ::World::OwnedWorldTemplateManager&                        ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-
-    MCAPI void _refresh();
-
-    MCFOLD ::std::vector<::OreUI::OwnedWorldTemplateDataBindings> const& getOwnedTemplateWorldsList();
     // NOLINTEND
 
 public:
@@ -70,13 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

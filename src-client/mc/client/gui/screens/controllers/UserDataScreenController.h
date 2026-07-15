@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
-class PlayerListEntry;
 struct ActorUniqueID;
 struct PlayerListInfo;
 namespace mce { class UUID; }
@@ -36,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UserDataScreenController() /*override*/;
+    virtual ~UserDataScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -48,25 +47,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit UserDataScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
-    MCAPI void _addEntryToPlayerList(::PlayerListEntry const& entry);
-
-    MCAPI void _addUserToPlayerList();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _requestPlayerProfileImages(::std::vector<::std::string> const& xuids);
-
-    MCAPI void _requestThirdPartyPics(::std::vector<::std::pair<::mce::UUID, ::std::string>> const& uuids);
-
-    MCAPI void _updatePlayerList();
-
     MCAPI ::PlayerListInfo getLocalPlayer() const;
 
     MCAPI ::PlayerListInfo getPlayerByAUID(::ActorUniqueID auid) const;
-
-    MCAPI ::std::vector<::PlayerListInfo> const& getPlayerList();
     // NOLINTEND
 
 public:
@@ -76,24 +59,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

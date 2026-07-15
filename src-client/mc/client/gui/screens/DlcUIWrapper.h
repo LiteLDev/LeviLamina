@@ -69,14 +69,6 @@ public:
         ::MainMenuScreenController&                                  mainMenuScreenController
     );
 
-    MCAPI void _checkForCopiedPremiumWorldTemplate(::std::shared_ptr<::DlcValidationState> dlcState);
-
-    MCAPI bool _continueAllowed(::std::shared_ptr<::DlcValidationState> dlcState) const;
-
-    MCAPI void _showDlcMissingContentKeyModal();
-
-    MCAPI bool isActive();
-
     MCAPI ::DlcUIWrapperResult tick();
 
     MCAPI void tryDownload(

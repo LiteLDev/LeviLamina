@@ -15,16 +15,11 @@ class LevelChunk;
 class Vec3;
 class WorldGenerator;
 struct BiomeIdType;
-struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 
 class NetherDimension : public ::Dimension {
-public:
-    // prevent constructor by default
-    NetherDimension();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,7 +31,7 @@ public:
 
     virtual bool isNaturalDimension() const /*override*/;
 
-    virtual bool isValidSpawn(int, int) const /*override*/;
+    virtual bool isValidSpawn(int x, int z) const /*override*/;
 
     virtual bool showSky() const /*override*/;
 
@@ -44,80 +39,26 @@ public:
 
     virtual bool mayRespawnViaBed() const /*override*/;
 
-    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
+    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const&, ::DimensionType) const /*override*/;
 
     virtual ::std::unique_ptr<::WorldGenerator>
-    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
+    createGenerator(::br::worldgen::StructureSetRegistry const&) /*override*/;
 
-    virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
+    virtual bool levelChunkNeedsUpgrade(::LevelChunk const&) const /*override*/;
 
-    virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
+    virtual void upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&) /*override*/;
 
-    virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
+    virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) /*override*/;
 
-    virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
+    virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) /*override*/;
 
     virtual ::std::unique_ptr<::ChunkSource>
-    _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NetherDimension(::DerivedDimensionArguments&& args);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
+        _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCAPI ::BiomeIdType $getDefaultBiomeId() const;
-
-    MCFOLD bool $isNaturalDimension() const;
-
-    MCFOLD bool $isValidSpawn(int, int) const;
-
-    MCFOLD bool $showSky() const;
-
-    MCFOLD float $getTimeOfDay(int time, float a) const;
-
-    MCFOLD bool $mayRespawnViaBed() const;
-
-    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
-
-    MCAPI ::std::unique_ptr<::WorldGenerator>
-    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
-
-    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
-
-    MCFOLD void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
-
-    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
-
-    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
-
-    MCFOLD ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCAPI static void** $vftableForIDimension();
-
-    MCNAPI static void** $vftableForSavedData();
-
-    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };

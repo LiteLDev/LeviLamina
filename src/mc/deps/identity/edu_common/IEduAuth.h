@@ -4,15 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/network/services/CachedAsync.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Identity { struct AuthArgs; }
 namespace Identity { struct AuthError; }
 namespace Identity { struct AuthToken; }
 namespace Identity { struct EduAuthTokenPair; }
+namespace Identity { struct AuthArgs; }
 namespace Identity { struct SignOutResult; }
 // clang-format on
 
@@ -65,17 +64,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::Threading::CachedAsync<::std::optional<::std::string>> getEduToken() const;
-#endif
-
-    MCNAPI ::Identity::EduAuthTokenPair getTokens() const;
-
-    MCNAPI bool hasValidMessToken() const;
-
-#ifdef LL_PLAT_C
     MCNAPI void resetEduToken();
-
-    MCNAPI void setEduToken(::std::string const& eduToken);
 
     MCNAPI void setTokens(::Identity::EduAuthTokenPair tokens);
 #endif

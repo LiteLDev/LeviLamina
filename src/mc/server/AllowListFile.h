@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AllowList;
 namespace Core { class Path; }
 // clang-format on
 
@@ -32,25 +31,7 @@ public:
 #ifdef LL_PLAT_S
     MCNAPI explicit AllowListFile(::Core::Path const& filePath);
 
-    MCNAPI ::AllowList& getAllowList() const;
-
-    MCNAPI bool isDisabledBecauseNoOnlineAuth();
-
     MCNAPI ::FileReadResult reload();
-
-    MCNAPI void setIsDisabledBecauseNoOnlineAuth(bool disabled);
-
-    MCNAPI void syncToDisc();
-
-    MCNAPI ~AllowListFile();
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI static ::AllowListFile loadFromDefaultLocations();
 #endif
     // NOLINTEND
 
@@ -59,14 +40,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
     MCNAPI void* $ctor(::Core::Path const& filePath);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

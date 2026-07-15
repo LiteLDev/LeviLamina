@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace JsonRpc {
 
 class ReceiveClientMessageResult {
@@ -20,37 +15,9 @@ public:
 
 public:
     // prevent constructor by default
+    ReceiveClientMessageResult& operator=(ReceiveClientMessageResult const&);
+    ReceiveClientMessageResult(ReceiveClientMessageResult const&);
     ReceiveClientMessageResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ReceiveClientMessageResult(::JsonRpc::ReceiveClientMessageResult const&);
-
-    MCNAPI ::JsonRpc::ReceiveClientMessageResult& operator=(::JsonRpc::ReceiveClientMessageResult&&);
-
-    MCNAPI ::JsonRpc::ReceiveClientMessageResult& operator=(::JsonRpc::ReceiveClientMessageResult const&);
-
-    MCNAPI ~ReceiveClientMessageResult();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::JsonRpc::ReceiveClientMessageResult const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace JsonRpc

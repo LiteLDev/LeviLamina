@@ -20,9 +20,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPalette;
 class DataItem;
-class ItemStack;
 class Player;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
@@ -56,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AddPlayerPacket() /*override*/;
+    virtual ~AddPlayerPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -73,12 +71,6 @@ public:
     MCAPI AddPlayerPacket();
 
     MCAPI explicit AddPlayerPacket(::Player& p);
-
-#ifdef LL_PLAT_C
-    MCAPI ::ItemStack getCarriedItem(::BlockPalette& blockPalette, bool isClientSide) const;
-
-    MCFOLD ::PropertySyncData const& getSynchedProperties() const;
-#endif
     // NOLINTEND
 
 public:
@@ -90,15 +82,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string_view $getName() const;
 

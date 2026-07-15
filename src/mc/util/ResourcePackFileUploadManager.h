@@ -18,9 +18,7 @@ class IFileChunkUploader;
 class ResourceLocation;
 class TaskGroup;
 namespace Core { class Path; }
-namespace Core { class PathView; }
 namespace Core::ZipUtils { class IZipUtility; }
-namespace Json { class Value; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
 namespace ResourcePackPathLifetimeHelpers { class ScopeDestroyedPath; }
 // clang-format on
@@ -51,10 +49,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void archiveAndUploadFileToRealmStorage(
-        ::std::string const& uploadId,
-        ::Core::Path const&  path,
-        int const            slotIndex,
-        ::std::string const& realmsGuid
+        ::std::string const&,
+        ::Core::Path const&,
+        int const,
+        ::std::string const&
     ) /*override*/;
 
     virtual void
@@ -84,41 +82,6 @@ public:
         ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
     );
 #endif
-
-    MCAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
-
-    MCAPI void _archiveAndUploadPackToRealmStorage(
-        ::std::string const& uploadId,
-        ::Core::Path const&  path,
-        int                  slotIndex,
-        ::std::string const&
-    );
-
-    MCAPI ::Bedrock::Threading::Async<void> _extractPackFromZipAndUpload(
-        ::std::string const&                     resourcePack,
-        ::ResourceLocation const&                resourcePackLocation,
-        ::Core::PathBuffer<::std::string> const& relativePathWithinZip,
-        ::Core::PathBuffer<::std::string> const& resourceZipPath,
-        ::Json::Value const&                     uploadOptions
-    );
-
-    MCAPI bool _unzipEmbeddedResourcePackForUpload(
-        ::ResourceLocation const&                resourcePackLocation,
-        ::Core::PathBuffer<::std::string> const& relativePathWithinZip,
-        ::Core::PathView                         outputPath
-    );
-
-    MCAPI ::Bedrock::Threading::Async<void> _uploadResourcePackFolder(
-        ::std::string const&                     resourcePack,
-        ::ResourceLocation const&                resourcePackLocation,
-        ::Core::PathBuffer<::std::string> const& resourceZipPath,
-        ::Json::Value const&                     uploadOptions
-    );
-
-    MCAPI bool _zipResourcePackForUpload(
-        ::ResourceLocation const&                resourcePackLocation,
-        ::Core::PathBuffer<::std::string> const& resourceZipPath
-    );
 
     MCAPI ::Bedrock::Threading::Async<void> uploadResourcePack(
         ::std::string const&                     resourcePackName,
@@ -158,21 +121,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $archiveAndUploadFileToRealmStorage(
-        ::std::string const& uploadId,
-        ::Core::Path const&  path,
-        int const            slotIndex,
-        ::std::string const& realmsGuid
-    );
 
-    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

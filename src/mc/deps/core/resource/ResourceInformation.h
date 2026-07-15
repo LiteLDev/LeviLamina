@@ -6,11 +6,6 @@
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/platform/UUID.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PackIdVersion;
-// clang-format on
-
 class ResourceInformation {
 public:
     // ResourceInformation inner types define
@@ -36,18 +31,11 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                      mEntry;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ResourceInformation& operator=(ResourceInformation const&);
     ResourceInformation();
 
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ResourceInformation();
-
-#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -71,12 +59,6 @@ public:
         ::std::string const&                entry
     );
 
-#ifdef LL_PLAT_C
-    MCAPI ::ResourceInformation& operator=(::ResourceInformation const&);
-#endif
-
-    MCAPI bool satisfies(::PackIdVersion const& pack) const;
-
     MCAPI ~ResourceInformation();
     // NOLINTEND
 
@@ -84,8 +66,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ResourceInformation::ResourceType ResourceTypeFromString(::std::string const& value);
-
-    MCAPI static ::std::string const& StringFromResourceType(::ResourceInformation::ResourceType value);
     // NOLINTEND
 
 public:

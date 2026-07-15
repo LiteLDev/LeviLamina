@@ -3,17 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/editor/datastore/EventType.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ScriptDeferredEventCoordinator;
-namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Services { class DataStoreServiceProvider; }
 namespace Editor::Services { class TelemetryServiceProvider; }
-namespace Json { class Value; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -30,6 +26,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkd49f60;
     ::ll::UntypedStorage<8, 32> mUnk8cb4e5;
     ::ll::UntypedStorage<8, 32> mUnk68c06f;
+    ::ll::UntypedStorage<8, 32> mUnkfeac0b;
     ::ll::UntypedStorage<8, 32> mUnk58830f;
     ::ll::UntypedStorage<8, 32> mUnk2e76b8;
     ::ll::UntypedStorage<8, 32> mUnk4248d0;
@@ -52,19 +49,8 @@ public:
         ::Scripting::WeakLifetimeScope const&              scope
     );
 
-    MCNAPI void _handleDataStorePayloadEvent(
-        ::HashedString const&          dataTag,
-        ::Editor::DataStore::EventType eventType,
-        ::Json::Value const&           payload,
-        ::Editor::DataStore::PayloadDescription const&
-    );
-
     MCNAPI ::Editor::ScriptModule::ScriptDataStoreService&
     operator=(::Editor::ScriptModule::ScriptDataStoreService&& other);
-
-    MCNAPI void sendNetworkEvent(::std::string dataTag, ::std::string payload);
-
-    MCNAPI void sendNotificationEvent(::std::string const& dataTag, ::std::string const& payload);
 
     MCNAPI ~ScriptDataStoreService();
     // NOLINTEND

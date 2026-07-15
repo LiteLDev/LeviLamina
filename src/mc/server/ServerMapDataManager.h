@@ -11,11 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class DimensionManager;
-class EntityContext;
 class IGameplayUserManagerConnector;
-class IMapDataManagerOptions;
-class LevelStorage;
 class MapItemSavedData;
 struct ActorUniqueID;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -34,16 +30,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerMapDataManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ServerMapDataManager() /*override*/ = default;
 
-    virtual void
-    registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector) /*override*/;
+    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&) /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& getOnCreateMapSavedDataConnector() /*override*/;
 
@@ -55,50 +46,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ServerMapDataManager(
-        ::DimensionManager&                         dimensionManager,
-        ::LevelStorage*                             levelStorage,
-        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
-        ::std::function<::ActorUniqueID()>          getNewUniqueID
-    );
-
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::DimensionManager&                         dimensionManager,
-        ::LevelStorage*                             levelStorage,
-        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
-        ::std::function<::ActorUniqueID()>          getNewUniqueID
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& $getOnCreateMapSavedDataConnector();
-
-    MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
-
-    MCFOLD void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
-
-    MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIServerMapDataManagerConnector();
-
-    MCNAPI static void** $vftableForMapDataManager();
     // NOLINTEND
 };

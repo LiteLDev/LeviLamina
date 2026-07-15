@@ -8,9 +8,6 @@ class DataDrivenRenderer;
 class GameVersion;
 class HashedString;
 class MinecraftGameplayGraphicsResources;
-struct DataDrivenRendererContinuousData;
-struct DataDrivenRendererPreprocessingContext;
-struct ProcessedDataDrivenRenderers;
 // clang-format on
 
 class DataDrivenRendererV2RequiredData {
@@ -35,18 +32,6 @@ public:
         LateRenderer& operator=(LateRenderer const&);
         LateRenderer(LateRenderer const&);
         LateRenderer();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~LateRenderer();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -83,35 +68,14 @@ public:
         ::GameVersion const&                                                                 gameVersion
     );
 
-    MCNAPI ::DataDrivenRendererContinuousData* getDataDrivenRendererContinuousData() const;
-
-    MCNAPI ::ProcessedDataDrivenRenderers const* getProcessedDataDrivenRenderers() const;
-
     MCNAPI void rebuildLateRenderers(::MinecraftGameplayGraphicsResources& graphicsResources);
 
     MCNAPI bool removeRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
-
-    MCNAPI bool renderActorsWithAttachablesEquipped() const;
-
-    MCNAPI bool shouldRebuild() const;
 
     MCNAPI bool tryLateAddRenderer(
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
         ::MinecraftGameplayGraphicsResources&          graphicsResources
-    );
-
-    MCNAPI ~DataDrivenRendererV2RequiredData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool _tryAddRenderer(
-        ::HashedString const&                          name,
-        ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
-        ::DataDrivenRendererPreprocessingContext&      ctx,
-        bool                                           supportPlayers
     );
     // NOLINTEND
 
@@ -123,11 +87,5 @@ public:
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

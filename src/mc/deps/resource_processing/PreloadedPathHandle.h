@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Resources::Archive { class Reader; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -25,22 +24,14 @@ public:
 public:
     // prevent constructor by default
     PreloadedPathHandle& operator=(PreloadedPathHandle const&);
+    PreloadedPathHandle();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PreloadedPathHandle();
-
     MCNAPI PreloadedPathHandle(::Bedrock::Resources::PreloadedPathHandle const&);
 
-    MCNAPI PreloadedPathHandle(
-        ::Core::Path const&                                      root,
-        ::std::shared_ptr<::Bedrock::Resources::Archive::Reader> backingObject
-    );
-
     MCNAPI void forEach(::brstd::function_ref<void(::Core::Path const&)> callback) const;
-
-    MCNAPI explicit operator bool() const;
 
     MCNAPI ~PreloadedPathHandle();
     // NOLINTEND
@@ -48,12 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Bedrock::Resources::PreloadedPathHandle const&);
-
-    MCNAPI void*
-    $ctor(::Core::Path const& root, ::std::shared_ptr<::Bedrock::Resources::Archive::Reader> backingObject);
     // NOLINTEND
 
 public:

@@ -28,11 +28,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptPluginDetails(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
 
-    MCAPI ScriptPluginDetails(::std::string const& name, ::std::string const& packId, ::std::string const& moduleUUID);
-
-    MCAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
-    operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails&&);
-
     MCAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
     operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
 
@@ -49,8 +44,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
-
-    MCAPI void* $ctor(::std::string const& name, ::std::string const& packId, ::std::string const& moduleUUID);
     // NOLINTEND
 
 public:

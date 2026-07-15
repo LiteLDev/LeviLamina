@@ -13,12 +13,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 

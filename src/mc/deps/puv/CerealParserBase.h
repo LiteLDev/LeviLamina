@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/puv/ParserBase.h"
 
 // auto generated forward declare list
@@ -40,14 +39,6 @@ public:
         ::SemVersion                   parserVersion,
         ::Puv::VersionRange            supportedRange
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::cereal::ResultCode const& StrictErrorCodes();
-
-    MCNAPI static ::cereal::ResultCode const& UnstrictErrorCodes();
     // NOLINTEND
 
 public:

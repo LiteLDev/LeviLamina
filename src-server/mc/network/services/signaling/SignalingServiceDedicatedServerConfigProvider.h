@@ -33,10 +33,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignalingServiceDedicatedServerConfigProvider() /*override*/;
+    virtual ~SignalingServiceDedicatedServerConfigProvider() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url>
-    getUrl(bool useJsonRpc, ::std::string const& id) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(::std::string const&) /*override*/;
 
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() /*override*/;
 
@@ -64,24 +63,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> $getUrl(bool useJsonRpc, ::std::string const& id);
 
-    MCNAPI ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> $getAuthToken();
-
-    MCNAPI void $reset();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

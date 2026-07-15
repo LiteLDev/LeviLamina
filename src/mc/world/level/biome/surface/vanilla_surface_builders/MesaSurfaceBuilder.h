@@ -8,13 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BlockVolume;
+class LevelSeed64;
 class MesaSurfaceBuilderNoises;
-class Random;
 class SurfaceBuilderData;
-struct MesaSurfaceBlocks;
-struct SurfaceMaterialBlocks;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -30,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initBuilder(uint levelSeed) /*override*/;
+    virtual void initBuilder(::LevelSeed64 levelSeed) /*override*/;
 
     virtual void initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const /*override*/;
 
@@ -40,29 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _buildSurface(
-        ::BlockPos const&              pos,
-        float                          depthValue,
-        ::Random&                      random,
-        ::BlockVolume&                 blockVolume,
-        int                            lowerLimit,
-        short                          seaLevel,
-        ::MesaSurfaceBlocks const&     mesaPalette,
-        ::SurfaceMaterialBlocks const& blockPalette,
-        float                          extensionTop
-    ) const;
-
-    MCAPI void _init(uint levelSeed);
-
-    MCAPI void generateBands(::Random& random);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initBuilder(uint levelSeed);
+    MCAPI void $initBuilder(::LevelSeed64 levelSeed);
 
     MCFOLD void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
@@ -71,12 +47,6 @@ public:
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -72,8 +72,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit Asymmetric(::Crypto::Asymmetric::System system);
-
-    MCNAPI bool canComputeSecret();
     // NOLINTEND
 
 public:

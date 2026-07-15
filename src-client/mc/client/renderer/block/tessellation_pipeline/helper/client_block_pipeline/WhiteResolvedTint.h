@@ -24,12 +24,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::mce::Color const& $get(int, uchar) const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

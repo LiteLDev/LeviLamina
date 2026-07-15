@@ -17,18 +17,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   brokenPackIds;
     ::ll::TypedStorage<8, 32, ::std::string>                  missingPackSize;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PackCheckResult();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace World

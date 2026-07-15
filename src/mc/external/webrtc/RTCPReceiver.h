@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RtpRtcpInterface.h"
-#include "mc/external/webrtc/SequenceChecker.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class ModuleRtpRtcpImpl2; }
+namespace webrtc { class Environment; }
 namespace webrtc { class ReportBlockData; }
 namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
@@ -25,7 +25,6 @@ class RTCPReceiver {
 public:
     // RTCPReceiver inner types declare
     // clang-format off
-    class CustomSequenceChecker;
     struct LastFirStatus;
     class ModuleRtpRtcp;
     class NonSenderRttStats;
@@ -37,8 +36,6 @@ public:
     // clang-format on
 
     // RTCPReceiver inner types define
-    class CustomSequenceChecker : public ::webrtc::SequenceChecker {};
-
     struct LastFirStatus {
     public:
         // member variables
@@ -64,7 +61,9 @@ public:
 
         virtual void OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers) = 0;
 
-        virtual void OnReceivedRtcpReportBlocks(::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) = 0;
+        virtual void OnReceivedRtcpReportBlocks(
+            ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
+        ) = 0;
 
         virtual ~ModuleRtpRtcp() = default;
         // NOLINTEND
@@ -103,6 +102,7 @@ public:
         ::ll::UntypedStorage<8, 16>  mUnk63fb49;
         ::ll::UntypedStorage<4, 4>   mUnkb69d48;
         ::ll::UntypedStorage<8, 8>   mUnk22422c;
+        ::ll::UntypedStorage<8, 64>  mUnk6fb1c3;
         ::ll::UntypedStorage<4, 172> mUnk6b762e;
         ::ll::UntypedStorage<8, 144> mUnk521b78;
         ::ll::UntypedStorage<8, 8>   mUnkd2a463;
@@ -131,7 +131,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnka50035;
+        ::ll::UntypedStorage<1, 1>  mUnk4c13f5;
         ::ll::UntypedStorage<8, 24> mUnk8f2d4f;
         // NOLINTEND
 
@@ -144,15 +144,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RegisteredSsrcs(bool disable_sequence_checker, ::webrtc::RtpRtcpInterface::Configuration const& config);
+        MCNAPI bool count(uint ssrc) const;
 
         MCNAPI ~RegisteredSsrcs();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(bool disable_sequence_checker, ::webrtc::RtpRtcpInterface::Configuration const& config);
         // NOLINTEND
 
     public:
@@ -258,8 +252,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk13975a;
+    ::ll::UntypedStorage<8, 40> mUnkb2abd1;
     ::ll::UntypedStorage<1, 1>  mUnkc3a58d;
+    ::ll::UntypedStorage<1, 1>  mUnkd865c8;
     ::ll::UntypedStorage<8, 8>  mUnkbb5694;
     ::ll::UntypedStorage<8, 32> mUnk29a22d;
     ::ll::UntypedStorage<8, 8>  mUnkc11de9;
@@ -270,7 +265,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkb68c3a;
     ::ll::UntypedStorage<8, 40> mUnk643873;
     ::ll::UntypedStorage<4, 4>  mUnkdc1ae4;
-    ::ll::UntypedStorage<8, 40> mUnk15b893;
+    ::ll::UntypedStorage<8, 48> mUnk15b893;
     ::ll::UntypedStorage<8, 16> mUnka72441;
     ::ll::UntypedStorage<8, 32> mUnk80dd77;
     ::ll::UntypedStorage<1, 1>  mUnkd92c89;
@@ -319,6 +314,11 @@ public:
 
     MCNAPI bool HandleBye(::webrtc::rtcp::CommonHeader const& rtcp_block);
 
+    MCNAPI bool HandleCongestionControlFeedback(
+        ::webrtc::rtcp::CommonHeader const&        rtcp_block,
+        ::webrtc::RTCPReceiver::PacketInformation* packet_information
+    );
+
     MCNAPI bool HandleFir(
         ::webrtc::rtcp::CommonHeader const&        rtcp_block,
         ::webrtc::RTCPReceiver::PacketInformation* packet_information
@@ -346,18 +346,22 @@ public:
 
     MCNAPI void HandleXrReceiveReferenceTime(uint sender_ssrc, ::webrtc::rtcp::Rrtr const& rrtr);
 
-    MCNAPI void IncomingPacket(::rtc::ArrayView<uchar const> packet);
+    MCNAPI void IncomingPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> packet);
 
     MCNAPI ::std::optional<::webrtc::TimeDelta> LastRtt() const;
 
     MCNAPI ::std::optional<::webrtc::TimeDelta> OnPeriodicRttUpdate(::webrtc::Timestamp newer_than, bool sending);
 
     MCNAPI bool ParseCompoundPacket(
-        ::rtc::ArrayView<uchar const>              packet,
-        ::webrtc::RTCPReceiver::PacketInformation* packet_information
+        ::webrtc::ArrayView<uchar const, 18446744073709546905> packet,
+        ::webrtc::RTCPReceiver::PacketInformation*             packet_information
     );
 
-    MCNAPI RTCPReceiver(::webrtc::RtpRtcpInterface::Configuration const& config, ::webrtc::ModuleRtpRtcpImpl2* owner);
+    MCNAPI RTCPReceiver(
+        ::webrtc::Environment const&                     env,
+        ::webrtc::RtpRtcpInterface::Configuration const& config,
+        ::webrtc::RTCPReceiver::ModuleRtpRtcp*           owner
+    );
 
     MCNAPI void SetNonSenderRttMeasurement(bool enabled);
 
@@ -377,7 +381,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::RtpRtcpInterface::Configuration const& config, ::webrtc::ModuleRtpRtcpImpl2* owner);
+    MCNAPI void* $ctor(
+        ::webrtc::Environment const&                     env,
+        ::webrtc::RtpRtcpInterface::Configuration const& config,
+        ::webrtc::RTCPReceiver::ModuleRtpRtcp*           owner
+    );
     // NOLINTEND
 
 public:

@@ -16,29 +16,8 @@ public:
 public:
     // prevent constructor by default
     NotificationEvent& operator=(NotificationEvent const&);
+    NotificationEvent(NotificationEvent const&);
     NotificationEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI NotificationEvent(::ScriptDebuggerMessages::NotificationEvent const&);
-
-    MCNAPI ::ScriptDebuggerMessages::NotificationEvent& operator=(::ScriptDebuggerMessages::NotificationEvent&&);
-
-    MCNAPI ~NotificationEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptDebuggerMessages::NotificationEvent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptDebuggerMessages

@@ -29,4 +29,10 @@ public:
     AsyncState& operator=(AsyncState const&);
     AsyncState(AsyncState const&);
     AsyncState();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void Release();
+    // NOLINTEND
 };

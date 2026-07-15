@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/EnableQueueForThread.h"
 
 namespace Bedrock::Threading {
@@ -17,14 +16,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EnableQueueForMainThread(::std::string name);
-
-    MCAPI void flushMainThreadTasks();
-
-    MCAPI ::Bedrock::Threading::Async<void> queueForMainThread(::std::function<void()>&& callback);
-
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Threading::Async<void> queueForMainThreadAutoRequeue(::std::function<bool()>&& callback);
-#endif
     // NOLINTEND
 
 public:

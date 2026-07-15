@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/script/LoggingServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
@@ -46,8 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit LoggingService(::Editor::ServiceProviderCollection& providers);
-
-    MCNAPI void _dispatchLogMessageEvent(::Editor::LogMessage const& message);
     // NOLINTEND
 
 public:

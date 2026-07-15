@@ -31,13 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::BlockRules::RandomBlockStateMatch
-    from(::Block const& block, float probability);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $test(::Block const& block, ::IRandom& random) const;

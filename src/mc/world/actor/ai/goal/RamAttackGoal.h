@@ -13,14 +13,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorDefinitionTrigger;
-class BlockPos;
-class BlockSource;
-class LookControlComponent;
 class Mob;
-class MoveControlComponent;
-class NavigationComponent;
 class Path;
 namespace RamAttackGoalUtils { class RamGoalItemDropperInterface; }
 // clang-format on
@@ -119,24 +113,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RamAttackGoal(::Mob& mob);
-
-    MCAPI bool _hasChargePath();
-
-    MCAPI bool _initiateRamAttack();
-
-    MCAPI bool _pathablePos(::BlockSource const& region, ::BlockPos blockPos);
-
-    MCAPI void _resetCooldown();
-
-    MCAPI bool _setupAttackPosVector();
-
-    MCAPI bool _takeAttackPos(::NavigationComponent& navigation, ::LookControlComponent& lookControl, ::Actor& target);
-
-    MCAPI void _tryKnockbackTarget();
-
-    MCAPI bool _turnToTarget(::MoveControlComponent& moveControl) const;
-
-    MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
     // NOLINTEND
 
 public:

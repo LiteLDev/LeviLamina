@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class PackAssetSet;
 class ResourceLocation;
 struct StreamableAssetSource;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
@@ -77,7 +76,8 @@ public:
     virtual void unload() /*override*/;
 
     virtual ::Bedrock::Result<::StreamableAssetSource>
-    getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView>) const /*override*/;
+    getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView> tempDirectory) const
+        /*override*/;
 
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
     _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
@@ -94,26 +94,12 @@ public:
         bool                                                recurse,
         ::std::function<::std::string(::Core::Path const&)> reader
     );
-
-    MCNAPI DirectoryPackAccessStrategy(
-        ::std::unique_ptr<::PackAssetSet>&&                 assetSet,
-        ::ResourceLocation const&                           packLocation,
-        bool                                                recurse,
-        ::std::function<::std::string(::Core::Path const&)> reader
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::ResourceLocation const&                           packLocation,
-        bool                                                recurse,
-        ::std::function<::std::string(::Core::Path const&)> reader
-    );
-
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::PackAssetSet>&&                 assetSet,
         ::ResourceLocation const&                           packLocation,
         bool                                                recurse,
         ::std::function<::std::string(::Core::Path const&)> reader
@@ -135,15 +121,7 @@ public:
 
     MCNAPI ::std::string const& $getPackName() const;
 
-    MCNAPI bool $isWritable() const;
-
-    MCNAPI bool $isTrusted() const;
-
-    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
-
     MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
-
-    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
     MCNAPI void $forEachIn(
         ::Core::Path const&                        packRelativePath,
@@ -154,29 +132,13 @@ public:
     MCNAPI void
     $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
 
-    MCNAPI ::PackAccessStrategyType $getStrategyType() const;
-
-    MCNAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
-
     MCNAPI bool $canRecurse() const;
 
     MCNAPI void $unload();
-
-    MCNAPI ::Bedrock::Result<::StreamableAssetSource>
-    $getStreamableSource(::Core::Path const& packRelativePath, ::std::optional<::Core::PathView>) const;
-
-    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
-    $_loadArchive(::Core::Path const& packRelativePath) const;
 
     MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     $_preloadSubFolders(::Core::Path const& packRelativePath) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

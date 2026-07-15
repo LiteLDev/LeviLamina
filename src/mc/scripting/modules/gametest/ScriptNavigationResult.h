@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class Vec3;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -22,8 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::Vec3> getPath() const;
-
     MCAPI ~ScriptNavigationResult();
     // NOLINTEND
 

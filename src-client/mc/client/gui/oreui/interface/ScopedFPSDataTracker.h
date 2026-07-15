@@ -8,10 +8,10 @@ struct ScopedFPSDataTracker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mFPS;
-    ::ll::TypedStorage<4, 4, float> mTotalTimeSpent;
-    ::ll::TypedStorage<4, 4, float> mLongestActiveFrameTime;
-    ::ll::TypedStorage<4, 4, int>   mAmountOfFrames;
+    ::ll::TypedStorage<4, 4, float>                      mFPS;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> mTotalTimeSpent;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> mLongestActiveFrameTime;
+    ::ll::TypedStorage<4, 4, int>                        mAmountOfFrames;
     // NOLINTEND
 };
 

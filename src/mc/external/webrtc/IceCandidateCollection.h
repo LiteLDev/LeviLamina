@@ -4,34 +4,44 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class IceCandidateInterface; }
+namespace webrtc { class IceCandidate; }
 // clang-format on
 
 namespace webrtc {
 
 class IceCandidateCollection {
 public:
-    // virtual functions
+    // member variables
     // NOLINTBEGIN
-    virtual ~IceCandidateCollection() = default;
-
-    virtual uint64 count() const = 0;
-
-    virtual bool HasCandidate(::webrtc::IceCandidateInterface const* candidate) const = 0;
-
-    virtual ::webrtc::IceCandidateInterface const* at(uint64 index) const = 0;
+    ::ll::UntypedStorage<8, 24> mUnkfa1937;
     // NOLINTEND
 
 public:
-    // virtual function thunks
-    // NOLINTBEGIN
+    // prevent constructor by default
+    IceCandidateCollection& operator=(IceCandidateCollection const&);
+    IceCandidateCollection(IceCandidateCollection const&);
+    IceCandidateCollection();
 
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::webrtc::IceCandidateCollection Clone() const;
+
+    MCNAPI bool HasCandidate(::webrtc::IceCandidate const* candidate) const;
+
+    MCNAPI void add(::std::unique_ptr<::webrtc::IceCandidate> candidate);
+
+    MCNAPI ::webrtc::IceCandidate const* at(uint64 index) const;
+
+    MCNAPI uint64 remove(::webrtc::IceCandidate const* candidate);
+
+    MCNAPI ~IceCandidateCollection();
     // NOLINTEND
 
 public:
-    // vftables
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

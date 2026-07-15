@@ -46,18 +46,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                                        mCullAgainstFullAndOpaque;
         ::ll::TypedStorage<8, 40, ::BlockCullingData::CullingRule::GeometryPart>              mGeometryPart;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~CullingRule();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -66,17 +54,5 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>                                 mCullIdentifier;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockCullingData::CullingRule>> mCullingRules;
     ::ll::TypedStorage<8, 32, ::PuvLoadData::LoadResultWithTiming>            mLoadTime;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~BlockCullingData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

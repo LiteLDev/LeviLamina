@@ -138,12 +138,6 @@ public:
     MCAPI explicit DlcBatchModel(::IDlcBatchModel const& ref);
 
     MCAPI DlcBatchModel(
-        ::IContentAcquisition&                contentAcquisition,
-        ::IStoreCatalogRepository&            storeCatalog,
-        ::std::vector<::PackIdVersion> const& packIds
-    );
-
-    MCAPI DlcBatchModel(
         ::IContentAcquisition&              contentAcquisition,
         ::IStoreCatalogRepository&          storeCatalog,
         ::std::vector<::std::string> const& productIds
@@ -155,14 +149,6 @@ public:
         ::std::vector<::DlcId>         dlcIds,
         ::std::vector<::PackIdVersion> packIds
     );
-
-    MCAPI bool _canBeginDownload() const;
-
-    MCAPI bool compareTo(::std::vector<::DlcId> const& dlcIds) const;
-
-    MCAPI bool compareTo(::std::vector<::std::string> const& productIds) const;
-
-    MCAPI bool compareToPackIds(::std::vector<::PackIdVersion> const& packIds) const;
     // NOLINTEND
 
 public:
@@ -171,12 +157,6 @@ public:
     MCAPI void* $ctor(::DlcBatchModel const&);
 
     MCAPI void* $ctor(::IDlcBatchModel const& ref);
-
-    MCAPI void* $ctor(
-        ::IContentAcquisition&                contentAcquisition,
-        ::IStoreCatalogRepository&            storeCatalog,
-        ::std::vector<::PackIdVersion> const& packIds
-    );
 
     MCAPI void* $ctor(
         ::IContentAcquisition&              contentAcquisition,

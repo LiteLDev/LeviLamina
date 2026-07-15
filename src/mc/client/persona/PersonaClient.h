@@ -10,7 +10,7 @@ public:
     // clang-format on
 
     // PersonaClient inner types define
-    enum class SyncState : int {};
+    enum class SyncSource : int {};
 
     class SkinEntitlementChangeListener {};
 };

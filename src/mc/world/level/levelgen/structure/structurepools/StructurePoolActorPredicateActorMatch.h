@@ -18,27 +18,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructurePoolActorPredicateActorMatch();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool test(::std::string const& actor) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit StructurePoolActorPredicateActorMatch(::std::string actor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string actor);
     // NOLINTEND
 
 public:

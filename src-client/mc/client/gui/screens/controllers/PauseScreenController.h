@@ -6,24 +6,18 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
-#include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/social/ProfileImageOptions.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/legacy/ActorUniqueID.h"
 
 // auto generated forward declare list
 // clang-format off
-class Option;
 class PauseScreenModel;
 class PermissionsScreenController;
-class PlayerListEntry;
 class SocialButtonScreenController;
 class UserDataScreenController;
 namespace Json { class Value; }
-namespace Realms { struct World; }
-namespace mce { class UUID; }
 // clang-format on
 
 class PauseScreenController : public ::ClientInstanceScreenController {
@@ -60,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PauseScreenController() /*override*/;
+    virtual ~PauseScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -85,53 +79,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PauseScreenController(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
-
-    MCFOLD void _displayOpenExternalBrowserDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _getUnreadCount(::Realms::World const& world);
-
-    MCAPI bool _isBigScreen();
-
-    MCAPI bool _isInviteButtonEnabled() const;
-
-    MCAPI bool _isInviteButtonVisible() const;
-
-    MCAPI bool _isMultiplayerLocked() const;
-
-    MCAPI bool _isProfileButtonAEnabled() const;
-
-    MCAPI bool _isProfileButtonBEnabled() const;
-
-    MCAPI void _navigateToInviteScreen();
-
-    MCAPI void _navigateToPermissions(::ActorUniqueID const& id);
-
-    MCAPI ::ui::ViewRequest _navigateToProfileOrSkinsScreen();
-
-    MCAPI bool _needToUpdateSocialButton();
-
-    MCAPI void _onPlayerListEntryRemoved(
-        ::PlayerListEntry const& list,
-        ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&
-    );
-
-    MCAPI void _pauseToggleOptionCallback(::Option const& pauseFeatureToggle);
-
-    MCAPI void _populateClientIds();
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerConnectors();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerSubControllers();
-
-    MCAPI bool _showRealmsButtons() const;
-
-    MCAPI void _updateProfileImage();
-
-    MCAPI bool _useMovedInviteButton() const;
     // NOLINTEND
 
 public:
@@ -141,38 +88,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $onTerminate();
-
-    MCAPI void $onInit();
-
-    MCAPI void $onEntered();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCFOLD ::ui::SceneType $getSceneType() const;
-
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
-
-    MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

@@ -9,7 +9,7 @@ class IDataInput {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IDataInput();
+    virtual ~IDataInput() = default;
 
     virtual ::Bedrock::Result<::std::string> readStringResult() = 0;
 
@@ -48,12 +48,6 @@ public:
     MCAPI short readShort();
 
     MCAPI ::std::string readString();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

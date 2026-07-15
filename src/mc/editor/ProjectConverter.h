@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/FileArchiver.h"
@@ -14,7 +13,6 @@ class IContentKeyProvider;
 class ILevelListCache;
 class IResourcePackRepository;
 class Scheduler;
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor {
@@ -48,22 +46,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ProjectConverter() /*override*/;
+    virtual ~ProjectConverter() /*override*/ = default;
 
     virtual void enqueueConvertImportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::Bedrock::Threading::Async<void>&                              prevTaskHandle
+        ::std::shared_ptr<::FileArchiver::Result>&,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
+        ::Bedrock::Threading::Async<void>&
     ) /*override*/;
 
-    virtual bool shouldCopyWorldForConversion(::std::string const& levelId) const /*override*/;
+    virtual bool shouldCopyWorldForConversion(::std::string const&) const /*override*/;
 
     virtual void enqueueConvertExportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::ExportData>&                             exportData,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>            progress,
-        ::Bedrock::Threading::Async<void>&                                         prevTaskHandle,
-        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
-        ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
+        ::std::shared_ptr<::FileArchiver::ExportData>&,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
+        ::Bedrock::Threading::Async<void>&,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>>,
+        ::std::optional<::FileArchiver::WorldConverterExportSettings> const
     ) /*override*/;
     // NOLINTEND
 
@@ -76,28 +74,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     );
-
-    MCNAPI void _fixupPackHistoryFile(
-        ::Core::PathBuffer<::std::string> const& filePath,
-        ::std::unordered_set<::mce::UUID> const& packsToRemove
-    ) const;
-
-    MCNAPI void _fixupPacksFile(
-        ::Core::PathBuffer<::std::string> const& filePath,
-        ::std::unordered_set<::mce::UUID> const& packsToRemove
-    ) const;
-
-    MCNAPI ::Core::PathBuffer<::std::string> _getLevelFolder(::std::string const& levelId) const;
-
-    MCNAPI ::std::string _getLevelIdFromFolderPath(::Core::PathBuffer<::std::string> const& levelFolder) const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& WORLD_BEHAVIOR_PACKS_FILE();
-
-    MCNAPI static ::std::string const& WORLD_RESOURCE_PACKS_FILE();
     // NOLINTEND
 
 public:
@@ -112,37 +88,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $enqueueConvertImportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::Bedrock::Threading::Async<void>&                              prevTaskHandle
-    );
 
-    MCNAPI bool $shouldCopyWorldForConversion(::std::string const& levelId) const;
-
-    MCNAPI void $enqueueConvertExportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::ExportData>&                             exportData,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>            progress,
-        ::Bedrock::Threading::Async<void>&                                         prevTaskHandle,
-        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
-        ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class BlockSource;
 // clang-format on
 
@@ -32,18 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockSource const& getBlockSource() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockStateChangeEvent(::BlockSource& region, ::BlockPos pos, ::Block const& previousBlock);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::BlockSource& region, ::BlockPos pos, ::Block const& previousBlock);
     // NOLINTEND
 
 public:

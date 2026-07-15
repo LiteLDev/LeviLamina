@@ -4,12 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/realms/PostStatus.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class DateManager;
-class ProfanityContext;
 namespace Clubs { struct FeedItem; }
 namespace Realms::Stories { class FacetStateManager; }
 // clang-format on
@@ -37,64 +34,6 @@ public:
     FacetCommentData& operator=(FacetCommentData const&);
     FacetCommentData(FacetCommentData const&);
     FacetCommentData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FacetCommentData(
-        ::Clubs::FeedItem&                                    feedItem,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>    dateManager,
-        ::std::weak_ptr<::Realms::Stories::FacetStateManager> provider,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>     profanityContext
-    );
-
-    MCAPI ::std::string const& getAuthorXuid() const;
-
-    MCAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
-
-    MCAPI bool const getHasLiked() const;
-
-    MCAPI bool const getHasViewed() const;
-
-    MCAPI ::std::string const& getId() const;
-
-    MCAPI ::std::string const& getParentId() const;
-
-    MCAPI ::Realms::Stories::PostStatus getReportToClubOwnerStatus() const;
-
-    MCAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
-
-    MCAPI ::Realms::Stories::PostStatus getSetViewedStatus() const;
-
-    MCAPI ::Realms::Stories::PostStatus getToggleLikeStatus() const;
-
-    MCAPI int const getTotalLikes() const;
-
-    MCAPI ~FacetCommentData();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Clubs::FeedItem&                                    feedItem,
-        ::Bedrock::NotNullNonOwnerPtr<::DateManager const>    dateManager,
-        ::std::weak_ptr<::Realms::Stories::FacetStateManager> provider,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>     profanityContext
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI::RealmsStories

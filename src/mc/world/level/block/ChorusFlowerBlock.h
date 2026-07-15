@@ -19,10 +19,6 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 
 class ChorusFlowerBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    ChorusFlowerBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -34,7 +30,7 @@ public:
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
@@ -44,12 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChorusFlowerBlock(::std::string const& nameId, int id);
-
-    MCAPI void _placeDeadFlower(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void _placeGrownFlower(::BlockSource& region, ::BlockPos const& pos, int newAge) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
@@ -58,8 +48,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _allNeighborsEmpty(::BlockSource& region, ::BlockPos const& pos, uchar ignore);
-
     MCAPI static void _growTreeRecursive(
         ::BlockSource&    region,
         ::BlockPos const& current,
@@ -68,15 +56,6 @@ public:
         int               maxHorizontalSpread,
         int               depth
     );
-
-    MCAPI static void
-    generatePlant(::BlockSource& region, ::BlockPos const& target, ::Random& random, int maxHorizontalSpread);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -90,7 +69,7 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const& face, uchar type, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 

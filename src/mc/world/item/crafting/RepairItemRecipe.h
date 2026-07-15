@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RepairItemRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
@@ -33,7 +29,7 @@ public:
 
     virtual int getCraftingSize() const /*override*/;
 
-    virtual ::RecipeIngredient const& getIngredient(int, int) const /*override*/;
+    virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
     virtual ::std::vector<::ItemInstance> const& getResultItems() const /*override*/;
 
@@ -43,21 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RepairItemRecipe(::std::string const& recipeId, ::mce::UUID const* uuid);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID& ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const* uuid);
     // NOLINTEND
 
 public:
@@ -67,7 +51,7 @@ public:
 
     MCFOLD int $getCraftingSize() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int, int) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
     MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
 

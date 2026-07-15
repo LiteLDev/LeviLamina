@@ -50,12 +50,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void execute(
-        ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&  customBoxes,
-        ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
-        ::ClientBlockPipeline::BlockVolumeArea const&             area,
-        ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const*  relativePos,
-        ::ClientBlockPipeline::CustomGeometryBlock const&         blockPosTransform,
+        ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&,
+        ::std::vector<::ClientBlockPipeline::CustomGeometryFace>&,
+        ::ClientBlockPipeline::BlockVolumeArea const&,
+        ::ClientBlockPipeline::BitsetCache const&,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const*,
+        ::ClientBlockPipeline::CustomGeometryBlock const&,
         ::ClientBlockPipeline::BlockLookupData const&,
         ::BlockPos const&,
         ::Matrix const&
@@ -71,8 +71,9 @@ public:
         ::ClientBlockPipeline::ITintResolver&                                                          tintResolver,
         ::BiomeTintCache*                                                                              biomeTintCache,
         ::BlockPos const&                                                                              relativePos,
-        ::Matrix const& transformationMatrix,
-        ::Block const&  extraBlock
+        ::Matrix const&   transformationMatrix,
+        ::Block const&    extraBlock,
+        ::BlockPos const& blockWorldPos
     );
     // NOLINTEND
 
@@ -85,31 +86,16 @@ public:
         ::ClientBlockPipeline::ITintResolver&                                                          tintResolver,
         ::BiomeTintCache*                                                                              biomeTintCache,
         ::BlockPos const&                                                                              relativePos,
-        ::Matrix const& transformationMatrix,
-        ::Block const&  extraBlock
+        ::Matrix const&   transformationMatrix,
+        ::Block const&    extraBlock,
+        ::BlockPos const& blockWorldPos
     );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(
-        ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&  customBoxes,
-        ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
-        ::ClientBlockPipeline::BlockVolumeArea const&             area,
-        ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const*  relativePos,
-        ::ClientBlockPipeline::CustomGeometryBlock const&         blockPosTransform,
-        ::ClientBlockPipeline::BlockLookupData const&,
-        ::BlockPos const&,
-        ::Matrix const&
-    ) const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

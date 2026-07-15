@@ -7,11 +7,6 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/minecraft_camera/camera_spline_utils/SplineType.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace CameraInstructionOptions {
 
 struct SplineInstruction {
@@ -40,12 +35,6 @@ public:
         ::ll::TypedStorage<4, 12, ::Vec3>      mRotationKeyFrameValue;
         ::ll::TypedStorage<4, 4, float>        mRotationKeyFrameTime;
         ::ll::TypedStorage<4, 4, ::EasingType> mRotationKeyFramesEasingFunc;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 
@@ -80,12 +69,6 @@ public:
     MCAPI bool operator==(::CameraInstructionOptions::SplineInstruction const& other) const;
 
     MCAPI ~SplineInstruction();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/input/KeyboardManager.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
-class GuiData;
 class IClientInstance;
 class RectangleArea;
 class Vec2;
@@ -92,35 +90,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MinecraftKeyboardManager(::IClientInstance& clientInstance);
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> _getGuiData() const;
-
-    MCAPI float _getGuiScale() const;
-
-    MCAPI float _getInvGuiScale() const;
-
-    MCAPI void delayedInputResume();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool keyboardIsOwned();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static int& mGlobalKeyboardOwnerId();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& clientInstance);
     // NOLINTEND
 
 public:
@@ -146,15 +118,15 @@ public:
 
     MCFOLD bool $isKeyboardActive() const;
 
-    MCFOLD bool $wasEnabledWithMultiline() const;
+    MCAPI bool $wasEnabledWithMultiline() const;
 
-    MCFOLD bool $isNumbersOnly() const;
+    MCAPI bool $isNumbersOnly() const;
 
-    MCFOLD int $getMaxLength() const;
+    MCAPI int $getMaxLength() const;
 
     MCAPI void $setResumeInputCallback(::std::function<void()> callback);
 
-    MCAPI void $setDisableInputToOtherClientsCallback(::std::function<void(int)> callback);
+    MCFOLD void $setDisableInputToOtherClientsCallback(::std::function<void(int)> callback);
 
     MCAPI bool $tryClaimKeyboardOwnership();
 

@@ -26,6 +26,8 @@ public:
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                                  mEntityFilter;
     ::ll::TypedStorage<4, 4, int>                                                  mAttackCooldownTicks;
     ::ll::TypedStorage<1, 1, bool>                                                 mPlayAttackSound;
+    ::ll::TypedStorage<1, 1, bool>                                                 mUseSelfAsDamageSource;
+    ::ll::TypedStorage<8, 32, ::std::string>                                       mDeathMessageOverride;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ActorUniqueID, ::Tick>>> mAttackCooldownVector;
     // NOLINTEND
 
@@ -40,11 +42,6 @@ public:
     MCAPI AreaAttackComponent(::AreaAttackComponent const&);
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI ::std::pair<::ActorUniqueID, ::Tick>* findCooldownEntry(::ActorUniqueID const& actorID);
-
-    MCAPI bool
-    isEntryOnAttackCooldown(::std::pair<::ActorUniqueID, ::Tick> const* cooldownEntry, ::Tick const& currentTick) const;
 
     MCAPI ::AreaAttackComponent& operator=(::AreaAttackComponent&&);
 

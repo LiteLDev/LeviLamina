@@ -17,7 +17,7 @@ class JunglePyramidPiece : public ::ScatteredFeaturePiece {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
+    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) /*override*/;
 
     virtual ::StructurePieceType getType() const /*override*/;
     // NOLINTEND
@@ -25,16 +25,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI ::StructurePieceType $getType() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

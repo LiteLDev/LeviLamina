@@ -28,22 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContentViews& operator=(ContentViews const&);
-    ContentViews();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContentViews(::ContentViews const&);
-
     MCAPI ~ContentViews();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentViews const&);
     // NOLINTEND
 
 public:

@@ -3,77 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
-#include "mc/scripting/modules/minecraft/ErrorMemberType.h"
-#include "mc/scripting/modules/minecraft/events/metadata/IScriptAfterEventSignalBuilder.h"
-#include "mc/world/persistence/DynamicPropertyDefinePropertyError.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class Dimension;
-class PlayerUpdateEntityOverridesPacket;
-class Potion;
-class PropertyComponent;
-class PropertyMetadata;
-class Vec3;
-struct GameRuleId;
-namespace ScriptModuleMinecraft { class ParamStorageBase; }
-namespace ScriptModuleMinecraft { class ScriptActor; }
-namespace ScriptModuleMinecraft { class ScriptAimAssistCategorySettings; }
-namespace ScriptModuleMinecraft { class ScriptAimAssistPresetSettings; }
 namespace ScriptModuleMinecraft { class ScriptBiomeType; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
-namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
-namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
+namespace ScriptModuleMinecraft { struct IScriptAfterEventSignalBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptBiomeFillOptions; }
-namespace ScriptModuleMinecraft { struct ScriptCustomCommandInterface; }
 namespace ScriptModuleMinecraft { struct ScriptUnloadedChunksError; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct EnumBinding; }
-namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
-namespace Scripting { struct TaggedBinding; }
-namespace SharedTypes::v1_21_120 { struct CameraAimAssistPresetDefinition; }
-namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::std::unique_ptr<::ScriptModuleMinecraft::ParamStorageBase>>
-CreateParamStorage(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface);
-
-MCNAPI ::Scripting::Error
-_handleDefinePropertyError(::DynamicPropertyDefinePropertyError error, ::std::string const& identifier);
-
-MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForOverridenProperty(
-    ::Actor&                                          actor,
-    ::PropertyComponent const&                        props,
-    ::PlayerUpdateEntityOverridesPacket&              packet,
-    ::PropertyMetadata const&                         propertyMetadata,
-    ::std::variant<float, bool, ::std::string> const& value
-);
-
-MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForRemovedOverride(
-    ::Actor&                   actor,
-    ::PropertyComponent const& props,
-    ::PropertyMetadata const&  propertyMetadata
-);
-
-MCNAPI ::std::optional<::Scripting::Error> _validatePropertyMetadata(
-    ::PropertyMetadata const* propertyMetadata,
-    ::Actor const*            actor,
-    ::std::string const&      identifier
-);
-
 MCNAPI ::Scripting::EnumBinding bindActorHealCause();
 
 MCNAPI ::Scripting::EnumBinding bindActorLocatorEnum();
@@ -126,269 +80,182 @@ MCNAPI ::Scripting::EnumBinding bindTimeOfDay();
 
 MCNAPI ::Scripting::EnumBinding bindTintMethodEnums();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createBlockContainerClosedAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createBlockContainerOpenedAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createBlockExplodeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createButtonPushAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createButtonPushAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createButtonPushV1AfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createChatSendAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createChatSendAfterEventMetadata();
-
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createDataDrivenEntityTriggerAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createEffectAddAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createEffectAddAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityContainerClosedAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityContainerOpenedAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createEntityDieAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createEntityDieAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createEntityHealAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createEntityHealAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityHealthChangedAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityHitBlockAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityHitEntityAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createEntityHurtAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createEntityHurtAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityHurtV1AfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityItemDropAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityItemPickupAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createEntityLoadAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createEntityLoadAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createEntityRemoveAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createEntitySpawnAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createEntitySpawnAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createExplosionAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createEntityStartSneakingAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createEntityUpgradeAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createExplosionAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createGameRuleChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createItemCompleteUseAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createItemReleaseUseAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createItemStartUseAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createItemStartUseOnAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createItemStopUseAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createItemStopUseAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createItemStopUseOnAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createItemUseAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createItemUseAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createItemUseOnAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createItemUseOnAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createLeverActionAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createLeverActionAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createLeverActionV1AfterEventMetadata();
-
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createMessageReceiveAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPackSettingChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPistonActivateAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerBreakBlockAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerButtonInputAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createPlayerCancelBreakingBlockAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerDimensionChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createPlayerEmoteAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createPlayerEmoteAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerGameModeChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerHotbarSelectedSlotChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerInputModeChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerInputPermissionCategoryChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerInteractWithBlockAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerInteractWithEntityAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerInventoryItemChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createPlayerJoinAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createPlayerJoinAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createPlayerJoinV1AfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createPlayerLeaveAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createPlayerLeaveAfterEventMetadata();
-
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createPlayerLeaveV1AfterEventMetadata();
-
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerPlaceBlockAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createPlayerSpawnAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createPlayerSpawnAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createPlayerSpawnV1AfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createPlayerStartBreakingBlockAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerSwingStartAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerUseNameTagAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPressurePlatePopAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPressurePlatePushAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createProjectileHitBlockAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createProjectileHitEntityAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createTargetBlockHitAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createTripWireTripAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createWeatherChangeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createWorldInitializeAfterEventMetadata();
 
-MCNAPI ::std::unique_ptr<
-    ::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder<::ScriptModuleMinecraft::ScriptWorldAfterEvents>>
-createWorldLoadAfterEventMetadata();
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createWorldLoadAfterEventMetadata();
 
 MCNAPI ::Block const* extractBlockFromVariant(
     ::std::variant<
@@ -396,8 +263,6 @@ MCNAPI ::Block const* extractBlockFromVariant(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
 );
-
-MCNAPI ::Vec3 extractLocalBlockPosFromWorldHitPos(::Vec3 const& worldPos);
 
 MCNAPI ::Scripting::Result<
     void,
@@ -412,29 +277,6 @@ fillBiomes(
     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType> const&                biomeType,
     ::ScriptModuleMinecraft::ScriptBiomeFillOptions const&                                               options
 );
-
-MCNAPI ::std::string formatErrorMessage(
-    ::ScriptModuleMinecraft::ErrorMemberType memberType,
-    ::std::string_view                       propertyName,
-    ::std::string_view                       objectTypeName
-);
-
-MCNAPI ::std::optional<::Scripting::TaggedBinding> getGameRuleVersion(::GameRuleId const& ruleId);
-
-MCNAPI ::std::string getScriptScoreboardParticipantName(
-    ::std::variant<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
-        ::std::string> const& participant
-);
-
-MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition
-makeAimAssistCategoryDefinition(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& category);
-
-MCNAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition
-makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& preset);
-
-MCNAPI ::std::optional<::std::shared_ptr<::Potion const> const> tryGetPotion(::std::string const& potionNameId);
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft

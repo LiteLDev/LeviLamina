@@ -18,18 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockShapeComponentData& operator=(BlockShapeComponentData const&);
-    BlockShapeComponentData(BlockShapeComponentData const&);
-    BlockShapeComponentData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::BlockShapeComponentData& operator=(::BlockShapeComponentData&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void transformAABBs(::BlockShapeComponentData& data, ::Matrix const& transform);

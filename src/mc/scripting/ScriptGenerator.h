@@ -18,16 +18,4 @@ public:
     ScriptGenerator& operator=(ScriptGenerator const&);
     ScriptGenerator(ScriptGenerator const&);
     ScriptGenerator();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptGenerator();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

@@ -22,38 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestBatch();
-
-    MCNAPI void addRequest(::std::unique_ptr<::ItemStackRequestData> request);
-#endif
-
-    MCNAPI ::std::vector<::std::unique_ptr<::ItemStackRequestData>> const& getRequests() const;
-
-    MCNAPI ::std::vector<::std::unique_ptr<::ItemStackRequestData>> takeRequests() const;
-
     MCNAPI void write(::BinaryStream& stream) const;
-
-    MCNAPI ~ItemStackRequestBatch();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestBatch>> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

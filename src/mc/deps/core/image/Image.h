@@ -6,6 +6,7 @@
 #include "mc/deps/core/container/Blob.h"
 #include "mc/deps/core/image/ImageFormat.h"
 #include "mc/deps/core/image/ImageUsage.h"
+#include "mc/deps/core/math/AlphaUsage.h"
 
 namespace mce {
 
@@ -22,41 +23,18 @@ public:
     ::ll::TypedStorage<4, 4, uint>               mHeight;
     ::ll::TypedStorage<4, 4, uint>               mDepth;
     ::ll::TypedStorage<1, 1, ::mce::ImageUsage>  mUsage;
+    ::ll::TypedStorage<1, 1, ::mce::AlphaUsage>  mAlphaUsage;
     ::ll::TypedStorage<8, 24, ::mce::Blob>       mImageBytes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Image();
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit Image(::mce::Blob&& contents);
-#endif
-
-    MCAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
-
     MCAPI ::mce::Image clone() const;
 
-    MCAPI bool isEmpty() const;
-
     MCAPI void resizeImageBytesToFitImageDescription();
-
-#ifdef LL_PLAT_C
-    MCAPI void setRawImage(::mce::Blob&& contents);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::mce::Blob&& contents);
-#endif
-
-    MCAPI void* $ctor(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
     // NOLINTEND
 };
 

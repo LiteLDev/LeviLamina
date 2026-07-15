@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/BaseError.h"
+#include "mc/deps/script_core/runtime/scripting/BaseError.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,27 +23,12 @@ public:
     // prevent constructor by default
     ScriptInternalWebSocketError& operator=(ScriptInternalWebSocketError const&);
     ScriptInternalWebSocketError(ScriptInternalWebSocketError const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ScriptInternalWebSocketError();
-
-    MCNAPI explicit ScriptInternalWebSocketError(::std::error_code const& error);
-    // NOLINTEND
+    ScriptInternalWebSocketError();
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::std::error_code const& error);
     // NOLINTEND
 };
 

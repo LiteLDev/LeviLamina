@@ -51,22 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit RandomStrollGoal(::Mob& mob);
-
-    MCAPI RandomStrollGoal(::Mob& mob, float speed, int xzDist, int yDist, int interval);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-
-    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, int interval);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

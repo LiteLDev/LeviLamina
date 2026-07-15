@@ -5,52 +5,60 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/InventoryTransactionPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/world/containers/ContainerEnumName.h"
-#include "mc/world/inventory/network/TypedClientNetId.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPalette;
-class ComplexInventoryTransaction;
 class ReadOnlyBinaryStream;
-class ServerPlayer;
-struct ItemStackLegacyRequestIdTag;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class InventoryTransactionPacket : public ::Packet {
-public:
-    // InventoryTransactionPacket inner types define
-    using LegacySetSlot = ::std::pair<::ContainerEnumName, ::std::vector<uchar>>;
-
+class InventoryTransactionPacket : public ::ll::PayloadPacket<::InventoryTransactionPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::ItemStackLegacyRequestId> mLegacyRequestId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>>>
-                                                                               mLegacySetItemSlots;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ComplexInventoryTransaction>> mTransaction;
-    ::ll::TypedStorage<1, 1, bool>                                             mIsClientSide;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InventoryTransactionPacket& operator=(InventoryTransactionPacket const&);
-    InventoryTransactionPacket(InventoryTransactionPacket const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~InventoryTransactionPacket() /*override*/;
-
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
     virtual ::std::string_view getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
     // NOLINTEND
 
 public:
@@ -58,13 +66,7 @@ public:
     // NOLINTBEGIN
     MCAPI InventoryTransactionPacket();
 
-    MCAPI InventoryTransactionPacket(::InventoryTransactionPacket&&);
-
-    MCAPI InventoryTransactionPacket(::std::unique_ptr<::ComplexInventoryTransaction> transaction, bool isClientSide);
-
-    MCAPI void handle(::ServerPlayer& player, ::BlockPalette& blockPalette) const;
-
-    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide) const;
+    MCAPI explicit InventoryTransactionPacket(::InventoryTransactionPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -72,15 +74,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::InventoryTransactionPacket&&);
-
-    MCAPI void* $ctor(::std::unique_ptr<::ComplexInventoryTransaction> transaction, bool isClientSide);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::InventoryTransactionPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -90,9 +84,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
+    MCAPI ::SerializationMode $getSerializationMode() const;
+
+    MCAPI void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCAPI bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

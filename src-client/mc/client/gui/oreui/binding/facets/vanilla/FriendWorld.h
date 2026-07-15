@@ -24,28 +24,6 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mRealmId;
     ::ll::TypedStorage<1, 1, bool>                            mIsEditorWorld;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FriendWorld& operator=(FriendWorld const&);
-    FriendWorld(FriendWorld const&);
-    FriendWorld();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::OreUI::FriendWorld& operator=(::OreUI::FriendWorld&&);
-
-    MCAPI bool operator==(::OreUI::FriendWorld const&) const;
-
-    MCAPI ~FriendWorld();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -17,7 +17,7 @@ class BlockVolumeBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockVolumeBase();
+    virtual ~BlockVolumeBase() = default;
 
     virtual ::BoundingBox getBoundingBox() const = 0;
 
@@ -40,12 +40,6 @@ public:
     virtual ::std::unordered_set<::BlockPos> getFlattenedBlockPositions() const = 0;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> getIterator() const = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

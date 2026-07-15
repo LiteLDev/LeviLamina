@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/data_structures/List.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class BitStream; }
@@ -48,6 +45,8 @@ public:
 public:
     // prevent constructor by default
     RakString& operator=(RakString const&);
+    RakString(RakString const&);
+    RakString();
 
 public:
     // member functions
@@ -60,47 +59,19 @@ public:
 
     MCAPI void Free();
 
-    MCAPI uint64 GetLength() const;
-
-    MCAPI bool IsEmpty() const;
-
-    MCAPI RakString();
-
-    MCAPI RakString(::RakNet::RakString const& rhs);
-
     MCAPI RakString(char const*, ...);
-
-    MCFOLD ::RakNet::RakString& operator=(char* str);
-
-    MCFOLD ::RakNet::RakString& operator=(char const* str);
-
-    MCAPI bool operator==(::RakNet::RakString const& rhs) const;
-
-    MCAPI ~RakString();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::RakNet::RakString::SharedString& emptyString();
-
-    MCAPI static ::DataStructures::List<::RakNet::RakString::SharedString*>& freeList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::RakNet::RakString const& rhs);
-
     MCAPI void* $ctor(char const*, ...);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

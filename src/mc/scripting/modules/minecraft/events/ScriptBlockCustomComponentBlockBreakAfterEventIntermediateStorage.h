@@ -37,18 +37,6 @@ public:
                             BlockCause> const>
         mDestructionCauseBlock;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptBlockCustomComponentBlockBreakAfterEventIntermediateStorage();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

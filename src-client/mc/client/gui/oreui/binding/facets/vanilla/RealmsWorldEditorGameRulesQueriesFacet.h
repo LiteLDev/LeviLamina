@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/util/SubscribedValue.h"
 
@@ -15,7 +15,7 @@ namespace Realms { class RealmsWorldEditor; }
 namespace OreUI {
 
 class RealmsWorldEditorGameRulesQueriesFacet
-: public ::OreUI::FacetBase<::OreUI::RealmsWorldEditorGameRulesQueriesFacet> {
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsWorldEditorGameRulesQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,7 +43,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsWorldEditorGameRulesQueriesFacet() /*override*/;
+    virtual ~RealmsWorldEditorGameRulesQueriesFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -54,34 +54,6 @@ public:
     MCAPI explicit RealmsWorldEditorGameRulesQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor
     );
-
-    MCAPI void _refreshRealmWorldSubscriptions();
-
-    MCFOLD bool getFireSpreads() const;
-
-    MCAPI bool getImmediateRespawn() const;
-
-    MCFOLD bool getMobsDropLoot() const;
-
-    MCFOLD bool getNaturalRegeneration() const;
-
-    MCFOLD bool getRecipesUnlock() const;
-
-    MCFOLD bool getRespawnBlocksExplode() const;
-
-    MCAPI int getRespawnRadius() const;
-
-    MCFOLD bool getShowCoordinates() const;
-
-    MCFOLD bool getShowDaysPlayed() const;
-
-    MCAPI bool getSleepSkipNight() const;
-
-    MCFOLD int getSleepSkipNightPercent() const;
-
-    MCFOLD bool getTNTExplodes() const;
-
-    MCFOLD bool getTileDrops() const;
     // NOLINTEND
 
 public:
@@ -97,21 +69,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -12,8 +12,6 @@ namespace PlayerSleep {
 // NOLINTBEGIN
 MCAPI short getSleepCounter(::EntityContext const& provider);
 
-MCAPI void initializePlayer(::EntityContext& provider);
-
 MCAPI bool isSleepingLongEnough(::EntityContext const& provider);
 
 MCAPI void resetSleepCounter(::EntityContext& provider);

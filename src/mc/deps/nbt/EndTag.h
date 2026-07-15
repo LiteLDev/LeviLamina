@@ -44,7 +44,7 @@ public:
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
-    MCFOLD bool $equals(::Tag const& rhs) const;
+    MCAPI bool $equals(::Tag const& rhs) const;
 
     MCFOLD uint64 $hash() const;
 

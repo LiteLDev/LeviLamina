@@ -2,16 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/pub_sub/Connector.h"
-#include "mc/deps/game_refs/StackRefResult.h"
-#include "mc/world/SimulationType.h"
-
 // auto generated forward declare list
 // clang-format off
-class EntityRegistry;
-class Option;
-namespace Bedrock::PubSub { class Subscription; }
 class ILocalServerPauseCommunication;
 // clang-format on
 
@@ -37,50 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PauseManager(::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry);
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::PubSub::Connector<void(bool)>& getPauseStateChangeConnector();
-#endif
-
-    MCNAPI ::SimulationType getSimulationType() const;
-
-#ifdef LL_PLAT_C
-    MCNAPI void initializeOption(::Option* option);
-#endif
-
-    MCNAPI ::Bedrock::PubSub::Subscription
-    listenForSimulationTypeChange(::std::function<void(::SimulationType, ::SimulationType)> callback);
-
 #ifdef LL_PLAT_C
     MCNAPI bool requestInGamePause(::ILocalServerPauseCommunication& pauseCommunication, bool status) const;
-
-    MCNAPI void setPauseFeatureEnabled(bool status);
-
-    MCNAPI void setPauseIntent(bool value);
 #endif
 
-    MCNAPI void setSimulationType(::SimulationType simulationType);
-
     MCNAPI ~PauseManager();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::SimulationType getSimulationType(::StackRefResult<::PauseManager const> pauseManager);
-
-    MCNAPI static bool
-    isSimulationType(::StackRefResult<::PauseManager const> pauseManager, ::SimulationType simulationType);
-
-    MCNAPI static void
-    setSimulationType(::StackRefResult<::PauseManager> pauseManager, ::SimulationType simulationType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry);
     // NOLINTEND
 
 public:

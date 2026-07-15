@@ -13,16 +13,4 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::HudElement>> mHudElement;
     ::ll::TypedStorage<4, 4, ::HudVisibility>              mHudVisible;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SetHudPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -15,16 +15,4 @@ public:
     DynamicAmbientSound& operator=(DynamicAmbientSound const&);
     DynamicAmbientSound(DynamicAmbientSound const&);
     DynamicAmbientSound();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~DynamicAmbientSound();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

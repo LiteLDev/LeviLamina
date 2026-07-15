@@ -17,7 +17,6 @@ class ScreenContext;
 namespace Core { class Path; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class TrueTypeFont : public ::Font {
@@ -39,18 +38,6 @@ public:
         ::ll::TypedStorage<4, 4, int>                descent;
         ::ll::TypedStorage<4, 4, int>                lineGap;
         ::ll::TypedStorage<8, 32, ::std::string>     resourceData;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~LoadedFontInformation();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -82,15 +69,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TrueTypeFont();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TrueTypeFont() /*override*/;
+    virtual ~TrueTypeFont() /*override*/ = default;
 
-    virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
+    virtual void loadFontData(bool) /*override*/;
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
@@ -102,11 +85,11 @@ public:
 
     virtual int _getReplacementCharacter() /*override*/;
 
-    virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool) const /*override*/;
+    virtual ::ResourceLocation _getFontSheetLocation(int, bool) const /*override*/;
 
-    virtual float _getCharWidth(int uniChar, bool) /*override*/;
+    virtual float _getCharWidth(int, bool) /*override*/;
 
-    virtual bool supportsChar(int const& character) /*override*/;
+    virtual bool supportsChar(int const&) /*override*/;
 
     virtual float getWrapHeight() const /*override*/;
 
@@ -119,31 +102,20 @@ public:
     virtual void setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const
         /*override*/;
 
-    virtual void reloadFontTextures(
-        ::Bedrock::NonOwnerPointer<::ResourceLoadManager> const& resourceLoadManager,
-        bool                                                     blockingLoad
-    ) /*override*/;
+    virtual void reloadFontTextures(::Bedrock::NonOwnerPointer<::ResourceLoadManager> const&, bool) /*override*/;
 
     virtual bool isReloadingTextures() /*override*/;
 
-    virtual void _scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode) /*override*/;
+    virtual void _scanUnicodeCharacterSize(int, int, bool) /*override*/;
 
-    virtual ::mce::Font::Type getType(int) const /*override*/;
+    virtual ::mce::Font::Type getType(int glyphSheet) const /*override*/;
 
-    virtual void fetchPage(int page) /*override*/;
+    virtual void fetchPage(int) /*override*/;
 
-    virtual float buildChar(
-        ::std::vector<::Font::GlyphQuad>& quads,
-        int                               i,
-        ::mce::Color const&               color,
-        bool                              italic,
-        float                             x,
-        float                             y,
-        bool                              unicode
-    ) /*override*/;
+    virtual float
+    buildChar(::std::vector<::Font::GlyphQuad>&, int, ::mce::Color const&, bool, float, float, bool) /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string>
-    getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
+    virtual ::Core::PathBuffer<::std::string> getUnicodeFontNameWithPage(::Core::Path const&, uchar const) const;
 
     virtual void switchFontsource(::Core::Path const&, ::Core::Path const&) /*override*/;
 
@@ -152,133 +124,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TrueTypeFont(
-        ::std::string const&                   ttfFile,
-        uint                                   version,
-        uchar                                  defaultRenderPixelHeight,
-        ushort                                 atlasPageSize,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-        bool                                   uploadTextureOnConstruction
-    );
-
-    MCAPI void _cacheAtlas(
-        ::Core::Path const&                   atlasPath,
-        ::std::shared_ptr<::cg::ImageBuffer>& atlasTexture,
-        ::Core::Path const&                   glyphInfoPath,
-        ::TrueTypeFont::PageOfGlyphs&         atlasGlyphInfo
-    );
-
-    MCAPI void
-    _convertAtlas(::std::vector<uchar> const& data, ::std::shared_ptr<::cg::ImageBuffer>& atlasTexture, int atlasSize);
-
-    MCAPI bool _loadCache(
-        ::Core::Path const&                   atlasPath,
-        ::std::shared_ptr<::cg::ImageBuffer>& atlasTexture,
-        ::Core::Path const&                   glyphInfoPath,
-        ::TrueTypeFont::PageOfGlyphs&         atlasGlyphInfo
-    );
-
-    MCAPI void _loadSheetForGlyph(int codepoint, bool uploadTexture, bool forceReload);
-
-    MCAPI void
-    _uploadTextureToGPU(::ResourceLocation const& resourceLocation, ::std::shared_ptr<::cg::ImageBuffer> imageBuffer);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint const& CACHE_VERSION();
-
-    MCAPI static ushort const& DEFAULT_ATLAS_PAGE_SIZE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                   ttfFile,
-        uint                                   version,
-        uchar                                  defaultRenderPixelHeight,
-        ushort                                 atlasPageSize,
-        ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-        bool                                   uploadTextureOnConstruction
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadFontData(bool uploadTextureImmediately);
 
-    MCFOLD bool $_supportsShadowInSingleDraw();
-
-    MCAPI ::mce::MaterialPtr& $getMaterial(int, bool) const;
-
-    MCAPI void $uploadTextureToGPU();
-
-    MCAPI void $unloadTextures();
-
-    MCFOLD int $_getReplacementCharacter();
-
-    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
-
-    MCAPI float $_getCharWidth(int uniChar, bool);
-
-    MCAPI bool $supportsChar(int const& character);
-
-    MCAPI float $getWrapHeight() const;
-
-    MCFOLD float $getScaleFactor() const;
-
-    MCFOLD bool $isScreenPixelAligned() const;
-
-    MCFOLD bool $materialCanBeOverridden() const;
-
-    MCFOLD void $setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const;
-
-    MCAPI void $reloadFontTextures(
-        ::Bedrock::NonOwnerPointer<::ResourceLoadManager> const& resourceLoadManager,
-        bool                                                     blockingLoad
-    );
-
-    MCFOLD bool $isReloadingTextures();
-
-    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
-
-    MCFOLD ::mce::Font::Type $getType(int) const;
-
-    MCAPI void $fetchPage(int page);
-
-    MCAPI float $buildChar(
-        ::std::vector<::Font::GlyphQuad>& quads,
-        int                               i,
-        ::mce::Color const&               color,
-        bool                              italic,
-        float                             x,
-        float                             y,
-        bool                              unicode
-    );
-
-    MCFOLD ::Core::PathBuffer<::std::string>
-    $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
-
-    MCFOLD void $switchFontsource(::Core::Path const&, ::Core::Path const&);
-
-    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
-    $getFontSources() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

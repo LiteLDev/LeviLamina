@@ -15,13 +15,11 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class BlockSource;
 class ContainerModel;
 class DynamicContainerTracker;
 class HashedString;
 class IContainerRegistryAccess;
 class ItemStack;
-class ItemStackNetManagerBase;
 class Player;
 struct ActorUniqueID;
 struct FullContainerName;
@@ -122,58 +120,19 @@ public:
 
     MCAPI void _addContainer(::std::shared_ptr<::ContainerModel> containerModel);
 
-    MCAPI void _addContainerToItemStackNetManager(
-        ::ItemStackNetManagerBase* itemStackNetManager,
-        ::ContainerModel&          containerModel,
-        ::BlockSource&             region
-    );
-
-    MCAPI ::ContainerScreenContext _containerScreenContext(::ActorUniqueID actorId);
-
-    MCAPI ::ContainerScreenContext _containerScreenContext(::BlockPos const& blockPos);
-
     MCAPI ::std::shared_ptr<::ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
-
-    MCAPI bool _isPlayerInRangeOfPosition(::BlockPos const& blockPos, float pickRange) const;
-
-    MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
 
 #ifdef LL_PLAT_C
     MCAPI ::std::string getBlockDisplayName(::BlockPos const& blockPos) const;
 
     MCAPI ::HashedString getBlockLocName(::BlockPos const& blockPos) const;
 
-    MCFOLD ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerModel>>& getContainers();
-
-    MCAPI ::std::shared_ptr<::ContainerModel> getDynamicContainer(::FullContainerName const& name);
-
     MCAPI ::HashedString getEntityLocName(::ActorUniqueID const& actorUniqueID) const;
 
     MCAPI ::std::string getEntityName(::ActorUniqueID const& actorUniqueID) const;
 #endif
 
-    MCFOLD ::Player& getPlayer() const;
-
-#ifdef LL_PLAT_C
-    MCAPI int getPlayerLevels() const;
-
-    MCAPI void grantExperience(int amount);
-#endif
-
     MCAPI void postInit();
-
-#ifdef LL_PLAT_C
-    MCAPI void registerInformControllerOfDestructionCallback(
-        ::ContainerManagerController const*             owner,
-        ::std::function<void(::ContainerManagerModel&)> callback
-    );
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _appendCopies(::std::vector<::ItemStack>& out, ::std::vector<::ItemStack> const& items);
     // NOLINTEND
 
 public:
@@ -195,9 +154,9 @@ public:
 
     MCFOLD ::ContainerID $getContainerId() const;
 
-    MCFOLD void $setContainerId(::ContainerID id);
+    MCAPI void $setContainerId(::ContainerID id);
 
-    MCFOLD ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+    MCAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
     MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
@@ -225,11 +184,5 @@ public:
     MCFOLD void $_onDynamicContainerContentsChanged();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

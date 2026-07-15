@@ -15,18 +15,6 @@ public:
     ::ll::TypedStorage<8, 32, ::OreUI::UserPermissionFEWrapper> addFriends;
     ::ll::TypedStorage<8, 32, ::OreUI::UserPermissionFEWrapper> viewProfiles;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~UserPermissionsFEWrapper();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace OreUI

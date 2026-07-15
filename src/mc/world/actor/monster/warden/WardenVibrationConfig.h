@@ -36,19 +36,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onSignalReceive(
-        ::BlockSource&     region,
-        ::BlockPos const&  vibrationSourcePos,
-        ::GameEvent const& vibrationSource,
-        ::Actor*           projectileOwner,
+        ::BlockSource&    region,
+        ::BlockPos const& vibrationSourcePos,
+        ::GameEvent const&,
+        ::Actor* vibrationSource,
         float,
         uint,
-        ::Actor*
+        ::Actor* projectileOwner
     ) /*override*/;
 
     virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
 
     virtual bool
-    shouldListen(::BlockSource& region, ::GameEvent const& gameEventContext, ::GameEventContext const&) /*override*/;
+    shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
     // NOLINTEND
 
 public:
@@ -67,18 +67,18 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onSignalReceive(
-        ::BlockSource&     region,
-        ::BlockPos const&  vibrationSourcePos,
-        ::GameEvent const& vibrationSource,
-        ::Actor*           projectileOwner,
+        ::BlockSource&    region,
+        ::BlockPos const& vibrationSourcePos,
+        ::GameEvent const&,
+        ::Actor* vibrationSource,
         float,
         uint,
-        ::Actor*
+        ::Actor* projectileOwner
     );
 
     MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const& gameEventContext, ::GameEventContext const&);
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
 
 
     // NOLINTEND

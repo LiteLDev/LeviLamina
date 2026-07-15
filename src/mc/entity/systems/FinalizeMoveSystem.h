@@ -46,22 +46,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();
-
-    MCAPI static void tick(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::AABBShapeComponent const,
-            ::MoveRequestComponent const,
-            ::OffsetsComponent const,
-            ::StateVectorComponent,
-            ::Optional<::OnGroundFlagComponent const>,
-            ::Optional<::MovementAbilitiesComponent const>> view,
-        ::EntityModifier<
-            ::OnGroundFlagComponent,
-            ::CollisionFlagComponent,
-            ::HorizontalCollisionFlagComponent,
-            ::VerticalCollisionFlagComponent,
-            ::CollidableMobNearFlagComponent> mod
-    );
     // NOLINTEND
 };

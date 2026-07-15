@@ -35,10 +35,4 @@ public:
 
     MCAPI ::std::string $getTitleText() const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

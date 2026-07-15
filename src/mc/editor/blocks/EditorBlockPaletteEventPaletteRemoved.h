@@ -16,18 +16,6 @@ public:
     EditorBlockPaletteEventPaletteRemoved& operator=(EditorBlockPaletteEventPaletteRemoved const&);
     EditorBlockPaletteEventPaletteRemoved(EditorBlockPaletteEventPaletteRemoved const&);
     EditorBlockPaletteEventPaletteRemoved();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~EditorBlockPaletteEventPaletteRemoved();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Editor

@@ -28,19 +28,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int getAvailableSetCount(int, ::ItemStackBase const&) const /*override*/;
+    virtual int getAvailableSetCount(int slot, ::ItemStackBase const& item) const /*override*/;
 
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
     virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& slot,
-        int const                       item,
-        ::ItemStackBase const&          amount,
-        int const,
+        ::ContainerScreenContext const&,
+        int const              slot,
+        ::ItemStackBase const& item,
+        int const              amount,
         bool
     ) const /*override*/;
 
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const&) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -58,19 +59,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getAvailableSetCount(int, ::ItemStackBase const&) const;
+    MCFOLD int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
 
     MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
     MCAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& slot,
-        int const                       item,
-        ::ItemStackBase const&          amount,
-        int const,
+        ::ContainerScreenContext const&,
+        int const              slot,
+        ::ItemStackBase const& item,
+        int const              amount,
         bool
     ) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const&) const;
+    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
     // NOLINTEND

@@ -26,7 +26,6 @@ class UIPropertyBag;
 class UiExpression;
 class Vec2;
 namespace mce { class Color; }
-namespace ui { struct LayoutOffset; }
 namespace ui { struct SliceSize; }
 // clang-format on
 
@@ -47,15 +46,12 @@ public:
 public:
     // prevent constructor by default
     UIResolvedDef& operator=(UIResolvedDef const&);
+    UIResolvedDef(UIResolvedDef const&);
     UIResolvedDef();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIResolvedDef(::UIResolvedDef const&);
-
-    MCAPI UIResolvedDef(::std::vector<::Json::Value*>* variablesStack, ::Json::Value const& resolvedVal);
-
     MCAPI UIResolvedDef(
         ::std::vector<::Json::Value*>* variablesStack,
         ::std::string_view             defNamespace,
@@ -66,11 +62,7 @@ public:
 
     MCAPI ::Json::Value const& _evaluate(::Json::Value const& value, bool forceExpressionEval) const;
 
-    MCAPI void _pushVariables();
-
     MCAPI void _validateProperty(::std::string_view name) const;
-
-    MCAPI void foreachMemberNames(::std::function<void(::std::string_view)> predicate) const;
 
     MCAPI ::ui::AnchorPoint getAsAnchorPoint(::std::string_view key, ::ui::AnchorPoint defaultValue) const;
 
@@ -79,8 +71,6 @@ public:
     MCAPI ::BindingCondition getAsBindingCondition(::std::string_view key) const;
 
     MCAPI ::BindingType getAsBindingType(::std::string_view key) const;
-
-    MCAPI bool getAsBool(::std::string_view key, bool defaultValue) const;
 
     MCAPI uint getAsButtonId(::std::string_view key, uint defaultValue) const;
 
@@ -92,15 +82,9 @@ public:
 
     MCAPI ::ui::Draggable getAsDraggable(::std::string_view key, ::ui::Draggable defaultValue) const;
 
-    MCAPI float getAsFloat(::std::string_view key, float defaultValue) const;
-
     MCAPI ::ui::FontSize getAsFontSize(::std::string_view key, ::ui::FontSize defaultValue) const;
 
     MCAPI ::glm::ivec2 getAsGridSize(::std::string_view key, ::glm::ivec2 const& defaultValue) const;
-
-    MCAPI int getAsInt(::std::string_view key, int defaultValue) const;
-
-    MCAPI ::ui::LayoutOffset getAsLayoutSize(::std::string_view key, ::ui::LayoutOffset const& defaultValue) const;
 
     MCAPI ::ui::OrientationType getAsOrientation(::std::string_view key, ::ui::OrientationType defaultValue) const;
 
@@ -132,21 +116,11 @@ public:
 
     MCFOLD ::glm::vec2 getAsUVSize(::std::string_view key, ::glm::vec2 const& defaultValue) const;
 
-    MCAPI uint getAsUnsignedInt(::std::string_view key, uint defaultValue) const;
-
     MCAPI ::UIDefType getDefType() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD ::std::string const& getNamespace() const;
 
     MCAPI ::Json::Value const& getValue(::std::string_view key, bool forceExpressionEval) const;
 
     MCAPI bool hasValue(::std::string_view key) const;
-
-    MCFOLD bool isIgnored() const;
-
-    MCAPI bool isNamed() const;
 
     MCAPI ~UIResolvedDef();
     // NOLINTEND
@@ -154,9 +128,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string
-    _replaceVarsInRefString(::std::string_view refString, ::std::vector<::Json::Value*>* variablesStack);
-
     MCAPI static ::UIResolvedDef create(
         ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepo,
         ::std::vector<::Json::Value*>*                          variablesStack,
@@ -176,29 +147,11 @@ public:
         ::std::vector<::Json::Value*> const& variablesStack,
         ::Json::Value const*                 optionalLocalStack
     );
-
-    MCAPI static void parseName(
-        ::std::string_view             input,
-        ::std::string&                 outName,
-        ::std::string&                 outNamespace,
-        ::std::string&                 outRef,
-        ::std::vector<::Json::Value*>* variablesStack
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::UIResolvedDef& mNull();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const&);
-
-    MCAPI void* $ctor(::std::vector<::Json::Value*>* variablesStack, ::Json::Value const& resolvedVal);
-
     MCAPI void* $ctor(
         ::std::vector<::Json::Value*>* variablesStack,
         ::std::string_view             defNamespace,

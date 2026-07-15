@@ -8,4 +8,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint> mControlOptionId;
     // NOLINTEND
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~ControlOption() = default;
+    // NOLINTEND
 };

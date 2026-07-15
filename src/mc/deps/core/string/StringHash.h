@@ -6,6 +6,6 @@ class StringHash {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint const> m_hash;
+    ::ll::TypedStorage<4, 4, uint> m_hash;
     // NOLINTEND
 };

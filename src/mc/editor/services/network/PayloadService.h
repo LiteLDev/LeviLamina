@@ -4,13 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/selection/PayloadServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class EditorNetworkPacket;
 class PacketSender;
 class WeakEntityRef;
@@ -59,18 +58,6 @@ public:
         CachedPacket& operator=(CachedPacket const&);
         CachedPacket(CachedPacket const&);
         CachedPacket();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CachedPacket();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     struct PayloadFactory {
@@ -116,18 +103,6 @@ public:
         PayloadInfo& operator=(PayloadInfo const&);
         PayloadInfo(PayloadInfo const&);
         PayloadInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~PayloadInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -151,7 +126,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PayloadService() /*override*/;
+    virtual ~PayloadService() /*override*/ = default;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -159,59 +134,50 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    dispatchToSelf(::Editor::Network::INetworkPayload& payload) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> dispatchToSelf(::Editor::Network::INetworkPayload&) /*override*/;
 
-    virtual void onReceivePayload(::EditorNetworkPacket const& packet) /*override*/;
+    virtual void onReceivePayload(::EditorNetworkPacket const&) /*override*/;
 
     virtual bool isCollectingMetrics() const /*override*/;
 
     virtual void clearMetrics() /*override*/;
 
-    virtual void setCollectingMetrics(bool collecting) /*override*/;
+    virtual void setCollectingMetrics(bool) /*override*/;
 
     virtual ::std::vector<::std::pair<::std::string, ::Editor::Network::PayloadMetrics>> collectMetricsReport() const
         /*override*/;
 
     virtual ::Editor::Network::PayloadMetrics* _registerPayload(
-        char const*                                                              payloadName,
-        ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
+        char const*,
+        ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()>
     ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    _send(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics) /*override*/;
+    _send(::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _sendToManager(
-        ::Editor::Network::INetworkPayload& payload,
-        ::Editor::Network::PayloadMetrics*  metrics
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    _sendToManager(::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> _sendToClientId(
-        ::mce::UUID const&                  clientId,
-        ::Editor::Network::INetworkPayload& payload,
-        ::Editor::Network::PayloadMetrics*  metrics
+        ::mce::UUID const&,
+        ::Editor::Network::INetworkPayload&,
+        ::Editor::Network::PayloadMetrics*
     ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> _sendToClientIds(
-        ::std::vector<::mce::UUID> const&   clientIds,
-        ::Editor::Network::INetworkPayload& payload,
-        ::Editor::Network::PayloadMetrics*  metrics
+        ::std::vector<::mce::UUID> const&,
+        ::Editor::Network::INetworkPayload&,
+        ::Editor::Network::PayloadMetrics*
     ) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _broadcastToClients(
-        ::Editor::Network::INetworkPayload& payload,
-        ::Editor::Network::PayloadMetrics*  metrics
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    _broadcastToClients(::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _broadcastToClientManagers(
-        ::Editor::Network::INetworkPayload& payload,
-        ::Editor::Network::PayloadMetrics*  metrics
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    _broadcastToClientManagers(::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> _listenFor(
-        char const*                                                      payloadName,
-        ::std::function<void(::Editor::Network::INetworkPayload const&)> fnSubscriber
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    _listenFor(char const*, ::std::function<void(::Editor::Network::INetworkPayload const&)>) /*override*/;
     // NOLINTEND
 
 public:
@@ -223,47 +189,6 @@ public:
         ::PacketSender&                      packetSender,
         bool                                 isClientSide,
         bool                                 collectMetrics
-    );
-
-    MCNAPI ::Editor::Network::PayloadService::PayloadInfo* _createPayloadInfo(
-        char const*                                                              payloadName,
-        ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
-    );
-
-    MCNAPI ::std::shared_ptr<::Editor::Network::INetworkPayload>
-    _load(::std::string_view payloadName, ::std::string_view payloadRawData);
-
-    MCNAPI ::Scripting::Result_deprecated<::EditorNetworkPacket> _populatePacket(
-        ::Editor::Network::INetworkPayload*           payload,
-        ::Editor::Network::PayloadService::SendTarget target,
-        ::Editor::Network::PayloadMetrics*            metrics
-    );
-
-    MCNAPI void _sendCachedPacketToTarget(::Editor::Network::PayloadService::CachedPacket& packet);
-
-    MCNAPI ::Scripting::Result_deprecated<void> _sendToClient(
-        ::Editor::Network::INetworkPayload&           payload,
-        ::Editor::Network::PayloadService::SendTarget target,
-        ::Editor::Network::PayloadMetrics*            metrics
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> _sendToClientTargets(
-        ::std::vector<::Actor*>            actorList,
-        ::EditorNetworkPacket&             outPacket,
-        ::Editor::Network::PayloadMetrics* metrics
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> _sendToServer(
-        ::Editor::Network::INetworkPayload&           payload,
-        ::Editor::Network::PayloadService::SendTarget target,
-        ::Editor::Network::PayloadMetrics*            metrics
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> _sendToTarget(
-        ::Actor*                                      actor,
-        ::EditorNetworkPacket&                        outPacket,
-        ::Editor::Network::PayloadService::SendTarget toWhom,
-        ::Editor::Network::PayloadMetrics*            metrics
     );
     // NOLINTEND
 
@@ -280,75 +205,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $init();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $quit();
-
-    MCNAPI ::std::string_view $getServiceName() const;
-
-    MCNAPI ::Scripting::Result_deprecated<void> $dispatchToSelf(::Editor::Network::INetworkPayload& payload);
-
-    MCNAPI void $onReceivePayload(::EditorNetworkPacket const& packet);
-
-    MCNAPI bool $isCollectingMetrics() const;
-
-    MCNAPI void $clearMetrics();
-
-    MCNAPI void $setCollectingMetrics(bool collecting);
-
-    MCNAPI ::std::vector<::std::pair<::std::string, ::Editor::Network::PayloadMetrics>> $collectMetricsReport() const;
-
-    MCNAPI ::Editor::Network::PayloadMetrics* $_registerPayload(
-        char const*                                                              payloadName,
-        ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()> constructorFunc
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $_send(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics);
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $_sendToManager(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics);
-
-    MCNAPI ::Scripting::Result_deprecated<void> $_sendToClientId(
-        ::mce::UUID const&                  clientId,
-        ::Editor::Network::INetworkPayload& payload,
-        ::Editor::Network::PayloadMetrics*  metrics
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void> $_sendToClientIds(
-        ::std::vector<::mce::UUID> const&   clientIds,
-        ::Editor::Network::INetworkPayload& payload,
-        ::Editor::Network::PayloadMetrics*  metrics
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $_broadcastToClients(::Editor::Network::INetworkPayload& payload, ::Editor::Network::PayloadMetrics* metrics);
-
-    MCNAPI ::Scripting::Result_deprecated<void> $_broadcastToClientManagers(
-        ::Editor::Network::INetworkPayload& payload,
-        ::Editor::Network::PayloadMetrics*  metrics
-    );
-
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    $_listenFor(char const* payloadName, ::std::function<void(::Editor::Network::INetworkPayload const&)> fnSubscriber);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForPayloadServiceProvider();
-
-    MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
 };
 

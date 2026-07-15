@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/PortalAxis.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +17,6 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-class Random;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -33,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool mayPick(::BlockSource const& region, ::Block const&, bool) const /*override*/;
+    virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -54,10 +52,10 @@ public:
     ) const /*override*/;
 
     virtual ::AABB const&
-    getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const
+    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    virtual void entityInside(::BlockSource& pos, ::BlockPos const& entity, ::Actor&) const /*override*/;
+    virtual void entityInside(::BlockSource&, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -72,8 +70,6 @@ public:
     // NOLINTBEGIN
     MCAPI PortalBlock(::std::string const& nameId, int id);
 
-    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
@@ -86,8 +82,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void trySpawnPigZombie(::BlockSource& region, ::BlockPos const& pos, ::PortalAxis axis);
-
     MCAPI static bool trySpawnPortal(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
@@ -100,7 +94,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPick(::BlockSource const& region, ::Block const&, bool) const;
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -121,9 +115,9 @@ public:
     ) const;
 
     MCFOLD ::AABB const&
-    $getOutline(::Block const& pos, ::IConstBlockSource const& bufferValue, ::BlockPos const&, ::AABB&) const;
+    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI void $entityInside(::BlockSource& pos, ::BlockPos const& entity, ::Actor&) const;
+    MCAPI void $entityInside(::BlockSource&, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

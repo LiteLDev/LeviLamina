@@ -17,31 +17,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const>    defProperties;
     ::ll::TypedStorage<8, 48, ::UI::Resources::ControlPropertyNames> defControls;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DefinitionPropertyNames& operator=(DefinitionPropertyNames const&);
-    DefinitionPropertyNames();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DefinitionPropertyNames(::UI::Resources::DefinitionPropertyNames const&);
-
-    MCAPI ~DefinitionPropertyNames();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UI::Resources::DefinitionPropertyNames const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace UI::Resources

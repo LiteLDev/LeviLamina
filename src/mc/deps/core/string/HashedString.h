@@ -18,12 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit HashedString(nullptr_t);
-#endif
-
-    MCAPI HashedString(::HashedString&& rhs);
-
     MCAPI HashedString(::HashedString const& rhs);
 
     MCAPI explicit HashedString(::std::string const& str);
@@ -33,20 +27,6 @@ public:
     MCAPI explicit HashedString(::std::string_view str);
 
     MCAPI HashedString(uint64 hash, char const* str);
-
-    MCFOLD char const* c_str() const;
-
-    MCAPI void clear();
-
-    MCFOLD bool empty() const;
-
-    MCFOLD uint64 getHash() const;
-
-    MCFOLD uint getHash32Bits() const;
-
-    MCFOLD ::std::string const& getString() const;
-
-    MCFOLD bool isEmpty() const;
 
     MCAPI ::HashedString& operator=(::HashedString&& rhs);
 
@@ -59,27 +39,17 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static uint64 computeHash(::std::string const& str);
-
-    MCAPI static uint64 computeHash(char const* str);
-
-    MCAPI static ::HashedString const& getEmptyString();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString& defaultErrorValue();
+    MCAPI static ::HashedString const& defaultErrorValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(nullptr_t);
-#endif
-
-    MCAPI void* $ctor(::HashedString&& rhs);
-
     MCAPI void* $ctor(::HashedString const& rhs);
 
     MCAPI void* $ctor(::std::string const& str);
@@ -102,7 +72,7 @@ public:
 // NOLINTBEGIN
 MCAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
 
-MCAPI bool operator<(::HashedString const& lhs, ::HashedString const& rhs);
+MCAPI ::std::strong_ordering operator<=>(::HashedString const& lhs, ::HashedString const& rhs);
 
 MCAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
 // NOLINTEND

@@ -19,8 +19,8 @@ public:
     // OverworldGenerationRulesBiomeJsonComponent inner types declare
     // clang-format off
     struct WeightedBiomeName;
-    struct WeightedTemperatureCategory;
     struct WeightedBiomeNameVector;
+    struct WeightedTemperatureCategory;
     // clang-format on
 
     // OverworldGenerationRulesBiomeJsonComponent inner types define
@@ -36,28 +36,17 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 80, ::std::array<::std::variant<::SharedTypes::Reference<3>, uint>, 2>> mValues;
         // NOLINTEND
+    };
 
+    struct WeightedBiomeNameVector {
     public:
-        // member functions
+        // member variables
         // NOLINTBEGIN
-        MCAPI ~WeightedBiomeName();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-        MCAPI static void fromReference(
-            ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName& instance,
-            ::SharedTypes::Reference<3> const&                                                      ref
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
+        ::ll::TypedStorage<
+            8,
+            24,
+            ::std::vector<::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName>>
+            mWeightedBiomeNames;
         // NOLINTEND
     };
 
@@ -72,41 +61,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 16, ::std::array<::std::variant<::BiomeTemperatureCategory, uint>, 2>> mValues;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-    };
-
-    struct WeightedBiomeNameVector {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<
-            8,
-            24,
-            ::std::vector<::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName>>
-            mWeightedBiomeNames;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-        MCAPI static void fromReference(
-            ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,
-            ::SharedTypes::Reference<3> const&                                                            ref
-        );
-
-        MCAPI static void fromVector(
-            ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,
-            ::std::vector<::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName>&
-                entries
-        );
         // NOLINTEND
     };
 
@@ -154,6 +108,8 @@ public:
 
     MCAPI ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&);
+
+    MCAPI bool operator==(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&) const;
     // NOLINTEND
 
 public:

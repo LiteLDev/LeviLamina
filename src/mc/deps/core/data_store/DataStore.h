@@ -70,17 +70,7 @@ public:
 
         virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() = 0;
 
-        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view key) const = 0;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCNAPI bool getBooleanKey(::std::string_view key, bool defaultValue) const;
-
-        MCNAPI int getSInt32Key(::std::string_view key, int defaultValue) const;
-#endif
+        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view) const = 0;
         // NOLINTEND
 
     public:
@@ -97,10 +87,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view key) = 0;
+        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view) = 0;
 
         virtual ::Bedrock::JSONObject::Node*
-        setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) = 0;
+        setValueForKey(::std::string_view, ::Bedrock::JSONObject::ValueWrapper const&) = 0;
         // NOLINTEND
 
     public:
@@ -133,35 +123,18 @@ public:
 
         virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() /*override*/;
 
-        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view key) const /*override*/;
+        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view) const /*override*/;
 
-        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view key) /*override*/;
+        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view) /*override*/;
 
         virtual ::Bedrock::JSONObject::Node*
-        setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) /*override*/;
+        setValueForKey(::std::string_view, ::Bedrock::JSONObject::ValueWrapper const&) /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::gsl::not_null<::Bedrock::DataStore const*> $getOwningDataStore() const;
 
-        MCNAPI ::gsl::not_null<::Bedrock::DataStore*> $getOwningDataStore();
-
-        MCNAPI ::Bedrock::JSONObject::Node const* $getValueForKey(::std::string_view key) const;
-
-        MCNAPI ::Bedrock::JSONObject::Node* $getValueForKey(::std::string_view key);
-
-        MCNAPI ::Bedrock::JSONObject::Node*
-        $setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value);
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -190,11 +163,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI explicit Impl(::Bedrock::DataStore* owner);
-
-        MCNAPI ::Bedrock::JSONObject::Node* _getValueForKey(char const* key, uint64 keyLength);
-
-        MCNAPI ::Bedrock::JSONObject::Node*
-        _setValueForKey(char const* key, uint64 keyLength, ::Bedrock::JSONObject::ValueWrapper const& value);
 
         MCNAPI void load();
 
@@ -240,25 +208,13 @@ public:
 
         virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() /*override*/;
 
-        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view key) const /*override*/;
+        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view) const /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::gsl::not_null<::Bedrock::DataStore const*> $getOwningDataStore() const;
 
-        MCNAPI ::gsl::not_null<::Bedrock::DataStore*> $getOwningDataStore();
-
-        MCNAPI ::Bedrock::JSONObject::Node const* $getValueForKey(::std::string_view key) const;
-
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -284,23 +240,7 @@ public:
     // NOLINTBEGIN
     MCNAPI DataStore();
 
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::DataStore::AccessHandle<::Bedrock::DataStore::Editor, ::Bedrock::DataStore::EditorImpl> edit();
-#endif
-
-    MCNAPI void load();
-
-#ifdef LL_PLAT_C
-    MCNAPI void save();
-#endif
-
     MCNAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
-
-    MCNAPI void setFilePath(::Core::Path const& filePath);
-
-#ifdef LL_PLAT_C
-    MCNAPI ::Bedrock::DataStore::AccessHandle<::Bedrock::DataStore::Viewer, ::Bedrock::DataStore::ViewerImpl> view();
-#endif
     // NOLINTEND
 
 public:

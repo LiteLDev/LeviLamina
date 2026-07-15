@@ -6,6 +6,11 @@
 #include "mc/deps/puv/VersionRange.h"
 #include "mc/world/level/levelgen/feature/feature_loading/FeatureVersion.h"
 
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+// clang-format on
+
 namespace FeatureLoading {
 
 struct VersionInfo {
@@ -17,22 +22,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~VersionInfo();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::SemVersion getMinFormatVersion(::FeatureLoading::FeatureVersion const& version);
+
     MCAPI static ::std::optional<::Puv::VersionRange>
     getRangeFromVersion(::FeatureLoading::FeatureVersion const& version);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

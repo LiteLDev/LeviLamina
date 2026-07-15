@@ -9,8 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class LevelData;
-class PackCapability;
 class ResourcePackManager;
 // clang-format on
 
@@ -41,8 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EducationOptions(::ResourcePackManager* packMan);
-
-    MCNAPI void init(::LevelData const& levelData);
     // NOLINTEND
 
 public:
@@ -50,21 +46,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::ServiceReference<::EducationOptions> _getCurrentOptions();
 
-    MCNAPI static ::PackCapability getPackCapability();
-
     MCNAPI static bool isBaseCodeBuilderEnabled();
 
     MCNAPI static bool isChemistryEnabled();
 
     MCNAPI static bool isCodeBuilderEnabled();
-
-    MCNAPI static bool isEducationEnabled();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::EducationOptions& DEFAULT_OPTION();
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 // clang-format off
 namespace GeometryAtlas { class IAtlasTile; }
 namespace GeometryAtlas { class IGeometryAtlas; }
+namespace GeometryAtlas { class InitializeCallbackPayload; }
 namespace GeometryAtlas { struct TileDefinition; }
 namespace OreUI { class IItemHandleFactory; }
 // clang-format on
@@ -36,48 +37,37 @@ public:
         // NOLINTBEGIN
         virtual ::GeometryAtlas::TileDefinition const& getDefinition() const /*override*/;
 
-        virtual void submitUpdate(::GeometryAtlas::IAtlasTile& tile) const /*override*/;
+        virtual void submitUpdate(::GeometryAtlas::IAtlasTile&, ::GeometryAtlas::InitializeCallbackPayload) const
+            /*override*/;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD ::GeometryAtlas::TileDefinition const& $getDefinition() const;
 
-        MCAPI void $submitUpdate(::GeometryAtlas::IAtlasTile& tile) const;
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::OreUI::IItemHandleFactory>>> mFactory;
+    // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::GeometryAtlas::IAtlasTile>
-    createTile(::GeometryAtlas::IGeometryAtlas& atlas, ::GeometryAtlas::TileDefinition const& definition) /*override*/;
+    createTile(::GeometryAtlas::IGeometryAtlas&, ::GeometryAtlas::TileDefinition const&) /*override*/;
 
     virtual ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
-    tryResolveRequest(::std::string_view url, ::OreUI::IItemHandleFactory const& factory) /*override*/;
+        tryResolveRequest(::std::string_view) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IAtlasTile>
-    $createTile(::GeometryAtlas::IGeometryAtlas& atlas, ::GeometryAtlas::TileDefinition const& definition);
 
-    MCAPI ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
-    $tryResolveRequest(::std::string_view url, ::OreUI::IItemHandleFactory const& factory);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

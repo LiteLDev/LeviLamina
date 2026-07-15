@@ -41,10 +41,6 @@ public:
         ::Social::FriendInviteType                                 inviteEntryType,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-
-    MCAPI ::std::string const& getActiveProfileImage() const;
-
-    MCAPI ~InvitableFriendBindings();
     // NOLINTEND
 
 public:
@@ -55,12 +51,6 @@ public:
         ::Social::FriendInviteType                                 inviteEntryType,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

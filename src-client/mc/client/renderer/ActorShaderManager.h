@@ -18,7 +18,6 @@ class Vec2;
 class Vec4;
 struct Brightness;
 struct BrightnessPair;
-struct TextureUVCoordinateSet;
 namespace LightPropagation { class LightVolumeManager; }
 namespace mce { class ActorConstants; }
 namespace mce { class Color; }
@@ -39,14 +38,12 @@ public:
     // NOLINTBEGIN
     virtual ~ActorShaderManager();
 
-    virtual ::mce::Color _getOverlayColor(::Actor& actor, float) const;
+    virtual ::mce::Color _getOverlayColor(::Actor& actor, float a) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorShaderManager();
-
     MCAPI ::mce::MaterialPtr& getEntityMaterial();
 
     MCAPI ::mce::MaterialPtr& getStaticMaterial();
@@ -66,6 +63,21 @@ public:
         bool                                allowOverlay
     ) const;
 
+    MCAPI void setupFoilShaderParameters(
+        ::ScreenContext&                    screenContext,
+        ::BaseActorRenderContext&           entityContext,
+        ::Actor&                            entity,
+        ::mce::Color const&                 overlayColor,
+        ::mce::Color const&                 changeColor,
+        ::mce::Color const&                 changeColor2,
+        ::Vec2 const&                       uvScale,
+        ::Vec4 const&                       uvAnim,
+        float                               br,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        bool                                allowOverlay
+    ) const;
+
     MCAPI void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
@@ -77,27 +89,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::mce::Color getOverlayColor(::Actor& actor, float);
-
     MCAPI static void setEntityConstants(
         ::mce::ActorConstants& entityConstants,
-        ::mce::RenderContext&  tileLightColor,
-        ::mce::Color const&    tileLightColorUV,
-        ::Vec2 const&          blockLightColor,
-        ::glm::vec4 const&     overlay,
+        ::mce::RenderContext&  renderContext,
+        ::mce::Color const&    tileLightColor,
+        ::Vec2 const&          tileLightColorUV,
+        ::glm::vec4 const&     blockLightColor,
+        ::mce::Color const&    overlay,
         ::mce::Color const&    changeColor,
         ::mce::Color const&    changeColor2,
         ::mce::Color const&    glintColor,
-        ::mce::Color const&    glintUVScale,
-        ::Vec2 const&          uvAnim,
-        ::Vec4 const&          uvOffset1,
+        ::Vec2 const&          glintUVScale,
+        ::Vec4 const&          uvAnim,
+        float                  uvOffset1,
         float                  uvOffset2,
         float                  uvRot1,
-        float                  uvRot2,
-        float
+        float                  uvRot2
     );
-
-    MCAPI static void setupFoilShaderParameters(::ScreenContext& screenContext, ::TextureUVCoordinateSet const& icon);
 
     MCAPI static void setupFoilShaderParameters(
         ::ScreenContext&    screenContext,
@@ -105,13 +113,6 @@ public:
         ::mce::Color const& changeColor,
         ::mce::Color const& changeColor2,
         ::Vec2 const&       uvScale
-    );
-
-    MCAPI static void setupShaderParameters(
-        ::ScreenContext&    screenContext,
-        float               br,
-        ::mce::Color const& overlayColor,
-        bool                dimensionHasCeiling
     );
 
     MCAPI static void setupShaderParameters(
@@ -157,11 +158,11 @@ public:
         ::BlockSource&          source,
         ::BrightnessPair const& lightColorUV,
         ::glm::vec4 const&      blockLightColor,
-        float                   ignoreLighting,
-        bool                    lightTexture,
-        ::LightTexture&         uvScale,
-        ::Vec2 const&           uvAnim,
-        ::Vec4 const&
+        float,
+        bool            ignoreLighting,
+        ::LightTexture& lightTexture,
+        ::Vec2 const&   uvScale,
+        ::Vec4 const&   uvAnim
     );
 
     MCAPI static void setupShaderParameters(
@@ -248,12 +249,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -262,7 +257,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $_getOverlayColor(::Actor& actor, float) const;
+    MCAPI ::mce::Color $_getOverlayColor(::Actor& actor, float a) const;
     // NOLINTEND
 
 public:

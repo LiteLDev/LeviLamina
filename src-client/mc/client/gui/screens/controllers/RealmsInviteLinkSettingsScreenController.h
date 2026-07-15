@@ -4,8 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
-#include "mc/client/gui/ViewRequest.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/client/network/realms/InviteLink.h"
 #include "mc/client/network/realms/World.h"
@@ -62,28 +60,6 @@ public:
         ::Realms::World const&                   world,
         ::Realms::InviteLink const&              link
     );
-
-    MCAPI void _confirmationRemoveLinkDialog(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _deleteInviteLink();
-
-    MCAPI void _displayLinkErrorModal(::std::string const& title, ::std::string const& body);
-
-    MCAPI void _handleChangeLinkExpiry(::RealmsInviteLinkSettingsScreenController::ExpirationDuration expiry);
-
-    MCAPI ::ui::ViewRequest _handleCopyClick();
-
-    MCAPI void _handleToggleLinkActive(bool optionValue);
-
-    MCAPI void _handleToggleLinkInfinite(bool optionValue);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerControllerCallbacks();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _updateInviteLink(::Realms::InviteLink tempLink);
     // NOLINTEND
 
 public:
@@ -99,16 +75,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD bool $_doesScreenHaveExitBehavior() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

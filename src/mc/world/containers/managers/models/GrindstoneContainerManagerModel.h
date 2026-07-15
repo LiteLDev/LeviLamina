@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -12,7 +11,6 @@
 class ContainerScreenContext;
 class ItemInstance;
 class ItemStack;
-class Player;
 // clang-format on
 
 class GrindstoneContainerManagerModel : public ::ContainerManagerModel {
@@ -21,10 +19,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GrindstoneContainerManagerModel();
 
 public:
     // virtual functions
@@ -49,17 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GrindstoneContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
 #ifdef LL_PLAT_C
     MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:

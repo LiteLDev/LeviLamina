@@ -27,51 +27,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) /*override*/;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) /*override*/;
 
-    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) /*override*/;
+    virtual void parseJson(::ConstDeserializeDataParams const&) /*override*/;
 
-    virtual bool emitterResetting(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::RenderParams&                                   renderParams
-    ) /*override*/;
+    virtual bool emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&) /*override*/;
 
-    virtual bool hasEmitterExpired(
-        ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
-        ::RenderParams&                                         renderParams
-    ) /*override*/;
+    virtual bool
+    hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const&, ::RenderParams&) /*override*/;
 
-    virtual bool isEmitterActive(
-        ::ParticleSystem::ComponentAccessParticleEmitter const& emitter,
-        ::RenderParams&                                         renderParams
-    ) /*override*/;
+    virtual bool isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const&, ::RenderParams&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCFOLD void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
-
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
-
-    MCFOLD bool
-    $emitterResetting(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
-
-    MCAPI bool
-    $hasEmitterExpired(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
-
-    MCAPI bool
-    $isEmitterActive(::ParticleSystem::ComponentAccessParticleEmitter const& emitter, ::RenderParams& renderParams);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

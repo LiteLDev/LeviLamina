@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/LoadResult.h"
 #include "mc/deps/puv/Loader.h"
 
 // auto generated forward declare list
 // clang-format off
 class PackLoadContext;
 struct ActorSpawnRuleData;
+namespace Bedrock::Resources { class MinecraftDocumentInput; }
 namespace SharedTypes::v1_21_60::Spawn { struct Contents; }
 namespace br::spawn { class SpawnPlacements; }
 namespace cereal { struct ReflectionCtx; }
@@ -27,27 +29,36 @@ public:
         mLoaderV0;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ActorSpawnRuleDataLoader();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ActorSpawnRuleDataLoader(
         ::cereal::ReflectionCtx const& ctx,
         ::PackLoadContext const&       packLoadContext,
         ::br::spawn::SpawnPlacements&  spawnPlacements
     );
+
+    MCAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(
         ::cereal::ReflectionCtx const& ctx,
         ::PackLoadContext const&       packLoadContext,
         ::br::spawn::SpawnPlacements&  spawnPlacements
     );
+#endif
     // NOLINTEND
 };

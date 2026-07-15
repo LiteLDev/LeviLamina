@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class IResourcePackRepositoryRefresher;
-class TaskGroup;
 // clang-format on
 
 class ResourcePackRepositoryRefreshQueue {
@@ -52,18 +51,6 @@ public:
         RefreshResult& operator=(RefreshResult const&);
         RefreshResult(RefreshResult const&);
         RefreshResult();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~RefreshResult();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -78,24 +65,4 @@ public:
     ResourcePackRepositoryRefreshQueue& operator=(ResourcePackRepositoryRefreshQueue const&);
     ResourcePackRepositoryRefreshQueue(ResourcePackRepositoryRefreshQueue const&);
     ResourcePackRepositoryRefreshQueue();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<void> _tryCompleteInitialization(::TaskGroup& taskGroup);
-
-    MCNAPI ::Bedrock::Threading::Async<void> initialize(::TaskGroup& taskGroup);
-
-    MCNAPI ::ResourcePackRepositoryRefreshQueue::RefreshResult refreshPacks(::TaskGroup& taskGroup);
-
-    MCNAPI ::Bedrock::Threading::Async<void> reloadUserPacks(::TaskGroup& taskGroup);
-
-    MCNAPI ~ResourcePackRepositoryRefreshQueue();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

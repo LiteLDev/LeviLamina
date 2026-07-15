@@ -19,23 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Parameter(int64 const& min, int64 const& max);
-
     MCAPI Parameter(float min, float max);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ClimateUtils::Parameter
-    fromParameters(::ClimateUtils::Parameter const& minParam, ::ClimateUtils::Parameter const& maxParam);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int64 const& min, int64 const& max);
-
     MCAPI void* $ctor(float min, float max);
     // NOLINTEND
 };

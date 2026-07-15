@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataRate; }
@@ -84,23 +87,25 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnke90b68;
         ::ll::UntypedStorage<1, 1>  mUnk458227;
         ::ll::UntypedStorage<1, 1>  mUnk6fa4bb;
+        ::ll::UntypedStorage<8, 8>  mUnka0348d;
         // NOLINTEND
 
     public:
         // prevent constructor by default
         Config& operator=(Config const&);
         Config(Config const&);
+        Config();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Config();
+        MCNAPI ~Config();
         // NOLINTEND
 
     public:
-        // constructor thunks
+        // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -174,17 +179,35 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk6ddbfa;
-        ::ll::UntypedStorage<4, 4> mUnk676689;
-        ::ll::UntypedStorage<8, 8> mUnk99b4c8;
-        ::ll::UntypedStorage<8, 8> mUnk9cb7c4;
+        ::ll::UntypedStorage<4, 4>  mUnk6ddbfa;
+        ::ll::UntypedStorage<8, 64> mUnkee7f5e;
+        ::ll::UntypedStorage<8, 8>  mUnk99b4c8;
         // NOLINTEND
 
     public:
         // prevent constructor by default
         PartialObservation& operator=(PartialObservation const&);
         PartialObservation(PartialObservation const&);
-        PartialObservation();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI PartialObservation();
+
+        MCNAPI ~PartialObservation();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
     };
 
     struct Result {
@@ -206,11 +229,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnkaee502;
-    ::ll::UntypedStorage<8, 288> mUnkf646a5;
+    ::ll::UntypedStorage<8, 296> mUnkf646a5;
     ::ll::UntypedStorage<8, 16>  mUnkb98071;
     ::ll::UntypedStorage<4, 4>   mUnk2d03fe;
     ::ll::UntypedStorage<8, 24>  mUnkc4c3c3;
-    ::ll::UntypedStorage<8, 24>  mUnk349780;
+    ::ll::UntypedStorage<8, 80>  mUnk349780;
     ::ll::UntypedStorage<8, 8>   mUnkd4703e;
     ::ll::UntypedStorage<8, 8>   mUnkd4f601;
     ::ll::UntypedStorage<8, 16>  mUnka7304d;
@@ -225,6 +248,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnkf2ae5a;
     ::ll::UntypedStorage<8, 24>  mUnk2d61a3;
     ::ll::UntypedStorage<8, 16>  mUnk50eae4;
+    ::ll::UntypedStorage<8, 8>   mUnk1b74a7;
     // NOLINTEND
 
 public:
@@ -236,9 +260,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CalculateInstantLowerBound();
+    MCNAPI double CalculateAverageReportedByteLossRatio() const;
 
-    MCNAPI double GetAverageReportedLossRatio() const;
+    MCNAPI void CalculateInstantLowerBound();
 
     MCNAPI ::std::vector<::webrtc::LossBasedBweV2::ChannelParameters> GetCandidates(bool in_alr) const;
 
@@ -246,6 +270,8 @@ public:
     GetDerivatives(::webrtc::LossBasedBweV2::ChannelParameters const& channel_parameters) const;
 
     MCNAPI ::webrtc::LossBasedBweV2::Result GetLossBasedResult() const;
+
+    MCNAPI ::webrtc::DataRate GetMedianSendingRate() const;
 
     MCNAPI double GetObjective(::webrtc::LossBasedBweV2::ChannelParameters const& channel_parameters) const;
 
@@ -257,9 +283,8 @@ public:
 
     MCNAPI explicit LossBasedBweV2(::webrtc::FieldTrialsView const* key_value_config);
 
-    MCNAPI bool PaceAtLossBasedEstimate() const;
-
-    MCNAPI bool PushBackObservation(::rtc::ArrayView<::webrtc::PacketResult const> packet_results);
+    MCNAPI bool
+    PushBackObservation(::webrtc::ArrayView<::webrtc::PacketResult const, 18446744073709546905> packet_results);
 
     MCNAPI bool ReadyToUseInStartPhase() const;
 
@@ -268,12 +293,14 @@ public:
     MCNAPI void SetMinMaxBitrate(::webrtc::DataRate min_bitrate, ::webrtc::DataRate max_bitrate);
 
     MCNAPI void UpdateBandwidthEstimate(
-        ::rtc::ArrayView<::webrtc::PacketResult const> packet_results,
-        ::webrtc::DataRate                             delay_based_estimate,
-        bool                                           in_alr
+        ::webrtc::ArrayView<::webrtc::PacketResult const, 18446744073709546905> packet_results,
+        ::webrtc::DataRate                                                      delay_based_estimate,
+        bool                                                                    in_alr
     );
 
     MCNAPI bool UseInStartPhase() const;
+
+    MCNAPI ~LossBasedBweV2();
     // NOLINTEND
 
 public:
@@ -287,6 +314,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

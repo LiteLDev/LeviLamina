@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 #include "mc/editor/Mode.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/datastore/container/Container.h"
@@ -25,6 +25,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkf594a1;
     ::ll::UntypedStorage<8, 16> mUnk9e375a;
     ::ll::UntypedStorage<8, 24> mUnkdb5cbf;
+    ::ll::UntypedStorage<8, 64> mUnkf874f4;
     // NOLINTEND
 
 public:
@@ -36,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ModalToolContainer() /*override*/;
+    virtual ~ModalToolContainer() /*override*/ = default;
 
     virtual void clear() /*override*/;
     // NOLINTEND
@@ -46,21 +47,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ModalToolContainer(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
 
-    MCNAPI bool _createTool(::std::string const& id, ::Json::Value const& payload);
-
-    MCNAPI void _onSelectedToolUpdated(::Json::Value const& current, ::Json::Value const& prev);
-
-    MCNAPI void _onToolCreated(::std::string const& id);
-
-    MCNAPI void _onToolDestroyed(::std::string const& id);
-
-    MCNAPI void _onToolUpdated(::std::string const& id, ::std::string const& propName);
-
-    MCNAPI bool _removeTool(::std::string const& id);
-
     MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCNAPI ::Json::Value getSelectedToolPayload(::Editor::DataStore::PayloadDescription const&) const;
+    MCNAPI ::Json::Value getSortOrderPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(
         ::Editor::DataStore::EventType                 eventType,
@@ -74,6 +63,12 @@ public:
         bool                           isNetworkEvent
     );
 
+    MCNAPI ::Scripting::Result_deprecated<void> handleSortOrderEvent(
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
+
     MCNAPI void notifyModeChange(::Editor::Mode newMode);
     // NOLINTEND
 
@@ -83,18 +78,14 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_DATA();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_SELECTED_TOOL();
+
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> TAG_SORT_ORDER();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -49,12 +49,6 @@ public:
         ::ui::ScreenTechStackSelector&                        techStackSelector,
         ::std::function<void(::UploadState, ::Realms::World)> callbackAfterUpload
     );
-
-    MCAPI void _displayLockedWorldPopup(int worldIndex);
-
-    MCAPI void _displayWorldIsTooBigPopup(int);
-
-    MCAPI void _upload(int worldIndex);
     // NOLINTEND
 
 public:
@@ -72,18 +66,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI void $_registerEventHandlers();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

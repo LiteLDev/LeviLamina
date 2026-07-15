@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/resources/persona/PersonaColorOption.h"
-#include "mc/world/actor/player/persona/BodySize.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
@@ -12,9 +10,6 @@
 class Pack;
 class TintMapColor;
 struct PackIdVersion;
-struct PersonaAnimationDefinition;
-namespace Json { class Value; }
-namespace mce { class UUID; }
 // clang-format on
 
 class PersonaPiece {
@@ -74,22 +69,22 @@ public:
     // prevent constructor by default
     PersonaPiece& operator=(PersonaPiece const&);
     PersonaPiece(PersonaPiece const&);
+    PersonaPiece();
 
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
     PersonaPiece& operator=(PersonaPiece const&);
+    PersonaPiece(PersonaPiece const&);
 
 #endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI PersonaPiece();
 
-#ifdef LL_PLAT_C
     MCNAPI PersonaPiece(::PersonaPiece&&);
-
-    MCNAPI PersonaPiece(::PersonaPiece const&);
 
     MCNAPI PersonaPiece(
         ::std::string const&   pieceId,
@@ -99,99 +94,36 @@ public:
         bool                   titleLocked
     );
 
-    MCNAPI void _initSideInfo();
-
-    MCNAPI bool allowsTintOverride() const;
-
-    MCNAPI bool canBeSidePiece() const;
-
-    MCNAPI ::PersonaAnimationDefinition const& getAnimation(int index) const;
-
-    MCNAPI ::persona::BodySize::Type const& getBodyVariant() const;
-
-    MCNAPI ::std::vector<::persona::PersonaColorOption> const& getColorSwatches() const;
-
-    MCNAPI ::Json::Value const& getGeometryFileJson() const;
-
-    MCNAPI ::std::string const& getGeometryFileName() const;
-
-    MCNAPI ::std::string getLocString(::std::string const& locKey) const;
-
-    MCNAPI ::Json::Value const& getMetaFileJson() const;
-
-    MCNAPI ::PackIdVersion const& getPackIdVersion() const;
-
-    MCNAPI ::std::string const& getPieceId() const;
-
-    MCNAPI ::mce::UUID const& getPieceIdAsUUID() const;
-
     MCNAPI ::std::string getPieceName() const;
 
-    MCNAPI ::persona::PieceType const& getPieceSubType() const;
-
-    MCNAPI ::persona::PieceType const& getPieceType() const;
-
     MCNAPI ::std::string getPieceTypeAsString() const;
-
-    MCNAPI ::std::string const& getRelativeLocation() const;
-
-    MCNAPI ::std::shared_ptr<::Pack const> getSourcePack() const;
-
-    MCNAPI ::std::string const& getThumbnailPath() const;
 
     MCNAPI ::TintMapColor getTintBaseColor() const;
 
     MCNAPI bool getTintMapColor(::TintMapColor& tintColor) const;
 
-    MCNAPI bool hasLocStringData() const;
-
-    MCNAPI void hipBoneParentRetarget();
-
     MCNAPI void initLocalizationDictionary();
-
-    MCNAPI bool isColorChangeAllowed() const;
 
     MCNAPI bool isDefaultPiece() const;
 
-    MCNAPI bool isPieceTypeX(::persona::PieceType pieceType) const;
-
-    MCNAPI bool isPlatformLocked() const;
-
-    MCNAPI bool isTitleLocked() const;
-
     MCNAPI bool isValid() const;
 
-    MCNAPI bool operator!=(::PersonaPiece const& asset) const;
-
-    MCNAPI bool operator==(::PersonaPiece const& asset) const;
-
-    MCNAPI void setPackIdVersion(::PackIdVersion const& packIdVersion);
-
-    MCNAPI void setPieceId(::mce::UUID const& pieceId);
-
-    MCNAPI void setPieceNameAsLocKey(::std::string const& pieceName);
-#endif
-
     MCNAPI ~PersonaPiece();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::PersonaPiece createPersonaPieceForClassicSkin(
-        ::std::string const&   pieceId,
-        ::PackIdVersion const& packIdVersion,
-        bool                   platformLocked,
-        bool                   titleLocked
-    );
-
     MCNAPI static ::PersonaPiece createPersonaPieceFromPiecePack(
         ::std::shared_ptr<::Pack>        sourcePack,
         ::PersonaPiece::FilePaths const& filePaths,
         bool                             differPieceAndPackIds,
         bool                             isTestResourcePack
     );
+
+    MCNAPI static ::PersonaPiece const& getInvalidPiece();
 #endif
     // NOLINTEND
 
@@ -199,21 +131,15 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& GEOMETRY_SOURCES_KEY();
-
-    MCNAPI static ::PersonaPiece const& INVALID_PIECE();
-
-    MCNAPI static ::std::string const& TEXTURE_SOURCES_KEY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void* $ctor();
 
-#ifdef LL_PLAT_C
     MCNAPI void* $ctor(::PersonaPiece&&);
-
-    MCNAPI void* $ctor(::PersonaPiece const&);
 
     MCNAPI void* $ctor(
         ::std::string const&   pieceId,
@@ -228,6 +154,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

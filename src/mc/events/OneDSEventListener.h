@@ -3,17 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/Async.h"
 #include "mc/events/AggregationEventListener.h"
-#include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class Response; }
-namespace Core { class Path; }
-namespace Json { class Value; }
 namespace Social::Events { class Event; }
-namespace Social::Events { class Property; }
 // clang-format on
 
 namespace Social::Events {
@@ -47,51 +41,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OneDSEventListener() /*override*/;
+    virtual ~OneDSEventListener() /*override*/ = default;
 
-    virtual void sendEvent(::Social::Events::Event const& event) /*override*/;
+    virtual void sendEvent(::Social::Events::Event const&) /*override*/;
 
     virtual int getEventTagsFilter() const /*override*/;
 
-    virtual bool _checkAgainstEventAllowlist(::Social::Events::Event const& event) const /*override*/;
+    virtual bool _checkAgainstEventAllowlist(::Social::Events::Event const&) const /*override*/;
 
     virtual void _flushEventQueue() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void
-    AddPartA(::std::string const& eventName, ::Json::Value& eventBody, int64 eventTimestamp, bool isSafetyEvent);
-
-    MCNAPI void AddPartAExtensions(::Json::Value& eventBody);
-
-    MCNAPI void AddPartC(::Social::Events::Event const& event, ::Json::Value& eventBody);
-
-    MCNAPI ::std::string BuildCommonSchemaMsg(::Social::Events::Event const& event);
-
-    MCNAPI explicit OneDSEventListener(::Core::Path logFileName);
-
-    MCNAPI void _addDynamicPropertiesFromEvent(
-        ::Json::Value& properties,
-        ::brstd::flat_map<
-            ::std::string,
-            ::std::vector<::Social::Events::Property>,
-            ::std::less<::std::string>,
-            ::std::vector<::std::string>,
-            ::std::vector<::std::vector<::Social::Events::Property>>> const& dynamicProperties
-    );
-
-    MCNAPI ::std::vector<::std::string> _buildEventPayloads(
-        ::std::vector<::Social::Events::Event>                            events,
-        ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
-    );
-
-    MCNAPI void _handleAsyncResponse(::Bedrock::Threading::Async<::Bedrock::Http::Response> asyncResponse);
-
-    MCNAPI bool _sendBatch();
-
-    MCNAPI void _sendEvents(::std::string const& eventPayload, ::std::string const& endpoint);
     // NOLINTEND
 
 public:
@@ -109,35 +67,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::Path logFileName);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $sendEvent(::Social::Events::Event const& event);
 
-    MCNAPI int $getEventTagsFilter() const;
-
-    MCNAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
-
-    MCNAPI void $_flushEventQueue();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

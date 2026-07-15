@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/events/PrivacyTagEnterprise.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Social::Events { class Measurement; }
-namespace Social::Events { class Measurements; }
-namespace Social::Events { class Property; }
-// clang-format on
-
 namespace Social::Events {
 
 class CompoundMeasurement {
@@ -30,56 +20,8 @@ public:
 public:
     // prevent constructor by default
     CompoundMeasurement& operator=(CompoundMeasurement const&);
+    CompoundMeasurement(CompoundMeasurement const&);
     CompoundMeasurement();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI CompoundMeasurement(::Social::Events::CompoundMeasurement const&);
-
-    MCNAPI CompoundMeasurement(
-        ::std::string const&                   dynamicColumnName,
-        ::std::string const&                   propertyName,
-        ::Social::Events::PrivacyTagEnterprise privacyTag,
-        uint64                                 maxSize,
-        uint64                                 maxNumberOfOperations
-    );
-
-    MCNAPI void _addOrUpdateMeasurement(
-        ::Social::Events::Measurements&      existingMeasurements,
-        ::Social::Events::Measurement const& newMeasurement
-    );
-
-    MCNAPI void addOrUpdateMeasurement(int propertyValue, ::Social::Events::Measurement const& measurement);
-
-    MCNAPI ::std::vector<::Social::Events::Property> getAsDynamicPropertyVector() const;
-
-    MCNAPI ::Social::Events::CompoundMeasurement& operator=(::Social::Events::CompoundMeasurement&&);
-
-    MCNAPI void updateMeasurements(::Social::Events::CompoundMeasurement const& other);
-
-    MCNAPI ~CompoundMeasurement();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Social::Events::CompoundMeasurement const&);
-
-    MCNAPI void* $ctor(
-        ::std::string const&                   dynamicColumnName,
-        ::std::string const&                   propertyName,
-        ::Social::Events::PrivacyTagEnterprise privacyTag,
-        uint64                                 maxSize,
-        uint64                                 maxNumberOfOperations
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Social::Events

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -12,7 +11,6 @@
 class ContainerScreenContext;
 class ItemInstance;
 class ItemStack;
-class Player;
 // clang-format on
 
 class LoomContainerManagerModel : public ::ContainerManagerModel {
@@ -23,21 +21,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LoomContainerManagerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~LoomContainerManagerModel() /*override*/ = default;
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int, int) /*override*/;
+    virtual void setData(int id, int value) /*override*/;
 
     virtual void broadcastChanges() /*override*/;
 
@@ -49,19 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoomContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
 #ifdef LL_PLAT_C
-    MCAPI void fireFruitOnTheLoomAchievementEvent();
-
     MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -69,11 +53,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int, int);
+    MCFOLD void $setData(int id, int value);
 
     MCFOLD void $broadcastChanges();
 

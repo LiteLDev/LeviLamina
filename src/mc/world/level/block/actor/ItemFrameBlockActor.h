@@ -7,9 +7,8 @@
 #include "mc/world/item/ClockSpriteCalculator.h"
 #include "mc/world/item/CompassSpriteCalculator.h"
 #include "mc/world/item/ItemInstance.h"
-#include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
-#include "mc/world/level/block/states/BlockStateVariant.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,12 +18,11 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class HashedString;
 class ILevel;
 class SaveContext;
 // clang-format on
 
-class ItemFrameBlockActor : public ::BlockActor {
+class ItemFrameBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -69,57 +67,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemFrameBlockActor(::BlockPos const& pos);
-
     MCAPI ItemFrameBlockActor(::BlockPos const& pos, ::BlockActorType type);
-
-    MCAPI void
-    _updateBit(::BlockSource& region, ::BlockStateVariant<bool> const& vanillaState, ::HashedString const& itemName);
 
     MCAPI void actuallyDropItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
 
     MCAPI void dropFramedItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
 
-#ifdef LL_PLAT_C
-    MCFOLD ::ClockSpriteCalculator& getClockCalculator();
-
-    MCFOLD ::CompassSpriteCalculator& getCompassCalculator();
-#endif
-
-    MCFOLD ::ItemInstance const& getFramedItem() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::CompassSpriteCalculator& getRecoveryCompassCalculator();
-#endif
-
-    MCFOLD float getRotation();
-
-#ifdef LL_PLAT_C
-    MCFOLD bool const ignoreLighting() const;
-#endif
-
-    MCAPI void rotateFramedItem(::BlockSource& region, ::Actor& entitySource);
-
     MCAPI void setItem(::BlockSource& region, ::ItemInstance const& item, ::Actor* entitySource);
-
-#ifdef LL_PLAT_C
-    MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
-#endif
 
     MCAPI void updateNameTag();
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& ROTATION_DEGREES();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
-
     MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
     // NOLINTEND
 
@@ -148,6 +109,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
     // NOLINTEND
 };

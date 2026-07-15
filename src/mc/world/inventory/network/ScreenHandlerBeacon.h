@@ -11,8 +11,6 @@
 class BeaconBlockActor;
 class ContainerScreenContext;
 class ItemStackRequestAction;
-class ItemStackRequestActionBeaconPayment;
-class ItemStackRequestActionHandler;
 // clang-format on
 
 class ScreenHandlerBeacon : public ::ScreenHandlerBase {
@@ -37,43 +35,16 @@ public:
     // NOLINTBEGIN
     virtual ~ScreenHandlerBeacon() /*override*/ = default;
 
-    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const&) /*override*/;
 
     virtual ::ItemStackNetResult endRequest() /*override*/;
 
-    virtual void postRequest(bool const wasSuccess) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    ScreenHandlerBeacon(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& requestHandler);
-
-    MCAPI ::ItemStackNetResult _handleBeaconPaymentAction(::ItemStackRequestActionBeaconPayment const& requestAction);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& requestHandler);
+    virtual void postRequest(bool const) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
-    MCAPI ::ItemStackNetResult $endRequest();
-
-    MCAPI void $postRequest(bool const wasSuccess);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

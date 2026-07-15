@@ -21,21 +21,12 @@ public:
     // prevent constructor by default
     OwnerStorageEntity& operator=(OwnerStorageEntity const&);
     OwnerStorageEntity(OwnerStorageEntity const&);
+    OwnerStorageEntity();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OwnerStorageEntity();
-
-    MCAPI OwnerStorageEntity(::OwnerStorageEntity&& other);
-
     MCAPI explicit OwnerStorageEntity(::EntityRegistry& registry);
-
-    MCFOLD ::EntityContext& _getStackRef() const;
-
-    MCFOLD bool _hasValue() const;
-
-    MCAPI void _reset();
 
     MCAPI ::OwnerStorageEntity& operator=(::OwnerStorageEntity&& other);
 
@@ -45,10 +36,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::OwnerStorageEntity&& other);
-
     MCAPI void* $ctor(::EntityRegistry& registry);
     // NOLINTEND
 

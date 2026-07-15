@@ -14,6 +14,7 @@ class ActorDefinitionGroup;
 class ActorHurtResult;
 class EntityContext;
 struct ActorDefinitionIdentifier;
+struct HurtParameters;
 struct KnockbackParameters;
 struct VariantParameterList;
 namespace mce { class Color; }
@@ -46,13 +47,15 @@ public:
 
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    virtual void knockback(::Actor*, int, float, float, ::KnockbackParameters const&) /*override*/;
+    virtual void
+    knockback(::Actor* source, int damage, float xd, float zd, ::KnockbackParameters const& parameters) /*override*/;
 
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
     // NOLINTEND
 
 public:
@@ -85,38 +88,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
-
-    MCAPI void $newServerAiStep();
-
-    MCFOLD void $die(::ActorDamageSource const& source);
-
-    MCFOLD bool $canBeAffected(uint id) const;
-
-    MCAPI ::mce::Color $getNameTagTextColor() const;
-
-    MCFOLD bool $canShowNameTag() const;
-
-    MCFOLD bool $isTargetable() const;
-
-    MCAPI void $buildDebugInfo(::std::string& out) const;
-
-    MCFOLD void $knockback(::Actor*, int, float, float, ::KnockbackParameters const&);
-
-    MCFOLD bool $canBePulledIntoVehicle() const;
-
-    MCFOLD bool $canExistWhenDisallowMob() const;
-
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, bool, bool);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

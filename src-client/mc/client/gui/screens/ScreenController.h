@@ -27,7 +27,6 @@ struct ItemRendererData;
 struct PointerHeldScreenEventData;
 struct RawInputScreenEventData;
 struct ScreenEvent;
-struct SliderChangeEventData;
 struct TextEditScreenEventData;
 struct TextEditSelectedStateChangeEventData;
 struct ToggleChangeEventData;
@@ -466,13 +465,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScreenController(bool useTaskGroup);
 
-    MCFOLD uint _getNameId(::std::string const& name) const;
-
-    MCAPI ::ui::ViewRequest _handleButtonEvent(::ScreenEvent& screenEvent);
-
     MCAPI ::ui::ViewRequest _handleEvent(::ScreenEvent& screenEvent);
-
-    MCAPI ::ui::ViewRequest _handleSliderChangeEvent(::SliderChangeEventData& sliderChangeEvent);
 
     MCAPI void _registerSubController(::std::shared_ptr<::ScreenController> controller);
 
@@ -552,17 +545,6 @@ public:
         ::brstd::move_only_function<bool(::std::string const&, int) const> condition
     );
 
-    MCAPI void bindForCollection(
-        ::StringHash const&                                                                  collectionName,
-        ::StringHash const&                                                                  bindingName,
-        ::brstd::move_only_function<void(int, ::std::string const&, ::UIPropertyBag&) const> func
-    );
-
-    MCAPI void bindForGlobal(
-        ::StringHash const&                                                             bindingName,
-        ::brstd::move_only_function<void(::std::string const&, ::UIPropertyBag&) const> func
-    );
-
     MCAPI void bindForGlobalGridSize(
         ::StringHash const&                                                             bindingName,
         ::brstd::move_only_function<void(::std::string const&, ::UIPropertyBag&) const> callback,
@@ -619,28 +601,10 @@ public:
         ::brstd::move_only_function<bool(int) const>          condition
     );
 
-    MCAPI void focusControl(::std::string const& controlName, bool delayed);
-
-    MCAPI void
-    focusControl(::std::string const& focusId, ::std::string const& collectionIndexName, int collectionIndex);
-
-    MCFOLD uint getNameId(::std::string const& name) const;
-
-    MCAPI bool hasFinishedAsyncTasks() const;
-
-    MCAPI void prepareFocusForModalPopup();
-
     MCAPI void queueAsyncTask(::brstd::move_only_function<::TaskResult()>&& task, ::std::function<void()>&& callback);
 
     MCAPI void
     registerAnimationEventHandler(uint eventId, ::brstd::move_only_function<::ui::ViewRequest() const> callback);
-
-    MCAPI void registerButtonEventHandler(
-        uint                                                                   buttonId,
-        ::ButtonState                                                          currentState,
-        ::ButtonState                                                          previousState,
-        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
-    );
 
     MCAPI void registerButtonEventHandler(
         uint                                                                   buttonId,
@@ -650,16 +614,6 @@ public:
     );
 
     MCAPI void registerButtonInteractedHandler(
-        uint                                                                   buttonId,
-        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
-    );
-
-    MCAPI void registerButtonPressedHandler(
-        uint                                                                   buttonId,
-        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
-    );
-
-    MCAPI void registerButtonReleasedHandler(
         uint                                                                   buttonId,
         ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const> callback
     );
@@ -676,22 +630,6 @@ public:
 
     MCAPI void
     registerCustomRendererEventHandler(uint eventId, ::brstd::move_only_function<::ui::ViewRequest() const> callback);
-
-    MCAPI void registerFocusMovedEventHandler(
-        ::brstd::move_only_function<::ui::ViewRequest(::FocusMoveScreenEventData&) const> callback
-    );
-
-    MCAPI void registerInputModechangedEventHandler(
-        ::brstd::move_only_function<::ui::ViewRequest(::InputModeChangeScreenEventData&) const> callback
-    );
-
-    MCAPI void registerPointerHeldEventHandler(
-        ::brstd::move_only_function<::ui::ViewRequest(::PointerHeldScreenEventData&) const> callback
-    );
-
-    MCAPI void registerRawInputEventHandler(
-        ::brstd::move_only_function<::ui::ViewRequest(::RawInputScreenEventData&) const> callback
-    );
 
     MCAPI void registerSliderChangedEventHandler(
         uint                                                             buttonId,
@@ -762,7 +700,7 @@ public:
 
     MCAPI void $queueTitleNarration();
 
-    MCAPI void $onTerminate();
+    MCFOLD void $onTerminate();
 
     MCAPI void $onInit();
 
@@ -780,7 +718,7 @@ public:
 
     MCFOLD void $leaveScreen(::std::string const& expectedScreenName);
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI bool $bind(
         ::std::string const& collectionName,
@@ -811,7 +749,7 @@ public:
 
     MCAPI void $setViewCommand(::ScreenViewCommand const& callback);
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCFOLD ::std::string $getAdditionalScreenInfo() const;
 
@@ -836,11 +774,5 @@ public:
     MCFOLD bool $_doesScreenHaveExitBehavior() const;
 
     MCFOLD bool $_isContainerScreen() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

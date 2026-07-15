@@ -80,17 +80,7 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCAPI void _parseJigsawDefinitionData(::std::string_view fileWithExtension, ::std::string&& fileData);
-
-    MCAPI void _parseProcessorsData(::std::string_view fileWithExtension, ::std::string&& fileData);
-
-    MCAPI void _parseStructureSetData(::std::string_view fileWithExtension, ::std::string&& fileData);
-
-    MCAPI void _parseTemplatePoolsData(::std::string_view fileWithExtension, ::std::string&& fileData);
-
     MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager);
-
-    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> takeJigsawStructureData();
     // NOLINTEND
 
 public:

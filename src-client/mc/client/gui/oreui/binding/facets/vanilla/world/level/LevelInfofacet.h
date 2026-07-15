@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -18,7 +18,7 @@ namespace OreUI { class IResourceAllowList; }
 
 namespace OreUI {
 
-class LevelInfofacet : public ::OreUI::FacetBase<::OreUI::LevelInfofacet> {
+class LevelInfofacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::LevelInfofacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,7 +41,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LevelInfofacet() /*override*/;
+    virtual ~LevelInfofacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -55,14 +55,6 @@ public:
         ::std::function<::LocalPlayer*()>                          getCurrentLocalPlayer,
         ::std::function<::LevelSummary*(::std::string)>            getCurrentLevelSummary
     );
-
-    MCAPI void _init();
-
-    MCAPI bool getIsInitialized() const;
-
-    MCFOLD ::OreUI::AllowListPath const& getWorldIconPath() const;
-
-    MCFOLD ::std::string const& getWorldName() const;
     // NOLINTEND
 
 public:
@@ -83,21 +75,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

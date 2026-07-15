@@ -19,16 +19,4 @@ public:
     ::ll::TypedStorage<4, 4, float>                                   mDamage;
     ::ll::TypedStorage<4, 4, int>                                     mAbsorbedDamage;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorHurtEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

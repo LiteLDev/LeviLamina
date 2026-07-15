@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ namespace OreUI { struct FacetAchievementCategoryData; }
 
 namespace OreUI {
 
-class AchievementCategoriesFacet : public ::OreUI::FacetBase<::OreUI::AchievementCategoriesFacet> {
+class AchievementCategoriesFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::AchievementCategoriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,10 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AchievementCategoriesFacet();
-
-    MCFOLD ::std::vector<::OreUI::FacetAchievementCategoryData> const& getReleaseCategoryData() const;
-
-    MCFOLD ::std::vector<::OreUI::FacetAchievementCategoryData> const& getStandardCategoryData() const;
     // NOLINTEND
 
 public:
@@ -51,13 +47,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

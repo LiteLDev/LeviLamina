@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class EntityContext;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
 // clang-format on
@@ -27,14 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onActorRemoved(::Actor const& actor);
-
-    MCAPI void _onGameplayUserRemoved(::EntityContext const& entity);
-
-    MCFOLD ::HitResult& getHitResult();
-
-    MCFOLD ::HitResult& getLiquidHitResult();
-
     MCAPI void initialize(
         ::IActorManagerConnector&        actorManagerConnector,
         ::IGameplayUserManagerConnector& gameplayUserManagerConnector

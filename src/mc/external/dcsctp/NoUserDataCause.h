@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/dcsctp/Parameter.h"
 #include "mc/external/dcsctp/TLVTrait.h"
+#include "mc/external/webrtc/ArrayView.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,7 +40,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::NoUserDataCause> Parse(::rtc::ArrayView<uchar const> data);
+    MCNAPI static ::std::optional<::dcsctp::NoUserDataCause>
+    Parse(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
     // NOLINTEND
 
 public:

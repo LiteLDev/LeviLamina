@@ -7,7 +7,6 @@
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core_graphics/VariationMap.h"
 #include "mc/deps/core_graphics/enums/RenderState.h"
-#include "mc/deps/core_graphics/enums/ShaderType.h"
 #include "mc/deps/core_graphics/helpers/InheritanceType.h"
 
 // auto generated forward declare list
@@ -44,13 +43,6 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                              mRequiredTextures;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    RenderMaterialBase& operator=(RenderMaterialBase const&);
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -84,23 +76,6 @@ public:
 #ifdef LL_PLAT_C
     MCAPI RenderMaterialBase();
 
-    MCAPI RenderMaterialBase(::cg::RenderMaterialBase const&);
-
-    MCAPI void addDefine(::std::string const& define);
-
-    MCFOLD ::std::set<::std::string> const& getDefines() const;
-
-    MCFOLD ::std::string const& getMaterialIdentifier() const;
-
-    MCFOLD ::std::map<::std::string, ::std::shared_ptr<::cg::RenderMaterialBase>> const&
-    getMaterialVariationMap() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const& getShaderProgramName(::mce::ShaderType shaderType) const;
-
-    MCAPI bool hasDefine(::std::string const& define) const;
-
-    MCAPI bool hasState(::mce::RenderState state) const;
-
     MCAPI void modifyDefines(::cg::RenderFeaturesConfiguration const& features);
 
     MCAPI void parseDefines(::Json::Value const& root);
@@ -116,16 +91,6 @@ public:
     );
 
     MCAPI void parseVersion(::Json::Value const& root);
-
-    MCAPI void removeDefine(::std::string const& define);
-#endif
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void warnOnDeprecatedSchemaKeyword(::Json::Value const& root, ::std::string_view key);
 #endif
     // NOLINTEND
 
@@ -134,8 +99,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::cg::RenderMaterialBase const&);
 #endif
     // NOLINTEND
 

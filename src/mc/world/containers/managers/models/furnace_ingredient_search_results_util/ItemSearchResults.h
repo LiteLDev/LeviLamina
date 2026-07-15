@@ -17,18 +17,6 @@ public:
     ItemSearchResults& operator=(ItemSearchResults const&);
     ItemSearchResults(ItemSearchResults const&);
     ItemSearchResults();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ItemSearchResults();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace FurnaceIngredientSearchResultsUtil

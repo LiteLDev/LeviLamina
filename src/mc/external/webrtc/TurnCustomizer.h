@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class PortInterface; }
-namespace cricket { class StunMessage; }
+namespace webrtc { class PortInterface; }
+namespace webrtc { class StunMessage; }
 // clang-format on
 
 namespace webrtc {
@@ -14,9 +14,9 @@ class TurnCustomizer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void MaybeModifyOutgoingStunMessage(::cricket::PortInterface*, ::cricket::StunMessage*) = 0;
+    virtual void MaybeModifyOutgoingStunMessage(::webrtc::PortInterface*, ::webrtc::StunMessage*) = 0;
 
-    virtual bool AllowChannelData(::cricket::PortInterface*, void const*, uint64, bool) = 0;
+    virtual bool AllowChannelData(::webrtc::PortInterface*, void const*, uint64, bool) = 0;
 
     virtual ~TurnCustomizer() = default;
     // NOLINTEND

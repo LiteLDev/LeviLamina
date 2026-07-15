@@ -25,18 +25,12 @@ public:
 
 public:
     // prevent constructor by default
+    AutomaticFeatureRulesData(AutomaticFeatureRulesData const&);
     AutomaticFeatureRulesData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AutomaticFeatureRulesData(::SharedTypes::v1_21_20::AutomaticFeatureRulesData&&);
-
-    MCAPI AutomaticFeatureRulesData(::SharedTypes::v1_21_20::AutomaticFeatureRulesData const&);
-
-    MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRulesData&
-    operator=(::SharedTypes::v1_21_20::AutomaticFeatureRulesData&&);
-
     MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRulesData&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRulesData const&);
 
@@ -47,14 +41,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::AutomaticFeatureRulesData&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::AutomaticFeatureRulesData const&);
     // NOLINTEND
 
 public:

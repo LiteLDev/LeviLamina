@@ -110,12 +110,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemRegistryRef();
-
-    MCAPI explicit ItemRegistryRef(::std::weak_ptr<::ItemRegistry> registry);
-
-    MCAPI ::std::shared_ptr<::ItemRegistry> _lockRegistry() const;
-
     MCAPI void addItemToTagMap(::Item const& item) const;
 
     MCAPI ::TagUpdateToken allowTagUpdate() const;
@@ -211,8 +205,6 @@ public:
 
     MCAPI bool isServerInitializingCreativeItems() const;
 
-    MCAPI bool isValid() const;
-
     MCAPI ::ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
 
     MCAPI ::WeakPtr<::Item> lookupByName(::HashedString const& inString) const;
@@ -270,21 +262,5 @@ public:
     MCAPI void unregisterItem(::HashedString const& itemName) const;
 
     MCAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& itemData);
-
-    MCAPI ~ItemRegistryRef();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

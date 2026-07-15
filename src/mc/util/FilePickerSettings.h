@@ -29,18 +29,6 @@ public:
         FileDescription& operator=(FileDescription const&);
         FileDescription(FileDescription const&);
         FileDescription();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~FileDescription();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -61,42 +49,29 @@ public:
     // prevent constructor by default
     FilePickerSettings& operator=(FilePickerSettings const&);
     FilePickerSettings(FilePickerSettings const&);
+    FilePickerSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilePickerSettings();
-
     MCNAPI void addFileDescription(::std::string const& extension, ::std::string const& name, bool isDefaultExtension);
 
 #ifdef LL_PLAT_C
-    MCNAPI ::std::string const& getDefaultFileName() const;
-
-    MCNAPI ::std::vector<::FilePickerSettings::FileDescription> const& getFileDescriptions() const;
-
-    MCNAPI ::FilePickerSettings::PickerType getPickerType() const;
-
     MCNAPI void setDefaultFileName(::std::string fileName);
 #endif
 
     MCNAPI void setPickerTitle(::std::string FilePickerTitle);
 
 #ifdef LL_PLAT_C
-    MCNAPI void setPickerType(::FilePickerSettings::PickerType PickerType);
-#endif
-
     MCNAPI ~FilePickerSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

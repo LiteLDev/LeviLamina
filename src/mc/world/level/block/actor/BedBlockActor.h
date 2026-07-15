@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,10 +15,11 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
+class IVanillaRenderBlockActorComponent;
 class SaveContext;
 // clang-format on
 
-class BedBlockActor : public ::BlockActor {
+class BedBlockActor : public ::VanillaBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,13 +44,14 @@ public:
 
     virtual void onChanged(::BlockSource&) /*override*/;
 
-    virtual void load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const /*override*/;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+    virtual ::IVanillaRenderBlockActorComponent*
+    getCrackEntity(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -61,23 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BedBlockActor(::BlockPos const& pos);
-
-    MCAPI bool claimPetSleepOnBed(::ActorUniqueID petId);
-
-    MCFOLD int getColorIndex() const;
-
-    MCAPI void setColorIndex(int color);
-
-    MCAPI void startSleepingOn();
-
     MCAPI void stopSleepingOn(::BlockSource& region, bool forcefulAwake);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -85,17 +71,17 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCFOLD void $onPlace(::BlockSource&);
+    MCAPI void $onPlace(::BlockSource&);
 
-    MCFOLD void $onChanged(::BlockSource&);
+    MCAPI void $onChanged(::BlockSource&);
 
-    MCAPI void $load(::ILevel& base, ::CompoundTag const&, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI ::IVanillaRenderBlockActorComponent* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI ::std::string $getName() const;
 
@@ -109,6 +95,12 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND
 };

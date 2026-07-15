@@ -32,8 +32,6 @@ public:
     MCAPI ::std::optional<::std::string> getFilteredMessage() const;
 
     MCAPI ::std::string getMessage() const;
-
-    MCFOLD bool shouldSkipMessages() const;
 #endif
     // NOLINTEND
 

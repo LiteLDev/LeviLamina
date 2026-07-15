@@ -10,7 +10,6 @@
 // clang-format off
 class EntityRegistry;
 class OwnerStorageEntity;
-class StackResultStorageEntity;
 // clang-format on
 
 class WeakStorageEntity {
@@ -22,28 +21,18 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WeakStorageEntity();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeakStorageEntity();
-
     MCAPI explicit WeakStorageEntity(::OwnerStorageEntity const& ownerStorage);
-
-    MCAPI explicit WeakStorageEntity(::StackResultStorageEntity const& stackResultStorage);
-
-    MCAPI bool _isSet() const;
-
-    MCAPI void _reset();
-
-    MCAPI bool operator==(::WeakStorageEntity const& w) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCFOLD void* $ctor(::OwnerStorageEntity const& ownerStorage);
-
-    MCFOLD void* $ctor(::StackResultStorageEntity const& stackResultStorage);
+    MCAPI void* $ctor(::OwnerStorageEntity const& ownerStorage);
     // NOLINTEND
 };

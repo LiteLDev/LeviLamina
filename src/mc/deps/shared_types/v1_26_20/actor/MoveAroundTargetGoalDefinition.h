@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~MoveAroundTargetGoalDefinition();
+    MCAPI bool operator==(::SharedTypes::v1_26_20::MoveAroundTargetGoalDefinition const&) const;
     // NOLINTEND
 
 public:
@@ -43,12 +43,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

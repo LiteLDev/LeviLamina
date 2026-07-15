@@ -17,8 +17,9 @@ class LakeFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString const> mFluidBlock;
-    ::ll::TypedStorage<8, 48, ::HashedString>       mBarrierBlock;
+    ::ll::TypedStorage<8, 48, ::HashedString const>                                                mFluidBlock;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                                      mBarrierBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::HashedString const>> const> mProhibitedBlocks;
     // NOLINTEND
 
 public:
@@ -34,13 +35,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LakeFeature(::HashedString fluidBlock, ::HashedString barrierBlock);
+    MCAPI LakeFeature(
+        ::HashedString                                                       fluidBlock,
+        ::HashedString                                                       barrierBlock,
+        ::std::vector<::std::reference_wrapper<::HashedString const>> const& prohibitedBlocks
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString fluidBlock, ::HashedString barrierBlock);
+    MCAPI void* $ctor(
+        ::HashedString                                                       fluidBlock,
+        ::HashedString                                                       barrierBlock,
+        ::std::vector<::std::reference_wrapper<::HashedString const>> const& prohibitedBlocks
+    );
     // NOLINTEND
 
 public:

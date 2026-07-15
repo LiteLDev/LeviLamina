@@ -26,21 +26,10 @@ public:
         ::ll::TypedStorage<8, 8, uint64>                            mImageHash;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
-    public:
-        // prevent constructor by default
-        StreamedResource& operator=(StreamedResource const&);
-        StreamedResource(StreamedResource const&);
-        StreamedResource();
-
-#endif
     public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ::cg::ImageResource::StreamedResource& operator=(::cg::ImageResource::StreamedResource&&);
-
         MCAPI ~StreamedResource();
 #endif
         // NOLINTEND
@@ -49,7 +38,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
 #endif
         // NOLINTEND
     };

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
+
 namespace webrtc {
 
 class AbsoluteCaptureTimeInterpolator {
@@ -15,6 +18,11 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkbac612;
     ::ll::UntypedStorage<4, 4>  mUnk24198c;
     ::ll::UntypedStorage<8, 24> mUnk53198e;
+    ::ll::UntypedStorage<8, 16> mUnk1e9413;
+    ::ll::UntypedStorage<8, 16> mUnke2222e;
+    ::ll::UntypedStorage<8, 16> mUnk381a5e;
+    ::ll::UntypedStorage<8, 16> mUnk74ff40;
+    ::ll::UntypedStorage<8, 16> mUnk15d4ca;
     // NOLINTEND
 
 public:
@@ -26,7 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static uint GetSource(uint ssrc, ::rtc::ArrayView<uint const> csrcs);
+    MCNAPI static uint GetSource(uint ssrc, ::webrtc::ArrayView<uint const, 18446744073709546905> csrcs);
 
     MCNAPI static uint64 InterpolateAbsoluteCaptureTimestamp(
         uint   rtp_timestamp,

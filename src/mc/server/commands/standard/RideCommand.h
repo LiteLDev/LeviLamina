@@ -60,21 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void evictPassengers(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void startRiding(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void stopRiding(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void summonPassenger(::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void summonVehicle(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -86,25 +72,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
-
-// clang-format off
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::RideRules>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::TeleportRules>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::VehicleAction>();
-template <>
-MCAPI ::ll::type_id_ref Bedrock::typeid_storage_impl<class CommandRegistry, ::RideCommand::VehicleFillType>();
-// clang-format on

@@ -26,13 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IRequestAction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRequestAction();
+    virtual ~IRequestAction() = default;
 
     virtual void execute(::ServerLevel& level, ::Dimension& dimension) = 0;
 
@@ -42,42 +38,10 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit IRequestAction(::IRequestAction::RequestActionType const& actionType);
-
-    MCAPI bool operator!=(::IRequestAction const& action) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isValidTag(::CompoundTag const& tag);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IRequestAction::RequestActionType const& actionType);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $serialize(::CompoundTag& tag);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

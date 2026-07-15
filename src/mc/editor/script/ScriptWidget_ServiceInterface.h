@@ -14,7 +14,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void
-    _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload) = 0;
+    _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const&) = 0;
     // NOLINTEND
 
 public:

@@ -52,8 +52,6 @@ public:
         ::BiomeSource const&                        biomeSource,
         ::br::worldgen::StructureSetRegistry const& allStructures
     );
-
-    MCAPI static ::br::worldgen::ChunkGeneratorStructureState createVoid(int64 levelSeed);
     // NOLINTEND
 
 public:

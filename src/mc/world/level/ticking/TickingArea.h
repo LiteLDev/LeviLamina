@@ -16,7 +16,6 @@
 // clang-format off
 class Actor;
 class BlockSource;
-class Dimension;
 class ITickingAreaView;
 class LevelStorage;
 class Random;
@@ -49,13 +48,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TickingArea();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TickingArea() /*override*/;
+    virtual ~TickingArea() /*override*/ = default;
 
     virtual ::mce::UUID const& getId() const /*override*/;
 
@@ -83,19 +78,19 @@ public:
 
     virtual ::TickingAreaLoadMode getLoadMode() const /*override*/;
 
-    virtual void setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage) /*override*/;
+    virtual void setLoadMode(::TickingAreaLoadMode, ::LevelStorage&) /*override*/;
 
     virtual bool isPreloadDone() const /*override*/;
 
-    virtual void tick(::Tick const& currentTick, bool randomize) /*override*/;
+    virtual void tick(::Tick const&, bool) /*override*/;
 
-    virtual void tickSeasons(::Random& random) /*override*/;
+    virtual void tickSeasons(::Random&) /*override*/;
 
-    virtual void updatePosition(::Vec3 const& pos) /*override*/;
+    virtual void updatePosition(::Vec3 const&) /*override*/;
 
-    virtual void updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick) /*override*/;
+    virtual void updateAndCenter(::LevelStorage&, ::Tick) /*override*/;
 
-    virtual ::Actor* findOwner(uchar& pendingChunks) /*override*/;
+    virtual ::Actor* findOwner(uchar&) /*override*/;
 
     virtual bool entityHasBeenFound() const /*override*/;
 
@@ -103,14 +98,9 @@ public:
 
     virtual bool isRemoved() /*override*/;
 
-    virtual void remove(::LevelStorage& levelStorage) /*override*/;
+    virtual void remove(::LevelStorage&) /*override*/;
 
-    virtual void onComponentChanged(
-        uint            radius,
-        float           maxDistToPlayers,
-        bool            alwaysActive,
-        ::LevelStorage& levelStorage
-    ) /*override*/;
+    virtual void onComponentChanged(uint, float, bool, ::LevelStorage&) /*override*/;
 
     virtual bool isScoped() const /*override*/;
 
@@ -122,155 +112,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TickingArea(::Dimension& dimension, ::mce::UUID uniqueId, ::Bounds const& bounds, ::ActorUniqueID entityId);
-
-    MCAPI TickingArea(
-        ::Dimension&    dimension,
-        ::mce::UUID     uniqueId,
-        ::Bounds const& bounds,
-        ::ActorUniqueID entityId,
-        float           maxDistToPlayers
-    );
-
-    MCAPI TickingArea(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        ::TickingAreaLoadMode loadMode
-    );
-
-    MCAPI TickingArea(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::ActorUniqueID       entityId,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        float                 maxDistToPlayers,
-        bool                  alwaysActive,
-        ::TickingAreaLoadMode loadMode
-    );
-
-    MCAPI void _center(::LevelStorage& levelStorage);
-
-    MCAPI void _save(::LevelStorage& levelStorage);
-
-    MCAPI void addScope(::std::optional<uint64> scope);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::mce::UUID uniqueId, ::Bounds const& bounds, ::ActorUniqueID entityId);
-
-    MCAPI void* $ctor(
-        ::Dimension&    dimension,
-        ::mce::UUID     uniqueId,
-        ::Bounds const& bounds,
-        ::ActorUniqueID entityId,
-        float           maxDistToPlayers
-    );
-
-    MCAPI void* $ctor(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        ::TickingAreaLoadMode loadMode
-    );
-
-    MCAPI void* $ctor(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::ActorUniqueID       entityId,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        float                 maxDistToPlayers,
-        bool                  alwaysActive,
-        ::TickingAreaLoadMode loadMode
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::UUID const& $getId() const;
 
-    MCFOLD ::std::string const& $getName() const;
-
-    MCFOLD ::ActorUniqueID const& $getEntityId() const;
-
-    MCAPI ::Bounds const $getBoundsCopy() const;
-
-    MCAPI bool $isEntityOwned() const;
-
-    MCFOLD bool $isAlwaysActive() const;
-
-    MCAPI float $getMaxDistToPlayers() const;
-
-    MCFOLD ::ITickingAreaView const& $getView() const;
-
-    MCFOLD ::ITickingAreaView& $getView();
-
-    MCFOLD ::WeakRef<::BlockSource> const $getBlockSource() const;
-
-    MCFOLD ::WeakRef<::BlockSource> $getBlockSource();
-
-    MCAPI ::TickingAreaDescription $getDescription() const;
-
-    MCAPI ::TickingAreaLoadMode $getLoadMode() const;
-
-    MCAPI void $setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
-
-    MCAPI bool $isPreloadDone() const;
-
-    MCAPI void $tick(::Tick const& currentTick, bool randomize);
-
-    MCAPI void $tickSeasons(::Random& random);
-
-    MCAPI void $updatePosition(::Vec3 const& pos);
-
-    MCAPI void $updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick);
-
-    MCAPI ::Actor* $findOwner(uchar& pendingChunks);
-
-    MCFOLD bool $entityHasBeenFound() const;
-
-    MCFOLD void $setEntityFound();
-
-    MCAPI bool $isRemoved();
-
-    MCAPI void $remove(::LevelStorage& levelStorage);
-
-    MCAPI void
-    $onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage);
-
-    MCFOLD bool $isScoped() const;
-
-    MCFOLD ::std::optional<uint64> const& $getScope() const;
-
-    MCFOLD bool $isDoneLoadingScoped() const;
-
-    MCAPI bool $isStandalone() const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

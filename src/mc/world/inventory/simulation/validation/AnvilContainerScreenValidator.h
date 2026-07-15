@@ -20,9 +20,9 @@ public:
     virtual bool isCraftingImplemented() /*override*/;
 
     virtual ::ContainerValidationCraftResult getCraftResult(
-        ::ContainerScreenContext const&                     screenContext,
-        ::ContainerScreenValidation&                        screenValidation,
-        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        ::ContainerScreenContext const&,
+        ::ContainerScreenValidation&,
+        ::std::unique_ptr<::ContainerValidationCraftInputs>,
         uchar const
     ) /*override*/;
     // NOLINTEND
@@ -30,21 +30,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isCraftingImplemented();
 
-    MCAPI ::ContainerValidationCraftResult $getCraftResult(
-        ::ContainerScreenContext const&                     screenContext,
-        ::ContainerScreenValidation&                        screenValidation,
-        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
-        uchar const
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

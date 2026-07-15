@@ -20,16 +20,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                    mIsPowered;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>                        mPlayerRef;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~LeverActionEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

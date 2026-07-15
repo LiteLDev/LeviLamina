@@ -56,11 +56,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AdvanceFrameResult
-    getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& entity) /*override*/;
+    getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&) /*override*/;
 
-    virtual void advanceFrame(::EntityContext& entity) const /*override*/;
+    virtual void advanceFrame(::EntityContext&) const /*override*/;
 
-    virtual void advanceLiveFrame(::Actor& actor, ::std::optional<uint64>) /*override*/;
+    virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) /*override*/;
 
     virtual ::std::bitset<2> getCorrectionTypeBitset() const /*override*/;
     // NOLINTEND
@@ -80,19 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AdvanceFrameResult $getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& entity);
 
-    MCAPI void $advanceFrame(::EntityContext& entity) const;
-
-    MCAPI void $advanceLiveFrame(::Actor& actor, ::std::optional<uint64>);
-
-    MCAPI ::std::bitset<2> $getCorrectionTypeBitset() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

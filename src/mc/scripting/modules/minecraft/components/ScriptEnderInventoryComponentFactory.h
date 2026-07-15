@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/components/GenericScriptActorComponentFactory.h"
 
 // auto generated forward declare list
@@ -23,30 +23,16 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptEnderInventoryComponentFactory() /*override*/ = default;
 
-    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent> createComponent(
-        ::WeakEntityRef                       entity,
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::std::string const&                  id
-    ) /*override*/;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
+    createComponent(::WeakEntityRef, ::Scripting::WeakLifetimeScope const&, ::std::string const&) /*override*/;
 
-    virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
+    virtual bool hasComponent(::WeakEntityRef) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
-    $createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
 
-    MCFOLD bool $hasComponent(::WeakEntityRef entity) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -42,28 +42,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<void>
-    $queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&);
 
-    MCNAPI ::Bedrock::Threading::Async<void>
-    $queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&);
-
-    MCNAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase>);
-
-    MCNAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool);
-
-    MCNAPI ::TaskGroupState $getState() const;
-
-    MCNAPI void $processCoroutines();
-
-    MCNAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*>);
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

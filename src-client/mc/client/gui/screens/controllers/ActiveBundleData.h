@@ -41,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActiveBundleData();
-
     MCAPI ::BundleTooltipLayoutData const& getBundleTooltipLayoutData(
         ::ItemStackBase const&        bundleItem,
         ::ContainerManagerController& containerManagerController
@@ -52,34 +50,5 @@ public:
 
     MCAPI int
     getContainerIndexFromCollectionIndex(::BundleTooltipLayoutData const& tooltipLayoutData, int collectionIndex) const;
-
-    MCAPI int getSelectedItemContainerIndex(::BundleTooltipLayoutData const& tooltipLayoutData) const;
-
-    MCAPI void invalidateBundleTooltipLayoutData();
-
-    MCAPI bool isActive() const;
-
-    MCAPI bool isHovered() const;
-
-    MCAPI void resetData();
-
-    MCAPI void setActive(::std::string const& collectionName, int collectionIndex);
-
-    MCAPI void setHovered(::std::string const& collectionName, int collectionIndex);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BundleTooltipLayoutData _calculateBundleTooltipLayoutData(
-        ::ItemStackBase const&        bundleItem,
-        ::ContainerManagerController& containerManagerController
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

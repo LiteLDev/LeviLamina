@@ -3,17 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/BufferT.h"
 #include "mc/external/webrtc/RtpTransport.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
-namespace rtc { class PacketTransportInternal; }
-namespace rtc { class ReceivedPacket; }
-namespace rtc { struct NetworkRoute; }
-namespace rtc { struct PacketOptions; }
+namespace webrtc { class CopyOnWriteBuffer; }
 namespace webrtc { class FieldTrialsView; }
+namespace webrtc { class PacketTransportInternal; }
+namespace webrtc { class ReceivedIpPacket; }
 namespace webrtc { class RtpPacketSinkInterface; }
+namespace webrtc { struct AsyncSocketPacketOptions; }
+namespace webrtc { struct NetworkRoute; }
 // clang-format on
 
 namespace webrtc {
@@ -23,14 +24,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkfda4b5;
-    ::ll::UntypedStorage<8, 8>  mUnk1f0d2b;
-    ::ll::UntypedStorage<8, 8>  mUnke67a94;
-    ::ll::UntypedStorage<8, 8>  mUnkb10ca3;
-    ::ll::UntypedStorage<8, 8>  mUnk77dbf6;
+    ::ll::UntypedStorage<8, 8>  mUnk1d3d3a;
+    ::ll::UntypedStorage<8, 8>  mUnkd8ecff;
+    ::ll::UntypedStorage<8, 8>  mUnkd64893;
+    ::ll::UntypedStorage<8, 8>  mUnkc48ed5;
     ::ll::UntypedStorage<4, 8>  mUnk69d279;
     ::ll::UntypedStorage<4, 8>  mUnk129ed6;
-    ::ll::UntypedStorage<8, 24> mUnk109469;
-    ::ll::UntypedStorage<8, 24> mUnk904e8c;
+    ::ll::UntypedStorage<8, 24> mUnk96fea3;
+    ::ll::UntypedStorage<8, 24> mUnk24ab60;
     ::ll::UntypedStorage<1, 1>  mUnkcc3a05;
     ::ll::UntypedStorage<1, 1>  mUnke5116d;
     ::ll::UntypedStorage<4, 4>  mUnkc2972a;
@@ -49,11 +50,17 @@ public:
     // NOLINTBEGIN
     virtual ~SrtpTransport() /*override*/;
 
-    virtual bool
-    SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
+    virtual bool SendRtpPacket(
+        ::webrtc::CopyOnWriteBuffer*              packet,
+        ::webrtc::AsyncSocketPacketOptions const& options,
+        int                                       flags
+    ) /*override*/;
 
-    virtual bool
-    SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
+    virtual bool SendRtcpPacket(
+        ::webrtc::CopyOnWriteBuffer*              packet,
+        ::webrtc::AsyncSocketPacketOptions const& options,
+        int                                       flags
+    ) /*override*/;
 
     virtual bool IsSrtpActive() const /*override*/;
 
@@ -61,13 +68,13 @@ public:
 
     virtual bool UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink) /*override*/;
 
-    virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
+    virtual void OnRtpPacketReceived(::webrtc::ReceivedIpPacket const& packet) /*override*/;
 
-    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
+    virtual void OnRtcpPacketReceived(::webrtc::ReceivedIpPacket const& packet) /*override*/;
 
-    virtual void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route) /*override*/;
+    virtual void OnNetworkRouteChanged(::std::optional<::webrtc::NetworkRoute> network_route) /*override*/;
 
-    virtual void OnWritableState(::rtc::PacketTransportInternal* packet_transport) /*override*/;
+    virtual void OnWritableState(::webrtc::PacketTransportInternal* packet_transport) /*override*/;
     // NOLINTEND
 
 public:
@@ -80,25 +87,21 @@ public:
     MCNAPI void ResetParams();
 
     MCNAPI bool SetRtcpParams(
-        int                       send_crypto_suite,
-        uchar const*              send_key,
-        int                       send_key_len,
-        ::std::vector<int> const& send_extension_ids,
-        int                       recv_crypto_suite,
-        uchar const*              recv_key,
-        int                       recv_key_len,
-        ::std::vector<int> const& recv_extension_ids
+        int                                send_crypto_suite,
+        ::webrtc::BufferT<uchar, 1> const& send_key,
+        ::std::vector<int> const&          send_extension_ids,
+        int                                recv_crypto_suite,
+        ::webrtc::BufferT<uchar, 1> const& recv_key,
+        ::std::vector<int> const&          recv_extension_ids
     );
 
     MCNAPI bool SetRtpParams(
-        int                       send_crypto_suite,
-        uchar const*              send_key,
-        int                       send_key_len,
-        ::std::vector<int> const& send_extension_ids,
-        int                       recv_crypto_suite,
-        uchar const*              recv_key,
-        int                       recv_key_len,
-        ::std::vector<int> const& recv_extension_ids
+        int                                send_crypto_suite,
+        ::webrtc::BufferT<uchar, 1> const& send_key,
+        ::std::vector<int> const&          send_extension_ids,
+        int                                recv_crypto_suite,
+        ::webrtc::BufferT<uchar, 1> const& recv_key,
+        ::std::vector<int> const&          recv_extension_ids
     );
 
     MCNAPI SrtpTransport(bool rtcp_mux_enabled, ::webrtc::FieldTrialsView const& field_trials);
@@ -119,9 +122,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags);
+    MCNAPI bool
+    $SendRtpPacket(::webrtc::CopyOnWriteBuffer* packet, ::webrtc::AsyncSocketPacketOptions const& options, int flags);
 
-    MCNAPI bool $SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags);
+    MCNAPI bool
+    $SendRtcpPacket(::webrtc::CopyOnWriteBuffer* packet, ::webrtc::AsyncSocketPacketOptions const& options, int flags);
 
     MCNAPI bool $IsSrtpActive() const;
 
@@ -129,13 +134,13 @@ public:
 
     MCNAPI bool $UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink);
 
-    MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& packet);
+    MCNAPI void $OnRtpPacketReceived(::webrtc::ReceivedIpPacket const& packet);
 
-    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet);
+    MCNAPI void $OnRtcpPacketReceived(::webrtc::ReceivedIpPacket const& packet);
 
-    MCNAPI void $OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route);
+    MCNAPI void $OnNetworkRouteChanged(::std::optional<::webrtc::NetworkRoute> network_route);
 
-    MCNAPI void $OnWritableState(::rtc::PacketTransportInternal* packet_transport);
+    MCNAPI void $OnWritableState(::webrtc::PacketTransportInternal* packet_transport);
 
 
     // NOLINTEND

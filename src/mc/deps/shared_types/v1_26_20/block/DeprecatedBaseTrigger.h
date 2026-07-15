@@ -6,14 +6,13 @@
 #include "mc/deps/shared_types/legacy/ExpressionNode.h"
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_20::BlockDefinition {
 
 struct DeprecatedBaseTrigger {
+public:
+    // DeprecatedBaseTrigger inner types define
+    using CerealHierarchyEqualityOperator = void;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,12 +32,6 @@ public:
     MCAPI DeprecatedBaseTrigger(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedBaseTrigger const&);
 
     MCAPI ~DeprecatedBaseTrigger();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindAllTriggersType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

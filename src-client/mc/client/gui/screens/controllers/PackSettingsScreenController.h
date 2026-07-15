@@ -11,7 +11,6 @@
 class DynamicFormScreenController;
 class MainMenuScreenModel;
 class PackSettings;
-namespace Json { class Value; }
 // clang-format on
 
 class PackSettingsScreenController : public ::MainMenuScreenController {
@@ -41,10 +40,6 @@ public:
     // NOLINTBEGIN
     MCAPI
     PackSettingsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::PackSettingsInfo packSettingsInfo);
-
-    MCAPI void _onContentItemChanged(::Json::Value& contentItem);
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -56,16 +51,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $onTerminate();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

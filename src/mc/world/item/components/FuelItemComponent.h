@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
-namespace SharedTypes::v1_20_50 { struct FuelItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,18 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FuelItemComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit FuelItemComponent(::SharedTypes::v1_20_50::FuelItemComponent component);
-
-    MCFOLD void setFuelDuration(float fuelDuration);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
@@ -41,14 +27,6 @@ public:
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::FuelItemComponent component);
     // NOLINTEND
 
 public:

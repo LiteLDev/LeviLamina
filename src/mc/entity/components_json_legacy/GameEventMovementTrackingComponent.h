@@ -7,11 +7,6 @@
 #include "mc/entity/components_json_legacy/GameEventMovementTrackingSettings.h"
 #include "mc/world/level/Tick.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-// clang-format on
-
 class GameEventMovementTrackingComponent {
 public:
     // member variables
@@ -23,17 +18,5 @@ public:
     ::ll::TypedStorage<4, 4, float>   mMoveDist;
     ::ll::TypedStorage<1, 1, bool>    mConsiderVerticalComponentForAmphibiousMovement;
     ::ll::TypedStorage<1, 4, ::std::optional<::GameEventMovementTrackingSettings>> mSettings;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initializeFromCode(::Actor& actor, bool considerVerticalComponentForAmphibiousMovement);
-
-    MCAPI bool shouldEmitEntityMoveGameEvent();
-
-    MCAPI bool shouldEmitFlapGameEvent();
-
-    MCAPI bool shouldEmitSwimGameEvent();
     // NOLINTEND
 };

@@ -3,19 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/SSLRole.h"
+#include "mc/external/webrtc/ArrayView.h"
+#include "mc/external/webrtc/DataChannelEventObserverInterface.h"
 #include "mc/external/webrtc/DataChannelInterface.h"
 #include "mc/external/webrtc/DataChannelSink.h"
 #include "mc/external/webrtc/DataMessageType.h"
 #include "mc/external/webrtc/RTCErrorOr.h"
+#include "mc/external/webrtc/SSLRole.h"
 #include "mc/external/webrtc/SctpDataChannelControllerInterface.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class CopyOnWriteBuffer; }
+namespace webrtc { class CopyOnWriteBuffer; }
+namespace webrtc { class DataChannelEventObserverInterface; }
 namespace webrtc { class DataChannelInterface; }
 namespace webrtc { class DataChannelTransportInterface; }
+namespace webrtc { class PriorityValue; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class SctpDataChannel; }
 namespace webrtc { class StreamId; }
@@ -42,8 +46,9 @@ public:
     ::ll::UntypedStorage<8, 40> mUnkdeaa97;
     ::ll::UntypedStorage<8, 24> mUnkcd43ed;
     ::ll::UntypedStorage<1, 1>  mUnk745d5e;
+    ::ll::UntypedStorage<8, 8>  mUnkd39ca8;
     ::ll::UntypedStorage<8, 8>  mUnkf053e4;
-    ::ll::UntypedStorage<8, 16> mUnk32b9c5;
+    ::ll::UntypedStorage<8, 16> mUnk499b9e;
     ::ll::UntypedStorage<8, 8>  mUnk13b8b8;
     // NOLINTEND
 
@@ -59,12 +64,12 @@ public:
     virtual ~DataChannelController() /*override*/;
 
     virtual ::webrtc::RTCError SendData(
-        ::webrtc::StreamId              sid,
-        ::webrtc::SendDataParams const& params,
-        ::rtc::CopyOnWriteBuffer const& payload
+        ::webrtc::StreamId                 sid,
+        ::webrtc::SendDataParams const&    params,
+        ::webrtc::CopyOnWriteBuffer const& payload
     ) /*override*/;
 
-    virtual void AddSctpDataStream(::webrtc::StreamId sid) /*override*/;
+    virtual void AddSctpDataStream(::webrtc::StreamId sid, ::webrtc::PriorityValue priority) /*override*/;
 
     virtual void RemoveSctpDataStream(::webrtc::StreamId sid) /*override*/;
 
@@ -79,8 +84,11 @@ public:
 
     virtual void SetBufferedAmountLowThreshold(::webrtc::StreamId sid, uint64 bytes) /*override*/;
 
-    virtual void
-    OnDataReceived(int channel_id, ::webrtc::DataMessageType type, ::rtc::CopyOnWriteBuffer const& buffer) /*override*/;
+    virtual void OnDataReceived(
+        int                                channel_id,
+        ::webrtc::DataMessageType          type,
+        ::webrtc::CopyOnWriteBuffer const& buffer
+    ) /*override*/;
 
     virtual void OnChannelClosing(int channel_id) /*override*/;
 
@@ -96,7 +104,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AllocateSctpSids(::rtc::SSLRole role);
+    MCNAPI void AllocateSctpSids(::webrtc::SSLRole role);
+
+    MCNAPI ::std::optional<::webrtc::DataChannelEventObserverInterface::Message> BuildObserverMessage(
+        ::webrtc::StreamId                                              sid,
+        ::webrtc::DataMessageType                                       type,
+        ::webrtc::ArrayView<uchar const, 18446744073709546905>          payload,
+        ::webrtc::DataChannelEventObserverInterface::Message::Direction direction
+    ) const;
 
     MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::SctpDataChannel>>
     CreateDataChannel(::std::string const& label, ::webrtc::InternalDataChannelInit& config);
@@ -104,7 +119,7 @@ public:
     MCNAPI ::std::vector<::webrtc::DataChannelStats> GetDataChannelStats() const;
 
     MCNAPI bool
-    HandleOpenMessage_n(int channel_id, ::webrtc::DataMessageType type, ::rtc::CopyOnWriteBuffer const& buffer);
+    HandleOpenMessage_n(int channel_id, ::webrtc::DataMessageType type, ::webrtc::CopyOnWriteBuffer const& buffer);
 
     MCNAPI bool HasDataChannels() const;
 
@@ -113,15 +128,16 @@ public:
     MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
     InternalCreateDataChannelWithProxy(::std::string const& label, ::webrtc::InternalDataChannelInit const& config);
 
-    MCNAPI void
-    OnDataChannelOpenMessage(::webrtc::scoped_refptr<::webrtc::SctpDataChannel> channel, bool ready_to_send);
-
     MCNAPI void OnTransportChanged(::webrtc::DataChannelTransportInterface* new_data_channel_transport);
 
     MCNAPI void PrepareForShutdown();
 
-    MCNAPI ::webrtc::RTCError
-    ReserveOrAllocateSid(::std::optional<::webrtc::StreamId>& sid, ::std::optional<::rtc::SSLRole> fallback_ssl_role);
+    MCNAPI ::webrtc::RTCError ReserveOrAllocateSid(
+        ::std::optional<::webrtc::StreamId>& sid,
+        ::std::optional<::webrtc::SSLRole>   fallback_ssl_role
+    );
+
+    MCNAPI void SetEventObserver(::std::unique_ptr<::webrtc::DataChannelEventObserverInterface> observer);
 
     MCNAPI void SetupDataChannelTransport_n(::webrtc::DataChannelTransportInterface* transport);
 
@@ -139,10 +155,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RTCError
-    $SendData(::webrtc::StreamId sid, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& payload);
+    MCNAPI ::webrtc::RTCError $SendData(
+        ::webrtc::StreamId                 sid,
+        ::webrtc::SendDataParams const&    params,
+        ::webrtc::CopyOnWriteBuffer const& payload
+    );
 
-    MCNAPI void $AddSctpDataStream(::webrtc::StreamId sid);
+    MCNAPI void $AddSctpDataStream(::webrtc::StreamId sid, ::webrtc::PriorityValue priority);
 
     MCNAPI void $RemoveSctpDataStream(::webrtc::StreamId sid);
 
@@ -155,7 +174,8 @@ public:
 
     MCNAPI void $SetBufferedAmountLowThreshold(::webrtc::StreamId sid, uint64 bytes);
 
-    MCNAPI void $OnDataReceived(int channel_id, ::webrtc::DataMessageType type, ::rtc::CopyOnWriteBuffer const& buffer);
+    MCNAPI void
+    $OnDataReceived(int channel_id, ::webrtc::DataMessageType type, ::webrtc::CopyOnWriteBuffer const& buffer);
 
     MCNAPI void $OnChannelClosing(int channel_id);
 

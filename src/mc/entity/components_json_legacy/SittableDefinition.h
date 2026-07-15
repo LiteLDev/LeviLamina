@@ -25,8 +25,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void uninitialize(::EntityContext& entity, ::SitComponent&) const;
-
-    MCAPI ~SittableDefinition();
     // NOLINTEND
 
 public:
@@ -35,11 +33,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SittableDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -29,16 +29,6 @@ public:
     // NOLINTBEGIN
     MCAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
 
-    MCFOLD bool hasMagicAttacks() const;
-
     MCAPI void onShoot(::Actor& owner);
-
-    MCAPI ~ShooterComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

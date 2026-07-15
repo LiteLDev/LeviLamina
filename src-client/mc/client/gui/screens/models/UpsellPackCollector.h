@@ -41,54 +41,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~UpsellPackCollector() /*override*/;
+    virtual ~UpsellPackCollector() /*override*/ = default;
 
-    virtual void start(bool allowed) /*override*/;
+    virtual void start(bool) /*override*/;
 
     virtual bool exhausted() const /*override*/;
 
-    virtual ::HandleRangeResult handleRange(int end, int) /*override*/;
+    virtual ::HandleRangeResult handleRange(int, int) /*override*/;
 
     virtual void collect(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::PersonaClient&                                     skinRepo,
-        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
-        ::std::unordered_set<::mce::UUID>&                   handledPackSet
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>,
+        ::PersonaClient&,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>&,
+        ::std::unordered_set<::mce::UUID>&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _search();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start(bool allowed);
 
-    MCAPI bool $exhausted() const;
-
-    MCAPI ::HandleRangeResult $handleRange(int end, int);
-
-    MCAPI void $collect(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::PersonaClient&                                     skinRepo,
-        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
-        ::std::unordered_set<::mce::UUID>&                   handledPackSet
-    );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

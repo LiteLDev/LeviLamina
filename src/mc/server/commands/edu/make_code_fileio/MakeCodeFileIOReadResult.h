@@ -14,18 +14,6 @@ public:
     ::ll::TypedStorage<4, 4, ::MakeCodeFileIO::MakeCodeFileResult> mResult;
     ::ll::TypedStorage<8, 32, ::std::string>                       mFileContents;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MakeCodeFileIOReadResult();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace MakeCodeFileIO

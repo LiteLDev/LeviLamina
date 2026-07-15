@@ -13,23 +13,13 @@ namespace ColorFormat {
 #ifdef LL_PLAT_C
 MCNAPI ::std::string ColorCodeFromColor(::mce::Color const& color);
 
-MCNAPI ::mce::Color const* ColorFromChar(char colorCode);
-
 MCNAPI ::mce::Color const* ColorFromColorCode(::std::string const& colorCode);
 #endif
 
 MCNAPI ::std::string_view const FormatCodeFromName(::std::string const& str);
 
 #ifdef LL_PLAT_C
-MCNAPI bool IsColorCode(char c);
-#endif
-
-MCNAPI bool IsFormatOrColorCode(char c);
-
-#ifdef LL_PLAT_C
 MCNAPI ::std::string NameFromFormatCode(::std::string const& formatCode);
-
-MCNAPI void setColors(::std::array<::mce::Color, 28> const& colors);
 #endif
 // NOLINTEND
 
@@ -37,15 +27,7 @@ MCNAPI void setColors(::std::array<::mce::Color, 28> const& colors);
 // NOLINTBEGIN
 MCNAPI ::std::string const& AQUA();
 
-MCNAPI ::std::string const& BLACK();
-
 MCNAPI ::std::string const& BLUE();
-
-MCNAPI ::std::string const& BOLD();
-
-MCNAPI ::std::string const& DARK_AQUA();
-
-MCNAPI ::std::string const& DARK_BLUE();
 
 MCNAPI ::std::string const& DARK_GRAY();
 
@@ -53,11 +35,11 @@ MCNAPI ::std::string const& DARK_GREEN();
 
 MCNAPI ::std::string const& DARK_PURPLE();
 
-MCNAPI ::std::string const& DARK_RED();
-
 MCNAPI ::std::string const& ESCAPE();
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string const& GOLD();
+#endif
 
 MCNAPI ::std::string const& GRAY();
 
@@ -89,9 +71,9 @@ MCNAPI ::std::string const& MATERIAL_REDSTONE();
 
 MCNAPI ::std::string const& MATERIAL_RESIN();
 
-MCNAPI ::std::string const& MINECOIN_GOLD();
-
+#ifdef LL_PLAT_C
 MCNAPI ::std::string const& OBFUSCATED();
+#endif
 
 MCNAPI ::std::string const& RED();
 

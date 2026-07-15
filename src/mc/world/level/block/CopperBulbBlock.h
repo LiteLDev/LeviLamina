@@ -13,7 +13,6 @@
 class Block;
 class BlockPos;
 class BlockSource;
-struct CopperBlockSet;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
@@ -26,17 +25,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CopperBulbBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool hasComparatorSignal() const /*override*/;
 
-    virtual int getComparatorSignal(::BlockSource& block, ::BlockPos const&, ::Block const&, uchar) const /*override*/;
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
-    virtual bool shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const /*override*/;
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
     // NOLINTEND
@@ -44,19 +42,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    CopperBulbBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet, ::Brightness litBrightness);
-
     MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet, ::Brightness litBrightness);
     // NOLINTEND
 
 public:
@@ -64,9 +52,10 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& block, ::BlockPos const&, ::Block const&, uchar) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD bool $shouldConnectToRedstone(::BlockSource&, ::BlockPos const&, ::Direction::Type) const;
+    MCFOLD bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 

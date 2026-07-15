@@ -14,7 +14,7 @@ struct FamilyTypeDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkcc400e;
+    ::ll::UntypedStorage<8, 16> mUnkc45a3d;
     // NOLINTEND
 
 public:

@@ -11,7 +11,6 @@
 struct NetworkWorldInfo;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Realms { struct RealmId; }
-namespace Social { class MultiplayerGameInfo; }
 namespace Social { class MultiplayerServiceManager; }
 // clang-format on
 
@@ -45,28 +44,15 @@ public:
         ::std::function<bool()>                  isEditorModeEnabled
     );
 
-    MCAPI ::std::unordered_map<::Network::ServerID, ::NetworkWorldInfo>
-    _filterWorlds(::std::vector<::Social::MultiplayerGameInfo> const& serverList) const;
-
     MCAPI void _refreshWorlds();
-
-    MCAPI ::std::optional<::Realms::RealmId> getRealmIdByUserId(::std::string const& userId) const;
 
     MCAPI ::std::optional<::Network::ServerID> getServerIdByUserId(::std::string const& userId) const;
 
     MCAPI ::NetworkWorldInfo const* getWorld(::Network::ServerID const& serverId) const;
 
-    MCFOLD ::std::unordered_map<::Network::ServerID, ::NetworkWorldInfo> const& getWorlds() const;
-
-    MCAPI void onTrialModeChanged(bool trial);
-
     MCAPI ::Bedrock::PubSub::Subscription subscribeToBuildGameList();
 
-    MCAPI void update();
-
-    MCAPI void userControlledUpdateGameList();
-
-    MCAPI ~FriendServerWorldList();
+    MCFOLD void userControlledUpdateGameList();
     // NOLINTEND
 
 public:
@@ -78,12 +64,6 @@ public:
         ::std::function<bool(::Realms::RealmId)> isRealmJoinable,
         ::std::function<bool()>                  isEditorModeEnabled
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

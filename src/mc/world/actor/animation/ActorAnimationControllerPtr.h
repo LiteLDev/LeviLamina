@@ -25,15 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI ActorAnimationControllerPtr(::ActorAnimationControllerGroup& group, ::HashedString const& name);
 
-    MCFOLD bool isNull() const;
-
     MCAPI ~ActorAnimationControllerPtr();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::ActorAnimationControllerPtr const& NONE();
     // NOLINTEND
 
 public:

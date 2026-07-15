@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::JSONObject { class Document; }
-namespace Bedrock::JSONObject { class ValueWrapper; }
-// clang-format on
-
 namespace Bedrock::JSONObject {
 
 class ParseHandler
@@ -47,50 +41,6 @@ public:
     ParseHandler& operator=(ParseHandler const&);
     ParseHandler(ParseHandler const&);
     ParseHandler();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool Bool(bool b);
-
-    MCNAPI bool Double(double d);
-
-    MCNAPI bool EndArray(uint elementCount);
-
-    MCNAPI bool EndObject(uint memberCount);
-
-    MCNAPI bool Int(int i);
-
-    MCNAPI bool Int64(int64 i);
-
-    MCNAPI bool Key(char const* str, uint length, bool copy);
-
-    MCNAPI bool Null();
-
-    MCNAPI explicit ParseHandler(::gsl::not_null<::Bedrock::JSONObject::Document*> document);
-
-    MCNAPI bool StartArray();
-
-    MCNAPI bool StartObject();
-
-    MCNAPI bool String(char const* str, uint length, bool copy);
-
-    MCNAPI bool Uint(uint u);
-
-    MCNAPI bool Uint64(uint64 u);
-
-#ifdef LL_PLAT_S
-    MCNAPI bool _addBasicEntry(::Bedrock::JSONObject::ValueWrapper const& value);
-#endif
-
-    MCNAPI bool _addObjectOrArray(::Bedrock::JSONObject::ValueWrapper const& value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::Bedrock::JSONObject::Document*> document);
-    // NOLINTEND
 };
 
 } // namespace Bedrock::JSONObject

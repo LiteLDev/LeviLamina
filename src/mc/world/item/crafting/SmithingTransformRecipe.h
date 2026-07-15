@@ -47,14 +47,6 @@ public:
         ::Recipe::Results&&       results,
         ::HashedString const&     tag
     );
-
-    MCFOLD ::RecipeIngredient const& getAdditionIngredient() const;
-
-    MCFOLD ::RecipeIngredient const& getBaseIngredient() const;
-
-    MCAPI ::ItemInstance const& getResult() const;
-
-    MCFOLD ::RecipeIngredient const& getTemplateIngredient() const;
     // NOLINTEND
 
 public:

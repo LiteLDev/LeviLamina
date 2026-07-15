@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/legacy/FilterSubject.h"
-#include "mc/world/filters/FilterOperator.h"
-
 // auto generated forward declare list
 // clang-format off
 class IWorldRegistriesProvider;
 struct FilterContext;
 struct FilterInputs;
-struct FilterParamDefinition;
 namespace Json { class Value; }
 // clang-format on
 
@@ -45,31 +40,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Definition(
-            ::std::string const&                               name,
-            ::std::string const&                               description,
-            ::FilterParamDefinition const*                     subjectParam,
-            ::FilterParamDefinition const*                     domainParam,
-            ::FilterParamDefinition const*                     operatorParam,
-            ::FilterParamDefinition const*                     valueParam,
-            ::std::function<::std::shared_ptr<::FilterTest>()> factory
-        );
-
         MCNAPI ~Definition();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::std::string const&                               name,
-            ::std::string const&                               description,
-            ::FilterParamDefinition const*                     subjectParam,
-            ::FilterParamDefinition const*                     domainParam,
-            ::FilterParamDefinition const*                     operatorParam,
-            ::FilterParamDefinition const*                     valueParam,
-            ::std::function<::std::shared_ptr<::FilterTest>()> factory
-        );
         // NOLINTEND
 
     public:
@@ -97,11 +68,11 @@ public:
     // NOLINTBEGIN
     virtual ~FilterTest() = default;
 
-    virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+    virtual bool setup(::FilterTest::Definition const&, ::FilterInputs const&);
 
-    virtual bool evaluate(::FilterContext const& context) const = 0;
+    virtual bool evaluate(::FilterContext const&) const = 0;
 
-    virtual void finalizeParsedValue(::IWorldRegistriesProvider& registries);
+    virtual void finalizeParsedValue(::IWorldRegistriesProvider&);
 
     virtual ::std::string_view getName() const = 0;
 
@@ -117,22 +88,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::FilterOperator getOperator() const;
-
-    MCNAPI ::SharedTypes::Legacy::FilterSubject getSubject() const;
-
     MCNAPI ::Json::Value serialize() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
-
-    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;
-
-    MCNAPI ::Json::Value $_serializeDomain() const;
-
 
     // NOLINTEND
 };

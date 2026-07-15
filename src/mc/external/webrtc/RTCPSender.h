@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/FunctionView.h"
+#include "mc/external/webrtc/ArrayView.h"
+#include "mc/external/webrtc/FunctionView.h"
 #include "mc/external/webrtc/RTCPPacketType.h"
 #include "mc/external/webrtc/RtcpMode.h"
-#include "mc/external/webrtc/RtpRtcpInterface.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class Environment; }
 namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
 namespace webrtc { class VideoBitrateAllocation; }
@@ -38,12 +39,10 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnk7d220d;
         ::ll::UntypedStorage<4, 4>  mUnkb8d0c3;
-        ::ll::UntypedStorage<8, 8>  mUnkf4db1b;
         ::ll::UntypedStorage<8, 8>  mUnk8c7d15;
         ::ll::UntypedStorage<1, 1>  mUnk846c91;
-        ::ll::UntypedStorage<8, 64> mUnk7833ff;
-        ::ll::UntypedStorage<8, 8>  mUnk84a888;
-        ::ll::UntypedStorage<8, 16> mUnkfa1b4c;
+        ::ll::UntypedStorage<8, 32> mUnkb88dd5;
+        ::ll::UntypedStorage<8, 8>  mUnk630de8;
         ::ll::UntypedStorage<8, 8>  mUnk707772;
         ::ll::UntypedStorage<8, 8>  mUnka92548;
         // NOLINTEND
@@ -58,13 +57,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Configuration();
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCNAPI static ::webrtc::RTCPSender::Configuration
-        FromRtpRtcpConfiguration(::webrtc::RtpRtcpInterface::Configuration const& configuration);
         // NOLINTEND
 
     public:
@@ -117,7 +109,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>   mUnkf71045;
+        ::ll::UntypedStorage<8, 16>   mUnk6ce37f;
         ::ll::UntypedStorage<8, 8>    mUnkf2560e;
         ::ll::UntypedStorage<8, 8>    mUnk151275;
         ::ll::UntypedStorage<1, 1500> mUnk3685ce;
@@ -132,7 +124,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI PacketSender(::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback, uint64 max_packet_size);
+        MCNAPI PacketSender(
+            ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback,
+            uint64                                                                               max_packet_size
+        );
 
         MCNAPI ~PacketSender();
         // NOLINTEND
@@ -140,7 +135,10 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback, uint64 max_packet_size);
+        MCNAPI void* $ctor(
+            ::webrtc::FunctionView<void(::webrtc::ArrayView<uchar const, 18446744073709546905>)> callback,
+            uint64                                                                               max_packet_size
+        );
         // NOLINTEND
 
     public:
@@ -169,10 +167,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkf0921b;
-        ::ll::UntypedStorage<4, 4> mUnk47c83c;
-        ::ll::UntypedStorage<8, 8> mUnkfbc631;
-        ::ll::UntypedStorage<8, 8> mUnk645408;
+        ::ll::UntypedStorage<8, 8>  mUnkf0921b;
+        ::ll::UntypedStorage<8, 16> mUnk61cc8e;
+        ::ll::UntypedStorage<8, 8>  mUnk645408;
         // NOLINTEND
 
     public:
@@ -185,15 +182,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40>  mUnkbe2fab;
     ::ll::UntypedStorage<1, 1>   mUnk9e28cb;
     ::ll::UntypedStorage<4, 4>   mUnke07adf;
-    ::ll::UntypedStorage<8, 8>   mUnkfb4089;
     ::ll::UntypedStorage<8, 8>   mUnk853c06;
     ::ll::UntypedStorage<4, 4>   mUnk19e398;
-    ::ll::UntypedStorage<8, 8>   mUnk1b3756;
     ::ll::UntypedStorage<8, 8>   mUnkb5237c;
     ::ll::UntypedStorage<8, 8>   mUnk7c8856;
-    ::ll::UntypedStorage<8, 64>  mUnkcab8b2;
+    ::ll::UntypedStorage<8, 32>  mUnke1d2b0;
     ::ll::UntypedStorage<8, 40>  mUnk6bcb05;
     ::ll::UntypedStorage<1, 1>   mUnkf2c49d;
     ::ll::UntypedStorage<8, 16>  mUnk6d5944;
@@ -231,39 +227,33 @@ public:
     RTCPSender();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ~RTCPSender();
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool AllVolatileFlagsConsumed() const;
 
-    MCNAPI void BuildBYE(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
+    MCNAPI void BuildBYE(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender& sender);
 
     MCNAPI void
     BuildExtendedReports(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
 
-    MCNAPI void BuildFIR(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
+    MCNAPI void BuildFIR(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender& sender);
 
     MCNAPI void
-    BuildLossNotification(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
+    BuildLossNotification(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender& sender);
 
     MCNAPI void BuildNACK(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
 
-    MCNAPI void BuildPLI(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
+    MCNAPI void BuildPLI(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender& sender);
 
-    MCNAPI void BuildREMB(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
+    MCNAPI void BuildREMB(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender& sender);
 
     MCNAPI void BuildRR(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
 
-    MCNAPI void BuildSDES(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
+    MCNAPI void BuildSDES(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender& sender);
 
     MCNAPI void BuildSR(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
 
-    MCNAPI void BuildTMMBN(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
+    MCNAPI void BuildTMMBN(::webrtc::RTCPSender::RtcpContext const&, ::webrtc::RTCPSender::PacketSender& sender);
 
     MCNAPI void BuildTMMBR(::webrtc::RTCPSender::RtcpContext const& ctx, ::webrtc::RTCPSender::PacketSender& sender);
 
@@ -271,11 +261,10 @@ public:
     CheckAndUpdateLayerStructure(::webrtc::VideoBitrateAllocation const& bitrate) const;
 
     MCNAPI ::std::optional<int> ComputeCompoundRTCPPacket(
-        ::webrtc::RTCPSender::FeedbackState const& feedback_state,
-        ::webrtc::RTCPPacketType                   packet_type,
-        int                                        nack_size,
-        ushort const*                              nack_list,
-        ::webrtc::RTCPSender::PacketSender&        sender
+        ::webrtc::RTCPSender::FeedbackState const&              feedback_state,
+        ::webrtc::RTCPPacketType                                packet_type,
+        ::webrtc::ArrayView<ushort const, 18446744073709546905> nacks,
+        ::webrtc::RTCPSender::PacketSender&                     sender
     );
 
     MCNAPI bool ConsumeFlag(uint type, bool forced);
@@ -285,7 +274,7 @@ public:
 
     MCNAPI void PrepareReport(::webrtc::RTCPSender::FeedbackState const& feedback_state);
 
-    MCNAPI explicit RTCPSender(::webrtc::RTCPSender::Configuration config);
+    MCNAPI RTCPSender(::webrtc::Environment const& env, ::webrtc::RTCPSender::Configuration config);
 
     MCNAPI uint SSRC() const;
 
@@ -300,10 +289,9 @@ public:
     );
 
     MCNAPI int SendRTCP(
-        ::webrtc::RTCPSender::FeedbackState const& feedback_state,
-        ::webrtc::RTCPPacketType                   packet_type,
-        int                                        nack_size,
-        ushort const*                              nack_list
+        ::webrtc::RTCPSender::FeedbackState const&              feedback_state,
+        ::webrtc::RTCPPacketType                                packet_type,
+        ::webrtc::ArrayView<ushort const, 18446744073709546905> nacks
     );
 
     MCNAPI bool Sending() const;
@@ -332,7 +320,7 @@ public:
 
     MCNAPI void SetRtpClockRate(schar payload_type, int rtp_clock_rate_hz);
 
-    MCNAPI void SetSendingStatus(::webrtc::RTCPSender::FeedbackState const& feedback_state, bool sending);
+    MCNAPI void SetSendingStatus(::webrtc::RTCPSender::FeedbackState const&, bool sending);
 
     MCNAPI void SetSsrc(uint ssrc);
 
@@ -347,24 +335,20 @@ public:
     MCNAPI bool TimeToSendRTCPReport(bool send_keyframe_before_rtp) const;
 
     MCNAPI void UnsetRemb();
+
+    MCNAPI ~RTCPSender();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::RTCPSender::Configuration config);
+    MCNAPI void* $ctor(::webrtc::Environment const& env, ::webrtc::RTCPSender::Configuration config);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

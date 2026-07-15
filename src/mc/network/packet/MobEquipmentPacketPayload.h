@@ -37,16 +37,6 @@ public:
         int                selectedSlot,
         ::ContainerID      containerId
     );
-
-    MCAPI MobEquipmentPacketPayload(
-        ::ActorRuntimeID                    runtimeId,
-        ::NetworkItemStackDescriptor const& item,
-        int                                 slot,
-        int                                 selectedSlot,
-        ::ContainerID                       containerId
-    );
-
-    MCAPI ~MobEquipmentPacketPayload();
     // NOLINTEND
 
 public:
@@ -54,19 +44,5 @@ public:
     // NOLINTBEGIN
     MCAPI void*
     $ctor(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
-
-    MCAPI void* $ctor(
-        ::ActorRuntimeID                    runtimeId,
-        ::NetworkItemStackDescriptor const& item,
-        int                                 slot,
-        int                                 selectedSlot,
-        ::ContainerID                       containerId
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -26,24 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComponentRenderBatch& operator=(ComponentRenderBatch const&);
-    ComponentRenderBatch();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentRenderBatch(::ComponentRenderBatch const&);
-
-    MCAPI uint getNumInstances() const;
-
     MCAPI ~ComponentRenderBatch();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentRenderBatch const&);
     // NOLINTEND
 
 public:

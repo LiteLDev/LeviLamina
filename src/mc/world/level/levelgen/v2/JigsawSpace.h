@@ -14,20 +14,6 @@ public:
     ::ll::TypedStorage<4, 24, ::BoundingBox>                mMySpace;
     ::ll::TypedStorage<8, 24, ::std::vector<::BoundingBox>> mChildrensSpace;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void addChild(::BoundingBox box);
-
-    MCAPI ~JigsawSpace();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

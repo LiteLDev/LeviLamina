@@ -23,6 +23,13 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                              mNumIngredients;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ItemStackRequestActionCraftRecipeAuto();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,11 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemStackRequestActionCraftRecipeAuto();
-
 #ifdef LL_PLAT_C
-    MCNAPI ItemStackRequestActionCraftRecipeAuto(::RecipeNetId const& recipeNetId, uchar numCrafts);
-
     MCNAPI ItemStackRequestActionCraftRecipeAuto(
         ::RecipeNetId const&                     recipeNetId,
         uchar                                    numCrafts,
@@ -50,11 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::RecipeNetId const& recipeNetId, uchar numCrafts);
-
     MCNAPI void*
     $ctor(::RecipeNetId const& recipeNetId, uchar numCrafts, ::std::vector<::RecipeIngredient> const& ingredients);
 #endif

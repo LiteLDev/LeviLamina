@@ -24,10 +24,10 @@ public:
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
     virtual void setInitialState(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams,
-        ::Vec3 const&                                     spawnDirection
+        ::ParticleSystem::ComponentAccessParticleEmitter&,
+        ::ParticleSystem::CommonParticle&,
+        ::RenderParams&,
+        ::Vec3 const&
     );
 
     virtual void updateParticleAppearance(
@@ -36,30 +36,13 @@ public:
         ::RenderParams&                                   renderParams
     );
 
-    virtual void
-    updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
+    virtual void updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter&, ::RenderParams&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
-    MCFOLD void $setInitialState(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams,
-        ::Vec3 const&                                     spawnDirection
-    );
-
-    MCFOLD void $updateParticleAppearance(
-        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
-        ::ParticleSystem::CommonParticle&                 particle,
-        ::RenderParams&                                   renderParams
-    );
-
-    MCFOLD void
-    $updateEmitterAppearance(::ParticleSystem::ComponentAccessParticleEmitter& emitter, ::RenderParams& renderParams);
     // NOLINTEND
 };
 

@@ -30,11 +30,11 @@ public:
     ::ll::TypedStorage<8, 8, ::Tick>                mRemoveItemTimer;
     ::ll::TypedStorage<8, 8, ::Tick>                mInterestTimer;
     ::ll::TypedStorage<8, 8, ::Tick>                mInterestCooldown;
-    ::ll::TypedStorage<8, 8, ::Tick const>          mInterestTimeMax;
-    ::ll::TypedStorage<8, 8, ::Tick const>          mInterestTimeMaxHalf;
-    ::ll::TypedStorage<8, 8, ::Tick const>          mRemoveTimeMax;
-    ::ll::TypedStorage<8, 8, ::Tick const>          mCarriedSwitchMax;
-    ::ll::TypedStorage<8, 8, ::Tick const>          mInterestCooldownMax;
+    ::ll::TypedStorage<8, 8, ::Tick>                mInterestTimeMax;
+    ::ll::TypedStorage<8, 8, ::Tick>                mInterestTimeMaxHalf;
+    ::ll::TypedStorage<8, 8, ::Tick>                mRemoveTimeMax;
+    ::ll::TypedStorage<8, 8, ::Tick>                mCarriedSwitchMax;
+    ::ll::TypedStorage<8, 8, ::Tick>                mInterestCooldownMax;
     // NOLINTEND
 
 public:
@@ -62,23 +62,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeInterestGoal(
-        ::Mob& mob,
-        float  interestDistance,
-        float  interestTime,
-        float  removeTime,
-        float  carriedTime,
-        float  cooldown
-    );
-
-    MCAPI bool _isLookingAtMe(::Player const& target) const;
+    MCAPI explicit TradeInterestGoal(::Mob& mob);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, float interestDistance, float interestTime, float removeTime, float carriedTime, float cooldown);
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

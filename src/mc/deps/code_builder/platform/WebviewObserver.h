@@ -22,11 +22,7 @@ public:
 
     virtual void onLoadingEnd();
 
-#ifdef LL_PLAT_S
     virtual void onError(::WebviewError const&);
-#else // LL_PLAT_C
-    virtual void onError(::WebviewError const& error);
-#endif
 
     virtual void onWebviewChanged();
 
@@ -38,7 +34,7 @@ public:
 
     virtual void onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
 
-    virtual void onMessageRecieved(::std::string const& message);
+    virtual void onMessageRecieved(::std::string const&);
 
     virtual void fireCodeBuilderLoadPerformance(
         ::std::string const&        stage,
@@ -62,9 +58,10 @@ public:
 
     MCNAPI void $onWebviewChanged();
 
-    MCNAPI void $onDownloadBegin(::WebviewDownloadInfo const& downloadInfo);
-
     MCNAPI void $onDownloadUpdate(::WebviewDownloadInfo const&);
+
+#ifdef LL_PLAT_C
+    MCNAPI void $onDownloadBegin(::WebviewDownloadInfo const& downloadInfo);
 
     MCNAPI void $onDownloadComplete(::WebviewDownloadInfo const& downloadInfo);
 
@@ -79,9 +76,6 @@ public:
 
     MCNAPI void
     $fireCodeBuilderRunPerformance(::std::string const& stage, ::std::chrono::milliseconds elapsedTimeMS) const;
-
-#ifdef LL_PLAT_C
-    MCNAPI void $onMessageRecieved(::std::string const& message);
 #endif
 
 

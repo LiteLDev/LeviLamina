@@ -8,11 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class ActorOwnerComponent;
 class EntityRegistry;
-class Vec3;
-struct TrailComponent;
 // clang-format on
 
 class TrailSystem : public ::ITickingSystem {
@@ -38,24 +34,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TrailSystem::BlockPositions _calculateBlockSpawnPositions(::Actor& actor, ::Vec3& offset);
-
-    MCAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::TrailComponent& trailComponent);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::EntityRegistry& registry);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

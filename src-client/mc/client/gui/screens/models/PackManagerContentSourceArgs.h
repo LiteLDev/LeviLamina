@@ -34,16 +34,4 @@ public:
     PackManagerContentSourceArgs& operator=(PackManagerContentSourceArgs const&);
     PackManagerContentSourceArgs(PackManagerContentSourceArgs const&);
     PackManagerContentSourceArgs();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PackManagerContentSourceArgs();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

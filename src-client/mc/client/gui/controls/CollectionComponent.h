@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CollectionItemComponent;
 class UIControl;
 // clang-format on
 
@@ -21,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CollectionComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const /*override*/;
@@ -35,25 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CollectionComponent(::UIControl& owner);
-
-    MCAPI ::CollectionItemComponent const* const _findLastChildCollectionItemComponent();
-
-    MCAPI void _reinitializeCollection();
-
-    MCFOLD ::std::string const& getCollectionName() const;
-
     MCAPI void refreshPanelItems();
 
-    MCAPI void setCollectionName(::std::string const& collectionName);
-
     MCAPI void setControlBindings(::std::vector<::std::string> const& controlBindings);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:

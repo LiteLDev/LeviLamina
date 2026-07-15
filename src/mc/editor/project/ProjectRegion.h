@@ -3,21 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ProjectRegionAvailabilityMode.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
-class BlockSource;
 class BoundingBox;
-class ChunkSource;
 class Dimension;
-class LevelChunk;
 struct Bounds;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor { struct ProjectRegionConfig; }
 namespace mce { class UUID; }
@@ -68,30 +63,6 @@ public:
         BlockOperationAreaRequest& operator=(BlockOperationAreaRequest const&);
         BlockOperationAreaRequest(BlockOperationAreaRequest const&);
         BlockOperationAreaRequest();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI BlockOperationAreaRequest(
-            ::Editor::RelativeVolumeListBlockVolume volume,
-            ::std::function<void(
-                ::Editor::RelativeVolumeListBlockVolume const&,
-                ::std::optional<::Scripting::Result_deprecated<void>>
-            )>                                      callback
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::Editor::RelativeVolumeListBlockVolume volume,
-            ::std::function<void(
-                ::Editor::RelativeVolumeListBlockVolume const&,
-                ::std::optional<::Scripting::Result_deprecated<void>>
-            )>                                      callback
-        );
-        // NOLINTEND
     };
 
 public:
@@ -131,11 +102,7 @@ public:
 
     MCNAPI void _discardRequests();
 
-    MCNAPI void _initialize(::Dimension& dimension);
-
     MCNAPI bool _isBoundsAvailable(::Bounds const& bounds) const;
-
-    MCNAPI void _onChunkLoaded(::ChunkSource& levelChunk, ::LevelChunk&, int);
 
     MCNAPI void _processAvailability();
 
@@ -143,25 +110,9 @@ public:
 
     MCNAPI void _processBounds();
 
-    MCNAPI void _updateChunksToProcess();
-
-    MCNAPI ::Editor::ProjectRegionAvailabilityMode getAvailabilityMode() const;
-
-    MCNAPI ::BlockSource& getBlockSource();
-
-    MCNAPI ::BoundingBox getBoundingBox() const;
-
-    MCNAPI ::mce::UUID const& getId() const;
-
     MCNAPI bool isAreaAvailable(::BoundingBox const& area);
 
-    MCNAPI bool isAvailable() const;
-
     MCNAPI bool isLocationAvailable(::BlockPos const& loc) const;
-
-    MCNAPI bool isValid() const;
-
-    MCNAPI ::Bedrock::PubSub::Subscription listenForBoundsChange(::std::function<void(::Bounds const&)> func);
 
     MCNAPI ::Scripting::Result_deprecated<::mce::UUID> requestAvailabilityCheck(
         ::std::function<void(::Scripting::Result_deprecated<void>)> callback,
@@ -183,17 +134,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> setBlock(::BlockPos const& pos, ::Block const& block);
 
-    MCNAPI void tick();
-
     MCNAPI ::Scripting::Result_deprecated<void> tryDimensionTransfer(::Dimension& newDimension);
 
     MCNAPI ~ProjectRegion();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool isValidRegionBounds(::Bounds const& bounds);
     // NOLINTEND
 
 public:

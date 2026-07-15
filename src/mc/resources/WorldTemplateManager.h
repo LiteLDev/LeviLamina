@@ -15,7 +15,6 @@ struct PackIdVersion;
 struct WorldTemplateInfo;
 struct WorldTemplateManagerInitData;
 namespace Bedrock::PubSub { class Subscription; }
-namespace Core { class Path; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -55,28 +54,59 @@ public:
 
     virtual uint64 getWorldTemplateSize() const /*override*/;
 
+#ifdef LL_PLAT_S
     virtual ::WorldTemplateInfo const& getWorldTemplateAtIndex(int index) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::WorldTemplateInfo const& getWorldTemplateAtIndex(int) const /*override*/;
+#endif
 
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getLocalTemplates() const /*override*/;
 
+#ifdef LL_PLAT_S
     virtual ::WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::WorldTemplateInfo const* findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const&) const
+        /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const
         /*override*/;
+#else // LL_PLAT_C
+    virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const&) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const
         /*override*/;
+#else // LL_PLAT_C
+    virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const&) const /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) /*override*/;
+#else // LL_PLAT_C
+    virtual void deleteWorldTemplateAndFiles(::PackIdVersion const&) /*override*/;
+#endif
 
     virtual bool isInitialized() const /*override*/;
 
+#ifdef LL_PLAT_S
     virtual ::Bedrock::PubSub::Subscription registerModifiedCallback(
         ::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction
     ) /*override*/;
+#else // LL_PLAT_C
+    virtual ::Bedrock::PubSub::Subscription
+        registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)>) /*override*/;
+#endif
 
+#ifdef LL_PLAT_S
     virtual ::WorldTemplateCollectionView createView(::mce::UUID const& toView) const /*override*/;
+#else // LL_PLAT_C
+    virtual ::WorldTemplateCollectionView createView(::mce::UUID const&) const /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -84,44 +114,22 @@ public:
     // NOLINTBEGIN
     MCNAPI WorldTemplateManager(::std::unique_ptr<::IWorldTemplateManagerInitializer> initializer, bool initAsync);
 
-    MCNAPI void _deleteWorldTemplate(
-        ::PackIdVersion const&                     packIdentity,
-        ::std::function<bool(::Core::Path const&)> deleteWorldCallback
-    );
-
+#ifdef LL_PLAT_C
     MCNAPI void _initialize(::WorldTemplateManagerInitData&& data);
 
-#ifdef LL_PLAT_C
     MCNAPI void addKnownPackFromImport(::Pack const& pack);
 
-    MCNAPI void deleteWorldTemplate(::PackIdVersion const& packIdentity);
-
-    MCNAPI ::WorldTemplateInfo const* findWorldTemplateAtIndex(int index);
-
-    MCNAPI ::std::vector<::PackIdVersion> const& getLocalPremiumPackIds() const;
-
     MCNAPI ::Core::PathBuffer<::std::string> getWorldTemplatesPath() const;
-
-    MCNAPI bool isWorldTemplateInstalled(::mce::UUID const& uuid) const;
 
     MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack const>>>
     loadPacksForTemplate(::WorldTemplateInfo const& info);
 
     MCNAPI void onStorageDirectoryChanged();
 
-    MCNAPI void setSortMethod(
-        ::std::function<bool(
-            ::std::unique_ptr<::WorldTemplateInfo const> const&,
-            ::std::unique_ptr<::WorldTemplateInfo const> const&
-        )> sort
-    );
-
     MCNAPI void setWorldIconAllowListPath(::WorldTemplateInfo const& info, ::std::string path);
-#endif
 
     MCNAPI void sortWorldTemplates();
 
-#ifdef LL_PLAT_C
     MCNAPI void update();
 #endif
     // NOLINTEND
@@ -141,6 +149,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI void $flushResourceLoaderTasks();
 
     MCNAPI void $populateWorldTemplates();
@@ -166,13 +175,8 @@ public:
     $registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction);
 
     MCNAPI ::WorldTemplateCollectionView $createView(::mce::UUID const& toView) const;
+#endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

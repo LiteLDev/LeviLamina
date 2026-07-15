@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/level/chunk/NeighborAwareBlockUpdateType.h"
@@ -24,11 +23,9 @@ class Dimension;
 class IUnknownBlockTypeRegistry;
 class JigsawStructureBlockInfo;
 class LevelChunk;
-class StructureAnimationData;
 class StructureBlockPalette;
 class StructureSettings;
 class StructureTelemetryServerData;
-class Vec3;
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
 // clang-format on
 
@@ -95,8 +92,6 @@ public:
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
 
-    MCFOLD void _clearStructureData();
-
     MCAPI void _fillBlockInfo(
         ::BlockSource&    region,
         ::BlockPos const& minCorner,
@@ -112,41 +107,12 @@ public:
         ::StructureBlockPalette&         palette
     );
 
-    MCAPI int _getOrCreateIndex(
-        ::BlockPos                       position,
-        ::Block const&                   block,
-        ::std::map<::Block const*, int>& indexMap,
-        ::StructureBlockPalette&         palette
-    );
-
     MCAPI void _placeEntitiesInWorld(
         ::BlockSource&                 region,
         ::DataLoadHelper&              dataLoadHelper,
         bool                           shouldReloadActorEquipment,
         ::std::optional<::BoundingBox> overlapBB
     ) const;
-
-    MCAPI void _placeNextBlockSegmentInWorld(
-        ::BlockSource&                  region,
-        uint64                          startPlacement,
-        uint64                          endPlacement,
-        ::StructureSettings const&      structureSettings,
-        ::DataLoadHelper&               dataLoadHelper,
-        ::StructureBlockPalette const&  structureBlockPalette,
-        ::BlockPalette const&           globalBlockPalette,
-        ::BlockPos                      position,
-        ::BlockPos const&               offset,
-        ::Vec3 const&                   pivot,
-        ::Rotation                      rotation,
-        ::Mirror                        mirror,
-        float                           integrityValue,
-        uint                            integritySeed,
-        ::StructureTelemetryServerData* updateItemData,
-        bool                            ignoreJigsawBlocks,
-        bool
-    ) const;
-
-    MCFOLD ::IStructureTemplate const& asStructureTemplate() const;
 
     MCAPI void fillFromWorld(
         ::BlockSource&             region,
@@ -155,14 +121,6 @@ public:
     );
 
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD bool getRemovable() const;
-
-    MCFOLD ::BlockPos const& getSize() const;
-
-    MCAPI bool isLoaded() const;
 
     MCAPI bool const isWaterlogged(::BlockPos const& pos) const;
 
@@ -188,16 +146,7 @@ public:
         bool                            updateItemData
     ) const;
 
-    MCAPI void placeNextSegmentInWorld(
-        ::StructureAnimationData& structureAnimationData,
-        ::BlockPalette const&     globalBlockPalette
-    ) const;
-
     MCAPI bool setBlock(::BlockPos const& pos, ::Block const* block, bool waterlogged);
-
-    MCAPI void setName(::std::string const& name);
-
-    MCAPI void setStructureTemplateData(::StructureTemplateData const& data);
 
     MCAPI bool structureTemplateDataIsValid(
         ::BlockSource const&       region,
@@ -205,8 +154,6 @@ public:
         ::BlockPos const&          capturePosition,
         ::StructureSettings const& structureSettings
     ) const;
-
-    MCAPI ::Block const* tryGetBlockAtPos(::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
@@ -228,12 +175,6 @@ public:
         ::StructureTemplateData const&                          structureTemplateData,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& NO_BLOCK_INDEX_VALUE();
     // NOLINTEND
 
 public:
@@ -265,7 +206,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> $save() const;
 
-    MCFOLD void $clear();
+    MCAPI void $clear();
 
     MCAPI ::BoundingBox
     $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;

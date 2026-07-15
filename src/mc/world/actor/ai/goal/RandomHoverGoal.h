@@ -47,22 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit RandomHoverGoal(::Mob& mob);
-
-    MCAPI ::std::unique_ptr<::Path> _findNewTarget() const;
-
-    MCAPI void _moveToTarget();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

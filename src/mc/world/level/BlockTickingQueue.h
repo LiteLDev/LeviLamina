@@ -70,17 +70,9 @@ public:
     // NOLINTBEGIN
     MCAPI void _acquireAllTicks(::BlockTickingQueue& otherChunkQueue);
 
-    MCAPI void _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
-
     MCAPI void _eliminateTicksForZeroAndAbove(::BlockTickingQueue::TickDataSet& queue);
 
     MCAPI void _saveQueue(::ListTag& list, ::BlockTickingQueue::TickDataSet const& queue) const;
-
-    MCAPI void acquireAllRandomTicks(::LevelChunk& lc);
-
-    MCAPI void acquireAllTicks(::LevelChunk& lc);
-
-    MCAPI void acquireAllTicks(::BlockTickingQueue& otherQueue);
 
     MCAPI void
     add(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
@@ -93,24 +85,14 @@ public:
         int               priorityOffset
     );
 
-    MCAPI void eliminateAllTicksZeroAndAbove();
-
     MCAPI void eliminateDuplicatesOf(::BlockType const& block);
 
     MCAPI void finishInstaticking();
 
     MCAPI bool getNextUpdateForPos(::BlockPos const& pos, ::Tick& tick) const;
 
-    MCAPI ::std::optional<::Tick> getTickDelayForNextTickUpdateAtPos(::BlockPos const& pos) const;
-
     MCAPI ::std::unordered_multimap<::BlockPos, ::TickDelayBlock>
     getTickDelaysInArea(::BoundingBox const& boundingBox) const;
-
-    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos) const;
-
-    MCAPI bool isEmpty() const;
-
-    MCAPI bool isInNextTickQueue(::BlockPos const& pos, ::BlockType const& blockType, int tickDelay) const;
 
     MCAPI void load(::CompoundTag const& tag, ::BlockPalette const& palette);
 
@@ -120,13 +102,7 @@ public:
 
     MCAPI void save(::CompoundTag& tag) const;
 
-    MCFOLD void setOwningChunk(::LevelChunk* owningChunk);
-
-    MCAPI void tickAllPendingTicks(::BlockSource& region, uint64 maximumTicksAllowed);
-
     MCAPI bool tickPendingTicks(::BlockSource& region, ::Tick const& until, int max, bool instaTick_);
-
-    MCAPI int ticksFromNow(int offset) const;
 
     MCAPI ~BlockTickingQueue();
     // NOLINTEND

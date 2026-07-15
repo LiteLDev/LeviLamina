@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -11,7 +10,6 @@
 // clang-format off
 class ContainerScreenContext;
 class ItemStack;
-class Player;
 // clang-format on
 
 class MaterialReducerContainerManagerModel : public ::ContainerManagerModel {
@@ -22,19 +20,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MaterialReducerContainerManagerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int, ::ItemStack const&, bool) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
-    virtual ::ItemStack const& getSlot(int) const /*override*/;
+    virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
-    virtual void setData(int, int) /*override*/;
+    virtual void setData(int id, int value) /*override*/;
 
     virtual bool isValid(float pickRange) /*override*/;
 
@@ -46,19 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MaterialReducerContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
 #ifdef LL_PLAT_C
-    MCAPI ::ItemStack const& getInput();
-
     MCAPI ::ItemStack const& getOutput(int slot);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -66,11 +50,11 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCFOLD void $setSlot(int, ::ItemStack const&, bool);
+    MCFOLD void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCFOLD ::ItemStack const& $getSlot(int) const;
+    MCFOLD ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int, int);
+    MCFOLD void $setData(int id, int value);
 
     MCAPI bool $isValid(float pickRange);
 

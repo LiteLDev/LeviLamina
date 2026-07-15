@@ -27,7 +27,6 @@
 #include "mc/external/bgfx/View.h"
 #include "mc/external/bgfx/ViewStats.h"
 #include "mc/external/bgfx/acceleration_structure_build_flags/Enum.h"
-#include "mc/external/bgfx/backbuffer_ratio/Enum.h"
 #include "mc/external/bgfx/render_frame/Enum.h"
 #include "mc/external/bgfx/renderer_type/Enum.h"
 #include "mc/external/bgfx/texture_format/Enum.h"
@@ -40,7 +39,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace bgfx { class CommandBuffer; }
 namespace bgfx { struct AccelerationStructureHandle; }
 namespace bgfx { struct AllocationContext; }
 namespace bgfx { struct Attachment; }
@@ -53,10 +51,7 @@ namespace bgfx { struct Memory; }
 namespace bgfx { struct ProgramHandle; }
 namespace bgfx { struct RendererContextI; }
 namespace bgfx { struct ShaderBufferHandle; }
-namespace bgfx { struct TextureInfo; }
 namespace bgfx { struct TopLevelInstanceDesc; }
-namespace bgfx { struct TransientIndexBuffer; }
-namespace bgfx { struct TransientVertexBuffer; }
 namespace bgfx { struct UniformHandle; }
 namespace bgfx { struct UniformInfo; }
 namespace bgfx { struct VertexBufferHandle; }
@@ -278,20 +273,9 @@ public:
     // NOLINTBEGIN
     MCAPI Context();
 
-    MCAPI void _initBegin();
-
-    MCAPI bool _initFinalize();
-
-    MCAPI void _initPending(bool async);
-
     MCAPI void _shutdownBegin();
 
     MCAPI void _shutdownFinalize();
-
-    MCAPI uint64 allocDynamicIndexBuffer(uint _size, ushort _flags);
-
-    MCAPI ::bgfx::Context::DynamicVertexAllocation
-    allocDynamicVertexBuffer(uint _size, ushort _flags, ushort _aligment);
 
     MCAPI ::bgfx::Encoder* begin();
 
@@ -350,24 +334,11 @@ public:
 
     MCAPI ::bgfx::ShaderBufferHandle createShaderBuffer(uint _num, uint _stride, ushort _flags);
 
-    MCAPI ::bgfx::TextureHandle createTexture(
-        ::bgfx::Memory const*         _mem,
-        uint                          _flags,
-        uchar                         _skip,
-        ::bgfx::TextureInfo*          _info,
-        ::bgfx::BackbufferRatio::Enum _ratio,
-        bool                          _immutable
-    );
-
     MCAPI ::bgfx::AccelerationStructureHandle createTopLevelAccelerationStructure(
         ::bgfx::AccelerationStructureHandle _handle,
         uint                                numInstances,
         ::bgfx::TopLevelInstanceDesc*       instanceDescs
     );
-
-    MCAPI ::bgfx::TransientIndexBuffer* createTransientIndexBuffer(uint _size);
-
-    MCAPI ::bgfx::TransientVertexBuffer* createTransientVertexBuffer(uint _size, ::bgfx::VertexDecl const* _decl);
 
     MCAPI ::bgfx::UniformHandle createUniform(char const* _name, ::bgfx::UniformType::Enum _type, ushort _num);
 
@@ -377,10 +348,6 @@ public:
     MCAPI ::bgfx::VertexDeclHandle createVertexDecl(::bgfx::VertexDecl const& _decl);
 
     MCAPI void destroyAccelerationStructure(::bgfx::AccelerationStructureHandle _handle);
-
-    MCAPI void destroyDynamicIndexBufferInternal(::bgfx::DynamicIndexBufferHandle _handle);
-
-    MCAPI void destroyDynamicVertexBufferInternal(::bgfx::DynamicVertexBufferHandle _handle);
 
     MCAPI void destroyFrameBuffer(::bgfx::FrameBufferHandle _handle);
 
@@ -392,15 +359,9 @@ public:
 
     MCAPI void destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
 
-    MCAPI void destroyVertexBufferInternal(::bgfx::VertexBufferHandle _handle);
-
     MCAPI ::bgfx::VertexDeclHandle findVertexDecl(::bgfx::VertexDecl const& _decl);
 
-    MCAPI void flushTextureUpdateBatch(::bgfx::CommandBuffer& _cmdbuf);
-
     MCAPI uint frame(uint _flags);
-
-    MCAPI void freeAllHandles(::bgfx::Frame* _frame);
 
     MCAPI ::bgfx::Stats const getPerfStats();
 
@@ -412,14 +373,7 @@ public:
 
     MCAPI ::bgfx::RenderFrame::Enum renderFrame(int _msecs);
 
-    MCAPI void rendererExecCommands(::bgfx::CommandBuffer& _cmdbuf);
-
     MCAPI void reset(uint _width, uint _height, uint _flags);
-
-    MCAPI void
-    resizeTexture(::bgfx::TextureHandle _handle, ushort _width, ushort _height, uchar _numMips, ushort _numLayers);
-
-    MCAPI void setName(::bgfx::TextureHandle _handle, ::bx::StringView const& _name);
 
     MCAPI void setName(::bgfx::ShaderHandle _handle, ::bx::StringView const& _name);
 
@@ -428,10 +382,6 @@ public:
     MCAPI void setViewName(ushort _id, char const* _name);
 
     MCAPI void shaderBufferDecRef(::bgfx::ShaderBufferHandle _handle);
-
-    MCAPI void shaderDecRef(::bgfx::ShaderHandle _handle);
-
-    MCAPI void swap();
 
     MCAPI void textureDecRef(::bgfx::TextureHandle _handle);
 
@@ -446,8 +396,6 @@ public:
 
     MCAPI void
     updateOffset(::bgfx::DynamicVertexBufferHandle _handle, uint _offset, uint _declStride, ::bgfx::Memory const* _mem);
-
-    MCAPI void updatePerfStats();
 
     MCAPI void updateTexture(
         ::bgfx::TextureHandle _handle,
@@ -466,12 +414,6 @@ public:
     MCAPI ::bgfx::TextureHandle wrapExternalTexture(::bgfx::RendererType::Enum _type, void* _texturePtr);
 
     MCAPI ~Context();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static int renderThread(::bx::Thread*, void*);
     // NOLINTEND
 
 public:

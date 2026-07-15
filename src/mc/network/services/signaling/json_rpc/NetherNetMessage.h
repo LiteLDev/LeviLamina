@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/network/services/signaling/json_rpc/JsonRpcNotificationBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace JsonRpc {
 
 struct NetherNetMessage : public ::JsonRpc::JsonRpcNotificationBase {
@@ -31,29 +26,8 @@ public:
     public:
         // prevent constructor by default
         Params& operator=(Params const&);
+        Params(Params const&);
         Params();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Params(::JsonRpc::NetherNetMessage::Params const&);
-
-        MCNAPI ::JsonRpc::NetherNetMessage::Params& operator=(::JsonRpc::NetherNetMessage::Params&&);
-
-        MCNAPI ~Params();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::JsonRpc::NetherNetMessage::Params const&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -64,36 +38,9 @@ public:
 
 public:
     // prevent constructor by default
+    NetherNetMessage& operator=(NetherNetMessage const&);
     NetherNetMessage(NetherNetMessage const&);
     NetherNetMessage();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI NetherNetMessage(::std::string netherNetId, ::std::string message);
-
-    MCNAPI ::JsonRpc::NetherNetMessage& operator=(::JsonRpc::NetherNetMessage const&);
-
-    MCNAPI ~NetherNetMessage();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string netherNetId, ::std::string message);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace JsonRpc

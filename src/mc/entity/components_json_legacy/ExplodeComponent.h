@@ -40,36 +40,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExplodeComponent();
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void explode(::Actor& actor, ::Vec3 const& explosionPosition);
 
-    MCFOLD int getFuseLength() const;
-
-    MCFOLD int getInitialFuseLength() const;
-
-    MCFOLD bool getIsFuseLit() const;
-
-    MCFOLD bool getNegatesFallDamage() const;
-
-    MCFOLD bool isFuseLit() const;
-
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCFOLD bool requiresTntExplodeGameRuleEnabled() const;
-
-    MCFOLD void setAllowUnderwater(bool allow);
-
-    MCFOLD void setFuseLength(int fuseLength);
-
-    MCAPI void setTntExpodeGameRuleRequired();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

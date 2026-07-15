@@ -26,9 +26,9 @@ public:
 
     virtual bool canContinueToUse() /*override*/;
 
-    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
+    virtual bool isValidTarget(::BlockSource&, ::BlockPos const&) /*override*/;
 
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
 
     virtual bool findTargetBlock() /*override*/;
     // NOLINTEND
@@ -36,22 +36,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
-
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
-    MCAPI bool $findTargetBlock();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

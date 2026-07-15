@@ -29,18 +29,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_40::ClientBiomeGrassColorMap> mColorMap;
         // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-        // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
-        // NOLINTEND
     };
 
 public:

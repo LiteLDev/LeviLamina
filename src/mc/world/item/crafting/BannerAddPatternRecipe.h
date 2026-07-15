@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/item/crafting/MultiRecipe.h"
 
 // auto generated forward declare list
 // clang-format off
-class BannerPattern;
 class CraftingContainer;
 class CraftingContext;
 class ItemInstance;
@@ -22,10 +20,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BannerAddPatternRecipe();
 
 public:
     // virtual functions
@@ -45,24 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BannerAddPatternRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
-
-    MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const
-    matchPatterns(::CraftingContainer const& craftSlots) const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 
 public:

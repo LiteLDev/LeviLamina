@@ -6,24 +6,18 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/threading/UniqueLock.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
-class Geometry;
 class GeometryInfo;
-class GeometryInheritanceTree;
-class GeometryPtr;
 class HashedString;
 class MinEngineVersion;
 class ResourceLoadManager;
 class ResourcePackManager;
-class SemVersion;
 struct ModelParent;
 struct TextureUVCoordinateSet;
 namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class GeometryGroup : public ::Bedrock::EnableNonOwnerReferences,
@@ -44,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~GeometryGroup() /*override*/;
+    virtual ~GeometryGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,15 +46,9 @@ public:
     // NOLINTBEGIN
     MCAPI GeometryGroup();
 
-    MCAPI ::std::shared_ptr<::GeometryInfo>
-    _findOrAddGeometryInfo(::HashedString const& name, ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>&);
-
-    MCAPI void _loadModelsAsync(
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
-        ::std::shared_ptr<::GeometryInheritanceTree>         inheritance,
-        ::std::function<void(::std::weak_ptr<::GeometryGroup>, ::std::string const&, ::ModelParent const&)>
-                                loadModelFunction,
-        ::std::function<void()> mainThreadCallback
+    MCAPI ::std::shared_ptr<::GeometryInfo> _findOrAddGeometryInfo(
+        ::HashedString const&                                          name,
+        ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>& geometryLock
     );
 
     MCAPI void addGeometries(
@@ -70,12 +58,6 @@ public:
         ::std::function<void()>                              mainThreadCallback,
         bool                                                 isAsync
     );
-
-    MCAPI ::GeometryPtr getGeometry(::HashedString const& geometryName);
-
-    MCAPI ::std::shared_ptr<::GeometryInfo> getGeometryInfo(::HashedString const& name);
-
-    MCFOLD ::std::weak_ptr<::GeometryGroup> getWeakPtrToThis();
 
     MCAPI void loadGeometriesAsync(
         ::ResourcePackManager&                               resourcePackManager,
@@ -90,68 +72,11 @@ public:
         ::std::string const&      content,
         ::MinEngineVersion const& minEngineVersion
     );
-
-    MCAPI void removeGeometry(::HashedString const& name);
-
-    MCAPI void setGeometry(::HashedString const& name, ::std::unique_ptr<::Geometry>&& ptr);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
-    _buildGeometryFileSchema_pre_v1_8();
-
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
-    _buildGeometryFileSchema_v1_12();
-
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
-    _buildGeometryFileSchema_v1_14();
-
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
-    _buildGeometryFileSchema_v1_16();
-
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
-    _buildGeometryFileSchema_v1_19_30();
-
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
-    _buildGeometryFileSchema_v1_21();
-
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
-    _buildGeometryFileSchema_v1_8();
-
-    MCAPI static void _buildInheritanceTree(
-        ::std::string const&                  fileName,
-        ::std::string const&                  sourceFilePathWithExtension,
-        ::std::string const&                  fileContent,
-        ::MinEngineVersion const&             minEngineVersion,
-        ::GeometryInheritanceTree&            inheritance,
-        bool                                  isFromBaseGamePack,
-        bool                                  requireMinecraftNamespace,
-        ::std::function<void(::Json::Value&)> postLoadFixup
-    );
-
-    MCAPI static void _buildInheritanceTree(
-        ::std::string const&       sourceFilePathWithExtension,
-        ::std::string const&       value,
-        ::Json::Value&             minEngineVersion,
-        ::MinEngineVersion const&  inheritance,
-        ::GeometryInheritanceTree& isFromBaseGamePack,
-        bool                       requireMinecraftNamespace,
-        bool                       postLoadFixup,
-        ::std::function<void(::Json::Value&)>
-    );
-
-    MCAPI static ::std::pair<::std::string, ::std::string> _getParent(::std::string const& fullName);
-
-    MCAPI static bool checkVersionlessName(::std::string_view name, ::std::string_view versionlessGeoName);
-
-    MCAPI static bool isValidGeometryIdentifier(::Json::Value const& name);
-
-    MCAPI static bool isValidMinecraftNamespaceGeometryIdentifier(::std::string const& identifier);
-
-    MCAPI static bool isValidOptionalNamespaceGeometryIdentifier(::Json::Value const& name);
-
     MCAPI static void loadModel(
         ::std::weak_ptr<::GeometryGroup> weakGeometryGroup,
         ::std::string const&             pascalCaseName,
@@ -167,59 +92,12 @@ public:
         ::TextureUVCoordinateSet const&  uvOffset,
         bool                             clearSkinAdjustmentsBitmask
     );
-
-    MCAPI static void upgradeMirrorMemberToV1_12(::Json::Value& bone);
-
-    MCAPI static void upgradeResetMemberToV1_12(::Json::Value& bone);
-
-    MCAPI static bool upgradeToV1_12(
-        ::Json::Value&            root,
-        ::SemVersion const&       fileVersion,
-        ::MinEngineVersion const& minEngineVersion,
-        bool&                     hasBeenValidated
-    );
-
-    MCAPI static bool upgradeToV1_14(
-        ::Json::Value&            root,
-        ::SemVersion const&       fileVersion,
-        ::MinEngineVersion const& minEngineVersion,
-        bool&                     hasBeenValidated
-    );
-
-    MCAPI static bool upgradeToV1_16(
-        ::Json::Value&            root,
-        ::SemVersion const&       fileVersion,
-        ::MinEngineVersion const& minEngineVersion,
-        bool&                     hasBeenValidated
-    );
-
-    MCAPI static bool upgradeToV1_19_30(
-        ::Json::Value&            root,
-        ::SemVersion const&       fileVersion,
-        ::MinEngineVersion const& minEngineVersion,
-        bool&                     hasBeenValidated
-    );
-
-    MCAPI static bool upgradeToV1_21(
-        ::Json::Value&            root,
-        ::SemVersion const&       fileVersion,
-        ::MinEngineVersion const& minEngineVersion,
-        bool&                     hasBeenValidated
-    );
-
-    MCAPI static bool validateFormatVersion(::SemVersion& fileVersion, ::Json::Value const& value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

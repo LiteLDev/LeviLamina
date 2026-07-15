@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ScriptPackConfigurationManager;
-namespace ScriptModuleServerAdmin { class ScriptSecretString; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 // clang-format on
@@ -36,12 +35,6 @@ public:
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Scripting::ContextConfig const&                            contextConfig
     );
-
-    MCNAPI ::std::optional<::ScriptModuleServerAdmin::ScriptSecretString> get(::std::string const& name) const;
-
-    MCNAPI ::std::vector<::std::string> getAllSecretNames() const;
-
-    MCNAPI ~ScriptServerSecrets();
     // NOLINTEND
 
 public:
@@ -57,12 +50,6 @@ public:
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Scripting::ContextConfig const&                            contextConfig
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

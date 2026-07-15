@@ -25,37 +25,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SkinPackCollector();
+    virtual ~SkinPackCollector() = default;
 
-    virtual void start(bool allowed);
+    virtual void start(bool);
 
     virtual bool exhausted() const = 0;
 
     virtual ::HandleRangeResult handleRange(int, int) = 0;
 
     virtual void collect(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::PersonaClient&                                     skinRepo,
-        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
-        ::std::unordered_set<::mce::UUID>&                   handledPackSet
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>,
+        ::PersonaClient&,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>&,
+        ::std::unordered_set<::mce::UUID>&
     ) = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $start(bool allowed);
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

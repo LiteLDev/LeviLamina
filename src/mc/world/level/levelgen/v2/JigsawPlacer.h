@@ -56,20 +56,6 @@ public:
     JigsawPlacer& operator=(JigsawPlacer const&);
     JigsawPlacer(JigsawPlacer const&);
     JigsawPlacer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void tryPlacingChildren(::br::worldgen::JigsawPieceState state);
-
-    MCAPI ~JigsawPlacer();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

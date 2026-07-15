@@ -13,14 +13,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ReflectionCtx();
-
-    MCAPI ::std::optional<::entt::type_info> getKnownPropertyType(::std::string_view name) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::cereal::ReflectionCtx& global();
     // NOLINTEND
 
 public:

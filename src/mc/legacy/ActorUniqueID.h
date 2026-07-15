@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
-
 struct ActorUniqueID {
 public:
     // member variables
@@ -15,9 +10,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static ::ActorUniqueID fromUUID(::mce::UUID const& uuid);
+    MCAPI uint64 getHash() const;
     // NOLINTEND
 
 public:

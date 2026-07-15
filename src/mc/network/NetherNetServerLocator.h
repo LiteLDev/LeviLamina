@@ -5,22 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/StubServerLocator.h"
-#include "mc/platform/Result.h"
 #include "mc/platform/threading/UniqueLock.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-class BinaryStream;
-class ReadOnlyBinaryStream;
 class SignalingService;
 struct NetherNetConnector;
 struct PingedCompatibleServer;
 struct PortPair;
 struct ServerSupportedAuthenticationTypes;
 namespace Bedrock::Threading { class Mutex; }
-namespace NetherNet { struct NetworkID; }
 // clang-format on
 
 class NetherNetServerLocator : public ::StubServerLocator {
@@ -52,24 +48,6 @@ public:
         ServerData& operator=(ServerData const&);
         ServerData(ServerData const&);
         ServerData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::NetherNetServerLocator::ServerData& operator=(::NetherNetServerLocator::ServerData&&);
-
-        MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-
-        MCNAPI void write(::BinaryStream& stream) const;
-
-        MCNAPI ~ServerData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -94,17 +72,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetherNetServerLocator() /*override*/;
+    virtual ~NetherNetServerLocator() /*override*/ = default;
 
     virtual void startAnnouncingServer(
-        ::std::string const& playerName,
-        ::std::string const& worldName,
-        ::GameType           gameType,
-        int                  numPlayers,
-        int                  maxNumPlayers,
-        bool                 isEditorWorld,
-        bool                 isHardcore,
-        bool                 supportedAuth,
+        ::std::string const&,
+        ::std::string const&,
+        ::GameType,
+        int,
+        int,
+        bool,
+        bool,
+        bool,
         ::ServerSupportedAuthenticationTypes
     ) /*override*/;
 
@@ -129,25 +107,6 @@ public:
         ::Bedrock::NonOwnerPointer<::AppPlatform> const&      appPlatform,
         ::Bedrock::NonOwnerPointer<::SignalingService>        signalingService
     );
-
-    MCNAPI void _cacheDiscoveryResponseData();
-
-    MCNAPI void _onDiscoveryResponse(::NetherNet::NetworkID const& networkID, ::gsl::span<char const> responseData);
-
-    MCNAPI void _pruneStaleServers(::std::chrono::seconds staleAfter);
-
-    MCNAPI void _setDiscoveryRequestCallback(bool enable);
-
-    MCNAPI void _setDiscoveryResponseCallback(bool enable);
-
-    MCNAPI void _setIsDiscovering(bool isDiscovering);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::PingedCompatibleServer
-    _transformFrom(::NetherNet::NetworkID const& networkID, ::NetherNetServerLocator::ServerData&& serverData);
     // NOLINTEND
 
 public:
@@ -161,44 +120,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $startAnnouncingServer(
-        ::std::string const& playerName,
-        ::std::string const& worldName,
-        ::GameType           gameType,
-        int                  numPlayers,
-        int                  maxNumPlayers,
-        bool                 isEditorWorld,
-        bool                 isHardcore,
-        bool                 supportedAuth,
-        ::ServerSupportedAuthenticationTypes
-    );
 
-    MCNAPI void $stopAnnouncingServer();
-
-    MCNAPI void $startServerDiscovery(::PortPair);
-
-    MCNAPI void $stopServerDiscovery();
-
-    MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
-
-    MCNAPI void $clearServerList();
-
-    MCNAPI void $update();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

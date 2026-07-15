@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 #include "mc/client/realms/RealmsPurchaseReconcilerFailureReason.h"
 #include "mc/client/realms/RealmsPurchaseReconcilerState.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -15,7 +15,8 @@ namespace Realms { class RealmsPurchaseReconciler; }
 
 namespace OreUI {
 
-class RealmsPurchaseReconcilerQueriesFacet : public ::OreUI::FacetBase<::OreUI::RealmsPurchaseReconcilerQueriesFacet> {
+class RealmsPurchaseReconcilerQueriesFacet
+: public ::OreUI::FacetBase_DEPRECATED<::OreUI::RealmsPurchaseReconcilerQueriesFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsPurchaseReconcilerQueriesFacet() /*override*/;
+    virtual ~RealmsPurchaseReconcilerQueriesFacet() /*override*/ = default;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -44,10 +45,6 @@ public:
     MCAPI explicit RealmsPurchaseReconcilerQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsPurchaseReconciler> realmsPurchaseReconciler
     );
-
-    MCFOLD ::Realms::RealmsPurchaseReconcilerFailureReason getFailureReason() const;
-
-    MCFOLD ::Realms::RealmsPurchaseReconcilerState getState() const;
     // NOLINTEND
 
 public:
@@ -63,21 +60,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

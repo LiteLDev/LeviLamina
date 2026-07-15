@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/EduMultiplayerPauseMenuScreenController.h"
-#include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/jpmsc/Inputs.h"
 #include "mc/client/social/edu_discovery/DiscoveryObserver.h"
 
@@ -37,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JoincodePauseMenuScreenController() /*override*/;
+    virtual ~JoincodePauseMenuScreenController() /*override*/ = default;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -57,26 +56,6 @@ public:
         ::std::shared_ptr<::PauseScreenModel> model,
         ::std::vector<::ActorUniqueID> const& clientIds
     );
-
-    MCAPI void _confirmationGenerateNewCode(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _confirmationRestartHosting(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _confirmationStartHosting(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI void _confirmationStopHosting(::std::function<void(::ModalScreenButtonId)> callback);
-
-    MCAPI ::std::string _connectionIDAccessibilityLabel(::std::string_view networkId);
-
-    MCAPI ::std::string _joincodeUri();
-
-    MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _requestStartHosting();
     // NOLINTEND
 
 public:
@@ -86,32 +65,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCFOLD void $onServerInvalidated(::EDUDiscovery::ServerInvalidationDetails const&);
-
-    MCFOLD void $onJoinCodeGenerated(::EDUDiscovery::JoinCode const&);
-
-    MCFOLD void $onCredentialsInvalidated();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/TransportLayer.h"
-
 class NetworkSummary {
 public:
     // member variables
@@ -20,32 +17,4 @@ public:
     NetworkSummary& operator=(NetworkSummary const&);
     NetworkSummary(NetworkSummary const&);
     NetworkSummary();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI NetworkSummary(
-        ::std::function<::TransportLayer()> getNetworkType,
-        ::std::function<bool()>             isInGame,
-        ::std::function<bool()>             isSignedIntoSignalingService,
-        ::std::function<bool()>             isHostingLocalDedicatedServer
-    );
-
-    MCNAPI ::std::optional<::std::string> getNetworkInfoString();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
-        ::std::function<::TransportLayer()> getNetworkType,
-        ::std::function<bool()>             isInGame,
-        ::std::function<bool()>             isSignedIntoSignalingService,
-        ::std::function<bool()>             isHostingLocalDedicatedServer
-    );
-#endif
-    // NOLINTEND
 };

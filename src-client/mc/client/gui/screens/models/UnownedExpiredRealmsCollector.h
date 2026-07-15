@@ -21,27 +21,16 @@ public:
     virtual ~UnownedExpiredRealmsCollector() /*override*/ = default;
 
     virtual void collect(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::PersonaClient&                                     skinRepo,
-        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
-        ::std::unordered_set<::mce::UUID>&                   handledPackSet
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>,
+        ::PersonaClient&,
+        ::std::vector<::std::shared_ptr<::SkinPackModel>>&,
+        ::std::unordered_set<::mce::UUID>&
     ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $collect(
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
-        ::PersonaClient&                                     skinRepo,
-        ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,
-        ::std::unordered_set<::mce::UUID>&                   handledPackSet
-    );
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

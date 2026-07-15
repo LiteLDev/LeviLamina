@@ -31,7 +31,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CommandOutputSender() = default;
+#else // LL_PLAT_C
     virtual ~CommandOutputSender();
+#endif
 
     virtual void send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
@@ -42,13 +46,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CommandOutputSender();
-
-    MCAPI void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
-
     MCAPI ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
-
-    MCAPI void addObserver(::CodeBuilder::CommandOutputObserver& observer);
 #endif
 
     MCAPI void
@@ -58,15 +56,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
+    MCAPI static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
     // NOLINTEND
 
 public:

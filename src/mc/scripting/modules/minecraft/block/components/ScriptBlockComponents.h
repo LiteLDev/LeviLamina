@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -37,21 +37,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptBlockComponents();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptBlockComponents(
-        ::WeakRef<::ScriptModuleMinecraft::IScriptBlockCustomComponentReader const> customComponentReader
-    );
-
-    MCAPI ::std::unordered_map<
-        ::std::string_view,
-        ::std::shared_ptr<::ScriptModuleMinecraft::IScriptBlockComponentFactory>> const&
-    getOrCreateBlockComponentFactories() const;
-
     MCAPI ::std::vector<::std::string_view> getSupportedComponentIds(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const& permutation,
         bool                                                                                         includeCustom
@@ -65,14 +52,6 @@ public:
         ::Scripting::WeakLifetimeScope const& scope,
         bool                                  allowCustomComponent
     ) const;
-
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
-    tryCreateComponentV010(
-        ::std::string_view                    componentName,
-        ::BlockSource&                        region,
-        ::BlockPos                            position,
-        ::Scripting::WeakLifetimeScope const& scope
-    ) const;
     // NOLINTEND
 
 public:
@@ -84,13 +63,6 @@ public:
         ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&                 componentTypeEnumBuilder,
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockComponents> const& blockComponents
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void*
-    $ctor(::WeakRef<::ScriptModuleMinecraft::IScriptBlockCustomComponentReader const> customComponentReader);
     // NOLINTEND
 };
 

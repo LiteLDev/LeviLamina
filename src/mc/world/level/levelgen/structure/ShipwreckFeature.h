@@ -53,20 +53,20 @@ public:
     ) /*override*/;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        ::ChunkPos const&    lc,
+        ::Dimension&,
+        ::BiomeSource const&,
+        ::Random&,
+        ::ChunkPos const&,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
     virtual bool isFeatureChunk(
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        ::ChunkPos const&                    pos,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
+        ::BiomeSource const&,
+        ::Random&,
+        ::ChunkPos const&,
+        uint,
+        ::IPreliminarySurfaceProvider const&,
+        ::Dimension const&
     ) /*override*/;
     // NOLINTEND
 
@@ -85,41 +85,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
 
-    MCAPI bool $getNearestGeneratedFeature(
-        ::Dimension&                           dimension,
-        ::BiomeSource const&                   biomeSource,
-        ::BlockPos const&                      origin,
-        ::BlockPos&                            pos,
-        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
-        bool                                   mustBeInNewChunks,
-        ::std::optional<::HashedString> const& biomeTag
-    );
-
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        ::ChunkPos const&    lc,
-        ::IPreliminarySurfaceProvider const&
-    );
-
-    MCAPI bool $isFeatureChunk(
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        ::ChunkPos const&                    pos,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
-    );
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

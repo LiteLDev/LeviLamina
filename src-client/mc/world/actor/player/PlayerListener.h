@@ -13,20 +13,16 @@ public:
     // NOLINTBEGIN
     virtual ~PlayerListener() = default;
 
-    virtual void onWillChangeDimension(::Player& player);
+    virtual void onWillChangeDimension(::Player&);
 
-    virtual void onDimensionChanged(::Player& player);
+    virtual void onDimensionChanged(::Player&);
 
-    virtual void onPlayerDestruction(::Player& player);
+    virtual void onPlayerDestruction(::Player&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onWillChangeDimension(::Player& player);
 
-    MCFOLD void $onDimensionChanged(::Player& player);
-
-    MCFOLD void $onPlayerDestruction(::Player& player);
     // NOLINTEND
 };

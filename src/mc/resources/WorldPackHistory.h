@@ -6,7 +6,6 @@
 // clang-format off
 struct PackIdVersion;
 namespace Json { class Value; }
-namespace mce { class UUID; }
 // clang-format on
 
 class WorldPackHistory {
@@ -21,56 +20,28 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk30ef62;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     WorldPackHistory& operator=(WorldPackHistory const&);
+    WorldPackHistory(WorldPackHistory const&);
     WorldPackHistory();
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI WorldPackHistory();
-#endif
-
-    MCNAPI WorldPackHistory(::WorldPackHistory const&);
-
     MCNAPI bool initializeFromJson(::Json::Value const& value);
 
-    MCNAPI ::WorldPackHistory& operator=(::WorldPackHistory&&);
-
 #ifdef LL_PLAT_C
-    MCNAPI ::WorldPackHistory& operator=(::WorldPackHistory const&);
-
-    MCNAPI void setCanBeRedownloaded(bool canBeRedownloaded);
-
     MCNAPI void setLocalizedNames(::std::unordered_map<::std::string, ::std::string> localizedMap);
 
     MCNAPI void setPackIdVersion(::PackIdVersion const& packIdVersion);
 
-    MCNAPI void setSourceUUID(::mce::UUID const& sourceUUID);
-
-    MCNAPI void setSubpackCount(int count);
-#endif
-
     MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
+#endif
 
     MCNAPI ::Json::Value toJsonValue() const;
 
     MCNAPI ~WorldPackHistory();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
-#endif
-
-    MCNAPI void* $ctor(::WorldPackHistory const&);
     // NOLINTEND
 
 public:

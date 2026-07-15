@@ -6,17 +6,16 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/deps/scripting/Version.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
+#include "mc/deps/script_core/lifetime_registry/scripting/WeakTypedObjectHandle.h"
+#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/scripting/Version.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentClosureFlags.h"
 #include "mc/scripting/modules/minecraft/items/IScriptItemCustomComponentRegistry.h"
 #include "mc/world/item/registry/ItemRegistryRef.h"
 
 // auto generated forward declare list
 // clang-format off
-class Item;
 class ScriptDeferredEventCoordinator;
 class ScriptDeferredEventListener;
 struct ServerScriptManagerEvents;
@@ -52,18 +51,6 @@ public:
         ::ll::TypedStorage<8, 40, ::Scripting::Version>                                          mClosureFlagsVersion;
         ::ll::TypedStorage<2, 2, ::ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags> mClosureFlags;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~ComponentInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -92,7 +79,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptItemCustomComponentRegistry() /*override*/;
+    virtual ~ScriptItemCustomComponentRegistry() /*override*/ = default;
 
     virtual ::Scripting::Result<
         void,
@@ -102,8 +89,8 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
     tryRegisterComponentV1(
-        ::HashedString const&                                         componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
+        ::HashedString const&,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&
     ) /*override*/;
 
     virtual ::Scripting::Result<
@@ -114,24 +101,24 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
     tryRegisterComponent(
-        ::HashedString const&                                         componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
+        ::HashedString const&,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&
     ) /*override*/;
 
-    virtual ::std::vector<::std::string_view> getValidComponentsForItem(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
-    ) const /*override*/;
+    virtual ::std::vector<::std::string_view>
+        getValidComponentsForItem(::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>) const
+        /*override*/;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     tryGetCustomComponentParametersForItem(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
-        ::std::string_view                                                           componentName,
-        ::Scripting::WeakLifetimeScope const&                                        scope
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
+        ::std::string_view,
+        ::Scripting::WeakLifetimeScope const&
     ) const /*override*/;
 
     virtual ::ScriptDeferredEventListener& getEventListener() /*override*/;
 
-    virtual void setCerealContext(::cereal::ReflectionCtx& ctx) /*override*/;
+    virtual void setCerealContext(::cereal::ReflectionCtx&) /*override*/;
 
     virtual void _onReload() /*override*/;
 
@@ -148,24 +135,6 @@ public:
         ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                            parameterCache
     );
-
-    MCAPI void _bindComponentToCereal(::HashedString const& compName);
-
-    MCAPI void _subscribeItemToComponents(::Item* item, ::std::unordered_set<::HashedString>& unusedComponents);
-
-    MCAPI void _subscribeItemsToComponents();
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
-    _tryRegisterComponent(
-        ::HashedString const&                                         componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
-    );
     // NOLINTEND
 
 public:
@@ -181,68 +150,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
-    $tryRegisterComponentV1(
-        ::HashedString const&                                         componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
-    );
 
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
-    $tryRegisterComponent(
-        ::HashedString const&                                         componentName,
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
-    );
-
-    MCAPI ::std::vector<::std::string_view> $getValidComponentsForItem(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
-    ) const;
-
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-    $tryGetCustomComponentParametersForItem(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
-        ::std::string_view                                                           componentName,
-        ::Scripting::WeakLifetimeScope const&                                        scope
-    ) const;
-
-    MCFOLD ::ScriptDeferredEventListener& $getEventListener();
-
-    MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
-
-    MCAPI void $_onReload();
-
-    MCAPI void $_onScriptInitializationComplete();
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForIScriptItemCustomComponentWriter();
-
-    MCNAPI static void** $vftableForIScriptItemCustomComponentReader();
-
-    MCNAPI static void** $vftableForScriptCustomComponentRegistry();
     // NOLINTEND
 };
 

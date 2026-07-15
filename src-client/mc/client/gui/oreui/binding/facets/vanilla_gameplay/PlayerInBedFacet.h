@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/FacetBase.h"
-#include "mc/client/gui/oreui/binding/facets/vanilla_gameplay/ChatAvailability.h"
+#include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +12,7 @@ class LocalPlayer;
 
 namespace OreUI {
 
-class PlayerInBedFacet : public ::OreUI::FacetBase<::OreUI::PlayerInBedFacet> {
+class PlayerInBedFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::PlayerInBedFacet> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,20 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayerInBedFacet(::LocalPlayer* player, bool isTrial);
-
-    MCFOLD bool getCanChangeSleepSettings() const;
-
-    MCAPI ::OreUI::ChatAvailability getChatAvailability() const;
-
-    MCFOLD bool getIsAbleToSleep() const;
-
-    MCFOLD int getRemotePlayersCount() const;
-
-    MCFOLD int getRequiredSleepingPlayerCount() const;
-
-    MCFOLD int getSleepingPlayerCount() const;
-
-    MCAPI void wakeUp();
     // NOLINTEND
 
 public:

@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 #include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_26_20/block/BlockRenderLayer.h"
 #include "mc/deps/shared_types/v1_26_20/block/TintMethod.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_26_20::BlockDefinition {
@@ -20,7 +21,7 @@ public:
     // MaterialInstancesComponent inner types declare
     // clang-format off
     struct MaterialInstance;
-    struct MaterialInstanceConstraint;
+    class MaterialInstanceConstraint;
     // clang-format on
 
     // MaterialInstancesComponent inner types define
@@ -44,24 +45,22 @@ public:
         MCAPI bool operator==(
             ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstance const& instance
         ) const;
-
-        MCAPI ~MaterialInstance();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
-    struct MaterialInstanceConstraint
+    class MaterialInstanceConstraint
     : public ::cereal::ConstraintHandle<
           ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstanceConstraint> {
     public:
-        // vftables
+        // virtual functions
         // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+        virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const /*override*/;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+
         // NOLINTEND
     };
 
@@ -95,53 +94,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<
-        ::std::string,
-        ::std::variant<
-            ::std::string,
-            ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstance>>
-    getter() const;
-
     MCAPI ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent const&);
-
-    MCAPI void setter(
-        ::std::unordered_map<
-            ::std::string,
-            ::std::variant<
-                ::std::string,
-                ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstance>> parsedArray
-    );
 
     MCAPI ~MaterialInstancesComponent();
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& AlphaMaskedTintId();
-
-    MCAPI static ::std::string_view const& AmbientOcclusionId();
-
-    MCAPI static ::std::string_view const& DitheringId();
-
-    MCAPI static ::std::string_view const& FaceDimmingId();
-
-    MCAPI static ::std::string_view const& IsotropicId();
-
     MCAPI static ::std::string_view const& NameId();
-
-    MCAPI static ::std::string_view const& RenderMethodId();
-
-    MCAPI static ::std::string_view const& TextureId();
-
-    MCAPI static ::std::string_view const& TintMethodId();
     // NOLINTEND
 
 public:

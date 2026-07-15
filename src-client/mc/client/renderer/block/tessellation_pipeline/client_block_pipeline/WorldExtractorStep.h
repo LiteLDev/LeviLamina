@@ -105,19 +105,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const /*override*/;
+    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const&) const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ClientBlockPipeline::WorldExtractorStep::BlockExtractionData _getBlockExtractionData(
-        ::ClientBlockPipeline::WorldExtractorStep::ExtractionData& extraction,
-        ::Block const&                                             block,
-        bool                                                       checkIgnoreBlockTransforms,
-        ::ClientBlockPipeline::VisualReference                     visualReference
-    );
-
     MCAPI static ::std::optional<::ClientBlockPipeline::PipelineError> extractCustomBlock(
         ::Block const&                                                       block,
         ::ClientBlockPipeline::WorldExtractorStep::BlockIterationData const& iterData,
@@ -135,13 +128,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

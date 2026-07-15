@@ -10,6 +10,7 @@
 #include "mc/external/dcsctp/SendPacketStatus.h"
 #include "mc/external/dcsctp/SendStatus.h"
 #include "mc/external/dcsctp/SocketState.h"
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/StrongAlias.h"
 
 // auto generated forward declare list
@@ -79,7 +80,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk33c97a;
     ::ll::UntypedStorage<8, 8>   mUnk485c94;
     ::ll::UntypedStorage<8, 88>  mUnk62c28b;
-    ::ll::UntypedStorage<8, 176> mUnk1a131d;
+    ::ll::UntypedStorage<8, 192> mUnk1a131d;
     ::ll::UntypedStorage<8, 48>  mUnkead560;
     ::ll::UntypedStorage<8, 88>  mUnkd2281a;
     ::ll::UntypedStorage<8, 8>   mUnk4e6a7a;
@@ -101,7 +102,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void ReceivePacket(::rtc::ArrayView<uchar const> data) /*override*/;
+    virtual void ReceivePacket(::webrtc::ArrayView<uchar const, 18446744073709546905> data) /*override*/;
+
+    virtual uint64 MessagesReady() const /*override*/;
+
+    virtual ::std::optional<::dcsctp::DcSctpMessage> GetNextMessage() /*override*/;
 
     virtual void HandleTimeout(::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id) /*override*/;
 
@@ -117,12 +122,13 @@ public:
     Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options) /*override*/;
 
     virtual ::std::vector<::dcsctp::SendStatus> SendMany(
-        ::rtc::ArrayView<::dcsctp::DcSctpMessage> messages,
-        ::dcsctp::SendOptions const&              send_options
+        ::webrtc::ArrayView<::dcsctp::DcSctpMessage, 18446744073709546905> messages,
+        ::dcsctp::SendOptions const&                                       send_options
     ) /*override*/;
 
     virtual ::dcsctp::ResetStreamsStatus ResetStreams(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            outgoing_streams
     ) /*override*/;
 
     virtual ::dcsctp::SocketState state() const /*override*/;
@@ -184,8 +190,7 @@ public:
 
     MCNAPI bool Dispatch(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleAbort(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleAbort(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void
     HandleCookieEcho(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
@@ -194,16 +199,13 @@ public:
 
     MCNAPI void HandleDataCommon(::dcsctp::AnyDataChunk& chunk);
 
-    MCNAPI void
-    HandleError(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleError(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void HandleForwardTsnCommon(::dcsctp::AnyForwardTsnChunk const& chunk);
 
-    MCNAPI void
-    HandleInit(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleInit(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleInitAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleInitAck(::dcsctp::CommonHeader const&, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void
     HandleShutdownAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
@@ -223,7 +225,8 @@ public:
 
     MCNAPI ::webrtc::TimeDelta OnInitTimerExpiry();
 
-    MCNAPI void OnSentPacket(::rtc::ArrayView<uchar const> packet, ::dcsctp::SendPacketStatus status);
+    MCNAPI void
+    OnSentPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> packet, ::dcsctp::SendPacketStatus status);
 
     MCNAPI ::webrtc::TimeDelta OnShutdownTimerExpiry();
 
@@ -252,7 +255,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $ReceivePacket(::rtc::ArrayView<uchar const> data);
+    MCNAPI void $ReceivePacket(::webrtc::ArrayView<uchar const, 18446744073709546905> data);
+
+    MCNAPI uint64 $MessagesReady() const;
+
+    MCNAPI ::std::optional<::dcsctp::DcSctpMessage> $GetNextMessage();
 
     MCNAPI void $HandleTimeout(::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id);
 
@@ -266,11 +273,15 @@ public:
 
     MCNAPI ::dcsctp::SendStatus $Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options);
 
-    MCNAPI ::std::vector<::dcsctp::SendStatus>
-    $SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage> messages, ::dcsctp::SendOptions const& send_options);
+    MCNAPI ::std::vector<::dcsctp::SendStatus> $SendMany(
+        ::webrtc::ArrayView<::dcsctp::DcSctpMessage, 18446744073709546905> messages,
+        ::dcsctp::SendOptions const&                                       send_options
+    );
 
-    MCNAPI ::dcsctp::ResetStreamsStatus
-    $ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
+    MCNAPI ::dcsctp::ResetStreamsStatus $ResetStreams(
+        ::webrtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const, 18446744073709546905>
+            outgoing_streams
+    );
 
     MCNAPI ::dcsctp::SocketState $state() const;
 

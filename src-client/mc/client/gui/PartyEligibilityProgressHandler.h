@@ -35,14 +35,13 @@ public:
 
     virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
-    virtual void
-    onGameEventNotification(::MinecraftScreenModel& notification, ::ui::GameEventNotification const&) /*override*/;
+    virtual void onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -65,22 +64,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
-
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCAPI ::std::string $getTitleText() const;
-
-    MCAPI void $onGameEventNotification(::MinecraftScreenModel& notification, ::ui::GameEventNotification const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

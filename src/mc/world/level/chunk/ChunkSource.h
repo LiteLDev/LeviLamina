@@ -5,16 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
-#include "mc/world/level/chunk/ChunkState.h"
-#include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlendingDataProvider;
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class ChunkKey;
@@ -26,12 +22,12 @@ class Level;
 class LevelChunk;
 class LevelChunkBuilderData;
 class LevelChunkMetaDataDictionary;
-class LevelStorage;
 class Random;
-class TaskResult;
 struct ActorUnloadedChunkTransferEntry;
 struct ChunkDeletionMetadata;
 struct LevelChunkFinalDeleter;
+namespace br::worldgen { class StructureInstance; }
+namespace br::worldgen { struct Structure; }
 // clang-format on
 
 class ChunkSource : public ::Bedrock::EnableNonOwnerReferences {
@@ -83,15 +79,15 @@ public:
     virtual ::std::shared_ptr<::LevelChunk>
     getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhood);
+    virtual bool structurePostProcessChunk(::ChunkViewSource&);
 
-    virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+    virtual bool decorationPostProcessChunk(::ChunkViewSource&);
 
-    virtual void checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
+    virtual void checkAndReplaceChunk(::ChunkViewSource&, ::LevelChunk&);
 
-    virtual bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
+    virtual bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk&);
 
-    virtual void neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
+    virtual void neighborAwareChunkUpgrade(::LevelChunk&, ::ChunkViewSource&);
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
@@ -155,6 +151,9 @@ public:
     virtual bool chunkPosNeedsBlending(::ChunkPos const& cp);
 
     virtual void _clearBlendingCache();
+
+    virtual ::std::shared_ptr<::br::worldgen::StructureInstance>
+    _tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
     // NOLINTEND
 
 public:
@@ -162,94 +161,15 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChunkSource(::std::unique_ptr<::ChunkSource> parent);
 
-    MCAPI ChunkSource(::Dimension* dimension, int side);
-
-    MCAPI bool _checkAndDispatchTaskForLevelChunk(
-        ::std::pair<::ChunkPos, ::ChunkState> const& chunkPosAndExpectedState,
-        bool                                         areInTask
-    );
-
-    MCAPI void _checkForReplacementDataTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
-
+#ifdef LL_PLAT_C
     MCAPI void _checkForUnblockingChunks(::LevelChunk const& lc);
 
-    MCAPI void _checkLevelChunkForNextStage(
-        ::LevelChunk const&                                         lc,
-        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid,
-        ::ChunkState                                                stateToCheck
-    );
-
-    MCAPI void _checkLevelChunkForPostProcessing(
-        ::LevelChunk const&                                         lc,
-        ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& grid
-    );
-
-    MCAPI bool _chunkAtStage(::std::weak_ptr<::LevelChunk> lcwp, ::ChunkState stateToCheck);
-
     MCAPI void _createOrReplaceGridAreaMap(::std::shared_ptr<::LevelChunk> lc, bool createNeighbourGridsIfMissing);
-
-    MCAPI void _decorationPostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
-
-    MCAPI void _dispatchTaskForLevelChunk(
-        ::std::shared_ptr<::LevelChunk> const&      lc,
-        ::std::shared_ptr<::ChunkViewSource> const& chunks,
-        bool                                        areInTask
-    );
+#endif
 
     MCAPI void _freeChunkGenerationGridMap(::ChunkPos const& cp, bool isLevelChunkDeletion);
 
-    MCAPI void _handleTaskFailure(::LevelChunk& levelChunk, ::ChunkState currentState, ::ChunkState previousState);
-
-    MCAPI void _launchChunkTask(
-        ::std::string_view areInTask,
-        ::ChunkPos const&  taskFunc,
-        bool,
-        ::brstd::move_only_function<::TaskResult()>
-    );
-
-    MCAPI void _launchDecorationPostProcessingTask(
-        ::std::shared_ptr<::LevelChunk> const&      lc,
-        ::std::shared_ptr<::ChunkViewSource> const& chunks,
-        bool                                        areInTask
-    );
-
-    MCAPI void _launchGenerationTask(::std::shared_ptr<::LevelChunk> const& lc, bool areInTask);
-
-    MCAPI void _launchLightingTask(
-        ::std::shared_ptr<::LevelChunk> const&      lc,
-        ::std::shared_ptr<::ChunkViewSource> const& chunks,
-        bool                                        areInTask
-    );
-
-    MCAPI void _launchNeighborAwareUpgradeTask(
-        ::std::shared_ptr<::LevelChunk> const&      lc,
-        ::std::shared_ptr<::ChunkViewSource> const& chunks,
-        bool                                        areInTask
-    );
-
-    MCAPI void _launchReplacementDataTask(
-        ::std::shared_ptr<::LevelChunk> const&      lc,
-        ::std::shared_ptr<::ChunkViewSource> const& chunks,
-        bool                                        areInTask
-    );
-
-    MCAPI void _launchStructurePostProcessingTask(
-        ::std::shared_ptr<::LevelChunk> const&      lc,
-        ::std::shared_ptr<::ChunkViewSource> const& chunks,
-        bool                                        areInTask
-    );
-
-    MCAPI void _lightingTask(::std::shared_ptr<::LevelChunk> const& lc, ::ChunkViewSource& chunks);
-
-    MCAPI void _loadChunkTask(::LevelChunk& lc);
-
-    MCAPI void _neighborAwareUpgradeTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
-
-    MCAPI void _saveDirtyChunks(::LevelStorage&);
-
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
-
-    MCAPI void _structurePostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
 
 #ifdef LL_PLAT_C
     MCAPI void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
@@ -257,6 +177,7 @@ public:
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
+#ifdef LL_PLAT_C
     MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(
         ::ChunkSource::LoadMode                                             lm,
         bool                                                                circle,
@@ -264,25 +185,10 @@ public:
         ::ChunkSourceViewGenerateMode                                       chunkViewGenerateMode,
         float const*                                                        serverBuildRatio
     );
-
-    MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
-
-    MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
-
-    MCFOLD int getChunkSide() const;
-
-    MCFOLD ::Dimension& getDimension() const;
-
-    MCAPI ::std::shared_ptr<::LevelChunk> getGeneratedChunk(::ChunkPos const& cp);
-
-    MCFOLD ::Level& getLevel() const;
+#endif
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
-
-    MCAPI void setShuttingDown(bool value);
-
-    MCAPI bool shouldServerGeneratePos(::ChunkPos const& chunkPos, float serverBuildRatio, int viewRadius);
     // NOLINTEND
 
 public:
@@ -295,8 +201,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> parent);
-
-    MCAPI void* $ctor(::Dimension* dimension, int side);
     // NOLINTEND
 
 public:
@@ -326,15 +230,15 @@ public:
     MCAPI ::std::shared_ptr<::LevelChunk>
     $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource& neighborhood);
+    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource&);
 
-    MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+    MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource&);
 
-    MCFOLD void $checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
+    MCFOLD void $checkAndReplaceChunk(::ChunkViewSource&, ::LevelChunk&);
 
-    MCFOLD bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
+    MCFOLD bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk&);
 
-    MCFOLD void $neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
+    MCFOLD void $neighborAwareChunkUpgrade(::LevelChunk&, ::ChunkViewSource&);
 
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
@@ -391,13 +295,16 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
 
-    MCFOLD void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+    MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
 
     MCAPI bool $canLaunchTasks() const;
 
     MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
 
     MCAPI void $_clearBlendingCache();
+
+    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 
     // NOLINTEND

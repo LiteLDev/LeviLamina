@@ -27,34 +27,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PathView& operator=(PathView const&);
-    PathView();
-
-public:
-    // member functions
+    // static variables
     // NOLINTBEGIN
-    MCNAPI PathView(::Core::PathView&&);
-
-    MCNAPI PathView(::Core::PathView const&);
-
-    MCNAPI ::Core::PathView& operator=(::Core::PathView&&);
-
-    MCNAPI ~PathView();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::PathView&&);
-
-    MCNAPI void* $ctor(::Core::PathView const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI static ::Core::PathView const& EMPTY();
     // NOLINTEND
 };
 

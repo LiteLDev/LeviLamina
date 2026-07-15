@@ -567,7 +567,17 @@ enum class LevelSoundEvent : uint {
     ResetGrowth                        = 598,
     PushedByPlayer                     = 599,
     Bounce                             = 600,
-    Undefined                          = 601,
+    SlimeLanding                       = 601,
+    AbsorbBlock                        = 602,
+    EjectBlock                         = 603,
+    GeyserEruptionStart                = 604,
+    GeyserEruptionActive               = 605,
+    RecordBounce                       = 606,
+    BucketFillLandAnimal               = 607,
+    BucketEmptyLandAnimal              = 608,
+    GeyserContinuousEruptionStart      = 609,
+    GeyserContinuousEruptionActive     = 610,
+    Undefined                          = 611,
 };
 
 }

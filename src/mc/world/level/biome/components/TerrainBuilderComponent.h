@@ -13,10 +13,4 @@ public:
     ::ll::TypedStorage<8, 32, ::SurfaceBuilderData>                  mSurfaceBuilderData;
     ::ll::TypedStorage<8, 40, ::std::optional<::SurfaceBuilderData>> mSubsurfaceBuilderData;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

@@ -29,8 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptProjectileHitBlockAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockHitInformation getBlockHit() const;
     // NOLINTEND
 
 public:

@@ -39,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void hideAllPlayers();
-
 #ifdef LL_PLAT_C
     MCNAPI void hidePlayer(::ActorUniqueID const& id);
 

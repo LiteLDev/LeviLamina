@@ -10,8 +10,8 @@
 #include "mc/world/Container.h"
 #include "mc/world/item/ItemInstance.h"
 #include "mc/world/item/ItemStack.h"
-#include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/actor/VanillaBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,11 +26,10 @@ class ILevel;
 class Item;
 class ItemStackBase;
 class LevelChunk;
-class Recipes;
 class SaveContext;
 // clang-format on
 
-class FurnaceBlockActor : public ::BlockActor, public ::Container {
+class FurnaceBlockActor : public ::VanillaBlockActor, public ::Container {
 public:
     // FurnaceBlockActor inner types define
     enum : int {
@@ -104,7 +103,7 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const&) /*override*/;
+    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position) /*override*/;
 
     virtual void onMove() /*override*/;
 
@@ -116,16 +115,14 @@ public:
 
     virtual void fixupOnLoad(::LevelChunk& lc) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FurnaceBlockActor(::BlockPos const& pos);
-
     MCAPI FurnaceBlockActor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
@@ -137,49 +134,11 @@ public:
         ::Block const&                         litFurnace
     );
 
-    MCAPI void _tryBroadcastBurnSound(::BlockSource& region);
-
-    MCAPI void burn(::Recipes const& recipes);
-
-    MCAPI bool canBurn(::Recipes const& recipes);
-
-    MCAPI void checkForAlternativeFuelAchievement(::BlockSource& region, ::ItemStack const& item);
-
     MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
-
-#ifdef LL_PLAT_C
-    MCAPI int getBurnProgress(int max);
-
-    MCFOLD ::ItemInstance const& getLastFuelItem() const;
-#endif
-
-    MCFOLD int getLitDuration() const;
-
-#ifdef LL_PLAT_C
-    MCAPI int getLitProgress(int max);
-#endif
-
-    MCFOLD int getLitTime() const;
-
-    MCAPI int getStoredXP() const;
-
-    MCFOLD int getTickCount() const;
 
     MCAPI bool isEmptiedByHopper(::BlockSource& region);
 
     MCAPI void onFurnaceBlockRemoved(::BlockSource& region);
-
-    MCFOLD void setLitDuration(int value);
-
-    MCFOLD void setLitTime(int value);
-
-    MCAPI void setOpenByLocalPlayer(bool open);
-
-    MCAPI void setStoredXP(int value);
-
-    MCFOLD void setTickCount(int value);
-
-    MCAPI void storeXPRewardForRemovingWithHopper(::ItemStackBase const& item, int numItemsSmelted);
 
     MCAPI int withdrawStoredXPReward();
     // NOLINTEND
@@ -195,42 +154,12 @@ public:
 
     MCAPI static float getItemBurnDuration(::Item const& item, float burnInterval);
 
-    MCAPI static int getXPRewardFromSmeltingItems(::ItemStackBase const& item, int numItemsSmelted);
-
     MCAPI static bool isItemAllowedInFuelSlot(int slot, ::ItemStackBase const& item, int amount);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& BURN_DURATION_KEY();
-
-    MCAPI static int const& BURN_INTERVAL();
-
-    MCAPI static ::std::string const& BURN_TIME_KEY();
-
-    MCAPI static ::std::string const& COOK_TIME_KEY();
-
-    MCAPI static float const& DEFAULT_SMELTING_TIME();
-
-    MCAPI static ::std::string const& FILTERED_CUSTOM_NAME_KEY();
-
-    MCAPI static ::std::string const& ITEMS_LIST_KEY();
-
-    MCAPI static ::std::string const& LAST_FUEL_KEY();
-
-    MCAPI static ::std::string const& SLOT_KEY();
-
-    MCAPI static ::std::string const& STORED_XP_DEPRECATED_KEY();
-
-    MCAPI static ::std::string const& STORED_XP_KEY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
-
     MCAPI void* $ctor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
@@ -278,7 +207,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const&);
+    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 
     MCFOLD void $onMove();
 
@@ -290,9 +219,9 @@ public:
 
     MCAPI void $fixupOnLoad(::LevelChunk& lc);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND
@@ -300,8 +229,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainer();
+    MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
 
     MCAPI static void** $vftableForBlockActor();
+
+    MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
+
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForIVanillaRenderBlockActorComponent();
     // NOLINTEND
 };

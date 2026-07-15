@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/script_core/binding_factory/scripting/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
-namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
@@ -43,17 +41,12 @@ public:
     MCNAPI explicit ScriptMinecraftModuleFactory(::ServerLevel* level);
 
     MCNAPI void _addVersions();
-
-    MCNAPI ::Scripting::ModuleBinding
-    _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::string const& versionPath);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::string getModuleName(::Scripting::Version version);
-
-    MCNAPI static ::mce::UUID getModuleUUID();
 
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
 
@@ -63,8 +56,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& LegacyModuleName();
-
     MCNAPI static char const*& ModuleName();
 
     MCNAPI static ::mce::UUID const& ModuleUUID();

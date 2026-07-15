@@ -10,8 +10,10 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class LevelData;
 class PacketSender;
 class WorldClock;
+struct WorldClockData;
 // clang-format on
 
 class WorldClockRegistry {
@@ -35,17 +37,21 @@ public:
     // NOLINTBEGIN
     virtual ~WorldClockRegistry();
 
-    virtual void tick(::PacketSender&) = 0;
+    virtual void tick(::PacketSender& packetSender, ::LevelData const& levelData) = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock const> const tryGetClock(uint64 clockId) const;
+    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock> const _tryGetClock(::HashedString const& name);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::WorldClock const> const tryGetClock(::HashedString const& name) const;
-#endif
+    MCAPI int getTime(::HashedString const& clockName) const;
+
+    MCAPI void setTime(::HashedString const& clockName, int time);
+
+    MCAPI ::std::vector<::WorldClockData> toData() const;
+
+    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock const> const tryGetClock(::HashedString const& name) const;
     // NOLINTEND
 
 public:

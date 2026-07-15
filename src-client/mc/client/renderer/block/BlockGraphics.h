@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/texture/IsotropicFaceData.h"
-#include "mc/common/WeakPtr.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockShape.h"
 #include "mc/world/phys/AABB.h"
@@ -15,22 +14,14 @@ class AtlasItemManager;
 class Block;
 class BlockPos;
 class BlockSource;
-class BlockType;
 class Experiments;
 class HashedString;
-class LoadedResourceData;
 class ResourcePackManager;
-class SemVersion;
-class TextureAtlasItem;
 class Vec3;
 struct TextureItem;
 struct TextureUVCoordinateSet;
-namespace Bedrock::Threading { class Mutex; }
-namespace BlockGeometry { struct Model; }
 namespace BlockTessellationFallbackUtils { struct TessellationConfigInfo; }
-namespace ClientBlockPipeline { struct TextureUVs; }
 namespace Json { class Value; }
-namespace Json { class ValueIterator; }
 // clang-format on
 
 class BlockGraphics {
@@ -65,13 +56,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockGraphics();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockGraphics();
+    virtual ~BlockGraphics() = default;
 
     virtual ::BlockRenderLayer getRenderLayer(::BlockSource&, ::BlockPos const&) const;
 
@@ -81,160 +68,42 @@ public:
 
     virtual bool isSeasonTinted(::BlockSource&, ::BlockPos const&) const;
 
-    virtual void onGraphicsModeChanged(bool fancy, bool fancyBubbles);
+    virtual void onGraphicsModeChanged(bool, bool);
 
     virtual int getExtraRenderLayers();
 
-    virtual ::TextureUVCoordinateSet const& getCarriedTexture(uint64 textureSlot, int blockVariant) const;
+    virtual ::TextureUVCoordinateSet const& getCarriedTexture(uint64, int) const;
 
-    virtual void setVisualShape(::AABB const& shape);
+    virtual void setVisualShape(::AABB const&);
 
-    virtual void setVisualShape(::Vec3 const& min, ::Vec3 const& max);
+    virtual void setVisualShape(::Vec3 const&, ::Vec3 const&);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockGraphics(::std::string const& nameId);
-
     MCAPI void _logBlockTextureError(::fmt::v11::fstring<char const*> const& error) const;
-
-    MCFOLD float getAmbientOcclusionExponent() const;
-
-    MCAPI ::TextureAtlasItem const& getAtlasItem(uint64 textureSlot) const;
-
-    MCFOLD ::Block const* getBlock() const;
-
-    MCFOLD ::BlockShape getBlockShape() const;
 
     MCAPI ::std::string const getDefaultTextureName(uint64 textureSlot) const;
 
-    MCAPI ::TextureUVCoordinateSet const& getIconTexture(int blockVariant) const;
-
-    MCFOLD ::BlockRenderLayer getRenderLayer() const;
-
-    MCFOLD ::std::string const& getSoundType() const;
-
     MCAPI ::TextureUVCoordinateSet const& getTexture(uint64 textureSlot, int blockVariant) const;
-
-    MCAPI ::TextureUVCoordinateSet const& getTexture(::BlockPos const& p, uint64 textureSlot, int blockVariant) const;
-
-    MCAPI ::std::vector<::TextureUVCoordinateSet> const&
-    getTextureDefaultVariations(uint64 textureSlot, int blockVariant) const;
 
     MCAPI bool isFull() const;
 
     MCAPI bool isFullAndOpaque() const;
-
-    MCAPI bool isValid() const;
-
-    MCAPI ::BlockGraphics& setCarriedTextureItem(
-        ::std::string const& nameUp,
-        ::std::string const& nameDown,
-        ::std::string const& nameNorth,
-        ::std::string const& nameSouth,
-        ::std::string const& nameWest,
-        ::std::string const& nameEast
-    );
-
-    MCAPI void setDefaultCarriedTextures();
-
-    MCFOLD void setSoundType(::std::string type);
-
-    MCAPI ::BlockGraphics& setTextureItem(
-        ::std::string const& nameUp,
-        ::std::string const& nameDown,
-        ::std::string const& nameNorth,
-        ::std::string const& nameSouth,
-        ::std::string const& nameWest,
-        ::std::string const& nameEast
-    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _extractComplexAliasBlockData(
-        ::HashedString const&                                               blockName,
-        ::Json::Value const&                                                member,
-        ::std::unordered_map<::HashedString, ::std::vector<::Json::Value>>& output,
-        ::std::vector<::WeakPtr<::BlockType>>&                              blockTypes
-    );
-
-    MCAPI static void _initBlockModels(::ResourcePackManager& packManager);
-
-    MCAPI static ::TextureUVCoordinateSet const&
-    chooseRandomTexture(float random, ::std::vector<::TextureUVCoordinateSet> const& uvsets);
-
-    MCAPI static uint64
-    chooseRandomTextureIndex(float random, ::std::vector<::ClientBlockPipeline::TextureUVs> const& uvsets);
-
-    MCAPI static ::BlockGraphics* createBlockGraphics(::HashedString const& name, ::BlockShape defaultBlockShape);
-
-    MCAPI static void detectAndRegisterTessellationFallbacks(
-        ::std::unordered_map<::HashedString, ::BlockTessellationFallbackUtils::TessellationConfigInfo>&
-            blockTessellationInfoMap
-    );
-
-    MCAPI static void disableBlockType(::BlockType const& blockType);
-
-    MCAPI static ::std::vector<::WeakPtr<::BlockType>> extractBlockDataValues(
-        ::Json::ValueIterator const&                                        memberIterator,
-        ::std::unordered_map<::HashedString, ::std::vector<::Json::Value>>& output,
-        ::SemVersion const&                                                 formatVersion
-    );
-
-    MCAPI static void extractBlockDataValuesFromFileContents(
-        ::Experiments const&                                                experiments,
-        ::std::vector<::LoadedResourceData> const&                          contents,
-        ::std::unordered_map<::HashedString, ::std::vector<::Json::Value>>& blockDataValuesMap,
-        ::std::unordered_map<::HashedString, ::BlockTessellationFallbackUtils::TessellationConfigInfo>&
-            blockTessellationInfoMap
-    );
-
-    MCAPI static ::std::unordered_map<uint, ::BlockGraphics*> const& getBlocks();
-
     MCAPI static ::BlockGraphics const* getForBlock(::Block const& block);
-
-    MCAPI static ::BlockGraphics const* getForBlock(::BlockType const& block);
-
-    MCAPI static ::BlockGraphics const* getForBlock(uint blockID);
-
-    MCAPI static ::TextureAtlasItem const& getTextureItem(
-        ::std::string const&                                     name,
-        ::std::weak_ptr<::AtlasItemManager>                      terrainTextureAtlas,
-        ::std::unordered_map<::std::string, ::TextureAtlasItem>& complexTextureItems
-    );
 
     MCAPI static ::TextureUVCoordinateSet
     getTextureUVCoordinateSet(::std::string const& name, int blockVariant, int textureVariant);
 
-    MCAPI static bool hasOldTessellationFallback(::Block const& block);
-
     MCAPI static void initBlocks(::ResourcePackManager& packManager, ::Experiments const& experiments);
 
     MCAPI static bool isFullAndOpaque(::Block const& block);
-
-    MCAPI static bool isInitialized();
-
-    MCAPI static ::SemVersion loadBlockDataFormatVersion(::Json::Value const& root);
-
-    MCAPI static ::BlockGraphics& registerBlockGraphics(
-        ::std::unordered_map<::HashedString, ::std::vector<::Json::Value>>& blockDataValuesMap,
-        ::HashedString const&                                               name,
-        ::BlockShape                                                        defaultBlockShape
-    );
-
-    MCAPI static void
-    registerLooseBlockGraphics(::std::unordered_map<::HashedString, ::std::vector<::Json::Value>>& blockDataValuesMap);
-
-    MCAPI static void setAtlasItemManager(::std::shared_ptr<::AtlasItemManager> atlasItemManager);
-
-    MCAPI static bool setBlockShape(::BlockGraphics& block, ::Json::Value const& blockShapeData);
-
-    MCAPI static bool setCarriedTextures(::BlockGraphics& block, ::Json::Value const& textureData);
-
-    MCAPI static bool setTextures(::BlockGraphics& block, ::Json::Value const& textureData);
 
     MCAPI static void teardownBlocks();
     // NOLINTEND
@@ -244,64 +113,20 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& NORMAL_SOUND();
 
-    MCAPI static ::std::unordered_map<::std::string, ::BlockGraphics*>& mBlockLookupMap();
-
-    MCAPI static ::Bedrock::Threading::Mutex& mBlockModelAccess();
-
     MCAPI static ::std::unordered_map<uint, ::BlockGraphics*>& mBlocks();
 
     MCAPI static ::std::unique_ptr<::BlockGraphics>& mDummyBlock();
 
     MCAPI static bool& mInitialized();
 
-    MCAPI static ::std::map<::std::string, ::std::unique_ptr<::BlockGeometry::Model>>& mModels();
-
-    MCAPI static ::std::vector<::std::unique_ptr<::BlockGraphics>>& mOwnedBlocks();
-
     MCAPI static ::std::weak_ptr<::AtlasItemManager>& mTerrainTextureAtlas();
 
     MCAPI static ::std::unordered_set<uint>& mVanillaBlocksWithFallbackToOldTessellation();
-
-    MCAPI static ::std::unordered_map<::std::string, ::TextureAtlasItem>& sComplexTextureItems();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockRenderLayer $getRenderLayer(::BlockSource&, ::BlockPos const&) const;
 
-    MCFOLD int $getColor(int) const;
-
-    MCFOLD int $getColor(::BlockSource&, ::BlockPos const&) const;
-
-    MCFOLD bool $isSeasonTinted(::BlockSource&, ::BlockPos const&) const;
-
-    MCAPI void $onGraphicsModeChanged(bool fancy, bool fancyBubbles);
-
-    MCFOLD int $getExtraRenderLayers();
-
-    MCAPI ::TextureUVCoordinateSet const& $getCarriedTexture(uint64 textureSlot, int blockVariant) const;
-
-    MCAPI void $setVisualShape(::AABB const& shape);
-
-    MCAPI void $setVisualShape(::Vec3 const& min, ::Vec3 const& max);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

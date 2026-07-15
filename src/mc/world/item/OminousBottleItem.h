@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OminousBottleItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Potion::PotionType getPotionType() const;
@@ -59,18 +55,6 @@ public:
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     virtual bool isDestructive(int) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OminousBottleItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

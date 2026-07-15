@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/RTCPPacketType.h"
 #include "mc/external/webrtc/RTCPReceiver.h"
 #include "mc/external/webrtc/RTCPSender.h"
@@ -12,11 +13,11 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace webrtc { class Environment; }
 namespace webrtc { class RTPSender; }
 namespace webrtc { class ReportBlockData; }
 namespace webrtc { class RtpPacketToSend; }
 namespace webrtc { class RtpSendRates; }
-namespace webrtc { class TaskQueueBase; }
 namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
 namespace webrtc { class VideoBitrateAllocation; }
@@ -42,10 +43,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 360> mUnk5e9bb6;
+        ::ll::UntypedStorage<8, 344> mUnk5e9bb6;
         ::ll::UntypedStorage<1, 1>   mUnkaf31e8;
         ::ll::UntypedStorage<8, 64>  mUnk35434b;
-        ::ll::UntypedStorage<8, 488> mUnkb717e8;
+        ::ll::UntypedStorage<8, 616> mUnkb717e8;
         ::ll::UntypedStorage<8, 48>  mUnk15cbc0;
         ::ll::UntypedStorage<8, 280> mUnkec2288;
         // NOLINTEND
@@ -55,33 +56,17 @@ public:
         RtpSenderContext& operator=(RtpSenderContext const&);
         RtpSenderContext(RtpSenderContext const&);
         RtpSenderContext();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI RtpSenderContext(
-            ::webrtc::TaskQueueBase&                         worker_queue,
-            ::webrtc::RtpRtcpInterface::Configuration const& config
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::webrtc::TaskQueueBase& worker_queue, ::webrtc::RtpRtcpInterface::Configuration const& config);
-        // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 40>  mUnkacf0a4;
     ::ll::UntypedStorage<8, 8>   mUnk909e53;
     ::ll::UntypedStorage<1, 1>   mUnkdb6f5b;
     ::ll::UntypedStorage<8, 8>   mUnk56245f;
-    ::ll::UntypedStorage<8, 680> mUnke4397b;
-    ::ll::UntypedStorage<8, 520> mUnke545e2;
-    ::ll::UntypedStorage<8, 8>   mUnkaca0fc;
+    ::ll::UntypedStorage<8, 664> mUnke4397b;
+    ::ll::UntypedStorage<8, 560> mUnke545e2;
     ::ll::UntypedStorage<2, 2>   mUnk693b30;
     ::ll::UntypedStorage<8, 8>   mUnkd32067;
     ::ll::UntypedStorage<2, 2>   mUnk400446;
@@ -103,7 +88,7 @@ public:
     // NOLINTBEGIN
     virtual ~ModuleRtpRtcpImpl2() /*override*/;
 
-    virtual void IncomingRtcpPacket(::rtc::ArrayView<uchar const> rtcp_packet) /*override*/;
+    virtual void IncomingRtcpPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> rtcp_packet) /*override*/;
 
     virtual void SetRemoteSSRC(uint ssrc) /*override*/;
 
@@ -111,7 +96,7 @@ public:
 
     virtual void RegisterSendPayloadFrequency(int payload_type, int payload_frequency) /*override*/;
 
-    virtual int DeRegisterSendPayload(schar payload_type) /*override*/;
+    virtual int DeRegisterSendPayload(schar) /*override*/;
 
     virtual void SetExtmapAllowMixed(bool extmap_allow_mixed) /*override*/;
 
@@ -193,15 +178,17 @@ public:
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFecPackets() /*override*/;
 
-    virtual void OnAbortedRetransmissions(::rtc::ArrayView<ushort const> sequence_numbers) /*override*/;
+    virtual void
+    OnAbortedRetransmissions(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) /*override*/;
 
-    virtual void OnPacketsAcknowledged(::rtc::ArrayView<ushort const> sequence_numbers) /*override*/;
+    virtual void
+    OnPacketsAcknowledged(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) /*override*/;
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>
     GeneratePadding(uint64 target_size_bytes) /*override*/;
 
     virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const /*override*/;
+    GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const /*override*/;
 
     virtual uint64 ExpectedPerPacketOverhead() const /*override*/;
 
@@ -260,8 +247,9 @@ public:
 
     virtual void OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers) /*override*/;
 
-    virtual void
-    OnReceivedRtcpReportBlocks(::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) /*override*/;
+    virtual void OnReceivedRtcpReportBlocks(
+        ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
+    ) /*override*/;
 
     virtual void OnRequestSendReport() /*override*/;
 
@@ -279,7 +267,10 @@ public:
 
     MCNAPI void MaybeSendRtcp();
 
-    MCNAPI explicit ModuleRtpRtcpImpl2(::webrtc::RtpRtcpInterface::Configuration const& configuration);
+    MCNAPI ModuleRtpRtcpImpl2(
+        ::webrtc::Environment const&                     env,
+        ::webrtc::RtpRtcpInterface::Configuration const& configuration
+    );
 
     MCNAPI void PeriodicUpdate();
 
@@ -290,16 +281,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2>
-    Create(::webrtc::RtpRtcpInterface::Configuration const& configuration);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::RtpRtcpInterface::Configuration const& configuration);
+    MCNAPI void*
+    $ctor(::webrtc::Environment const& env, ::webrtc::RtpRtcpInterface::Configuration const& configuration);
     // NOLINTEND
 
 public:
@@ -311,7 +296,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $IncomingRtcpPacket(::rtc::ArrayView<uchar const> rtcp_packet);
+    MCNAPI void $IncomingRtcpPacket(::webrtc::ArrayView<uchar const, 18446744073709546905> rtcp_packet);
 
     MCNAPI void $SetRemoteSSRC(uint ssrc);
 
@@ -319,7 +304,7 @@ public:
 
     MCNAPI void $RegisterSendPayloadFrequency(int payload_type, int payload_frequency);
 
-    MCNAPI int $DeRegisterSendPayload(schar payload_type);
+    MCNAPI int $DeRegisterSendPayload(schar);
 
     MCNAPI void $SetExtmapAllowMixed(bool extmap_allow_mixed);
 
@@ -396,14 +381,14 @@ public:
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $FetchFecPackets();
 
-    MCNAPI void $OnAbortedRetransmissions(::rtc::ArrayView<ushort const> sequence_numbers);
+    MCNAPI void $OnAbortedRetransmissions(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
 
-    MCNAPI void $OnPacketsAcknowledged(::rtc::ArrayView<ushort const> sequence_numbers);
+    MCNAPI void $OnPacketsAcknowledged(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers);
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $GeneratePadding(uint64 target_size_bytes);
 
     MCNAPI ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    $GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const;
+    $GetSentRtpPacketInfos(::webrtc::ArrayView<ushort const, 18446744073709546905> sequence_numbers) const;
 
     MCNAPI uint64 $ExpectedPerPacketOverhead() const;
 
@@ -461,7 +446,9 @@ public:
 
     MCNAPI void $OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers);
 
-    MCNAPI void $OnReceivedRtcpReportBlocks(::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks);
+    MCNAPI void $OnReceivedRtcpReportBlocks(
+        ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
+    );
 
     MCNAPI void $OnRequestSendReport();
 

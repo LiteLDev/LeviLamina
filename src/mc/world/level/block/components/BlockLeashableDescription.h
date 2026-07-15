@@ -22,19 +22,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockLeashableDescription() /*override*/;
+    virtual ~BlockLeashableDescription() /*override*/ = default;
 
     virtual ::std::string const& getName() const /*override*/;
 
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockLeashableDescription();
     // NOLINTEND
 
 public:
@@ -46,23 +40,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& MAX_BOUNDS();
-
-    MCAPI static ::Vec3 const& MIN_BOUNDS();
-
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

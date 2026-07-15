@@ -19,10 +19,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UpdateSubChunkBlocksChangedInfo& operator=(UpdateSubChunkBlocksChangedInfo const&);
+    UpdateSubChunkBlocksChangedInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateSubChunkBlocksChangedInfo();
-
     MCAPI UpdateSubChunkBlocksChangedInfo(::UpdateSubChunkBlocksChangedInfo const&);
 
     MCAPI UpdateSubChunkBlocksChangedInfo(
@@ -37,16 +40,12 @@ public:
         int                            updateFlags,
         ::ActorBlockSyncMessage const* syncMsg);
 
-    MCAPI ::UpdateSubChunkBlocksChangedInfo& operator=(::UpdateSubChunkBlocksChangedInfo const&);
-
     MCAPI ~UpdateSubChunkBlocksChangedInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCAPI void* $ctor(::UpdateSubChunkBlocksChangedInfo const&);
 
     MCAPI void* $ctor(

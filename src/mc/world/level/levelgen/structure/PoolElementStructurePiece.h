@@ -56,58 +56,19 @@ public:
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
     virtual int generateHeightAtPosition(
-        ::BlockPos const&                                                          pos,
-        ::Dimension&                                                               dim,
-        ::BlockVolume&                                                             box,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
+        ::BlockPos const&,
+        ::Dimension&,
+        ::BlockVolume&,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
     ) const = 0;
 
-    virtual ::Block const*
-    getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const = 0;
+    virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const = 0;
 
-    virtual ::Block const& getBeardStabilizeBlock(::Block const& foundationBlock) const = 0;
+    virtual ::Block const& getBeardStabilizeBlock(::Block const&) const = 0;
 
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
 
     virtual bool _needsPostProcessing(::BlockSource& region);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PoolElementStructurePiece(
-        ::StructurePoolElement const& element,
-        ::BlockPos                    position,
-        ::Rotation                    rotation,
-        int                           genDepth,
-        ::JigsawJunction&             junction,
-        ::BoundingBox const&          box,
-        ::BlockPos                    refPos
-    );
-
-    MCAPI void _fillWithSupportBlock(
-        ::BlockPos const&    startPos,
-        ::BlockSource&       region,
-        ::BoundingBox const& chunkBB,
-        ::Block const&       blockToFill,
-        ::Random&            random
-    );
-
-    MCAPI void _stabilizeBeard(::BlockPos const& startPos, ::BlockSource& region, ::Block const& blockToFill);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::StructurePoolElement const& element,
-        ::BlockPos                    position,
-        ::Rotation                    rotation,
-        int                           genDepth,
-        ::JigsawJunction&             junction,
-        ::BoundingBox const&          box,
-        ::BlockPos                    refPos
-    );
     // NOLINTEND
 
 public:

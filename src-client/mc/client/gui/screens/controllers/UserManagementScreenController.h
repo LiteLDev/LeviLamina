@@ -45,10 +45,6 @@ public:
         ::UserManagementModalScreenData const&    screenData,
         ::std::function<void(bool)>               callback
     );
-
-    MCAPI void _registerBindings();
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -64,18 +60,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD ::std::string $getAdditionalScreenInfo() const;
-
-    MCAPI void $onLeave();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

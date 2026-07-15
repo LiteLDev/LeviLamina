@@ -15,16 +15,4 @@ public:
     SimpleTextureData& operator=(SimpleTextureData const&);
     SimpleTextureData(SimpleTextureData const&);
     SimpleTextureData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SimpleTextureData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

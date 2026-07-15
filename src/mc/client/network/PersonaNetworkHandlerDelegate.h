@@ -6,9 +6,9 @@ class PersonaNetworkHandlerDelegate {
 public:
     // PersonaNetworkHandlerDelegate inner types declare
     // clang-format off
-    struct ProcessingSkin;
+    class SafetyServiceContext;
     // clang-format on
 
     // PersonaNetworkHandlerDelegate inner types define
-    struct ProcessingSkin {};
+    class SafetyServiceContext {};
 };

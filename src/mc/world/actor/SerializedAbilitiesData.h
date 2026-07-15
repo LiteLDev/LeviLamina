@@ -52,30 +52,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SerializedAbilitiesData();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SerializedAbilitiesData();
-
     MCAPI SerializedAbilitiesData(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
 
     MCAPI void fillIn(::LayeredAbilities& layeredAbilities) const;
-
-    MCFOLD ::ActorUniqueID getTargetPlayer() const;
 
     MCAPI ~SerializedAbilitiesData();
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::array<::SerializedAbilitiesData::SerializedAbilitiesLayer, 6> const& ABILITIES_LAYER_MAP();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
     // NOLINTEND
 

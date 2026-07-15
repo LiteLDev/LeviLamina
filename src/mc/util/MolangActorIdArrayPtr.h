@@ -13,28 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> mActorIds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangActorIdArrayPtr();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MolangActorIdArrayPtr(::std::vector<::ActorUniqueID> actorIds);
-
-    MCAPI ~MolangActorIdArrayPtr();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::vector<::ActorUniqueID> actorIds);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

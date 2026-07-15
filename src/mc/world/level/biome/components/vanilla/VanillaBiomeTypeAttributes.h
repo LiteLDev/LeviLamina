@@ -12,10 +12,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::VanillaBiomeTypes> mBiomeType;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

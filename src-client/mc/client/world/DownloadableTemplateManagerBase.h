@@ -5,13 +5,11 @@
 // auto generated inclusion list
 #include "mc/client/world/DownloadWorldTemplateError.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class IContentAcquisition;
 class IDlcBatcher;
-class IStoreCatalogRepository;
 // clang-format on
 
 namespace World {
@@ -40,24 +38,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DownloadableTemplateManagerBase() /*override*/;
+    virtual ~DownloadableTemplateManagerBase() /*override*/ = default;
 
     virtual ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(
-        ::std::string const&                                                        templateId,
-        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
+        ::std::string const&,
+        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)>
     );
 
-    virtual void _templateDownloadedCallback(::std::string const& templateId, bool success);
+    virtual void _templateDownloadedCallback(::std::string const&, bool);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DownloadableTemplateManagerBase(
-        ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
-        ::IContentAcquisition&                                   contentAquisition
-    );
-
     MCAPI bool canDownloadBeCancelled(::std::string const& templateId) const;
 
     MCAPI void cancelDownload(::std::string const& templateId);
@@ -72,35 +65,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
-        ::IContentAcquisition&                                   contentAquisition
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
-        ::std::string const&                                                        templateId,
-        ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
-    );
 
-    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -13,11 +13,8 @@ class CommandRegistry;
 class Experiments;
 class IGameModuleDocumentation;
 class IResourcePackRepository;
-class IWorldRegistriesProvider;
 class ItemRegistryRef;
 class Level;
-class LevelStorage;
-class LinkedAssetValidator;
 class Player;
 class ResourcePackManager;
 class ResourcePackStack;
@@ -25,9 +22,6 @@ class ServerInstance;
 class ServerNetworkHandler;
 class ServerScriptManager;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
-struct SpawnSettings;
-namespace VanillaSystemsRegistration { struct RegistrationOptions; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class VanillaGameModuleServer : public ::GameModuleServer {
@@ -44,11 +38,12 @@ public:
     // prevent constructor by default
     VanillaGameModuleServer& operator=(VanillaGameModuleServer const&);
     VanillaGameModuleServer(VanillaGameModuleServer const&);
+    VanillaGameModuleServer();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~VanillaGameModuleServer() /*override*/;
+    virtual ~VanillaGameModuleServer() /*override*/ = default;
 
     virtual void init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
 
@@ -71,10 +66,12 @@ public:
             biomeIdToResolvedData
     ) /*override*/;
 
-    virtual void configureNewPlayer(::Player&) /*override*/;
+    virtual void configureNewPlayer(::Player& player) /*override*/;
 
-    virtual void
-    configureDocumentation(::IGameModuleDocumentation& docItemRegistry, ::ItemRegistryRef const) /*override*/;
+    virtual void configureDocumentation(
+        ::IGameModuleDocumentation& moduleDocumentation,
+        ::ItemRegistryRef const     docItemRegistry
+    ) /*override*/;
 
     virtual void tick() /*override*/;
 
@@ -84,47 +81,6 @@ public:
         ::ServerInstance&                                     server,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI VanillaGameModuleServer();
-
-    MCAPI void _configureEntitySystems(
-        ::Bedrock::NotNullNonOwnerPtr<::Level> const& level,
-        ::ResourcePackManager&                        registrationOptions,
-        ::Experiments const&,
-        ::VanillaSystemsRegistration::RegistrationOptions const&
-    );
-
-    MCAPI void _configureWorldGen(
-        ::IWorldRegistriesProvider&                        worldRegistries,
-        ::SpawnSettings const&                             spawnSettings,
-        ::Experiments const&                               experiments,
-        ::ResourcePackManager&                             resourcePackManager,
-        ::BaseGameVersion const&                           baseGameVersion,
-        ::LevelStorage*                                    levelStorage,
-        ::cereal::ReflectionCtx&                           ctx,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
-        ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
-            biomeIdToResolvedData
-    );
-
-    MCAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level, bool realmsStoriesEnabled);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -151,9 +107,10 @@ public:
             biomeIdToResolvedData
     );
 
-    MCFOLD void $configureNewPlayer(::Player&);
+    MCFOLD void $configureNewPlayer(::Player& player);
 
-    MCAPI void $configureDocumentation(::IGameModuleDocumentation& docItemRegistry, ::ItemRegistryRef const);
+    MCFOLD void
+    $configureDocumentation(::IGameModuleDocumentation& moduleDocumentation, ::ItemRegistryRef const docItemRegistry);
 
     MCFOLD void $tick();
 

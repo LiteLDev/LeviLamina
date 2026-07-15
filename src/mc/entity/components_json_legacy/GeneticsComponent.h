@@ -9,7 +9,6 @@ class CompoundTag;
 class DataLoadHelper;
 class GeneticsDefinition;
 class Random;
-struct GeneDefinition;
 // clang-format on
 
 class GeneticsComponent {
@@ -40,14 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeneticsComponent();
-
-    MCAPI ::GeneticsComponent::Gene _crossParentGenes(
-        ::GeneDefinition const&    definition,
-        ::GeneticsComponent::Gene& gene1,
-        ::GeneticsComponent::Gene& gene2
-    );
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void buildDebugInfo(::std::string& out) const;
@@ -67,11 +58,5 @@ public:
     MCAPI static ::std::string const& HIDDEN_ALLELE();
 
     MCAPI static ::std::string const& MAIN_ALLELE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

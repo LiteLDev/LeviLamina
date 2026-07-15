@@ -11,20 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 36, ::Vec3[3]> mData;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI BoneOrientationTransform();
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor();
-#endif
-    // NOLINTEND
 };

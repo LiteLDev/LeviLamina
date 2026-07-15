@@ -63,30 +63,6 @@ public:
         ::ll::TypedStorage<8, 8, ::ChunkRecyclerTelemetryData::TimeAccumulator> mTimeAccumulator;
         ::ll::TypedStorage<8, 64, ::std::function<bool(int64)>>                 isInRangeInclusive;
         // NOLINTEND
-
-#ifdef LL_PLAT_S
-    public:
-        // prevent constructor by default
-        BucketContext& operator=(BucketContext const&);
-        BucketContext();
-
-#else // LL_PLAT_C
-#endif
-    public:
-        // member functions
-        // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        MCAPI BucketContext(::ChunkRecyclerTelemetryData::BucketContext const&);
-#endif
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-#ifdef LL_PLAT_S
-        MCAPI void* $ctor(::ChunkRecyclerTelemetryData::BucketContext const&);
-#endif
-        // NOLINTEND
     };
 
     struct ChunkData {
@@ -129,15 +105,9 @@ public:
 
     MCAPI void _reset();
 
-    MCAPI void _setIsLocked();
-
     MCAPI void endLevel(::Level& level);
 
-    MCAPI void recordCacheCheck(::LevelChunk const& lc);
-
     MCAPI void recordChunkDeleted(::LevelChunk const& lc);
-
-    MCAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
 
     MCAPI void startLevel(::Level const& level);
 

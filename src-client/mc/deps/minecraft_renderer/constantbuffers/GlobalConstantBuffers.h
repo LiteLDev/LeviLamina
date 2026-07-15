@@ -61,23 +61,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GlobalConstantBuffers();
-
     MCAPI void init();
-
-    MCAPI ~GlobalConstantBuffers();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

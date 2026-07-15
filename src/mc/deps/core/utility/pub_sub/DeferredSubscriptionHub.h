@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/ConnectPosition.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,8 +46,11 @@ public:
 
     virtual void _join(::Bedrock::PubSub::DeferredSubscription&& subscription) = 0;
 
-    virtual void
-    _enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group) = 0;
+    virtual void _enqueue(
+        ::brstd::move_only_function<void()> fn,
+        ::Bedrock::PubSub::ConnectPosition  at,
+        ::std::optional<int>                group
+    ) = 0;
     // NOLINTEND
 
 public:

@@ -21,20 +21,27 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Biome const*>> mOceanBiomes;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     Shore();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI Shore(::BiomeRegistry const& registry, ::Biome const& defaultShore);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::BiomeRegistry const& registry, ::Biome const& defaultShore);
+#endif
     // NOLINTEND
 };
 

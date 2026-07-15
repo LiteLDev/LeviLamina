@@ -24,18 +24,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void loadDefsList(
-        ::ResourceLocation const&                           defsListFile,
-        ::ResourcePackStack const&                          packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&,
+        ::ResourcePackStack const&,
+        ::std::function<void(::std::vector<::PackReport>&)>
     ) = 0;
 
     virtual void validateDefEntries(
-        ::ResourceLocation const&                           defsListFile,
-        ::std::shared_ptr<::ResourcePackStack const>        packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&,
+        ::std::shared_ptr<::ResourcePackStack const>,
+        ::std::function<void(::std::vector<::PackReport>&)>
     ) const = 0;
 
-    virtual ::Json::Value const& findDef(::std::string const& defNamespace, ::std::string const& defName) const = 0;
+    virtual ::Json::Value const& findDef(::std::string const&, ::std::string const&) const = 0;
 
     virtual ::Bedrock::Threading::SharedLock<::std::shared_mutex> acquireSharedLock() const = 0;
 
@@ -53,11 +53,11 @@ public:
 
     virtual bool isUIValidationDone() const = 0;
 
-    virtual void forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)> callback) = 0;
+    virtual void forEachControl(::std::function<void(::Json::Value const&, ::std::string const&)>) = 0;
 
     virtual ::Json::Value const& getGlobalVariables() const = 0;
 
-    virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const itemRegistry) = 0;
+    virtual void translateLegacyItemIdsInRepository(::ItemRegistryRef const) = 0;
     // NOLINTEND
 
 public:

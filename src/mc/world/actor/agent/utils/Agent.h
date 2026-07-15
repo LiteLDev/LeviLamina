@@ -7,9 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
-class Actor;
-class BlockSource;
 class EntityContext;
 class Vec3;
 namespace Util::Agent { struct SimulatedMoveResult; }
@@ -22,18 +19,6 @@ MCAPI ::Vec3 getNextPosFromDirection(::Vec3 const& startPosition, float bodyRota
 
 MCAPI ::Util::Agent::SimulatedMoveResult
 simulateMove(::EntityContext& entity, ::AgentComponents::Direction dir, ::Vec3 destination);
-
-MCAPI void testForCollidableMobs(
-    ::Actor const&         actor,
-    ::BlockSource&         region,
-    ::AABB const&          intersectTestBox,
-    ::std::vector<::AABB>& collisionAABBs
-);
-// NOLINTEND
-
-// static variables
-// NOLINTBEGIN
-MCAPI float const& COMMAND_INTERVAL();
 // NOLINTEND
 
 } // namespace Util::Agent

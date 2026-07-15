@@ -10,11 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class ActorHurtResult;
 class BlockPos;
-class EntityContext;
-struct ActorDefinitionIdentifier;
+struct HurtParameters;
 // clang-format on
 
 class GlowSquid : public ::Squid {
@@ -26,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GlowSquid();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void normalTick() /*override*/;
@@ -39,29 +33,9 @@ public:
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     virtual ::ActorHurtResult
-    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    _hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters) /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlowSquid(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -73,7 +47,8 @@ public:
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult
+    $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
 

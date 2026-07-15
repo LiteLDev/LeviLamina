@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/external/webrtc/ArrayView.h"
 #include "mc/external/webrtc/NetworkLinkRtcpObserver.h"
 #include "mc/external/webrtc/NetworkStateEstimateObserver.h"
 #include "mc/external/webrtc/RtpTransportControllerSendInterface.h"
@@ -10,11 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { struct NetworkRoute; }
-namespace rtc { struct SentPacket; }
 namespace webrtc { class DataRate; }
 namespace webrtc { class FecController; }
 namespace webrtc { class FrameTransformerInterface; }
+namespace webrtc { class NetworkControllerInterface; }
 namespace webrtc { class PacketRouter; }
 namespace webrtc { class ReportBlockData; }
 namespace webrtc { class RtpPacketSender; }
@@ -30,6 +30,7 @@ namespace webrtc { struct BitrateAllocationLimits; }
 namespace webrtc { struct BitrateConstraints; }
 namespace webrtc { struct BitrateSettings; }
 namespace webrtc { struct NetworkControlUpdate; }
+namespace webrtc { struct NetworkRoute; }
 namespace webrtc { struct NetworkStateEstimate; }
 namespace webrtc { struct ReceivedPacket; }
 namespace webrtc { struct RtpConfig; }
@@ -38,7 +39,10 @@ namespace webrtc { struct RtpSenderFrameEncryptionConfig; }
 namespace webrtc { struct RtpSenderObservers; }
 namespace webrtc { struct RtpState; }
 namespace webrtc { struct RtpTransportConfig; }
+namespace webrtc { struct SentPacketInfo; }
 namespace webrtc { struct TargetRateConstraints; }
+namespace webrtc { struct TransportPacketsFeedback; }
+namespace webrtc::rtcp { class CongestionControlFeedback; }
 namespace webrtc::rtcp { class TransportFeedback; }
 // clang-format on
 
@@ -72,39 +76,44 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40>   mUnkc6453a;
-    ::ll::UntypedStorage<1, 1>    mUnk70273c;
-    ::ll::UntypedStorage<8, 8>    mUnk5feadf;
-    ::ll::UntypedStorage<8, 264>  mUnkc4ccb7;
-    ::ll::UntypedStorage<8, 24>   mUnk54cb69;
-    ::ll::UntypedStorage<8, 56>   mUnk25fb43;
-    ::ll::UntypedStorage<8, 16>   mUnkcab8bd;
-    ::ll::UntypedStorage<1, 1>    mUnk4acc8b;
-    ::ll::UntypedStorage<1, 1>    mUnk2af1ae;
-    ::ll::UntypedStorage<8, 1040> mUnk33f103;
-    ::ll::UntypedStorage<8, 8>    mUnk9afb80;
-    ::ll::UntypedStorage<8, 72>   mUnk6a6f0b;
-    ::ll::UntypedStorage<8, 136>  mUnk7c1ecc;
-    ::ll::UntypedStorage<8, 8>    mUnkf715ad;
-    ::ll::UntypedStorage<8, 8>    mUnk781f0e;
-    ::ll::UntypedStorage<8, 8>    mUnkde8f4a;
-    ::ll::UntypedStorage<8, 8>    mUnkdd0229;
-    ::ll::UntypedStorage<8, 8>    mUnk56e9e1;
-    ::ll::UntypedStorage<8, 16>   mUnkb564b9;
-    ::ll::UntypedStorage<8, 8>    mUnk8df24d;
-    ::ll::UntypedStorage<8, 152>  mUnk76ebad;
-    ::ll::UntypedStorage<8, 80>   mUnkebfb3e;
-    ::ll::UntypedStorage<1, 1>    mUnk782b23;
-    ::ll::UntypedStorage<1, 1>    mUnk3e0443;
-    ::ll::UntypedStorage<8, 80>   mUnk7341dc;
-    ::ll::UntypedStorage<8, 8>    mUnk6073aa;
-    ::ll::UntypedStorage<1, 1>    mUnka9dac7;
-    ::ll::UntypedStorage<8, 8>    mUnk5926b7;
-    ::ll::UntypedStorage<8, 8>    mUnk5fbed4;
-    ::ll::UntypedStorage<8, 8>    mUnk826305;
-    ::ll::UntypedStorage<1, 1>    mUnk777a52;
-    ::ll::UntypedStorage<8, 152>  mUnkbbdc9a;
-    ::ll::UntypedStorage<8, 8>    mUnkd01d6f;
+    ::ll::UntypedStorage<8, 40>  mUnkc6453a;
+    ::ll::UntypedStorage<1, 1>   mUnk70273c;
+    ::ll::UntypedStorage<8, 8>   mUnk5feadf;
+    ::ll::UntypedStorage<8, 272> mUnkc4ccb7;
+    ::ll::UntypedStorage<8, 24>  mUnk54cb69;
+    ::ll::UntypedStorage<8, 56>  mUnk25fb43;
+    ::ll::UntypedStorage<8, 16>  mUnk507013;
+    ::ll::UntypedStorage<1, 1>   mUnk4acc8b;
+    ::ll::UntypedStorage<1, 1>   mUnk2af1ae;
+    ::ll::UntypedStorage<8, 952> mUnk33f103;
+    ::ll::UntypedStorage<8, 8>   mUnk9afb80;
+    ::ll::UntypedStorage<8, 40>  mUnk6a6f0b;
+    ::ll::UntypedStorage<8, 160> mUnk7c1ecc;
+    ::ll::UntypedStorage<8, 8>   mUnkf715ad;
+    ::ll::UntypedStorage<8, 8>   mUnk781f0e;
+    ::ll::UntypedStorage<8, 8>   mUnkde8f4a;
+    ::ll::UntypedStorage<8, 8>   mUnkdd0229;
+    ::ll::UntypedStorage<8, 8>   mUnk56e9e1;
+    ::ll::UntypedStorage<8, 16>  mUnkb564b9;
+    ::ll::UntypedStorage<8, 8>   mUnk8df24d;
+    ::ll::UntypedStorage<8, 176> mUnk76ebad;
+    ::ll::UntypedStorage<8, 80>  mUnkebfb3e;
+    ::ll::UntypedStorage<1, 1>   mUnk782b23;
+    ::ll::UntypedStorage<1, 1>   mUnk3e0443;
+    ::ll::UntypedStorage<1, 1>   mUnk8c2e35;
+    ::ll::UntypedStorage<8, 80>  mUnk7341dc;
+    ::ll::UntypedStorage<8, 8>   mUnk6073aa;
+    ::ll::UntypedStorage<1, 1>   mUnka9dac7;
+    ::ll::UntypedStorage<8, 8>   mUnk5926b7;
+    ::ll::UntypedStorage<8, 8>   mUnk5fbed4;
+    ::ll::UntypedStorage<8, 8>   mUnk826305;
+    ::ll::UntypedStorage<1, 1>   mUnk777a52;
+    ::ll::UntypedStorage<1, 1>   mUnk7185e9;
+    ::ll::UntypedStorage<1, 1>   mUnk199982;
+    ::ll::UntypedStorage<4, 4>   mUnk8b5f1e;
+    ::ll::UntypedStorage<4, 4>   mUnk5823de;
+    ::ll::UntypedStorage<8, 152> mUnkbbdc9a;
+    ::ll::UntypedStorage<8, 8>   mUnkd01d6f;
     // NOLINTEND
 
 public:
@@ -155,7 +164,7 @@ public:
     virtual void RegisterTargetTransferRateObserver(::webrtc::TargetTransferRateObserver* observer) /*override*/;
 
     virtual void
-    OnNetworkRouteChanged(::std::string_view transport_name, ::rtc::NetworkRoute const& network_route) /*override*/;
+    OnNetworkRouteChanged(::std::string_view transport_name, ::webrtc::NetworkRoute const& network_route) /*override*/;
 
     virtual void OnNetworkAvailability(bool network_available) /*override*/;
 
@@ -167,7 +176,7 @@ public:
 
     virtual void EnablePeriodicAlrProbing(bool enable) /*override*/;
 
-    virtual void OnSentPacket(::rtc::SentPacket const& sent_packet) /*override*/;
+    virtual void OnSentPacket(::webrtc::SentPacketInfo const& sent_packet) /*override*/;
 
     virtual void OnReceivedPacket(::webrtc::ReceivedPacket const& packet_msg) /*override*/;
 
@@ -187,8 +196,8 @@ public:
     OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate) /*override*/;
 
     virtual void OnReport(
-        ::webrtc::Timestamp                               receive_time,
-        ::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks
+        ::webrtc::Timestamp                                                        receive_time,
+        ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
     ) /*override*/;
 
     virtual void OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt) /*override*/;
@@ -198,25 +207,38 @@ public:
         ::webrtc::rtcp::TransportFeedback const& feedback
     ) /*override*/;
 
+    virtual void OnCongestionControlFeedback(
+        ::webrtc::Timestamp                              receive_time,
+        ::webrtc::rtcp::CongestionControlFeedback const& feedback
+    ) /*override*/;
+
     virtual void OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate estimate) /*override*/;
+
+    virtual ::webrtc::NetworkControllerInterface* GetNetworkController() /*override*/;
+
+    virtual void EnableCongestionControlFeedbackAccordingToRfc8888() /*override*/;
+
+    virtual ::std::optional<int> ReceivedCongestionControlFeedbackCount() const /*override*/;
+
+    virtual ::std::optional<int> ReceivedTransportCcFeedbackCount() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void HandleTransportPacketsFeedback(::webrtc::TransportPacketsFeedback const& feedback);
+
     MCNAPI void MaybeCreateControllers();
 
     MCNAPI void PostUpdates(::webrtc::NetworkControlUpdate update);
 
-    MCNAPI void ProcessSentPacket(::rtc::SentPacket const& sent_packet);
+    MCNAPI void ProcessSentPacket(::webrtc::SentPacketInfo const& sent_packet);
 
     MCNAPI explicit RtpTransportControllerSend(::webrtc::RtpTransportConfig const& config);
 
     MCNAPI void StartProcessPeriodicTasks();
 
     MCNAPI void UpdateBitrateConstraints(::webrtc::BitrateConstraints const& updated);
-
-    MCNAPI void UpdateCongestedState();
 
     MCNAPI void UpdateControllerWithTimeInterval();
 
@@ -278,7 +300,7 @@ public:
 
     MCNAPI void $RegisterTargetTransferRateObserver(::webrtc::TargetTransferRateObserver* observer);
 
-    MCNAPI void $OnNetworkRouteChanged(::std::string_view transport_name, ::rtc::NetworkRoute const& network_route);
+    MCNAPI void $OnNetworkRouteChanged(::std::string_view transport_name, ::webrtc::NetworkRoute const& network_route);
 
     MCNAPI void $OnNetworkAvailability(bool network_available);
 
@@ -290,7 +312,7 @@ public:
 
     MCNAPI void $EnablePeriodicAlrProbing(bool enable);
 
-    MCNAPI void $OnSentPacket(::rtc::SentPacket const& sent_packet);
+    MCNAPI void $OnSentPacket(::webrtc::SentPacketInfo const& sent_packet);
 
     MCNAPI void $OnReceivedPacket(::webrtc::ReceivedPacket const& packet_msg);
 
@@ -308,15 +330,30 @@ public:
 
     MCNAPI void $OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate);
 
-    MCNAPI void
-    $OnReport(::webrtc::Timestamp receive_time, ::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks);
+    MCNAPI void $OnReport(
+        ::webrtc::Timestamp                                                        receive_time,
+        ::webrtc::ArrayView<::webrtc::ReportBlockData const, 18446744073709546905> report_blocks
+    );
 
     MCNAPI void $OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt);
 
     MCNAPI void
     $OnTransportFeedback(::webrtc::Timestamp receive_time, ::webrtc::rtcp::TransportFeedback const& feedback);
 
+    MCNAPI void $OnCongestionControlFeedback(
+        ::webrtc::Timestamp                              receive_time,
+        ::webrtc::rtcp::CongestionControlFeedback const& feedback
+    );
+
     MCNAPI void $OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate estimate);
+
+    MCNAPI ::webrtc::NetworkControllerInterface* $GetNetworkController();
+
+    MCNAPI void $EnableCongestionControlFeedbackAccordingToRfc8888();
+
+    MCNAPI ::std::optional<int> $ReceivedCongestionControlFeedbackCount() const;
+
+    MCNAPI ::std::optional<int> $ReceivedTransportCcFeedbackCount() const;
 
 
     // NOLINTEND

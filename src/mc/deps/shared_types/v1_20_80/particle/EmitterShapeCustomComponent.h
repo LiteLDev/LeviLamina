@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -22,10 +21,14 @@ public:
     ::ll::TypedStorage<8, 144, ::std::array<::SharedTypes::Legacy::ExpressionNode, 3>> mDirectionExpr;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     EmitterShapeCustomComponent& operator=(EmitterShapeCustomComponent const&);
+    EmitterShapeCustomComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,17 +38,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EmitterShapeCustomComponent();
-
+#ifdef LL_PLAT_C
     MCAPI EmitterShapeCustomComponent(::SharedTypes::v1_20_80::EmitterShapeCustomComponent&&);
 
     MCAPI EmitterShapeCustomComponent(::SharedTypes::v1_20_80::EmitterShapeCustomComponent const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
@@ -57,17 +54,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
+#ifdef LL_PLAT_C
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeCustomComponent&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeCustomComponent const&);
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCAPI ::HashedString const& $getIdentifier() const;
+#endif
 
 
     // NOLINTEND

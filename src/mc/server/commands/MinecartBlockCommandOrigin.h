@@ -16,10 +16,8 @@ class BlockSource;
 class CommandBlockActor;
 class CommandOrigin;
 class CompoundTag;
-class Level;
 class Vec2;
 class Vec3;
-struct DimensionType;
 // clang-format on
 
 class MinecartBlockCommandOrigin : public ::BlockCommandOrigin {
@@ -65,67 +63,17 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
-
-    MCAPI MinecartBlockCommandOrigin(
-        ::Level&               level,
-        ::DimensionType        dimensionType,
-        ::std::string const&   name,
-        ::BlockPos const&      pos,
-        ::ActorUniqueID const& minecartId
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::MinecartBlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
-
-    MCAPI void* $ctor(
-        ::Level&               level,
-        ::DimensionType        dimensionType,
-        ::std::string const&   name,
-        ::BlockPos const&      pos,
-        ::ActorUniqueID const& minecartId
-    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPos $getBlockPosition() const;
 
-    MCAPI ::Vec3 $getWorldPosition() const;
-
-    MCAPI ::std::optional<::Vec2> $getRotation() const;
-
-    MCAPI ::Actor* $getEntity() const;
-
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
-
-    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
-
-    MCFOLD ::CommandOriginType $getOriginType() const;
-
-    MCAPI ::CompoundTag $serialize() const;
-
-    MCFOLD bool $isValid() const;
-
-    MCFOLD ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
-
-    MCAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
-
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

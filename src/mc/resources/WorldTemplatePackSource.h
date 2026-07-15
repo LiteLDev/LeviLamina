@@ -3,20 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/DirectoryPackSource.h"
-#include "mc/resources/PackSource.h"
 
 // auto generated forward declare list
 // clang-format off
-class IContentKeyProvider;
-class IPackManifestFactory;
-class PackSourceReport;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
-struct WorldTemplatePackSourceOptions;
-namespace mce { class UUID; }
 // clang-format on
 
 class WorldTemplatePackSource : public ::DirectoryPackSource {
@@ -39,44 +31,12 @@ public:
     // NOLINTBEGIN
     virtual ~WorldTemplatePackSource() /*override*/ = default;
 
-    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit WorldTemplatePackSource(::WorldTemplatePackSourceOptions options);
-
-    MCNAPI ::PackSourceReport _tryLoadFromZip(
-        ::std::shared_ptr<::PackSource::PackTaskData>                     data,
-        ::IPackManifestFactory&                                           manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::Core::PathBuffer<::std::string> const&                          worldTemplatePath,
-        ::std::string const&                                              subDir
-    );
-
-#ifdef LL_PLAT_C
-    MCNAPI ::mce::UUID const& getWorldTemplateId() const;
-#endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::WorldTemplatePackSourceOptions options);
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
 
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -27,35 +27,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorEventResponseFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorEventResponseFactory() /*override*/;
+    virtual ~ActorEventResponseFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorEventResponseFactory(::PackLoadContext const& packLoadContext);
-
     MCAPI void initSchema();
 
     MCAPI void initializeFactory(::PackLoadContext const& packLoadContext);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PackLoadContext const& packLoadContext);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

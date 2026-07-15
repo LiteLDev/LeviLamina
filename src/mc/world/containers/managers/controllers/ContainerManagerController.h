@@ -4,13 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
-#include "mc/world/containers/managers/controllers/ItemSpecialLocation.h"
 #include "mc/world/containers/managers/controllers/ItemTransferType.h"
-#include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/ContainerExpandStatus.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 
@@ -21,14 +18,12 @@ class Container;
 class ContainerController;
 class ContainerManagerModel;
 class ContainerModel;
-class ContainerScreenContext;
 class ContainerScreenSimulation;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 struct ActorUniqueID;
 struct AutoPlaceItem;
-struct AutoPlaceRequest;
 struct AutoPlaceResult;
 struct ContainerScreenActionResult;
 struct ContainerSimulationSplitStack;
@@ -77,11 +72,7 @@ public:
     virtual ~ContainerManagerController();
 #endif
 
-#ifdef LL_PLAT_S
     virtual void postInit(::std::weak_ptr<::ContainerManagerController>);
-#else // LL_PLAT_C
-    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self);
-#endif
 
     virtual void registerContainerCallbacks();
 
@@ -110,39 +101,39 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    virtual void handleTakeAmount(::SlotData const&, int, ::SlotData const&);
+    virtual bool handleTakeAmount(::SlotData const&, int, ::SlotData const&);
 #else // LL_PLAT_C
-    virtual void handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+    virtual bool handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
 #endif
 
 #ifdef LL_PLAT_S
-    virtual void handleTakeAll(::SlotData const&, ::SlotData const&);
+    virtual bool handleTakeAll(::SlotData const&, ::SlotData const&);
 #else // LL_PLAT_C
-    virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    virtual bool handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 #endif
 
 #ifdef LL_PLAT_S
-    virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
+    virtual bool handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
 #else // LL_PLAT_C
-    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    virtual bool handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 #endif
 
 #ifdef LL_PLAT_S
-    virtual void handleTakeHalf(::SlotData const&, ::SlotData const&);
+    virtual bool handleTakeHalf(::SlotData const&, ::SlotData const&);
 #else // LL_PLAT_C
-    virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    virtual bool handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 #endif
 
 #ifdef LL_PLAT_S
-    virtual void handlePlaceOne(::SlotData const&, ::SlotData const&);
+    virtual bool handlePlaceOne(::SlotData const&, ::SlotData const&);
 #else // LL_PLAT_C
-    virtual void handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    virtual bool handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 #endif
 
 #ifdef LL_PLAT_S
-    virtual void handlePlaceAmount(::SlotData const&, int, ::SlotData const&);
+    virtual bool handlePlaceAmount(::SlotData const&, int, ::SlotData const&);
 #else // LL_PLAT_C
-    virtual void handlePlaceAmount(::SlotData const& srcSlot, int amount, ::SlotData const& dstSlot);
+    virtual bool handlePlaceAmount(::SlotData const& srcSlot, int amount, ::SlotData const& dstSlot);
 #endif
 
 #ifdef LL_PLAT_S
@@ -230,9 +221,9 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    virtual void handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType);
+    virtual bool handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType);
 #else // LL_PLAT_C
-    virtual void handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
+    virtual bool handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
 #endif
 
     virtual void closeContainers();
@@ -253,7 +244,7 @@ public:
     virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
 #else // LL_PLAT_C
     virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount);
+    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
 #endif
 
 #ifdef LL_PLAT_S
@@ -277,7 +268,7 @@ public:
 #ifdef LL_PLAT_S
     virtual void _onItemPlaced(::ItemInstance const&, ::SlotData const&);
 #else // LL_PLAT_C
-    virtual void _onItemPlaced(::ItemInstance const& itemInstance, ::SlotData const& dstSlot);
+    virtual void _onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot);
 #endif
 
 #ifdef LL_PLAT_S
@@ -294,20 +285,10 @@ public:
 #ifdef LL_PLAT_C
     MCAPI explicit ContainerManagerController(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
 
-    MCAPI void _addContainer(::std::shared_ptr<::ContainerController> uiContainer);
-
     MCAPI void _addOutputsAsDestinations(
         ::ContainerScreenActionResult const& result,
         ::std::vector<::AutoPlaceResult>&    destinations
     ) const;
-
-    MCAPI int _appendAutoPlaceOutputs(
-        ::ItemTransferRequest&                request,
-        ::ItemStackBase const&                itemToPlace,
-        int                                   requestAmount,
-        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
-        int                                   placementGroup
-    );
 
     MCAPI void _autoPlaceOrDrop(
         ::SlotData const&                     srcSlot,
@@ -322,8 +303,6 @@ public:
         ::ItemTransferRequest&                request
     );
 
-    MCAPI void _buildContainerControllers();
-
     MCAPI int _bulkAutoPlaceOutput(
         int                                   craftableCount,
         int                                   amount,
@@ -333,71 +312,29 @@ public:
         ::std::vector<::AutoPlaceResult>&     destinations
     );
 
-    MCAPI ::AutoPlaceRequest const _canAutoPlace(
-        ::SlotData const&                     srcSlot,
-        ::ItemTransferAmount                  requestTakeAmount,
-        ::std::vector<::AutoPlaceItem> const& autoPlaceOrder
-    );
-
     MCAPI bool _canCraftIntoStorageItem(::ItemInstance const& itemToCraft, ::ItemStack const& storageItem);
 
     MCAPI void _clearCreativeHotbar();
 
     MCAPI void _closeContainers(::ContainerManagerModel& containerModel);
 
-    MCAPI ::std::shared_ptr<::ContainerController> _getContainerController(::SlotData const& slot) const;
-
     MCAPI ::ContainerValidationSlotData _getContainerValidationSlotData(::SlotData const& slotData) const;
 
-    MCAPI ::ItemStack const& _getItem(::SlotData const& slot, bool) const;
+    MCAPI ::ItemStack const& _getItem(::SlotData const& slot, bool canBeEmpty) const;
 
     MCAPI ::ItemStack const& _getItem0(::ContainerEnumName collectionEnumName) const;
 
-    MCAPI ::std::tuple<::ItemStack const&, ::std::shared_ptr<::ContainerController>>
-    _getItemAndContainerController(::SlotData const& slot, bool) const;
-
     MCAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> _getPredictiveContainers();
-
-    MCAPI ::ContainerScreenContext _getScreenContext() const;
-
-    MCAPI ::SlotData _getSlotData(::ContainerValidationSlotData const& containerValidationSlotData) const;
 
     MCAPI bool _handleAutoPlace(::ItemTransferRequest const& request);
 
-    MCAPI void _handleSplitMultiple(
-        ::SelectedSlotInfo const& selected,
-        ::ItemInstance const&     itemTemplate,
-        ::SlotData const&         dstSlot
-    );
-
     MCAPI bool _isContainerSimulationEnabled() const;
-
-    MCAPI void _onItemTransferring(
-        ::ItemStack const& stack,
-        ::SlotData const&  srcSlot,
-        ::ContainerModel*  srcModel,
-        ::SlotData const&  dstSlot,
-        ::ContainerModel*  dstModel
-    );
 
     MCAPI void _onTransfer(::ContainerScreenActionResult const& result);
 
     MCAPI void _playCraftingSound(
         ::std::weak_ptr<::ContainerManagerModel> const& containerManagerModel,
         ::SharedTypes::Legacy::LevelSoundEvent          soundEvent
-    );
-
-    MCAPI void _registerSetThisDirtyCallback(::std::shared_ptr<::ContainerModel> containerModel);
-
-    MCAPI ::ContainerCategory
-    _resolveToRealSourceSlot(::ContainerModel* srcModel, ::SlotData const& srcSlot, ::SlotData& realSrcSlot) const;
-
-    MCAPI void _returnToPlayerOrDrop(::SlotData const& srcSlot, ::ItemTransferAmount amount);
-
-    MCAPI void _shiftLeftStorageItemContents(
-        ::std::string const&              collectionName,
-        int                               selectedItemIdx,
-        ::std::vector<::ItemStack> const& items
     );
 
     MCAPI bool _transfer(
@@ -409,11 +346,6 @@ public:
         bool                 allowVisualOnlySameItemSwap
     );
 
-    MCAPI bool _transferAll(::ItemTransferType transferType, ::SlotData const& dstSlot, ::SlotData const& srcSlot);
-
-    MCAPI bool
-    _transferSpecial(::SlotData const& srcSlot, ::ItemTransferAmount transferAmount, ::ItemSpecialLocation location);
-
     MCAPI ::ItemStackRequestScope _tryBeginItemStackRequest(::ContainerManagerModel const* managerModel);
 
     MCAPI void
@@ -424,21 +356,13 @@ public:
 
     MCAPI bool blockHasCustomName(::BlockPos const& blockPos) const;
 
-    MCAPI bool getAndResetContainerDirty();
-
     MCAPI ::std::string getBlockName(::BlockPos const& blockPos) const;
 
     MCAPI ::std::shared_ptr<::ContainerController> getContainerController(::ContainerEnumName containerEnumName) const;
 
     MCAPI ::std::shared_ptr<::ContainerController> getContainerController(::std::string const& containerName) const;
 
-    MCFOLD ::std::weak_ptr<::ContainerManagerModel> getContainerManagerModel();
-
-    MCAPI ::std::weak_ptr<::ContainerModel> getContainerModel(::std::string const& containerName) const;
-
     MCAPI int getContainerSize(::std::string const& collectionName) const;
-
-    MCAPI ::SharedTypes::Legacy::ContainerType getContainerType() const;
 
     MCAPI void getCurrentContainerStateList(::std::vector<::ItemStateData>& inventoryState);
 
@@ -449,8 +373,6 @@ public:
     MCAPI ::std::string getExpandoGroupName(::std::string const& collectionName, int collectionIndex) const;
 
     MCAPI ::ContainerExpandStatus getExpandoStatus(::std::string const& containerName, int collectionIndex) const;
-
-    MCFOLD ::ItemStack const& getItemStack(::SlotData const& slot) const;
 
     MCAPI ::ItemStack const& getItemStack(::std::string const& collectionName, int collectionIndex) const;
 
@@ -480,22 +402,8 @@ public:
 
     MCAPI bool isItemFiltered(::std::vector<::std::string> containerNames, ::ItemStackBase const& item) const;
 
-    MCAPI bool isValid(float pickRange);
-
     MCAPI bool playerHasRoomForItem(::ItemInstance const& item) const;
-
-    MCAPI void resetSplitStack();
-
-    MCAPI void sortStorageContainer(::std::string const& storageName);
 #endif
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TRANSFER_NO_DESTINATION();
-
-    MCAPI static ::std::string_view const& TRANSFER_NO_ORIGIN();
     // NOLINTEND
 
 public:
@@ -516,7 +424,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController> self);
+    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController>);
 
     MCAPI void $registerContainerCallbacks();
 
@@ -530,19 +438,19 @@ public:
 
     MCFOLD void $updatePreviewItem();
 
-    MCFOLD ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
 
-    MCAPI void $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
 
-    MCAPI void $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    MCAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
-    MCAPI void $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCAPI void $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCAPI bool $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCAPI void $handlePlaceAmount(::SlotData const& srcSlot, int amount, ::SlotData const& dstSlot);
+    MCAPI bool $handlePlaceAmount(::SlotData const& srcSlot, int amount, ::SlotData const& dstSlot);
 
     MCAPI int $handleAutoPlace(
         ::SlotData const&                     srcSlot,
@@ -582,7 +490,7 @@ public:
 
     MCAPI bool $handleConsume(::SlotData const& srcSlot, ::ItemTransferAmount const transferAmount);
 
-    MCAPI void $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
+    MCAPI bool $handleAddToStack(::SlotData const& dstSlot, ::SlotData const& srcSlot, ::ItemTakeType type);
 
     MCAPI void $closeContainers();
 
@@ -595,7 +503,7 @@ public:
     );
 
     MCAPI ::CreateContainerItemScope
-    $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount);
+    $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
 
     MCAPI void $_onItemTransferredFrom(::ItemInstance const& stack, ::SlotData const& srcSlot);
 
@@ -603,17 +511,11 @@ public:
 
     MCFOLD void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
 
-    MCFOLD void $_onItemPlaced(::ItemInstance const& itemInstance, ::SlotData const& dstSlot);
+    MCFOLD void $_onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot);
 
     MCFOLD void $_onContainerScreenAction(::ContainerScreenActionResult const& result);
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

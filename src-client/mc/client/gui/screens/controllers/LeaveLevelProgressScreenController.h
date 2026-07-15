@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LeaveLevelProgressScreenController() /*override*/;
+    virtual ~LeaveLevelProgressScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
@@ -73,24 +73,6 @@ public:
         bool                                               loadAssets,
         bool                                               forceRenderBelow
     );
-
-    MCAPI void _closeEduCloudConflictPopup();
-
-    MCAPI void _exitScreen();
-
-    MCAPI bool _exitingErrorScreen() const;
-
-    MCAPI ::std::chrono::milliseconds const _getEduCloudIsDoneInterval() const;
-
-    MCAPI ::std::string const _getErrorCode() const;
-
-    MCAPI void _registerControllerCallbacks();
-
-    MCAPI void _registerEventHandlers();
-
-    MCAPI void _registerProgressBindings();
-
-    MCFOLD void _showEduCloudConflictPopup();
     // NOLINTEND
 
 public:
@@ -106,36 +88,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCFOLD ::std::string $getAdditionalScreenInfo() const;
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCFOLD ::ui::SceneType $getSceneType() const;
-
-    MCAPI void $onLeave();
-
-    MCAPI void $onReload();
-
-    MCFOLD ::std::string $_getButtonADescription();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForScreenController();
     // NOLINTEND
 };

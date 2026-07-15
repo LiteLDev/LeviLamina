@@ -13,7 +13,6 @@ class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class HudHorseHeartRenderer : public ::MinecraftUICustomRenderer {
@@ -39,15 +38,13 @@ public:
     virtual void
     render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int) /*override*/;
 
-    virtual bool update(::IClientInstance& client, ::UIControl&, ::UIScene const&) /*override*/;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI HudHorseHeartRenderer();
-
-    MCAPI void _loadHeartTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
@@ -63,7 +60,7 @@ public:
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 
 public:

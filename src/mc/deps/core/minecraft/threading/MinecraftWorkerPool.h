@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class WorkerPool;
-struct AllWorkerConfigurations;
 // clang-format on
 
 class MinecraftWorkerPool {
@@ -34,18 +33,6 @@ public:
 
     MCNAPI static void destroySingletons();
 
-#ifdef LL_PLAT_C
-    MCNAPI static ::WorkerPool& getASYNCOrDISKWorkerPoolForLoading();
-#endif
-
-    MCNAPI static ::std::optional<::AllWorkerConfigurations> const getAllWorkerConfigurations();
-
-#ifdef LL_PLAT_C
-    MCNAPI static uint64 getAudioThreadMask();
-#endif
-
-    MCNAPI static void initializeDefaults();
-
     MCNAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
     // NOLINTEND
 
@@ -53,8 +40,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
-
-    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& CONNECTEDSTORAGE();
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& DISK();
 
@@ -71,7 +56,5 @@ public:
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING();
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING_HELPERS();
-
-    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
     // NOLINTEND
 };

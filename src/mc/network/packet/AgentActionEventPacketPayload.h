@@ -25,8 +25,6 @@ public:
         ::AgentActionType    action,
         ::Json::Value const& response
     );
-
-    MCAPI ~AgentActionEventPacketPayload();
     // NOLINTEND
 
 public:
@@ -35,11 +33,5 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::std::string const& requestId, ::AgentActionType action, ::Json::Value const& response);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

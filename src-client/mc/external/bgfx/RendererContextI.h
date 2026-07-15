@@ -106,15 +106,9 @@ public:
 
     virtual void destroyProgram(::bgfx::ProgramHandle _handle) = 0;
 
-    virtual void* createTexture(
-        ::bgfx::TextureHandle  _handle,
-        ::bgfx::Memory const*  _mem,
-        uint                   _flags,
-        uchar                  _skip,
-        ::bgfx::Memory const** _imageContainerData
-    ) = 0;
+    virtual void* createTexture(::bgfx::TextureHandle, ::bgfx::Memory const*, uint, uchar, ::bgfx::Memory const**) = 0;
 
-    virtual void updateTextureBegin(::bgfx::TextureHandle _handle, uchar _side, uchar _mip) = 0;
+    virtual void updateTextureBegin(::bgfx::TextureHandle, uchar, uchar) = 0;
 
     virtual void updateTexture(
         ::bgfx::TextureHandle _handle,
@@ -179,11 +173,7 @@ public:
 
     virtual void setName(::bgfx::Handle _handle, char const* _name) = 0;
 
-    virtual void submit(
-        ::bgfx::Frame*               _render,
-        ::bgfx::ClearQuad&           _clearQuad,
-        ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter
-    ) = 0;
+    virtual void submit(::bgfx::Frame*, ::bgfx::ClearQuad&, ::bgfx::TextVideoMemBlitter&) = 0;
 
     virtual void blitSetup(::bgfx::TextVideoMemBlitter& _blitter) = 0;
 

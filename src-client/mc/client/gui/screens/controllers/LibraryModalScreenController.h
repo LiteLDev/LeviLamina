@@ -28,14 +28,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~LibraryModalScreenController() /*override*/;
+    virtual ~LibraryModalScreenController() /*override*/ = default;
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
     virtual ::std::string getTelemetryOverride() const /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
-        /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -47,8 +46,6 @@ public:
         ::std::function<void(bool)>                              onModalDismissed,
         ::std::vector<::std::pair<::std::string, ::std::string>> eventProperties
     );
-
-    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
@@ -63,26 +60,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ui::SceneType $getSceneType() const;
 
-    MCAPI ::std::string $getTelemetryOverride() const;
-
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForScreenController();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
 };

@@ -12,10 +12,6 @@ namespace Util::Url { struct ComponentsView; }
 namespace Util::Url {
 // functions
 // NOLINTBEGIN
-#ifdef LL_PLAT_C
-MCNAPI ::std::string addUrlSchemeIfNotPresent(::std::string const& url, ::std::string const& scheme);
-#endif
-
 MCNAPI ::std::string anonymizeIPAddress(::std::string const& ipAddress);
 
 MCNAPI ::std::string anonymizeIPv6Address(::std::string const& ipAddress);
@@ -33,21 +29,10 @@ MCNAPI ::std::string extractAuthorityAndPathFromUrl(::std::string const& url);
 
 MCNAPI ::std::optional<::std::string> getExtension(::std::string const& url);
 
-MCNAPI ::std::optional<::std::string_view> getQueryParameterValue(
-    ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& params,
-    ::std::string_view                                                        key
-);
-
 MCNAPI ::std::vector<::std::pair<::std::string_view, ::std::string_view>> getQueryParameters(::std::string_view url);
 #endif
 
-MCNAPI bool isValidAbsoluteUrl(::std::string const& url);
-
 MCNAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
-
-#ifdef LL_PLAT_C
-MCNAPI bool isValidIPAndPort(::std::string const& ipAddress, int port);
-#endif
 
 MCNAPI bool isValidIPv4(::std::string_view ipAddrStr);
 
@@ -58,23 +43,11 @@ MCNAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);
 #ifdef LL_PLAT_C
 MCNAPI ::std::string setQueryParameter(::std::string_view url, ::std::string_view key, ::std::string_view value);
 
-MCNAPI ::std::vector<::std::string_view> splitPathIntoSegments(::std::string_view path);
-
-MCNAPI bool startsWithMatchingFullPathSegments(::std::string_view route, ::std::string_view start);
-
 MCNAPI ::std::string stripProtocol(::std::string const& url);
 
 MCNAPI ::std::string stripQueryParameters(::std::string const& url);
 
-MCNAPI ::std::optional<::std::string> urlDecode(::std::string const& value, bool replacePlusWithSpace);
-
 MCNAPI ::std::optional<::std::string> urlDecode(::std::string_view value, bool replacePlusWithSpace);
-#endif
-
-MCNAPI ::std::string urlEncode(::std::string const& value);
-
-#ifdef LL_PLAT_C
-MCNAPI ::std::string urlEncode(::std::string_view value);
 #endif
 
 MCNAPI ::std::string urlEncode(::std::string_view value, ::std::function<bool(uchar)> isAlphaNum);

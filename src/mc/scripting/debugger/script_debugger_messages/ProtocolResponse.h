@@ -16,22 +16,9 @@ public:
 
 public:
     // prevent constructor by default
+    ProtocolResponse& operator=(ProtocolResponse const&);
     ProtocolResponse(ProtocolResponse const&);
     ProtocolResponse();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::ScriptDebuggerMessages::ProtocolResponse& operator=(::ScriptDebuggerMessages::ProtocolResponse const&);
-
-    MCNAPI ~ProtocolResponse();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptDebuggerMessages

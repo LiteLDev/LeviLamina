@@ -81,9 +81,11 @@ public:
     // NOLINTBEGIN
     virtual bool isHumanoidArmor() const /*override*/;
 
-    virtual bool
-    isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const
-        /*override*/;
+    virtual bool isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const /*override*/;
 
     virtual int getEnchantSlot() const /*override*/;
 
@@ -136,28 +138,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HumanoidArmorItem(
-        ::std::string const&                      name,
-        short                                     id,
-        ::HumanoidArmorItem::ArmorMaterial const& armorType,
-        int                                       icon,
-        ::SharedTypes::Legacy::ArmorSlot          slot,
-        bool                                      currentVersionAllowsTrim
-    );
-
-    MCAPI ::ItemInstance getTierItem() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void ResetDefaultLeatherColor();
-
-    MCAPI static void SetDefaultLeatherColor(int newDefaultLeatherColor);
+    MCAPI ::ItemInstance getTierItem() const;
 #endif
-
-    MCAPI static bool isDamageable(::ItemDescriptor const& item);
     // NOLINTEND
 
 public:
@@ -185,31 +168,21 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                      name,
-        short                                     id,
-        ::HumanoidArmorItem::ArmorMaterial const& armorType,
-        int                                       icon,
-        ::SharedTypes::Legacy::ArmorSlot          slot,
-        bool                                      currentVersionAllowsTrim
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isHumanoidArmor() const;
 
-    MCAPI bool
-    $isValidRepairItem(::ItemStackBase const& repairItem, ::ItemStackBase const&, ::BaseGameVersion const&) const;
+    MCAPI bool $isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
 
     MCAPI int $getEnchantSlot() const;
 
     MCAPI int $getEnchantValue() const;
 
-    MCFOLD int $getArmorValue() const;
+    MCAPI int $getArmorValue() const;
 
     MCAPI int $getToughnessValue() const;
 

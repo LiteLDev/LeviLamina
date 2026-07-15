@@ -23,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DimensionFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::OwnerPtr<::Dimension> create(::std::string const& dimensionName) const /*override*/;
@@ -34,18 +30,6 @@ public:
     virtual void initializeDimension(::Dimension& dimension) const /*override*/;
 
     virtual ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& getDimensionOwnerPtrFactory() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DimensionFactory(::DimensionFactoryArguments&& args);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DimensionFactoryArguments&& args);
     // NOLINTEND
 
 public:

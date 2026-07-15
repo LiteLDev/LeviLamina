@@ -10,7 +10,6 @@
 // clang-format off
 class UIAnimationComponent;
 class UIControl;
-class UIResolvedDef;
 // clang-format on
 
 class UIAnimFlipbook : public ::UIAnim {
@@ -29,52 +28,22 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UIAnimFlipbook();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::shared_ptr<::UIAnim> clone() /*override*/;
 
     virtual char const* getInitialValueKey() const /*override*/;
 
-    virtual bool tick(::UIControl& ownerControl, float const deltaTime) /*override*/;
+    virtual bool tick(::UIControl&, float const) /*override*/;
 
-    virtual void onResourcesLoaded(::UIAnimationComponent& animComponent) /*override*/;
+    virtual void onResourcesLoaded(::UIAnimationComponent&) /*override*/;
 
-    virtual void _reset(::UIControl& ownerControl) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit UIAnimFlipbook(::UIResolvedDef const& def);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& def);
+    virtual void _reset(::UIControl&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UIAnim> $clone();
 
-    MCFOLD char const* $getInitialValueKey() const;
-
-    MCAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
-
-    MCAPI void $onResourcesLoaded(::UIAnimationComponent& animComponent);
-
-    MCAPI void $_reset(::UIControl& ownerControl);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

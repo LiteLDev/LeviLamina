@@ -42,25 +42,13 @@ public:
         ::OreUI::RouteType               routeType
     );
 
-    MCAPI bool _isRealmsStoriesScreen(::std::string const& routeName) const;
-
     MCFOLD ::std::string const& getFragment() const;
-
-    MCFOLD ::OreUI::RouteMode getMode() const;
 
     MCFOLD ::std::string const& getPath() const;
 
     MCFOLD ::std::string const& getQuery() const;
 
-    MCFOLD ::std::weak_ptr<::AbstractScene> getScene() const;
-
-    MCAPI ::std::unordered_map<::std::string, ::std::string> getTelemetryEventProperties() const;
-
     MCAPI ::std::string getTelemetryId() const;
-
-    MCFOLD ::OreUI::RouteType getType() const;
-
-    MCFOLD ::std::string const& getUrl() const;
 
     MCAPI bool isValid() const;
 

@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class NeighborBlockDirections;
 class StructureBlockPlacementInfo;
 // clang-format on
 
@@ -33,12 +32,4 @@ public:
     StructurePlacementNeighbors& operator=(StructurePlacementNeighbors const&);
     StructurePlacementNeighbors(StructurePlacementNeighbors const&);
     StructurePlacementNeighbors();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::NeighborBlockDirections getDirectionsFromExistingBlockToStructure() const;
-
-    MCAPI ::NeighborBlockDirections getDirectionsFromStructureToExistingBlock() const;
-    // NOLINTEND
 };
