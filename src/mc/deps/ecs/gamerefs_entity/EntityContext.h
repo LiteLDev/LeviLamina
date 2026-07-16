@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class WeakEntityRef;
 class EntityRegistry;
 // clang-format on
 
@@ -50,6 +51,8 @@ public:
     [[nodiscard]] inline T& getOrAddComponent(Args&&... args) {
         return getRegistry().get_or_emplace<T>(mEntity, std::forward<Args>(args)...);
     }
+
+    LLNDAPI WeakEntityRef getWeakRef() const;
 
 public:
     // member variables

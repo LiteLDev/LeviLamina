@@ -23,7 +23,7 @@ public:
 
     HitResult& operator=(HitResult const&) = default;
     HitResult(HitResult const&)            = default;
-    HitResult(::HitResult&&) = default;
+    HitResult(::HitResult&&)               = default;
 
     HitResult(
         ::Vec3 const& startPos,
@@ -37,7 +37,7 @@ public:
       mType(HitResultType::Entity),
       mFacing(0),
       mPos(pos),
-      mEntity(*entity.mEntityContext),
+      mEntity(entity.getEntityContext().getWeakRef()),
       mEntityAABB(entityAABB),
       mIsHitLiquid(false),
       mLiquidFacing(0),
