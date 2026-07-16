@@ -60,8 +60,6 @@ public:
     MCAPI void add(::std::unique_ptr<::Tag> tag);
 
     MCAPI ::std::unique_ptr<::ListTag> copyList() const;
-
-    MCAPI ::ListTag& operator=(::ListTag&&);
     // NOLINTEND
 
 public:

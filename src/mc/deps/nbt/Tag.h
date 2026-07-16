@@ -58,6 +58,7 @@ public:
         List      = 0x9,
         Compound  = 0xA,
         IntArray  = 0xB,
+        NumTagTypes = 0xC,
     };
     using enum Type;
 
